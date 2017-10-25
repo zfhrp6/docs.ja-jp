@@ -1,0 +1,476 @@
+<Type Name="EncryptedType" FullName="System.Security.Cryptography.Xml.EncryptedType">
+  <TypeSignature Language="C#" Value="public abstract class EncryptedType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EncryptedType extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.EncryptedType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>元の抽象基本クラスを表すクラス<see cref="T:System.Security.Cryptography.Xml.EncryptedData" />と<see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />派生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedType>クラスが元となる抽象基本クラスを表すクラス<xref:System.Security.Cryptography.Xml.EncryptedData>と<xref:System.Security.Cryptography.Xml.EncryptedKey>派生します。 これら 2 つのクラスには、実際の暗号化されたデータや XML 暗号化に重要な情報が含まれます。 XML 暗号化標準に準拠するには、これら 2 つの派生クラスを使用する必要があります。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。  
+  
+ [!code-csharp[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EncryptedType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedType.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedType" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。 このクラスは、元となる抽象基本クラスを表すクラス<xref:System.Security.Cryptography.Xml.EncryptedData>と<xref:System.Security.Cryptography.Xml.EncryptedKey>派生します。 XML 暗号化標準に準拠するには、2 つの派生クラスを使用してください。 XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。  
+  
+ [!code-csharp[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddProperty">
+      <MemberSignature Language="C#" Value="public void AddProperty (System.Security.Cryptography.Xml.EncryptionProperty ep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddProperty(class System.Security.Cryptography.Xml.EncryptionProperty ep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedType.AddProperty(System.Security.Cryptography.Xml.EncryptionProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ep" Type="System.Security.Cryptography.Xml.EncryptionProperty" />
+      </Parameters>
+      <Docs>
+        <param name="ep"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" /> オブジェクト。</param>
+        <summary>追加、<see langword="&lt;EncryptionProperty&gt;" />に子要素、 <see langword="&lt;EncryptedProperties&gt;" /> 、現在の要素<see cref="T:System.Security.Cryptography.Xml.EncryptedType" />XML 暗号化内のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを追加するために使用できます`<EncryptionProperty>`子要素を`<EncryptedProperties>`要素。 `<EncryptedProperties>`要素の追加情報を提供、`<EncryptedType>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CipherData">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.Xml.CipherData CipherData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.CipherData CipherData" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.CipherData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.CipherData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Security.Cryptography.Xml.CipherData" />のインスタンスの値、<see cref="T:System.Security.Cryptography.Xml.EncryptedType" />クラスです。</summary>
+        <value><see cref="T:System.Security.Cryptography.Xml.CipherData" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<CipherData>`要素は、暗号化されたデータを提供する XML 暗号化に必要な要素です。 Base64 でエンコードされたテキストとして、暗号化されたオクテット シーケンスを含んでいるか、<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>プロパティ、または暗号化のオクテット シーケンスを使用して、含む外部の場所への参照を提供、<xref:System.Security.Cryptography.Xml.CipherData.CipherReference%2A>プロパティです。  
+  
+ この要素の詳細については、次を参照してください。<xref:System.Security.Cryptography.Xml.CipherData>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。  
+  
+ [!code-csharp[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedType.CipherData" />プロパティに設定された<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public virtual string Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="Encoding" />の属性、 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" /> XML 暗号化のインスタンス。</summary>
+        <value>暗号化されたデータのエンコード方法を説明する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、暗号化されたデータのエンコード方法について説明します。 たとえば、暗号化されたデータが base64 でエンコードされた PNG の場合は、エンコーディングとして指定できました 'http://www.w3.org/2000/09/xmldsig#base64' です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。 このサンプルのさまざまなプロパティを表示し、<xref:System.Security.Cryptography.Xml.EncryptedData>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedData/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedData/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionMethod">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.Xml.EncryptionMethod EncryptionMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.EncryptionMethod EncryptionMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.EncryptionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="&lt;EncryptionMethod&gt;" /> XML 暗号化要素です。</summary>
+        <value><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />を表すオブジェクト、<see langword="&lt;EncryptionMethod&gt;" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<EncryptionMethod>`は、暗号化されたデータに適用される暗号化アルゴリズムを表す省略可能な要素です。 要素が存在しない場合、受信者が、暗号化アルゴリズムを認識する必要があります。 または暗号化解除は失敗します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。  
+  
+ [!code-csharp[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionProperties">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.Xml.EncryptionPropertyCollection EncryptionProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.EncryptionPropertyCollection EncryptionProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.EncryptionProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.EncryptionPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="&lt;EncryptionProperties&gt;" /> XML 暗号化要素です。</summary>
+        <value><see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<EncryptionProperties>`要素の作成に関する追加情報を含めることができます、<xref:System.Security.Cryptography.Xml.EncryptedType>日付と時刻スタンプなどの暗号化中に使用される暗号化のハードウェア シリアル番号のインスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。 このサンプルのさまざまなプロパティを表示し、<xref:System.Security.Cryptography.Xml.EncryptedData>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedData/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedData/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedType.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.EncryptedType" />オブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XmlElement" />を表すオブジェクト、 <see langword="&lt;EncryptedType&gt;" /> XML 暗号化要素です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、出力、 `<EncryptedType>` XML 内の要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public virtual string Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="Id" />の属性、 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" /> XML 暗号化のインスタンス。</summary>
+        <value>文字列、<see langword="Id" />の属性、<see langword="&lt;EncryptedType&gt;" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Id`属性は省略可能な属性の`<EncryptedType>`文字列識別子を XML ドキュメント内の要素に割り当てるための標準的な方法を提供する要素。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。 このサンプルのさまざまなプロパティを表示し、<xref:System.Security.Cryptography.Xml.EncryptedData>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedData/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedData/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyInfo">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.KeyInfo KeyInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.KeyInfo KeyInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.KeyInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.KeyInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="&lt;KeyInfo&gt;" /> XML 暗号化要素です。</summary>
+        <value><see cref="T:System.Security.Cryptography.Xml.KeyInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<KeyInfo>`要素は、データの暗号化に使用するキーに関する情報を含む省略可能な要素です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。 このサンプルのさまざまなプロパティを表示し、<xref:System.Security.Cryptography.Xml.EncryptedData>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedData/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedData/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public abstract void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedType.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XmlElement" />で使用する XML 要素を表すオブジェクトを<see langword="&lt;EncryptedType&gt;" />要素。</param>
+        <summary>XML の情報を読み込み、 <see langword="&lt;EncryptedType&gt;" /> XML 暗号化要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用してに既存の XML 要素を読み込み、<xref:System.Security.Cryptography.Xml.EncryptedType>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。  
+  
+ [!code-csharp[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" />提供は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MimeType">
+      <MemberSignature Language="C#" Value="public virtual string MimeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MimeType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.MimeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="MimeType" />の属性、 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" /> XML 暗号化のインスタンス。</summary>
+        <value>暗号化されたデータのメディアの種類を説明する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `MimeType`属性は、暗号化されたデータのメディアの種類を説明する省略可能な属性です。 この属性の値が文字列で定義されている値で[RFC 2045: Multipurpose Internet Mail Extensions (MIME) Part One: 形式 of Internet Message Bodies](http://www.ietf.org/rfc/rfc2045.txt)です。 たとえば、暗号化されたデータは base64 でエンコードされた PNG では、`Encoding`属性 'http://www.w3.org/2000/09/xmldsig#base64' になります、 `MimeType` 'イメージ/png' になります。 この属性は省略可能なとの検証は行われません、`MimeType`情報が必要です。 属性では、暗号化アプリケーションが、追加の処理を行う必要がありますは示されません。 この情報が識別子に既にバインドされている場合は、必要ない場合があります、`Type`属性。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。 このサンプルのさまざまなプロパティを表示し、<xref:System.Security.Cryptography.Xml.EncryptedData>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedData/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedData/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public virtual string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedType.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="Type" />の属性、 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" /> XML 暗号化のインスタンス。</summary>
+        <value>暗号化されたデータのテキスト形式を説明する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Type`属性は、暗号化されたコンテンツのテキスト形式に関する型情報を識別する省略可能な属性です。 省略可能で、これは重要な属性でありで説明されている必須の処理で使用される[処理ルール: 復号化](http://www.w3.org/TR/xmlenc-core/)(セクション 4.2) XML Encryption Syntax and Processing 仕様 (http://www.w3.org/TR/xmlenc-core/) のです。 場合、`<EncryptedData>`要素には、型のデータが含まれています。`'element'`または要素`'content'`、置換する、XML ドキュメントでデータを強くお勧めすると、`Type`属性を指定します。 この情報がない場合、情報の暗号化を解除しようとしています。 アプリケーションは自動的に元のテキスト形式を XML ドキュメントを復元できるできません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、暗号化を使用して XML 要素を復号化する方法を示します、<xref:System.Security.Cryptography.Xml.EncryptedData>から派生したクラス、<xref:System.Security.Cryptography.Xml.EncryptedType>クラスです。  
+  
+ [!code-csharp[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML-EncryptedData - EncryptedType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML-EncryptedData - EncryptedType/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

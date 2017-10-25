@@ -1,0 +1,60 @@
+<Type Name="ToolTipEventArgs" FullName="System.Windows.Controls.ToolTipEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ToolTipEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ToolTipEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ToolTipEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ツールヒントが開くか閉じるときに発生するイベントのイベント情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールヒントの開閉、ときに、このクラスは、イベント情報を提供します。 ツールヒントを指定する要素はいずれかから継承<xref:System.Windows.FrameworkElement>または<xref:System.Windows.ContentElement>です。 そのため、オープンとクローズのイベントは、これらのクラスの両方に存在します。 次の表には、このクラスを使用するイベントが一覧表示します。  
+  
+|ツールヒントが開くときに発生するイベント|ツールヒントが閉じたときに発生するイベント|  
+|--------------------------------------------|---------------------------------------------|  
+|<xref:System.Windows.FrameworkElement.ToolTipOpening?displayProperty=nameWithType>|<xref:System.Windows.FrameworkElement.ToolTipClosing?displayProperty=nameWithType>|  
+|<xref:System.Windows.FrameworkContentElement.ToolTipOpening?displayProperty=nameWithType>|<xref:System.Windows.FrameworkContentElement.ToolTipClosing?displayProperty=nameWithType>|  
+  
+ これらのイベントは登録している、<xref:System.Windows.Controls.ToolTipService>クラスの<xref:System.Windows.Controls.ToolTipService.ToolTipOpeningEvent>と<xref:System.Windows.Controls.ToolTipService.ToolTipClosingEvent>フィールドです。 <xref:System.Windows.FrameworkElement>と<xref:System.Windows.FrameworkContentElement>両方のクラスを実装、<xref:System.Windows.Controls.ToolTipService>および前の表に、イベントを定義することでこのイベントを公開  
+  
+ <xref:System.Windows.Controls.ToolTipEventArgs>クラスのオーバーライド、<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>メソッドです。 ただし、この保護されたメンバーに表示されない、<xref:System.Windows.Controls.ToolTipEventArgs>メンバーの一覧は、メソッドは封印されておりからのクラスでオーバーライドできないため<xref:System.Windows.Controls.ToolTipEventArgs>です。 このクラスのメソッドの実装をメソッドにパラメーターとして提供されるイベント ハンドラー デリゲートのキャスト、<xref:System.Windows.Controls.ToolTipEventHandler>型です。  
+  
+ ツールヒントとして定義されている場合、<xref:System.Windows.Controls.ToolTip>オブジェクト、<xref:System.Windows.Controls.ToolTip.Opened>と<xref:System.Windows.Controls.ToolTip.Closed>のイベント、<xref:System.Windows.Controls.ToolTip>クラスは、ツールヒントの開閉場合に発生もします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

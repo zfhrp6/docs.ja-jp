@@ -1,0 +1,153 @@
+<Type Name="FilterType" FullName="System.ServiceModel.Routing.Configuration.FilterType">
+  <TypeSignature Language="C#" Value="public enum FilterType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FilterType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Routing.Configuration.FilterType" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>メッセージのルーティングに使用するフィルターの型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)] の使用方法<xref:System.ServiceModel.Routing.Configuration.FilterType>、「<xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="Action" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType Action = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.Action" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.ActionMessageFilter" /> を使用してアクションをフィルター処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="And">
+      <MemberSignature Language="C#" Value="And" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType And = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.And" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.StrictAndMessageFilter" /> を使用して、2 つのメッセージ フィルターを AND で連結してフィルター処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType Custom = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義のフィルターを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointAddress">
+      <MemberSignature Language="C#" Value="EndpointAddress" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType EndpointAddress = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.EndpointAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用して<see cref="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" />で<see cref="P:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison" />に設定**false**にアドレス フィルターを適用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointName">
+      <MemberSignature Language="C#" Value="EndpointName" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType EndpointName = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.EndpointName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.EndpointNameMessageFilter" /> を使用して、サービス エンドポイントの名前をフィルター処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchAll">
+      <MemberSignature Language="C#" Value="MatchAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType MatchAll = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.MatchAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.MatchAllMessageFilter" /> を使用してすべてのメッセージを照合します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PrefixEndpointAddress">
+      <MemberSignature Language="C#" Value="PrefixEndpointAddress" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType PrefixEndpointAddress = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.PrefixEndpointAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用<see cref="T:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter" />で<see cref="P:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison" />'éý' **false**に最長プレフィックス一致を使用してアドレス フィルターを適用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="XPath" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Routing.Configuration.FilterType XPath = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Routing.Configuration.FilterType.XPath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> を使用して XPath 式をフィルター処理します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

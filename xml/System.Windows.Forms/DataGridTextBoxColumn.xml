@@ -1,0 +1,960 @@
+<Type Name="DataGridTextBoxColumn" FullName="System.Windows.Forms.DataGridTextBoxColumn">
+  <TypeSignature Language="C#" Value="public class DataGridTextBoxColumn : System.Windows.Forms.DataGridColumnStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridTextBoxColumn extends System.Windows.Forms.DataGridColumnStyle" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridTextBoxColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridColumnStyle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ホスト、<see cref="T:System.Windows.Forms.TextBox" />のセル内のコントロール、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />文字列を編集します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTextBoxColumn>から派生したクラス、`abstract`クラス<xref:System.Windows.Forms.DataGridColumnStyle>です。 実行時に、<xref:System.Windows.Forms.DataGridTextBoxColumn>ホスト、<xref:System.Windows.Forms.DataGridTextBox>コントロールのテキストを編集するユーザーを許可します。  
+  
+ クラスに追加の特殊なプロパティを含める<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>、および<xref:System.Windows.Forms.DataGridTextBoxColumn.HideEditBox%2A>です。 これらのプロパティを使用する、ホストされているアクセス<xref:System.Windows.Forms.DataGridTextBox>コントロールとその属性と値を表示する書式を設定します。  
+  
+ データ ソースがある場合、<xref:System.Data.DataTable>を含む<xref:System.Data.DataColumn>、オブジェクト、<xref:System.Data.DataColumn.DataType%2A>のプロパティ、<xref:System.Data.DataColumn>テキスト ボックス コントロールに論理的に編集可能なデータ型に設定する必要があります。 次のデータ型は自動的に関連付けられて、 <xref:System.Windows.Forms.DataGridTextBoxColumn> : <xref:System.Byte>、 <xref:System.DateTime>、 <xref:System.Decimal>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>、 <xref:System.Single>、および<xref:System.String>です。  
+  
+> [!NOTE]
+>  Visual Basic で、次の種類が完全にサポートされていない: <xref:System.DateTime>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>、および<xref:System.TimeSpan>です。 (演算子は使用できません)。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.DataGridTextBoxColumn>に追加し、<xref:System.Windows.Forms.GridColumnStylesCollection>の<xref:System.Windows.Forms.DataGrid>です。 このコード例を実行するを持つフォームに貼り付け、<xref:System.Windows.Forms.DataGrid>という名前`dataGrid1`のコンス トラクターから呼び出すと、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridTextBoxColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridTextBoxColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.DataGridTextBoxColumn>に追加し、<xref:System.Windows.Forms.GridColumnStylesCollection>コレクション。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridTextBoxColumn (System.ComponentModel.PropertyDescriptor prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.PropertyDescriptor prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.#ctor(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />使用する列に対して、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />が関連付けられます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />と指定した<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridColumnStyle>を使用して、<xref:System.ComponentModel.PropertyDescriptor>列に表示されるデータの種類を判断します。 返される、<xref:System.ComponentModel.PropertyDescriptorCollection>を使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.DataGridTextBoxColumn>に追加し、<xref:System.Windows.Forms.GridColumnStylesCollection>コレクション。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.DataGridTextBoxColumn2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.DataGridTextBoxColumn2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn2 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.DataGridTextBoxColumn2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.DataGridTextBoxColumn2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridTextBoxColumn (System.ComponentModel.PropertyDescriptor prop, bool isDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.PropertyDescriptor prop, bool isDefault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.#ctor(System.ComponentModel.PropertyDescriptor,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="isDefault" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />に関連付けられる、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />です。</param>
+        <param name="isDefault">指定するかどうか、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />既定の列です。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridTextBoxColumn" /> を指定して <see cref="T:System.ComponentModel.PropertyDescriptor" /> クラスの新しいインスタンスを初期化します。 指定するかどうか、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />既定の列です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridColumnStyle>を使用して、<xref:System.ComponentModel.PropertyDescriptor>列に表示されるデータの種類を判断します。 返される、<xref:System.ComponentModel.PropertyDescriptorCollection>を使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridTextBoxColumn (System.ComponentModel.PropertyDescriptor prop, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.PropertyDescriptor prop, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.#ctor(System.ComponentModel.PropertyDescriptor,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />使用する列に対して、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />が関連付けられます。</param>
+        <param name="format">列の値の書式を設定するために使用する形式。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataGridTextBoxColumn" /> 、指定した<see cref="T:System.ComponentModel.PropertyDescriptor" />と形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、表示されるデータのカスタム形式を作成できます。  
+  
+ <xref:System.Windows.Forms.DataGridColumnStyle>を使用して、<xref:System.ComponentModel.PropertyDescriptor>列に表示されるデータの種類を判断します。 返される、<xref:System.ComponentModel.PropertyDescriptorCollection>を使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。  
+  
+ 書式設定の詳細については、文字を参照してください[型の書式設定](~/docs/standard/base-types/formatting-types.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataGridTextBoxColumn_DataGridTextBoxColumn_2#2](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridTextBoxColumn_DataGridTextBoxColumn_2/CPP/datagridtextboxcolumn_2.cpp#2)]
+ [!code-csharp[DataGridTextBoxColumn_DataGridTextBoxColumn_2#2](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridTextBoxColumn_DataGridTextBoxColumn_2/CS/datagridtextboxcolumn_datagridtextboxcolumn_2.cs#2)]
+ [!code-vb[DataGridTextBoxColumn_DataGridTextBoxColumn_2#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridTextBoxColumn_DataGridTextBoxColumn_2/VB/datagridtextboxcolumn_datagridtextboxcolumn_2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridTextBoxColumn (System.ComponentModel.PropertyDescriptor prop, string format, bool isDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.PropertyDescriptor prop, string format, bool isDefault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.#ctor(System.ComponentModel.PropertyDescriptor,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="isDefault" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />に関連付けられる、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />です。</param>
+        <param name="format">使用する形式。</param>
+        <param name="isDefault">指定するかどうか、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />既定の列です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridTextBoxColumn" />と指定したクラス<see cref="T:System.ComponentModel.PropertyDescriptor" />と形式です。 列が既定の列であるかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridColumnStyle>を使用して、<xref:System.ComponentModel.PropertyDescriptor>列に表示されるデータの種類を判断します。 返される、<xref:System.ComponentModel.PropertyDescriptorCollection>を使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="protected override void Abort (int rowNum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Abort(int32 rowNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.Abort(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowNum">編集操作が中断されている行の数。</param>
+        <summary>編集プロシージャを中断する要求を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、列に加えられた変更をロールバックし、起動、<xref:System.Windows.Forms.DataGridTextBoxColumn.HideEditBox%2A>と<xref:System.Windows.Forms.DataGridTextBoxColumn.EndEdit%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="protected override bool Commit (System.Windows.Forms.CurrencyManager dataSource, int rowNum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool Commit(class System.Windows.Forms.CurrencyManager dataSource, int32 rowNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.Commit(System.Windows.Forms.CurrencyManager,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">列が属する <see cref="T:System.Windows.Forms.CurrencyManager" /> コントロールの <see cref="T:System.Windows.Forms.DataGrid" />。</param>
+        <param name="rowNum">編集された行の番号。</param>
+        <summary>編集プロシージャを完了する要求を実行します。</summary>
+        <returns>
+          <see langword="true" />場合は、値が正常にコミットされます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、編集が実際に発生していることを確認することを確認します。 その場合は、値を適切にフォーマットします。 値が場合`null`、メソッドの入力<xref:System.Convert.DBNull>; 列にそれ以外の場合、使用して、<xref:System.Windows.Forms.DataGridColumnStyle.SetColumnValueAtRow%2A>値をコミットするメソッド。  
+  
+ メソッドを呼び出す、<xref:System.Windows.Forms.DataGrid>編集操作がコミットされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConcedeFocus">
+      <MemberSignature Language="C#" Value="protected override void ConcedeFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ConcedeFocus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.ConcedeFocus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォーカスが与えられたことを列に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバーライド メソッドで、<xref:System.Windows.Forms.TextBox>によってホストされるコントロール、<xref:System.Windows.Forms.DataGridTextBoxColumn>を非表示にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="protected override void Edit (System.Windows.Forms.CurrencyManager source, int rowNum, System.Drawing.Rectangle bounds, bool readOnly, string displayText, bool cellIsVisible);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Edit(class System.Windows.Forms.CurrencyManager source, int32 rowNum, valuetype System.Drawing.Rectangle bounds, bool readOnly, string displayText, bool cellIsVisible) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="readOnly" Type="System.Boolean" />
+        <Parameter Name="displayText" Type="System.String" />
+        <Parameter Name="cellIsVisible" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="source">列が属する <see cref="T:System.Windows.Forms.CurrencyManager" /> コントロールの <see cref="T:System.Windows.Forms.DataGrid" />。</param>
+        <param name="rowNum">編集されている列の行番号。</param>
+        <param name="bounds">コントロールの配置先の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="readOnly">列は読み取り専用であるかどうかを示す値。 <see langword="true" />値が読み取り専用の場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="displayText">コントロール内で表示するテキスト。</param>
+        <param name="cellIsVisible">セルを表示するかどうかを示す値です。 <see langword="true" />セルを表示する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>編集するためにセルを準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridColumnStyle.Edit%2A>サイト、<xref:System.Windows.Forms.TextBox>編集されているセルの位置にグリッド上のコントロールです。 メソッドを呼び出す、<xref:System.Windows.Forms.DataGrid>クラスの<xref:System.Windows.Forms.DataGrid.BeginEdit%2A>メソッドの編集操作が開始するときにします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.DataGridTextBoxColumn.Edit%2A>でクリックされたセルのテキストを変更するメソッドを<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.Edit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.Edit Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.Edit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.Edit Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.Edit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.Edit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndEdit">
+      <MemberSignature Language="C#" Value="protected void EndEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void EndEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.EndEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集操作の終了、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルの値を編集するには、呼び出し、<xref:System.Data.DataRow>オブジェクトの<xref:System.Data.DataRow.BeginEdit%2A>値を変更する前にします。 呼び出す必要があります、<xref:System.Data.DataRow.AcceptChanges%2A>両方のメソッド、<xref:System.Data.DataRow>と<xref:System.Data.DataTable>オブジェクトの変更がコミットされる前にします。  
+  
+   
+  
+## Examples  
+ 次の例で呼び出して、<xref:System.Windows.Forms.DataGridTextBoxColumn.EndEdit%2A>列の値を編集する前にメソッドです。  
+  
+ [!code-vb[Classic DataGridTextBoxColumn.EndEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.EndEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterNullValue">
+      <MemberSignature Language="C#" Value="protected override void EnterNullValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void EnterNullValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.EnterNullValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力した、<see cref="F:System.DBNull.Value" />列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力した、<xref:System.Windows.Forms.DataGridColumnStyle.NullText%2A>をセルの値。  
+  
+   
+  
+## Examples  
+ 次の例のテスト、<xref:System.Windows.Forms.DataGridColumnStyle>を列の型を決定します。 列がある場合、 <xref:System.Windows.Forms.DataGridTextBoxColumn>、および<xref:System.Data.DataColumn>により`null`、値、<xref:System.Windows.Forms.DataGridColumnStyle.NullText%2A>プロパティが設定されてと<xref:System.Windows.Forms.DataGridTextBoxColumn.EnterNullValue%2A>メソッドが呼び出されました。  
+  
+ [!code-vb[Classic DataGridTextBoxColumn.EnterNullValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.EnterNullValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public string Format { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Format" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridTextBoxColumn.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataGridColumnStyleFormatEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキストを書式設定する方法を指定する文字を設定します。</summary>
+        <value>文字またはテキストを書式設定する方法を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティは、列に値を表示する方法を指定します。 たとえば、値は現地の通貨として書式設定することを指定するには、"c"にプロパティを設定します。 <xref:System.Globalization.CultureInfo>をコンピューターを使用して、実際の通貨の書式を決定します。 データが変更されたときにの値は、ネイティブ型に自動的に書式付きではありません。  
+  
+ 書式設定の詳細については、文字を参照してください[型の書式設定](~/docs/standard/base-types/formatting-types.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+ 書式を設定するは、データの種類に該当する必要があります。 たとえば、データが数値の場合は、数値書式指定文字列のいずれかを使用します。  
+  
+ 変更することができます、<xref:System.Globalization.CultureInfo>の<xref:System.Windows.Forms.DataGridTextBoxColumn>を設定して、<xref:System.Windows.Forms.DataGridTextBoxColumn.FormatInfo%2A>プロパティを新しい<xref:System.Globalization.CultureInfo>適切なカルチャ ID で構築されたインスタンス  
+  
+ 設定する、<xref:System.Globalization.CultureInfo>アプリケーション、設定、<xref:System.Windows.Forms.Application.CurrentCulture%2A>のプロパティ、<xref:System.Windows.Forms.Application>を新しいオブジェクト<xref:System.Globalization.CultureInfo>適切なカルチャ ID で構築されたインスタンス  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Globalization.CultureInfo>オブジェクトし、それに割り当てます、<xref:System.Windows.Forms.DataGridTextBoxColumn.FormatInfo%2A>のプロパティ、<xref:System.Windows.Forms.DataGridTextBoxColumn>オブジェクト。 また、設定、<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティを"c"列が、値を通貨として表示することを指定します。  
+  
+ [!code-cpp[DataGridTextBoxColumn Format#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridTextBoxColumn Format/CPP/datagridtextboxcolumn format.cpp#1)]
+ [!code-csharp[DataGridTextBoxColumn Format#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridTextBoxColumn Format/CS/datagridtextboxcolumn format.cs#1)]
+ [!code-vb[DataGridTextBoxColumn Format#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridTextBoxColumn Format/VB/datagridtextboxcolumn format.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatInfo">
+      <MemberSignature Language="C#" Value="public IFormatProvider FormatInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IFormatProvider FormatInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridTextBoxColumn.FormatInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IFormatProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または値の書式設定方法を決定するために使用カルチャ固有の情報を設定します。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.IFormatProvider" />インターフェイスなど、<see cref="T:System.Globalization.CultureInfo" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するときに、<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティ、書式設定文字のいずれかを<xref:System.Windows.Forms.DataGridTextBoxColumn>によって提供される情報を使用して、<xref:System.Windows.Forms.DataGridTextBoxColumn.FormatInfo%2A>プロパティをさらにどのようなカルチャ固有の書式設定を使用するを指定します。 たとえば、ときに、<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティ (通貨) の形式の文字"c"に設定されて、リラのシンボルを使用することをさらに指定できます。 これを行うには、作成、新しい<xref:System.Globalization.CultureInfo>、イタリア語のロケール ID を持つオブジェクトし、設定、<xref:System.Windows.Forms.DataGridTextBoxColumn.FormatInfo%2A>を新しいプロパティ<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ 書式設定の詳細については、文字を参照してください[型の書式設定](~/docs/standard/base-types/formatting-types.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Globalization.CultureInfo>オブジェクトし、それに割り当てます、<xref:System.Windows.Forms.DataGridTextBoxColumn.FormatInfo%2A>のプロパティ、<xref:System.Windows.Forms.DataGridTextBoxColumn>オブジェクト。 また、設定、<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティを"c"列が、値を通貨として表示することを指定します。  
+  
+ [!code-cpp[DataGridTextBoxColumn Format#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridTextBoxColumn Format/CPP/datagridtextboxcolumn format.cpp#1)]
+ [!code-csharp[DataGridTextBoxColumn Format#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridTextBoxColumn Format/CS/datagridtextboxcolumn format.cs#1)]
+ [!code-vb[DataGridTextBoxColumn Format#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridTextBoxColumn Format/VB/datagridtextboxcolumn format.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMinimumHeight">
+      <MemberSignature Language="C#" Value="protected override int GetMinimumHeight ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance int32 GetMinimumHeight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.GetMinimumHeight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のセルの高さを取得、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</summary>
+        <returns>セルの高さ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値<xref:System.Windows.Forms.DataGridTextBoxColumn.GetMinimumHeight%2A>列のフォントと余白の値のサイズを加算して計算されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredHeight">
+      <MemberSignature Language="C#" Value="protected override int GetPreferredHeight (System.Drawing.Graphics g, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance int32 GetPreferredHeight(class System.Drawing.Graphics g, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.GetPreferredHeight(System.Drawing.Graphics,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />画面上の図形の描画に使用されるオブジェクト。</param>
+        <param name="value">描画する値。</param>
+        <summary>列を自動的にサイズ変更のために使用する高さを取得します。</summary>
+        <returns>セルに自動的にサイズを調整する高さ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.DataGridTextBoxColumn.GetPreferredHeight%2A>列を返す、高さが自動的にサイズに変更します。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.GetPreferredHeight Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.GetPreferredHeight Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.GetPreferredHeight Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.GetPreferredHeight Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.GetPreferredHeight Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.GetPreferredHeight Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics g, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics g, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.GetPreferredSize(System.Drawing.Graphics,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />画面上の図形の描画に使用されるオブジェクト。</param>
+        <param name="value">描画する値。</param>
+        <summary>指定した値を基準として指定した行の最適な幅と、セルの高さを返します。</summary>
+        <returns>セルの大きさを格納する <see cref="T:System.Drawing.Size" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最適な幅と高さは、文字列のサイズを測定し、フォントと属性を考慮に入れて、余白の値を追加して計算されます。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.Forms.DataGridTextBoxColumn.GetPreferredSize%2A>を返す、<xref:System.Drawing.Size>です。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.GetPreferredSize Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.GetPreferredSize Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.GetPreferredSize Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.GetPreferredSize Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.GetPreferredSize Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.GetPreferredSize Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideEditBox">
+      <MemberSignature Language="C#" Value="protected void HideEditBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void HideEditBox() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.HideEditBox" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非表示に、<see cref="T:System.Windows.Forms.DataGridTextBox" />を制御し、フォーカスを移動、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.CurrencyManager source, int rowNum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Paint(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.CurrencyManager source, int32 rowNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />を描画するオブジェクト。</param>
+        <param name="bounds">描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />の<see cref="T:System.Windows.Forms.DataGrid" />列を含む、します。</param>
+        <param name="rowNum">基になるデータ テーブル内の行の数。</param>
+        <summary>描画、 <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> 、指定した<see cref="T:System.Drawing.Graphics" />、 <see cref="T:System.Drawing.Rectangle" />、 <see cref="T:System.Windows.Forms.CurrencyManager" />、および行の数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.CurrencyManager source, int rowNum, bool alignToRight);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Paint(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.CurrencyManager source, int32 rowNum, bool alignToRight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="alignToRight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />を描画するオブジェクト。</param>
+        <param name="bounds">描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />の<see cref="T:System.Windows.Forms.DataGrid" />列を含む、します。</param>
+        <param name="rowNum">基になるデータ テーブル内の行の数。</param>
+        <param name="alignToRight">右側の列のコンテンツを整列するかどうかを示す値。 <see langword="true" />コンテンツを右に配置する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>描画、 <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> 、指定した<see cref="T:System.Drawing.Graphics" />、 <see cref="T:System.Drawing.Rectangle" />、 <see cref="T:System.Windows.Forms.CurrencyManager" />、行番号、および配置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTextBoxColumn.Paint%2A>メソッドを使用、<xref:System.Windows.Forms.DataGridColumnStyle.GetColumnValueAtRow%2A>セルに描画する値を決定します。 <xref:System.Windows.Forms.DataGridTextBoxColumn.PaintText%2A>セルとその内容を描画するメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.CurrencyManager source, int rowNum, System.Drawing.Brush backBrush, System.Drawing.Brush foreBrush, bool alignToRight);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Paint(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.CurrencyManager source, int32 rowNum, class System.Drawing.Brush backBrush, class System.Drawing.Brush foreBrush, bool alignToRight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Brush,System.Drawing.Brush,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="backBrush" Type="System.Drawing.Brush" />
+        <Parameter Name="foreBrush" Type="System.Drawing.Brush" />
+        <Parameter Name="alignToRight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />を描画するオブジェクト。</param>
+        <param name="bounds">描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />の<see cref="T:System.Windows.Forms.DataGrid" />列を含む、します。</param>
+        <param name="rowNum">基になるデータ テーブル内の行の数。</param>
+        <param name="backBrush">A<see cref="T:System.Drawing.Brush" />背景を描画します。</param>
+        <param name="foreBrush">A<see cref="T:System.Drawing.Brush" />前景色を描画します。</param>
+        <param name="alignToRight">右側の列のコンテンツを整列するかどうかを示す値。 <see langword="true" />コンテンツを右に配置する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>描画、 <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> 、指定した<see cref="T:System.Drawing.Graphics" />、 <see cref="T:System.Drawing.Rectangle" />、 <see cref="T:System.Windows.Forms.CurrencyManager" />、行の数、 <see cref="T:System.Drawing.Brush" />、および前景色。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTextBoxColumn.Paint%2A>メソッドを使用、<xref:System.Windows.Forms.DataGridColumnStyle.GetColumnValueAtRow%2A>セルに描画する値を決定します。 <xref:System.Windows.Forms.DataGridTextBoxColumn.PaintText%2A>セルとその内容を描画するメソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.DataGridTextBoxColumn.Paint%2A>新しい前景色と背景色でクリックされたセルを描画するメソッド。  
+  
+ [!code-cpp[Classic DataGridTextBoxColumn.Paint2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.Paint2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridTextBoxColumn.Paint2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.Paint2 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridTextBoxColumn.Paint2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.Paint2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintText">
+      <MemberSignature Language="C#" Value="protected void PaintText (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string text, bool alignToRight);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PaintText(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string text, bool alignToRight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.PaintText(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="alignToRight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />オブジェクト、文字列を描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />四角形の境界のデータが含まれています。</param>
+        <param name="text">画面に描画する文字列。</param>
+        <param name="alignToRight">テキストが右揃えであるかどうかを示す値。</param>
+        <summary>配置を指定して、指定された場所にテキストと四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTextBoxColumn.PaintText%2A>メソッドを使用、<xref:System.Windows.Forms.DataFormats.Format>オブジェクトに設定、<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティを画面に描画する前に、値の書式設定します。  
+  
+ <xref:System.Windows.Forms.DataGridColumnStyle.Paint%2A> メソッドは <xref:System.Windows.Forms.DataGridTextBoxColumn.PaintText%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintText">
+      <MemberSignature Language="C#" Value="protected void PaintText (System.Drawing.Graphics g, System.Drawing.Rectangle textBounds, string text, System.Drawing.Brush backBrush, System.Drawing.Brush foreBrush, bool alignToRight);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PaintText(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle textBounds, string text, class System.Drawing.Brush backBrush, class System.Drawing.Brush foreBrush, bool alignToRight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.PaintText(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Brush,System.Drawing.Brush,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="backBrush" Type="System.Drawing.Brush" />
+        <Parameter Name="foreBrush" Type="System.Drawing.Brush" />
+        <Parameter Name="alignToRight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />オブジェクト、文字列を描画するために使用します。</param>
+        <param name="textBounds">A<see cref="T:System.Drawing.Rectangle" />四角形の境界のデータが含まれています。</param>
+        <param name="text">画面に描画する文字列。</param>
+        <param name="backBrush">A<see cref="T:System.Drawing.Brush" />四角形の背景色を決定します。</param>
+        <param name="foreBrush">A<see cref="T:System.Drawing.Brush" />四角形の前景色を指定します。</param>
+        <param name="alignToRight">テキストが右揃えであるかどうかを示す値。</param>
+        <summary>指定された色と配置を指定した位置にテキストと四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTextBoxColumn.PaintText%2A>メソッドを使用、<xref:System.Windows.Forms.DataGridTextBoxColumn.Format%2A>プロパティを画面に描画する前に、値の書式設定します。  
+  
+ <xref:System.Windows.Forms.DataGridColumnStyle.Paint%2A> メソッドは <xref:System.Windows.Forms.DataGridTextBoxColumn.PaintText%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyDescriptor">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptor PropertyDescriptor { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor PropertyDescriptor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridTextBoxColumn.PropertyDescriptor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.PropertyDescriptor" /> の <see cref="T:System.Windows.Forms.DataGridTextBoxColumn" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.ComponentModel.PropertyDescriptor" />列に表示される値の書式を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ComponentModel.PropertyDescriptor> の <xref:System.Windows.Forms.DataGridTextBoxColumn> プロパティを設定する例を次に示します。  
+  
+```csharp  
+[SampleID='Classic DataGridTextBoxColumn.PropertyDescriptor Example' SnippetID='1']  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public override bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridTextBoxColumn.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスの列は読み取り専用であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テキスト ボックスの列が読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHostedControl">
+      <MemberSignature Language="C#" Value="protected override void ReleaseHostedControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ReleaseHostedControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.ReleaseHostedControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>参照を削除する、<see cref="T:System.Windows.Forms.DataGrid" />にデータを編集するために使用するコントロールを保持します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、参照を削除する、<xref:System.Windows.Forms.DataGrid>への保持、<xref:System.Windows.Forms.DataGridTextBox>システム リソースを解放するために、コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataGridInColumn">
+      <MemberSignature Language="C#" Value="protected override void SetDataGridInColumn (System.Windows.Forms.DataGrid value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDataGridInColumn(class System.Windows.Forms.DataGrid value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.SetDataGridInColumn(System.Windows.Forms.DataGrid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.DataGrid" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.DataGrid" />コントロール、<see cref="T:System.Windows.Forms.TextBox" />にコントロールを追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.TextBox" />コントロールを<see cref="T:System.Windows.Forms.DataGrid" />コントロールの<see cref="T:System.Windows.Forms.Control.ControlCollection" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されたとき、ホスト<xref:System.Windows.Forms.TextBox>にコントロールを追加、<xref:System.Windows.Forms.DataGrid>コントロールの<xref:System.Windows.Forms.Control.ControlCollection>します。 これにより、<xref:System.Windows.Forms.CurrencyManager>に両方のコントロールを同じデータ ソースに関連付けます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextBox">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.TextBox TextBox { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TextBox TextBox" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridTextBoxColumn.TextBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TextBox</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストを取得<see cref="T:System.Windows.Forms.TextBox" />コントロール。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TextBox" />列によってホストされるコントロールです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ホスト型の背景色を変更<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ [!code-vb[Classic DataGridTextBoxColumn.TextBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridTextBoxColumn.TextBox Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateUI">
+      <MemberSignature Language="C#" Value="protected override void UpdateUI (System.Windows.Forms.CurrencyManager source, int rowNum, string displayText);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void UpdateUI(class System.Windows.Forms.CurrencyManager source, int32 rowNum, string displayText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridTextBoxColumn.UpdateUI(System.Windows.Forms.CurrencyManager,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="displayText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />データを提供します。</param>
+        <param name="rowNum">更新する行のインデックス。</param>
+        <param name="displayText">セルに表示されるテキストです。</param>
+        <summary>ユーザー インターフェイスを更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

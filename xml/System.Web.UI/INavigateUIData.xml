@@ -1,0 +1,125 @@
+<Type Name="INavigateUIData" FullName="System.Web.UI.INavigateUIData">
+  <TypeSignature Language="C#" Value="public interface INavigateUIData" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INavigateUIData" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.INavigateUIData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>インターフェイスを実装するユーザー インターフェイスのデータのナビゲーションとナビゲーション コントロールに値を提供するクラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.INavigateUIData>インターフェイスによりなどのナビゲーション コントロール、<xref:System.Web.UI.WebControls.TreeView>と<xref:System.Web.UI.WebControls.Menu>階層構造のサイト ナビゲーションのデータを表すデータ ソースからデータを自動的に表示するために、コントロール。 <xref:System.Web.UI.INavigateUIData>インターフェイスは、<xref:System.Web.SiteMapNode>から返される型、<xref:System.Web.UI.WebControls.SiteMapDataSource>制御ナビゲーション コントロールがページの開発者が明示的に関連付けを定義する、データ バインディングのプロパティにないデータを自動的に表示できるように<xref:System.Web.SiteMapNode>です。 たとえば、<xref:System.Web.UI.WebControls.SiteMapDataSource>コントロールがページの開発者が作成する必要があるないように、宣言型データ バインディングを有効、<xref:System.Web.UI.WebControls.TreeView.DataBindings%2A?displayProperty=nameWithType>または<xref:System.Web.UI.WebControls.Menu.DataBindings%2A?displayProperty=nameWithType>プロパティを明示的に、<xref:System.Web.UI.WebControls.TreeView>と<xref:System.Web.UI.WebControls.Menu>コントロール、それぞれします。  
+  
+ <xref:System.Web.UI.INavigateUIData>によって返されるオブジェクトのインターフェイスを実装することも、<xref:System.Web.UI.WebControls.ObjectDataSource>明示的なデータ バインドせずにナビゲーション コントロールの自動のレンダリングを有効にするために管理します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.INavigateUIData.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション コントロールのナビゲーション ノードの説明を表すテキストを取得します。</summary>
+        <value>ナビゲーション コントロールのノードの説明テキストそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.INavigateUIData.Description%2A>プロパティがのツールヒント テキストとして表示される、<xref:System.Web.UI.WebControls.TreeNode>と<xref:System.Web.UI.WebControls.MenuItem>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.INavigateUIData.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション コントロールのナビゲーション ノードの名前を表すテキストを取得します。</summary>
+        <value>ナビゲーション コントロールのノードの名前を表す文字列それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.INavigateUIData.Name%2A>としてプロパティが表示される、<xref:System.Web.UI.WebControls.TreeNode.Text%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>コントロールと<xref:System.Web.UI.WebControls.MenuItem.Text%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.INavigateUIData.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション ノードをクリックすると移動先の URL を取得します。</summary>
+        <value>ノードがクリックされたときに移動する URLそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.INavigateUIData.NavigateUrl%2A>プロパティを表すナビゲーション ノードに移動する URL など<xref:System.Web.UI.WebControls.TreeNode>または<xref:System.Web.UI.WebControls.MenuItem>コントロール をクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.INavigateUIData.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション ノードに関するその他のデータの格納に使用される非表示の値を取得します。</summary>
+        <value>表示されず、ナビゲーション ノードに関する追加データの格納に使用する値それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.INavigateUIData.Value%2A>プロパティなど、ナビゲーション ノードによって使用される追加のデータを表す、<xref:System.Web.UI.WebControls.TreeNode>または<xref:System.Web.UI.WebControls.MenuItem>は HTML としてレンダリングするコントロール`value`ノードの属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

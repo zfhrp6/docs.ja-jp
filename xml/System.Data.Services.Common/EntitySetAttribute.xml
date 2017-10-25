@@ -1,0 +1,75 @@
+<Type Name="EntitySetAttribute" FullName="System.Data.Services.Common.EntitySetAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EntitySetAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntitySetAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Common.EntitySetAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアント データ サービス クラスが属するエンティティ セットを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Common.EntitySetAttribute> クラスは、クラスが属するエンティティ セットの名前を特定するために、データ バインド中にクライアントによって使用されます。 この属性は、によって生成される、 `Add Service Reference`  ダイアログ ボックスのバインド オプションを使用すると、ツールおよびときに、`/binding`オプションを指定します。  
+  
+ <xref:System.Data.Services.Common.EntitySetAttribute> は、データ バインドで使用されるユーザー指定のクライアント データ サービス クラスに適用する必要があります。  
+  
+ <xref:System.Data.Services.Common.EntitySetAttribute> は、型に 1 つのエンティティ セットが関連付けられている場合にのみサポートされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntitySetAttribute (string entitySet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string entitySet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Common.EntitySetAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="entitySet" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entitySet">クラスが属するエンティティ セット。</param>
+        <summary>
+          <see cref="T:System.Data.Services.Common.EntitySetAttribute" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntitySet">
+      <MemberSignature Language="C#" Value="public string EntitySet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EntitySet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntitySetAttribute.EntitySet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスが属するエンティティ セットを取得します。</summary>
+        <value>文字列値としてのエンティティ セット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,57 @@
+<Type Name="InstanceCompletionAction" FullName="System.Activities.DurableInstancing.InstanceCompletionAction">
+  <TypeSignature Language="C#" Value="public enum InstanceCompletionAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstanceCompletionAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DurableInstancing.InstanceCompletionAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>インスタンスの完了後に、永続化プロバイダーが永続化ストア内のインスタンスの状態情報を保持するか、または削除するかを指定するオプションを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[netfx40_short](~/includes/netfx40-short-md.md)] には、SQL Workflow Instance Store の構成要素として SQL 永続化プロバイダーが付属しています。これは、<xref:System.Runtime.Persistence.InstanceStore> クラスの具象実装であり、SQL Server データベースに状態情報を永続化するために使用されます。 ときに、`InstanceComplectionAction`属性を DeleteNothing に設定されて、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>サービスに関連付けられているサービスの動作 SQL 永続化プロバイダー内に保持しますインスタンスのインスタンス状態情報を SQL サーバー永続性データベースおよびインスタンスが完了すると後も、 `InstanceComplectionAction` DeleteAll (これが既定値) に属性が設定されている、永続化プロバイダーは、インスタンスが完了するときにすべてのインスタンス状態情報を削除します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeleteAll">
+      <MemberSignature Language="C#" Value="DeleteAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceCompletionAction DeleteAll = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceCompletionAction.DeleteAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceCompletionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの完了後に、永続化ストアからワークフロー インスタンスのデータとメタデータを削除することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteNothing">
+      <MemberSignature Language="C#" Value="DeleteNothing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceCompletionAction DeleteNothing = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceCompletionAction.DeleteNothing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceCompletionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの完了後も、永続性データベースにワークフロー インスタンスのデータとメタデータを保持することを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

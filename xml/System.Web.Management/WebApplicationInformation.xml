@@ -1,0 +1,303 @@
+<Type Name="WebApplicationInformation" FullName="System.Web.Management.WebApplicationInformation">
+  <TypeSignature Language="C#" Value="public sealed class WebApplicationInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebApplicationInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebApplicationInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>正常性イベントに関連付けられている情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management?displayProperty=nameWithType>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ インスタンス、<xref:System.Web.Management.WebApplicationInformation>クラスにはから派生した型のいずれかを使用して取得される情報が含まれて、<xref:System.Web.Management.WebManagementEvent>型です。  
+  
+ アプリケーションでは、この型によって提供される保護された情報にアクセスする適切なアクセス許可が必要です。  
+  
+ 次は、イベント ログにエラーをアプリケーションの情報を含む ASP.NET を有効にするを使用すると、構成ファイルの抜粋です。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartBeatInterval="0">  
+  
+    <rules>  
+     <add   
+       name="All Errors Default"  
+       eventName="All Errors"  
+       provider="EventLogProvider"  
+       profile="Default"  
+       minInterval="00:01:00" />  
+    </rules>  
+  
+</healthMonitoring>  
+```  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム イベント クラスの作成の例は、このトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の 2 つの部分です。 最初の部分は、ASP.NET カスタム イベントを使用できるようにする構成ファイルの抜粋です。 2 つ目を使用してそのカスタム イベントを作成する方法を示します、<xref:System.Web.Management.WebApplicationInformation>クラスです。  
+  
+ カスタム イベントは、適切な時点に置き換えられます対応するシステム正常性イベントを発生させるとを確認します。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartBeatInterval="0">  
+  
+  <eventMappings>   
+    <add name="SampleApplicationInformation"   
+        type="SamplesAspNet.SampleWebApplicationInformation, webapplicationinformation, Version=1.0.1585.27289, Culture=neutral, PublicKeyToken=3648e5c763a8239f, processorArchitecture=MSIL"/>   
+  </eventMappings>  
+  
+  <rules>   
+    <add name="Custom Application Information"  
+      eventName="SampleApplicationInformation"   
+      provider="EventLogProvider"    
+      profile="Default"/>   
+</rules>  
+  
+</healthMonitoring>  
+```  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#1)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationDomain">
+      <MemberSignature Language="C#" Value="public string ApplicationDomain { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationDomain" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebApplicationInformation.ApplicationDomain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメイン名を取得します。</summary>
+        <value>アプリケーション ドメインの名前を取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、アプリケーション ドメインの名前を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#4)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationPath">
+      <MemberSignature Language="C#" Value="public string ApplicationPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebApplicationInformation.ApplicationPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの物理パスを取得します。</summary>
+        <value>アプリケーションの物理パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、アクセスする適切なアクセス許可が必要です。 アクセス許可のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションの物理パスを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#5)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationVirtualPath">
+      <MemberSignature Language="C#" Value="public string ApplicationVirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebApplicationInformation.ApplicationVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの論理パスを取得します。</summary>
+        <value>アプリケーションの論理パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、アプリケーションの論理パスを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#6)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatToString">
+      <MemberSignature Language="C#" Value="public void FormatToString (System.Web.Management.WebEventFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FormatToString(class System.Web.Management.WebEventFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebApplicationInformation.FormatToString(System.Web.Management.WebEventFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatter" Type="System.Web.Management.WebEventFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="formatter"><see cref="T:System.Web.Management.WebEventFormatter" /> Web 状態のイベント情報を書式設定に使用されるタブとインデントの設定を格納しています。</param>
+        <summary>アプリケーションの情報を書式設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebApplicationInformation.FormatToString%2A>メソッドでは、同一の形式を提供イベントについては、イベント データをログに記録され後で、ユーザーに提示する必要がある場合に便利です。 プロバイダーは、のいずれかを呼び出したときに内部的に呼び出されます、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。  
+  
+> [!NOTE]
+>  表示するため、カスタム イベントの情報を書式設定と上書き、<xref:System.Web.Management.WebApplicationInformation.FormatToString%2A>メソッドではなく、<xref:System.Web.Management.WebApplicationInformation.ToString%2A>メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カスタム情報を書式設定する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#9)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebApplicationInformation.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのマシン名を取得します。</summary>
+        <value>アプリケーションが実行されているコンピューターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、コンピューター名を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#7)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebApplicationInformation.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示のためのイベント情報を書式設定します。</summary>
+        <returns>イベント情報</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドを呼び出してイベント情報を書式設定、<xref:System.Web.Management.WebApplicationInformation.FormatToString%2A>メソッドです。  
+  
+> [!NOTE]
+>  表示するため、カスタム イベントの情報を書式設定と上書き、<xref:System.Web.Management.WebApplicationInformation.FormatToString%2A>これではなくメソッド<xref:System.Web.Management.WebApplicationInformation.ToString%2A>メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+   
+  
+## Examples  
+ 使用する例については、<xref:System.Web.Management.WebApplicationInformation.ToString%2A>メソッドを参照してください<xref:System.Web.Management.WebEventProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustLevel">
+      <MemberSignature Language="C#" Value="public string TrustLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TrustLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebApplicationInformation.TrustLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの信頼レベルを取得します。</summary>
+        <value>アプリケーションの信頼レベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、アクセスする適切なアクセス許可が必要です。 アクセス許可のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、アプリケーションの信頼レベルの情報を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationInformation#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/CS/webapplicationinformation.cs#8)]
+ [!code-vb[System.Web.Management.WebApplicationInformation#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebApplicationInformation/VB/webapplicationinformation.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

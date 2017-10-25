@@ -1,0 +1,388 @@
+<Type Name="RegistryAccessRule" FullName="System.Security.AccessControl.RegistryAccessRule">
+  <TypeSignature Language="C#" Value="public sealed class RegistryAccessRule : System.Security.AccessControl.AccessRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegistryAccessRule extends System.Security.AccessControl.AccessRule" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.RegistryAccessRule" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.AccessRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーまたはグループに対して許可または拒否の権限のセットを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.RegistryAccessRule>クラスは、一連のレジストリ キーの Windows アクセス制御セキュリティを管理するため、.NET Framework が提供するクラスのいずれか。 これらのクラスと、基になる Windows アクセス制御構造との関係の概要については、次を参照してください。<xref:System.Security.AccessControl.RegistrySecurity>です。  
+  
+> [!NOTE]
+>  Windows のアクセス制御セキュリティは、レジストリ キーにのみ適用できます。 キーに格納されている個別のキー/値ペアを適用することはできません。  
+  
+ レジストリ キーに現在適用されている規則の一覧を取得する、<xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクトを使用して、その<xref:System.Security.AccessControl.CommonObjectSecurity.GetAccessRules%2A>メソッドのコレクションを取得する<xref:System.Security.AccessControl.RegistryAccessRule>オブジェクト。  
+  
+ <xref:System.Security.AccessControl.RegistryAccessRule>オブジェクトは基になるコントロールの随意アクセス リスト (DACL) にアクセス制御エントリを一対一でマップしません。 レジストリ キーのすべてのアクセス規則のセットを取得するときに、セットには、すべてのアクセス制御エントリを表すために必要な現在のルールの最小数が含まれています。  
+  
+> [!NOTE]
+>  基になるアクセス制御エントリは変更を適用して規則を削除するとします。 規則の情報は、アクセス制御エントリの最小数を維持するために可能な場合は、結合されます。 したがって、現在のルールの一覧を読み取るときに、追加したすべてのルールの一覧とまったく同じ体裁に可能性がありますとは限りません。  
+  
+ 使用して<xref:System.Security.AccessControl.RegistryAccessRule>ユーザーまたはグループを許可または拒否するアクセス権を指定するオブジェクト。 A<xref:System.Security.AccessControl.RegistryAccessRule>表しますアクセスを許可または拒否にアクセスすることはありません両方を常にオブジェクトします。  
+  
+ レジストリ キーにルールを適用するには、使用、<xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクト。 変更、 <xref:System.Security.AccessControl.RegistrySecurity> 、ルールを追加し、使用してそのメソッドを使用して、オブジェクト、<xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType>セキュリティ オブジェクトを再アタッチするメソッド。  
+  
+> [!IMPORTANT]
+>  変更を加える、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクトには影響しません、レジストリ キーのアクセス レベルが呼び出されるまで、<xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType>レジストリ キーには、変更されたセキュリティ オブジェクトを割り当てる方法です。  
+  
+ <xref:System.Security.AccessControl.RegistryAccessRule>オブジェクトは変更できません。 メソッドを使用してレジストリ キーのセキュリティが変更された、<xref:System.Security.AccessControl.RegistrySecurity>ルールを追加または削除するクラスです。 これを行うと、基になるアクセス制御エントリが変更されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、継承や伝達を行うアクセス規則を示します。 例は、作成、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクトを作成し、持つ 2 つの規則を追加、、<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>フラグ。 最初の規則には伝達フラグがありません、2 つ目があるときに<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>と<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>です。  
+  
+ プログラムは、表示内のルール、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクトをオブジェクトを使用してサブキーを作成します。 プログラムでは、子サブキーと孫サブキーを作成し、し、各サブキーのセキュリティを表示します。 最後に、プログラムは、テスト キーを削除します。  
+  
+ [!code-csharp[System.Security.AccessControl.RegistryAccessRule.ctor2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistryAccessRule.ctor2/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.RegistryAccessRule.ctor2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistryAccessRule.ctor2/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegistryAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.RegistryRights registryRights, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.RegistryRights registryRights, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistryAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="registryRights" Type="System.Security.AccessControl.RegistryRights" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザーまたはグループのルールを適用します。 型でなければなりません<see cref="T:System.Security.Principal.SecurityIdentifier" />またはなど型<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</param>
+        <param name="registryRights">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.RegistryRights" />権限を示す値を許可または拒否します。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.RegistryAccessRule" />指定して、ユーザーまたはグループのアクセス権を規則を適用し、指定したアクセス権を許可または拒否するかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、既定の反映され、継承を指定します。 つまり、<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=nameWithType>と<xref:System.Security.AccessControl.PropagationFlags?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="registryRights" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="type" />無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="eventRights" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identity" />型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />もなどの型の<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegistryAccessRule (string identity, System.Security.AccessControl.RegistryRights registryRights, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.Security.AccessControl.RegistryRights registryRights, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistryAccessRule.#ctor(System.String,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="registryRights" Type="System.Security.AccessControl.RegistryRights" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザーまたはグループの名前に、ルールが適用されます。</param>
+        <param name="registryRights">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.RegistryRights" />権限を示す値を許可または拒否します。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.RegistryAccessRule" />クラス、ユーザーまたはアクセス権を規則が適用されるグループの名前を指定し、指定したアクセス権を許可または拒否するかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、既定の反映され、継承を指定します。 つまり、<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=nameWithType>と<xref:System.Security.AccessControl.PropagationFlags?displayProperty=nameWithType>です。  
+  
+ このコンス トラクターを作成するのには、<xref:System.Security.Principal.NTAccount>を渡すことによって、オブジェクト`identity`を<xref:System.Security.Principal.NTAccount.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクター、および新しく作成された渡す<xref:System.Security.Principal.NTAccount>オブジェクトを<xref:System.Security.AccessControl.RegistryAccessRule.%23ctor%28System.Security.Principal.IdentityReference%2CSystem.Security.AccessControl.RegistryRights%2CSystem.Security.AccessControl.AccessControlType%29>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、レジストリのアクセス ルールを作成、追加して、<xref:System.Security.AccessControl.RegistrySecurity>許可し、権限を拒否する規則は、同じの互換性のあるルールの中には別方法の種類を表示、オブジェクトがマージされます。  
+  
+ [!code-csharp[System.Security.AccessControl.RegistrySecurity.AddAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.AddAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.RegistrySecurity.AddAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.AddAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="registryRights" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="type" />無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="registryRights" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="identity" /> は長さゼロの文字列です。  
+  
+ または  
+  
+ <paramref name="identity" />512 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegistryAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.RegistryRights registryRights, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.RegistryRights registryRights, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistryAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="registryRights" Type="System.Security.AccessControl.RegistryRights" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザーまたはグループのルールを適用します。 型でなければなりません<see cref="T:System.Security.Principal.SecurityIdentifier" />またはなど型<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</param>
+        <param name="registryRights">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.RegistryRights" />権限を指定する値を許可または拒否します。</param>
+        <param name="inheritanceFlags">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.InheritanceFlags" />アクセス権を他のオブジェクトから継承する方法を指定するフラグ。</param>
+        <param name="propagationFlags">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.PropagationFlags" />他のオブジェクトへのアクセス権を反映する方法を指定するフラグ。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.RegistryAccessRule" />クラス、伝達フラグのユーザーまたはグループのルールを適用、アクセス権、継承フラグを指定すること、および指定したアクセス権を許可または拒否するかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのレジストリ キーには、コンテナーがあるためはレジストリ キーの意味のある唯一の継承フラグはに、<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=nameWithType>フラグ。 このフラグが指定されていない場合、伝達フラグは無視され、直接のキーだけが影響を受けます。 フラグが存在する場合は、次の表に示すように、規則が反映されます。 テーブルでは、子サブキー CS と孫サブキー GS の S サブキーがあると仮定します。 つまり、孫サブキーのパスは、S\CS\GS がします。  
+  
+|伝達フラグ|S|CS|GS|  
+|-----------------------|-------|--------|--------|  
+|<xref:System.Security.AccessControl.PropagationFlags.None>|X|X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>|X|X||  
+|<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>, <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X||  
+  
+ 孫サブキーのパターンは、孫サブキーに含まれるすべてのサブキーを制御します。  
+  
+ たとえば場合、<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>フラグが指定されて`inheritanceFlags`と<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>伝達フラグが指定されて`propagationFlags`すると、このルールは、イミディ エイトのサブキーには適用されませんはすべての直接の子サブキーしをすべてのサブキーが含まれています。  
+  
+> [!NOTE]
+>  指定できますが、<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=nameWithType>を示すフラグ`inheritanceFlags`、意味がないようにします。 アクセス制御のため、サブキーの名前と値のペアは別個のオブジェクト 名前/値のペアにアクセス権は、サブキーの権限によって制御されます。 さらに、すべてのサブキーがコンテナーであるため (つまり、ことが含まれているその他のサブキーには) を受けない、<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>フラグ。 最後に、指定する、<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>互換性のあるそれ以外の場合の規則の組み合わせに支障があるためにフラグが、ルールのメンテナンスに不必要に複雑にできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="registryRights" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="type" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="inheritanceFlags" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="propagationFlags" />無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="registryRights" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identity" />型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />、やなどの型の<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegistryAccessRule (string identity, System.Security.AccessControl.RegistryRights registryRights, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.Security.AccessControl.RegistryRights registryRights, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistryAccessRule.#ctor(System.String,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="registryRights" Type="System.Security.AccessControl.RegistryRights" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザーまたはグループの名前に、ルールが適用されます。</param>
+        <param name="registryRights">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.RegistryRights" />権限を示す値を許可または拒否します。</param>
+        <param name="inheritanceFlags">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.InheritanceFlags" />アクセス権を他のオブジェクトから継承する方法を指定するフラグ。</param>
+        <param name="propagationFlags">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.PropagationFlags" />他のオブジェクトへのアクセス権を反映する方法を指定するフラグ。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.RegistryAccessRule" />クラス、伝達フラグを設定、ユーザーまたはアクセス権限を継承フラグにルールが適用されるグループの名前を指定する、および指定したアクセス権を許可または拒否するかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのレジストリ キーには、コンテナーがあるためはレジストリ キーの意味のある唯一の継承フラグはに、<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=nameWithType>フラグ。 このフラグが指定されていない場合、伝達フラグは無視され、直接のキーだけが影響を受けます。 フラグが存在する場合は、次の表に示すように、規則が反映されます。 テーブルでは、子サブキー CS と孫サブキー GS の S サブキーがあると仮定します。 つまり、孫サブキーのパスは、S\CS\GS がします。  
+  
+|伝達フラグ|S|CS|GS|  
+|-----------------------|-------|--------|--------|  
+|<xref:System.Security.AccessControl.PropagationFlags.None>|X|X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>|X|X||  
+|<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>, <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X||  
+  
+ 孫サブキーのパターンは、孫サブキーに含まれるすべてのサブキーを制御します。  
+  
+ たとえば場合、<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>フラグが指定されて`inheritanceFlags`と<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>伝達フラグが指定されて`propagationFlags`すると、このルールは、イミディ エイトのサブキーには適用されませんはすべての直接の子サブキーしをすべてのサブキーが含まれています。  
+  
+> [!NOTE]
+>  指定できますが、<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=nameWithType>を示すフラグ`inheritanceFlags`、意味がないようにします。 アクセス制御のため、サブキーの名前と値のペアは別個のオブジェクト 名前/値のペアにアクセス権は、サブキーの権限によって制御されます。 さらに、すべてのサブキーがコンテナーであるため (つまり、ことが含まれているその他のサブキーには) を受けない、<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>フラグ。 最後に、指定する、<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>互換性のあるそれ以外の場合の規則の組み合わせに支障があるためにフラグが、ルールのメンテナンスに不必要に複雑にできます。  
+  
+ このコンス トラクターを作成するのには、<xref:System.Security.Principal.NTAccount>を渡すことによって、オブジェクト`identity`を<xref:System.Security.Principal.NTAccount.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクター、および新しく作成された渡す<xref:System.Security.Principal.NTAccount>オブジェクトを<xref:System.Security.AccessControl.RegistryAccessRule.%23ctor%28System.Security.Principal.IdentityReference%2CSystem.Security.AccessControl.RegistryRights%2CSystem.Security.AccessControl.InheritanceFlags%2CSystem.Security.AccessControl.PropagationFlags%2CSystem.Security.AccessControl.AccessControlType%29>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、継承や伝達を行うアクセス規則を示します。 例は、作成、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクトを作成し、持つ 2 つの規則を追加、、<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>フラグ。 最初の規則には伝達フラグがありません、2 つ目があるときに<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>と<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>です。  
+  
+ プログラムは、表示内のルール、<xref:System.Security.AccessControl.RegistrySecurity>オブジェクト、および、使用、<xref:System.Security.AccessControl.RegistrySecurity>サブキーを作成するオブジェクト。 プログラムでは、子サブキーと孫サブキーを作成し、し、各サブキーの規則を表示します。 最後に、プログラムは、テスト キーを削除します。  
+  
+ [!code-csharp[System.Security.AccessControl.RegistryAccessRule.ctor2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistryAccessRule.ctor2/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.RegistryAccessRule.ctor2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistryAccessRule.ctor2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="registryRights" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="type" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="inheritanceFlags" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="propagationFlags" />無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="eventRights" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="identity" /> は長さゼロの文字列です。  
+  
+ または  
+  
+ <paramref name="identity" />512 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegistryRights">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.RegistryRights RegistryRights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.RegistryRights RegistryRights" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.RegistryAccessRule.RegistryRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.RegistryRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス規則によって許可または拒否の権限を取得します。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.RegistryRights" />権限を示す値を許可またはアクセス ルールによって拒否されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.RegistryAccessRule>オブジェクトは変更できません。 別のユーザー、異なる権限、または異なるを表す新しいアクセス ルールを作成する<xref:System.Security.AccessControl.AccessControlType>が、既存のアクセス ルールを変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

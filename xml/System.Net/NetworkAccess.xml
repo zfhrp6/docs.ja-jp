@@ -1,0 +1,77 @@
+<Type Name="NetworkAccess" FullName="System.Net.NetworkAccess">
+  <TypeSignature Language="C#" Value="public enum NetworkAccess" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NetworkAccess extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkAccess" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ネットワーク アクセス許可を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkAccess>と列挙が使用される、<xref:System.Net.WebPermission>と<xref:System.Net.SocketPermission>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="Accept" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkAccess Accept = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkAccess.Accept" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル リソースにインターネットからの接続を受け入れるように、アプリケーションが許可されていることを示します。 (アドレス/ポート) のローカル リソースへのアクセスを付与するための同意を使用したローカル ホストの保護は、このことに注意してください。 ソケット、アクセス許可をこのローカル リソースにバインドしようとする時に、そのリソースで Accept が存在するかどうかをチェックが実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="Connect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkAccess Connect = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkAccess.Connect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが特定のインターネット リソースに接続できることを示します。 リモート ホスト リソースの場合、することを確認、Connect 権限が存在することを確認するチェックは行われません。 これは、接続のリモート ホストのポートが不明な適切な許可を事前に作成できるためです。 アプリケーションの責任を待機中のソケットに接続しようとしています。 リモート ホストのアクセス許可を確認することをお勧めします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

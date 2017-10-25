@@ -1,0 +1,123 @@
+<Type Name="MessageBoxOptions" FullName="System.Windows.Forms.MessageBoxOptions">
+  <TypeSignature Language="C#" Value="public enum MessageBoxOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MessageBoxOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MessageBoxOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オプションを指定します、<see cref="T:System.Windows.Forms.MessageBox" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は、<xref:System.Windows.Forms.MessageBox> クラスで使用します。  
+  
+ メソッドを呼び出すときに、このパラメーターを指定しない場合<xref:System.Windows.Forms.MessageBox>、代わりに 0 に渡すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後、文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>質問ボックス アイコンを提供する、ユーザー操作をキャンセルするオプションです。 例では、メンバーを使用、テキストの<xref:System.Windows.Forms.MessageBoxOptions.RightAlign>列挙型をダイアログ ボックスの右端に揃えます。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#2](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#2)]
+ [!code-csharp[MessageBox.Show Variations#2](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#2)]
+ [!code-vb[MessageBox.Show Variations#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DefaultDesktopOnly">
+      <MemberSignature Language="C#" Value="DefaultDesktopOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxOptions DefaultDesktopOnly = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスは、アクティブ デスクトップに表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数は、同じ`ServiceNotification`対話型ウィンドウ ステーションの既定のデスクトップでのみ、システムがメッセージ ボックスを表示する点を除いて  
+  
+ DefaultDesktopOnly が原因で発生するアプリケーションは、<xref:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly>フォーカスを失う。 <xref:System.Windows.Forms.MessageBox>表示されているがされている visual スタイルを使用します。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightAlign">
+      <MemberSignature Language="C#" Value="RightAlign" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxOptions RightAlign = int32(524288)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxOptions.RightAlign" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスのテキストが右揃えです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RtlReading">
+      <MemberSignature Language="C#" Value="RtlReading" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxOptions RtlReading = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxOptions.RtlReading" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスのテキストが右から左に読むと表示されることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceNotification">
+      <MemberSignature Language="C#" Value="ServiceNotification" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxOptions ServiceNotification = int32(2097152)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスは、アクティブ デスクトップに表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元は、イベントのユーザーに通知するサービスです。 関数では、コンピューターにログオンしているユーザーが存在しない場合でも、現在アクティブなデスクトップで、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

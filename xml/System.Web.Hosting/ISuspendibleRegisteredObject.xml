@@ -1,0 +1,62 @@
+<Type Name="ISuspendibleRegisteredObject" FullName="System.Web.Hosting.ISuspendibleRegisteredObject">
+  <TypeSignature Language="C#" Value="public interface ISuspendibleRegisteredObject : System.Web.Hosting.IRegisteredObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISuspendibleRegisteredObject implements class System.Web.Hosting.IRegisteredObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.ISuspendibleRegisteredObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IRegisteredObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>[.NET Framework 4.5.1 以上でサポート]  
+  
+ リッスンは中断し、通知を再開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションに合格した場合、<xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A>メソッドを実装するオブジェクトを<xref:System.Web.Hosting.ISuspendibleRegisteredObject>インターフェイス、ホスティング環境がリッスンするためにオブジェクトをサブスクライブする中断または通知を再開します。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型のインスタンス メンバーは、スレッド セーフである保証はありません。 呼び出すことができます、<see cref="M:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend" />他のオブジェクトの呼び出し中に、この同じオブジェクトに対して別のメソッドの呼び出し中に含め、いつでもメソッド<see cref="M:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend" />メソッド、またはこのオブジェクトの呼び出し中にも<see cref="M:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend" />メソッドです。 間隔があるこれらのメソッドの実行は、マルチ スレッドであるため、<see cref="M:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend" />への呼び出し後にメソッドを呼び出すことができます、<see cref="M:System.Web.Hosting.HostingEnvironment.UnregisterObject(System.Web.Hosting.IRegisteredObject)" />メソッドが完了します。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Suspend">
+      <MemberSignature Language="C#" Value="public Action Suspend ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Action Suspend() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Action</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>[.NET Framework 4.5.1 以降のバージョンでサポート]  
+  
+ ASP.NET は、プロセスが中断されていることをアプリケーションに通知するときに呼び出されます。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend%2A>メソッドが例外をスローする必要があります、それ以外の場合、動作は未定義と、プロセスが終了する可能性があります。 <xref:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend%2A> 5 秒後に ASP.NET により、プロセスが中断されるためメソッドは、実行をブロックする必要がありますすべて場合でも<xref:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend%2A>メソッドが完了します。  
+  
+ コールバックが返された場合は、プロセスが中断から再開すると呼び出されます。 <xref:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend%2A>メソッドが返す`null`場合は、プロセスが再開されるときに通知する必要はありません。  
+  
+ <xref:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend%2A>統合モードの IIS で実行されている場合にのみ、メソッドはサポートされています。 ASP.NET ランタイムとは限りませんを<xref:System.Web.Hosting.ISuspendibleRegisteredObject.Suspend%2A>メソッドが必ず発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,148 @@
+<Type Name="WorkflowSchedulerService" FullName="System.Workflow.Runtime.Hosting.WorkflowSchedulerService">
+  <TypeSignature Language="C#" Value="public abstract class WorkflowSchedulerService : System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WorkflowSchedulerService extends System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.WorkflowSchedulerService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowRuntimeService</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローを実行しメモリ内タイマー登録とイベントを管理する独自のスレッド プールを実装するための機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> は、ワークフロー ランタイム エンジン ホストでワークフロー インスタンスを実行するスレッドを作成するすべてのクラスの基本クラスです。 その中には、<xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService> や <xref:System.Workflow.Runtime.Hosting.ManualWorkflowSchedulerService> があります。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Workflow.Runtime.Hosting.WorkflowSchedulerService" /> から継承する場合、<see cref="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Cancel(System.Guid)" />、<see cref="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule(System.Threading.WaitCallback,System.Guid)" />、<see cref="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule(System.Threading.WaitCallback,System.Guid,System.DateTime,System.Guid)" /> の各メンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WorkflowSchedulerService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Hosting.WorkflowSchedulerService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> オブジェクト (<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> から継承) のインスタンスを作成し、作成したインスタンスをランタイムに追加する方法を示しています。 この例は、Program.cs ファイルに含まれている、入れ子にされた例外ハンドラーを示す SDK サンプルです。 詳細については、次を参照してください。[例外ハンドラーのサンプルの入れ子になった](http://msdn.microsoft.com/en-us/d1da0209-842b-41c8-9b7c-0cbaa1034265)です。  
+  
+ [!code-csharp[WF_Samples#161](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#161)]
+ [!code-vb[WF_Samples#161](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#161)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="protected abstract void Cancel (Guid timerId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Cancel(valuetype System.Guid timerId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Cancel(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timerId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="timerId">キャンセルする既存のスケジュール済みスレッドに関連付けられている <see cref="T:System.Guid" />。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定された <paramref name="timerId" /> を持つスケジュール済み作業項目をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Cancel%2A> は、保留中の作業項目のキューから、以前のワークフロー インスタンス スケジュール要求を削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schedule">
+      <MemberSignature Language="C#" Value="protected abstract void Schedule (System.Threading.WaitCallback callback, Guid workflowInstanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Schedule(class System.Threading.WaitCallback callback, valuetype System.Guid workflowInstanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule(System.Threading.WaitCallback,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.WaitCallback" />
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="callback">実行するメソッドを表す <see cref="T:System.Threading.WaitCallback" /> マルチキャスト デリゲート。</param>
+        <param name="workflowInstanceId">ワークフロー インスタンスを表す <see cref="T:System.Guid" />。</param>
+        <summary>派生クラスでオーバーライドされると、このメソッドは、特定のインスタンス ID に関する作業項目 (コールバック) をスケジュールするためにランタイムによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいスレッドで実行するデリゲート メソッドを作成するには、<xref:System.Threading.WaitCallback> コンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schedule">
+      <MemberSignature Language="C#" Value="protected abstract void Schedule (System.Threading.WaitCallback callback, Guid workflowInstanceId, DateTime whenUtc, Guid timerId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Schedule(class System.Threading.WaitCallback callback, valuetype System.Guid workflowInstanceId, valuetype System.DateTime whenUtc, valuetype System.Guid timerId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule(System.Threading.WaitCallback,System.Guid,System.DateTime,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.WaitCallback" />
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+        <Parameter Name="whenUtc" Type="System.DateTime" />
+        <Parameter Name="timerId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="callback">実行するメソッドを表す <see cref="T:System.Threading.WaitCallback" /> マルチキャスト デリゲート。</param>
+        <param name="workflowInstanceId">追加するワークフロー インスタンスを表す <see cref="T:System.Guid" />。</param>
+        <param name="whenUtc">ワークフロー項目の実行を開始する <see cref="T:System.DateTime" />。</param>
+        <param name="timerId">スケジュールされるタイマーを表す <see cref="T:System.Guid" />。</param>
+        <summary>派生クラスでオーバーライドされると、このメソッドは、指定した時刻 (<see cref="T:System.DateTime" />) に特定のワークフロー インスタンスに関する作業項目 (コールバック) が実行されるようにスケジュールするためにランタイムによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

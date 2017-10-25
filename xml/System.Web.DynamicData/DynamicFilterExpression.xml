@@ -1,0 +1,160 @@
+<Type Name="DynamicFilterExpression" FullName="System.Web.DynamicData.DynamicFilterExpression">
+  <TypeSignature Language="C#" Value="public class DynamicFilterExpression : System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicFilterExpression extends System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicFilterExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.DataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定されたフィルター コントロールからの値を使用して、データベース クエリを変更します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicFilterExpression>クラスで割り当てられている値を使用して、データベース クエリを変更することができます、<xref:System.Web.DynamicData.DynamicFilter>コントロール。 このコントロールのビルドのタスクのデリゲート、<xref:System.Linq.IQueryable>などの特殊なコントロールにクエリ<xref:System.Web.DynamicData.QueryableFilterRepeater>コントロールまたは<xref:System.Web.DynamicData.DynamicFilter>コントロール。  
+  
+ フィルター コントロールは、参照するフィルター テンプレートへのクエリの構築を委任します。 によって参照されているデータ ソース コントロールによって、クエリを実行し、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。  
+  
+ 使用する、<xref:System.Web.DynamicData.DynamicFilterExpression>クラス ページでは、次の手順。  
+  
+-   追加、<xref:System.Web.UI.WebControls.QueryExtender>ページを制御します。  
+  
+-   設定、`TargetControlID`のプロパティ、<xref:System.Web.UI.WebControls.QueryExtender>コントロールをデータ ソース コントロールを参照します。  
+  
+-   追加、<xref:System.Web.DynamicData.DynamicFilterExpression>オブジェクトの子として、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。  
+  
+-   設定、`ControlID`のプロパティ、<xref:System.Web.DynamicData.DynamicFilterExpression>フィルター コントロールを参照するオブジェクト。  
+  
+ 前の手順で、関連するフィルター コントロール、データ バインド コントロールとデータ ソース コントロールがページで定義されていると見なされます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.DynamicFilterExpression>コントロールをページにフィルターのテンプレートを選択します。 フィルターのテンプレートが選択されている、<xref:System.Web.DynamicData.DynamicFilter>によって識別されるコントロール<xref:System.Web.DynamicData.DynamicFilterExpression>を介して制御その`ControID`プロパティです。  
+  
+```  
+<asp:QueryExtender ID="QueryExtender1"   
+    TargetControlID="GridDataSource" runat="server">  
+    <asp:DynamicFilterExpression ControlID="CategoryFilterID" />  
+</asp:QueryExtender>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicFilterExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilterExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicFilterExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlID">
+      <MemberSignature Language="C#" Value="public string ControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicFilterExpression.ControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィルター コントロール id を設定します。</summary>
+        <value>フィルター コントロールの識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロールの識別子を使って、<xref:System.Web.DynamicData.DynamicFilterExpression>フィルター選択するクラスがそこにさらに、データ ソース コントロールによって実行されるクエリの作成のタスクを委任を制御します。  
+  
+ フィルター コントロールは、構築、クエリ フィルター テンプレートへの参照のタスクを委任します。 によって参照されているデータ ソース コントロールによって、クエリを実行し、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.DynamicFilterExpression>ページで、フィルター コントロールを選択するクラス。  
+  
+```  
+<asp:QueryExtender ID="QueryExtender1"   
+    TargetControlID="GridDataSource" runat="server">  
+    <asp:DynamicFilterExpression ControlID="CategoryFilterID" />  
+</asp:QueryExtender>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilterExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">変更するデータ ソース クエリ。</param>
+        <summary>現在のフィルター値を使用して、変更したクエリを取得します。</summary>
+        <returns>データ ソース クエリに含まれている現在の値を使用して変更される、<see cref="T:System.Web.DynamicData.DynamicFilterExpression" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicFilterExpression.GetQueryable%2A>メソッドによって指定されるフィルター コントロールによって参照されているフィルター テンプレートへのクエリの構築のタスクのデリゲート、<xref:System.Web.DynamicData.DynamicFilterExpression.ControlID%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public override void SetContext (System.Web.UI.Control owner, System.Web.HttpContext context, System.Web.UI.WebControls.IQueryableDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetContext(class System.Web.UI.Control owner, class System.Web.HttpContext context, class System.Web.UI.WebControls.IQueryableDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilterExpression.SetContext(System.Web.UI.Control,System.Web.HttpContext,System.Web.UI.WebControls.IQueryableDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.IQueryableDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="owner">含むコントロール、<see cref="T:System.Web.DynamicData.DynamicFilterExpression" />インスタンスなど、<see cref="T:System.Web.UI.WebControls.QueryExtender" />コントロール。</param>
+        <param name="context">現在の <see cref="T:System.Web.HttpContext" /> オブジェクト。</param>
+        <param name="dataSource">ターゲット データ ソース、<see cref="T:System.Web.DynamicData.DynamicFilterExpression" />インスタンス。</param>
+        <summary>データ ソースの情報を持つ式を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

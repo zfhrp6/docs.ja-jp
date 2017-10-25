@@ -1,0 +1,772 @@
+<Type Name="DataGridViewCellStyle" FullName="System.Windows.Forms.DataGridViewCellStyle">
+  <TypeSignature Language="C#" Value="public class DataGridViewCellStyle : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCellStyle extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataGridViewCellStyleEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataGridViewCellStyleConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の個々 のセルに適用される書式とスタイル情報を表す、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCellStyle>クラスでは、複数のスタイル情報を共有できます。<xref:System.Windows.Forms.DataGridView>セル、行、列、および行または列のヘッダー、個々 のセルのスタイル プロパティの設定のメモリ要件を回避します。 型のプロパティを持つクラスの詳細については<xref:System.Windows.Forms.DataGridViewCellStyle>互いに関連する方法を参照してください、 [Windows フォーム DataGridView コントロールのセル スタイル](~/docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、複数のプロパティの設定の効果を示します<xref:System.Windows.Forms.DataGridViewCellStyle>オブジェクト。 この例は、内のセルの背景色を設定、<xref:System.Windows.Forms.DataGridView>を設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>プロパティを<xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>プロパティです。 背景色が交互の行のためにオーバーライドされる、<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>プロパティが設定されて、<xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A>プロパティです。 という名前の列の日付の形式を判別も`Last Prepared`を設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>列のプロパティで<xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewStyleDemo#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewStyleDemo#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/VB/form1.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />クラスの既定のプロパティ値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellStyle (System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.#ctor(System.Windows.Forms.DataGridViewCellStyle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataGridViewCellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewCellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />初期プロパティ値を提供するテンプレートとして使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />クラスの指定したプロパティ値を使用して<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewCellStyle" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Alignment">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewContentAlignment Alignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewContentAlignment Alignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.Alignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewContentAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内のコンテンツのセルの位置を示す値を設定、<see cref="T:System.Windows.Forms.DataGridView" />セル。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewContentAlignment" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.DataGridViewContentAlignment.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#072](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#072)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#072](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#072)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティの値が有効な<see cref="T:System.Windows.Forms.DataGridViewContentAlignment" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyStyle">
+      <MemberSignature Language="C#" Value="public virtual void ApplyStyle (System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyStyle(class System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.ApplyStyle(System.Windows.Forms.DataGridViewCellStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewCellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewCellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />現在に適用する<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />です。</param>
+        <summary>指定された適用<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />現在<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCellStyle.ApplyStyle%2A>メソッドで設定されているプロパティの値を適用する、`dataGridViewCellStyle`現在パラメーター<xref:System.Windows.Forms.DataGridViewCellStyle>です。 プロパティ設定されていない場合`dataGridViewCellStyle`、現在<xref:System.Windows.Forms.DataGridViewCellStyle>そのプロパティの値を保持します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewCellStyle" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景色、<see cref="T:System.Windows.Forms.DataGridView" />セル。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />セルの背景色を表すです。 既定値は、<see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、内のセルの背景色を設定、<xref:System.Windows.Forms.DataGridView>を設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>プロパティを<xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>プロパティです。 背景色がために交互の行でオーバーライドされることに注意してください、<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>プロパティが設定されて、<xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewCellStyle>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.DataGridViewCellStyle Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.DataGridViewCellStyle Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.DataGridViewCellStyle" /> の同一コピーを作成します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />を表す、このセルのスタイルの正確なコピーです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceNullValue">
+      <MemberSignature Language="C#" Value="public object DataSourceNullValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSourceNullValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルに null 値が入力されたときに、データ ソースに保存される値を設定します。</summary>
+        <value>ユーザーが null のセルの値を指定すると、データ ソースに保存する値。 既定値は、<see cref="F:System.DBNull.Value" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力できる null 値セルに ctrl +0 キーを押してかの値を入力して、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティです。 基になるセルの値がの値に設定されているコミット時に、ユーザー、変更、<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>プロパティまたは`null`場合<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>は<xref:System.DBNull.Value?displayProperty=nameWithType>とセル<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>は参照型です。 設定すると、この変換は行われません、<xref:System.Windows.Forms.DataGridViewCell.Value%2A?displayProperty=nameWithType>プロパティ プログラムでします。  
+  
+> [!NOTE]
+>  コントロールが表示されない、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティの値と等しいセル値を<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>プロパティ値の場合に<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>以外の値に設定<xref:System.DBNull.Value?displayProperty=nameWithType>または`null`です。 この場合、処理することができます、<xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType>を表示するイベント、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティの値。 詳細については、このトピックのコード例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例では、<xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType>イベント ハンドラーの値を表示する、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティ セルの値に等しくなると<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc2#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/cs/misc2.cs#50)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc2#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/vb/misc2.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが、指定したオブジェクトと等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、 <see cref="T:System.Windows.Forms.DataGridViewCellStyle" /> ; このインスタンスと同じプロパティ値は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキスト コンテンツに適用するフォント、<see cref="T:System.Windows.Forms.DataGridView" />セル。</summary>
+        <value><see cref="T:System.Drawing.Font" />セルのテキストに適用します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、セルのテキストに適用されるフォント スタイルを変更することができます。 <xref:System.Drawing.Font>は変更できません (そのプロパティは読み取り専用)、このプロパティを変更するには、新しいを割り当てることによってのみか、既存の<xref:System.Drawing.Font>以外にすることはできません、返されたオブジェクトのプロパティを直接変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、列ヘッダーのフォントを設定します。 この例を実行するコードを貼り付けます、フォームが含まれていますが、<xref:System.Windows.Forms.DataGridView>という名前`GridView1`を呼び出すと、`SetupUpDataGridView`と`PopulateDataGridView`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.OnLoad%2A>メソッドです。 すべてのイベントがイベント処理メソッドに関連付けられていることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#5)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#5)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の前景色、<see cref="T:System.Windows.Forms.DataGridView" />セル。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />セルの前景色を表すです。 既定値は、<see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>プロパティは通常とは対照的色を指定する必要があります、<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>と<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>交互の行のセルのプロパティです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewCellStyle>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public string Format { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Format" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.FormatStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキスト コンテンツに適用される書式指定文字列、<see cref="T:System.Windows.Forms.DataGridView" />セル。</summary>
+        <value>セルの値の書式を示す文字列。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>プロパティは、セルの値が文字列として書式設定方法を指定します。 詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前の列の日付の書式を設定`Last Fixed`する「月、年」を設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>列のプロパティで<xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewCellStyle>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatProvider">
+      <MemberSignature Language="C#" Value="public IFormatProvider FormatProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IFormatProvider FormatProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.FormatProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IFormatProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のカルチャに固有の書式を提供するために使用された<see cref="T:System.Windows.Forms.DataGridView" />セル値。</summary>
+        <value><see cref="T:System.IFormatProvider" />セルの書式設定に使用します。 既定値は、<see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDataSourceNullValueDefault">
+      <MemberSignature Language="C#" Value="public bool IsDataSourceNullValueDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDataSourceNullValueDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.IsDataSourceNullValueDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue" />プロパティが設定されています。</summary>
+        <value>
+          <see langword="true" />場合の値、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue" />プロパティは、既定値以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してかどうか、<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>比較については、既定値を格納することがなくプロパティが明示的に設定されています。 これは便利ですので、<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>プロパティその他ほとんどのとは異なり、空でない既定値を持つ<xref:System.Windows.Forms.DataGridViewCellStyle>など、既定値が設定されたプロパティ`null`、 <xref:System.Drawing.Color.Empty>、または<xref:System.Windows.Forms.DataGridViewContentAlignment.NotSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFormatProviderDefault">
+      <MemberSignature Language="C#" Value="public bool IsFormatProviderDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFormatProviderDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.IsFormatProviderDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.FormatProvider" />プロパティが設定されています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.FormatProvider" />プロパティは、既定値以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してかどうか、<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>比較については、既定値を格納することがなくプロパティが明示的に設定されています。 これは便利ですので、<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>プロパティその他ほとんどのとは異なり、空でない既定値を持つ<xref:System.Windows.Forms.DataGridViewCellStyle>など、既定値が設定されたプロパティ`null`、 <xref:System.Drawing.Color.Empty>、または<xref:System.Windows.Forms.DataGridViewContentAlignment.NotSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullValueDefault">
+      <MemberSignature Language="C#" Value="public bool IsNullValueDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullValueDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.IsNullValueDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.NullValue" />プロパティが設定されています。</summary>
+        <value>
+          <see langword="true" />場合の値、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.NullValue" />プロパティは、既定値以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してかどうか、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>比較については、既定値を格納することがなくプロパティが明示的に設定されています。 これは便利ですので、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティその他ほとんどのとは異なり、空でない既定値を持つ<xref:System.Windows.Forms.DataGridViewCellStyle>など、既定値が設定されたプロパティ`null`、 <xref:System.Drawing.Color.Empty>、または<xref:System.Windows.Forms.DataGridViewContentAlignment.NotSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullValue">
+      <MemberSignature Language="C#" Value="public object NullValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NullValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.NullValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataGridView" />セルの値に対応するセルの表示値<see cref="F:System.DBNull.Value" />または<see langword="null" />です。</summary>
+        <value>セルに null 値を示すために使用するオブジェクト。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataGridView>このセルのスタイルを持つセルの値を持つ<xref:System.DBNull.Value?displayProperty=nameWithType>または`null`またはユーザーがセルを編集し、ctrl キーを押しながら、0 を押して、<xref:System.Windows.Forms.DataGridView>表示の制御、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティの値。 コントロールがの値にセルの値を設定するユーザーは、このセルのスタイルを含むセルを編集し、このプロパティの値を入力したり、ctrl + 0 を押す、ときに、<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>プロパティまたは`null`場合<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>は<xref:System.DBNull.Value?displayProperty=nameWithType>とセル<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>参照型であります。 設定すると、この変換は行われません、<xref:System.Windows.Forms.DataGridViewCell.Value%2A?displayProperty=nameWithType>プロパティ プログラムでします。  
+  
+> [!NOTE]
+>  コントロールが表示されない、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティの値と等しいセル値を<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>プロパティ値の場合に<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>以外の値に設定<xref:System.DBNull.Value?displayProperty=nameWithType>または`null`です。 この場合、処理することができます、<xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType>を表示するイベント、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティの値。 詳細については、このトピックのコード例を参照してください。  
+  
+ このプロパティは、任意のオブジェクトでは、セルの表示の種類に適切な型の値を指定することができます。 たとえば、ことができます設定するこのプロパティ文字列の値を使用するためにテキスト ボックスのセルまたは使用するイメージによってイメージ セルでします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例では、<xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType>イベント ハンドラーの値を表示する、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティ セルの値に等しくなると<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc2#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/cs/misc2.cs#50)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc2#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/vb/misc2.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の端の間の空白、<see cref="T:System.Windows.Forms.DataGridViewCell" />とそのコンテンツ。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Padding" />の端の間の空白を表す、<see cref="T:System.Windows.Forms.DataGridViewCell" />とそのコンテンツ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、 <xref:System.Windows.Forms.DataGridViewCellStyle.Padding%2A> where に影響を与えるプロパティの編集コントロール、<xref:System.Windows.Forms.DataGridViewCell>が描画されます。 設定する場合など、<xref:System.Windows.Forms.DataGridViewCellStyle.Padding%2A>上、<xref:System.Windows.Forms.DataGridViewTextBoxCell>に、 <xref:System.Windows.Forms.Padding?displayProperty=nameWithType> 10 の値を持つその<xref:System.Windows.Forms.Padding.Left%2A>、 <xref:System.Windows.Forms.Padding.Top%2A>、 <xref:System.Windows.Forms.Padding.Right%2A>、および<xref:System.Windows.Forms.Padding.Bottom%2A>プロパティ、セルの内容は、テキスト ボックスの端とセルの端との間の 10 のピクセルのスペースを持つセルの途中で描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用を示しています、<xref:System.Windows.Forms.DataGridView>オーナー描画の行を含むコントロールです。 各行には、通常のセル コンテンツの下にある行の幅全体にわたるテキストが表示されます。 <xref:System.Windows.Forms.DataGridViewCellStyle.Padding%2A>プロパティを使用する次のテキストの余分なスペースを指定します。 呼ばれる定数の例では、必要な追加の高さが格納されている`CUSTOM_CONTENT_HEIGHT`です。  
+  
+ このコード例は、例の一部です。 完了の例では、次を参照してください。[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionBackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color SelectionBackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionBackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で使用される背景色、<see cref="T:System.Windows.Forms.DataGridView" />セルを選択するとします。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />選択したセルの背景色を表すです。 既定値は、<see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの使用を示しています、<xref:System.Windows.Forms.DataGridView>主に表示を目的とします。 この例では、いくつかの方法でコントロールの外観をカスタマイズおよび対話機能を制限、制御を構成します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewCellStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color SelectionForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で使用される前景色、<see cref="T:System.Windows.Forms.DataGridView" />セルを選択するとします。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />選択したセルの前景色を表すです。 既定値は、<see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>プロパティは通常とは対照的色を指定する必要があります、<xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用を示しています、<xref:System.Windows.Forms.DataGridView>主に表示を目的とします。 この例では、いくつかの方法でコントロールの外観をカスタマイズおよび対話機能を制限、制御を構成します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewCellStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewStyleDemo#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewStyleDemo/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.DataGridViewCellStyle" /> の同一コピーを作成します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />を表す、このセルのスタイルの正確なコピーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewCellStyle> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連するその他のデータを格納しているオブジェクト、<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />です。</summary>
+        <value>追加のデータを格納するオブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellStyle.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティの現在の設定を示す文字列を返します、<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />です。</summary>
+        <returns>プロパティの現在の設定を示す文字列、<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewTriState WrapMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewTriState WrapMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellStyle.WrapMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewTriState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト形式かどうかを示す値を設定でコンテンツを<see cref="T:System.Windows.Forms.DataGridView" />セルの行を折り返すまたは長すぎて 1 行に収まらない場合に切り捨てられます。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewTriState" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.DataGridViewTriState.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>は<xref:System.Windows.Forms.DataGridViewTriState.False>テキストを含むセルのセルが 1 つの行のテキストが表示され、ボックス文字として改行文字が表示されます。 場合<xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>は<xref:System.Windows.Forms.DataGridViewTriState.True>テキストを含むセルのセルに表示されます改行文字行は、中断が、セルの幅を超えるすべての行に折り返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#074](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#074)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#074](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#074)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティの値が有効な<see cref="T:System.Windows.Forms.DataGridViewTriState" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

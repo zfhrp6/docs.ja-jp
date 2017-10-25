@@ -1,0 +1,130 @@
+<Type Name="OutputCacheProviderAsync" FullName="System.Web.Caching.OutputCacheProviderAsync">
+  <TypeSignature Language="C#" Value="public abstract class OutputCacheProviderAsync : System.Web.Caching.OutputCacheProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit OutputCacheProviderAsync extends System.Web.Caching.OutputCacheProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.OutputCacheProviderAsync" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Caching.OutputCacheProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非同期の <see cref="T:System.Web.Caching.OutputCacheProvider" /> クラスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OutputCacheProviderAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCacheProviderAsync.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Caching.OutputCacheProviderAsync" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;object&gt; AddAsync (string key, object entry, DateTime utcExpiry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; AddAsync(string key, object entry, valuetype System.DateTime utcExpiry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCacheProviderAsync.AddAsync(System.String,System.Object,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="entry" Type="System.Object" />
+        <Parameter Name="utcExpiry" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="key">エントリの一意の識別子。</param>
+        <param name="entry">出力キャッシュに追加するコンテンツ。</param>
+        <param name="utcExpiry">キャッシュ エントリの有効期限が切れる日付と時刻。</param>
+        <summary>出力キャッシュに指定されたエントリを非同期的に挿入します。</summary>
+        <returns>指定されたエントリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;object&gt; GetAsync (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; GetAsync(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCacheProviderAsync.GetAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">出力キャッシュでキャッシュされたエントリの一意の識別子。</param>
+        <summary>出力キャッシュ内で指定されたエントリへの参照を非同期的に返します。</summary>
+        <returns>キャッシュ内の指定したエントリを識別する <paramref name="key" /> 値、または指定したエントリがキャッシュにない場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task RemoveAsync (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task RemoveAsync(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCacheProviderAsync.RemoveAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">出力キャッシュから削除するエントリの一意の識別子。</param>
+        <summary>出力キャッシュから指定されたエントリを非同期的に削除します。</summary>
+        <returns>操作の状態。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task SetAsync (string key, object entry, DateTime utcExpiry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task SetAsync(string key, object entry, valuetype System.DateTime utcExpiry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCacheProviderAsync.SetAsync(System.String,System.Object,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="entry" Type="System.Object" />
+        <Parameter Name="utcExpiry" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="key">一意の識別子<c>エントリ</c></param>
+        <param name="entry">出力キャッシュに追加するコンテンツ。</param>
+        <param name="utcExpiry">対象となる日付と時刻、キャッシュされた<c>エントリ</c>有効期限が切れた。</param>
+        <summary>指定したエントリを出力キャッシュに非同期に挿入し、キャッシュが既に存在する場合はエントリを上書きします。</summary>
+        <returns>操作の状態。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

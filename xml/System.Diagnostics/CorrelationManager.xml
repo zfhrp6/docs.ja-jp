@@ -1,0 +1,232 @@
+<Type Name="CorrelationManager" FullName="System.Diagnostics.CorrelationManager">
+  <TypeSignature Language="C#" Value="public class CorrelationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CorrelationManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.CorrelationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレースは、論理トランザクションの一部である相互に関連付けます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つの論理操作から生成されたトレースは、別の論理操作からのトレースと区別するために操作一意の id でタグことができます。 たとえば、ASP.NET 要求によって関連付けられたグループ トレースすると便利ですがあります。 <xref:System.Diagnostics.CorrelationManager>クラスはスレッド バインド コンテキストに論理操作の id を格納し、タグ ストアドの id を持つスレッドによって生成される各トレース イベントを自動的に使用されるメソッドを提供します。  
+  
+ 論理演算をネストすることもできます。 <xref:System.Diagnostics.CorrelationManager.LogicalOperationStack%2A>プロパティは入れ子になった論理操作の id のスタックを公開します。 呼び出しごとに、<xref:System.Diagnostics.CorrelationManager.StartLogicalOperation%2A>メソッドは、スタック上に新しい論理操作の id をプッシュします。 呼び出しごとに、<xref:System.Diagnostics.CorrelationManager.StopLogicalOperation%2A>メソッドは、スタックからポップ論理操作の id をポップします。  
+  
+> [!NOTE]
+>  論理操作の id は、論理操作の id の型の使用を許可するオブジェクトです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Diagnostics.CorrelationManager>トレースされるイベントに関連付けられている論理操作を識別するクラス。 2 つの論理操作が開始されると、メイン スレッドとワーカー スレッドで他のいずれか。 エラー イベントは、両方の論理操作で記録されます。  
+  
+ [!code-cpp[System.Diagnostics.CorrelationManager#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Diagnostics.CorrelationManager/cpp/correlationmanager.cpp#1)]
+ [!code-csharp[System.Diagnostics.CorrelationManager#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CorrelationManager/cs/program.cs#1)]
+ [!code-vb[System.Diagnostics.CorrelationManager#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CorrelationManager/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivityId">
+      <MemberSignature Language="C#" Value="public Guid ActivityId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ActivityId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CorrelationManager.ActivityId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグローバルのアクティビティの id を設定します。</summary>
+        <value>A<see cref="T:System.Guid" />グローバルのアクティビティを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CorrelationManager.ActivityId%2A>プロパティを取得およびグローバル アクティビティ id が設定され、<xref:System.Runtime.Remoting.Messaging.CallContext>のスレッドのです。 <xref:System.Diagnostics.CorrelationManager.ActivityId%2A>のトレース転送操作をオーバーライドするトレース リスナーで使用されて、<xref:System.Diagnostics.TraceListener.TraceTransfer%2A>メソッドなど、<xref:System.Diagnostics.XmlWriterTraceListener>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalOperationStack">
+      <MemberSignature Language="C#" Value="public System.Collections.Stack LogicalOperationStack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Stack LogicalOperationStack" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CorrelationManager.LogicalOperationStack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Stack</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しのコンテキストから論理演算のスタックを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Stack" />論理操作の履歴呼び出しのコンテキストを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しごとに、<xref:System.Diagnostics.CorrelationManager.StartLogicalOperation%2A>メソッド プッシュ上に新しい論理操作の id、<xref:System.Diagnostics.CorrelationManager.LogicalOperationStack%2A>プロパティのスタックです。 呼び出しごとに、<xref:System.Diagnostics.CorrelationManager.StopLogicalOperation%2A>メソッドは、スタックから論理操作の id をポップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartLogicalOperation">
+      <MemberSignature Language="C#" Value="public void StartLogicalOperation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartLogicalOperation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CorrelationManager.StartLogicalOperation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スレッドでの論理操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理操作を開始するには、論理操作の識別子を自動的に生成された GUID を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartLogicalOperation">
+      <MemberSignature Language="C#" Value="public void StartLogicalOperation (object operationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartLogicalOperation(object operationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CorrelationManager.StartLogicalOperation(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="operationId">操作を識別するオブジェクト。</param>
+        <summary>指定された id のスレッドで、論理操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `operationId`パラメーターがなど、任意のオブジェクトを指定できます、<xref:System.String>操作をトレース目的で特定することができます。 によって表されるオブジェクト`operationId`に追加、<xref:System.Diagnostics.CorrelationManager.LogicalOperationStack%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Diagnostics.CorrelationManager.StartLogicalOperation%28System.Object%29>方法はメイン スレッドに関連する論理操作の初期化をします。 完全なコード例については、<xref:System.Diagnostics.CorrelationManager>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.CorrelationManager#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CorrelationManager/cs/program.cs#2)]
+ [!code-vb[System.Diagnostics.CorrelationManager#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CorrelationManager/vb/module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="operationId" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StopLogicalOperation">
+      <MemberSignature Language="C#" Value="public void StopLogicalOperation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StopLogicalOperation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CorrelationManager.StopLogicalOperation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の論理操作を停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理操作は中断され、論理操作の id はから削除、<xref:System.Diagnostics.CorrelationManager.LogicalOperationStack%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Diagnostics.CorrelationManager.LogicalOperationStack" />プロパティは空のスタックです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

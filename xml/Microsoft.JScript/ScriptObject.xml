@@ -1,0 +1,619 @@
+<Type Name="ScriptObject" FullName="Microsoft.JScript.ScriptObject">
+  <TypeSignature Language="C#" Value="public abstract class ScriptObject : System.Reflection.IReflect" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ScriptObject extends System.Object implements class System.Reflection.IReflect" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.ScriptObject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Reflection.IReflect</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>JScript のすべてのクラスをサポートしています。 これは、すべての JScript クラスの基本クラスです。 このクラスは、オブジェクトと関数のカテゴリに属します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="engine">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.Vsa.VsaEngine engine;" />
+      <MemberSignature Language="ILAsm" Value=".field public class Microsoft.JScript.Vsa.VsaEngine engine" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.ScriptObject.engine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.Vsa.VsaEngine</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプト エンジンへの参照を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo GetField (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo GetField(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetField(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するフィールドの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>指定した名前を持つフィールドを取得します。</summary>
+        <returns>フィールドには、指定された、 <paramref name="name" />、または、そのスクリプト オブジェクトには、フィールドが含まれていない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetFields">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.FieldInfo[] GetFields (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo[] GetFields(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetFields(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.FieldInfo" />現在のスクリプト オブジェクトのすべてのフィールドに対応するオブジェクト。</summary>
+        <returns>現在のスクリプト オブジェクトのすべてのフィールドを含むオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MemberInfo[] GetMember (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MemberInfo[] GetMember(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetMember(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメンバーの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>派生クラスでオーバーライドされるの配列を取得<see cref="T:System.Reflection.MemberInfo" />指定した名前に一致するすべてのメンバーに対応するオブジェクト。</summary>
+        <returns>一致するオブジェクトの配列、<paramref name="name" />引数。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMembers">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MemberInfo[] GetMembers (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MemberInfo[] GetMembers(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetMembers(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>派生クラスでオーバーライドされるの配列を取得<see cref="T:System.Reflection.MemberInfo" />現在のスクリプト オブジェクトのすべてのメンバーに対応するオブジェクト。</summary>
+        <returns>現在のスクリプト オブジェクトのすべてのメンバーを含むオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetMethod (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethod(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetMethod(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するメソッドの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>指定した名前を持つメソッドを取得します。</summary>
+        <returns>持つ、指定したメソッド<paramref name="name" />、または、そのスクリプト オブジェクトにメソッドが含まれていない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetMethod (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethod(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメソッドの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="binder">実引数の型から仮引数型への型変換を実行するオブジェクト。</param>
+        <param name="types">一致するメソッドを検索に使用されるパラメーターの型。</param>
+        <param name="modifiers">種類が変更されているパラメーター シグネチャを使用するバインディングを有効にするパラメーター修飾子の配列。</param>
+        <summary>指定された選択条件を使用して、指定した名前を持つメソッドを取得します。</summary>
+        <returns>持つ、指定したメソッド<paramref name="name" />、または、そのスクリプト オブジェクトにメソッドが含まれていない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethods">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo[] GetMethods (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo[] GetMethods(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetMethods(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MethodInfo" />現在のスクリプト オブジェクトのすべてのメソッドに対応するオブジェクト。</summary>
+        <returns>現在のスクリプト オブジェクトのすべてのメソッドを含むオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.ScriptObject GetParent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.JScript.ScriptObject GetParent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetParent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.ScriptObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>親オブジェクトへの参照を取得します。</summary>
+        <returns>親オブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親は、スクリプト オブジェクトを実装していない自体のプロパティまたはメソッドの要求を委任するオブジェクトです。 たとえば、作成、<xref:Microsoft.JScript.NumberObject>を使用して、 <xref:Microsoft.JScript.NumberConstructor>、親は、<xref:Microsoft.JScript.NumberPrototype>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.PropertyInfo[] GetProperties (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo[] GetProperties(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetProperties(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.PropertyInfo" />現在のスクリプト オブジェクトのすべてのプロパティに対応するオブジェクト。</summary>
+        <returns>現在のスクリプト オブジェクトのすべてのプロパティを含むオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo GetProperty (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo GetProperty(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetProperty(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するプロパティの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>指定した名前を持つプロパティを取得します。</summary>
+        <returns>プロパティを持つ、指定した<paramref name="name" />、または、そのスクリプト オブジェクトにプロパティが含まれていない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo GetProperty (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, Type returnType, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo GetProperty(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, class System.Type returnType, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.GetProperty(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Type,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するプロパティの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="binder">実引数の型から仮引数型への型変換を実行するオブジェクト。</param>
+        <param name="returnType">このプロパティが必要な戻り値の型。</param>
+        <param name="types">検索対象のプロパティのインデックスの種類。 クラスのインデクサーなど、インデックスのプロパティに使用されます。</param>
+        <param name="modifiers">種類が変更されているパラメーター シグネチャを使用するバインディングを有効にするパラメーター修飾子の配列。</param>
+        <summary>指定された選択条件を使用して、指定した名前を持つプロパティを取得します。</summary>
+        <returns>プロパティを持つ、指定した<paramref name="name" />、または、そのスクリプト オブジェクトにプロパティが含まれていない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMember">
+      <MemberSignature Language="C#" Value="public virtual object InvokeMember (string name, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object target, object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo locale, string[] namedParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object InvokeMember(string name, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object target, object[] args, valuetype System.Reflection.ParameterModifier[] modifiers, class System.Globalization.CultureInfo locale, string[] namedParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+        <Parameter Name="locale" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="namedParameters" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出すメンバーの名前。</param>
+        <param name="invokeAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="binder">実引数の型から仮引数型への型変換を実行するオブジェクト。</param>
+        <param name="target">メンバーを呼び出す対象となるオブジェクト。 これは、現在のスクリプト オブジェクトでなければなりません。</param>
+        <param name="args">呼び出すには、数、順序、およびメンバーのパラメーターの型を含むオブジェクトの配列。 これは、パラメーターがない場合、空の配列です。</param>
+        <param name="modifiers">Args パラメーターと同じ長さのある配列。 これは、メタデータで呼び出されるメンバーの引数の属性を表します。</param>
+        <param name="locale">特定のカルチャまたはロケール情報を提供します。 数値、日付、および文字列を正しく書式設定に使用します。</param>
+        <param name="namedParameters">パラメーターの配列。</param>
+        <summary>指定したメンバーを呼び出します。</summary>
+        <returns>メンバーへの呼び出しの戻り値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[double index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(float64)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptObject.Item(System.Double)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="index">メンバーのインデックス。</param>
+        <summary>指定したスクリプトのメンバー オブジェクトを取得または設定が指定された<see cref="T:System.Double" />インデックス値。</summary>
+        <value>あるメンバーの値<paramref name="index" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptObject.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">メンバーのインデックス。</param>
+        <summary>指定したスクリプトのメンバー オブジェクトを取得または設定が指定された<see cref="T:System.Int32" />インデックス値。</summary>
+        <value>あるメンバーの値<paramref name="index" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[params object[] pars] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object[])" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptObject.Item(System.Object[])" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pars" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="pars">名前またはメンバーのインデックス。</param>
+        <summary>指定した名前で指定されたオブジェクトのスクリプトのメンバーを取得または<see cref="T:System.Double" />インデックス値、または<see cref="T:System.Int32" />インデックス値。</summary>
+        <value>指定されているメンバーの値<paramref name="pars" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`pars`配列には、複数の要素、最後の要素は、このプロパティの引数。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptObject.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">メンバーの名前。</param>
+        <summary>取得または指定した名前で指定されたオブジェクトのスクリプトのメンバーを設定します。</summary>
+        <value>という名前のメンバーの値<paramref name="name" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="parent">
+      <MemberSignature Language="C#" Value="protected Microsoft.JScript.ScriptObject parent;" />
+      <MemberSignature Language="ILAsm" Value=".field family class Microsoft.JScript.ScriptObject parent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.ScriptObject.parent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.ScriptObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親オブジェクトへの参照を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親は、スクリプト オブジェクトを実装していない自体のプロパティまたはメソッドの要求を委任するオブジェクトです。 たとえば、作成、<xref:Microsoft.JScript.NumberObject>を使用して、 <xref:Microsoft.JScript.NumberConstructor>、親は、<xref:Microsoft.JScript.NumberPrototype>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlyingSystemType">
+      <MemberSignature Language="C#" Value="public virtual Type UnderlyingSystemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type UnderlyingSystemType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptObject.UnderlyingSystemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのスクリプトの種類を取得します。</summary>
+        <value>スクリプト オブジェクトの型。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMembers">
+      <MemberSignature Language="C#" Value="protected static System.Reflection.MemberInfo[] WrapMembers (System.Reflection.MemberInfo member, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Reflection.MemberInfo[] WrapMembers(class System.Reflection.MemberInfo member, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.WrapMembers(System.Reflection.MemberInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="member" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="member">ラップするメンバー。</param>
+        <param name="obj">オブジェクトを<c>メンバー</c>で定義されています。</param>
+        <summary>指定されたオブジェクトと共に指定したメンバーを含む、ラップされたオブジェクトを作成します。</summary>
+        <returns>メンバー情報が含まれるラップされたオブジェクトを持つ 1 つの要素の配列と<paramref name="obj" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、格納し、その値を返す場合と同様に、独自のメンバーが含まれていないその他のオブジェクトを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMembers">
+      <MemberSignature Language="C#" Value="protected static System.Reflection.MemberInfo[] WrapMembers (System.Reflection.MemberInfo[] members, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Reflection.MemberInfo[] WrapMembers(class System.Reflection.MemberInfo[] members, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.WrapMembers(System.Reflection.MemberInfo[],System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="members" Type="System.Reflection.MemberInfo[]" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="members">ラップするメンバー。</param>
+        <param name="obj">オブジェクトを<c>メンバー</c>で定義されています。</param>
+        <summary>指定されたオブジェクトと共に指定したメンバーが含まれるラップされたオブジェクトの配列を作成します。</summary>
+        <returns>メンバー情報およびのコピーを含むそれぞれが、ラップされたオブジェクトの配列<paramref name="obj" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、それらを保存し、場合と同様、独自にその値を返すにこれらのメンバーが含まれていないその他のオブジェクトを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMembers">
+      <MemberSignature Language="C#" Value="protected static System.Reflection.MemberInfo[] WrapMembers (System.Reflection.MemberInfo[] members, object obj, Microsoft.JScript.SimpleHashtable cache);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Reflection.MemberInfo[] WrapMembers(class System.Reflection.MemberInfo[] members, object obj, class Microsoft.JScript.SimpleHashtable cache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptObject.WrapMembers(System.Reflection.MemberInfo[],System.Object,Microsoft.JScript.SimpleHashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="members" Type="System.Reflection.MemberInfo[]" />
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="cache" Type="Microsoft.JScript.SimpleHashtable" />
+      </Parameters>
+      <Docs>
+        <param name="members">ラップするメンバー。</param>
+        <param name="obj">オブジェクトを<c>メンバー</c>で定義されています。</param>
+        <param name="cache">ラップされたオブジェクトの一時的なデータ ストレージ。</param>
+        <summary>指定されたデータ記憶域に結果をキャッシュ、指定されたオブジェクトと共に、指定したメンバーを含むラップされたオブジェクトの配列を作成します。</summary>
+        <returns>メンバー情報およびのコピーを含むそれぞれが、ラップされたオブジェクトの配列<paramref name="obj" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、それらを保存し、場合と同様、独自にその値を返すにこれらのメンバーが含まれていないその他のオブジェクトを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

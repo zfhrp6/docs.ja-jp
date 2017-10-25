@@ -1,0 +1,260 @@
+<Type Name="PackageRelationship" FullName="System.IO.Packaging.PackageRelationship">
+  <TypeSignature Language="C#" Value="public class PackageRelationship" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PackageRelationship extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackageRelationship" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Packaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ソースとの間のアソシエーションを表します<see cref="T:System.IO.Packaging.Package" />または<see cref="T:System.IO.Packaging.PackagePart" />、および可能性があるターゲット オブジェクト、<see cref="T:System.IO.Packaging.PackagePart" />または外部のリソース。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Packaging.PackageRelationship>間のアソシエーションを定義、*ソース*<xref:System.IO.Packaging.Package>または<xref:System.IO.Packaging.PackagePart>を*ターゲット*<xref:System.IO.Packaging.PackagePart>または外部のリソース。  ソース オブジェクトは、リレーションシップの「所有者」と見なされます。  
+  
+ <xref:System.IO.Packaging.PackageRelationship>クラスにパブリック コンス トラクターがありません。 代わりに、2 つの作成方法を使用します。  
+  
+|||  
+|-|-|  
+|<xref:System.IO.Packaging.Package>.<xref:System.IO.Packaging.Package.CreateRelationship%2A>|「パッケージ レベル」リレーションシップが作成されます: 指定された部分または外部のリソースをパッケージからです。|  
+|<xref:System.IO.Packaging.PackagePart>.<xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>|「一部レベル」リレーションシップが作成されます: 別の部分に 1 つの部分からまたは外部のリソース。|  
+  
+ ソース パッケージまたはパーツによって識別される、<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>リレーションシップのプロパティです。  ターゲットの一部または外部のリソースで識別される、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>リレーションシップのプロパティです。  
+  
+ リレーションシップを作成、削除するには、任意の方法でソースまたはターゲット オブジェクトは変わりません。  
+  
+ ソース オブジェクトが削除された場合、オブジェクトによって所有されているすべてのリレーションシップも削除されます。  
+  
+ リレーションシップは、ドキュメントとの両方でドキュメント間でのナビゲーションを有効にします。  リレーションシップ リンクなどのドキュメント オブジェクト モデル サービスをサポートしても、<xref:System.Printing.PrintTicket>を特定のドキュメントの要素を印刷するときにします。  
+  
+ 詳細については<xref:System.IO.Packaging.PackageRelationship>要素のセクション 1.3「リレーションシップ」を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationship.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップを識別する文字列を取得します。</summary>
+        <value>リレーションシップを識別する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageRelationship.Id%2A>プロパティの文字列がによって所有されているすべてのリレーションシップに対して一意で、<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>パッケージまたはパーツ。  
+  
+ <xref:System.IO.Packaging.PackageRelationship.Id%2A>への呼び出しで指定された、**パッケージ**.<xref:System.IO.Packaging.Package.CreateRelationship%2A>または**PackagePart**.<xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>リレーションシップを作成するメソッド。  リレーションシップを作成した後、<xref:System.IO.Packaging.PackageRelationship.Id%2A>は変更できません。  
+  
+ <xref:System.IO.Packaging.PackageRelationship.Id%2A>プロパティの文字列が有効な XML 識別子。 <xref:System.IO.Packaging.PackageRelationship.Id%2A>型 xsd:ID し、に規定された名前付け規則に従う必要があります、 *XML Schema Part 2: Datatypes*仕様 (を参照してください[http://www.w3.org/TR/xmlschema-2/#ID](http://www.w3.org/TR/xmlschema-2/))。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Package">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.Package Package { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.Package Package" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationship.Package" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.Package</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Packaging.Package" />このリレーションシップを格納しています。</summary>
+        <value>このリレーションシップを含むパッケージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については<xref:System.IO.Packaging.Package>要素を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipType">
+      <MemberSignature Language="C#" Value="public string RelationshipType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationship.RelationshipType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップの修飾型名を取得します。</summary>
+        <value>リレーションシップの修飾型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageRelationship.RelationshipType%2A>への呼び出しで指定された、**パッケージ**.<xref:System.IO.Packaging.Package.CreateRelationship%2A>または**PackagePart**.<xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>リレーションシップを作成するメソッド。  リレーションシップを作成した後、<xref:System.IO.Packaging.PackageRelationship.RelationshipType%2A>は変更できません。  
+  
+ <xref:System.IO.Packaging.PackageRelationship.RelationshipType%2A>URI に似た構文で定義され、リレーションシップのロールを識別します。 たとえば、"http://schemas.microsoft.com/xps/2005/06/required-resource"が「必須のリソースです」であるターゲット パーツとの関係を識別します。  
+  
+ **パッケージ全体のリレーションシップ型**  
+  
+|説明|リレーションシップの種類|  
+|-----------------|-----------------------|  
+|主要プロパティ|http://schemas.microsoft.com/package/2006/relationships/metadata/core-properties|  
+|デジタル署名|http://schemas.microsoft.com/package/2006/relationships/digital-signature/signature|  
+|デジタル署名証明書|http://schemas.microsoft.com/package/2006/relationships/digital-signature/certificate|  
+|デジタル署名の発行元|http://schemas.microsoft.com/package/2006/relationships/digital-signature/origin|  
+|縮小表示|http://schemas.microsoft.com/package/2006/relationships/metadata/thumbnail|  
+  
+ パッケージのリレーションシップの詳細については、型には第 3 章、付録 I を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceUri">
+      <MemberSignature Language="C#" Value="public Uri SourceUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SourceUri" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationship.SourceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]パッケージまたはリレーションシップを所有している一部のです。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.IO.Packaging.Package" />または<see cref="T:System.IO.Packaging.PackagePart" />リレーションシップを所有しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップがによって所有されている場合、 <xref:System.IO.Packaging.Package>、<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>の URI を返します「/」です。  
+  
+ リレーションシップがによって所有されている場合、 <xref:System.IO.Packaging.PackagePart>、<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>パートの URI を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetMode">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.TargetMode TargetMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.TargetMode TargetMode" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationship.TargetMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.TargetMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのターゲットがあるかどうかを示す値を取得<see cref="F:System.IO.Packaging.TargetMode.Internal" />または<see cref="F:System.IO.Packaging.TargetMode.External" />を<see cref="T:System.IO.Packaging.Package" />です。</summary>
+        <value>列挙値を示すかどうか<see cref="P:System.IO.Packaging.PackageRelationship.TargetUri" />のリソースを参照<see cref="F:System.IO.Packaging.TargetMode.Internal" />または<see cref="F:System.IO.Packaging.TargetMode.External" />を<see cref="T:System.IO.Packaging.Package" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>への呼び出しで指定された、**パッケージ**.<xref:System.IO.Packaging.Package.CreateRelationship%2A>または**PackagePart**.<xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>リレーションシップを作成するメソッド。 リレーションシップを作成した後、<xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>は変更できません。  
+  
+ ときに<xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>は<xref:System.IO.Packaging.TargetMode.Internal>、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>相対参照である必要があります。  相対参照パッケージ レベルのリレーションシップの<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>を所有しているし、リレーションシップが含まれているソース パッケージのパック URI に対して相対的に解決されます。  (ソース パッケージ パック URI の例:"pack://http:、および www.adatum.com、files,datapak.package/"です)。部品レベル リレーションシップの場合、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>リレーションシップを所有する、ソース パートに対して相対的に解決される (<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>は相対的に解釈されます<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>)。  
+  
+ ときに<xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>は<xref:System.IO.Packaging.TargetMode.External>、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>相対パスまたは完全修飾 URI のいずれかを指定できます。  場合、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>相対参照は、参照の場所に対して相対的に解釈されます、<xref:System.IO.Packaging.Package>このリレーションシップを格納しています。  
+  
+ 詳細については<xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>の 1.3.3 セクションの「リレーションシップ マークアップ」を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetUri">
+      <MemberSignature Language="C#" Value="public Uri TargetUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri TargetUri" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationship.TargetUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]リレーションシップのターゲット リソース。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ターゲット リソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>への呼び出しで指定された、**パッケージ**.<xref:System.IO.Packaging.Package.CreateRelationship%2A>または**PackagePart**.<xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>リレーションシップを作成するメソッド。 リレーションシップを作成した後、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>は変更できません。  
+  
+ ときに<xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>は<xref:System.IO.Packaging.TargetMode.Internal>、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>相対参照である必要があります。  相対参照パッケージ レベルのリレーションシップの<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>を所有しているし、リレーションシップが含まれているソース パッケージのパック URI に対して相対的に解決されます。  (ソース パッケージ パック URI の例:"pack://http:、および www.adatum.com、files,datapak.package/"です)。部品レベル リレーションシップの場合、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>リレーションシップを所有する、ソース パートに対して相対的に解決される (<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>は相対的に解釈されます<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>)。  
+  
+ ときに<xref:System.IO.Packaging.PackageRelationship.TargetMode%2A>は<xref:System.IO.Packaging.TargetMode.External>、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>相対パスまたは完全修飾 URI のいずれかを指定できます。  場合、<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>相対参照は、参照の場所に対して相対的に解釈されます、<xref:System.IO.Packaging.Package>このリレーションシップを格納しています。  
+  
+ 詳細については<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>の 1.3.3 セクションの「リレーションシップ マークアップ」を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

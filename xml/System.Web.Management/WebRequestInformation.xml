@@ -1,0 +1,254 @@
+<Type Name="WebRequestInformation" FullName="System.Web.Management.WebRequestInformation">
+  <TypeSignature Language="C#" Value="public sealed class WebRequestInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebRequestInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebRequestInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在の Web 要求に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ インスタンス、<xref:System.Web.Management.WebRequestInformation>クラスには使用して取得される情報が含まれて、 <xref:System.Web.Management.WebRequestEvent>、 <xref:System.Web.Management.WebAuditEvent>、 <xref:System.Web.Management.WebErrorEvent>、または<xref:System.Web.Management.WebRequestErrorEvent>型です。  
+  
+ アプリケーションでは、この型によって提供される保護された情報にアクセスする適切なアクセス許可が必要です。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム イベント クラスの作成の例は、このトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム イベントを実装する方法を示しています、<xref:System.Web.Management.WebRequestInformation>型です。  
+  
+ また、このカスタム イベントを使用して ASP.NET をできるようにする構成ファイルの抜粋も示します。  
+  
+ カスタム イベントは、適切な時点に置き換えられます対応するシステム正常性イベントを発生させるとを確認します。  
+  
+```  
+<healthMonitoring  
+  heartBeatInterval="0" enabled="true">  
+  
+  <profiles>  
+    <add name="Custom"   
+      minInstances="1"   
+      maxLimit="Infinite"   
+      minInterval="00:00:00" />  
+  </profiles>  
+  
+  <eventMappings>  
+  
+    <add   
+      name="SampleWebRequestInformation"   
+      type="SamplesAspNet.SampleWebRequestInformation,webrequestinformation,Version=1.0.1782.28745, Culture=neutral, PublicKeyToken=79955d9b8521c250,processorArchitecture=MSIL" />  
+  
+  </eventMappings>  
+  
+  <rules>  
+  
+    <add name="Custom Web Request Info Event"   
+      eventName="SampleWebRequestInformation"   
+      provider="EventLogProvider"  
+      profile="Custom" />  
+  
+  </rules>  
+  
+</healthMonitoring>  
+```  
+  
+ [!code-csharp[System.Web.Management.WebRequestInformation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/CS/webrequestinformation.cs#1)]
+ [!code-vb[System.Web.Management.WebRequestInformation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/VB/webrequestinformation.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FormatToString">
+      <MemberSignature Language="C#" Value="public void FormatToString (System.Web.Management.WebEventFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FormatToString(class System.Web.Management.WebEventFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestInformation.FormatToString(System.Web.Management.WebEventFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatter" Type="System.Web.Management.WebEventFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="formatter"><see cref="T:System.Web.Management.WebEventFormatter" /> Web 状態のイベント情報を書式設定に使用されるタブとインデントの設定を格納しています。</param>
+        <summary>Web 要求の情報を書式設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebRequestInformation.FormatToString%2A>メソッドでは、同一の形式を提供イベントについては、イベント データをログに記録され後で、ユーザーに提示する必要がある場合に便利です。 プロバイダーは、のいずれかを呼び出したときに内部的に呼び出されます、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カスタム情報を書式設定する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestInformation#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/CS/webrequestinformation.cs#9)]
+ [!code-vb[System.Web.Management.WebRequestInformation#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/VB/webrequestinformation.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Principal">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal Principal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal Principal" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestInformation.Principal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 要求に関連付けられているマネージ コードのプリンシパルのインスタンスを取得します。</summary>
+        <value><see cref="T:System.Security.Principal.IPrincipal" />要求イベントに関連付けられているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルは、Web 要求を発行した認証されたエンティティを意味します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web 要求に関連付けられているプリンシパルを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestInformation#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/CS/webrequestinformation.cs#8)]
+ [!code-vb[System.Web.Management.WebRequestInformation#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/VB/webrequestinformation.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestPath">
+      <MemberSignature Language="C#" Value="public string RequestPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestInformation.RequestPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 要求の物理パスを取得します。</summary>
+        <value>要求の物理パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、Web 要求のパスを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestInformation#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/CS/webrequestinformation.cs#5)]
+ [!code-vb[System.Web.Management.WebRequestInformation#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/VB/webrequestinformation.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUrl">
+      <MemberSignature Language="C#" Value="public string RequestUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestInformation.RequestUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の論理パスを取得します。</summary>
+        <value>要求の論理パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のコード例では、Web 要求の論理パスを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestInformation#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/CS/webrequestinformation.cs#6)]
+ [!code-vb[System.Web.Management.WebRequestInformation#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/VB/webrequestinformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadAccountName">
+      <MemberSignature Language="C#" Value="public string ThreadAccountName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreadAccountName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestInformation.ThreadAccountName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コードが実行されている対象ユーザーの Windows ログオン名を表す文字列を取得します。</summary>
+        <value>コードが実行されている対象ユーザーの Windows ログオン名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、現在によって決まります<xref:System.Security.Principal.WindowsIdentity>オブジェクトの<xref:System.Security.Principal.WindowsIdentity.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserHostAddress">
+      <MemberSignature Language="C#" Value="public string UserHostAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserHostAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestInformation.UserHostAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー ホスト アドレスを取得します。</summary>
+        <value>ユーザーのホスト アドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のコード例では、ユーザーのホスト アドレスを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestInformation#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/CS/webrequestinformation.cs#7)]
+ [!code-vb[System.Web.Management.WebRequestInformation#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestInformation/VB/webrequestinformation.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

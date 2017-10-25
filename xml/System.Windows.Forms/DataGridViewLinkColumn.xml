@@ -1,0 +1,432 @@
+<Type Name="DataGridViewLinkColumn" FullName="System.Windows.Forms.DataGridViewLinkColumn">
+  <TypeSignature Language="C#" Value="public class DataGridViewLinkColumn : System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewLinkColumn extends System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewLinkColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.DataGridViewLinkColumn), "DataGridViewLinkColumn.bmp")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内のリンクが含まれているセルの列を表す、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkColumn>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewColumn>論理的にホストするためのクラスのセルのユーザーのクリックに応答します。 <xref:System.Windows.Forms.DataGridViewLinkColumn>クラスがに似ていますが、<xref:System.Windows.Forms.DataGridViewButtonColumn>クラスは、データベース テーブルに格納されている URL を表示するなどの特定の状況でより適切な可能性がある別のユーザー エクスペリエンスを提供します。  
+  
+ すべてのセルの同じリンク テキストを表示するには、次のように設定します。、<xref:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue%2A>プロパティを`true`設定と、<xref:System.Windows.Forms.DataGridViewLinkColumn.Text%2A>プロパティを、目的のリンク テキスト。  
+  
+ A<xref:System.Windows.Forms.DataGridViewLinkColumn>が関連付けられている<xref:System.Windows.Forms.DataGridViewLinkCell>ですべて<xref:System.Windows.Forms.DataGridViewRow>と交差することです。  
+  
+ この列の型の既定の並べ替えモードは<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>します。  
+  
+ クリックに応答するユーザーのリンク、処理、<xref:System.Windows.Forms.DataGridView.CellContentClick?displayProperty=nameWithType>イベント。 使用することも、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>セルの任意の場所でのクリックに応答するイベントです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プロパティを設定で、<xref:System.Windows.Forms.DataGridViewLinkColumn>です。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewLinkColumn" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewLinkColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewLinkColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい初期化するときに<xref:System.Windows.Forms.DataGridViewLinkColumn>インスタンスをこのコンス トラクターの設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティを新しい<xref:System.Windows.Forms.DataGridViewLinkCell>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ActiveLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ActiveLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のセル内のアクティブなリンクを表示するために使用する色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />が選択されているリンクを表示するために使用する色を表すです。 既定値は、ユーザーの Internet Explorer 設定のリンクの色のホバー時の状態にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewLinkCell.ActiveLinkColor%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.ActiveLinkColor%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例の初期化、<xref:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor%2A>プロパティ白色にリンクできるようにすると、ユーザーに選択します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいセルの作成に使用するテンプレートを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCell" />列内のすべてのセルが後にモデル化します。 既定値は、新しい<see cref="T:System.Windows.Forms.DataGridViewLinkCell" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクター、<xref:System.Windows.Forms.DataGridViewLinkColumn>クラスは、新しく作成するには、このプロパティを初期化<xref:System.Windows.Forms.DataGridViewLinkCell>です。  
+  
+> [!CAUTION]
+>  セル テンプレートのプロパティの変更はすぐに影響しません、列の既存のセルのユーザー インターフェイス (UI)。 これらの変更のみが明らかな列が再生成 (列を並べ替えることで、たとえば、またはを呼び出すことによって、<xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType>メソッド)。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCell>のテンプレートとして、<xref:System.Windows.Forms.DataGridViewColumn>です。 列の任意のセルにスタイルの変更では、すべての列のセルに影響します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#120)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#120)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">ときにこのプロパティ値を設定するの種類はありません<see cref="T:System.Windows.Forms.DataGridViewLinkCell" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象の列の同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewLinkColumn" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、重複するリンク セルの列を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" />呼び出し、基本クラスの派生クラスで<see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされも、派生クラスに追加されたプロパティの値をコピーすることを確認するようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.LinkBehavior LinkBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.LinkBehavior LinkBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のセル内のリンクの動作を表す値を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.LinkBehavior" />リンク動作を示す値。 既定値は、<see cref="F:System.Windows.Forms.LinkBehavior.SystemDefault" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkBehavior%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkBehavior%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例には、このプロパティを初期化する<xref:System.Windows.Forms.LinkBehavior.SystemDefault>、オペレーティング システムのリンクを表示する方法を選択することができます。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.LinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のセル内で選択されていないリンクを表示するために使用する色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />リンクが最初に表示するために使用する色を表すです。 既定値は、ユーザーの Internet Explorer のリンクの色を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、青にこのプロパティを初期化します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の場合、列のセルに表示されるリンク テキスト<see cref="P:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue" />は<see langword="true" />します。</summary>
+        <value>A<see cref="T:System.String" />リンク テキストを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが表示される場合、<xref:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue%2A>プロパティに設定されている`true`です。 各セルのリンク テキストは、それ以外の場合、<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>の各セルのプロパティです。  
+  
+ オーバーライドすることができます、<xref:System.Windows.Forms.DataGridViewLinkColumn.Text%2A>セルを設定して個々 のセルのプロパティの値<xref:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue%2A>プロパティを`false`列を設定した後<xref:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティの値を設定するときに、<see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />プロパティは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列を説明する文字列を取得します。</summary>
+        <returns>A<see cref="T:System.String" />列を説明します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackVisitedState">
+      <MemberSignature Language="C#" Value="public bool TrackVisitedState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrackVisitedState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはがアクセスした場合、リンクの色が変化するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />選択されているリンクの色を変更する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState%2A>が true の場合、<xref:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor%2A>表示済みリンクを表示するプロパティの値を使用します。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例が選択されているリンクの色を変更できるように、このプロパティを初期化します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseColumnTextForLinkValue">
+      <MemberSignature Language="C#" Value="public bool UseColumnTextForLinkValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseColumnTextForLinkValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />プロパティ値がこのリンク テキストとして表示されます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />プロパティ値ですこのリンク テキストとして表示されます。<see langword="false" />場合、セル<see cref="P:System.Windows.Forms.DataGridViewCell.FormattedValue" />プロパティ値がこのリンク テキストとして表示されます。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティを設定する方法を示しますできるように、<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>テキスト リンクの従業員の上司、この場合、従業員 ID の各セルのプロパティが表示されます。 リンクを選択すると、選択ポイントは、上司の名前に移動されます。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VisitedLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color VisitedLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color VisitedLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、以前アクセスしたリンクの表示に使用する色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />がアクセスしたリンクを表示するために使用する色を表すです。 既定値は、ユーザーの Internet Explorer を訪問したリンクの色を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState%2A>プロパティが false に設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor%2A>プロパティは無視されます。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewLinkCell.VisitedLinkColor%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.VisitedLinkColor%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、リンクが黄、緑の場合は、ユーザーがアクセスしたことになるように、このプロパティを初期化します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

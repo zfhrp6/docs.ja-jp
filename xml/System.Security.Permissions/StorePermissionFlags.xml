@@ -1,0 +1,279 @@
+<Type Name="StorePermissionFlags" FullName="System.Security.Permissions.StorePermissionFlags">
+  <TypeSignature Language="C#" Value="public enum StorePermissionFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed StorePermissionFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.StorePermissionFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>X.509 証明書ストアへのアクセス許可を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのアクセス許可の多くには、潜在的なセキュリティとプライバシーの脅威がもたらされます。 細心は、ストアへのアクセス許可で実行される必要があります。 アクセスによって公開される脅威の種類の簡単な説明は、access の概要に含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.StorePermissionFlags>列挙します。  
+  
+ [!code-cpp[System.Security.Permissions.StorePermission#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StorePermission/CPP/storepermission.cpp#2)]
+ [!code-csharp[System.Security.Permissions.StorePermission#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StorePermission/CS/storepermission.cs#2)]
+ [!code-vb[System.Security.Permissions.StorePermission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StorePermission/VB/program.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddToStore">
+      <MemberSignature Language="C#" Value="AddToStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags AddToStore = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.AddToStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアに証明書を追加する権限です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ上の理由から、信頼性の高いコードにのみこのアクセス許可を付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllFlags">
+      <MemberSignature Language="C#" Value="AllFlags" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags AllFlags = int32(247)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.AllFlags" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてを実行する機能は、証明書および格納操作。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStore">
+      <MemberSignature Language="C#" Value="CreateStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags CreateStore = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.CreateStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいストアを作成する権限です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいストアが呼び出すことによって作成された、<xref:System.Security.Cryptography.X509Certificates.X509Store.Open%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteStore">
+      <MemberSignature Language="C#" Value="DeleteStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags DeleteStore = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.DeleteStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアを削除する権限です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この機能がによって公開されていない、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateCertificates">
+      <MemberSignature Language="C#" Value="EnumerateCertificates" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags EnumerateCertificates = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書ストアを列挙する機能。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プライバシー上の理由から、完全に信頼されたコードだけにこのアクセス許可を付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateStores">
+      <MemberSignature Language="C#" Value="EnumerateStores" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags EnumerateStores = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.EnumerateStores" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューター上のストアを列挙する機能。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この機能がによって公開されていない、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFlags">
+      <MemberSignature Language="C#" Value="NoFlags" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags NoFlags = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.NoFlags" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>任意の証明書を行ったり、格納操作には、アクセス許可を付与しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStore">
+      <MemberSignature Language="C#" Value="OpenStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags OpenStore = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアを開く権限です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 機能ストアを開くには、(これはプライバシーの問題を発生させます) 証明書を列挙するを追加または証明書を削除できるよう (これはセキュリティ上の問題を発生させます) は含まれません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFromStore">
+      <MemberSignature Language="C#" Value="RemoveFromStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.StorePermissionFlags RemoveFromStore = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.StorePermissionFlags.RemoveFromStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアから証明書を削除する権限です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス拒否攻撃につながる証明書を削除するため、信頼性の高いコードにのみこのアクセス許可を付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

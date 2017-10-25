@@ -1,0 +1,171 @@
+<Type Name="TransferEncoding" FullName="System.Net.Mime.TransferEncoding">
+  <TypeSignature Language="C#" Value="public enum TransferEncoding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransferEncoding extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mime.TransferEncoding" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>電子メール メッセージの添付ファイルのコンテンツ-転送-エンコード ヘッダー情報を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値、<xref:System.Net.Mime.TransferEncoding>列挙で使用されて、<xref:System.Net.Mail.AttachmentBase.TransferEncoding?displayProperty=nameWithType>プロパティです。  
+  
+ コンテンツ転送エンコード ヘッダーでは、SMTP の要件を満たすようにする、関連付けられたメッセージ本文のエンコードを指定します。 SMTP では、7 ビットの US-ASCII 文字を 1000 文字以内の行で内にあるトランスポートのデータが必要です。  
+  
+ コンテンツ転送エンコード値は、RFC 2045 のセクションで使用可能な第 6 で詳しく説明[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示<xref:System.Net.Mime.TransferEncoding>添付ファイルによって使用されます。  
+  
+ [!code-cpp[NclMailSync#21](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#21)]
+ [!code-csharp[NclMailSync#21](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#21)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Base64">
+      <MemberSignature Language="C#" Value="Base64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mime.TransferEncoding Base64 = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mime.TransferEncoding.Base64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.TransferEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーム ベースのデータをエンコードします。 6.8 RFC 2406 セクションを参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EightBit">
+      <MemberSignature Language="C#" Value="EightBit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mime.TransferEncoding EightBit = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mime.TransferEncoding.EightBit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.TransferEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データでは 8 ビット文字を 1000 8 ビット文字以内の行の合計長を持つ国際文字を表すことがあります。 この 8 ビット MIME 転送拡張機能の詳細については、IETF RFC 6152 を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QuotedPrintable">
+      <MemberSignature Language="C#" Value="QuotedPrintable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mime.TransferEncoding QuotedPrintable = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mime.TransferEncoding.QuotedPrintable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.TransferEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷可能な文字は、US-ASCII 文字セットで構成データをエンコードします。 6.7 RFC 2406 セクションを参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SevenBit">
+      <MemberSignature Language="C#" Value="SevenBit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mime.TransferEncoding SevenBit = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mime.TransferEncoding.SevenBit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.TransferEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンコードされていないデータに使用します。 データでは 7 ビット、US-ASCII 文字の 1000 文字以内の行の合計長を持つです。 Rfc 2406 セクション 2.7 を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mime.TransferEncoding Unknown = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mime.TransferEncoding.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.TransferEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>転送エンコードが既知であることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

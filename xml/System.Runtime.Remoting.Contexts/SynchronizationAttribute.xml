@@ -1,0 +1,405 @@
+<Type Name="SynchronizationAttribute" FullName="System.Runtime.Remoting.Contexts.SynchronizationAttribute">
+  <TypeSignature Language="C#" Value="public class SynchronizationAttribute : System.Runtime.Remoting.Contexts.ContextAttribute, System.Runtime.Remoting.Contexts.IContributeClientContextSink, System.Runtime.Remoting.Contexts.IContributeServerContextSink" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SynchronizationAttribute extends System.Runtime.Remoting.Contexts.ContextAttribute implements class System.Runtime.Remoting.Contexts.IContributeClientContextSink, class System.Runtime.Remoting.Contexts.IContributeServerContextSink" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.Contexts.ContextAttribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Contexts.IContributeClientContextSink</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Contexts.IContributeServerContextSink</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在のコンテキストと同じインスタンスを共有するすべてのコンテキストの同期ドメインを強制します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を適用するオブジェクトにこのプロパティのインスタンスを共有するすべてのコンテキストで 1 つのスレッドが実行されていることができます。 これは、シンクをインターセプトし、それぞれのコンテキストの着信呼び出しをシリアル化を提供することによって行います。 プロパティが再入のマークされている場合、コールアウトはも受け取られます。 引き出し線の途中受信では、最大限のスループットの同期ドメインを入力するその他の待機中のスレッドを使用できます。  
+  
+> [!NOTE]
+>  という名前の 2 つのクラスがある`SynchronizationAttribute`: のいずれか、<xref:System.Runtime.Remoting.Contexts>名前空間、およびその他の<xref:System.EnterpriseServices>名前空間。 <xref:System.EnterpriseServices.SynchronizationAttribute?displayProperty=nameWithType>のみ同期呼び出しをサポートする、クラスし、サービス コンポーネントでのみ使用できます。 (サービス コンポーネントの詳細については、次を参照してください[&#91;\< 。topic://cpconservicedcomponentoverview > & #93 です。](http://msdn.microsoft.com/en-us/5133a620-9c8c-47bd-8e36-130e722fe463).)<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute?displayProperty=nameWithType>同期および非同期の呼び出しをサポートし、コンテキスト バインド オブジェクトでのみ使用できます。 (詳細については、コンテキストにバインドされたオブジェクトを参照してください、<xref:System.ContextBoundObject>クラスです)。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求し、クラス レベルの継承確認要求を使用します。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに、インフラストラクチャのアクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>です。 完全なサンプル コードの例を参照してください、<xref:System.Runtime.Remoting.Messaging.AsyncResult>クラスです。  
+  
+ [!code-cpp[AsyncResult.NewExamples#2](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncResult.NewExamples/CPP/ad.cpp#2)]
+ [!code-csharp[AsyncResult.NewExamples#2](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncResult.NewExamples/CS/ad.cs#2)]
+ [!code-vb[AsyncResult.NewExamples#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncResult.NewExamples/VB/ad.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SynchronizationAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SynchronizationAttribute (bool reEntrant);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool reEntrant) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reEntrant" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="reEntrant">再入が必要かどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />再エントリが必要かどうかを示すブール値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再入が必要な場合、引き出し線付きのうち、<xref:System.Runtime.Remoting.Contexts.Context>を現在の属性を適用する傍受され、シリアル化する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SynchronizationAttribute (int flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flag" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="flag">この属性を適用するオブジェクトの動作を示す整数値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />クラスのこの属性を適用するオブジェクトの動作を示すフラグを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `flag`パラメーターはいずれかである必要があります<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.NOT_SUPPORTED>、 <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.SUPPORTED>、 <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.REQUIRED>、または<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.REQUIRES_NEW>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="flag" />のパラメーターが定義されているフラグのいずれか。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SynchronizationAttribute (int flag, bool reEntrant);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 flag, bool reEntrant) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.#ctor(System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flag" Type="System.Int32" />
+        <Parameter Name="reEntrant" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="flag">この属性を適用するオブジェクトの動作を示す整数値。</param>
+        <param name="reEntrant">
+          <see langword="true" />場合は再入が必要であり、コールアウトの傍受され、シリアル化する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />この属性を適用するオブジェクトの動作を示すフラグと再エントリが必要かどうかを示すブール値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `flag`パラメーターはいずれかである必要があります<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.NOT_SUPPORTED>、 <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.SUPPORTED>、 <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.REQUIRED>、または<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute.REQUIRES_NEW>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="flag" />のパラメーターが定義されているフラグのいずれか。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientContextSink">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.Messaging.IMessageSink GetClientContextSink (System.Runtime.Remoting.Messaging.IMessageSink nextSink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink GetClientContextSink(class System.Runtime.Remoting.Messaging.IMessageSink nextSink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.GetClientContextSink(System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nextSink" Type="System.Runtime.Remoting.Messaging.IMessageSink" />
+      </Parameters>
+      <Docs>
+        <param name="nextSink">シンク チェーンがこれまでで構成されます。</param>
+        <summary>コールアウト シンクを作成し、指定されたクライアント側リモート処理の呼び出しのコンテキスト境界でシンク チェーンの前にチェーンされます。</summary>
+        <returns>新しいコールアウト シンクに複合シンク チェーン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドの実装は、<xref:System.Runtime.Remoting.Contexts.IContributeClientContextSink.GetClientContextSink%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesForNewContext">
+      <MemberSignature Language="C#" Value="public override void GetPropertiesForNewContext (System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetPropertiesForNewContext(class System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.GetPropertiesForNewContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctorMsg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctorMsg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />プロパティを追加します。</param>
+        <summary>追加、<see langword="Synchronized" />コンテキスト プロパティを指定した<see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServerContextSink">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.Messaging.IMessageSink GetServerContextSink (System.Runtime.Remoting.Messaging.IMessageSink nextSink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink GetServerContextSink(class System.Runtime.Remoting.Messaging.IMessageSink nextSink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.GetServerContextSink(System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nextSink" Type="System.Runtime.Remoting.Messaging.IMessageSink" />
+      </Parameters>
+      <Docs>
+        <param name="nextSink">シンク チェーンがこれまでで構成されます。</param>
+        <summary>同期されたディスパッチ シンクを作成し、指定されたサーバー側リモート処理の呼び出しのコンテキスト境界でシンク チェーンの前にチェーンされます。</summary>
+        <returns>新しい複合シンク チェーンには、ディスパッチ シンクが同期されています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドの実装は、<xref:System.Runtime.Remoting.Contexts.IContributeServerContextSink.GetServerContextSink%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContextOK">
+      <MemberSignature Language="C#" Value="public override bool IsContextOK (System.Runtime.Remoting.Contexts.Context ctx, System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsContextOK(class System.Runtime.Remoting.Contexts.Context ctx, class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.SynchronizationAttribute.IsContextOK(System.Runtime.Remoting.Contexts.Context,System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.Runtime.Remoting.Contexts.Context" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctx">確認対象のコンテキスト。</param>
+        <param name="msg">この属性でマークされているコンテキスト バインド オブジェクトの構築時に収集された情報です。 <see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />検査、追加、およびコンテキストが使用できる場合を決定する際に、コンテキストからプロパティを削除できます。</param>
+        <summary>コンテキスト パラメーターがコンテキスト属性の要件を満たしているかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />渡されたコンテキスト適切な場合です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="ctx" /> パラメーターまたは <paramref name="msg" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReEntrant">
+      <MemberSignature Language="C#" Value="public virtual bool IsReEntrant { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReEntrant" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Contexts.SynchronizationAttribute.IsReEntrant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または再入が必要かどうかを示すブール値を設定します。</summary>
+        <value>再入が必要かどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再入が必要な場合、引き出し線付きのうち、<xref:System.Runtime.Remoting.Contexts.Context>を現在の属性を適用する傍受され、シリアル化する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locked">
+      <MemberSignature Language="C#" Value="public virtual bool Locked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Locked" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Contexts.SynchronizationAttribute.Locked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示すブール値かどうか、<see cref="T:System.Runtime.Remoting.Contexts.Context" />のこのインスタンスを実装する<see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />はロックされています。</summary>
+        <value>示すブール値かどうか、<see cref="T:System.Runtime.Remoting.Contexts.Context" />のこのインスタンスを実装する<see cref="T:System.Runtime.Remoting.Contexts.SynchronizationAttribute" />はロックされています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同期されたときに<xref:System.Runtime.Remoting.Contexts.Context>がロックされている場合が現在実行中のスレッド内のオブジェクトへのアクセスを持つのみ、<xref:System.Runtime.Remoting.Contexts.Context>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NOT_SUPPORTED">
+      <MemberSignature Language="C#" Value="public const int NOT_SUPPORTED = 1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 NOT_SUPPORTED = (1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Contexts.SynchronizationAttribute.NOT_SUPPORTED" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>同期されたコンテキストでこの属性を適用するクラスを作成できないことを示します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="REQUIRED">
+      <MemberSignature Language="C#" Value="public const int REQUIRED = 4;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 REQUIRED = (4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Contexts.SynchronizationAttribute.REQUIRED" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4</MemberValue>
+      <Docs>
+        <summary>同期されたコンテキストでこの属性を適用するクラスを作成する必要があることを示します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="REQUIRES_NEW">
+      <MemberSignature Language="C#" Value="public const int REQUIRES_NEW = 8;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 REQUIRES_NEW = (8)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Contexts.SynchronizationAttribute.REQUIRES_NEW" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>8</MemberValue>
+      <Docs>
+        <summary>クラスのこの属性を適用する必要があります同期プロパティの新しいインスタンスを使用して、コンテキストに毎回作成することを示します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SUPPORTED">
+      <MemberSignature Language="C#" Value="public const int SUPPORTED = 2;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 SUPPORTED = (2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Contexts.SynchronizationAttribute.SUPPORTED" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2</MemberValue>
+      <Docs>
+        <summary>この属性を適用するクラスは、コンテキストが同期を備えているかどうかに依存しないことを示します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

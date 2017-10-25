@@ -1,0 +1,75 @@
+<Type Name="Converter&lt;TInput,TOutput&gt;" FullName="System.Converter&lt;TInput,TOutput&gt;">
+  <TypeSignature Language="C#" Value="public delegate TOutput Converter&lt;in TInput,out TOutput&gt;(TInput input);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Converter`2&lt;- TInput, + TOutput&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Converter`2" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TInput">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+    <TypeParameter Name="TOutput">
+      <Constraints>
+        <ParameterAttribute>Covariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="input" Type="TInput" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>TOutput</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="TInput">変換するオブジェクトの型。</typeparam>
+    <typeparam name="TOutput">入力オブジェクトに変換する型。</typeparam>
+    <param name="input">変換対象のオブジェクト。</param>
+    <summary>1 つの型のオブジェクトを別の型に変換するメソッドを表します。</summary>
+    <returns><paramref name="TOutput" />を表す、変換された<paramref name="TInput" />です。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートを使用して、<xref:System.Array.ConvertAll%2A>のメソッド、<xref:System.Array>クラスおよび<xref:System.Collections.Generic.List`1.ConvertAll``1*>のメソッド、<xref:System.Collections.Generic.List%601>クラス、コレクションの各要素を別の 1 つの型に変換します。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初に、説明、<xref:System.Converter%602>を持つデリゲート、<xref:System.Array.ConvertAll%2A>のメソッド、<xref:System.Array>クラス、および 2 番目のデリゲートを示します、<xref:System.Collections.Generic.List`1.ConvertAll``1*>のメソッド、<xref:System.Collections.Generic.List%601>ジェネリック クラスです。  
+  
+ 例 1  
+  
+ 次のコード例は、という名前のメソッドを定義`PointFToPoint`変換する、<xref:System.Drawing.PointF>に構造体、<xref:System.Drawing.Point>構造体。 配列を作成し<xref:System.Drawing.PointF>構造と、作成、`Converter<PointF, Point>`委任 (`Converter(Of PointF, Point)` Visual Basic で) を表す、`PointFToPoint`メソッドにデリゲートを渡します、<xref:System.Array.ConvertAll%2A>メソッドです。 <xref:System.Array.ConvertAll%2A>メソッドは成功する入力の一覧の各要素、`PointFToPoint`メソッドの新しいリストに変換された要素を格納および<xref:System.Drawing.Point>構造体。 両方の一覧が表示されます。  
+  
+ [!code-cpp[Array_ConvertAll#1](~/samples/snippets/cpp/VS_Snippets_CLR/Array_ConvertAll/cpp/source.cpp#1)]
+ [!code-csharp[Array_ConvertAll#1](~/samples/snippets/csharp/VS_Snippets_CLR/Array_ConvertAll/cs/source.cs#1)]
+ [!code-vb[Array_ConvertAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Array_ConvertAll/vb/source.vb#1)]  
+  
+ 例 2  
+  
+ 次のコード例は、という名前のメソッドを定義`PointFToPoint`変換する、<xref:System.Drawing.PointF>に構造体、<xref:System.Drawing.Point>構造体。 作成し、<xref:System.Collections.Generic.List%601>の<xref:System.Drawing.PointF>構造と、作成、`Converter\<PointF, Point>`委任 (`Converter(Of PointF, Point)` Visual Basic で) を表す、`PointFToPoint`メソッドにデリゲートを渡します、< xref:System.Collections.Generic.List`1.ConvertAll``1*> method. The <xref:System.Collections.Generic.List`1.ConvertAll''1* > メソッドは成功する入力の一覧の各要素、`PointFToPoint`メソッドの新しいリストに変換された要素を格納および<xref:System.Drawing.Point>構造体。 両方の一覧が表示されます。  
+  
+ [!code-cpp[List\`1_ConvertAll#1](~/samples/snippets/cpp/VS_Snippets_CLR/List`1_ConvertAll/cpp/source.cpp#1)]
+ [!code-csharp[List\`1_ConvertAll#1](~/samples/snippets/csharp/VS_Snippets_CLR/List`1_ConvertAll/cs/source.cs#1)]
+ [!code-vb[List\`1_ConvertAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/List`1_ConvertAll/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

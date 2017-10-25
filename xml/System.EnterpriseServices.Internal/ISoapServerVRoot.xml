@@ -1,0 +1,169 @@
+<Type Name="ISoapServerVRoot" FullName="System.EnterpriseServices.Internal.ISoapServerVRoot">
+  <TypeSignature Language="C#" Value="public interface ISoapServerVRoot" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISoapServerVRoot" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.ISoapServerVRoot" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("A31B6577-71D2-4344-AEDF-ADC1B0DC5347")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーで、暗号化された認証済みの SOAP 仮想ルートを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください<xref:System.EnterpriseServices.Internal.SoapServerVRoot>既定の実装です。  
+  
+ <xref:System.EnterpriseServices.Internal.ISoapServerVRoot>.NET Framework によって内部的に使用されます。 コード内で直接使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateVirtualRootEx">
+      <MemberSignature Language="C#" Value="public void CreateVirtualRootEx (string rootWebServer, string inBaseUrl, string inVirtualRoot, string homePage, string discoFile, string secureSockets, string authentication, string operation, out string baseUrl, out string virtualRoot, out string physicalPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CreateVirtualRootEx(string rootWebServer, string inBaseUrl, string inVirtualRoot, string homePage, string discoFile, string secureSockets, string authentication, string operation, [out] string&amp; baseUrl, [out] string&amp; virtualRoot, [out] string&amp; physicalPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ISoapServerVRoot.CreateVirtualRootEx(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootWebServer" Type="System.String" />
+        <Parameter Name="inBaseUrl" Type="System.String" />
+        <Parameter Name="inVirtualRoot" Type="System.String" />
+        <Parameter Name="homePage" Type="System.String" />
+        <Parameter Name="discoFile" Type="System.String" />
+        <Parameter Name="secureSockets" Type="System.String" />
+        <Parameter Name="authentication" Type="System.String" />
+        <Parameter Name="operation" Type="System.String" />
+        <Parameter Name="baseUrl" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="virtualRoot" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="physicalPath" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="rootWebServer">ルート Web サーバー。</param>
+        <param name="inBaseUrl">仮想ルートを含む基本 URL です。</param>
+        <param name="inVirtualRoot">仮想ルートの名前。</param>
+        <param name="homePage">
+          <see langword="true" />場合、<see langword="EnableDefaultDoc" />プロパティが、それ以外の設定を<see langword="false" />です。</param>
+        <param name="discoFile">
+          <see langword="true" />既定の探索ファイルが作成される; 場合<see langword="false" />探索ファイルがない場合がある場合。 場合<see langword="false" />値が存在して、ファイルは削除されます。</param>
+        <param name="secureSockets">
+          <see langword="true" />SSL 暗号化が必要な場合です。それ以外の場合、<see langword="false" />です。</param>
+        <param name="authentication">認証が使用された (匿名ユーザー) であるがない場合は「匿名」を指定します。 それ以外の場合、空の文字列を指定します。</param>
+        <param name="operation">使用しません。 指定<see langword="null" />このパラメーターにします。</param>
+        <param name="baseUrl">このメソッドが戻るとき、このパラメーターには、ベース URL が含まれています。</param>
+        <param name="virtualRoot">このメソッドが戻るとき、このパラメーターには、仮想ルートの名前が含まれています。</param>
+        <param name="physicalPath">このメソッドが戻るとき、このパラメーターには、仮想ルート ディレクトリのディスク アドレスが含まれています。</param>
+        <summary>セキュリティ オプションを SOAP 仮想ルートを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">SOAP ユーティリティでは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteVirtualRootEx">
+      <MemberSignature Language="C#" Value="public void DeleteVirtualRootEx (string rootWebServer, string baseUrl, string virtualRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeleteVirtualRootEx(string rootWebServer, string baseUrl, string virtualRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ISoapServerVRoot.DeleteVirtualRootEx(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(2)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootWebServer" Type="System.String" />
+        <Parameter Name="baseUrl" Type="System.String" />
+        <Parameter Name="virtualRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rootWebServer">ルート Web サーバー。</param>
+        <param name="baseUrl">仮想ルートを含む基本 URL です。</param>
+        <param name="virtualRoot">仮想ルートの名前。</param>
+        <summary>仮想ルートを削除します。 完全に実装されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想ルートを削除する機能はこのインターフェイスの実装で現在使用できません。 ルートを削除することがなく、実装が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">SOAP ユーティリティでは使用できません。</exception>
+        <exception cref="T:System.EnterpriseServices.ServicedComponentException">システム ディレクトリを識別する呼び出しが失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualRootStatus">
+      <MemberSignature Language="C#" Value="public void GetVirtualRootStatus (string rootWebServer, string inBaseUrl, string inVirtualRoot, out string exists, out string secureSockets, out string windowsAuth, out string anonymous, out string homePage, out string discoFile, out string physicalPath, out string baseUrl, out string virtualRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetVirtualRootStatus(string rootWebServer, string inBaseUrl, string inVirtualRoot, [out] string&amp; exists, [out] string&amp; secureSockets, [out] string&amp; windowsAuth, [out] string&amp; anonymous, [out] string&amp; homePage, [out] string&amp; discoFile, [out] string&amp; physicalPath, [out] string&amp; baseUrl, [out] string&amp; virtualRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ISoapServerVRoot.GetVirtualRootStatus(System.String,System.String,System.String,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(3)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootWebServer" Type="System.String" />
+        <Parameter Name="inBaseUrl" Type="System.String" />
+        <Parameter Name="inVirtualRoot" Type="System.String" />
+        <Parameter Name="exists" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="secureSockets" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="windowsAuth" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="anonymous" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="homePage" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="discoFile" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="physicalPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="baseUrl" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="virtualRoot" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="rootWebServer">ルート Web サーバー。</param>
+        <param name="inBaseUrl">仮想ルートを含む基本 URL です。</param>
+        <param name="inVirtualRoot">仮想ルートの名前。</param>
+        <param name="exists">このパラメーターが含まれるこのメソッドが戻るとき、<see langword="true" />仮想ディレクトリが存在する場合は、それ以外の場合、<see langword="false" />です。</param>
+        <param name="secureSockets">このパラメーターが含まれるこのメソッドが戻るとき、 <see langword="true" /> SSL 暗号化が必要なそれ以外の場合は<see langword="false" />します。</param>
+        <param name="windowsAuth">このメソッドが戻るときにこのパラメーターが含まれる<see langword="true" />Windows 認証が設定されている場合、それ以外の場合、<see langword="false" />です。</param>
+        <param name="anonymous">このメソッドが戻るときにこのパラメーターが含まれる<see langword="true" />認証が設定されていない場合 (匿名ユーザー) です。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="homePage">このパラメーターが含まれるこのメソッドが戻るとき、<see langword="true" />場合、仮想ルート ディレクトリの<see langword="EnableDefaultDoc" />プロパティは設定、それ以外の<see langword="false" />します。</param>
+        <param name="discoFile">このパラメーターが含まれるこのメソッドが戻るとき、<see langword="true" />値が存在する場合は、それ以外の場合、<see langword="false" />です。</param>
+        <param name="physicalPath">このメソッドが戻るとき、このパラメーターには、仮想ルート ディレクトリのディスク アドレスが含まれています。</param>
+        <param name="baseUrl">このメソッドが戻るとき、このパラメーターには、ベース URL が含まれています。</param>
+        <param name="virtualRoot">このメソッドが戻るとき、このパラメーターには、仮想ルートの名前が含まれています。</param>
+        <summary>既存の SOAP 仮想ルートのセキュリティの状態を返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

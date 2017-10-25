@@ -1,0 +1,89 @@
+<Type Name="ItemBoundsPortion" FullName="System.Windows.Forms.ItemBoundsPortion">
+  <TypeSignature Language="C#" Value="public enum ItemBoundsPortion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ItemBoundsPortion extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ItemBoundsPortion" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>外接する四角形を取得する対象のリスト ビューの項目の一部を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すときに、この列挙体のメンバーを使用して、<xref:System.Windows.Forms.ListView.GetItemRect%2A>のメソッド、<xref:System.Windows.Forms.ListView>コントロール。 この列挙体を呼び出すときにも使用、<xref:System.Windows.Forms.ListViewItem.GetBounds%2A>のメソッド、<xref:System.Windows.Forms.ListViewItem>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Entire">
+      <MemberSignature Language="C#" Value="Entire" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ItemBoundsPortion Entire = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ItemBoundsPortion.Entire" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ItemBoundsPortion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコン、項目のテキストとサブ項目のテキスト (表示される場合) を含めた項目全体の外接する四角形を取得する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Icon">
+      <MemberSignature Language="C#" Value="Icon" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ItemBoundsPortion Icon = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ItemBoundsPortion.Icon" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ItemBoundsPortion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンまたは小さいアイコンに外接する四角形を取得する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemOnly">
+      <MemberSignature Language="C#" Value="ItemOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ItemBoundsPortion ItemOnly = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ItemBoundsPortion.ItemOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ItemBoundsPortion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンまたは小さいアイコンと項目のテキストの外接する四角形を取得する必要があります。 すべてのビューの詳細の表示の点を除いて、 <see cref="T:System.Windows.Forms.ListView" />、として同じの外接する四角形を指定、<see langword="Entire" />値。 この値がで指定された外接する四角形を指定の詳細ビューで、<see langword="Entire" />サブ項目なしの値。 場合、<see cref="P:System.Windows.Forms.ListView.CheckBoxes" />プロパティに設定されている<see langword="true" />、このプロパティには、その外接する四角形でチェック ボックスの領域は含まれません。 チェック ボックスを含めた項目全体を含めるには使用、<see langword="Entire" />を呼び出すときの値、<see cref="M:System.Windows.Forms.ListView.GetItemRect(System.Int32)" />メソッドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="Label" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ItemBoundsPortion Label = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ItemBoundsPortion.Label" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ItemBoundsPortion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のテキストの外接する四角形を取得する必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

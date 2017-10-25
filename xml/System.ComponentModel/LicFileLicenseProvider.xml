@@ -1,0 +1,194 @@
+<Type Name="LicFileLicenseProvider" FullName="System.ComponentModel.LicFileLicenseProvider">
+  <TypeSignature Language="C#" Value="public class LicFileLicenseProvider : System.ComponentModel.LicenseProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LicFileLicenseProvider extends System.ComponentModel.LicenseProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.LicFileLicenseProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.LicenseProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装を提供する<see cref="T:System.ComponentModel.LicenseProvider" />です。 プロバイダーは、Microsoft .NET Framework の標準ライセンス モデルと同様の方法で動作します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.LicFileLicenseProvider>提供<xref:System.ComponentModel.LicFileLicenseProvider.GetLicense%2A>と<xref:System.ComponentModel.LicFileLicenseProvider.IsKeyValid%2A>メソッドです。 <xref:System.ComponentModel.LicFileLicenseProvider.IsKeyValid%2A>メソッドを判断するかどうか、<xref:System.ComponentModel.License.LicenseKey%2A>によって取得された、<xref:System.ComponentModel.LicFileLicenseProvider.GetLicense%2A>メソッドは無効です。 このクラスから継承する場合は上書きできます、<xref:System.ComponentModel.LicFileLicenseProvider.IsKeyValid%2A>メソッド独自の検証ロジックを提供します。  
+  
+ このクラスは、COM のライセンスをライセンスと同様の機能を提供するが存在し、テキストのライセンス ファイルを使用します。  
+  
+ ライセンスの詳細については、次を参照してください。[する方法: ライセンス コンポーネントやコントロール](http://msdn.microsoft.com/library/8e66c1ed-a445-4b26-8185-990b6e2bbd57)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、ライセンスされたコントロールを作成、<xref:System.ComponentModel.LicenseManager.Validate%2A>メソッドです。 使用して<xref:System.ComponentModel.LicFileLicenseProvider>ライセンス マネージャー。  
+  
+ [!code-cpp[Classic LicenseManager Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic LicenseManager Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic LicenseManager Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic LicenseManager Example/CS/source.cs#1)]
+ [!code-vb[Classic LicenseManager Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic LicenseManager Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LicFileLicenseProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicFileLicenseProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.LicFileLicenseProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="protected virtual string GetKey (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetKey(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicFileLicenseProvider.GetKey(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">キーを返すオブジェクトの型。</param>
+        <summary>指定した型のキーを返します。</summary>
+        <returns>確認メッセージを<paramref name="type" />パラメーターはライセンスされています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLicense">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.License GetLicense (System.ComponentModel.LicenseContext context, Type type, object instance, bool allowExceptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.License GetLicense(class System.ComponentModel.LicenseContext context, class System.Type type, object instance, bool allowExceptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicFileLicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.License</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.LicenseContext" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="allowExceptions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.LicenseContext" />ライセンス付きのオブジェクトを使用することができますを指定します。</param>
+        <param name="type">A<see cref="T:System.Type" />要求しているコンポーネントを表す、<see cref="T:System.ComponentModel.License" />です。</param>
+        <param name="instance">オブジェクトを要求する、<see cref="T:System.ComponentModel.License" />です。</param>
+        <param name="allowExceptions">
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.LicenseException" />コンポーネントは、ライセンス; 許可されない場合にスローする必要がそれ以外の場合、<see langword="false" />です。</param>
+        <summary>1 つが利用可能な場合、コンポーネントのインスタンスのライセンスを返します。</summary>
+        <returns>有効な <see cref="T:System.ComponentModel.License" />。 このメソッドは、有効な見つけられない場合<see cref="T:System.ComponentModel.License" />または有効な<paramref name="context" />パラメーターが返されます<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン時に、<xref:System.ComponentModel.LicFileLicenseProvider.GetLicense%2A>メソッドはという名前のライセンス ファイルを検索`myClassName.LIC`ここで、`myClassName`は、<xref:System.Type.FullName%2A>を作成するコンポーネントのです。 このファイルは、コンポーネントを含む .dll ファイルと同じディレクトリである必要があります。  
+  
+ 次に、このメソッドで指定されたキーに対してライセンス ファイルの最初の行を確認、<xref:System.ComponentModel.LicFileLicenseProvider.IsKeyValid%2A>メソッドです。 この行として使用されているキーが有効である場合、<xref:System.ComponentModel.License.LicenseKey%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyValid">
+      <MemberSignature Language="C#" Value="protected virtual bool IsKeyValid (string key, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsKeyValid(string key, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicFileLicenseProvider.IsKeyValid(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="key">確認対象の <see cref="P:System.ComponentModel.License.LicenseKey" />。</param>
+        <param name="type">A<see cref="T:System.Type" />要求しているコンポーネントを表す、<see cref="T:System.ComponentModel.License" />です。</param>
+        <summary>決定するかどうか、キーを<see cref="M:System.ComponentModel.LicFileLicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)" />メソッドの取得は、指定した型に対して有効です。</summary>
+        <returns>
+          <see langword="true" />キーが有効な場合<see cref="P:System.ComponentModel.License.LicenseKey" />指定した型の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、句に対してキーを確認します。" `myClassName is a licensed component.` "ここで、`myClassName`は、<xref:System.Type.FullName%2A>を作成するコンポーネントのです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスから継承する場合は、独自の検証ロジックを提供するには、このメソッドをオーバーライドできます。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

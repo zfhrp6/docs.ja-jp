@@ -1,0 +1,85 @@
+<Type Name="Tablet" FullName="System.Windows.Input.Tablet">
+  <TypeSignature Language="C#" Value="public static class Tablet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Tablet extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Tablet" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>システムに接続されているタブレット デバイスを返す静的メソッドへのアクセスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentTabletDevice">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.TabletDevice CurrentTabletDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.TabletDevice CurrentTabletDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Tablet.CurrentTabletDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TabletDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Input.TabletDevice" /> を取得します。</summary>
+        <value>現在の <see cref="T:System.Windows.Input.TabletDevice" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のタブレット デバイスは、システムにパケットを最近配信デバイスです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Input.TabletDevice>プロパティです。  
+  
+ [!code-csharp[HwCaps#7](~/samples/snippets/csharp/VS_Snippets_Wpf/HwCaps/CSharp/Window1.xaml.cs#7)]
+ [!code-vb[HwCaps#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HwCaps/VisualBasic/Window1.xaml.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabletDevices">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.TabletDeviceCollection TabletDevices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.TabletDeviceCollection TabletDevices" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Tablet.TabletDevices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TabletDeviceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Input.TabletDeviceCollection" />システムに関連付けられています。</summary>
+        <value><see cref="T:System.Windows.Input.TabletDeviceCollection" /> Tablet PC に関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Input.TabletDeviceCollection>プロパティです。  
+  
+ [!code-csharp[HwCaps#15](~/samples/snippets/csharp/VS_Snippets_Wpf/HwCaps/CSharp/Window1.xaml.cs#15)]
+ [!code-vb[HwCaps#15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HwCaps/VisualBasic/Window1.xaml.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,87 @@
+<Type Name="AndCondition" FullName="System.Windows.Automation.AndCondition">
+  <TypeSignature Language="C#" Value="public class AndCondition : System.Windows.Automation.Condition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AndCondition extends System.Windows.Automation.Condition" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AndCondition" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Condition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つ以上の組み合わせを表す<see cref="T:System.Windows.Automation.PropertyCondition" />は両方のオブジェクトが一致するものを true にします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AndCondition (params System.Windows.Automation.Condition[] conditions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Automation.Condition[] conditions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.AndCondition.#ctor(System.Windows.Automation.Condition[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="conditions" Type="System.Windows.Automation.Condition[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="conditions">2 つ以上のサブ条件。</param>
+        <summary>作成、<see cref="T:System.Windows.Automation.PropertyCondition" />すべてのサブ条件が当てはまる場合は true です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Automation.AndCondition>を検索する[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]複雑な条件に一致する要素。  
+  
+ [!code-csharp[UIAClient_snip#176](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ConditionSnips.cs#176)]
+ [!code-vb[UIAClient_snip#176](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ConditionSnips.vb#176)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConditions">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Condition[] GetConditions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.Condition[] GetConditions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.AndCondition.GetConditions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この条件のサブ条件の配列を取得します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される配列は、コピーです。 これを変更するには影響しませんの状態、<xref:System.Windows.Automation.AndCondition>です。  
+  
+   
+  
+## Examples  
+ 次の例の構築、<xref:System.Windows.Automation.AndCondition>しが含まれている条件の数を表示します。  
+  
+ [!code-csharp[UIAClient_snip#176](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ConditionSnips.cs#176)]
+ [!code-vb[UIAClient_snip#176](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ConditionSnips.vb#176)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

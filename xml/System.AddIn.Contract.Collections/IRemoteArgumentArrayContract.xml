@@ -1,0 +1,86 @@
+<Type Name="IRemoteArgumentArrayContract" FullName="System.AddIn.Contract.Collections.IRemoteArgumentArrayContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteArgumentArrayContract : System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteArgumentArrayContract implements class System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract, class System.AddIn.Contract.Collections.IRemoteArgumentEnumerableContract, class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>配列を表す<see cref="T:System.AddIn.Contract.RemoteArgument" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract>の配列を渡す<xref:System.AddIn.Contract.RemoteArgument>参照によってコントラクト間のオブジェクト。  
+  
+ <xref:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract>は動的にサイズを変更しません。 コレクションを使用する必要がある場合を動的に収まるようを使用して、<xref:System.AddIn.Contract.Collections.IRemoteArgumentArrayListContract>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetItem">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument GetItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument GetItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract.GetItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">返される要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある要素を返します。</summary>
+        <returns>指定したインデックス位置にある要素。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上<see cref="M:System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract.GetCount" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="public void SetItem (int index, System.AddIn.Contract.RemoteArgument value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetItem(int32 index, valuetype System.AddIn.Contract.RemoteArgument value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract.SetItem(System.Int32,System.AddIn.Contract.RemoteArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.AddIn.Contract.RemoteArgument" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換える要素の 0 から始まるインデックス番号。</param>
+        <param name="value">指定したインデックス位置に存在する要素の新しい値。</param>
+        <summary>指定した、指定したインデックス位置にある要素を置き換えます<see cref="T:System.AddIn.Contract.RemoteArgument" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上<see cref="M:System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract.GetCount" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

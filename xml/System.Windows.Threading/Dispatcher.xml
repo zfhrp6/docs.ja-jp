@@ -1,0 +1,2071 @@
+<Type Name="Dispatcher" FullName="System.Windows.Threading.Dispatcher">
+  <TypeSignature Language="C#" Value="public sealed class Dispatcher" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Dispatcher extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.Dispatcher" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スレッドの作業項目のキューを管理するためのサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher>特定のスレッドの作業項目の優先順位の高いキューを保持します。  
+  
+ ときに、<xref:System.Windows.Threading.Dispatcher>が作成されるスレッドでのみが<xref:System.Windows.Threading.Dispatcher>を関連付けることができる、スレッド場合でも、<xref:System.Windows.Threading.Dispatcher>がシャット ダウンします。  
+  
+ 取得しようとすると、 <xref:System.Windows.Threading.Dispatcher.CurrentDispatcher%2A> 、現在のスレッドと<xref:System.Windows.Threading.Dispatcher>、スレッドに関連付けられていない、<xref:System.Windows.Threading.Dispatcher>が作成されます。 A<xref:System.Windows.Threading.Dispatcher>を作成するときにも作成、<xref:System.Windows.Threading.DispatcherObject>です。 作成する場合、<xref:System.Windows.Threading.Dispatcher>バック グラウンド スレッドでスレッドを終了する前に、ディスパッチャーをシャット ダウンすることを確認します。  
+  
+ 場合、<xref:System.Windows.Threading.Dispatcher>がシャット ダウン、再起動することはできません。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、<xref:System.Windows.Threading.DispatcherObject>によってのみアクセスできる、<xref:System.Windows.Threading.Dispatcher>に関連付けられていること。  たとえば、バック グラウンド スレッドがの内容を更新できません、<xref:System.Windows.Controls.Button>と関連付けられている、<xref:System.Windows.Threading.Dispatcher>上、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドです。  バック グラウンド スレッドにアクセスするために、<xref:System.Windows.Controls.ContentControl.Content%2A>のプロパティ、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、<xref:System.Windows.Threading.Dispatcher>に関連付けられている、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドです。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、のキューに追加される、<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+ すべてのメソッドの<xref:System.Windows.Threading.Dispatcher>の例外を除いて<xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>は、フリー スレッドです。  
+  
+ 派生したオブジェクト<xref:System.Windows.Threading.DispatcherObject>スレッド アフィニティがあります。  
+  
+ 派生したオブジェクト<xref:System.Windows.Freezable>はフリー スレッドは、固定したときにします。  詳細については、「[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例に、操作を配置する方法を示しています、<xref:System.Windows.Threading.Dispatcher>です。  この例の完全なソース コードを参照してください。[実行時間の長い計算のサンプルを使用して、シングル スレッド アプリケーション](http://go.microsoft.com/fwlink/?LinkID=160038)です。  
+  
+ 最初に、デリゲートの引数を受け入れないが作成されます。  
+  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberInit](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberinit)] 
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberInit](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberinit)]   
+  
+ 次に、<xref:System.Windows.Threading.Dispatcher.BeginInvoke%28System.Windows.Threading.DispatcherPriority%2CSystem.Delegate%29>と呼びます。  この呼び出しを<xref:System.Windows.Threading.Dispatcher.BeginInvoke%28System.Windows.Threading.DispatcherPriority%2CSystem.Delegate%29>2 つのパラメーター: に設定されている優先度<xref:System.Windows.Threading.DispatcherPriority?displayProperty=nameWithType>、デリゲートのインスタンスを経由で渡されるコールバックと`NextPrimeDelegate`です。  
+  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberBeginInvoke](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberbegininvoke)] 
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberBeginInvoke](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberbegininvoke)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="BeginInvoke">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>スレッドでデリゲートを非同期的に実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期です。したがって、コントロールが呼び出された後、呼び出し元のオブジェクトをすぐに返されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>返します、<xref:System.Windows.Threading.DispatcherOperation>デリゲートは、キューでは、イベントの場合、デリゲートと対話するために使用できるオブジェクト。  
+  
+ <xref:System.Windows.Threading.DispatcherOperation>によって返されるオブジェクト<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>など、指定したデリゲートと対話するいくつかの方法で使用できます。  
+  
+-   変更、<xref:System.Windows.Threading.DispatcherPriority>デリゲートの保留中は実行のイベント キューします。  
+  
+-   デリゲートをイベント キューから削除しています。  
+  
+-   返すデリゲートを待機しています。  
+  
+-   その後、デリゲートが返された値を取得するが実行されます。  
+  
+ 複数<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>同時呼び出しが行われる<xref:System.Windows.Threading.DispatcherPriority>、これらは、呼び出しが行われた順序で実行されます。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation BeginInvoke (Delegate method, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation BeginInvoke(class System.Delegate method, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.BeginInvoke(System.Delegate,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">指定されたパラメーターを受け取るメソッドへのデリゲート<c>args</c>にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。 指定できます<see langword="null" />です。</param>
+        <summary>スレッドで非同期的に指定された引数で指定したデリゲートを実行する、<see cref="T:System.Windows.Threading.Dispatcher" />に作成されました。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.DispatcherOperation>によって返されるオブジェクト<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>など、指定したデリゲートと対話するいくつかの方法で使用できます。  
+  
+-   変更、<xref:System.Windows.Threading.DispatcherPriority>デリゲートの保留中は実行のイベント キューします。  
+  
+-   デリゲートをイベント キューから削除しています。  
+  
+-   返すデリゲートを待機しています。  
+  
+-   その後、デリゲートが返された値を取得するが実行されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期です。したがって、コントロールが呼び出された後、呼び出し元のオブジェクトをすぐに返されます。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。 たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。 バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。 いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。 操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation BeginInvoke (System.Windows.Threading.DispatcherPriority priority, Delegate method);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation BeginInvoke(valuetype System.Windows.Threading.DispatcherPriority priority, class System.Delegate method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="method" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="method">メソッドにデリゲートする引数を使用しないにプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <summary>スレッドで、指定された優先順位で非同期的に指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>同時呼び出しが行われる<xref:System.Windows.Threading.DispatcherPriority>、これらは、呼び出しが行われた順序で実行されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>返します、<xref:System.Windows.Threading.DispatcherOperation>デリゲートは、キューでは、イベントの場合、デリゲートと対話するために使用できるオブジェクト。  
+  
+ <xref:System.Windows.Threading.DispatcherOperation>によって返されるオブジェクト<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>など、指定したデリゲートと対話するいくつかの方法で使用できます。  
+  
+-   変更、<xref:System.Windows.Threading.DispatcherPriority>デリゲートの保留中は実行のイベント キューします。  
+  
+-   デリゲートをイベント キューから削除しています。  
+  
+-   返すデリゲートを待機しています。  
+  
+-   その後、デリゲートが返された値を取得するが実行されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期です。したがって、コントロールが呼び出された後、呼び出し元のオブジェクトをすぐに返されます。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+   
+  
+## Examples  
+ 次の例に、操作を配置する方法を示しています、<xref:System.Windows.Threading.Dispatcher>です。  この例の完全なソース コードを参照してください。[実行時間の長い計算のサンプルを使用して、シングル スレッド アプリケーション](http://go.microsoft.com/fwlink/?LinkID=160038)です。  
+  
+ 最初に、デリゲートの引数を受け入れないが作成されます。  
+  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberInit](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberinit)] 
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberInit](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberinit)]   
+  
+ 次に、<xref:System.Windows.Threading.Dispatcher.BeginInvoke%28System.Windows.Threading.DispatcherPriority%2CSystem.Delegate%29>と呼びます。  すべて<xref:System.Windows.Threading.DispatcherObject>を返すプロパティを持つ、<xref:System.Windows.Threading.Dispatcher>目的に関連付けられている<xref:System.Windows.Threading.Dispatcher>クエリを実行して取得した、 <xref:System.Windows.Threading.DispatcherObject>、ここでは、<xref:System.Windows.Controls.Button>という名前`startStopButton`です。   呼び出し<xref:System.Windows.Threading.Dispatcher.BeginInvoke%28System.Windows.Threading.DispatcherPriority%2CSystem.Delegate%29>2 つのパラメーター: に設定されている優先度<xref:System.Windows.Threading.DispatcherPriority?displayProperty=nameWithType>、およびデリゲートのインスタンスを経由で渡されたコールバック`NextPrimeDelegate`です。  
+  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberBeginInvoke](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberbegininvoke)] 
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberBeginInvoke](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberbegininvoke)]   
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation BeginInvoke (Delegate method, System.Windows.Threading.DispatcherPriority priority, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation BeginInvoke(class System.Delegate method, valuetype System.Windows.Threading.DispatcherPriority priority, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.BeginInvoke(System.Delegate,System.Windows.Threading.DispatcherPriority,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">指定されたパラメーターを受け取るメソッドへのデリゲート<c>args</c>にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。 指定できます<see langword="null" />です。</param>
+        <summary>スレッドで非同期的に、引数を指定して、指定した優先度で指定したデリゲートを実行する、<see cref="T:System.Windows.Threading.Dispatcher" />に作成されました。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.DispatcherOperation>によって返されるオブジェクト<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>など、指定したデリゲートと対話するいくつかの方法で使用できます。  
+  
+-   変更、<xref:System.Windows.Threading.DispatcherPriority>デリゲートの保留中は実行のイベント キューします。  
+  
+-   デリゲートをイベント キューから削除しています。  
+  
+-   返すデリゲートを待機しています。  
+  
+-   その後、デリゲートが返された値を取得するが実行されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期です。したがって、コントロールが呼び出された後、呼び出し元のオブジェクトをすぐに返されます。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。 たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。 バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。 いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。 操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation BeginInvoke (System.Windows.Threading.DispatcherPriority priority, Delegate method, object arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation BeginInvoke(valuetype System.Windows.Threading.DispatcherPriority priority, class System.Delegate method, object arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority,System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="arg" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="method">プッシュされますが、1 つの引数を受け取るメソッドへのデリゲート、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="arg">指定したメソッドに引数として渡すオブジェクト。</param>
+        <summary>スレッドで指定された優先順位に非同期的に指定された引数で、指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Arg`指定できます`null`引数が必要ない場合。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>返します、<xref:System.Windows.Threading.DispatcherOperation>デリゲートは、キューでは、イベントの場合、デリゲートと対話するために使用できるオブジェクト。  
+  
+ <xref:System.Windows.Threading.DispatcherOperation>によって返されるオブジェクト<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>など、指定したデリゲートと対話するいくつかの方法で使用できます。  
+  
+-   変更、<xref:System.Windows.Threading.DispatcherPriority>デリゲートの保留中は実行のイベント キューします。  
+  
+-   デリゲートをイベント キューから削除しています。  
+  
+-   返すデリゲートを待機しています。  
+  
+-   その後、デリゲートが返された値を取得するが実行されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期です。したがって、コントロールが呼び出された後、呼び出し元のオブジェクトをすぐに返されます。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ 複数<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>同時呼び出しが行われる<xref:System.Windows.Threading.DispatcherPriority>、これらは、呼び出しが行われた順序で実行されます。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+   
+  
+## Examples  
+ 次の例に、操作を配置する方法を示しています、<xref:System.Windows.Threading.Dispatcher>です。  
+  
+ 最初に、この場合は、文字列の 1 つの引数がデリゲートが作成されます。  
+  
+ [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherDelegates](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherdelegates)]
+ [!code-vb[ThreadingWeatherForecast#ThreadingWeatherDelegates](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherdelegates)]  
+  
+ 次に、<xref:System.Windows.Threading.Dispatcher.BeginInvoke%28System.Windows.Threading.DispatcherPriority%2CSystem.Delegate%2CSystem.Object%29>と呼びます。  すべて<xref:System.Windows.Threading.DispatcherObject>を返すプロパティを持つ、<xref:System.Windows.Threading.Dispatcher>目的に関連付けられている<xref:System.Windows.Threading.Dispatcher>クエリを実行して取得した、 <xref:System.Windows.Threading.DispatcherObject>、ここでは、<xref:System.Windows.Controls.Grid>という名前`tomorrowsWeather`です。 呼び出し<xref:System.Windows.Threading.Dispatcher.BeginInvoke%28System.Windows.Threading.DispatcherPriority%2CSystem.Delegate%2CSystem.Object%29>3 つのパラメーターを受け取る: に設定されている優先度<xref:System.Windows.Threading.DispatcherPriority?displayProperty=nameWithType>; は、デリゲートのインスタンスを経由で渡されるコールバック`OneArgDelegate`; という名前の文字列と`weather`コールバックの引数はします。  
+  
+ [!code-csharp[threadingweatherforecast#ThreadingWeatherDispatcherOneArge](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherdispatcheronearge)]
+ [!code-vb[threadingweatherforecast#ThreadingWeatherDispatcherOneArge](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherdispatcheronearge)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation BeginInvoke (System.Windows.Threading.DispatcherPriority priority, Delegate method, object arg, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation BeginInvoke(valuetype System.Windows.Threading.DispatcherPriority priority, class System.Delegate method, object arg, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority,System.Delegate,System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="arg" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="method">メソッドへのデリゲートを受け取る複数の引数にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="arg">指定したメソッドに引数として渡すオブジェクト。</param>
+        <param name="args">指定したメソッドに引数として渡すオブジェクトの配列。</param>
+        <summary>スレッドで指定された優先順位に非同期的に指定された引数の配列で、指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />が呼び出されると、保留中の実行では、デリゲートの対話に使用できる、<see cref="T:System.Windows.Threading.Dispatcher" />キュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `arg`パラメーターを指定できます`null`引数が必要ない場合。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>返します、<xref:System.Windows.Threading.DispatcherOperation>デリゲートは、キューでは、イベントの場合、デリゲートと対話するために使用できるオブジェクト。  
+  
+ <xref:System.Windows.Threading.DispatcherOperation>によって返されるオブジェクト<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>など、指定したデリゲートと対話するいくつかの方法で使用できます。  
+  
+-   変更、<xref:System.Windows.Threading.DispatcherPriority>デリゲートの保留中は実行のイベント キューします。  
+  
+-   デリゲートをイベント キューから削除しています。  
+  
+-   返すデリゲートを待機しています。  
+  
+-   その後、デリゲートが返された値を取得するが実行されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期です。したがって、コントロールが呼び出された後、呼び出し元のオブジェクトをすぐに返されます。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ 複数<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>同時呼び出しが行われる<xref:System.Windows.Threading.DispatcherPriority>、これらは、呼び出しが行われた順序で実行されます。  
+  
+ 場合<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>で呼び出されると、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、返されたの status プロパティが<xref:System.Windows.Threading.DispatcherOperation>に設定されている<xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <see cref="T:System.Windows.Threading.DispatcherPriority" />有効な優先度がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvokeShutdown">
+      <MemberSignature Language="C#" Value="public void BeginInvokeShutdown (System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginInvokeShutdown(valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.BeginInvokeShutdown(System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="priority">ディスパッチャーのシャット ダウンを開始する優先度です。</param>
+        <summary>シャット ダウンを開始、<see cref="T:System.Windows.Threading.Dispatcher" />非同期的にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher.BeginInvokeShutdown%2A>無制限の UI のアクセス許可を要求します。  
+  
+ ときに、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、起動、<xref:System.Windows.Threading.Dispatcher.ShutdownStarted>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>に設定されている`true`です。  
+  
+ <xref:System.Windows.Threading.Dispatcher>シャット ダウンしない完全にイベント キューのアンワインドするまでです。  
+  
+ ディスパッチャーは、シャット ダウンが完了すると、<xref:System.Windows.Threading.Dispatcher.ShutdownFinished>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownFinished%2A>プロパティに設定されている`true`です。  
+  
+ シャット ダウン プロセスが開始されると、保留中のすべての作業キュー内の項目は中止されました。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ディスパッチャーをシャット ダウンします。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccess">
+      <MemberSignature Language="C#" Value="public bool CheckAccess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CheckAccess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.CheckAccess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のスレッドがこれに関連付けられているスレッドかどうかを判断<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+        <returns>
+          <see langword="true" />かどうか、呼び出し元のスレッドがこれに関連付けられている<see cref="T:System.Windows.Threading.Dispatcher" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ、<xref:System.Windows.Threading.Dispatcher>を<xref:System.Windows.Threading.DispatcherObject>が作成されるオブジェクトへのアクセス可能性がありますにします。  使用して<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>別のスレッドからオブジェクトにアクセスします。  
+  
+ <xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>任意のスレッドから呼び出すことができます。  
+  
+ 違い<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>と<xref:System.Windows.Threading.Dispatcher.VerifyAccess%2A>は<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>呼び出し元のスレッドがへのアクセスを持っているかどうかを示すブール値を返します、<xref:System.Windows.Threading.Dispatcher>と<xref:System.Windows.Threading.Dispatcher.VerifyAccess%2A>例外をスローします。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>スレッドがへのアクセスを持つかどうかを決定する、<xref:System.Windows.Controls.Button>です。  <xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>メソッドを<xref:System.Windows.Threading.Dispatcher>に関連付けられている、<xref:System.Windows.Controls.Button>スレッドへのアクセスを確認するために呼び出されます。  呼び出し元のスレッドがアクセスできるよう、 <xref:System.Windows.Threading.Dispatcher>、<xref:System.Windows.Controls.Button>のメンバーにアクセスして更新、 <xref:System.Windows.Controls.Button>、それ以外のデリゲートを受け入れ、<xref:System.Windows.Controls.Button>を引数としては上に配置されます、<xref:System.Windows.Threading.Dispatcher>です。  <xref:System.Windows.Threading.Dispatcher>の更新の作業を委任、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[DispatcherAccessSample#DispatcherAccessCheckAccess](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherAccessSample/CSharp/Window1.xaml.cs#dispatcheraccesscheckaccess)]
+ [!code-vb[DispatcherAccessSample#DispatcherAccessCheckAccess](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherAccessSample/visualbasic/window1.xaml.vb#dispatcheraccesscheckaccess)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDispatcher">
+      <MemberSignature Language="C#" Value="public static System.Windows.Threading.Dispatcher CurrentDispatcher { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Threading.Dispatcher CurrentDispatcher" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.Dispatcher.CurrentDispatcher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.Dispatcher</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Threading.Dispatcher" />のスレッドの現在実行中と新たに作成<see cref="T:System.Windows.Threading.Dispatcher" />のスレッドに関連付けられているいずれかがない場合。</summary>
+        <value>現在のスレッドに関連付けられているディスパッチャー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、 <xref:System.Windows.Threading.Dispatcher> 、現在のスレッドに関連付けられていない新しい<xref:System.Windows.Threading.Dispatcher>が作成されます。  これは、<xref:System.Windows.Threading.Dispatcher.FromThread%2A> メソッドには該当しません。  <xref:System.Windows.Threading.Dispatcher.FromThread%2A>返されます`null`指定されたスレッドに関連付けられているディスパッチャーがないかどうか。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableProcessing">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherProcessingDisabled DisableProcessing ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Threading.DispatcherProcessingDisabled DisableProcessing() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.DisableProcessing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherProcessingDisabled</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理を無効になります、<see cref="T:System.Windows.Threading.Dispatcher" />キュー。</summary>
+        <returns>ディスパッチャーの処理を有効にする構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディスパッチャーの処理を無効にすることは、関連のない再入の可能性を排除するためのものでは、高度な方法です。  
+  
+ 処理を無効にする場合の影響は次のとおりです。  
+  
+-   [!INCLUDE[TLA2#tla_clr#initcap](~/includes/tla2sharptla-clrsharpinitcap-md.md)]ロックはないメッセージをポンプを内部的にします。  
+  
+-   <xref:System.Windows.Threading.DispatcherFrame>オブジェクトは、プッシュは許可されません。  
+  
+-   メッセージの処理が許可されていません。  
+  
+ <xref:System.Windows.Threading.DispatcherProcessingDisabled>構造体<xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>を返しますが呼び出されるとは、ディスパッチャーの処理を再度有効に使用できます。  呼び出す<xref:System.Windows.Threading.DispatcherProcessingDisabled.Dispose%2A>上、<xref:System.Windows.Threading.DispatcherProcessingDisabled>構造が再処理を有効します。  
+  
+ <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>スレッドでのみ呼び出すことができます、<xref:System.Windows.Threading.Dispatcher>に関連付けられています。  
+  
+   
+  
+## Examples  
+ 次の例では、ディスパッチャーの処理を無効にして、ディスパッチャーの処理を再度有効にする方法を示します。  <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>呼び出される、**を使用して**ステートメントです。  <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>返します、<xref:System.Windows.Threading.DispatcherProcessingDisabled>に破棄されたときに、オブジェクトとして使用される構造体、**を使用して**ブロックが完了するとします。  ときに<xref:System.Windows.Threading.DispatcherProcessingDisabled.Dispose%2A>で呼び出されると、<xref:System.Windows.Threading.DispatcherProcessingDisabled>構造体、ディスパッチャーの処理を再度有効にします。  
+  
+ [!code-csharp[DispatcherSnippets#DispatcherDisableProcessing](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherSnippets/CSharp/Window1.xaml.cs#dispatcherdisableprocessing)]
+ [!code-vb[DispatcherSnippets#DispatcherDisableProcessing](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherSnippets/visualbasic/window1.xaml.vb#dispatcherdisableprocessing)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitAllFrames">
+      <MemberSignature Language="C#" Value="public static void ExitAllFrames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExitAllFrames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.ExitAllFrames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入れ子になったフレームを含むすべてのフレームを閉じるように要求します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出す。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromThread">
+      <MemberSignature Language="C#" Value="public static System.Windows.Threading.Dispatcher FromThread (System.Threading.Thread thread);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Threading.Dispatcher FromThread(class System.Threading.Thread thread) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.FromThread(System.Threading.Thread)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.Dispatcher</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thread" Type="System.Threading.Thread" />
+      </Parameters>
+      <Docs>
+        <param name="thread">取得する、スレッド、<see cref="T:System.Windows.Threading.Dispatcher" />からです。</param>
+        <summary>取得、<see cref="T:System.Windows.Threading.Dispatcher" />指定したスレッドにします。</summary>
+        <returns>ディスパッチャー<paramref name="thread" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディスパッチャーが使用できない場合、指定されたスレッドの`null`が返されます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.FromThread%2A>作成されません、<xref:System.Windows.Threading.Dispatcher>がないスレッドで、<xref:System.Windows.Threading.Dispatcher>です。   新しい<xref:System.Windows.Threading.Dispatcher>をまだ持たないスレッドで作成された、<xref:System.Windows.Threading.Dispatcher>を取得しようとすると、<xref:System.Windows.Threading.Dispatcher>を使用して、<xref:System.Windows.Threading.Dispatcher.CurrentDispatcher%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasShutdownFinished">
+      <MemberSignature Language="C#" Value="public bool HasShutdownFinished { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasShutdownFinished" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.Dispatcher.HasShutdownFinished" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定するかどうか、<see cref="T:System.Windows.Threading.Dispatcher" />シャット ダウンが完了します。</summary>
+        <value>
+          <see langword="true" />ディスパッチャーがシャット ダウンを完了した場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、起動、<xref:System.Windows.Threading.Dispatcher.ShutdownStarted>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>に設定されている`true`です。  
+  
+ <xref:System.Windows.Threading.Dispatcher>イベント キューのアンワインドするまで完全にシャット ダウンをしません。  
+  
+ ディスパッチャーは、シャット ダウンが完了すると、<xref:System.Windows.Threading.Dispatcher.ShutdownFinished>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownFinished%2A>プロパティに設定されている`true`です。  
+  
+ シャット ダウン プロセスが開始されると、保留中のすべての作業キュー内の項目は中止されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasShutdownStarted">
+      <MemberSignature Language="C#" Value="public bool HasShutdownStarted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasShutdownStarted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.Dispatcher.HasShutdownStarted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定するかどうか、<see cref="T:System.Windows.Threading.Dispatcher" />がシャット ダウン中です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Threading.Dispatcher" />シャット ダウン以外の場合が開始<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、起動、<xref:System.Windows.Threading.Dispatcher.ShutdownStarted>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>に設定されている`true`です。  
+  
+ <xref:System.Windows.Threading.Dispatcher>シャット ダウンしない完全にイベント キューのアンワインドするまでです。  
+  
+ ディスパッチャーは、シャット ダウンが完了すると、<xref:System.Windows.Threading.Dispatcher.ShutdownFinished>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownFinished%2A>プロパティに設定されている`true`です。  
+  
+ シャット ダウン プロセスが開始されると、保留中のすべての作業キュー内の項目は中止されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hooks">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherHooks Hooks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Threading.DispatcherHooks Hooks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.Dispatcher.Hooks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherHooks</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>に関するその他のイベント情報を提供するフック関数のコレクションを取得、<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+        <value>これに関連付けられているフック<see cref="T:System.Windows.Threading.Dispatcher" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.DispatcherHooks>クラスに関する追加のイベント情報を提供する、 <xref:System.Windows.Threading.Dispatcher>、場合など、<xref:System.Windows.Threading.Dispatcher>がアクティブでないか、操作が完了しました。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティを取得します。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Invoke">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したデリゲートをスレッドで同期的に実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+   
+  
+## Examples  
+ 次の例にデリゲートを配置する、<xref:System.Windows.Threading.Dispatcher>で<xref:System.Windows.Threading.DispatcherPriority.Normal>を使用して<xref:System.Windows.Threading.Dispatcher.Invoke%2A>です。  
+  
+ [!code-csharp[invalidaterequerywithsystemtimer#SystemTimerDispatcherInvoke](~/samples/snippets/csharp/VS_Snippets_Wpf/InvalidateRequeryWithSystemTimer/CSharp/Window1.xaml.cs#systemtimerdispatcherinvoke)]
+ [!code-vb[invalidaterequerywithsystemtimer#SystemTimerDispatcherInvoke](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InvalidateRequeryWithSystemTimer/visualbasic/window1.xaml.vb#systemtimerdispatcherinvoke)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (Action callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke(class System.Action callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Action)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (Action callback, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke(class System.Action callback, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Action,System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (Delegate method, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(class System.Delegate method, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">指定されたパラメーターを受け取るメソッドへのデリゲート<c>args</c>にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。 指定できます<see langword="null" />です。</param>
+        <summary>スレッドで同期的に指定された引数で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。 たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。 バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。 いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。 操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (System.Windows.Threading.DispatcherPriority priority, Delegate method);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(valuetype System.Windows.Threading.DispatcherPriority priority, class System.Delegate method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="method" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="method">メソッドにデリゲートする引数を使用しないにプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <summary>指定された優先順位で同期的に指定されたデリゲートをスレッド上で実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+   
+  
+## Examples  
+ 次の例にデリゲートを配置する、<xref:System.Windows.Threading.Dispatcher>で<xref:System.Windows.Threading.DispatcherPriority.Normal>を使用して<xref:System.Windows.Threading.Dispatcher.Invoke%2A>です。  
+  
+ [!code-csharp[invalidaterequerywithsystemtimer#SystemTimerDispatcherInvoke](~/samples/snippets/csharp/VS_Snippets_Wpf/InvalidateRequeryWithSystemTimer/CSharp/Window1.xaml.cs#systemtimerdispatcherinvoke)]
+ [!code-vb[invalidaterequerywithsystemtimer#SystemTimerDispatcherInvoke](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InvalidateRequeryWithSystemTimer/visualbasic/window1.xaml.vb#systemtimerdispatcherinvoke)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" />有効な優先度がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (Action callback, System.Windows.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke(class System.Action callback, valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Action,System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <param name="cancellationToken">操作をキャンセルするかどうかを示すオブジェクト。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (Delegate method, TimeSpan timeout, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(class System.Delegate method, valuetype System.TimeSpan timeout, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.TimeSpan,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">指定されたパラメーターを受け取るメソッドへのデリゲート<c>args</c>にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="timeout">操作が完了するまでの最大待機時間。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。 指定できます<see langword="null" />です。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先順位にある指定された時間範囲内で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。 たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。 バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。 いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。 操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (Delegate method, System.Windows.Threading.DispatcherPriority priority, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(class System.Delegate method, valuetype System.Windows.Threading.DispatcherPriority priority, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.Windows.Threading.DispatcherPriority,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">指定されたパラメーターを受け取るメソッドへのデリゲート<c>args</c>にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。 指定できます<see langword="null" />です。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先度で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。 たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。 バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。 いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。 操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (System.Windows.Threading.DispatcherPriority priority, Delegate method, object arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(valuetype System.Windows.Threading.DispatcherPriority priority, class System.Delegate method, object arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="arg" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="method">プッシュされますが、1 つの引数を受け取るメソッドへのデリゲート、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="arg">特定のメソッドに引数として渡すオブジェクト。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先度で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Arg`指定できます`null`引数が必要ない場合  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" />有効な優先度がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (System.Windows.Threading.DispatcherPriority priority, TimeSpan timeout, Delegate method);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.TimeSpan timeout, class System.Delegate method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.TimeSpan,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="method" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="timeout">操作が終了するまで待機する最大時間。</param>
+        <param name="method">メソッドにデリゲートする引数を使用しないにプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <summary>スレッドで指定された優先順位に同期的に指定されたタイムアウト値で、指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />作成されました。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (Action callback, System.Windows.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke(class System.Action callback, valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Action,System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <param name="cancellationToken">操作をキャンセルするかどうかを示すオブジェクト。</param>
+        <param name="timeout">操作を開始するまで待機する時間の最小量。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (Delegate method, TimeSpan timeout, System.Windows.Threading.DispatcherPriority priority, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(class System.Delegate method, valuetype System.TimeSpan timeout, valuetype System.Windows.Threading.DispatcherPriority priority, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.TimeSpan,System.Windows.Threading.DispatcherPriority,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">指定されたパラメーターを受け取るメソッドへのデリゲート<c>args</c>にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="timeout">操作が完了するまでの最大待機時間。</param>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。 指定できます<see langword="null" />です。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先順位にある指定された時間範囲内で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。 たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。 バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。 いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。 操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (System.Windows.Threading.DispatcherPriority priority, Delegate method, object arg, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(valuetype System.Windows.Threading.DispatcherPriority priority, class System.Delegate method, object arg, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.Delegate,System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="arg" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="method">メソッドへのデリゲートを受け取る複数の引数にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="arg">特定のメソッドに引数として渡すオブジェクト。</param>
+        <param name="args">特定のメソッドに引数として渡すオブジェクトの配列。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先度で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Arg`指定できます`null`引数が必要ない場合  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" />有効な優先度がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (System.Windows.Threading.DispatcherPriority priority, TimeSpan timeout, Delegate method, object arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.TimeSpan timeout, class System.Delegate method, object arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.TimeSpan,System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="arg" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="timeout">操作が終了するまで待機する最大時間。</param>
+        <param name="method">メソッドへのデリゲートを受け取る複数の引数にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="arg">特定のメソッドに引数として渡すオブジェクト。 引数が必要ない場合は、<see langword="null" /> を指定できます。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先度で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Arg`指定できます`null`引数が必要ない場合  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" />有効な優先度がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (System.Windows.Threading.DispatcherPriority priority, TimeSpan timeout, Delegate method, object arg, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.TimeSpan timeout, class System.Delegate method, object arg, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.TimeSpan,System.Delegate,System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="arg" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="priority">保留中の操作で、他の基準とした、優先度、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キューを指定したメソッドが呼び出されます。</param>
+        <param name="timeout">操作が終了するまで待機する最大時間。</param>
+        <param name="method">メソッドへのデリゲートを受け取る複数の引数にプッシュされる<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <param name="arg">指定したメソッドに引数として渡すオブジェクト。</param>
+        <param name="args">指定したメソッドに引数として渡すオブジェクトの配列。</param>
+        <summary>スレッドで同期的に指定された引数で指定された優先度で指定したデリゲートを実行、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>呼び出されるデリゲートからの戻り値または<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Arg`指定できます`null`引数が必要ない場合。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、作成されたスレッドのみ、<xref:System.Windows.Threading.DispatcherObject>そのオブジェクトにアクセスすることがあります。  たとえば、メイン UI スレッドからで確立されるバック グラウンド スレッドがの内容を更新できません、 <xref:System.Windows.Controls.Button> UI スレッド上に作成されました。  バック グラウンド スレッドのコンテンツのプロパティにアクセスするために、 <xref:System.Windows.Controls.Button>、バック グラウンド スレッドに作業を委任する必要があります、 <xref:System.Windows.Threading.Dispatcher> UI スレッドに関連付けられています。  いずれかを使用してこれを実現<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期的および<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は非同期です。  操作は、イベント キューに追加の<xref:System.Windows.Threading.Dispatcher>内の指定した<xref:System.Windows.Threading.DispatcherPriority>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.Invoke%2A>同期操作です。したがって、コントロールは返されませんまでは、呼び出し元のオブジェクトにコールバックが返された後。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public TResult Invoke&lt;TResult&gt; (Func&lt;TResult&gt; callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TResult Invoke&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke``1(System.Func{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値`callback`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public TResult Invoke&lt;TResult&gt; (Func&lt;TResult&gt; callback, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TResult Invoke&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke``1(System.Func{``0},System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値`callback`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public TResult Invoke&lt;TResult&gt; (Func&lt;TResult&gt; callback, System.Windows.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TResult Invoke&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback, valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke``1(System.Func{``0},System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <param name="cancellationToken">操作をキャンセルするかどうかを示すオブジェクト。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値`callback`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public TResult Invoke&lt;TResult&gt; (Func&lt;TResult&gt; callback, System.Windows.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TResult Invoke&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback, valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Invoke``1(System.Func{``0},System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <param name="cancellationToken">操作をキャンセルするかどうかを示すオブジェクト。</param>
+        <param name="timeout">操作を開始するまで待機する時間の最小量。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値`callback`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation InvokeAsync (Action callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation InvokeAsync(class System.Action callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeAsync(System.Action)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで非同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="M:System.Windows.Threading.Dispatcher.InvokeAsync(System.Action)" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation InvokeAsync (Action callback, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation InvokeAsync(class System.Action callback, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeAsync(System.Action,System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで指定された優先度で非同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="M:System.Windows.Threading.Dispatcher.InvokeAsync(System.Action,System.Windows.Threading.DispatcherPriority)" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation InvokeAsync (Action callback, System.Windows.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation InvokeAsync(class System.Action callback, valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeAsync(System.Action,System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <param name="cancellationToken">操作をキャンセルするかどうかを示すオブジェクト。</param>
+        <summary>指定された実行<see cref="T:System.Action" />スレッドで指定された優先度で非同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="M:System.Windows.Threading.Dispatcher.InvokeAsync(System.Action,System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken)" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation&lt;TResult&gt; InvokeAsync&lt;TResult&gt; (Func&lt;TResult&gt; callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation`1&lt;!!TResult&gt; InvokeAsync&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeAsync``1(System.Func{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで非同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="M:System.Windows.Threading.Dispatcher.InvokeAsync``1(System.Func{``0})" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation&lt;TResult&gt; InvokeAsync&lt;TResult&gt; (Func&lt;TResult&gt; callback, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation`1&lt;!!TResult&gt; InvokeAsync&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeAsync``1(System.Func{``0},System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで指定された優先度で非同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="M:System.Windows.Threading.Dispatcher.InvokeAsync``1(System.Func{``0},System.Windows.Threading.DispatcherPriority)" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperation&lt;TResult&gt; InvokeAsync&lt;TResult&gt; (Func&lt;TResult&gt; callback, System.Windows.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Threading.DispatcherOperation`1&lt;!!TResult&gt; InvokeAsync&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; callback, valuetype System.Windows.Threading.DispatcherPriority priority, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeAsync``1(System.Func{``0},System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">指定されたデリゲートの戻り値の型。</typeparam>
+        <param name="callback">ディスパッチャーを介した呼び出すデリゲート。</param>
+        <param name="priority">保留中の操作で、他の基準とした順序で指定されたコールバックが呼び出されるを決定する優先度、<see cref="T:System.Windows.Threading.Dispatcher" />です。</param>
+        <param name="cancellationToken">操作をキャンセルするかどうかを示すオブジェクト。</param>
+        <summary>指定された実行<see cref="T:System.Func`1" />スレッドで指定された優先順位で同期的に、<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <returns>後にすぐに返されるオブジェクトを<see cref="M:System.Windows.Threading.Dispatcher.InvokeAsync``1(System.Func{``0},System.Windows.Threading.DispatcherPriority,System.Threading.CancellationToken)" />が呼び出されるは実行保留中のイベント キューに、デリゲートと対話に使用できます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeShutdown">
+      <MemberSignature Language="C#" Value="public void InvokeShutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeShutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.InvokeShutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シャット ダウン プロセスを開始、<see cref="T:System.Windows.Threading.Dispatcher" />同期的に処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher.InvokeShutdown%2A>無制限の UI のアクセス許可を要求します。  
+  
+ ときに、<xref:System.Windows.Threading.Dispatcher>をシャット ダウン、起動、<xref:System.Windows.Threading.Dispatcher.ShutdownStarted>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>に設定されている`true`です。  
+  
+ <xref:System.Windows.Threading.Dispatcher>シャット ダウンしない完全にイベント キューのアンワインドするまでです。  
+  
+ ディスパッチャーは、シャット ダウンが完了すると、<xref:System.Windows.Threading.Dispatcher.ShutdownFinished>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownFinished%2A>プロパティに設定されている`true`です。  
+  
+ シャット ダウン プロセスが開始されると、保留中のすべての作業キュー内の項目は中止されました。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ディスパッチャーをシャット ダウンします。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PushFrame">
+      <MemberSignature Language="C#" Value="public static void PushFrame (System.Windows.Threading.DispatcherFrame frame);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PushFrame(class System.Windows.Threading.DispatcherFrame frame) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.PushFrame(System.Windows.Threading.DispatcherFrame)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="frame" Type="System.Windows.Threading.DispatcherFrame" />
+      </Parameters>
+      <Docs>
+        <param name="frame">ディスパッチャーが処理するのフレームです。</param>
+        <summary>実行ループに入ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Threading.DispatcherFrame>保留中の作業項目を処理するループを表します。  
+  
+ ディスパッチャーは、ループ内での作業項目のキューを処理します。  ループは、フレームと呼ばれます。  初期のループが呼び出すことによって、アプリケーションによって開始通常<xref:System.Windows.Threading.Dispatcher.Run%2A>です。  
+  
+ <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>パラメーターによって表されるループに入る`frame`です。  ループの繰り返しごとに、<xref:System.Windows.Threading.Dispatcher>チェック、<xref:System.Windows.Threading.DispatcherFrame.Continue%2A>プロパティを<xref:System.Windows.Threading.DispatcherFrame>ループを続行するかどうか、または停止したかどうかを決めるクラスをします。  
+  
+ <xref:System.Windows.Threading.DispatcherFrame>により、<xref:System.Windows.Threading.DispatcherFrame.Continue%2A>プロパティを明示的に設定して、それを尊重、<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>プロパティを<xref:System.Windows.Threading.Dispatcher>です。  つまり、ときに、<xref:System.Windows.Threading.Dispatcher>をシャット ダウンが起動し、既定値を使用するフレーム<xref:System.Windows.Threading.DispatcherFrame>を終了する入れ子になったすべてのフレームを有効にする、実装が終了されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Threading.DispatcherFrame>と同様の結果を実現するために、 [!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Application.DoEvents%2A>メソッドです。  
+  
+ [!code-csharp[dispatchersnippets#DispatcherDispatcherFrameDoEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherSnippets/CSharp/Window1.xaml.cs#dispatcherdispatcherframedoevents)]
+ [!code-vb[dispatchersnippets#DispatcherDispatcherFrameDoEvents](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherSnippets/visualbasic/window1.xaml.vb#dispatcherdispatcherframedoevents)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="frame" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Threading.Dispatcher.HasShutdownFinished" /> は <see langword="true" /> です  
+  
+ または  
+  
+ <paramref name="frame" />別に実行されている<see cref="T:System.Windows.Threading.Dispatcher" />です。  
+  
+ または  
+  
+ ディスパッチャーの処理を無効にされています。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">実行フレームをプッシュします。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Run" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メインの実行のフレームに、イベント キューのプッシュ、<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher>ループ内で、イベント キューを処理します。  ループは、フレームと呼ばれます。  初期のループが呼び出すことによって、アプリケーションによって開始通常<xref:System.Windows.Threading.Dispatcher.Run%2A>です。  
+  
+ メインの実行のフレームはまで引き続き、<xref:System.Windows.Threading.Dispatcher>シャット ダウンします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownFinished">
+      <MemberSignature Language="C#" Value="public event EventHandler ShutdownFinished;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ShutdownFinished" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Threading.Dispatcher.ShutdownFinished" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Threading.Dispatcher" />シャット ダウンが完了するとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときのシャット ダウン プロセス、<xref:System.Windows.Threading.Dispatcher>が開始されて、<xref:System.Windows.Threading.Dispatcher.ShutdownStarted>イベントが発生したと<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>に設定されている`true`です。  
+  
+ <xref:System.Windows.Threading.Dispatcher>イベント キューのアンワインドするまで完全にシャット ダウンをしません。  
+  
+ ディスパッチャーは、シャット ダウンが完了すると、<xref:System.Windows.Threading.Dispatcher.ShutdownFinished>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownFinished%2A>プロパティに設定されている`true`です。  
+  
+ シャット ダウン プロセスが開始されると、保留中のすべての作業キュー内の項目は中止されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownStarted">
+      <MemberSignature Language="C#" Value="public event EventHandler ShutdownStarted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ShutdownStarted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Threading.Dispatcher.ShutdownStarted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Threading.Dispatcher" />シャット ダウンを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときのシャット ダウン プロセス、<xref:System.Windows.Threading.Dispatcher>が開始されて、<xref:System.Windows.Threading.Dispatcher.ShutdownStarted>イベントが発生したと<xref:System.Windows.Threading.Dispatcher.HasShutdownStarted%2A>に設定されている`true`です。  
+  
+ <xref:System.Windows.Threading.Dispatcher>イベント キューのアンワインドするまで完全にシャット ダウンをしません。  
+  
+ ディスパッチャーは、シャット ダウンが完了すると、<xref:System.Windows.Threading.Dispatcher.ShutdownFinished>イベントが発生し、<xref:System.Windows.Threading.Dispatcher.HasShutdownFinished%2A>プロパティに設定されている`true`です。  
+  
+ シャット ダウン プロセスが開始されると、保留中のすべての作業キュー内の項目は中止されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thread">
+      <MemberSignature Language="C#" Value="public System.Threading.Thread Thread { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Thread Thread" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.Dispatcher.Thread" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Thread</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このスレッドを取得<see cref="T:System.Windows.Threading.Dispatcher" />に関連付けられています。</summary>
+        <value>スレッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledException">
+      <MemberSignature Language="C#" Value="public event System.Windows.Threading.DispatcherUnhandledExceptionEventHandler UnhandledException;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Threading.DispatcherUnhandledExceptionEventHandler UnhandledException" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Threading.Dispatcher.UnhandledException" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherUnhandledExceptionEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドの例外がスローされ、によってデリゲートの実行中にキャッチされなかったときに発生<see cref="Overload:System.Windows.Threading.Dispatcher.Invoke" />または<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントはによってデリゲートの実行中にスローされた例外<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>はキャッチされません。  
+  
+ ハンドラーが例外処理済みとしてマークから呼び出される内部の例外ハンドラーができなくなります。  
+  
+ 発生したすべて慎重セカンダリ例外の作成を回避し、キャッチするには、このイベントに対するイベント ハンドラーを書き込む必要があります。 メモリの割り当てや、任意のリソースのハンドラーで処理を要する操作を実行しないようにお勧めします。  
+  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントを発生させませんする手段を提供する、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベント。  <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントは、最初に、場合<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.RequestCatch%2A>上、<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs>に設定されている`false`、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledExceptionFilter">
+      <MemberSignature Language="C#" Value="public event System.Windows.Threading.DispatcherUnhandledExceptionFilterEventHandler UnhandledExceptionFilter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Threading.DispatcherUnhandledExceptionFilterEventHandler UnhandledExceptionFilter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherUnhandledExceptionFilterEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドの例外がスローされ、によってデリゲートの実行中にキャッチされなかったときに発生<see cref="Overload:System.Windows.Threading.Dispatcher.Invoke" />または<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />フィルター ステージの場合にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってデリゲートの実行中に発生する例外のフィルターのステージ中にこのイベントは<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>がキャッチされたとします。  
+  
+ 呼び出しスタックは、この時点で (初回例外) アンワインドではありません。  
+  
+ 発生したすべて慎重セカンダリ例外の作成を回避し、キャッチするには、このイベントに対するイベント ハンドラーを書き込む必要があります。  メモリの割り当てや、任意のリソースのハンドラーで処理を要する操作を実行しないようにお勧めします。  
+  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントを発生させませんする手段を提供する、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベント。  <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントは、最初に、場合<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.RequestCatch%2A>上、<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs>に設定されている`false`、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">追加や、このイベントのハンドラーを削除します。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatePriority">
+      <MemberSignature Language="C#" Value="public static void ValidatePriority (System.Windows.Threading.DispatcherPriority priority, string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ValidatePriority(valuetype System.Windows.Threading.DispatcherPriority priority, string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.ValidatePriority(System.Windows.Threading.DispatcherPriority,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="priority">チェックする優先度です。</param>
+        <param name="parameterName">優先順位が有効でない場合に発生する例外によって返される文字列。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.Threading.DispatcherPriority" />優先順位が無効です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyAccess">
+      <MemberSignature Language="C#" Value="public void VerifyAccess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyAccess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.VerifyAccess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のスレッドがへのアクセスを持つかどうかを判断<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドでのみ、<xref:System.Windows.Threading.Dispatcher>は作成のアクセス可能性があります、<xref:System.Windows.Threading.Dispatcher>です。  
+  
+ このメソッドはパブリックです。したがって、任意のスレッドをへのアクセスを持っているかどうかが確認確認できる、<xref:System.Windows.Threading.Dispatcher>です。  
+  
+ 違い<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>と<xref:System.Windows.Threading.Dispatcher.VerifyAccess%2A>は<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>呼び出し元のスレッドにへのアクセスがない場合は、ブール値を返します、<xref:System.Windows.Threading.Dispatcher>と<xref:System.Windows.Threading.Dispatcher.VerifyAccess%2A>例外をスローします。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.Threading.Dispatcher.VerifyAccess%2A>をスレッドが、スレッドへのアクセスを持つかどうかを判断する、<xref:System.Windows.Controls.Button>上に作成されました。  メソッドは、オブジェクトにキャストする引数、<xref:System.Windows.Controls.Button>です。  <xref:System.Windows.Threading.Dispatcher.VerifyAccess%2A>メソッドを<xref:System.Windows.Threading.Dispatcher>の<xref:System.Windows.Controls.Button>スレッドへのアクセスを確認するために呼び出されます。  
+  
+ 呼び出し元のスレッドがアクセスできるよう、 <xref:System.Windows.Threading.Dispatcher>、<xref:System.Windows.Controls.Button>だけのメンバーにアクセスして更新されて、<xref:System.Windows.Controls.Button>です。  
+  
+ 呼び出し元のスレッドには、アクセスがない場合、<xref:System.InvalidOperationException>がスローされます。  この例は、例外をキャッチしを受け入れ、デリゲートをプッシュする<xref:System.Windows.Controls.Button>を引数として上に、<xref:System.Windows.Threading.Dispatcher>の<xref:System.Windows.Controls.Button>です。  これは、<xref:System.Windows.Threading.Dispatcher>の更新の作業を実行する、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[DispatcherAccessSample#DispatcherAccessVerifyAccess](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherAccessSample/CSharp/Window1.xaml.cs#dispatcheraccessverifyaccess)]
+ [!code-vb[DispatcherAccessSample#DispatcherAccessVerifyAccess](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherAccessSample/visualbasic/window1.xaml.vb#dispatcheraccessverifyaccess)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出し元のスレッドでは、これにアクセスできない<see cref="T:System.Windows.Threading.Dispatcher" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Yield">
+      <MemberSignature Language="C#" Value="public static System.Windows.Threading.DispatcherPriorityAwaitable Yield ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Threading.DispatcherPriorityAwaitable Yield() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Yield" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriorityAwaitable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期的に現在のディスパッチャーにコントロールを生成し、その他のイベントを処理するディスパッチャーの機会を提供する待機可能オブジェクトを作成します。</summary>
+        <returns>非同期的に現在のディスパッチャーにコントロールを生成し、その他のイベントを処理するディスパッチャーの機会を提供する待機可能オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、他のイベントを処理するなど、他の作業を行えるように一時的に実行制御を現在のディスパッチャーをリリースするための手段を提供します。 使用して、 `await`、または`Await`Visual basic で現在のディスパッチャーに制御を戻し、戻り値の演算子。 場合、このメソッドを使用して、アプリにアプリが多くの UI スレッドでの作業を行っているときにイベントを処理する機会を提供します。 たとえば、コントロールを更新する実行時間の長いループ内で、このメソッドを使用できます。  
+  
+ このメソッドを呼び出すことは、<xref:System.Windows.Threading.Dispatcher.Yield%28System.Windows.Threading.DispatcherPriority%29>メソッドを渡して<xref:System.Windows.Threading.DispatcherPriority?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yield">
+      <MemberSignature Language="C#" Value="public static System.Windows.Threading.DispatcherPriorityAwaitable Yield (System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Threading.DispatcherPriorityAwaitable Yield(valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriorityAwaitable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="priority">継続をスケジュールする優先度です。</param>
+        <summary>非同期的に現在のディスパッチャーにコントロールを生成し、その他のイベントを処理するディスパッチャーの機会を提供する待機可能オブジェクトを作成します。  このメソッドの結果を待機中のコードに制御が戻るときに発生する作業は、指定された優先順位がスケジュールされます。</summary>
+        <returns>非同期的に現在のディスパッチャーにコントロールを生成し、その他のイベントを処理するディスパッチャーの機会を提供する待機可能オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、他のイベントを処理するなど、他の作業を行えるように一時的に実行制御を現在のディスパッチャーをリリースするための手段を提供します。 使用して、 `await`、または`Await`Visual basic で現在のディスパッチャーに制御を戻し、戻り値の演算子。 場合、このメソッドを使用して、アプリにアプリが多くの UI スレッドでの作業を行っているときにイベントを処理する機会を提供します。 たとえば、コントロールを更新する実行時間の長いループ内で、このメソッドを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

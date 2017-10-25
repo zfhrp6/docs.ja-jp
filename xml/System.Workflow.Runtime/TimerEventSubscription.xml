@@ -1,0 +1,198 @@
+<Type Name="TimerEventSubscription" FullName="System.Workflow.Runtime.TimerEventSubscription">
+  <TypeSignature Language="C#" Value="public class TimerEventSubscription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TimerEventSubscription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.TimerEventSubscription" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タイマー イベントへのサブスクリプションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.TimerEventSubscription> オブジェクトは、指定した時刻に特定の <xref:System.Workflow.Runtime.WorkflowQueue> にメッセージを送信するために、ワークフロー インスタンスに関連付けられたタイマー キューに追加されます。 <xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A> で指定された時刻になると、ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.TimerEventSubscription.SubscriptionId%2A> を含むメッセージを、<xref:System.Workflow.Runtime.WorkflowQueue> で指定された <xref:System.Workflow.Runtime.TimerEventSubscription.QueueName%2A> に送信します。 ワークフロー インスタンスに関連付けられるタイマー キューは、<xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.TimerCollectionProperty> に含まれます。 <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.TimerCollectionProperty> によって返される <xref:System.Workflow.Runtime.WorkflowQueueInfo> および <xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A?displayProperty=nameWithType> オブジェクトを調べることによって、特定の <xref:System.Workflow.Runtime.TimerEventSubscription> を待機しているアクティビティを判断することができます。 <xref:System.Workflow.Activities.DelayActivity> と <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> はどちらも、タイマー イベント サブスクリプションを使用して機能の一部を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TimerEventSubscription ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscription.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimerEventSubscription (Guid workflowInstanceId, DateTime expiresAt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid workflowInstanceId, valuetype System.DateTime expiresAt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscription.#ctor(System.Guid,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+        <Parameter Name="expiresAt" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="workflowInstanceId">このサブスクリプションに関連付けられたワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="expiresAt">このサブスクリプションに関連付けられているタイマーが切れる世界協定時刻 (UTC) を表す <see cref="T:System.DateTime" />。</param>
+        <summary>指定したワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> および指定した有効期限 <see cref="T:System.Guid" /> を使用して、<see cref="T:System.DateTime" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscription> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.QueueName%2A>|<xref:System.Guid> を表すシステム提供の <xref:System.Workflow.Runtime.TimerEventSubscription.SubscriptionId%2A> の文字列表記。|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.SubscriptionId%2A>|システム提供の <xref:System.Guid>。|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.WorkflowInstanceId%2A>|<xref:System.Guid> で指定されたワークフロー インスタンスの `workflowInstanceId`。|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A>|<xref:System.DateTime> で指定された `expiresAt`。|  
+  
+ <xref:System.Workflow.Runtime.TimerEventSubscription.QueueName%2A> は、このコンストラクターによって <xref:System.Workflow.Runtime.TimerEventSubscription.SubscriptionId%2A> の文字列表記に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimerEventSubscription (Guid timerId, Guid workflowInstanceId, DateTime expiresAt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid timerId, valuetype System.Guid workflowInstanceId, valuetype System.DateTime expiresAt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscription.#ctor(System.Guid,System.Guid,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timerId" Type="System.Guid" />
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+        <Parameter Name="expiresAt" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="timerId">このサブスクリプションの <see cref="T:System.Guid" />。</param>
+        <param name="workflowInstanceId">このサブスクリプションが作成された対象のワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="expiresAt">このサブスクリプションのタイマーが切れる世界協定時刻 (UTC) を表す <see cref="T:System.DateTime" />。</param>
+        <summary>指定したサブスクリプション ID、指定したワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.TimerEventSubscription" />、指定した有効期限 <see cref="T:System.Guid" /> を使用して、<see cref="T:System.DateTime" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscription> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.QueueName%2A>|<xref:System.Guid> で指定された `timerId` の文字列表記。|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.SubscriptionId%2A>|<xref:System.Guid> で指定された `timerId`。|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.WorkflowInstanceId%2A>|<xref:System.Guid> で指定されたワークフロー インスタンスの `workflowInstanceId`。|  
+|<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A>|<xref:System.DateTime> で指定された `expiresAt`。|  
+  
+ <xref:System.Workflow.Runtime.TimerEventSubscription.QueueName%2A> は、このコンストラクターによって `timerId` の文字列表記に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpiresAt">
+      <MemberSignature Language="C#" Value="public virtual DateTime ExpiresAt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ExpiresAt" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサブスクリプションに関連付けられたタイマーの予定有効期限を取得します。</summary>
+        <value>このサブスクリプションに関連付けられているタイマーが切れる世界協定時刻 (UTC) を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueName">
+      <MemberSignature Language="C#" Value="public virtual IComparable QueueName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IComparable QueueName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscription.QueueName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IComparable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマー サブスクリプションの期限が切れたときに <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> がメッセージを送信する先の <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> の名前を表します。</summary>
+        <value><see cref="T:System.IComparable" /> オブジェクトの <see cref="T:System.Guid" /> インターフェイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubscriptionId">
+      <MemberSignature Language="C#" Value="public virtual Guid SubscriptionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid SubscriptionId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscription.SubscriptionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマー イベントを表す一意の識別子。</summary>
+        <value>
+          タイマー イベントの一意の識別子を表す <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowInstanceId">
+      <MemberSignature Language="C#" Value="public virtual Guid WorkflowInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid WorkflowInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscription.WorkflowInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマー サブスクリプションに関連付けられたワークフローの識別子。</summary>
+        <value>
+          タイマー サブスクリプションに関連付けられたワークフローの一意の識別子を表す <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

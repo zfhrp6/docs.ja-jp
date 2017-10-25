@@ -1,0 +1,172 @@
+<Type Name="SessionChangeReason" FullName="System.ServiceProcess.SessionChangeReason">
+  <TypeSignature Language="C#" Value="public enum SessionChangeReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionChangeReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.SessionChangeReason" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ターミナル サービス セッションの変更通知の理由を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.ServiceProcess.SessionChangeReason>の実装内の列挙型、<xref:System.ServiceProcess.ServiceBase.OnSessionChange%2A>から派生したクラスのメソッド<xref:System.ServiceProcess.ServiceBase>です。  このコード例に示されている例の一部である、<xref:System.ServiceProcess.ServiceBase>クラスです。  
+  
+ [!code-csharp[ServiceBase_Commands#9](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceBase_Commands/CS/simpleservice.cs#9)]
+ [!code-vb[ServiceBase_Commands#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceBase_Commands/VB/simpleservice.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConsoleConnect">
+      <MemberSignature Language="C#" Value="ConsoleConnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason ConsoleConnect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.ConsoleConnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンソール セッションが接続されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsoleDisconnect">
+      <MemberSignature Language="C#" Value="ConsoleDisconnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason ConsoleDisconnect = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.ConsoleDisconnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンソール セッションが切断されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteConnect">
+      <MemberSignature Language="C#" Value="RemoteConnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason RemoteConnect = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.RemoteConnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート セッションが接続されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteDisconnect">
+      <MemberSignature Language="C#" Value="RemoteDisconnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason RemoteDisconnect = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.RemoteDisconnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート セッションが切断されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionLock">
+      <MemberSignature Language="C#" Value="SessionLock" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason SessionLock = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.SessionLock" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションがロックされました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionLogoff">
+      <MemberSignature Language="C#" Value="SessionLogoff" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason SessionLogoff = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.SessionLogoff" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがセッションからログオフしました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionLogon">
+      <MemberSignature Language="C#" Value="SessionLogon" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason SessionLogon = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.SessionLogon" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがセッションにログオンしました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionRemoteControl">
+      <MemberSignature Language="C#" Value="SessionRemoteControl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason SessionRemoteControl = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.SessionRemoteControl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションのリモート制御状態が変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionUnlock">
+      <MemberSignature Language="C#" Value="SessionUnlock" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.SessionChangeReason SessionUnlock = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.SessionChangeReason.SessionUnlock" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションがロック解除されました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

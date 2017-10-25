@@ -1,0 +1,148 @@
+<Type Name="PropertyValueUIItem" FullName="System.Drawing.Design.PropertyValueUIItem">
+  <TypeSignature Language="C#" Value="public class PropertyValueUIItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyValueUIItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.PropertyValueUIItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連するイベント ハンドラー、ポップアップ情報文字列のプロパティを表示するアイコンなどのプロパティ ウィンドウに表示されるプロパティについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Drawing.Design.PropertyValueUIItem>という名前のコンポーネントのプロパティのオブジェクト`HorizontalMargin`または`VerticalMargin`です。 <xref:System.Drawing.Design.PropertyValueUIItem>これらのプロパティは、画像、ツールヒント、およびプロパティのイメージがクリックされたときに、メッセージ ボックスを表示するイベント ハンドラーを提供します。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.IPropertyValueUIService>インターフェイスです。  
+  
+ [!code-cpp[IPropertyValueUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CPP/propertyuicomponent.cpp#2)]
+ [!code-csharp[IPropertyValueUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CS/propertyuicomponent.cs#2)]
+ [!code-vb[IPropertyValueUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IPropertyValueUIServiceExample/VB/propertyuicomponent.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyValueUIItem (System.Drawing.Image uiItemImage, System.Drawing.Design.PropertyValueUIItemInvokeHandler handler, string tooltip);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image uiItemImage, class System.Drawing.Design.PropertyValueUIItemInvokeHandler handler, string tooltip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.PropertyValueUIItem.#ctor(System.Drawing.Image,System.Drawing.Design.PropertyValueUIItemInvokeHandler,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uiItemImage" Type="System.Drawing.Image" />
+        <Parameter Name="handler" Type="System.Drawing.Design.PropertyValueUIItemInvokeHandler" />
+        <Parameter Name="tooltip" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uiItemImage">表示するアイコン。 イメージは、8 x 8 ピクセルである必要があります。</param>
+        <param name="handler">イメージがダブルクリックされたときに呼び出されるハンドラー。</param>
+        <param name="tooltip"><see cref="P:System.Drawing.Design.PropertyValueUIItem.ToolTip" />このプロパティを表示する<see cref="T:System.Drawing.Design.PropertyValueUIItem" />に関連付けられています。</param>
+        <summary><see cref="T:System.Drawing.Design.PropertyValueUIItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Drawing.Design.PropertyValueUIItem>という名前のコンポーネントのプロパティのオブジェクト`HorizontalMargin`または`VerticalMargin`です。 <xref:System.Drawing.Design.PropertyValueUIItem>これらのプロパティは、画像、ツールヒント、およびプロパティのイメージがクリックされたときに、メッセージ ボックスを表示するイベント ハンドラーを提供します。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.IPropertyValueUIService>インターフェイスです。  
+  
+ [!code-cpp[IPropertyValueUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CPP/propertyuicomponent.cpp#2)]
+ [!code-csharp[IPropertyValueUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CS/propertyuicomponent.cs#2)]
+ [!code-vb[IPropertyValueUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IPropertyValueUIServiceExample/VB/propertyuicomponent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uiItemImage" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Image Image { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image Image" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.PropertyValueUIItem.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[プロパティ] ウィンドウが描画される 8 x 8 ピクセル イメージを取得します。</summary>
+        <value>プロパティ アイコンを使用するイメージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイメージは、8 x 8 ピクセルである必要があります。 そのイメージの透明度をサポートすることをお勧めします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeHandler">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Design.PropertyValueUIItemInvokeHandler InvokeHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Design.PropertyValueUIItemInvokeHandler InvokeHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.PropertyValueUIItem.InvokeHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.PropertyValueUIItemInvokeHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがこの項目をダブルクリックしたときに発生するハンドラーを取得します。</summary>
+        <value>A<see cref="T:System.Drawing.Design.PropertyValueUIItemInvokeHandler" />このユーザー インターフェイス (UI) の項目のイベント ハンドラーを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public virtual void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.PropertyValueUIItem.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー インターフェイス (UI) の項目をリセットします。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、UI 項目の再描画を実装するには、このメンバーをオーバーライドできます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public virtual string ToolTip { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.PropertyValueUIItem.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの項目に表示する情報の文字列を設定します。</summary>
+        <value>この項目に表示する情報の文字列を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

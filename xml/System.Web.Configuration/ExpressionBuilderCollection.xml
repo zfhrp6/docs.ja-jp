@@ -1,0 +1,323 @@
+<Type Name="ExpressionBuilderCollection" FullName="System.Web.Configuration.ExpressionBuilderCollection">
+  <TypeSignature Language="C#" Value="public sealed class ExpressionBuilderCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ExpressionBuilderCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ExpressionBuilderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.ExpressionBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.ExpressionBuilder" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ExpressionBuilderCollection>クラスは、基になる構成ファイル内の実際の要素を参照していません。 これは、含まれているコンパイルの情報に簡単にアクセスできるようにするコンストラクトです。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初のいくつかのプロパティの値を宣言によって指定する方法を説明、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。 2 番目のメンバーを使用する方法を示します、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言のいくつかのプロパティの値を指定する方法を示しています、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+```  
+<system.web>  
+  <compilation>   
+    <expressionBuilders>  
+      <add   
+        expressionPrefix="Resources"   
+        type="System.Web.Compilation.ResourceExpressionBuilder"/>  
+      <add   
+        expressionPrefix="ConnectionStrings"   
+        type="System.Web.Compilation.  
+        ConnectionStringsExpressionBuilder"/>  
+      <add expressionPrefix="AppSettings"   
+        type="System.Web.Compilation.AppSettingsExpressionBuilder" />  
+    </expressionBuilders>  
+  </compilation>  
+</system.web>  
+```  
+  
+ 次のコード例では、メンバーを使用して、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ExpressionBuilderCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/CS/ExpressionBuilderCollection.cs#1)]
+ [!code-vb[System.Web.Configuration.ExpressionBuilderCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/VB/ExpressionBuilderCollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionBuilderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ExpressionBuilderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.ExpressionBuilder buildProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.ExpressionBuilder buildProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.Add(System.Web.Configuration.ExpressionBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buildProvider" Type="System.Web.Configuration.ExpressionBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="buildProvider">指定する文字列値、<see cref="T:System.Web.Configuration.ExpressionBuilder" />参照します。</param>
+        <summary>追加、<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクトを<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションに <xref:System.Web.Configuration.ExpressionBuilder> オブジェクトを追加します。 アセンブリ情報を含むアセンブリのオブジェクトが初期化されていない場合は、例外がスローされます。 コレクション内のアセンブリ オブジェクトが既に存在する場合、ステートメントは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ExpressionBuilderCollection.Add%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ExpressionBuilderCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/CS/ExpressionBuilderCollection.cs#4)]
+ [!code-vb[System.Web.Configuration.ExpressionBuilderCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/VB/ExpressionBuilderCollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.ExpressionBuilder" />コレクションに既に追加するオブジェクトが存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを消去、<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクトから、<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した設定を取得または<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ExpressionBuilder>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ExpressionBuilder this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ExpressionBuilder Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ExpressionBuilderCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ExpressionBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定する整数値、<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクト内の<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.ExpressionBuilder" />で指定したインデックス位置、<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</summary>
+        <value><see cref="T:System.Web.Configuration.ExpressionBuilder" />指定したインデックス位置にオブジェクトまたは<see langword="null" />インデックスにあるオブジェクトが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ExpressionBuilder this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ExpressionBuilder Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ExpressionBuilderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ExpressionBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ExpressionBuilder" />内のオブジェクト、<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.ExpressionBuilder" />指定の名前を持つオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.ExpressionBuilder" />または<see langword="null" />コレクションに同じ名前のオブジェクトが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ExpressionBuilderCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">指定する文字列値、<see cref="T:System.Web.Configuration.ExpressionBuilder" />参照します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクトから、<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内でアセンブリが存在しない場合、ステートメントは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ExpressionBuilderCollection.Remove%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ExpressionBuilderCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/CS/ExpressionBuilderCollection.cs#5)]
+ [!code-vb[System.Web.Configuration.ExpressionBuilderCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/VB/ExpressionBuilderCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilderCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定を指定する整数値<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクト内の<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.ExpressionBuilder" />オブジェクトから、<see cref="T:System.Web.Configuration.ExpressionBuilderCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内でアセンブリが存在しない場合は、範囲外の例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ExpressionBuilderCollection.RemoveAt%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ExpressionBuilderCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/CS/ExpressionBuilderCollection.cs#6)]
+ [!code-vb[System.Web.Configuration.ExpressionBuilderCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/VB/ExpressionBuilderCollection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

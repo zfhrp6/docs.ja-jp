@@ -1,0 +1,387 @@
+<Type Name="SymmetricProofDescriptor" FullName="System.IdentityModel.Tokens.SymmetricProofDescriptor">
+  <TypeSignature Language="C#" Value="public class SymmetricProofDescriptor : System.IdentityModel.Tokens.ProofDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SymmetricProofDescriptor extends System.IdentityModel.Tokens.ProofDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.ProofDescriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>対称キーに基づいてトークンを発行するため、このクラスを使用できます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="targetWrappingCredentials"><see cref="T:System.IdentityModel.Tokens.EncryptingCredentials" />使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />暗号化の指定された資格情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合は、指定されたを使用する STS<xref:System.IdentityModel.Tokens.EncryptingCredentials>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (byte[] key, System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] key, class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.Byte[],System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="key">発行されたトークン内で使用される対称キー。</param>
+        <param name="targetWrappingCredentials">証明書利用者の資格情報を暗号化するキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />クラスが指定されたキー マテリアルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したキー バイトを使用する STS の場合は、このコンス トラクターを使用します。 これは、クライアントは、エントロピを送信し、STS はだけとして使用する発行済みトークンのキーを場合に発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (int keySizeInBits, System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keySizeInBits, class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.Int32,System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keySizeInBits" Type="System.Int32" />
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="keySizeInBits">対称キーのサイズ。</param>
+        <param name="targetWrappingCredentials">要求の対象用の資格情報を暗号化するキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />自動生成キーを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイナリ シークレットとして証明トークンで送信して、乱数ジェネレーターを使用して、キーの自動生成するための STS をする場合は、このコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (int keySizeInBits, System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keySizeInBits, class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, class System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.Int32,System.IdentityModel.Tokens.EncryptingCredentials,System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keySizeInBits" Type="System.Int32" />
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="requestorWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="keySizeInBits">対称キーのサイズ。</param>
+        <param name="targetWrappingCredentials">要求の対象用の資格情報を暗号化するキー。</param>
+        <param name="requestorWrappingCredentials">要求元の資格情報を暗号化するキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />自動生成キーを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化されたキーと証明トークンで送信して、キーの自動生成するための STS をする場合は、このコンス トラクターを使用します。 このコンス トラクターを使用して、2 つのケースに対処できます。  
+  
+1.  クライアントが、エントロピを送信しますが、サーバーで拒否しました。  
+  
+2.  クライアントでは、サーバーのエントロピが使用されるため、エントロピは送信しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keySizeInBits" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (int keySizeInBits, System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials, byte[] sourceEntropy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keySizeInBits, class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, class System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials, unsigned int8[] sourceEntropy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.Int32,System.IdentityModel.Tokens.EncryptingCredentials,System.IdentityModel.Tokens.EncryptingCredentials,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keySizeInBits" Type="System.Int32" />
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="requestorWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="sourceEntropy" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="keySizeInBits">対称キーのサイズ。</param>
+        <param name="targetWrappingCredentials">要求の対象用の資格情報を暗号化するキー。</param>
+        <param name="requestorWrappingCredentials">エントロピーまたは証明トークンの暗号化に使用される、要求元の暗号化の資格情報。</param>
+        <param name="sourceEntropy">要求元のエントロピー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />の送信に使用するクラスがエントロピを結合します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、結合エントロピを送信する場合に使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceEntropy" /><see langword="null" />または空の配列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keySize" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (int keySizeInBits, System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials, string encryptWith);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keySizeInBits, class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, class System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials, string encryptWith) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.Int32,System.IdentityModel.Tokens.EncryptingCredentials,System.IdentityModel.Tokens.EncryptingCredentials,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keySizeInBits" Type="System.Int32" />
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="requestorWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="encryptWith" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keySizeInBits">対称キーのサイズ。</param>
+        <param name="targetWrappingCredentials">証明書利用者の資格情報を暗号化するキー。</param>
+        <param name="requestorWrappingCredentials">要求元の資格情報を暗号化するキー。</param>
+        <param name="encryptWith">指定されたアルゴリズム (URI)、 <see langword="&lt;EncryptWith&gt;" /> RST の要素。</param>
+        <summary>STS の自動生成キーを持っているし、暗号化されたキーと証明トークンで送信するには、このコンス トラクターを使用します。 2 つの場合は、管理対象のここでは 1 です。 クライアントは、エントロピを送信しますが、サーバーでは拒否 2 です。 クライアントのエントロピを送信、ので、サーバーのエントロピを使用しなかったされません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`encryptWith`DES アルゴリズム、キーがあることが保証されません弱い DES キー。  
+  
+ 暗号化されたキーと証明トークンで送信して、キーの自動生成するための STS をする場合は、このコンス トラクターを使用します。 このコンス トラクターを使用して、2 つのケースに対処できます。  
+  
+1.  クライアントが、エントロピを送信しますが、サーバーで拒否しました。  
+  
+2.  クライアントでは、サーバーのエントロピが使用されるため、エントロピは送信しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keySizeInBits" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SymmetricProofDescriptor (int keySizeInBits, System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials, byte[] sourceEntropy, string encryptWith);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keySizeInBits, class System.IdentityModel.Tokens.EncryptingCredentials targetWrappingCredentials, class System.IdentityModel.Tokens.EncryptingCredentials requestorWrappingCredentials, unsigned int8[] sourceEntropy, string encryptWith) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.#ctor(System.Int32,System.IdentityModel.Tokens.EncryptingCredentials,System.IdentityModel.Tokens.EncryptingCredentials,System.Byte[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keySizeInBits" Type="System.Int32" />
+        <Parameter Name="targetWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="requestorWrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+        <Parameter Name="sourceEntropy" Type="System.Byte[]" />
+        <Parameter Name="encryptWith" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keySizeInBits">対称キーのサイズ。</param>
+        <param name="targetWrappingCredentials">SecurityKeyIdentifier プロパティのキーの暗号化に使用される証明書利用者の暗号化の資格情報。</param>
+        <param name="requestorWrappingCredentials">エントロピーまたは証明トークンの暗号化に使用される、要求元の暗号化の資格情報。</param>
+        <param name="sourceEntropy">要求元のエントロピー。</param>
+        <param name="encryptWith">証明キーの暗号化に使用するアルゴリズムの URI。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SymmetricProofDescriptor" />の送信に使用するクラスがエントロピを結合します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、結合エントロピを送信します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keySizeInBits" /> が 0 以下です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceEntropy" /><see langword="null" />または空の配列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyTo">
+      <MemberSignature Language="C#" Value="public override void ApplyTo (System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ApplyTo(class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.ApplyTo(System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />
+      </Parameters>
+      <Docs>
+        <param name="response">証明の記述子を適用する RSTR です。</param>
+        <summary>この証明記述子の設定に基づいて指定した RSTR を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求された証明トークン、新機能が実証記述子インスタンス内に基づく RSTR 内などの適切なアイテムを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="response" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeyBytes">
+      <MemberSignature Language="C#" Value="public byte[] GetKeyBytes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetKeyBytes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.GetKeyBytes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キー マテリアルを取得します。</summary>
+        <returns>キー マテリアルを格納するバイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSourceEntropy">
+      <MemberSignature Language="C#" Value="protected byte[] GetSourceEntropy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance unsigned int8[] GetSourceEntropy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.GetSourceEntropy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>普通のバイトのソース エントロピを取得します。</summary>
+        <returns>ソース エントロピを含むバイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetEntropy">
+      <MemberSignature Language="C#" Value="protected byte[] GetTargetEntropy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance unsigned int8[] GetTargetEntropy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricProofDescriptor.GetTargetEntropy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>普通のバイト単位でターゲット エントロピを取得します。</summary>
+        <returns>ターゲットのエントロピを含むバイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyIdentifier">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityKeyIdentifier KeyIdentifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityKeyIdentifier KeyIdentifier" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SymmetricProofDescriptor.KeyIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーを定義する、発行済みトークンの内部使用できるキー識別子を取得します。 これは、通常、バイナリ シークレットまたは暗号化されたキーです。</summary>
+        <value>キー識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestorEncryptingCredentials">
+      <MemberSignature Language="C#" Value="protected System.IdentityModel.Tokens.EncryptingCredentials RequestorEncryptingCredentials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.EncryptingCredentials RequestorEncryptingCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SymmetricProofDescriptor.RequestorEncryptingCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.EncryptingCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、要求元の証明トークン要求または応答でエントロピを暗号化するために使用できる資格情報を暗号化します。</summary>
+        <value>要求元の暗号化の資格情報です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetEncryptingCredentials">
+      <MemberSignature Language="C#" Value="protected System.IdentityModel.Tokens.EncryptingCredentials TargetEncryptingCredentials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.EncryptingCredentials TargetEncryptingCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SymmetricProofDescriptor.TargetEncryptingCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.EncryptingCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたセキュリティを暗号化するために使用できる資格情報を暗号化証明書利用者の応答でトークンを取得します。</summary>
+        <value>証明書利用者資格情報を暗号化します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

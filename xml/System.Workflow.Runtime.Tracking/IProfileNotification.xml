@@ -1,0 +1,80 @@
+<Type Name="IProfileNotification" FullName="System.Workflow.Runtime.Tracking.IProfileNotification">
+  <TypeSignature Language="C#" Value="public interface IProfileNotification" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProfileNotification" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.IProfileNotification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のワークフロー <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> に対する <see cref="T:System.Type" /> が変化したことを追跡サービスがランタイム追跡インフラストラクチャに通知するためのメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 追跡サービスは、ランタイム追跡インフラストラクチャによって使用される追跡プロファイルを管理します。 <xref:System.Workflow.Runtime.Tracking.IProfileNotification> を実装する追跡サービスは、特定のワークフロー <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に対する <xref:System.Type> が変更されたか、無効になった場合に、ランタイム追跡インフラストラクチャに通知することができます。 ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> および <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileRemoved> イベントに定期受信して、これらのイベントが発行された場合にキャッシュを更新します。 これにより、ランタイム追跡インフラストラクチャが追跡サービスに対して出す追跡プロファイル要求の数が減少します。 メモ : ランタイム追跡インフラストラクチャは、追跡サービスのオーバーロードされた <xref:System.Workflow.Runtime.Tracking.TrackingService.GetProfile%2A> メソッドを引き続き使用しますが、これらのメソッドを頻繁には呼び出さなくなります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ProfileRemoved">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs&gt; ProfileRemoved;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs&gt; ProfileRemoved" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileRemoved" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のワークフロー型に対する <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> が削除されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービスは <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileRemoved> イベントを出すことにより、ランタイム追跡インフラストラクチャに対して、<xref:System.Type> で指定されたワークフロー <xref:System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs> の新しいインスタンスを追跡しないよう通知することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileUpdated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs&gt; ProfileUpdated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs&gt; ProfileUpdated" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のワークフロー <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> に対する <see cref="T:System.Type" /> が更新されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービスは <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> イベントを出すことにより、特定のワークフロー <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の新しい <xref:System.Type> が使用可能であることをランタイム追跡インフラストラクチャに通知することができます。 ワークフロー <xref:System.Type> と <xref:System.Workflow.Runtime.Tracking.TrackingProfile> は、<xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs> で渡されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

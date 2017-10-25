@@ -1,0 +1,583 @@
+<Type Name="LockingPersistenceProvider" FullName="System.ServiceModel.Persistence.LockingPersistenceProvider">
+  <TypeSignature Language="C#" Value="public abstract class LockingPersistenceProvider : System.ServiceModel.Persistence.PersistenceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit LockingPersistenceProvider extends System.ServiceModel.Persistence.PersistenceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Persistence.LockingPersistenceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Persistence.PersistenceProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装ロックが派生元となる、すべての永続性サービスの永続化プロバイダーの抽象基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続性に加えて、<xref:System.ServiceModel.Persistence.LockingPersistenceProvider> クラスはサービス データ レコードのロックを実装します。 永続化されたデータをやり取りする方法 (など、`Load`メソッド) は省略可能なパラメーターを持つ (`lockInstance`) は、対象のデータのロックをリリースするまたは維持するかどうかを定義します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LockingPersistenceProvider (Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="id">この永続化プロバイダー インスタンスにに関連付けられた一意の識別子。</param>
+        <summary>派生クラスとして実装された場合、指定された ID 値が構成されている <see cref="T:System.ServiceModel.Persistence.LockingPersistenceProvider" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCreate">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginCreate (object instance, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginCreate(object instance, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginCreate(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">状態情報を永続化ストアに保存するインスタンス。</param>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある間隔。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>パラメーターを使用して永続化ストアのインスタンス状態情報を作成するための非同期操作を開始します。 このメソッドは、状態情報を保存した後にインスタンスのロックを解除しません。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、インスタンスをロック解除するかどうかを判断する追加のパラメーターを受け取る <xref:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginCreate%2A> メソッドを呼び出します。 このメソッドは渡します`false`呼び出し元のメソッドに、このパラメーターの値として。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCreate">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginCreate (object instance, TimeSpan timeout, bool unlockInstance, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCreate(object instance, valuetype System.TimeSpan timeout, bool unlockInstance, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginCreate(System.Object,System.TimeSpan,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="unlockInstance" Type="System.Boolean" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">状態情報を永続化ストアに保存するインスタンス。</param>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある間隔。</param>
+        <param name="unlockInstance">
+          <see langword="true" />インスタンス必要がありますロックを解除する永続化ストアに場合それ以外の場合<see langword="false" />です。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>パラメーターを使用して永続化ストアのインスタンス状態情報を作成するための非同期操作を開始します。 このメソッドは場合、インスタンスの状態を保存した後にインスタンスをロック解除の値、<paramref name="unlockInstance" />パラメーターは<see langword="true" />します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoad">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginLoad (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginLoad(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginLoad(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある間隔。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>パラメーターを使用して永続化ストアの状態情報に基づいてインスタンスを読み込むための非同期操作を開始します。 このメソッドでは、インスタンスのロックは行われません。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、永続化ストアのインスタンスをロックする必要があるかどうかを指定する追加のパラメーターを受け取る <xref:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginLoad%2A> を呼び出します。 このメソッドは渡します`false`呼び出し元のメソッドに、このパラメーターの値として。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoad">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginLoad (TimeSpan timeout, bool lockInstance, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginLoad(valuetype System.TimeSpan timeout, bool lockInstance, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginLoad(System.TimeSpan,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="lockInstance" Type="System.Boolean" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">タイムアウトするまでに操作を完了する必要がある間隔。</param>
+        <param name="lockInstance">
+          <see langword="true" />場合は、インスタンスをロックする必要があります。それ以外の場合<see langword="false" />です。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>パラメーターを使用して永続化ストアの状態情報に基づいてインスタンスを読み込むための非同期操作を開始します。 このメソッドでは、インスタンスをロック場合、インスタンスの状態の読み込み後の値、<paramref name="lockInstance" />パラメーターは<see langword="true" />します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoadIfChanged">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginLoadIfChanged (TimeSpan timeout, object instanceToken, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginLoadIfChanged(valuetype System.TimeSpan timeout, object instanceToken, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginLoadIfChanged(System.TimeSpan,System.Object,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="instanceToken" Type="System.Object" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの操作を中止するまでの期間。</param>
+        <param name="instanceToken">以前によって返されるトークン<see langword="Create" />または<see langword="Update" />を現在の状態を表すメソッドを呼び出し元によって保持されています。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、LoadIfChanged フェーズの開始を表します。 LoadIfChanged フェーズは、状態データが永続化ストアから永続化プロバイダーに読み込まれ、永続化ストアの状態データが変更されている場合に発生します。 このメソッド呼び出しは、永続化ストアのインスタンスをロックしません。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoadIfChanged">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginLoadIfChanged (TimeSpan timeout, object instanceToken, bool lockInstance, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginLoadIfChanged(valuetype System.TimeSpan timeout, object instanceToken, bool lockInstance, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginLoadIfChanged(System.TimeSpan,System.Object,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="instanceToken" Type="System.Object" />
+        <Parameter Name="lockInstance" Type="System.Boolean" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの操作を中止するまでの期間。</param>
+        <param name="instanceToken">以前によって返されるトークン<see langword="Create" />または<see langword="Update" />を現在の状態を表すメソッドを呼び出し元によって保持されています。</param>
+        <param name="lockInstance">
+          <see langword="true" />インスタンスが永続化ストアにロックされている場合それ以外の場合<see langword="false" />です。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、LoadIfChanged フェーズの開始を表します。 LoadIfChanged フェーズは、状態データが永続化ストアから永続化プロバイダーに読み込まれ、永続化ストアの状態データが変更されている場合に発生します。 このメソッド呼び出しでは、永続化ストアのインスタンスをロックするかどうかを指定できます。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUnlock">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginUnlock (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginUnlock(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginUnlock(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">タイムアウトするまでに操作を完了する必要がある間隔。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>永続化ストアのインスタンスのロックを解除するための非同期操作を開始します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUpdate">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginUpdate (object instance, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginUpdate(object instance, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginUpdate(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">永続化ストアの状態情報を更新するインスタンス。</param>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある間隔。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関する状態情報。</param>
+        <summary>渡されたパラメーターを使用して永続化ストアのインスタンス状態情報を更新するための非同期操作を開始します。 この操作は、インスタンス ストアのインスタンスのロックを解除しません。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す、<xref:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginUpdate%2A>メソッドおよびパス、`false`値を`unlockInstance`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUpdate">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginUpdate (object instance, TimeSpan timeout, bool unlockInstance, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginUpdate(object instance, valuetype System.TimeSpan timeout, bool unlockInstance, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.BeginUpdate(System.Object,System.TimeSpan,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="unlockInstance" Type="System.Boolean" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">永続化ストアの状態情報を更新するインスタンス。</param>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある間隔。</param>
+        <param name="unlockInstance">
+          <see langword="true" />場合は、インスタンスの状態が、永続化ストアで更新された後は、インスタンスをロックされている必要があります。それ以外の場合<see langword="false" />です。</param>
+        <param name="callback">操作が完了したときに通知を受信するデリゲート。</param>
+        <param name="state">非同期操作に関する状態情報。</param>
+        <summary>渡されたパラメーターを使用して永続化ストアのインスタンス状態情報を更新するための非同期操作を開始します。 場合、この操作は、永続化ストア内のインスタンスをロックの値、<paramref name="unlockInstance" />パラメーターは<see langword="true" />します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public override object Create (object instance, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Create(object instance, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Create(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="instance">状態情報を永続化ストアに保存する必要があるインスタンス オブジェクト。</param>
+        <param name="timeout">タイムアウトするまでに操作を完了する必要がある間隔。</param>
+        <summary>メソッドに渡されたパラメーターを使用して永続化ストアにインスタンス状態情報を作成します。 このメソッドは、インスタンスの状態を保存した後に永続化ストアのインスタンスのロックを解除しません。</summary>
+        <returns>状態情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public abstract object Create (object instance, TimeSpan timeout, bool unlockInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create(object instance, valuetype System.TimeSpan timeout, bool unlockInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Create(System.Object,System.TimeSpan,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="unlockInstance" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="instance">状態情報を永続化ストアに保存するインスタンス オブジェクト。</param>
+        <param name="timeout">タイムアウトするまでに操作を完了する必要がある間隔。</param>
+        <param name="unlockInstance">
+          <see langword="true" />インスタンス必要がありますロックを解除する永続化ストアに場合それ以外の場合<see langword="false" />です。</param>
+        <summary>このメソッドは、メソッドに渡されたパラメーターを使用して永続化ストアにインスタンス状態情報を作成します。 場合、メソッドがインスタンス ストアのインスタンスをロック解除の値、<paramref name="unlockInstance" />パラメーターは<see langword="true" />します。</summary>
+        <returns>状態情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndUnlock">
+      <MemberSignature Language="C#" Value="public abstract void EndUnlock (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndUnlock(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.EndUnlock(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">ロック解除操作によって返される結果。</param>
+        <summary>永続化ストアのインスタンスのロックを解除するための非同期操作を終了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override object Load (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Load(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Load(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>インスタンスをロックせずに永続化ストアからサービス状態情報を読み込みます。</summary>
+        <returns>サービス状態情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して、<xref:System.ServiceModel.Persistence.LockingPersistenceProvider.Load%2A>メソッドを`lockInstance`パラメーターに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public abstract object Load (TimeSpan timeout, bool lockInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Load(valuetype System.TimeSpan timeout, bool lockInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Load(System.TimeSpan,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="lockInstance" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの操作を中止するまでの期間。</param>
+        <param name="lockInstance">
+          <see langword="true" />場合は、インスタンスをロックする必要があります。それ以外の場合<see langword="false" />です。</param>
+        <summary>インスタンスをロックした後に永続化ストアから状態情報を読み込みます。</summary>
+        <returns>状態情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadIfChanged">
+      <MemberSignature Language="C#" Value="public override bool LoadIfChanged (TimeSpan timeout, object instanceToken, out object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool LoadIfChanged(valuetype System.TimeSpan timeout, object instanceToken, [out] object&amp; instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="instanceToken" Type="System.Object" />
+        <Parameter Name="instance" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの操作を中止するまでの期間。</param>
+        <param name="instanceToken">前のによって返されるトークン<see langword="Create" />または<see langword="Update" />メソッドの呼び出しは、呼び出し元によって保持されている現在の状態を表します。</param>
+        <param name="instance">実際のインスタンス状態情報。</param>
+        <summary>呼び出し元が前回情報を読み込んだときから状態情報が変更されている場合、永続化ストアからインスタンス状態情報を読み込みます。 このメソッドは、永続化ストアのインスタンスをロックしません。</summary>
+        <returns>
+          <see langword="true" />この操作の最後に永続化ストアのインスタンスをロックする場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadIfChanged">
+      <MemberSignature Language="C#" Value="public virtual bool LoadIfChanged (TimeSpan timeout, object instanceToken, bool lockInstance, out object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool LoadIfChanged(valuetype System.TimeSpan timeout, object instanceToken, bool lockInstance, [out] object&amp; instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Boolean,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="instanceToken" Type="System.Object" />
+        <Parameter Name="lockInstance" Type="System.Boolean" />
+        <Parameter Name="instance" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの操作を中止するまでの期間。</param>
+        <param name="instanceToken">直前の Create メソッド呼び出しまたは Update メソッド呼び出しで返されたトークン。呼び出し元で保持されている現在の状態を表します。</param>
+        <param name="lockInstance">
+          <see langword="true" />この操作の最後に永続化ストアのインスタンスをロックする場合それ以外の場合<see langword="false" />です。</param>
+        <param name="instance">インスタンス状態情報。</param>
+        <summary>呼び出し元が前回情報を読み込んだときから状態情報が変更されている場合、永続化ストアからインスタンス状態情報を読み込みます。 このメソッドでは、永続化ストアのインスタンスをロックするかどうかも指定できます。</summary>
+        <returns>
+          <see langword="true" />この操作の最後に永続化ストアのインスタンスをロックする場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unlock">
+      <MemberSignature Language="C#" Value="public abstract void Unlock (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unlock(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Unlock(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーが操作を中止するまでの期間。</param>
+        <summary>永続化ストアで <see cref="T:System.ServiceModel.Persistence.LockingPersistenceProvider" /> オブジェクトを作成するときに ID を指定されたインスタンスのロックを解除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public override object Update (object instance, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Update(object instance, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Update(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="instance">インスタンス状態情報。</param>
+        <param name="timeout">永続化プロバイダーが操作を中止するまでの期間。</param>
+        <summary>派生クラスとして実装された場合、永続化ストアのインスタンス状態情報を更新します。 このメソッドは、永続化ストアのインスタンス状態情報を更新した後にインスタンスのロックを解除しません。</summary>
+        <returns>インスタンス状態情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public abstract object Update (object instance, TimeSpan timeout, bool unlockInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Update(object instance, valuetype System.TimeSpan timeout, bool unlockInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.LockingPersistenceProvider.Update(System.Object,System.TimeSpan,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="unlockInstance" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="instance">インスタンス状態情報。</param>
+        <param name="timeout">永続化プロバイダーが操作を中止するまでの期間。</param>
+        <param name="unlockInstance">
+          <see langword="true" />インスタンス状態情報が更新された後; インスタンスがロックされている場合それ以外の場合<see langword="false" />です。</param>
+        <summary>派生クラスとして実装された場合、永続化ストアのインスタンス状態情報を更新します。 このメソッドは、永続化ストアのインスタンス状態情報を更新した後にインスタンスのロックを解除しません。</summary>
+        <returns>インスタンス状態情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,291 @@
+<Type Name="WebResourceAttribute" FullName="System.Web.UI.WebResourceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebResourceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebResourceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebResourceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アセンブリ内の埋め込みリソースを使用できるメタデータ属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebResourceAttribute>クラスがアセンブリの宣言で使用される場合にのみ有効です。 Web リソースとして使用するためにアセンブリ内の指定された埋め込みリソースを有効に使用されます。  
+  
+ リソースの詳細については、次を参照してください。 [ASP.NET Web ページのリソースの概要](http://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を適用する方法を示しています、<xref:System.Web.UI.WebResourceAttribute>属性をカスタム コントロールを定義する名前空間に`MyCustomControl`です。 2 番目のコード例を使用する方法を示しています、 `MyCustomControl` Web ページ内のクラスです。  
+  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.WebResourceAttribute>イメージ Web リソースと、HTML Web リソースを定義するカスタム アセンブリの属性です。 `MyCustomControl`クラス定義の値を設定、リソースを使用する複合コントロール、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.Image>を設定して複合コントロール内に含まれているコントロール、<xref:System.Web.UI.HtmlControls.HtmlAnchor.HRef%2A>のプロパティ、 <xref:System.Web.UI.HtmlControls.HtmlAnchor>HTML リソースへのリンクを制御します。  
+  
+ [!code-csharp[System.Web.UI.WebResourceAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/cs/WebResourceAttribute.cs#2)]
+ [!code-vb[System.Web.UI.WebResourceAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/vb/WebResourceAttribute.vb#2)]  
+  
+ 次のコード例を使用する方法を示しています、 `MyCustomControl` Web ページ内のクラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/cs/WebResourceAttribute.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/vb/WebResourceAttribute.aspx#1)]  
+  
+ この例を含むアセンブリと共に、Image1.jpg と Help.htm のリソースをコンパイルする必要があります`MyCustomControl`です。 詳細についてを参照してください、 [/resource (c# コンパイラ オプション)](~/docs/csharp/language-reference/compiler-options/resource-compiler-option.md)または[/resource (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/resource.md)です。  
+  
+ この例で使用できる HTML Web リソースの例は、[次へ] が表示されます。 使用に注意してください、`WebResource`を設定する際に使用される構文、<xref:System.Web.UI.WebResourceAttribute.PerformSubstitution%2A>プロパティを`true`Web リソースにします。  
+  
+ `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">`  
+  
+ `<html >`  
+  
+ `<head>`  
+  
+ `<title>Included Help Page</title>`  
+  
+ `</head>`  
+  
+ `<body>`  
+  
+ `<div>`  
+  
+ `<img alt="help image" src=<% = WebResource("image1.jpg") %> />`  
+  
+ `Included help file.`  
+  
+ `</div>`  
+  
+ `</body>`  
+  
+ `</html>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebResourceAttribute (string webResource, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string webResource, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebResourceAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webResource" Type="System.String" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="webResource">名前、Web リソースのです。</param>
+        <param name="contentType">リソースの種類など<c>"イメージ/gif"</c>または<c>"テキスト/javascript"</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebResourceAttribute" />クラスを指定した Web リソースとリソースのコンテンツ タイプを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="webResource" /> は <see langword="null" /> または空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="contentType" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CdnPath">
+      <MemberSignature Language="C#" Value="public string CdnPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CdnPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebResourceAttribute.CdnPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、パス、コンテンツ配信ネットワーク (CDN) の Web リソースを格納します。</summary>
+        <value>コンテンツ配信ネットワーク (CDN) のパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CdnSupportsSecureConnection">
+      <MemberSignature Language="C#" Value="public bool CdnSupportsSecureConnection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CdnSupportsSecureConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebResourceAttribute.CdnSupportsSecureConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値、 <see cref="T:System.Web.UI.ScriptManager" /> HTTPS を使用して、ページにアクセスする場合は、コンテンツ配信ネットワーク (CDN) のパスへの接続をセキュリティで保護を使用して、スクリプト リソースをアクセスする必要があるかどうか。</summary>
+        <value>
+          <see langword="true" />HTTPS を使用して、CDN にアクセスする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebResourceAttribute.CdnSupportsSecureConnection%2A>から関連付けられているスクリプト リソースにアクセスする必要があるかどうかを確認するプロパティ、 <xref:System.Web.UI.ScriptManager> (SSL を使用してセキュリティで保護された接続を使用して、CDN です。 使用して、<xref:System.Web.UI.WebResourceAttribute.CdnSupportsSecureConnection%2A>プロパティ、Web アプリケーションが SSL をサポートする CDN からセキュリティで保護されたコンテンツを要求しようとすると、ブラウザーから警告メッセージを回避できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebResourceAttribute.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって参照されているリソースの MIME の種類を含む文字列を取得、<see cref="T:System.Web.UI.WebResourceAttribute" />クラスです。</summary>
+        <value>リソースのコンテンツの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツの種類の例としては`"image/jpeg"`と`"text/xml"`です。 MIME の種類の詳細についてを参照してください、 [Internet Assigned Numbers Authority](http://go.microsoft.com/fwlink/?LinkId=43988) Web サイトとメディアの種類に関するセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリの値、<xref:System.Web.UI.WebResourceAttribute.ContentType%2A>プロパティです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebResourceAttribute>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/cs/WebResourceAttribute.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/vb/WebResourceAttribute.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadSuccessExpression">
+      <MemberSignature Language="C#" Value="public string LoadSuccessExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoadSuccessExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebResourceAttribute.LoadSuccessExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web リソースが正常に読み込まれたときに使用される式を設定します。</summary>
+        <value>Web リソースが正常に読み込まれたときに使用される式。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformSubstitution">
+      <MemberSignature Language="C#" Value="public bool PerformSubstitution { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PerformSubstitution" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebResourceAttribute.PerformSubstitution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定での参照を埋め込みリソースの処理中に、かどうかを決定するブール値、<see cref="T:System.Web.UI.WebResourceAttribute" />クラス、その他の Web リソース Url が解析され、リソースへの完全パスに置き換えられます。</summary>
+        <value>
+          <see langword="true" />埋め込みリソースはリソースの処理中に解決された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースが応答に、アセンブリからストリーミングされるときに、埋め込みリソースで他の Web リソースへの参照を解決できます現時点では場合、<xref:System.Web.UI.WebResourceAttribute.PerformSubstitution%2A>プロパティに設定されている`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリの値、<xref:System.Web.UI.WebResourceAttribute.PerformSubstitution%2A>プロパティです。 この例では、<xref:System.Web.UI.WebResourceAttribute>で HTML ファイル Help.htm の属性が定義されている、<xref:System.Web.UI.WebResourceAttribute.PerformSubstitution%2A>プロパティに設定`true`です。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebResourceAttribute>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/cs/WebResourceAttribute.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/vb/WebResourceAttribute.aspx#1)]  
+  
+ この例で使用できる HTML Web リソースの例は、[次へ] が表示されます。 なお、`WebResource`を設定すると、構文を使用する、<xref:System.Web.UI.WebResourceAttribute.PerformSubstitution%2A>プロパティを`true`リソースのです。  
+  
+ `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">`  
+  
+ `<html >`  
+  
+ `<head>`  
+  
+ `<title>Included Help Page</title>`  
+  
+ `</head>`  
+  
+ `<body>`  
+  
+ `<div>`  
+  
+ `<img alt="help image" src=<% = WebResource("image1.jpg") %> />`  
+  
+ `Included help file.`  
+  
+ `</div>`  
+  
+ `</body>`  
+  
+ `</html>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebResource">
+      <MemberSignature Language="C#" Value="public string WebResource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WebResource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebResourceAttribute.WebResource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって参照されているリソースの名前を含む文字列を取得、<see cref="T:System.Web.UI.WebResourceAttribute" />クラスです。</summary>
+        <value>リソースの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、クエリの値、<xref:System.Web.UI.WebResourceAttribute.WebResource%2A>プロパティです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebResourceAttribute>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/cs/WebResourceAttribute.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebResourceAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebResourceAttribute/vb/WebResourceAttribute.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

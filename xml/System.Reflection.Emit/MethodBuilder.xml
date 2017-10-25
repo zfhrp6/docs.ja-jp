@@ -1,0 +1,2062 @@
+<Type Name="MethodBuilder" FullName="System.Reflection.Emit.MethodBuilder">
+  <TypeSignature Language="C#" Value="public sealed class MethodBuilder : System.Reflection.MethodInfo, System.Runtime.InteropServices._MethodBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit MethodBuilder extends System.Reflection.MethodInfo implements class System.Runtime.InteropServices._MethodBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.MethodBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.Emit</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.MethodInfo</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._MethodBuilder</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._MethodBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>動的クラスのメソッドまたはコンストラクターを定義し、表わします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.MethodBuilder>完全名、属性、署名、およびメソッドの本文を含む Microsoft intermediate language (MSIL) のメソッドを記述するクラスを使用します。 組み合わせて使用されます、<xref:System.Reflection.Emit.TypeBuilder>実行時にクラスを作成するクラス。  
+  
+## <a name="global-methods-and-methods-as-type-members"></a>グローバル メソッドと型のメンバーとしてメソッド  
+ リフレクションを使用するグローバル メソッドを定義して、型のメンバーとしてメソッドを定義するを出力します。 Api メソッドの定義を返す<xref:System.Reflection.Emit.MethodBuilder>オブジェクト。  
+  
+### <a name="global-methods"></a>グローバル メソッド  
+ 使用してグローバル メソッドが定義されている、<xref:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod%2A?displayProperty=nameWithType>を返すメソッド、 **MethodBuilder**オブジェクト。  
+  
+ グローバル メソッドは静的である必要があります。 動的モジュールには、グローバル メソッドが含まれている場合、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A?displayProperty=nameWithType>メソッドは、共通言語ランタイムでは、すべてのグローバル関数が定義されるまで、動的モジュールを修正して、延期するために、動的モジュールまたはを含む動的アセンブリを保持する前に呼び出す必要があります。  
+  
+ 使用してネイティブのグローバル メソッドが定義されている、<xref:System.Reflection.Emit.ModuleBuilder.DefinePInvokeMethod%2A?displayProperty=nameWithType>メソッドです。 プラットフォーム呼び出し (PInvoke) abstract または virtual、メソッドを宣言しなければなりません。 ランタイム セット、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>プラットフォーム用の属性がメソッドを呼び出します。  
+  
+### <a name="methods-as-members-of-types"></a>型のメンバーとしてメソッド  
+ 使用して、メソッドが型のメンバーとして定義されている、<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A?displayProperty=nameWithType>を返すメソッド、<xref:System.Reflection.Emit.MethodBuilder>オブジェクト。  
+  
+ <xref:System.Reflection.Emit.MethodBuilder.DefineParameter%2A>メソッドを使用して、パラメーターまたは戻り値の名前とパラメーターの属性を設定します。 <xref:System.Reflection.Emit.ParameterBuilder>このメソッドによって返されるオブジェクトは、パラメーターまたは戻り値を表します。 <xref:System.Reflection.Emit.ParameterBuilder>定数の値を設定する、カスタム属性を適用して、マーシャ リングを設定するオブジェクトを使用できます。  
+  
+## <a name="attributes"></a>属性  
+ メンバー、<xref:System.Reflection.MethodAttributes>列挙体は、動的メソッドの正確な文字を定義します。  
+  
+-   静的メソッドを指定する、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>属性。  
+  
+-   最終的なメソッド (メソッドはオーバーライドできません) を指定する、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>属性。  
+  
+-   仮想メソッドを指定する、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>属性。  
+  
+-   抽象メソッドを指定する、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>属性。  
+  
+-   いくつかの属性は、メソッドの可視性を決定します。 説明を参照して、<xref:System.Reflection.MethodAttributes>列挙します。  
+  
+-   オーバー ロードされた演算子を実装するメソッドを設定する必要があります、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>属性。  
+  
+-   ファイナライザーを設定する必要があります、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>属性。  
+  
+## <a name="known-issues"></a>既知の問題  
+  
+-   <xref:System.Reflection.Emit.MethodBuilder>から派生した<xref:System.Reflection.MethodInfo>、一部の抽象メソッドで定義されている、<xref:System.Reflection.MethodInfo>クラスが完全に実装されていません<xref:System.Reflection.Emit.MethodBuilder>です。 これら<xref:System.Reflection.Emit.MethodBuilder>メソッドをスロー、<xref:System.NotSupportedException>です。 たとえば、<xref:System.Reflection.Emit.MethodBuilder.Invoke%2A?displayProperty=nameWithType>メソッドが完全に実装されていません。 使用してそれを囲む型を取得することによってこれらのメソッドに反映できる、<xref:System.Type.GetType%2A?displayProperty=nameWithType>または<xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   カスタム修飾子は、.NET framework version 2.0 以降がサポートされています。 以前のバージョンではサポートされません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.Emit.MethodBuilder>動的な型内のメソッドを作成するクラス。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MethodBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDeclarativeSecurity">
+      <MemberSignature Language="C#" Value="public void AddDeclarativeSecurity (System.Security.Permissions.SecurityAction action, System.Security.PermissionSet pset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDeclarativeSecurity(valuetype System.Security.Permissions.SecurityAction action, class System.Security.PermissionSet pset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity(System.Security.Permissions.SecurityAction,System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+        <Parameter Name="pset" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="action">(Demand、Assert などの) 実行されるセキュリティ アクション。</param>
+        <param name="pset">アクションが適用されるアクセス許可のセット。</param>
+        <summary>このメソッドに宣言セキュリティを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity%2A>セキュリティ アクションを指定する呼び出しごとに何回かを呼び出すことができます (など`Demand`、 `Assert`、および`Deny`) と、アクションが適用される権限のセット。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0、1.1、および 2.0 では、宣言セキュリティ属性を使用して、メソッドに適用、<xref:System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity%2A>メソッドは古い XML メタデータ形式で格納します。 宣言セキュリティ属性の出力方法を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例のコンテキストの使用方法を示します`AddDeclarativeSecurity`メソッドの呼び出し元が無制限のアクセス許可を要求するようにします。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="action" /> が正しくありません (<see langword="RequestMinimum" />、<see langword="RequestOptional" />、<see langword="RequestRefuse" /> が正しくない)。</exception>
+        <exception cref="T:System.InvalidOperationException">含んでいる型は <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> を使用して作成されています。  
+  
+ または  
+  
+ アクセス許可のセット <paramref name="pset" /> に、<see cref="M:System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity(System.Security.Permissions.SecurityAction,System.Security.PermissionSet)" /> によって以前に追加されたアクションが含まれています。  
+  
+ または  
+  
+ 現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pset" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodAttributes Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドの属性を取得します。</summary>
+        <value>読み取り専用です。 このメソッドの <see langword="MethodAttributes" /> を取得します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallingConvention">
+      <MemberSignature Language="C#" Value="public override System.Reflection.CallingConventions CallingConvention { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.CallingConventions CallingConvention" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.CallingConvention" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.CallingConventions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの呼び出し規則を返します。</summary>
+        <value>読み取り専用です。 メソッドの呼び出し規則。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsGenericParameters">
+      <MemberSignature Language="C#" Value="public override bool ContainsGenericParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContainsGenericParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.ContainsGenericParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型ではサポートされていません。</summary>
+        <value>サポートされていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Reflection.Emit.MethodBuilder>常に、ジェネリック メソッド定義を表し、そのため、呼び出すことができません。  
+  
+ 詳細については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> および <xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=nameWithType> を参照してください。 ジェネリック型については、次を参照してください。<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出されたメソッドは基底クラスでサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMethodBody">
+      <MemberSignature Language="C#" Value="public void CreateMethodBody (byte[] il, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateMethodBody(unsigned int8[] il, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.CreateMethodBody(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="il" Type="System.Byte[]" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="il">有効な MSIL 命令を含む配列。 このパラメーターは、する場合<see langword="null" />メソッドの本体がクリアされます。</param>
+        <param name="count">MSIL 配列内の有効なバイト数。 MSIL が <see langword="null" /> の場合、この値は無視されます。</param>
+        <summary>Microsoft intermediate language (MSIL) の命令の指定されたバイト配列を使用して、メソッドの本体を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから、メソッドの本体を作成する`il`、MSIL 命令を含む配列。 有効な MSIL のバイト数がカウントによって得られます。  
+  
+> [!NOTE]
+>  これは現在完全にサポートされていません。 ユーザーは、トークンの修正と例外ハンドラーの場所を指定できません。  
+  
+   
+  
+## Examples  
+ 次の例、2 つの整数を追加する単純なメソッドが生成されましたオペコードを使用して`CreateMethodBody`です。  
+  
+ [!code-cpp[System.Refelction.Emit.MethodBuilder.CreateMethodBody Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Refelction.Emit.MethodBuilder.CreateMethodBody Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Refelction.Emit.MethodBuilder.CreateMethodBody Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Refelction.Emit.MethodBuilder.CreateMethodBody Example/CS/source.cs#1)]
+ [!code-vb[System.Refelction.Emit.MethodBuilder.CreateMethodBody Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Refelction.Emit.MethodBuilder.CreateMethodBody Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> が指定の MSIL 命令の配列のインデックスの範囲内になく、<paramref name="il" /> が <see langword="null" /> ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">含まれている型は、<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> を使用して以前に作成されています。  
+  
+ または  
+  
+ このメソッドは、<see langword="null" /> ではなかった <paramref name="il" /> 引数を使用して以前にこの <see langword="MethodBuilder" /> で呼び出されました。  
+  
+ または  
+  
+ 現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringType">
+      <MemberSignature Language="C#" Value="public override Type DeclaringType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DeclaringType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.DeclaringType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドを宣言する型を返します。</summary>
+        <value>読み取り専用です。 このメソッドを宣言する型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用例、`Type`プロパティです。  
+  
+ [!code-cpp[MethodBuilderClass_TypeSample#1](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBuilderClass_TypeSample/CPP/methodbuilderclass.cpp#1)]
+ [!code-csharp[MethodBuilderClass_TypeSample#1](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBuilderClass_TypeSample/CS/methodbuilderclass.cs#1)]
+ [!code-vb[MethodBuilderClass_TypeSample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBuilderClass_TypeSample/VB/methodbuilderclass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineGenericParameters">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.GenericTypeParameterBuilder[] DefineGenericParameters (params string[] names);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.GenericTypeParameterBuilder[] DefineGenericParameters(string[] names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.DefineGenericParameters(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.GenericTypeParameterBuilder[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="names">ジェネリック型パラメーターの名前を表す文字列の配列。</param>
+        <summary>現在のメソッドのジェネリック型パラメーターの数を設定し、それらのパラメーターの名前を指定し、パラメーターの制約の定義に使用できる <see cref="T:System.Reflection.Emit.GenericTypeParameterBuilder" /> オブジェクトの配列を返します。</summary>
+        <returns>ジェネリック メソッドの型パラメーターを表す <see cref="T:System.Reflection.Emit.GenericTypeParameterBuilder" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドにより、現在のメソッドがジェネリックです。 この変更を元に戻すことはありません。 もう一度このメソッドを呼び出すと、<xref:System.InvalidOperationException>です。  
+  
+ 使用して後では、ジェネリック メソッドの型パラメーターを取得することができます、<xref:System.Reflection.Emit.MethodBuilder.GetGenericArguments%2A>メソッドです。  
+  
+ 慣例により、型パラメーター名は 1 つの大文字です。  
+  
+ 詳細については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> および <xref:System.Reflection.MethodInfo.GetGenericMethodDefinition%2A?displayProperty=nameWithType> を参照してください。 ジェネリック型については、次を参照してください。<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する動的な型`DemoType`、動的、ジェネリック メソッドが含まれています`DemoMethod`です。 このメソッドは、次の 2 つのジェネリック型パラメーターを 1 つは、パラメーターおよび戻り値の型として、その他のとして使用します。  
+  
+ コードを実行すると、動的アセンブリが DemoGenericMethod1.dll という名前で保存され、[Ildasm.exe (IL Disassembler)](~/docs/framework/tools/ildasm-exe-il-disassembler.md) を使用してチェックできます。  
+  
+> [!NOTE]
+>  このコード例では、null 参照を返すだけ単純なメソッドの本体を生成します。 作成して、ジェネリック型を使用する詳細完全に開発されたメソッドの本体のコード例は、次を参照してください。[する方法: リフレクション出力を持つジェネリック メソッドを定義する](~/docs/framework/reflection-and-codedom/how-to-define-a-generic-method-with-reflection-emit.md)です。  
+  
+ [!code-cpp[GenericMethodBuilder#1](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#1)]
+ [!code-csharp[GenericMethodBuilder#1](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#1)]
+ [!code-vb[GenericMethodBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドのジェネリック型パラメーターは既に定義されています。  
+  
+ または  
+  
+ メソッドが既に完了しました。  
+  
+ または  
+  
+ 現在のメソッドの <see cref="M:System.Reflection.Emit.MethodBuilder.SetImplementationFlags(System.Reflection.MethodImplAttributes)" /> メソッドが呼び出されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="names" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="names" /> の要素は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="names" /> は空の配列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineParameter">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.ParameterBuilder DefineParameter (int position, System.Reflection.ParameterAttributes attributes, string strParamName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.ParameterBuilder DefineParameter(int32 position, valuetype System.Reflection.ParameterAttributes attributes, string strParamName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.DefineParameter(System.Int32,System.Reflection.ParameterAttributes,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.ParameterBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+        <Parameter Name="attributes" Type="System.Reflection.ParameterAttributes" />
+        <Parameter Name="strParamName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="position">パラメーター リストのパラメーターの位置。 パラメーターのインデックスの作成は、最初のパラメーターの数値 1 から始まります。数値 0 は、メソッドの戻り値です。</param>
+        <param name="attributes">パラメーターのパラメーター属性。</param>
+        <param name="strParamName">パラメーターの名前。 名前は、null 文字列にすることができます。</param>
+        <summary>パラメーター属性およびこのメソッドのパラメーターの名前、またはこのメソッドの戻り値の名前を設定します。 カスタム属性を適用するために使用できる ParameterBuilder を返します。</summary>
+        <returns>このメソッドのパラメーターまたはこのメソッドの戻り値を表す <see langword="ParameterBuilder" /> オブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.ParameterBuilder>パラメーターの既定値を設定またはカスタム属性を適用する、このメソッドによって返されるオブジェクトを使用できます。  
+  
+ パラメーターの番号付け 1 から始まるため`position`は、最初のパラメーターの 1。 場合`position`0 の場合は、このメソッドの戻り値に影響します。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、例外がスローされる場合`position`は 0、ため、このメソッドは、これらのバージョンの戻り値の属性の変更を使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">メソッドにパラメーターが指定されていません。  
+  
+ または  
+  
+ <paramref name="position" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="position" /> は、メソッドのパラメーターの数を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">含まれている型は、<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> を使用して以前に作成されています。  
+  
+ または  
+  
+ 現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">この <see langword="MethodBuilder" /> インスタンスと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、このインスタンスと等しいかどうかを判定します。</summary>
+        <returns>
+          <paramref name="obj" /> が <see langword="MethodBuilder" /> のインスタンスで、このオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等しいかどうかは、同じ名前、属性、および署名を持つによって決定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBaseDefinition">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodInfo GetBaseDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MethodInfo GetBaseDefinition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetBaseDefinition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドの基本実装を返します。</summary>
+        <returns>このメソッドの基本実装。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在が常に返されます。`MethodBuilder`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public override object[] GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit">このメンバーの継承チェーンを検索してカスタム属性を見つけるかどうかを指定します。</param>
+        <summary>このメソッドの定義済みのカスタム属性をすべて返します。</summary>
+        <returns>このメソッドのすべてのカスタム属性を表す、オブジェクトの配列を返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは現在サポートされていません。 <see cref="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" /> を使用してメソッドを取得し、返された <see cref="T:System.Reflection.MethodInfo" /> に対して <see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)" /> を呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public override object[] GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">カスタム属性の型。</param>
+        <param name="inherit">このメンバーの継承チェーンを検索してカスタム属性を見つけるかどうかを指定します。</param>
+        <summary>指定された型で識別されるカスタム属性を返します。</summary>
+        <returns>このメソッドの型の属性を表すオブジェクトの配列を返します<paramref name="attributeType" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは現在サポートされていません。 <see cref="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" /> を使用してメソッドを取得し、返された <see cref="T:System.Reflection.MethodInfo" /> に対して <see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)" /> を呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGenericArguments">
+      <MemberSignature Language="C#" Value="public override Type[] GetGenericArguments ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type[] GetGenericArguments() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetGenericArguments" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドの型パラメーターがジェネリックの場合、そのパラメーターを表す <see cref="T:System.Reflection.Emit.GenericTypeParameterBuilder" /> オブジェクトの配列。</summary>
+        <returns>メソッドがジェネリックの場合、型パラメーターを表す <see cref="T:System.Reflection.Emit.GenericTypeParameterBuilder" /> オブジェクトの配列。メソッドがジェネリックでない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネリック メソッドの型パラメーターは、によって返されるも、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドを定義するために使用します。  
+  
+ 詳細については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> および <xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType> を参照してください。 ジェネリック型については、次を参照してください。<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGenericMethodDefinition">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodInfo GetGenericMethodDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MethodInfo GetGenericMethodDefinition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetGenericMethodDefinition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドを返します。</summary>
+        <returns><see cref="T:System.Reflection.Emit.MethodBuilder" /> の現在のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Reflection.Emit.MethodBuilder>構築されたジェネリック メソッドを直接出力には使用できません。 出力されたメソッドは、ジェネリック メソッド定義です。  
+  
+ 詳細については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> および <xref:System.Reflection.MethodInfo.GetGenericMethodDefinition%2A?displayProperty=nameWithType> を参照してください。 ジェネリック型については、次を参照してください。<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドはジェネリックではありません。 つまり、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティが <see langword="false" /> を返します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドのハッシュ コードを取得します。</summary>
+        <returns>このメソッドのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetILGenerator">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.ILGenerator GetILGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.ILGenerator GetILGenerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetILGenerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.ILGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドの <see langword="ILGenerator" /> を返します。既定の Microsoft Intermediate Language (MSIL) のストリーム サイズは 64 バイトです。</summary>
+        <returns>このメソッドの <see langword="ILGenerator" /> オブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のコンテキストの使用法を示しています、`GetILGenerator`メソッドを作成し、3 D 空間に 2 つのポイントとのドット積を計算する、動的アセンブリを生成します。  
+  
+ [!code-cpp[System.Reflection.Emit ILGenerator Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit ILGenerator Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Reflection.Emit ILGenerator Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit ILGenerator Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.Emit ILGenerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit ILGenerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">その<see cref="T:System.Reflection.MethodAttributes" /> または <see cref="T:System.Reflection.MethodImplAttributes" /> フラグにより、(たとえば、それに <see cref="F:System.Reflection.MethodAttributes.PinvokeImpl" /> フラグがあるため) メソッドは本文を持つべきではありません。  
+  
+ -または-  
+  
+ メソッドはジェネリック メソッドですが、ジェネリック メソッド定義ではありません。 つまり、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetILGenerator">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.ILGenerator GetILGenerator (int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.ILGenerator GetILGenerator(int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetILGenerator(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.ILGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="size">バイト単位の MSIL ストリームのサイズ。</param>
+        <summary>指定された Microsoft Intermediate Language (MSIL) のストリーム サイズにより、このメソッドの <see langword="ILGenerator" /> を返します。</summary>
+        <returns>このメソッドの <see langword="ILGenerator" /> オブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のコンテキストの使用法を示しています、`GetILGenerator`メソッドを作成し、3 D 空間に 2 つのポイントとのドット積を計算する、動的アセンブリを生成します。  
+  
+ [!code-cpp[System.Reflection.Emit ILGenerator Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit ILGenerator Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Reflection.Emit ILGenerator Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit ILGenerator Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.Emit ILGenerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit ILGenerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">その<see cref="T:System.Reflection.MethodAttributes" /> または <see cref="T:System.Reflection.MethodImplAttributes" /> フラグにより、(たとえば、それに <see cref="F:System.Reflection.MethodAttributes.PinvokeImpl" /> フラグがあるため) メソッドは本文を持つべきではありません。  
+  
+ -または-  
+  
+ メソッドはジェネリック メソッドですが、ジェネリック メソッド定義ではありません。 つまり、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodImplementationFlags">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodImplAttributes GetMethodImplementationFlags ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Reflection.MethodImplAttributes GetMethodImplementationFlags() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドの実装フラグを返します。</summary>
+        <returns>このメソッドの実装フラグを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetModule">
+      <MemberSignature Language="C#" Value="public System.Reflection.Module GetModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Module GetModule() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetModule" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Module</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドを含むモジュールへの参照を返します。</summary>
+        <returns>このメソッドを含むモジュールへの参照を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のサンプル コードの使用方法を示しています、`GetModule`を動的に生成されたモジュールに関する情報を取得する方法です。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder.GetModule#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.GetModule/CPP/source3.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder.GetModule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.GetModule/CS/source3.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder.GetModule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.GetModule/VB/source3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameters">
+      <MemberSignature Language="C#" Value="public override System.Reflection.ParameterInfo[] GetParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.ParameterInfo[] GetParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドのパラメーターを返します。</summary>
+        <returns>メソッドへの引数を表す <see langword="ParameterInfo" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の使用方法を示します`GetParameters`を動的に生成されたメソッドに渡されるパラメーターに関する情報を検出します。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder.GetParameters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.GetParameters Example/CPP/source4.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder.GetParameters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.GetParameters Example/CS/source4.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder.GetParameters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.GetParameters Example/VB/source4.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは現在サポートされていません。 <see cref="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" /> を使用してメソッドを取得し、返された <see cref="T:System.Reflection.MethodInfo" /> に対して <see langword="GetParameters" /> を呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodToken GetToken ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.MethodToken GetToken() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.GetToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="MethodToken" />このメソッドのトークンを表すです。</summary>
+        <returns>返します、<see langword="MethodToken" />このメソッドの。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitLocals">
+      <MemberSignature Language="C#" Value="public bool InitLocals { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InitLocals" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.InitLocals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドのローカル変数をゼロに初期化するかどうかを指定するブール値を取得または設定します。 このプロパティの既定値は <see langword="true" /> です。</summary>
+        <value>
+          このメソッドのローカル変数をゼロに初期化する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、生成された MSIL には、ローカル変数の初期化が含まれています。 設定されている場合`false`、ローカル変数が初期化されていませんし、生成されたコードは、検証できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。 (取得または設定します。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public override object Invoke (object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object[] parameters, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Invoke(object obj, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object[] parameters, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">指定したメソッドを呼び出す対象となるオブジェクト。 メソッドが静的である場合、このパラメーターは無視されます。</param>
+        <param name="invokeAttr">ビット フラグでなければなりません<see cref="T:System.Reflection.BindingFlags" />: <see langword="InvokeMethod" />、<see langword="NonPublic" />のようにします。</param>
+        <param name="binder">バインディング、引数型の強制変換、メンバーの呼び出し、リフレクションによる MemberInfo オブジェクトの取得を有効にするオブジェクト。 バインダーが場合<see langword="null" />既定のバインダーが使用されます。 詳細については、「<see cref="T:System.Reflection.Binder" />」を参照してください。</param>
+        <param name="parameters">引数リスト。 これは、呼び出されるメソッドのパラメーターと同じ数、順序、型の引数の配列です。 この値にはパラメーターがない場合<see langword="null" />です。</param>
+        <param name="culture">型の強制変換を制御するために使用する <see cref="T:System.Globalization.CultureInfo" /> のインスタンス。 これは、null の場合、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。 (これは、たとえば、変換するために必要なことに注意してください、 <see cref="T:System.String" /> 1000 を表す、<see cref="T:System.Double" />値、1000 の表記が異なるカルチャによって異なるためです)。</param>
+        <summary>指定されたバインダーの制約下で、指定されたパラメーターを渡しつつ、指定されたオブジェクトのこのインスタンスによって反映されるメソッドを動的に呼び出します。</summary>
+        <returns>呼び出されたメソッドの戻り値を格納するオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが静的の場合、`obj`パラメーターは無視されます。 非静的メソッドの`obj`継承またはメソッドを宣言し、このクラスと同じ型である必要があるクラスのインスタンスである必要があります。 メソッドは、パラメーターの値を持たない場合`parameters`する必要があります`null`です。 それ以外の場合、パラメーター配列内の要素のと同じ数、種類、およびこのインスタンスによって反映されるメソッドのパラメーターの順序にする必要があります。  
+  
+> [!NOTE]
+>  アクセスの制限には、完全に信頼されたコードは無視されます。 つまり、private のコンス トラクター、メソッド、フィールド、およびプロパティにアクセスできるし、コードが完全に信頼されている場合は、リフレクションを使用して呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは現在サポートされていません。 <see cref="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" /> を使用してメソッドを取得し、返された <see cref="T:System.Reflection.MethodInfo" /> に対して <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" /> を呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public override bool IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">カスタム属性の型。</param>
+        <param name="inherit">このメンバーの継承チェーンを検索してカスタム属性を見つけるかどうかを指定します。</param>
+        <summary>指定されたカスタム属性の型が定義されているかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定されたカスタム属性の型が定義されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは現在サポートされていません。 <see cref="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" /> を使用してメソッドを取得し、返された <see cref="T:System.Reflection.MethodInfo" /> に対して <see cref="M:System.Reflection.MemberInfo.IsDefined(System.Type,System.Boolean)" /> を呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGenericMethod">
+      <MemberSignature Language="C#" Value="public override bool IsGenericMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGenericMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドがジェネリック メソッドかどうかを示す値を取得します。</summary>
+        <value>
+          メソッドがジェネリックの場合、<see langword="true" />。それ以外の場合、<see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、型パラメーターがある場合はジェネリックです。 ことができますメソッド ジェネリックを呼び出して、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッド型パラメーターを追加します。 この変更を元に戻すことはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メソッドのステータスを表示します。 このコードに示されている例の一部である、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドです。  
+  
+ [!code-cpp[GenericMethodBuilder#7](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#7)]
+ [!code-csharp[GenericMethodBuilder#7](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#7)]
+ [!code-vb[GenericMethodBuilder#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGenericMethodDefinition">
+      <MemberSignature Language="C#" Value="public override bool IsGenericMethodDefinition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGenericMethodDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Reflection.Emit.MethodBuilder" /> オブジェクトがジェネリック メソッドの定義を表しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Reflection.Emit.MethodBuilder" /> オブジェクトがジェネリック メソッドの定義を表している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Reflection.Emit.MethodBuilder> ; ジェネリック メソッド定義の作成にのみ使用できる構築されたジェネリック メソッドを直接作成するために使用できません。 ただしのサブクラス<xref:System.Reflection.Emit.MethodBuilder>構築されたジェネリック メソッドを表す場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メソッドのステータスを表示します。 このコードに示されている例の一部である、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドです。  
+  
+ [!code-cpp[GenericMethodBuilder#7](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#7)]
+ [!code-csharp[GenericMethodBuilder#7](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#7)]
+ [!code-vb[GenericMethodBuilder#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityCritical">
+      <MemberSignature Language="C#" Value="public override bool IsSecurityCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.IsSecurityCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的アセンブリのメソッドがセキュリティ クリティカルであるかどうかを判断するのに呼び出すことによって型を完成させます。 <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType>、呼び出し、 <xref:System.Type.GetMethod%2A> get と完了の型のメソッド、<xref:System.Reflection.MethodBase.IsSecurityCritical%2A>プロパティ、その結果を<xref:System.Reflection.MethodInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">すべての場合。 このプロパティは、動的アセンブリではサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecuritySafeCritical">
+      <MemberSignature Language="C#" Value="public override bool IsSecuritySafeCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecuritySafeCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.IsSecuritySafeCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的アセンブリのメソッドがセキュリティ セーフ クリティカルであるかどうかを判断するのに呼び出すことによって型を完成させます。 <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType>、呼び出し、 <xref:System.Type.GetMethod%2A> get と完了の型のメソッド、<xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>プロパティ、その結果を<xref:System.Reflection.MethodInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">すべての場合。 このプロパティは、動的アセンブリではサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityTransparent">
+      <MemberSignature Language="C#" Value="public override bool IsSecurityTransparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityTransparent" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.IsSecurityTransparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的アセンブリのメソッドがセキュリティ透過的であるかどうかを判断するのに呼び出すことによって型を完成させます。 <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType>、呼び出し、 <xref:System.Type.GetMethod%2A> get と完了の型のメソッド、<xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>プロパティ、その結果を<xref:System.Reflection.MethodInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">すべての場合。 このプロパティは、動的アセンブリではサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeGenericMethod">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodInfo MakeGenericMethod (params Type[] typeArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MethodInfo MakeGenericMethod(class System.Type[] typeArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.MakeGenericMethod(System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeArguments" Type="System.Type[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="typeArguments">ジェネリック メソッドの型引数を表す <see cref="T:System.Type" /> オブジェクトの配列。</param>
+        <summary>指定したジェネリック型引数を使用して、現在のジェネリック メソッド定義から構築されたジェネリック メソッドを返します。</summary>
+        <returns>指定したジェネリック型引数を使用して、現在のジェネリック メソッド定義から構築されたジェネリック メソッドを表す <see cref="T:System.Reflection.MethodInfo" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的なコードを出力するときに、によって表されるジェネリック メソッド定義から構築されたメソッドへの呼び出しを生成する必要があります、<xref:System.Reflection.Emit.MethodBuilder>外側の型が完了する前に、します。 使用することができます、<xref:System.Reflection.Emit.MethodBuilder.MakeGenericMethod%2A>メソッドを作成、<xref:System.Reflection.MethodInfo>このような構築されるメソッドを使用して、<xref:System.Reflection.MethodInfo>生成の呼び出しで。  
+  
+   
+  
+## Examples  
+ 次のコード例では、不完全な型の不完全なジェネリック メソッド定義から構築されたメソッドを作成します。  
+  
+ 例では、1 つの型を持つ一時アセンブリとモジュールを作成、メソッドを追加`M`、型パラメーター T を使用して、追加することにより、メソッドのジェネリックおよび、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドです。 型パラメーターは、メソッドのパラメーターの型および戻り値の型としても使用されます。 ジェネリック メソッドの定義が指定されていない場合、本文、およびそれを囲む型が完了していません。 <xref:System.Reflection.Emit.MethodBuilder.MakeGenericMethod%2A>メソッドが構築されるメソッドを使用して`M<String>`(`M(Of String)` Visual Basic で)。 コード例には、出力がないためのサブクラス<xref:System.Reflection.MethodInfo>によって返される、<xref:System.Reflection.Emit.MethodBuilder.MakeGenericMethod%2A>メソッドでは、そのパラメーターには、リフレクションはできません。  
+  
+> [!NOTE]
+>  使用する別のコード例については<xref:System.Reflection.Emit.MethodBuilder.MakeGenericMethod%2A>を参照してください<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>です。 <xref:System.Reflection.Emit.MethodBuilder.MakeGenericMethod%2A>使用頻度がジェネリック型を使用するコードを生成するときにします。 参照してください[する方法: リフレクションを使用してジェネリック メソッドを定義する出力](~/docs/framework/reflection-and-codedom/how-to-define-a-generic-method-with-reflection-emit.md)です。  
+  
+ [!code-cpp[MethodBuilder.MakeGenericMethod#1](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBuilder.MakeGenericMethod/cpp/source.cpp#1)]
+ [!code-csharp[MethodBuilder.MakeGenericMethod#1](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBuilder.MakeGenericMethod/cs/source.cs#1)]
+ [!code-vb[MethodBuilder.MakeGenericMethod#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBuilder.MakeGenericMethod/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodHandle">
+      <MemberSignature Language="C#" Value="public override RuntimeMethodHandle MethodHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.RuntimeMethodHandle MethodHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.MethodHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeMethodHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの内部ハンドルを取得します。 基になるメタデータ ハンドルにアクセスするには、このハンドルを使用します。</summary>
+        <value>読み取り専用です。 メソッドの内部ハンドル。 基になるメタデータ ハンドルにアクセスするには、このハンドルを使用します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは現在サポートされていません。 <see cref="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" /> を使用してメソッドを取得し、返された <see cref="T:System.Reflection.MethodInfo" /> に対して <see cref="P:System.Reflection.MethodBase.MethodHandle" /> を呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodImplementationFlags">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodImplAttributes MethodImplementationFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodImplAttributes MethodImplementationFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.MethodImplementationFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Module">
+      <MemberSignature Language="C#" Value="public override System.Reflection.Module Module { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Module Module" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.Module" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Module</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメソッドが定義されているモジュールを取得します。</summary>
+        <value><see cref="T:System.Reflection.Module" />が表されるメンバーの現在の<see cref="T:System.Reflection.MemberInfo" />が定義されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、便宜上指定します。 使用すると等価である、<xref:System.Reflection.Emit.MethodBuilder.DeclaringType%2A>でメソッドが宣言されている、型を取得するプロパティと、呼び出し元、<xref:System.Type.Module%2A>結果のプロパティ<xref:System.Type>オブジェクト。  
+  
+ このプロパティは呼び出すことと同じ<xref:System.Reflection.Emit.MethodBuilder.GetModule%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドの名前を取得します。</summary>
+        <value>読み取り専用です。 このメソッドの簡易名を含む文字列を取得します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectedType">
+      <MemberSignature Language="C#" Value="public override Type ReflectedType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReflectedType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.ReflectedType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトを取得するためにリフレクションで使用されたクラスを取得します。</summary>
+        <value>読み取り専用です。 このメソッドの取得に使用された型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnParameter">
+      <MemberSignature Language="C#" Value="public override System.Reflection.ParameterInfo ReturnParameter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.ParameterInfo ReturnParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.ReturnParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値の型にカスタム修飾子があるかどうかなど、メソッドの戻り値の型に関する情報を格納している <see cref="T:System.Reflection.ParameterInfo" /> オブジェクトを取得します。</summary>
+        <value>戻り値の型に関する情報を格納している <see cref="T:System.Reflection.ParameterInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイラのデザイナーを使用できます、<xref:System.Reflection.ParameterInfo>カスタムかどうかを検出するには、このプロパティによって返されるオブジェクト修飾子など<xref:Microsoft.VisualC.IsConstModifier>、戻り値の型に適用されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">宣言する型が作成されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnType">
+      <MemberSignature Language="C#" Value="public override Type ReturnType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.ReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Reflection.Emit.MethodBuilder" /> によって表されるメソッドの戻り値の型を取得します。</summary>
+        <value>メソッドの戻り値の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  以降、.NET Framework 2.0 と .NET Compact Framework 2.0 では、このメンバーは、基底クラスから継承、<xref:System.Reflection.MethodInfo>です。 「<xref:System.Reflection.MethodInfo.ReturnType%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnTypeCustomAttributes">
+      <MemberSignature Language="C#" Value="public override System.Reflection.ICustomAttributeProvider ReturnTypeCustomAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.ICustomAttributeProvider ReturnTypeCustomAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.ReturnTypeCustomAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ICustomAttributeProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの戻り値の型のカスタム属性を返します。</summary>
+        <value>読み取り専用です。 メソッドの戻り値の型のカスタム属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に `null` を返します。 取得、<xref:System.Reflection.MethodInfo>含まれている後に<xref:System.Type>が作成され、呼び出された<xref:System.Reflection.MethodInfo.ReturnTypeCustomAttributes%2A>上、<xref:System.Reflection.MethodInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCustomAttribute">
+      <MemberSignature Language="C#" Value="public void SetCustomAttribute (System.Reflection.Emit.CustomAttributeBuilder customBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCustomAttribute(class System.Reflection.Emit.CustomAttributeBuilder customBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetCustomAttribute(System.Reflection.Emit.CustomAttributeBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customBuilder" Type="System.Reflection.Emit.CustomAttributeBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="customBuilder">カスタム属性を説明するヘルパー クラスのインスタンス。</param>
+        <summary>カスタム属性ビルダーを使用して、カスタム属性を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.MethodBuilder.SetCustomAttribute%2A>メソッドに対話できる、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>メソッドの組み合わせで 2 つの方法が使用されています。 「解説」セクションを参照してください、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>詳細についてはメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customBuilder" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCustomAttribute">
+      <MemberSignature Language="C#" Value="public void SetCustomAttribute (System.Reflection.ConstructorInfo con, byte[] binaryAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCustomAttribute(class System.Reflection.ConstructorInfo con, unsigned int8[] binaryAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetCustomAttribute(System.Reflection.ConstructorInfo,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="con" Type="System.Reflection.ConstructorInfo" />
+        <Parameter Name="binaryAttribute" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="con">カスタム属性のコンストラクター。</param>
+        <param name="binaryAttribute">属性を表すバイト blob。</param>
+        <summary>指定されたカスタム属性の blob を使用して、カスタム属性を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書式設定する方法の詳細`binaryAttribute`、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ <xref:System.Reflection.Emit.MethodBuilder.SetCustomAttribute%2A>メソッドに対話できる、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>メソッドの組み合わせで 2 つの方法が使用されています。 「解説」セクションを参照してください、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>詳細についてはメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="con" /> または <paramref name="binaryAttribute" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImplementationFlags">
+      <MemberSignature Language="C#" Value="public void SetImplementationFlags (System.Reflection.MethodImplAttributes attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImplementationFlags(valuetype System.Reflection.MethodImplAttributes attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetImplementationFlags(System.Reflection.MethodImplAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Reflection.MethodImplAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">設定する実装フラグ。</param>
+        <summary>このメソッドの実装フラグを取得または設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>メソッドと組み合わせて、<xref:System.Reflection.Emit.MethodBuilder.SetCustomAttribute%2A>メソッド、潜在的な相互作用に注意してください。 たとえばを使用して、<xref:System.Reflection.Emit.MethodBuilder.SetCustomAttribute%2A>を追加するメソッド、<xref:System.Runtime.InteropServices.DllImportAttribute>属性セットでも、<xref:System.Reflection.MethodImplAttributes?displayProperty=nameWithType>フラグ。 後で呼び出す場合、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>メソッド、<xref:System.Reflection.MethodImplAttributes.PreserveSig>フラグが上書きされます。 これにはこれを回避する 2 つの方法があります。  
+  
+-   呼び出す、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>メソッドを呼び出す前に、<xref:System.Reflection.Emit.MethodBuilder.SetCustomAttribute%2A>メソッドです。 <xref:System.Reflection.Emit.MethodBuilder.SetCustomAttribute%2A>メソッドは常に既存のメソッド実装フラグを尊重します。  
+  
+-   実装フラグを設定するときに呼び出す、<xref:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags%2A>ビット演算子を使用して、既存のフラグを取得する、フラグを追加し、呼び出すメソッド、<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例のコンテキストの使用方法を示します、`SetImplementationFlags`メソッドの本体で MSIL の実装を記述するメソッド。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder.SetImplementationFlags Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetImplementationFlags Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder.SetImplementationFlags Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetImplementationFlags Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder.SetImplementationFlags Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetImplementationFlags Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれている型は、<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> を使用して以前に作成されています。  
+  
+ または  
+  
+ 現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMarshal">
+      <MemberSignature Language="C#" Value="public void SetMarshal (System.Reflection.Emit.UnmanagedMarshal unmanagedMarshal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMarshal(class System.Reflection.Emit.UnmanagedMarshal unmanagedMarshal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetMarshal(System.Reflection.Emit.UnmanagedMarshal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("An alternate API is available: Emit the MarshalAs custom attribute instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unmanagedMarshal" Type="System.Reflection.Emit.UnmanagedMarshal" />
+      </Parameters>
+      <Docs>
+        <param name="unmanagedMarshal">このメソッドの戻り値の型のマーシャリング情報。</param>
+        <summary>このメソッドの戻り値の型のマーシャリング情報を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のコンテキストの使用方法を示しています、`SetMarshal`に異なる型としてのメソッド呼び出しの結果をマーシャ リングするメソッド。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder.SetMarshal Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetMarshal Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder.SetMarshal Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetMarshal Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder.SetMarshal Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetMarshal Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれている型は、<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> を使用して以前に作成されています。  
+  
+ または  
+  
+ 現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMethodBody">
+      <MemberSignature Language="C#" Value="public void SetMethodBody (byte[] il, int maxStack, byte[] localSignature, System.Collections.Generic.IEnumerable&lt;System.Reflection.Emit.ExceptionHandler&gt; exceptionHandlers, System.Collections.Generic.IEnumerable&lt;int&gt; tokenFixups);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMethodBody(unsigned int8[] il, int32 maxStack, unsigned int8[] localSignature, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Reflection.Emit.ExceptionHandler&gt; exceptionHandlers, class System.Collections.Generic.IEnumerable`1&lt;int32&gt; tokenFixups) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetMethodBody(System.Byte[],System.Int32,System.Byte[],System.Collections.Generic.IEnumerable{System.Reflection.Emit.ExceptionHandler},System.Collections.Generic.IEnumerable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="il" Type="System.Byte[]" />
+        <Parameter Name="maxStack" Type="System.Int32" />
+        <Parameter Name="localSignature" Type="System.Byte[]" />
+        <Parameter Name="exceptionHandlers" Type="System.Collections.Generic.IEnumerable&lt;System.Reflection.Emit.ExceptionHandler&gt;" />
+        <Parameter Name="tokenFixups" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="il">有効な MSIL 命令を含む配列。</param>
+        <param name="maxStack">スタック評価の最大深度。</param>
+        <param name="localSignature">シリアル化されたローカル変数の構造を含むバイト配列。 指定<see langword="null" />メソッドにローカル変数があるない場合。</param>
+        <param name="exceptionHandlers">メソッドの例外ハンドラーを含むコレクション。 指定<see langword="null" />メソッドに例外ハンドラーがあるない場合。</param>
+        <param name="tokenFixups">オフセットを表す値のコレクション<c>il</c>、変更可能性のあるトークンの先頭をそれぞれ指定します。 指定<see langword="null" />メソッドに変更する必要のあるトークンがない場合。</param>
+        <summary>Microsoft intermediate language (MSIL) の命令の指定したバイト配列を使用して、メソッドの本体を作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="il" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="maxStack" /> が負の値です。  
+  
+ -または-  
+  
+ いずれかの<paramref name="exceptionHandlers" />外のオフセットを指定<paramref name="il" />です。  
+  
+ -または-  
+  
+ いずれかの<paramref name="tokenFixups" />外のオフセットを指定します、<paramref name="il" />配列。</exception>
+        <exception cref="T:System.InvalidOperationException">包含する型が以前を使用して作成された、<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />メソッドです。  
+  
+ -または-  
+  
+ このメソッドはこれで以前に呼び出されて<see cref="T:System.Reflection.Emit.MethodBuilder" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameters">
+      <MemberSignature Language="C#" Value="public void SetParameters (params Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetParameters(System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterTypes" Type="System.Type[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="parameterTypes">パラメーターの型を表す <see cref="T:System.Type" /> オブジェクトの配列。</param>
+        <summary>メソッドのパラメーターの数と型を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターの型と数わかっている場合、メソッドが定義されている場合、その設定のオーバー ロードを使用して、<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A?displayProperty=nameWithType>パラメーターの型の配列を受け取るメソッド。 ただし、ジェネリック メソッドでは、型を持つ、1 つ以上のメソッドを定義した後にまで定義できません。 独自のジェネリック型パラメーターによって指定されたパラメーターを持つことができます。 このメソッドを使用すると、その場合は、パラメーターの型を設定できます。  
+  
+ 戻り値の型が省略可能または必須のカスタム修飾子をなどがかどうか<xref:System.Runtime.CompilerServices.IsConst>を使用して、<xref:System.Reflection.Emit.MethodBuilder.SetSignature%28System.Type%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%5B%5D%2CSystem.Type%5B%5D%5B%5D%29>メソッドのオーバー ロードします。  
+  
+ このメソッドの呼び出しを使用して設定されたパラメーターの型が置き換えられます、<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>を行うメソッドがジェネリック メソッドです。 <xref:System.Reflection.Emit.MethodBuilder.SetParameters%2A>メソッドは、最初のジェネリック型パラメーターによって指定される型を持つ、メソッドの 1 つパラメーターに使用します。 <xref:System.Reflection.Emit.MethodBuilder.SetReturnType%2A>メソッドを使用して、メソッドに 2 つ目のジェネリック型パラメーターで指定された戻り値の型を指定します。  
+  
+ このコードに示されている例の一部である、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドです。  
+  
+ [!code-cpp[GenericMethodBuilder#3](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#3)]
+ [!code-csharp[GenericMethodBuilder#3](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#3)]
+ [!code-vb[GenericMethodBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#3)]  
+[!code-cpp[GenericMethodBuilder#5](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#5)]
+[!code-csharp[GenericMethodBuilder#5](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#5)]
+[!code-vb[GenericMethodBuilder#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のメソッドはジェネリックですが、ジェネリック メソッド定義ではありません。 つまり、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReturnType">
+      <MemberSignature Language="C#" Value="public void SetReturnType (Type returnType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetReturnType(class System.Type returnType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetReturnType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="returnType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="returnType">メソッドの戻り値の型を表す <see cref="T:System.Type" /> オブジェクト。</param>
+        <summary>メソッドの戻り値の型を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、メソッドのジェネリック型パラメーターのいずれかで指定すると、戻り値の型がジェネリック メソッドの戻り値の型を設定できます。 戻り値の型が省略可能または必須のカスタム修飾子をなどがかどうか<xref:System.Runtime.CompilerServices.IsConst>を使用して、<xref:System.Reflection.Emit.MethodBuilder.SetSignature%28System.Type%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%5B%5D%2CSystem.Type%5B%5D%5B%5D%29>メソッドのオーバー ロードします。  
+  
+ このメソッドを呼び出すには、戻り値の型を使用して確立が置き換えられます。、<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>を行うメソッドがジェネリック メソッドです。 <xref:System.Reflection.Emit.MethodBuilder.SetParameters%2A>メソッドは、最初のジェネリック型パラメーターによって指定される型を持つ、メソッドの 1 つパラメーターに使用します。 <xref:System.Reflection.Emit.MethodBuilder.SetReturnType%2A>メソッドを使用して、メソッドに 2 つ目のジェネリック型パラメーターで指定された戻り値の型を指定します。  
+  
+ このコードに示されている例の一部である、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドです。  
+  
+ [!code-cpp[GenericMethodBuilder#3](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#3)]
+ [!code-csharp[GenericMethodBuilder#3](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#3)]
+ [!code-vb[GenericMethodBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#3)]  
+[!code-cpp[GenericMethodBuilder#5](~/samples/snippets/cpp/VS_Snippets_CLR/GenericMethodBuilder/cpp/source.cpp#5)]
+[!code-csharp[GenericMethodBuilder#5](~/samples/snippets/csharp/VS_Snippets_CLR/GenericMethodBuilder/CS/source.cs#5)]
+[!code-vb[GenericMethodBuilder#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodBuilder/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のメソッドはジェネリックですが、ジェネリック メソッド定義ではありません。 つまり、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSignature">
+      <MemberSignature Language="C#" Value="public void SetSignature (Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers, Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSignature(class System.Type returnType, class System.Type[] returnTypeRequiredCustomModifiers, class System.Type[] returnTypeOptionalCustomModifiers, class System.Type[] parameterTypes, class System.Type[][] parameterTypeRequiredCustomModifiers, class System.Type[][] parameterTypeOptionalCustomModifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetSignature(System.Type,System.Type[],System.Type[],System.Type[],System.Type[][],System.Type[][])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="returnTypeRequiredCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="returnTypeOptionalCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="parameterTypeRequiredCustomModifiers" Type="System.Type[][]" />
+        <Parameter Name="parameterTypeOptionalCustomModifiers" Type="System.Type[][]" />
+      </Parameters>
+      <Docs>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="returnTypeRequiredCustomModifiers">メソッドの戻り値の型の <see cref="T:System.Runtime.CompilerServices.IsConst" /> など、必須のカスタム修飾子を表す型の配列。 戻り値の型が必須のカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="returnTypeOptionalCustomModifiers">メソッドの戻り値の型の <see cref="T:System.Runtime.CompilerServices.IsConst" /> のような、省略可能なカスタム修飾子を表す型の配列。 戻り値の型が省略可能なカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <param name="parameterTypeRequiredCustomModifiers">型の配列の配列。 型の各配列は、<see cref="T:System.Runtime.CompilerServices.IsConst" /> のような、対応するパラメーターの必須のカスタム修飾子を表します。 特定のパラメーターに必須のカスタム修飾子がない場合は、型の配列の代わりに <see langword="null" /> を指定します。 どのパラメーターにも必須のカスタム修飾子がない場合は、配列の配列の代わりに <see langword="null" /> を指定します。</param>
+        <param name="parameterTypeOptionalCustomModifiers">型の配列の配列。 型の各配列は、<see cref="T:System.Runtime.CompilerServices.IsConst" /> のような、対応するパラメーターの省略可能なカスタム修飾子を表します。 特定のパラメーターに省略可能なカスタム修飾子がない場合は、型の配列の代わりに <see langword="null" /> を指定します。 どのパラメーターにも省略可能カスタム修飾子がない場合は、配列の配列の代わりに <see langword="null" /> を指定します。</param>
+        <summary>メソッドのシグネチャを設定します。それには、戻り値の型、パラメーターの型、および戻り値の型とパラメーター型の必須カスタム修飾子と省略可能カスタム修飾子が含まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の型および数とパラメーターの型がわかっている場合、メソッドが定義されている場合、確立できるのオーバー ロードを使用して、<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A?displayProperty=nameWithType>パラメーターの型の配列を受け取るメソッド。 ただし、ジェネリック メソッドでは、型を持つ、1 つ以上のメソッドを定義した後にまで定義できません。 独自のジェネリック型パラメーターによって指定されたパラメーターを持つことができます。 このメソッドを使用すると、その場合は、パラメーターの型を設定できます。  
+  
+ 戻り値の型でもパラメーターの型など、省略可能または必須のカスタム修飾子がある場合<xref:Microsoft.VisualC.IsConstModifier>、使用することができます、<xref:System.Reflection.Emit.MethodBuilder.SetReturnType%2A>と<xref:System.Reflection.Emit.MethodBuilder.SetParameters%2A>メソッドです。  
+  
+ このメソッドを呼び出すと、パラメーターと戻り値の型を使用して確立に置き換えられます、<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例には、型パラメーターを持つ Sample という名前のジェネリック クラスのソース コードが含まれています。`T`です。 クラスという名前のフィールドには`Field`、型の`T`、およびジェネリック メソッド`GM`独自の型パラメーターを持つ`U`します。 メソッド`GM`サンプルについては、独自の型パラメーターに置き換えることのインスタンスを作成`U`のサンプルについては、型パラメーターで、入力パラメーターを格納および`Field`です。 このソース コードがコンパイルされますが、使用されません。表示できます、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、クラスが生成するコードを比較し、`Example`です。  
+  
+ クラスのコード`Example`の使用例を示します、<xref:System.Reflection.Emit.MethodBuilder.SetSignature%2A>メソッドにジェネリック コードを出力します。 `Main`クラスのメソッド`Example`という名前のクラスを含む動的アセンブリを作成`Sample`を使用して、<xref:System.Reflection.Emit.TypeBuilder.DefineGenericParameters%2A?displayProperty=nameWithType>メソッドという名前の型パラメーターを追加することで汎用的なものを`T`です。 既定のコンス トラクターとという名前のフィールド`Field`、型の`T`、クラスに追加されます`Sample`です。 メソッド`GM`が追加され、ジェネリック メソッドを使用して、変わるは、<xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters%2A>メソッドです。 型パラメーター`GM`という`U`です。 型パラメーターを定義するのシグネチャ`GM`を使用して、追加、<xref:System.Reflection.Emit.MethodBuilder.SetSignature%2A>メソッドです。 ない戻り値の型とありませんやカスタム修飾子のため、このメソッドのすべてのパラメーターは`null`を除く`parameterTypes`、メソッドの唯一のパラメーターの型を設定する; メソッドの型パラメーターに設定されているこの`U`です。 メソッドの本体の構築型のインスタンスを作成する`Sample<U>`(`Sample(Of U)` Visual Basic で)、メソッドのパラメーターに割り当てます`Field`、しの値を出力`Field`です。 エントリ ポイント メソッドを保持するために、ダミーの型が定義されている`Main`です。 本体で`Main`、静的な`GM`構築されたジェネリック型でメソッドが呼び出される`Sample<int>`(`Sample(Of Integer)` Visual Basic で)、型と<xref:System.String>の代わりに使用`U`です。 <xref:System.Reflection.Emit.TypeBuilder.GetMethod%2A?displayProperty=nameWithType>メソッドの使用を作成、 <xref:System.Reflection.MethodInfo> 、静的`GM`構築ジェネリック型のメソッド`Sample<U>`、および<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType>を作成するメソッドを使用して、<xref:System.Reflection.MethodInfo>メソッドの呼び出しで出力することができます。  
+  
+ このコード例を実行すると、TypeBuilderGetFieldExample.exe として出力されたアセンブリが保存されます。 TypeBuilderGetFieldExample.exe を実行して、使用することができます、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md) 、出力コードのコードを比較する、`Sample`自体のコード例にコンパイルされるクラスです。  
+  
+ [!code-csharp[TypeBuilder.GetField_Generic#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeBuilder.GetField_Generic/cs/source.cs#1)]
+ [!code-vb[TypeBuilder.GetField_Generic#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeBuilder.GetField_Generic/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のメソッドはジェネリックですが、ジェネリック メソッド定義ではありません。 つまり、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSymCustomAttribute">
+      <MemberSignature Language="C#" Value="public void SetSymCustomAttribute (string name, byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSymCustomAttribute(string name, unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.SetSymCustomAttribute(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">シンボリック カスタム属性の名前。</param>
+        <param name="data">シンボリック カスタム属性の値を表すバイト blob。</param>
+        <summary>blob を使用して、シンボリック カスタム属性を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータのカスタム属性とは異なり、このカスタム属性は、シンボルのライターに関連付けられます。  
+  
+   
+  
+## Examples  
+ 次のコード例のコンテキストの使用方法を示しています、`SetSymCustomAttribute`バイト値のカスタム属性のキーと名前を設定するメソッドが、メソッドにアタッチします。  
+  
+ [!code-cpp[System.Reflection.Emit.MethodBuilder.SetSymCustomAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetSymCustomAttribute Example/CPP/source2.cpp#1)]
+ [!code-csharp[System.Reflection.Emit.MethodBuilder.SetSymCustomAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetSymCustomAttribute Example/CS/source2.cs#1)]
+ [!code-vb[System.Reflection.Emit.MethodBuilder.SetSymCustomAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.Emit.MethodBuilder.SetSymCustomAttribute Example/VB/source2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれている型は、<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> を使用して以前に作成されています。  
+  
+ -または-  
+  
+ このメソッドを含むモジュールがデバッグ モジュールではありません。  
+  
+ -または-  
+  
+ 現在のメソッドでは、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethod" /> プロパティは <see langword="true" /> ですが、<see cref="P:System.Reflection.Emit.MethodBuilder.IsGenericMethodDefinition" /> プロパティは <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Signature">
+      <MemberSignature Language="C#" Value="public string Signature { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Signature" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.MethodBuilder.Signature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの署名を取得します。</summary>
+        <value>読み取り専用です。 これによって、メソッドのシグネチャを含む文字列が反映される<see langword="MethodBase" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBuilder.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _MethodBuilder.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBuilder.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.System#Runtime#InteropServices#_MethodBuilder#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元割り当て済み配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBuilder.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _MethodBuilder.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBuilder.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.System#Runtime#InteropServices#_MethodBuilder#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBuilder.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _MethodBuilder.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBuilder.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.System#Runtime#InteropServices#_MethodBuilder#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBuilder.Invoke">
+      <MemberSignature Language="C#" Value="void _MethodBuilder.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBuilder.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.System#Runtime#InteropServices#_MethodBuilder#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.MethodBuilder.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see langword="MethodBuilder" /> インスタンスを文字列として返します。</summary>
+        <returns>このメソッドの名前、属性、メソッド シグネチャ、例外、ローカル シグネチャ、およびその後に現在の Microsoft intermediate language (MSIL) ストリームを内容とする文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

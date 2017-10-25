@@ -1,0 +1,102 @@
+<Type Name="EdmScalarPropertyAttribute" FullName="System.Data.Objects.DataClasses.EdmScalarPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EdmScalarPropertyAttribute : System.Data.Objects.DataClasses.EdmPropertyAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EdmScalarPropertyAttribute extends System.Data.Objects.DataClasses.EdmPropertyAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Objects.DataClasses.EdmPropertyAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティがスカラー プロパティを表すことを示す属性です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.IsNullable%2A>と<xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.EntityKeyProperty%2A>プロパティ両方できません`true`キー メンバーができないため`null`です。  
+  
+ <xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute> は、データ クラスのスカラー プロパティを、概念モデルに定義されているエンティティ型または複合型のプロパティにリンクします。  
+  
+ この属性は、スカラー型を返すプロパティに適用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmScalarPropertyAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityKeyProperty">
+      <MemberSignature Language="C#" Value="public bool EntityKeyProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EntityKeyProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.EntityKeyProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティがエンティティ キーに含まれるかどうかを示す値を取得または設定します。</summary>
+        <value>プロパティがエンティティ キーに含まれるかどうかを示す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンティティ キーには複数のプロパティを含めることができるので、<xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.EntityKeyProperty%2A> をエンティティ型の複数のプロパティに対して true に設定できます。  
+  
+ <xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.IsNullable%2A>と<xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.EntityKeyProperty%2A>プロパティ両方できません`true`キー メンバーができないため`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティがあることができるかどうかを示す値を設定、<see langword="null" />値。</summary>
+        <value>プロパティがあることができるかどうかを示す値、<see langword="null" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.IsNullable%2A>と<xref:System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.EntityKeyProperty%2A>プロパティ両方できません`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="EvidenceBase" FullName="System.Security.Policy.EvidenceBase">
+  <TypeSignature Language="C#" Value="public abstract class EvidenceBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit EvidenceBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.EvidenceBase" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>証拠の派生元として使用するすべてのオブジェクトから基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前に、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、ほとんどすべてのオブジェクトは、ホスティング コードが証拠として適用する場合、evidence オブジェクトとして使用可能性があります。 たとえば、一部の .NET Framework コードが認識される<xref:System.Uri?displayProperty=nameWithType>証拠としてオブジェクト。 共通言語ランタイム (CLR) が証拠オブジェクトとしてと見なされます<xref:System.Object?displayProperty=nameWithType>参照、およびそれらにタイプ セーフは適用されませんでした。  
+  
+ 証拠オブジェクトとして使用できる型を暗黙の制限があったために、問題が表示されます。 具体的には、証拠として使用されるオブジェクトはシリアル化するのには含まれており、できませんでした`null`です。 これらの要件が満たされていない場合は、これらの前提条件のいずれかが必要な操作が実行されるたびに、CLR で例外がスローします。  
+  
+ <xref:System.Security.Policy.EvidenceBase>証拠のすべてのオブジェクトから派生する必要があります、クラスで導入された、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]証拠として使用できるオブジェクトの型に対する制約を有効にして、証拠のすべてのオブジェクトに新しい機能や要件を追加する機能を提供します。 <xref:System.Security.Policy.EvidenceBase>クラスにより、インスタンス、化証拠オブジェクトがシリアル化可能であります。 さらに、新しい既定の実装を基底クラスに追加することによって作成される新しい証拠の要求を使用できます。  
+  
+ 証拠オブジェクトが更新されたとき、CLR で使用されるすべての型、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]から派生する<xref:System.Security.Policy.EvidenceBase>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EvidenceBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.EvidenceBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Policy.EvidenceBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証拠として使用するすべてのオブジェクトをシリアル化可能にする必要があります。 シリアル化可能な属性が派生クラスに反映されないため、シリアル化可能として、派生型をマークする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">証拠として使用するオブジェクトはシリアル化できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Policy.EvidenceBase Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Policy.EvidenceBase Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.EvidenceBase.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.EvidenceBase</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスの完全なコピーである新しいオブジェクトを作成します。</summary>
+        <returns>この証拠オブジェクトの複製コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製のコピーは、コレクション内のすべての証拠オブジェクトを含む完全なコピーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

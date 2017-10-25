@@ -1,0 +1,315 @@
+<Type Name="XmlNodeChangedEventArgs" FullName="System.Xml.XmlNodeChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class XmlNodeChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNodeChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlNodeChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Xml.XmlDocument.NodeChanged" />、 <see cref="E:System.Xml.XmlDocument.NodeChanging" />、 <see cref="E:System.Xml.XmlDocument.NodeInserted" />、 <see cref="E:System.Xml.XmlDocument.NodeInserting" />、<see cref="E:System.Xml.XmlDocument.NodeRemoved" />と<see cref="E:System.Xml.XmlDocument.NodeRemoving" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の c# コードでは、イベント ハンドラーを使用する方法を示します。  
+  
+```  
+//Add a new event handler.  
+XmlDocument doc = new XmlDocument();  
+doc.NodeInserted += new XmlNodeChangedEventHandler(NodeInsertedHandler);  
+//Define the event handler.  
+void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)  
+{  
+ Console.WriteLine("Node " + args.Node.Name + " inserted!!");  
+}  
+```  
+  
+> [!NOTE]
+>  操作が複数のアクションで構成される場合は、複数のイベントが発生します。 たとえば、<xref:System.Xml.XmlNode.AppendChild%2A>呼び出しは、以前の親から追加するノードを削除する必要があります。 ここで表示されます、`NodeRemoved`イベントが続く、`NodeInserted`イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlNodeChangedEventArgs (System.Xml.XmlNode node, System.Xml.XmlNode oldParent, System.Xml.XmlNode newParent, string oldValue, string newValue, System.Xml.XmlNodeChangedAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNode node, class System.Xml.XmlNode oldParent, class System.Xml.XmlNode newParent, string oldValue, string newValue, valuetype System.Xml.XmlNodeChangedAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNodeChangedEventArgs.#ctor(System.Xml.XmlNode,System.Xml.XmlNode,System.Xml.XmlNode,System.String,System.String,System.Xml.XmlNodeChangedAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+        <Parameter Name="oldParent" Type="System.Xml.XmlNode" />
+        <Parameter Name="newParent" Type="System.Xml.XmlNode" />
+        <Parameter Name="oldValue" Type="System.String" />
+        <Parameter Name="newValue" Type="System.String" />
+        <Parameter Name="action" Type="System.Xml.XmlNodeChangedAction" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />イベントを生成します。</param>
+        <param name="oldParent">古い親<see cref="T:System.Xml.XmlNode" />の<see cref="T:System.Xml.XmlNode" />イベントを生成します。</param>
+        <param name="newParent">新しい親<see cref="T:System.Xml.XmlNode" />の<see cref="T:System.Xml.XmlNode" />イベントを生成します。</param>
+        <param name="oldValue">元の値、<see cref="T:System.Xml.XmlNode" />イベントを生成します。</param>
+        <param name="newValue">新しい値、<see cref="T:System.Xml.XmlNode" />イベントを生成します。</param>
+        <param name="action"><see cref="T:System.Xml.XmlNodeChangedAction" />。</param>
+        <summary><see cref="T:System.Xml.XmlNodeChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNodeChangedAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeChangedAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeChangedAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>どの種類のノードの変更イベントが発生していることを示す値を取得します。</summary>
+        <value><see langword="XmlNodeChangedAction" />ノードを示す値を変更するイベントです。  
+  
+ <list type="table"><listheader><term>XmlNodeChangedAction 値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>挿入します。  
+  
+ </term><description>ノードはされたかが挿入されます。  
+  
+ </description></item><item><term>削除します。  
+  
+ </term><description>ノードがされたか、削除されます。  
+  
+ </description></item><item><term>変更  
+  
+ </term><description>ノードがされたか、変更されます。  
+  
+ </description></item></list><block subset="none" type="note"><para>  
+ <see langword="Action" />値は区別されません (前に、または後)、イベントが発生したとき。 両方のインスタンスを処理する別のイベント ハンドラーを作成することができます。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewParent">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNode NewParent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode NewParent" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.NewParent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="P:System.Xml.XmlNode.ParentNode" />操作の完了後します。</summary>
+        <value>値、<see langword="ParentNode" />操作の完了後します。 このプロパティを返します<see langword="null" />ノードが削除されている場合。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティが返す属性ノードの<see cref="P:System.Xml.XmlAttribute.OwnerElement" />です。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValue">
+      <MemberSignature Language="C#" Value="public string NewValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewValue" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.NewValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの新しい値を取得します。</summary>
+        <value>ノードの新しい値。 このプロパティを返します<see langword="null" />ノードが属性でも、テキスト ノードの場合、またはノードが削除されている場合。  
+  
+ 呼び出される場合、<see cref="E:System.Xml.XmlDocument.NodeChanging" />イベント、<see langword="NewValue" />変更が成功した場合、ノードの値を返します。 呼び出される場合、<see cref="E:System.Xml.XmlDocument.NodeChanged" />イベント、<see langword="NewValue" />ノードの現在の値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlNode" />を追加、削除または変更します。</summary>
+        <value><see langword="XmlNode" />を追加、削除または変更されたです。 このプロパティを返しません<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldParent">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNode OldParent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode OldParent" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.OldParent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="P:System.Xml.XmlNode.ParentNode" />操作を開始する前にします。</summary>
+        <value>値、<see langword="ParentNode" />操作を開始する前にします。 このプロパティを返します<see langword="null" />場合は、ノードの親がありませんでした。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティが返す属性ノードの<see cref="P:System.Xml.XmlAttribute.OwnerElement" />です。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValue">
+      <MemberSignature Language="C#" Value="public string OldValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldValue" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.OldValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの元の値を取得します。</summary>
+        <value>ノードの元の値。 このプロパティを返します<see langword="null" />ノードが属性でも、テキスト ノードの場合、またはノードが挿入されている場合。  
+  
+ 呼び出される場合、<see cref="E:System.Xml.XmlDocument.NodeChanging" />イベント、<see langword="OldValue" />は置き換えられます、変更が成功した場合、ノードの現在の値を返します。 呼び出される場合、<see cref="E:System.Xml.XmlDocument.NodeChanged" />イベント、<see langword="OldValue" />変更前にノードの値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

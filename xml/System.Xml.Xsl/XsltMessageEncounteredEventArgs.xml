@@ -1,0 +1,127 @@
+<Type Name="XsltMessageEncounteredEventArgs" FullName="System.Xml.Xsl.XsltMessageEncounteredEventArgs">
+  <TypeSignature Language="C#" Value="public abstract class XsltMessageEncounteredEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XsltMessageEncounteredEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered> XSLT ときの処理中に発生するイベント、`xsl:message`はスタイル シートで指定します。  
+  
+> [!NOTE]
+>  場合、`terminate`属性に設定されている`"yes"`、XSLT プロセッサは、メッセージが処理された後、スタイル シートが停止の実行を停止します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.Xsl.XsltMessageEncounteredEventArgs>を表示する`xsl:message`コンソールへのコンテンツ。 このサンプルは、次のメッセージをコンソールに出力:`Message received:  Author name is not in the correct format <author><name>Plato</name></author>`です。  
+  
+ [!code-csharp[XsltMessageEncountered#1](~/samples/snippets/csharp/VS_Snippets_Data/XsltMessageEncountered/CS/xsltmessageargs.cs#1)]
+ [!code-vb[XsltMessageEncountered#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XsltMessageEncountered/VB/xsltmessageargs.vb#1)]  
+  
+ 例では、入力として、次のファイルを使用します。  
+  
+ books.xml  
+  
+ [!code-xml[XML_Core_Files#1](~/samples/snippets/xml/VS_Snippets_Data/XML_Core_Files/XML/books.xml#1)]  
+  
+ message.xsl  
+  
+ [!code-xml[XsltMessageEncountered#2](~/samples/snippets/xml/VS_Snippets_Data/XsltMessageEncountered/XML/message.xsl#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XsltMessageEncounteredEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltMessageEncounteredEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public abstract string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XsltMessageEncounteredEventArgs.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内容を取得、 <c>xsl:message</c>要素。</summary>
+        <value>内容、 <c>xsl:message</c>要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Xml.Xsl.XsltMessageEncounteredEventArgs>を表示する`xsl:message`コンソールへのコンテンツ。 このサンプルは、次のメッセージをコンソールに出力:`Message received:  Author name is not in the correct format <author><name>Plato</name></author>`です。  
+  
+ [!code-csharp[XsltMessageEncountered#1](~/samples/snippets/csharp/VS_Snippets_Data/XsltMessageEncountered/CS/xsltmessageargs.cs#1)]
+ [!code-vb[XsltMessageEncountered#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XsltMessageEncountered/VB/xsltmessageargs.vb#1)]  
+  
+ 例では、入力として、次のファイルを使用します。  
+  
+ books.xml  
+  
+ [!code-xml[XML_Core_Files#1](~/samples/snippets/xml/VS_Snippets_Data/XML_Core_Files/XML/books.xml#1)]  
+  
+ message.xsl  
+  
+ [!code-xml[XsltMessageEncountered#2](~/samples/snippets/xml/VS_Snippets_Data/XsltMessageEncountered/XML/message.xsl#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

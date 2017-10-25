@@ -1,0 +1,500 @@
+<Type Name="FileIOPermissionAttribute" FullName="System.Security.Permissions.FileIOPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class FileIOPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FileIOPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.FileIOPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.FileIOPermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルとディレクトリは、絶対パスを使用して指定されます。 ファイルにアクセスするファイルを作成または開くときに、セキュリティ チェックが実行されます。 セキュリティ チェックは、ファイルを閉じて、再び開く場合を除き、もう一度行われません。 読み取りと書き込みが複数回を実行中に 1 回だけが行われるファイルを開くために、セキュリティ チェックがアプリケーションのパフォーマンスの影響を最小限にファイルを最初にアクセスするときに、アクセス許可をチェックします。  
+  
+ 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>のために使用します。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 命令型のセキュリティのアクセス許可の対応するクラスを使用します。  
+  
+> [!CAUTION]
+>  `Unrestricted`<xref:System.Security.Permissions.FileIOPermission>ファイルを指定した単一のアクセスに使用できる複数のパス名を含め、ファイル システム内のすべてのパスに対するアクセス許可を付与します。 <xref:System.Security.CodeAccessPermission.Deny%2A>アクセスをファイルにする必要があります`Deny`ファイルへのすべての可能なパスです。 たとえば場合、 \\\server\share がネットワーク ドライブの X にマップされている`Deny`へのアクセスを\\\server\share\file、する必要があります`Deny` \\\server\share\file、X:\file およびファイルへのアクセスに使用できるその他の任意のパス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求<xref:System.Security.Permissions.FileIOPermission>を使用して、<xref:System.Security.Permissions.FileIOPermissionAttribute>クラス、コードに付与するだけの権限を示すです。  
+  
+ [!code-cpp[Classic FileIOPermissionAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileIOPermissionAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileIOPermissionAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileIOPermissionAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic FileIOPermissionAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileIOPermissionAttribute Example/VB/source.vb#1)]  
+  
+ 次の例は、呼び出し元のコードが無制限になっていることを要求する方法を示しています。<xref:System.Security.Permissions.FileIOPermission>です。 通常マネージ ライブラリ (Dll) 有害なコードからメソッドまたはクラスを保護するための要求を作成します。  
+  
+ [!code-cpp[Classic FileIOPermissionAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileIOPermissionAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic FileIOPermissionAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileIOPermissionAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic FileIOPermissionAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileIOPermissionAttribute Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileIOPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.FileIOPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.FileIOPermissionAttribute" /> を使用して、<see cref="T:System.Security.Permissions.SecurityAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいくつかのインスタンスを作成、<xref:System.Security.Permissions.FileIOPermissionAttribute>クラスをさまざまなレベルのファイル I/O アクセス許可を設定します。  
+  
+ [!code-cpp[System.Security.Permissions.FileIOPermissionAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CPP/fileiopermissionattribute.cpp#1)]
+ [!code-csharp[System.Security.Permissions.FileIOPermissionAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CS/fileiopermissionattribute.cs#1)]
+ [!code-vb[System.Security.Permissions.FileIOPermissionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/VB/fileiopermissionattribute.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="action" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.SecurityAction" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="public string All { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string All" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.All" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("use newer properties")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはファイルまたは文字列値が指定されているディレクトリにフル アクセスを設定します。</summary>
+        <value>ファイルまたはフル アクセスのディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、1 つのファイルまたはディレクトリのアクセスを設定します。 追加の属性を使用すると、追加のファイルおよびディレクトリを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Security.Permissions.FileIOPermissionAttribute.All%2A>プロパティを指定したディレクトリへのフル アクセスを付与します。  
+  
+ [!code-cpp[System.Security.Permissions.FileIOPermissionAttribute#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CPP/fileiopermissionattribute.cpp#6)]
+ [!code-csharp[System.Security.Permissions.FileIOPermissionAttribute#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CS/fileiopermissionattribute.cs#6)]
+ [!code-vb[System.Security.Permissions.FileIOPermissionAttribute#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/VB/fileiopermissionattribute.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティの get メソッドがサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllFiles">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.FileIOPermissionAccess AllFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.FileIOPermissionAccess AllFiles" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.AllFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.FileIOPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのファイルへの許可されたアクセスを取得または設定します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />をすべてのファイルのアクセス許可を表す値です。 既定値は、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得またはローカル コンピューターとネットワーク ドライブ上のすべてのファイルへのアクセス許可を設定します。  
+  
+ 個人<xref:System.Security.Permissions.FileIOPermissionAccess>値をビット単位で決定できます`AND`操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllLocalFiles">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.FileIOPermissionAccess AllLocalFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.FileIOPermissionAccess AllLocalFiles" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.AllLocalFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.FileIOPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのローカル ファイルへの許可されたアクセスを取得または設定します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />をすべてのローカル ファイルのアクセス許可を表す値です。 既定値は、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル ファイルは、ローカル コンピューター上に含まれるファイルです。 ネットワーク ドライブを通じてアクセスされていないすべてのファイルは、ローカル ファイルです。  
+  
+ 個人<xref:System.Security.Permissions.FileIOPermissionAccess>値をビット単位で決定できます`AND`操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public string Append { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Append" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.Append" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加のファイルまたは文字列値が指定されているディレクトリへのアクセスを取得または設定します。</summary>
+        <value>ファイルまたは追加アクセスのためのディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、1 つのファイルまたはディレクトリのアクセスを設定します。 追加の属性を使用すると、追加のファイルおよびディレクトリを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A>を与えるプロパティ<xref:System.Security.Permissions.FileIOPermissionAccess.Append>指定したディレクトリ内のファイルにアクセスします。  
+  
+ [!code-cpp[System.Security.Permissions.FileIOPermissionAttribute#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CPP/fileiopermissionattribute.cpp#4)]
+ [!code-csharp[System.Security.Permissions.FileIOPermissionAttribute#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CS/fileiopermissionattribute.cs#4)]
+ [!code-vb[System.Security.Permissions.FileIOPermissionAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/VB/fileiopermissionattribute.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeAccessControl">
+      <MemberSignature Language="C#" Value="public string ChangeAccessControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChangeAccessControl" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.ChangeAccessControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ファイルまたはディレクトリのアクセス制御情報を変更できます。</summary>
+        <value>ファイルまたはアクセス制御情報を変更できるディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得または 1 つのファイルまたはディレクトリへのアクセスを設定します。 使用して追加<xref:System.Security.Permissions.FileIOPermissionAttribute>属性を追加のファイルおよびディレクトリを指定しています。  
+  
+> [!IMPORTANT]
+>  アクセス制御リスト (ACL) には、個人またはグループがある、または権限がない、特定のファイルとそのプロパティに特定のアクションをユーザーがについて説明します。  ACL を変更することは重要なアクセス許可し、慎重に付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.FileIOPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Security.Permissions.FileIOPermission" /> を作成して返します。</summary>
+        <returns>この属性に対応する <see cref="T:System.Security.Permissions.FileIOPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムからのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータの宣言セキュリティ データは、この属性に対応する権限をこのメソッドが返すから作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ファイルまたはディレクトリのアクセスをセキュリティで保護する対象のパス情報には、無効な文字やワイルドカード文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PathDiscovery">
+      <MemberSignature Language="C#" Value="public string PathDiscovery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathDiscovery" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはファイルまたはパスの検出を付与するディレクトリを設定します。</summary>
+        <value>ファイルまたはディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスの検出は、パス自体の情報へのアクセスを制御します。 これにより、ユーザー名など、パス内の機密情報だけでなく、パスで暴露されるディレクトリ構造についての情報を保護します。 この値は、ファイルまたはパスによって表されるフォルダーへのアクセスを付与しません。  
+  
+> [!NOTE]
+>  パフォーマンス上の理由から、 <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> 、しないディレクトリのファイルにのみ付与する必要があります。 たとえば、 <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> C:\test C:\test などのパスに権限を許可する必要があります\\ではなく、C:\test\example.txt などのファイルです。  
+  
+ このプロパティは、1 つのファイルまたはディレクトリのアクセスを設定します。 追加の属性を使用すると、追加のファイルおよびディレクトリを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A>を与えるプロパティ<xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery>指定したディレクトリ内のファイルにアクセスします。  
+  
+ [!code-cpp[System.Security.Permissions.FileIOPermissionAttribute#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CPP/fileiopermissionattribute.cpp#3)]
+ [!code-csharp[System.Security.Permissions.FileIOPermissionAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CS/fileiopermissionattribute.cs#3)]
+ [!code-vb[System.Security.Permissions.FileIOPermissionAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/VB/fileiopermissionattribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public string Read { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Read" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.Read" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはファイルまたは文字列値で指定されたディレクトリの読み取りアクセス許可を設定します。</summary>
+        <value>ファイルまたは読み取りアクセス用のディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、1 つのファイルまたはディレクトリのアクセスを設定します。 追加の属性を使用すると、追加のファイルおよびディレクトリを指定できます。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>を与えるプロパティ<xref:System.Security.Permissions.FileIOPermissionAccess.Read>指定したディレクトリ内のファイルにアクセスします。  
+  
+ [!code-cpp[System.Security.Permissions.FileIOPermissionAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CPP/fileiopermissionattribute.cpp#2)]
+ [!code-csharp[System.Security.Permissions.FileIOPermissionAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CS/fileiopermissionattribute.cs#2)]
+ [!code-vb[System.Security.Permissions.FileIOPermissionAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/VB/fileiopermissionattribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewAccessControl">
+      <MemberSignature Language="C#" Value="public string ViewAccessControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ViewAccessControl" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.ViewAccessControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ファイルまたはディレクトリのアクセス制御情報を表示できます。</summary>
+        <value>ファイルまたはアクセス制御情報を表示できるディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得または 1 つのファイルまたはディレクトリへのアクセスを設定します。 使用して追加<xref:System.Security.Permissions.FileIOPermissionAttribute>属性を追加のファイルおよびディレクトリを指定しています。  
+  
+> [!IMPORTANT]
+>  アクセス制御リスト (ACL) には、個人またはグループがある、または権限がない、特定のファイルとそのプロパティに特定のアクションをユーザーがについて説明します。  ACL を表示する機能は重要なアクセス許可し、慎重に付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewAndModify">
+      <MemberSignature Language="C#" Value="public string ViewAndModify { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ViewAndModify" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.ViewAndModify" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ファイルまたはディレクトリのファイル データを表示および変更できます。</summary>
+        <value>ファイルまたはファイル データを表示および変更できるディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定、 <xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A>、 <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A>、 <xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>、および<xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>1 つのファイルまたはディレクトリのプロパティです。 使用して追加<xref:System.Security.Permissions.FileIOPermissionAttribute>属性を追加のファイルおよびディレクトリを指定しています。 アクセス権は、ファイル データのみです。アクセス コントロールのプロパティが含まれない<xref:System.Security.Permissions.FileIOPermissionAttribute.ViewAccessControl%2A>と<xref:System.Security.Permissions.FileIOPermissionAttribute.ChangeAccessControl%2A>です。  
+  
+> [!NOTE]
+>  `get`アクセサーは c# コンパイラとの互換性を提供します。 C# コンパイラでは、読み取り/書き込み属性プロパティが必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see langword="get" />アクセサーが呼び出されます。 アクセサーは c# コンパイラの互換性のためだけに提供されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public string Write { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Write" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.FileIOPermissionAttribute.Write" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはファイルまたは文字列値で指定されたディレクトリへの書き込みアクセスを設定します。</summary>
+        <value>ファイルまたは書き込みアクセス用のディレクトリの絶対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、1 つのファイルまたはディレクトリのアクセスを設定します。 追加の属性を使用すると、追加のファイルおよびディレクトリを指定できます。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>を与えるプロパティ<xref:System.Security.Permissions.FileIOPermissionAccess.Write>指定したディレクトリ内のファイルにアクセスします。  
+  
+ [!code-cpp[System.Security.Permissions.FileIOPermissionAttribute#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CPP/fileiopermissionattribute.cpp#5)]
+ [!code-csharp[System.Security.Permissions.FileIOPermissionAttribute#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/CS/fileiopermissionattribute.cs#5)]
+ [!code-vb[System.Security.Permissions.FileIOPermissionAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.FileIOPermissionAttribute/VB/fileiopermissionattribute.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

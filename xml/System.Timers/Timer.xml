@@ -1,0 +1,785 @@
+<Type Name="Timer" FullName="System.Timers.Timer">
+  <TypeSignature Language="C#" Value="public class Timer : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Timer extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Timers.Timer" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Elapsed")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Interval")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一定の間隔の経過後にイベントを生成します。オプションとして、反復イベントを生成することもできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#System/services/timers/system/timers/Timer.cs#897683f27faba082)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.Timers.Timer>コンポーネントは、サーバー ベースのタイマーを発生させる、<xref:System.Timers.Timer.Elapsed>のミリ秒数の後に、アプリケーション内のイベント、<xref:System.Timers.Timer.Interval%2A>プロパティが経過しました。 構成することができます、<xref:System.Timers.Timer>を使用して 1 回だけまたは繰り返しイベントを発生させるオブジェクト、<xref:System.Timers.Timer.AutoReset%2A>プロパティです。 通常、<xref:System.Timers.Timer>が必要な限り、スコープ内に保持されるように、クラス レベルのオブジェクトが宣言されています。 処理することができますし、その<xref:System.Timers.Timer.Elapsed>通常の処理を提供するイベントです。 たとえば、する必要がある重要なサーバーがある場合 24 時間、日、週 7 日間を実行します。 使用するサービスを作成、<xref:System.Timers.Timer>オブジェクトを定期的にサーバーを確認し、システムが稼働していることを確認してください。 システムが応答していない場合、サービスでしたしようと、サーバーを再起動するか、管理者に通知します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Timers.Timer>クラスは、.NET Framework のみで使用できます。 .NET 標準に含まれていないと、.NET Core またはユニバーサル Windows プラットフォームなどの他の実装では使用できません。 これらの実装では、およびすべての .NET 実装間で移植性を考慮する必要がありますを使用する、<xref:System.Threading.Timer?displayProperty=nameWithType>クラスの代わりにします。  
+  
+ この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ サーバー ベース<xref:System.Timers.Timer?displayProperty=nameWithType>クラスがマルチ スレッド環境でのワーカー スレッドで使用するために設計されています。 サーバーのタイマーは、発生したを処理するスレッド間で移動できます<xref:System.Timers.Timer.Elapsed>時間でイベントの発生時にウィンドウ タイマーは結果として得られるイベント。  
+  
+ <xref:System.Timers.Timer?displayProperty=nameWithType>コンポーネントを生成、 <xref:System.Timers.Timer.Elapsed> (ミリ秒) の値に基づく、イベント、<xref:System.Timers.Timer.Interval%2A>プロパティです。 必要がある処理を実行するには、このイベントを処理することができます。 たとえば、継続的にデータベースへの販売注文を投稿するオンライン販売アプリケーションがあるとします。 出荷の指示をコンパイルするサービスは、各注文を個別に処理するのではなく、注文のバッチで動作します。 使用する可能性があります、<xref:System.Timers.Timer>バッチ 30 分ごとの処理を開始します。  
+  
+> [!IMPORTANT]
+>  System.Timers.Timer クラスには、システム時計と同じ解像度があります。 つまり、<xref:System.Timers.Timer.Elapsed>場合、システム クロックの解像度によって定義された間隔でイベントは起動、<xref:System.Timers.Timer.Interval%2A>プロパティは、システム時計の解像度より小さい。 詳細については、<xref:System.Timers.Timer.Interval%2A> プロパティを参照してください。  
+  
+ ときに<xref:System.Timers.Timer.AutoReset%2A>に設定されている`false`、<xref:System.Timers.Timer?displayProperty=nameWithType>オブジェクト、<xref:System.Timers.Timer.Elapsed>イベントは 1 回のみ、最初より後<xref:System.Timers.Timer.Interval%2A>が経過しました。 させると保持する、<xref:System.Timers.Timer.Elapsed>によって定義された間隔で定期的にイベント、<xref:System.Timers.Timer.Interval%2A>設定、<xref:System.Timers.Timer.AutoReset%2A>に`true`、これは、既定値です。  
+  
+ <xref:System.Timers.Timer>コンポーネントをキャッチし、において、イベント ハンドラーによってスローされる例外すべてを非表示、<xref:System.Timers.Timer.Elapsed>イベント。 この動作は、.NET Framework の将来のリリースで変更されます。 ただし、非同期的に実行してが含まれているイベント ハンドラーの場合は true ではないこと、`await`演算子 (c#) または`Await`演算子 (Visual Basic で)。 これらのイベント ハンドラーでスローされた例外は、次の例に示すように、呼び出し元のスレッドに反映されます。 非同期メソッドでスローされた例外の詳細については、次を参照してください。[例外処理](~/docs/standard/parallel-programming/exception-handling-task-parallel-library.md)です。  
+  
+ [!code-csharp[System.Timers.Timer#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/AsyncHandlerEx1.cs#3)]
+ [!code-vb[System.Timers.Timer#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/AsyncHandlerEx1.vb#3)]  
+  
+ 場合、<xref:System.Timers.Timer.SynchronizingObject%2A>プロパティは`null`、<xref:System.Timers.Timer.Elapsed>にイベントが発生、<xref:System.Threading.ThreadPool>スレッドです。 処理の場合、<xref:System.Timers.Timer.Elapsed>よりも長いイベント存続<xref:System.Timers.Timer.Interval%2A>、別のイベントを再度発生させる可能性があります<xref:System.Threading.ThreadPool>スレッドです。 このような状況で、イベント ハンドラーは再入可能にする必要があります。  
+  
+> [!NOTE]
+>  イベント処理メソッドが 1 つのスレッド別のスレッドが同時に実行される、<xref:System.Timers.Timer.Stop%2A>メソッドまたはセット、<xref:System.Timers.Timer.Enabled%2A>プロパティを`false`です。 これは、場合、<xref:System.Timers.Timer.Elapsed>タイマーを停止した後に発生するイベントです。 コードの使用例、<xref:System.Timers.Timer.Stop%2A>メソッドは、この競合状態を回避する方法を示しています。  
+  
+ 場合でも<xref:System.Timers.Timer.SynchronizingObject%2A>は`null`、<xref:System.Timers.Timer.Elapsed>後にイベントが発生する可能性が、<xref:System.Timers.Timer.Dispose%2A>または<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されたか、後、<xref:System.Timers.Timer.Enabled%2A>プロパティに設定されて`false`ため、シグナルを発生させる、<xref:System.Timers.Timer.Elapsed>スレッド プールのスレッド上で実行するイベントが常にキューに置かれました。 イベント ハンドラーを示すフラグを設定するは、この競合状態を解決するのには 1 つの方法、<xref:System.Timers.Timer.Elapsed>を後続のイベントを無視するイベントです。  
+  
+ 使用する場合、<xref:System.Timers.Timer?displayProperty=nameWithType>フォームやコントロールが含まれているフォームやそのユーザー インターフェイス要素に、タイマーをかけることがなく、コントロールなどのユーザー インターフェイス要素を持つクラスが割り当てる、<xref:System.Timers.Timer>を<xref:System.Timers.Timer.SynchronizingObject%2A>プロパティ、イベントは、ユーザー インターフェイス スレッドにマーシャ リングできるようにします。  
+  
+ インスタンスの既定のプロパティ値の一覧については<xref:System.Timers.Timer>を参照してください、<xref:System.Timers.Timer.%23ctor%2A>コンス トラクターです。  
+  
+> [!TIP]
+>  .NET Framework クラス ライブラリがという 4 つのクラスが含まれることに注意してください`Timer`、それぞれの異なる機能を提供します。  
+>   
+>  -   <xref:System.Timers.Timer?displayProperty=nameWithType>(このトピック): 一定の間隔でイベントを発生させます。 クラスは、サーバー ベースとして使用するか、マルチ スレッド環境でのサービス コンポーネントユーザー インターフェイスを持たないし、実行時に表示されていません。  
+> -   <xref:System.Threading.Timer?displayProperty=nameWithType>: 一定の間隔でスレッド プールのスレッドで単一のコールバック メソッドを実行します。 コールバック メソッドは、タイマーがインスタンス化され、変更できないときに定義されます。 同様に、<xref:System.Timers.Timer?displayProperty=nameWithType>クラス、マルチ スレッド環境でのサーバー ベースまたはサービスのコンポーネントとして使用するこのクラスが目的としています。 これは、ユーザー インターフェイスを持たないは実行時に表示されません。  
+> -   <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>: イベントを発生させる、一定の間隔で Windows フォームのコンポーネントです。 コンポーネントは、ユーザー インターフェイスを持たないされ、シングル スレッド環境での使用に適しています。  
+> -   <xref:System.Web.UI.Timer?displayProperty=nameWithType>: 定期的な間隔で非同期または同期の web ページのポストバックを実行するための ASP.NET コンポーネント。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、`System.Timers.Timer`を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベント (2,000 ミリ秒単位)、2 秒ごと、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-csharp[System.Timers.Timer#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer2a.cs#2)]
+ [!code-vb[System.Timers.Timer#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer2a.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリック<see langword="static" />この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Timers.Timer" /> クラスの新しいインスタンスを初期化し、すべてのプロパティを初期値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Timers.Timer>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Timers.Timer.AutoReset%2A>|`true`|  
+|<xref:System.Timers.Timer.Enabled%2A>|`false`|  
+|<xref:System.Timers.Timer.Interval%2A>|100 ミリ秒|  
+|<xref:System.Timers.Timer.SynchronizingObject%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-cpp[System.Timers.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.timers.timer/cpp/timer1.cpp#1)]
+ [!code-csharp[System.Timers.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer1.cs#1)]
+ [!code-vb[System.Timers.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer (double interval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 interval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="interval">ミリ秒単位でのイベントの発生間隔。 この値はゼロより大きく、<see cref="F:System.Int32.MaxValue" /> 以下である必要があります。</param>
+        <summary><see cref="T:System.Timers.Timer" /> クラスの新しいインスタンスを初期化し、<see cref="P:System.Timers.Timer.Interval" /> プロパティを指定したミリ秒数に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Timers.Timer.Interval%2A>タイマーの新しいインスタンスのプロパティが、タイマーを有効にしません。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-csharp[System.Timers.Timer#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/AsyncHandlerEx1.cs#3)]
+ [!code-vb[System.Timers.Timer#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/AsyncHandlerEx1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="interval" /> パラメーターの値は 0 以下か、または <see cref="F:System.Int32.MaxValue" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoReset">
+      <MemberSignature Language="C#" Value="public bool AutoReset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoReset" />
+      <MemberSignature Language="DocId" Value="P:System.Timers.Timer.AutoReset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Timers.TimersDescription("Indicates whether the timer will be restarted when it is enabled.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Timers.Timer" /> が <see cref="E:System.Timers.Timer.Elapsed" /> イベントを一度のみ発生させる (<see langword="false" />) か、または繰り返し発生させる (<see langword="true" />) かを示すブール値を取得または設定します。</summary>
+        <value>
+          指定した間隔が経過するたびに <see cref="T:System.Timers.Timer" /> で <see cref="E:System.Timers.Timer.Elapsed" /> イベントを発生させる場合は <see langword="true" />。最初の間隔が経過した後に 1 回だけ <see langword="false" /> イベントを発生させる場合は <see cref="E:System.Timers.Timer.Elapsed" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Timers.Timer>は既に有効になっている場合、<xref:System.Timers.Timer.Start%2A>メソッドが呼び出されると、間隔をリセットします。 場合<xref:System.Timers.Timer.AutoReset%2A>は`false`、<xref:System.Timers.Timer.Start%2A>カウントをもう一度開始するためにメソッドを呼び出す必要があります。  
+  
+ 間隔のリセットに影響を与える場合に、<xref:System.Timers.Timer.Elapsed>イベントが発生します。 たとえば、5 秒間に間隔を設定し、設定すると、<xref:System.Timers.Timer.Enabled%2A>プロパティを`true`、カウントの開始時に<xref:System.Timers.Timer.Enabled%2A>設定されています。 カウントが 3 秒の場合、10 秒間隔をリセットする場合、 <xref:System.Timers.Timer.Elapsed> 13 秒後に初めてイベントは、<xref:System.Timers.Timer.Enabled%2A>プロパティに設定されました`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Timers.Timer>が<xref:System.Timers.Timer.Elapsed>1.5 秒後にイベントが発生します。 対応するイベント ハンドラーは、"Hello World!"しが表示されます。 コンソールです。  
+  
+ [!code-cpp[Classic Timer.Timer1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Timer.Timer1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Timer.Timer1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Timer.Timer1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Timer.Timer1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Timer.Timer1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォームまたは別のコンポーネントで使用する <see cref="T:System.Timers.Timer" /> の実行時の初期化を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]デザイン環境では、このメソッドを使用して、フォームまたは別のコンポーネントに使用されるコンポーネントの初期化を開始します。 <xref:System.Timers.Timer.EndInit%2A>メソッドが初期化を終了します。 使用して、<xref:System.Timers.Timer.BeginInit%2A>と<xref:System.Timers.Timer.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Timers.Timer" /> で使用したリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Timers.Timer.Close%2A>メソッドを呼び出して、`Dispose`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>現在の <see cref="T:System.Timers.Timer" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Elapsed">
+      <MemberSignature Language="C#" Value="public event System.Timers.ElapsedEventHandler Elapsed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Timers.ElapsedEventHandler Elapsed" />
+      <MemberSignature Language="DocId" Value="E:System.Timers.Timer.Elapsed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Timers.TimersDescription("Occurs when the Interval has elapsed.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Timers.ElapsedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>間隔が経過すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Timers.Timer.Elapsed>イベントは、<xref:System.Timers.Timer.Enabled%2A>プロパティは`true`と、時間間隔 (ミリ秒単位) によって定義された、<xref:System.Timers.Timer.Interval%2A>プロパティが経過するとします。 場合、<xref:System.Timers.Timer.AutoReset%2A>プロパティは`true`、によって定義された間隔でイベントが繰り返し発生する、<xref:System.Timers.Timer.Interval%2A>プロパティです。 それ以外の場合、このイベントは最初に 1 回だけ、<xref:System.Timers.Timer.Interval%2A>が経過するまでの値。  
+  
+ 場合<xref:System.Timers.Timer.Interval%2A>後に設定されている、<xref:System.Timers.Timer>が開始されると、カウントがリセットされます。 たとえば、5 秒間に間隔を設定し、設定すると<xref:System.Timers.Timer.Enabled%2A>に`true`、カウントの開始時に<xref:System.Timers.Timer.Enabled%2A>設定されています。 カウントが 3 秒の場合、10 秒間隔をリセットする場合、<xref:System.Timers.Timer.Elapsed>を初めて 13 秒後にイベントを発生<xref:System.Timers.Timer.Enabled%2A>に設定された`true`です。  
+  
+ 場合、<xref:System.Timers.Timer.SynchronizingObject%2A>プロパティは`null`、<xref:System.Timers.Timer.Elapsed>にイベントが発生、<xref:System.Threading.ThreadPool>スレッドです。 場合の処理、<xref:System.Timers.Timer.Elapsed>よりも長いイベント存続<xref:System.Timers.Timer.Interval%2A>、別のイベントを再度発生させる可能性があります<xref:System.Threading.ThreadPool>スレッドです。 このような状況で、イベント ハンドラーは再入可能にする必要があります。  
+  
+> [!NOTE]
+>  イベント処理メソッドが 1 つのスレッド別のスレッドが同時に実行される、<xref:System.Timers.Timer.Stop%2A>メソッドまたはセット、<xref:System.Timers.Timer.Enabled%2A>プロパティを`false`です。 これは、場合、<xref:System.Timers.Timer.Elapsed>タイマーを停止した後に発生するイベントです。 コードの使用例、<xref:System.Timers.Timer.Stop%2A>メソッドは、この競合状態を回避する方法を示しています。  
+  
+ 場合でも<xref:System.Timers.Timer.SynchronizingObject%2A>は`null`、<xref:System.Timers.Timer.Elapsed>後にイベントが発生する可能性が、<xref:System.Timers.Timer.Dispose%2A>または<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されたか、後、<xref:System.Timers.Timer.Enabled%2A>プロパティに設定されて`false`ため、シグナルを発生させる、<xref:System.Timers.Timer.Elapsed>スレッド プールのスレッド上で実行するイベントが常にキューに置かれました。 イベント ハンドラーを示すフラグを設定するは、この競合状態を解決するのには 1 つの方法、<xref:System.Timers.Timer.Elapsed>を後続のイベントを無視するイベントです。  
+  
+ <xref:System.Timers.Timer>コンポーネントをキャッチし、において、イベント ハンドラーによってスローされる例外すべてを非表示、<xref:System.Timers.Timer.Elapsed>イベント。 この動作は、.NET Framework の将来のリリースで変更されます。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-cpp[System.Timers.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.timers.timer/cpp/timer1.cpp#1)]
+ [!code-csharp[System.Timers.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer1.cs#1)]
+ [!code-vb[System.Timers.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Timers.Timer.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Timers.TimersDescription("Indicates whether the timer is enabled to fire events at a defined interval.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Timers.Timer" /> で <see cref="E:System.Timers.Timer.Elapsed" /> イベントを発生させる必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Timers.Timer" /> で <see cref="E:System.Timers.Timer.Elapsed" /> イベントを発生させる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Timers.Timer.Enabled%2A>に`true`は呼び出すことと同じ<xref:System.Timers.Timer.Start%2A>、設定中に<xref:System.Timers.Timer.Enabled%2A>に`false`は呼び出すことと同じ<xref:System.Timers.Timer.Stop%2A>です。  
+  
+> [!NOTE]
+>  シグナルを発生させる、<xref:System.Timers.Timer.Elapsed>イベントは、常に実行するためキューに置かれた、<xref:System.Threading.ThreadPool>スレッドです。 これがあります、<xref:System.Timers.Timer.Elapsed>後に発生するイベント、<xref:System.Timers.Timer.Enabled%2A>プロパティに設定されている`false`です。 コード例、<xref:System.Timers.Timer.Stop%2A>メソッドは、この競合状態を回避する方法を示しています。  
+  
+ 場合<xref:System.Timers.Timer.Enabled%2A>に設定されている`true`と<xref:System.Timers.Timer.AutoReset%2A>に設定されている`false`、<xref:System.Timers.Timer>を発生させます、<xref:System.Timers.Timer.Elapsed>最初の時間間隔に 1 回だけが経過しました。  
+  
+ 後に、間隔が設定されている場合、<xref:System.Timers.Timer>が開始されると、カウントがリセットされます。 たとえば、5 秒間に間隔を設定し、設定すると、<xref:System.Timers.Timer.Enabled%2A>プロパティを`true`、カウントの開始時に<xref:System.Timers.Timer.Enabled%2A>設定されています。 カウントが 3 秒の場合、10 秒間隔をリセットする場合、<xref:System.Timers.Timer.Elapsed>を初めて 13 秒後にイベントを発生<xref:System.Timers.Timer.Enabled%2A>に設定された`true`です。  
+  
+> [!NOTE]
+>  Microsoft Visual Studio などのいくつかのビジュアル デザイナーの設定、<xref:System.Timers.Timer.Enabled%2A>プロパティを`true`新しいを挿入するときに<xref:System.Timers.Timer>です。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-cpp[System.Timers.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.timers.timer/cpp/timer1.cpp#1)]
+ [!code-csharp[System.Timers.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer1.cs#1)]
+ [!code-vb[System.Timers.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">タイマーが破棄されているために、このプロパティを設定することはできません。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Timers.Timer.Interval" />プロパティがより大きい値に設定されました<see cref="F:System.Int32.MaxValue" />タイマーが有効にする前にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォームまたは別のコンポーネントで使用する <see cref="T:System.Timers.Timer" /> の実行時の初期化を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]デザイン環境では、このメソッドを使用して、フォームまたは別のコンポーネントに使用されるコンポーネントの初期化を終了します。 <xref:System.Timers.Timer.BeginInit%2A>メソッドは、初期化を開始します。 使用して、<xref:System.Timers.Timer.BeginInit%2A>と<xref:System.Timers.Timer.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interval">
+      <MemberSignature Language="C#" Value="public double Interval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Interval" />
+      <MemberSignature Language="DocId" Value="P:System.Timers.Timer.Interval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.SettingsBindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Timers.TimersDescription("The number of milliseconds between timer events.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Timers.Timer.Elapsed" /> イベントの発生間隔を取得または設定します。</summary>
+        <value>ミリ秒単位での <see cref="E:System.Timers.Timer.Elapsed" /> イベントの発生間隔。 この値はゼロより大きく、<see cref="F:System.Int32.MaxValue" /> 以下である必要があります。 既定値は 100 ミリ秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Timers.Timer.Interval%2A>する頻度を決定するプロパティ、<xref:System.Timers.Timer.Elapsed>イベントが発生します。 <xref:System.Timers.Timer>クラスは、システム クロックに依存して、システム時計と同じ解像度があります。 つまり、<xref:System.Timers.Timer.Elapsed>場合、システム クロックの解像度によって定義された間隔でイベントは起動、<xref:System.Timers.Timer.Interval%2A>プロパティは、システム時計の解像度より小さい。 次の例のセット、<xref:System.Timers.Timer.Interval%2A>プロパティ 5 ミリ秒単位までです。 実行すると、 [!INCLUDE[win7](~/includes/win7-md.md)] 5 ミリ秒間隔ではなく、約 15 ミリ秒ごとのシステム クロックが、イベントの起動、約 15 ミリ秒単位の解像度を持つシステムです。  
+  
+ [!code-csharp[System.Timers.Timer.Interval#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer.interval/cs/interval2.cs#1)]
+ [!code-vb[System.Timers.Timer.Interval#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer.interval/vb/interval2.vb#1)]  
+  
+ 次のコードを使用すると、現在のシステムのシステム時計の解像度を決定します。  
+  
+ [!code-csharp[System.Timers.Timer.Interval#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer.interval/cs/resolution1.cs#2)]
+ [!code-vb[System.Timers.Timer.Interval#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer.interval/vb/resolution1.vb#2)]  
+  
+ によって提供されるものより高い解像度が、アプリに必要なかどうか、<xref:System.Timers.Timer>クラスまたは参照; 高解像度のマルチ メディア タイマーを使用して、システム クロック[する方法: 高分解能タイマーを使用して](http://msdn.microsoft.com/library/aa964692.aspx)です。  
+  
+ 後に、間隔が設定されている場合、<xref:System.Timers.Timer>が開始されると、カウントがリセットされます。 たとえば、5 秒間に間隔を設定し、設定すると、<xref:System.Timers.Timer.Enabled%2A>プロパティを`true`、カウントの開始時に<xref:System.Timers.Timer.Enabled%2A>設定されています。 カウントが 3 秒の場合、10 秒間隔をリセットする場合、<xref:System.Timers.Timer.Elapsed>を初めて 13 秒後にイベントを発生<xref:System.Timers.Timer.Enabled%2A>に設定された`true`です。  
+  
+ 場合<xref:System.Timers.Timer.Enabled%2A>に設定されている`true`と<xref:System.Timers.Timer.AutoReset%2A>に設定されている`false`、<xref:System.Timers.Timer>を発生させます、<xref:System.Timers.Timer.Elapsed>最初の時間間隔に 1 回だけが経過しました。 <xref:System.Timers.Timer.Enabled%2A>設定されているし、`false`です。  
+  
+> [!NOTE]
+>  場合<xref:System.Timers.Timer.Enabled%2A>と<xref:System.Timers.Timer.AutoReset%2A>に設定されて`false`と、タイマーが以前有効になって、設定、<xref:System.Timers.Timer.Interval%2A>プロパティ原因、<xref:System.Timers.Timer.Elapsed>イベントが 1 回発生するよう、<xref:System.Timers.Timer.Enabled%2A>に設定されたプロパティ`true`です。 間隔を設定する、イベントを発生させることがなく、一時的に設定できます、<xref:System.Timers.Timer.Enabled%2A>プロパティを`true`、設定、<xref:System.Timers.Timer.Interval%2A>プロパティを希望する時間間隔にし、すぐに設定、<xref:System.Timers.Timer.Enabled%2A>プロパティ`false`です。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-cpp[System.Timers.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.timers.timer/cpp/timer1.cpp#1)]
+ [!code-csharp[System.Timers.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer1.cs#1)]
+ [!code-vb[System.Timers.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">間隔は、0 に等しいまたはそれよりも小さいです。  
+  
+ または  
+  
+ 間隔がより大きい<see cref="F:System.Int32.MaxValue" />タイマーが現在有効になっているとします。 (タイマーが現在有効でない場合は、例外はスローされませんが有効にするまでです。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.ISite Site { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.Timers.Timer.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン モードで <see cref="T:System.Timers.Timer" /> をコンテナーにバインドするサイトを取得または設定します。</summary>
+        <value><see cref="T:System.Timers.Timer" /> オブジェクトをコンテナーにバインドするサイトを表す <see cref="T:System.ComponentModel.ISite" /> インターフェイス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイトのバインド、<xref:System.ComponentModel.Component>を<xref:System.ComponentModel.Container>とそれらの間で通信を有効にするだけでなく、コンテナーがコンポーネントを管理するための方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Timers.Timer.Enabled" /> を <see langword="true" /> に設定して、<see cref="E:System.Timers.Timer.Elapsed" /> イベントの発生を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Timers.Timer.Start%2A>が呼び出されたと<xref:System.Timers.Timer.AutoReset%2A>に設定されている`false`、<xref:System.Timers.Timer>を発生させます、<xref:System.Timers.Timer.Elapsed>最初の時間間隔に 1 回だけが経過しました。 場合<xref:System.Timers.Timer.Start%2A>が呼び出されたと<xref:System.Timers.Timer.AutoReset%2A>は`true`、<xref:System.Timers.Timer>を発生させます、<xref:System.Timers.Timer.Elapsed>イベント最初の時間間隔が経過して、指定した間隔でイベントが発生し続けます。  
+  
+ 設定して、タイミングを開始することもできます。<xref:System.Timers.Timer.Enabled%2A>に`true`です。  
+  
+> [!NOTE]
+>  場合<xref:System.Timers.Timer.AutoReset%2A>は`false`、<xref:System.Timers.Timer.Start%2A>カウントをもう一度開始するためにメソッドを呼び出す必要があります。  
+  
+ 呼び出し、<xref:System.Timers.Timer.Start%2A>メソッド、タイマーが有効になっているときに影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="T:System.Timers.Timer" />以上になるとは、間隔で作成<see cref="F:System.Int32.MaxValue" />+ 1、または 0 未満の間隔に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Timers.Timer.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Timers.Timer.Enabled" /> を <see langword="false" /> に設定して、<see cref="E:System.Timers.Timer.Elapsed" /> イベントの発生を停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、タイミングを停止することもできます。<xref:System.Timers.Timer.Enabled%2A>に`false`です。  
+  
+> [!NOTE]
+>  シグナルを発生させる、<xref:System.Timers.Timer.Elapsed>イベントは、常に実行するためキューに置かれた、<xref:System.Threading.ThreadPool>スレッド、ため、同時に 1 つのスレッドが実行されるイベント処理メソッドにへの呼び出し、<xref:System.Timers.Timer.Stop%2A>メソッドの別のスレッドで実行します。 これは、結果、な<xref:System.Timers.Timer.Elapsed>後に発生するイベント、<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されます。 次のセクションのコード例では、この競合状態を回避する 1 つの方法を示します。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、`System.Timers.Timer`を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベント (2,000 ミリ秒単位)、2 秒ごと、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。 ユーザーは、Enter キーを押すと、アプリケーションを呼び出す、<xref:System.Timers.Timer.Stop%2A>アプリケーションを終了する前にメソッドです。  
+  
+ [!code-csharp[System.Timers.Timer#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer2a.cs#2)]
+ [!code-vb[System.Timers.Timer#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer2a.vb#2)]  
+  
+ 次のコード例を呼び出すスレッドを防ぐために 1 つの方法を示しています、<xref:System.Timers.Timer.Stop%2A>まで現在の実行を続行できなくメソッド<xref:System.Timers.Timer.Elapsed>イベントの終了時刻、および 2 つを防ぐためにも<xref:System.Timers.Timer.Elapsed>が同じイベント ハンドラーの実行からのイベント時間 (再入とも呼ばれます)。  
+  
+ この例では、100 のテストの実行を実行します。 テストを実行するたびに、タイマーが 150 のミリ秒単位の間隔で開始されます。 イベント ハンドラーを使用して、 <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> 50 から 200 ミリ秒単位までの長さがランダムに変化するタスクをシミュレートするメソッド。 テスト メソッドでは、コントロールをスレッドを 1 秒待機し、タイマーを停止しますも起動されます。 コントロール スレッド タイマーを停止するときに、イベントが処理されている場合、コントロールのスレッドは続行する前に、イベントが終了するまで待つ必要があります。  
+  
+ <xref:System.Threading.Interlocked.CompareExchange%28System.Int32%40%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドのオーバー ロードを使用して再入を回避し、コントロールのスレッドが実行中のイベントが終了するまでの操作を続行するを防ぐためです。 イベント ハンドラーを使用して、<xref:System.Threading.Interlocked.CompareExchange%28System.Int32%40%2CSystem.Int32%2CSystem.Int32%29>を 1 に変数が、値が 0 では現在場合にのみ、コントロールを設定します。 これは、分割不可能な操作です。 戻り値が 0 の場合は、コントロール変数が 1 に設定されているし、イベント ハンドラーが行われます。 戻り値が 0 以外の場合は、イベントは単に再入を破棄します。 (すべてのイベントを実行する必要がある場合、<xref:System.Threading.Monitor>クラスは、イベントを同期する優れた方法になります)。イベント ハンドラーの終了時、設定コントロール変数戻るを 0 にします。 例を実行、再入のため破棄された後に発生したイベントの合計数を記録する、<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されました。  
+  
+ コントロールのスレッドを使用して、 <xref:System.Threading.Interlocked.CompareExchange%28System.Int32%40%2CSystem.Int32%2CSystem.Int32%29> (マイナス 1)、-1 に変数が、値が 0 では現在場合にのみ、コントロールを設定します。 分割不可能な操作では、0 以外を返します、イベントが実行中です。 コントロールのスレッドは待機し、もう一度試みます。 この例は、コントロールのスレッドが終了するイベントの待機しなければならなかった回数を記録します。  
+  
+ [!code-csharp[Timer.Stop#1](~/samples/snippets/csharp/VS_Snippets_CLR/Timer.Stop/CS/source.cs#1)]
+ [!code-vb[Timer.Stop#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Timer.Stop/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizingObject">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
+      <MemberSignature Language="DocId" Value="P:System.Timers.Timer.SynchronizingObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Timers.TimersDescription("The object used to marshal the event handler calls issued when an interval has elapsed.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISynchronizeInvoke</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した間隔が経過したときに発行されるイベント ハンドラー呼び出しをマーシャリングするために使用するオブジェクトを取得または設定します。</summary>
+        <value>指定した間隔が経過したときに発行されるイベント ハンドラー呼び出しをマーシャリングするために使用するオブジェクトを表す <see cref="T:System.ComponentModel.ISynchronizeInvoke" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Timers.Timer.SynchronizingObject%2A>は`null`、処理するメソッド、<xref:System.Timers.Timer.Elapsed>イベントは、システムのスレッド プールのスレッドで呼び出されます。 システム スレッド プールの詳細については、次を参照してください。<xref:System.Threading.ThreadPool>です。  
+  
+ ときに、<xref:System.Timers.Timer.Elapsed>可能性がありますか、例外の結果が動作しないシステム スレッド プールを介したコンポーネントにアクセスする、ボタンなどの visual Windows フォームのコンポーネントでイベントが処理されます。 この特殊効果を設定して回避<xref:System.Timers.Timer.SynchronizingObject%2A>を処理するメソッドを停止する Windows フォームのコンポーネントを<xref:System.Timers.Timer.Elapsed>コンポーネントが作成された同じスレッドで呼び出されるイベント。  
+  
+> [!NOTE]
+>  場合でも、<xref:System.Timers.Timer.SynchronizingObject%2A>プロパティは使用されません`null`、<xref:System.Timers.Timer.Elapsed>後にイベントが発生する可能性が、<xref:System.Timers.Timer.Dispose%2A>または<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されたか、後、<xref:System.Timers.Timer.Enabled%2A>プロパティに設定されて`false`ため、シグナルを発生させる、<xref:System.Timers.Timer.Elapsed>イベントが常にスレッド プールのスレッドで実行をキューに登録します。 イベント ハンドラーを示すフラグを設定するは、この競合状態を解決するのには 1 つの方法、<xref:System.Timers.Timer.Elapsed>を後続のイベントを無視するイベントです。  
+  
+ 場合、<xref:System.Timers.Timer>が Visual Studio 内で、Windows フォーム デザイナーで使用<xref:System.Timers.Timer.SynchronizingObject%2A>を含むコントロールに自動的に設定されている、<xref:System.Timers.Timer>です。 配置する場合など、<xref:System.Timers.Timer>をデザイナーで`Form1`(から継承される<xref:System.Windows.Forms.Form>) では、<xref:System.Timers.Timer.SynchronizingObject%2A>プロパティの<xref:System.Timers.Timer>のインスタンスに設定されている`Form1`です。  
+  
+   
+  
+## Examples  
+ 次の例は、非常に単純なテキスト ファイル エディターとして機能する Windows フォーム アプリケーションです。 テキスト ボックス内のテキストが保存されていないときに、アプリをユーザーに確認 1 分間隔でそのユーザーがテキスト ボックスの内容を保存するかどうか。  これを行う、<xref:System.Timers.Timer.Interval%2A>プロパティが 1 分 (60,000 ミリ秒) に設定と<xref:System.Timers.Timer.SynchronizingObject%2A>プロパティに設定されている、<xref:System.Windows.Forms.Form>オブジェクト。  
+  
+ [!code-csharp[System.Timers.Timer.SynchronizingObject#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Timers.Timer.SynchronizingObject/cs/Form1.cs#1)]
+ [!code-vb[System.Timers.Timer.SynchronizingObject#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Timers.Timer.SynchronizingObject/vb/Form1.vb#1)]  
+  
+ 例では、次のコントロールをフォームに追加する必要があります。  
+  
+-   A<xref:System.Windows.Forms.TextBox>という名前のコントロール`TextBox1`(既定の名前)。  
+  
+-   A<xref:System.Windows.Forms.Button>という名前のコントロール`Button1`(既定の名前)。  
+  
+-   A<xref:System.Windows.Forms.SaveFileDialog>という名前のコントロール`SaveSaveFileDialog1`(既定の名前)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

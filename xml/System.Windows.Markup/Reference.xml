@@ -1,0 +1,140 @@
+<Type Name="Reference" FullName="System.Windows.Markup.Reference">
+  <TypeSignature Language="C#" Value="public class Reference : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Reference extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Reference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Name")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して、 <c>{X:reference}</c>マークアップ拡張機能です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `{x:Reference}`マークアップ拡張機能には、(1 つだけのパラメーターがある)、位置指定の使用法と名前付き引数の使用がサポートしています (名前付き引数を持つ`name`)。  
+  
+ `{x:Reference}`マークアップ拡張機能を使用して、オブジェクト グラフ内の別の名前付きオブジェクトを参照します。 このシナリオではオブジェクトの名前には、特定の実装は多くの場合、異なる定義が<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>です。 詳細については、次を参照してください。 [X:reference マークアップ拡張機能](~/docs/framework/xaml-services/x-reference-markup-extension.md)します。  
+  
+ マークアップ拡張機能の詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)します。  
+  
+ System.Xaml アセンブリ使用<xref:System.Windows.Markup.XmlnsDefinitionAttribute>アセンブリ内のすべての型を XAML 言語の XAML 名前空間にマップする ([!INCLUDE[TLA#tla_xamlxmlnsv1](~/includes/tlasharptla-xamlxmlnsv1-md.md)])。 プレフィックスを宣言する通常[!INCLUDE[TLA#tla_xamlxmlnsv1](~/includes/tlasharptla-xamlxmlnsv1-md.md)]では、ルート要素のマッピングを使用してプレフィックス`x`です。  
+  
+<a name="xamlTextUsage_Reference"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Reference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Reference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.Reference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Reference (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Reference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">参照する要素の XAML 名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.Reference" />クラス、<paramref name="name" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Reference.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ConstructorArgument("name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のリファレンスを取得する XAML の名前。</summary>
+        <value>参照を取得する要素の XAML の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Name"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Reference.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.Xaml.IXamlNameResolver" /> サービスを実装するクラス。</param>
+        <summary>ターゲット プロパティの値であるオブジェクトを返します。 <see cref="T:System.Windows.Markup.Reference" /> 型の場合、これは指定した <see cref="P:System.Windows.Markup.Reference.Name" /> が参照するオブジェクトです。</summary>
+        <returns>ターゲット プロパティの値です。 これは、可能性のある任意のオブジェクトは、関連するバッキング アセンブリで型マップされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要ですが、`serviceProvider`を実装する値、<xref:System.Xaml.IXamlNameResolver>サービス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="serviceProvider" />値を実装していません、<see cref="T:System.Xaml.IXamlNameResolver" />サービス。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Markup.Reference.Name" />構築または位置指定の使用状況を通じて値が設定されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceProvider" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

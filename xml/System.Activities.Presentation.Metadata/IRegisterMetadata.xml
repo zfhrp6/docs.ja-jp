@@ -1,0 +1,48 @@
+<Type Name="IRegisterMetadata" FullName="System.Activities.Presentation.Metadata.IRegisterMetadata">
+  <TypeSignature Language="C#" Value="public interface IRegisterMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRegisterMetadata" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Metadata.IRegisterMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メタデータ ストアに追加属性を追加するクラスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.Metadata.IRegisterMetadata> 型を使用すると、デザイン時属性のランタイム型への緩やかな関連付けをカプセル化できます。 [!INCLUDE[wfd1](~/includes/wfd1-md.md)]をホストするアプリケーションは、<xref:System.Activities.Presentation.Metadata.IRegisterMetadata> インターフェイスを使用して、アクティビティの属性を登録できます。 たとえば、[!INCLUDE[vs2010](~/includes/vs2010-md.md)] では、*.design アセンブリで型が検索される以外に、<xref:System.Activities.Presentation.Metadata.IRegisterMetadata> が実装された型を含むアセンブリが読み込まれた場合には、これらの型も検索されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public void Register ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Register() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.IRegisterMetadata.Register" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナーの初期化時に、メタデータ ストアに追加のメタデータを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装では、メタデータ ストアにデータを追加するために <xref:System.Activities.Presentation.Metadata.MetadataStore.AddAttributeTable%2A> を呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

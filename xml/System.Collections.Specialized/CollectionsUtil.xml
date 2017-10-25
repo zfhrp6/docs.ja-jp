@@ -1,0 +1,231 @@
+<Type Name="CollectionsUtil" FullName="System.Collections.Specialized.CollectionsUtil">
+  <TypeSignature Language="C#" Value="public class CollectionsUtil" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CollectionsUtil extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.CollectionsUtil" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>大文字小文字を無視する文字列のコレクションを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドは、ハッシュ コード プロバイダーとの比較子の大文字と小文字の実装を使用して、コレクションの大文字と小文字のインスタンスを生成します。 結果のインスタンスは、動作が異なる場合がありますが、そのクラスの他のインスタンスと同様に使用できます。  
+  
+ たとえば、2 つのオブジェクト キーを使用して「こんにちは」、"HELLO"が、ハッシュ テーブルに追加するには. 2 つの異なるエントリを区別するハッシュ テーブルを作成一方、大文字と小文字のハッシュ テーブルが 2 番目のオブジェクトを追加するときに例外がスロー。  
+  
+   
+  
+## Examples  
+ 次の例では、市区町村のグループの設定値を保持するために、ハッシュ テーブルと、並べ替えられたリストの 2 つのコレクションを使用します。 値は、都市名をキーとして使用してコレクションから取得されます。 市区町村名は、大文字と小文字のキーとしての使用を表示する大文字小文字混在でです。  
+  
+ [!code-cpp[System.Collections.Specialized.CollectionsUtil#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.collections.specialized.collectionsutil/cpp/source.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.CollectionsUtil#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.specialized.collectionsutil/cs/source.cs#1)]
+ [!code-vb[System.Collections.Specialized.CollectionsUtil#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.specialized.collectionsutil/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>A <see cref="T:System.Collections.Hashtable" /> 1 つのライターと複数リーダー同時にサポートできます。 複数のライターをサポートするために、によって返されるラッパーを介してすべての操作を行う必要があります、<see cref="M:System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)" />メソッドです。  
+  
+ A<see cref="T:System.Collections.SortedList" />コレクションが変更されない限り、複数のリーダーを同時にサポートできます。 スレッド セーフを確保する、 <see cref="T:System.Collections.SortedList" />、によって返されるラッパーを介してすべての操作を行う必要があります、<see cref="M:System.Collections.SortedList.Synchronized(System.Collections.SortedList)" />メソッドです。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CollectionsUtil ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.CollectionsUtil.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.CollectionsUtil" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCaseInsensitiveHashtable">
+      <MemberSignature Language="C#" Value="public static System.Collections.Hashtable CreateCaseInsensitiveHashtable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Hashtable CreateCaseInsensitiveHashtable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>大文字と小文字のインスタンスを新規作成、<see cref="T:System.Collections.Hashtable" />既定の初期容量を持つクラス。</summary>
+        <returns>新しい大文字インスタンス、<see cref="T:System.Collections.Hashtable" />既定の初期容量を持つクラス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する代わりに、<xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A>メソッドを使用して、<xref:System.Collections.Hashtable.%23ctor%28System.Collections.IEqualityComparer%29?displayProperty=nameWithType>大文字小文字の区別を作成するコンス トラクター<xref:System.Collections.Hashtable>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCaseInsensitiveHashtable">
+      <MemberSignature Language="C#" Value="public static System.Collections.Hashtable CreateCaseInsensitiveHashtable (System.Collections.IDictionary d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Hashtable CreateCaseInsensitiveHashtable(class System.Collections.IDictionary d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />を新しいコピーを大文字と小文字<see cref="T:System.Collections.Hashtable" />です。</param>
+        <summary>新しい大文字と小文字のインスタンスに指定されたディクショナリからエントリをコピー、<see cref="T:System.Collections.Hashtable" />コピーされるエントリの数と同じ初期量を持つクラス。</summary>
+        <returns>新しい大文字インスタンス、<see cref="T:System.Collections.Hashtable" />から、指定したエントリを含むクラス<see cref="T:System.Collections.IDictionary" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する代わりに、<xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A>メソッドを使用して、<xref:System.Collections.Hashtable.%23ctor%28System.Collections.IDictionary%2CSystem.Collections.IEqualityComparer%29?displayProperty=nameWithType>大文字小文字の区別を作成するコンス トラクター<xref:System.Collections.Hashtable>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCaseInsensitiveHashtable">
+      <MemberSignature Language="C#" Value="public static System.Collections.Hashtable CreateCaseInsensitiveHashtable (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Hashtable CreateCaseInsensitiveHashtable(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">エントリの概数を<see cref="T:System.Collections.Hashtable" />最初に含めることができます。</param>
+        <summary>大文字と小文字のインスタンスを新規作成、<see cref="T:System.Collections.Hashtable" />指定した初期容量を持つクラス。</summary>
+        <returns>新しい大文字インスタンス、<see cref="T:System.Collections.Hashtable" />指定した初期容量を持つクラス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する代わりに、<xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A>メソッドを使用して、<xref:System.Collections.Hashtable.%23ctor%28System.Int32%2CSystem.Collections.IEqualityComparer%29?displayProperty=nameWithType>大文字小文字の区別を作成するコンス トラクター<xref:System.Collections.Hashtable>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCaseInsensitiveSortedList">
+      <MemberSignature Language="C#" Value="public static System.Collections.SortedList CreateCaseInsensitiveSortedList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.SortedList CreateCaseInsensitiveSortedList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveSortedList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.SortedList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Collections.SortedList" />文字列の大文字と小文字を区別しないクラスです。</summary>
+        <returns>新しいインスタンス、<see cref="T:System.Collections.SortedList" />文字列の大文字と小文字を区別しないクラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Collections.SortedList>によるとインスタンスの並べ替え、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

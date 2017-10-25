@@ -1,0 +1,341 @@
+<Type Name="SelectionRangeConverter" FullName="System.Windows.Forms.SelectionRangeConverter">
+  <TypeSignature Language="C#" Value="public class SelectionRangeConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SelectionRangeConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SelectionRangeConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>変換する型コンバーターを提供<see cref="T:System.Windows.Forms.SelectionRange" />オブジェクトとその他のさまざまな種類の間です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRange>クラスは、1 つの日付または日付の範囲を表します。 このクラスは、一般的に関連付け、<xref:System.Windows.Forms.MonthCalendar>制御、ここで、選択した日と強調表示された日を表します。 <xref:System.Windows.Forms.SelectionRangeConverter>クラスを付加クラス<xref:System.Windows.Forms.SelectionRange>と他の型から変換することができます、文字列のほとんどの場合です。  
+  
+ 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラス、[一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)、および[する方法: 型コンバーターの実装](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+> [!NOTE]
+>  作成しないで、<xref:System.Windows.Forms.SelectionRangeConverter>です。 代わりに、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A> クラスの <xref:System.ComponentModel.TypeDescriptor> メソッドを呼び出します。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectionRangeConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.SelectionRangeConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRangeConverter.%23ctor%2A>既定のコンス トラクターは、コンパイラによって提供されます。  
+  
+ 作成しないで、<xref:System.Windows.Forms.SelectionRangeConverter>です。 代わりに、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A> クラスの <xref:System.ComponentModel.TypeDescriptor> メソッドを呼び出します。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="sourceType">ソース<see cref="T:System.Type" />変換します。</param>
+        <summary>このコンバーターが、指定された型記述子コンテキストのクエリを実行して、指定したソースの種類のオブジェクトをコンバーターのネイティブ型に変換できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />コンバーターが指定された変換を実行できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRangeConverter>クラスは、型間の変換に特化した<xref:System.String>と<xref:System.Windows.Forms.SelectionRange>です。 その結果、<xref:System.Windows.Forms.SelectionRangeConverter.CanConvertFrom%2A>メソッドを返します。`true`場合、`sourceType`パラメーターの型は<xref:System.String>します。 それ以外の場合、このメソッドの基本実装への呼び出しを延期<xref:System.ComponentModel.TypeConverter.CanConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" /> パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 パラメーターは、<see langword="null" />ので、情報を常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="destinationType">転送先<see cref="T:System.Type" />に変換します。</param>
+        <summary>このコンバーターが、指定したコンテキストを使用してオブジェクトを指定した型に変換できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />このコンバーターは、指定した変換を実行できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRangeConverter.CanConvertTo%2A>メソッドを返します。`true`場合、`destinationType`パラメーターの型は<xref:System.String>または<xref:System.ComponentModel.Design.Serialization.InstanceDescriptor>です。 それ以外の場合、このメソッドの基本実装への呼び出しを延期<xref:System.ComponentModel.TypeConverter.CanConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" /> パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 パラメーターは、<see langword="null" />ので、情報を常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="culture">変換のロケール情報。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定したロケールを使用して、指定された値をコンバーターのネイティブ型に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRangeConverter.ConvertFrom%2A>メソッドが変換に特化した<xref:System.String>をする日付の範囲を表す値をその<xref:System.Windows.Forms.SelectionRange>表現します。 以外の型<xref:System.String>はこのメソッドの基本クラスの実装に渡されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />型は<see cref="T:System.String" />が日付を表す 2 つの文字列を解析できませんでした。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="value" />型は<see cref="T:System.String" />は解析に 2 つの文字列がいずれかまたは両方への変換、<see cref="T:System.DateTime" />型は成功しませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" /> パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 パラメーターは、<see langword="null" />ので、情報を常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="culture">変換のロケール情報。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <param name="destinationType">転送先<see cref="T:System.Type" />に変換します。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Forms.SelectionRangeConverter" />オブジェクトを指定されたカルチャを使用して、別の型。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRangeConverter.ConvertTo%2A>メソッドが変換に特化した<xref:System.Windows.Forms.SelectionRange>値をその<xref:System.String>または<xref:System.ComponentModel.Design.Serialization.InstanceDescriptor>表現します。 その他の種類は、このメソッドの基本クラスの実装に渡されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="value" />変換できない、<paramref name="destinationType" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" /> パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 パラメーターは、<see langword="null" />ので、情報を常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public override object CreateInstance (System.ComponentModel.ITypeDescriptorContext context, System.Collections.IDictionary propertyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object CreateInstance(class System.ComponentModel.ITypeDescriptorContext context, class System.Collections.IDictionary propertyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="propertyValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="propertyValues"><see cref="T:System.Collections.IDictionary" />新しいプロパティの値を格納しています。</param>
+        <summary>作成、<see cref="T:System.Windows.Forms.SelectionRange" />そのオブジェクトのプロパティ値のセットと指定した型記述子を使用してオブジェクト。</summary>
+        <returns>成功した場合、新しく作成された<see cref="T:System.Windows.Forms.SelectionRange" />以外の場合、このメソッドが例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.SelectionRangeConverter.CreateInstance%2A>という変更済みバージョンを作成することで、既存の変更できないオブジェクトを変更するメソッド。 このメソッドが必要ですが、`propertyValues`パラメーターのキーの値を持つ要素を`Start`と`End`、それぞれに対応する<xref:System.DateTime>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="propertyValues" /><see langword="null" />またはその<c>開始</c>と<c>終了</c>に要素を変換できませんでした、<see cref="T:System.Windows.Forms.SelectionRange" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCreateInstanceSupported">
+      <MemberSignature Language="C#" Value="public override bool GetCreateInstanceSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetCreateInstanceSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>かどうか、インスタンスの値を変更する必要がありますへの呼び出しを決定<see cref="Overload:System.Windows.Forms.SelectionRangeConverter.CreateInstance" />新しい値を作成します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="Overload:System.Windows.Forms.SelectionRangeConverter.CreateInstance" />それ以外の 1 つまたは複数のプロパティを変更すると呼ばれる必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptorCollection GetProperties (System.ComponentModel.ITypeDescriptorContext context, object value, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.ComponentModel.ITypeDescriptorContext context, object value, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="value">プロパティを取得する対象となる配列の型を指定する <see cref="T:System.Object" />。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>フィルター選択されたプロパティのセットを返します、<see cref="T:System.Windows.Forms.SelectionRange" />型</summary>
+        <returns>成功した場合、公開するプロパティのセット、<see cref="T:System.Windows.Forms.SelectionRange" />入力です。 それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装が使用しない、`context`または`value`パラメーター、TypeDescriptor。 への呼び出しを単純には参照<xref:System.ComponentModel.TypeDescriptor.GetProperties%28System.Type%2CSystem.Attribute%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetPropertiesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetPropertiesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRangeConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>現在のオブジェクトが指定した型記述子コンテキストを使用するプロパティをサポートしているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="Overload:System.Windows.Forms.SelectionRangeConverter.GetProperties" />のプロパティを検索するに呼び出せる、<see cref="T:System.Windows.Forms.SelectionRange" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

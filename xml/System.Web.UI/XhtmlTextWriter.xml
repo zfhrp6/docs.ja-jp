@@ -1,0 +1,501 @@
+<Type Name="XhtmlTextWriter" FullName="System.Web.UI.XhtmlTextWriter">
+  <TypeSignature Language="C#" Value="public class XhtmlTextWriter : System.Web.UI.HtmlTextWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XhtmlTextWriter extends System.Web.UI.HtmlTextWriter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.XhtmlTextWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlTextWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張のハイパー テキスト マークアップ言語 (XHTML) を書き込みます-モバイル デバイス用の ASP.NET サーバー コントロールの出力ストリームに XTHML から派生する XHTML モジュールのすべてのバリエーションを含む、特定の文字です。 上書き、 <see cref="T:System.Web.UI.XhtmlTextWriter" /> ASP.NET ページおよびサーバー コントロールのカスタム XHTML 表示を提供するクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XHTML は、HTML 4.1 は、複数のデバイス タイプに適している Web サイトを作成することができますに基づく、XML 対応のマークアップ言語です。 さまざまな書式とスタイルのオプションと削減マークアップ タグのあいまいさのマークアップ言語を生成する XML によって提供される厳密な要素のガイドラインに HTML によって提供される使いやすさをマージします。 <xref:System.Web.UI.XhtmlTextWriter>クラスには、ASP.NET サーバー コントロールの使用をクライアントに XHTML コンテンツをレンダリングするときに書式設定機能が用意されています。 使用することができます、 <xref:System.Web.UI.XhtmlTextWriter.SetDocType%2A> XHTML の種類のテキスト ライターのレンダリングを指定します。 サポートされているドキュメントの種類が定義されている、<xref:System.Web.UI.XhtmlMobileDocType>列挙します。  
+  
+ <xref:System.Web.UI.XhtmlTextWriter>クラスは、2 つの要素の属性のセットを表示します。 1 つのセットで参照されていると、共通の属性のコレクションとは、<xref:System.Web.UI.XhtmlTextWriter.CommonAttributes%2A>プロパティです。 2 番目のセットで参照されていると、要素に固有の属性のコレクションとは、<xref:System.Web.UI.XhtmlTextWriter.ElementSpecificAttributes%2A>プロパティです。 要素とがレンダリングされるスタイルの詳細については、仕様を参照して、XHTML モジュールで、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ メンバーを使用することができます、<xref:System.Web.UI.XhtmlTextWriter>アダプターまたはアダプターのクラスにページ クラスおよび派生クラスをカスタム XHTML で使用するカスタム テキスト ライターを作成します。 標準の動作をオーバーライドする派生クラスを作成することも、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ 既定では、HTML 4.0 をサポートするブラウザーを使用しているときに ASP.NET ページおよびコントロール マークアップを表示する XHTML 1.1 規格と互換性があります。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+  
+ <xref:System.Web.UI.HtmlTextWriter>いない XHTML マークアップを表示するには、具体的には ASP.NET を構成していない限り、XHTML を出力します。 詳細については、次を参照してください。 [NIB: 方法: 構成 XHTML の ASP.NET Web サイトでレンダリング](http://msdn.microsoft.com/en-us/42483a54-f1ae-44e1-88e6-4370f8690149)です。  
+  
+   
+  
+## Examples  
+ このセクションのコード例には、4 つの部分が含まれています。 最初の例では、派生クラスを作成する方法を示します。 2 番目のコード例では、カスタム コントロールを作成する方法を示します。 3 番目のコード例では、カスタム コントロールを使用する方法を示します。 4 番目のコード例では、カスタム コントロールを実行するために必要なコードを提供します。  
+  
+ 次のコード例から派生したカスタム クラスを作成する方法を示します、<xref:System.Web.UI.XhtmlTextWriter>クラスです。 これは、標準から直接的または間接的に継承するすべてのクラスの 2 つのコンス トラクターが、<xref:System.Web.UI.HtmlTextWriter>クラスです。 最初のコンス トラクターは、<xref:System.IO.TextWriter>オブジェクトをパラメーターとして次の 2 つのパラメーター値を渡す 2 番目のコンス トラクターを呼び出す。  
+  
+-   <xref:System.IO.TextWriter> インスタンス。  
+  
+-   値、 <xref:System.Web.UI.HtmlTextWriter.DefaultTabString?displayProperty=nameWithType> XHTML テキスト ライターによって使用される既定の行のインデントを定義するプロパティです。  
+  
+ このコード例では、オーバーライドする方法も示しています、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>と<xref:System.Web.UI.XhtmlTextWriter.OnStyleAttributeRender%2A>テキストのフィルター処理するメソッドのサイズし、スタイル、色のそれぞれします。 さらに、オーバーライド、<xref:System.Web.UI.HtmlTextWriter.BeginRender%2A>と<xref:System.Web.UI.HtmlTextWriter.EndRender%2A>前に、コントロールが表示された後に文字列のテキストを書き込むメソッド。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/CS/customxhtmltextwriter.cs#1)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/VB/customxhtmltextwriter.vb#1)]  
+  
+ 次のコード例は、カスタムを作成する方法を示します<xref:System.Web.UI.WebControls.Label>という名前のコントロール`TestLabel`およびという名前のカスタム アダプター `XhtmlTestLabelAdapter` XHTML としてコントロールの内容を表示します。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.XhtmlTextWriter_Sample1/cs/xhtmltextlabel.cs#1)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.XhtmlTextWriter_Sample1/VB/xhtmltestlabel.vb#1)]  
+  
+ 次のコード例は、カスタム コントロールを使用する方法を示します`TestLabel`ASP.NET Web ページにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.XhtmlTextWriter_Sample1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.XhtmlTextWriter_Sample1/cs/xhtmltextlabel.aspx#4)]
+ [!code-aspx-vb[System.Web.UI.XhtmlTextWriter_Sample1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.XhtmlTextWriter_Sample1/VB/xhtmltestlabel.aspx#4)]  
+  
+ カスタム コントロールを使用して、前のコード例では、次の追加`<controlAdapters>`要素を 2 つのファイルのいずれか。 特定のブラウザーのサブディレクトリに適切なコンピューター全体のファイルに .NET Framework 構成ディレクトリのサブフォルダーとして追加することができます。 代わりに、Web アプリケーション ルートの下の App_Browsers ディレクトリ内のカスタム ブラウザー ファイルを追加することができます。  
+  
+```  
+<controlAdapters>  
+   <adapter controlType="AspNet.Samples.TestLabel"  
+   adapterType="AspNet.Samples.XhtmlTestLabelAdapter" />  
+</controlAdapters>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XhtmlTextWriter (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.#ctor(System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A <see cref="T:System.IO.TextWriter" /> XHTML コンテンツを表示するインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.XhtmlTextWriter" />で指定されている行のインデントを使用するクラス、<see cref="F:System.Web.UI.HtmlTextWriter.DefaultTabString" />フィールドです。 使用して、<see cref="M:System.Web.UI.XhtmlTextWriter.#ctor(System.IO.TextWriter)" />既定行のインデントを変更したくない場合、コンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.XhtmlTextWriter.%23ctor%2A>を受け取るコンス トラクター、<xref:System.IO.TextWriter>オブジェクトのようにパラメーターが 2 つのパラメーター値を渡す、2 番目のコンス トラクターを呼び出します。  
+  
+-   <xref:System.IO.TextWriter> インスタンス。  
+  
+-   指定されている文字列値、<xref:System.Web.UI.HtmlTextWriter.DefaultTabString>フィールドには、XHTML テキスト ライターによって使用されるタブのスペースを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例から直接または間接的に派生するすべてのクラスの標準である 2 つのコンス トラクターを作成する方法を示します、<xref:System.Web.UI.HtmlTextWriter>から派生したカスタム クラス用のクラス、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample2#5](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/CS/customxhtmltextwriter.cs#5)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample2#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/VB/customxhtmltextwriter.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XhtmlTextWriter (System.IO.TextWriter writer, string tabString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer, string tabString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.#ctor(System.IO.TextWriter,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="tabString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A <see cref="T:System.IO.TextWriter" /> XHTML コンテンツを表示するインスタンス。</param>
+        <param name="tabString">行のインデントを表示するために使用する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.XhtmlTextWriter" />指定された行のインデントを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から直接または間接的に派生するすべてのクラスの標準である 2 つのコンス トラクターを作成する方法を示します、<xref:System.Web.UI.HtmlTextWriter>から派生したカスタム クラス用のクラス、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample2#5](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/CS/customxhtmltextwriter.cs#5)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample2#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/VB/customxhtmltextwriter.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRecognizedAttribute">
+      <MemberSignature Language="C#" Value="public virtual void AddRecognizedAttribute (string elementName, string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRecognizedAttribute(string elementName, string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.AddRecognizedAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">属性を追加する XHTML 要素。</param>
+        <param name="attributeName">追加する属性です。</param>
+        <summary>XHTML 要素に属性を追加します。 要素に固有の属性のコレクション、<see cref="T:System.Web.UI.XhtmlTextWriter" />によってオブジェクトが参照される、<see cref="P:System.Web.UI.XhtmlTextWriter.ElementSpecificAttributes" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.XhtmlTextWriter.AddRecognizedAttribute%2A> XHTML 要素に属性を追加します。 追加された属性は、認識し、によって表示される、<xref:System.Web.UI.XhtmlTextWriter>オブジェクト。 ライターが XHTML 要素の一般的な属性を表示しないように、使用、<xref:System.Web.UI.XhtmlTextWriter.RemoveRecognizedAttribute%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonAttributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable CommonAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable CommonAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.XhtmlTextWriter.CommonAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.Hashtable" />のマークアップ タグの共通の属性を格納しているオブジェクト、<see cref="T:System.Web.UI.XhtmlTextWriter" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />共通の属性を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.XhtmlTextWriter.CommonAttributes%2A>コレクションには、XHTML 要素で許容されるを抑制されない属性が含まれています、<xref:System.Web.UI.XhtmlTextWriter.SuppressCommonAttributes%2A>プロパティです。 共通の属性の詳細については、次を参照してください。、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ 新しいインスタンスをときに、<xref:System.Web.UI.XhtmlTextWriter>クラスが作成されると、初期化される共通の属性は。  
+  
+-   `class`  
+  
+-   `id`  
+  
+-   `title`  
+  
+-   `xml:lang`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementSpecificAttributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable ElementSpecificAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable ElementSpecificAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.XhtmlTextWriter.ElementSpecificAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.Hashtable" />要素に固有の属性を含むオブジェクト。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />要素に固有の属性を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.XhtmlTextWriter.AddRecognizedAttribute%2A> XHTML 要素に認識されているを追加するメソッドの属性です。 削除するには、XHTML 要素に共通の属性を使用して、<xref:System.Web.UI.XhtmlTextWriter.RemoveRecognizedAttribute%2A>メソッドです。  
+  
+ 新しいインスタンスをときに、<xref:System.Web.UI.XhtmlTextWriter>クラスを作成すると、<xref:System.Collections.Hashtable>要素に固有の属性のオブジェクトには、次の表に示すように属性が表示されます。  
+  
+|要素|属性|  
+|-------------|----------------|  
+|`<a>`|`accesskey`, `href`, `charset`, `hreflang`, `rel`, `type`, `rev`, `title`, `tabindex`|  
+|`<base>`|`href`|  
+|`<blockquote>`|`cite`|  
+|`<br>`|`id`、`class`、`title`|  
+|`<form>`|`action`、`method`、`enctype`|  
+|`<head>`|`xml:lang`|  
+|`<html>`|`version`、`xml:lang`、`xmlns`|  
+|`<img>`|`src`, `alt`, `width`, `longdesc`, `height`|  
+|`<input>`|`size`, `accesskey`, `title`, `name`, `type`, `disabled`, `value`, `src`, `checked`, `maxlength`, `tabindex`|  
+|`<label>`|`accesskey`, `for`|  
+|`<li>`|`value`|  
+|`<link>`|`hreflang`, `rev`, `type`, `charset`, `rel`, `href`, `media`|  
+|`<meta>`|`content`, `name`, `xml:lang`, `http-equiv`, `scheme`|  
+|`<object>`|`codebase`, `classid`, `data`, `standby`, `name`, `type`, `height`, `archive`, `declare`, `width`, `tabindex`, `codetype`|  
+|`<ol>`|`start`|  
+|`<optgroup>`|`label`, `disabled`|  
+|`<option>`|`selected`, `value`|  
+|`<param>`|`id`, `name`, `valuetype`, `value`, `type`|  
+|`<pre>`|`xml:space`|  
+|`<q>`|`cite`|  
+|`<select>`|`name`, `tabindex`, `disabled`, `multiple`, `size`|  
+|`<style>`|`xml:lang`, `xml:space`, `type`, `title`, `media`|  
+|`<table>`|`width`, `summary`|  
+|`<textarea>`|`name`, `cols`, `accesskey`, `tabindex`, `rows`|  
+|`<td>`|`headers`, `align`, `rowspan`, `colspan`, `axis`, `scope`, `abbr`, `valign`|  
+|`<th>`|`headers`, `align`, `rowspan`, `colspan`, `axis`, `scope`, `abbr`, `valign`|  
+|`<title>`|`xml:lang`|  
+|`<tr>`|`align`, `valign`|  
+  
+ 要素とがレンダリングされるスタイルの詳細については、仕様を参照して、XHTML モジュールで、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidFormAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsValidFormAttribute (string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValidFormAttribute(string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.IsValidFormAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">チェックする属性名。</param>
+        <summary>開始タグ内に表示できることを確認するを XHTML 属性のチェック、<see langword="&lt;form&gt;" />要素。</summary>
+        <returns>
+          <see langword="true" />属性を適用できる場合、<see langword="&lt;form&gt;" />要素、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、条件付きで要求元のデバイスの XHTML ドキュメントの種類でサポートされているかどうかに応じて属性を表示するために役立ちます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムを作成する例の一部<xref:System.Web.UI.WebControls.Label>コントロールと XHTML としてコントロールのコンテンツをレンダリングするアダプター。  
+  
+ このコード例は、という名前のブール変数を作成する方法を示します`attTest`呼び出し元から結果の戻り値に設定し、 <xref:System.Web.UI.XhtmlTextWriter.IsValidFormAttribute%2A> "style"パラメーターの値を持つメソッドです。 場合、<xref:System.Web.UI.XhtmlTextWriter.IsValidFormAttribute%2A>メソッドを返します。 `true`、を使用して、コントロールに関連付けられているスタイルが表示される、<xref:System.Web.UI.HtmlTextWriter.EnterStyle%2A?displayProperty=nameWithType>と<xref:System.Web.UI.HtmlTextWriter.ExitStyle%2A?displayProperty=nameWithType>メソッドです。 場合、`attTest`値は`false`スタイルはレンダリングされません。 代わりに、ページには、コントロールのテキストが表示されます、`<br/>`によって表示される要素、<xref:System.Web.UI.XhtmlTextWriter.WriteBreak%2A>メソッド、およびコントロールの XHTML コンテンツが条件付きで表示をユーザーに通知をテキスト文字列。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.XhtmlTextWriter_Sample1/cs/xhtmltextlabel.cs#3)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.XhtmlTextWriter_Sample1/VB/xhtmltestlabel.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAttributeRender">
+      <MemberSignature Language="C#" Value="protected override bool OnAttributeRender (string name, string value, System.Web.UI.HtmlTextWriterAttribute key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnAttributeRender(string name, string value, valuetype System.Web.UI.HtmlTextWriterAttribute key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.OnAttributeRender(System.String,System.String,System.Web.UI.HtmlTextWriterAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="name">表示するために XHTML 属性です。</param>
+        <param name="value">XHTML 属性に割り当てられた値。</param>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterAttribute" /> XHTML 属性に関連付けられた列挙値。</param>
+        <summary>指定された XHTML 属性とその値をマークアップの現在の要素を表示するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性が、ページに表示される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>を確認するかどうか、`size`このテキスト ライターによってレンダリングされる要素のいずれかの属性が表示されます。 場合、`size`属性が表示される、コードでは、その値が 8 のポイントであるかどうかを確認します。 場合は、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>メソッドを返します。 `true`、属性、および表示するためにその値を許可します。 値が 8 のポイント以外の場合、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>メソッドを返します。 `false`、属性とその値は表示されません。 場合、キーのパラメーター、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>メソッドと一致しません、<xref:System.Web.UI.HtmlTextWriterAttribute.Size>属性の基本機能、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>で定義されているメソッドを呼び出す、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/CS/customxhtmltextwriter.cs#2)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/VB/customxhtmltextwriter.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStyleAttributeRender">
+      <MemberSignature Language="C#" Value="protected override bool OnStyleAttributeRender (string name, string value, System.Web.UI.HtmlTextWriterStyle key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnStyleAttributeRender(string name, string value, valuetype System.Web.UI.HtmlTextWriterStyle key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.OnStyleAttributeRender(System.String,System.String,System.Web.UI.HtmlTextWriterStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterStyle" />
+      </Parameters>
+      <Docs>
+        <param name="name">表示するために XHTML スタイルの属性です。</param>
+        <param name="value">XHTML スタイルの属性に割り当てられた値。</param>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterStyle" /> XHTML スタイルの属性に関連付けられた列挙型値。</param>
+        <summary>指定された XHTML スタイルの属性とその値をマークアップの現在の要素を表示するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />スタイル属性が表示される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.XhtmlTextWriter.OnStyleAttributeRender%2A>を確認するかどうか、<xref:System.Web.UI.HtmlTextWriterStyle.Color>このテキスト ライターによってレンダリングされる要素のいずれかの属性を表示しています。 場合、<xref:System.Web.UI.HtmlTextWriterStyle.Color>属性が表示される、コードは、その値が紫色であるかどうかを確認します。 値が、紫色の場合、<xref:System.Web.UI.XhtmlTextWriter.OnStyleAttributeRender%2A>メソッドを返します。`false`属性とその値は表示されません。 場合、<xref:System.Web.UI.HtmlTextWriterStyle.Color>属性が、他の値に設定されている、<xref:System.Web.UI.XhtmlTextWriter.OnStyleAttributeRender%2A>メソッドを返します。`true`され、属性とその値が表示されます。 場合、キーのパラメーター、<xref:System.Web.UI.XhtmlTextWriter.OnAttributeRender%2A>メソッドと一致しません、<xref:System.Web.UI.HtmlTextWriterStyle.Color>属性の基本機能、<xref:System.Web.UI.XhtmlTextWriter.OnStyleAttributeRender%2A>で定義されているメソッドを呼び出す、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.XhtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.XhtmlTextWriter_Sample2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/CS/customxhtmltextwriter.cs#3)]
+ [!code-vb[System.Web.UI.XhtmlTextWriter_Sample2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/VB/customxhtmltextwriter.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRecognizedAttribute">
+      <MemberSignature Language="C#" Value="public virtual void RemoveRecognizedAttribute (string elementName, string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveRecognizedAttribute(string elementName, string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.RemoveRecognizedAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XHTML 要素から属性を削除します。</param>
+        <param name="attributeName">指定された XHTML 要素から削除する属性です。</param>
+        <summary>属性を削除、<see cref="P:System.Web.UI.XhtmlTextWriter.ElementSpecificAttributes" />要素のコレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDocType">
+      <MemberSignature Language="C#" Value="public virtual void SetDocType (System.Web.UI.XhtmlMobileDocType docType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetDocType(valuetype System.Web.UI.XhtmlMobileDocType docType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.SetDocType(System.Web.UI.XhtmlMobileDocType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="docType" Type="System.Web.UI.XhtmlMobileDocType" />
+      </Parameters>
+      <Docs>
+        <param name="docType"><see cref="T:System.Web.UI.XhtmlMobileDocType" /> 列挙値のいずれか。</param>
+        <summary>ページまたはコントロールに表示するテキスト ライターの XHTML ドキュメントの種類を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.XhtmlTextWriter.SetDocType%2A>要求元のデバイスを表示する XHTML の種類を定義するカスタム ページ アダプター内のメソッドです。 サポートされているドキュメントの種類が定義されている、<xref:System.Web.UI.XhtmlMobileDocType>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressCommonAttributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable SuppressCommonAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable SuppressCommonAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.XhtmlTextWriter.SuppressCommonAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.Hashtable" />対象の要素のオブジェクト<see cref="P:System.Web.UI.XhtmlTextWriter.CommonAttributes" />属性が抑制されます。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />要素のコレクションを含むの<see cref="P:System.Web.UI.XhtmlTextWriter.CommonAttributes" />はレンダリングされません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抑制された属性のコレクションには XHTML 要素の一覧が含まれます<xref:System.Web.UI.XhtmlTextWriter.CommonAttributes%2A>属性はレンダリングされません。  
+  
+ 新しいインスタンスをときに、<xref:System.Web.UI.XhtmlTextWriter>クラスを作成すると、<xref:System.Collections.Hashtable>対象の要素のオブジェクト<xref:System.Web.UI.XhtmlTextWriter.CommonAttributes%2A>属性が抑制されますが含まれています。  
+  
+-   `base`  
+  
+-   `meta`  
+  
+-   `br`  
+  
+-   `head`  
+  
+-   `title`  
+  
+-   `html`  
+  
+-   `style`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteBreak">
+      <MemberSignature Language="C#" Value="public override void WriteBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteBreak() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XhtmlTextWriter.WriteBreak" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込みます、 <see langword="&lt;br/&gt;" /> XHTML に要素がストリームを出力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、継承した<xref:System.Web.UI.HtmlTextWriter.BeginRender%2A?displayProperty=nameWithType>でテキスト文字列を記述するメソッド、<xref:System.Web.UI.HtmlTextWriter.Write%2A?displayProperty=nameWithType>メソッドおよび`<br/>`を持つ要素、<xref:System.Web.UI.XhtmlTextWriter.WriteBreak%2A>メソッドです。  
+  
+ [!code-csharp[system.web.ui.xhtmltextwriter_sample2#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/CS/customxhtmltextwriter.cs#4)]
+ [!code-vb[system.web.ui.xhtmltextwriter_sample2#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.xhtmltextwriter_Sample2/VB/customxhtmltextwriter.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

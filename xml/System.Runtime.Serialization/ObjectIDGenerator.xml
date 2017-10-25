@@ -1,0 +1,148 @@
+<Type Name="ObjectIDGenerator" FullName="System.Runtime.Serialization.ObjectIDGenerator">
+  <TypeSignature Language="C#" Value="public class ObjectIDGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ObjectIDGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.ObjectIDGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの Id を生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.ObjectIDGenerator>の既知のオブジェクトを追跡します。 オブジェクトの ID を要求するときに、<xref:System.Runtime.Serialization.ObjectIDGenerator>を既存の ID を返すまたは生成し、新しい ID に注意してくださいかどうかを認識しています  
+  
+ Id は、一意の有効期間、<xref:System.Runtime.Serialization.ObjectIDGenerator>インスタンス。 一般に、<xref:System.Runtime.Serialization.ObjectIDGenerator>ライフ継続限り、<xref:System.Runtime.Serialization.Formatter>作成します。 オブジェクト Id は、指定されたシリアル化されたストリーム内でのみ意味を持つされ、シリアル化されたオブジェクト グラフ内の他のユーザーへの参照を持つオブジェクトを追跡に使用されます。  
+  
+ ハッシュ テーブルを使用して、 <xref:System.Runtime.Serialization.ObjectIDGenerator> ID がどのオブジェクトに割り当てられた保持されます。 各オブジェクトを一意に識別するには、オブジェクトの参照は、ランタイムのガベージ コレクション ヒープ内のアドレスです。 オブジェクト参照の値は、シリアル化中に変更できますが、情報が正しいので、テーブルが自動的に更新されます。  
+  
+ オブジェクト Id は、64 ビットの番号です。 割り当ては、0 が有効なオブジェクト ID ではありませんので、1 から始まる フォーマッタがゼロの値を表す値がオブジェクト参照を選択できます`null`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectIDGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectIDGenerator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.ObjectIDGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetId">
+      <MemberSignature Language="C#" Value="public virtual long GetId (object obj, out bool firstTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 GetId(object obj, [out] bool&amp; firstTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectIDGenerator.GetId(System.Object,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="firstTime" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="obj">オブジェクトの ID。</param>
+        <param name="firstTime">
+          <see langword="true" />場合<c>obj</c>認識されていませんでした以前、 <see cref="T:System.Runtime.Serialization.ObjectIDGenerator" />、それ以外の<see langword="false" />します。</param>
+        <summary>指定したオブジェクトがで既に識別されていない場合、新しい ID を生成する、指定したオブジェクトの ID を返します、<see cref="T:System.Runtime.Serialization.ObjectIDGenerator" />です。</summary>
+        <returns>オブジェクトの ID は、シリアル化のために使用されます。 <paramref name="firstTime" />設定されている<see langword="true" />オブジェクトが識別されている場合は、初めて; に設定されている場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><see cref="T:System.Runtime.Serialization.ObjectIDGenerator" />オブジェクトが多すぎるを追跡するように指示されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasId">
+      <MemberSignature Language="C#" Value="public virtual long HasId (object obj, out bool firstTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 HasId(object obj, [out] bool&amp; firstTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectIDGenerator.HasId(System.Object,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="firstTime" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="obj">要求しているオブジェクト。</param>
+        <param name="firstTime">
+          <see langword="true" />場合<c>obj</c>認識されていませんでした以前、 <see cref="T:System.Runtime.Serialization.ObjectIDGenerator" />、それ以外の<see langword="false" />します。</param>
+        <summary>かどうか、オブジェクトが既に割り当てられて ID の決定します。</summary>
+        <returns>オブジェクト ID<paramref name="obj" />を以前の場合、<see cref="T:System.Runtime.Serialization.ObjectIDGenerator" />以外の場合、0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ID が返されるオブジェクトが既に割り当てられている場合、ID、および`firstTime`に設定されている`false`、それ以外の 0 が返されると`firstTime`に設定されている`true`です。 <xref:System.Runtime.Serialization.ObjectIDGenerator.HasId%2A>異なる<xref:System.Runtime.Serialization.ObjectIDGenerator.GetId%2A>によって既に確認されていないオブジェクトの ID を作成しないことで、<xref:System.Runtime.Serialization.ObjectIDGenerator>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

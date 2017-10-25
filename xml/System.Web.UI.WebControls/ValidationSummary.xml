@@ -1,0 +1,578 @@
+<Type Name="ValidationSummary" FullName="System.Web.UI.WebControls.ValidationSummary">
+  <TypeSignature Language="C#" Value="public class ValidationSummary : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidationSummary extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ValidationSummary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.ValidationSummaryDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての検証エラーの概要を、Web ページ上のインラインまたはメッセージ ボックスのいずれかまたは両方で表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ValidationSummary>を 1 か所で Web ページ上のすべての検証コントロールからのエラー メッセージを要約するクラスを使用します。 割り当てることによって Web ページ上の検証コントロールのグループからのエラー メッセージをまとめることができます、<xref:System.Web.UI.WebControls.ValidationSummary>を設定して検証グループ コントロール、<xref:System.Web.UI.WebControls.ValidationSummary.ValidationGroup%2A>プロパティです。  
+  
+ リスト、箇条書きリストまたはに基づいて、1 つの段落、概要を表示できます、<xref:System.Web.UI.WebControls.ValidationSummary.DisplayMode%2A>プロパティです。  
+  
+ 概要や、メッセージ ボックスに、Web ページに設定して表示されます、<xref:System.Web.UI.WebControls.ValidationSummary.ShowSummary%2A>と<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>プロパティ、それぞれします。  
+  
+> [!NOTE]
+>  使用すると、<xref:System.Web.UI.WebControls.ValidationSummary>内の制御、<xref:System.Web.UI.UpdatePanel>制御、検証コントロールと関連付けられているコントロールが同じパネルであるかどうかを確認します。 使用しての詳細については、<xref:System.Web.UI.UpdatePanel>部分ページ更新プログラムの制御を参照してください[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.ValidationSummary>を参照してください、<xref:System.Web.UI.WebControls.ValidationSummary.%23ctor%2A>コンス トラクターです。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールを Web ページ上のすべての検証コントロールからのエラー メッセージを要約し、それを箇条書きリストに表示します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationSummary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidationSummary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ValidationSummary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.ValidationSummary>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|前景色|`Color.Red`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidationSummary.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML のコンテンツを表示する出力ストリーム。</param>
+        <summary>このコントロールに対して生成された HTML タグに属性を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ValidationSummaryDisplayMode DisplayMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ValidationSummaryDisplayMode DisplayMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.DisplayMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ValidationSummaryDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の検証の表示モードの概要。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ValidationSummaryDisplayMode" /> 値のいずれか。 既定値は、<see langword="BulletList" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの表示形式を使用して、<xref:System.Web.UI.WebControls.ValidationSummary>コントロール。 リスト、箇条書きリスト、または 1 つの段落、概要を表示できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.ValidationSummary.DisplayMode%2A>箇条書きリストを表示するプロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary.DisplayMode Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary.DisplayMode Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary.DisplayMode Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary.DisplayMode Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">表示モードは、のいずれかではない、<see cref="T:System.Web.UI.WebControls.ValidationSummaryDisplayMode" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableClientScript">
+      <MemberSignature Language="C#" Value="public bool EnableClientScript { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableClientScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.EnableClientScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />コントロールはクライアント側スクリプトを使用してそれ自体を更新します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />コントロールは、クライアント側スクリプトを使用して自己更新それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、指定するかどうか、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールはクライアント側スクリプトを使用してそれ自体を更新します。 このプロパティを設定すると`true`、更新をクライアントでクライアント側のスクリプトが表示される、<xref:System.Web.UI.WebControls.ValidationSummary>ブラウザーは、その機能をサポートしている場合は、制御します。 このプロパティを設定すると`false`、クライアントでクライアント側のスクリプトはレンダリングされず<xref:System.Web.UI.WebControls.ValidationSummary>コントロールのみ自体を更新、サーバーへのラウンド トリップされます。 このような状況で、<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>プロパティは影響を与えません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary.EnableClientScript%2A>ようにするプロパティ、<xref:System.Web.UI.WebControls.ValidationSummary>をクライアント側スクリプトを使用して自動的に更新を制御します。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary.EnableClientScript Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary.EnableClientScript Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary.EnableClientScript Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary.EnableClientScript Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Red")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの前景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />コントロールの前景色を表すです。 既定値は、<see langword="Red" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、エラー (error) の検証コントロールからのメッセージが表示される色を指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary.ForeColor%2A>プロパティ検証の概要に青色のテキストが表示されることを指定します。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary.ForeColor Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary.ForeColor Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary.ForeColor Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary.ForeColor Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または概要の上部に表示されるヘッダー テキストを設定します。</summary>
+        <value>概要の上部に表示されるヘッダー テキストです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイトルを表示するこのプロパティを使用して、<xref:System.Web.UI.WebControls.ValidationSummary>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.ValidationSummary.HeaderText%2A>プロパティは HTML エンコードではありません。 HTML タグを含めることがそのため、<xref:System.Web.UI.WebControls.ValidationSummary.HeaderText%2A>です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[ASP.NET のグローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary.HeaderText%2A>のタイトルを表示するプロパティを<xref:System.Web.UI.WebControls.ValidationSummary>コントロール。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary.DisplayMode Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary.DisplayMode Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary.DisplayMode Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary.DisplayMode Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidationSummary.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本コントロールの後に<xref:System.Web.UI.Control.OnInit%2A>メソッド、設定、<xref:System.Web.UI.WebControls.ValidationSummary.ForeColor%2A>プロパティを<xref:System.Drawing.Color.Red%2A>次の条件に該当する場合。  
+  
+-   <xref:System.Web.UI.WebControls.ValidationSummary.ForeColor%2A>プロパティが既に設定されていません。  
+  
+-   <xref:System.Web.UI.Control.RenderingCompatibility%2A?displayProperty=nameWithType>プロパティ 4 より前は ASP.NET のバージョンを示します。 既定では、ASP.NET 4 およびそれ以降のバージョンの検証コントロールは表示されません赤でエラー メッセージ。 検証コントロールの外観を制御する方法については、次を参照してください。 [ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidationSummary.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary.OnPreRender%2A>メソッド常にエラーを表示するようメッセージをカスタムに太字<xref:System.Web.UI.WebControls.ValidationSummary>サーバー コントロールです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[CustomValidationSummaryOnPreRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidationSummaryOnPreRender/CS/custom_validationsummary_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomValidationSummaryOnPreRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidationSummaryOnPreRender/VB/custom_validationsummary_addattributestorendervb.aspx#1)]  
+[!code-csharp[CustomValidationSummaryOnPreRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidationSummaryOnPreRender/CS/custom_validationsummary_addattributestorender.cs#2)]
+[!code-vb[CustomValidationSummaryOnPreRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidationSummaryOnPreRender/VB/custom_validationsummary_addattributestorender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidationSummary.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML のコンテンツを表示する出力ストリーム。</param>
+        <summary>提供されたクライアントに表示される内容を書き込む <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトに、サーバー コントロールの内容を送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.ValidationSummary.Render%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.ValidationSummary>で囲まれているコントロール、<xref:System.Web.UI.HtmlTextWriterTag.Small>タグ。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[CustomValidationSummaryRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidationSummaryRender/CS/custom_validationsummary_rendercs.aspx#1)]
+ [!code-aspx-vb[CustomValidationSummaryRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidationSummaryRender/VB/custom_validationsummary_rendervb.aspx#1)]  
+[!code-csharp[CustomValidationSummaryRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidationSummaryRender/CS/custom_validationsummary_render.cs#2)]
+[!code-vb[CustomValidationSummaryRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidationSummaryRender/VB/custom_validationsummary_render.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowMessageBox">
+      <MemberSignature Language="C#" Value="public bool ShowMessageBox { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowMessageBox" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証の概要が、メッセージ ボックスに表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />検証の概要は、メッセージ ボックスに表示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他に、このプロパティを使用できる、<xref:System.Web.UI.WebControls.ValidationSummary.ShowSummary%2A>プロパティをコントロールの検証の概要が表示されます。 場合はこのプロパティと<xref:System.Web.UI.WebControls.ValidationSummary.EnableClientScript%2A>に設定されて`true`、メッセージ ボックスに、検証の概要が表示されます。 場合<xref:System.Web.UI.WebControls.ValidationSummary.EnableClientScript%2A>に設定されている`false`、このプロパティは影響を与えません。  
+  
+> [!NOTE]
+>  両方の<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>と<xref:System.Web.UI.WebControls.ValidationSummary.ShowSummary%2A>プロパティに設定されます`true`、メッセージ ボックスに、Web ページで、検証の概要が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>と<xref:System.Web.UI.WebControls.ValidationSummary.ShowSummary%2A>プロパティをメッセージ ボックスにのみ検証の概要が表示されることを指定します。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary.ShowMessageBox Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary.ShowMessageBox Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary.ShowMessageBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary.ShowMessageBox Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowModelStateErrors">
+      <MemberSignature Language="C#" Value="public bool ShowModelStateErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowModelStateErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.ShowModelStateErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデル状態エラーを表示するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />モデル状態エラーを表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSummary">
+      <MemberSignature Language="C#" Value="public bool ShowSummary { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowSummary" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.ShowSummary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証の概要がインラインで表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />検証の概要が表示されているインライン; である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他に、このプロパティを使用できる、<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>プロパティをコントロールの検証の概要が表示されます。 このプロパティ設定されている場合`true`、Web ページの検証の概要が表示されます。  
+  
+> [!NOTE]
+>  両方の<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>と<xref:System.Web.UI.WebControls.ValidationSummary.ShowSummary%2A>プロパティに設定されます`true`、メッセージ ボックスに、Web ページで、検証の概要が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ValidationSummary.ShowMessageBox%2A>と<xref:System.Web.UI.WebControls.ValidationSummary.ShowSummary%2A>プロパティをメッセージ ボックスに、Web ページで、検証の概要が表示されることを指定します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic ValidationSummary.ShowSummary Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ValidationSummary.ShowSummary Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ValidationSummary.ShowSummary Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ValidationSummary.ShowSummary Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowValidationErrors">
+      <MemberSignature Language="C#" Value="public bool ShowValidationErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowValidationErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.ShowValidationErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証の検証コントロールの概要を表示するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />検証の検証コントロールの概要を表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ValidationSummary.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象のコントロールのグループを設定、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />オブジェクトには、検証メッセージが表示されます。</summary>
+        <value>対象のコントロールのグループ、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />オブジェクトには、検証メッセージが表示されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループとは無関係に検証できます。 使用して、<xref:System.Web.UI.WebControls.ValidationSummary.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールは、エラー メッセージが要約されます。  
+  
+ 値を指定すると、<xref:System.Web.UI.WebControls.ValidationSummary>プロパティ、指定されたグループの一部である検証コントロールからのエラーのみメッセージをまとめます。 このプロパティの値を設定しない場合は、検証グループに割り当てられていないページ上の検証コントロールからのすべてのエラー メッセージがまとめられています。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,364 @@
+<Type Name="DynamicDocumentPaginator" FullName="System.Windows.Documents.DynamicDocumentPaginator">
+  <TypeSignature Language="C#" Value="public abstract class DynamicDocumentPaginator : System.Windows.Documents.DocumentPaginator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DynamicDocumentPaginator extends System.Windows.Documents.DocumentPaginator" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.DynamicDocumentPaginator" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.DocumentPaginator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドと基底クラスのプロパティだけでなく自動再修正における間で自動的にバック グラウンドの改ページ調整と追跡コンテンツの位置をサポートする抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Documents.DynamicDocumentPaginator>自動的に事前改ページ調整、バック グラウンドでのコンテンツ (この処理は開始時に<xref:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled%2A>は`true`、これは既定の設定)。  
+  
+ ときに<xref:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled%2A>は`true`、コンテンツの変更または変更のため、レイアウトをフォントもは<xref:System.Windows.Documents.DocumentPaginator.PageSize%2A>します。  
+  
+ <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>イベントが発生した改ページ (または改ページ) の 1 つまたは複数のページの完了したときにこのような次の状況と同様にします。  
+  
+-   <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>コンテンツがバック グラウンドで改ページ調整と、イベントが発生します。 実装によっては、イベントが 1 つまたは複数のページを改ページ調整時に発生する (<xref:System.Windows.Documents.PaginationProgressEventArgs>ページが改ページ調整されたを指定します)。  
+  
+-   呼び出す<xref:System.Windows.Documents.DocumentPaginator.GetPage%2A>または<xref:System.Windows.Documents.DocumentPaginator.GetPageAsync%2A>が発生する可能性があります、<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>指定されたページがされたページ割り当てされていない場合に発生するイベントです。 たとえば、バック グラウンドのページ割り当てが有効になっている場合 (<xref:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled%2A> = `true`) が 3 番目のページの呼び出しまでのページ割り当てが完了してのみ<xref:System.Windows.Documents.DocumentPaginator.GetPage%2A>6 の引数を指定して、原因ページ 4、5、6、および改ページ調整するのには 7 です。 を終了すると、<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>でイベントを発生させる<xref:System.Windows.Documents.PaginationProgressEventArgs>の設定<xref:System.Windows.Documents.PaginationProgressEventArgs.Start%2A>= 4 と<xref:System.Windows.Documents.PaginationProgressEventArgs.Count%2A>4 を = です。  
+  
+-   バック グラウンドのページ割り当てが有効になっていると (<xref:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled%2A> = `true`)、変更<xref:System.Windows.Documents.DocumentPaginator.PageSize%2A>フロー形式のコンテンツに対するなど、 <xref:System.Windows.Documents.FlowDocument>、改ページが原因で、関連付けられている<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>イベント。 注意してください<xref:System.Windows.Documents.DocumentPaginator.PageSize%2A>も何も起こりません固定形式のコンテンツ、改ページのように<xref:System.Windows.Documents.FixedDocument>visual ページ サイズが、レイアウトに影響ありません。  
+  
+ A<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted>イベントは、バック グラウンドの改ページが無効にした場合にも発生します。 1 つだけのページの内容がある場合などと<xref:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled%2A>  =  `false`) を呼び出す<xref:System.Windows.Documents.DocumentPaginator.GetPage%2A>0 の引数の 2 つのイベントになります。  
+  
+1.  A<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>イベントと<xref:System.Windows.Documents.PaginationProgressEventArgs>の設定<xref:System.Windows.Documents.PaginationProgressEventArgs.Start%2A>= 0 および<xref:System.Windows.Documents.PaginationProgressEventArgs.Count%2A>= 1 です。  
+  
+2.  A<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DynamicDocumentPaginator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.DynamicDocumentPaginator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectPosition">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Documents.ContentPosition GetObjectPosition (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Documents.ContentPosition GetObjectPosition(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.GetObjectPosition(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.ContentPosition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">返されるオブジェクト、<see cref="T:System.Windows.Documents.ContentPosition" />のです。</param>
+        <summary>派生クラスでオーバーライドされると、 <see cref="T:System.Windows.Documents.ContentPosition" /> 、指定された<see cref="T:System.Object" />です。</summary>
+        <returns><see cref="T:System.Windows.Documents.ContentPosition" />の指定したオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPageNumber">
+      <MemberSignature Language="C#" Value="public abstract int GetPageNumber (System.Windows.Documents.ContentPosition contentPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetPageNumber(class System.Windows.Documents.ContentPosition contentPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber(System.Windows.Documents.ContentPosition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentPosition" Type="System.Windows.Documents.ContentPosition" />
+      </Parameters>
+      <Docs>
+        <param name="contentPosition">ページ番号が必要なコンテンツの位置。</param>
+        <summary>派生クラスでオーバーライドされると、指定した 0 から始まるページ番号を返します<see cref="T:System.Windows.Documents.ContentPosition" />です。</summary>
+        <returns><see cref="T:System.Int32" /> 0 から始まるページ番号を表す、指定した<paramref name="contentPosition" />が表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合よりも前のページ、`contentPosition`されていない書式設定すると、それらが改ページ調整する同期的に要求されたページ数を返す前にします。  
+  
+ <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A>ような機能を提供します<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber%2A>が、非同期操作にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPageNumberAsync">
+      <MemberSignature Language="C#" Value="public virtual void GetPageNumberAsync (System.Windows.Documents.ContentPosition contentPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetPageNumberAsync(class System.Windows.Documents.ContentPosition contentPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentPosition" Type="System.Windows.Documents.ContentPosition" />
+      </Parameters>
+      <Docs>
+        <param name="contentPosition">ページ番号が必要なコンテンツの位置。</param>
+        <summary>非同期的に返します (を介して、このメソッドを発生させます、<see cref="E:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted" />イベント) の指定した 0 から始まるページ番号<see cref="T:System.Windows.Documents.ContentPosition" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの非同期操作をキャンセルする唯一の方法では、すべての非同期操作をキャンセルします。 これはこのメソッドの他のオーバー ロード:<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29>です。  
+  
+ このメソッドを発生させる、<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted>イベント。 ページ番号は、イベント引数の 1 つとして、イベントに渡されます。 参照してください<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29>に対してこのメソッドを使用して、ページ番号を取得する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPageNumberAsync">
+      <MemberSignature Language="C#" Value="public virtual void GetPageNumberAsync (System.Windows.Documents.ContentPosition contentPosition, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetPageNumberAsync(class System.Windows.Documents.ContentPosition contentPosition, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentPosition" Type="System.Windows.Documents.ContentPosition" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contentPosition">ページ数を返すコンテンツの位置の要素。</param>
+        <param name="userState">非同期タスクの一意の識別子。</param>
+        <summary>非同期的に返します (を介して、このメソッドを発生させます、<see cref="E:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted" />イベント) の指定した 0 から始まるページ番号<see cref="T:System.Windows.Documents.ContentPosition" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードによりこの非同期操作を取り消す非同期操作がすべてを取り消さなくてもできます。  
+  
+ このメソッドを発生させる、<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted>イベント。  
+  
+ 次の手順のページ番号を取得する方法を説明する、指定された`contentPosition`非同期的にします。  
+  
+1.  作成、<xref:System.Windows.Documents.GetPageNumberCompletedEventHandler>を委任し、追加の通知を受信する<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted>イベント。  
+  
+2.  呼び出す<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29>を指定する、`contentPosition`目的と一意識別子`userState`非同期タスクの識別に使用されるオブジェクト。  
+  
+3.  イベントが発生するし、デリゲートが呼び出されて、比較、イベントの<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>を元のプロパティ<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A>`userState`パラメーター。  
+  
+4.  ときに、 <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>元と一致するプロパティ<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29>`userState`操作が完了し、ページ番号は準備ができて、します。  (、 <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.ContentPosition%2A>プロパティは、元の一致も<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29>`contentPosition`パラメーターです)。  
+  
+5.  <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.PageNumber%2A>プロパティには、指定した 0 から始まるページ番号が含まれています。`contentPosition`です。  
+  
+ <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber%2A>ような機能を提供します<xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A>、同期操作にもします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPageNumberCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Documents.GetPageNumberCompletedEventHandler GetPageNumberCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Documents.GetPageNumberCompletedEventHandler GetPageNumberCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.GetPageNumberCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに<see cref="Overload:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync" />が完了しました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPagePosition">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Documents.ContentPosition GetPagePosition (System.Windows.Documents.DocumentPage page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Documents.ContentPosition GetPagePosition(class System.Windows.Documents.DocumentPage page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.GetPagePosition(System.Windows.Documents.DocumentPage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.ContentPosition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="page" Type="System.Windows.Documents.DocumentPage" />
+      </Parameters>
+      <Docs>
+        <param name="page">位置が必要なページです。</param>
+        <summary>派生クラスでオーバーライドされると、ドキュメントのコンテンツ内の指定したページの位置を取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.ContentPosition" />の位置を表す<paramref name="page" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBackgroundPaginationEnabled">
+      <MemberSignature Language="C#" Value="public virtual bool IsBackgroundPaginationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBackgroundPaginationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または改ページがページ サイズの変更などの特定のイベントに応答してバック グラウンドで自動的に実行されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />バック グラウンドのページ割り当てが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`true`、改ページは、バック グラウンドで実行させると<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress>と<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted>として適切なイベントです。  
+  
+ 改ページ調整<xref:System.Windows.Documents.FixedDocument>から distinct として、コンテンツ、<xref:System.Windows.Documents.FlowDocument>ビジュアルへの変更の影響を受けません<xref:System.Windows.Documents.DocumentPaginator.PageSize%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGetPageNumberCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnGetPageNumberCompleted (System.Windows.Documents.GetPageNumberCompletedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnGetPageNumberCompleted(class System.Windows.Documents.GetPageNumberCompletedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.OnGetPageNumberCompleted(System.Windows.Documents.GetPageNumberCompletedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Documents.GetPageNumberCompletedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Documents.GetPageNumberCompletedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaginationCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaginationCompleted (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPaginationCompleted(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.OnPaginationCompleted(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaginationProgress">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaginationProgress (System.Windows.Documents.PaginationProgressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPaginationProgress(class System.Windows.Documents.PaginationProgressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DynamicDocumentPaginator.OnPaginationProgress(System.Windows.Documents.PaginationProgressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Documents.PaginationProgressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Documents.PaginationProgressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaginationCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler PaginationCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PaginationCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのドキュメントの内容が改ページ調整されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted>発生すると、<xref:System.Windows.Documents.DocumentPaginator.IsPageCountValid%2A>は`true`新しい改ページが開始されるまでです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaginationProgress">
+      <MemberSignature Language="C#" Value="public event System.Windows.Documents.PaginationProgressEventHandler PaginationProgress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Documents.PaginationProgressEventHandler PaginationProgress" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.PaginationProgressEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数のコンテンツ ページが改ページ調整されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.PaginationProgressEventArgs>プロパティ<xref:System.Windows.Documents.PaginationProgressEventArgs.Start%2A>と<xref:System.Windows.Documents.PaginationProgressEventArgs.Count%2A>改ページ調整されたページの範囲を特定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

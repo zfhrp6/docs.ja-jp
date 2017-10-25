@@ -1,0 +1,197 @@
+<Type Name="HttpCookiesSection" FullName="System.Web.Configuration.HttpCookiesSection">
+  <TypeSignature Language="C#" Value="public sealed class HttpCookiesSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpCookiesSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpCookiesSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションで使用される cookie のプロパティを構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCookiesSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`httpCookies`構成ファイルのセクションです。  
+  
+ Cookie を発行するコードがそれらをオーバーライドしない限り、アプリケーションによって発行されたすべてのクッキーに既定で適用する設定を定義します。  
+  
+ 1 つの目的、`httpCookies`要素は、の使用をサポートする`HttpOnly`cookie です。 `HttpOnly`cookie (cookie で、`HttpOnly`属性) はクロスサイト スクリプティングのリスクを軽減するように Internet Explorer 6 で導入されました。 `HttpOnly`属性は、クライアント側スクリプトからアクセスできないように cookie を回避します。 含まれるすべての情報、 `HttpOnly` cookie は、ハッカーや悪意のある Web サイトに公開される可能性は低くします。 詳細については、MSDN (msdn.microsoft.com) を検索"HttpOnly"  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.HttpCookiesSection>読み書きできる情報セクション プロパティに従って、構成ファイルの関連するセクションと<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.Everywhere>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.HttpCookiesSection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.HttpCookiesSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/CS/httpCookiesSection.cs#1)]
+ [!code-vb[System.Web.Configuration.HttpCookiesSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/VB/httpCookiesSection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCookiesSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCookiesSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpCookiesSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.HttpCookiesSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCookiesSection.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("domain", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie のドメイン名を設定します。</summary>
+        <value>Cookie のドメインの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HttpCookiesSection.Domain%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.HttpCookiesSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/CS/httpCookiesSection.cs#2)]
+ [!code-vb[System.Web.Configuration.HttpCookiesSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/VB/httpCookiesSection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HttpOnlyCookies">
+      <MemberSignature Language="C#" Value="public bool HttpOnlyCookies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpOnlyCookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCookiesSection.HttpOnlyCookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpOnlyCookies", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、ブラウザーのサポート<see langword="HttpOnly" />cookie が有効にします。</summary>
+        <value>
+          <see langword="true" />場合のサポート、 <see langword="HttpOnly" /> cookie が有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `httpCookies`要素の使用をサポートする`HttpOnly`cookie です。 `HttpOnly`cookie (cookie で、`HttpOnly`属性) はクロスサイト スクリプティングのリスクを軽減するように Internet Explorer 6 で導入されました。 `HttpOnly`属性は、クライアント側スクリプトからアクセスできないように cookie を回避します。 含まれるすべての情報、 `HttpOnly` cookie は、ハッカーや悪意のある Web サイトに公開される可能性は低くします。 詳細については、MSDN (msdn.microsoft.com) を検索"HttpOnly"  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HttpCookiesSection.HttpOnlyCookies%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.HttpCookiesSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/CS/httpCookiesSection.cs#4)]
+ [!code-vb[System.Web.Configuration.HttpCookiesSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/VB/httpCookiesSection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCookiesSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireSSL">
+      <MemberSignature Language="C#" Value="public bool RequireSSL { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireSSL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCookiesSection.RequireSSL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requireSSL", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Secure Sockets Layer (SSL) 通信が必要かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SSL が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCookiesSection.RequireSSL%2A>プロパティを有効または RFC 2109」の説明に従って、セキュリティで保護された cookie 属性の出力を無効にします。 対応しているブラウザーを使用して、ときに、SSL や TLS を使用して接続を介して送り返さのみ、クッキーが送信されます。 既定値は、`false` です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HttpCookiesSection.RequireSSL%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.HttpCookiesSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/CS/httpCookiesSection.cs#3)]
+ [!code-vb[System.Web.Configuration.HttpCookiesSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpCookiesSection/VB/httpCookiesSection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

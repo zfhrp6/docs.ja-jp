@@ -1,0 +1,237 @@
+<Type Name="ServiceAuthorizationManager" FullName="System.ServiceModel.ServiceAuthorizationManager">
+  <TypeSignature Language="C#" Value="public class ServiceAuthorizationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceAuthorizationManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceAuthorizationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス操作の承認アクセス チェックを行います。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、すべてのポリシー (ユーザーが実行を許可されていることを定義するルール) を評価し、それらのポリシーをクライアントによるクレームと比較し、その結果である <xref:System.IdentityModel.Policy.AuthorizationContext> を <xref:System.ServiceModel.ServiceSecurityContext> に設定し、呼び出し元による特定の操作へのアクセスを許可するか、拒否するかを決定する承認を行います。  
+  
+ <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> メソッドは、リソースへのアクセスが試行されるたびに [!INCLUDE[indigo1](~/includes/indigo1-md.md)] インフラストラクチャによって呼び出されます。 このメソッドは、アクセスの許可または拒否を表す `true` または `false` を返します。  
+  
+ <xref:System.ServiceModel.ServiceAuthorizationManager>の一部である、 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] *Id モデル*インフラストラクチャです。 この ID モデルでは、カスタム承認ポリシーとカスタム承認スキームを作成できます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]Id モデルの動作を参照してください。[管理クレームと Id モデル承認](~/docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)です。  
+  
+## <a name="custom-authorization"></a>カスタム承認  
+ このクラスは、一切の承認は行わず、ユーザーがすべてのサービス操作にアクセスすることを許可します。 限定的な承認を行うには、カスタム ポリシーをチェックするカスタム承認マネージャーを作成する必要があります。 これを行うには、このクラスから継承して <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> メソッドを上書きします。 派生クラスのインスタンスは、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationManager%2A> プロパティを介して指定します。  
+  
+ <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> でアプリケーションは、<xref:System.ServiceModel.OperationContext> オブジェクトを使用して呼び出し元の ID (<xref:System.ServiceModel.OperationContext.ServiceSecurityContext%2A>) にアクセスできます。  
+  
+ <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A> オブジェクトを返す <xref:System.ServiceModel.Channels.MessageHeaders> プロパティを取得することで、アプリケーションはサービス (<xref:System.ServiceModel.Channels.MessageHeaders.To%2A>) および操作 (<xref:System.ServiceModel.Channels.MessageHeaders.Action%2A>) にアクセスします。  
+  
+ <xref:System.ServiceModel.OperationContext.RequestContext%2A> オブジェクトを返す <xref:System.ServiceModel.Channels.RequestContext> プロパティを取得することで、アプリケーションは要求メッセージ全体 (<xref:System.ServiceModel.Channels.RequestContext.RequestMessage%2A>) にアクセスし、それに応じて承認決定を実行できます。  
+  
+ 例については、次を参照してください。[する方法: サービスのカスタム承認マネージャーを作成する](~/docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)です。  
+  
+ カスタム承認ポリシーを作成するには、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> クラスを実装します。  例については、次を参照してください。[する方法: カスタム承認ポリシーの作成](~/docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)です。  
+  
+ カスタム クレームを作成するには、<xref:System.IdentityModel.Claims.Claim> クラスを使用します。  例については、次を参照してください。[する方法: カスタム クレームを作成](~/docs/framework/wcf/extending/how-to-create-a-custom-claim.md)です。 ようにカスタム クレームを比較する信頼性情報を比較する必要があります[する方法: クレームの比較](~/docs/framework/wcf/extending/how-to-compare-claims.md)です。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][カスタム承認](~/docs/framework/wcf/extending/custom-authorization.md)です。  
+  
+ 使用してカスタム承認マネージャーの種類を設定することができます、 [ &lt;serviceAuthorization&gt; ](~/docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md)クライアント アプリケーション構成ファイルにします。  
+  
+   
+  
+## Examples  
+ `MyServiceAuthorizationManager` から継承され、<xref:System.ServiceModel.ServiceAuthorizationManager> メソッドを上書きする、<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> という名前のクラスのコード例を次に示します。  
+  
+ [!code-csharp[c_CustomAuthMgr#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#2)]
+ [!code-vb[c_CustomAuthMgr#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceAuthorizationManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceAuthorizationManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceAuthorizationManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccess">
+      <MemberSignature Language="C#" Value="public virtual bool CheckAccess (System.ServiceModel.OperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CheckAccess(class System.ServiceModel.OperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceAuthorizationManager.CheckAccess(System.ServiceModel.OperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationContext" Type="System.ServiceModel.OperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="operationContext"><see cref="T:System.ServiceModel.OperationContext" />。</param>
+        <summary>指定された操作コンテキストの承認をチェックします。</summary>
+        <returns>
+          アクセスが許可されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アプリケーションは、このメソッドの代わりに、<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> を上書きします。  
+  
+ アプリケーションが <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> に対して別のポリシー セットを関連付けるか、または導入する場合、または、別のポリシー評価 (チェーン) モデルを提供する場合は、<xref:System.ServiceModel.ServiceSecurityContext> をオーバーライドします。  
+  
+ このメソッドは、<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> を呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドをオーバーライドして、カスタム アクセス制御要件を指定する方法を示しています。  
+  
+ [!code-csharp[c_Federation#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#1)]
+ [!code-vb[c_Federation#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccess">
+      <MemberSignature Language="C#" Value="public virtual bool CheckAccess (System.ServiceModel.OperationContext operationContext, ref System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CheckAccess(class System.ServiceModel.OperationContext operationContext, class System.ServiceModel.Channels.Message&amp; message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceAuthorizationManager.CheckAccess(System.ServiceModel.OperationContext,System.ServiceModel.Channels.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationContext" Type="System.ServiceModel.OperationContext" />
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="operationContext"><see cref="T:System.ServiceModel.OperationContext" />。</param>
+        <param name="message">承認を決定するために検査される <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>メッセージへのアクセスが必要なときに、指定された操作コンテキストの承認をチェックします。</summary>
+        <returns>
+          アクセスが許可されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、アプリケーションは、このメソッドの代わりに <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>をオーバーライドします。このメソッドは、承認決定がメッセージ本文に依存する場合にのみ使用されます。 パフォーマンスの問題があるので、可能であればアプリケーションを再デザインして、承認決定でメッセージ本文にアクセスする必要がないようにしてください。  
+  
+ アプリケーションが、結果の <xref:System.ServiceModel.ServiceSecurityContext><xref:System.ServiceModel.Channels.Message>および に対して別のポリシー セットを関連付けるか、または導入する場合、または、別のポリシー評価 (チェーン) モデルを提供する場合は、このメソッドをオーバーライドします。  
+  
+ このメソッドは、<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> を呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドをオーバーライドして、メッセージ本文にアクセスする必要があるカスタム アクセス制御要件を指定する方法を示しています。  
+  
+ [!code-csharp[c_Federation#6](~/samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#6)]
+ [!code-vb[c_Federation#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccessCore">
+      <MemberSignature Language="C#" Value="protected virtual bool CheckAccessCore (System.ServiceModel.OperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool CheckAccessCore(class System.ServiceModel.OperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore(System.ServiceModel.OperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationContext" Type="System.ServiceModel.OperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="operationContext">現在の承認要求に対する <see cref="T:System.ServiceModel.OperationContext" />。</param>
+        <summary>指定された操作コンテキストの承認を、既定のポリシー評価に基づいてチェックします。</summary>
+        <returns>
+          アクセスが許可されている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.ServiceModel.OperationContext.ServiceSecurityContext%2A> は、既定のポリシーの評価結果です。  
+  
+ カスタム承認決定を行うには、このメソッドを上書きします。  
+  
+ このメソッドを使用して、受信したトークンから推測されるクレーム セット、または外部承認ポリシーを介して追加されたクレーム セットに基づいて、承認決定を行うことができます。 承認決定は、受信メッセージのプロパティ (アクション ヘッダーなど) に基づいて行うこともできます。  
+  
+ このメソッドでアプリケーションは、`operationContext` パラメーターを使用して呼び出し元 ID (<xref:System.ServiceModel.OperationContext.ServiceSecurityContext%2A>) にアクセスできます。 <xref:System.ServiceModel.Channels.RequestContext> プロパティから <xref:System.ServiceModel.OperationContext.RequestContext%2A> オブジェクトを返すことで、アプリケーションは要求メッセージ全体 (<xref:System.ServiceModel.Channels.RequestContext.RequestMessage%2A>) にアクセスできます。 <xref:System.ServiceModel.Channels.MessageHeaders> プロパティから <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A> オブジェクトを返すことで、アプリケーションは、サービス URL (<xref:System.ServiceModel.Channels.MessageHeaders.To%2A>) および操作 (<xref:System.ServiceModel.Channels.MessageHeaders.Action%2A>) にアクセスできます。 この情報により、アプリケーションは適宜承認決定を行うことができます。  
+  
+ ユーザーが行ったクレームは、<xref:System.IdentityModel.Claims.ClaimSet> の <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> プロパティによって返される `AuthorizationContext` 内にあります。 現在の `AuthorizationContext` は、<xref:System.ServiceModel.OperationContext.ServiceSecurityContext%2A> クラスの <xref:System.ServiceModel.OperationContext> プロパティによって返されます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> メソッドのオーバーライドを次の例に示します。  
+  
+ [!code-csharp[c_CustomAuthMgr#6](~/samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#6)]
+ [!code-vb[c_CustomAuthMgr#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#6)]  
+  
+ 別の例では、次を参照してください。[する方法: サービスのカスタム承認マネージャーを作成する](~/docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAuthorizationPolicies">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; GetAuthorizationPolicies (System.ServiceModel.OperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; GetAuthorizationPolicies(class System.ServiceModel.OperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceAuthorizationManager.GetAuthorizationPolicies(System.ServiceModel.OperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationContext" Type="System.ServiceModel.OperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="operationContext">現在の承認要求の <see cref="T:System.ServiceModel.OperationContext" />。</param>
+        <summary>ポリシー評価に参加するポリシーのセットを取得します。</summary>
+        <returns><see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] の実装には、承認ポリシーの既定のセットが用意されています。 この中には、要求元の資格情報を格納するプライマリ トークン、サポートするすべてのトークン、トランスポート トークンが含まれ、指定された場合は外部トークンも含まれます。  
+  
+ この実装を上書きして、ポリシーの別のセットを用意できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

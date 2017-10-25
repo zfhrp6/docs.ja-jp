@@ -1,0 +1,190 @@
+<Type Name="LiteralControl" FullName="System.Web.UI.LiteralControl">
+  <TypeSignature Language="C#" Value="public class LiteralControl : System.Web.UI.Control, System.Web.UI.ITextControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LiteralControl extends System.Web.UI.Control implements class System.Web.UI.ITextControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.LiteralControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.ITextControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーでの処理を必要としない、ASP.NET ページ内の HTML 要素、テキスト、その他の文字列を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、すべての HTML 要素とこのクラスのインスタンスにサーバー側の処理を必要としない判読できるテキストをコンパイルします。 HTML 要素などが含まれていないを`runat="server"`属性/値ペアの開始タグでにコンパイルされ、<xref:System.Web.UI.LiteralControl>オブジェクト。 <xref:System.Web.UI.LiteralControl>オブジェクト状態を保持しないビュー、そのための内容、<xref:System.Web.UI.LiteralControl>要求ごとにオブジェクトを再作成する必要があります。  
+  
+ リテラル コントロール、テキスト ホルダー literal コントロールからテキストを抽出し、親サーバー コントロールのリテラルのコントロールを削除できますとして動作<xref:System.Web.UI.ControlCollection>を通じて、親のコレクション<xref:System.Web.UI.Control.Controls%2A>プロパティです。 そのためから派生したカスタム コントロールを開発する際に、<xref:System.Web.UI.LiteralControl>クラス、コントロールを実行前処理ステップ自体、呼び出しに使用するのではなく必要なことを確認、<xref:System.Web.UI.LiteralControl.Render%2A?displayProperty=nameWithType>それを達成するメソッド。 通常、Web アプリケーションの応答時間を向上させるためにこれを実行します。  
+  
+ 追加または使用してプログラムからのページまたはサーバー コントロールからリテラル コントロールを削除することができます、<xref:System.Web.UI.ControlCollection.Add%2A?displayProperty=nameWithType>または<xref:System.Web.UI.ControlCollection.Remove%2A?displayProperty=nameWithType>メソッド、それぞれします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバー ロードを使用する方法を示します<xref:System.Web.UI.LiteralControl.%23ctor%2A>コンス トラクターをオーバーライドする場合、<xref:System.Web.UI.Control.CreateChildControls%2A?displayProperty=nameWithType>メソッドです。 次のコードを追加する 2 つの新しい<xref:System.Web.UI.LiteralControl>オブジェクトおよび<xref:System.Web.UI.WebControls.TextBox>Web サーバー コントロールを現在のサーバー コントロールの<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-csharp[SystemWebUILiteralControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUILiteralControl/CS/controlcreatechildcontrols.cs#1)]
+ [!code-vb[SystemWebUILiteralControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUILiteralControl/VB/controlcreatechildcontrols.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LiteralControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.LiteralControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.LiteralControl" />要求された ASP.NET ページに表示されるリテラル文字列を含むクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、クラスを作成`CustLiteralControlClass`、自身を拡張する、<xref:System.Web.UI.LiteralControl>クラスです。 という名前のクラスのインスタンス作成`myLiteralControlClass1`のテキストを指定しないコンス トラクターを使用して、<xref:System.Web.UI.LiteralControl>オブジェクト。 オブジェクトを作成した後、<xref:System.Web.UI.LiteralControl.Text%2A>が含まれているテキストを設定するプロパティを使用します。  
+  
+ [!code-csharp[LiteralControlSample#4](~/samples/snippets/csharp/VS_Snippets_WebNet/LiteralControlSample/CS/customliteralcontrol.cs.aspx#4)]
+ [!code-vb[LiteralControlSample#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LiteralControlSample/VB/customliteralcontrol.vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LiteralControl (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.LiteralControl.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">要求された Web ページに表示されるテキストです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.LiteralControl" />テキストを指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、2 つのインスタンスを作成、<xref:System.Web.UI.LiteralControl>クラスを使用して、<xref:System.Web.UI.LiteralControl.%23ctor%2A>コンス トラクターです。 2 つのインスタンスは、H3 HTML 要素の開始と終了タグをレンダリングし、H3 タグ内に表示されるテキストを挿入します。  
+  
+ [!code-csharp[SystemWebUILiteralControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUILiteralControl/CS/controlcreatechildcontrols.cs#1)]
+ [!code-vb[SystemWebUILiteralControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUILiteralControl/VB/controlcreatechildcontrols.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.LiteralControl.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Web.UI.EmptyControlCollection" />オブジェクトの現在のインスタンスを<see cref="T:System.Web.UI.LiteralControl" />クラスです。</summary>
+        <returns><see cref="T:System.Web.UI.EmptyControlCollection" />現在のコントロールです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.LiteralControl>オブジェクトには、テキストとない子サーバー コントロールのみが含まれています。 この動作を変更する場合は、このメソッドをオーバーライドする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例の上書き、<xref:System.Web.UI.LiteralControl.CreateControlCollection%2A>のインスタンスを作成する方法、<xref:System.Web.UI.ControlCollection>クラスのインスタンスではなく、<xref:System.Web.UI.EmptyControlCollection>クラスです。  
+  
+ [!code-csharp[LiteralControlSample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/LiteralControlSample/CS/customliteralcontrol.cs#2)]
+ [!code-vb[LiteralControlSample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LiteralControlSample/VB/customliteralcontrol.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.LiteralControl.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="output"><see cref="T:System.Web.UI.HtmlTextWriter" />の内容を表示する、<see cref="T:System.Web.UI.LiteralControl" />要求元のクライアントです。</param>
+        <summary>内容を書き込む、 <see cref="T:System.Web.UI.LiteralControl" /> ASP.NET ページへのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を渡すことによって、コントロールのパフォーマンスを向上できるコントロールをクライアントに固有の html 形式またはテキストをレンダリングするか、カスタム サーバーを作成するときに、<xref:System.Web.UI.LiteralControl.Text%2A>プロパティを<xref:System.Web.UI.Control.Render%2A?displayProperty=nameWithType>呼び出しではなく、メソッド、<xref:System.Web.UI.LiteralControl.Render%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.LiteralControl.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストのコンテンツの設定を取得または、<see cref="T:System.Web.UI.LiteralControl" />オブジェクト。</summary>
+        <value>A <see cref="T:System.String" /> literal コントロールのテキストの内容を表すです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、クラスを作成`CustLiteralControlClass`、自身を拡張する、<xref:System.Web.UI.LiteralControl>クラスです。 という名前のクラスのインスタンス作成`myLiteralControlClass1`のテキストを指定しないコンス トラクターを使用して、<xref:System.Web.UI.LiteralControl>オブジェクト。 オブジェクトを作成した後、<xref:System.Web.UI.LiteralControl.Text%2A>が含まれているテキストを設定するプロパティを使用します。  
+  
+ [!code-csharp[LiteralControlSample#4](~/samples/snippets/csharp/VS_Snippets_WebNet/LiteralControlSample/CS/customliteralcontrol.cs.aspx#4)]
+ [!code-vb[LiteralControlSample#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LiteralControlSample/VB/customliteralcontrol.vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

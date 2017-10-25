@@ -1,0 +1,670 @@
+<Type Name="IPStatus" FullName="System.Net.NetworkInformation.IPStatus">
+  <TypeSignature Language="C#" Value="public enum IPStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IPStatus extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.IPStatus" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Ping</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージの送信の状態を報告します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping>クラスでは、この列挙体の値を使用して、設定、<xref:System.Net.NetworkInformation.PingReply.Status%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Net.NetworkInformation.Ping>クラスを返します<xref:System.Net.NetworkInformation.PingReply>オブジェクトを呼び出すときに、<xref:System.Net.NetworkInformation.Ping.Send%2A?displayProperty=nameWithType>または<xref:System.Net.NetworkInformation.Ping.SendAsync%2A?displayProperty=nameWithType>コンピューターでネットワーク経由でアクセス可能かどうかを確認するメソッド。  
+  
+> [!WARNING]
+>  DestinationProhibited と DestinationProtocolUnreachable 列挙値は、同じ数値値を設定します。 これには DestinationProhibited は IPv6 にのみ適用されます、DestinationProtocolUnreachable が IPv4 のみに適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、デバイスが ICMP エコー メッセージを送信し、状態を確認します。  
+  
+ [!code-cpp[NclPingSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingSync/CPP/syncping.cpp#1)]
+ [!code-csharp[NclPingSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingSync/CS/syncping.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BadDestination">
+      <MemberSignature Language="C#" Value="BadDestination" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus BadDestination = int32(11018)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.BadDestination" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宛先 IP アドレスが ICMP エコー要求を受信できませんか、IP データグラムの送信先アドレスのフィールドには表示されませんが、ICMP エコー要求が失敗しました。 たとえば、呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.Send" />し、IP アドレス「000.0.0.0」を指定する、この状態を返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadHeader">
+      <MemberSignature Language="C#" Value="BadHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus BadHeader = int32(11042)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.BadHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、ヘッダーが無効であるために失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadOption">
+      <MemberSignature Language="C#" Value="BadOption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus BadOption = int32(11007)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.BadOption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、無効なオプションが含まれているために失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadRoute">
+      <MemberSignature Language="C#" Value="BadRoute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus BadRoute = int32(11012)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.BadRoute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、送信元と送信先のコンピューター間で有効なルートがないために失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationHostUnreachable">
+      <MemberSignature Language="C#" Value="DestinationHostUnreachable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationHostUnreachable = int32(11003)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationHostUnreachable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、セットアップ先のコンピューターに到達できないために失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationNetworkUnreachable">
+      <MemberSignature Language="C#" Value="DestinationNetworkUnreachable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationNetworkUnreachable = int32(11002)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationNetworkUnreachable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、セットアップ先のコンピューターを含むネットワークにアクセスできないために失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationPortUnreachable">
+      <MemberSignature Language="C#" Value="DestinationPortUnreachable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationPortUnreachable = int32(11005)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationPortUnreachable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、移行先コンピューター上のポートが使用できないために失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationProhibited">
+      <MemberSignature Language="C#" Value="DestinationProhibited" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationProhibited = int32(11004)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationProhibited" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMPv6 エコー要求は、セットアップ先のコンピューターとの接続が管理者によって禁止されているために失敗しました。 この値は、IPv6 のみに適用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationProtocolUnreachable">
+      <MemberSignature Language="C#" Value="DestinationProtocolUnreachable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationProtocolUnreachable = int32(11004)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationProtocolUnreachable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、デバイスが ICMP エコー メッセージで指定されている移行先コンピューターが存在しない、パケットのプロトコルはサポートされていませんために失敗しました。 この値は、IPv4 のみに適用されます。 この値との通信が管理者によって禁止された IETF RFC 1812 の説明です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationScopeMismatch">
+      <MemberSignature Language="C#" Value="DestinationScopeMismatch" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationScopeMismatch = int32(11045)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationScopeMismatch" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、発信元アドレスと ICMP エコー メッセージで指定されている宛先アドレスが、同じスコープ内にないために失敗しました。 これは通常、送信元アドレスの範囲外であるインターフェイスを使用してパケットを転送するルーターにより発生します。 アドレスのスコープ (リンク ローカル、サイト ローカル、グローバル スコープ) は、ネットワーク上のアドレスが有効でを決定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationUnreachable">
+      <MemberSignature Language="C#" Value="DestinationUnreachable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus DestinationUnreachable = int32(11040)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.DestinationUnreachable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバイスが ICMP エコー メッセージで指定されている移行先コンピューターに到達; できないために、ICMP エコー要求が失敗しました問題の正確な原因は不明です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HardwareError">
+      <MemberSignature Language="C#" Value="HardwareError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus HardwareError = int32(11008)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.HardwareError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、ハードウェア エラーのため失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IcmpError">
+      <MemberSignature Language="C#" Value="IcmpError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus IcmpError = int32(11044)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.IcmpError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、ICMP プロトコル エラーのため失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoResources">
+      <MemberSignature Language="C#" Value="NoResources" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus NoResources = int32(11006)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.NoResources" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、ネットワーク リソースの不足のため失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketTooBig">
+      <MemberSignature Language="C#" Value="PacketTooBig" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus PacketTooBig = int32(11009)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.PacketTooBig" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、要求を含む、パケットが、ソースと移行先の間にあるノード (ルーターまたはゲートウェイ) の最大転送単位 (MTU) よりも大きいために失敗しました。 MTU では、送信できるパケットの最大サイズを定義します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterProblem">
+      <MemberSignature Language="C#" Value="ParameterProblem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus ParameterProblem = int32(11015)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.ParameterProblem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、ルーター (ゲートウェイ) ノードには、パケット ヘッダーの処理中に問題が発生したため失敗しました。 これは、たとえば、ヘッダーに無効なフィールドのデータまたは認識できないオプションが含まれている場合は、状態です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceQuench">
+      <MemberSignature Language="C#" Value="SourceQuench" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus SourceQuench = int32(11016)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.SourceQuench" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、パケットが破棄されたために失敗しました。 これは、ソース コンピューターの出力キューがある十分な記憶域スペースとき、またはパケットが宛先に到着が早すぎる処理するときに発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="Success" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus Success = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.Success" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求が成功しました。ICMP エコー応答を受信しました。 この状態コードは、もう一方を取得するときに<see cref="T:System.Net.NetworkInformation.PingReply" />プロパティが有効なデータが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TimedOut">
+      <MemberSignature Language="C#" Value="TimedOut" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus TimedOut = int32(11010)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.TimedOut" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー応答が割り当てられた時間内に受信しませんでした。 応答に割り当てられる既定の時間は、5 秒です。 使用してこの値を変更することができます、<see cref="Overload:System.Net.NetworkInformation.Ping.Send" />または<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />を受け取るメソッド、<paramref name="timeout" />パラメーター。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeExceeded">
+      <MemberSignature Language="C#" Value="TimeExceeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus TimeExceeded = int32(11041)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.TimeExceeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求には、その Time to Live (TTL) 値に達したため、0 (ルーターまたはゲートウェイ) がパケットを破棄する転送元ノードの原因が失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TtlExpired">
+      <MemberSignature Language="C#" Value="TtlExpired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus TtlExpired = int32(11013)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.TtlExpired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求には、その Time to Live (TTL) 値に達したため、0 (ルーターまたはゲートウェイ) がパケットを破棄する転送元ノードの原因が失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TtlReassemblyTimeExceeded">
+      <MemberSignature Language="C#" Value="TtlReassemblyTimeExceeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus TtlReassemblyTimeExceeded = int32(11014)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.TtlReassemblyTimeExceeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、パケットが転送用の断片に分割されたすべてのフラグメントの再構築に割り当てられた時間内に受信されなかったために失敗しました。 RFC 2460 (www.ietf.org で入手可能) には、60 秒を表す、すべてのパケット内のフラグメントを受け取る必要がある制限時間を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus Unknown = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、不明な理由により失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnrecognizedNextHeader">
+      <MemberSignature Language="C#" Value="UnrecognizedNextHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.IPStatus UnrecognizedNextHeader = int32(11043)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.IPStatus.UnrecognizedNextHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ICMP エコー要求は、次のヘッダー フィールドに、認識可能な値が含まれていないために失敗しました。 次のヘッダー フィールドは、拡張機能ヘッダーの種類 (存在する場合) または TCP または UDP など、IP レイヤーより上位のプロトコルを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

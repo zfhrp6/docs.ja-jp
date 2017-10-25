@@ -1,0 +1,592 @@
+<Type Name="AnnotationStore" FullName="System.Windows.Annotations.Storage.AnnotationStore">
+  <TypeSignature Language="C#" Value="public abstract class AnnotationStore : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AnnotationStore extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.Storage.AnnotationStore" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>派生クラスでオーバーライドされる場合、ユーザーの注釈を読み書きするためのデータ ストアを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AnnotationStore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Annotations.Storage.AnnotationStore" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAnnotation">
+      <MemberSignature Language="C#" Value="public abstract void AddAnnotation (System.Windows.Annotations.Annotation newAnnotation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddAnnotation(class System.Windows.Annotations.Annotation newAnnotation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.AddAnnotation(System.Windows.Annotations.Annotation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newAnnotation" Type="System.Windows.Annotations.Annotation" />
+      </Parameters>
+      <Docs>
+        <param name="newAnnotation">ストアに追加する注釈。</param>
+        <summary>新しい <see cref="T:System.Windows.Annotations.Annotation" /> をストアに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Windows.Annotations.Annotation>ストアに追加されたその[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)]<xref:System.Windows.Annotations.Annotation.Id%2A>プロパティが新しい値に設定します。  ときに<xref:System.Windows.Annotations.Storage.AnnotationStore.AddAnnotation%2A>が呼び出されると、その<xref:System.Windows.Annotations.Annotation.Id%2A>プロパティがかどうかを確認、<xref:System.Windows.Annotations.Annotation>既にストアに追加されています。  場合、<xref:System.Windows.Annotations.Annotation>既にが追加されており、ストアに存在する (定めるところによるその<xref:System.Windows.Annotations.Annotation.Id%2A>プロパティ)、<xref:System.ArgumentException>エラーがスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="newAnnotation" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">同じ <see cref="P:System.Windows.Annotations.Annotation.Id" /> プロパティの値を持つ <see cref="T:System.Windows.Annotations.Annotation" /> はストア内に既に存在します。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnchorChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.AnnotationResourceChangedEventHandler AnchorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.AnnotationResourceChangedEventHandler AnchorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Storage.AnnotationStore.AnchorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationResourceChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアの <see cref="T:System.Windows.Annotations.Annotation" /> でアンカーが変更される場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.AnnotationStore.AnchorChanged>イベントを使用して、注釈への変更を監視する<xref:System.Windows.Annotations.Annotation.Anchors%2A>ごとに登録する必要がない、ストアに含まれている<xref:System.Windows.Annotations.Annotation>個別にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.AnnotationAuthorChangedEventHandler AuthorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.AnnotationAuthorChangedEventHandler AuthorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Storage.AnnotationStore.AuthorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationAuthorChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアの <see cref="T:System.Windows.Annotations.Annotation" /> で作成者が変更される場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.AnnotationStore.AnchorChanged>イベントを使用して、注釈への変更を監視する<xref:System.Windows.Annotations.Annotation.Authors%2A>ごとに登録する必要がない、ストアに含まれている<xref:System.Windows.Annotations.Annotation>個別にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFlush">
+      <MemberSignature Language="C#" Value="public abstract bool AutoFlush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoFlush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.AnnotationStore.AutoFlush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈バッファー内のデータが物理データ ストアにすぐに書き込まれるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          注釈バッファー内のデータを操作のたびに、すぐに物理データ ストアに書き込む場合は <see langword="true" />。アプリケーションが明示的に <see cref="M:System.Windows.Annotations.Storage.AnnotationStore.Flush" /> を呼び出したときに注釈バッファー内のデータを書き込む場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的な保存モデルを使用するアプリケーションを設定できます<xref:System.Windows.Annotations.Storage.AnnotationStore.AutoFlush%2A>に`false`を呼び出すと<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>直接適切な場合です。  
+  
+ 暗黙の保存モデルを使用するアプリケーションを設定できます<xref:System.Windows.Annotations.Storage.AnnotationStore.AutoFlush%2A>に`true`させる<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>すべてストア操作の後に自動的に呼び出される (追加、削除、または変更)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CargoChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.AnnotationResourceChangedEventHandler CargoChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.AnnotationResourceChangedEventHandler CargoChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Storage.AnnotationStore.CargoChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationResourceChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアの <see cref="T:System.Windows.Annotations.Annotation" /> でカーゴが変更される場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.AnnotationStore.CargoChanged>イベントを使用して、注釈への変更を監視する<xref:System.Windows.Annotations.Annotation.Cargos%2A>ごとに登録する必要がない、ストアに含まれている<xref:System.Windows.Annotations.Annotation>個別にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAnnotation">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Annotations.Annotation DeleteAnnotation (Guid annotationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Annotations.Annotation DeleteAnnotation(valuetype System.Guid annotationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.DeleteAnnotation(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="annotationId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="annotationId">[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)] <see cref="P:System.Windows.Annotations.Annotation.Id" />削除する注釈のプロパティです。</param>
+        <summary>指定された <see cref="P:System.Windows.Annotations.Annotation.Id" /> を持つ注釈をストアから削除します。</summary>
+        <returns>削除された注釈。指定した <paramref name="annotationId" /> を持つ注釈がストア内で見つからなかった場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.Storage.AnnotationStore.DeleteAnnotation%2A>と<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>メソッドです。  
+  
+ [!code-csharp[DocumentSerialize#DocSerDelete](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserdelete)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストアによって使用されているマネージ リソースおよびアンマネージ リソースのすべてを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを呼び出す必要があります<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>の使用が終わったら、<xref:System.Windows.Annotations.Storage.AnnotationStore>です。  呼び出した後<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>に対するすべての参照を解放、<xref:System.Windows.Annotations.Storage.AnnotationStore>ガベージ コレクターがメモリを再利用を許可すること、<xref:System.Windows.Annotations.Storage.AnnotationStore>占有されていた。  詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ パブリック<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>メソッドは、保護された<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>`(Boolean)`メソッドを`disposing`のパラメーター`true`すべてのマネージ コードとアンマネージ リソースを解放します。  
+  
+> [!NOTE]
+>  呼び出す<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>に対する最後の参照の前に、<xref:System.Windows.Annotations.Storage.AnnotationStore>を解放します。  場合<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>は呼び出されません<xref:System.Windows.Annotations.Storage.AnnotationStore>ガベージ コレクターは、ストアを呼び出すまで、リソースは解放されません<xref:System.Windows.Annotations.Storage.AnnotationStore.Finalize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>ストアによって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 保護されているこの<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>メソッドは、パブリック<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>と<xref:System.Object.Finalize%2A>メソッドです。  パブリック<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>プロテクト呼び出します<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>`(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。  <xref:System.Object.Finalize%2A>呼び出す<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターは`true`、<xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>オブジェクトをマネージ コードで保持されているすべてのリソースのリリース、<xref:System.Windows.Annotations.Storage.AnnotationStore>参照します。  <xref:System.Windows.Annotations.Storage.AnnotationStore.Dispose%2A>また、`Dispose()`参照される各オブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Windows.Annotations.Storage.AnnotationStore.Dispose(System.Boolean)" /> は、他のオブジェクトから複数回呼び出すことができます。  オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see cref="M:System.Windows.Annotations.Storage.AnnotationStore.Dispose(System.Boolean)" />です。 実装する方法の詳細についての<see langword="" /> <see cref="M:System.Windows.Annotations.Storage.AnnotationStore.Dispose(System.Boolean)" /><see langword="(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.IDisposable.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~AnnotationStore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最終的には、このストアに対して <see cref="M:System.Windows.Annotations.Storage.AnnotationStore.Dispose(System.Boolean)" /> が呼び出されることを保証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは基本<xref:System.Object.Finalize%2A>メソッドです。  アプリケーション プログラムが呼び出さないで<xref:System.Windows.Annotations.Storage.AnnotationStore.Finalize%2A>直接です。  <xref:System.Windows.Annotations.Storage.AnnotationStore.Finalize%2A>呼び出しによって無効にしない限りにガベージ コレクション中に自動的に呼び出される、<xref:System.GC.SuppressFinalize%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public abstract void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部バッファーで保持されている注釈データが、強制的に基になるストレージ デバイスに書き込まれるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的な保存モデルを使用するアプリケーションを設定できます<xref:System.Windows.Annotations.Storage.AnnotationStore.AutoFlush%2A>に`false`を呼び出すと<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>直接適切な場合です。  
+  
+ 暗黙の保存モデルを使用するアプリケーションを設定できます、<xref:System.Windows.Annotations.Storage.AnnotationStore.AutoFlush%2A>に`true`させる<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>すべてストア操作の後に自動的に呼び出される (追加、削除、または変更)。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>メソッドは、アプリケーションを閉じると、<xref:System.Windows.Annotations.AnnotationService>です。  
+  
+ [!code-csharp[DocViewerAnnotationsXps#StopAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/AnnotationsHelperXps.cs#stopannotations)]
+ [!code-vb[DocViewerAnnotationsXps#StopAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXps/visualbasic/annotationshelperxps.vb#stopannotations)]  
+  
+ 次の例では、使用、<xref:System.Windows.Annotations.Storage.AnnotationStore.DeleteAnnotation%2A>と<xref:System.Windows.Annotations.Storage.AnnotationStore.Flush%2A>メソッドです。  
+  
+ [!code-csharp[DocumentSerialize#DocSerDelete](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserdelete)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnnotation">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Annotations.Annotation GetAnnotation (Guid annotationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Annotations.Annotation GetAnnotation(valuetype System.Guid annotationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.GetAnnotation(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="annotationId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="annotationId">[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)] <see cref="P:System.Windows.Annotations.Annotation.Id" />返される注釈のプロパティです。</param>
+        <summary>指定された <see cref="P:System.Windows.Annotations.Annotation.Id" /> を持つ注釈をストアから返します。</summary>
+        <returns>指定した <paramref name="annotationId" /> を持つ注釈。指定した <paramref name="annotationId" /> を持つ注釈がストア内で見つからなかった場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetAnnotations">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ストア内に格納されている注釈の一覧を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.AnnotationStore.GetAnnotations%2A>ストアに格納されているすべての注釈があるかを調べます。  
+  
+ [!code-csharp[DocumentSerialize#DocSerCloseFile](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserclosefile)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetAnnotations">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt; GetAnnotations ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Annotations.Annotation&gt; GetAnnotations() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.GetAnnotations" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストア内のすべての注釈の一覧を返します。</summary>
+        <returns>ストア内に現在格納されているすべての注釈の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.AnnotationStore.GetAnnotations%2A>ストアに格納されているすべての注釈があるかを調べます。  
+  
+ [!code-csharp[DocumentSerialize#DocSerCloseFile](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserclosefile)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnnotations">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt; GetAnnotations (System.Windows.Annotations.ContentLocator anchorLocator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Annotations.Annotation&gt; GetAnnotations(class System.Windows.Annotations.ContentLocator anchorLocator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.GetAnnotations(System.Windows.Annotations.ContentLocator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="anchorLocator" Type="System.Windows.Annotations.ContentLocator" />
+      </Parameters>
+      <Docs>
+        <param name="anchorLocator">一致する注釈を返す、先頭の <see cref="T:System.Windows.Annotations.ContentLocatorPart" /> のシーケンス。</param>
+        <summary>一致する <see cref="T:System.Windows.Annotations.ContentLocatorPart" /> シーケンスで開始するロケーターを含む <see cref="P:System.Windows.Annotations.Annotation.Anchors" /> を持つ注釈の一覧を返します。</summary>
+        <returns>指定した <paramref name="anchorLocator" /> で始まり、かつ一致するロケーターを含む <see cref="P:System.Windows.Annotations.Annotation.Anchors" /> を持つ注釈の一覧。一致する注釈が見つからなかった場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Annotations.Storage.AnnotationStore.GetAnnotations%2A>メソッドは内部的に使用して、<xref:System.Windows.Annotations.ContentLocator.StartsWith%2A>のメソッド、<xref:System.Windows.Annotations.ContentLocator>クラスを検索し、返される注釈と一致します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDisposed">
+      <MemberSignature Language="C#" Value="protected bool IsDisposed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDisposed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.AnnotationStore.IsDisposed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> が呼び出されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> が呼び出されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。  既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAnchorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnAnchorChanged (System.Windows.Annotations.AnnotationResourceChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAnchorChanged(class System.Windows.Annotations.AnnotationResourceChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.OnAnchorChanged(System.Windows.Annotations.AnnotationResourceChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.Annotations.AnnotationResourceChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Annotations.Storage.AnnotationStore.AnchorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAuthorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnAuthorChanged (System.Windows.Annotations.AnnotationAuthorChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAuthorChanged(class System.Windows.Annotations.AnnotationAuthorChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.OnAuthorChanged(System.Windows.Annotations.AnnotationAuthorChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.Annotations.AnnotationAuthorChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Annotations.Storage.AnnotationStore.AuthorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCargoChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnCargoChanged (System.Windows.Annotations.AnnotationResourceChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCargoChanged(class System.Windows.Annotations.AnnotationResourceChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.OnCargoChanged(System.Windows.Annotations.AnnotationResourceChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.Annotations.AnnotationResourceChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Annotations.Storage.AnnotationStore.CargoChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStoreContentChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnStoreContentChanged (System.Windows.Annotations.Storage.StoreContentChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStoreContentChanged(class System.Windows.Annotations.Storage.StoreContentChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.AnnotationStore.OnStoreContentChanged(System.Windows.Annotations.Storage.StoreContentChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Annotations.Storage.StoreContentChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Annotations.Storage.AnnotationStore.StoreContentChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreContentChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.Storage.StoreContentChangedEventHandler StoreContentChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.Storage.StoreContentChangedEventHandler StoreContentChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Storage.AnnotationStore.StoreContentChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Storage.StoreContentChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアで <see cref="T:System.Windows.Annotations.Annotation" /> が追加または削除される場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のイベントのデリゲートを追加する方法を示しています、<xref:System.Windows.Annotations.Storage.AnnotationStore.StoreContentChanged>イベント。  
+  
+ [!code-csharp[DocumentSerialize#DocSerEnableAnn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserenableann)]  
+  
+ 次の例では、操作、<xref:System.Windows.Annotations.Storage.AnnotationStore.StoreContentChanged>イベントのデリゲート。  
+  
+ [!code-csharp[DocumentSerialize#DocSerContentChanged](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docsercontentchanged)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="protected object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.AnnotationStore.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Annotations.Storage.AnnotationStore" /> の重要なセクションの同期ロックとして使用するオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Windows.Annotations.Storage.AnnotationStore" /> の重要なセクションの同期ロックとして使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

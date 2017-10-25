@@ -1,0 +1,176 @@
+<Type Name="VirtualizedContainerService" FullName="System.Activities.Presentation.View.VirtualizedContainerService">
+  <TypeSignature Language="C#" Value="public class VirtualizedContainerService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VirtualizedContainerService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.View.VirtualizedContainerService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>編集コンテキストおよびデザイン ビューに関連付けられた、仮想コンテナー サービスを表します。 仮想コンテナー サービスは、UI 仮想化の動作をカスタマイズするために使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI 仮想化は、デザイナー キャンバスのうち、その時点で表示対象になっている領域のみを描画することによって、デザイナーの応答性を高め、メモリ消費量を抑えるために使用します。 既定では、プロシージャ デザイナーおよびフローチャート デザイナーの両方が仮想化に対応していますが、個々の画面よりも大きい制御フロー デザイナーを構築する場合、このデザイナーは仮想化するメリットがあります。  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VirtualizedContainerService (System.Activities.Presentation.EditingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Presentation.EditingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.VirtualizedContainerService.#ctor(System.Activities.Presentation.EditingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.Presentation.EditingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">サービスの <see cref="T:System.Activities.Presentation.EditingContext" />。</param>
+        <summary>特定の編集コンテキストを使用して、<see cref="T:System.Activities.Presentation.View.VirtualizedContainerService" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainer">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement GetContainer (System.Activities.Presentation.Model.ModelItem modelItem, System.Activities.Presentation.ICompositeView sourceContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.UIElement GetContainer(class System.Activities.Presentation.Model.ModelItem modelItem, class System.Activities.Presentation.ICompositeView sourceContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.VirtualizedContainerService.GetContainer(System.Activities.Presentation.Model.ModelItem,System.Activities.Presentation.ICompositeView)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+        <Parameter Name="sourceContainer" Type="System.Activities.Presentation.ICompositeView" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">コンテナーに関連付けられる <see cref="T:System.Activities.Presentation.Model.ModelItem" />。</param>
+        <param name="sourceContainer">モデル アイテムに関連付けられている <see cref="T:System.Activities.Presentation.ICompositeView" />。</param>
+        <summary>コンテナーを取得し、そのコンテナーを指定したモデル アイテムに関連付けて、その関連付けを表す UI 要素を返します。</summary>
+        <returns>モデル アイテムに関連付けられたコンテナーを表す <see cref="T:System.Windows.UIElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHintSize">
+      <MemberSignature Language="C#" Value="public static object GetHintSize (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetHintSize(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.VirtualizedContainerService.GetHintSize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">プロパティ ストア。</param>
+        <summary>HintSizeName プロパティの値の取得を試みます。</summary>
+        <returns>値の取得先の <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティがストア内に見つからない場合でも、<xref:System.Activities.Presentation.View.VirtualizedContainerService.GetHintSize%2A> では例外はスローされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewElement">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.WorkflowViewElement GetViewElement (System.Activities.Presentation.Model.ModelItem modelItem, System.Activities.Presentation.ICompositeView sourceContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Presentation.WorkflowViewElement GetViewElement(class System.Activities.Presentation.Model.ModelItem modelItem, class System.Activities.Presentation.ICompositeView sourceContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.VirtualizedContainerService.GetViewElement(System.Activities.Presentation.Model.ModelItem,System.Activities.Presentation.ICompositeView)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.WorkflowViewElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+        <Parameter Name="sourceContainer" Type="System.Activities.Presentation.ICompositeView" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">取得するワークフロー ビュー要素の基になるモデル アイテム。</param>
+        <param name="sourceContainer">ワークフロー ビュー要素に設定するドラッグ ソース依存プロパティ値。</param>
+        <summary>指定したモデル アイテムに対応するワークフロー ビュー要素を返します。</summary>
+        <returns>指定したモデル アイテムに対応するワークフロー ビュー要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HintSizeName">
+      <MemberSignature Language="C#" Value="public static readonly System.Xaml.AttachableMemberIdentifier HintSizeName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xaml.AttachableMemberIdentifier HintSizeName" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.VirtualizedContainerService.HintSizeName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.AttachableMemberIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML 型のシステム識別子を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、<xref:System.Activities.Presentation.View.VirtualizedContainerService> 型と "HintSize" で構成される文字列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHintSize">
+      <MemberSignature Language="C#" Value="public static void SetHintSize (object instance, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHintSize(object instance, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.VirtualizedContainerService.SetHintSize(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">プロパティ ストア。</param>
+        <param name="value">設定する値。</param>
+        <summary>HintSizeName プロパティの値の設定を試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、割り当てられた `value` を解析して <xref:System.Windows.Size> オブジェクトにします。したがって、文字列は en-us カルチャを使用して書式設定される必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

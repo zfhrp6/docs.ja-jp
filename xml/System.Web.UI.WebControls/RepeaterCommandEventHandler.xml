@@ -1,0 +1,42 @@
+<Type Name="RepeaterCommandEventHandler" FullName="System.Web.UI.WebControls.RepeaterCommandEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void RepeaterCommandEventHandler(object source, RepeaterCommandEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RepeaterCommandEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeaterCommandEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="source" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.RepeaterCommandEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="source">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.RepeaterCommandEventArgs" />。</param>
+    <summary><see cref="E:System.Web.UI.WebControls.Repeater.ItemCommand" /> の <see cref="T:System.Web.UI.WebControls.Repeater" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RepeaterCommandEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次の例には、<xref:System.Web.UI.WebControls.Repeater.ItemCommand>のイベント、<xref:System.Web.UI.WebControls.Repeater>です。 ボタンについての情報が表示されるときに、<xref:System.Web.UI.WebControls.Button>内で制御、<xref:System.Web.UI.WebControls.Repeater>がクリックされました。  
+  
+ [!code-aspx-csharp[Classic RepeaterCommandEventHandler Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterCommandEventHandler Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterCommandEventHandler Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterCommandEventHandler Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

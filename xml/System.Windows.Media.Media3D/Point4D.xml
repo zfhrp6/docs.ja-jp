@@ -1,0 +1,757 @@
+<Type Name="Point4D" FullName="System.Windows.Media.Media3D.Point4D">
+  <TypeSignature Language="C#" Value="public struct Point4D : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Point4D extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.Point4D" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.Media3D.Point4DConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.Media3D.Converters.Point4DValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>X、y、z、および非アフィン 3-D 行列を使用して変換の実行で使用される、ワールド空間 w の各座標点を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML では、値の間の区切り記号、<xref:System.Windows.Media.Media3D.Point4D>コンマまたは空白にすることができます。  
+  
+ 一部のカルチャは、ピリオドではなく 10 進区切り記号としてコンマ文字を使用する可能性があります。 インバリアント カルチャの XAML 処理では、既定値のほとんどの XAML プロセッサの実装では、EN-US あり、小数点区切り文字にピリオドが必要です。 指定する場合、10 進区切り記号としてコンマ文字の使用を避ける必要があります、 <xref:System.Windows.Media.Media3D.Point4D> 、XAML での文字列型の変換に競合が発生するため、<xref:System.Windows.Media.Media3D.Point4D>属性値をそのコンポーネントにします。  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="x,y,z,w"/>  
+-or-  
+<object property="x y z w"/>  
+```  
+  
+<a name="xamlValues_MinWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *x*  
+ <xref:System.Windows.Media.Media3D.Point4D.X%2A>このコンポーネント<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ *y*  
+ <xref:System.Windows.Media.Media3D.Point4D.Y%2A>このコンポーネント<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ *z*  
+ <xref:System.Windows.Media.Media3D.Point4D.Z%2A>このコンポーネント<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ *w*  
+ <xref:System.Windows.Media.Media3D.Point4D.W%2A>このコンポーネント<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Point4D (double x, double y, double z, double w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 x, float64 y, float64 z, float64 w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.#ctor(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+        <Parameter Name="z" Type="System.Double" />
+        <Parameter Name="w" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">新しいの x 座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <param name="y">新しいの y 座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <param name="z">新しいの z 座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <param name="w">新しい w 座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D Add (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Point4D Add(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Add(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1">最初の<see cref="T:System.Windows.Media.Media3D.Point4D" />構造を追加します。</param>
+        <param name="point2">2 番目<see cref="T:System.Windows.Media.Media3D.Point4D" />構造を追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Media.Media3D.Point4D" />に構造体、<see cref="T:System.Windows.Media.Media3D.Point4D" />です。</summary>
+        <returns>合計を返して<paramref name="point1" />と<paramref name="point2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、2 つ追加する方法を示します<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN3](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn3)]
+ [!code-vb[point4dsample#Mil4DPoints3DN3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象のオブジェクト。</param>
+        <summary>決定かどうか、指定した<see cref="T:System.Object" />は、<see cref="T:System.Windows.Media.Media3D.Point4D" />構造場合に、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、<see cref="P:System.Windows.Media.Media3D.Point4D.Z" />と<see cref="P:System.Windows.Media.Media3D.Point4D.W" />の指定したプロパティ<see cref="T:System.Object" />と等しい、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Z" />、および<see cref="P:System.Windows.Media.Media3D.Point4D.W" />のプロパティを<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>
+          <see langword="true" />インスタンスが等しい場合はそれ以外の場合、<see langword="false" />です。  
+  
+ <see langword="true" />場合<paramref name="o" />(渡された<see cref="T:System.Object" />) は、<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体し、同じですが、これは<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体です。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`o`(渡されたオブジェクト)、<xref:System.Windows.Media.Media3D.Point4D>構造体、このメソッドが戻る`false`です。  
+  
+ <xref:System.Double>値で有効桁数が失われる場合、それら 2 つの比較に対する算術演算の実行時<xref:System.Windows.Media.Media3D.Point4D>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を確認する方法を示して かどうか、<xref:System.Object>と<xref:System.Windows.Media.Media3D.Point4D>構造体が等しい。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN12](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn12)]
+ [!code-vb[point4dsample#Mil4DPoints3DN12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.Media3D.Point4D value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Media.Media3D.Point4D value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Equals(System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="value">このインスタンスと比較する Point4D のインスタンス。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Media3D.Point4D" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />インスタンスが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double>値で有効桁数が失われる場合、それら 2 つの比較に対する算術演算の実行時<xref:System.Windows.Media.Media3D.Point4D>が論理的に等しい値が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Equals(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1">比較する最初の <see cref="T:System.Windows.Media.Media3D.Point4D" /> 構造体。</param>
+        <param name="point2">比較する 2 番目の <see cref="T:System.Windows.Media.Media3D.Point4D" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Media3D.Point4D" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、および<see cref="P:System.Windows.Media.Media3D.Point4D.Z" />のコンポーネント<paramref name="point3D1" />と<paramref name="point3D2" />が等しい。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.Media3D.Point4D>構造体が等しい場合の値、 <xref:System.Windows.Media.Media3D.Point4D.X%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Y%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Z%2A>、および<xref:System.Windows.Media.Media3D.Point4D.W%2A>プロパティは同じです。  
+  
+ <xref:System.Double>値で有効桁数が失われる場合、それら 2 つの比較に対する算術演算の実行時<xref:System.Windows.Media.Media3D.Point4D>論理的に等価であるインスタンスが失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つあるかどうかをチェックする方法を示します<xref:System.Windows.Media.Media3D.Point4D>構造体が等しい。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn11)]
+ [!code-vb[point4dsample#Mil4DPoints3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>このハッシュ コードを返します<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のハッシュ コードを取得する方法を示しています、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN16](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn16)]
+ [!code-vb[point4dsample#Mil4DPoints3DN16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D Multiply (System.Windows.Media.Media3D.Point4D point, System.Windows.Media.Media3D.Matrix3D matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Point4D Multiply(valuetype System.Windows.Media.Media3D.Point4D point, valuetype System.Windows.Media.Media3D.Matrix3D matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Multiply(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Matrix3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Media3D.Matrix3D" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Windows.Media.Media3D.Point4D" />構造を変換します。</param>
+        <param name="matrix">変換<see cref="T:System.Windows.Media.Media3D.Matrix3D" />構造体。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体を指定した<see cref="T:System.Windows.Media.Media3D.Matrix3D" />構造体。</summary>
+        <returns>変換した結果を返します<paramref name="point" />と<paramref name="matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を乗算する方法を示しています、<xref:System.Windows.Media.Media3D.Point4D>で構造体、<xref:System.Windows.Media.Media3D.Matrix3D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN9](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn9)]
+ [!code-vb[point4dsample#Mil4DPoints3DN9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public void Offset (double deltaX, double deltaY, double deltaZ, double deltaW);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Offset(float64 deltaX, float64 deltaY, float64 deltaZ, float64 deltaW) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Offset(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deltaX" Type="System.Double" />
+        <Parameter Name="deltaY" Type="System.Double" />
+        <Parameter Name="deltaZ" Type="System.Double" />
+        <Parameter Name="deltaW" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="deltaX">オフセットの量、<see cref="P:System.Windows.Media.Media3D.Point4D.X" />この座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <param name="deltaY">オフセットの量、<see cref="P:System.Windows.Media.Media3D.Point4D.Y" />この座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <param name="deltaZ">オフセットの量、<see cref="P:System.Windows.Media.Media3D.Point4D.Z" />この座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <param name="deltaW">オフセットの量、<see cref="P:System.Windows.Media.Media3D.Point4D.W" />この座標<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</param>
+        <summary>変換、<see cref="T:System.Windows.Media.Media3D.Point4D" />指定した量だけ構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、<xref:System.Windows.Media.Media3D.Point4D.Offset%2A>メソッドのみが、特殊効果を変更できる場合、 <xref:System.Windows.Media.Media3D.Point4D.W%2A>、 <xref:System.Windows.Media.Media3D.Point4D.X%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Y%2A>、および<xref:System.Windows.Media.Media3D.Point4D.Z%2A>プロパティに直接できます。 <xref:System.Windows.Media.Media3D.Point4D>値の型を参照する場合は、<xref:System.Windows.Media.Media3D.Point4D>オブジェクト プロパティまたはインデクサーを使用すると、オブジェクトへの参照ではなく、オブジェクトのコピーを取得します。 変更しようとする場合<xref:System.Windows.Media.Media3D.Point4D.W%2A>、 <xref:System.Windows.Media.Media3D.Point4D.X%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Y%2A>、または<xref:System.Windows.Media.Media3D.Point4D.Z%2A>プロパティまたはインデクサーの参照、コンパイラ エラーが発生します。 同様に、呼び出す<xref:System.Windows.Media.Media3D.Point4D.Offset%2A>プロパティまたはインデクサーには変更されません、基になるオブジェクト。 値を変更する場合、<xref:System.Windows.Media.Media3D.Point4D>プロパティまたはインデクサーとして参照される、新規作成<xref:System.Windows.Media.Media3D.Point4D>、そのフィールドを変更し、割り当てます、<xref:System.Windows.Media.Media3D.Point4D>プロパティまたはインデクサーに戻します。  
+  
+   
+  
+## Examples  
+ 次の例のオフセットでは、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN7](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn7)]
+ [!code-vb[point4dsample#Mil4DPoints3DN7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D operator + (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Media3D.Point4D op_Addition(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.op_Addition(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1">最初の<see cref="T:System.Windows.Media.Media3D.Point4D" />構造を追加します。</param>
+        <param name="point2">2 番目<see cref="T:System.Windows.Media.Media3D.Point4D" />構造を追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Media.Media3D.Point4D" />に構造体、<see cref="T:System.Windows.Media.Media3D.Point4D" />です。</summary>
+        <returns>合計を返して<paramref name="point1" />と<paramref name="point2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、オーバー ロードされた加算演算子を使用して、2 つ追加する方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN4](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn4)]
+ [!code-vb[point4dsample#Mil4DPoints3DN4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.op_Equality(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1">比較する最初の <see cref="T:System.Windows.Media.Media3D.Point4D" /> 構造体。</param>
+        <param name="point2">比較する 2 番目の <see cref="T:System.Windows.Media.Media3D.Point4D" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Media3D.Point4D" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、および<see cref="P:System.Windows.Media.Media3D.Point4D.Z" />の座標<paramref name="point4D1" />と<paramref name="point4D2" />が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.Media3D.Point4D>構造体が等しい場合の値、 <xref:System.Windows.Media.Media3D.Point4D.X%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Y%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Z%2A>、および<xref:System.Windows.Media.Media3D.Point4D.W%2A>プロパティは同じです。  
+  
+ <xref:System.Double>値で有効桁数が失われる場合、それら 2 つの比較に対する算術演算の実行時<xref:System.Windows.Media.Media3D.Point4D>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、オーバー ロードされた等値演算子を使用して、2 つあるかどうかを確認する方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>構造体が等しい。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN10](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn10)]
+ [!code-vb[point4dsample#Mil4DPoints3DN10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.op_Inequality(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1">比較する最初の <see cref="T:System.Windows.Media.Media3D.Point4D" /> 構造体。</param>
+        <param name="point2">比較する 2 番目の <see cref="T:System.Windows.Media.Media3D.Point4D" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Media3D.Point4D" />非等値の構造体。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Z" />、および<see cref="P:System.Windows.Media.Media3D.Point4D.W" />の座標<paramref name="point4D1" />と<paramref name="point4D2" />が、それ以外のさまざまな<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.Media3D.Point4D>構造が等しくない場合の値、 <xref:System.Windows.Media.Media3D.Point4D.X%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Y%2A>、 <xref:System.Windows.Media.Media3D.Point4D.Z%2A>、および<xref:System.Windows.Media.Media3D.Point4D.W%2A>プロパティは異なります。  
+  
+ <xref:System.Double>値で有効桁数が失われる場合、それら 2 つの比較に対する算術演算の実行時<xref:System.Windows.Media.Media3D.Point4D>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、オーバー ロードされた非等値演算子を使用して、2 つあるかどうかを確認する方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>構造が等しくないです。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN14](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn14)]
+ [!code-vb[point4dsample#Mil4DPoints3DN14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D operator * (System.Windows.Media.Media3D.Point4D point, System.Windows.Media.Media3D.Matrix3D matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Media3D.Point4D op_Multiply(valuetype System.Windows.Media.Media3D.Point4D point, valuetype System.Windows.Media.Media3D.Matrix3D matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.op_Multiply(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Matrix3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Media3D.Matrix3D" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Windows.Media.Media3D.Point4D" />構造を変換します。</param>
+        <param name="matrix">変換<see cref="T:System.Windows.Media.Media3D.Matrix3D" />構造体。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体を指定した<see cref="T:System.Windows.Media.Media3D.Matrix3D" />構造体。</summary>
+        <returns>変換した結果を返します<paramref name="point" />と<paramref name="matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、オーバー ロードされた乗算演算子を使用して変換する方法を示しています、<xref:System.Windows.Media.Media3D.Point4D>で構造体、<xref:System.Windows.Media.Media3D.Matrix3D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN8](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn8)]
+ [!code-vb[point4dsample#Mil4DPoints3DN8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D operator - (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Media3D.Point4D op_Subtraction(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.op_Subtraction(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1"><see cref="T:System.Windows.Media.Media3D.Point4D" />から減算される構造です。</param>
+        <param name="point2"><see cref="T:System.Windows.Media.Media3D.Point4D" />から減算する構造体<c>point1</c>です。</param>
+        <summary>減算、<see cref="T:System.Windows.Media.Media3D.Point4D" />から構造体、<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体し、結果として返します、<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>差を返します<paramref name="point1" />と<paramref name="point2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、減算するオーバー ロードされた減算演算子を使用する方法を示しています、<xref:System.Windows.Media.Media3D.Point4D>から構造体、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN5](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn5)]
+ [!code-vb[point4dsample#Mil4DPoints3DN5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Point4D Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.String" /> Point4D 構造の表現。</param>
+        <summary>変換、 <see cref="T:System.String" /> point4D 構造体の表現をそれと同等に<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>対応する、返す<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Windows.Media.Media3D.Point4D.Parse%2A> point4D 構造への文字列形式に変換するメソッド、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN13](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn13)]
+ [!code-vb[point4dsample#Mil4DPoints3DN13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Point4D Subtract (System.Windows.Media.Media3D.Point4D point1, System.Windows.Media.Media3D.Point4D point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Point4D Subtract(valuetype System.Windows.Media.Media3D.Point4D point1, valuetype System.Windows.Media.Media3D.Point4D point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.Subtract(System.Windows.Media.Media3D.Point4D,System.Windows.Media.Media3D.Point4D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point4D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Media.Media3D.Point4D" />
+        <Parameter Name="point2" Type="System.Windows.Media.Media3D.Point4D" />
+      </Parameters>
+      <Docs>
+        <param name="point1"><see cref="T:System.Windows.Media.Media3D.Point4D" />から減算される構造です。</param>
+        <param name="point2"><see cref="T:System.Windows.Media.Media3D.Point4D" />から減算する構造体<c>point1</c>です。</param>
+        <summary>減算、<see cref="T:System.Windows.Media.Media3D.Point4D" />から構造体、<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>差を返します<paramref name="point1" />と<paramref name="point2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、減算する方法を示しています、<xref:System.Windows.Media.Media3D.Point4D>から構造体、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN6](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn6)]
+ [!code-vb[point4dsample#Mil4DPoints3DN6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する形式を指定する文字列。  
+  
+ または  
+  
+ <see langword="null" />型に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider"><see langword="IFormatProvider" />を使用して値の書式設定します。  
+  
+ または  
+  
+ <see langword="null" />オペレーティング システムの現在のロケール設定から数値の書式情報を取得できます。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 このメンバーの詳細については、「<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>指定された形式で現在のインスタンスの値を含む文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>返します、<see cref="T:System.String" />を含む、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Z" />、および<see cref="P:System.Windows.Media.Media3D.Point4D.W" />この値<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の文字列表現を取得する方法を示しています、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN15](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn15)]
+ [!code-vb[point4dsample#Mil4DPoints3DN15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Point4D.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <returns>返します、<see cref="T:System.String" />を含む、 <see cref="P:System.Windows.Media.Media3D.Point4D.X" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Y" />、 <see cref="P:System.Windows.Media.Media3D.Point4D.Z" />、および<see cref="P:System.Windows.Media.Media3D.Point4D.W" />この値<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の文字列表現を取得する方法、<xref:System.Windows.Media.Media3D.Point4D>構造体。  
+  
+ [!code-csharp[point4dsample#Mil4DPoints3DN15](~/samples/snippets/csharp/VS_Snippets_Wpf/Point4DSample/CSharp/Window1.xaml.cs#mil4dpoints3dn15)]
+ [!code-vb[point4dsample#Mil4DPoints3DN15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Point4DSample/visualbasic/window1.xaml.vb#mil4dpoints3dn15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="W">
+      <MemberSignature Language="C#" Value="public double W { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 W" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Point4D.W" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Media.Media3D.Point4D.W" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <value><see cref="P:System.Windows.Media.Media3D.Point4D.W" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。  既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public double X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Point4D.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Media.Media3D.Point4D.X" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <value><see cref="P:System.Windows.Media.Media3D.Point4D.X" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。  既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public double Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Point4D.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Media.Media3D.Point4D.Y" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <value><see cref="P:System.Windows.Media.Media3D.Point4D.Y" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。  既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Z">
+      <MemberSignature Language="C#" Value="public double Z { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Z" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Point4D.Z" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Media.Media3D.Point4D.Z" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。</summary>
+        <value><see cref="P:System.Windows.Media.Media3D.Point4D.Z" />このコンポーネント<see cref="T:System.Windows.Media.Media3D.Point4D" />構造体。  既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

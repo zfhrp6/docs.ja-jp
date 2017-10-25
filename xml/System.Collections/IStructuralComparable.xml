@@ -1,0 +1,148 @@
+<Type Name="IStructuralComparable" FullName="System.Collections.IStructuralComparable">
+  <TypeSignature Language="C#" Value="public interface IStructuralComparable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStructuralComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.IStructuralComparable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>FSharp.Core</AssemblyName>
+    <AssemblyVersion>2.3.98.1</AssemblyVersion>
+    <AssemblyVersion>3.98.4.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コレクション オブジェクトの構造比較をサポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IStructuralComparable>インターフェイスでは、コレクションのメンバーのカスタムの比較を実装することができます。 つまり、正確な意味を前に、に従って、または 2 つ目のコレクション オブジェクトと並べ替え順序で同じ位置で発生する 1 つのコレクション オブジェクトを定義できます。 型がコレクション型を受け入れるこの定義を使用することを指定することができますし、<xref:System.Collections.IStructuralComparable>インターフェイスです。  
+  
+ このインターフェイスに 1 つのメンバー、 <xref:System.Collections.IStructuralComparable.CompareTo%2A>、現在のコレクション オブジェクトが同じか、または並べ替え順序で 2 番目のオブジェクトより大きいよりも小さいかどうかを決定します。 メンバーまたはと 2 番目のオブジェクトで、現在のインスタンス内の要素の実際の比較を行う、<xref:System.Collections.IComparer>インターフェイスの実装は、カスタム比較の結果の定義が含まれています。  
+  
+> [!NOTE]
+>  <xref:System.Collections.IStructuralComparable>インターフェイスは、並べ替えと順序付けの構造比較だけをサポートしています。 <xref:System.Collections.IStructuralEquatable>インターフェイスは、構造の等価のカスタム比較をサポートしています。  
+  
+ .NET Framework では、次の 2 つの既定の比較子を提供します。 によって返される 1 つ、<xref:System.Collections.StructuralComparisons.StructuralComparer%2A?displayProperty=nameWithType>プロパティによって返される他の<xref:System.Collections.Generic.Comparer%601.Default%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ジェネリック組クラス (<xref:System.Tuple%601>、 <xref:System.Tuple%602>、<xref:System.Tuple%603>など)、および<xref:System.Array>クラスの明示的な実装を提供する、<xref:System.Collections.IStructuralComparable>インターフェイスです。 キャスト (c#) またはへの変換 (Visual Basic) の配列または組の現在のインスタンスによって、<xref:System.Collections.IStructuralComparable>インターフェイス値を提供して、<xref:System.Collections.IComparer>実装への引数として、<xref:System.Collections.IStructuralComparable.CompareTo%2A>メソッド、配列またはコレクションのカスタムの並べ替え順序を定義することができます。 ただし、呼び出すことはありません、<xref:System.Collections.IStructuralComparable.CompareTo%2A>ほとんどの場合に直接メソッドです。 代わりに、<xref:System.Collections.IStructuralComparable.CompareTo%2A>並べ替え方法など、メソッドを呼び出して<xref:System.Array.Sort%28System.Array%2CSystem.Collections.IComparer%29>です。 ここを定義する、<xref:System.Collections.IComparer>実装し、並べ替えメソッド、またはコレクション オブジェクトのクラス コンス トラクターに渡す引数として渡すことです。 <xref:System.Collections.IStructuralComparable.CompareTo%2A>コレクションが並べ替えられたときに、カスタムの比較演算子とメソッドが自動的に呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例の配列を作成する<xref:System.Tuple%606>2000 1960年から次の 3 つの米国都市の母集団のデータが含まれているオブジェクト。 6 組の最初のコンポーネントは、市区町村名です。 残りの 5 つのコンポーネントでは、1960年から 2000年までの 10 年間の間隔で人口を表します。  
+  
+ `PopulationComparer`クラスを提供する<xref:System.Collections.IComparer>により、そのコンポーネントのいずれかでソートする 6 組の配列を実装します。 2 つの値が用意されて、`PopulationComparer`コンス トラクター内のクラス: 並べ替え順序を定義するコンポーネントと組オブジェクトを昇順または降順で並べ替える必要があるかどうかを示すブール値の位置。  
+  
+ 例では、し、並べ替えられていない順序で配列の要素が表示されます、3 番目のコンポーネント (1970 年のカタログ作成) で並べ替えてと、それらを表示し、6 番目のコンポーネント (2000年のカタログ作成) で並べ替えてして表示にします。 例では、直接呼び出しませんなお、<xref:System.Collections.IStructuralComparable.CompareTo%2A>メソッドです。 メソッドはによって暗黙的に、<xref:System.Array.Sort%28System.Array%2CSystem.Collections.IComparer%29>メソッド内の各組オブジェクト配列。  
+  
+ [!code-csharp[System.Tuple\`6.CompareTo#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`6.compareto/cs/compareto2.cs#2)]
+ [!code-vb[System.Tuple\`6.CompareTo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`6.compareto/vb/compareto2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object other, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object other, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IStructuralComparable.CompareTo(System.Object,System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>FSharp.Core</AssemblyName>
+        <AssemblyVersion>2.3.98.1</AssemblyVersion>
+        <AssemblyVersion>3.98.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較するオブジェクト。</param>
+        <param name="comparer">オブジェクトの対応するメンバーと、現在のコレクション オブジェクトのメンバーを比較する<c>他</c>です。</param>
+        <summary>現在のコレクション オブジェクトの並べ替え順序での位置が、別のオブジェクトと比べて前か、後か、または同じかを判断します。</summary>
+        <returns>現在のコレクション オブジェクトの関係を示す整数<paramref name="other" />次の表に示すように、します。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term> -1  
+  
+ </term><description>現在のインスタンスの前に<paramref name="other" />です。  
+  
+ </description></item><item><term> 0  
+  
+ </term><description>現在のインスタンスと<paramref name="other" />が等しい。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>現在のインスタンスに依存して<paramref name="other" />です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IStructuralComparable.CompareTo%2A>メソッドは、配列とタプル オブジェクトの並べ替えとカスタムの構造比較をサポートします。 <xref:System.Collections.IStructuralComparable.CompareTo%2A>メソッドの呼び出し、`comparer`オブジェクトの<xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType>配列の各要素または以降の最初の要素またはコンポーネントで、タプル コンポーネントを比較するメソッド。 個々 の呼び出し<xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType>終了と<xref:System.Collections.IStructuralComparable.CompareTo%2A>メソッドは、次の条件のいずれかが true になるときに値を返します。  
+  
+-   <xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType>メソッドは-1 を返します。  
+  
+-   <xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType>メソッドは 1 を返します。  
+  
+-   <xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType>最後の要素またはコレクション オブジェクト内のコンポーネントのメソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例の配列を作成する<xref:System.Tuple%606>2000 1960年から次の 3 つの米国都市の母集団のデータが含まれているオブジェクト。 6 組の最初のコンポーネントは、市区町村名です。 残りの 5 つのコンポーネントでは、1960年から 2000年までの 10 年間の間隔で人口を表します。  
+  
+ `PopulationComparer`クラスを提供する<xref:System.Collections.IComparer>により、そのコンポーネントのいずれかでソートする 6 組の配列を実装します。 2 つの値が用意されて、`PopulationComparer`コンス トラクター内のクラス: 並べ替え順序を定義するコンポーネントの位置と<xref:System.Boolean>組オブジェクトを昇順または降順で並べ替える必要があるかどうかを示す値。  
+  
+ 例では、し、並べ替えられていない順序で配列の要素が表示されます、3 番目のコンポーネント (1970 年のカタログ作成) で並べ替えてと、それらを表示し、6 番目のコンポーネント (2000年のカタログ作成) で並べ替えてして表示にします。 例では、直接呼び出しませんなお、<xref:System.Collections.IStructuralComparable.CompareTo%2A?displayProperty=nameWithType>実装します。 メソッドはによって暗黙的に、<xref:System.Array.Sort%28System.Array%2CSystem.Collections.IComparer%29>メソッド内の各組オブジェクト配列。  
+  
+ [!code-csharp[System.Tuple\`6.CompareTo#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`6.compareto/cs/compareto2.cs#2)]
+ [!code-vb[System.Tuple\`6.CompareTo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`6.compareto/vb/compareto2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このインスタンスと<paramref name="other" />同じタイプではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

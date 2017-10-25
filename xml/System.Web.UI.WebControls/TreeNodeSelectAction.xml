@@ -1,0 +1,100 @@
+<Type Name="TreeNodeSelectAction" FullName="System.Web.UI.WebControls.TreeNodeSelectAction">
+  <TypeSignature Language="C#" Value="public enum TreeNodeSelectAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TreeNodeSelectAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeSelectAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>内のノードの場合に発生するイベントを表す、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロールを選択します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを<xref:System.Web.UI.WebControls.TreeNode>コントロールが、空の文字列以外の値に設定されている ("")、指定された URL に移動するノードをクリックします。 場合、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティがポストバックをノードの原因としてをクリックすると、空の文字列に設定します。 <xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>プロパティがポストバックを発生させるイベントを決定します。 既定では、<xref:System.Web.UI.WebControls.TreeNode.Select%2A>イベントが発生します。 場合にイベントが発生しません、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを設定します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeView.HoverNodeStyle%2A>ノードのプロパティはレンダリングされません、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>値は [なし] プロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeSelectAction.None>でノードがクリックされたときに発生するイベントを表す列挙体、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeViewPopulateNodesFromClient#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/CS/treeviewpopulatenodesfromclientcs.aspx#1)]
+ [!code-aspx-vb[TreeViewPopulateNodesFromClient#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/VB/treeviewpopulatenodesfromclientvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Expand">
+      <MemberSignature Language="C#" Value="Expand" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeSelectAction Expand = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeSelectAction.Expand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeSelectAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.TreeView.TreeNodeExpanded" />イベント ノードを選択するとします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeSelectAction None = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeSelectAction.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeSelectAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードが選択されているときにイベントを発生させません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="Select" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeSelectAction Select = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeSelectAction.Select" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeSelectAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.TreeView.SelectedNodeChanged" />イベント ノードを選択するとします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectExpand">
+      <MemberSignature Language="C#" Value="SelectExpand" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeSelectAction SelectExpand = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeSelectAction.SelectExpand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeSelectAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>両方を生成、<see cref="E:System.Web.UI.WebControls.TreeView.SelectedNodeChanged" />と<see cref="E:System.Web.UI.WebControls.TreeView.TreeNodeExpanded" />イベント ノードを選択するとします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

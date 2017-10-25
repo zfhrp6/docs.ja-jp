@@ -1,0 +1,109 @@
+<Type Name="PnrpScope" FullName="System.Net.PeerToPeer.PnrpScope">
+  <TypeSignature Language="C#" Value="public enum PnrpScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PnrpScope extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.PnrpScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>PNRP クラウドのさまざまなスコープを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.PeerToPeer.PnrpScope>列挙型です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.PeerToPeer.PnrpScope All = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.PnrpScope.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PnrpScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての IP アドレスは、PNRP に登録する許可<see cref="T:System.Net.PeerToPeer.Cloud" />です。 任意のスコープとすべてのスコープの違いはありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Global">
+      <MemberSignature Language="C#" Value="Global" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.PeerToPeer.PnrpScope Global = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.PnrpScope.Global" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PnrpScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープはグローバルです。すべての有効な IP アドレスは、PNRP に登録する許可<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkLocal">
+      <MemberSignature Language="C#" Value="LinkLocal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.PeerToPeer.PnrpScope LinkLocal = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.PnrpScope.LinkLocal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PnrpScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープは、リンク ローカルです。PNRP に登録するローカル エリアのサブネットに対して定義された IP アドレスのみが許可されている<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteLocal">
+      <MemberSignature Language="C#" Value="SiteLocal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.PeerToPeer.PnrpScope SiteLocal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.PnrpScope.SiteLocal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PnrpScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープは、サイト ローカルです。PNRP に登録するには、サイトに対して定義されている IP アドレスのみが許可します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

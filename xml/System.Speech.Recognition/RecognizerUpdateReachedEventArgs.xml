@@ -1,0 +1,297 @@
+<Type Name="RecognizerUpdateReachedEventArgs" FullName="System.Speech.Recognition.RecognizerUpdateReachedEventArgs">
+  <TypeSignature Language="C#" Value="public class RecognizerUpdateReachedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RecognizerUpdateReachedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognizerUpdateReachedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを返す、<see cref="E:System.Speech.Recognition.SpeechRecognitionEngine.RecognizerUpdateReached" />または<see cref="E:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `RecognizerUpdateReached`イベントは、読み込みとアンロードの文法などのアトミックおよび同期の変更を適用する音声認識エンジンを一時停止するためのメカニズムを提供します。  
+  
+ アプリケーションが使用されている場合、<xref:System.Speech.Recognition.SpeechRecognitionEngine>認識を管理するインスタンスののいずれかが使用することができます、<xref:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate%2A?displayProperty=nameWithType>更新プログラムを受信する、エンジンが一時停止を要求するメソッド。 <xref:System.Speech.Recognition.SpeechRecognitionEngine>インスタンス化が発生し、<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizerUpdateReached?displayProperty=nameWithType>更新プログラムの準備ができたときにイベント。  
+  
+ 中に、<xref:System.Speech.Recognition.SpeechRecognitionEngine>インスタンスが一時停止して、読み込み、アンロード、有効にするには、および無効にする<xref:System.Speech.Recognition.Grammar>オブジェクトし、の値を変更、 <xref:System.Speech.Recognition.SpeechRecognitionEngine.BabbleTimeout%2A>、 <xref:System.Speech.Recognition.SpeechRecognitionEngine.InitialSilenceTimeout%2A>、および<xref:System.Speech.Recognition.SpeechRecognitionEngine.EndSilenceTimeout%2A>プロパティです。  
+  
+ アプリケーションが使用されている場合、<xref:System.Speech.Recognition.SpeechRecognizer>認識を管理するインスタンスののいずれかが使用することができます、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A?displayProperty=nameWithType>更新プログラムを受信する、エンジンが一時停止を要求するメソッド。 <xref:System.Speech.Recognition.SpeechRecognizer>インスタンス化が発生し、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached?displayProperty=nameWithType>更新プログラムの準備ができたときにイベント。  
+  
+ 中に、<xref:System.Speech.Recognition.SpeechRecognizer>インスタンスが一時停止して、読み込み、アンロード、有効にするには、および無効にする<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ 処理するときに<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizerUpdateReached?displayProperty=nameWithType>と<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached?displayProperty=nameWithType>イベント、イベント ハンドラーを返すまで、認識エンジンが一時停止します。  
+  
+ <xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs> は、<xref:System.EventArgs> から派生します。  
+  
+   
+  
+## Examples  
+ 次の例では、コンソール アプリケーションをロードおよびアンロード<xref:System.Speech.Recognition.Grammar>オブジェクト。 アプリケーションを使用して、<xref:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate%2A>音声認識エンジンの更新プログラムを受信できるようにを一時停止を要求するメソッド。 アプリケーションが読み込むか、アンロード、<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ 各更新プログラムのハンドラーで<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizerUpdateReached?displayProperty=nameWithType>イベントが現在読み込み済みの状態と名前を書き込みます<xref:System.Speech.Recognition.Grammar>オブジェクトをコンソールです。 ように文法では、読み込まれ、アンロードすることが、アプリケーションは、ファーム動物の名前、果物の名前およびファーム動物の名前にし果物の名前だけに最初認識します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Collections.Generic;  
+using System.Threading;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognitionEngine recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize an in-process speech recognition engine and configure its input.  
+      using (recognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US")))  
+      {  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Create the first grammar - Farm.  
+        Choices animals = new Choices(new string[] { "cow", "pig", "goat" });  
+        GrammarBuilder farm = new GrammarBuilder(animals);  
+        Grammar farmAnimals = new Grammar(farm);  
+        farmAnimals.Name = "Farm";  
+  
+        // Create the second grammar - Fruit.  
+        Choices fruit = new Choices(new string[] { "apples", "peaches", "oranges" });  
+        GrammarBuilder favorite = new GrammarBuilder(fruit);  
+        Grammar favoriteFruit = new Grammar(favorite);  
+        favoriteFruit.Name = "Fruit";  
+  
+        // Attach event handlers.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+        recognizer.RecognizerUpdateReached +=  
+          new EventHandler<RecognizerUpdateReachedEventArgs>(recognizer_RecognizerUpdateReached);  
+        recognizer.SpeechRecognitionRejected +=  
+          new EventHandler<SpeechRecognitionRejectedEventArgs>(recognizer_SpeechRecognitionRejected);  
+  
+        // Load the Farm grammar.  
+        recognizer.LoadGrammar(farmAnimals);  
+  
+        // Start asynchronous, continuous recognition.  
+        recognizer.RecognizeAsync(RecognizeMode.Multiple);  
+        Console.WriteLine("Starting asynchronous, continuous recognition");  
+        Console.WriteLine("  Farm grammar is loaded and enabled.");  
+  
+        // Pause to recognize farm animals.  
+        Thread.Sleep(7000);  
+        Console.WriteLine();  
+  
+        // Request an update and load the Fruit grammar.  
+        recognizer.RequestRecognizerUpdate();  
+        recognizer.LoadGrammarAsync(favoriteFruit);  
+        Thread.Sleep(7000);  
+  
+        // Request an update and unload the Farm grammar.  
+        recognizer.RequestRecognizerUpdate();  
+        recognizer.UnloadGrammar(farmAnimals);  
+        Thread.Sleep(7000);  
+      }  
+  
+      // Keep the console window open.  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // At the update, get the names and enabled status of the currently loaded grammars.  
+    public static void recognizer_RecognizerUpdateReached(  
+      object sender, RecognizerUpdateReachedEventArgs e)  
+    {  
+      Console.WriteLine();  
+      Console.WriteLine("Update reached:");  
+      Thread.Sleep(1000);  
+  
+      string qualifier;  
+      List<Grammar> grammars = new List<Grammar>(recognizer.Grammars);  
+      foreach (Grammar g in grammars)  
+      {  
+        qualifier = (g.Enabled) ? "enabled" : "disabled";  
+        Console.WriteLine("  {0} grammar is loaded and {1}.",  
+        g.Name, qualifier);  
+      }  
+    }  
+  
+    // Write the text of the recognized phrase to the console.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("    Speech recognized: " + e.Result.Text);  
+    }  
+  
+    // Write a message to the console when recognition fails.  
+    static void recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)  
+    {  
+      Console.WriteLine("    Recognition attempt failed");  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan AudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerUpdateReachedEventArgs.AudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられているオーディオの位置を取得します。</summary>
+        <value>音声バッファー内の位置を返します、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />を一時停止し、発生するとき、 <c>RecognizerUpdateReached</c>イベント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションによって示される位置を使用して<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs.AudioPosition%2A>認識エンジンが一時停止されたときに発生したオーディオの入力にアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserToken">
+      <MemberSignature Language="C#" Value="public object UserToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserToken" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerUpdateReachedEventArgs.UserToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <c>UserToken</c>アプリケーションを呼び出すときに、システムに渡される<see cref="Overload:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate" />または<see cref="Overload:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate" />です。</summary>
+        <value>含むオブジェクトを返します、 <c>UserToken</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを指定します、`UserToken`の生成を要求したとき、`RecognizerUpdateReached`イベントの 1 つを呼び出して、<xref:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate%2A?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A?displayProperty=nameWithType>を受け取るメソッド、`userToken`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例では、コンソール アプリケーションをロードおよびアンロード<xref:System.Speech.Recognition.Grammar>オブジェクト。 アプリケーションを使用して、<xref:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate%2A>音声認識エンジンの更新プログラムを受信できるようにを一時停止を要求するメソッド。 メソッドは成功、<xref:System.String>オブジェクトに対する、`userToken`パラメーターを更新した後、アプリケーションが認識されますについて説明します。 アプリケーションが読み込むか、アンロード、<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ 各更新プログラムのハンドラーで<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizerUpdateReached?displayProperty=nameWithType>イベントの内容を書き込みます`userToken`コンソールにします。 ように文法では、読み込まれ、アンロードすることが、アプリケーションは、ファーム動物の名前、果物の名前およびファーム動物の名前にし果物の名前だけに最初認識します。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+using System.Collections.Generic;  
+using System.Threading;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognitionEngine recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize an in-process speech recognition engine and configure its input.  
+      using (recognizer = new SpeechRecognitionEngine(  
+        new System.Globalization.CultureInfo("en-US")))  
+      {  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Create the first grammar - Farm.  
+        Choices animals = new Choices(new string[] { "cow", "pig", "goat" });  
+        GrammarBuilder farm = new GrammarBuilder(animals);  
+        Grammar farmAnimals = new Grammar(farm);  
+        farmAnimals.Name = "Farm";  
+  
+        // Create the second grammar - Fruit.  
+        Choices fruit = new Choices(new string[] { "apples", "peaches", "oranges" });  
+        GrammarBuilder favorite = new GrammarBuilder(fruit);  
+        Grammar favoriteFruit = new Grammar(favorite);  
+        favoriteFruit.Name = "Fruit";  
+  
+        // Attach event handlers.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+        recognizer.RecognizerUpdateReached +=  
+          new EventHandler<RecognizerUpdateReachedEventArgs>(recognizer_RecognizerUpdateReached);  
+        recognizer.SpeechRecognitionRejected +=  
+          new EventHandler<SpeechRecognitionRejectedEventArgs>(recognizer_SpeechRecognitionRejected);  
+  
+        // Load the farmAnimals grammar  
+        recognizer.LoadGrammar(farmAnimals);  
+  
+        // Start continuous, asynchronous recognition.  
+        recognizer.RecognizeAsync(RecognizeMode.Multiple);  
+        Console.WriteLine("Starting asynchronous recognition...");  
+        Console.WriteLine("  Farm animals will now be recognized.");  
+        Thread.Sleep(7000);  
+        Console.WriteLine();  
+  
+        // Load the Fruit grammar.  
+        string activeGrammars = "Farm animals and fruits will now be recognized.";  
+        recognizer.RequestRecognizerUpdate(activeGrammars);  
+        recognizer.LoadGrammarAsync(favoriteFruit);  
+        Console.WriteLine();  
+        Thread.Sleep(7000);  
+        Console.WriteLine();  
+  
+        // Unload the Farm grammar.  
+        string onlyFruit = "Only fruits will now be recognized.";  
+        recognizer.RequestRecognizerUpdate(onlyFruit);  
+        recognizer.UnloadGrammar(farmAnimals);  
+        Thread.Sleep(7000);  
+      }  
+  
+      // Keep the console window open.  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // At the update, describe what the application will recognize next.  
+    public static void recognizer_RecognizerUpdateReached(object sender, RecognizerUpdateReachedEventArgs e)  
+    {  
+      Console.WriteLine("  Update reached: " + e.UserToken);  
+    }  
+  
+    // Write the text of the recognized phrase to the console.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("    Speech recognized: " + e.Result.Text);  
+    }  
+  
+    // Write a message to the console when recognition fails.  
+    static void recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)  
+    {  
+      Console.WriteLine("    Recognition attempt failed");  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

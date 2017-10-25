@@ -1,0 +1,183 @@
+<Type Name="TrackingProfileSerializer" FullName="System.Workflow.Runtime.Tracking.TrackingProfileSerializer">
+  <TypeSignature Language="C#" Value="public class TrackingProfileSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TrackingProfileSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingProfileSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追跡プロファイル XML スキーマ定義 (XSD) を使って追跡プロファイルを XML ドキュメントにシリアル化したり、XML から追跡プロファイルに逆シリアル化したりするメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> は <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema%2A?displayProperty=nameWithType> に含まれる追跡プロファイル XSD を使用して、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> オブジェクトを有効な XML ドキュメントにシリアル化したり、有効な XML ドキュメントを <xref:System.Workflow.Runtime.Tracking.TrackingProfile> オブジェクトに逆シリアル化したりします。 <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> はシリアル化/逆シリアル化の際に検証を実行して、必要に応じて適切な例外をスローします。  
+  
+ XML ドキュメントは、追跡プロファイルを保存するための便利な形式です。 また、追跡プロファイルを非プログラミング的に作成する方法も提供します。 標準装備の <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、データベースに保存された追跡プロファイルをシリアル化および逆シリアル化するために <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.%23ctor%2A> を作成し、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> をシリアル化する方法を示しています。 このコードでは <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Serialize%2A> メソッドも使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrackingProfileSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.TrackingProfileSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.%23ctor%2A> を作成し、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> をシリアル化する方法を示しています。 このコードでは <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Serialize%2A> メソッドも使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingProfile Deserialize (System.IO.TextReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.Tracking.TrackingProfile Deserialize(class System.IO.TextReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Deserialize(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ドキュメントを格納する <see cref="T:System.IO.TextReader" />。</param>
+        <summary>追跡プロファイル XML スキーマ定義 (XSD) を使用して、テキスト リーダーに含まれる XML ドキュメントを逆シリアル化します。</summary>
+        <returns>逆シリアル化された追跡プロファイルを格納する <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化とは、正しい形式の XML ドキュメントからオブジェクトを作成することです。 <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Deserialize%2A> は <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema%2A> に含まれる追跡プロファイル XSD を使用することによって、テキスト リーダーに含まれる XML ドキュメントを有効な <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に逆シリアル化します。 逆シリアル化の際には XML ドキュメントが検証され、ドキュメントが有効でなければ <xref:System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException> がスローされます。 この例外をキャッチして <xref:System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException.ValidationEventArgs%2A> を調べると、検証エラーの原因を判別することができます。 追跡プロファイルの逆シリアル化の際にいずれかの例外が未処理のままである場合、追跡プロファイル要求の対象となったワークフロー インスタンスは終了します。  
+  
+> [!NOTE]
+>  追跡プロファイルの XML 表記を逆シリアル化せずに検証するには、独自の追跡プロファイル バリデーターを作成できます。 詳細については、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema%2A> プロパティに関するトピックを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.Workflow.Runtime.Tracking.TrackingProfileDeserializationException">
+          追跡プロファイル XSD に準拠するドキュメントが <paramref name="reader" /> 内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡プロファイル XML スキーマ定義 (XSD) を取得します。</summary>
+        <value>追跡プロファイル XSD。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> のシリアル化および逆シリアル化のために <xref:System.Workflow.Runtime.Tracking.TrackingProfile> によって使用される追跡プロファイル XSD を公開します。 また、追跡プロファイル用の独自のバリデーターを作成する目的で、このプロパティを使って追跡プロファイル XSD を取得することもできます。 こうすれば、たとえば逆シリアル化を実行しなくても追跡プロファイルの XML 表記を検証できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.TextWriter writer, System.Workflow.Runtime.Tracking.TrackingProfile profile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.TextWriter writer, class System.Workflow.Runtime.Tracking.TrackingProfile profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Serialize(System.IO.TextWriter,System.Workflow.Runtime.Tracking.TrackingProfile)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="profile" Type="System.Workflow.Runtime.Tracking.TrackingProfile" />
+      </Parameters>
+      <Docs>
+        <param name="writer">有効な <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" />。</param>
+        <param name="profile">このメソッドから返されるとき、XML ドキュメントを保持する <see cref="T:System.IO.TextWriter" /> を格納します。 このパラメーターは初期化されずに渡されます。</param>
+        <summary>追跡プロファイル XML スキーマ定義 (XSD) を使用して、追跡プロファイルを XML ドキュメントにシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化とは、有効な <xref:System.Workflow.Runtime.Tracking.TrackingProfile> から正しい形式の XML ドキュメントを作成することです。 <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Serialize%2A> は追跡プロファイル <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema%2A> を使って追跡プロファイルをシリアル化します。 `profile` は、少なくとも 1 つの有効な追跡ポイントを含む有効な <xref:System.Workflow.Runtime.Tracking.TrackingProfile> でなければなりません。 シリアル化の際には追跡プロファイルが検証され、追跡プロファイルが有効でなければ <xref:System.ArgumentException> がスローされます。 この例外をキャッチしてメッセージ プロパティを調べると、検証エラーの原因を判別することができます。 追跡プロファイルのシリアル化の際にいずれかの例外が未処理のままである場合、追跡プロファイル要求の対象となったワークフロー インスタンスは終了されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.%23ctor%2A> を作成し、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> をシリアル化する方法を示しています。 このコードでは <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Serialize%2A> メソッドも使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="profile" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="profile" /> は有効な追跡プロファイルではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

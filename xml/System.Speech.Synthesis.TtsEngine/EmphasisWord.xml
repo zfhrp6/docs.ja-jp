@@ -1,0 +1,111 @@
+<Type Name="EmphasisWord" FullName="System.Speech.Synthesis.TtsEngine.EmphasisWord">
+  <TypeSignature Language="C#" Value="public enum EmphasisWord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EmphasisWord extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.EmphasisWord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>値を列挙<see langword="EmphasisWord" />、特定の<see langword="TextFragment" />します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定されている単語のエンファシス<xref:System.Speech.Synthesis.TtsEngine.TextFragment>を通じてインスタンス、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返されるオブジェクト、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>プロパティのインスタンスを<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。  
+  
+ 各合成の音声認識エンジンが強調; を表示する方法を決定するために解放言語や方言、性別、音声で強調の性質は異なります。  
+  
+ 両方<xref:System.Speech.Synthesis.TtsEngine.EmphasisWord>と<xref:System.Speech.Synthesis.TtsEngine.EmphasisBreak>設定または取得する場合に使用できる、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>上、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>インスタンス。  
+  
+ 2 つの値は、ファクトによって区別可能性がありますの実際の値<xref:System.Speech.Synthesis.TtsEngine.EmphasisWord>より大きいかゼロの値に等しい<xref:System.Speech.Synthesis.TtsEngine.EmphasisBreak>はすべて未満の値を使用して、ゼロより<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>によって返される、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返されるオブジェクト、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>インスタンスのプロパティです。 詳細についてから、次を参照してください。 <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>、および<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisWord Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisWord.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisWord</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重点を置いて、エンジン固有の既定のレベルを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Moderate">
+      <MemberSignature Language="C#" Value="Moderate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisWord Moderate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisWord.Moderate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisWord</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中程度の強調を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisWord None = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisWord.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisWord</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された強調がないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Reduced">
+      <MemberSignature Language="C#" Value="Reduced" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisWord Reduced = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisWord.Reduced" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisWord</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削減強調を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Strong">
+      <MemberSignature Language="C#" Value="Strong" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisWord Strong = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisWord.Strong" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisWord</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重点を示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

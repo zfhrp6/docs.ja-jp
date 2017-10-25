@@ -1,0 +1,131 @@
+<Type Name="BaseAddressPrefixFilterElement" FullName="System.ServiceModel.Configuration.BaseAddressPrefixFilterElement">
+  <TypeSignature Language="C#" Value="public sealed class BaseAddressPrefixFilterElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BaseAddressPrefixFilterElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>IIS で Windows Communication Foundation (WCF) アプリケーションをホストする場合に、適切な IIS バインドを選択するためのメカニズムを提供するフィルターをパスを指定する構成要素を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プレフィックス フィルターには、サービスが特定の URI にバインドするための機構が用意されています。これにより、複数のアプリケーションを同じサイト上の同じスキームに対する別のベース アドレスを使用してホストできます。  
+  
+ IIS Web サイトは、仮想ディレクトリを含む仮想アプリケーションのコンテナーです。 サイト内のアプリケーションに、1 つ以上の IIS バインディングからアクセスできます。 IIS バインディングは、バインディング プロトコルとバインディング情報という 2 つの情報を提供します。 バインディング プロトコル (HTTP など) は通信を行うスキームを定義し、バインディング情報 (IPAddress、Port、Hostheader など) はサイトにアクセスするために使用するデータです。  
+  
+ IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。 あるサイトでホストされている [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスではスキームごとに 1 つのベース アドレスにしかバインドできないので、プレフィックス フィルター機能を使用して、ホストされるサービスの必要なベース アドレスを選択できます。  IIS によって指定される受信ベース アドレスは、オプションのプレフィックス リスト フィルターに基づいてフィルター処理されます。  
+  
+ たとえば、サイトに次のベース アドレスを格納できます。  
+  
+```  
+http://testl.fabrikam.com/Service.svc  
+http://test2.fabrikam.com/Service.svc  
+```  
+  
+ 次の構成ファイルを使用して、appdomain レベルでプレフィックス フィルターを指定できます。  
+  
+```  
+<system.serviceModel>  
+  <serviceHostingEnvironment>  
+     <baseAddressPrefixFilters>  
+        <add prefix="net.tcp://test1.fabrikam.com:8000"/>  
+        <add prefix="http://test2.fabrikam.com:9000"/>  
+    </baseAddressPrefixFilters>  
+  </serviceHostingEnvironment>  
+</system.serviceModel>  
+```  
+  
+ この例では、`net.tcp://test1.fabrikam.com:8000` と `http://test2.fabrikam.com:9000` はそれぞれのスキームにおいて、そのまま渡すことができる唯一のベース アドレスです。  
+  
+ 既定では、プレフィックスを指定しない場合、すべてのアドレスが渡されます。 プレフィックスを指定すると、そのスキームの一致するベース アドレスだけが渡されます。  
+  
+> [!NOTE]
+>  フィルターでワイルドカードはサポートされません。 また、IIS が提供する baseAddresses には、`baseAddressPrefixFilters` リストに存在しない他のスキームにバインドされたアドレスが指定される場合があります。 これらのアドレスはフィルターで除外されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BaseAddressPrefixFilterElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BaseAddressPrefixFilterElement (Uri prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">この特定のプレフィックスで始まるすべての URI でサービスがリッスンするようにするフィルター。</param>
+        <summary>特定の URI を使用して、<see cref="T:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public Uri Prefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("prefix", Options=System.Configuration.ConfigurationPropertyOptions.IsRequired | System.Configuration.ConfigurationPropertyOptions.IsKey)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベース アドレスの一部との一致に使用するプレフィックスを取得または設定します。</summary>
+        <value>ベース アドレスの一部の一致に使用される URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

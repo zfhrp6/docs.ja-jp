@@ -1,0 +1,214 @@
+<Type Name="DataGridViewDataErrorContexts" FullName="System.Windows.Forms.DataGridViewDataErrorContexts">
+  <TypeSignature Language="C#" Value="public enum DataGridViewDataErrorContexts" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewDataErrorContexts extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewDataErrorContexts" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ バインドの状態を表す<see cref="T:System.Windows.Forms.DataGridView" />データ エラーが発生したときを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体のメンバーは、データ バインドの状態を表すビットごとの OR 演算を使用して組み合わせることができます<xref:System.Windows.Forms.DataGridView>データ エラーが発生しました。 たとえば、ユーザーが、無効なセルなどの値 (日付を必要とするセルに名前を入力) を入力し、別のセルを選択、<xref:System.Windows.Forms.DataGridView>は無効なセルの値をコミットを再試行してください。 コミットが失敗したときに、<xref:System.Windows.Forms.DataGridView>が生成されます、<xref:System.Windows.Forms.DataGridView.DataError>イベントが<xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.Context%2A>コミットと CurrentCellChange の値を持ちます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、この型の使用を示しています。 この例で使用できる例の一部である[する方法: 処理エラーを発生中にデータ入力 Windows フォーム DataGridView コントロールで](~/docs/framework/winforms/controls/handle-errors-that-occur-during-data-entry-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.DataError#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.DataError/CS/errorhandling.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridView.DataError#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.DataError/VB/errorhandling.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClipboardContent">
+      <MemberSignature Language="C#" Value="ClipboardContent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts ClipboardContent = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.ClipboardContent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツをクリップボードにコピーするときに、データのエラーが発生しました。 この値は、セルの値を文字列に変換できませんでしたを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="Commit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts Commit = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.Commit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ストアに変更をコミットするとき、データのエラーが発生しました。 この値は、セルに入力されたデータは基になるデータ ストアにコミットできませんでしたを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCellChange">
+      <MemberSignature Language="C#" Value="CurrentCellChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts CurrentCellChange = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.CurrentCellChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択カーソルが別のセルに移動したときに、データのエラーが発生しました。 この値は、ユーザーでは、以前に選択したセルがある、エラーが発生場合に、セルが選択されていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Display">
+      <MemberSignature Language="C#" Value="Display" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts Display = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.Display" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースによって値が設定されたセルを表示するときに、データのエラーが発生しました。 この値は、セルに、データ ソースから値を表示できませんまたはセルに、データ ソースから値を変換するマップが存在しないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Formatting">
+      <MemberSignature Language="C#" Value="Formatting" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts Formatting = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.Formatting" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ エラーが発生は、データの書式を設定しようとするとき、データ ストアに送信されるか、データ ストアから読み込まれます。 この値は、セルへの変更が正しく書式設定に失敗したことを示します。 新しいセルの値を修正する必要があるか、セルの書式設定を変更する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialValueRestoration">
+      <MemberSignature Language="C#" Value="InitialValueRestoration" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts InitialValueRestoration = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.InitialValueRestoration" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前の値にセルを復元するときに、データのエラーが発生しました。 この値は、セルの編集と初期値にロールバックをキャンセルしようとしましたが失敗したことを示します。 これは、セルの書式設定変更されたため、初期値との互換性がない場合に発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaveControl">
+      <MemberSignature Language="C#" Value="LeaveControl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts LeaveControl = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.LeaveControl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データのエラーが発生したときに、<see cref="T:System.Windows.Forms.DataGridView" />フォーカスを失った。 この値が示す、<see cref="T:System.Windows.Forms.DataGridView" />フォーカスが失われた後、ユーザーの変更をコミットできませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Parsing">
+      <MemberSignature Language="C#" Value="Parsing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts Parsing = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.Parsing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいデータを解析するときに、データのエラーが発生しました。 この値が示す、<see cref="T:System.Windows.Forms.DataGridView" />が、ユーザーが入力したか、または基になるデータ ストアから読み込まれた新しいデータを解析できませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredSize">
+      <MemberSignature Language="C#" Value="PreferredSize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts PreferredSize = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.PreferredSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの推奨サイズを計算するときに、データのエラーが発生しました。 この値が示す、<see cref="T:System.Windows.Forms.DataGridView" />をプログラムによって、列または行のサイズ変更時に、適切な幅またはセルの高さを計算できませんでした。 これは、セルがその値を書式設定に失敗した場合に発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RowDeletion">
+      <MemberSignature Language="C#" Value="RowDeletion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts RowDeletion = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.RowDeletion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行を削除するときに、データのエラーが発生しました。 この値は、基になるデータ ストアがデータ バインド時に例外をスローしたことを示します<see cref="T:System.Windows.Forms.DataGridView" />行を削除しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Scroll">
+      <MemberSignature Language="C#" Value="Scroll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewDataErrorContexts Scroll = int32(8192)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewDataErrorContexts.Scroll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewDataErrorContexts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューに新しい領域をスクロールする場合、データのエラーが発生しました。 この値は、あるデータのエラーを含むセルをスクロールして表示プログラムから、または、スクロール バーを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

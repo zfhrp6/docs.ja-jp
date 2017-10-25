@@ -1,0 +1,365 @@
+<Type Name="LocalFileSettingsProvider" FullName="System.Configuration.LocalFileSettingsProvider">
+  <TypeSignature Language="C#" Value="public class LocalFileSettingsProvider : System.Configuration.SettingsProvider, System.Configuration.IApplicationSettingsProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LocalFileSettingsProvider extends System.Configuration.SettingsProvider implements class System.Configuration.IApplicationSettingsProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.LocalFileSettingsProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingsProvider</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Configuration.IApplicationSettingsProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>アプリケーション設定クラスの持続性を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定プロバイダーは、アプリケーション設定アーキテクチャで使用される構成データを格納するためのメカニズムを定義します。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 、1 つの既定の設定プロバイダーが含まれて<xref:System.Configuration.LocalFileSettingsProvider>、ローカル ファイル システムに構成データを格納します。 アプリケーション設定のプロパティまたはプロパティのグループに関連付けられている特定の設定プロバイダーを使用すると、<xref:System.Configuration.SettingsProviderAttribute>です。  
+  
+ 通常、クライアント プログラムに明示的にアクセスしません。 このクラス代わりに、アプリケーション設定アーキテクチャでは自動的に適切な設定プロバイダーを起動して、そのサービスが必要な場合です。 たとえば、多くのメンバーの<xref:System.Configuration.ApplicationSettingsBase>メソッドに関連する設定プロバイダーへの作業を委任します。  
+  
+ <xref:System.Configuration.LocalFileSettingsProvider>拡張子を持つ構成ファイルの設定が引き続き発生する`.config`です。 構成ファイルの内容は、XML ドキュメントとして構成されています。 内の要素として、構成データを格納するかどうか、アプリケーション レベルまたはユーザー レベルで、設定のスコープは、によって、`<applicationSettings>`または`<userSettings>`グループをそれぞれセクションです。 これらの各セクション グループが、対応するで表される<xref:System.Configuration.AppSettingsSection>または<xref:System.Configuration.ClientSettingsSection>、それぞれします。 セクションの各オブジェクトを所有し、型のオブジェクトには、構成セクション ハンドラーによって管理される<xref:System.Configuration.IConfigurationSectionHandler>です。  
+  
+ アプリケーション スコープ設定と既定のユーザー スコープ設定がという名前のファイルに格納されている`application.exe.config`、これは、実行可能ファイルと同じディレクトリに作成します。 アプリケーションの構成設定とは、読み取り専用です。 という名前のファイルで特定のユーザー データが格納されている`user.config`ユーザーのホーム ディレクトリの下に格納します。 ローミング プロファイルが有効な場合、ユーザー構成ファイルの 2 つのバージョンが存在しています。 このような場合は、ローミングのバージョンのエントリは、ローカルのユーザー構成ファイルに重複するエントリに優先します。  
+  
+ アプリケーション設定の詳細については、次を参照してください。 [Windows フォーム用のアプリケーション設定](~/docs/framework/winforms/advanced/application-settings-for-windows-forms.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalFileSettingsProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.LocalFileSettingsProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、設定、<xref:System.Configuration.LocalFileSettingsProvider.ApplicationName%2A>プロパティを<xref:System.String.Empty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.LocalFileSettingsProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在実行中のアプリケーションの名前を設定します。</summary>
+        <value>アプリケーションの表示名を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LocalFileSettingsProvider.ApplicationName%2A>と<xref:System.Configuration.Provider.ProviderBase.Name%2A>プロパティは、同様に別のアプリケーションのプロパティの名前付きの設定を区別するために役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreviousVersion">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsPropertyValue GetPreviousVersion (System.Configuration.SettingsContext context, System.Configuration.SettingsProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.SettingsPropertyValue GetPreviousVersion(class System.Configuration.SettingsContext context, class System.Configuration.SettingsProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.GetPreviousVersion(System.Configuration.SettingsContext,System.Configuration.SettingsProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="property" Type="System.Configuration.SettingsProperty" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />アプリケーション設定のプロパティが使用されていることについて説明します。</param>
+        <param name="property"><see cref="T:System.Configuration.SettingsProperty" />値が返されます。</param>
+        <summary>同じアプリケーションの以前のバージョンの名前付きの設定のプロパティの値を返します。</summary>
+        <returns>A <see cref="T:System.Configuration.SettingsPropertyValue" /> 、それ以外の場合は、アプリケーション設定を表す<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LocalFileSettingsProvider.GetPreviousVersion%2A>メソッドがと共に使用される多くの場合、<xref:System.Configuration.LocalFileSettingsProvider.Upgrade%2A>メソッドは、アプリケーションの新しいバージョンのインストール中にアプリケーションの設定を移行するとします。 詳細については、<xref:System.Configuration.LocalFileSettingsProvider.Upgrade%2A> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValues">
+      <MemberSignature Language="C#" Value="public override System.Configuration.SettingsPropertyValueCollection GetPropertyValues (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyCollection properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Configuration.SettingsPropertyValueCollection GetPropertyValues(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyCollection properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.GetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyValueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="properties" Type="System.Configuration.SettingsPropertyCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <param name="properties">A<see cref="T:System.Configuration.SettingsPropertyCollection" />取得するのには、値が設定プロパティのグループを含むです。</param>
+        <summary>指定したアプリケーション インスタンスと設定のプロパティ グループのプロパティの値の設定のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Configuration.SettingsPropertyValueCollection" />指定した設定のプロパティ グループの値を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LocalFileSettingsProvider.GetPropertyValues%2A>メソッドを管理する特殊なアプリケーションの設定の種類も<xref:System.Configuration.SpecialSetting.ConnectionString>します。 接続文字列は、特別なファイルのセクションで、構成要素で区切られた`<connectionstrings>`です。  
+  
+> [!CAUTION]
+>  <xref:System.Configuration.LocalFileSettingsProvider>すべての設定を保持するのに、暗号化を使用しません。 したがって、プレーン テキスト パスワードまたは個別に構成ファイル内の情報を暗号化などの他の対策を講じることがなくこのプロバイダーを使用して他の機密情報を格納しないでください。 詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">ユーザー スコープ設定が見つかりましたが、現在の構成では、アプリケーション スコープの設定のみがサポートされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="values" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロバイダーのフレンドリ名。</param>
+        <param name="values">このプロバイダーの構成で指定された、プロバイダー固有の属性を表す名前と値のペアのコレクション。</param>
+        <summary>プロバイダーを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset (System.Configuration.SettingsContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset(class System.Configuration.SettingsContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.Reset(System.Configuration.SettingsContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <summary>既定値に指定されたアプリケーションに関連付けられているすべてのアプリケーション設定のプロパティをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LocalFileSettingsProvider.Reset%2A>メソッドは、指定したアプリケーションの設定グループのストアドの値を復元します。 アクション<xref:System.Configuration.LocalFileSettingsProvider.Reset%2A>アプリケーション設定のプロパティのスコープによって異なります。  
+  
+-   アプリケーション スコープの設定は影響しません。  
+  
+-   ユーザー スコープ設定は、アプリケーション構成ファイルの読み取り専用のエントリとして格納されている既定値にリセットされます`application.exe.config`です。 ローミング プロファイルを使用している場合は、ローミング プロファイル内の任意のアプリケーションの設定値が、ローカルのプロファイルで検出された重複部分よりも優先されます。  
+  
+ ローミング プロファイルを使用している場合があること 2 つに注目してください。`user.config`ファイルのローカル設定のいずれか、およびローミング プロファイルのいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">ユーザー スコープ設定が見つかりましたが、現在の構成では、アプリケーション スコープの設定のみがサポートされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyValues">
+      <MemberSignature Language="C#" Value="public override void SetPropertyValues (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyValueCollection values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetPropertyValues(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyValueCollection values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.SetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="values" Type="System.Configuration.SettingsPropertyValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <param name="values">A<see cref="T:System.Configuration.SettingsPropertyValueCollection" />を設定するプロパティの設定のグループを表すです。</param>
+        <summary>指定した設定のグループのプロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定のラッパー クラスから派生した<xref:System.Configuration.ApplicationSettingsBase>が含まれています、<xref:System.Configuration.ApplicationSettingsBase.Save%2A>メソッドが呼び出され、その設定のプロパティのすべての値を保持します。 すべての設定でこのメソッドが列挙し、設定プロパティ、および呼び出しに関連付けられたプロバイダー、<xref:System.Configuration.SettingsProvider.SetPropertyValues%2A>メソッドごとに<xref:System.Configuration.SettingsProvider>実際のシリアル化操作を実行します。  
+  
+ <xref:System.Configuration.LocalFileSettingsProvider.SetPropertyValues%2A>適切な設定の対応するアプリケーションに各アプリケーションのユーザー スコープ設定のプロパティを個別にシリアル化`user.config`構成ファイル。  
+  
+ 既定では、<xref:System.Configuration.LocalFileSettingsProvider.SetPropertyValues%2A>設定プロパティの種類によっては、シリアル化方式を決定するメソッドは、次の論理シーケンスを使用します。  
+  
+1.  型が関連付けられている<xref:System.ComponentModel.TypeConverter>で、<xref:System.ComponentModel.TypeConverter.ConvertToString%2A>メソッド実装では、この変換を使用します。  
+  
+2.  XML シリアル化が使用されます。  
+  
+ ただし、推奨されるシリアル化メカニズムを使用して指定できます、<xref:System.Configuration.SettingsSerializeAsAttribute>です。 <xref:System.Configuration.LocalFileSettingsProvider>バイナリ シリアル化をサポートしていません[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。  
+  
+ ユーザー スコープ設定のプロパティ設定されている場合バックアップを既定値に明示的にし、ローカル ファイルの設定プロバイダーは、ユーザー構成ファイルから関連する設定のエントリを削除します。 このプロパティの [次へ] の読み取りアクセス権は、既定値を使用して単純にします。  
+  
+> [!CAUTION]
+>  <xref:System.Configuration.LocalFileSettingsProvider>すべての設定を保持するのに、暗号化を使用しません。 したがって、プレーン テキスト パスワードまたは個別に構成ファイル内の情報を暗号化などの他の対策を講じることがなくこのプロバイダーを使用して他の機密情報を格納しないでください。 詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">ユーザー スコープ設定が見つかりましたが、現在の構成では、アプリケーション スコープの設定のみがサポートされます。  
+  
+ または  
+  
+ 設定を保存して、構成ファイルに一般エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Upgrade">
+      <MemberSignature Language="C#" Value="public void Upgrade (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyCollection properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Upgrade(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyCollection properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LocalFileSettingsProvider.Upgrade(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="properties" Type="System.Configuration.SettingsPropertyCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <param name="properties">A<see cref="T:System.Configuration.SettingsPropertyCollection" />取得するのには、値が設定プロパティのグループを含むです。</param>
+        <summary>同じアプリケーションの以前のバージョンから以前のユーザー スコープ設定を移行しようとしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LocalFileSettingsProvider>個別の操作で、ローカルとローミングの設定を移行します。  
+  
+ <xref:System.Configuration.LocalFileSettingsProvider.Upgrade%2A>すべてのアプリケーションを設定するには、メソッドを非表示に、<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>から派生した全体の設定ラッパー クラス、またはに適用<xref:System.Configuration.ApplicationSettingsBase>です。  
+  
+ このメソッドはこの方法は、アップグレード中は、アプリケーションの種類によって異なります。  
+  
+-   各バージョン、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションが独自の独立したインストール ディレクトリに格納されています。 新しいバージョンの後に、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションがインストールされているし、新しいバージョンが最初に実行時に内部ロジックは自動的に呼び出す<xref:System.Configuration.LocalFileSettingsProvider.Upgrade%2A>新しいバージョンに共通のすべてのアプリケーション設定を移行します。 詳細については、「[ClickOnce とアプリケーション設定](http://msdn.microsoft.com/library/891caba6-faef-4a3c-8f71-60e6fadb60eb)」を参照してください。  
+  
+-   標準の Windows フォームおよびコンソール アプリケーションを呼び出す必要があります手動で<xref:System.Configuration.LocalFileSettingsProvider.Upgrade%2A>このようなアプリケーションは最初の実行時を決定する、自動の一般的な方法がないため、します。 2 つの一般的な方法はから、インストール プログラムまたは永続化されたプロパティを使用して、アプリケーション自体からを使用して多くの場合のような名前`IsFirstRun`です。  
+  
+ あるバージョンについては、新しいアプリケーション設定を移行する、必要があります可能になって、古いバージョンのアプリケーション設定の読み込みと読み取りに注意してください。 そのため、アプリケーションの新しいと以前のバージョンと互換性のあるラッパー クラスでなければなりません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">ユーザー スコープ設定が見つかりましたが、現在の構成では、アプリケーション スコープの設定のみがサポートされます。  
+  
+ または  
+  
+ 構成ファイルの以前のバージョンにアクセスできませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

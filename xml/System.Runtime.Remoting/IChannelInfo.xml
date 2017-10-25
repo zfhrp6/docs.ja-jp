@@ -1,0 +1,52 @@
+<Type Name="IChannelInfo" FullName="System.Runtime.Remoting.IChannelInfo">
+  <TypeSignature Language="C#" Value="public interface IChannelInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.IChannelInfo" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>と共に示されているカスタム チャネル情報を提供、<see cref="T:System.Runtime.Remoting.ObjRef" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、<xref:System.Runtime.Remoting.ObjRef.ChannelInfo%2A?displayProperty=nameWithType>プロパティです。 トランスポート固有の情報が提供されたプロセスの呼び出しを受け取ることができるチャネル、またはアプリケーション ドメインのオブジェクトが存在する場所へのアクセスを提供します。 カスタムのビルド時に、このインターフェイスを使用する場合がありますも<xref:System.Runtime.Remoting.ObjRef>クラスです。  
+  
+ 既存のオブジェクト インスタンスが生成するためにマーシャ リングされる、 <xref:System.Runtime.Remoting.ObjRef>、<xref:System.Runtime.Remoting.IChannelInfo.ChannelData%2A>がチャネルからコピー (を参照してください<xref:System.Runtime.Remoting.Channels.IChannelReceiver>) チャネルを登録してに格納されているため、<xref:System.Runtime.Remoting.ObjRef>です。 ときに、<xref:System.Runtime.Remoting.ObjRef>その送信先にマーシャ リングは、<xref:System.Runtime.Remoting.IChannelInfo.ChannelData%2A>によって提供される、<xref:System.Runtime.Remoting.IChannelInfo>インターフェイスを調べたり、そのプロセスまたはアプリケーション ドメイン内の対応するチャネルでプロキシと、サーバー オブジェクト間の通信を管理するトランスポート メッセージ シンクを作成するために使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ChannelData">
+      <MemberSignature Language="C#" Value="public object[] ChannelData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object[] ChannelData" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.IChannelInfo.ChannelData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、各チャネルのチャネルのデータを設定します。</summary>
+        <value>各チャネルのチャネルのデータ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1541 @@
+<Type Name="PerformanceCounter" FullName="System.Diagnostics.PerformanceCounter">
+  <TypeSignature Language="C#" Value="public sealed class PerformanceCounter : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PerformanceCounter extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounter" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.InstallerType(typeof(System.Diagnostics.PerformanceCounterInstaller))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows NT パフォーマンス カウンター コンポーネントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceCounter>定義済みの既存またはカスタムのカウンターを読み取ると公開 (書き込み) のパフォーマンスの両方のコンポーネントを使用できますのカスタム カウンターにデータ。  
+  
+ 多数の定義済みカウンターで、Windows パフォーマンス モニターの一覧がある[カウンターの追加 ダイアログ ボックス](http://go.microsoft.com/fwlink/p/?LinkId=257854)です。 .NET Framework のパフォーマンス カウンターの詳細についてを参照してください。[パフォーマンス カウンター](~/docs/framework/debug-trace-profile/performance-counters.md)です。  
+  
+ この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+> [!IMPORTANT]
+>  1.0 および 1.1 の .NET Framework のバージョンでは、このクラスには、完全に信頼できる即時呼び出し元が必要です。 このクラスは .NET Framework version 2.0 から始めて、必要があります<xref:System.Diagnostics.PerformanceCounterPermission>特定のアクション。 強くお勧めする<xref:System.Diagnostics.PerformanceCounterPermission>信頼度の低いコードに付与できません。  パフォーマンス カウンターを読み書きする機能には、実行中のプロセスと情報の取得の列挙などのアクションを実行するコードができます。  
+>   
+>  さらに、渡す、<xref:System.Diagnostics.PerformanceCounter>オブジェクトを信頼性の低いコードには、セキュリティ上の問題を作成できます。 渡してパフォーマンス カウンター オブジェクトなど、<xref:System.Diagnostics.PerformanceCounterCategory>または<xref:System.Diagnostics.PerformanceCounter>を信頼性の低いコード。  
+  
+ パフォーマンス カウンターを読み取ったりするのインスタンスを作成、<xref:System.Diagnostics.PerformanceCounter>クラスは、設定、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、し、必要に応じて、<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>または<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティ、および 呼び出し、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>パフォーマンス カウンターの読み取りを実行するメソッド。  
+  
+ パフォーマンス カウンター データを発行するを使用して 1 つまたは複数のカスタム カウンターを作成、<xref:System.Diagnostics.PerformanceCounterCategory.Create%2A?displayProperty=nameWithType>メソッドのインスタンスを作成、<xref:System.Diagnostics.PerformanceCounter>クラスは、設定、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>し、必要に応じて<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>または<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティ、およびを呼び出します、 <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>、 <xref:System.Diagnostics.PerformanceCounter.Increment%2A>、または<xref:System.Diagnostics.PerformanceCounter.Decrement%2A>メソッド、またはセット、<xref:System.Diagnostics.PerformanceCounter.RawValue%2A>カスタムのカウンターの値を変更するプロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.PerformanceCounter.Increment%2A>、 <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>、および<xref:System.Diagnostics.PerformanceCounter.Decrement%2A>メソッドでは、インタロックを使用して、カウンターの値を更新します。 これにより、マルチ スレッドまたはマルチ プロセスのシナリオも、パフォーマンスの低下の結果で、カウンターの値を正確に維持できます。 インタロック精度を必要としない場合の操作を提供、更新することができます、 <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> 5 台までのプロパティを直接倍パフォーマンスが向上します。  ただし、マルチ スレッドのシナリオで、カウンターの値を一部の更新プログラムがあります無視されます、不正確なデータの結果として得られます。  
+  
+ このカウンターは、パフォーマンスのでは、データの収集メカニズムです。 レジストリでは、それぞれがシステムの機能の特定の領域に関連するすべてのカウンターの名前を格納します。 例には、プロセッサのビジー時間、メモリ使用量、またはネットワーク接続経由で受信したバイト数が含まれます。  
+  
+ 各カウンターは、その名前と場所を一意に識別します。 カウンター情報をファイルのパスには、ドライブ、ディレクトリ、1 つ以上のサブディレクトリおよびファイル名が含まれている、同じ方法では、4 つの要素で構成されます。 コンピューター、カテゴリ、カテゴリ インスタンスおよびカウンターの名前。  
+  
+ カウンター情報は、カテゴリ、または、カウンター データを測定するパフォーマンス オブジェクトに含める必要があります。 コンピューターのカテゴリには、プロセッサ、ディスク、およびメモリなどの物理的なコンポーネントが含まれます。 プロセスとスレッドなど、システム カテゴリもあります。 各カテゴリは、コンピューター内の機能の要素に関連して、標準的なカウンターのセットが割り当てられてです。 これらのオブジェクトが Windows 2000 のシステム モニター カウンターの追加 ダイアログ ボックスのパフォーマンス オブジェクトのドロップダウン リストに表示されているし、カウンターのパスに含める必要があります。 パフォーマンス データは、関連するカテゴリはによってグループ化されます。  
+  
+ 場合によっては、同じカテゴリの複数のコピーが存在できます。 たとえば、いくつかのプロセスとスレッドを同時に実行し、一部のコンピューターを含む 1 つ以上のプロセッサ。 カテゴリのコピーには、カテゴリ インスタンスと呼ばれ、各インスタンスに割り当てられている標準のカウンターのセットがあります。 カテゴリには複数のインスタンスを設定できる場合は、カウンター情報でインスタンス仕様を含める必要があります。  
+  
+ 必要な計算を実行するため、またはそれ以前の初期値を必要とするカウンターのパフォーマンス データを取得する呼び出し、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>メソッドを 2 回および使用するアプリケーションで必要な情報が返されます。  
+  
+> [!NOTE]
+>  パフォーマンス カウンターのカテゴリと共にインストールされる、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]独自のメモリを持つ各パフォーマンス カウンター カテゴリ別の共有メモリを使用します。 別の共有メモリのサイズを指定するには、レジストリ キー hkey_local_machine \system\currentcontrolset\services に FileMappingSize をという名前の DWORD を作成することで\\*\<カテゴリ名 >*\Performance です。 FileMappingSize 値は、カテゴリの共有メモリのサイズに設定されます。 既定のサイズは、10 進 131, 072 です。 FileMappingSize 値が存在しない場合、`fileMappingSize`属性の値を`performanceCounters`Machine.config ファイルで指定された要素を使用すると、構成ファイルの処理に追加のオーバーヘッドを発生させます。 レジストリでファイルの割り当てサイズを設定して、アプリケーションの起動時のパフォーマンスの向上を実感できます。 ファイルの割り当てサイズの詳細については、次を参照してください。 [ &lt;performanceCounters&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Diagnostics.PerformanceCounter>クラスを作成および使用して、<xref:System.Diagnostics.PerformanceCounterType.AverageCount64>カウンターの種類。 例では、カテゴリを作成、カウンターを設定、カウンター、および呼び出しからデータを収集、<xref:System.Diagnostics.CounterSampleCalculator>パフォーマンス カウンター データを解釈するクラス。 中間および最終的な結果は、コンソール ウィンドウに表示されます。 その他のパフォーマンス カウンターの種類の他の例を参照してください、<xref:System.Diagnostics.PerformanceCounterType>列挙します。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>読み取り専用の新しいインスタンスを初期化、<see cref="T:System.Diagnostics.PerformanceCounter" />クラスは、システムとカスタム パフォーマンス カウンターのインスタンスを関連付けることがない場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード コンス トラクターのセットの<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>と<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティを空の文字列 ("")、設定と、<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティをローカル コンピューター ("です。")。  
+  
+ このコンス トラクターは、パフォーマンス カウンターを初期化しないため、ローカル コンピューターの既存のカウンターのインスタンスは関連付けられません。 特定のパフォーマンス カウンターを指すように設定、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、し、必要に応じて、<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>と<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>の他のプロパティを読み取りまたはカウンターからを読み取る前にプロパティです。 パフォーマンス カウンターに書き込む、設定、<xref:System.Diagnostics.PerformanceCounter.ReadOnly%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このメンバーに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値: <xref:System.Security.Permissions.HostProtectionResource.Synchronization> & #124 です。<xref:System.Security.Permissions.HostProtectionResource.SharedState>. <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の既定のインスタンスを作成する、<xref:System.Diagnostics.PerformanceCounter>クラスです。 インスタンスを作成した後、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティの値は、セット、およびへの呼び出しの結果、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>メソッドが表示されます。  
+  
+ [!code-cpp[PerfCounter#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerfCounter/CPP/perfcounter.cpp#1)]
+ [!code-csharp[PerfCounter#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerfCounter/CS/perfcounter.cs#1)]
+ [!code-vb[PerfCounter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerfCounter/VB/perfcounter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="categoryName" Type="System.String" />
+        <Parameter Name="counterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="categoryName">このパフォーマンス カウンターが関連付けられているパフォーマンス カウンター カテゴリ (パフォーマンス オブジェクト) の名前。</param>
+        <param name="counterName">パフォーマンス カウンターの名前です。</param>
+        <summary>読み取り専用の新しいインスタンスを初期化、<see cref="T:System.Diagnostics.PerformanceCounter" />クラスし、指定したシステムまたはローカル コンピューター上のカスタム パフォーマンス カウンターに関連付けます。 このコンス トラクターでは、カテゴリの 1 つのインスタンスである必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター文字列は区別されません。  
+  
+ このオーバー ロードを使用して、1 つのパフォーマンス カウンター カテゴリのインスタンスが含まれるカテゴリに属している、ローカル コンピューターのカウンターにアクセスします。 このポイントをこのコンス トラクターを使用しようとするかどうかは<xref:System.Diagnostics.PerformanceCounter>インスタンス カテゴリに複数のインスタンス、コンス トラクターの例外スローが含まれています。 このオーバー ロードできる読み取り専用アクセスまたは読み取り/書き込みカウンターが読み取り専用モードにします。 A<xref:System.Diagnostics.PerformanceCounter>カウンター自体が読み取り/書き込み場合でもこのオーバー ロードを使用して作成されたインスタンスが、カウンターを書き込むことはできません。  
+  
+ コンス トラクターのセットのこのオーバー ロード、<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>と<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>プロパティの値にするに渡す、設定、<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティをローカル コンピューターに"です。"、設定と、<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティを空の文字列 ("") です。  
+  
+ このコンス トラクターは、パフォーマンス カウンターを初期化し、インスタンスをローカル コンピューターの既存のカウンター (システムまたはカスタムのカウンター) に関連付けます。 指定した値、<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>と<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>プロパティは、ローカル コンピューター上の既存のパフォーマンス カウンターを指す必要があります。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="categoryName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="counterName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ 指定されたカテゴリが存在しません。  
+  
+ または  
+  
+ 指定したカテゴリは、複数インスタンスとしてマークされ、パフォーマンス カウンターをインスタンス名で作成する必要があります。  
+  
+ または  
+  
+ <paramref name="categoryName" />および<paramref name="counterName" />異なる言語にローカライズされています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="categoryName" /> または <paramref name="counterName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, bool readOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, bool readOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="categoryName" Type="System.String" />
+        <Parameter Name="counterName" Type="System.String" />
+        <Parameter Name="readOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="categoryName">このパフォーマンス カウンターが関連付けられているパフォーマンス カウンター カテゴリ (パフォーマンス オブジェクト) の名前。</param>
+        <param name="counterName">パフォーマンス カウンターの名前です。</param>
+        <param name="readOnly">
+          <see langword="true" />カウンターにアクセスして読み取り専用モードで (ただし、カウンター自体は、読み取り/書き込みをする可能性があります) にします。<see langword="false" />カウンターにアクセスして読み取り/書き込みモードにします。</param>
+        <summary>初期化の新しい読み取り専用または読み取り/書き込みインスタンスの<see cref="T:System.Diagnostics.PerformanceCounter" />クラスし、指定したシステムまたはローカル コンピューター上のカスタム パフォーマンス カウンターに関連付けます。 このコンス トラクターは、カテゴリが 1 つのインスタンスを含めることが必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター文字列は区別されません。  
+  
+ 読み取り専用アクセスまたは読み取り/書き込みの 1 つのパフォーマンス カウンター カテゴリのインスタンスが含まれるカテゴリに属しているローカル コンピューターのカウンターには、このオーバー ロードを使用します。 このポイントをこのコンス トラクターを使用しようとするかどうかは<xref:System.Diagnostics.PerformanceCounter>インスタンス カテゴリに複数のインスタンス、コンス トラクターの例外スローが含まれています。  
+  
+ コンス トラクターのセットのこのオーバー ロード、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>と<xref:System.Diagnostics.PerformanceCounter.ReadOnly%2A>プロパティの値にするに渡す、設定、<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティをローカル コンピューターに"です。"、設定と、<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティを空の文字列 ("") です。  
+  
+ このコンス トラクターは、パフォーマンス カウンターを初期化し、インスタンスをローカル コンピューターの既存のカウンター (システムまたはカスタムのカウンター) に関連付けます。 指定した値、<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>と<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>プロパティは、ローカル コンピューター上の既存のパフォーマンス カウンターを指す必要があります。 ポイントするパフォーマンス カウンターのインスタンスが有効でない場合、コンス トラクターの呼び出しは例外をスローします。  
+  
+> [!NOTE]
+>  システム カウンターへの接続にこのオーバー ロードを使用できますが、システム カウンターに書き込むことはできません。 そのため、設定`readOnly`に`false`システム カウンターへの接続によってが生じる場合、コンス トラクターは例外をスローします。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:System.Diagnostics.PerformanceCounter>クラスです。 カテゴリ名、カウンター名、およびカウンターが読み取り専用ではないことを示すフラグ値で渡します。 このコード例の例の一部である、<xref:System.Diagnostics.PerformanceCounter>クラスです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#2](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#2)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#2](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#2)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="categoryName" />空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="counterName" />空の文字列 ("") です。  
+  
+ または  
+  
+ 指定されたカテゴリが存在しません。 (場合<paramref name="readOnly" />は<see langword="true" />)。  
+  
+ または  
+  
+ 指定したカテゴリは、.NET Framework のカスタム カテゴリではない (場合<paramref name="readOnly" />は<see langword="false" />)。  
+  
+ または  
+  
+ 指定したカテゴリは、複数インスタンスとしてマークされ、パフォーマンス カウンターをインスタンス名で作成する必要があります。  
+  
+ または  
+  
+ <paramref name="categoryName" />および<paramref name="counterName" />異なる言語にローカライズされています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="categoryName" /> または <paramref name="counterName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, string instanceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, string instanceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="categoryName" Type="System.String" />
+        <Parameter Name="counterName" Type="System.String" />
+        <Parameter Name="instanceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="categoryName">このパフォーマンス カウンターが関連付けられているパフォーマンス カウンター カテゴリ (パフォーマンス オブジェクト) の名前。</param>
+        <param name="counterName">パフォーマンス カウンターの名前です。</param>
+        <param name="instanceName">パフォーマンス カウンターのカテゴリ インスタンスまたは空の文字列の名前 ("")、カテゴリには、1 つのインスタンスが含まれている場合、します。</param>
+        <summary>読み取り専用の新しいインスタンスを初期化、<see cref="T:System.Diagnostics.PerformanceCounter" />クラスし、指定したシステムまたはローカル コンピューター上のカスタム パフォーマンス カウンターと、カテゴリ インスタンスに関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター文字列は区別されません。  
+  
+ このオーバー ロード コンス トラクターのセットの<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティの値にするで渡すし、設定、<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティをローカル コンピューターに"です。"です。  
+  
+ このコンス トラクターは、パフォーマンス カウンターを初期化し、インスタンスをローカル コンピューターの既存のカウンター (システムまたはカスタムのカウンター) に関連付けます。 指定した値、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティは、ローカル コンピューター上の既存のパフォーマンス カウンターを指す必要があります。 をポイントするパフォーマンス カウンターのインスタンスが有効でない場合、コンス トラクターの呼び出しは例外をスローします。  
+  
+ このオーバー ロードできる読み取り専用アクセスまたは読み取り/書き込みカウンターが読み取り専用モードにします。 A<xref:System.Diagnostics.PerformanceCounter>カウンター自体が読み取り/書き込み場合でもこのオーバー ロードを使用して作成されたインスタンスが、カウンターを書き込むことはできません。  
+  
+ パフォーマンス カテゴリのインスタンスを作成するには、指定、`instanceName`上、<xref:System.Diagnostics.PerformanceCounter.%23ctor%2A>コンス トラクターです。 カテゴリのインスタンスを指定して場合`instanceName`既に存在する、新しいオブジェクトは、既存のカテゴリのインスタンスを参照します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="categoryName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="counterName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ 指定されたカテゴリが正しくありません。  
+  
+ または  
+  
+ 指定したカテゴリは、複数インスタンスとしてマークされ、パフォーマンス カウンターをインスタンス名で作成する必要があります。  
+  
+ または  
+  
+ <paramref name="instanceName" />127 文字を超えています。  
+  
+ または  
+  
+ <paramref name="categoryName" />および<paramref name="counterName" />異なる言語にローカライズされています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="categoryName" /> または <paramref name="counterName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, string instanceName, bool readOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, string instanceName, bool readOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="categoryName" Type="System.String" />
+        <Parameter Name="counterName" Type="System.String" />
+        <Parameter Name="instanceName" Type="System.String" />
+        <Parameter Name="readOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="categoryName">このパフォーマンス カウンターが関連付けられているパフォーマンス カウンター カテゴリ (パフォーマンス オブジェクト) の名前。</param>
+        <param name="counterName">パフォーマンス カウンターの名前です。</param>
+        <param name="instanceName">パフォーマンス カウンターのカテゴリ インスタンスまたは空の文字列の名前 ("")、カテゴリには、1 つのインスタンスが含まれている場合、します。</param>
+        <param name="readOnly">
+          <see langword="true" />読み取り専用モードであるカウンターにアクセスするには<see langword="false" />読み取り/書き込みモードでのカウンターにアクセスします。</param>
+        <summary>初期化の新しい読み取り専用または読み取り/書き込みインスタンスの<see cref="T:System.Diagnostics.PerformanceCounter" />クラスし、指定したシステムまたはローカル コンピューター上のカスタム パフォーマンス カウンターと、カテゴリ インスタンスに関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター文字列は区別されません。  
+  
+ このオーバー ロードを使用して、いずれかのパフォーマンス カウンターにアクセスする読み取り専用または読み取り/書き込みモードです。  
+  
+ このオーバー ロード コンス トラクターのセットの<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>し、セット内のプロパティを値を渡す、<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティをローカル コンピューターに"です。"です。  
+  
+ このコンス トラクターは、パフォーマンス カウンターを初期化し、インスタンスをローカル コンピューターの既存のカウンター (システムまたはカスタムのカウンター) に関連付けます。 指定した値、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティは、ローカル コンピューター上の既存のパフォーマンス カウンターを指す必要があります。 ポイントするパフォーマンス カウンターのインスタンスが有効でない場合、コンス トラクターの呼び出しは例外をスローします。  
+  
+> [!NOTE]
+>  システム カウンターへの接続にこのオーバー ロードを使用できますが、システム カウンターに書き込むことはできません。 そのため、設定`readOnly`に`false`システム カウンターへの接続によってが生じる場合、コンス トラクターは例外をスローします。  
+  
+ パフォーマンス カテゴリのインスタンスを作成するには、指定、`instanceName`上、<xref:System.Diagnostics.PerformanceCounter.%23ctor%2A>コンス トラクターです。 カテゴリのインスタンスを指定して場合`instanceName`既に存在する、新しいオブジェクトは、既存のカテゴリのインスタンスを参照します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="categoryName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="counterName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ このカウンターの読み取り/書き込みアクセス許可を要求された設定が正しくありません。  
+  
+ または  
+  
+ 指定されたカテゴリが存在しません (場合<paramref name="readOnly" />は<see langword="true" />)。  
+  
+ または  
+  
+ 指定したカテゴリは、.NET Framework のカスタム カテゴリではない (場合<paramref name="readOnly" />は<see langword="false" />)。  
+  
+ または  
+  
+ 指定したカテゴリは、複数インスタンスとしてマークされ、パフォーマンス カウンターをインスタンス名で作成する必要があります。  
+  
+ または  
+  
+ <paramref name="instanceName" />127 文字を超えています。  
+  
+ または  
+  
+ <paramref name="categoryName" />および<paramref name="counterName" />異なる言語にローカライズされています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="categoryName" /> または <paramref name="counterName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, string instanceName, string machineName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, string instanceName, string machineName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="categoryName" Type="System.String" />
+        <Parameter Name="counterName" Type="System.String" />
+        <Parameter Name="instanceName" Type="System.String" />
+        <Parameter Name="machineName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="categoryName">このパフォーマンス カウンターが関連付けられているパフォーマンス カウンター カテゴリ (パフォーマンス オブジェクト) の名前。</param>
+        <param name="counterName">パフォーマンス カウンターの名前です。</param>
+        <param name="instanceName">パフォーマンス カウンターのカテゴリ インスタンスまたは空の文字列の名前 ("")、カテゴリには、1 つのインスタンスが含まれている場合、します。</param>
+        <param name="machineName">パフォーマンス カウンターとそれに関連付けられているカテゴリが存在するコンピューター。</param>
+        <summary>読み取り専用の新しいインスタンスを初期化、<see cref="T:System.Diagnostics.PerformanceCounter" />クラスし、指定したシステムまたはカスタム パフォーマンス カウンターと、カテゴリ インスタンスで、指定したコンピューターに関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター文字列は区別されません。  
+  
+ このオーバー ロード コンス トラクターのセットの<xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、 <xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>、および<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティに渡す値にします。  
+  
+ このコンス トラクターは、パフォーマンス カウンターを初期化し、インスタンスを指定したコンピューターの既存のカウンター (システムまたはカスタムのカウンター) に関連付けます。 指定した値、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>と<xref:System.Diagnostics.PerformanceCounter.MachineName%2A>プロパティは、既存のパフォーマンス カウンターを指す必要があります。 をポイントするパフォーマンス カウンターのインスタンスが有効でない場合、コンス トラクターの呼び出しは例外をスローします。 このオーバー ロードできる読み取り専用アクセスまたは読み取り/書き込みカウンターが読み取り専用モードにします。 A<xref:System.Diagnostics.PerformanceCounter>カウンター自体が読み取り/書き込み場合でもこのオーバー ロードを使用して作成されたインスタンスが、カウンターを書き込むことはできません。  
+  
+> [!NOTE]
+>  リモートのパフォーマンス カウンターを記述することはできません。 読み取り/書き込みインスタンスを指定できるオーバー ロードはありません、<xref:System.Diagnostics.PerformanceCounter>リモート コンピューターに接続するクラス。  
+  
+ パフォーマンス カテゴリのインスタンスを作成するには、指定、`instanceName`上、<xref:System.Diagnostics.PerformanceCounter.%23ctor%2A>コンス トラクターです。 カテゴリのインスタンスを指定して場合`instanceName`既に存在する、新しいオブジェクトは、既存のカテゴリのインスタンスを参照します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+> [!NOTE]
+>  Windows Vista でリモート コンピューターがワークグループのメンバーである必要がありますローカル ユーザー アカウントは、フィルター選択されていないと、管理者アカウントに昇格することができるように、UAC を無効にします。 セキュリティ上の理由は、UAC を無効にするとは、最後の手段にする必要があります。 UAC を無効にする方法については、次を参照してください。[ユーザー アカウント制御と WMI](http://go.microsoft.com/fwlink/?LinkId=91617)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="categoryName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="counterName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ このカウンターの読み取り/書き込みアクセス許可を要求された設定が正しくありません。  
+  
+ または  
+  
+ このカウンターは指定したコンピューター上に存在しません。  
+  
+ または  
+  
+ 指定したカテゴリは、複数インスタンスとしてマークされ、パフォーマンス カウンターをインスタンス名で作成する必要があります。  
+  
+ または  
+  
+ <paramref name="instanceName" />127 文字を超えています。  
+  
+ または  
+  
+ <paramref name="categoryName" />および<paramref name="counterName" />異なる言語にローカライズされています。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="machineName" />パラメーターが無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="categoryName" /> または <paramref name="counterName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を開始、<see cref="T:System.Diagnostics.PerformanceCounter" />インスタンスまたは別のコンポーネントをフォームで使用します。 初期化は実行時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]デザイン環境では、このメソッドを使用して、フォームまたは別のコンポーネントに使用されるコンポーネントの初期化を開始します。 <xref:System.Diagnostics.PerformanceCounter.EndInit%2A>メソッドが初期化を終了します。 使用して、<xref:System.Diagnostics.PerformanceCounter.BeginInit%2A>と<xref:System.Diagnostics.PerformanceCounter.EndInit%2A>メソッド使用されないように、コンポーネントは完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryName">
+      <MemberSignature Language="C#" Value="public string CategoryName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CategoryName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CategoryName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.CategoryValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このパフォーマンス カウンターのパフォーマンス カウンターのカテゴリの名前を設定します。</summary>
+        <value>このパフォーマンス カウンターが関連付けられているパフォーマンス カウンター カテゴリ (パフォーマンス オブジェクト) の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>に表示される、`Performance Object`パフォーマンス カウンター マネージャー MMC スナップインのフィールドでの`Add Counter` ダイアログ ボックス。  
+  
+ パフォーマンス カウンターは、カテゴリ、またはコンピューター上のパフォーマンス オブジェクトの動作を監視します。 カテゴリには、(プロセッサ、ディスク、およびメモリ) などの物理的なコンポーネントおよびプロセスとスレッド) などのシステム オブジェクトが含まれます。 同じパフォーマンス オブジェクトに関連付けられているシステム カウンターは、共通のフォーカスを示すカテゴリにグループ化されます。 インスタンスを作成する場合、<xref:System.Diagnostics.PerformanceCounter>クラス、まずを指定するカテゴリをコンポーネントが対話する、そのカテゴリからカウンターを選択します。  
+  
+ たとえば、1 つの Windows カウンター カテゴリは、Memory カテゴリです。 このカテゴリ内のシステム カウンターは、使用可能なバイト数とキャッシュのバイト数などのメモリ データを追跡します。 インスタンスを作成すると、アプリケーションでキャッシュされたバイト数を使用する場合は、<xref:System.Diagnostics.PerformanceCounter>コンポーネント、メモリ カテゴリへの接続し、そのカテゴリから (この場合、キャッシュされたバイト数) を適切なカウンターを選択します。  
+  
+ システム、数以上のカウンター カテゴリで使用できる可能性がありますにやり取りする最も頻繁に、カテゴリは、キャッシュ、メモリ、オブジェクト、PhysicalDisk、プロセス、プロセッサ、サーバー、システム、およびスレッドのカテゴリ。  
+  
+   
+  
+## Examples  
+ 次のコード例の既定のインスタンスを作成する、<xref:System.Diagnostics.PerformanceCounter>クラスです。 インスタンスを作成した後、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティの値は、セット、およびへの呼び出しの結果、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>メソッドが表示されます。  
+  
+ [!code-cpp[PerfCounter#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerfCounter/CPP/perfcounter.cpp#1)]
+ [!code-csharp[PerfCounter#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerfCounter/CS/perfcounter.cs#1)]
+ [!code-vb[PerfCounter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerfCounter/VB/perfcounter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Diagnostics.PerformanceCounter.CategoryName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パフォーマンス カウンターを終了し、このパフォーマンス カウンターのインスタンスによって割り当てられたすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けると、この<xref:System.Diagnostics.PerformanceCounter>サーバーでは、システム上に存在するパフォーマンス カウンターのインスタンスが、インスタンスを初期化し、カウンター サンプルの情報を格納するメモリを割り当てます。 <xref:System.Diagnostics.PerformanceCounter.Close%2A>メソッドは、オブジェクトによって割り当てられたリソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseSharedResources">
+      <MemberSignature Language="C#" Value="public static void CloseSharedResources ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CloseSharedResources() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.CloseSharedResources" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カウンターによって割り当てられたパフォーマンス カウンター ライブラリ共有の状態を解放します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを読み取っています。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterHelp">
+      <MemberSignature Language="C#" Value="public string CounterHelp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CounterHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CounterHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("A description describing the counter.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このパフォーマンス カウンターの説明を取得します。</summary>
+        <value>項目またはこのパフォーマンス カウンターを測定する数量の説明です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンス カウンター マネージャー MMC スナップインの表示でのカウンターの追加 ダイアログ ボックス、<xref:System.Diagnostics.PerformanceCounter.CounterHelp%2A>テキスト ユーザーが、カウンターの一覧からカウンターを選択し、説明 ボタンをクリックします。  
+  
+ 新しいカウンターを作成するときに使用して、<xref:System.Diagnostics.PerformanceCounter.CounterHelp%2A>カウンターの監視対象を説明するテキストを行うので、ユーザーは、システム モニターのディスプレイにカウンターを追加するかどうかを判別できます。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Diagnostics.PerformanceCounter" />インスタンスに関連付けられていないパフォーマンス カウンター。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを読み取っています。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterName">
+      <MemberSignature Language="C#" Value="public string CounterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CounterName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CounterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.CounterNameConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているパフォーマンス カウンターの名前を取得または<see cref="T:System.Diagnostics.PerformanceCounter" />インスタンス。</summary>
+        <value>カウントする量を大まかに説明すると、カウンターの名前。 この名前が表示されるパフォーマンス カウンター マネージャー MMC のカウンターの一覧で、スナップインの [カウンターの追加] ダイアログ ボックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な既存のカウンターの一覧を取得すると、Windows パフォーマンス マネージャーからの[カウンターの追加 ダイアログ ボックス](http://go.microsoft.com/fwlink/p/?LinkId=257854)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Diagnostics.PerformanceCounter.CounterName%2A>プロパティを標準的なカウンター名。  
+  
+ [!code-cpp[PerfCounter#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerfCounter/CPP/perfcounter.cpp#1)]
+ [!code-csharp[PerfCounter#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerfCounter/CS/perfcounter.cs#1)]
+ [!code-vb[PerfCounter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerfCounter/VB/perfcounter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Diagnostics.PerformanceCounter.CounterName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterType CounterType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterType CounterType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CounterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The type of the counter.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連するパフォーマンス カウンターのカウンターの種類を取得します。</summary>
+        <value>A<see cref="T:System.Diagnostics.PerformanceCounterType" />両方を説明するカウンターが監視のアプリケーションとが含まれている値の性質とやり取りする方法 (たとえば、計算された、または計算されない)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceCounterType>列挙型にはと対話できるパフォーマンス カウンターの種類が含まれています。 一部のカウンターの種類は、システムが以降に測定されたカウンターの平均値などの計算値を表します。 その他の種類は、raw、または計算されない値を表します。 次の表は、最も頻繁にやり取りするカウンターの種類を示します。  
+  
+|カウンターの役割|PerformanceCounterType 値|例|  
+|------------------------------|----------------------------------|-------------|  
+|アイテムまたは操作の簡単なカウントを維持します。|`NumberOfItems32`|32 ビット整数として受信した注文の数を追跡します。|  
+|容量の大きい単純なカウントを維持します。|`NumberOfItems64`|サイトでは、大量の注文の数を追跡するには、64 ビット整数値として格納されます。|  
+|項目または 1 秒あたりの操作の数を追跡します。|`RateOfCountsPerSecond32`|サイトで 1 秒あたりに受信した命令を追跡します。|  
+|項目または 1 秒あたりの操作の容量の大きい数を追跡します。|`RateOfCountsPerSecond64`|非常に高いボリュームを持つサイトで 1 秒あたり受信注文を追跡します。|  
+|プロセスを実行するか、項目を処理する平均時間を計算します。|`AverageTimer32`|注文の処理にかかる平均時間を計算します。|  
+  
+ 対応するベース カウンターの使用は、型のカウンターを作成するときに、カウンターとでベースを宣言する必要があります、<xref:System.Diagnostics.CounterCreationDataCollection>に渡す、<xref:System.Diagnostics.PerformanceCounterCategory.Create%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを読み取っています。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrement">
+      <MemberSignature Language="C#" Value="public long Decrement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 Decrement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Decrement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デクリメント効率的なアトミック操作によっていずれかで関連付けられたパフォーマンス カウンター。</summary>
+        <returns>減らされたカウンター値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム カウンターのみを記述することができます。 すべてのシステム カウンターとは、読み取り専用です。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.PerformanceCounter.Increment%2A>、 <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>、および<xref:System.Diagnostics.PerformanceCounter.Decrement%2A>メソッドでは、インタロックを使用して、カウンターの値を更新します。 これにより、マルチ スレッドまたはマルチ プロセスのシナリオも、パフォーマンスの低下の結果で、カウンターの値を正確に維持できます。 インタロック精度を必要としない場合の操作を提供、更新することができます、 <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> 5 台までのプロパティを直接倍パフォーマンスが向上します。  ただし、マルチ スレッドのシナリオで、カウンターの値を一部の更新プログラムがあります無視されます、不正確なデータの結果として得られます。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">カウンターは、アプリケーションが下げることはできませんのでは読み取り専用です。  
+  
+ または  
+  
+ インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+        <threadsafe>このメソッドは、スレッド セーフです。</threadsafe>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFileMappingSize">
+      <MemberSignature Language="C#" Value="public static int DefaultFileMappingSize;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 DefaultFileMappingSize" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounter.DefaultFileMappingSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パフォーマンス カウンターが共有するグローバル メモリのバイト単位のサイズを指定します。 既定のサイズは 524, 288 バイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を終了、<see cref="T:System.Diagnostics.PerformanceCounter" />フォームまたは別のコンポーネントに使用されるインスタンスです。 初期化は実行時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]デザイン環境では、このメソッドを使用して、フォームまたは別のコンポーネントに使用されるコンポーネントの初期化を終了します。 <xref:System.Diagnostics.PerformanceCounter.BeginInit%2A>メソッドは、初期化を開始します。 使用して、<xref:System.Diagnostics.PerformanceCounter.BeginInit%2A>と<xref:System.Diagnostics.PerformanceCounter.EndInit%2A>メソッド使用されないように、コンポーネントは完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Increment">
+      <MemberSignature Language="C#" Value="public long Increment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 Increment() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Increment" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>効率的なアトミックの操作を使用して、関連するパフォーマンス カウンターをインクリメントします。</summary>
+        <returns>増やされたカウンター値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム カウンターのみを記述することができます。 すべてのシステム カウンターとは、読み取り専用です。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.PerformanceCounter.Increment%2A>、 <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>、および<xref:System.Diagnostics.PerformanceCounter.Decrement%2A>メソッドでは、インタロックを使用して、カウンターの値を更新します。 これにより、マルチ スレッドまたはマルチ プロセスのシナリオも、パフォーマンスの低下の結果で、カウンターの値を正確に維持できます。 インタロック精度を必要としない場合の操作を提供、更新することができます、 <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> 5 台までのプロパティを直接倍パフォーマンスが向上します。  ただし、マルチ スレッドのシナリオで、カウンターの値を一部の更新プログラムがあります無視されます、不正確なデータの結果として得られます。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このカウンターは読み取り専用アプリケーションが増分できません。  
+  
+ または  
+  
+ インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+        <threadsafe>このメソッドは、スレッド セーフです。</threadsafe>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementBy">
+      <MemberSignature Language="C#" Value="public long IncrementBy (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 IncrementBy(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.IncrementBy(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">インクリメントする値。 負の値をデクリメント カウンターです。)</param>
+        <summary>ずつインクリメントまたはデクリメント効率的なアトミック操作によって、指定した量によって関連付けられたパフォーマンス カウンターの値。</summary>
+        <returns>新しいカウンター値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム カウンターのみを記述することができます。 すべてのシステム カウンターとは、読み取り専用です。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.PerformanceCounter.Increment%2A>、 <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>、および<xref:System.Diagnostics.PerformanceCounter.Decrement%2A>メソッドでは、インタロックを使用して、カウンターの値を更新します。 これにより、マルチ スレッドまたはマルチ プロセスのシナリオも、パフォーマンスの低下の結果で、カウンターの値を正確に維持できます。 インタロック精度を必要としない場合の操作を提供、更新することができます、 <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> 5 台までのプロパティを直接倍パフォーマンスが向上します。  ただし、マルチ スレッドのシナリオで、カウンターの値を一部の更新プログラムがあります無視されます、不正確なデータの結果として得られます。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>カウンターをインクリメントを追加するメソッド。 このコード例の例の一部である、<xref:System.Diagnostics.PerformanceCounter>クラスです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#3](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#3)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#3](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#3)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このカウンターは読み取り専用アプリケーションが増分できません。  
+  
+ または  
+  
+ インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">場合、パフォーマンス カウンターのカテゴリを記述するため、<see cref="P:System.Diagnostics.PerformanceCounter.ReadOnly" />プロパティは<see langword="false" />します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+        <threadsafe>このメソッドは、スレッド セーフです。</threadsafe>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceLifetime">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterInstanceLifetime InstanceLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterInstanceLifetime InstanceLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterInstanceLifetime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロセスの有効期間を設定します。</summary>
+        <value><see cref="T:System.Diagnostics.PerformanceCounterInstanceLifetime" /> 値のいずれか。 既定値は、<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Global" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グローバル共有メモリ、および値を使用してパフォーマンス カウンター カテゴリ作成する場合は、.NET Framework version 1.0 または 1.1 で<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.CounterType%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterCategoryType.SingleInstance>、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>値のパフォーマンス カウンターをする必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されている値がのメンバーではない、<see cref="T:System.Diagnostics.PerformanceCounterInstanceLifetime" />列挙します。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />後に設定されている、<see cref="T:System.Diagnostics.PerformanceCounter" />は初期化されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceName">
+      <MemberSignature Language="C#" Value="public string InstanceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InstanceName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.InstanceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.InstanceNameConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このパフォーマンス カウンターのインスタンス名を設定します。</summary>
+        <value>パフォーマンス カウンターのカテゴリ インスタンスまたは空の文字列の名前 ("")、カウンターが単一インスタンスのカウンターである場合、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  インスタンス名は、長さは 128 文字より短くする必要があります。  
+  
+ 一部の状況では、カテゴリはカテゴリに関連するオブジェクトの複数の発生に関するデータを追跡するインスタンスに分かれています。 インスタンスは、個々 のカウンターではなく、カテゴリ全体に適用されます。 カテゴリ内の各カウンターは、カテゴリに対して定義されている各インスタンスを持ちます。 たとえば、プロセスのカテゴリには、アイドル状態とシステムを名前付きインスタンスが含まれています。 プロセス カテゴリ内の各カウンターには、そのため、アイドル プロセスまたはシステム プロセスに関する情報を表示し、インスタンスごとにデータが含まれています。  
+  
+ 多くのカテゴリは、複数のインスタンスを含まないため、このプロパティをインスタンスが、カテゴリに関連付けられていないことを示すには、空のままにすることができます。  
+  
+ この場合<xref:System.Diagnostics.PerformanceCounter>非カスタムのカテゴリへのポインターをインスタンス化した既存のカテゴリ インスタンスのみから選択できます。 新しいカテゴリ インスタンスは、カスタムのカテゴリは、必要に応じて、インスタンスを多数のカウンターおよびカテゴリとして定義することでのみ作成できます。  
+  
+ パフォーマンス カテゴリのインスタンスを作成するには、指定、`instanceName`上、<xref:System.Diagnostics.PerformanceCounter.%23ctor%2A>コンス トラクターです。 カテゴリのインスタンスを指定して場合`instanceName`既に存在する、新しいオブジェクトは、既存のカテゴリのインスタンスを参照します。  
+  
+> [!NOTE]
+>  文字は使用できません「(",」)"、「#」、"\\"、またはインスタンス名に「/」です。 パフォーマンス コンソールの次の文字を使用する場合 (を参照してください[ランタイム プロファイリング](~/docs/framework/debug-trace-profile/runtime-profiling.md))、インスタンスの値を正しく表示されない可能性があります。  
+  
+ インスタンス名が自動的に生成され、文字を含めることがあるかどうか「(",」)"、「#」、"\\"、または「/」、次の表で文字マッピングを使用します。  
+  
+|文字|マップされている文字|  
+|---------------|----------------------|  
+|(|[|  
+|)|]|  
+|#|_|  
+|\|_|  
+|/|_|  
+  
+ <xref:System.AppDomain.FriendlyName%2A>のプロパティ、<xref:System.AppDomain>から取得したオブジェクト、<xref:System.AppDomain.CurrentDomain%2A?displayProperty=nameWithType>プロパティは無効な文字を含めることができるインスタンス名の一般的な原因です。  
+  
+   
+  
+## Examples  
+ 次のコード例の既定のインスタンスを作成する、<xref:System.Diagnostics.PerformanceCounter>クラスです。 インスタンスを作成した後、 <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>、 <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>、および<xref:System.Diagnostics.PerformanceCounter.InstanceName%2A>プロパティの値は、セット、およびへの呼び出しの結果、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>メソッドが表示されます。  
+  
+ [!code-cpp[PerfCounter#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerfCounter/CPP/perfcounter.cpp#1)]
+ [!code-csharp[PerfCounter#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerfCounter/CS/perfcounter.cs#1)]
+ [!code-vb[PerfCounter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerfCounter/VB/perfcounter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(".")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.MonoTODO("What's the machine name format?")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このパフォーマンス カウンターのコンピューター名取得または設定</summary>
+        <value>パフォーマンス カウンターとそれに関連付けられているカテゴリが存在するサーバーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル コンピューター上に存在するためのカウンターに対してのみ値を書き込むことができます。 ただし、アクセス特権があるエンタープライズ内のコンピューターとカウンターの値を読み取ることができます。  
+  
+ 設定すると、 <xref:System.Diagnostics.PerformanceCounter.MachineName%2A> 、リモート コンピューター をポイントするプロパティ、<xref:System.Diagnostics.PerformanceCounter>インスタンスがそのコンピューターのカウンターを開こうとします。 カウンターが存在しない場合は、例外をスローこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Diagnostics.PerformanceCounter.MachineName" />形式が無効です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NextSample">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.CounterSample NextSample ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Diagnostics.CounterSample NextSample() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.NextSample" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.CounterSample</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カウンターのサンプルを取得し、raw、または計算されない値を返します。</summary>
+        <returns>A<see cref="T:System.Diagnostics.CounterSample" />システムがこのカウンターを取得する次の生の値を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常、計算されない値が含まれているカウンターを使用します。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Diagnostics.PerformanceCounter.NextSample%2A>カウンターの次の計算されない値を取得します。 このコード例の例の一部である、<xref:System.Diagnostics.PerformanceCounter>クラスです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#3](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#3)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#3](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#3)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを読み取っています。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NextValue">
+      <MemberSignature Language="C#" Value="public float NextValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32 NextValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.NextValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カウンター サンプルを取得し、計算される値を返します。</summary>
+        <returns>このカウンターのシステムを取得する次の計算される値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  カウンターの計算値は、次の 2 つのカウンターの読み取りに依存する場合、最初の読み取り操作には、0.0 が返されます。 パフォーマンス カウンターのさまざまなカウンターを指定するプロパティをリセットするは、新しいパフォーマンス カウンターの作成に相当し、新しいプロパティを使用して最初の読み取り操作には、0.0 が返されます。 呼び出しの間で推奨される遅延時間、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>メソッドでは、1 秒を次の増分読み込みを実行するカウンターをできるようにします。  
+  
+> [!NOTE]
+>  パフォーマンス カウンターを読み取りするには、管理者特権が必要です。 Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.PerformanceCounterType.ElapsedTime>カウンターと使用、<xref:System.Diagnostics.PerformanceCounter.NextValue%2A>期間にわたってカウンターの値を表示するメソッド。  
+  
+ [!code-cpp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CPP/elapsedtime.cpp#2)]
+ [!code-csharp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CS/elapsedtime.cs#2)]
+ [!code-vb[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/VB/elapsedtime.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを読み取っています。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RawValue">
+      <MemberSignature Language="C#" Value="public long RawValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RawValue" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.RawValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The raw value of the counter.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このカウンターの生のまたは計算されない値を設定します。</summary>
+        <value>カウンターの生の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カウンター タイプは 32 ビットのサイズが大きすぎる値にこのプロパティを設定しようとする場合は、プロパティには、32 ビット値が切り捨てられます。 使用して、ローカル コンピューター上のカスタムのカウンターを読み取るときに、<xref:System.Diagnostics.PerformanceCounter.RawValue%2A>計算値ではなく、プロパティは、生の値が十分であるシナリオのパフォーマンスが著しく向上を生成できます。  
+  
+ お読みになっているカウンターが読み取り専用の場合は、取得、<xref:System.Diagnostics.PerformanceCounter.RawValue%2A>プロパティがプロパティが呼び出される時に、カウンターをサンプリングします。 このは、最初の呼び出しを行う場合と同じ、<xref:System.Diagnostics.PerformanceCounter.NextSample%2A>メソッドです。 後で呼び出す場合は、 <xref:System.Diagnostics.PerformanceCounter.NextSample%2A>、両方の呼び出しが返される値に対して計算を実行することができます。  
+  
+ システム カウンターは読み取り専用であるためには、取得が、その生の値を設定できません。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.PerformanceCounter.Increment%2A>、 <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>、および<xref:System.Diagnostics.PerformanceCounter.Decrement%2A>メソッドでは、インタロックを使用して、カウンターの値を更新します。 これにより、マルチ スレッドまたはマルチ プロセスのシナリオも、パフォーマンスの低下の結果で、カウンターの値を正確に維持できます。 インタロック精度を必要としない場合の操作を提供、更新することができます、 <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> 5 台までのプロパティを直接倍パフォーマンスが向上します。  ただし、マルチ スレッドのシナリオで、カウンターの値を一部の更新プログラムがあります無視されます、不正確なデータの結果として得られます。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+> [!NOTE]
+>  Windows Vista、Windows XP Professional x64 Edition、または Windows Server 2003 でのパフォーマンス カウンターを読み取りには、Performance Monitor Users グループのメンバーであるか、管理特権を持っている必要があります。  
+>   
+>  Windows Vista でのパフォーマンス カウンターにアクセスする特権を昇格することを回避するのには、自分でを Performance Monitor Users グループに追加します。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 パフォーマンス カウンターにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Diagnostics.CounterSample>の値を表示するクラス、<xref:System.Diagnostics.PerformanceCounter.RawValue%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">カウンターの生の値を設定しようとして、カウンターが読み取り専用です。  
+  
+ または  
+  
+ インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">管理者特権なしで実行されるコードは、パフォーマンス カウンターを読み取ろうとしました。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを作成します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The accessability level of the counter.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかこの<see cref="T:System.Diagnostics.PerformanceCounter" />インスタンスが読み取り専用モードでします。</summary>
+        <value>
+          <see langword="true" />、場合、<see cref="T:System.Diagnostics.PerformanceCounter" />インスタンスが読み取り専用モードで (自体カウンターは、カスタム .NET フレームワーク カウンター場合でも)。<see langword="false" />が読み取り/書き込みモードにある場合。 既定では、コンス トラクターによって設定された値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システム カウンター<xref:System.Diagnostics.PerformanceCounter.ReadOnly%2A>常にする必要があります`true`です。 システム カウンターに記述することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveInstance">
+      <MemberSignature Language="C#" Value="public void RemoveInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.RemoveInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定されたカテゴリ インスタンスを削除、<see cref="T:System.Diagnostics.PerformanceCounter" />オブジェクト<see cref="P:System.Diagnostics.PerformanceCounter.InstanceName" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムのカウンターに対してのみインスタンスを削除することができます。 すべてのシステム カウンターは、例外をスローうちの 1 つを削除しようとしたためは読み取り専用です。  
+  
+> [!NOTE]
+>  競合状態を避けるためには、パフォーマンス カウンターの共有メモリが解放されるときに、ことを推奨、<xref:System.Diagnostics.PerformanceCounter.RemoveInstance%2A>メソッドから呼び出す、<xref:System.AppDomain.DomainUnload>イベント ハンドラー。  
+  
+ パフォーマンス カテゴリのインスタンスを作成するには、指定、`instanceName`上、<xref:System.Diagnostics.PerformanceCounter.%23ctor%2A>コンス トラクターです。 カテゴリのインスタンスを指定して場合`instanceName`既に存在する、新しいオブジェクトは、既存のカテゴリのインスタンスを参照します。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>プロパティは<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process>と .NET framework version 1.0 または 1.1 では、パフォーマンス カウンター カテゴリが作成された、<xref:System.InvalidOperationException>がスローされます。 グローバル共有メモリ、およびの値は、以前のバージョンで作成されたパフォーマンス カウンターのカテゴリを使用して<xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>する必要があります<xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>です。 1.0 または 1.1、.NET Framework のバージョンで実行されるアプリケーション カテゴリを使用しない場合は、削除し、カテゴリを再作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このカウンターは、カテゴリに関連付けられている任意のインスタンスを削除することはできませんのでは読み取り専用です。  
+  
+ または  
+  
+ インスタンスは、パフォーマンス カウンターを正しく関連付けではありません。  
+  
+ または  
+  
+ <see cref="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />プロパティに設定されている<see cref="F:System.Diagnostics.PerformanceCounterInstanceLifetime.Process" />共有メモリがグローバルを使用するとします。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows 98 または Windows me、パフォーマンス カウンターをサポートしていません。</exception>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">パフォーマンス カウンターのカテゴリを作成します。 関連する列挙値:<see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

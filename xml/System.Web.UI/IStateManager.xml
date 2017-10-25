@@ -1,0 +1,152 @@
+<Type Name="IStateManager" FullName="System.Web.UI.IStateManager">
+  <TypeSignature Language="C#" Value="public interface IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IStateManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティと任意のクラスを実装する必要がありますメソッドを定義して、サーバー コントロールの表示状態管理をサポートするためにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールのビュー ステートには、コントロールのプロパティの累積値が構成されています。 このインターフェイスには、保存したり、サーバー コントロールのビュー ステートの値を読み込むメソッドだけでなく、ビュー状態に変更を追跡するために、コントロールに指示するメソッドが含まれています。  
+  
+ ASP.NET アプリケーションは、サーバー コントロールのビュー ステートを管理する方法をカスタマイズするから継承することはできませんので、このインターフェイスを実装するクラスを作成する必要があります、<xref:System.Web.UI.StateBag>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装するクラスを示しています、<xref:System.Web.UI.IStateManager>インターフェイスです。 実装が含まれている、<xref:System.Web.UI.IStateManager.IsTrackingViewState%2A>プロパティおよび<xref:System.Web.UI.IStateManager.LoadViewState%2A>、 <xref:System.Web.UI.IStateManager.SaveViewState%2A>、および<xref:System.Web.UI.IStateManager.TrackViewState%2A>メソッドです。  
+  
+ [!code-csharp[StateBag_IStateManager_Sample1#8](~/samples/snippets/csharp/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/CS/ism_statebag_samples.cs#8)]
+ [!code-vb[StateBag_IStateManager_Sample1#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/VB/ism_statebag_samples.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="public bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスに実装すると、サーバー コントロールがそのビュー ステートの変化を追跡しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サーバー コントロールは、ビューステートの変更を追跡する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[StateBag_IStateManager_Sample1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/CS/ism_statebag_samples.cs#6)]
+ [!code-vb[StateBag_IStateManager_Sample1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/VB/ism_statebag_samples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="public void LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IStateManager.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">保存したコントロールのビュー ステートの値を格納している <see cref="T:System.Object" />。</param>
+        <summary>クラスに実装すると、サーバー コントロールの手順で保存したビューステートを読み込みますコントロールにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[StateBag_IStateManager_Sample1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/CS/ism_statebag_samples.cs#3)]
+ [!code-vb[StateBag_IStateManager_Sample1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/VB/ism_statebag_samples.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="public object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IStateManager.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスによって実装された場合、変更をサーバー コントロールのビュー ステートに保存、<see cref="T:System.Object" />です。</summary>
+        <returns>ビュー ステートの変化を格納している <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[StateBag_IStateManager_Sample1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/CS/ism_statebag_samples.cs#4)]
+ [!code-vb[StateBag_IStateManager_Sample1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/VB/ism_statebag_samples.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="public void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IStateManager.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスによって実装された場合、そのビュー ステートの変更を追跡するために、サーバー コントロールに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールでは、このメソッドが呼び出された後、<xref:System.Web.UI.IStateManager.IsTrackingViewState%2A>が返される`true`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[StateBag_IStateManager_Sample1#5](~/samples/snippets/csharp/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/CS/ism_statebag_samples.cs#5)]
+ [!code-vb[StateBag_IStateManager_Sample1#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StateBag_IStateManager_Sample1/VB/ism_statebag_samples.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

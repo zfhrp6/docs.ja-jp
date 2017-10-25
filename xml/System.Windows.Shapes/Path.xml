@@ -1,0 +1,161 @@
+<Type Name="Path" FullName="System.Windows.Shapes.Path">
+  <TypeSignature Language="C#" Value="public sealed class Path : System.Windows.Shapes.Shape" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Path extends System.Windows.Shapes.Shape" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shapes.Path" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Shapes.Shape</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>直線と曲線が連結して一続きになったものを描画します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shapes.Path>オブジェクトが閉じられているか開いている図形、複数の図形、さらに曲線図形を描画できます。  
+  
+ 異なり、<xref:System.Windows.Shapes.Line>と<xref:System.Windows.Shapes.Polyline>オブジェクト、曲線の描画をこのオブジェクトを使用することができます。 参照してください、<xref:System.Windows.Shapes.Path.Data%2A>詳細については、図形のプロパティを<xref:System.Windows.Shapes.Path>要素をサポートしています。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shapes.Path>そのプロパティを使用してコードの要素と設定します。  
+  
+ [!code-cpp[shapesprocedural#ShapesProceduralPath](~/samples/snippets/cpp/VS_Snippets_Wpf/ShapesProcedural/CPP/ShapesProcedural.cpp#shapesproceduralpath)]
+ [!code-csharp[shapesprocedural#ShapesProceduralPath](~/samples/snippets/csharp/VS_Snippets_Wpf/ShapesProcedural/Csharp/ShapesProcedural.cs#shapesproceduralpath)]
+ [!code-vb[shapesprocedural#ShapesProceduralPath](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ShapesProcedural/VisualBasic/ShapesProceduralVB.vb#shapesproceduralpath)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Path ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shapes.Path.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Shapes.Path" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry Data" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Path.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画される図形を指定する <see cref="T:System.Windows.Media.Geometry" /> を取得または設定します。</summary>
+        <value>描画する図形の説明。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単純な図形を描くを使用して、 <xref:System.Windows.Media.EllipseGeometry>、 <xref:System.Windows.Media.LineGeometry>、および<xref:System.Windows.Media.RectangleGeometry>オブジェクト。 曲線を円弧、または複雑な図形を描くには使用、<xref:System.Windows.Media.PathGeometry>オブジェクト。 複合ジオメトリを作成するには、使用、<xref:System.Windows.Media.GeometryGroup>です。 ジオメトリを結合するを使用して、<xref:System.Windows.Media.CombinedGeometry>です。  
+  
+<a name="xamlPropertyElementUsage_Data"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<Path>  
+  <Path.Data>  
+    singleGeometry  
+  </Path.Data>  
+</Path>  
+```  
+  
+<a name="xamlAttributeUsage_Data"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Data="moveAndDrawCommands"/>  
+```  
+  
+<a name="xamlValues_Data"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *singleGeometry*  
+ 派生する 1 つのオブジェクト要素<xref:System.Windows.Media.Geometry>です。 DLL は、次のいずれかの場所に置くことができます。  
+  
+-   単純なジオメトリのいずれかの<xref:System.Windows.Media.EllipseGeometry>、 <xref:System.Windows.Media.LineGeometry>、または<xref:System.Windows.Media.RectangleGeometry>です。  
+  
+-   1 つ<xref:System.Windows.Media.GeometryGroup>、子要素として他のジオメトリをサポートします。 XAML 値セクションを参照してください<xref:System.Windows.Media.GeometryGroup>です。  
+  
+-   A<xref:System.Windows.Media.PathGeometry>図形やセグメントのパス ジオメトリ オブジェクト モデルの確立が子オブジェクトの要素をサポートします。 XAML 値セクションを参照してください<xref:System.Windows.Media.PathGeometry>です。  
+  
+ *moveAndDrawCommands*  
+ 1 つまたは複数移動し、コマンドを描画します。 完全な構文を参照してください。[パス マークアップ構文](~/docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)です。  
+  
+<a name="dependencyPropertyInfo_Data"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Shapes.Path.DataProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shapes.Path>要素、<xref:System.Windows.Shapes.Path.Data%2A>コードを使用してプロパティです。  
+  
+ [!code-cpp[shapesprocedural#ShapesProceduralPath](~/samples/snippets/cpp/VS_Snippets_Wpf/ShapesProcedural/CPP/ShapesProcedural.cpp#shapesproceduralpath)]
+ [!code-csharp[shapesprocedural#ShapesProceduralPath](~/samples/snippets/csharp/VS_Snippets_Wpf/ShapesProcedural/Csharp/ShapesProcedural.cs#shapesproceduralpath)]
+ [!code-vb[shapesprocedural#ShapesProceduralPath](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ShapesProcedural/VisualBasic/ShapesProceduralVB.vb#shapesproceduralpath)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DataProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DataProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Path.DataProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Path.Data" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefiningGeometry">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Geometry DefiningGeometry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry DefiningGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Path.DefiningGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

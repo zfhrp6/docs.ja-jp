@@ -1,0 +1,103 @@
+<Type Name="IResourceProvider" FullName="System.Web.Compilation.IResourceProvider">
+  <TypeSignature Language="C#" Value="public interface IResourceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IResourceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.IResourceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>リソース プロバイダーとして機能するクラスを実装する必要があります、インターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース プロバイダーでは、リソース ファイルからの値の取得が容易になります。 ときに、フォームの式`<%$ Resources: classKey, resourceKey %>`が発生したページは、解析時にリソース プロバイダーには、リソースのローカライズされた値が返されます。 <xref:System.Web.Compilation.ResourceProviderFactory>クラスのインスタンスを作成<xref:System.Web.Compilation.IResourceProvider>値を取得中に使用するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キャッシュされた値を取得するカスタマイズされたリソース プロバイダー ファクトリを示します。 リソース プロバイダーのファクトリを実装するクラスのインスタンスを作成する<xref:System.Web.Compilation.IResourceProvider>です。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public object GetObject (string resourceKey, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetObject(string resourceKey, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.IResourceProvider.GetObject(System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">特定のリソースを識別するキー。</param>
+        <param name="culture">リソースのローカライズされた値を識別するカルチャです。</param>
+        <summary>キーおよびカルチャのリソース オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" />をリソースの値を格納している、<paramref name="resourceKey" />と<paramref name="culture" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装された場合、<xref:System.Web.Compilation.IResourceProvider.GetObject%2A>メソッドは、現在のカルチャに基づいてリソース キーのローカライズされた値を返します。 クラスの実装を取得できなかった、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>場合の値は、プロパティ、`culture`でパラメーターが渡されない。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キャッシュされた値を取得するカスタマイズされたリソース プロバイダー ファクトリを示します。 リソース プロバイダーのファクトリを実装するカスタマイズされたリソース プロバイダーのインスタンスを作成する<xref:System.Web.Compilation.IResourceProvider>です。 リソース プロバイダーが含まれていますが、カスタマイズされた<xref:System.Web.Compilation.IResourceProvider.GetObject%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceReader">
+      <MemberSignature Language="C#" Value="public System.Resources.IResourceReader ResourceReader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Resources.IResourceReader ResourceReader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.IResourceProvider.ResourceReader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.IResourceReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソースからリソースの値を読み取るオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Resources.IResourceReader" />現在のリソース プロバイダーに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.IResourceReader>オブジェクトは、ソースから順次名前/値ペアを読み取ります。 <xref:System.Resources.ResourceReader>と<xref:System.Resources.ResXResourceReader>クラスは、既定値を提供<xref:System.Resources.IResourceReader>インターフェイス .resources や .resx ファイルから読み取るのために実装します。 他の実装、<xref:System.Web.Compilation.IResourceProvider>リソース値を含む任意のソースからインターフェイスを読み込めませんでした。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キャッシュされた値を取得するカスタマイズされたリソース プロバイダー ファクトリを示します。 リソース プロバイダーのファクトリを実装するカスタマイズされたリソース プロバイダーのインスタンスを作成する<xref:System.Web.Compilation.IResourceProvider>です。 リソース プロバイダーが含まれていますが、カスタマイズされた<xref:System.Web.Compilation.IResourceProvider.ResourceReader%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,46 @@
+<Type Name="XmlSerializationCollectionFixupCallback" FullName="System.Xml.Serialization.XmlSerializationCollectionFixupCallback">
+  <TypeSignature Language="C#" Value="public delegate void XmlSerializationCollectionFixupCallback(object collection, object collectionItems);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlSerializationCollectionFixupCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializationCollectionFixupCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="collection" Type="System.Object" />
+    <Parameter Name="collectionItems" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="collection">コレクション項目の配列のコピー先のコレクションです。</param>
+    <param name="collectionItems">コピーされる項目の配列、<c>オブジェクト コレクション</c>です。</param>
+    <summary>によって使用されるデリゲート、 <see cref="T:System.Xml.Serialization.XmlSerializer" /> SOAP でエンコードされた XML データの逆シリアル化のクラス型のコレクションまたは列挙型にマップします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化中に、.NET Framework XML のシリアル化インフラストラクチャに動的に生成およびコンパイル一時クラスから派生した逆シリアル化の<xref:System.Xml.Serialization.XmlSerializationReader>クラスです。 このプロセス中に、.NET Framework がコレクション フィックス アップ メソッドを使用するを生成、<xref:System.Xml.Serialization.XmlSerializationCollectionFixupCallback>を委任します。 これは、SOAP でエンコードされた配列または .NET Framework のコレクションまたは列挙型にどちらの場合、データ型を持つマップ SOAP でエンコードされた、複数の参照の要素に対して発生します。 必要に応じて、逆シリアル化中にコレクションのフィックス アップ メソッドが呼び出されます。  
+  
+ 直接インスタンス化する必要がありますいない<xref:System.Xml.Serialization.XmlSerializationCollectionFixupCallback>です。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+</Type>

@@ -1,0 +1,181 @@
+<Type Name="IRawElementProviderSimple" FullName="System.Windows.Automation.Provider.IRawElementProviderSimple">
+  <TypeSignature Language="C#" Value="public interface IRawElementProviderSimple" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRawElementProviderSimple" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("d6dd68d1-86fd-4332-8666-9abedea2d24c")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>UI 要素に関する基本的な情報を公開するメソッドとプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ボタンなどの単純な要素の UI オートメーション プロバイダーでは、このインターフェイスを実装することができます。 追加のプロパティまたはコントロール パターン、または既存のプロパティまたはコントロール パターン、既定のプロバイダーが既に存在する要素でオーバーライドするプロバイダーで実装することもできます。  
+  
+ 複雑な要素のプロバイダーを実装する必要があります<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>または<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetPatternProvider">
+      <MemberSignature Language="C#" Value="public object GetPatternProvider (int patternId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetPatternProvider(int32 patternId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patternId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="patternId">パターンの識別子。</param>
+        <summary>コントロール パターンのサポートを提供するオブジェクトを取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。</summary>
+        <returns>パターン インターフェイスを実装するオブジェクトまたは<see langword="null" />パターンがサポートされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の実装を示しています。<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A>のみをサポートするプロバイダーの<xref:System.Windows.Automation.InvokePattern>します。  
+  
+ [!code-csharp[UIAProvider_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAProvider_snip/CSharp/FragmentRoot.cs#101)]
+ [!code-vb[UIAProvider_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAProvider_snip/VisualBasic/FragmentRoot.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetPropertyValue (int propertyId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetPropertyValue(int32 propertyId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="propertyId">プロパティの識別子。</param>
+        <summary>UI オートメーション プロバイダーでサポートされるプロパティの値を取得します。</summary>
+        <returns>プロパティの値または<see langword="null" />プロパティが、このプロバイダーによってサポートされていない場合または<see cref="F:System.Windows.Automation.AutomationElementIdentifiers.NotSupported" />まったくサポートされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーが返す必要があります<xref:System.Windows.Automation.AutomationElementIdentifiers.NotSupported>プロパティの値を明示的に非表示し、要求はその他のプロバイダーに渡される場合にのみです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の実装を示しています。<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A>をカスタム ボタン コントロールです。  
+  
+ [!code-csharp[UIAProvider_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAProvider_snip/CSharp/FragmentRoot.cs#102)]
+ [!code-vb[UIAProvider_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAProvider_snip/VisualBasic/FragmentRoot.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostRawElementProvider">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple HostRawElementProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Provider.IRawElementProviderSimple HostRawElementProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の基本プロバイダーを取得します。</summary>
+        <value>基本プロバイダー、または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、カスタム コントロールのウィンドウの UI オートメーション プロバイダーです。 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ウィンドウでホストされるコントロールのプロバイダーの実装と組み合わせてこのプロバイダーを使用します。 たとえば、要素のランタイム識別子は、ホスト プロバイダーから取得されます。  
+  
+ ホスト プロバイダーは、次の場合のいずれかで返される必要があります。  
+  
+-   この要素は、フラグメントのルートです。  
+  
+-   要素は、プッシュ ボタンなどの単純な要素です。  
+  
+-   プロバイダーは、再配置のプレース ホルダーです。  
+  
+ それ以外の場合に、プロパティを返す必要があります`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の実装を示しています。<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>フラグメント ルートの場合、Windows フォームでホストされています。  
+  
+ [!code-csharp[UIAProvider_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAProvider_snip/CSharp/FragmentRoot.cs#103)]
+ [!code-vb[UIAProvider_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAProvider_snip/VisualBasic/FragmentRoot.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderOptions">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.ProviderOptions ProviderOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.Provider.ProviderOptions ProviderOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRawElementProviderSimple.ProviderOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.ProviderOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント側のプロバイダーであるか、サーバー側のプロバイダーであるかなど、UI オートメーション プロバイダーの特性を示す値を取得します。</summary>
+        <value>いずれか<see cref="F:System.Windows.Automation.Provider.ProviderOptions.ClientSideProvider" />または<see cref="F:System.Windows.Automation.Provider.ProviderOptions.ServerSideProvider" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]プロバイダーのさまざまな種類を異なる方法で扱われます。 たとえば、サーバー側プロバイダーからのイベントは、リッスンしているすべての UI オートメーション クライアント プロセスにブロードキャストしますが、クライアント側プロバイダーからのイベントがそのクライアントのプロセスに残ります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の実装を示しています。<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.ProviderOptions%2A>サーバー側 UI オートメーション プロバイダー。  
+  
+ [!code-csharp[UIAProvider_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAProvider_snip/CSharp/FragmentRoot.cs#104)]
+ [!code-vb[UIAProvider_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAProvider_snip/VisualBasic/FragmentRoot.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

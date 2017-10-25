@@ -1,0 +1,341 @@
+<Type Name="KeyGesture" FullName="System.Windows.Input.KeyGesture">
+  <TypeSignature Language="C#" Value="public class KeyGesture : System.Windows.Input.InputGesture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyGesture extends System.Windows.Input.InputGesture" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.KeyGesture" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputGesture</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.KeyGestureConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Input.KeyGestureValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コマンドの呼び出しに使用できる、キーの組み合わせを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、 <xref:System.Windows.Input.KeyGesture> 1 つまたは複数の操作に関連付ける必要がある<xref:System.Windows.Input.ModifierKeys>です。 このルールの例外は、ファンクション キーと、有効な可能性があるテンキーのキー<xref:System.Windows.Input.KeyGesture>単独でします。 たとえば、作成することができます、<xref:System.Windows.Input.KeyGesture>でキーが X を使用する、F12 キーのみを使用して、<xref:System.Windows.Input.KeyGesture>修飾子キーを使用してペアリングする必要があります。  
+  
+ 一般を実行できます。  
+  
+ 使用することができます、<xref:System.Windows.Input.KeyBinding>にバインドする、<xref:System.Windows.Input.KeyGesture>を<xref:System.Windows.Input.ICommand>コマンドが呼び出されるように、ときに、<xref:System.Windows.Input.KeyGesture>に発生します。  
+  
+ <xref:System.Windows.Input.KeyGesture> [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の使用法で一般に設定されているプロパティ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]は<xref:System.Windows.Input.KeyBinding.Gesture%2A>ジェスチャが標準的なキーと修飾子キーの両方を表す場合。 設定することも、<xref:System.Windows.Input.KeyBinding.Gesture%2A>だけ、ファンクション キー、または修飾子だけになるプロパティのキーの組み合わせ。 設定する一般的な<xref:System.Windows.Input.KeyBinding.Key%2A>目的のコマンドのバインドがありません修飾子を持つ関数キー プロパティまたは<xref:System.Windows.Input.KeyBinding.Modifiers%2A>の修飾子キーのみの目的のコマンドのバインドがある場合。  
+  
+<a name="xamlAttributeUsage_KeyGesture"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="oneOrMoreModifierKeys+key"/>  
+- or -  
+<object property="functionKey"/>  
+```  
+  
+<a name="xamlValues_KeyGesture"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `functionKey`  
+ <xref:System.Windows.Input.Key>  
+  
+ テンキーのキーまたはファンクション キー (F1 ~ 12) のいずれかを指定する必要があります、単一キーの値。  
+  
+ `oneOrMoreModifierKeys`  
+ によって定義された 1 つまたは複数の修飾子キー、<xref:System.Windows.Input.ModifierKeys>列挙型、「+」文字で区切られます。  
+  
+ `key`  
+ <xref:System.Windows.Input.Key>  
+  
+ 1 つのキー値。  
+  
+   
+  
+## Examples  
+ 次の例は、バインドする方法を示しています、<xref:System.Windows.Input.ApplicationCommands.Close%2A>コマンドを<xref:System.Windows.Input.KeyGesture>を使用して、<xref:System.Windows.Input.KeyBinding>です。  
+  
+ [!code-csharp[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keybindingwithkeyandmodifiers)]
+ [!code-vb[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keybindingwithkeyandmodifiers)]  
+  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.KeyGesture>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 なお、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用状況を直接宣言しません、`<KeyGesture>`要素。 オブジェクト要素の使用はことはできませんので<xref:System.Windows.Input.KeyGesture>はパブリックの既定のコンス トラクターを公開しません。 代わりに、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用法では、typeconverter の動作を使って全体を宣言する<xref:System.Windows.Input.KeyGesture>としてインラインで、`Gesture`属性の値。  
+  
+ [!code-xaml[commandWithHandler#CommandHandlerKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlerkeybinding)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyGesture (System.Windows.Input.Key key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.Key key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyGesture.#ctor(System.Windows.Input.Key)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+      </Parameters>
+      <Docs>
+        <param name="key">このジェスチャに関連付けられているキーです。</param>
+        <summary>指定した <see cref="T:System.Windows.Input.KeyGesture" /> を使用して、<see cref="T:System.Windows.Input.Key" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、 <xref:System.Windows.Input.KeyGesture> 1 つまたは複数の操作に関連付ける必要がある<xref:System.Windows.Input.ModifierKeys>です。  このルールの例外は、ファンクション キーと、有効な可能性があるテンキーのキー<xref:System.Windows.Input.KeyGesture>単独でします。  
+  
+   
+  
+## Examples  
+ 次の例は、このコンス トラクターを使用して作成する方法を示しています、<xref:System.Windows.Input.KeyGesture>関連付けます、<xref:System.Windows.Input.KeyBinding>です。  <xref:System.Windows.Input.KeyBinding>に追加し、<xref:System.Windows.Input.InputBindingCollection>の<xref:System.Windows.Window>です。  
+  
+ [!code-csharp[commandlibrarysnippets#KeyBindingWithNoModifier](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keybindingwithnomodifier)]
+ [!code-vb[commandlibrarysnippets#KeyBindingWithNoModifier](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keybindingwithnomodifier)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="key" /> は有効な <see cref="T:System.Windows.Input.Key" /> ではありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="key" /> は有効な <see cref="T:System.Windows.Input.KeyGesture" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyGesture (System.Windows.Input.Key key, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.Key key, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyGesture.#ctor(System.Windows.Input.Key,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="key">ジェスチャに関連付けられているキーです。</param>
+        <param name="modifiers">ジェスチャに関連付けられている修飾子キーです。</param>
+        <summary>指定された <see cref="T:System.Windows.Input.KeyGesture" /> と <see cref="T:System.Windows.Input.Key" /> を使用して、<see cref="T:System.Windows.Input.ModifierKeys" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、 <xref:System.Windows.Input.KeyGesture> 1 つまたは複数の操作に関連付ける必要がある<xref:System.Windows.Input.ModifierKeys>です。 このルールの例外は、ファンクション キーと、有効な可能性があるテンキーのキー<xref:System.Windows.Input.KeyGesture>単独でします。  
+  
+   
+  
+## Examples  
+ 次の例は、このコンス トラクターを使用して作成する方法を示しています、<xref:System.Windows.Input.KeyGesture>関連付けます、<xref:System.Windows.Input.KeyBinding>です。 <xref:System.Windows.Input.KeyBinding>に追加し、<xref:System.Windows.Input.InputBindingCollection>の<xref:System.Windows.Window>です。  
+  
+ [!code-csharp[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keybindingwithkeyandmodifiers)]
+ [!code-vb[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keybindingwithkeyandmodifiers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="modifiers" />無効です。<see cref="T:System.Windows.Input.ModifierKeys" />  
+  
+ または  
+  
+ <paramref name="key" /> は有効な <see cref="T:System.Windows.Input.Key" /> ではありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="key" />および<paramref name="modifiers" />有効なを形成しません<see cref="T:System.Windows.Input.KeyGesture" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyGesture (System.Windows.Input.Key key, System.Windows.Input.ModifierKeys modifiers, string displayString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.Key key, valuetype System.Windows.Input.ModifierKeys modifiers, string displayString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyGesture.#ctor(System.Windows.Input.Key,System.Windows.Input.ModifierKeys,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+        <Parameter Name="displayString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">ジェスチャに関連付けられているキーです。</param>
+        <param name="modifiers">ジェスチャに関連付けられている修飾子キーです。</param>
+        <param name="displayString"><see cref="T:System.Windows.Input.KeyGesture" /> の文字列形式。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Input.KeyGesture" /> 、指定したクラス<see cref="T:System.Windows.Input.Key" />、 <see cref="T:System.Windows.Input.ModifierKeys" />、および文字列を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.KeyGesture.DisplayString%2A>プロパティに設定されている、`displayString`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="modifiers" />無効です。<see cref="T:System.Windows.Input.ModifierKeys" />  
+  
+ または  
+  
+ <paramref name="key" /> は有効な <see cref="T:System.Windows.Input.Key" /> ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="displayString" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="key" />および<paramref name="modifiers" />有効なを形成しません<see cref="T:System.Windows.Input.KeyGesture" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayString">
+      <MemberSignature Language="C#" Value="public string DisplayString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayString" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyGesture.DisplayString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この文字列表現を取得<see cref="T:System.Windows.Input.KeyGesture" />です。</summary>
+        <value>この表示文字列<see cref="T:System.Windows.Input.KeyGesture" />です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示文字列が、コンス トラクターで設定されていない場合、空の文字列が返されます。  
+  
+ このプロパティが空の場合、<xref:System.Windows.Input.KeyGesture.GetDisplayStringForCulture%2A>メソッドから作成された文字列を返します、<xref:System.Windows.Input.KeyGesture.Key%2A>と<xref:System.Windows.Input.KeyGesture.Modifiers%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDisplayStringForCulture">
+      <MemberSignature Language="C#" Value="public string GetDisplayStringForCulture (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetDisplayStringForCulture(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyGesture.GetDisplayStringForCulture(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">カルチャ固有の情報です。</param>
+        <summary>表示するために使用する文字列を返します、<see cref="T:System.Windows.Input.KeyGesture" />です。</summary>
+        <returns>表示する文字列</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示文字列は、その文字列が返されます。 コンス トラクターによって設定された場合文字列を作成するそれ以外の場合、<xref:System.Windows.Input.KeyGesture.Key%2A>と<xref:System.Windows.Input.KeyGesture.Modifiers%2A>で管理されている必要な変換において指定した<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Key Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.Key Key" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyGesture.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Key</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているキーを取得<see cref="T:System.Windows.Input.KeyGesture" />です。</summary>
+        <value>ジェスチャに関連付けられているキーです。  既定値は <see cref="F:System.Windows.Input.Key.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、 <xref:System.Windows.Input.KeyGesture> 1 つまたは複数の操作に関連付ける必要がある<xref:System.Windows.Input.ModifierKeys>です。  このルールの例外は、ファンクション キーと、有効な可能性があるテンキーのキー<xref:System.Windows.Input.KeyGesture>単独でします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (object targetElement, System.Windows.Input.InputEventArgs inputEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(object targetElement, class System.Windows.Input.InputEventArgs inputEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyGesture.Matches(System.Object,System.Windows.Input.InputEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetElement" Type="System.Object" />
+        <Parameter Name="inputEventArgs" Type="System.Windows.Input.InputEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetElement">ターゲット。</param>
+        <param name="inputEventArgs">このジェスチャを比較する入力イベントのデータ。</param>
+        <summary>決定するかどうかこの<see cref="T:System.Windows.Input.KeyGesture" />に指定された関連付けられている入力と一致する<see cref="T:System.Windows.Input.InputEventArgs" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />このイベント データに一致する場合<see cref="T:System.Windows.Input.KeyGesture" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `targetElement`コマンドを特定の要素で呼び出されるかどうかをより具体的な決定を行うために使用します。  
+  
+   
+  
+## Examples  
+ 次の例をテストする方法を示して かどうか、<xref:System.Windows.Input.KeyGesture>のインスタンスに関連付けられている入力と一致する、<xref:System.Windows.Input.InputEventArgs>です。 A<xref:System.Windows.UIElement.KeyDown>イベント ハンドラーが作成されたイベント データとを比較する、<xref:System.Windows.Input.KeyGesture>を使用して、<xref:System.Windows.Input.KeyGesture.Matches%2A>メソッドです。  
+  
+ [!code-csharp[commandlibrarysnippets#KeyDownHandlerKeyGestureMatches](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keydownhandlerkeygesturematches)]
+ [!code-vb[commandlibrarysnippets#KeyDownHandlerKeyGestureMatches](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keydownhandlerkeygesturematches)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ModifierKeys Modifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.ModifierKeys Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyGesture.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられている修飾子キーの取得<see cref="T:System.Windows.Input.KeyGesture" />です。</summary>
+        <value>ジェスチャに関連付けられている修飾子キーです。 既定値は <see cref="F:System.Windows.Input.ModifierKeys.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、 <xref:System.Windows.Input.KeyGesture> 1 つまたは複数の操作に関連付ける必要がある<xref:System.Windows.Input.ModifierKeys>です。 このルールの例外は、ファンクション キーと、有効な可能性があるテンキーのキー<xref:System.Windows.Input.KeyGesture>単独でします。 たとえば、作成することができます、<xref:System.Windows.Input.KeyGesture>でキーが X を使用する、F12 キーのみを使用して、<xref:System.Windows.Input.KeyGesture>修飾子キーを使用してペアリングする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

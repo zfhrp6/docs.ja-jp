@@ -1,0 +1,178 @@
+<Type Name="ApplicationQueuingAttribute" FullName="System.EnterpriseServices.ApplicationQueuingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationQueuingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationQueuingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ApplicationQueuingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マークしたアセンブリのキュー サポートを有効にし、Message Queuing キューからのメソッド呼び出しをアプリケーションで読み取ることができるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの初期プロパティ値の一覧については<xref:System.EnterpriseServices.ApplicationQueuingAttribute>を参照してください、<xref:System.EnterpriseServices.ApplicationQueuingAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.ApplicationQueuingAttribute>型です。  
+  
+ [!code-csharp[EnterpriseServicesApplicationQueuingAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/CS/class1.cs#0)]
+ [!code-vb[EnterpriseServicesApplicationQueuingAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/VB/class1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationQueuingAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ApplicationQueuingAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.ApplicationQueuingAttribute" /> クラスの新しいインスタンスを初期化して、アセンブリのキュー サポートを有効にし、<see cref="P:System.EnterpriseServices.ApplicationQueuingAttribute.Enabled" />、<see cref="P:System.EnterpriseServices.ApplicationQueuingAttribute.QueueListenerEnabled" />、および <see cref="P:System.EnterpriseServices.ApplicationQueuingAttribute.MaxListenerThreads" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.EnterpriseServices.ApplicationQueuingAttribute>です。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|`Enabled`|`true`|  
+|`QueueListenerEnabled`|`false`|  
+|`MaxListenerThreads`|ゼロ (0)|  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.ApplicationQueuingAttribute>です。  
+  
+ [!code-csharp[EnterpriseServicesApplicationQueuingAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServicesApplicationQueuingAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationQueuingAttribute.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キュー サポートが有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          キュー サポートが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 コンストラクターによって設定される既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、既定ではキューに置かれたコンポーネントを使用することはできません。 インスタンス化する<xref:System.EnterpriseServices.ApplicationQueuingAttribute>により、アプリケーションを使用してキュー コンポーネントです。 ただし、これは有効にしませんクライアントからのキューに置かれたメッセージをリッスンするアプリケーション。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得し、値を設定、`ApplicationQueuing`属性の<xref:System.EnterpriseServices.ApplicationQueuingAttribute.Enabled%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServicesApplicationQueuingAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/CS/class1.cs#2)]
+ [!code-vb[EnterpriseServicesApplicationQueuingAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxListenerThreads">
+      <MemberSignature Language="C#" Value="public int MaxListenerThreads { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxListenerThreads" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationQueuingAttribute.MaxListenerThreads" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージをキューから抽出し、対応するコンポーネントをアクティブ化するために使用するスレッドの数を取得または設定します。</summary>
+        <value>キューに到着するメッセージを処理するときに使用する、スレッドの最大数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの有効な範囲は、0 ~ 1000 です。 既定値は 0 です。 新しく作成されたアプリケーションの場合、設定は現在リスナー スレッド数の既定の決定に使用するアルゴリズムから派生します。 サーバーで Cpu の数の 16 回です。  
+  
+ 詳細については、次を参照してください。`QcListenerMaxThreads`で[アプリケーション (COM +)](http://msdn.microsoft.com/library/default.asp?url=/library/cossdk/html/c0c46592-5282-412d-8f54-67637be8218a.asp)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得し、値を設定、`ApplicationQueuing`属性の<xref:System.EnterpriseServices.ApplicationQueuingAttribute.MaxListenerThreads%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServicesApplicationQueuingAttribute#4](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/CS/class1.cs#4)]
+ [!code-vb[EnterpriseServicesApplicationQueuingAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueListenerEnabled">
+      <MemberSignature Language="C#" Value="public bool QueueListenerEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool QueueListenerEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationQueuingAttribute.QueueListenerEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントからのキュー コンポーネントの呼び出しをアプリケーションで受け入れるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          キュー コンポーネントの呼び出しをアプリケーションが受け入れる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得し、値を設定、`ApplicationQueuing`属性の<xref:System.EnterpriseServices.ApplicationQueuingAttribute.QueueListenerEnabled%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServicesApplicationQueuingAttribute#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/CS/class1.cs#3)]
+ [!code-vb[EnterpriseServicesApplicationQueuingAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesApplicationQueuingAttribute/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

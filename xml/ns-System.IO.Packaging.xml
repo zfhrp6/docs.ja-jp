@@ -1,0 +1,47 @@
+<Namespace Name="System.IO.Packaging">
+  <Docs>
+    <summary>1 つのコンテナーで複数のデータ オブジェクトのストレージをサポートするクラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.Package>移植性と効率的にアクセスする場合は、定義されている物理形式の 1 つのエンティティにオブジェクトを整理するために使用する抽象クラスです。  
+  
+ ZIP ファイルは、プライマリの物理フォーマットを<xref:System.IO.Packaging.Package>です。  その他の<xref:System.IO.Packaging.Package>実装が XML ドキュメント、データベースなどその他の物理形式を使用してまたは Web サービス可能性があります。  
+  
+ ファイル システムのような項目が含まれている、<xref:System.IO.Packaging.Package>フォルダーおよびファイルの階層構造で参照されます。  
+  
+ <xref:System.IO.Packaging.Package>抽象クラスでは、<xref:System.IO.Packaging.ZipPackage>派生クラスによって既定として使用される、<xref:System.IO.Packaging.Package.Open%2A?displayProperty=nameWithType>メソッドです。  
+  
+ A <xref:System.IO.Packaging.PackagePart> (「部分」) に格納されているオブジェクトを表す抽象クラスであり、<xref:System.IO.Packaging.Package>です。  
+  
+ A <xref:System.IO.Packaging.PackageRelationship> (「リレーションシップ」)、ソースとの間の関連付けを定義する<xref:System.IO.Packaging.Package>または<xref:System.IO.Packaging.PackagePart>と、ターゲット オブジェクト。  A<xref:System.IO.Packaging.PackageRelationship>それぞれできる 2 つの形式のいずれかの 2 種類のいずれかになります。  
+  
+-   パッケージ レベルの関係 (によって作成された<xref:System.IO.Packaging.Package.CreateRelationship%2A?displayProperty=nameWithType>)  
+  
+    -   間、<xref:System.IO.Packaging.Package>パッケージではパーツをターゲットとします。  
+  
+    -   間、<xref:System.IO.Packaging.Package>パッケージの外部のリソースを対象とします。  
+  
+-   リレーションシップの一部レベル (によって作成された<xref:System.IO.Packaging.PackagePart.CreateRelationship%2A?displayProperty=nameWithType>)  
+  
+    -   ソースの間で<xref:System.IO.Packaging.PackagePart>と、パッケージ内の別のターゲット部分。  
+  
+    -   ソースの間で<xref:System.IO.Packaging.PackagePart>パッケージの外部のリソースを対象とします。  
+  
+ リレーションシップのソース<xref:System.IO.Packaging.Package>またはソース<xref:System.IO.Packaging.PackagePart>リレーションシップの「所有者」と見なされます。  ソース オブジェクトが削除されると、ソース オブジェクトによって所有されているすべてのリレーションシップも削除されます。  作成するか、リレーションシップの削除のプロセスが任意の方法でソースまたはターゲットのいずれかのオブジェクトを物理的に変更することはできません。  
+  
+ A<xref:System.IO.Packaging.PackageDigitalSignature>パーツおよびリレーションシップに含まれているデジタル署名を表すの合成である (「デジタル署名」)、<xref:System.IO.Packaging.Package>です。  デジタル署名が、発信元を識別し、署名済みパーツとリレーションシップに含まれることを検証、<xref:System.IO.Packaging.Package>変更されていません。  
+  
+ パッケージはデジタル著作権管理 (DRM)、コンテンツの要素で使用できるもサポート、<xref:System.IO.Packaging.Package>承認されたユーザーに付与された特定のアクセス権を持つ暗号化します。  
+  
+ に基づいて、 <xref:System.IO.Packaging.Package> 、アーキテクチャ、<xref:System.Windows.Xps.Packaging.XpsDocument>開くに基づいてドキュメントを格納するために設計されたパッケージの種類は、 [XPS XML Paper Specification ()](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]パッケージを使用して、コンテンツ、リソース、およびページおよび既定では、標準の ZIP ファイルを使用してドキュメントのリレーションシップを格納します。 ZIP ファイルとアプリケーションで使用できるよう、<xref:System.IO.Packaging>クラスを格納し、必要に応じて任意の 1 つの効率的なアクセス コンテナー内のデータ ファイルの数または種類を保護します。  
+  
+ 詳細については、ある XPS セクションでダウンロード可能な Open Packaging Conventions (OPC) 仕様を参照してください。 [Windows ハードウェア開発中央](http://go.microsoft.com/fwlink/?LinkID=71255)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

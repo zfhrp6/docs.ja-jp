@@ -1,0 +1,569 @@
+<Type Name="CollectionEditor" FullName="System.ComponentModel.Design.CollectionEditor">
+  <TypeSignature Language="C#" Value="public class CollectionEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CollectionEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.CollectionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に、ほとんどの種類のコレクションを編集できるユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.EditorAttribute>に関連付けるには、<xref:System.ComponentModel.Design.CollectionEditor>プロパティを設定します。  
+  
+ [!code-cpp[EditorAttributesExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/EditorAttributesExample/CPP/class1.cpp#1)]
+ [!code-csharp[EditorAttributesExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/EditorAttributesExample/CS/class1.cs#1)]
+ [!code-vb[EditorAttributesExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/EditorAttributesExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>このエディターは、あるコレクションを編集できます、<see langword="Item" />プロパティです。 エディターは、コレクションの種類を判断、<see langword="Item" />が存在する場合は、プロパティです。 コレクションは、このプロパティを持っていない場合、または 1 つ以上の型のコレクションを提供する場合は、その他の種類のコレクションをサポートするために、エディターをカスタマイズするこのクラスの特定のプロテクト メンバーをオーバーライドできます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CollectionEditor (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">編集するには、このエディターのコレクションの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.CollectionEditor" />クラスの指定されたコレクションの種類を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelChanges">
+      <MemberSignature Language="C#" Value="protected virtual void CancelChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CancelChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CancelChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションへの変更を取り消します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>コレクションへの変更が取り消されたときに、追加の処理を実行する必要がある場合は、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRemoveInstance">
+      <MemberSignature Language="C#" Value="protected virtual bool CanRemoveInstance (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool CanRemoveInstance(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CanRemoveInstance(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する値。</param>
+        <summary>コレクションの元のメンバーを削除できるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />コレクションからこの値を削除できる場合はそれ以外の場合、<see langword="false" />です。 既定の実装を常に返します<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスで実装された場合、このメソッドは、指定した値をコレクションから削除できるかどうかを示します。 既定では、このメソッドは常`true`です。  
+  
+ ユーザーが元のコレクションのメンバーであるアイテムを削除しようとするときは、このメソッドが呼び出されます。 このメソッドは、現在ではないために、編集セッションをまだコレクションの一部に追加された項目を削除する場合は呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSelectMultipleInstances">
+      <MemberSignature Language="C#" Value="protected virtual bool CanSelectMultipleInstances ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool CanSelectMultipleInstances() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CanSelectMultipleInstances" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複数のコレクション アイテムを一度に選択できるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />複数のコレクション メンバーことができる場合です同時に選択されている。それ以外の場合、<see langword="false" />です。 既定が返されます。<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コレクション エディター ダイアログ ボックス内で複数のコレクション メンバーを選択できるかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionItemType">
+      <MemberSignature Language="C#" Value="protected Type CollectionItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CollectionItemType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.CollectionEditor.CollectionItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の各項目のデータ型を取得します。</summary>
+        <value>コレクション アイテムのデータ型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクションの項目のデータ型を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionType">
+      <MemberSignature Language="C#" Value="protected Type CollectionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CollectionType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.CollectionEditor.CollectionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション オブジェクトのデータ型を取得します。</summary>
+        <value>コレクション オブジェクトのデータ型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクション オブジェクトのデータ型を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.ITypeDescriptorContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ITypeDescriptorContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.CollectionEditor.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ITypeDescriptorContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストを示す型記述子を取得します。</summary>
+        <value><see cref="T:System.ComponentModel.ITypeDescriptorContext" />を使用して、現在のコンテキストを示すまたは<see langword="null" />コンテキストが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCollectionForm">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.Design.CollectionEditor.CollectionForm CreateCollectionForm ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.Design.CollectionEditor/CollectionForm CreateCollectionForm() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CreateCollectionForm" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.CollectionEditor+CollectionForm</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示し、現在のコレクションを編集する新しいフォームを作成します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.Design.CollectionEditor.CollectionForm" />コレクションの編集のユーザー インターフェイスとして入力します。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>継承できます<see cref="T:System.ComponentModel.Design.CollectionEditor.CollectionForm" />独自形式を指定します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCollectionItemType">
+      <MemberSignature Language="C#" Value="protected virtual Type CreateCollectionItemType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type CreateCollectionItemType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CreateCollectionItemType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクションに含まれるデータ型を取得します。</summary>
+        <returns>コレクション内の項目のデータ型、または<see cref="T:System.Object" />いない場合<see langword="Item" />プロパティをコレクションに配置することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの項目のデータ型を取得することができます、<xref:System.ComponentModel.Design.CollectionEditor.CollectionItemType%2A>プロパティで、このメソッドよりも高速です。  
+  
+ このメソッドは、このメソッドが、オーバーライドされ、実装された派生クラスでを除き、ユーザーが呼び出す必要はありません。  
+  
+ このメソッドの既定の実装を返しますのデータ型、`Item`が存在する場合は、コレクションのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>開発者は、代表的なサポートされているコレクション モデルに従っていないコレクションをサポートするには、このメソッドをオーバーライドできますか、型の解決が遅すぎますパフォーマンスが重要なおよびリフレクション ベースです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="protected virtual object CreateInstance (Type itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object CreateInstance(class System.Type itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CreateInstance(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">作成するアイテムの型。</param>
+        <summary>指定したコレクション項目の種類の新しいインスタンスを作成します。</summary>
+        <returns>指定したオブジェクトの新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>指定した型の新しいインスタンスを作成できない場合は、このメソッドは例外をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewItemTypes">
+      <MemberSignature Language="C#" Value="protected virtual Type[] CreateNewItemTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type[] CreateNewItemTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.CreateNewItemTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクション エディターを含めることができるデータ型を取得します。</summary>
+        <returns>このコレクションに格納できるデータ型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの項目のデータ型を取得することができます、<xref:System.ComponentModel.Design.CollectionEditor.NewItemTypes%2A>プロパティで、このメソッドよりも高速です。  
+  
+ このメソッドは、このメソッドが、オーバーライドされ、実装された派生クラスでを除き、ユーザーが呼び出す必要はありません。  
+  
+ このメソッドの既定の実装では、配列型ですべてのコレクション アイテムの種類を返します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドして、複数の型のコレクションをサポートする必要があります。 このメソッドの既定の実装を返しますのデータ型、<see langword="Item" />が存在する場合は、コレクションのプロパティです。 既定の実装をオーバーライドするのにには、このメソッドを使用します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DestroyInstance">
+      <MemberSignature Language="C#" Value="protected virtual void DestroyInstance (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DestroyInstance(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.DestroyInstance(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">オブジェクトを破棄します。</param>
+        <summary>指定したオブジェクトのインスタンスを破棄します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="provider">使用する編集サービスを取得するサービス プロバイダー オブジェクト。</param>
+        <param name="value">値を編集するオブジェクト。</param>
+        <summary>指定したサービス プロバイダーとコンテキストを使用して、指定したオブジェクトの値を編集します。</summary>
+        <returns>オブジェクトの新しい値。 オブジェクトの値が変更されていない場合は、このメソッドは渡されたオブジェクトと同じオブジェクトを返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.Design.CheckoutException">ソース コード管理プログラムにチェックインされているファイルをチェック アウトとしましたが失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDisplayText">
+      <MemberSignature Language="C#" Value="protected virtual string GetDisplayText (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetDisplayText(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.GetDisplayText(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">表示テキストを取得する対象のリスト項目。</param>
+        <summary>指定されたリスト項目の表示テキストを取得します。</summary>
+        <returns>表示テキストを<paramref name="value" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>使用する編集スタイルを取得、<see cref="M:System.ComponentModel.Design.CollectionEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />メソッドです。</summary>
+        <returns>A<see cref="T:System.Drawing.Design.UITypeEditorEditStyle" />指定された編集を示す列挙値のスタイルを設定します。 かどうか、メソッドは、指定されたコンテキストではサポートされていません、このメソッドは、<see cref="F:System.Drawing.Design.UITypeEditorEditStyle.None" />識別子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItems">
+      <MemberSignature Language="C#" Value="protected virtual object[] GetItems (object editValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object[] GetItems(object editValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.GetItems(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="editValue">編集するコレクション。</param>
+        <summary>指定されたコレクションを格納するオブジェクトの配列を取得します。</summary>
+        <returns>コレクション オブジェクトを格納する配列または、空のオブジェクトの配列から、指定されたコレクションは継承しません<see cref="T:System.Collections.ICollection" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectsFromInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.IList GetObjectsFromInstance (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.IList GetObjectsFromInstance(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.GetObjectsFromInstance(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance"><see cref="T:System.Collections.ArrayList" />オブジェクトとして返されます。</param>
+        <summary>指定したオブジェクトを含むリストを返します</summary>
+        <returns><see cref="T:System.Collections.ArrayList" />を作成する個々 のオブジェクトが含まれています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="protected object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの型。</param>
+        <summary>使用可能になる場合は、要求したサービスを取得します。</summary>
+        <returns>サービスのインスタンスまたは<see langword="null" />サービスが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpTopic">
+      <MemberSignature Language="C#" Value="protected virtual string HelpTopic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpTopic" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.CollectionEditor.HelpTopic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ トピックや、エディターのダイアログ ボックスの [ヘルプ] ボタンまたは F1 キーが押されたときのトピックの一覧を表示するヘルプ キーワードを取得します。</summary>
+        <value>ヘルプ トピックや、エディターのヘルプが要求されたときのトピックの一覧を表示するヘルプ キーワード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のヘルプ トピックを表示するには、このプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewItemTypes">
+      <MemberSignature Language="C#" Value="protected Type[] NewItemTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] NewItemTypes" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.CollectionEditor.NewItemTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションの作成可能な項目の利用可能な型を取得します。</summary>
+        <value>作成できる項目の種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクションに追加できるデータ型を示します。 既定では、単一の型が返されます<xref:System.ComponentModel.Design.CollectionEditor.CollectionItemType%2A>です。 1 つ以上の型が返される場合はコレクション エディター UI を作成する項目の種類を選択する方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItems">
+      <MemberSignature Language="C#" Value="protected virtual object SetItems (object editValue, object[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SetItems(object editValue, object[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.SetItems(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editValue" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="editValue">編集するコレクション。</param>
+        <param name="value">コレクション項目として設定するオブジェクトの配列。</param>
+        <summary>コレクション内の項目として指定した配列を設定します。</summary>
+        <returns>新しく作成されたコレクション オブジェクト、または、それ以外の場合、された、<paramref name="editValue" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定は、新しいオブジェクトを作成する必要がある場合、新しいオブジェクトが返されます。 それ以外の場合、`editValue`パラメーターが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="protected virtual void ShowHelp ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ShowHelp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.CollectionEditor.ShowHelp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション エディターの既定のヘルプ トピックを表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

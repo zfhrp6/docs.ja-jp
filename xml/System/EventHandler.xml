@@ -1,0 +1,73 @@
+<Type Name="EventHandler" FullName="System.EventHandler">
+  <TypeSignature Language="C#" Value="public delegate void EventHandler(object sender, EventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed EventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.EventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.EventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納していないオブジェクト。</param>
+    <summary>イベント データを含まないイベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework のイベント モデルは、イベント デリゲート、イベントのハンドラーを関連付けるを持つに基づいています。 イベントを発生させるには、2 つの要素が必要です。  
+  
+-   イベントに応答を提供するメソッドを識別するデリゲート。  
+  
+-   必要に応じて、イベントのデータを提供する場合は、イベント データを保持するクラスです。  
+  
+ デリゲートは、署名、つまり、戻り値の型、メソッドのパラメーター リストの型を定義する型です。 デリゲート型を使用すると、デリゲートと同じシグネチャを持つメソッドを参照できる変数を宣言します。  
+  
+ 標準イベント ハンドラー デリゲートのシグネチャは、値を返さないメソッドを定義します。 このメソッドの最初のパラメーターの型は<xref:System.Object>イベントを発生させるインスタンスを指します。 2 番目のパラメーターが型から派生<xref:System.EventArgs>イベント データを保持します。 2 番目のパラメーターの値だけでは、イベントがイベント データを生成しない場合、<xref:System.EventArgs?displayProperty=nameWithType>フィールドです。 2 番目のパラメーターから派生した型は、それ以外の場合、<xref:System.EventArgs>し、フィールドまたはイベント データを保持するために必要なプロパティを提供します。  
+  
+ <xref:System.EventHandler>デリゲートは、定義済みのデリゲートを具体的にはデータを生成しないイベントのイベント ハンドラー メソッドを表すです。 イベントがデータを生成される場合に、ジェネリックを使用する必要があります<xref:System.EventHandler%601>クラスに委任します。  
+  
+ 関連付けるには、イベントをイベントを処理するメソッドを使用して、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。  
+  
+ イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例では、という名前のイベント`ThresholdReached`と関連付けられている、<xref:System.EventHandler>を委任します。 割り当てられているメソッド、<xref:System.EventHandler>デリゲートが呼び出されて、`OnThresholdReached`メソッドです。  
+  
+ [!code-cpp[EventsOverview#6](~/samples/snippets/cpp/VS_Snippets_CLR/eventsoverview/cpp/programwithdata.cpp#6)]
+ [!code-csharp[EventsOverview#6](~/samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programwithdata.cs#6)]
+ [!code-vb[EventsOverview#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1withdata.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,47 @@
+<Type Name="GridViewCancelEditEventHandler" FullName="System.Web.UI.WebControls.GridViewCancelEditEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void GridViewCancelEditEventHandler(object sender, GridViewCancelEditEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GridViewCancelEditEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewCancelEditEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.GridViewCancelEditEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.WebControls.GridViewCancelEditEventArgs" /> オブジェクト。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.GridView.RowCancelingEdit" />のイベント、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView.RowCancelingEdit>編集モードでの行の [キャンセル] ボタンがクリックされたときにイベントが発生したが、行が終了する前に編集モードです。 これにより、なりそうな場合、行、望ましくない状態でこのイベントが発生するたびに取り消し操作を停止するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewCancelEditEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewCancelEditEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowCancelingEdit>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewCancelEditEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewCancelEditEventHandler/CS/gridviewcancelediteventhandlercs.aspx#1)]
+ [!code-aspx-vb[GridViewCancelEditEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewCancelEditEventHandler/VB/gridviewcancelediteventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewCancelEditEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowCancelingEdit>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewRowCancellingEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowCancellingEdit/CS/gridviewrowcancellingeditcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowCancellingEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowCancellingEdit/VB/gridviewrowcancellingeditvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

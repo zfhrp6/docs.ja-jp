@@ -1,0 +1,73 @@
+<Type Name="ResolvedImport" FullName="Microsoft.Build.Evaluation.ResolvedImport">
+  <TypeSignature Language="C#" Value="public struct ResolvedImport" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ResolvedImport extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Evaluation.ResolvedImport" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>評価されたプロジェクト、ProjectImportElement とインポートされたプロジェクトの ProjectRootElement 間でのインポートの関係をカプセル化します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ImportedProject">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectRootElement ImportedProject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectRootElement ImportedProject" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ResolvedImport.ImportedProject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectRootElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポートされたプロジェクトのいずれかを取得します。</summary>
+        <value>返します、<see cref="T:Microsoft.Build.Construction.ProjectRootElement" />インポートされたプロジェクトを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportingElement">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectImportElement ImportingElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectImportElement ImportingElement" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ResolvedImport.ImportingElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectImportElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポートを実行して要素を取得します。</summary>
+        <value>返します、<see cref="T:Microsoft.Build.Construction.ProjectImportElement" />インポートを実行して要素を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImported">
+      <MemberSignature Language="C#" Value="public bool IsImported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImported" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ResolvedImport.IsImported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうか、インポート要素はインポート自体を決定するフラグを取得します。</summary>
+        <value>返します<see langword="true" />要素をインポートすると場合、<see langword="false" />それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

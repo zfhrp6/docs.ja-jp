@@ -1,0 +1,79 @@
+<Type Name="UpdateCheck" FullName="System.Data.Linq.Mapping.UpdateCheck">
+  <TypeSignature Language="C#" Value="public enum UpdateCheck" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UpdateCheck extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.UpdateCheck" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>オブジェクトの同時実行の競合をテストする場合を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルには、ことを指定した後のコード例`HomePage`オブジェクトをテストすることはありません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.UpdateCheck#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.mapping.updatecheck/cs/northwind.cs#1)]
+ [!code-vb[System.Data.Linq.Mapping.UpdateCheck#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.mapping.updatecheck/vb/northwind.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Always">
+      <MemberSignature Language="C#" Value="Always" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.Mapping.UpdateCheck Always = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.Mapping.UpdateCheck.Always" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.UpdateCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に確認してください。 しない限り、既定値は、この<see cref="P:System.Data.Linq.Mapping.ColumnAttribute.IsVersion" />は<see langword="true" />メンバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Never">
+      <MemberSignature Language="C#" Value="Never" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.Mapping.UpdateCheck Never = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.Mapping.UpdateCheck.Never" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.UpdateCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テストされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WhenChanged">
+      <MemberSignature Language="C#" Value="WhenChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.Mapping.UpdateCheck WhenChanged = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.Mapping.UpdateCheck.WhenChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.UpdateCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが変更されたときにのみを確認してください。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

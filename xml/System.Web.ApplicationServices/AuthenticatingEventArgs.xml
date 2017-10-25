@@ -1,0 +1,211 @@
+<Type Name="AuthenticatingEventArgs" FullName="System.Web.ApplicationServices.AuthenticatingEventArgs">
+  <TypeSignature Language="C#" Value="public class AuthenticatingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticatingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.AuthenticatingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.ApplicationServices.AuthenticationService.Authenticating" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーを作成する、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>実行時にユーザーの資格情報を認証する方法をカスタマイズするときにイベント。 <xref:System.Web.ApplicationServices.AuthenticatingEventArgs>クラスにいずれかの値を指定する<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント ハンドラー。 このクラスで使用できるプロパティを使用すると、認証をカスタマイズするユーザーの資格情報を取得することができます。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService>クラスが生成、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>ユーザーの資格情報を検証する前にイベント。 <xref:System.Web.ApplicationServices.AuthenticationService>クラスのインスタンスを作成する、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs>オブジェクトを任意に渡します。<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント ハンドラー。  
+  
+ 使用することができます、 <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>ユーザーの資格情報を取得するプロパティです。 <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>プロパティは、id 番号などの認証に必要な追加の値を含めることができます。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>プロパティでは、ユーザーの資格情報が有効かどうかを示します。 設定する、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>プロパティをカスタマイズした認証の結果。 さらに、設定、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>プロパティを`true`がユーザーの資格情報をチェックし、たくないかどうか、<xref:System.Web.ApplicationServices.AuthenticationService>クラスを既定のメンバーシップを通じてユーザーの資格情報を確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、渡されるイベント ハンドラー、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>カスタム メンバーシップ プロバイダーがユーザーの資格情報を検証する値。 イベント ハンドラーに設定<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>の戻り値を<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>メソッドとセット<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に`true`できるように、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、資格情報を検証しません。  
+  
+ [!code-csharp[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/vb/Global.asax#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Authenticated">
+      <MemberSignature Language="C#" Value="public bool Authenticated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Authenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーの資格情報が有効かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーの資格情報が有効な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーでユーザー資格情報を認証するかどうか、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント、設定、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>ユーザーの資格情報が有効かどうかを示すプロパティです。 ユーザーの資格情報は有効では、追加の検証は必要ない場合は、設定<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>に`true`と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に`true`です。 設定する、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>ユーザーを認証するための手順を認証サービスが既定値をバイパスする必要がありますを示すプロパティです。 値<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>によって使用される、<xref:System.Web.ApplicationServices.AuthenticationService>クラス場合にのみ<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に設定されている`true`です。 場合<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>は`false`、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、ユーザーの資格情報を検証する既定のメンバーシップ プロバイダーを呼び出すしの値が上書きされます<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、渡されるイベント ハンドラーを示しています。<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>カスタム メンバーシップ プロバイダーがユーザーの資格情報を検証する値。 イベント ハンドラーに設定<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>の戻り値を<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>メソッドとセット<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に`true`できるように、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、資格情報を検証しません。  
+  
+ [!code-csharp[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationIsComplete">
+      <MemberSignature Language="C#" Value="public bool AuthenticationIsComplete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AuthenticationIsComplete" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーの資格情報が認証されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーの資格情報を検証するためのすべての手順が実行されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>かを示すプロパティかどうか、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、ユーザーの資格情報を認証する必要があります。 場合<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>は`true`、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、既定のメンバーシップを通じてユーザーの資格情報を検証しません。 代わりの値を使用して<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>認証クッキーを作成するかどうかを決定します。  
+  
+ 場合<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>は`false`、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、既定のメンバーシップを通じてユーザーの資格情報を検証し、内の値を上書き、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、渡されるイベント ハンドラーを示しています。<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>カスタム メンバーシップ プロバイダーがユーザーの資格情報を検証する値。 イベント ハンドラーに設定<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>の戻り値を<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>メソッドとセット<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に`true`できるように、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、資格情報を検証しません。  
+  
+ [!code-csharp[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomCredential">
+      <MemberSignature Language="C#" Value="public string CustomCredential { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomCredential" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証の追加のユーザーの値を取得します。</summary>
+        <value>ユーザー名とパスワード以外の認証に必要な値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>ユーザー名とパスワード中以外の認証の値を取得するプロパティを<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント。 たとえば、アプリケーションを構成して、ユーザー名とパスワードと共に id 番号を検証する場合があります。 その場合は、識別番号は、`CustomCredential`のパラメーター、<xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>メソッドです。 使用してカスタム値を取得することができますし、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>プロパティです。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>に渡されると、プロパティが同じ形式でカスタマイズされた値を含む、<xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>メソッドです。 <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>プロパティに複数の値が格納されている場合は、イベント ハンドラーの値を解析する必要があります、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>プロパティの値を取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>から認証の 2 つの値を解析するイベント、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>プロパティです。 という名前のカスタム認証クラスに 2 つの値と、ユーザー名とパスワードを渡す`StudentAuthentication`です。  
+  
+ [!code-csharp[System.Web.Security.LoginService_MultipleCredentials#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_MultipleCredentials/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_MultipleCredentials#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_MultipleCredentials/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.AuthenticatingEventArgs.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのパスワードを取得します。</summary>
+        <value>検証するパスワード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>中にパスワードを取得するプロパティを<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、渡されるイベント ハンドラーを示しています。<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>カスタム メンバーシップ プロバイダーがユーザーの資格情報を検証する値。 イベント ハンドラーに設定<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>の戻り値を<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>メソッドとセット<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に`true`できるように、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、資格情報を検証しません。  
+  
+ [!code-csharp[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーの認証名を取得します。</summary>
+        <value>検証するユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>中に認証名を取得するプロパティを<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント。  
+  
+   
+  
+## Examples  
+ 次の例の値に基づいて、イベント ハンドラーを使用するメンバーシップ プロバイダーを選択する、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>プロパティです。 ハンドラー パス<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName%2A>と<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password%2A>カスタム メンバーシップ プロバイダーはユーザーの資格情報を検証する値。 設定<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated%2A>の戻り値を<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>メソッドとセット<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete%2A>に`true`できるように、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、資格情報を検証しません。  
+  
+ [!code-csharp[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_NonDefaultProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_NonDefaultProvider/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,95 @@
+<Type Name="IFileChangeNotificationSystem" FullName="System.Runtime.Caching.Hosting.IFileChangeNotificationSystem">
+  <TypeSignature Language="C#" Value="public interface IFileChangeNotificationSystem" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFileChangeNotificationSystem" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>カスタムを公開する方法を定義<see cref="T:System.Runtime.Caching.FileChangeMonitor" />キャッシュ実装するオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Asp.net では、<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>インターフェイスは内部のファイル変更通知の管理へのアクセスを提供します。  
+  
+ <xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>インターフェイスは内部で使用される、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスです。  
+  
+ キャッシュ実装を ASP.NET アプリケーション ドメインで実行すると、ASP.NET が実装する<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>によってインターフェイスを<xref:System.Runtime.Caching.ObjectCache.Host%2A>プロパティです。 <xref:System.Runtime.Caching.HostFileChangeMonitor>クラスは、このプロパティを検出して、ファイルの変更通知に基づくキャッシュ エントリを削除する ASP.NET ファイル変更通知システムを使用します。  
+  
+ 非 ASP.NET アプリケーションでカスタムを実装するホスト環境がない<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>インターフェイスです。 その結果、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスの使用、 <xref:System.IO.FileSystemWatcher> CLR のクラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="StartMonitoring">
+      <MemberSignature Language="C#" Value="public void StartMonitoring (string filePath, System.Runtime.Caching.OnChangedCallback onChangedCallback, out object state, out DateTimeOffset lastWriteTime, out long fileSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartMonitoring(string filePath, class System.Runtime.Caching.OnChangedCallback onChangedCallback, [out] object&amp; state, [out] valuetype System.DateTimeOffset&amp; lastWriteTime, [out] int64&amp; fileSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StartMonitoring(System.String,System.Runtime.Caching.OnChangedCallback,System.Object@,System.DateTimeOffset@,System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePath" Type="System.String" />
+        <Parameter Name="onChangedCallback" Type="System.Runtime.Caching.OnChangedCallback" />
+        <Parameter Name="state" Type="System.Object&amp;" RefType="out" />
+        <Parameter Name="lastWriteTime" Type="System.DateTimeOffset&amp;" RefType="out" />
+        <Parameter Name="fileSize" Type="System.Int64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="filePath">ディレクトリまたは変更を監視するファイルの完全修飾物理パス。</param>
+        <param name="onChangedCallback">実装するメソッドへの参照、<see cref="T:System.Runtime.Caching.OnChangedCallback" />を委任します。 監視対象のファイルまたはディレクトリが変更されたとき、ホスト環境の実装、<see cref="T:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem" />インターフェイスを呼び出してイベントを発生させる、<see cref="T:System.Runtime.Caching.OnChangedCallback" />クラスです。</param>
+        <param name="state">ホスト環境によって指定されている状態です。 キャッシュの実装とカスタム変更の監視は、非透過的に状態の値を扱う必要があります。 ただし、キャッシュの実装を呼び出すときに、ホスト環境に送信できることができるように、状態を格納する必要があります、<see cref="M:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StopMonitoring(System.String,System.Object)" />メソッドです。</param>
+        <param name="lastWriteTime">このメソッドが戻るときに最後の日付と時刻に発生した書き込み操作が含まれています<c>filePath</c>です。 このパラメーターは初期化せずに渡されます。 このパラメーターは、ホスト環境から返されます。</param>
+        <param name="fileSize">このメソッドが戻るときに、監視対象の合計サイズが含まれています<c>filePath</c>です。 このパラメーターは初期化せずに渡されます。 このパラメーターは、ホスト環境から返されます。</param>
+        <summary>ホスト環境を監視するファイルのパスを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはカスタム キャッシュ オブジェクトによって使用され、ユーザー設定を変更するホスト環境を実装している<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>インターフェイスでは、ホスト環境を監視するためのファイル パスを登録するためにします。 <xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StartMonitoring%2A>メソッドの実装によって呼び出されます、<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>ファイルまたはディレクトリの変更を監視するために登録するためのインターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopMonitoring">
+      <MemberSignature Language="C#" Value="public void StopMonitoring (string filePath, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopMonitoring(string filePath, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StopMonitoring(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePath" Type="System.String" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="filePath">ファイルまたは監視を停止するフォルダーのパス。 これは、以前の呼び出しで渡されたファイル パスの値と一致する必要があります、<see cref="M:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StartMonitoring(System.String,System.Runtime.Caching.OnChangedCallback,System.Object@,System.DateTimeOffset@,System.Int64@)" />メソッドです。</param>
+        <param name="state">最初に指定されたホスト環境によって、以前の呼び出し中に状態情報、<see cref="M:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StartMonitoring(System.String,System.Runtime.Caching.OnChangedCallback,System.Object@,System.DateTimeOffset@,System.Int64@)" />メソッドです。</param>
+        <summary>監視の変更が終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem.StopMonitoring%2A>カスタム キャッシュでメソッドを呼び出す必要があり、カスタム ファイルのパス、およびディレクトリの監視を停止するのには、ホスト環境によって破棄されるはモニターを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

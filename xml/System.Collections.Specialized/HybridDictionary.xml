@@ -1,0 +1,1006 @@
+<Type Name="HybridDictionary" FullName="System.Collections.Specialized.HybridDictionary">
+  <TypeSignature Language="C#" Value="public class HybridDictionary : System.Collections.IDictionary" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit HybridDictionary extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.HybridDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Specialized</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>実装して<see langword="IDictionary" />を使用して、<see cref="T:System.Collections.Specialized.ListDictionary" />への切り替えに小規模では、コレクション、<see cref="T:System.Collections.Hashtable" />コレクションが大きなを取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリの要素の数が不明の場合に、このクラスを使用することをお勧めします。 パフォーマンスの向上を利用、<xref:System.Collections.Specialized.ListDictionary>コレクションへの切り替えの柔軟性を提供し、<xref:System.Collections.Hashtable>より大規模なコレクションを処理する<xref:System.Collections.Specialized.ListDictionary>です。  
+  
+ コレクションの初期サイズが最適なサイズより大きいかどうか、<xref:System.Collections.Specialized.ListDictionary>にコレクションが格納されている、<xref:System.Collections.Hashtable>から要素のコピーのオーバーヘッドを避けるために、<xref:System.Collections.Specialized.ListDictionary>を<xref:System.Collections.Hashtable>です。  
+  
+ コンス トラクターは、により、ユーザーは、文字列を比較するときに、コレクションで大文字小文字を無視するかどうかを指定するブール型のパラメーターを受け取ります。 キーの実装を使用して、コレクションが大文字の場合は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。 コレクションが大文字と小文字の場合は、単純な序数大文字と小文字は、のみインバリアント カルチャの大文字小文字の規則に従うを実行します。 既定では、コレクションが大文字小文字を区別します。 インバリアント カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>です。  
+  
+ キーを null にすることはできませんが、値のことができます。  
+  
+ `foreach` C# 言語のステートメント (`For Each` Visual Basic で)、コレクション内の要素の型のオブジェクトを返します。 以降の各要素、<xref:System.Collections.Specialized.HybridDictionary>キー/値ペアは、要素型は、キーの型または値の型ではありません。 要素の型は、代わりに、<xref:System.Collections.DictionaryEntry>です。 例:  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary2#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CPP/source2.cpp#2)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CS/source2.cs#2)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/VB/source2.vb#2)]  
+  
+ `foreach`ステートメントがしか書き込まないことから、コレクションへの読み取りを許可する列挙子のラッパー。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CPP/hybriddictionary.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CS/hybriddictionary.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/VB/hybriddictionary.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ この実装は同期済みは提供されませんの (スレッド セーフな) ラッパー、 <see cref="T:System.Collections.Specialized.HybridDictionary" />、派生クラスは、独自の同期されたバージョンを作成できますが、<see cref="T:System.Collections.Specialized.HybridDictionary" />を使用して、<see cref="P:System.Collections.Specialized.HybridDictionary.SyncRoot" />プロパティです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HybridDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>作成、空の大文字小文字を区別<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、コレクション大文字小文字が区別されのキーの実装を使用して<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>ハッシュ コード プロバイダーとのキーの実装として<xref:System.Object.Equals%2A?displayProperty=nameWithType>としての比較子。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.HybridDictionary>一意である必要があります。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CPP/hybriddictionary.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CS/hybriddictionary.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/VB/hybriddictionary.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HybridDictionary (bool caseInsensitive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool caseInsensitive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="caseInsensitive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="caseInsensitive">示すブール値かどうか、<see cref="T:System.Collections.Specialized.HybridDictionary" />小文字は区別されません。</param>
+        <summary>空の作成<see cref="T:System.Collections.Specialized.HybridDictionary" />指定の大文字小文字を区別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`caseInsensitive`は`false`、コレクションのキーの実装を使用して<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。 場合`caseInsensitive`は`true`コレクション、単純な序数大文字と小文字の比較を実行のみインバリアント カルチャの大文字小文字の規則に従うをします。 インバリアント カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HybridDictionary (int initialSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 initialSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="initialSize">エントリの概数を<see cref="T:System.Collections.Specialized.HybridDictionary" />最初に含めることができます。</param>
+        <summary>大文字小文字を区別する作成<see cref="T:System.Collections.Specialized.HybridDictionary" />で指定した初期サイズします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの初期サイズが最適なサイズより大きいかどうか、<xref:System.Collections.Specialized.ListDictionary>にコレクションが格納されている、<xref:System.Collections.Hashtable>から要素のコピーのオーバーヘッドを避けるために、<xref:System.Collections.Specialized.ListDictionary>を<xref:System.Collections.Hashtable>です。  
+  
+ 既定では、コレクション大文字小文字が区別されのキーの実装を使用して<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>ハッシュ コード プロバイダーとのキーの実装として<xref:System.Object.Equals%2A?displayProperty=nameWithType>としての比較子。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.HybridDictionary>一意である必要があります。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`initialSize`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HybridDictionary (int initialSize, bool caseInsensitive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 initialSize, bool caseInsensitive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.#ctor(System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialSize" Type="System.Int32" />
+        <Parameter Name="caseInsensitive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="initialSize">エントリの概数を<see cref="T:System.Collections.Specialized.HybridDictionary" />最初に含めることができます。</param>
+        <param name="caseInsensitive">示すブール値かどうか、<see cref="T:System.Collections.Specialized.HybridDictionary" />小文字は区別されません。</param>
+        <summary>作成、<see cref="T:System.Collections.Specialized.HybridDictionary" />指定した初期サイズと大文字小文字の区別を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの初期サイズが最適なサイズより大きいかどうか、<xref:System.Collections.Specialized.ListDictionary>にコレクションが格納されている、<xref:System.Collections.Hashtable>から要素のコピーのオーバーヘッドを避けるために、<xref:System.Collections.Specialized.ListDictionary>を<xref:System.Collections.Hashtable>です。  
+  
+ 場合`caseInsensitive`は`false`、コレクションのキーの実装を使用して<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。 場合`caseInsensitive`は`true`コレクション、単純な序数大文字と小文字の比較を実行のみインバリアント カルチャの大文字小文字の規則に従うをします。 インバリアント カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`initialSize`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加するエントリのキー。</param>
+        <param name="value">追加するエントリの値。 値として <see langword="null" /> を指定できます。</param>
+        <summary>指定したキーと値を持つエントリを追加、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの状態とそのハッシュ コード値間の相関関係を持たない必要があります通常されませんするキーとして使用します。 たとえば、文字列オブジェクトは、キーとして使用 StringBuilder オブジェクトよりも優れています。  
+  
+ キーには`null`値のことができますが、します。  
+  
+ 使用することも、<xref:System.Collections.Specialized.HybridDictionary.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、 <xref:System.Collections.Specialized.HybridDictionary>。 たとえば、`myCollection["myNonexistentKey"] = myValue`です。 ただしで指定したキーが既に存在する場合、 <xref:System.Collections.Specialized.HybridDictionary>、設定、<xref:System.Collections.Specialized.HybridDictionary.Item%2A>プロパティに古い値が上書きされます。 これに対し、<xref:System.Collections.Specialized.HybridDictionary.Add%2A>メソッドでは、既存の要素は変更しません。  
+  
+ 要素の数が最適なサイズより大きくなると、 <xref:System.Collections.Specialized.ListDictionary>、要素のコピーから、<xref:System.Collections.Specialized.ListDictionary>を<xref:System.Collections.Hashtable>です。 ただし、これだけは 1 回です。 コレクションに既に格納されている場合、<xref:System.Collections.Hashtable>要素の数が最適なサイズを下回ると、<xref:System.Collections.Specialized.ListDictionary>でのコレクションが、<xref:System.Collections.Hashtable>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例に追加しから要素を削除、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/CPP/hybriddictionary_addremove.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/CS/hybriddictionary_addremove.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/VB/hybriddictionary_addremove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">同じキーを持つエントリは既に、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのエントリを削除、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.HybridDictionary.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。  
+  
+ コレクションに既に格納されている場合、<xref:System.Collections.Hashtable>でのコレクションが、<xref:System.Collections.Hashtable>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.HybridDictionary.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例に追加しから要素を削除、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/CPP/hybriddictionary_addremove.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/CS/hybriddictionary_addremove.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/VB/hybriddictionary_addremove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Collections.Specialized.HybridDictionary" /> 内で検索されるキー。</param>
+        <summary><see cref="T:System.Collections.Specialized.HybridDictionary" /> に特定のキーが格納されているかどうかを判断します。</summary>
+        <returns>
+          指定したキーを持つエントリが <see cref="T:System.Collections.Specialized.HybridDictionary" /> に格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`key`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次のコード内の要素の検索の例、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Contains#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Contains/CPP/hybriddictionary_contains.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Contains#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Contains/CS/hybriddictionary_contains.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Contains/VB/hybriddictionary_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />のコピー先は、<see cref="T:System.Collections.DictionaryEntry" />からコピーされるオブジェクト<see cref="T:System.Collections.Specialized.HybridDictionary" />です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コピー、<see cref="T:System.Collections.Specialized.HybridDictionary" />エントリを 1 次元<see cref="T:System.Array" />インスタンスの指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のコピー先は、<xref:System.Array>を列挙子が反復処理する順序と同じ順序で、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ 内のキーのみをコピーする、<xref:System.Collections.Specialized.HybridDictionary>を使用して`HybridDictionary.Keys.CopyTo`です。  
+  
+ 値だけをコピーする、<xref:System.Collections.Specialized.HybridDictionary>を使用して`HybridDictionary.Values.CopyTo`です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.HybridDictionary.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素をコピー、<xref:System.Collections.Specialized.HybridDictionary>を配列にします。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_CopyTo#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_CopyTo/CPP/hybriddictionary_copyto.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_CopyTo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_CopyTo/CS/hybriddictionary_copyto.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_CopyTo/VB/hybriddictionary_copyto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.Specialized.HybridDictionary" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="arrayIndex" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.Specialized.HybridDictionary" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.HybridDictionary" /> に格納されているキー/値ペアの数を取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.HybridDictionary" /> に格納されているキー/値ペアの数。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CPP/hybriddictionary_enumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CS/hybriddictionary_enumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/VB/hybriddictionary_enumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IDictionaryEnumerator" />を反復処理する、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" /> の <see cref="T:System.Collections.Specialized.HybridDictionary" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CPP/hybriddictionary_enumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CS/hybriddictionary_enumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/VB/hybriddictionary_enumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.HybridDictionary" /> が固定サイズかどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.HybridDictionary>実装する、<xref:System.Collections.Specialized.HybridDictionary.IsFixedSize%2A>プロパティが必要としているため、<xref:System.Collections.IDictionary?displayProperty=nameWithType>インターフェイスです。  
+  
+ 固定サイズのコレクションでは、コレクションの作成後に要素の追加または削除はできませんが、既存の要素の変更はできます。  
+  
+ 固定サイズ コレクションが追加および削除する要素を防止するラッパーで単純なコレクションそのための追加または削除、要素を含む、基になるコレクションが変更された場合、固定サイズ コレクションにはそれらの変更が反映されます。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.HybridDictionary" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.HybridDictionary>実装する、<xref:System.Collections.Specialized.HybridDictionary.IsReadOnly%2A>プロパティが必要としているため、<xref:System.Collections.IDictionary?displayProperty=nameWithType>インターフェイスです。  
+  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+ 読み取り専用であるコレクションは、コレクションのコレクションの変更を防止するラッパーです。そのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Collections.Specialized.HybridDictionary" />が同期されている (スレッド セーフである)。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.HybridDictionary>実装する、<xref:System.Collections.Specialized.HybridDictionary.IsSynchronized%2A>プロパティが必要としているため、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ 派生クラスでの同期されたバージョンを提供できる、<xref:System.Collections.Specialized.HybridDictionary>を使用して、<xref:System.Collections.Specialized.HybridDictionary.SyncRoot%2A>プロパティです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Specialized.HybridDictionary.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary2#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CPP/source2.cpp#3)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CS/source2.cs#3)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/VB/source2.vb#3)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">値を取得または設定する対象のキー。</param>
+        <summary>指定されたキーに関連付けられている値を取得または設定します。</summary>
+        <value>指定されたキーに関連付けられている値。 返しますを取得しようとして、指定したキーが見つからない場合<see langword="null" />、し、指定したキーを使用して、新しいエントリを作成するように設定しようとしています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[key]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ 使用することも、<xref:System.Collections.Specialized.HybridDictionary.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、 <xref:System.Collections.Specialized.HybridDictionary>。 たとえば、`myCollection["myNonexistentKey"] = myValue`です。 ただしで指定したキーが既に存在する場合、 <xref:System.Collections.Specialized.HybridDictionary>、設定、<xref:System.Collections.Specialized.HybridDictionary.Item%2A>プロパティに古い値が上書きされます。 これに対し、<xref:System.Collections.Specialized.HybridDictionary.Add%2A>メソッドでは、既存の要素は変更しません。  
+  
+ キーには`null`値のことができますが、します。 区別するために`null`指定したキーが見つからないため、返されると`null`指定したキーの値が返される`null`を使用して、<xref:System.Collections.Specialized.HybridDictionary.Contains%2A>一覧で、キーが存在するかどうかを決定するメソッド。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.Specialized.HybridDictionary.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Specialized.HybridDictionary.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ このプロパティの値を取得する場合は、o (1) 操作です。プロパティの設定は、o (1) 操作ではもです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CPP/hybriddictionary_enumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CS/hybriddictionary_enumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/VB/hybriddictionary_enumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />内のキーを含む、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" />内のキーを含む、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値の順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられている値と同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Collections.Specialized.HybridDictionary.Values%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元のキーを逆参照<xref:System.Collections.Specialized.HybridDictionary>です。 そのため、変更、<xref:System.Collections.Specialized.HybridDictionary>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CPP/hybriddictionary_enumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CS/hybriddictionary_enumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/VB/hybriddictionary_enumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するエントリのキー。</param>
+        <summary>指定したキーを持つエントリを削除、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.Specialized.HybridDictionary>指定のキーを持つ要素が含まれていない、<xref:System.Collections.Specialized.HybridDictionary>は変更されません。 例外をスローすることはありません。  
+  
+ コレクションに既に格納されている場合、<xref:System.Collections.Hashtable>要素の数が最適なサイズを下回ると、<xref:System.Collections.Specialized.ListDictionary>でのコレクションが、<xref:System.Collections.Hashtable>から要素のコピーのオーバーヘッドを回避する、<xref:System.Collections.Hashtable>に戻す、<xref:System.Collections.Specialized.ListDictionary>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例に追加しから要素を削除、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/CPP/hybriddictionary_addremove.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/CS/hybriddictionary_addremove.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_AddRemove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_AddRemove/VB/hybriddictionary_addremove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.HybridDictionary" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.HybridDictionary" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、独自の同期されたバージョンを指定できます、<xref:System.Collections.Specialized.HybridDictionary>を使用して、<xref:System.Collections.Specialized.HybridDictionary.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.Specialized.HybridDictionary.SyncRoot%2A>の<xref:System.Collections.Specialized.HybridDictionary>、上で直接、<xref:System.Collections.Specialized.HybridDictionary>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.Specialized.HybridDictionary>オブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Specialized.HybridDictionary.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary2#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CPP/source2.cpp#3)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/CS/source2.cs#3)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary2/VB/source2.vb#3)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.HybridDictionary.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />を反復処理する、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Collections.Specialized.HybridDictionary" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 この位置で、呼び出す<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、呼び出し元<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Current%2A>、<xref:System.Collections.IEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CPP/hybriddictionary_enumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CS/hybriddictionary_enumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/VB/hybriddictionary_enumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.HybridDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Collections.Specialized.HybridDictionary" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Collections.Specialized.HybridDictionary" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値の順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられているキーと同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Collections.Specialized.HybridDictionary.Keys%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元の値を逆参照<xref:System.Collections.Specialized.HybridDictionary>です。 そのため、変更、<xref:System.Collections.Specialized.HybridDictionary>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.HybridDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CPP/hybriddictionary_enumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/CS/hybriddictionary_enumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.HybridDictionary_Enumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.HybridDictionary_Enumerator/VB/hybriddictionary_enumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,236 @@
+<Type Name="DynamicUpdateMap" FullName="System.Activities.DynamicUpdate.DynamicUpdateMap">
+  <TypeSignature Language="C#" Value="public class DynamicUpdateMap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicUpdateMap extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DynamicUpdate.DynamicUpdateMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Activities.XamlIntegration.DynamicUpdateMapConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>動的更新マップのオプションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CalculateImplementationMapItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateImplementationMapItems (System.Activities.Activity activityDefinitionToBeUpdated);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;object, class System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateImplementationMapItems(class System.Activities.Activity activityDefinitionToBeUpdated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.CalculateImplementationMapItems(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityDefinitionToBeUpdated" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activityDefinitionToBeUpdated">更新するアクティビティ定義。</param>
+        <summary>計算の実装で使用されるマップ項目<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMap" />アクティビティ定義を指定します。</summary>
+        <returns>計算されたマップ項目です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalculateImplementationMapItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateImplementationMapItems (System.Activities.Activity activityDefinitionToBeUpdated, System.Activities.LocationReferenceEnvironment environment);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;object, class System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateImplementationMapItems(class System.Activities.Activity activityDefinitionToBeUpdated, class System.Activities.LocationReferenceEnvironment environment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.CalculateImplementationMapItems(System.Activities.Activity,System.Activities.LocationReferenceEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityDefinitionToBeUpdated" Type="System.Activities.Activity" />
+        <Parameter Name="environment" Type="System.Activities.LocationReferenceEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="activityDefinitionToBeUpdated">更新するアクティビティ定義。</param>
+        <param name="environment">環境。</param>
+        <summary>計算の実装で使用されるマップ項目<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMap" />with アクティビティ定義と環境を指定します.</summary>
+        <returns>計算されたマップ項目です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalculateMapItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateMapItems (System.Activities.Activity workflowDefinitionToBeUpdated);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;object, class System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateMapItems(class System.Activities.Activity workflowDefinitionToBeUpdated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.CalculateMapItems(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowDefinitionToBeUpdated" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionToBeUpdated">更新するアクティビティ定義。</param>
+        <summary>計算で使用されているマップ項目<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMap" />ワークフロー定義を指定します。</summary>
+        <returns>計算されたマップ項目です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalculateMapItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateMapItems (System.Activities.Activity workflowDefinitionToBeUpdated, System.Activities.LocationReferenceEnvironment environment);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;object, class System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt; CalculateMapItems(class System.Activities.Activity workflowDefinitionToBeUpdated, class System.Activities.LocationReferenceEnvironment environment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.CalculateMapItems(System.Activities.Activity,System.Activities.LocationReferenceEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Object,System.Activities.DynamicUpdate.DynamicUpdateMapItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowDefinitionToBeUpdated" Type="System.Activities.Activity" />
+        <Parameter Name="environment" Type="System.Activities.LocationReferenceEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionToBeUpdated">更新するアクティビティ定義。</param>
+        <param name="environment">環境。</param>
+        <summary>計算で使用されているマップ項目<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMap" />with ワークフロー定義と環境を指定します。</summary>
+        <returns>計算されたマップ項目です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="public static System.Activities.DynamicUpdate.DynamicUpdateMap Merge (params System.Activities.DynamicUpdate.DynamicUpdateMap[] maps);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.DynamicUpdate.DynamicUpdateMap Merge(class System.Activities.DynamicUpdate.DynamicUpdateMap[] maps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.Merge(System.Activities.DynamicUpdate.DynamicUpdateMap[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DynamicUpdate.DynamicUpdateMap</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maps" Type="System.Activities.DynamicUpdate.DynamicUpdateMap[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="maps">マージするマップのコレクション。</param>
+        <summary>動的更新マップをマージします。</summary>
+        <returns>マージ動的更新マップです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="public static System.Activities.DynamicUpdate.DynamicUpdateMap Merge (System.Collections.Generic.IEnumerable&lt;System.Activities.DynamicUpdate.DynamicUpdateMap&gt; maps);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.DynamicUpdate.DynamicUpdateMap Merge(class System.Collections.Generic.IEnumerable`1&lt;class System.Activities.DynamicUpdate.DynamicUpdateMap&gt; maps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.Merge(System.Collections.Generic.IEnumerable{System.Activities.DynamicUpdate.DynamicUpdateMap})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DynamicUpdate.DynamicUpdateMap</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maps" Type="System.Collections.Generic.IEnumerable&lt;System.Activities.DynamicUpdate.DynamicUpdateMap&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="maps">マージするマップです。</param>
+        <summary>動的更新マップをマージします。</summary>
+        <returns>マージ動的更新マップです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoChanges">
+      <MemberSignature Language="C#" Value="public static System.Activities.DynamicUpdate.DynamicUpdateMap NoChanges { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Activities.DynamicUpdate.DynamicUpdateMap NoChanges" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.DynamicUpdateMap.NoChanges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DynamicUpdate.DynamicUpdateMap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更することがなく、動的更新マップを取得します。</summary>
+        <value>変更することがなく、動的更新マップします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="public System.Activities.DynamicUpdate.DynamicUpdateMapQuery Query (System.Activities.Activity updatedWorkflowDefinition, System.Activities.Activity originalWorkflowDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.DynamicUpdate.DynamicUpdateMapQuery Query(class System.Activities.Activity updatedWorkflowDefinition, class System.Activities.Activity originalWorkflowDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMap.Query(System.Activities.Activity,System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DynamicUpdate.DynamicUpdateMapQuery</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="updatedWorkflowDefinition" Type="System.Activities.Activity" />
+        <Parameter Name="originalWorkflowDefinition" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="updatedWorkflowDefinition">更新されたワークフローの情報です。</param>
+        <param name="originalWorkflowDefinition">元のワークフロー定義</param>
+        <summary>動的更新マップのクエリを表示します。</summary>
+        <returns>動的更新マップ クエリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

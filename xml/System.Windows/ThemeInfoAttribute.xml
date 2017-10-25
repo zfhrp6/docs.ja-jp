@@ -1,0 +1,132 @@
+<Type Name="ThemeInfoAttribute" FullName="System.Windows.ThemeInfoAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ThemeInfoAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ThemeInfoAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ThemeInfoAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アセンブリのテーマの辞書が格納されている場所を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、テーマ リソース ディクショナリは、コントロールを定義済みのアセンブリで宣言されているし、リソース ディクショナリが置かれているを示すためにアセンブリ レベルで使用します。  
+  
+ たとえば、テーマ固有のリソース ディクショナリを指定しない場合、および`generic.xaml`提供リソース定義のすべてのリソース参照は、アセンブリのコントロール クラスの定義が存在する同じアセンブリにコンパイルされてで次の属性を適用すること、`AssemblyInfo.cs`アセンブリ プロジェクトの。  
+  
+ `[assembly:ThemeInfoAttribute(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]`  
+  
+ 加え<xref:System.Windows.ThemeInfoAttribute>アプリケーション、プロジェクトおよびアセンブリは WPF テーマ システムで使用可能にするリソース ディクショナリの順序で他の特性が必要です。  
+  
+-   宣言する場合<xref:System.Windows.ResourceDictionaryLocation.SourceAssembly>、参照先リソース ディクショナリ内に配置する必要がありますし、`themes`アセンブリ構造ディレクトリ。  
+  
+-   宣言する場合<xref:System.Windows.ResourceDictionaryLocation.SourceAssembly>の<xref:System.Windows.ThemeInfoAttribute.ThemeDictionaryLocation%2A>、XAML ファイルの名前は、XAML ファイルの名前付けパターンに準拠するように想定される動作です。`themes\<Theme Name>.<Theme Color>.xaml`です。 たとえば、クライアントで、さまざまな WPF テーマ シナリオをサポートするテーマ ファイルの一覧は、次のように。  
+  
+    -   `themes\luna.normalcolor.xaml`  
+  
+    -   `themes\luna.homestead.xaml`  
+  
+    -   `themes\luna.metallic.xaml`  
+  
+    -   `themes\royale.normalcolor.xaml`  
+  
+    -   `themes\aero.normalcolor.xaml`  
+  
+    -   `themes\classic.xaml`  
+  
+-   宣言する場合<xref:System.Windows.ResourceDictionaryLocation.ExternalAssembly>し、外部アセンブリ必要な名前は、名前付けパターンに準拠するように、および各テーマの各アセンブリは、同じキー情報を使用して構築する必要があります。  
+  
+ 作成して、テーマのリソース ディクショナリを使用する方法の詳細については、「を定義するリソース テーマ レベルで」を参照してください。」の「[コントロールの作成の概要](~/docs/framework/wpf/controls/control-authoring-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThemeInfoAttribute (System.Windows.ResourceDictionaryLocation themeDictionaryLocation, System.Windows.ResourceDictionaryLocation genericDictionaryLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.ResourceDictionaryLocation themeDictionaryLocation, valuetype System.Windows.ResourceDictionaryLocation genericDictionaryLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ThemeInfoAttribute.#ctor(System.Windows.ResourceDictionaryLocation,System.Windows.ResourceDictionaryLocation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="themeDictionaryLocation" Type="System.Windows.ResourceDictionaryLocation" />
+        <Parameter Name="genericDictionaryLocation" Type="System.Windows.ResourceDictionaryLocation" />
+      </Parameters>
+      <Docs>
+        <param name="themeDictionaryLocation">テーマ固有のリソースの場所です。</param>
+        <param name="genericDictionaryLocation">ジェネリック、テーマに固有ではない、リソースの場所。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.ThemeInfoAttribute" />クラスし、アセンブリで型のテーマ辞書の場所を定義する属性を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、`themeDictionaryLocation`は<xref:System.Windows.ResourceDictionaryLocation.SourceAssembly>、Luna.NormalColor.xaml などのファイルを含めることができます。 これらの名前は、以下に、システムのテーマ ファイルによって定義されます。  
+  
+ クラシック – [クラシック] Windows 9x x/2000 は Windows XP で検索します。  
+  
+ Luna.NormalColor - Windows XP での既定の青のテーマ。  
+  
+ Luna.Homestead – Windows XP でオリーブ テーマ。  
+  
+ Luna.Metallic – Windows XP で銀色のテーマ。  
+  
+ Royale.NormalColor – Windows XP Media Center Edition の既定のテーマ。  
+  
+ Aero.NormalColor – Windows Vista での既定のテーマ  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericDictionaryLocation">
+      <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionaryLocation GenericDictionaryLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.ResourceDictionaryLocation GenericDictionaryLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ThemeInfoAttribute.GenericDictionaryLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceDictionaryLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジェネリック、いない特定のテーマ、リソースの場所です。</summary>
+        <value><see cref="T:System.Windows.ResourceDictionaryLocation" />ジェネリックの<see cref="T:System.Windows.ResourceDictionary" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThemeDictionaryLocation">
+      <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionaryLocation ThemeDictionaryLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.ResourceDictionaryLocation ThemeDictionaryLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ThemeInfoAttribute.ThemeDictionaryLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceDictionaryLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマ固有のリソースの場所です。</summary>
+        <value><see cref="T:System.Windows.ResourceDictionaryLocation" />テーマ固有の<see cref="T:System.Windows.ResourceDictionary" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

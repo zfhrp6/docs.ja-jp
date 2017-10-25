@@ -1,0 +1,48 @@
+<Type Name="ICodeDomDesignerReload" FullName="System.ComponentModel.Design.Serialization.ICodeDomDesignerReload">
+  <TypeSignature Language="C#" Value="public interface ICodeDomDesignerReload" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICodeDomDesignerReload" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイナーの再読み込みを最適化するために使用できるインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.CodeDom.Compiler.CodeDomProvider>デザイナーによって再読み込み最適化をサポートするには、このインターフェイスを実装します。 デザイナーは、表示のファイルを再解析、ときに、パフォーマンスを向上させるためにこのインターフェイスを使用できます。  
+  
+ このパフォーマンスの最適化のメソッドをサポートするために、デザイナーを渡すことができます、<xref:System.CodeDom.CodeCompileUnit>にドキュメントのコードを表す、<xref:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload.ShouldReloadDesigner%2A>メソッドです。 <xref:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload.ShouldReloadDesigner%2A>コードが変更されたかどうかを一般に、コードに、デザイナーを再読み込みが必要かどうかを示す値を返します。 それ以外の場合、デザイナーを再読み込みする時間を費やす必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ShouldReloadDesigner">
+      <MemberSignature Language="C#" Value="public bool ShouldReloadDesigner (System.CodeDom.CodeCompileUnit newTree);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShouldReloadDesigner(class System.CodeDom.CodeCompileUnit newTree) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload.ShouldReloadDesigner(System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newTree" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="newTree">A<see cref="T:System.CodeDom.CodeCompileUnit" />デザイナーのドキュメントのコードを含むです。</param>
+        <summary>デザイナーが正しく指定したコンパイル単位をインポートするために再読み込みが必要かどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合は、デザイナーを再読み込みする必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,357 @@
+<Type Name="BrowsableAttribute" FullName="System.ComponentModel.BrowsableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class BrowsableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BrowsableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.BrowsableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ ウィンドウでプロパティまたはイベントを表示するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナー通常表示プロパティ ウィンドウで参照可能な属性を持っていないかが付いているこれらのメンバー、<xref:System.ComponentModel.BrowsableAttribute.%23ctor%2A>コンス トラクターの`browsable`パラメーターに設定`true`です。 これらのメンバーは、デザイン時に変更できます。 マークされたメンバー、<xref:System.ComponentModel.BrowsableAttribute.%23ctor%2A>コンス トラクターの`browsable`パラメーターに設定`false`デザイン時の編集に適さないものし、そのため、ビジュアル デザイナーでは表示されません。 既定値は、`true` です。  
+  
+> [!NOTE]
+>  持つプロパティを指定すると`Browsable(true)`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.BrowsableAttribute.Yes>です。 マークされたプロパティの`Browsable(false)`、値が<xref:System.ComponentModel.BrowsableAttribute.No>です。 したがって、コードでこの属性の値をチェックするときは、属性としてを指定する必要があります<xref:System.ComponentModel.BrowsableAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.BrowsableAttribute.No?displayProperty=nameWithType>です。  
+  
+ 詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、参照可能としてプロパティをマークします。  
+  
+ [!code-cpp[Classic BrowsableAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BrowsableAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BrowsableAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BrowsableAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic BrowsableAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BrowsableAttribute Example/VB/source.vb#1)]  
+  
+ 次の例の値を確認する方法を示しています、<xref:System.ComponentModel.BrowsableAttribute>の`MyProperty`します。 最初に、コードを取得、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。 次に、インデックス、コード、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。 このプロパティの属性を返し、属性変数に保存します。  
+  
+ この例の値をチェックする 2 つの異なる方法を表示する、<xref:System.ComponentModel.BrowsableAttribute>です。 この例では、2 つ目のコード フラグメントで、<xref:System.Object.Equals%2A>メソッドです。 この例では、最後のコード フラグメントで、<xref:System.ComponentModel.BrowsableAttribute.Browsable%2A>プロパティの値を確認します。  
+  
+ [!code-cpp[Classic BrowsableAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BrowsableAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic BrowsableAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BrowsableAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic BrowsableAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BrowsableAttribute Example/VB/source.vb#2)]  
+  
+ 持つクラスをマークした場合、<xref:System.ComponentModel.BrowsableAttribute>値を確認し、次のコードを使用します。  
+  
+ [!code-cpp[Classic BrowsableAttribute Example#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BrowsableAttribute Example/CPP/source.cpp#3)]
+ [!code-csharp[Classic BrowsableAttribute Example#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BrowsableAttribute Example/CS/source.cs#3)]
+ [!code-vb[Classic BrowsableAttribute Example#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BrowsableAttribute Example/VB/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BrowsableAttribute (bool browsable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool browsable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BrowsableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="browsable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="browsable">
+          <see langword="true" />デザイン時プロパティまたはイベントを変更できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</param>
+        <summary><see cref="T:System.ComponentModel.BrowsableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、<xref:System.ComponentModel.BrowsableAttribute.%23ctor%2A>値のコンス トラクター `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.BrowsableAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.BrowsableAttribute.%23ctor%2A>値のコンス トラクター `false`、値が<xref:System.ComponentModel.BrowsableAttribute.No>です。 そのため、コード内でこの属性の値を確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.BrowsableAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.BrowsableAttribute.No?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では、参照可能としてプロパティをマークします。 このコードでは、新しい<xref:System.ComponentModel.BrowsableAttribute>、その値に設定<xref:System.ComponentModel.BrowsableAttribute.Yes?displayProperty=nameWithType>、し、プロパティにバインドします。  
+  
+ [!code-cpp[Classic BrowsableAttribute.BrowsableAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BrowsableAttribute.BrowsableAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BrowsableAttribute.BrowsableAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BrowsableAttribute.BrowsableAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic BrowsableAttribute.BrowsableAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BrowsableAttribute.BrowsableAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Browsable">
+      <MemberSignature Language="C#" Value="public bool Browsable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Browsable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BrowsableAttribute.Browsable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが参照可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、オブジェクトが参照可能です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の確認を表示するかどうか`MyProperty`が参照可能です。 最初の属性の取得コード`MyProperty`で。  
+  
+-   取得する、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。  
+  
+-   インデックスを付ける、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。  
+  
+-   このプロパティの属性の属性変数に保存します。  
+  
+ コードを設定し、`myAttribute`の値に、<xref:System.ComponentModel.BrowsableAttribute>で、<xref:System.ComponentModel.AttributeCollection>し、プロパティが参照可能かどうかを確認します。  
+  
+ [!code-cpp[Classic BrowsableAttribute.Browsable Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BrowsableAttribute.Browsable Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BrowsableAttribute.Browsable Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BrowsableAttribute.Browsable Example/CS/source.cs#1)]
+ [!code-vb[Classic BrowsableAttribute.Browsable Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BrowsableAttribute.Browsable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.BrowsableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.BrowsableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.BrowsableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BrowsableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を指定します、 <see cref="T:System.ComponentModel.BrowsableAttribute" />、これは<see cref="F:System.ComponentModel.BrowsableAttribute.Yes" />します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性が定数のメンバーに設定されている場合、この値を持つプロパティを設定すると、<xref:System.ComponentModel.BrowsableAttribute.Yes>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.BrowsableAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BrowsableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のもう 1 つのオブジェクト。</param>
+        <summary>このインスタンスと指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <paramref name="obj" /> がこのインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BrowsableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BrowsableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性が既定値であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性がこの属性クラスの既定値である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.BrowsableAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.BrowsableAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.BrowsableAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BrowsableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時に変更できないプロパティまたはイベントを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、<xref:System.ComponentModel.BrowsableAttribute.%23ctor%2A>値のコンス トラクター `false`、定数のメンバーにこの属性が設定されている<xref:System.ComponentModel.BrowsableAttribute.No>です。 したがって、属性がコード内でこの値に設定されているかどうかをチェックするときは、属性としてを指定する必要があります<xref:System.ComponentModel.BrowsableAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.BrowsableAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.BrowsableAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.BrowsableAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BrowsableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティまたはイベントをデザイン時に変更することを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、この属性の既定の設定です。  
+  
+ 持つプロパティを指定すると、<xref:System.ComponentModel.BrowsableAttribute.%23ctor%2A>値のコンス トラクター `true`、定数のメンバーにこの属性が設定されている<xref:System.ComponentModel.BrowsableAttribute.Yes>です。 したがって、属性がコード内でこの値に設定されているかどうかをチェックするときは、属性としてを指定する必要があります<xref:System.ComponentModel.BrowsableAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

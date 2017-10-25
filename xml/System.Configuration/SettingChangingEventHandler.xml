@@ -1,0 +1,36 @@
+<Type Name="SettingChangingEventHandler" FullName="System.Configuration.SettingChangingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void SettingChangingEventHandler(object sender, SettingChangingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SettingChangingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingChangingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Configuration.SettingChangingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、通常、アプリケーション設定のラッパー クラスから派生します<see cref="T:System.Configuration.ApplicationSettingsBase" />クラスです。</param>
+    <param name="e">A<see cref="T:System.Configuration.SettingChangingEventArgs" />イベントのデータを格納します。</param>
+    <summary><see cref="E:System.Configuration.ApplicationSettingsBase.SettingChanging" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ApplicationSettingsBase.SettingChanging>アプリケーション設定プロパティの値を変更するまで、通常を呼び出すことによって、イベントが発生した、<xref:System.Configuration.ApplicationSettingsBase.Item%2A>メソッドです。 <xref:System.Configuration.ApplicationSettingsBase.SettingChanging>取り消すことができます、<xref:System.Configuration.SettingChangingEventArgs>イベント データ クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

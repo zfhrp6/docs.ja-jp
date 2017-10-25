@@ -1,0 +1,480 @@
+<Type Name="BevelBitmapEffect" FullName="System.Windows.Media.Effects.BevelBitmapEffect">
+  <TypeSignature Language="C#" Value="public sealed class BevelBitmapEffect : System.Windows.Media.Effects.BitmapEffect" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BevelBitmapEffect extends System.Windows.Media.Effects.BitmapEffect" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Effects.BevelBitmapEffect" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Effects.BitmapEffect</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 指定した曲線に従ってイメージの表面を浮き上がらせるベベルを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]ソフトウェアでレンダリングされたビットマップ効果とは。 効果を適用するオブジェクトも、ソフトウェアでレンダリングされます。 パフォーマンスが低下する可能性、ビットマップ効果を大規模なビジュアルやアニメーションに適用されません必要があります。  
+  
+ 傾斜 (ベベルの曲線) の型によって決定されます、<xref:System.Windows.Media.Effects.BevelBitmapEffect.EdgeProfile%2A>プロパティです。  
+  
+ <xref:System.Windows.Media.Effects.BevelBitmapEffect>SDK に同梱されているいくつかの効果の 1 つです。 その他の効果は、次のとおりです。  
+  
+-   <xref:System.Windows.Media.Effects.OuterGlowBitmapEffect>  
+  
+-   <xref:System.Windows.Media.Effects.BlurBitmapEffect>  
+  
+-   <xref:System.Windows.Media.Effects.DropShadowBitmapEffect>  
+  
+-   <xref:System.Windows.Media.Effects.EmbossBitmapEffect>  
+  
+ 次の図は、 <xref:System.Windows.Media.Effects.BevelBitmapEffect> visual オブジェクトに適用されます (この場合に適用、 <xref:System.Windows.Controls.Button>)。  
+  
+ ![スクリーン ショット: 通常の動作と斜め結合ボタンの比較](~/add/media/effects-bevelsimple1.png "スクリーン ショット: 通常の動作と斜め結合ボタンのボタンの比較")  
+  
+ 次の図のいくつかの基本的なプロパティの効果を表示する<xref:System.Windows.Media.Effects.BevelBitmapEffect>です。  
+  
+ <xref:System.Windows.Media.Effects.BevelBitmapEffect.BevelWidth%2A>ベベルの幅はプロパティを指定します。  
+  
+ ![スクリーン ショット: BevelWidth 値の比較](~/add/media/effects-bevelbevelwidth.png "スクリーン ショット: BevelWidth の比較値")  
+  
+ <xref:System.Windows.Media.Effects.BevelBitmapEffect.EdgeProfile%2A>ベベルの曲線を指定します。  
+  
+ ![スクリーン ショット: EdgeProfile の値を比較する](~/add/media/effects-beveledgeprofile.png "スクリーン ショット: EdgeProfile の値の比較")  
+  
+ <xref:System.Windows.Media.Effects.BevelBitmapEffect.Relief%2A>ベベルのリリーフを指定します。  
+  
+ ![スクリーン ショット: 緩和プロパティの比較](~/add/media/effects-bevelrelief.png "スクリーン ショット: 緩和プロパティの比較")  
+  
+ <xref:System.Windows.Media.Effects.BevelBitmapEffect.Smoothness%2A>ベベルの影の滑らかさはプロパティを指定します。  
+  
+ ![スクリーン ショット: Smoothness プロパティ値を比較する](~/add/media/effects-bevelsmoothness.png "スクリーン ショット: 比較 Smoothness プロパティ値")  
+  
+ <xref:System.Windows.Media.Effects.BevelBitmapEffect.LightAngle%2A>プロパティは、どちらの方向から「仮想光」から読み込まれてベベルの影を作り出すを指定します。  
+  
+ ![スクリーン ショット: 光の角度の比較](~/add/media/effects-bevellightangle.png "スクリーン ショット: 光の角度の比較")  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">インスタンスを作成するため、<see cref="T:System.Windows.Media.Effects.BevelBitmapEffect" />クラスです。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BevelBitmapEffect ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BevelBitmapEffect.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="T:System.Windows.Media.Effects.BevelBitmapEffect" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BevelWidth">
+      <MemberSignature Language="C#" Value="public double BevelWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 BevelWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BevelBitmapEffect.BevelWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 ベベルの幅を取得または設定します。</summary>
+        <value>ベベルの幅。 既定値は<c>5</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、このプロパティの効果を示しています。  
+  
+ ![スクリーン ショット: BevelWidth 値の比較](~/add/media/effects-bevelbevelwidth.png "スクリーン ショット: BevelWidth の比較値")  
+  
+<a name="dependencyPropertyInfo_BevelWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BevelBitmapEffect.BevelWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BevelWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BevelWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BevelWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BevelBitmapEffect.BevelWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BevelBitmapEffect.BevelWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BevelBitmapEffect Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.BevelBitmapEffect Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BevelBitmapEffect.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BevelBitmapEffect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 この <see cref="T:System.Windows.Media.Effects.BevelBitmapEffect" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BevelBitmapEffect CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.BevelBitmapEffect CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BevelBitmapEffect.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BevelBitmapEffect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 この <see cref="T:System.Windows.Media.Effects.BevelBitmapEffect" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、およびアニメーションはコピーされませんが、その現在の値は</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BevelBitmapEffect.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUnmanagedEffect">
+      <MemberSignature Language="C#" Value="protected override System.Runtime.InteropServices.SafeHandle CreateUnmanagedEffect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Runtime.InteropServices.SafeHandle CreateUnmanagedEffect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BevelBitmapEffect.CreateUnmanagedEffect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.SafeHandle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdgeProfile">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.EdgeProfile EdgeProfile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Effects.EdgeProfile EdgeProfile" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BevelBitmapEffect.EdgeProfile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.EdgeProfile</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 ベベルの曲線を取得または設定します。</summary>
+        <value>ベベルの曲線。 既定値は <see cref="F:System.Windows.Media.Effects.EdgeProfile.Linear" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、このプロパティの効果を示しています。  
+  
+ ![スクリーン ショット: EdgeProfile の値を比較する](~/add/media/effects-beveledgeprofile.png "スクリーン ショット: EdgeProfile の値の比較")  
+  
+<a name="dependencyPropertyInfo_EdgeProfile"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BevelBitmapEffect.EdgeProfileProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdgeProfileProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty EdgeProfileProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty EdgeProfileProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BevelBitmapEffect.EdgeProfileProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BevelBitmapEffect.EdgeProfile" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LightAngle">
+      <MemberSignature Language="C#" Value="public double LightAngle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LightAngle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BevelBitmapEffect.LightAngle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 傾斜面の影を作り出す "仮想光" の照射方向を取得または設定します。</summary>
+        <value>仮想光源の方向。 有効な範囲は 0 ～ 360 (度) です。0 はオブジェクトの右側を示し、値が大きくなるにつれてオブジェクトを中心に反時計回りに移動します。 傾斜面の影は、光が当てられる場所の反対側に映し出されます。 既定値は<c>135</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、照射方向はこのプロパティの指定された値から取得します。 ベベルの影は、光の角度の反対側にキャストされます。  
+  
+ ![ダイアグラム: DropShadow 方向](~/add/media/effects-dropshadowdirection2.png "ダイアグラム: DropShadow 方向")  
+  
+ 次の図は、このプロパティの効果を示しています。  
+  
+ ![スクリーン ショット: 光の角度の比較](~/add/media/effects-bevellightangle.png "スクリーン ショット: 光の角度の比較")  
+  
+<a name="dependencyPropertyInfo_LightAngle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BevelBitmapEffect.LightAngleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LightAngleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LightAngleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LightAngleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BevelBitmapEffect.LightAngleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BevelBitmapEffect.LightAngle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Relief">
+      <MemberSignature Language="C#" Value="public double Relief { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Relief" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BevelBitmapEffect.Relief" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 ベベルのリリーフの高さを取得または設定します。</summary>
+        <value>ベベルのリリーフの高さ。 有効な範囲は<c>0</c>と<c>1</c>で<c>1</c>最もリリーフ (最も色の濃い影) を持ちます。 既定値は<c>0.3</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、このプロパティの効果を示しています。  
+  
+ ![スクリーン ショット: 緩和プロパティの比較](~/add/media/effects-bevelrelief.png "スクリーン ショット: 緩和プロパティの比較")  
+  
+<a name="dependencyPropertyInfo_Relief"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BevelBitmapEffect.ReliefProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReliefProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ReliefProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ReliefProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BevelBitmapEffect.ReliefProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BevelBitmapEffect.Relief" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Smoothness">
+      <MemberSignature Language="C#" Value="public double Smoothness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Smoothness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BevelBitmapEffect.Smoothness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 ベベルの影の滑らかさを取得または設定します。</summary>
+        <value>ベベルの影の滑らかさを示す値。 有効な範囲は<c>0</c>と<c>1</c>で<c>1</c>です。 既定値は<c>0.2</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、このプロパティの効果を示しています。  
+  
+ ![スクリーン ショット: Smoothness プロパティ値を比較する](~/add/media/effects-bevelsmoothness.png "スクリーン ショット: 比較 Smoothness プロパティ値")  
+  
+<a name="dependencyPropertyInfo_Smoothness"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BevelBitmapEffect.SmoothnessProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmoothnessProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SmoothnessProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SmoothnessProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BevelBitmapEffect.SmoothnessProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BevelBitmapEffect.Smoothness" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateUnmanagedPropertyState">
+      <MemberSignature Language="C#" Value="protected override void UpdateUnmanagedPropertyState (System.Runtime.InteropServices.SafeHandle unmanagedEffect);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void UpdateUnmanagedPropertyState(class System.Runtime.InteropServices.SafeHandle unmanagedEffect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BevelBitmapEffect.UpdateUnmanagedPropertyState(System.Runtime.InteropServices.SafeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unmanagedEffect" Type="System.Runtime.InteropServices.SafeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="unmanagedEffect">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

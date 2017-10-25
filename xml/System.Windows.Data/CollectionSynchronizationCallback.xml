@@ -1,0 +1,30 @@
+<Type Name="CollectionSynchronizationCallback" FullName="System.Windows.Data.CollectionSynchronizationCallback">
+  <TypeSignature Language="C#" Value="public delegate void CollectionSynchronizationCallback(IEnumerable collection, object context, Action accessMethod, bool writeAccess);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CollectionSynchronizationCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.CollectionSynchronizationCallback" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+    <Parameter Name="context" Type="System.Object" />
+    <Parameter Name="accessMethod" Type="System.Action" />
+    <Parameter Name="writeAccess" Type="System.Boolean" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="collection">作成に使用されたもの以外のスレッドでアクセスするコレクション。</param>
+    <param name="context">コレクションを同期するために使用するオブジェクト。</param>
+    <param name="accessMethod">コレクションに対して演算を実行するメソッドにデリゲートします。</param>
+    <param name="writeAccess">
+      <see langword="true" />場合<c>accessMethod</c>コレクションに書き込みますそれ以外の場合、<see langword="false" />です。</param>
+    <summary>スレッド間アクセス用のコレクションを同期するメソッドを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

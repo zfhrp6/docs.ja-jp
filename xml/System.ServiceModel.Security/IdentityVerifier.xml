@@ -1,0 +1,119 @@
+<Type Name="IdentityVerifier" FullName="System.ServiceModel.Security.IdentityVerifier">
+  <TypeSignature Language="C#" Value="public abstract class IdentityVerifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IdentityVerifier extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.IdentityVerifier" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リモート エンドポイントを表す承認コンテキストに対して予想 ID を検証したり、エンドポイント アドレスから ID を作成したりするために実装できる <see langword="abstract" /> 基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャは、まず <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> メソッドを呼び出し、メッセージからサービスの ID を取得します。 次に、インフラストラクチャは、返された <xref:System.ServiceModel.Security.IdentityVerifier.CheckAccess%2A> と <xref:System.ServiceModel.EndpointIdentity> を使用して <xref:System.IdentityModel.Policy.AuthorizationContext> メソッドを呼び出します。  
+  
+ クラスの実装の詳細については、次を参照してください。[する方法: カスタム クライアント Id 検証機能を作成する](~/docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected IdentityVerifier ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.IdentityVerifier.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>このクラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccess">
+      <MemberSignature Language="C#" Value="public abstract bool CheckAccess (System.ServiceModel.EndpointIdentity identity, System.IdentityModel.Policy.AuthorizationContext authContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CheckAccess(class System.ServiceModel.EndpointIdentity identity, class System.IdentityModel.Policy.AuthorizationContext authContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.IdentityVerifier.CheckAccess(System.ServiceModel.EndpointIdentity,System.IdentityModel.Policy.AuthorizationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.ServiceModel.EndpointIdentity" />
+        <Parameter Name="authContext" Type="System.IdentityModel.Policy.AuthorizationContext" />
+      </Parameters>
+      <Docs>
+        <param name="identity">検証する <see cref="T:System.ServiceModel.EndpointIdentity" />。</param>
+        <param name="authContext"><see cref="T:System.IdentityModel.Policy.AuthorizationContext" />をテストする、 <c>identity</c>に対してです。</param>
+        <summary>ID を検証するメソッドを実装します。</summary>
+        <returns>
+          ID が検証された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.IdentityVerifier CreateDefault ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Security.IdentityVerifier CreateDefault() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.IdentityVerifier.CreateDefault" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.IdentityVerifier</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このクラスの既定のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Security.IdentityVerifier" /> の既定のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetIdentity">
+      <MemberSignature Language="C#" Value="public abstract bool TryGetIdentity (System.ServiceModel.EndpointAddress reference, out System.ServiceModel.EndpointIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetIdentity(class System.ServiceModel.EndpointAddress reference, [out] class System.ServiceModel.EndpointIdentity&amp; identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity(System.ServiceModel.EndpointAddress,System.ServiceModel.EndpointIdentity@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="identity" Type="System.ServiceModel.EndpointIdentity&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="reference">ID の作成に使用する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="identity">返される <see cref="T:System.ServiceModel.EndpointIdentity" />。</param>
+        <summary>エンドポイントから ID の作成を試みます。</summary>
+        <returns>
+          ID が返された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.IdentityVerifier> の一部として明示的な <xref:System.ServiceModel.DnsEndpointIdentity> が指定されていない場合、既定の <xref:System.ServiceModel.EndpointAddress.Uri%2A> は <xref:System.ServiceModel.EndpointIdentity> のホスト名部分に基づいて <xref:System.ServiceModel.EndpointAddress> を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

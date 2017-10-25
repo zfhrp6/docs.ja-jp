@@ -1,0 +1,2053 @@
+<Type Name="SerializationInfo" FullName="System.Runtime.Serialization.SerializationInfo">
+  <TypeSignature Language="C#" Value="public sealed class SerializationInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializationInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.SerializationInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトを逆シリアル化または逆シリアル化に必要なすべてのデータを格納します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、カスタム シリアル化の動作を持つオブジェクトで使用されます。 <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>いずれかのメソッド<xref:System.Runtime.Serialization.ISerializable>または<xref:System.Runtime.Serialization.ISerializationSurrogate>は追加、<xref:System.Runtime.Serialization.SerializationInfo>と名前で、種類、シリアル化する必要がある情報の各部分の値を格納します。 逆シリアル化中に、適切な関数は、この情報を抽出できます。  
+  
+ オブジェクトに追加されます、<xref:System.Runtime.Serialization.SerializationInfo>を使用してシリアル化時に保存、<xref:System.Runtime.Serialization.SerializationInfo.AddValue%2A>メソッドから抽出し、<xref:System.Runtime.Serialization.SerializationInfo>で逆シリアル化を使用して、保存、<xref:System.Runtime.Serialization.SerializationInfo.GetValue%2A>メソッドです。  
+  
+ シリアル化をカスタマイズする方法の詳細については、次を参照してください。[カスタム シリアル化](~/docs/standard/serialization/custom-serialization.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Runtime.Serialization.SerializationInfo>カスタム シリアル化と逆シリアル化のさまざまな値です。  
+  
+ [!code-cpp[ISerializable Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ISerializable Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[ISerializable Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ISerializable Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[ISerializable Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ISerializable Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializationInfo (Type type, System.Runtime.Serialization.IFormatterConverter converter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Runtime.Serialization.IFormatterConverter converter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.#ctor(System.Type,System.Runtime.Serialization.IFormatterConverter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="converter" Type="System.Runtime.Serialization.IFormatterConverter" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />のシリアル化するオブジェクト。</param>
+        <param name="converter"><see cref="T:System.Runtime.Serialization.IFormatterConverter" />逆シリアル化中に使用します。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.IFormatterConverter>として渡される、`converter`パラメーターは、データをその内部表現から要求されたユーザーの形式に変換します。 内のデータの内部表現、<xref:System.Runtime.Serialization.SerializationInfo>作成に使用されたフォーマッタによって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="converter" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializationInfo (Type type, System.Runtime.Serialization.IFormatterConverter converter, bool requireSameTokenInPartialTrust);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Runtime.Serialization.IFormatterConverter converter, bool requireSameTokenInPartialTrust) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.#ctor(System.Type,System.Runtime.Serialization.IFormatterConverter,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="converter" Type="System.Runtime.Serialization.IFormatterConverter" />
+        <Parameter Name="requireSameTokenInPartialTrust" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />のシリアル化するオブジェクト。</param>
+        <param name="converter"><see cref="T:System.Runtime.Serialization.IFormatterConverter" />逆シリアル化中に使用します。</param>
+        <param name="requireSameTokenInPartialTrust">オブジェクトに部分的な信頼で同じトークンが必要かどうかを示します。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化するブール値。</param>
+        <summary>ブール値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。 例:  
+  
+```csharp  
+void ISerializable.GetObject(SerializationInfo info, StreamingContext context)  
+{  
+   // This will not cause an exception to be thrown.  
+   info.AddValue("ABC", true);  
+   info.AddValue("abc", false);  
+   // However, this will cause the SerializationException to be thrown.  
+   info.AddValue("XYZ", true);  
+   info.AddValue("XYZ", false);  
+}  
+```  
+  
+```vb  
+Private Sub GetObjectData(ByVal info As SerializationInfo, _  
+ByVal context As StreamingContext)  
+   ' This will not cause an exception to be thrown.  
+   info.AddValue("ABC", "upper case")  
+   info.AddValue("abc", "lower case")  
+   ' However, this will cause the SerializationException to be thrown.  
+   info.AddValue("XYZ", "same case")  
+   info.AddValue("XYZ", "same case")  
+End Sub  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化するバイト値。</param>
+        <summary>8 ビット符号なし整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化する文字の値。</param>
+        <summary>Unicode 文字の値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, DateTime value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, valuetype System.DateTime value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see cref="T:System.DateTime" />シリアル化する値。</param>
+        <summary>追加、<see cref="T:System.DateTime" />値に、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, decimal value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, valuetype System.Decimal value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化する 10 進値です。</param>
+        <summary>10 進値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">場合、<paramref name="name" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている場合<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化する double 値。</param>
+        <summary>倍精度浮動小数点値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see langword="Int16" />シリアル化する値。</param>
+        <summary>16 ビット符号付き整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see langword="Int32" />シリアル化する値。</param>
+        <summary>32 ビット符号付き整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ISerializable Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ISerializable Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[ISerializable Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ISerializable Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[ISerializable Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ISerializable Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">Int64 の値をシリアル化します。</param>
+        <summary>64 ビット符号付き整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化する値。 このオブジェクトの子は、自動的にシリアル化されます。</param>
+        <summary>指定したオブジェクトに追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />ストアの場所に関連付けられている指定された名前です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれているオブジェクト、`value`パラメーターは、によって返される型としてシリアル化`value`です。  
+  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, sbyte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see langword="Sbyte" />シリアル化する値。</param>
+        <summary>8 ビット符号付き整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化する 1 つの値。</param>
+        <summary>単精度浮動小数点値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, ushort value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, unsigned int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see langword="UInt16" />シリアル化する値。</param>
+        <summary>16 ビット符号なし整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see langword="UInt32" />シリアル化する値。</param>
+        <summary>32 ビット符号なし整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Runtime.Serialization.SerializationInfo.AddValue%2A>メソッドの型のシリアル化をカスタマイズします。 コードのインスタンスに文字列と整数を追加、<xref:System.Runtime.Serialization.SerializationInfo>クラス内で、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>のメソッド、<xref:System.Runtime.Serialization.ISerializable>インターフェイスです。 コードを使用しても、<xref:System.Runtime.Serialization.SerializationInfo.GetValue%2A>から値を取得する方法を<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ [!code-csharp[ISerializable_GetObjectData#0](~/samples/snippets/csharp/VS_Snippets_Remoting/ISerializable_GetObjectData/cs/ISerializable_GetObjectData.cs#0)]
+ [!code-vb[ISerializable_GetObjectData#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ISerializable_GetObjectData/vb/ISerializable_GetObjectData.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value"><see langword="UInt64" />シリアル化する値。</param>
+        <summary>64 ビット符号なし整数値を追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValue">
+      <MemberSignature Language="C#" Value="public void AddValue (string name, object value, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValue(string name, object value, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">その後で逆シリアル化できるように、値に関連付ける名前。</param>
+        <param name="value">シリアル化する値。 このオブジェクトの子は、自動的にシリアル化されます。</param>
+        <param name="type"><see cref="T:System.Type" />現在のオブジェクトに関連付けます。 このパラメーターは、またはその基本クラスの 1 つのオブジェクト自体の型を常に指定する必要があります。</param>
+        <summary>値を追加、 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 、格納場所<paramref name="value" />に関連付けられている<paramref name="name" />としてシリアル化と<see cref="T:System.Type" /><paramref name="type" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てられた型が、オブジェクトの型またはその親の 1 つでは常にします。  
+  
+ 2 つの値がで追加された場合だけが異なる名前の場合は、例外はスローされません、推奨される方法はありません。 ただし、まったく同じ名前の 2 つの値を追加することにより、<xref:System.Runtime.Serialization.SerializationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">場合<paramref name="name" />または<paramref name="type" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">値が既に関連付けられている<paramref name="name" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.SerializationInfo.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのみシリアル化中にシリアル化する型のアセンブリ名を設定します。</summary>
+        <value>シリアル化する型のアセンブリの完全名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.SerializationInfo.AssemblyName%2A>がによって返される値と同じ<xref:System.Reflection.Assembly.FullName%2A>包含する型のアセンブリのプロパティです。 これは、このオブジェクトの型情報をシリアル化するときに、フォーマッタが使用するアセンブリ名です。  
+  
+ アセンブリ名には、アセンブリ、バージョン、カルチャ、およびオブジェクトに関するセキュリティ情報の名前が含まれています。  
+  
+ (たとえば、特定の型に対してプロキシを送信する場合など) にシリアル化する型を変更するユーザーは、このプロパティの値が設定されます。  
+  
+> [!CAUTION]
+>  このプロパティの値が定義されているため逆シリアル化中にこのプロパティは使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定される値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTypeName">
+      <MemberSignature Language="C#" Value="public string FullTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.SerializationInfo.FullTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の完全な名前、<see cref="T:System.Type" />をシリアル化します。</summary>
+        <value>シリアル化する型の完全名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.SerializationInfo.FullTypeName%2A>は呼び出すことによって返されるものと同じ、<xref:System.Type.FullName%2A>で<xref:System.Type>です。 これは、このオブジェクトの型情報をシリアル化するときに、フォーマッタを使用して、型名です。  
+  
+ (たとえば、特定の型に対してプロキシを送信する場合など) をシリアル化する型を変更するユーザーはこのプロパティの値を設定するとします。  
+  
+> [!CAUTION]
+>  このプロパティの値が定義されているため逆シリアル化中にこのプロパティは使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティに設定される値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolean">
+      <MemberSignature Language="C#" Value="public bool GetBoolean (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetBoolean(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetBoolean(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>ブール値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられたブール値<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、ブール値、または 1 つに、その値が返されます。 変換することができる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />ブール値に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByte">
+      <MemberSignature Language="C#" Value="public byte GetByte (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8 GetByte(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetByte(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>8 ビット符号なし整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 8 ビット符号なし整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 8 ビット符号なし整数の場合、または 1 つに、その値が返されます。 変換できる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />8 ビット符号なし整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChar">
+      <MemberSignature Language="C#" Value="public char GetChar (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance char GetChar(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetChar(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>Unicode 文字値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている Unicode 文字<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が Unicode 文字、または 1 つに、その値が返されます。 変換することができる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />Unicode 文字に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateTime">
+      <MemberSignature Language="C#" Value="public DateTime GetDateTime (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTime GetDateTime(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetDateTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>取得、<see cref="T:System.DateTime" />値から、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns><see cref="T:System.DateTime" />に関連付けられた値<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の場合、<xref:System.DateTime>に変換できるか、 <xref:System.DateTime>、その値を返します。 それ以外の場合、、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />に変換できない、<see cref="T:System.DateTime" />値。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecimal">
+      <MemberSignature Language="C#" Value="public decimal GetDecimal (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Decimal GetDecimal(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetDecimal(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>10 進値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>10 進値から、<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は 10 進数、またはその値が返されます。 decimal に変換できる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />10 進数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDouble">
+      <MemberSignature Language="C#" Value="public double GetDouble (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetDouble(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetDouble(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>倍精度浮動小数点値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている倍精度浮動小数点値<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が double 型、またはその値が返されます。、double 型に変換できる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />倍精度浮動小数点値に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.SerializationInfoEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Runtime.Serialization.SerializationInfoEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.SerializationInfoEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Runtime.Serialization.SerializationInfoEnumerator" />で名前と値のペアを反復処理するために使用、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>A<see cref="T:System.Runtime.Serialization.SerializationInfoEnumerator" />に含まれている名前と値のペアを解析するため、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数ストリームに書き込む前に値を列挙する必要があるフォーマッタによってよく使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt16">
+      <MemberSignature Language="C#" Value="public short GetInt16 (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int16 GetInt16(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetInt16(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>16 ビット符号付き整数の値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 16 ビット符号付き整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 16 ビット符号付き整数では、または 1 つに、その値が返されます。 変換できる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />16 ビット符号付き整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt32">
+      <MemberSignature Language="C#" Value="public int GetInt32 (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetInt32(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetInt32(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値の名前。</param>
+        <summary>32 ビット符号付き整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 32 ビット符号付き整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 32 ビットの符号付き整数か、または 1 つに、その値が返されます。 変換する場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ISerializable Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ISerializable Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[ISerializable Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ISerializable Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[ISerializable Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ISerializable Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />32 ビット符号付き整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt64">
+      <MemberSignature Language="C#" Value="public long GetInt64 (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 GetInt64(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetInt64(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>64 ビット符号付き整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 64 ビット符号付き整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は 64 ビットの符号付き整数か、または 1 つに、その値が返されます。 変換する場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />64 ビット符号付き整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSByte">
+      <MemberSignature Language="C#" Value="public sbyte GetSByte (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int8 GetSByte(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetSByte(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>8 ビット符号付き整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 8 ビット符号付き整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の場合、`Int8`に変換できるか、 `Int8`、その値を返します。 それ以外の場合、、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />8 ビット符号付き整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSingle">
+      <MemberSignature Language="C#" Value="public float GetSingle (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32 GetSingle(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetSingle(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値の名前。</param>
+        <summary>単精度浮動小数点値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>単精度浮動小数点値に関連付けられている<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、単精度浮動小数点数、または 1 つに、その値が返されます。 変換することができる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />単精度浮動小数点値に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public string GetString (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetString(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>取得、<see cref="T:System.String" />値から、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns><see cref="T:System.String" /> に関連付けられている <paramref name="name" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の場合、<xref:System.String>に変換できるか、 <xref:System.String>、その値を返します。 それ以外の場合、、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />に変換できない、<see cref="T:System.String" />です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUInt16">
+      <MemberSignature Language="C#" Value="public ushort GetUInt16 (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int16 GetUInt16(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetUInt16(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>16 ビット符号なし整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 16 ビット符号なし整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 16 ビット符号なし整数の場合、または 1 つに、その値が返されます。 変換できる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />16 ビット符号なし整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUInt32">
+      <MemberSignature Language="C#" Value="public uint GetUInt32 (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int32 GetUInt32(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetUInt32(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>32 ビット符号なし整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 32 ビット符号なし整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 32 ビットの符号付き整数か、または 1 つに、その値が返されます。 変換する場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />32 ビット符号なし整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUInt64">
+      <MemberSignature Language="C#" Value="public ulong GetUInt64 (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int64 GetUInt64(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetUInt64(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <summary>64 ビット符号なし整数値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>関連付けられている 64 ビット符号なし整数<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 64 ビット符号なし整数の場合、または 1 つに、その値が返されます。 変換できる場合それ以外の場合、<xref:System.InvalidCastException>がスローされます。 すべての変換が完了したら、<xref:System.Runtime.Serialization.IFormatterConverter>これに関連付けられている<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />64 ビット符号なし整数に変換できません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (string name, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(string name, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値に関連付けられている名前です。</param>
+        <param name="type"><see cref="T:System.Type" />の値を取得します。 格納されている値は、この型に変換することはできません、システムがスローされます、<see cref="T:System.InvalidCastException" />です。</param>
+        <summary>値を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <returns>指定したオブジェクト<see cref="T:System.Type" />に関連付けられている<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データが格納されている場合、<xref:System.Runtime.Serialization.SerializationInfo>は要求された型 (またはその派生クラスのいずれか) のその値が直接返されます。 それ以外の場合、<xref:System.Runtime.Serialization.IFormatterConverter.Convert%2A?displayProperty=nameWithType>が呼び出され、適切な型に変換します。  
+  
+ によって返される値、<xref:System.Runtime.Serialization.SerializationInfo.GetValue%2A>メソッドを常に安全にキャストできますで指定される型、`type`パラメーター。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Serialization.SerializationInfo.GetValue%2A>メソッド。  
+  
+ [!code-cpp[Classic SerializationInfo.GetValue Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SerializationInfo.GetValue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SerializationInfo.GetValue Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SerializationInfo.GetValue Example/CS/source.cs#1)]
+ [!code-vb[Classic SerializationInfo.GetValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SerializationInfo.GetValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="type" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">関連付けられている値<paramref name="name" />に変換できない<paramref name="type" />です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">現在のインスタンスで、指定した名前を持つ要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssemblyNameSetExplicit">
+      <MemberSignature Language="C#" Value="public bool IsAssemblyNameSetExplicit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAssemblyNameSetExplicit" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.SerializationInfo.IsAssemblyNameSetExplicit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリ名が明示的に設定されているかどうかを取得します。</summary>
+        <value>
+          <see langword="True" />アセンブリ名が明示的に設定されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFullTypeNameSetExplicit">
+      <MemberSignature Language="C#" Value="public bool IsFullTypeNameSetExplicit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFullTypeNameSetExplicit" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.SerializationInfo.IsFullTypeNameSetExplicit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全な型名が明示的に設定されているかどうかを取得します。</summary>
+        <value>
+          <see langword="True" />完全な型名が明示的に設定されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberCount">
+      <MemberSignature Language="C#" Value="public int MemberCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MemberCount" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.SerializationInfo.MemberCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加されているメンバーの数を取得、<see cref="T:System.Runtime.Serialization.SerializationInfo" />を格納します。</summary>
+        <value>現在追加されているメンバーの数<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectType">
+      <MemberSignature Language="C#" Value="public Type ObjectType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.SerializationInfo.ObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化されるオブジェクトの型を返します。</summary>
+        <value>シリアル化されるオブジェクトの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetType">
+      <MemberSignature Language="C#" Value="public void SetType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.SerializationInfo.SetType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />のシリアル化するオブジェクト。</param>
+        <summary>セット、<see cref="T:System.Type" />のシリアル化するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.Formatter>は設定を<xref:System.Type>の<xref:System.Runtime.Serialization.SerializationInfo>に渡す前にインスタンス<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>です。 ただし、それらのオブジェクトのプロキシを送信するユーザーは、これによって表される型を変更する必要がある<xref:System.Runtime.Serialization.SerializationInfo>インスタンス。 使用して、<xref:System.Runtime.Serialization.SerializationInfo.SetType%2A>メソッドは、両方を設定する、<xref:System.Runtime.Serialization.SerializationInfo.FullTypeName%2A>と<xref:System.Runtime.Serialization.SerializationInfo.AssemblyName%2A>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[IObjectReference Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IObjectReference Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[IObjectReference Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IObjectReference Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[IObjectReference Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IObjectReference Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

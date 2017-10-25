@@ -1,0 +1,362 @@
+<Type Name="BindingBase" FullName="System.Windows.Data.BindingBase">
+  <TypeSignature Language="C#" Value="public abstract class BindingBase : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract BindingBase extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.BindingBase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Modifiability=System.Windows.Modifiability.Unmodifiable, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Object))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一般的な特性を定義、 <see cref="T:System.Windows.Data.Binding" />、 <see cref="T:System.Windows.Data.PriorityBinding" />、および<see cref="T:System.Windows.Data.MultiBinding" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.BindingBase.ProvideValue%2A?displayProperty=nameWithType>メソッドがシールされている、カスタム バインディングから派生するクラス<xref:System.Windows.Data.BindingBase>として正しく機能しません、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]マークアップ拡張機能です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BindingGroupName">
+      <MemberSignature Language="C#" Value="public string BindingGroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BindingGroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.BindingBase.BindingGroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Windows.Data.BindingGroup" />このバインディングが属しています。</summary>
+        <value>名前、<see cref="T:System.Windows.Data.BindingGroup" />このバインディングが属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>が、バインディングが属する、設定されていない、<xref:System.Windows.Data.BindingGroup>場合にのみ、バインディングのソースと<xref:System.Windows.FrameworkElement.DataContext%2A>を持つ親要素の<xref:System.Windows.Data.BindingGroup>同じオブジェクトです。  
+  
+ 場合<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>設定されているバインディングが属するに値を<xref:System.Windows.Data.BindingGroup>次の条件に該当する場合。  
+  
+-   <xref:System.Windows.Data.BindingGroup.Name%2A>の<xref:System.Windows.Data.BindingGroup>と<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>が等しい。  
+  
+-   <xref:System.Windows.Data.BindingGroup>バインディングのターゲット要素の親要素に所属します。  
+  
+ 場合<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>に設定されている`null`、バインディングがの一部であることはありません、<xref:System.Windows.Data.BindingGroup>です。  
+  
+ 異なるソースのバインドを含めることができます、<xref:System.Windows.FrameworkElement.DataContext%2A>の親を持つ要素を<xref:System.Windows.Data.BindingGroup>を設定して<xref:System.Windows.Data.BindingGroup.Name%2A>の<xref:System.Windows.Data.BindingGroup>と<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>同じ値にバインディングのプロパティです。  同じソースのバインドを除外する<xref:System.Windows.FrameworkElement.DataContext%2A>を持つ親要素の<xref:System.Windows.Data.BindingGroup>を設定して<xref:System.Windows.Data.BindingGroup.Name%2A>の<xref:System.Windows.Data.BindingGroup>と<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>ごとに異なる値のバインドのプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、ユーザーが同じ値に 2 つのオブジェクトのプロパティに設定するかどうかを確認するアプリケーションの一部です。 最初の例では、2 つ作成されます<xref:System.Windows.Controls.TextBox>コントロール、それぞれが別のソースにバインドされたデータ: 最初のバインド<xref:System.Windows.Controls.TextBox>の一部である、<xref:System.Windows.Data.BindingGroup>ため、<xref:System.Windows.Controls.TextBox>継承、<xref:System.Windows.FrameworkElement.DataContext%2A>と<xref:System.Windows.Data.BindingGroup>からその親<xref:System.Windows.Controls.StackPanel>  
+  
+ 2 番目のバインド<xref:System.Windows.Controls.TextBox>の一部である、<xref:System.Windows.Data.BindingGroup>ため、<xref:System.Windows.Data.BindingGroup.Name%2A>の<xref:System.Windows.Data.BindingGroup>と<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>の<xref:System.Windows.Data.Binding>に設定されて`bindingGroup`です。  
+  
+ [!code-xaml[BindingGroupSnippets#BindingGroupName](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window3.xaml#bindinggroupname)]  
+[!code-xaml[BindingGroupSnippets#ValidationAdornerSite](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window3.xaml#validationadornersite)]  
+  
+ 次の例は、<xref:System.Windows.Controls.ValidationRule>前の例を使用します。  <xref:System.Windows.Controls.ValidationRule.Validate%2A>メソッドから、ソース オブジェクトを取得する例では、<xref:System.Windows.Data.BindingGroup>し、オブジェクトのプロパティが等しいかどうかを確認します。  
+  
+ [!code-csharp[BindingGroupSnippets#BindingGroupNameValidationRule](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window3.xaml.cs#bindinggroupnamevalidationrule)]
+ [!code-vb[BindingGroupSnippets#BindingGroupNameValidationRule](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindingGroupSnippets/visualbasic/window3.xaml.vb#bindinggroupnamevalidationrule)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delay">
+      <MemberSignature Language="C#" Value="public int Delay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Delay" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.BindingBase.Delay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲットの変更の値の後に、バインディング ソースを更新する前に待機するミリ秒単位で、時間を設定します。</summary>
+        <value>バインディング ソースを更新する前に待機するミリ秒単位の時間数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するターゲットのプロパティの値が変更されるたびに、バインディング ソースを更新するバインドを使用するときに、<xref:System.Windows.Data.Binding.Mode%2A>プロパティを<xref:System.Windows.Data.BindingMode.TwoWay>と<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>に<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>です。  このような状況で使用できます、<xref:System.Windows.Data.BindingBase.Delay%2A>プロパティ ターゲットが変更されたときと、ソースが更新されたときの間の遅延時間が存在するかどうかを指定します。  これは、機能は、ソース オブジェクトのプロパティを変更するユーザーを有効にするがソースにすぐにコミットするには、各変更したくない場合に便利です。  たとえば、双方向にデータ バインドされたデータ オブジェクトのプロパティをテキスト ボックスがあるとします。  ユーザーには、テキスト ボックスに値が変更された、ときに、ソースの更新を取得します。  このシナリオを有効にするに設定する、<xref:System.Windows.Data.Binding.Mode%2A>プロパティを<xref:System.Windows.Data.Binding>に<xref:System.Windows.Data.BindingMode.TwoWay>と<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>に<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>です。  すべてのキーストロークで、ソース オブジェクトを更新しないように、設定、<xref:System.Windows.Data.BindingBase.Delay%2A>プロパティ バインディングを入力するユーザーによって中止されたために、期間が経過した後に更新する適切な値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackValue">
+      <MemberSignature Language="C#" Value="public object FallbackValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FallbackValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.BindingBase.FallbackValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドが値を返すことができないときに使用する値を取得または設定します。</summary>
+        <value>既定値は <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディング場合、正常に値を返します。  
+  
+1.  バインディング ソースへのパスを正常に解決します。  
+  
+2.  値コンバーター、存在する場合は、結果の値を変換することです。  
+  
+3.  結果の値は、バインディング ターゲット (ターゲット) プロパティに対して無効です。  
+  
+ 1 と 2 を返す場合<xref:System.Windows.DependencyProperty.UnsetValue?displayProperty=nameWithType>、ターゲット プロパティの値に、<xref:System.Windows.Data.BindingBase.FallbackValue%2A>が利用可能な場合です。 ある場合ありません<xref:System.Windows.Data.BindingBase.FallbackValue%2A>、ターゲット プロパティの既定値が使用されます。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue?displayProperty=nameWithType>成功の戻り値とは見なされません。  
+  
+<a name="xamlTextUsage_FallbackValue"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+```  
+<object FallbackValue="fallbackValue" />  
+```  
+  
+ **- または -**  
+  
+```  
+<object>  
+  <object.FallbackValue>  
+    fallbackValue  
+    </object.FallbackValue>  
+</object>  
+```  
+  
+<a name="xamlValues_FallbackValue"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fallbackValue*  
+ 属性またはオブジェクト要素の値の対象となるプロパティと同じ型。 XAML の使用方法については、その型のドキュメントを参照してください。 その種類可能性があります、その値に対して属性の構文をサポートしない可能性がありますまたは可能性があります、またはオブジェクトの要素の構文を必要とする型に既定のコンス トラクター) をサポートしていません。 ターゲット プロパティの型の値を使用する構文の影響を与えるため、<xref:System.Windows.Data.BindingBase.FallbackValue%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override sealed object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingBase.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。 あります<see langword="null" />です。</param>
+        <summary>このバインディングおよび拡張機能の適用先のプロパティに設定されるオブジェクトを返します。</summary>
+        <returns>バインディング ターゲット プロパティに設定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を提供をバインドの基本構文サポート[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]実用的な派生クラスが提供されるすべての (<xref:System.Windows.Data.Binding>、 <xref:System.Windows.Data.PriorityBinding>、および<xref:System.Windows.Data.MultiBinding>)。  
+  
+ <xref:System.Windows.Data.BindingBase>このメソッドのクラスの実装がバインディングの結果である式オブジェクトを取得するが必要です。 プロパティのバインドでは、対象とする、指定された<xref:System.Windows.DependencyProperty>で、指定された<xref:System.Windows.DependencyObject>です。 クエリを実行してこれらの 2 つの情報は送信、<xref:System.Windows.Markup.IProvideValueTarget>上の実装、 `serviceProvider`、どの、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]リーダーは、バインディングの解析中に使用できるようにします。 この基本クラス実装は、有効なためチェックを<xref:System.Windows.DependencyProperty>と<xref:System.Windows.DependencyObject>です。 これらが見つからない場合は、バインド式を返すの実際の実装は、基本クラスの呼び出し内部抽象メソッドを持つによって実装されるさまざまな派生クラスになります。 それ以外の場合、拡張機能には、バインディング オブジェクト自体が返されます。 型の不一致エラーの結果、バインディング自体を返すことが、これは通常の状況で発生しません。  
+  
+> [!IMPORTANT]
+>  を通じてバインドの構文[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]このメソッドは、内部のオーバーライドを実装に実装されているため、<xref:System.Windows.Data.BindingBase.ProvideValue%2A?displayProperty=nameWithType>自体がシールされている、カスタム バインディングから派生するクラス<xref:System.Windows.Data.BindingBase>として正しく機能しません、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]マークアップ拡張機能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeFallbackValue">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeFallbackValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeFallbackValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingBase.ShouldSerializeFallbackValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスが有効な値をシリアル化する必要があるかどうかを示す値を返します、<see cref="P:System.Windows.Data.BindingBase.FallbackValue" />このクラスのインスタンスのプロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.Data.BindingBase.FallbackValue" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTargetNullValue">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTargetNullValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTargetNullValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingBase.ShouldSerializeTargetNullValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="P:System.Windows.Data.BindingBase.TargetNullValue" />プロパティをシリアル化する必要があります。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Data.BindingBase.TargetNullValue" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StringFormat">
+      <MemberSignature Language="C#" Value="public string StringFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.BindingBase.StringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバインドされた値を文字列として表示される場合、バインディングの書式を設定する方法を指定する文字列を設定します。</summary>
+        <value>バインドされた値を文字列として表示される場合、バインディングの書式を設定する方法を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.BindingBase.StringFormat%2A>定義済み、複合、またはカスタムの文字列形式にすることができます。 文字列形式の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ 設定した場合、<xref:System.Windows.Data.Binding.Converter%2A>と<xref:System.Windows.Data.BindingBase.StringFormat%2A>コンバーターのプロパティが最初のデータ値に適用するし、<xref:System.Windows.Data.BindingBase.StringFormat%2A>を適用します。  
+  
+ 設定すると、<xref:System.Windows.Data.BindingBase.StringFormat%2A>上、<xref:System.Windows.Data.Binding>複合文字列の形式では、1 つだけのパラメーターを指定できます。  
+  
+ 使用すると、 <xref:System.Windows.Data.MultiBinding>、<xref:System.Windows.Data.BindingBase.StringFormat%2A>のみに設定されている場合にプロパティが適用されます、<xref:System.Windows.Data.MultiBinding>です。  値<xref:System.Windows.Data.BindingBase.StringFormat%2A>任意の子に設定されている<xref:System.Windows.Data.Binding>オブジェクトは無視されます。  複合文字列の形式でパラメーターの数は、子の数を超えることはできません<xref:System.Windows.Data.Binding>内のオブジェクト、<xref:System.Windows.Data.MultiBinding>です。  
+  
+ 使用する場合、 <xref:System.Windows.Data.PriorityBinding>、設定することができます、<xref:System.Windows.Data.BindingBase.StringFormat%2A>上、<xref:System.Windows.Data.PriorityBinding>バインディングの子オブジェクト、またはその両方でします。  場合、<xref:System.Windows.Data.BindingBase.StringFormat%2A>セットのバインドされている子で適用すると、値が使用されます。  場合、<xref:System.Windows.Data.BindingBase.StringFormat%2A>適用すると、子のバインドでは設定されず、<xref:System.Windows.Data.BindingBase.StringFormat%2A>の<xref:System.Windows.Data.PriorityBinding>設定されている場合に適用します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Data.BindingBase.StringFormat%2A>プロパティに変換する`Price`、これは、<xref:System.Double>通貨を表す文字列にします。  
+  
+ [!code-xaml[ContentStringSnippets#Binding](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentStringSnippets/CSharp/Window1.xaml#binding)]  
+  
+ 次の例では、<xref:System.Windows.Data.BindingBase.StringFormat%2A>プロパティを<xref:System.Windows.Data.MultiBinding>を含む文字列を作成する、`Description`と`Price`内の各項目の<xref:System.Windows.Controls.ListBox>です。  
+  
+ [!code-xaml[ContentStringSnippets#MultiBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentStringSnippets/CSharp/Window1.xaml#multibinding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNullValue">
+      <MemberSignature Language="C#" Value="public object TargetNullValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TargetNullValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.BindingBase.TargetNullValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソースの値が、ターゲットのために使用される値を設定を取得または<see langword="null" />です。</summary>
+        <value>ソースの値が、ターゲットで使用されている値<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_TargetNullValue"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+```  
+<object TargetNullValue="nullValue" />  
+```  
+  
+ **- または -**  
+  
+```  
+<object>  
+  <object.TargetNullValue>  
+    nullValue  
+    </object.TargetNullValue>  
+</object>  
+```  
+  
+<a name="xamlValues_TargetNullValue"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *nullValue*  
+ 属性またはオブジェクト要素の値の対象となるプロパティと同じ型。 XAML の使用方法については、その型のドキュメントを参照してください。 その種類可能性があります、その値に対して属性の構文をサポートしない可能性がありますまたは可能性があります、またはオブジェクトの要素の構文を必要とする型に既定のコンス トラクター) をサポートしていません。  
+  
+   
+  
+## Examples  
+ 次の例ではバインド、<xref:System.Windows.Controls.TextBox>オブジェクトのプロパティにします。  プロパティが場合`null`、<xref:System.Windows.Controls.TextBox>表示「を入力してください (string)」。  
+  
+ [!code-xaml[BindingGroupSnippets#TargetNullValue](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window3.xaml#targetnullvalue)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

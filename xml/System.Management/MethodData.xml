@@ -1,0 +1,215 @@
+<Type Name="MethodData" FullName="System.Management.MethodData">
+  <TypeSignature Language="C#" Value="public class MethodData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MethodData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Management.MethodData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WMI のメソッドについてを説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、に関する情報を表示、 **Win32_Process.Create**メソッドを使用して、<xref:System.Management.MethodData>クラスです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_MethodData#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_MethodData/cs/MethodData.cs#1)]
+ [!code-vb[wminet_MethodData#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_MethodData/vb/MethodData.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InParameters">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject InParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementBaseObject InParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Management.MethodData.InParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドへの入力パラメーターを取得します。 各パラメーターは、オブジェクトのプロパティとして説明します。 両方に表示されますが、パラメーターがある場合、<see cref="P:System.Management.MethodData.InParameters" />と<see cref="P:System.Management.MethodData.OutParameters" />プロパティです。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementBaseObject" />メソッドへの入力パラメーターを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト内の各パラメーター、メソッドの呼び出しでパラメーターの順序を識別する ID 修飾子が必要です。  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.ManagementBaseObject>すべての入力パラメーターがメソッドを格納します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、に関する情報を表示、 **Win32_Process.Create**メソッドを使用して、<xref:System.Management.MethodData>クラスです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_MethodData_InParameters#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_MethodData_InParameters/cs/MethodData_InParameters.cs#1)]
+ [!code-vb[wminet_MethodData_InParameters#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_MethodData_InParameters/vb/MethodData_InParameters.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Management.MethodData.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの名前を取得します。</summary>
+        <value>返します、<see cref="T:System.String" />メソッドの名前を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ メソッドの名前。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、に関する情報を表示、 **Win32_Process.Create**メソッドを使用して、<xref:System.Management.MethodData>クラスです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_MethodData_Name#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_MethodData_Name/cs/MethodData_Name.cs#1)]
+ [!code-vb[wminet_MethodData_Name#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_MethodData_Name/vb/MethodData_Name.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Origin">
+      <MemberSignature Language="C#" Value="public string Origin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Origin" />
+      <MemberSignature Language="DocId" Value="P:System.Management.MethodData.Origin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドをクラスの継承階層で最初に導入された管理クラスの名前を取得します。</summary>
+        <value>返します、<see cref="T:System.String" />にメソッドをクラスの継承階層で最初に導入されたクラスの名前を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 元の管理クラスの名前を表す文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutParameters">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject OutParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementBaseObject OutParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Management.MethodData.OutParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドへの出力パラメーターを取得します。 各パラメーターは、オブジェクトのプロパティとして説明します。 両方に表示されますが、パラメーターがある場合、<see cref="P:System.Management.MethodData.InParameters" />と<see cref="P:System.Management.MethodData.OutParameters" />プロパティです。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementBaseObject" />メソッドの出力パラメーターを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクト内の各パラメーター、メソッドの呼び出しでは、パラメーターの順序を識別する ID 修飾子が必要です。  
+  
+ **ReturnValue**プロパティは、特殊なプロパティ、<xref:System.Management.ManagementBaseObject>によって返される、<xref:System.Management.MethodData.OutParameters%2A>プロパティ、メソッドの戻り値を保持します。  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.ManagementBaseObject>すべての出力パラメーター、メソッドを格納します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、に関する情報を表示、 **Win32_Process.Create**メソッドを使用して、<xref:System.Management.MethodData>クラスです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_MethodData_OutParameters#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_MethodData_OutParameters/cs/MethodData_OutParameters.cs#1)]
+ [!code-vb[wminet_MethodData_OutParameters#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_MethodData_OutParameters/vb/MethodData_OutParameters.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Qualifiers">
+      <MemberSignature Language="C#" Value="public System.Management.QualifierDataCollection Qualifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.QualifierDataCollection Qualifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Management.MethodData.Qualifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.QualifierDataCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドで定義された修飾子のコレクションを取得します。 型の各要素は、<see cref="T:System.Management.QualifierData" />などの情報を格納し、*修飾子*名前、値、および*フレーバー*です。</summary>
+        <value>返します、<see cref="T:System.Management.QualifierDataCollection" />修飾子メソッドを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.QualifierDataCollection>修飾子このメソッドを格納します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、に関する情報を表示、 **Win32_Process.Create**メソッドを使用して、<xref:System.Management.MethodData>クラスです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_MethodData_Qualifiers#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_MethodData_Qualifiers/cs/MethodData_Qualifiers.cs#1)]
+ [!code-vb[wminet_MethodData_Qualifiers#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_MethodData_Qualifiers/vb/MethodData_Qualifiers.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

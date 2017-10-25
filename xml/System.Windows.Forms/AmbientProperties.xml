@@ -1,0 +1,141 @@
+<Type Name="AmbientProperties" FullName="System.Windows.Forms.AmbientProperties">
+  <TypeSignature Language="C#" Value="public sealed class AmbientProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AmbientProperties extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AmbientProperties" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トップ レベル コントロールをアンビエント プロパティの値を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエント プロパティはコントロールのプロパティ セットは、親コントロールから取得されます。 コントロールがアンビエント プロパティの値を検索しようとした、コントロールには、親はありません。 プロパティが設定されていない場合は、、<xref:System.ComponentModel.Component.Site%2A>プロパティです。 コントロールが配置されていません、サイトがアンビエント プロパティをサポートしていないか、プロパティに設定されていない場合、<xref:System.Windows.Forms.AmbientProperties>オブジェクト、<xref:System.Windows.Forms.Control>独自の既定値を使用します。 一部のオブジェクトから派生した、<xref:System.Windows.Forms.Control>持っていない場合でも、クラスは、プロパティを設定可能性があります。 たとえば、<xref:System.Windows.Forms.Form>クラス セットでは常に、<xref:System.Windows.Forms.Control.ForeColor%2A>と<xref:System.Windows.Forms.Control.BackColor%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AmbientProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AmbientProperties.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.AmbientProperties" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AmbientProperties.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのアンビエント背景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />オブジェクトの背景色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエント背景色の値がないかどうか、<xref:System.Windows.Forms.Control.BackColor%2A>プロパティに設定されている<xref:System.Drawing.Color.Empty?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cursor">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Cursor Cursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Cursor Cursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AmbientProperties.Cursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのアンビエント カーソルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Cursor" />を表すオブジェクトのカーソル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエントのカーソルの値がないかどうか、<xref:System.Windows.Forms.Control.Cursor%2A>プロパティは`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AmbientProperties.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのアンビエント フォントを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Font" />オブジェクト内のテキストを表示するときに使用されるフォントを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエント フォントの値がないかどうか、<xref:System.Windows.Forms.Control.Font%2A>プロパティは`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AmbientProperties.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのアンビエント前景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />オブジェクトの前景色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエント前景の色の値がないかどうか、<xref:System.Windows.Forms.Control.ForeColor%2A>プロパティに設定されている<xref:System.Drawing.Color.Empty?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

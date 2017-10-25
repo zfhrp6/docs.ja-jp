@@ -1,0 +1,678 @@
+<Type Name="StatusBarPanel" FullName="System.Windows.Forms.StatusBarPanel">
+  <TypeSignature Language="C#" Value="public class StatusBarPanel : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StatusBarPanel extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.StatusBarPanel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.StatusBar" /> コントロールのパネルを表します。 <see cref="T:System.Windows.Forms.StatusStrip" />コントロールの置換し、する機能を追加、<see cref="T:System.Windows.Forms.StatusBar" />以前のバージョンでのコントロール<see cref="T:System.Windows.Forms.StatusBar" />を選択した場合に、旧バージョンとの互換性と将来の使用の両方の保持されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.StatusBarPanel>で個々 のパネルを表す、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>の<xref:System.Windows.Forms.StatusBar>コントロール。 A<xref:System.Windows.Forms.StatusBarPanel>テキストやアプリケーションの状態を反映するために使用できるアイコンに含めることができます。 使用して、 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>、経由でアクセスできる、<xref:System.Windows.Forms.StatusBar.Panels%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Forms.StatusBar>取得、追加、または個人を削除する、制御<xref:System.Windows.Forms.StatusBarPanel>です。  
+  
+ <xref:System.Windows.Forms.StatusBarPanel>を内のパネルの表示動作を変更できるようにするプロパティを提供する<xref:System.Windows.Forms.StatusBar>コントロール。 使用することができます、<xref:System.Windows.Forms.StatusBarPanel.Icon%2A>パネル内のアイコンを表示するプロパティです。 このプロパティは、アプリケーションの状態のグラフィカル表現を提供する使用できます。 <xref:System.Windows.Forms.StatusBarPanel.Alignment%2A>プロパティでは、パネル内のテキストまたはアイコンを配置する方法を指定することができます。 パネルのテキストに合わせて正しくサイズは、パネルには、使用することができます、<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>領域内のパネルのテキストに合わせて、または残りの入力パネルを自動的にサイズ変更プロパティ、<xref:System.Windows.Forms.StatusBar>コントロール。 <xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>プロパティを使用することは取得しませんを表示するものでは、データよりも小さいことを確認するのには、パネルの幅の最小値を指定します。  
+  
+ <xref:System.Windows.Forms.StatusBar>コントロールを通常使用すると、ヘルプ情報や、アプリケーションに関する状態情報を表示します。 多くの場合、パネルに表示されるデータに関する追加情報を表示する重要なです。 使用することができます、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>をパネルにマウス ポインターを置いたときに情報を表示するプロパティです。  
+  
+ ただし、<xref:System.Windows.Forms.StatusBar>コントロールは、通常のテキスト情報を表示する使用、表示の独自の型を提供することも、<xref:System.Windows.Forms.StatusBarPanel>です。 <xref:System.Windows.Forms.StatusBarPanel.Style%2A>プロパティでは、指定することができますが、どのように<xref:System.Windows.Forms.StatusBarPanel>を描画するか。 既定では、<xref:System.Windows.Forms.StatusBarPanel.Style%2A>の値を表示するプロパティが使用される、<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティ (とで指定されている場合、アイコン、<xref:System.Windows.Forms.StatusBarPanel.Icon%2A>プロパティ)。 プロパティ設定されている場合<xref:System.Windows.Forms.StatusBarPanelStyle.OwnerDraw>パネルに、独自の情報を描画することができます。 この機能を使用すると、プログレス バーまたはアニメーションのアイコンをパネルに描画します。  
+  
+ インスタンスを作成する場合、<xref:System.Windows.Forms.StatusBarPanel>クラス、読み取り/書き込みプロパティは、初期値に設定されます。 これらの値の一覧は、次を参照してください。、<xref:System.Windows.Forms.StatusBarPanel.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 最初の<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認する、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StatusBarPanel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBarPanel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.StatusBarPanel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合<xref:System.Windows.Forms.StatusBarPanel>、次の読み取り/書き込みプロパティの初期値に設定されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Windows.Forms.StatusBarPanel.Alignment%2A>|<xref:System.Windows.Forms.HorizontalAlignment.Left>|  
+|<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>|<xref:System.Windows.Forms.StatusBarPanelAutoSize.None>|  
+|<xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>|<xref:System.Windows.Forms.StatusBarPanelBorderStyle.Sunken>|  
+|<xref:System.Windows.Forms.StatusBarPanel.Icon%2A>|`null`|  
+|<xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>|10|  
+|<xref:System.Windows.Forms.StatusBarPanel.Style%2A>|<xref:System.Windows.Forms.StatusBarPanelStyle.Text>|  
+|<xref:System.Windows.Forms.StatusBarPanel.Text%2A>|長さ 0 の文字列。|  
+|<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>|長さ 0 の文字列。|  
+|<xref:System.Windows.Forms.StatusBarPanel.Width%2A>|100|  
+  
+ プロパティに別個の呼び出しでこれらのプロパティのいずれかの値を変更することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 最初の<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認する、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alignment">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HorizontalAlignment Alignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.HorizontalAlignment Alignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Alignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステータス バー パネル内のテキストおよびアイコンの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.HorizontalAlignment" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.HorizontalAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、テキストを水平方向に整列するやに割り当てられているアイコン、<xref:System.Windows.Forms.StatusBarPanel.Icon%2A>パネルの境界線内のプロパティです。 テキストとアイコンを左、右、または中央に配置することができます、<xref:System.Windows.Forms.StatusBarPanel>です。 内のアイコンを個別に配置する方法はありません、<xref:System.Windows.Forms.StatusBarPanel>です。 たとえばの左側にあるアイコンを配置することはできません、<xref:System.Windows.Forms.StatusBarPanel>右側にあるテキストの配置中にします。 アイコンは常に、テキストの配置方法に関係なく、テキストの左側に配置します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.StatusBar.SizingGrip%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.StatusBarPanel.Alignment%2A>、 <xref:System.Windows.Forms.StatusBarPanel.Width%2A>、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、および<xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>プロパティ、および処理する方法、<xref:System.Windows.Forms.StatusBar.PanelClick?displayProperty=nameWithType>イベント。  
+  
+ 例を実行するには、フォームに次のコードを貼り付けます。 呼び出す、`InitializeStatusBarPanels`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.StatusBarPanelExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarPanelExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.StatusBarPanelExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarPanelExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.StatusBarPanelExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.StatusBarPanelExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティに割り当てられている値は <see cref="T:System.Windows.Forms.HorizontalAlignment" /> 列挙体のメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.StatusBarPanelAutoSize AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.StatusBarPanelAutoSize AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanelAutoSize</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステータス バー パネルのサイズを自動調整するかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.StatusBarPanelAutoSize" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.StatusBarPanelAutoSize.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel>オブジェクトに設定<xref:System.Windows.Forms.StatusBarPanelAutoSize.Contents>に設定するこれらのパネルでの優先順位がある、<xref:System.Windows.Forms.StatusBarPanelAutoSize.Spring>値。 たとえば、<xref:System.Windows.Forms.StatusBarPanel>を持つその<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>プロパティに設定<xref:System.Windows.Forms.StatusBarPanelAutoSize.Spring>部分が切り捨てられた場合、<xref:System.Windows.Forms.StatusBarPanel>で、<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>プロパティに設定<xref:System.Windows.Forms.StatusBarPanelAutoSize.Contents>その領域が必要です。  
+  
+ 使用することができます<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>の内容を確実に、<xref:System.Windows.Forms.StatusBarPanel>に適切に表示、<xref:System.Windows.Forms.StatusBar>コントロールを複数の 1 つのパネルが含まれています。 などを表示しているテキストの量を自動的に調整するテキストを含むパネルをする可能性があります (<xref:System.Windows.Forms.StatusBarPanelAutoSize.Contents>)、別のパネルで、<xref:System.Windows.Forms.StatusBar>オーナー描画の進行状況バーを固定サイズである必要があります表示する (<xref:System.Windows.Forms.StatusBarPanelAutoSize.None>)。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 最初の<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認する、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティに割り当てられている値は <see cref="T:System.Windows.Forms.StatusBarPanelAutoSize" /> 列挙体のメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBarPanel.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を開始、<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、フォームまたは別のコンポーネントで使用するコンポーネントの初期化を起動します。 <xref:System.Windows.Forms.StatusBarPanel.EndInit%2A>メソッドが初期化を終了します。 使用して、<xref:System.Windows.Forms.StatusBarPanel.BeginInit%2A>と<xref:System.Windows.Forms.StatusBarPanel.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.StatusBarPanelBorderStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.StatusBarPanelBorderStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(-504)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanelBorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはステータス バー パネルの境界線スタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.StatusBarPanelBorderStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.StatusBarPanelBorderStyle.Sunken" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のパネルを表示するパネルを区別するためにこのプロパティを使用することができます、<xref:System.Windows.Forms.StatusBar>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 最初の<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認する、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティに割り当てられている値は <see cref="T:System.Windows.Forms.StatusBarPanelBorderStyle" /> 列挙体のメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBarPanel.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.StatusBarPanel" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Windows.Forms.StatusBarPanel> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBarPanel.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を終了、<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、他のコンポーネントで使用されるコンポーネントの初期化を終了するを使用します。 <xref:System.Windows.Forms.StatusBarPanel.BeginInit%2A>メソッドは、初期化を開始します。 使用して、<xref:System.Windows.Forms.StatusBarPanel.BeginInit%2A>と<xref:System.Windows.Forms.StatusBarPanel.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Icon">
+      <MemberSignature Language="C#" Value="public System.Drawing.Icon Icon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Icon Icon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Icon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Icon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはステータス バー パネル内に表示するアイコンを設定します。</summary>
+        <value><see cref="T:System.Drawing.Icon" />パネルに表示するアイコンを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、アプリケーションまたはアプリケーション内のプロセスの状態を表すアイコンを表示することができます。 たとえば、内のアイコンを表示することができます、<xref:System.Windows.Forms.StatusBarPanel>ファイルの保存操作が進行中または完了するかどうかを示すためにします。  
+  
+> [!NOTE]
+>  内のアイコンを個別に配置する方法はありません、<xref:System.Windows.Forms.StatusBarPanel>です。 たとえばの左側にあるアイコンを配置することはできません、<xref:System.Windows.Forms.StatusBarPanel>を使用して、右側のテキストの配置中に、<xref:System.Windows.Forms.StatusBarPanel.Alignment%2A>プロパティです。 アイコンは常に、テキストの配置方法に関係なく、パネルのテキストの左側に配置します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWidth">
+      <MemberSignature Language="C#" Value="public int MinWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.MinWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定できる最小の幅、ステータス バー パネル内の<see cref="T:System.Windows.Forms.StatusBar" />コントロール。</summary>
+        <value>最小の幅 (ピクセル単位) の<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>プロパティは使用時に、<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>プロパティに設定されている<xref:System.Windows.Forms.StatusBarPanelAutoSize.Contents>または<xref:System.Windows.Forms.StatusBarPanelAutoSize.Spring>を防ぐために、<xref:System.Windows.Forms.StatusBarPanel>が小さすぎる、幅を自動的にサイズを変更します。 ときに、<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>プロパティに設定されている<xref:System.Windows.Forms.StatusBarPanelAutoSize.None>、<xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>プロパティと同じ値に自動的に、<xref:System.Windows.Forms.StatusBarPanel.Width%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティには、0 より小さい値が割り当てられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を適用する名前、<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.StatusBarPanel" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.StatusBarPanel>で、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.StatusBar Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.StatusBar Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.StatusBar" />ステータス バー パネルをホストするコントロール。</summary>
+        <value><see cref="T:System.Windows.Forms.StatusBar" />パネルを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 決定する、このプロパティを使用することができます、<xref:System.Windows.Forms.StatusBar>コントロールによって、<xref:System.Windows.Forms.StatusBarPanel>内に含まれます。 <xref:System.Windows.Forms.StatusBarPanel>オブジェクトに追加されます、<xref:System.Windows.Forms.StatusBar>コントロールを呼び出して、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>クラスです。 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>の<xref:System.Windows.Forms.StatusBar>コントロールが経由でアクセスできる、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.StatusBarPanelStyle Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.StatusBarPanelStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanelStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはステータス バー パネルのスタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.StatusBarPanelStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.StatusBarPanelStyle.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 示すためにこのプロパティを使用するかどうか、<xref:System.Windows.Forms.StatusBarPanel>テキストまたはオーナー描画として、パネルを管理するかどうかが表示されます<xref:System.Windows.Forms.StatusBarPanel>です。 タイミングを決定する、<xref:System.Windows.Forms.StatusBarPanel>描画される、イベント ハンドラーを作成する必要があります、<xref:System.Windows.Forms.StatusBar.DrawItem>のイベント、<xref:System.Windows.Forms.StatusBar>コントロール。 <xref:System.Windows.Forms.StatusBarDrawItemEventArgs>のイベント ハンドラーにパラメーターとして渡される、<xref:System.Windows.Forms.StatusBar.DrawItem>イベントでは、パネルが描画されなければならないかを判断することができます。 <xref:System.Windows.Forms.StatusBarDrawItemEventArgs>も用意されています、<xref:System.Drawing.Graphics>オブジェクトで描画タスクを実行に使用する、<xref:System.Windows.Forms.StatusBarPanel>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.StatusBarPanel.Style%2A>プロパティ、<xref:System.Windows.Forms.StatusBarDrawItemEventHandler>デリゲート<xref:System.Windows.Forms.StatusBarDrawItemEventArgs>クラス、<xref:System.Windows.Forms.StatusBarPanelStyle>列挙型、および<xref:System.Windows.Forms.StatusBarDrawItemEventArgs.Panel%2A?displayProperty=nameWithType>プロパティです。 例を実行するには、フォームに次のコードを貼り付けます。 呼び出す、`InitializeStatusBarPanels`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.StatusBarDrawItemEventHandler#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarDrawItemEventHandler/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.StatusBarDrawItemEventHandler#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarDrawItemEventHandler/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.StatusBarDrawItemEventHandler#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.StatusBarDrawItemEventHandler/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティに割り当てられている値は <see cref="T:System.Windows.Forms.StatusBarPanelStyle" /> 列挙体のメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関するデータを格納するオブジェクト、<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</summary>
+        <value><see cref="T:System.Object" />に関するデータを格納、<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはステータス バー パネルのテキストを設定します。</summary>
+        <value>パネルに表示されるテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがあるテキストを表すときに表示される、<xref:System.Windows.Forms.StatusBarPanel.Style%2A>プロパティに設定されている<xref:System.Windows.Forms.StatusBarPanelStyle.Text>です。 このプロパティを使用するには、アプリケーションに関する情報を表示、<xref:System.Windows.Forms.StatusBar>コントロール。 たとえば、使用することができます、<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティまたはアプリケーションで開かれているファイルの場所と名前を表示するときに表示されるヘルプ情報をユーザーがメニューにマウスを移動します。 内のテキストに合わせて、<xref:System.Windows.Forms.StatusBarPanel>を使用して、<xref:System.Windows.Forms.StatusBarPanel.Alignment%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 最初の<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認する、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipText">
+      <MemberSignature Language="C#" Value="public string ToolTipText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.ToolTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはステータス バー パネルに関連付けられているツールヒント テキストを設定します。</summary>
+        <value>パネルのツールヒント テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス ポインターを合わせると、ツールヒントの追加情報を表示するこのプロパティを使用することができます、<xref:System.Windows.Forms.StatusBarPanel>です。 データの転送速度を提供するツールヒントを表示するなど、<xref:System.Windows.Forms.StatusBarPanel>ファイル転送の状態を表示します。  
+  
+ アプリケーションでは、その他のコントロールのツールヒントを表示するには、使用、<xref:System.Windows.Forms.ToolTip>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 最初の<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認する、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBarPanel.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パネルについての情報を含む文字列を取得します。</summary>
+        <returns>コントロールとが含まれているテキストのクラス名を表す文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBarPanel.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ステータス バー パネル内の幅、<see cref="T:System.Windows.Forms.StatusBar" />コントロール。</summary>
+        <value>幅をピクセル単位での<see cref="T:System.Windows.Forms.StatusBarPanel" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel.Width%2A>プロパティは常に実際の幅を反映して、<xref:System.Windows.Forms.StatusBarPanel>よりも小さくすることはできません、<xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>プロパティです。 自動的にサイズの幅を変更する、<xref:System.Windows.Forms.StatusBarPanel>の内容を<xref:System.Windows.Forms.StatusBarPanel>、使用することができます、<xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.StatusBar.SizingGrip%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.StatusBarPanel.Alignment%2A>、 <xref:System.Windows.Forms.StatusBarPanel.Width%2A>、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、および<xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>プロパティ、および処理する方法、<xref:System.Windows.Forms.StatusBar.PanelClick?displayProperty=nameWithType>イベント。  
+  
+ 例を実行するには、フォームに次のコードを貼り付けます。 呼び出す、`InitializeStatusBarPanels`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.StatusBarPanelExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarPanelExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.StatusBarPanelExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarPanelExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.StatusBarPanelExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.StatusBarPanelExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された幅がの値より小さい、<see cref="P:System.Windows.Forms.StatusBarPanel.MinWidth" />プロパティです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

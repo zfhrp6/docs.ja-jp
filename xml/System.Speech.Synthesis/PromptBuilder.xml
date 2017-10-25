@@ -1,0 +1,2226 @@
+<Type Name="PromptBuilder" FullName="System.Speech.Synthesis.PromptBuilder">
+  <TypeSignature Language="C#" Value="public class PromptBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PromptBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.PromptBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>空の <see cref="T:System.Speech.Synthesis.Prompt" /> オブジェクトを作成し、内容の追加、音声の選択、音声の属性の制御、および読み上げられる単語の発音の制御を行うメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.PromptBuilder>、追加する (として文字列またはファイル)、プレーン テキスト、SSML マークアップを含む、プロンプトを使用するコンテンツの種類のさまざまなオーディオを記録するかも別<xref:System.Speech.Synthesis.PromptBuilder>オブジェクト。  
+  
+ テキストを追加する、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトし、強調、レート、およびボリュームのいずれかを使用するなど、音声の属性を必要に応じて管理、<xref:System.Speech.Synthesis.PromptBuilder.AppendText%2A>メソッドです。  グループとして、音声の属性を制御することも、<xref:System.Speech.Synthesis.PromptBuilder.StartStyle%2A>と<xref:System.Speech.Synthesis.PromptBuilder.EndStyle%2A>メソッドです。  
+  
+ テキストを追加し、読み上げられる内容を制御できますを使用しては増大がどのように、 <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithHint%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithAlias%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithPronunciation%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.AppendSsml%2A>、または<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>メソッドです。  
+  
+ オーバー ロードされたいずれかを使用して、プロンプトで現在選択されている語音声を変更する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>メソッドを使用するかを指定することを特定の音声の名前を付けるには、年齢や性別など、音声の特性が必要なです。  
+  
+ 音声の生成に、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを引数として渡すことができます、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。[複雑なメッセージを構築する](http://msdn.microsoft.com/en-us/552cb356-7344-473e-b0f2-7a9983f8c1a4)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PromptBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Speech.Synthesis.PromptBuilder>インスタンスし、テキスト文字列を追加します。  
+  
+```csharp  
+using System.Speech.Synthesis;  
+  
+public void MySimpleText ()  
+{  
+    PromptBuilder builder = new PromptBuilder ();  
+    builder.AppendText("Hello world!");  
+}  
+```  
+  
+ 次のマークアップは、それと同等の音声合成マークアップ言語 (SSML) でを示しています (`xml:lang`の必須の属性には、`speak`要素)。  
+  
+```xml  
+<speak version="1.0"  
+ xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">  
+  Hello world!  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PromptBuilder (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.#ctor(System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">特定のカルチャに関する情報を提供します。たとえば、カルチャの言語、カルチャの名前、書記体系、使用するカレンダー、日付形式や文字列の並べ替え方法などです。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> クラスの新しいインスタンスを作成し、カルチャを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの値の設定、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>で指定された言語をサポートするインストール済みの音声を選択しようとして、オブジェクト、`culture`プロンプトを処理するパラメーターです。 指定したカルチャに音声が見つかった場合は使用されます。 指定したカルチャに音声を検出できない場合は、既定の音声が使用されます。  
+  
+ 指定された言語の単語を正しく発音、`culture`パラメーターを言語をサポートする音声合成の音声合成 (TTS) エンジンをインストールする必要があります。 インストール済みの音声合成エンジンは、音声と呼ばれます。 に特定のカルチャの声のインストールに関する情報を取得するを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ Microsoft Windows および System.Speech API は、の値として有効なすべての言語、国コードを受け入れる`culture`です。 Windows 7 に付属の音声合成エンジンでは、次の言語、国コードをサポートします。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>インスタンスし、指定の<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>します。  
+  
+```csharp  
+using System.Speech.Synthesis;  
+  
+public void MySimpleText ()  
+{  
+    PromptBuilder builder = new PromptBuilder(new System.Globalization.CultureInfo("en-US"));  
+    builder.AppendText("Hello world!");  
+}  
+```  
+  
+ 次のマークアップは、同等の SSML を示しています。  
+  
+```xml  
+<speak version="1.0"  
+ xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">  
+  Hello world!  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendAudio">
+      <MemberSignature Language="C#" Value="public void AppendAudio (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendAudio(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendAudio(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">オーディオ ファイルへの完全修飾パス。</param>
+        <summary>指定されたオーディオ ファイルを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendAudio">
+      <MemberSignature Language="C#" Value="public void AppendAudio (Uri audioFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendAudio(class System.Uri audioFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendAudio(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioFile" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="audioFile">オーディオ ファイルの URI。</param>
+        <summary>指定した URI のオーディオ ファイルを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Speech.Synthesis.PromptBuilder>クラスし、オーディオ ファイルを続けて、そのテキストを追加します。  
+  
+```csharp  
+using System.Speech.PromptBuilder;  
+  
+public void SimpleConcatenation()  
+{  
+    // Add a prompt fragment from a .wav file.  
+    PromptBuilder builder = new PromptBuilder ();  
+    builder.AppendText("How are you today?");  
+    builder.AppendAudio(new Uri ("http://www.speech.microsoft.com/ding.wav"));  
+}  
+```  
+  
+ 次のマークアップは、同等の SSML マークアップを示しています。  
+  
+```xml  
+<speak xmlns="http://www.w3.org/2001/10/synthesis"  
+       xmlns:ms="http://www.microsoft.com/speech/synthesis" xml:lang="en">  
+  
+  How are you today?  
+  <audio src="http://www.speech.microsoft.com/ding.wav" />  
+  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendAudio">
+      <MemberSignature Language="C#" Value="public void AppendAudio (Uri audioFile, string alternateText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendAudio(class System.Uri audioFile, string alternateText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendAudio(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioFile" Type="System.Uri" />
+        <Parameter Name="alternateText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="audioFile">オーディオ ファイルの URI。</param>
+        <param name="alternateText">オーディオを表す代替テキストを含む文字列。</param>
+        <summary>指定されたオーディオ ファイルと代替テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーディオ ファイルを再生できない場合、音声合成エンジンは代替テキストを話します。  
+  
+   
+  
+## Examples  
+ 次の例では、追加するオーディオ ファイルを<xref:System.Speech.Synthesis.PromptBuilder>インスタンスし、オーディオ ファイルを再生できない場合にも言及するテキストを指定します。  
+  
+```csharp  
+using System.Speech.PromptBuilder;  
+  
+public void SimpleConcatenation()  
+{  
+  
+    // Concatenate a prompt fragment from a .wav file.  
+    PromptBuilder builder = new PromptBuilder ();  
+    builder.AppendAudio(new Uri ("C:\\OnHold.wav"), "Your call will be answered in the order it was received");  
+}  
+```  
+  
+ 次のマークアップは、同等の SSML マークアップを示しています。  
+  
+```xml  
+<speak xmlns="http://www.w3.org/2001/10/synthesis"  
+       xmlns:ms="http://www.microsoft.com/speech/synthesis" xml:lang="en">  
+  
+  <audio src="C:\OnHold.wav"> Your call will be answered in the order it was received. </audio>  
+  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendBookmark">
+      <MemberSignature Language="C#" Value="public void AppendBookmark (string bookmarkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendBookmark(string bookmarkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendBookmark(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bookmarkName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="bookmarkName">追加されるブックマークの名前を含む文字列。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトにブックマークを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声複合エンジンが生成されます、<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>イベントのいずれかを使用して、プロンプトを話すときに、ブックマークに到達した場合、 <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのブックマークが含まれていて、WAV ファイル再生のために、出力を送信するメッセージを作成します。 ハンドラーを<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>イベントがコンソールにイベントが発生したときに、オーディオのストリーム内での位置およびブックマークの名前を書き込みます。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\test\weather.wav");  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =  
+          new System.Media.SoundPlayer(@"C:\test\weather.wav");  
+  
+        // Build a prompt and append bookmarks.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendText(  
+          "The weather forecast for today is partly cloudy with some sun breaks.");  
+        builder.AppendBookmark("Daytime forecast");  
+        builder.AppendText(  
+          "Tonight's weather will be cloudy with a 30% chance of showers.");  
+        builder.AppendBookmark("Nightime forecast");  
+  
+        // Add a handler for the BookmarkReached event.  
+        synth.BookmarkReached +=  
+          new EventHandler<BookmarkReachedEventArgs>(synth_BookmarkReached);  
+  
+        // Speak the prompt and play back the output file.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Write the name and position of the bookmark to the console.  
+    static void synth_BookmarkReached(object sender, BookmarkReachedEventArgs e)  
+    {  
+      Console.WriteLine("Bookmark ({0}) reached at: {1} ",  
+        e.Bookmark, e.AudioPosition);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendBreak">
+      <MemberSignature Language="C#" Value="public void AppendBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendBreak() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendBreak" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに中断を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、中断の期間を指定しません。 <xref:System.Speech.Synthesis.SpeechSynthesizer>言語的コンテキストに基づく、期間の値を決定します。  
+  
+   
+  
+## Examples  
+ 次の例では、改行で区切られた 2 つの文を含むメッセージを構築し、コンピューターの既定のオーディオ デバイスには、プロンプトを話します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Build a prompt with two sentences separated by a break.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendText(  
+          "Tonight's movie showings in theater A are at 5:45, 7:15, and 8:45.");  
+        builder.AppendBreak();  
+        builder.AppendText(  
+          "Tonight's movie showings in theater B are at 5:15, 7:30, and 9:15.");  
+  
+        // Speak the prompt.  
+        synth.Speak(builder);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendBreak">
+      <MemberSignature Language="C#" Value="public void AppendBreak (System.Speech.Synthesis.PromptBreak strength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendBreak(valuetype System.Speech.Synthesis.PromptBreak strength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendBreak(System.Speech.Synthesis.PromptBreak)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strength" Type="System.Speech.Synthesis.PromptBreak" />
+      </Parameters>
+      <Docs>
+        <param name="strength">中断の期間と次の増加する値を示します:</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに中断を追加し、強度 (継続時間) を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値、<xref:System.Speech.Synthesis.PromptBreak>列挙体は、単語の境界間の分離間隔 (一時停止) の範囲を表します。 音声複合エンジンでは、間隔の正確な時間を決定します。 中断が要求されると、これらの値の 1 つはこれらの値と対応するミリ秒区切り値の間のマッピングが含まれていますの音声合成 (TTS) エンジンに渡されます。  
+  
+   
+  
+## Examples  
+ 次の例では、改行で区切られた 2 つの文を含むメッセージを構築し、再生の WAV ファイルに出力を送信します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\test\weather.wav");  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =  
+          new System.Media.SoundPlayer(@"C:\test\weather.wav");  
+  
+        // Build a prompt with two sentences separated by a break.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendText(  
+          "Tonight's movie showings in theater A are at 5:45, 7:15, and 8:45");  
+        builder.AppendBreak(PromptBreak.Medium);  
+        builder.AppendText(  
+          "Tonight's movie showings in theater B are at 5:15, 7:15, and 9:15");  
+  
+        // Speak the prompt and play back the output file.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendBreak">
+      <MemberSignature Language="C#" Value="public void AppendBreak (TimeSpan duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendBreak(valuetype System.TimeSpan duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendBreak(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="duration" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="duration">ティック単位の時間 (1 ティックは 100 ナノ秒)。</param>
+        <summary>指定された継続時間の中断を <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中断は、一時停止や単語間の他の挿入する韻律の境界の制御に使用できます。 改行は省略できます。 中断が存在しない場合は、シンセサイザーは言語的コンテキストに応じて単語間の中断を決定します。  
+  
+   
+  
+## Examples  
+ 次の例では、15,000, 000 ティック (1.5 秒) の改行で区切られた 2 つの文を含むメッセージを構築し、コンピューターの既定のオーディオ デバイスには、プロンプトを話します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Build a prompt with two sentences separated by a break.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendText(  
+          "Tonight's movie showings in theater A are at 5:45, 7:15, and 8:45");  
+        builder.AppendBreak(new TimeSpan(15000000));  
+        builder.AppendText(  
+          "Tonight's movie showings in theater B are at 5:15, 7:15, and 9:15");  
+  
+        // Speak the prompt.  
+        synth.Speak(builder);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendPromptBuilder">
+      <MemberSignature Language="C#" Value="public void AppendPromptBuilder (System.Speech.Synthesis.PromptBuilder promptBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendPromptBuilder(class System.Speech.Synthesis.PromptBuilder promptBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendPromptBuilder(System.Speech.Synthesis.PromptBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="promptBuilder" Type="System.Speech.Synthesis.PromptBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="promptBuilder">追加するコンテンツ。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトを別の <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Speech.Synthesis.PromptBuilder>インスタンスし、3 番目に追加し、<xref:System.Speech.Synthesis.PromptBuilder>です。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\test\showtimes.wav");  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =  
+          new System.Media.SoundPlayer(@"C:\test\showtimes.wav");  
+  
+        // Build child prompts.  
+        PromptBuilder theatreA = new PromptBuilder();  
+        theatreA.AppendText(  
+          "Tonight's movie showings in theater A are at 5:45, 7:15, and 9:30");  
+        theatreA.AppendBreak(PromptBreak.Large);  
+        PromptBuilder theatreB = new PromptBuilder();  
+        theatreB.AppendText(  
+          "Tonight's movie showings in theater B are at 5:15, 7:15, and 9:15");  
+  
+        // Build the parent prompt and append the two child prompts.  
+        PromptBuilder showTimes = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        showTimes.AppendText(  
+          "The following are the show times for tonight's movies:");  
+        showTimes.AppendPromptBuilder(theatreA);  
+        showTimes.AppendPromptBuilder(theatreB);  
+  
+        // Speak the prompt and play back the output file.  
+        synth.Speak(showTimes);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSsml">
+      <MemberSignature Language="C#" Value="public void AppendSsml (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSsml(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendSsml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">追加する SSML ファイルへの完全修飾パス。</param>
+        <summary>指定したパスの SSML ファイルを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML ファイルに準拠した XML フォーマット ファイルである必要があります、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201763)仕様です。  
+  
+ 使用して文字列として SSML マークアップを追加することもできます。<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを使用して SSML ファイルの内容を追加、<xref:System.Speech.Synthesis.PromptBuilder.AppendSsml%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and append a file that defines an SSML prompt.  
+        PromptBuilder ssmlFile = new PromptBuilder();  
+        ssmlFile.AppendSsml("c:\\test\\Weather.ssml");  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(ssmlFile);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ 前の例を参照する SSML ファイルを次に示します。  
+  
+```xml  
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<speak version="1.0"  
+ xmlns="http://www.w3.org/2001/10/synthesis"  
+ xml:lang="en-US">  
+  
+  <s> The weather forecast for today is partly cloudy with some sun breaks. </s>  
+  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSsml">
+      <MemberSignature Language="C#" Value="public void AppendSsml (Uri ssmlFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSsml(class System.Uri ssmlFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendSsml(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ssmlFile" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="ssmlFile">追加する SSML ファイルの完全修飾 URI。</param>
+        <summary>指定した URI の SSML ファイルを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML ファイルに準拠した XML フォーマット ファイルである必要があります、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://www.w3.org/TR/speech-synthesis/)仕様です。  
+  
+ 使用して文字列として SSML マークアップを追加することもできます。<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを使用して SSML ファイルの内容を追加、<xref:System.Speech.Synthesis.PromptBuilder.AppendSsml%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and append a file that defines an SSML prompt.  
+        PromptBuilder ssmlFile = new PromptBuilder();  
+        ssmlFile.AppendSsml(new Uri("c:\\test\\Weather.ssml"));  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(ssmlFile);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ 前の例を参照する SSML ファイルを次に示します。  
+  
+```xml  
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<speak version="1.0"  
+ xmlns="http://www.w3.org/2001/10/synthesis"  
+ xml:lang="en-US">  
+  
+  <s> The weather forecast for today is partly cloudy with some sun breaks. </s>  
+  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSsml">
+      <MemberSignature Language="C#" Value="public void AppendSsml (System.Xml.XmlReader ssmlFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSsml(class System.Xml.XmlReader ssmlFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendSsml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ssmlFile" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="ssmlFile">追加する XML ファイルの完全修飾名。</param>
+        <summary>追加、 <c>XMLReader</c> SSML プロンプトを参照するオブジェクト、<see cref="T:System.Speech.Synthesis.PromptBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML ファイルに準拠した XML フォーマット ファイルである必要があります、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://www.w3.org/TR/speech-synthesis/)仕様です。  
+  
+ 使用して文字列として SSML マークアップを追加することもできます。<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトから、<xref:System.Xml.XmlReader>音声合成マークアップ言語 (SSML) マークアップを含むファイルを参照するオブジェクト。  
+  
+```csharp  
+using System;  
+using System.Xml;  
+using System.IO;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\test\weather.wav");  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =  
+          new System.Media.SoundPlayer(@"C:\test\weather.wav");  
+  
+        // Create the path to the SSML file.  
+        string weatherFile = Path.GetFullPath("c:\\test\\Weather.xml");  
+        PromptBuilder builder = null;  
+  
+        // Create an XML Reader from the file, create a PromptBuilder and   
+        // append the XmlReader.  
+        if (File.Exists(weatherFile))  
+        {  
+          XmlReader reader = XmlReader.Create(weatherFile);  
+          builder = new PromptBuilder();  
+          builder.AppendSsml(reader);  
+          reader.Close();  
+        }  
+  
+        // Speak the prompt and play back the output file.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSsmlMarkup">
+      <MemberSignature Language="C#" Value="public void AppendSsmlMarkup (string ssmlMarkup);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSsmlMarkup(string ssmlMarkup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ssmlMarkup" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ssmlMarkup">SSML マークアップを格納している文字列。</param>
+        <summary>SSML マークアップを含む指定された文字列を <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML マークアップを追加するときに、適切なエスケープ文字を使用する必要があります。 旧バージョンとスラッシュの値を囲む引用符の前に注意してください、`interpret-as`次の例では、属性。  
+  
+```csharp  
+builder.AppendSsmlMarkup("<say-as interpret-as = \"characters\"> chair </say-as>");  
+```  
+  
+> [!NOTE]
+>  引数として使用される文字列<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>含めることはできません、`speak`要素。  
+  
+ 使用する場合<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>でインライン発音を指定する、`phoneme`要素、現在の音声認識エンジンがそれをサポートしている指定された、次の phonetic アルファベットのいずれかから携帯電話を使用することができます。  
+  
+-   国際音声記号 (IPA)  
+  
+-   ユニバーサル電話設定 (UPS)  
+  
+-   SAPI 電話の設定  
+  
+ SSML 準拠音声認識エンジンは、IPA から携帯電話を話します。  
+  
+ いずれかを使用して SSML マークアップを含むファイルを追加することも、<xref:System.Speech.Synthesis.PromptBuilder.AppendSsml%2A>メソッドです。 マークアップ言語でフォーマットされていない読み上げるテキストを追加するには、いずれかの操作を使用して、 <xref:System.Speech.Synthesis.PromptBuilder.AppendText%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithAlias%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithHint%2A>、または<xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithPronunciation%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendText">
+      <MemberSignature Language="C#" Value="public void AppendText (string textToSpeak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendText(string textToSpeak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストを含む文字列。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加されるテキストを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML マークアップ言語としてフォーマットされているテキストを追加するを使用して<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを使用したテキスト文字列を追加、<xref:System.Speech.Synthesis.PromptBuilder.AppendText%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and append a text string.  
+        PromptBuilder speakText = new PromptBuilder();  
+        speakText.AppendText("Say the name of the song you want to hear");  
+  
+        // Speak the contents of the prompt.  
+        synth.Speak(speakText);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendText">
+      <MemberSignature Language="C#" Value="public void AppendText (string textToSpeak, System.Speech.Synthesis.PromptEmphasis emphasis);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendText(string textToSpeak, valuetype System.Speech.Synthesis.PromptEmphasis emphasis) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendText(System.String,System.Speech.Synthesis.PromptEmphasis)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="emphasis" Type="System.Speech.Synthesis.PromptEmphasis" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストを含む文字列。</param>
+        <param name="emphasis">テキストに適用する強調またはストレスの値。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、テキストの強調の度合いを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows の音声合成エンジンは、この時点で強調パラメーターをサポートしていません。 強調パラメーターの値を設定する生成されない合成音声出力の音が聞こえる変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendText">
+      <MemberSignature Language="C#" Value="public void AppendText (string textToSpeak, System.Speech.Synthesis.PromptRate rate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendText(string textToSpeak, valuetype System.Speech.Synthesis.PromptRate rate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendText(System.String,System.Speech.Synthesis.PromptRate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="rate" Type="System.Speech.Synthesis.PromptRate" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストを含む文字列。</param>
+        <param name="rate">テキストに適用する話し速度の値。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、テキストの読み上げ速度を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトをテキスト文字列を追加します。 この例では、<xref:System.Speech.Synthesis.PromptBuilder.AppendText%2A>の注文の内容を列挙する追加される文字列の評価、低速で話しを指定します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and add content.  
+        PromptBuilder speakRate = new PromptBuilder();  
+        speakRate.AppendText("Your order for");  
+        speakRate.AppendText("one kitchen sink and one faucet", PromptRate.Slow);  
+        speakRate.AppendText("has been confirmed.");  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(speakRate);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendText">
+      <MemberSignature Language="C#" Value="public void AppendText (string textToSpeak, System.Speech.Synthesis.PromptVolume volume);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendText(string textToSpeak, valuetype System.Speech.Synthesis.PromptVolume volume) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendText(System.String,System.Speech.Synthesis.PromptVolume)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="volume" Type="System.Speech.Synthesis.PromptVolume" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストを含む文字列。</param>
+        <param name="volume">テキストに適用する音量 (大きさ) の値。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、テキストの音量を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.PromptVolume.Default>設定<xref:System.Speech.Synthesis.PromptVolume>が同じであるフルボリュームとして<xref:System.Speech.Synthesis.PromptVolume.ExtraLoud>です。 他の設定は、ボリューム全体の基準とした音声出力の音量を調整します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Speech.Synthesis.PromptBuilder.AppendText%2A>ボリュームの設定を指定するメソッドを<xref:System.Speech.Synthesis.SpeechSynthesizer>音声出力に適用する必要があります。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Build a prompt that applies different volume settings.  
+        PromptBuilder builder = new PromptBuilder();  
+        builder.AppendText("This is the default speaking volume.", PromptVolume.Default);  
+        builder.AppendBreak();  
+        builder.AppendText("This is the extra loud speaking volume.", PromptVolume.ExtraLoud);  
+        builder.AppendBreak();  
+        builder.AppendText("This is the medium speaking volume.", PromptVolume.Medium);  
+  
+        // Speak the prompt.  
+        synth.Speak(builder);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTextWithAlias">
+      <MemberSignature Language="C#" Value="public void AppendTextWithAlias (string textToSpeak, string substitute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendTextWithAlias(string textToSpeak, string substitute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendTextWithAlias(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="substitute" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">テキスト表現を含む文字列。</param>
+        <param name="substitute">読み上げるテキストを含む文字列。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、追加したテキストの代わりに読み上げられるエイリアスのテキストを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これにより、音声およびプロンプトの記述形式の両方を格納するドキュメントです。 たとえば、記述形式は SAPI などの頭字語と読み上げ形式の頭字語は、この case 音声アプリケーション プログラミング インターフェイスでの展開されたテキスト可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例に、テキスト文字列 (「音声合成マークアップ言語」) と ("SSML")、そのエイリアスを追加、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクト。 シンセサイザーは、"S S M L"と発音されます。  
+  
+```  
+PromptBuilder alias = new PromptBuilder();  
+alias.AppendTextWithAlias("Speech Synthesis Markup Language","SSML");   
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTextWithHint">
+      <MemberSignature Language="C#" Value="public void AppendTextWithHint (string textToSpeak, System.Speech.Synthesis.SayAs sayAs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendTextWithHint(string textToSpeak, valuetype System.Speech.Synthesis.SayAs sayAs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendTextWithHint(System.String,System.Speech.Synthesis.SayAs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="sayAs" Type="System.Speech.Synthesis.SayAs" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストを含む文字列。</param>
+        <param name="sayAs">テキストのコンテンツ タイプ。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、<see cref="T:System.Speech.Synthesis.SayAs" /> 列挙型のメンバーを使用してコンテンツ タイプを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたコンテンツの種類`sayAs`、音声合成エンジンに発音の内容についてのガイダンスを提供できます`textToSpeak`です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and define the data types for some of the added strings.  
+        PromptBuilder sayAs = new PromptBuilder();  
+        sayAs.AppendText("Your");  
+        sayAs.AppendTextWithHint("1st", SayAs.NumberOrdinal);  
+        sayAs.AppendText("request was for");  
+        sayAs.AppendTextWithHint("1", SayAs.NumberCardinal);  
+        sayAs.AppendText("room, on");  
+        sayAs.AppendTextWithHint("10/19/2012,", SayAs.MonthDayYear);  
+        sayAs.AppendText("with early arrival at");  
+        sayAs.AppendTextWithHint("12:35pm", SayAs.Time12);  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(sayAs);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTextWithHint">
+      <MemberSignature Language="C#" Value="public void AppendTextWithHint (string textToSpeak, string sayAs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendTextWithHint(string textToSpeak, string sayAs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendTextWithHint(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="sayAs" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストを含む文字列。</param>
+        <param name="sayAs">テキストのコンテンツ タイプ。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、テキストのコンテンツ タイプを指定する <see cref="T:System.String" /> を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するに含まれていないコンテンツの種類を指定する、<xref:System.Speech.Synthesis.SayAs>列挙します。 ただし、音声合成エンジンでは、指定したパラメーターをサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTextWithPronunciation">
+      <MemberSignature Language="C#" Value="public void AppendTextWithPronunciation (string textToSpeak, string pronunciation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendTextWithPronunciation(string textToSpeak, string pronunciation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.AppendTextWithPronunciation(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="pronunciation" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">言語の従来のアルファベットを使用した単語の記述形式を含む文字列。</param>
+        <param name="pronunciation">国際音声記号 (IPA) の音素を含む文字列。</param>
+        <summary>テキストを <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトに追加し、テキストの発音を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シンセサイザー話すの内容、`pronunciation`パラメーターでは、コンテンツではなく、`textToSpeak`パラメーター。  
+  
+ 発音でインラインで指定のプロンプトは、個々 の単語の出現する位置にのみ適用され、音声認識エンジンまたは、現在アクティブな辞書のいずれかの発音をオーバーライドします。 通常、既存の単語の発音をカスタムのまたは音声複合エンジン発音可能性があり、予想される適切な名前などの特殊な単語の発音のインライン発音が使用されます。  
+  
+ 国際音声記号 (IPA) からの電話を使用してインライン発音を指定する必要があります。 スマート フォンは、文字または音声の個別のサウンドを表す文字です。 音声認識エンジンに準拠している、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201763)仕様は、IPA から携帯電話を発音します。 その他の phonetic アルファベットを使用してインライン発音を指定するを参照してください。<xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>です。  
+  
+ IPA を発行、[グラフ](http://go.microsoft.com/fwlink/?LinkId=58362)をその電話を一覧表示し、Unicode の数字にマッピングします。  
+  
+ IPA アルファベットでは、一部の電話では、ラテン語アルファベット文字と同じ形式があります。 ような場合、ラテン語文字を入力し、携帯電話の適切な表現を作成することができます。 テキストで、よく使用されるラテン文字は、IPA 電話設定のいくつかの携帯電話を表すことがあります、ためラテン語文字を入力するだけされない可能性があります正確な IPA 電話が必要です。 他の電話としてコードに表せる IPA アルファベット必要性、アンパサンド (&)、番号記号で構成される参照の文字 (#)、Unicode に数値を 16 進数または 10 進数、必要な携帯電話のすべての後に、セミコロン (;) とします。 Schwa など、((& a)\#x0259;) で表されます`&#x0259;`です。  
+  
+ 複数の単語の発音を新規またはカスタムを追加、たとえば express 地域の言語仕様に、または適切な名前または、学習や医療分野に固有のボキャブラリを追加するには、ビルド、辞書に追加、<xref:System.Speech.Synthesis.SpeechSynthesizer>を使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.AddLexicon%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Speech.Synthesis.PromptBuilder>クラスです。 テキスト文字列「自分の名前は」インスタンスを追加します。 最後に、適切な名前"DuBois"を含む文字列を追加し、名前の発音を指定します。  
+  
+```csharp  
+public void ProperName()  
+{  
+    PromptBuilder builder = new PromptBuilder();  
+    builder.AppendText("My name is");  
+  
+    // Add a proper name and its pronunciation.  
+    builder.AppendTextWithPronunciation("DuBois", "duˈbwɑ");     
+}  
+```  
+  
+ 次のマークアップは、SSML を示しています。 この<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトが生成されます。  
+  
+```xml  
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-us">  
+  My name is <phoneme ph="duˈbwɑ"> DuBois </phoneme>  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContent">
+      <MemberSignature Language="C#" Value="public void ClearContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.ClearContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトから内容を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PromptBuilder.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトのカルチャ情報を取得または設定します。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>で指定された言語をサポートするインストール済みの音声を選択しようとして、オブジェクト、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティをメッセージを処理します。 指定したカルチャに音声が見つかった場合は使用されます。 指定したカルチャに音声を検出できない場合は、既定の音声が使用されます。  
+  
+ 個別のセクションではコンテンツを使用するために、プロンプト内でカルチャを指定することも、 <xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.StartParagraph%2A>、および<xref:System.Speech.Synthesis.PromptBuilder.StartSentence%2A>メソッドです。 上記のメソッドのいずれかを使用して、コンテンツの一部がオーバーライドされますに対して指定されたカルチャ、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティの中に実際には、および<xref:System.Speech.Synthesis.SpeechSynthesizer>で指定された言語をサポートするインストール済みの音声を選択しようとしてが、`culture`メソッドのパラメーターです。  
+  
+ 指定された言語の単語を正しく発音、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティ、言語をサポートする音声合成の音声合成 (TTS) エンジンをインストールする必要があります。 インストール済みの音声合成エンジンは、音声と呼ばれます。 に特定のカルチャの声のインストールに関する情報を取得するを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ Microsoft Windows および System.Speech API は、の値として有効なすべての言語、国コードを受け入れる`culture`です。 Windows 7 に付属の音声合成エンジンでは、次の言語、国コードをサポートします。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  参照してください[言語識別子の定数と文字列](http://msdn.microsoft.com/library/dd318693\(VS.85\).aspx)言語コードの包括的な一覧についてはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndParagraph">
+      <MemberSignature Language="C#" Value="public void EndParagraph ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndParagraph() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.EndParagraph" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの段落の終わりを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。 例については、「<xref:System.Speech.Synthesis.PromptBuilder.StartParagraph%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSentence">
+      <MemberSignature Language="C#" Value="public void EndSentence ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndSentence() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.EndSentence" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの文の終わりを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。 例については、「<xref:System.Speech.Synthesis.PromptBuilder.StartSentence%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndStyle">
+      <MemberSignature Language="C#" Value="public void EndStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.EndStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトのスタイルの終わりを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.PromptBuilder.EndStyle%2A>メソッドは現在の話し方のスタイルを停止します。 話し方のスタイルが有効にした設定に戻されます、<xref:System.Speech.Synthesis.PromptBuilder.StartStyle%2A>メソッドは、新しい話し方のスタイルを開始します。 例については、「<xref:System.Speech.Synthesis.PromptBuilder.StartStyle%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndVoice">
+      <MemberSignature Language="C#" Value="public void EndVoice ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndVoice() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.EndVoice" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声使用の終わりを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>メソッドは現在の音声の音声出力の使用を停止します。 有効にする前に、設定を元に戻します、音声、<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>メソッドは、新しい音声通話を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PromptBuilder.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> が空かどうかを取得します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="StartParagraph">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの段落の開始を指定し、オプションで言語を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="StartParagraph">
+      <MemberSignature Language="C#" Value="public void StartParagraph ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartParagraph() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartParagraph" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの段落の開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトは、コンテンツを追加してを段落と文にコンテンツを編成します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and add content as paragraphs and sentences.  
+        PromptBuilder parSent = new PromptBuilder();  
+        parSent.StartParagraph();  
+        parSent.StartSentence();  
+        parSent.AppendText("Introducing the sentence element.");  
+        parSent.EndSentence();  
+        parSent.StartSentence();  
+        parSent.AppendText("You can use it to mark individual sentences.");  
+        parSent.EndSentence();  
+        parSent.EndParagraph();  
+        parSent.StartParagraph();  
+        parSent.AppendText("Another simple paragraph. Sentence structure in this paragraph" +  
+          "is not explicitly marked.");  
+        parSent.EndParagraph();  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(parSent);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartParagraph">
+      <MemberSignature Language="C#" Value="public void StartParagraph (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartParagraph(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartParagraph(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">特定のカルチャに関する情報を提供します。たとえば、カルチャの言語、カルチャの名前、書記体系、使用するカレンダー、日付形式や文字列の並べ替え方法などです。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの指定されたカルチャの段落の開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。  
+  
+ `culture`段落のパラメーターとは異なる、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>のプロパティ、<xref:System.Speech.Synthesis.PromptBuilder>保持するオブジェクト。 値を実際には、while、`culture`パラメーターよりも優先されます、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>で指定された言語をサポートするインストール済みの音声を選択しようとしてが、`culture`段落を読み上げるへのパラメーターです。 指定したカルチャに音声が見つかった場合は使用されます。 指定したカルチャに音声を検出できない場合は、既定の音声が使用されます。 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartParagraph%2A>、呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndParagraph%2A>です。  
+  
+ 指定された言語の単語を正しく発音、`culture`パラメーターを言語をサポートする音声合成の音声合成 (TTS) エンジンをインストールする必要があります。 インストール済みの音声合成エンジンは、音声と呼ばれます。 に特定のカルチャの声のインストールに関する情報を取得するを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ Microsoft Windows および System.Speech API は、の値として有効なすべての言語、国コードを受け入れる`culture`です。 Windows 7 に付属の音声合成エンジンでは、次の言語、国コードをサポートします。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="StartSentence">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの文の開始を指定し、オプションで言語を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="StartSentence">
+      <MemberSignature Language="C#" Value="public void StartSentence ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartSentence() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartSentence" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの文の開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトは、コンテンツを追加してを段落と文にコンテンツを編成します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and add content as paragraphs and sentences.  
+        PromptBuilder parSent = new PromptBuilder();  
+        parSent.StartParagraph();  
+        parSent.StartSentence();  
+        parSent.AppendText("Introducing the sentence element.");  
+        parSent.EndSentence();  
+        parSent.StartSentence();  
+        parSent.AppendText("You can use it to mark individual sentences.");  
+        parSent.EndSentence();  
+        parSent.EndParagraph();  
+        parSent.StartParagraph();  
+        parSent.AppendText("Another simple paragraph. Sentence structure in this paragraph" +  
+          "is not explicitly marked.");  
+        parSent.EndParagraph();  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(parSent);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartSentence">
+      <MemberSignature Language="C#" Value="public void StartSentence (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartSentence(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartSentence(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">特定のカルチャに関する情報を提供します。たとえば、カルチャの言語、カルチャの名前、書記体系、使用するカレンダー、日付形式や文字列の並べ替え方法などです。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの指定されたカルチャの文の開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さプロンプトを表示できます人間の音声のような詳細の文章や段落にそれらが壊れた場合。  
+  
+ `culture`文のパラメーターとは異なる、`culture`という文が含まれる段落のパラメーター、または<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>のプロパティ、<xref:System.Speech.Synthesis.PromptBuilder>それらを含むオブジェクト。  
+  
+ 値を実際には、while、`culture`パラメーターよりも優先されます、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティおよび`culture`文が含まれる段落のパラメーターです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>で指定された言語をサポートするインストール済みの音声を選択しようとしてが、`culture`文を話すへのパラメーターです。 指定したカルチャに音声が見つかった場合は使用されます。 指定したカルチャに音声を検出できない場合は、既定の音声が使用されます。 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartSentence%2A>、呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndSentence%2A>です。  
+  
+ 指定された言語の単語を正しく発音、`culture`パラメーターを言語をサポートする音声合成の音声合成 (TTS) エンジンをインストールする必要があります。 インストール済みの音声合成エンジンは、音声と呼ばれます。 に特定のカルチャの声のインストールに関する情報を取得するを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ Microsoft Windows および System.Speech API は、の値として有効なすべての言語、国コードを受け入れる`culture`です。 Windows 7 に付属の音声合成エンジンでは、次の言語、国コードをサポートします。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartStyle">
+      <MemberSignature Language="C#" Value="public void StartStyle (System.Speech.Synthesis.PromptStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartStyle(class System.Speech.Synthesis.PromptStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartStyle(System.Speech.Synthesis.PromptStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Speech.Synthesis.PromptStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">開始するスタイル。</param>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトのスタイルの開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.PromptBuilder.StartStyle%2A>メソッドは、<xref:System.Speech.Synthesis.PromptStyle>オブジェクトを引数として。 プロパティを使用することができます、<xref:System.Speech.Synthesis.PromptStyle>レート、およびボリューム (大きさ) の音声出力のスタイルが有効な状態に適用する話し、エンファシスを設定するオブジェクト。 現在のスタイルを使用してを停止する呼び出し、<xref:System.Speech.Synthesis.PromptBuilder.EndStyle%2A>メソッドです。  
+  
+> [!NOTE]
+>  -   Windows の音声合成エンジンは、この時点で強調パラメーターをサポートしていません。 強調パラメーターの値を設定する生成されない合成音声出力の音が聞こえる変更します。  
+> -   <xref:System.Speech.Synthesis.PromptVolume.Default>設定<xref:System.Speech.Synthesis.PromptVolume>が同じであるフルボリュームとして<xref:System.Speech.Synthesis.PromptVolume.ExtraLoud>です。 他の設定は、ボリューム全体の基準とした音声出力の音量を調整します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトをテキスト文字列を追加します。 この例では、<xref:System.Speech.Synthesis.PromptBuilder.StartStyle%2A>の注文の内容を列挙する追加される文字列の評価、低速で話しを指定します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and add content.  
+        PromptBuilder style = new PromptBuilder();  
+        style.AppendText("Your order for");  
+        style.StartStyle(new PromptStyle(PromptRate.Slow));  
+        style.AppendText("one kitchen sink and one faucet");  
+        style.EndStyle();  
+        style.AppendText("has been confirmed.");  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(style);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="StartVoice">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するように指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声では、インストール済みの音声合成エンジンを表します。 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラス名との属性を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションは、のいずれかを呼び出すことはできません、 <xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A> 、音声のメソッドが<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="StartVoice">
+      <MemberSignature Language="C#" Value="public void StartVoice (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartVoice(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartVoice(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">特定のカルチャに関する情報を提供します。たとえば、カルチャの言語、カルチャの名前、書記体系、使用するカレンダー、日付形式や文字列の並べ替え方法などです。</param>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するよう指示し、使用する音声のカルチャを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `culture`パラメーター<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>とは異なる、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>のプロパティ、<xref:System.Speech.Synthesis.PromptBuilder>保持するオブジェクト。  値を実際には、while、`culture`パラメーターよりも優先されます、<xref:System.Speech.Synthesis.PromptBuilder.Culture%2A>プロパティです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>で指定された言語をサポートするインストール済みの音声を選択しようとしてが、`culture`で囲まれたコンテンツを読み上げるためにパラメーター<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>と<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。 指定したカルチャに音声が見つかった場合は使用されます。 指定したカルチャに音声を検出できない場合は、既定の音声が使用されます。 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>、呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。  
+  
+ 指定された言語の単語を正しく発音、`culture`パラメーターを言語をサポートする音声合成の音声合成 (TTS) エンジンをインストールする必要があります。 インストール済みの音声合成エンジンは、音声と呼ばれます。 に特定のカルチャの声のインストールに関する情報を取得するを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ Microsoft Windows および System.Speech API は、の値として有効なすべての言語、国コードを受け入れる`culture`です。 Windows 7 に付属の音声合成エンジンでは、次の言語、国コードをサポートします。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartVoice">
+      <MemberSignature Language="C#" Value="public void StartVoice (System.Speech.Synthesis.VoiceGender gender);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartVoice(valuetype System.Speech.Synthesis.VoiceGender gender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartVoice(System.Speech.Synthesis.VoiceGender)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+      </Parameters>
+      <Docs>
+        <param name="gender">使用する音声の性別。</param>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するよう指示し、使用する音声の性別を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラス名との属性を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。  
+  
+ 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartVoice">
+      <MemberSignature Language="C#" Value="public void StartVoice (System.Speech.Synthesis.VoiceInfo voice);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartVoice(class System.Speech.Synthesis.VoiceInfo voice) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartVoice(System.Speech.Synthesis.VoiceInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="voice" Type="System.Speech.Synthesis.VoiceInfo" />
+      </Parameters>
+      <Docs>
+        <param name="voice">使用する音声の条件。</param>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するよう指示し、新しい音声の条件を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラス名との属性を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。  
+  
+ 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartVoice">
+      <MemberSignature Language="C#" Value="public void StartVoice (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartVoice(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartVoice(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">使用する音声の名前。</param>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するよう指示し、使用する音声の名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声のインストールに関する情報を取得するには、いずれかを使用、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartVoice">
+      <MemberSignature Language="C#" Value="public void StartVoice (System.Speech.Synthesis.VoiceGender gender, System.Speech.Synthesis.VoiceAge age);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartVoice(valuetype System.Speech.Synthesis.VoiceGender gender, valuetype System.Speech.Synthesis.VoiceAge age) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartVoice(System.Speech.Synthesis.VoiceGender,System.Speech.Synthesis.VoiceAge)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+        <Parameter Name="age" Type="System.Speech.Synthesis.VoiceAge" />
+      </Parameters>
+      <Docs>
+        <param name="gender">使用する新しい音声の性別。</param>
+        <param name="age">使用する音声の年齢。</param>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するよう指示し、新しい音声の性別と年齢を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラス名との属性を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。  
+  
+ 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartVoice">
+      <MemberSignature Language="C#" Value="public void StartVoice (System.Speech.Synthesis.VoiceGender gender, System.Speech.Synthesis.VoiceAge age, int voiceAlternate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartVoice(valuetype System.Speech.Synthesis.VoiceGender gender, valuetype System.Speech.Synthesis.VoiceAge age, int32 voiceAlternate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.StartVoice(System.Speech.Synthesis.VoiceGender,System.Speech.Synthesis.VoiceAge,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+        <Parameter Name="age" Type="System.Speech.Synthesis.VoiceAge" />
+        <Parameter Name="voiceAlternate" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="gender">使用する音声の性別。</param>
+        <param name="age">使用する音声の年齢。</param>
+        <param name="voiceAlternate">1 つ以上の音声が一致する場合に、望ましい音声を指定する整数、<c>性別</c>と<c>age</c>パラメーター。</param>
+        <summary>シンセサイザーに <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトの音声を変更するよう指示し、性別、年齢、および指定した性別と年齢に一致する適切な音声を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声複合エンジン カウントが指定されたパラメーターで検出され、カウントが、音声を返しますの一致、`voiceAlternate`パラメーター。  
+  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラス名との属性を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。  
+  
+ 指定された音声の使用を停止する<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>呼び出す<xref:System.Speech.Synthesis.PromptBuilder.EndVoice%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public string ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.PromptBuilder.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトから生成される SSML を返します。</summary>
+        <returns>単一行として <see cref="T:System.Speech.Synthesis.PromptBuilder" /> オブジェクトから生成される SSML を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.PromptBuilder.ToXml%2A>メソッドが任意の方法で返される SSML をフォーマットする操作を行わない。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクト、テキストを追加および SSML プロンプトの該当するショートカットをプロンプトの内容を話す前に、コンソールに書き込みます。  
+  
+```csharp  
+  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and add content.  
+        PromptBuilder style = new PromptBuilder();  
+        style.AppendText("Your order for");  
+        style.StartStyle(new PromptStyle(PromptRate.Slow));  
+        style.AppendText("one kitchen sink and one faucet");  
+        style.EndStyle();  
+        style.AppendText("has been confirmed.");  
+  
+        // Write the contents of the PromptBuilder object to the console as  
+        // an SSML-compatible XML file.  
+        string myXml = style.ToXml();  
+        Console.WriteLine("This is the SSML equivalent of the PromptBuilder: \n\n" + myXml);  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(style);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

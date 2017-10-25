@@ -1,0 +1,225 @@
+<Type Name="Export" FullName="System.ComponentModel.Composition.Primitives.Export">
+  <TypeSignature Language="C#" Value="public class Export" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Export extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Primitives.Export" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>遅延時間で作成されたエクスポートされたオブジェクトと、そのオブジェクトを記述するメタデータで構成される型では、エクスポートを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Export ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.Export.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Composition.Primitives.Export" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを呼び出して派生の型をオーバーライドする必要があります、<xref:System.ComponentModel.Composition.Primitives.Export.Definition%2A>プロパティおよび<xref:System.ComponentModel.Composition.Primitives.Export.GetExportedValueCore%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Export (System.ComponentModel.Composition.Primitives.ExportDefinition definition, Func&lt;object&gt; exportedValueGetter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.Composition.Primitives.ExportDefinition definition, class System.Func`1&lt;object&gt; exportedValueGetter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.Export.#ctor(System.ComponentModel.Composition.Primitives.ExportDefinition,System.Func{System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ExportDefinition" />
+        <Parameter Name="exportedValueGetter" Type="System.Func&lt;System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="definition">コントラクトを記述するオブジェクトを<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトを満たします。</param>
+        <param name="exportedValueGetter">エクスポートされるオブジェクトを作成するために呼び出されるメソッド、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />です。 これにより、遅延までオブジェクトの作成、<see cref="P:System.ComponentModel.Composition.Primitives.Export.Value" />プロパティが呼び出されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />指定されたエクスポート定義とエクスポートされるオブジェクトの get アクセス操作子を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="exportedObjectGetter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Export (string contractName, Func&lt;object&gt; exportedValueGetter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName, class System.Func`1&lt;object&gt; exportedValueGetter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.Export.#ctor(System.String,System.Func{System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="exportedValueGetter" Type="System.Func&lt;System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">コントラクト名、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクト。</param>
+        <param name="exportedValueGetter">エクスポートされるオブジェクトを作成するために呼び出されるメソッド、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />です。 これにより、遅延までオブジェクトの作成、<see cref="P:System.ComponentModel.Composition.Primitives.Export.Value" />メソッドが呼び出されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />指定したコントラクト名、およびエクスポートした値の get アクセス操作子を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contractName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="exportedObjectGetter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contractName" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Export (string contractName, System.Collections.Generic.IDictionary&lt;string,object&gt; metadata, Func&lt;object&gt; exportedValueGetter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; metadata, class System.Func`1&lt;object&gt; exportedValueGetter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.Export.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Func{System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="exportedValueGetter" Type="System.Func&lt;System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">コントラクト名、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクト。</param>
+        <param name="metadata">メタデータ、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトまたは<see langword="null" />を設定する、<see cref="P:System.ComponentModel.Composition.Primitives.Export.Metadata" />プロパティが空、読み取り専用を<see cref="T:System.Collections.Generic.IDictionary`2" />オブジェクト。</param>
+        <param name="exportedValueGetter">エクスポートされるオブジェクトを作成するために呼び出されるメソッド、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />です。 これにより、遅延までオブジェクトの作成、<see cref="P:System.ComponentModel.Composition.Primitives.Export.Value" />メソッドが呼び出されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />指定したコントラクト名、メタデータ、およびエクスポートされた値の get アクセス操作子を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contractName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="exportedObjectGetter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contractName" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Definition">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Composition.Primitives.ExportDefinition Definition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Composition.Primitives.ExportDefinition Definition" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.Export.Definition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Primitives.ExportDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポートが満たすコントラクトを記述する定義を取得します。</summary>
+        <value>コントラクトを定義する、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトを満たします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライドが返りません`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このプロパティは、派生クラスでオーバーライドされませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValueCore">
+      <MemberSignature Language="C#" Value="protected virtual object GetExportedValueCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetExportedValueCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.Export.GetExportedValueCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エクスポートが提供するエクスポートされたオブジェクトを返します。</summary>
+        <returns>エクスポートされるオブジェクトのエクスポートを提供します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException"><see cref="M:System.ComponentModel.Composition.Primitives.Export.GetExportedValueCore" />メソッドは派生クラスでオーバーライドされませんでした。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Metadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.Export.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポートのメタデータを取得します。</summary>
+        <value>メタデータ、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を返します<xref:System.ComponentModel.Composition.Primitives.ExportDefinition.Metadata%2A>の<xref:System.ComponentModel.Composition.Primitives.Export.Definition%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException"><see cref="P:System.ComponentModel.Composition.Primitives.Export.Definition" />プロパティは、派生クラスでオーバーライドされませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.Export.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエクスポートが表すオブジェクトを提供します。</summary>
+        <value>このエクスポートが表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,335 @@
+<Type Name="ComponentDispatcher" FullName="System.Windows.Interop.ComponentDispatcher">
+  <TypeSignature Language="C#" Value="public static class ComponentDispatcher" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed ComponentDispatcher extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.ComponentDispatcher" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Win32 と WPF の間で相互運用シナリオでのメッセージ ポンプの制御を共有できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的では、クラス自体はのすべてのメンバー<xref:System.Windows.Interop.ComponentDispatcher>は特定のスレッドに固有です。 値を確認する場合など、 <xref:System.Windows.Interop.ComponentDispatcher.IsThreadModal%2A> 、2 つの異なるスレッドに異なる値が取得する可能性があります。  
+  
+ メソッドは静的ですがスレッドごとのデータ構造でのバックアップがします。  静的メソッドは、単一のアクセスを許可するが、<xref:System.Windows.Interop.ComponentDispatcher>スレッドごとの適切な操作を並べ替えます。  
+  
+ 呼び出すコードによってメッセージ ポンプの所有者が定義されている、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]関数[GetMessage](http://msdn.microsoft.com/library/ms644936.aspx)です。 所有者呼び出し<xref:System.Windows.Interop.ComponentDispatcher.RaiseThreadMessage%2A>キーボード メッセージごとにします。 このメソッドを発生させる、<xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage>イベントのデータが含まれてし、メッセージ イベントには。 そのイベントが処理されない場合は、所有者が、<xref:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage>イベントの引数に含まれるイベント メッセージを使用します。  
+  
+> [!NOTE]
+>  キーボード メッセージのみがサポートされます。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentKeyboardMessage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Interop.MSG CurrentKeyboardMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Interop.MSG CurrentKeyboardMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.ComponentDispatcher.CurrentKeyboardMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.MSG</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後に発生したメッセージを取得します。</summary>
+        <value>最後のメッセージ。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterThreadModal">
+      <MemberSignature Language="C#" Value="public static event EventHandler EnterThreadModal;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EnterThreadModal" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.ComponentDispatcher.EnterThreadModal" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドがモーダルになったときに発生します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsThreadModal">
+      <MemberSignature Language="C#" Value="public static bool IsThreadModal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsThreadModal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.ComponentDispatcher.IsThreadModal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドがモーダルかどうかを示す値を取得します。</summary>
+        <value>
+          スレッドがモーダルの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaveThreadModal">
+      <MemberSignature Language="C#" Value="public static event EventHandler LeaveThreadModal;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LeaveThreadModal" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.ComponentDispatcher.LeaveThreadModal" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モーダル スレッドが非モーダルになったときに発生します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PopModal">
+      <MemberSignature Language="C#" Value="public static void PopModal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PopModal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.ComponentDispatcher.PopModal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>モーダル スレッドがモーダルでなくなったことを示すために呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PushModal">
+      <MemberSignature Language="C#" Value="public static void PushModal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PushModal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.ComponentDispatcher.PushModal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スレッドがモーダルであることを示すために呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスのすべてのメンバーが必要な<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />権限です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseIdle">
+      <MemberSignature Language="C#" Value="public static void RaiseIdle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RaiseIdle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.ComponentDispatcher.RaiseIdle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スレッドがアイドル状態であることを示すために呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseThreadMessage">
+      <MemberSignature Language="C#" Value="public static bool RaiseThreadMessage (ref System.Windows.Interop.MSG msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RaiseThreadMessage(valuetype System.Windows.Interop.MSG&amp; msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.ComponentDispatcher.RaiseThreadMessage(System.Windows.Interop.MSG@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージおよびそれに関連付けられたデータ。</param>
+        <summary>処理できる新しいメッセージがあることを示します。</summary>
+        <returns>
+          メッセージ ループをリッスンしているモジュールのいずれかがメッセージを処理した場合は <see langword="true" />。 この場合、メッセージ ループの所有者はこのメッセージを無視します。 メッセージが処理されなかった場合は <see langword="false" />。 この場合、メッセージ ポンプの所有者を呼び出す必要があります、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]関数[TranslateMessage](http://msdn.microsoft.com/library/ms644955.aspx)続く[DispatchMessage](http://msdn.microsoft.com/library/ms644934.aspx)です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ポンプの所有者は、キーボード メッセージごとに、このメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadFilterMessage">
+      <MemberSignature Language="C#" Value="public static event System.Windows.Interop.ThreadMessageEventHandler ThreadFilterMessage;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Interop.ThreadMessageEventHandler ThreadFilterMessage" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.ThreadMessageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ポンプがキーボード メッセージを受信すると発生します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadIdle">
+      <MemberSignature Language="C#" Value="public static event EventHandler ThreadIdle;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ThreadIdle" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.ComponentDispatcher.ThreadIdle" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドがアイドル状態のときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューにメッセージがないかどうかは、アイドル状態にアナウンスされる、<xref:System.Windows.Interop.ComponentDispatcher.ThreadIdle>イベントが処理を実行するための効率的な時間。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadPreprocessMessage">
+      <MemberSignature Language="C#" Value="public static event System.Windows.Interop.ThreadMessageEventHandler ThreadPreprocessMessage;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Interop.ThreadMessageEventHandler ThreadPreprocessMessage" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.ComponentDispatcher.ThreadPreprocessMessage" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.ThreadMessageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ポンプがキーボード メッセージを受信すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後にこのイベントを発生させるか<xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage>、そのイベントが処理されない場合。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスの任意のメンバーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

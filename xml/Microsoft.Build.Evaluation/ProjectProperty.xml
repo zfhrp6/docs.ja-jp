@@ -1,0 +1,309 @@
+<Type Name="ProjectProperty" FullName="Microsoft.Build.Evaluation.ProjectProperty">
+  <TypeSignature Language="C#" Value="public abstract class ProjectProperty : IEquatable&lt;Microsoft.Build.Evaluation.ProjectProperty&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProjectProperty extends System.Object implements class System.IEquatable`1&lt;class Microsoft.Build.Evaluation.ProjectProperty&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Evaluation.ProjectProperty" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;Microsoft.Build.Evaluation.ProjectProperty&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{Name}={EvaluatedValue} [{UnevaluatedValue}]")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>評価済みのデザイン時プロパティを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EvaluatedValue">
+      <MemberSignature Language="C#" Value="public string EvaluatedValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EvaluatedValue" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.EvaluatedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価されたプロパティ値を取得します。</summary>
+        <value>評価されたプロパティ値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接設定することはできません。未評価の値のみを設定することができます。 評価値には、文字エスケープ シーケンスが含まれていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnvironmentProperty">
+      <MemberSignature Language="C#" Value="public abstract bool IsEnvironmentProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnvironmentProperty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.IsEnvironmentProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが元の環境変数にするかどうかを判断します。</summary>
+        <value>プロパティで環境変数に開始された場合は true。false それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGlobalProperty">
+      <MemberSignature Language="C#" Value="public abstract bool IsGlobalProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGlobalProperty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.IsGlobalProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティがグローバル プロパティであるかどうかを判断します。</summary>
+        <value>プロパティがグローバル プロパティでは、true を返します。false それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImported">
+      <MemberSignature Language="C#" Value="public abstract bool IsImported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImported" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.IsImported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティがインポートされたファイルに基づいているかどうかを判断します。</summary>
+        <value>プロパティは、インポートされたファイル、および環境変数、グローバル プロパティ、または予約済みのプロパティからではなくを生成する場合は true を返します。 それ以外の場合は、false を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReservedProperty">
+      <MemberSignature Language="C#" Value="public abstract bool IsReservedProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReservedProperty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.IsReservedProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが予約済みのプロパティ、たとえば 'MSBuildProjectFile' であるかどうかを判断します。</summary>
+        <value>プロパティが予約済みのプロパティ以外の場合、true を返しますfalse それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの名前を取得します。</summary>
+        <value>プロパティ名を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Predecessor">
+      <MemberSignature Language="C#" Value="public abstract Microsoft.Build.Evaluation.ProjectProperty Predecessor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Evaluation.ProjectProperty Predecessor" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.Predecessor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価中にこのプロパティによってオーバーライドされた最後のプロパティを取得します。</summary>
+        <value>最後の値が評価中にこのプロパティによってオーバーライドされたプロパティを返します。 プロパティがオーバーライドされていない場合は null を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、論理プロジェクト ファイルで上に、条件が true に評価と同じ名前のすべてのプロパティを検索します。  
+  
+ 最後に変更されてから、プロジェクトが再評価されていません、この値が正しく可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Project">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.Project Project { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Evaluation.Project Project" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.Project" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.Project</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティを含むプロジェクトを取得します。</summary>
+        <value>このプロパティを含むプロジェクトを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IEquatable&lt;Microsoft.Build.Evaluation.ProjectProperty&gt;.Equals">
+      <MemberSignature Language="C#" Value="bool IEquatable&lt;ProjectProperty&gt;.Equals (Microsoft.Build.Evaluation.ProjectProperty other);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IEquatable&lt;Microsoft.Build.Evaluation.ProjectProperty&gt;.Equals(class Microsoft.Build.Evaluation.ProjectProperty other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.ProjectProperty.System#IEquatable&lt;Microsoft#Build#Evaluation#ProjectProperty&gt;#Equals(Microsoft.Build.Evaluation.ProjectProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="Microsoft.Build.Evaluation.ProjectProperty" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較対象となるプロジェクトのプロパティ</param>
+        <summary>このプロジェクトのプロパティが所定のプロジェクトのプロパティと等しいかを比較します。</summary>
+        <returns>プロジェクトのプロパティが等しい場合は true を返します。それ以外の場合は、false を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnevaluatedValue">
+      <MemberSignature Language="C#" Value="public abstract string UnevaluatedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UnevaluatedValue" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.UnevaluatedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または評価されていないプロパティの値を設定します。</summary>
+        <value>未評価のプロパティ値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Setter メソッド未評価の値と評価した値の両方を更新しますが再評価されるまでプロジェクト内の他に何も影響しません。  
+  
+ 含むプロジェクトは、変更済みとしてマークされます。 評価されていない値は、格納するエスケープ文字シーケンスを必要に応じてと見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xml">
+      <MemberSignature Language="C#" Value="public abstract Microsoft.Build.Construction.ProjectPropertyElement Xml { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectPropertyElement Xml" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectProperty.Xml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectPropertyElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたプロパティ要素を取得します。 XML プロパティをバックアップします。 環境、またはビルトイン プロパティこれは、グローバル場合にのみ、null です。</summary>
+        <value>関連付けられたプロパティ要素を返します。 グローバルまたは予約済みのプロパティでは、または環境変数から取得された場合は null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

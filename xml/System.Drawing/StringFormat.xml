@@ -1,0 +1,712 @@
+<Type Name="StringFormat" FullName="System.Drawing.StringFormat">
+  <TypeSignature Language="C#" Value="public sealed class StringFormat : MarshalByRefObject, ICloneable, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StringFormat extends System.MarshalByRefObject implements class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.StringFormat" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>配置、方向、タブ ストップなどのテキスト レイアウト情報、省略記号の挿入や国別の代替の数字形式などの表示方法、および OpenType 機能をカプセル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くの一般的な形式は、提供、<xref:System.Drawing.StringFormatFlags>列挙します。 <xref:System.Drawing.StringFormat>オブジェクトを変更することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringFormat ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.StringFormat> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|FormatFlags|0 (フラグが設定されていない)|  
+|<xref:System.Drawing.StringFormat.HotkeyPrefix%2A>|<xref:System.Drawing.Text.HotkeyPrefix.None>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringFormat (System.Drawing.StringFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.StringFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.#ctor(System.Drawing.StringFormat)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="format" Type="System.Drawing.StringFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトを初期化するために使用する <see cref="T:System.Drawing.StringFormat" /> オブジェクト。</param>
+        <summary>指定した既存 <see cref="T:System.Drawing.StringFormat" /> オブジェクトから、新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、次のメンバーを示しています。  
+  
+-   <xref:System.Drawing.Rectangle.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.Alignment%2A>  
+  
+-   <xref:System.Drawing.StringFormat.LineAlignment%2A>  
+  
+-   <xref:System.Drawing.StringAlignment>  
+  
+-   <xref:System.Drawing.StringFormatFlags>  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineAndAlignment`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Misc2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Misc2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringFormat (System.Drawing.StringFormatFlags options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.StringFormatFlags options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.#ctor(System.Drawing.StringFormatFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="options" Type="System.Drawing.StringFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="options">新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトの <see cref="T:System.Drawing.StringFormatFlags" /> 列挙体。</param>
+        <summary>指定した <see cref="T:System.Drawing.StringFormatFlags" /> 列挙体を使用して、新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、次のメンバーを示しています。  
+  
+-   <xref:System.Drawing.Rectangle.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.Alignment%2A>  
+  
+-   <xref:System.Drawing.StringFormat.LineAlignment%2A>  
+  
+-   <xref:System.Drawing.StringAlignment>  
+  
+-   <xref:System.Drawing.StringFormatFlags>  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineAndAlignment`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Misc2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Misc2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringFormat (System.Drawing.StringFormatFlags options, int language);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.StringFormatFlags options, int32 language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.#ctor(System.Drawing.StringFormatFlags,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="options" Type="System.Drawing.StringFormatFlags" />
+        <Parameter Name="language" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="options">新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトの <see cref="T:System.Drawing.StringFormatFlags" /> 列挙体。</param>
+        <param name="language">テキストの言語を示す値。</param>
+        <summary>指定した <see cref="T:System.Drawing.StringFormatFlags" /> 列挙体および言語を使用して、新しい <see cref="T:System.Drawing.StringFormat" /> オブジェクトを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alignment">
+      <MemberSignature Language="C#" Value="public System.Drawing.StringAlignment Alignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.StringAlignment Alignment" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.Alignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の水平方向の配置を取得または設定します。</summary>
+        <value>文字列の水平方向の配置を指定する <see cref="T:System.Drawing.StringAlignment" /> 列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Drawing.StringFormat.LineAlignment%2A>文字列の垂直方向の配置を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.StringFormat.LineAlignment%2A>と<xref:System.Drawing.StringFormat.Alignment%2A>プロパティおよび<xref:System.Drawing.StringAlignment>列挙型を文字列に揃え。 この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineAndAlignment`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Misc2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Misc2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトの同一コピーを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.StringFormat" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigitSubstitutionLanguage">
+      <MemberSignature Language="C#" Value="public int DigitSubstitutionLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DigitSubstitutionLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.DigitSubstitutionLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>西ヨーロッパ言語の数字をローカルの数字に置換する際に使用される言語を取得します。</summary>
+        <value>西ヨーロッパ言語の数字をローカルの数字に置換する際に使用される言語を特定する NLS (National Language Support) 言語の ID。 <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの <see cref="P:System.Globalization.CultureInfo.LCID" /> プロパティを NLS 言語の ID として渡すことができます。 たとえば、文字列 "ar-EG" を <see cref="T:System.Globalization.CultureInfo" /> コンストラクターに渡して、<see cref="T:System.Globalization.CultureInfo" /> オブジェクトを作成する場合を想定します。 その <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの <see cref="P:System.Globalization.CultureInfo.LCID" /> プロパティを <see cref="F:System.Drawing.StringDigitSubstitute.Traditional" /> と共に <see cref="M:System.Drawing.StringFormat.SetDigitSubstitution(System.Int32,System.Drawing.StringDigitSubstitute)" /> メソッドに渡すと、表示には西ヨーロッパ言語の数字の代わりにアラビア インド数字が使用されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigitSubstitutionMethod">
+      <MemberSignature Language="C#" Value="public System.Drawing.StringDigitSubstitute DigitSubstitutionMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.StringDigitSubstitute DigitSubstitutionMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.DigitSubstitutionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringDigitSubstitute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数字の置き換えに使用される方法を取得します。</summary>
+        <value>現在のフォントでサポートされていないために表示できない文字列の文字を置き換える方法を指定する <see cref="T:System.Drawing.StringDigitSubstitute" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Drawing.StringFormat.Dispose%2A>により、これによって使用されるリソース<xref:System.Drawing.StringFormat>を他の目的を再割り当てするオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~StringFormat ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatFlags">
+      <MemberSignature Language="C#" Value="public System.Drawing.StringFormatFlags FormatFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.StringFormatFlags FormatFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.FormatFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式情報を格納する <see cref="T:System.Drawing.StringFormatFlags" /> 列挙体を取得または設定します。</summary>
+        <value>書式情報を格納する <see cref="T:System.Drawing.StringFormatFlags" /> 列挙体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericDefault">
+      <MemberSignature Language="C#" Value="public static System.Drawing.StringFormat GenericDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.StringFormat GenericDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.GenericDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の汎用 <see cref="T:System.Drawing.StringFormat" /> オブジェクトを取得します。</summary>
+        <value>既定の汎用 <see cref="T:System.Drawing.StringFormat" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、汎用的な既定のインスタンスの初期プロパティ値、<xref:System.Drawing.StringFormat>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Drawing.StringFormat.FormatFlags%2A>|0|  
+|<xref:System.Drawing.StringFormat.Alignment%2A>|<xref:System.Drawing.StringAlignment.Near>|  
+|<xref:System.Drawing.StringFormat.LineAlignment%2A>|<xref:System.Drawing.StringAlignment.Near>|  
+|<xref:System.Drawing.StringFormat.Trimming%2A>|<xref:System.Drawing.StringTrimming.Character>|  
+|<xref:System.Drawing.StringFormat.HotkeyPrefix%2A>|<xref:System.Drawing.Text.HotkeyPrefix.None>|  
+|<xref:System.Drawing.StringFormat.DigitSubstitutionMethod%2A>|<xref:System.Drawing.StringDigitSubstitute.User>|  
+|<xref:System.Drawing.StringFormat.DigitSubstitutionLanguage%2A>|0|  
+  
+ 変更を加えた場合、<xref:System.Drawing.StringFormat>から返されたオブジェクト、<xref:System.Drawing.StringFormat.GenericDefault%2A>プロパティ、これらの変更を永続化、および将来の呼び出し、<xref:System.Drawing.StringFormat.GenericDefault%2A>プロパティには、これらの変更が反映されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericTypographic">
+      <MemberSignature Language="C#" Value="public static System.Drawing.StringFormat GenericTypographic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.StringFormat GenericTypographic" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.GenericTypographic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷用の汎用 <see cref="T:System.Drawing.StringFormat" /> オブジェクトを取得します。</summary>
+        <value>印刷用の汎用 <see cref="T:System.Drawing.StringFormat" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表の汎用文字体裁インスタンスの初期プロパティ値を示しています、<xref:System.Drawing.StringFormat>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Drawing.StringFormat.FormatFlags%2A>|24580 (<xref:System.Drawing.StringFormatFlags.NoClip>、<xref:System.Drawing.StringFormatFlags.FitBlackBox>と<xref:System.Drawing.StringFormatFlags.LineLimit>)。|  
+|<xref:System.Drawing.StringFormat.Alignment%2A>|<xref:System.Drawing.StringAlignment.Near>|  
+|<xref:System.Drawing.StringFormat.LineAlignment%2A>|<xref:System.Drawing.StringAlignment.Near>|  
+|<xref:System.Drawing.StringFormat.Trimming%2A>|<xref:System.Drawing.StringTrimming.None>|  
+|<xref:System.Drawing.StringFormat.HotkeyPrefix%2A>|<xref:System.Drawing.Text.HotkeyPrefix.None>|  
+|<xref:System.Drawing.StringFormat.DigitSubstitutionMethod%2A>|<xref:System.Drawing.StringDigitSubstitute.User>|  
+|<xref:System.Drawing.StringFormat.DigitSubstitutionLanguage%2A>|0|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTabStops">
+      <MemberSignature Language="C#" Value="public float[] GetTabStops (out float firstTabOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32[] GetTabStops([out] float32&amp; firstTabOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.GetTabStops(System.Single@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstTabOffset" Type="System.Single&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="firstTabOffset">テキスト行の先頭と最初のタブ ストップ間の空白の数。</param>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトのタブ ストップを取得します。</summary>
+        <returns>タブ ストップの間隔 (空白の数) の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   タブ ストップを設定、<xref:System.Drawing.StringFormat>です。  
+  
+-   文字列とレイアウト四角形を描画します。 文字列にタブが含まれることに注意してください。 タブの設定、<xref:System.Drawing.StringFormat>タブ付きのテキストのオフセットを指定します。  
+  
+-   使用してタブ ストップを取得または値を検査します。  
+  
+ [!code-cpp[System.Drawing.ClassicStringFormatExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ClassicStringFormatExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ClassicStringFormatExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HotkeyPrefix">
+      <MemberSignature Language="C#" Value="public System.Drawing.Text.HotkeyPrefix HotkeyPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Text.HotkeyPrefix HotkeyPrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.HotkeyPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.HotkeyPrefix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトの <see cref="T:System.Drawing.Text.HotkeyPrefix" /> オブジェクトを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトの <see cref="T:System.Drawing.Text.HotkeyPrefix" /> オブジェクト。既定値は、<see cref="F:System.Drawing.Text.HotkeyPrefix.None" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィカル ユーザー インターフェイスでは、ホット キーは (通常は Alt キーなどの別のキーと組み合わせて) 単語内の下線付きの文字、単語を表す機能をアクティブ化するキーボードの押すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キーボード ショートカットを使用して、設定する方法を示します、<xref:System.Drawing.StringFormat.HotkeyPrefix%2A>プロパティです。 使用する方法も示します、<xref:System.Drawing.SystemBrushes.FromSystemColor%2A>メソッドです。 この例を実行するコードをフォームに貼り付け、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントおよびとして e を渡す次のメソッドを呼び出して<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.MiscExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.MiscExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineAlignment">
+      <MemberSignature Language="C#" Value="public System.Drawing.StringAlignment LineAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.StringAlignment LineAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.LineAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の垂直方向の配置を取得または設定します。</summary>
+        <value>縦線の配置を表す <see cref="T:System.Drawing.StringAlignment" /> 列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Drawing.StringFormat.Alignment%2A>文字列の水平方向の配置を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.StringFormat.LineAlignment%2A>と<xref:System.Drawing.StringFormat.Alignment%2A>プロパティおよび<xref:System.Drawing.StringAlignment>列挙型を文字列に揃え。 この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineAndAlignment`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Misc2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Misc2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDigitSubstitution">
+      <MemberSignature Language="C#" Value="public void SetDigitSubstitution (int language, System.Drawing.StringDigitSubstitute substitute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDigitSubstitution(int32 language, valuetype System.Drawing.StringDigitSubstitute substitute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.SetDigitSubstitution(System.Int32,System.Drawing.StringDigitSubstitute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.Int32" />
+        <Parameter Name="substitute" Type="System.Drawing.StringDigitSubstitute" />
+      </Parameters>
+      <Docs>
+        <param name="language">西ヨーロッパ言語の数字をローカルの数字に置換する際に使用される言語を特定する NLS (National Language Support) 言語の ID。 <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの <see cref="P:System.Globalization.CultureInfo.LCID" /> プロパティを NLS 言語の ID として渡すことができます。 たとえば、文字列 "ar-EG" を <see cref="T:System.Globalization.CultureInfo" /> コンストラクターに渡して、<see cref="T:System.Globalization.CultureInfo" /> オブジェクトを作成する場合を想定します。 その <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの <see cref="P:System.Globalization.CultureInfo.LCID" /> プロパティを <see cref="F:System.Drawing.StringDigitSubstitute.Traditional" /> と共に <see cref="M:System.Drawing.StringFormat.SetDigitSubstitution(System.Int32,System.Drawing.StringDigitSubstitute)" /> メソッドに渡すと、表示には西ヨーロッパ言語の数字の代わりにアラビア インド数字が使用されます。</param>
+        <param name="substitute">数字の表示方法を指定する <see cref="T:System.Drawing.StringDigitSubstitute" /> 列挙体の要素。</param>
+        <summary>西ヨーロッパ言語の数字をローカルの数字に置換する際に使用される言語と方法を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   セットの<xref:System.Drawing.StringFormat>、使用する言語および使用する代替方法です。  
+  
+-   文字列を描画します。  
+  
+-   (アラビア語およびタイ語) の 2 つの異なる言語には、上記の 2 つの手順を繰り返します。  
+  
+ 2 つの言語ごとに、National 置換メソッドと従来の置換方法が示されています。 各国語のメソッドは、ユーザーのロケールの公用語に従って桁の数字を表示します。 従来の方法では、ユーザーのネイティブ スクリプトまたは公用語と異なる可能性のある言語に従って桁の数字を表示します。  
+  
+ [!code-cpp[System.Drawing.ClassicStringFormatExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ClassicStringFormatExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ClassicStringFormatExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMeasurableCharacterRanges">
+      <MemberSignature Language="C#" Value="public void SetMeasurableCharacterRanges (System.Drawing.CharacterRange[] ranges);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMeasurableCharacterRanges(valuetype System.Drawing.CharacterRange[] ranges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.SetMeasurableCharacterRanges(System.Drawing.CharacterRange[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ranges" Type="System.Drawing.CharacterRange[]" />
+      </Parameters>
+      <Docs>
+        <param name="ranges"><see cref="M:System.Drawing.Graphics.MeasureCharacterRanges(System.String,System.Drawing.Font,System.Drawing.RectangleF,System.Drawing.StringFormat)" /> メソッドを呼び出したときに計測される、文字の範囲を表す <see cref="T:System.Drawing.CharacterRange" /> 構造体の配列。</param>
+        <summary><see cref="M:System.Drawing.Graphics.MeasureCharacterRanges(System.String,System.Drawing.Font,System.Drawing.RectangleF,System.Drawing.StringFormat)" /> メソッドを呼び出したときに計測される、文字の範囲を表す <see cref="T:System.Drawing.CharacterRange" /> 構造体の配列を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可されていませんしすると、32 を超える文字範囲を設定、<xref:System.OverflowException?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   文字範囲を設定、<xref:System.Drawing.StringFormat>です。  
+  
+-   指定した文字列とレイアウトの四角形の文字範囲を測定します。  
+  
+-   文字列とレイアウト四角形を描画します。  
+  
+-   領域を塗りつぶします。 各<xref:System.Drawing.Region>文字の範囲によって占有される領域を指定します。 文字範囲がで計測されたときに、領域内の値が設定されて、<xref:System.Drawing.Graphics.MeasureCharacterRanges%2A>メソッドです。  
+  
+-   最初の 4 つの手順を繰り返しますが、各文字の範囲の測定値の末尾のスペースが含まれています。  
+  
+-   形式フラグをクリア、<xref:System.Drawing.StringFormat>末尾のスペースが各文字の範囲の測定に含まれないようにします。  
+  
+-   最初の 4 つの手順を繰り返しますが、レイアウト四角形に文字の範囲の測定値が決まることを示すためだけに異なるレイアウト四角形を使用します。 フォントのサイズ測定値も影響を与えます。  
+  
+ [!code-cpp[System.Drawing.ClassicStringFormatExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicStringFormatExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicStringFormatExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OverflowException">32 文字を超える文字範囲が設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTabStops">
+      <MemberSignature Language="C#" Value="public void SetTabStops (float firstTabOffset, float[] tabStops);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetTabStops(float32 firstTabOffset, float32[] tabStops) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.SetTabStops(System.Single,System.Single[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstTabOffset" Type="System.Single" />
+        <Parameter Name="tabStops" Type="System.Single[]" />
+      </Parameters>
+      <Docs>
+        <param name="firstTabOffset">テキスト行の先頭と最初のタブ ストップ間の空白の数。</param>
+        <param name="tabStops">タブ ストップの間隔の配列。単位は、<see cref="P:System.Drawing.Graphics.PageUnit" /> プロパティによって指定します。</param>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトのタブ ストップを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の各タブ位置オフセット、`tabStops`前に対する相対パスを除く、1 つ目の配列です。 最初のタブ ストップ オフセットは、初期オフセット位置で指定された`firstTabOffset`です。 たとえば、初期オフセット位置 8 で、最初のタブ位置オフセットが 50、最初のタブ ストップは、位置 58 し、します。 初期オフセット位置が 0 の場合は、最初のタブ ストップのオフセットは 0、文字列の原点の位置に対して相対的です。  
+  
+   
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   タブ ストップを設定、<xref:System.Drawing.StringFormat>です。  
+  
+-   文字列とレイアウト四角形を描画します。 文字列にタブが含まれることに注意してください。 タブの設定、<xref:System.Drawing.StringFormat>タブ付きのテキストのオフセットを指定します。  
+  
+-   使用してタブ ストップを取得または値を検査します。  
+  
+ [!code-cpp[System.Drawing.ClassicStringFormatExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.ClassicStringFormatExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.ClassicStringFormatExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.StringFormat.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトをユーザーが判読できる文字列に変換します。</summary>
+        <returns>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトの文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値のみ、<xref:System.Drawing.StringFormat.FormatFlags%2A>プロパティを変換します。  
+  
+   
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   変換、<xref:System.Drawing.StringFormat>オブジェクトを文字列します。  
+  
+-   文字列を描画します。  
+  
+-   いくつかのプロパティを変更、<xref:System.Drawing.StringFormat>オブジェクト。  
+  
+-   文字列を描画します。 文字列が異なるするためのプロパティ、<xref:System.Drawing.StringFormat>オブジェクトが変更されました。  
+  
+ [!code-cpp[System.Drawing.ClassicStringFormatExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.ClassicStringFormatExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.ClassicStringFormatExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicStringFormatExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trimming">
+      <MemberSignature Language="C#" Value="public System.Drawing.StringTrimming Trimming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.StringTrimming Trimming" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.StringFormat.Trimming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトの <see cref="T:System.Drawing.StringTrimming" /> 列挙体を取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.StringFormat" /> オブジェクトで描画されるテキストが、レイアウト四角形の端からはみ出た場合のトリミング方法を示す <see cref="T:System.Drawing.StringTrimming" /> 列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Drawing.StringFormat.Trimming%2A>プロパティと使用方法、<xref:System.Drawing.StringTrimming>列挙します。 この例は Windows フォームで使用するよう設計されています。 フォームと呼び出しにこのコードを貼り付けます、`ShowStringTrimming`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>として e を渡すイベント<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.Misc2#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.Misc2#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

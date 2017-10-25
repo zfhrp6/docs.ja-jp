@@ -1,0 +1,115 @@
+<Type Name="JSLocalField" FullName="Microsoft.JScript.JSLocalField">
+  <TypeSignature Language="C#" Value="public sealed class JSLocalField : Microsoft.JScript.JSVariableField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit JSLocalField extends Microsoft.JScript.JSVariableField" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.JSLocalField" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.JSVariableField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ローカル変数を表します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JSLocalField (string name, RuntimeTypeHandle handle, int slotNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.RuntimeTypeHandle handle, int32 slotNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSLocalField.#ctor(System.String,System.RuntimeTypeHandle,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="handle" Type="System.RuntimeTypeHandle" />
+        <Parameter Name="slotNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">このフィールドの名前。</param>
+        <param name="handle">このフィールドの内部メタデータ表現へのハンドル。</param>
+        <param name="slotNumber">変数のスロット番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.JScript.JSLocalField" />クラス、指定された名前、ハンドル、およびスロット番号を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FieldType">
+      <MemberSignature Language="C#" Value="public override Type FieldType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FieldType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.JSLocalField.FieldType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィールドの種類を取得します。</summary>
+        <value>このフィールドの型。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override object GetValue (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetValue(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSLocalField.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が返されるオブジェクト。</param>
+        <summary>フィールドの値を取得します。</summary>
+        <returns>フィールドの値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public override void SetValue (object obj, object value, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Globalization.CultureInfo locale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetValue(object obj, object value, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, class System.Globalization.CultureInfo locale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSLocalField.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="locale" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が設定されるオブジェクト。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <param name="invokeAttr">バインドを制御する列挙値のビットごとの組み合わせ。</param>
+        <param name="binder">一連のプロパティをバインディング、引数型の強制変換、リフレクションによるメンバーの呼び出しを有効にします。</param>
+        <param name="locale">特定のカルチャまたはロケール情報を提供します。 数値、日付、および文字列を正しく書式設定に使用します。</param>
+        <summary>指定された値、カルチャ、およびバインディング情報を使用して、フィールドの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

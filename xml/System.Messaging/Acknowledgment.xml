@@ -1,0 +1,320 @@
+<Type Name="Acknowledgment" FullName="System.Messaging.Acknowledgment">
+  <TypeSignature Language="C#" Value="public enum Acknowledgment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed Acknowledgment extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.Acknowledgment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>試行されたメッセージ配信の結果を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Acknowledgment>クラスは、管理キューとして送信する受信確認メッセージが発生する条件でメッセージ キューをポストする受信確認メッセージの種類を定義します。 受信確認の種類は 4 つのグループに大別できます: 正到着受信確認、正の値の読み取り受信確認、負の値の到着の確認、および負の値の読み取り受信確認します。  
+  
+ メッセージに関連付けられている管理キューがで指定された、<xref:System.Messaging.Message.AdministrationQueue%2A?displayProperty=nameWithType>プロパティです。  
+  
+ メッセージ キュー設定、<xref:System.Messaging.Message.Acknowledgment%2A?displayProperty=nameWithType>プロパティのいずれかを<xref:System.Messaging.Acknowledgment>列挙値を受信確認メッセージの作成時にします。 <xref:System.Messaging.Message.Acknowledgment%2A?displayProperty=nameWithType>プロパティの値が通常意味のあるインスタンスが、システムによって送信される受信確認メッセージを参照場合のみです。 読み取り、<xref:System.Messaging.Message.Acknowledgment%2A?displayProperty=nameWithType>受信確認メッセージ以外のメッセージのプロパティは例外をスローします。  
+  
+ 送信元アプリケーションが動作を要求しない限り、メッセージ キューは受信確認メッセージを送信しません。 アプリケーションにより、この要求の適切な値の設定、<xref:System.Messaging.Message.AcknowledgeType%2A?displayProperty=nameWithType>プロパティです。 メッセージ キューで指定される管理キューにすべての受信確認メッセージを送信する、 <xref:System.Messaging.Message.AdministrationQueue%2A> 、元のプロパティ<xref:System.Messaging.Message>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キューから注文を含むメッセージを送受信します。 元のメッセージが達した場合または具体的には、肯定受信確認の要求がキューから取得します。  
+  
+ [!code-cpp[Message.Acknowledgment#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.Acknowledgment/CPP/message_acknowledgment.cpp#1)]
+ [!code-csharp[Message.Acknowledgment#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.Acknowledgment/CS/message_acknowledgment.cs#1)]
+ [!code-vb[Message.Acknowledgment#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.Acknowledgment/VB/message_acknowledgment.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccessDenied">
+      <MemberSignature Language="C#" Value="AccessDenied" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment AccessDenied = int32(32772)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.AccessDenied" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信元アプリケーションに送信先キューにメッセージを送信するために必要な権限がないことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadDestinationQueue">
+      <MemberSignature Language="C#" Value="BadDestinationQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment BadDestinationQueue = int32(32768)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.BadDestinationQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先キューが送信元アプリケーションに使用できないことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadEncryption">
+      <MemberSignature Language="C#" Value="BadEncryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment BadEncryption = int32(32775)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.BadEncryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先のキュー マネージャーがプライベート メッセージを解読できなかったことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadSignature">
+      <MemberSignature Language="C#" Value="BadSignature" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment BadSignature = int32(32774)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.BadSignature" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のメッセージのデジタル署名が有効ではないことを示すメッセージ キューが認証できませんでした否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CouldNotEncrypt">
+      <MemberSignature Language="C#" Value="CouldNotEncrypt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment CouldNotEncrypt = int32(32776)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.CouldNotEncrypt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信元キュー マネージャーがプライベート メッセージを暗号化できませんでしたを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HopCountExceeded">
+      <MemberSignature Language="C#" Value="HopCountExceeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment HopCountExceeded = int32(32773)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.HopCountExceeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(を中間サーバーの数を示す) 元のメッセージのホップ数を超過したことを示す否定到達受信を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最大ホップ数は 15 では、メッセージ キューによって設定されているしは変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージは受信確認メッセージではありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotTransactionalMessage">
+      <MemberSignature Language="C#" Value="NotTransactionalMessage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment NotTransactionalMessage = int32(32778)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.NotTransactionalMessage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非トランザクション メッセージが、トランザクション キューに送信されたことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotTransactionalQueue">
+      <MemberSignature Language="C#" Value="NotTransactionalQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment NotTransactionalQueue = int32(32777)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.NotTransactionalQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非トランザクション キューへトランザクション メッセージが送信されたことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Purged">
+      <MemberSignature Language="C#" Value="Purged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment Purged = int32(32769)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.Purged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信先キューに到達する前に削除されたことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueDeleted">
+      <MemberSignature Language="C#" Value="QueueDeleted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment QueueDeleted = int32(49152)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.QueueDeleted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信確認は、メッセージが読み取られる前に、キューが削除されたことを示す、負の値の読み取り。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueExceedMaximumSize">
+      <MemberSignature Language="C#" Value="QueueExceedMaximumSize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment QueueExceedMaximumSize = int32(32771)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.QueueExceedMaximumSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先キューがいっぱいなので、元のメッセージが配信されなかったことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueuePurged">
+      <MemberSignature Language="C#" Value="QueuePurged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment QueuePurged = int32(49153)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.QueuePurged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信確認は、メッセージが読み取られる前に、キューが削除されたことを示す、負の値の読み取り。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReachQueue">
+      <MemberSignature Language="C#" Value="ReachQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment ReachQueue = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.ReachQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のメッセージが送信先キューに到達したことを示す正の到着受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReachQueueTimeout">
+      <MemberSignature Language="C#" Value="ReachQueueTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment ReachQueueTimeout = int32(32770)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.ReachQueueTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマー キューに到達時刻または時刻への受信には、元のメッセージが送信先キューに到達する前に期限が切れたことを示す否定到達受信を確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Receive">
+      <MemberSignature Language="C#" Value="Receive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment Receive = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.Receive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正の値は、元のメッセージが受信側アプリケーションで受信されたことを示す受信確認を読み取る。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTimeout">
+      <MemberSignature Language="C#" Value="ReceiveTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.Acknowledgment ReceiveTimeout = int32(49154)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.Acknowledgment.ReceiveTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Acknowledgment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>負の値は、その時間に、受信のタイマーが期限切れ前に、元のメッセージがキューから受信いないことを示す受信確認を読み取る。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

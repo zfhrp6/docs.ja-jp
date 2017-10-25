@@ -1,0 +1,141 @@
+<Type Name="AccessibleSelection" FullName="System.Windows.Forms.AccessibleSelection">
+  <TypeSignature Language="C#" Value="public enum AccessibleSelection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessibleSelection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleSelection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォーカスを受け取るまたはユーザー補助オブジェクトの選択方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカスのあるオブジェクトは、キーボード入力を受け取る 1 つのオブジェクトです。 キーボード フォーカスを持つオブジェクトとは、アクティブなウィンドウまたはアクティブなウィンドウの子オブジェクトです。 選択したオブジェクトは、何らかの種類のグループの操作に参加として設定されます。  
+  
+ この列挙体を使って<xref:System.Windows.Forms.AccessibleObject.Select%2A?displayProperty=nameWithType>です。  
+  
+ ユーザー補助アプリケーションの詳細については、"Microsoft Active Accessibility"、Microsoft Developer Network (MSDN) ライブラリを検索します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例が、実際はないため<xref:System.Windows.Forms.Control>-ベースの制御が、代わりに描画されるグラフ コントロールでは、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ この例では、<xref:System.Windows.Forms.AccessibleSelection>列挙が、<xref:System.Windows.Forms.AccessibleObject.Select%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#4)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#4)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddSelection">
+      <MemberSignature Language="C#" Value="AddSelection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleSelection AddSelection = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleSelection.AddSelection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択範囲に、オブジェクトを追加します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendSelection">
+      <MemberSignature Language="C#" Value="ExtendSelection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleSelection ExtendSelection = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleSelection.ExtendSelection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンカーと選択したオブジェクトの間のすべてのオブジェクトを選択します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleSelection None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleSelection.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択項目またはオブジェクトのフォーカスは変更されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSelection">
+      <MemberSignature Language="C#" Value="RemoveSelection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleSelection RemoveSelection = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleSelection.RemoveSelection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択範囲からオブジェクトを削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TakeFocus">
+      <MemberSignature Language="C#" Value="TakeFocus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleSelection TakeFocus = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleSelection.TakeFocus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーカスをオブジェクトに割り当てし、これは、選択範囲の開始位置のアンカーをなります。 組み合わせて使用できます<see langword="TakeSelection" />、 <see langword="ExtendSelection" />、 <see langword="AddSelection" />、または<see langword="RemoveSelection" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TakeSelection">
+      <MemberSignature Language="C#" Value="TakeSelection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleSelection TakeSelection = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleSelection.TakeSelection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを選択し、コンテナー内の他のすべてのオブジェクトの選択を解除します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,259 @@
+<Type Name="ProfileService" FullName="System.Web.ApplicationServices.ProfileService">
+  <TypeSignature Language="C#" Value="public class ProfileService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProfileService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.ProfileService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode=System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceBehavior(ConcurrencyMode=System.ServiceModel.ConcurrencyMode.Multiple, InstanceContextMode=System.ServiceModel.InstanceContextMode.Single, Namespace="http://asp.net/ApplicationServices/v200")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceContract(Namespace="http://asp.net/ApplicationServices/v200")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceKnownType("GetKnownTypes", typeof(System.Web.ApplicationServices.KnownTypesProvider))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET Web サービス経由でユーザー プロファイルにアクセスできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.ProfileService>クラスでは、取得および Windows Communication Foundation (WCF) サービスを介してユーザーのプロファイルのプロパティを設定することができます。 プロファイルのプロパティを使用してユーザーのカスタム情報を保持することができます。 プロファイルのプロパティについては、次を参照してください。 [ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+ <xref:System.Web.ApplicationServices.ProfileService>クラスには、WCF サービスからのみアクセスするか、次の方法が含まれています。  
+  
+-   <xref:System.Web.ApplicationServices.ProfileService.GetPropertiesForCurrentUser%2A>  
+  
+-   <xref:System.Web.ApplicationServices.ProfileService.GetAllPropertiesForCurrentUser%2A>  
+  
+-   <xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A>  
+  
+-   <xref:System.Web.ApplicationServices.ProfileService.GetPropertiesMetadata%2A>  
+  
+ これらのメソッドを呼び出すには、するには、Web サーバーで、プロファイル サービスを有効にし、Web サービスに WCF と互換性のあるクライアント アプリケーションに接続します。 プロファイル サービスを構成する方法については、次を参照してください。[する方法: WCF プロファイル サービスを有効にする](http://msdn.microsoft.com/library/46a16bc2-8c01-4eed-aed9-2286c85f094a)です。  
+  
+ <xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベントは、ユーザーのプロファイルのプロパティが設定されている場合に発生します。 イベント ハンドラーを作成することができます、<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>プロパティ値を検証する場合、またはその値を動的に変更するイベントです。  
+  
+ コンソール アプリケーションから WCF プロファイル サービスを使用する方法の例は、次を参照してください。[チュートリアル: ASP.NET アプリケーション サービスを使用する](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ProfileService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ApplicationServices.ProfileService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllPropertiesForCurrentUser">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,object&gt; GetAllPropertiesForCurrentUser (bool authenticatedUserOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.Dictionary`2&lt;string, object&gt; GetAllPropertiesForCurrentUser(bool authenticatedUserOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ProfileService.GetAllPropertiesForCurrentUser(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticatedUserOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="authenticatedUserOnly">認証されたユーザーに対してのみプロパティが返されるかどうかを示す値。</param>
+        <summary>すべてのプロファイルのプロパティと、現在のユーザー プロファイル サービスに使用可能な値を取得します。</summary>
+        <returns>プロファイルのプロパティと値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ApplicationServices.ProfileService.GetAllPropertiesForCurrentUser%2A>を 1 つの Web サービス呼び出しを介してすべてのユーザーのプロファイルのプロパティを取得する方法です。 たとえば、このメソッドを呼び出すとクライアント アプリケーションで、プロファイルのプロパティを格納し、必要に応じて値を取得します。 <xref:System.Web.ApplicationServices.ProfileService.GetAllPropertiesForCurrentUser%2A>メソッドのみ Web サービス経由でアクセスするように構成されているプロファイルのプロパティの値を返します。 プロファイル プロパティは、いずれかを設定して Web サービスを介してアクセスできるかどうかを設定する、<xref:System.Web.Configuration.ScriptingProfileServiceSection.ReadAccessProperties%2A>プロパティまたは<xref:System.Web.Configuration.ScriptingProfileServiceSection.WriteAccessProperties%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesForCurrentUser">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,object&gt; GetPropertiesForCurrentUser (System.Collections.Generic.IEnumerable&lt;string&gt; properties, bool authenticatedUserOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.Dictionary`2&lt;string, object&gt; GetPropertiesForCurrentUser(class System.Collections.Generic.IEnumerable`1&lt;string&gt; properties, bool authenticatedUserOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ProfileService.GetPropertiesForCurrentUser(System.Collections.Generic.IEnumerable{System.String},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="authenticatedUserOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="properties">取得するプロファイルのプロパティの名前を含む文字列値のコレクション。</param>
+        <param name="authenticatedUserOnly">認証されたユーザーに対してのみプロパティが返されるかどうかを示す値。</param>
+        <summary>指定されたプロファイルのプロパティと、現在のユーザーの値を取得します。</summary>
+        <returns>プロファイル プロパティの情報と値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のユーザーに対して特定のプロファイル プロパティの値を取得、使用して、<xref:System.Web.ApplicationServices.ProfileService.GetPropertiesForCurrentUser%2A>メソッドを指定するプロファイル プロパティを取得します。 <xref:System.Web.ApplicationServices.ProfileService.GetPropertiesForCurrentUser%2A>メソッドのみの Web サービスを通じてアクセス用に構成されているプロファイル プロパティの値を返します。 設定して Web サービスを通じてアクセスするためのプロファイル プロパティを構成する、<xref:System.Web.Configuration.ScriptingProfileServiceSection.ReadAccessProperties%2A>プロパティまたは<xref:System.Web.Configuration.ScriptingProfileServiceSection.WriteAccessProperties%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="properties" />パラメーターまたは内の項目、<paramref name="properties" />コレクションが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesMetadata">
+      <MemberSignature Language="C#" Value="public System.Web.ApplicationServices.ProfilePropertyMetadata[] GetPropertiesMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.ApplicationServices.ProfilePropertyMetadata[] GetPropertiesMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ProfileService.GetPropertiesMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationServices.ProfilePropertyMetadata[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロファイル サービスから使用可能なプロファイルのプロパティに関する情報を取得します。</summary>
+        <returns>配列<see cref="T:System.Web.ApplicationServices.ProfilePropertyMetadata" />プロファイルのプロパティに関する情報を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.ApplicationServices.ProfileService.GetPropertiesMetadata%2A> Windows Communication Framework (WCF) と互換性のあるクライアント アプリケーションからプロファイルのプロパティに関する情報を取得します。 次などの情報を取得できます。  
+  
+-   名前とプロパティの型。  
+  
+-   されるかどうか読み取り専用です。  
+  
+-   かどうか認証されていないユーザーによってアクセスできます。  
+  
+-   プロパティの既定値。  
+  
+ これらの値を取得後に、クライアント アプリケーションは読み取り専用プロパティを設定しようとしていないなどの適切なアクションを実行できます。 現在のユーザーが呼び出すために認証する必要はありません、<xref:System.Web.ApplicationServices.ProfileService.GetPropertiesMetadata%2A>メソッド、プロパティは、すべてのユーザーに適用されるためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertiesForCurrentUser">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; SetPropertiesForCurrentUser (System.Collections.Generic.IDictionary&lt;string,object&gt; values, bool authenticatedUserOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; SetPropertiesForCurrentUser(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; values, bool authenticatedUserOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser(System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="authenticatedUserOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="values">設定するプロファイルのプロパティの名前と値を含むコレクション。</param>
+        <param name="authenticatedUserOnly">認証されたユーザーに対してのみプロパティを設定するかどうかを示す値。</param>
+        <summary>ユーザー プロファイルに指定されたプロパティの値を設定します。</summary>
+        <returns>存在する場合、ユーザー プロファイルに設定されていないプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A> Windows Communication Foundation (WCF) と互換性のあるアプリケーションからユーザーのプロファイルのプロパティを設定します。 <xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A>メソッド原因は次のいずれかの可能性のある値が設定されていないが返されます。  
+  
+-   指定されたプロファイルのプロパティは読み取り専用 (、<xref:System.Web.Configuration.ScriptingProfileServiceSection.WriteAccessProperties%2A>に指定されたプロファイル プロパティのプロパティが設定されていない`true`)。  
+  
+-   ユーザー プロファイルには、一致する名前を持つプロファイル プロパティがありません。  
+  
+-   値の検証に失敗しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatingProperties">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Web.ApplicationServices.ValidatingPropertiesEventArgs&gt; ValidatingProperties;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ApplicationServices.ValidatingPropertiesEventArgs&gt; ValidatingProperties" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ApplicationServices.ProfileService.ValidatingProperties" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ApplicationServices.ValidatingPropertiesEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのプロファイルのプロパティが設定されている場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーを作成することができます、<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>プロパティ値を検証する場合、またはその値を動的に変更するイベントです。 <xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベントが発生したときに、<xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A>メソッドが呼び出されます。 値プロパティには、検証が失敗したため追加するには、そのプロパティの場合、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>のコレクション、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs>クラスです。 含まれる任意のプロパティ、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>コレクションは、ユーザー プロファイルに保存されません。  
+  
+ 追加し、Global.asax ファイル内のイベント ハンドラーを登録できます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベント。 値が渡されたときに`FirstName`プロパティが空または`null`、`FirstName`にプロパティが追加、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>コレクション。  
+  
+ [!code-csharp[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/cs/Global.asax#1)]
+ [!code-vb[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,449 @@
+<Type Name="SecurityTokenRequirement" FullName="System.IdentityModel.Selectors.SecurityTokenRequirement">
+  <TypeSignature Language="C#" Value="public class SecurityTokenRequirement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityTokenRequirement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.SecurityTokenRequirement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ トークン要件を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、カスタム セキュリティ トークン、セキュリティ トークン マネージャー、セキュリティ トークン プロバイダー、またはセキュリティ トークン認証システムを作成する場合を除き、アプリケーション コードで <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> クラスを使用する必要はありません。 <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> クラスは、セキュリティ トークン マネージャーが、セキュリティ トークンに必要な事項 (キー サイズ、キーの種類、キーの使用方法など) を指定するのに使用します。 セキュリティ トークンが指定された条件に一致することが判明すると、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> および <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> を取得して、それぞれ送信 SOAP メッセージのセキュリティ トークンの提供、および受信 SOAP メッセージのセキュリティ トークンの認証を行うことができます。 たとえば、送信 SOAP メッセージの既定のセキュリティ トークン マネージャーの <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> メソッドに <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> パラメーターを指定して呼び出すことにより、セキュリティ トークンに指定された条件に一致するセキュリティ トークン プロバイダーを取得できます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>  
+  
+ <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager>  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenProvider>  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>  
+  
+ <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29>  
+  
+ <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29>  
+  
+ <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29>  
+  
+ <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenRequirement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenRequirement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;TValue&gt;">
+      <MemberSignature Language="C#" Value="public TValue GetProperty&lt;TValue&gt; (string property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TValue GetProperty&lt;TValue&gt;(string property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenRequirement.GetProperty``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TValue">取得するプロパティの型。</typeparam>
+        <param name="property">To be added.</param>
+        <summary>現在の <see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" /> インスタンスの指定されたプロパティを取得します。</summary>
+        <returns>取得するプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.GetProperty%2A> メソッドは、最初に <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TryGetProperty%60%601%28System.String%2C%60%600%40%29> メソッドを呼び出して、`propertyName` パラメーターに指定されたプロパティが設定されているかどうかを判断します。 次に、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.GetProperty%2A> メソッドで、プロパティ値を返すときに `TValue` パラメーターに指定された型に設定可能であるかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="property" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOptionalTokenProperty">
+      <MemberSignature Language="C#" Value="public static string IsOptionalTokenProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IsOptionalTokenProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.IsOptionalTokenProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能である場合は、トークンのプロパティの値を取得します。</summary>
+        <value>トークンのプロパティの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public int KeySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられたキーに必要なサイズを取得または設定します。</summary>
+        <value>セキュリティ トークンに関連付けられたキーのサイズ (ビット数)。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize%2A> プロパティ値は、プロパティ値のコレクションである <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> プロパティを取得することでもアクセスできます。 <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize%2A> プロパティの値は、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySizeProperty%2A> プロパティの値に一致するインデックスに保存されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize" /> プロパティは、0 未満の値が設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySizeProperty">
+      <MemberSignature Language="C#" Value="public static string KeySizeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string KeySizeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySizeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize" /> コレクションのインデックス名を示す値を取得します。</summary>
+        <value><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize" /> コレクションのインデックス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要なキー サイズを設定するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySize%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyType">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityKeyType KeyType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Tokens.SecurityKeyType KeyType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられたキーの種類 (非対称または対称) を取得または設定します。</summary>
+        <value>セキュリティ トークンに関連付けられたキーの種類 (非対称または対称) を示す <see cref="T:System.IdentityModel.Tokens.SecurityKeyType" />。 既定値は <see langword="SymmetricKey" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType%2A> プロパティ値は、プロパティ値のコレクションである <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> プロパティを取得することでもアクセスできます。 <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType%2A> プロパティの値は、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyTypeProperty%2A> プロパティの値に一致するインデックスに保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyTypeProperty">
+      <MemberSignature Language="C#" Value="public static string KeyTypeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string KeyTypeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyTypeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType" /> コレクションのインデックス名を示す値を取得します。</summary>
+        <value><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType" /> コレクションのインデックス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要なキーの種類を設定するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUsage">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityKeyUsage KeyUsage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Tokens.SecurityKeyUsage KeyUsage" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyUsage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられたキーの使用方法を示す値を取得または設定します。</summary>
+        <value>セキュリティ トークンに関連付けられたキーの使用方法を示す <see cref="T:System.IdentityModel.Tokens.SecurityKeyUsage" />。 既定値は <see cref="F:System.IdentityModel.Tokens.SecurityKeyUsage.Signature" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsage%2A> プロパティ値は、プロパティ値のコレクションである <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> プロパティを取得することでもアクセスできます。 <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsage%2A> プロパティの値は、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsageProperty%2A> プロパティの値に一致するインデックスに保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUsageProperty">
+      <MemberSignature Language="C#" Value="public static string KeyUsageProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string KeyUsageProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsageProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsage" /> コレクションのインデックス名を示す値を取得します。</summary>
+        <value><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsage" /> コレクションのインデックス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの使用要件を設定するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsage%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerAuthenticationMode">
+      <MemberSignature Language="C#" Value="public static string PeerAuthenticationMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PeerAuthenticationMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.PeerAuthenticationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア認証方法を示すプロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> コレクションのインデックス名を取得します。</summary>
+        <value>ピア認証方法を示すプロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> コレクションのインデックス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア認証モードの設定機能を追加するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement> の派生クラスを作成し、プロパティまたはコンストラクターを公開します。 コンストラクターまたはピア内で <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> プロパティの値をコレクションのインデックスとして使用して、ピア認証モードを <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.PeerAuthenticationMode%2A> コレクションに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" /> インスタンスの非静的プロパティのコレクションを取得します。</summary>
+        <value>現在の <see cref="T:System.Collections.Generic.IDictionary`2" /> インスタンスの非静的プロパティのコレクションを格納している <see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeySizeProperty%2A>、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyTypeProperty%2A>、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyUsageProperty%2A>、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenTypeProperty%2A> プロパティの値をコレクションのインデックスとして使用して、特定のプロパティの値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireCryptographicToken">
+      <MemberSignature Language="C#" Value="public bool RequireCryptographicToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireCryptographicToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに暗号操作 (暗号化など) の機能を持たせるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          セキュリティ トークンに暗号操作の機能を持たせる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.UserNameSecurityToken> などのセキュリティ トークンは、暗号操作を行うにはセキュリティが不十分であるため、認証のみに使用してください。  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicToken%2A> プロパティ値は、プロパティ値のコレクションである <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> プロパティを取得することでもアクセスできます。 <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicToken%2A> プロパティの値は、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicTokenProperty%2A> プロパティの値に一致するインデックスに保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireCryptographicTokenProperty">
+      <MemberSignature Language="C#" Value="public static string RequireCryptographicTokenProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string RequireCryptographicTokenProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicTokenProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicToken" /> コレクション内のインデックス名を取得します。</summary>
+        <value><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.RequireCryptographicToken" /> コレクションのインデックス名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenType">
+      <MemberSignature Language="C#" Value="public string TokenType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要なセキュリティ トークンの種類を取得または設定します。</summary>
+        <value>必要なセキュリティ トークンの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityTokenTypes> クラスの静的プロパティのいずれかを使用して、このプロパティを設定します。  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType%2A> プロパティ値は、プロパティ値のコレクションである <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> プロパティを取得することでもアクセスできます。 <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType%2A> プロパティの値は、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenTypeProperty%2A> プロパティの値に一致するインデックスに保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenTypeProperty">
+      <MemberSignature Language="C#" Value="public static string TokenTypeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string TokenTypeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenTypeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType" /> コレクションのインデックス名を示す値を取得します。</summary>
+        <value><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType" /> コレクションのインデックス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要なセキュリティ トークンの種類を設定するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetProperty&lt;TValue&gt;">
+      <MemberSignature Language="C#" Value="public bool TryGetProperty&lt;TValue&gt; (string property, out TValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetProperty&lt;TValue&gt;(string property, [out] !!TValue&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenRequirement.TryGetProperty``1(System.String,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="result" Type="TValue&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TValue">返されるプロパティの型、<c>結果</c>パラメーター。</typeparam>
+        <param name="property">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>現在の <see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" /> インスタンスの指定されたプロパティを取得します。</summary>
+        <returns>
+          <see langword="true" /> プロパティに、<see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> に指定されたプロパティの値が格納されている場合は <paramref name="propertyName" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたプロパティのプロパティ値を取得し、そのプロパティ値を `TValue` パラメーターに指定された型に設定可能かどうかを確認するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.GetProperty%60%601%28System.String%29> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="propertyName" /> パラメーターに指定された名前のプロパティは存在しますが、型が <paramref name="TValue" /> パラメーターに指定された型と異なります。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

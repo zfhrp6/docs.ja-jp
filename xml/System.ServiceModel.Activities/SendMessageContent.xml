@@ -1,0 +1,178 @@
+<Type Name="SendMessageContent" FullName="System.ServiceModel.Activities.SendMessageContent">
+  <TypeSignature Language="C#" Value="public sealed class SendMessageContent : System.ServiceModel.Activities.SendContent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SendMessageContent extends System.ServiceModel.Activities.SendContent" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.SendMessageContent" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activities.SendContent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Message")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー サービスとの間で 1 つの項目 (メッセージ) を送信するために使用されるクラス。 項目には、プリミティブ型、<see cref="T:System.ServiceModel.Channels.Message" />、<see cref="T:System.Xml.Linq.XElement" /> などの組み込み型、アプリケーション定義のデータ コントラクト、メッセージ コントラクト、またはシリアル化可能な XML 型を使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用する場合、メッセージ コントラクト型または <xref:System.ServiceModel.Channels.Message> 型以外のデータでは、ネットワークでシリアル化されたメッセージはラップされません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.SendMessageContent> インスタンスを <xref:System.ServiceModel.Activities.Send> アクティビティと共に使用する方法を示します。  
+  
+ [!code-csharp[ContentBasedCorrelation#0](~/samples/snippets/csharp/VS_Snippets_CFX/contentbasedcorrelation/cs/client.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendMessageContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageContent.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.SendMessageContent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendMessageContent (System.Activities.InArgument message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.InArgument message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageContent.#ctor(System.Activities.InArgument)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.Activities.InArgument" />
+      </Parameters>
+      <Docs>
+        <param name="message">送信するデータ。</param>
+        <summary>送信するデータを指定して、<see cref="T:System.ServiceModel.Activities.SendMessageContent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[ContentBasedCorrelation#0](~/samples/snippets/csharp/VS_Snippets_CFX/contentbasedcorrelation/cs/client.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendMessageContent (System.Activities.InArgument message, Type declaredMessageType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.InArgument message, class System.Type declaredMessageType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageContent.#ctor(System.Activities.InArgument,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.Activities.InArgument" />
+        <Parameter Name="declaredMessageType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="message">送信するデータ。</param>
+        <param name="declaredMessageType">サービスの説明に表示されるデータ型。 同じ型をする必要があります<c>メッセージ</c>または任意の基本型の<c>メッセージ</c>です。</param>
+        <summary>指定したメッセージとその型を使用して、<see cref="T:System.ServiceModel.Activities.SendMessageContent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaredMessageType">
+      <MemberSignature Language="C#" Value="public Type DeclaredMessageType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DeclaredMessageType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.SendMessageContent.DeclaredMessageType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宣言されたメッセージの型を取得または設定します。</summary>
+        <value>宣言されたメッセージの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Activities.SendMessageContent.DeclaredMessageType%2A>サービスの説明および WSDL に表示されるデータ型です。 実行時にサービスがさまざまな派生クラスを送受信できるように、サービスの説明に基本クラス型を含めることができます。 <xref:System.ServiceModel.Activities.SendMessageContent.DeclaredMessageType%2A> は、Message プロパティの引数型またはその基本データ型と同じである必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.Activities.InArgument Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.InArgument Message" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.SendMessageContent.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.InArgument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信するデータを取得または設定します。</summary>
+        <value>送信するデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeDeclaredMessageType">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeDeclaredMessageType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeDeclaredMessageType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageContent.ShouldSerializeDeclaredMessageType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Activities.SendMessageContent.DeclaredMessageType" /> プロパティを XAML シリアル化するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合は、プロパティをシリアル化する必要があります。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

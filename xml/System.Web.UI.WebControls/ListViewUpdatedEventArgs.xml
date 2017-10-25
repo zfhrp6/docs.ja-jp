@@ -1,0 +1,281 @@
+<Type Name="ListViewUpdatedEventArgs" FullName="System.Web.UI.WebControls.ListViewUpdatedEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewUpdatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewUpdatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewUpdatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemUpdated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>昇給を制御、<xref:System.Web.UI.WebControls.ListView.ItemUpdated>イベントときに、<xref:System.Web.UI.WebControls.ListView.UpdateItem%2A>メソッドが呼び出されるか、ときにコントロールでの更新ボタンをクリックした後は、<xref:System.Web.UI.WebControls.ListView>コントロールが項目を更新します。 (更新ボタンは、ボタンが`CommandName`プロパティが「更新」に設定します)。これにより、更新操作の結果を確認するなど、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>オブジェクトは、イベント処理メソッドに渡されます。 このオブジェクトでは、更新項目の数を決定し、発生した例外を取得できます。 更新操作の影響を受けたアイテムの数を確認するには<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.AffectedRows%2A>プロパティです。 任意の例外が発生したかどうかを判断するのには、使用、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.Exception%2A>プロパティです。 設定して、イベント処理メソッドで例外が処理されたかどうかを示すことができます、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.ExceptionHandled%2A>プロパティです。 使用して元のフィールド値にアクセスすることができます、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.OldValues%2A>プロパティです。 使用して更新されたフィールドの値にアクセスすることができます、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.NewValues%2A>プロパティです。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.ListView>更新操作の後読み取り専用モードに項目が返されます。 更新操作中に発生した例外を処理する場合を保持できます、<xref:System.Web.UI.WebControls.ListView>を設定して編集モードの項目、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.KeepInEditMode%2A>プロパティを`true`です。  
+  
+ <xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>更新操作中に例外が発生したかどうかを決定するオブジェクト。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemUpdated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/CS/ListViewItemUpdatedCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemUpdated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/VB/ListViewItemUpdatedVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewUpdatedEventArgs (int affectedRows, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 affectedRows, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewUpdatedEventArgs.#ctor(System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedRows" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="affectedRows">更新操作によって影響を受けた行の数。</param>
+        <param name="exception">更新操作が実行されたときに発生する例外。 例外が発生しなかった場合を使用して<see langword="null" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewUpdatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.AffectedRows%2A>|`affectedRows` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.Exception%2A>|<xref:System.Exception?displayProperty=nameWithType>に含まれているオブジェクト、`e`パラメーター。|  
+|<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.ExceptionHandled%2A>|`false`。|  
+|<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.KeepInEditMode%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedRows">
+      <MemberSignature Language="C#" Value="public int AffectedRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AffectedRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewUpdatedEventArgs.AffectedRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作の影響を受けた行の数を取得します。</summary>
+        <value>更新操作によって影響を受けた行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.AffectedRows%2A>プロパティをデータ ソースによって返される更新操作によって影響を受けた行の数を決定します。 通常、1 つの項目が更新される、ために、このプロパティは通常 0 または 1 の値を表します。  
+  
+ 更新操作の実行中にエラーが発生する例外を発生させないことができます。 その場合は、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.AffectedRows%2A>項目が更新されたことを確認するプロパティを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.AffectedRows%2A>プロパティ項目が更新されたことを確認します。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/CS/ListViewItemUpdatedCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/VB/ListViewItemUpdatedVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewUpdatedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれか、更新操作中に発生した場合は、例外を取得します。</summary>
+        <value>存在する場合に、更新操作中に発生した例外例外が発生しなかった場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.Exception%2A> (存在する場合)、例外を決定するプロパティが更新操作中に発生しました。 このプロパティを返しますのかどうかは例外が発生しなかった、`null`です。  
+  
+> [!NOTE]
+>  例外が発生し、イベント ハンドラー、設定に、例外を処理する場合、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 それ以外の場合、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.Exception%2A>更新操作中に例外が発生したかどうかを決定するプロパティです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/CS/ListViewItemUpdatedCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/VB/ListViewItemUpdatedVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewUpdatedEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または更新操作中に発生した例外で、イベント中に処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合、イベント ハンドラーです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 更新操作中に例外が発生する場合を使用して、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.ExceptionHandled%2A>イベント中に例外を処理するかどうかを示すプロパティです。 このプロパティ設定されている場合`true`、例外が処理され、によって再スローされないと見なされます、<xref:System.Web.UI.WebControls.ListView>コントロール。 このプロパティ設定されている場合`false`、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。 発生した例外を確認するには<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.ExceptionHandled%2A>例外が、イベント ハンドラーで処理されたことを示すプロパティです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/CS/ListViewItemUpdatedCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/VB/ListViewItemUpdatedVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepInEditMode">
+      <MemberSignature Language="C#" Value="public bool KeepInEditMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewUpdatedEventArgs.KeepInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.WebControls.ListView" />更新操作の後コントロールが編集モードのままにします。</summary>
+        <value>
+          <see langword="true" />更新操作の後の編集モードの場合は、コントロールのままにします。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.WebControls.ListView>更新操作の後、制御が読み取り専用モードに戻ります。 設定、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.KeepInEditMode%2A>プロパティを`true`ことを指定する、<xref:System.Web.UI.WebControls.ListView>コントロール編集モードのままにする必要があります。 これには、ユーザーが入力した値も保持されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.KeepInEditMode%2A>を保持するプロパティ、<xref:System.Web.UI.WebControls.ListView>例外が発生したときに、編集モードでのコントロールです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/CS/ListViewItemUpdatedCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemUpdated#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemUpdated/VB/ListViewItemUpdatedVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary NewValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary NewValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewUpdatedEventArgs.NewValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新された項目の新しい値を格納するディクショナリを取得します。</summary>
+        <value>更新された項目の新しい値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.NewValues%2A>更新された項目の新しいフィールド値にアクセスするプロパティです。 たとえば、更新された項目のログを保持するのにこれらの値を使用することができます。  
+  
+ <xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.NewValues%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>更新された項目のフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  インデクサーを使用する簡単な方法として、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary OldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary OldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewUpdatedEventArgs.OldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新された項目の元の値を格納するディクショナリを取得します。</summary>
+        <value>更新された項目の元の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.OldValues%2A>更新された項目の元のフィールド値にアクセスするプロパティです。 たとえば、更新された項目のログを保持するのにこれらの値を使用することができます。  
+  
+ <xref:System.Web.UI.WebControls.ListViewUpdatedEventArgs.OldValues%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>更新された項目のフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  インデクサーを使用する簡単な方法として、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

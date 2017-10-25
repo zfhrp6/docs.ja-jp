@@ -1,0 +1,335 @@
+<Type Name="FormParameter" FullName="System.Web.UI.WebControls.FormParameter">
+  <TypeSignature Language="C#" Value="public class FormParameter : System.Web.UI.WebControls.Parameter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormParameter extends System.Web.UI.WebControls.Parameter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Parameter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("FormField")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>HTTP 要求の値をバインド<see cref="P:System.Web.HttpRequest.Form" />パラメーター オブジェクトにフィールドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.FormParameter>のフォーム変数の値をバインドするクラス、<xref:System.Web.HttpRequest.Form%2A>をパラメーター化されたクエリまたはコマンドで使用されるパラメーターのコレクション。 パラメーターにデータをバインドするコントロールが例外をスロー、<xref:System.Web.UI.WebControls.FormParameter>が指定されているが、対応する形式の変数が渡されない。 これらもデータは表示されませんで対応する値はありませんフォーム変数が渡された場合。 設定、<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>を適切な場所にこのような状況を回避します。  
+  
+ <xref:System.Web.UI.WebControls.FormParameter>クラスを提供、<xref:System.Web.UI.WebControls.FormParameter.FormField%2A>から継承しただけでなくにバインドするフォーム変数の名前を指定するプロパティ、<xref:System.Web.UI.WebControls.Parameter>クラスです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.FormParameter>は任意の方法で、フォーム要素によって渡された値は検証されません生の値を使用します。 ほとんどの場合は、値を検証することができます、<xref:System.Web.UI.WebControls.FormParameter>など、イベントを処理することによってデータ ソース コントロールによって使用される前に、 `Selecting`、 `Updating`、 `Inserting`、または`Deleting`を使用しているデータ ソース コントロールによって公開されるイベント。 パラメーターの値が検証テストに合格しなかった場合は、設定して、データ操作を取り消すことができます、 <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> 、関連するプロパティ<xref:System.ComponentModel.CancelEventArgs>クラスを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してデータベースにデータを挿入する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールと、単純な ASP.NET Web ページ。 データ テーブルの現在のデータが表示されます、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 内の値を入力して新しいレコードを追加することができます、<xref:System.Web.UI.WebControls.TextBox>コントロールおよびボタンをクリックします。 指定された値は、データベースに挿入 ボタンがクリックされたときに、<xref:System.Web.UI.WebControls.DropDownList>は更新します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい名前のないインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FormParameter" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.FormParameter>で作成されたオブジェクト、<xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A>コンス トラクターは、そのすべてのプロパティの既定値で初期化します。 <xref:System.Web.UI.WebControls.FormParameter.FormField%2A>に初期化される<xref:System.String.Empty?displayProperty=nameWithType>です。 さらに、<xref:System.Web.UI.WebControls.Parameter.Name%2A>にプロパティを初期化<xref:System.String.Empty?displayProperty=nameWithType>、<xref:System.Web.UI.WebControls.Parameter.Type%2A>にプロパティが初期化されて<xref:System.TypeCode?displayProperty=nameWithType>、<xref:System.Web.UI.WebControls.Parameter.Direction%2A>にプロパティを初期化<xref:System.Data.ParameterDirection.Input>、および<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>プロパティは null に初期化 (`Nothing` Visual Basic で)。  
+  
+   
+  
+## Examples  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.FormParameter>は任意の方法で、フォーム要素によって渡された値は検証されません生の値を使用します。 ほとんどの場合は、値を検証することができます、<xref:System.Web.UI.WebControls.FormParameter>など、イベントを処理することによってデータ ソース コントロールによって使用される前に、 `Selecting`、 `Updating`、 `Inserting`、または`Deleting`を使用しているデータ ソース コントロールによって公開されるイベント。 パラメーターの値が検証テストに合格しなかった場合は、設定して、データ操作を取り消すことができます、 <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> 、関連するプロパティ<xref:System.ComponentModel.CancelEventArgs>クラスを`true`です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.FormParameter_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_1/CS/fp1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.FormParameter_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_1/VB/fp1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FormParameter (System.Web.UI.WebControls.FormParameter original);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.FormParameter original) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.Web.UI.WebControls.FormParameter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="original" Type="System.Web.UI.WebControls.FormParameter" />
+      </Parameters>
+      <Docs>
+        <param name="original">A<see cref="T:System.Web.UI.WebControls.FormParameter" />インスタンスから現在のインスタンスを初期化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FormParameter" />で指定されたインスタンスの値を持つクラス、<paramref name="original" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A>コンス トラクターは、`protected`複製に使用されるコピー コンス トラクター、<xref:System.Web.UI.WebControls.FormParameter>インスタンス。 値、<xref:System.Web.UI.WebControls.FormParameter>など、 <xref:System.Web.UI.WebControls.FormParameter.FormField%2A>、 <xref:System.Web.UI.WebControls.Parameter.Name%2A>、および<xref:System.Web.UI.WebControls.Parameter.Type%2A>新しいインスタンスに転送されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormParameter (string name, string formField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string formField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="formField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="formField">パラメーター オブジェクトのバインド先のフォーム変数の名前。 既定値は、<see cref="F:System.String.Empty" /> です。</param>
+        <summary>新しい名前付きのインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FormParameter" />クラス、どのフォーム変数フィールドにバインドを識別する、指定した文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.FormParameter>で作成されたオブジェクト、<xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A>コンス トラクターは、指定されたパラメーター名とパラメーターのバインド先のフォーム変数を識別する文字列を初期化します。 <xref:System.Web.UI.WebControls.Parameter.Type%2A>と<xref:System.Web.UI.WebControls.Parameter.Direction%2A>プロパティは既定値で初期化されます。  
+  
+   
+  
+## Examples  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.FormParameter>は任意の方法で、フォーム要素によって渡された値は検証されません生の値を使用します。 ほとんどの場合は、値を検証することができます、<xref:System.Web.UI.WebControls.FormParameter>など、イベントを処理することによってデータ ソース コントロールによって使用される前に、 `Selecting`、 `Updating`、 `Inserting`、または`Deleting`を使用しているデータ ソース コントロールによって公開されるイベント。 パラメーターの値が検証テストに合格しなかった場合は、設定して、データ操作を取り消すことができます、 <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> 、関連するプロパティ<xref:System.ComponentModel.CancelEventArgs>クラスを`true`です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.FormParameter_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_2/CS/fp2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.FormParameter_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_2/VB/fp2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormParameter (string name, System.Data.DbType dbType, string formField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.DbType dbType, string formField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.String,System.Data.DbType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dbType" Type="System.Data.DbType" />
+        <Parameter Name="formField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="dbType">パラメーターのデータベースの種類。</param>
+        <param name="formField">パラメーター オブジェクトのバインド先のフォーム変数の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FormParameter" />クラス、どのフォーム変数フィールドにバインドを識別する、指定した文字列を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormParameter (string name, TypeCode type, string formField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.TypeCode type, string formField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.String,System.TypeCode,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.TypeCode" />
+        <Parameter Name="formField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="type">パラメーターを表す型。 既定値は、<see cref="F:System.TypeCode.Object" /> です。</param>
+        <param name="formField">パラメーター オブジェクトのバインド先のフォーム変数の名前。 既定値は、<see cref="F:System.String.Empty" /> です。</param>
+        <summary>新しい名前付きと厳密に型指定されたインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FormParameter" />クラス、フォームにバインドする変数を識別する、指定した文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.FormParameter>で作成されたオブジェクト、<xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A>コンス トラクターは、指定されたパラメーターの名前を持つ初期化<xref:System.Web.UI.WebControls.Parameter.Type%2A>、およびパラメーターのバインド先のフォーム変数を識別する文字列。 のみ、<xref:System.Web.UI.WebControls.Parameter.Direction%2A>と<xref:System.Web.UI.WebControls.Parameter.ConvertEmptyStringToNull%2A>プロパティは既定値で初期化されます。  
+  
+   
+  
+## Examples  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.FormParameter>は任意の方法で、フォーム要素によって渡された値は検証されません生の値を使用します。 ほとんどの場合は、値を検証することができます、<xref:System.Web.UI.WebControls.FormParameter>など、イベントを処理することによってデータ ソース コントロールによって使用される前に、 `Selecting`、 `Updating`、 `Inserting`、または`Deleting`を使用しているデータ ソース コントロールによって公開されるイベント。 パラメーターの値が検証テストに合格しなかった場合は、設定して、データ操作を取り消すことができます、 <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> 、関連するプロパティ<xref:System.ComponentModel.CancelEventArgs>クラスを`true`です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.FormParameter_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_3/CS/fp3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.FormParameter_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_3/VB/fp3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Parameter Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Parameter Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Parameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の複製を返します<see cref="T:System.Web.UI.WebControls.FormParameter" />インスタンス。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.FormParameter" />現在 1 つの完全な複製であります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormParameter.Clone%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A>コピー コンス トラクターの新しいインスタンスを初期化するために、<xref:System.Web.UI.WebControls.FormParameter>現在のインスタンスの値を持つクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="protected override object Evaluate (System.Web.HttpContext context, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object Evaluate(class System.Web.HttpContext context, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />要求のです。</param>
+        <param name="control">A<see cref="T:System.Web.UI.Control" />ページに関連付けられている場所、<see cref="T:System.Web.UI.WebControls.FormParameter" />を使用します。</param>
+        <summary>更新の値を返します、<see cref="T:System.Web.UI.WebControls.FormParameter" />オブジェクト。</summary>
+        <returns>パラメーターの更新された現在の値を表すオブジェクト。 コンテキスト、または要求が null の場合 (<see langword="Nothing" /> Visual Basic で)、 <see cref="M:System.Web.UI.WebControls.FormParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" /> null が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormParameter>たびに、フォームの変数にバインドしようとしています、<xref:System.Web.UI.WebControls.FormParameter.Evaluate%2A>メソッドが呼び出されます。  
+  
+ `context`がパラメーターを使用、<xref:System.Web.UI.WebControls.FormParameter.Evaluate%2A>要求から指定されたフォーム フィールドの値を取得します。 `control`パラメーターは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormField">
+      <MemberSignature Language="C#" Value="public string FormField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormParameter.FormField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパラメーターのバインド先のフォーム変数の名前を設定します。</summary>
+        <value>パラメーターのバインド先のフォーム変数を識別する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormParameter.FormField%2A>に渡される名前/値ペアの識別、<xref:System.Web.HttpRequest.Form%2A>コレクション。 中に、<xref:System.Web.UI.WebControls.FormParameter.FormField%2A>プロパティは、ペアの名前を識別、<xref:System.Web.UI.WebControls.FormParameter>実行時に、対応する値をバインドします。 予期されたフォーム変数の文字列の名前/値ペアがコレクション内の ASP.NET Web ページに渡されない場合、<xref:System.Web.UI.WebControls.FormParameter.Evaluate%2A>メソッドに、パラメーターの値をバインド、<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>プロパティ、設定されている場合。 場合、<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>が設定されていない、<xref:System.Web.UI.WebControls.FormParameter.Evaluate%2A>パラメーター値をバインドするメソッドは失敗します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してフィルター選択されたデータを表示する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールと<xref:System.Web.UI.WebControls.FormParameter>中間層ビジネス オブジェクトからデータを取得し、<xref:System.Web.UI.WebControls.GridView>結果を表示するコントロール。  
+  
+ コード例は、 <xref:System.Web.UI.WebControls.TextBox>、<xref:System.Web.UI.WebControls.GridView>コントロール、<xref:System.Web.UI.WebControls.ObjectDataSource>制御、および送信ボタン。 既定では、 <xref:System.Web.UI.WebControls.TextBox> Northwind traders 社の従業員のいずれかの名前が格納されます。 <xref:System.Web.UI.WebControls.GridView>で名前によって識別される従業員に関する情報を表示、<xref:System.Web.UI.WebControls.TextBox>です。 他の従業員のデータを取得するには、従業員の完全名を入力、<xref:System.Web.UI.WebControls.TextBox>ボタンをクリックします。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSource.FilterExpression%2A>プロパティによって取得されたデータをフィルター処理に使用する式を指定する、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>です。 このプロパティに含まれているパラメーターに評価されるパラメーターのプレース ホルダーを使用して、<xref:System.Web.UI.WebControls.ObjectDataSource.FilterParameters%2A>コレクション。 この例では、パラメーター プレース ホルダーは、<xref:System.Web.UI.WebControls.FormParameter>の値にバインドされている、<xref:System.Web.UI.WebControls.TextBox>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/CS/objds9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/VB/objds9vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例で使用される中間層のビジネス オブジェクトを示します。 この例は、2 つの基本クラスで構成されています。`EmployeeLogic`クラスは、ビジネス ロジックをカプセル化し、`NorthwindEmployee`クラスは、モデル クラスを読み込んで、データ層からデータを永続化に必要な基本的な機能のみを含むです。 簡略化のため、`EmployeeLogic`クラスは、データ層からデータを取得するのではなく、データの静的セットを作成します。 サンプルは、フィルター処理を示すために、Northwind traders 社の従業員の氏名を提供するユーザーに依存するためにもこの例では便利です。 稼働させるためには、コンパイルして、提供された ASP.NET コードの例とこれらのクラスを使用する必要があります。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.FormParameter>は任意の方法で、フォーム要素によって渡された値は検証されません生の値を使用します。 ほとんどの場合は、値を検証することができます、<xref:System.Web.UI.WebControls.FormParameter>など、イベントを処理することによってデータ ソース コントロールによって使用される前に、 `Selecting`、 `Updating`、 `Inserting`、または`Deleting`を使用しているデータ ソース コントロールによって公開されるイベント。 パラメーターの値が検証テストに合格しなかった場合は、設定して、データ操作を取り消すことができます、 <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> 、関連するプロパティ<xref:System.ComponentModel.CancelEventArgs>クラスを`true`です。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_9#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/CS/northwindemployee9.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_9#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/VB/northwindemployee9.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateInput">
+      <MemberSignature Language="C#" Value="public bool ValidateInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormParameter.ValidateInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントが、パラメーターの入力を検証するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クライアントの入力検証を行います。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

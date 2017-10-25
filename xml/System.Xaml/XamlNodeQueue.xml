@@ -1,0 +1,129 @@
+<Type Name="XamlNodeQueue" FullName="System.Xaml.XamlNodeQueue">
+  <TypeSignature Language="C#" Value="public class XamlNodeQueue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlNodeQueue extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlNodeQueue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ノードを作成および再読み取りためのバッファーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードがから使用される、 <xref:System.Xaml.XamlNodeQueue> XAML リーダーによって読み取られるときにします。 再生することができます、ある XAML ノードのリストが必要なかどうか、またはランダム アクセスをサポートするリストのモデルを参照してください<xref:System.Xaml.XamlNodeList>です。  
+  
+ 作成するときに、 <xref:System.Xaml.XamlNodeQueue>、として存在するライター デリゲートを作成する、<xref:System.Xaml.XamlNodeQueue.Writer%2A>値。 ライターのデリゲートは、XAML ノードが具体的には、する内部 XAML ライター クラスに基づいています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlNodeQueue (System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlNodeQueue.#ctor(System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="schemaContext">ノードの操作に使用するスキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlNodeQueue" />クラス提供された XAML スキーマ コンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として存在する XAML ライターに、スキーマ コンテキストが適用される、<xref:System.Xaml.XamlNodeQueue.Writer%2A>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlSchemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlNodeQueue.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のノードの数を取得、<see cref="T:System.Xaml.XamlNodeQueue" />です。</summary>
+        <value>内のノードの数、<see cref="T:System.Xaml.XamlNodeQueue" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlNodeQueue.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうかこの<see cref="T:System.Xaml.XamlNodeQueue" />はノードがありません。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlNodeQueue" />; のノードが含まれていません。<see langword="false" />この<see cref="T:System.Xaml.XamlNodeQueue" />ノードが含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reader">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlReader Reader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlReader Reader" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlNodeQueue.Reader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML リーダーの実装デリゲートを取得します。</summary>
+        <value>XAML リーダーの実装デリゲート。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xaml.XamlException">ノード リストに使用する XAML ライターには、有効な XAML スキーマ コンテキストがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Writer">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlWriter Writer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlWriter Writer" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlNodeQueue.Writer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する XAML ライターを取得します。</summary>
+        <value>関連する XAML ライター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

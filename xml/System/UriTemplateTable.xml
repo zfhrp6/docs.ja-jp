@@ -1,0 +1,430 @@
+<Type Name="UriTemplateTable" FullName="System.UriTemplateTable">
+  <TypeSignature Language="C#" Value="public class UriTemplateTable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UriTemplateTable extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.UriTemplateTable" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.UriTemplate" /> オブジェクトの結合セットを表すクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplateTable> は、開発者が選択したオブジェクトにバインドされた <xref:System.UriTemplate> オブジェクトの結合セットです。 これにより、セット内のテンプレートと候補 URI (Uniform Resource Identifier) を照合し、一致したテンプレートに関連付けられているデータを取得することができます。 <xref:System.UriTemplateTable> のコンテンツは、<xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> メソッドが呼び出されるまで変更することができます。メソッドが呼び出された時点で、以下のいずれかの種類の検証が行われます。  
+  
+-   <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> を渡して `false` を呼び出す場合、<xref:System.UriTemplateTable> はテーブル内に構造的に等しい複数のテンプレートが存在しないことを確認します。 そのようなテンプレートが見つかった場合は、例外がスローされます。 この種類の検証は、受信 URI と一致するテンプレートが 1 つだけであることを確認する場合に、<xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> と組み合わせて使用します。  
+  
+-   <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> を渡して `true` を呼び出した場合は、構造的に等しい複数のテンプレートを <xref:System.UriTemplateTable> に含めることができます。 ただし、テンプレート内のクエリ文字列はあいまいにすることができません。同一のクエリ文字列のみが使用できます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]あいまいなクエリ文字列を参照してください[UriTemplate および UriTemplateTable](~/docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)です。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateTable> を作成し、それを設定して、候補 <xref:System.Uri> との照合に使用する方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#0](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/program.cs#0)]
+ [!code-vb[UriTemplateTable#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/program1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriTemplateTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.UriTemplateTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.UriTemplateTable> クラスを初期化する方法を次の例に示します。  
+  
+ [!code-csharp[UriTemplateTable#1](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/program.cs#1)]
+ [!code-vb[UriTemplateTable#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriTemplateTable (System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;UriTemplate,object&gt;&gt; keyValuePairs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.UriTemplate, object&gt;&gt; keyValuePairs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.UriTemplate,System.Object}})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyValuePairs" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.UriTemplate,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="keyValuePairs">キーと値のペアのコレクションは、URI テンプレートと関連付けられたデータで構成されます。</param>
+        <summary>指定したキーと値のペアのコレクションを使用して、<see cref="T:System.UriTemplateTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.UriTemplateTable> クラスを初期化する方法を次の例に示します。  
+  
+ [!code-csharp[UriTemplateTable#2](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#2)]
+ [!code-vb[UriTemplateTable#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriTemplateTable (Uri baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseAddress" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseAddress">ベース アドレスを格納する <see cref="T:System.Uri" /> インスタンス。</param>
+        <summary>指定したベース アドレスを使用して <see cref="T:System.UriTemplateTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを呼び出す方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#3](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/program.cs#3)]
+ [!code-vb[UriTemplateTable#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/program1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriTemplateTable (Uri baseAddress, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;UriTemplate,object&gt;&gt; keyValuePairs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseAddress, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.UriTemplate, object&gt;&gt; keyValuePairs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.#ctor(System.Uri,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.UriTemplate,System.Object}})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseAddress" Type="System.Uri" />
+        <Parameter Name="keyValuePairs" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.UriTemplate,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="baseAddress">ベース アドレスを格納する <see cref="T:System.Uri" /> インスタンス。</param>
+        <param name="keyValuePairs">キーと値のペアのコレクションは、URI テンプレートと関連付けられたデータで構成されます。</param>
+        <summary>指定したベース アドレスと、キーと値のペアのコレクションを使用して、<see cref="T:System.UriTemplateTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを呼び出す方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#4](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#4)]
+ [!code-vb[UriTemplateTable#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseAddress">
+      <MemberSignature Language="C#" Value="public Uri BaseAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseAddress" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateTable.BaseAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.UriTemplateTable" /> インスタンスのベース アドレスを取得および設定します。</summary>
+        <value>ベース アドレスを格納する <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplateTable.BaseAddress%2A> プロパティは、<xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29>、<xref:System.UriTemplateTable.Match%28System.Uri%29> または <xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> を呼び出す前にのみ設定できます。それ以外の場合は <xref:System.InvalidOperationException> がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.UriTemplateTable.BaseAddress%2A> プロパティにアクセスする方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#5](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#5)]
+ [!code-vb[UriTemplateTable#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateTable.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.UriTemplateTable" /> が読み取り専用かどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" /> プロパティが読み取り専用の場合は <see cref="T:System.UriTemplateTable" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplateTable> は、<xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> メソッドが呼び出された後にのみ読み取られます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.UriTemplateTable.IsReadOnly%2A> プロパティにアクセスする方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#6](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#6)]
+ [!code-vb[UriTemplateTable#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyValuePairs">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Collections.Generic.KeyValuePair&lt;UriTemplate,object&gt;&gt; KeyValuePairs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.UriTemplate, object&gt;&gt; KeyValuePairs" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateTable.KeyValuePairs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Collections.Generic.KeyValuePair&lt;System.UriTemplate,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.UriTemplate" /> オブジェクトと関連したデータで構成されるキーと値のペアのコレクションを取得します。</summary>
+        <value><see cref="T:System.UriTemplate" /> オブジェクトと関連したデータで構成されるキーと値のペアのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブル内の各 <xref:System.UriTemplate> インスタンスには、それに関連付けられたデータがあります。 キーと値のペアのコレクションを格納する <xref:System.UriTemplateTable.KeyValuePairs%2A> プロパティ。ここで、キーは <xref:System.UriTemplate> インスタンス、値は <xref:System.UriTemplate> に関連付けられたデータです。 値は、<xref:System.UriTemplateTable.KeyValuePairs%2A>、<xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29>、または <xref:System.UriTemplateTable.Match%28System.Uri%29> を呼び出す前にのみ、<xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> プロパティに追加できます。それ以外の場合は、<xref:System.NotSupportedException> がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.UriTemplateTable.KeyValuePairs%2A> プロパティにアクセスする方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#7](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#7)]
+ [!code-vb[UriTemplateTable#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly (bool allowDuplicateEquivalentUriTemplates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly(bool allowDuplicateEquivalentUriTemplates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.MakeReadOnly(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allowDuplicateEquivalentUriTemplates" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allowDuplicateEquivalentUriTemplates"><see cref="T:System.UriTemplate" /> 内で重複した同等の <see cref="T:System.UriTemplateTable" /> インスタンスを許可するかどうかを指定します。</param>
+        <summary><see cref="T:System.UriTemplateTable" /> を読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> メソッドが呼び出されるときに、次のいずれかの種類の検証が行われます。  
+  
+-   <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> を渡して `false` を呼び出す場合、<xref:System.UriTemplateTable> はテーブル内に構造的に等しい複数のテンプレートが存在しないことを確認します。 該当するテンプレートが見つかった場合は、例外がスローされます。 この種類の検証は、受信 URI と一致するテンプレートが 1 つだけであることを確認する場合に、<xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> と組み合わせて使用します。  
+  
+-   <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> を渡して `true` を呼び出した場合は、構造的に等しい複数のテンプレートを <xref:System.UriTemplateTable> に含めることができます。 ただし、テンプレート内のクエリ文字列はあいまいにすることができません。同一のクエリ文字列のみが使用できます。 この種類の検証は、候補 URI で複数のテンプレートの一致が許可されている場合に、<xref:System.UriTemplateTable.Match%28System.Uri%29> と組み合わせて使用されます。  
+  
+ <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> への最初の呼び出しだけが受け入れられ、それ以降の呼び出しは無視され、例外はスローされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;UriTemplateMatch&gt; Match (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.UriTemplateMatch&gt; Match(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.Match(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.UriTemplateMatch&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">候補 URI。</param>
+        <summary>候補 <see cref="T:System.Uri" /> と <see cref="T:System.UriTemplateTable" /> との照合を試みます。</summary>
+        <returns><see cref="T:System.UriTemplateMatch" /> インスタンスのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは複数の一致を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.UriTemplateTable.Match%28System.Uri%29> メソッドを呼び出す方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#9](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#9)]
+ [!code-vb[UriTemplateTable#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchSingle">
+      <MemberSignature Language="C#" Value="public UriTemplateMatch MatchSingle (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.UriTemplateMatch MatchSingle(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateTable.MatchSingle(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriTemplateMatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">候補 URI。</param>
+        <summary>候補 <see cref="T:System.Uri" /> と <see cref="T:System.UriTemplateTable" /> との照合を試みます。</summary>
+        <returns>単一の <see cref="T:System.UriTemplateMatch" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが返す一致は、多くても 1 つです。 複数の一致が見つかると、<xref:System.UriTemplateMatchException> がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> メソッドを呼び出す方法を示しています。  
+  
+ [!code-csharp[UriTemplateTable#10](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatetable/cs/snippets.cs#10)]
+ [!code-vb[UriTemplateTable#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatetable/vb/snippets.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalBaseAddress">
+      <MemberSignature Language="C#" Value="public Uri OriginalBaseAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri OriginalBaseAddress" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateTable.OriginalBaseAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のベース アドレスを取得します。</summary>
+        <value>元のベース アドレス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

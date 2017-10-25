@@ -1,0 +1,101 @@
+<Type Name="SqlChangeMonitor" FullName="System.Runtime.Caching.SqlChangeMonitor">
+  <TypeSignature Language="C#" Value="public sealed class SqlChangeMonitor : System.Runtime.Caching.ChangeMonitor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlChangeMonitor extends System.Runtime.Caching.ChangeMonitor" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.SqlChangeMonitor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Caching.ChangeMonitor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SQL Server データベースの変更の監視を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.SqlChangeMonitor>クラスは、ADO.NET、ラップ<xref:System.Data.SqlClient.SqlDependency>クラスし、SQL Server ベースの依存関係の変更の監視を追加します。 したがって、<xref:System.Runtime.Caching.SqlChangeMonitor>クラスは、ADO.NET 間の仲介役として機能<xref:System.Data.SqlClient.SqlDependency>オブジェクトおよび<xref:System.Runtime.Caching>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlChangeMonitor (System.Data.SqlClient.SqlDependency dependency);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlDependency dependency) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.SqlChangeMonitor.#ctor(System.Data.SqlClient.SqlDependency)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dependency" Type="System.Data.SqlClient.SqlDependency" />
+      </Parameters>
+      <Docs>
+        <param name="dependency">ADO.NET を表すオブジェクト<see cref="T:System.Data.SqlClient.SqlDependency" />オブジェクト。</param>
+        <summary><see cref="T:System.Runtime.Caching.SqlChangeMonitor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.SqlChangeMonitor.%23ctor%2A>メソッド バインド、<xref:System.Data.SqlClient.SqlDependency.OnChange>内のオブジェクトのイベント`dependency`を<xref:System.Runtime.Caching.ChangeMonitor.OnChanged%2A>メソッド ハンドラー。 これにより、SQL Server データベースで変更の通知を受信するモニターを変更できます。  
+  
+ 呼び出した場合、<xref:System.Runtime.Caching.SqlChangeMonitor.%23ctor%2A>コンス トラクターを渡す必要があります、<xref:System.Data.SqlClient.SqlDependency>オブジェクトをパラメーターとして。 作成するときに、<xref:System.Data.SqlClient.SqlDependency>オブジェクトを渡す必要があります、<xref:System.Data.SqlClient.SqlCommand>コンス トラクターのパラメーターです。 コンス トラクター<xref:System.Data.SqlClient.SqlDependency>クラスでは、構成するためのオプションの情報を指定することができます、<xref:System.Data.SqlClient.SqlDependency>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependency" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.SqlChangeMonitor.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UniqueId">
+      <MemberSignature Language="C#" Value="public override string UniqueId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UniqueId" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.SqlChangeMonitor.UniqueId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別子を取得、<see cref="T:System.Runtime.Caching.SqlChangeMonitor" />インスタンス。</summary>
+        <value>変更監視機能の識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.SqlChangeMonitor>クラスは、このプロパティの GUID を生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

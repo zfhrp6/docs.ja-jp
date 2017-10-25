@@ -1,0 +1,89 @@
+<Type Name="XamlDeferringLoader" FullName="System.Xaml.XamlDeferringLoader">
+  <TypeSignature Language="C#" Value="public abstract class XamlDeferringLoader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XamlDeferringLoader extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlDeferringLoader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML リーダーの動作を読み込んで返す遅延コンテンツを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、.NET Framework XAML サービスによって実装されるその他の XAML リーダーの基底クラスとしては使用されません。 値渡しでリーダーによってなどの内部で使用が代わりに、 <xref:System.Xaml.XamlObjectReader>; または使用を基底クラスとして、テクノロジ固有の実装のように<xref:System.Windows.TemplateContentLoader>PresentationFramework.dll からです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XamlDeferringLoader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDeferringLoader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlDeferringLoader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public abstract object Load (System.Xaml.XamlReader xamlReader, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Load(class System.Xaml.XamlReader xamlReader, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDeferringLoader.Load(System.Xaml.XamlReader,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlReader" Type="System.Xaml.XamlReader" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="xamlReader">発信側への呼び出しで返されるリーダー<see cref="M:System.Xaml.XamlDeferringLoader.Save(System.Object,System.IServiceProvider)" />です。</param>
+        <param name="serviceProvider">必要なサービスのサービス プロバイダー。</param>
+        <summary>XAML コンテンツに基づく遅延モードでのロード、<see cref="T:System.Xaml.XamlReader" />サービス プロバイダーからの特定の必要なサービスです。</summary>
+        <returns>入力によって生成されるルート オブジェクト<see cref="T:System.Xaml.XamlReader" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public abstract System.Xaml.XamlReader Save (object value, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xaml.XamlReader Save(object value, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDeferringLoader.Save(System.Object,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="value">遅延読み込みをコミットする入力値。</param>
+        <param name="serviceProvider">必要なサービスのサービス プロバイダー。</param>
+        <summary>遅延読み込みの値をコミットします。</summary>
+        <returns>XAML ノードの情報と遅延の値を取得するのに使用できる XAML リーダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

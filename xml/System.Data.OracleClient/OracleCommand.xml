@@ -1,0 +1,990 @@
+<Type Name="OracleCommand" FullName="System.Data.OracleClient.OracleCommand">
+  <TypeSignature Language="C#" Value="public sealed class OracleCommand : System.Data.Common.DbCommand, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleCommand extends System.Data.Common.DbCommand implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleCommand" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbCommand</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("RecordsAffected")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("Microsoft.VSDesigner.Data.VS.OracleCommandDesigner, Microsoft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("OracleCommand has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260", false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データベースに対して実行する SQL ステートメントまたはストアド プロシージャを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は廃止されており、.NET Framework の将来のバージョンで削除される予定です。 詳細については、次を参照してください。 [Oracle および ADO.NET](~/docs/framework/data/adonet/oracle-and-adonet.md)です。  
+  
+ <xref:System.Data.OracleClient.OracleCommand>クラスは、データ ソースに対してコマンドを実行するための次のメソッドを提供します。  
+  
+|アイテム|説明|  
+|----------|-----------------|  
+|<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>|行を返すコマンドを実行します。|  
+|<xref:System.Data.OracleClient.OracleCommand.ExecuteOracleNonQuery%2A>|に対して SQL ステートメントを実行、<xref:System.Data.OracleClient.OracleCommand.Connection%2A>影響を受ける行の数を返します。|  
+|<xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery%2A>|SQL の INSERT、DELETE、UPDATE、および一連のステートメントなどのコマンドを実行します。|  
+|<xref:System.Data.OracleClient.OracleCommand.ExecuteScalar%2A>|.NET Framework データ型として、データベースから 1 つの値 (たとえば、集計値) を取得します。|  
+|<xref:System.Data.OracleClient.OracleCommand.ExecuteOracleScalar%2A>|Oracle 固有のデータ型として、データベースから 1 つの値 (たとえば、集計値) を取得します。|  
+  
+ リセットすることができます、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティと再利用、<xref:System.Data.OracleClient.OracleCommand>オブジェクト。  
+  
+ コマンドの実行結果致命的なエラーになった場合<xref:System.Data.OracleClient.OracleException>、<xref:System.Data.OracleClient.OracleConnection>閉じることがあります。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+> [!NOTE]
+>  異なり、**コマンド**、他の .NET Framework データ プロバイダー (SQL Server、OLE DB および ODBC) 内のオブジェクト、<xref:System.Data.OracleClient.OracleCommand>オブジェクトはサポートしません、<xref:System.Data.OracleClient.OracleCommand.CommandTimeout%2A>プロパティです。 コマンドのタイムアウトを設定する影響は生じず、返される値は常に 0 です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>のメソッド<xref:System.Data.OracleClient.OracleCommand>、と共に<xref:System.Data.OracleClient.OracleDataReader>と<xref:System.Data.OracleClient.OracleConnection>、テーブルから行を選択します。  
+  
+ [!code-csharp[Classic WebData OracleCommand#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Data.OracleClient.OracleCommand" />の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本コンス トラクターは、すべてのフィールドを既定値を初期化します。 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Data.OracleClient.OracleCommand>です。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>|空の文字列 ("")|  
+|<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>|`Text`|  
+|<xref:System.Data.OracleClient.OracleCommand.Connection%2A>|null|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.OracleCommand#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.OracleCommand/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.OracleCommand#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.OracleCommand/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleCommand (string commandText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="commandText">クエリのテキスト。</param>
+        <summary>クエリ テキストを指定して、<see cref="T:System.Data.OracleClient.OracleCommand" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleCommand (string commandText, System.Data.OracleClient.OracleConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandText, class System.Data.OracleClient.OracleConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.#ctor(System.String,System.Data.OracleClient.OracleConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.OracleClient.OracleConnection" />
+      </Parameters>
+      <Docs>
+        <param name="commandText">クエリのテキスト。</param>
+        <param name="connection"><see cref="T:System.Data.OracleClient.OracleConnection" />データベースへの接続を表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleCommand" />クエリのテキストを持つクラスおよび<see cref="T:System.Data.OracleClient.OracleConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>です。  
+  
+ [!code-csharp[Classic WebData OracleCommand.OracleCommand2#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.OracleCommand2/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.OracleCommand2#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.OracleCommand2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleCommand (string commandText, System.Data.OracleClient.OracleConnection connection, System.Data.OracleClient.OracleTransaction tx);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandText, class System.Data.OracleClient.OracleConnection connection, class System.Data.OracleClient.OracleTransaction tx) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.#ctor(System.String,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.OracleClient.OracleConnection" />
+        <Parameter Name="tx" Type="System.Data.OracleClient.OracleTransaction" />
+      </Parameters>
+      <Docs>
+        <param name="commandText">クエリのテキスト。</param>
+        <param name="connection"><see cref="T:System.Data.OracleClient.OracleConnection" />データベースへの接続を表すオブジェクト。</param>
+        <param name="tx"><see cref="T:System.Data.OracleClient.OracleCommand" /> が実行される <see cref="T:System.Data.OracleClient.OracleTransaction" />。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.OracleClient.OracleCommand" /> 、クエリのテキストを持つクラス、<see cref="T:System.Data.OracleClient.OracleConnection" />オブジェクト、および<see cref="T:System.Data.OracleClient.OracleTransaction" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表のこの実装のインスタンスの初期プロパティ値、<xref:System.Data.OracleClient.OracleCommand>です。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>|`cmdText`|  
+|<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>|`Text`|  
+|<xref:System.Data.OracleClient.OracleCommand.Connection%2A>|新しい<xref:System.Data.OracleClient.OracleConnection>の値である、`connection`パラメーター。|  
+  
+ これらのパラメーターのいずれかの値を変更するには、関連するプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.OracleCommand3#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.OracleCommand3/CS/mysample.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.OracleCommand3#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.OracleCommand3/VB/mysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public override void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行をキャンセルしようとしています、<see cref="T:System.Data.OracleClient.OracleCommand" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [キャンセル] を何も行われませんが、何も起こりません。 ただし、処理中のコマンドが存在し、キャンセルの試行が失敗した場合でも、例外は生成されません。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>を実行し、実行をキャンセルします。 これを実現するには、SQL SELECT ステートメントを表す文字列と、データベースへの接続に使用する文字列、メソッドに渡します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.Cancel#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.Cancel/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.Cancel#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.Cancel/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコピーを作成<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクトのすべてのプロパティの値は、元と同じです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandText">
+      <MemberSignature Language="C#" Value="public override string CommandText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandText" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.CommandText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Oracle.Design.OracleCommandTextEditor, Microsoft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SQL ステートメントまたはデータベースに対して実行するストアド プロシージャを設定します。</summary>
+        <value>実行する SQL ステートメントまたはストアド プロシージャ。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティは、ストアド プロシージャの名前に設定する必要があります。 ユーザーが、ストアド プロシージャ名に特殊文字が含まれている場合は、エスケープ文字構文を使用する必要あります。 コマンドは、Execute メソッドの 1 つを呼び出すときに、このストアド プロシージャを実行します。  
+  
+ によって呼び出される SQL ステートメントにパラメーターを渡すに、.NET Framework Data Provider for Oracle が疑問符 (?) プレース ホルダーをサポートしない、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`します。 この場合、名前付きパラメーターを使用する必要があります。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = :pCustomerID  
+```  
+  
+ 呼び出された SQL ステートメントで名前付きパラメーターを使用してとき、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`パラメーター名にコロン (:) を前に指定する必要があります。 ただし、ストアド プロシージャ、またはコード内の他の場所の名前付きパラメーターを参照する場合 (など、追加するときに<xref:System.Data.OracleClient.OracleParameter>オブジェクトを<xref:System.Data.OracleClient.OracleCommand.Parameters%2A>プロパティ)、コロン (:)、名前付きパラメーターは付けません。 .NET Framework Data Provider for Oracle では、コロンを自動的に提供します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.CommandText#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.CommandText/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.CommandText#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.CommandText/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTimeout">
+      <MemberSignature Language="C#" Value="public override int CommandTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CommandTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.CommandTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドを実行する試みを終了してエラーが生成されるまでの待機時間を取得または設定します。</summary>
+        <value>時間 (秒) コマンドの実行を待機します。 既定値は 30 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ArgumentException>場合に生成される、割り当てられた<xref:System.Data.OracleClient.OracleCommand.CommandTimeout%2A>プロパティの値が 0 未満です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandType">
+      <MemberSignature Language="C#" Value="public override System.Data.CommandType CommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.CommandType CommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.CommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値が、どのように<see cref="P:System.Data.OracleClient.OracleCommand.CommandText" />プロパティが解釈されます。</summary>
+        <value><see cref="T:System.Data.CommandType" /> 値のいずれか。 既定値は、<see langword="Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、設定する必要があります、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティを完全な Oracle 呼び出し構文。 コマンドは、Execute メソッドの 1 つを呼び出すときに、このストアド プロシージャを実行 (たとえば、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>または<xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery%2A>)。  
+  
+ <xref:System.Data.OracleClient.OracleCommand.Connection%2A>、<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>と<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>現在の接続が実行または fetch 操作を実行している場合、プロパティを設定することはできません。  
+  
+ によって呼び出される SQL ステートメントにパラメーターを渡すに、.NET Framework Data Provider for Oracle が疑問符 (?) プレース ホルダーをサポートしない、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`します。 この場合、名前付きパラメーターを使用する必要があります。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = :pCustomerID  
+```  
+  
+ 呼び出された SQL ステートメントで名前付きパラメーターを使用してとき、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`パラメーター名にコロン (:) を前に指定する必要があります。 ただし、ストアド プロシージャ、またはコード内の他の場所の名前付きパラメーターを参照する場合 (など、追加するときに<xref:System.Data.OracleClient.OracleParameter>オブジェクトを<xref:System.Data.OracleClient.OracleCommand.Parameters%2A>プロパティ)、コロン (:)、名前付きパラメーターは付けません。 .NET Framework Data Provider for Oracle では、コロンを自動的に提供します。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.OracleClient.OracleCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.CommandType#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.CommandType/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.CommandType#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.CommandType/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値が正しい <see cref="T:System.Data.CommandType" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleConnection Connection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DbConnectionEditor, Microsoft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.OracleClient.OracleCommand" /> のインスタンスで使用する <see cref="T:System.Data.OracleClient.OracleConnection" /> を取得または設定します。</summary>
+        <value>データ ソースへの接続。 既定は null 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することはできません、 <xref:System.Data.OracleClient.OracleCommand.Connection%2A>、 <xref:System.Data.OracleClient.OracleCommand.CommandType%2A>、および<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティの場合は、現在の接続で実行またはフェッチ操作が実行されます。  
+  
+ トランザクションの進行中に <xref:System.Data.OracleClient.OracleCommand.Connection%2A> を設定した場合、<xref:System.Data.OracleClient.OracleCommand.Transaction%2A> プロパティが NULL でなければ、<xref:System.InvalidOperationException> が生成されます。 設定した場合<xref:System.Data.OracleClient.OracleCommand.Connection%2A>トランザクションがコミットまたはロールバックされた後、<xref:System.Data.OracleClient.OracleCommand.Transaction%2A>プロパティが null でない、<xref:System.Data.OracleClient.OracleCommand.Transaction%2A>プロパティが null 値に設定し、します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.Connection#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.Connection/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.Connection#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.Connection/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">トランザクションの進行中に <see cref="P:System.Data.OracleClient.OracleCommand.Connection" /> プロパティが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDbParameter">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameter CreateDbParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbParameter CreateDbParameter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.CreateDbParameter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParameter">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter CreateParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter CreateParameter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.CreateParameter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクトの新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleCommand.CreateParameter%2A>メソッドは、厳密に型指定されたバージョンの<xref:System.Data.IDbCommand.CreateParameter%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbConnection">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbConnection DbConnection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection DbConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.DbConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbParameterCollection">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameterCollection DbParameterCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbParameterCollection DbParameterCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.DbParameterCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbTransaction">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbTransaction DbTransaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbTransaction DbTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.DbTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbTransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeVisible">
+      <MemberSignature Language="C#" Value="public override bool DesignTimeVisible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignTimeVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.DesignTimeVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コマンド オブジェクトをカスタマイズしたインターフェイスのコントロールに表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、コマンド オブジェクトがコントロールに表示されている必要がある場合それ以外の場合<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteDbDataReader">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbDataReader ExecuteDbDataReader (System.Data.CommandBehavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbDataReader ExecuteDbDataReader(valuetype System.Data.CommandBehavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(System.Data.CommandBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Data.CommandBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteNonQuery">
+      <MemberSignature Language="C#" Value="public override int ExecuteNonQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ExecuteNonQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteNonQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>に対して SQL ステートメントを実行、<see cref="P:System.Data.OracleClient.OracleCommand.Connection" />影響を受ける行の数を返します。</summary>
+        <returns>UPDATE、INSERT、および DELETE ステートメントでは、戻り値は、コマンドによって影響を受ける行の数です。 CREATE TABLE、および DROP TABLE ステートメントでは、戻り値は 0 です。 その他のすべての種類のステートメントは、戻り値は-1 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery%2A>(データベースの構造をクエリやテーブルなどのデータベース オブジェクトを作成するなど); カタログ操作を実行するか、データベース内のデータの変更を使用せずに、<xref:System.Data.DataSet>で実行する、更新、挿入、または DELETE ステートメント。  
+  
+ <xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery%2A>戻り値の任意の行、すべての出力パラメーターまたはパラメーターにマップされている値には、データが挿入されますを返すしていません。  
+  
+ UPDATE、INSERT、および DELETE ステートメントでは、戻り値は、コマンドによって影響を受ける行の数です。 CREATE TABLE、および DROP TABLE ステートメントでは、戻り値は 0 です。 その他のすべての種類のステートメントは、戻り値は-1 です。 ロールバックが発生した場合、戻り値も-1 にです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>を使用して実行<xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery%2A>です。 例には、SQL ステートメント (UPDATE、INSERT、DELETE など) を表す文字列と、データベースへの接続に使用する文字列が渡されます。  
+  
+ [!code-csharp[Classic WebData OracleCommand.ExecuteNonQuery#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteNonQuery/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.ExecuteNonQuery#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteNonQuery/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が存在しません。  
+  
+ または  
+  
+ 接続が開かれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteOracleNonQuery">
+      <MemberSignature Language="C#" Value="public int ExecuteOracleNonQuery (out System.Data.OracleClient.OracleString rowid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ExecuteOracleNonQuery([out] valuetype System.Data.OracleClient.OracleString&amp; rowid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteOracleNonQuery(System.Data.OracleClient.OracleString@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowid" Type="System.Data.OracleClient.OracleString&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="rowid">サーバー内の実際の行 ID の base64 文字列表現。</param>
+        <summary>に対して SQL ステートメントを実行、<see cref="P:System.Data.OracleClient.OracleCommand.Connection" />影響を受ける行の数を返します。</summary>
+        <returns>UPDATE、INSERT、および DELETE ステートメントでは、戻り値は、コマンドによって影響を受ける行の数です。 CREATE TABLE、および DROP TABLE ステートメントでは、戻り値は 0 です。 その他のすべての種類のステートメントは、戻り値は-1 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Data.OracleClient.OracleCommand.ExecuteOracleNonQuery%2A>(データベースの構造をクエリやテーブルなどのデータベース オブジェクトを作成するなど); カタログ操作を実行するか、データベース内のデータの変更を使用せずに、<xref:System.Data.DataSet>で実行する、更新、挿入、または DELETE ステートメント。  
+  
+ <xref:System.Data.OracleClient.OracleCommand.ExecuteOracleNonQuery%2A>異なる<xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery%2A>を返すという点で`rowid`ただ 1 つの行に影響する INSERT、DELETE、または UPDATE ステートメントを実行している場合、出力パラメーターとして。 これにより、その後、関連するクエリのパフォーマンスが向上することができる Oracle データベース内の行を一意に識別できます。  
+  
+ <xref:System.Data.OracleClient.OracleCommand.ExecuteOracleNonQuery%2A>戻り値の任意の行、すべての出力パラメーターまたはパラメーターにマップされている値には、データが挿入されますを返すしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が存在しません。  
+  
+ または  
+  
+ 接続が開かれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteOracleScalar">
+      <MemberSignature Language="C#" Value="public object ExecuteOracleScalar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ExecuteOracleScalar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteOracleScalar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、Oracle 固有のデータ型として、クエリによって返される結果セットの最初の行の最初の列を返します。 追加の列または行は無視されます。</summary>
+        <returns>結果は場合に、結果の最初の行の最初の列が Oracle 固有のデータ型、または null 参照と設定、<see langword="REF CURSOR" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.OracleClient.OracleCommand.ExecuteOracleScalar%2A>データベースから 1 つの値 (たとえば、集計値) を取得します。 使用するよりも少ないコードが必要です、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>メソッド、およびによって返されるデータから 1 つの値を生成するために必要な操作を実行すること、<xref:System.Data.OracleClient.OracleDataReader>です。  
+  
+ 一般的な<xref:System.Data.OracleClient.OracleCommand.ExecuteOracleScalar%2A>クエリは、c# の例を次のようにフォーマットされていることができます。  
+  
+```  
+command.CommandText = "SELECT COUNT(*) AS NumberOfRegions FROM Region";  
+count = command.ExecuteOracleScalar();  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteReader">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleDataReader ExecuteReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleDataReader ExecuteReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>送信、<see cref="P:System.Data.OracleClient.OracleCommand.CommandText" />を<see cref="P:System.Data.OracleClient.OracleCommand.Connection" />をビルドし、<see cref="T:System.Data.OracleClient.OracleDataReader" />です。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleDataReader" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティは、ストアド プロシージャの名前に設定する必要があります。 コマンドは、呼び出すときに、このストアド プロシージャを実行<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>です。  
+  
+ 1 つ以上<xref:System.Data.OracleClient.OracleDataReader>特定の時点で開くことができます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.OracleClient.OracleCommand>、してでは、SQL SELECT ステートメント、文字列と、データ ソースへの接続に使用する文字列を渡すことによって実行します。  
+  
+ [!code-csharp[Classic WebData OracleCommand.ExecuteReader1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteReader1/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.ExecuteReader1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteReader1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteReader">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleDataReader ExecuteReader (System.Data.CommandBehavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleDataReader ExecuteReader(valuetype System.Data.CommandBehavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteReader(System.Data.CommandBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Data.CommandBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior"><see cref="T:System.Data.CommandBehavior" /> 値のいずれか。</param>
+        <summary>送信、<see cref="P:System.Data.OracleClient.OracleCommand.CommandText" />を<see cref="P:System.Data.OracleClient.OracleCommand.Connection" />、およびビルド、<see cref="T:System.Data.OracleClient.OracleDataReader" />のいずれかを使用して、<see cref="T:System.Data.CommandBehavior" />値。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleDataReader" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する 1 つの行のみを返す SQL ステートメントの場合、`SingleRow`として、<xref:System.Data.CommandBehavior>値は、アプリケーションのパフォーマンスを向上させることがあります。  
+  
+ ときに、<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティは、ストアド プロシージャの名前に設定する必要があります。 コマンドは、呼び出すときに、このストアド プロシージャを実行<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>です。  
+  
+ <xref:System.Data.OracleClient.OracleDataReader>を効率的に読み込まれる大きなバイナリ値を有効にする、特殊なモードをサポートしています。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ 1 つ以上<xref:System.Data.OracleClient.OracleDataReader>特定の時点で開くことができます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>の SQL SELECT ステートメントを表す文字列とデータベースへの接続に使用する文字列を渡すことによって実行します。 <xref:System.Data.CommandBehavior>設定されているし、<xref:System.Data.CommandBehavior.CloseConnection>です。  
+  
+ [!code-csharp[Classic WebData OracleCommand.ExecuteReader2#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteReader2/CS/mysample.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.ExecuteReader2#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteReader2/VB/mysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteScalar">
+      <MemberSignature Language="C#" Value="public override object ExecuteScalar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ExecuteScalar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ExecuteScalar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、.NET Framework データ型として、クエリによって返される結果セットの最初の行の最初の列を返します。 追加の列または行は無視されます。</summary>
+        <returns>結果の最初の行の最初の列が、.NET Framework データ型として設定または結果セットが空の場合は null 参照または結果が、<see langword="REF CURSOR" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.OracleClient.OracleCommand.ExecuteScalar%2A>データベースから 1 つの値 (たとえば、集計値) を取得します。 使用するよりも少ないコードが必要です、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>メソッド、およびによって返されるデータから 1 つの値を生成するために必要な操作を実行すること、<xref:System.Data.OracleClient.OracleDataReader>です。  
+  
+ 一般的な<xref:System.Data.OracleClient.OracleCommand.ExecuteScalar%2A>クエリは、c# の例を次のようにフォーマットされていることができます。  
+  
+```  
+CommandText = "SELECT COUNT(*) FROM Region";  
+Int32 count = (int32) ExecuteScalar();  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>を使用してそれを実行および<xref:System.Data.OracleClient.OracleCommand.ExecuteScalar%2A>です。 例には、集計の結果を返す SQL ステートメントを表す文字列と、データベースへの接続に使用する文字列が渡されます。  
+  
+ [!code-csharp[Classic WebData OracleCommand.ExecuteScalar#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteScalar/CS/mysample.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.ExecuteScalar#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.ExecuteScalar/VB/mysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameterCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleParameterCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> を取得します。</summary>
+        <value>SQL ステートメントまたはストアド プロシージャのパラメーター。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.OracleClient.OracleCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>プロパティは、ストアド プロシージャの名前に設定する必要があります。 ユーザーが、ストアド プロシージャ名に特殊文字が含まれている場合は、エスケープ文字構文を使用する必要あります。 コマンドは、Execute メソッドの 1 つを呼び出すときに、このストアド プロシージャを実行します。  
+  
+ によって呼び出される SQL ステートメントにパラメーターを渡すに、.NET Framework Data Provider for Oracle が疑問符 (?) プレース ホルダーをサポートしない、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`します。 この場合、名前付きパラメーターを使用する必要があります。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = :pCustomerID  
+```  
+  
+ 呼び出された SQL ステートメントで名前付きパラメーターを使用してとき、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`パラメーター名にコロン (:) を前に指定する必要があります。 ただし、ストアド プロシージャ、またはコード内の他の場所の名前付きパラメーターを参照する場合 (など、追加するときに<xref:System.Data.OracleClient.OracleParameter>オブジェクトを<xref:System.Data.OracleClient.OracleCommand.Parameters%2A>プロパティ)、コロン (:)、名前付きパラメーターは付けません。 .NET Framework Data Provider for Oracle では、コロンを自動的に提供します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleCommand>し、そのパラメーターを表示します。 これを実現する、メソッドに渡されます、 <xref:System.Data.OracleClient.OracleConnection>、クエリ文字列は、SQL SELECT ステートメントとの配列を<xref:System.Data.OracleClient.OracleParameter>オブジェクト。  
+  
+ [!code-csharp[Classic WebData OracleCommand.Parameters#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleCommand.Parameters/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleCommand.Parameters#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleCommand.Parameters/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepare">
+      <MemberSignature Language="C#" Value="public override void Prepare ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Prepare() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.Prepare" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースにコマンドの準備 (またはコンパイル済み) のバージョンを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に<xref:System.Data.OracleClient.OracleCommand.Prepare%2A>、準備されたステートメント内の各パラメーターのデータ型を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Data.OracleClient.OracleCommand.Connection" /> が設定されていません。  
+  
+ または  
+  
+ <see cref="P:System.Data.OracleClient.OracleCommand.Connection" /> が <see cref="M:System.Data.OracleClient.OracleConnection.Open" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetCommandTimeout">
+      <MemberSignature Language="C#" Value="public void ResetCommandTimeout ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetCommandTimeout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommand.ResetCommandTimeout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Data.OracleClient.OracleCommand.CommandTimeout" />プロパティを既定値にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Data.OracleClient.OracleCommand.CommandTimeout%2A>は 30 秒です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleTransaction Transaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleTransaction Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleTransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleTransaction" /> が実行される <see cref="T:System.Data.OracleClient.OracleCommand" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleTransaction" />。 既定は null 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することはできません、<xref:System.Data.OracleClient.OracleCommand.Transaction%2A>場合は、既に特定の値に設定し、コマンドが実行中はプロパティです。 トランザクションのプロパティを設定する場合、<xref:System.Data.OracleClient.OracleTransaction>に同じ接続されていないオブジェクト<xref:System.Data.OracleClient.OracleConnection>として、<xref:System.Data.OracleClient.OracleCommand>オブジェクト、次回ステートメントを実行しようとすると、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedRowSource">
+      <MemberSignature Language="C#" Value="public override System.Data.UpdateRowSource UpdatedRowSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.UpdateRowSource UpdatedRowSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommand.UpdatedRowSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.UpdateRowSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値が、どのように<see langword="Update" />メソッドにコマンドの結果を適用する必要があります、<see cref="T:System.Data.DataRow" />です。</summary>
+        <value><see cref="T:System.Data.UpdateRowSource" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Data.UpdateRowSource>値は`Both`コマンドが自動的に生成される場合を除き、(同様の場合、 <xref:System.Data.OracleClient.OracleCommandBuilder>) の場合、既定値は`None`します。  
+  
+ 使用しての詳細については、<xref:System.Data.UpdateRowSource>プロパティを参照してください[DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">入力された値は、のいずれかでがない、<see cref="T:System.Data.UpdateRowSource" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

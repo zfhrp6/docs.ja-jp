@@ -1,0 +1,222 @@
+<Type Name="DetailsViewUpdateEventArgs" FullName="System.Web.UI.WebControls.DetailsViewUpdateEventArgs">
+  <TypeSignature Language="C#" Value="public class DetailsViewUpdateEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewUpdateEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewUpdateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.DetailsView.ItemUpdating" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView>昇給を制御、<xref:System.Web.UI.WebControls.DetailsView.ItemUpdating>更新ボタンをクリックしたときにイベント (ボタンがその`CommandName`プロパティが「更新」に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、レコードを更新します。 これにより、HTML エンコード方式などのカスタムのルーチンを実行するイベント ハンドラーを提供するこのイベントが発生するたびに、データ ソースで更新する前にレコードの値。  
+  
+ A<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs>オブジェクトが、省略可能なコマンドに渡す引数の値を決定することができます、イベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.DetailsView>とを示すかどうか、更新操作をキャンセルするかを制御します。 コマンド引数の値を確認するには<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.CommandArgument%2A>プロパティです。 更新操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 読み取りまたはを使用して、ユーザーが入力した新しい値を変更することができますも、<xref:System.Web.UI.WebControls.DetailsViewUpdatedEventArgs.Keys%2A>と<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>プロパティです。 <xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys%2A>プロパティには、キーのフィールドが含まれています。 中に、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>プロパティには、非キー フィールドが含まれています。 元のキー以外のフィールド値にアクセスする必要がある場合、<xref:System.Web.UI.WebControls.DetailsViewUpdatedEventArgs.OldValues%2A>プロパティです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs>オブジェクトのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.DetailsView.ItemUpdating>ユーザーが入力した値を検証するイベントです。  
+  
+ [!code-aspx-csharp[DetailsViewUpdateEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewUpdateEventArgs/CS/detailsviewupdateeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewUpdateEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewUpdateEventArgs/VB/detailsviewupdateeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewUpdateEventArgs (object commandArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object commandArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandArgument" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="commandArgument">渡される省略可能なコマンド引数、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DetailsViewUpdateEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs>クラスです。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.CommandArgument%2A>|`commandArgument` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandArgument">
+      <MemberSignature Language="C#" Value="public object CommandArgument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.CommandArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡される、更新操作のコマンド引数を取得、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</summary>
+        <value>渡される、更新操作のコマンド引数、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.CommandArgument%2A>に渡されるコマンドの引数の値を決定するプロパティ、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新するレコードのキー フィールドの名前/値ペアを格納するディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を更新するレコードのキー フィールドの名前/値ペアのディクショナリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys%2A>プロパティを更新するレコードのキー フィールドの値にアクセスします。 たとえば、これらの値を使用して、更新されたレコードのログを保持することができます。  
+  
+> [!NOTE]
+>  このプロパティには、キー フィールドのみが含まれています。 更新されたと元の非キー フィールドにアクセスするを使用して、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>と<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.OldValues%2A>プロパティ、それぞれします。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>を更新するレコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys%2A>更新されるレコードのキー フィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewUpdateEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewUpdateEventArgs/CS/detailsviewupdateeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewUpdateEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewUpdateEventArgs/VB/detailsviewupdateeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary NewValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary NewValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新するレコードに対して新しいフィールドの名前/値のペアを格納するディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を更新するレコードに対して新しいフィールドの名前/値のペアのディクショナリが含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>プロパティを更新するレコードの新しいフィールド値にアクセスします。 たとえば、これらの値を使用して、更新されたレコードのログを保持することができます。  
+  
+> [!NOTE]
+>  このプロパティにキー フィールドが含まれていません。 キー フィールドにアクセスするには、使用、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys%2A>プロパティです。 元のフィールド値を使用してアクセスすることもできます、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.OldValues%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>を更新するレコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>更新されるレコードの非キー フィールドについて、ユーザーが入力した新しい値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewUpdatedEventArgs/CS/detailsviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewUpdatedEventArgs/VB/detailsviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary OldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary OldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.OldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新するレコードの元のフィールドの名前と値のペアを格納するディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を更新するレコードの元のフィールドの名前と値のペアのディクショナリが含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.OldValues%2A>更新されたレコードの元のフィールド値にアクセスするプロパティです。 たとえば、これらの値を使用して、更新されたレコードのログを保持することができます。  
+  
+> [!NOTE]
+>  このプロパティにキー フィールドが含まれていません。 キー フィールドにアクセスするには、使用、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.Keys%2A>プロパティです。 使用して、ユーザーが入力した新しいフィールドの値にアクセスすることも、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.NewValues%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.OldValues%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>を更新するレコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  ショートカットとして、またフィールドの値に直接アクセスするのにオブジェクトのインデクサーを使用することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewUpdateEventArgs.OldValues%2A>更新されるレコードのキー以外のフィールドの元の値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewUpdateEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewUpdateEventArgs/CS/detailsviewupdateeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewUpdateEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewUpdateEventArgs/VB/detailsviewupdateeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

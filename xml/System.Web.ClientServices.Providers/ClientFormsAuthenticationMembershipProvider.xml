@@ -1,0 +1,1071 @@
+<Type Name="ClientFormsAuthenticationMembershipProvider" FullName="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider">
+  <TypeSignature Language="C#" Value="public class ClientFormsAuthenticationMembershipProvider : System.Web.Security.MembershipProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientFormsAuthenticationMembershipProvider extends System.Web.Security.MembershipProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Security.MembershipProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアント アプリケーション サービスでのフォーム認証を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーション サービスを使用して、フォーム認証を使用してユーザーを検証することができます。 フォーム認証を有効にするを使用するアプリケーションを構成する、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。 詳細については、「 [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+  
+ 構成では、後に呼び出すことによってユーザーを検証できます、 `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> 、内部的に呼び出すメソッド、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%28System.String%2CSystem.String%29?displayProperty=nameWithType>メソッドです。  
+  
+ フォーム認証では、ユーザーがアプリケーションによって提供されるログイン コントロールを通じて、資格情報を指定する必要があります。 資格情報を取得し、渡すことができます、<xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType>メソッドです。 空の文字列を渡すこともできますまたは`null`資格情報プロバイダーを使用します。 資格情報プロバイダーは、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider>アプリケーション構成ファイルで指定された実装。 通常、実装、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A?displayProperty=nameWithType>をログイン ダイアログ ボックスを表示し、設定されてを返すメソッドを<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials>オブジェクト。 資格情報プロバイダーを使用することにより、複数のアプリケーション間で同じログイン ダイアログ ボックスを共有できます。  
+  
+ <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドによって示されるログイン サービスを介してユーザーを認証して、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ServiceUri%2A>プロパティです。 値、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ServiceUri%2A>プロパティは通常、アプリケーション構成ファイルからその他の構成値と共に取得します。 詳細については、「 [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+  
+ サービス プロバイダーを設定、ユーザーが正常に認証されている場合、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティを新しい<xref:System.Web.ClientServices.ClientRolePrincipal>オブジェクトを含む新しい<xref:System.Web.ClientServices.ClientFormsIdentity>ユーザー情報を含むオブジェクト。 場合、<xref:System.Web.ClientServices.Providers.ClientRoleProvider>が構成されている、アプリケーションを使用できます、<xref:System.Web.ClientServices.ClientRolePrincipal>ロール サービスからユーザーのロール情報を取得するオブジェクト。  
+  
+ 現在の参照を取得する<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>を通じてインスタンス、 `static` <xref:System.Web.Security.Membership.Provider%2A?displayProperty=nameWithType>プロパティです。 メンバーシップ プロバイダーの参照を使用して呼び出すことができます、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドを直接です。 さらに、必要があります、メンバーシップ プロバイダーへの参照を呼び出す、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A>メソッドでは使用できません、<xref:System.Web.Security.MembershipProvider>基本クラスです。  
+  
+ 使用することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスを作成、削除、またはメンバーシップ情報を変更します。 作成、削除、またはユーザーの変更、ログイン サービス、サーバー上の構成を変更する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このメソッドを使用してを使用してユーザーを検証する方法を示します、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider>実装します。  
+  
+ [!code-csharp[ClientApplicationServices#306](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#306)]
+ [!code-vb[ClientApplicationServices#306](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#306)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientFormsAuthenticationMembershipProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>カスタム メンバーシップ プロバイダーを使用するアプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePassword">
+      <MemberSignature Language="C#" Value="public override bool ChangePassword (string username, string oldPassword, string newPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ChangePassword(string username, string oldPassword, string newPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ChangePassword(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="oldPassword" Type="System.String" />
+        <Parameter Name="newPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="oldPassword">使用しません。</param>
+        <param name="newPassword">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePasswordQuestionAndAnswer">
+      <MemberSignature Language="C#" Value="public override bool ChangePasswordQuestionAndAnswer (string username, string password, string newPasswordQuestion, string newPasswordAnswer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="newPasswordQuestion" Type="System.String" />
+        <Parameter Name="newPasswordAnswer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="password">使用しません。</param>
+        <param name="newPasswordQuestion">使用しません。</param>
+        <param name="newPasswordAnswer">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUser">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUser CreateUser (string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out System.Web.Security.MembershipCreateStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, [out] valuetype System.Web.Security.MembershipCreateStatus&amp; status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="passwordQuestion" Type="System.String" />
+        <Parameter Name="passwordAnswer" Type="System.String" />
+        <Parameter Name="isApproved" Type="System.Boolean" />
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="status" Type="System.Web.Security.MembershipCreateStatus&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="password">使用しません。</param>
+        <param name="email">使用しません。</param>
+        <param name="passwordQuestion">使用しません。</param>
+        <param name="passwordAnswer">使用しません。</param>
+        <param name="isApproved">使用しません。</param>
+        <param name="providerUserKey">使用しません。</param>
+        <param name="status">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteUser">
+      <MemberSignature Language="C#" Value="public override bool DeleteUser (string username, bool deleteAllRelatedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool DeleteUser(string username, bool deleteAllRelatedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.DeleteUser(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="deleteAllRelatedData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="deleteAllRelatedData">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePasswordReset">
+      <MemberSignature Language="C#" Value="public override bool EnablePasswordReset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnablePasswordReset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.EnablePasswordReset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePasswordRetrieval">
+      <MemberSignature Language="C#" Value="public override bool EnablePasswordRetrieval { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnablePasswordRetrieval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.EnablePasswordRetrieval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByEmail">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUserCollection FindUsersByEmail (string emailToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUserCollection FindUsersByEmail(string emailToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emailToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="emailToMatch">使用しません。</param>
+        <param name="pageIndex">使用しません。</param>
+        <param name="pageSize">使用しません。</param>
+        <param name="totalRecords">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByName">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUserCollection FindUsersByName (string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUserCollection FindUsersByName(string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="usernameToMatch">使用しません。</param>
+        <param name="pageIndex">使用しません。</param>
+        <param name="pageSize">使用しません。</param>
+        <param name="totalRecords">使用しません。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllUsers">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUserCollection GetAllUsers (int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUserCollection GetAllUsers(int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pageIndex">使用しません。</param>
+        <param name="pageSize">使用しません。</param>
+        <param name="totalRecords">使用しません。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNumberOfUsersOnline">
+      <MemberSignature Language="C#" Value="public override int GetNumberOfUsersOnline ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetNumberOfUsersOnline() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.GetNumberOfUsersOnline" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPassword">
+      <MemberSignature Language="C#" Value="public override string GetPassword (string username, string answer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetPassword(string username, string answer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.GetPassword(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="answer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="answer">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUser GetUser (object providerUserKey, bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUser GetUser(object providerUserKey, bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.GetUser(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="providerUserKey">使用しません。</param>
+        <param name="userIsOnline">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUser GetUser (string username, bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUser GetUser(string username, bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.GetUser(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="userIsOnline">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserNameByEmail">
+      <MemberSignature Language="C#" Value="public override string GetUserNameByEmail (string email);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetUserNameByEmail(string email) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.GetUserNameByEmail(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="email" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="email">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロバイダーのフレンドリ名。</param>
+        <param name="config">このプロバイダーの構成で指定されたプロバイダーに固有の属性を表す名前/値ペアのコレクション。</param>
+        <summary>プロバイダーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]機能拡張モデルの呼び出し、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Initialize%2A>初期化するメソッドを<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>アプリケーション構成ファイルに情報を使用します。 このメソッドは、次の認証サービスの構成属性を認識します。  
+  
+-   `name`  
+  
+-   `description`  
+  
+-   `savePasswordHashLocally`  
+  
+-   `credentialsProvider`  
+  
+-   `connectionStringName`  
+  
+-   `serviceUri`  
+  
+ 詳細については、「 [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="config" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空です。  
+  
+ または  
+  
+ <paramref name="config" />認識されない値が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider" />は既に初期化されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Logout">
+      <MemberSignature Language="C#" Value="public void Logout ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Logout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーをログアウトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A>メソッドは、すべての認証 cookie の cookie キャッシュをクリアし、リセット、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティを<xref:System.Security.Principal.WindowsPrincipal>現在を格納しているオブジェクト<xref:System.Security.Principal.WindowsIdentity>です。  
+  
+ このメソッドを呼び出した後、クライアント アプリケーション サービスの現在のユーザーは認証されなくなります。 つまりを通じてロールを取得することはできません、<xref:System.Web.ClientServices.Providers.ClientRoleProvider>クラスを使用と設定、<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>クラスです。 ただし、ユーザーは、有効な Windows id を持つ可能性があります、ためする可能性があります、引き続き受信、 `true` 、次のようなコードからの値:`Thread.CurrentPrincipal.Identity.IsAuthenticated`です。 クライアント アプリケーション サービスのユーザーが認証されたかどうかを判断するのにいることを確認、<xref:System.Security.Principal.IPrincipal.Identity%2A>のプロパティの値、<xref:System.Security.Principal.IPrincipal>を介して取得、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティは、<xref:System.Web.ClientServices.ClientFormsIdentity>参照します。 次に、チェック、<xref:System.Web.ClientServices.ClientFormsIdentity.IsAuthenticated%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 現在のユーザーを再認証を呼び出す、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドまたは`static`<xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを使用して、ユーザーをログアウトする方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#070](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#070)]
+ [!code-vb[ClientApplicationServices#070](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#070)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><see cref="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />プロパティの値が<see langword="false" />メンバーシップ プロバイダーは認証サービスにアクセスすることができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxInvalidPasswordAttempts">
+      <MemberSignature Language="C#" Value="public override int MaxInvalidPasswordAttempts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxInvalidPasswordAttempts" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.MaxInvalidPasswordAttempts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>メンバーシップ ユーザーがロックアウトされるまでの無効なパスワード試行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスには、次の 3 つのパスワードが常に用意されています。 プロバイダーを変更して、パスワードの試行回数を変更することはできません。  
+  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRequiredNonAlphanumericCharacters">
+      <MemberSignature Language="C#" Value="public override int MinRequiredNonAlphanumericCharacters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinRequiredNonAlphanumericCharacters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.MinRequiredNonAlphanumericCharacters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に 0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRequiredPasswordLength">
+      <MemberSignature Language="C#" Value="public override int MinRequiredPasswordLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinRequiredPasswordLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.MinRequiredPasswordLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に 1 つです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordAttemptWindow">
+      <MemberSignature Language="C#" Value="public override int PasswordAttemptWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PasswordAttemptWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.PasswordAttemptWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>メンバーシップ ユーザーがロックアウトされるまでに、無効なパスワードまたはパスワードの回答の最大試行回数が許可される時間 (分)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordFormat">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipPasswordFormat PasswordFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.MembershipPasswordFormat PasswordFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.PasswordFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipPasswordFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>パスワードを格納するストアのデータの形式です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordStrengthRegularExpression">
+      <MemberSignature Language="C#" Value="public override string PasswordStrengthRegularExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordStrengthRegularExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.PasswordStrengthRegularExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に"*"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresQuestionAndAnswer">
+      <MemberSignature Language="C#" Value="public override bool RequiresQuestionAndAnswer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresQuestionAndAnswer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.RequiresQuestionAndAnswer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueEmail">
+      <MemberSignature Language="C#" Value="public override bool RequiresUniqueEmail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueEmail" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.RequiresUniqueEmail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetPassword">
+      <MemberSignature Language="C#" Value="public override string ResetPassword (string username, string answer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ResetPassword(string username, string answer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ResetPassword(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="answer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <param name="answer">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceUri">
+      <MemberSignature Language="C#" Value="public string ServiceUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceUri" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ServiceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証サービスの URI を設定します。</summary>
+        <value>認証サービス URI です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Web.ClientServices.Providers.ClientRoleProvider.ServiceUri%2A>アプリケーション コードがプロパティでは、アプリケーション構成ファイルでの値を設定して通常されます。 これにより、コードを再コンパイルしなくても、サービスの場所を変更することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、認証サービスの場所をプログラムで設定する方法を示します。 サービスの場所をプログラムで設定すると、"Authentication_JSON_AppService.axd"で終わるは常に、URI の完全なサービスを指定する必要があります。  
+  
+ [!code-csharp[ClientApplicationServices#301](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#301)]
+ [!code-vb[ClientApplicationServices#301](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#301)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを取得するときに、サービス URI が見つからず、アプリケーション構成ファイルで、このプロパティが以前に設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockUser">
+      <MemberSignature Language="C#" Value="public override bool UnlockUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool UnlockUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.UnlockUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <returns>該当なし。 このメソッドは、常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateUser">
+      <MemberSignature Language="C#" Value="public override void UpdateUser (System.Web.Security.MembershipUser user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpdateUser(class System.Web.Security.MembershipUser user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Security.MembershipUser" />
+      </Parameters>
+      <Docs>
+        <param name="user">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、削除、またはを使用してユーザー情報を変更することはできません、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserValidated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.ClientServices.Providers.UserValidatedEventArgs&gt; UserValidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ClientServices.Providers.UserValidatedEventArgs&gt; UserValidated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.UserValidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ClientServices.Providers.UserValidatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが確認されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、ユーザーが正常に検証した後にのみ発生します。 このイベントを使用して、現在のユーザーを反映するようにアプリケーションを更新することができます。 たとえば、使用することができます、<xref:System.Web.ClientServices.Providers.UserValidatedEventArgs.UserName%2A?displayProperty=nameWithType>アプリケーションのユーザー インターフェイス (UI) にユーザー名を表示するプロパティです。  
+  
+ 呼び出すことによってユーザーを再検証することがサイレント モードで、<xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=nameWithType>メソッドです。 そのため、使用しないように、 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.UserValidated> UI を表示するイベントです。 たとえば、使用しないで、 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.UserValidated> [ようこそ] ダイアログ ボックスを表示するイベントです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このイベントを使用して、フォームのタイトル バーに、ユーザー名を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#305](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#305)]
+ [!code-vb[ClientApplicationServices#305](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#305)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUser">
+      <MemberSignature Language="C#" Value="public override bool ValidateUser (string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ValidateUser(string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">認証するユーザーの名前または<see cref="F:System.String.Empty" />または<see langword="null" />から資格情報を取得、<see cref="T:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider" />にこのアプリケーションが構成の実装を使用します。</param>
+        <param name="password">ユーザーの認証のパスワードです。</param>
+        <summary>指定されたユーザー名とパスワードを使用してユーザーを認証します。</summary>
+        <returns>
+          ユーザーが認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーション サービスを使用して、フォーム認証を使用してユーザーを検証することができます。 ユーザーを検証するには、通常呼び出して、 `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> 、内部的に呼び出すメソッド、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドです。 または、することができますこのメソッドを直接呼び出す例」のセクションで示すようにします。  
+  
+ フォーム認証では、ユーザーがアプリケーションによって提供されるログイン コントロールを通じて、資格情報を指定する必要があります。 資格情報を取得し、渡すことができます、<xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType>メソッドです。 空の文字列を渡すこともできますまたは`null`資格情報プロバイダーを使用します。 詳細については、「[方法: クライアント アプリケーション サービスでユーザーのログインを実装する](~/docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このメソッドを使用してを使用してユーザーを検証する方法を示します、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider>実装します。 この例では、する必要がありますを資格情報プロバイダーを使用するアプリケーションを構成できます。 詳細については、「 [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+  
+ [!code-csharp[ClientApplicationServices#306](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#306)]
+ [!code-vb[ClientApplicationServices#306](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#306)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><see cref="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />プロパティの値が<see langword="false" />メンバーシップ プロバイダーは認証サービスにアクセスすることができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUser">
+      <MemberSignature Language="C#" Value="public bool ValidateUser (string username, string password, bool rememberMe);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ValidateUser(string username, string password, bool rememberMe) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="rememberMe" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">ユーザーの認証の名前。</param>
+        <param name="password">ユーザーの認証のパスワードです。</param>
+        <param name="rememberMe">
+          <see langword="true" />ユーザーの認証クッキーの期限が切れたときに、オフラインで使用して、自動再認証のためのローカル データ キャッシュ内でパスワードのハッシュを格納するには<see langword="false" />をオフラインでログインを無効にするかをユーザーに、cookie の有効期限が切れるときに再認証を必要とします。</param>
+        <summary>使用して、指定されたユーザー名とパスワードを必要に応じてパスワードのハッシュを保存するローカル データ キャッシュ内でユーザーを認証します。</summary>
+        <returns>
+          ユーザーが認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーション サービスを使用して、フォーム認証を使用してユーザーを検証することができます。 ユーザーを検証するには、通常呼び出して、 `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> 、内部的に呼び出すメソッド、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%28System.String%2CSystem.String%29?displayProperty=nameWithType>メソッドです。 代わりに、呼び出すことができます、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドを直接です。 このオーバー ロードに渡すを呼び出すことができます、`rememberMe`値に加え、`username`と`password`値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを使用して、アプリケーション コードでログイン コントロールを使用してユーザーを検証する方法を示します。 この例は、<xref:System.Windows.Forms.TextBox>という名前のコントロール`usernameTextBox`、<xref:System.Windows.Forms.TextBox>という名前のコントロール`passwordTextBox`、および<xref:System.Windows.Forms.CheckBox>という名前のコントロール`rememberMeCheckBox`です。  
+  
+ [!code-csharp[ClientApplicationServices#307](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#307)]
+ [!code-vb[ClientApplicationServices#307](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#307)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><see cref="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />プロパティの値が<see langword="false" />メンバーシップ プロバイダーは認証サービスにアクセスすることができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUser">
+      <MemberSignature Language="C#" Value="public static bool ValidateUser (string username, string password, string serviceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ValidateUser(string username, string password, string serviceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="serviceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">ユーザーの認証の名前。</param>
+        <param name="password">ユーザーの認証のパスワードです。</param>
+        <param name="serviceUri">使用する認証サービスの URI。</param>
+        <summary>指定されたユーザー名とパスワードを使用して、指定したサービス URI にユーザーを認証します。</summary>
+        <returns>
+          ユーザーが認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーション サービスを使用して、フォーム認証を使用してユーザーを検証することができます。 ユーザーを検証するには、通常呼び出して、 `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> 、内部的に呼び出すメソッド、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドです。 代わりに、呼び出すことができます、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%2A?displayProperty=nameWithType>メソッドを直接です。 によって指定された位置に認証サービスにアクセスするこのオーバー ロードを呼び出すことができます、`serviceUri`パラメーター。 設定する代わりには、このオーバー ロードを使用して、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ServiceUri%2A>プロパティと呼び出し元、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.ValidateUser%28System.String%2CSystem.String%29>オーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを使用して、指定位置にある認証サービスを介してユーザーを検証する方法を示します。 ユーザーの資格情報は、アプリケーション コードでのログイン コントロールから取得されます。 この例は、<xref:System.Windows.Forms.TextBox>という名前のコントロール`usernameTextBox`と<xref:System.Windows.Forms.TextBox>という名前のコントロール`passwordTextBox`です。  
+  
+ [!code-csharp[ClientApplicationServices#308](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#308)]
+ [!code-vb[ClientApplicationServices#308](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#308)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><see cref="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />プロパティの値が<see langword="false" />メンバーシップ プロバイダーは認証サービスにアクセスすることができます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

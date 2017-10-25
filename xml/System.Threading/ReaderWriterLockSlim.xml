@@ -1,0 +1,1560 @@
+<Type Name="ReaderWriterLockSlim" FullName="System.Threading.ReaderWriterLockSlim">
+  <TypeSignature Language="C#" Value="public class ReaderWriterLockSlim : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReaderWriterLockSlim extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ReaderWriterLockSlim" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>リソースへのアクセス管理に使用するロックを表し、複数のスレッドによる読み取りや排他アクセスでの書き込みを許可します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Threading.ReaderWriterLockSlim>を複数のスレッドによって読み取られ、一度に 1 つのスレッドによって書き込まれるされるリソースを保護します。 <xref:System.Threading.ReaderWriterLockSlim>複数のスレッドが読み取りモードである、1 つのスレッドで、ロックの排他的所有権書き込みモードに設定することができますできれたり、元のスレッドがリソースの読み取りアクセス権を放棄することがなく 書き込みモードにアップグレードできます内にある読み取りアクセス権を持つ 1 つのスレッド。  
+  
+> [!NOTE]
+>  <xref:System.Threading.ReaderWriterLockSlim>ような<xref:System.Threading.ReaderWriterLock>再帰、アップグレード、およびロックの状態をダウン グレードの規則が簡素化されますが、します。 <xref:System.Threading.ReaderWriterLockSlim>多くの場合の潜在的なデッドロックを回避できます。 さらに、パフォーマンスの<xref:System.Threading.ReaderWriterLockSlim>よりも大幅に向上が<xref:System.Threading.ReaderWriterLock>です。 <xref:System.Threading.ReaderWriterLockSlim>すべての新しい開発をお勧めします。  
+  
+ 既定では、新しいインスタンス<xref:System.Threading.ReaderWriterLockSlim>で作成された、<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>フラグ、再帰はできません。 再帰が不要な複雑さの一部を紹介し、により、コードのデッドロックを受けやすいために、すべての新しい開発では、この既定のポリシーがお勧めします。 既存のファイルからの移行が簡単に使用するをプロジェクト<xref:System.Threading.Monitor>または<xref:System.Threading.ReaderWriterLock>、使用することができます、<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>のインスタンスを作成フラグ<xref:System.Threading.ReaderWriterLockSlim>再帰可能にします。  
+  
+ スレッドは 3 つのモードでロックに入ることができます。 モード、書き込みモードでは、読み取りモードに入るを読み込みます。 (このトピックの残りの部分で「アップグレード可能な読み取りモード」と呼びます「アップグレード可能モード」と"入力`x`モード"長い語句が %nd2 に関して使用"でロックに入る`x`モード"です)。  
+  
+ 再帰ポリシーに関係なく 1 つだけことができるスレッド書き込みモードでいつでもできます。 スレッドが書き込みモードでは、他のスレッドできますなしでロックに入るいずれかのモード。 1 つのスレッドをいつでもアップグレード可能モードにできます。 任意の数のスレッドのことができます、読み取りモードでできが 1 つのスレッド アップグレード可能モードで他のスレッドが読み取りモードでします。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ <xref:System.Threading.ReaderWriterLockSlim>スレッド アフィニティを管理します。つまり、各<xref:System.Threading.Thread>オブジェクトを入力し、ロック モードを終了する独自のメソッド呼び出しを行う必要があります。 別のスレッドのモードに変更できますスレッドはありません。  
+  
+ 場合、<xref:System.Threading.ReaderWriterLockSlim>再帰では、ロックに入るしようがいくつかの理由をブロックできますスレッドではできません。  
+  
+-   スレッドが書き込みモードまたは書き込みモードで 1 つのスレッドがあるかどうかの入力を待機している場合は、読み取りモードのブロックを入力しようとするスレッド。  
+  
+    > [!NOTE]
+    >  ライターがキューに置かれたときに、新しいリーダーをブロックは、書き込みを優先するロックの公平性ポリシーです。 現在の公平性ポリシーは、最も一般的なシナリオでのスループットを昇格するには、リーダーとライターに公平性を分散します。 将来のバージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]公平性の新しいポリシーを引き起こす可能性があります。  
+  
+-   既にある場合、スレッド アップグレード可能モードでスレッドが書き込みモードに入るを待機している場合、または 1 つのスレッドが書き込みモードである場合、アップグレード可能モードのブロックを入力しようとするスレッド。  
+  
+-   3 つのモードのいずれかのスレッドがある場合は、書き込みモードのブロックを入力しようとするスレッド。  
+  
+## <a name="upgrading-and-downgrading-locks"></a>アップグレードとダウン グレードのロックします。  
+ アップグレード可能モードは、ここで、スレッドは、通常、保護されたリソースから読み取ります。 ケースが、いくつかの条件が満たされた場合は、書き込みをする必要があります。 入力した、スレッド、<xref:System.Threading.ReaderWriterLockSlim>アップグレード可能モードでは、保護されたリソースへの読み取りアクセスと書き込みを呼び出してモードにアップグレードできます、<xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A>または<xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock%2A>メソッドです。 存在できないためだけに 1 つのスレッド アップグレード可能モードで、一度に、書き込みモードにアップグレードすることはできませんデッドロックの再帰が許可されていない場合、これは、既定のポリシー。  
+  
+> [!IMPORTANT]
+>  再帰ポリシーに関係なく、最初に入力した読み取りスレッド パターンでは、デッドロックの可能性が作成されるため、アップグレード可能モードまたは、書き込みモードにアップグレードするモードが使用できません。 たとえば、両方を入力しよう読み取りモードで 2 つのスレッドは書き込みモード場合、デッドロックは発生します。 アップグレード可能モードは、このようなデッドロックを回避するよう設計されています。  
+  
+ ブロックのアップグレードは、スレッド、読み取りモードに他のスレッドがある場合です。 スレッドがブロックされている間は、読み取りモードに入るしようとする他のスレッドがブロックされます。 終了するとすべてのスレッドが読み取りモードから、ブロックされているアップグレード可能なスレッドが書き込みモードに入ります。 入力を待機している他のスレッドが書き込みモードがある場合、ブロックされたまま、アップグレード可能モードでは、1 つのスレッドが原因で、リソースへの排他アクセスを防ぐためです。  
+  
+ アップグレード可能モードでスレッドが書き込みモードを終了したときに、ので、入力を待機しているスレッドが書き込みモードである場合を除き、読み取りモードに入るを待機している他のスレッドが実行できます。 アップグレード可能モードでのスレッドでは、アップグレードでき、保護されたリソースを書き込み、唯一のスレッドである限り、無期限にダウン グレードすることができます。  
+  
+> [!IMPORTANT]
+>  入力に複数のスレッドを許可する場合は、書き込みモードまたはアップグレード可能モードは、1 つのスレッドがアップグレード可能モードを独占できないようにする必要があります。 それ以外の場合、モード直接が無限にブロック、および他のスレッドが読み取りモードに入ることされますがブロックされた入力しようとするスレッドを記述します。  
+  
+ アップグレード可能モードでのスレッドは、最初の呼び出しで、読み取りモードにダウン グレードできますが、<xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A>メソッドを呼び出すことで、<xref:System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock%2A>メソッドです。 このダウン グレード パターンがすべてのロック再帰ポリシーも許可されている<xref:System.Threading.LockRecursionPolicy.NoRecursion>です。  
+  
+ 、読み取りモードにダウン グレードした後、スレッドできません再入力アップグレード可能モード読み取りモードを終了するまでします。  
+  
+## <a name="entering-the-lock-recursively"></a>再帰的にロックを入力します。  
+ 作成することができます、<xref:System.Threading.ReaderWriterLockSlim>を使用して再帰的なロックのエントリをサポートする、<xref:System.Threading.ReaderWriterLockSlim.%23ctor%28System.Threading.LockRecursionPolicy%29>ロック ポリシーを指定することを指定するコンス トラクター<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  新規の開発では、不要な複雑さの一部を紹介し、により、コードのデッドロックを受けやすいために、再帰の使用はお勧めできません。  
+  
+ <xref:System.Threading.ReaderWriterLockSlim>再帰を利用できる、スレッドが入力できるモードは、次と言えます。  
+  
+-   読み取りモードでのスレッドは読み取りモードを再帰的を入力できますが、書き込みモードか、アップグレード可能モードを入力することはできません。 これを行うしようとすると、<xref:System.Threading.LockRecursionException>がスローされます。 入力を読み取るモード」と入力して、書き込みモード アップグレード可能モードには、デッドロックの確率が厳密なパターンがあるため、許可されていません。 既に説明したように、アップグレード可能モードのロックをアップグレードする必要がある場合は指定できます。  
+  
+-   アップグレード可能モードでのスレッドは、書き込みモードまたは読み取りモードは、入力できの 3 つのモードの再帰的に入力できます。 ただしに入ろうとする、書き込みモード ブロック読み取りモードで他のスレッドがあるかどうか。  
+  
+-   書き込みモードでのスレッドは読み取りモードやアップグレード可能モードを入力しの 3 つのモードの再帰的に入力できます。  
+  
+-   ロックに入ったがないことをスレッドには、どのモードを入力できます。 この試行は、非再帰的なロックに入ろうとすると同じ理由でブロックできます。  
+  
+ スレッドは、何度でも、そのモードに入ったこととまったく同じように各モードを終了する限り、任意の順序でが入ったモードを終了できます。 スレッドの試行回数が多すぎますモードを終了するかがない入力モードを終了する場合、<xref:System.Threading.SynchronizationLockException>がスローされます。  
+  
+## <a name="lock-states"></a>ロックの状態  
+ ロックの状態の観点で考えるとわかりやすくすることもあります。 A <xref:System.Threading.ReaderWriterLockSlim> 4 つの状態のいずれかになります: 入力されていない、読み取り、アップグレード、および記述します。  
+  
+-   入力されていません。 この状態で、スレッド ロックに入ったありません (またはすべてのスレッドがロックを終了)。  
+  
+-   お読みください: この状態で、1 つまたは複数のスレッド ロックに入った読み取りアクセスで保護されたリソースにします。  
+  
+    > [!NOTE]
+    >  スレッドを使用して読み取りモードでロックを入力することができます、<xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A>または<xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock%2A>メソッド、またはアップグレード可能モードからダウン グレードしています。  
+  
+-   アップグレード: この状態で、1 つのスレッドがロックに入った書き込みのアクセス許可にアップグレードするオプションを使用して、読み取りアクセス用 (つまり、アップグレード可能モードで)、読み取りアクセスでロックに入った 0 個以上のスレッドとします。 一度に 2 つ以上のスレッドが; にアップグレードするオプションでロックに入ることができます。アップグレード可能モードに切り替わるしようとする追加のスレッドがブロックされます。  
+  
+-   書き込み: この状態で、1 つのスレッドがロックに入った書き込みアクセスの保護されたリソースにします。 そのスレッドは、ロックを所有している排他を持っています。 何らかの理由でロックに入るしようとする他のスレッドがブロックされます。  
+  
+ 次の表の場合、スレッドは再帰を許可されていないロックのロックの状態間の遷移`t`左端の列に説明されているアクションを実行します。 時に、その操作を行う`t`モードがありません。 (という特殊なケース場所`t`では、アップグレード可能モードは、表の脚注に記載されています)。一番上の行では、ロックの開始時の状態について説明します。 セルは、スレッドの処理を説明し、かっこ内にロック状態の変更を表示します。  
+  
+||入っていない (N)|Read (R)|アップグレード (U)|書き込み (W)|  
+|-|-----------------------|----------------|-------------------|-----------------|  
+|`t`読み取りモードに入ります|`t`(R) を入力します。|`t`スレッドが書き込みモードです。 を待機している場合それ以外の場合、`t`を入力します。|`t`スレッドが書き込みモードです。 を待機している場合それ以外の場合、`t`を入力します<sup>。1</sup>|`t`ブロックです。|  
+|`t`アップグレード可能モードに入ります|`t`(U) を入力します。|`t`スレッドが待機している場合は書き込みモードまたはアップグレード モードです。それ以外の場合、 `t` (U) を入力します。|`t`ブロックです。|`t`ブロックです。|  
+|`t`書き込みモードに入ります|`t`入力 (W)。|`t`ブロックです。|`t`ブロックです。<sup>2</sup>|`t`ブロックです。|  
+  
+ <sup>1</sup>場合`t`開始アウト アップグレード可能モードで読み取りモードに入ります。 このアクションを決してをブロックします。 ロックの状態は変更されません。 (スレッドは、アップグレード可能モードを終了することによって読み取りモードにダウン グレードを完了できますし、)。  
+  
+ <sup>2</sup>場合`t`アップグレード可能モードで開始、ブロックのスレッドが読み取りモードである場合。 それ以外の場合、これは書き込みモードにアップグレードします。 ロック状態の変更に書き込み (W)。 場合`t`、読み取りモードでスレッドがブロックの最後のスレッドが読み取りモードを終了するとすぐに書き込みモードに入りますが、入力を待機しているスレッドが書き込みモードである場合でもです。  
+  
+ スレッドがロックを終了したため、状態の変更が発生したときに起動される次のスレッドがとおりに選択します。  
+  
+-   最初を待機しているスレッドは書き込みモードとが既に (あります多くてこのような 1 つのスレッド) アップグレード可能モードでします。  
+  
+-   それがない場合は、書き込みモードを待機しているスレッド。  
+  
+-   それがない場合は、アップグレード可能モードを待機しているスレッド。  
+  
+-   読み取りモードを待機しているすべてのスレッドを失敗しています。  
+  
+ ロックの後続の状態は常に書き込み (W)、最初の 2 つのケースとアップグレード (U) スレッドの終了に伴って状態の変更をトリガーされたときに、ロックの状態に関係なく、3 番目のケースでします。 最後の場合、ロックの状態アップグレード (U) ある場合がスレッド アップグレード可能モードで、状態の変更、および Read (R) 後にそれ以外の場合、以前の状態に関係なく。  
+  
+   
+  
+## Examples  
+ 次の例では、整数キーを持つ文字列を保持する単純な同期されたキャッシュを示します。 インスタンス<xref:System.Threading.ReaderWriterLockSlim>へのアクセスを同期するために使用される、<xref:System.Collections.Generic.Dictionary%602>内部キャッシュとして機能します。  
+  
+ 例では、単純なキャッシュへの追加、およびメソッド、キャッシュから削除するキャッシュからの読み取りにはが含まれています。 タイムアウトを示すためには、例には、指定したタイムアウト内で実行可能であれば、キャッシュに追加するメソッドが含まれています。  
+  
+ アップグレード可能モードを示すためは、この例は、キーに関連付けられている値を取得する方法を説明し、新しい値を持つ比較します。 値が変更されていない場合は、変更がないことを示すステータスを返します。 これは、値が見つからないため、キー、キー/値ペアが挿入されます。 値が変更された場合は更新されます。 アップグレード可能モードでは、スレッドの書き込みアクセスを必要に応じて、デッドロックの危険を回避への読み取りアクセスからのアップグレードを許可します。  
+  
+ この例には、アップグレード可能モードを示すメソッドの戻り値を指定する入れ子になった列挙体が含まれています。  
+  
+ 例では、既定のコンス トラクターを使用して、ロックを作成して、再帰は許可されません。 プログラミング、<xref:System.Threading.ReaderWriterLockSlim>はロックで再帰が許可されない場合は、簡単かつエラーが発生しにくくなりました。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#11)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#11)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#12)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#12)]  
+  
+ 次のコードで使用して、`SynchronizedCache`野菜名の辞書を格納するオブジェクト。 3 つのタスクを作成します。 最初の配列に格納されている野菜の名前を書き込みます、`SynchronizedCache`インスタンス。 2 番目と 3 番目のタスクは、野菜、昇順 (低インデックスから最も大きいインデックス)、降順で、2 つ目の最初の名前を表示します。 最後のタスクは、文字列「したきゅうり」を検索し、発見された場合を呼び出して、 <xref:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock%2A> "緑 bean"文字列を置換するメソッド。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#11)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#11)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#13)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReaderWriterLockSlim ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.ReaderWriterLockSlim" /> クラスの新しいインスタンスを既定のプロパティ値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Threading.ReaderWriterLockSlim>これを初期化するコンス トラクターでは、再帰することはできません。 つまり、<xref:System.Threading.ReaderWriterLockSlim.RecursionPolicy%2A> プロパティが <xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType> を返します。  
+  
+ 再帰ポリシーとその影響の詳細については、次を参照してください。、<xref:System.Threading.LockRecursionPolicy>列挙型、および<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、整数キーを持つ文字列を保持する単純な同期されたキャッシュを示します。 インスタンス<xref:System.Threading.ReaderWriterLockSlim>へのアクセスを同期するために使用される、<xref:System.Collections.Generic.Dictionary%602>内部キャッシュとして機能します。 パラメーターなしのコンス トラクターを使用して、ロックを作成できます。  
+  
+ 例では、単純なキャッシュへの追加、およびメソッド、キャッシュから削除するキャッシュからの読み取りにはが含まれています。 タイムアウトを示すためには、例には、指定したタイムアウト内で実行可能であれば、キャッシュに追加するメソッドが含まれています。  
+  
+ アップグレード可能モードを示すためは、この例は、キーに関連付けられている値を取得する方法を説明し、新しい値を持つ比較します。 値が変更されていない場合は、変更がないことを示すステータスを返します。 これは、値が見つからないため、キー、キー/値ペアが挿入されます。 値が変更された場合は更新されます。 アップグレード可能モードでは、スレッドの書き込みアクセスを必要に応じて、デッドロックの危険を回避への読み取りアクセスからのアップグレードを許可します。  
+  
+ この例には、アップグレード可能モードを示すメソッドの戻り値を指定する入れ子になった列挙体が含まれています。  
+  
+ 例では、既定のコンス トラクターを使用して、ロックを作成して、再帰は許可されません。 プログラミング、<xref:System.Threading.ReaderWriterLockSlim>はロックで再帰が許可されない場合は、簡単かつエラーが発生しにくくなりました。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#11)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#11)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#12)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#12)]  
+  
+ 次のコードで使用して、`SynchronizedCache`野菜名の辞書を格納するオブジェクト。 3 つのタスクを作成します。 最初の配列に格納されている野菜の名前を書き込みます、`SynchronizedCache`インスタンス。 2 番目と 3 番目のタスクは、野菜、昇順 (低インデックスから最も大きいインデックス)、降順で、2 つ目の最初の名前を表示します。 最後のタスクは、文字列「したきゅうり」を検索し、発見された場合を呼び出して、 <xref:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock%2A> "緑 bean"文字列を置換するメソッド。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#11)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#11)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/classexample1.cs#13)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/classexample1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReaderWriterLockSlim (System.Threading.LockRecursionPolicy recursionPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.LockRecursionPolicy recursionPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.#ctor(System.Threading.LockRecursionPolicy)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="recursionPolicy" Type="System.Threading.LockRecursionPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="recursionPolicy">ロック再帰ポリシーを指定する列挙値のいずれか。</param>
+        <summary>ロック再帰ポリシーを指定して、<see cref="T:System.Threading.ReaderWriterLockSlim" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再帰ポリシーでは、複数回ロックに入るスレッドに関する制限事項を決定します。 たとえば、ロックの作成時の<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>スレッドが、読み取りモードでロックに入ったと<xref:System.Threading.LockRecursionException>スレッドが読み取りモードでロックを再入力しようとした場合にスローされます。 同様に、スレッドが書き込みモードでロックに入った場合は、<xref:System.Threading.LockRecursionException>が、スレッドは、いずれかのモードでロックを再入力しようとした場合にスローされます。  
+  
+> [!NOTE]
+>  アップグレード可能モードでのスレッドでは、書き込みモードにアップグレードしたり、読み取りロック再帰ポリシー設定に関係なくモードにダウン グレードすることができます。  
+  
+ 再帰ポリシーに関係なく、最初に入力した読み取りスレッド パターンでは、デッドロックの可能性が作成されるため、アップグレード可能モードまたは、書き込みモードにアップグレードするモードが使用できません。  
+  
+ 再帰ポリシーとその影響の詳細については、次を参照してください。、<xref:System.Threading.LockRecursionPolicy>列挙型、および<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、いずれかに依存している 2 つの例外シナリオ、<xref:System.Threading.LockRecursionPolicy>設定としない種類です。  
+  
+ 最初のシナリオでは、スレッドは、読み取りモードに入りますで、読み取りモードの再帰的を入力しようとします。 場合、<xref:System.Threading.ReaderWriterLockSlim>再帰ポリシーを設定の既定のコンス トラクターを使用して作成された<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>例外がスローされます。 場合<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>作成に使用される、<xref:System.Threading.ReaderWriterLockSlim>例外はスローされません。  
+  
+ 2 番目のシナリオでは、スレッドが読み取りモードに入ったし、入ろう書き込みますモード。 <xref:System.Threading.LockRecursionException>ロック再帰ポリシーに関係なくがスローされます。  
+  
+[!code-csharp[System.Threading.LockRecursionPolicy#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/cs/ClassExample1.cs#11)] 
+[!code-vb[System.Threading.LockRecursionPolicy#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/vb/ClassExample1.vb#11)]   
+[!code-csharp[System.Threading.LockRecursionPolicy#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/cs/ClassExample1.cs#12)] 
+[!code-vb[System.Threading.LockRecursionPolicy#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/vb/ClassExample1.vb#12)]  
+  
+ 次のコードで使用して、`SynchronizedCache`野菜名の辞書を格納するオブジェクト。 3 つのタスクを作成します。 最初の配列に格納されている野菜の名前を書き込みます、`SynchronizedCache`インスタンス。 2 番目と 3 番目のタスクは、野菜、昇順 (低インデックスから最も大きいインデックス)、降順で、2 つ目の最初の名前を表示します。 最後のタスクは、文字列「したきゅうり」を検索し、発見された場合を呼び出して、 <xref:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock%2A> "緑 bean"文字列を置換するメソッド。  
+  
+[!code-csharp[System.Threading.LockRecursionPolicy#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/cs/ClassExample1.cs#11)] 
+[!code-vb[System.Threading.LockRecursionPolicy#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/vb/ClassExample1.vb#11)]   
+[!code-csharp[System.Threading.LockRecursionPolicy#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/cs/ClassExample1.cs#13)] 
+[!code-vb[System.Threading.LockRecursionPolicy#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/vb/ClassExample1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentReadCount">
+      <MemberSignature Language="C#" Value="public int CurrentReadCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentReadCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.CurrentReadCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りモードでロックに入った一意のスレッドの総数を取得します。</summary>
+        <value>読み取りモードでロックに入った一意のスレッドの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドは 1 回だけカウントされますが、場合でも、再帰とスレッドを許可する、ロックがモードに入った読み取り複数回。  
+  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.CurrentReadCount%2A>読み取りモードでのスレッドの数がしきい値を超えた場合に、イベント ログ エントリを生成するプロパティです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#2)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#11)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.ReaderWriterLockSlim" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.ReaderWriterLockSlim.Dispose%2A> を使い終わったら <xref:System.Threading.ReaderWriterLockSlim> を呼び出します。 <xref:System.Threading.ReaderWriterLockSlim.Dispose%2A> メソッドによって、<xref:System.Threading.ReaderWriterLockSlim> は使用不可の状態になります。 呼び出した後<xref:System.Threading.ReaderWriterLockSlim.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Threading.ReaderWriterLockSlim>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Threading.ReaderWriterLockSlim>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  常に呼び出す<xref:System.Threading.ReaderWriterLockSlim.Dispose%2A>への参照を解放する前に、<xref:System.Threading.ReaderWriterLockSlim>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.SynchronizationLockException">
+          <see cref="P:System.Threading.ReaderWriterLockSlim.WaitingReadCount" />0 より大きいです。  
+  
+ または  
+  
+ <see cref="P:System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount" />0 より大きいです。  
+  
+ または  
+  
+ <see cref="P:System.Threading.ReaderWriterLockSlim.WaitingWriteCount" />0 より大きいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterReadLock">
+      <MemberSignature Language="C#" Value="public void EnterReadLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnterReadLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.EnterReadLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み取りモードでロックに入ることを試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはブロックされるまで、呼び出し元のスレッドがロックに入るし、しない可能性がありますを返します。 使用して、<xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock%2A>その間隔の間に読み取りモードに指定した時間をブロックし、呼び出し元のスレッドが入力がないかどうかを返すメソッド。  
+  
+ 複数のスレッドは、同時に読み取りモードに入ることができます。  
+  
+ 1 つまたは複数のスレッドが書き込みモードに入るを待機している場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A>メソッドは、これらのスレッドがいずれかのブロックは、タイムアウトしたため、または書き込みモードに入ったからそれを終了します。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する場合は、読み取りモードでロックに入ったスレッドは読み取りモードを再帰的に、書き込みモードに入る入力できます。  
+  
+ 他のスレッドが読み取りモードでは、最大で 1 つのスレッドはアップグレード可能モードでできます。 追加のスレッドがアップグレード可能モードに切り替わるを待機している書き込みモードに入るを待機しているスレッドが存在しない場合は、スレッドの呼び出し、<xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A>メソッドが読み取りモードをすぐに入力し、ブロックされません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A>読み取りモードでロックに入ることメソッドです。 この例に示すようにメソッドでは、キーに関連付けられている値を取得します。 キーが見つからなかったかどうか、内部によってスローされる例外<xref:System.Collections.Generic.Dictionary%602>terminate、メソッドを許可します。 A`finally`ブロックの実行を使用して、<xref:System.Threading.ReaderWriterLockSlim.ExitReadLock%2A>メソッドを呼び出し元が読み取りモードを終了することを確認します。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#3)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException">現在のスレッドは、読み込みロックを保持しながら書き込みロックを取得することはできません。  
+  
+ または  
+  
+ <see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />、現在のスレッドは、読み取りロックを保持しながら読み取りロックを取得しようとします。  
+  
+ または  
+  
+ <see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />、現在のスレッドは、書き込みロックを保持しながら読み取りロックを取得しようとします。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 この制限は非常に大きいため、アプリケーションで、この例外が発生することはないはずです。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterUpgradeableReadLock">
+      <MemberSignature Language="C#" Value="public void EnterUpgradeableReadLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnterUpgradeableReadLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アップグレード可能モードでロックに入ることを試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはブロックされるまで、呼び出し元のスレッドがロックに入るし、しない可能性がありますを返します。 使用して、<xref:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock%2A>メソッドは、指定した時間のブロックをかどうか、呼び出し元スレッドがないモードに入ったアップグレード可能な時間中に返されます。  
+  
+ スレッド通常によって保護されているリソースにアクセスするときにアップグレード可能モードを使用して、<xref:System.Threading.ReaderWriterLockSlim>に読み取りモードには、特定の条件が満たされた場合は、書き込みモードを入力する必要があります。 アップグレード可能モードでのスレッドでは、読み取りモードにダウン グレードしたり、書き込みモードにアップグレードすることができます。  
+  
+ 1 つのスレッドは、特定の時点でアップグレード可能モードを入力できます。 アップグレード可能モードに、スレッドが書き込みモードに入るを待機しているスレッドが存在しない場合は、任意の数の他のスレッドはアップグレード可能モードに切り替わるを待機しているスレッドがある場合でも、読み取りモードを入力できます。  
+  
+ 1 つまたは複数のスレッドが書き込みモードに入るを待機している場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock%2A>メソッドは、これらのスレッドがいずれかのブロックは、タイムアウトしたため、または書き込みモードに入ったからそれを終了します。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する場合は、アップグレード可能モードでロックに入ったスレッドはアップグレード可能モードの再帰的に、書き込みモードに入る入力できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock%2A>アップグレード可能モードでロックに入ることメソッドです。 A`finally`ブロックの実行を使用して、<xref:System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock%2A>メソッドを呼び出し元がアップグレード可能モードを終了することを確認します。  
+  
+ 例に示されたメソッドは、キーに関連付けられている値を取得し、新しい値と比較します。 値が変更されていない場合は、変更がないことを示すステータスを返します。 これは、値が見つからないため、キー、キー/値ペアが挿入されます。 値が変更された場合は更新されます。 アップグレード可能モードでは、スレッドなく必要に応じて、デッドロックの危険性は、読み取りロックをアップグレードします。  
+  
+ 例では、既定のコンス トラクターを使用して、ロックを作成して、再帰は許可されません。 プログラミング、<xref:System.Threading.ReaderWriterLockSlim>はロックで再帰が許可されない場合は、簡単かつエラーが発生しにくくなりました。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#6)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#6)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#10)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドが任意のモードでロックに入った既にとします。  
+  
+ または  
+  
+ 現在のスレッドは、読み取りモードに入っているため、アップグレード可能モードに切り替わるしようとしています。 デッドロックの可能性はします。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterWriteLock">
+      <MemberSignature Language="C#" Value="public void EnterWriteLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnterWriteLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.EnterWriteLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込みモードでロックに入ることを試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはブロックされるまで、呼び出し元のスレッドがロックに入るし、しない可能性がありますを返します。 使用して、<xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock%2A>メソッドは、指定した時間のブロックをかどうか、呼び出し元スレッドがないモードに入った書き込み時間中に返されます。  
+  
+ 他のスレッドは、読み取りモードでロックに入ったが場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A>読み取りモードにメソッドは、これらのスレッドが終了するまでブロックします。 書き込みモードに入るを待機しているスレッドが存在する場合、書き込みモードに入るを待機しているすべてのスレッドがあるかになるまで、読み取りモードまたはアップグレード可能モードのブロックを入力しようとする追加のスレッドはタイムアウトまたは書き込みモードに入ったし、そこから、終了しました。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する、他のスレッドが書き込みモードに入るを待機している場合でも、書き込みモードでロックに入ったスレッドは書き込みモードを入力できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A>書き込みモードでロックに入ることメソッドです。 例に示すメソッドは、同期、キャッシュに新しいキー/値ペアを追加します。 場合は、キーが、キャッシュでは、内部によってスローされる例外に既に<xref:System.Collections.Generic.Dictionary%602>terminate、メソッドを許可します。 A`finally`ブロックの実行を使用して、<xref:System.Threading.ReaderWriterLockSlim.ExitWriteLock%2A>メソッドを呼び出し元が書き込みモードを終了することを確認します。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#4)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドが任意のモードでロックに入った既にとします。  
+  
+ または  
+  
+ 現在のスレッドは、読み取りモードに入っているため、書き込みモードでロックに入るしようとしてデッドロックの可能性はします。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitReadLock">
+      <MemberSignature Language="C#" Value="public void ExitReadLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExitReadLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.ExitReadLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み取りモードの再帰カウントを減らし、結果のカウントが 0 (ゼロ) の場合には読み取りモードを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、再帰の順序に影響はありません。 たとえば、スレッドがアップグレード可能モードでロックに入った、読み取りモードでロックに入った場合、スレッドが 2 つのモードを終了する順序は関係ありません。 ロックは、再帰を許可する場合、スレッドできます書き込みモードでロックに入るし、入力を再帰的に読み取りモードであります。スレッドが終了する順序は、読み取りモードと、書き込みモードは関係ありません。  
+  
+ ロックを終了すると、その他の待機中のスレッドがシグナル可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、`finally`ブロックが実行、<xref:System.Threading.ReaderWriterLockSlim.ExitReadLock%2A>メソッドを呼び出し元が読み取りモードを終了することを確認します。 この例に示すようにメソッドでは、キーに関連付けられている値を取得します。 キーが見つからなかったかどうか、内部によってスローされる例外<xref:System.Collections.Generic.Dictionary%602>terminate、メソッドを許可します。 <xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A>メソッドを使用して、読み取りモードを入力します。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#3)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.SynchronizationLockException">現在のスレッドは読み取りモードでロックに入っていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitUpgradeableReadLock">
+      <MemberSignature Language="C#" Value="public void ExitUpgradeableReadLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExitUpgradeableReadLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アップグレード可能モードの再帰カウントを減らし、結果のカウントが 0 (ゼロ) の場合にはアップグレード可能モードを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、再帰の順序に影響はありません。 たとえば、スレッドがアップグレード可能モードでロックに入ったし、書き込みモードでロックに入った場合、スレッドが 2 つのモードを終了する順序は関係ありません。 ロックは、再帰を許可する場合、スレッドできます書き込みモードでロックに入るし、入力を再帰的にアップグレード可能モードであります。スレッドがアップグレード可能モードと書き込みのモードを終了する順序は重要ではありません。  
+  
+ ロックを終了すると、その他の待機中のスレッドがシグナル可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、`finally`ブロックが実行、<xref:System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock%2A>メソッドを呼び出し元がアップグレード可能モードを終了することを確認します。  
+  
+ 例に示されたメソッドは、キーに関連付けられている値を取得し、新しい値と比較します。 値が変更されていない場合は、変更がないことを示すステータスを返します。 これは、値が見つからないため、キー、キー/値ペアが挿入されます。 値が変更された場合は更新されます。 アップグレード可能モードでは、スレッドなく必要に応じて、デッドロックの危険性は、読み取りロックをアップグレードします。  
+  
+ 例では、既定のコンス トラクターを使用して、ロックを作成して、再帰は許可されません。 プログラミング、<xref:System.Threading.ReaderWriterLockSlim>はロックで再帰が許可されない場合は、簡単かつエラーが発生しにくくなりました。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#6)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#6)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#10)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.SynchronizationLockException">現在のスレッドはアップグレード可能モードでロックに入っていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitWriteLock">
+      <MemberSignature Language="C#" Value="public void ExitWriteLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExitWriteLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.ExitWriteLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込みモードの再帰カウントを減らし、結果のカウントが 0 (ゼロ) の場合には書き込みモードを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、再帰の順序に影響はありません。 たとえば、スレッドがアップグレード可能モードでロックに入ったし、書き込みモードでロックに入った場合、スレッドが 2 つのモードを終了する順序は関係ありません。 ロックは、再帰を許可する場合、スレッドできます書き込みモードでロックに入るし、入力を再帰的に読み取りモードであります。スレッドが終了する順序は、読み取りモードと、書き込みモードは関係ありません。  
+  
+ ロックを終了すると、その他の待機中のスレッドがシグナル可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、`finally`ブロックが実行、<xref:System.Threading.ReaderWriterLockSlim.ExitWriteLock%2A>メソッドを呼び出し元が書き込みモードを終了することを確認します。 例に示すメソッドは、同期、キャッシュに新しいキー/値ペアを追加します。 場合は、キーが、キャッシュでは、内部によってスローされる例外に既に<xref:System.Collections.Generic.Dictionary%602>terminate、メソッドを許可します。 <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A>メソッドは書き込みモードでロックに入るに使用します。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#4)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.SynchronizationLockException">現在のスレッドは書き込みモードでロックに入っていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadLockHeld">
+      <MemberSignature Language="C#" Value="public bool IsReadLockHeld { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadLockHeld" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.IsReadLockHeld" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドが読み取りモードでロックに入ったかどうかを示す値を取得します。</summary>
+        <value>
+          現在のスレッドが読み取りモードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するアサートまたはその他のデバッグの目的では、このプロパティを目的としています。 プログラム実行のフローを制御するのには使用しないでください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.IsReadLockHeld%2A>読み取りモードに予期せず、現在のスレッドが入力した場合は、アサートを生成するプロパティです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#21](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#21)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#21](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpgradeableReadLockHeld">
+      <MemberSignature Language="C#" Value="public bool IsUpgradeableReadLockHeld { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUpgradeableReadLockHeld" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドがアップグレード可能モードでロックに入ったかどうかを示す値を取得します。</summary>
+        <value>
+          現在のスレッドがアップグレード可能モードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するアサートまたはその他のデバッグの目的では、このプロパティを目的としています。 プログラム実行のフローを制御するのには使用しないでください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld%2A>プロパティを現在のスレッドがアップグレード可能モードを予期せずに入った場合は、アサートを生成します。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#22](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#22)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#22](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWriteLockHeld">
+      <MemberSignature Language="C#" Value="public bool IsWriteLockHeld { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWriteLockHeld" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.IsWriteLockHeld" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドが書き込みモードでロックに入ったかどうかを示す値を取得します。</summary>
+        <value>
+          現在のスレッドが書き込みモードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するアサートまたはその他のデバッグの目的では、このプロパティを目的としています。 プログラム実行のフローを制御するのには使用しないでください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.IsWriteLockHeld%2A>プロパティを現在のスレッドが書き込みモードを予期せずに入った場合は、アサートを生成します。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#23](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#23)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#23](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecursionPolicy">
+      <MemberSignature Language="C#" Value="public System.Threading.LockRecursionPolicy RecursionPolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.LockRecursionPolicy RecursionPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.LockRecursionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Threading.ReaderWriterLockSlim" /> オブジェクトの再帰ポリシーを示す値を取得します。</summary>
+        <value>ロック再帰ポリシーを指定する列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再帰ポリシーでは、複数回ロックに入るスレッドに関する制限事項を決定します。 たとえば、ロックの作成時の<xref:System.Threading.LockRecursionPolicy?displayProperty=nameWithType>スレッドが、読み取りモードでロックに入ったと<xref:System.Threading.LockRecursionException>スレッドが読み取りモードでロックを再入力しようとした場合にスローされます。  
+  
+> [!NOTE]
+>  アップグレード可能モードでのスレッドでは、書き込みモードにアップグレードしたり、読み取りロック再帰ポリシー設定に関係なくモードにダウン グレードすることができます。  
+  
+ 再帰ポリシーに関係なく、最初に入力した読み取りスレッド パターンでは、デッドロックの可能性が作成されるため、アップグレード可能モードまたは、書き込みモードにアップグレードするモードが使用できません。  
+  
+ 再帰ポリシーとその影響の詳細については、次を参照してください。、<xref:System.Threading.LockRecursionPolicy>列挙型、および<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecursiveReadCount">
+      <MemberSignature Language="C#" Value="public int RecursiveReadCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecursiveReadCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.RecursiveReadCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドが読み取りモードでロックに入った回数を、再帰を示す値として取得します。</summary>
+        <value>0 (ゼロ) に、現在のスレッドが入力されていない場合は、モードを読み取り、スレッドが読み取りモードに入ったが、されていない場合は 1 を入力して、再帰的にまたは* n * 、スレッドが再帰的にロックに入った場合* n * - 1 回です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecursiveUpgradeCount">
+      <MemberSignature Language="C#" Value="public int RecursiveUpgradeCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecursiveUpgradeCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.RecursiveUpgradeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドがアップグレード可能モードでロックに入った回数を、再帰を示す値として取得します。</summary>
+        <value>現在のスレッドがアップグレード可能モードの場合は、スレッドがアップグレード可能モードに入ったがいない再帰的に、1 を入力していない場合は 0 または* n * 、スレッドが再帰的にアップグレード可能モードに入った場合* n * - 1 回です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecursiveWriteCount">
+      <MemberSignature Language="C#" Value="public int RecursiveWriteCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecursiveWriteCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.RecursiveWriteCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドが書き込みモードでロックに入った回数を、再帰を示す値として取得します。</summary>
+        <value>現在のスレッドが入力されていない場合は 0 を書き込みモードでは、1 スレッドが書き込みモードに入ったが、されていない場合、再帰的にまたは* n * 、スレッドが書き込みモードに入った場合* n * - 1 回です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnterReadLock">
+      <MemberSignature Language="C#" Value="public bool TryEnterReadLock (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryEnterReadLock(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <summary>オプションのタイムアウトを表す整数を指定して、読み取りモードでロックに入ることを試みます。</summary>
+        <returns>
+          呼び出し元のスレッドが読み取りモードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`millisecondsTimeout`0 (ゼロ) は、このメソッドはロック状態を確認し、返します`false`目的の状態が使用できない場合にすぐにします。  
+  
+ 複数のスレッドは、同時に読み取りモードに入ることができます。  
+  
+ 1 つまたは複数のスレッドが書き込みモードに入るを待機している場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock%2A>メソッドは、呼び出し元スレッド独自のタイムアウト期限が切れたかそれらのスレッドか、タイムアウトまたは書き込みモードに入ったになりからを終了するまでブロックします。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する場合は、読み取りモードでロックに入ったスレッドは読み取りモードを再帰的に、書き込みモードに入る入力できます。  
+  
+ 他のスレッドが読み取りモードでは、1 つのスレッドはアップグレード可能モードにできます。 追加のスレッドがアップグレード可能モードに切り替わるを待機している書き込みモードに入るを待機しているスレッドが存在しない場合は、スレッドの呼び出し、<xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock%2A>メソッドが読み取りモードをすぐに入力し、ブロックされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドがロックに入った既にとします。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="millisecondsTimeout" />は負の値は等しくありませんが、 <see cref="F:System.Threading.Timeout.Infinite" /> (-1) のみである負の値を許可します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnterReadLock">
+      <MemberSignature Language="C#" Value="public bool TryEnterReadLock (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryEnterReadLock(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機する間隔。無制限に待機する場合は -1 ミリ秒。</param>
+        <summary>オプションのタイムアウトを指定して、読み取りモードでロックに入ることを試みます。</summary>
+        <returns>
+          呼び出し元のスレッドが読み取りモードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`timeout`0 (ゼロ) は、このメソッドはロック状態を確認し、返します`false`目的の状態が使用できない場合にすぐにします。  
+  
+ 複数のスレッドは、同時に、読み取りモードでロックに入ることができます。  
+  
+ 1 つまたは複数のスレッドが書き込みモードに入るキューに格納している場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock%2A>メソッドは、呼び出し元スレッド独自のタイムアウト期限が切れたかそれらのスレッドか、タイムアウトまたは書き込みモードに入ったになりからを終了するまでブロックします。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する場合は、読み取りモードでロックに入ったスレッドは読み取りモードを再帰的に、書き込みモードに入る入力できます。  
+  
+ 他のスレッドが読み取りモードでは、1 つのスレッドはアップグレード可能モードにできます。 追加のスレッドがアップグレード可能モードに切り替わるを待機している書き込みモードに入るを待機しているスレッドが存在しない場合は、スレッドの呼び出し、<xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock%2A>メソッドが読み取りモードをすぐに入力し、ブロックされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドがロックに入った既にとします。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="timeout" />は負の値のみである-1 (ミリ秒単位) と同じではありません負の値を許可します。  
+  
+ または  
+  
+ 値<paramref name="timeout" />がより大きい<see cref="F:System.Int32.MaxValue" />(ミリ秒)。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnterUpgradeableReadLock">
+      <MemberSignature Language="C#" Value="public bool TryEnterUpgradeableReadLock (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryEnterUpgradeableReadLock(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <summary>オプションのタイムアウトを指定して、アップグレード可能モードでロックに入ることを試みます。</summary>
+        <returns>
+          呼び出し元のスレッドがアップグレード可能モードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`millisecondsTimeout`0 (ゼロ) は、このメソッドはロック状態を確認し、返します`false`目的の状態が使用できない場合にすぐにします。  
+  
+ スレッド通常によって保護されているリソースにアクセスするときにアップグレード可能モードを使用して、<xref:System.Threading.ReaderWriterLockSlim>に読み取りモードには、特定の条件が満たされた場合は、書き込みモードを入力する必要があります。 アップグレード可能モードでのスレッドでは、書き込みモードにアップグレードしたり、読み取りモードにダウン グレードすることができます。  
+  
+ 1 つのスレッドは特定の時点で、アップグレード可能モードでロックに入ることができます。 アップグレード可能モードに、スレッドが書き込みモードに入るを待機しているスレッドが存在しない場合は、任意の数の他のスレッドはアップグレード可能モードに切り替わるを待機しているスレッドがある場合でも、読み取りモードを入力できます。  
+  
+ 1 つまたは複数のスレッドが書き込みモードに入るを待機している場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock%2A>メソッドは、呼び出し元スレッド独自のタイムアウト期限が切れたかそれらのスレッドか、タイムアウトまたは書き込みモードに入ったになりからを終了するまでブロックします。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する場合は、アップグレード可能モードでロックに入ったスレッドはアップグレード可能モードの再帰的に、書き込みモードに入る入力できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドがロックに入った既にとします。  
+  
+ または  
+  
+ 現在のスレッドは最初に、読み取りモードでロックに入ったアップグレード可能モードに入るとして、デッドロックの可能性。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="millisecondsTimeout" />は負の値は等しくありませんが、 <see cref="F:System.Threading.Timeout.Infinite" /> (-1) のみである負の値を許可します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnterUpgradeableReadLock">
+      <MemberSignature Language="C#" Value="public bool TryEnterUpgradeableReadLock (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryEnterUpgradeableReadLock(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機する間隔。無制限に待機する場合は -1 ミリ秒。</param>
+        <summary>オプションのタイムアウトを指定して、アップグレード可能モードでロックに入ることを試みます。</summary>
+        <returns>
+          呼び出し元のスレッドがアップグレード可能モードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`timeout`0 (ゼロ) は、このメソッドはロック状態を確認し、返します`false`目的の状態が使用できない場合にすぐにします。  
+  
+ スレッド通常によって保護されているリソースにアクセスするときにアップグレード可能モードを使用して、<xref:System.Threading.ReaderWriterLockSlim>に読み取りモードには、特定の条件が満たされた場合は、書き込みモードを入力する必要があります。 アップグレード可能モードでのスレッドでは、書き込みモードにアップグレードしたり、読み取りモードにダウン グレードすることができます。  
+  
+ 1 つのスレッドは特定の時点で、アップグレード可能モードでロックに入ることができます。 アップグレード可能モードに、スレッドが書き込みモードに入るを待機しているスレッドが存在しない場合は、任意の数の他のスレッドはアップグレード可能モードに切り替わるを待機しているスレッドがある場合でも、読み取りモードを入力できます。  
+  
+ 1 つまたは複数のスレッドが書き込みモードに入るを待機している場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock%2A>メソッドは、呼び出し元スレッド独自のタイムアウト期限が切れたかそれらのスレッドか、タイムアウトまたは書き込みモードに入ったになりからを終了するまでブロックします。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する場合は、アップグレード可能モードでロックに入ったスレッドはアップグレード可能モードの再帰的に、書き込みモードに入る入力できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドがロックに入った既にとします。  
+  
+ または  
+  
+ 現在のスレッドは最初に、読み取りモードでロックに入ったアップグレード可能モードに入るとして、デッドロックの可能性。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="timeout" />は負の値のみである-1 (ミリ秒単位) と同じではありません負の値を許可します。  
+  
+ または  
+  
+ 値<paramref name="timeout" />がより大きい<see cref="F:System.Int32.MaxValue" />(ミリ秒)。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnterWriteLock">
+      <MemberSignature Language="C#" Value="public bool TryEnterWriteLock (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryEnterWriteLock(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <summary>オプションのタイムアウトを指定して、書き込みモードでロックに入ることを試みます。</summary>
+        <returns>
+          呼び出し元のスレッドが書き込みモードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`millisecondsTimeout`0 (ゼロ) は、このメソッドはロック状態を確認し、返します`false`目的の状態が使用できない場合にすぐにします。  
+  
+ 他のスレッドは、読み取りモードでロックに入ったが場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock%2A>メソッドは、これらのスレッドが読み取りモードを終了するまで、またはタイムアウト間隔が経過するまでブロックします。 書き込みモードに入るを待機しているスレッドがブロックされるときに、読み取りモードまたはアップグレード可能モードを入力しようとする追加のスレッドは、入力を待機しているすべてのスレッドがタイムアウト、または書き込みモードに入ったし、そこから終了し、書き込みモードになるまでをブロックします。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する、他のスレッドが書き込みモードに入るを待機している場合でも、書き込みモードでロックに入ったスレッドは書き込みモードを入力できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock%2A>メソッドに、タイムアウトで、書き込みモードでロックに入ることです。例に示すメソッドは、同期、キャッシュに新しいキー/値ペアを追加します。 このメソッドを返しますのかどうかは、スレッド ロックに入る前に指定されたタイムアウト期間を過ぎると、`false`です。 このメソッドを返します`true`場合は、キー/値ペアを追加します。  
+  
+ 場合は、キーが、キャッシュでは、内部によってスローされる例外に既に<xref:System.Collections.Generic.Dictionary%602>terminate、メソッドを許可します。 A`finally`ブロックの実行を使用して、<xref:System.Threading.ReaderWriterLockSlim.ExitWriteLock%2A>メソッドを呼び出し元がロックを終了したことを確認します。  
+  
+ このコードに示されている例の一部である、<xref:System.Threading.ReaderWriterLockSlim>クラスです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#2)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#2)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Shadow#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/cs/source.cs#5)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Shadow#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Shadow/vb/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドがロックに入った既にとします。  
+  
+ または  
+  
+ 現在のスレッドは最初に、読み取りモードでロックに入った書き込みモードに入るようとして、デッドロックの可能性。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="millisecondsTimeout" />は負の値は等しくありませんが、 <see cref="F:System.Threading.Timeout.Infinite" /> (-1) のみである負の値を許可します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnterWriteLock">
+      <MemberSignature Language="C#" Value="public bool TryEnterWriteLock (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryEnterWriteLock(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機する間隔。無制限に待機する場合は -1 ミリ秒。</param>
+        <summary>オプションのタイムアウトを指定して、書き込みモードでロックに入ることを試みます。</summary>
+        <returns>
+          呼び出し元のスレッドが書き込みモードに入った場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`timeout`0 (ゼロ) は、このメソッドはロック状態を確認し、返します`false`目的の状態が使用できない場合にすぐにします。  
+  
+ 他のスレッドは、読み取りモードでロックに入ったが場合、スレッドを呼び出す、<xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock%2A>メソッドは、これらのスレッドが読み取りモードを終了するまで、またはタイムアウト間隔が経過するまでブロックします。 書き込みモードに入るを待機しているスレッドがブロックされるときに、読み取りモードまたはアップグレード可能モードを入力しようとする追加のスレッドは、入力を待機しているすべてのスレッドがタイムアウト、または書き込みモードに入ったし、そこから終了し、書き込みモードになるまでをブロックします。  
+  
+> [!NOTE]
+>  ロックは、再帰を許可する、他のスレッドが書き込みモードに入るを待機している場合でも、書き込みモードでロックに入ったスレッドは書き込みモードを入力できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />プロパティは<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />現在のスレッドがロックに入った既にとします。  
+  
+ または  
+  
+ 現在のスレッドは最初に、読み取りモードでロックに入った書き込みモードに入るようとして、デッドロックの可能性。  
+  
+ または  
+  
+ 再帰の回数は、カウンターの容量を超える可能性があります。 制限は非常に大きいので、アプリケーション発生してはなりませんです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="timeout" />は負の値のみである-1 (ミリ秒単位) と同じではありません負の値を許可します。  
+  
+ または  
+  
+ 値<paramref name="timeout" />がより大きい<see cref="F:System.Int32.MaxValue" />(ミリ秒)。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitingReadCount">
+      <MemberSignature Language="C#" Value="public int WaitingReadCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WaitingReadCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.WaitingReadCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りモードでロックに入るのを待機しているスレッドの総数を取得します。</summary>
+        <value>読み取りモードに入るのを待機しているスレッドの総数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.WaitingReadCount%2A>読み取りモードに入るを待機している、ブロックされているスレッドの数がしきい値を超えた場合に、イベント ログ エントリを生成するプロパティです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#31](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#31)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#31](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitingUpgradeCount">
+      <MemberSignature Language="C#" Value="public int WaitingUpgradeCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WaitingUpgradeCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アップグレード可能モードでロックに入るのを待機しているスレッドの総数を取得します。</summary>
+        <value>アップグレード可能モードに入るのを待機しているスレッドの総数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount%2A>アップグレード可能モードに切り替わるを待機している、ブロックされているスレッドの数がしきい値を超えた場合に、イベント ログ エントリを生成するプロパティです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#33](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#33)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#33](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitingWriteCount">
+      <MemberSignature Language="C#" Value="public int WaitingWriteCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WaitingWriteCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ReaderWriterLockSlim.WaitingWriteCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込みモードでロックに入るのを待機しているスレッドの総数を取得します。</summary>
+        <value>書き込みモードに入るのを待機しているスレッドの総数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デバッグ、プロファイリング、およびログ記録の目的、に対してのみを除く、アルゴリズムの動作を制御します。 結果は、計算が完了するとすぐに変更できます。 そのため、このプロパティに基づいた意思決定を行う安全ではありません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ReaderWriterLockSlim.WaitingWriteCount%2A>書き込みモードに入るを待機している、ブロックされているスレッドの数がしきい値を超えた場合に、イベント ログ エントリを生成するプロパティです。  
+  
+ [!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#1)]
+ [!code-vb[System.Threading.ReaderWriterLockSlim_Aux#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#1)]  
+[!code-csharp[System.Threading.ReaderWriterLockSlim_Aux#32](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/cs/source.cs#32)]
+[!code-vb[System.Threading.ReaderWriterLockSlim_Aux#32](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ReaderWriterLockSlim_Aux/vb/source.vb#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,137 @@
+<Type Name="DataGridViewRowContextMenuStripNeededEventArgs" FullName="System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewRowContextMenuStripNeededEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowContextMenuStripNeededEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>のみイベントが発生したときに、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティを設定またはその<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティは`true`します。 処理、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントは、行の現在の状態または含まれる値によって決定されたショートカット メニューを表示する場合に便利です。  
+  
+ 処理するときに、 <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded> 、イベント ハンドラーで指定したショートカット メニューが表示されるたびに、ユーザー行を右クリックしない限り、<xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded>イベントの上書きがクリックされた特定のセルのショートカット メニュー。  
+  
+ <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントが発生するたびの値、<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A?displayProperty=nameWithType>プロパティが取得プログラムからまたはユーザーが行を右クリックします。  
+  
+ 使用することができます、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.RowIndex%2A>行またはそれに含まれる値の状態を確認して、この情報を使用して、変更または変更するプロパティ、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.ContextMenuStrip%2A>プロパティです。 このプロパティは、行の値で初期化<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>プロパティで、イベントの値をオーバーライドします。  
+  
+ 処理、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>大量の行の設定のパフォーマンスの低下を避けるためにデータを操作するときにイベント<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>複数行の値。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントを使用して、<xref:System.Windows.Forms.ContextMenuStrip>従業員の役職に基づいて。 この例ではマネージャーと他のすべての従業員用の 2 つのショートカット メニューです。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView_NeededEvents#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/CS/Form1.cs#00)]
+ [!code-vb[System.Windows.Forms.DataGridView_NeededEvents#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/VB/Form1.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewRowContextMenuStripNeededEventArgs (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">行のインデックス。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、`rowIndex`初期化するためにパラメーター値、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.RowIndex%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="rowIndex" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuStrip">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ContextMenuStrip ContextMenuStrip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenuStrip ContextMenuStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.ContextMenuStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が発生している行のショートカット メニュー、<see cref="E:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded" />イベント。</summary>
+        <value>使用されている <see cref="T:System.Windows.Forms.ContextMenuStrip" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、初期状態の値を含む、<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A?displayProperty=nameWithType>プロパティ行に設定されている場合。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントを使用して、<xref:System.Windows.Forms.ContextMenuStrip>従業員の役職に基づいて。 この例ではマネージャーと他のすべての従業員用の 2 つのショートカット メニューです。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView_NeededEvents#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView_NeededEvents#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/VB/Form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ショートカット メニューを要求している行のインデックスを取得します。</summary>
+        <value>ショートカット メニューを要求している行の 0 から始まるインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、行に関する追加情報を取得できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントを使用して、<xref:System.Windows.Forms.ContextMenuStrip>従業員の役職に基づいて。 この例ではマネージャーと他のすべての従業員用の 2 つのショートカット メニューです。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView_NeededEvents#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView_NeededEvents#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/VB/Form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

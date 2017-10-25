@@ -1,0 +1,468 @@
+<Type Name="MetaData" FullName="System.Runtime.Remoting.MetadataServices.MetaData">
+  <TypeSignature Language="C#" Value="public class MetaData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetaData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.MetadataServices.MetaData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML スキーマを使用できるメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.MetadataServices.MetaData>クラスには、型についてから Web サービス記述言語 (WSDL) を生成できるようにするメソッドがコード ストリームに XML スキーマを変換し、コード ストリームをアセンブリにコンパイルが用意されています。 この機能に表示されます、 [Soapsuds ツール (Soapsuds.exe)](http://msdn.microsoft.com/en-us/40f6f8c8-b80c-4e9f-a920-31bcd0cf45c5)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetaData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.MetadataServices.MetaData" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertCodeSourceFileToAssemblyFile">
+      <MemberSignature Language="C#" Value="public static void ConvertCodeSourceFileToAssemblyFile (string codePath, string assemblyPath, string strongNameFilename);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertCodeSourceFileToAssemblyFile(string codePath, string assemblyPath, string strongNameFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertCodeSourceFileToAssemblyFile(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codePath" Type="System.String" />
+        <Parameter Name="assemblyPath" Type="System.String" />
+        <Parameter Name="strongNameFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="codePath">ソース コードを含むファイルへのパス。</param>
+        <param name="assemblyPath">新しいランタイム アセンブリが生成される場所です。</param>
+        <param name="strongNameFilename">新しいアセンブリにコンパイルする厳密な名前。 指定できます<see cref="F:System.String.Empty" />です。</param>
+        <summary>ランタイムのアセンブリ ファイルに指定されたコードのソース ファイルをコンパイルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 厳密な名前の詳細については、次を参照してください。[厳密な名前付きアセンブリ](~/docs/framework/app-domains/strong-named-assemblies.md)です。  
+  
+> [!NOTE]
+>  指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.MetadataServices.MetaData.ConvertCodeSourceFileToAssemblyFile%2A>指定した名前を持つランタイム アセンブリに指定した型のスキーマ定義を書き込みます。 `CsSource.cs`ここで変換ファイルには、c# ソース コードが含まれています。  
+  
+ [!code-cpp[MetaData.ConvertCodeSourceFileToAssemblyFile#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MetaData.ConvertCodeSourceFileToAssemblyFile/CPP/source.cpp#1)]
+ [!code-csharp[MetaData.ConvertCodeSourceFileToAssemblyFile#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MetaData.ConvertCodeSourceFileToAssemblyFile/CS/source.cs#1)]
+ [!code-vb[MetaData.ConvertCodeSourceFileToAssemblyFile#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MetaData.ConvertCodeSourceFileToAssemblyFile/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertCodeSourceStreamToAssemblyFile">
+      <MemberSignature Language="C#" Value="public static void ConvertCodeSourceStreamToAssemblyFile (System.Collections.ArrayList outCodeStreamList, string assemblyPath, string strongNameFilename);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertCodeSourceStreamToAssemblyFile(class System.Collections.ArrayList outCodeStreamList, string assemblyPath, string strongNameFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertCodeSourceStreamToAssemblyFile(System.Collections.ArrayList,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outCodeStreamList" Type="System.Collections.ArrayList" />
+        <Parameter Name="assemblyPath" Type="System.String" />
+        <Parameter Name="strongNameFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outCodeStreamList">A<see cref="T:System.Collections.ArrayList" />ソース コードを使用して、ストリームのです。</param>
+        <param name="assemblyPath">新しいランタイム アセンブリが生成される場所です。</param>
+        <param name="strongNameFilename">新しいランタイムのアセンブリにコンパイルする厳密な名前。 指定できます<see cref="F:System.String.Empty" />です。</param>
+        <summary>コンパイルでは、実行時のアセンブリ ファイルにコードのソース ストリームを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 厳密な名前の詳細については、次を参照してください。[厳密な名前付きアセンブリ](~/docs/framework/app-domains/strong-named-assemblies.md)です。  
+  
+> [!NOTE]
+>  指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertSchemaStreamToCodeSourceStream">
+      <MemberSignature Language="C#" Value="public static void ConvertSchemaStreamToCodeSourceStream (bool clientProxy, string outputDirectory, System.IO.Stream inputStream, System.Collections.ArrayList outCodeStreamList);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertSchemaStreamToCodeSourceStream(bool clientProxy, string outputDirectory, class System.IO.Stream inputStream, class System.Collections.ArrayList outCodeStreamList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertSchemaStreamToCodeSourceStream(System.Boolean,System.String,System.IO.Stream,System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientProxy" Type="System.Boolean" />
+        <Parameter Name="outputDirectory" Type="System.String" />
+        <Parameter Name="inputStream" Type="System.IO.Stream" />
+        <Parameter Name="outCodeStreamList" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="clientProxy">生成するプロキシの種類を示します。 場合<see langword="true" />チャネルを読み込み、リモート オブジェクトのすべてのメソッドを公開、およびチャネル プロパティにアクセスを自動的にする単純なプロキシ (ラップされたプロキシとも呼ばれます) が生成されます。 場合<see langword="false" />、リモート オブジェクトのすべてのメソッドを公開する透過的なプロキシを生成します。</param>
+        <param name="outputDirectory">ここで、新しい c# ソース コード ファイル、プロキシでディレクトリが作成されます。</param>
+        <param name="inputStream">Web サービス記述言語 (WSDL) 形式でのスキーマ定義を含む入力ストリーム。</param>
+        <param name="outCodeStreamList">生成されるコード ストリームのファイル名の一覧。 なお、<see cref="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertSchemaStreamToCodeSourceStream(System.Boolean,System.String,System.IO.Stream,System.Collections.ArrayList,System.String,System.String)" />メソッドがコード ストリームには複数のソースの作成できます。</param>
+        <summary>指定したスキーマ定義を c# プロキシ ソース コードに変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  指定した名前を持つファイルは既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertSchemaStreamToCodeSourceStream">
+      <MemberSignature Language="C#" Value="public static void ConvertSchemaStreamToCodeSourceStream (bool clientProxy, string outputDirectory, System.IO.Stream inputStream, System.Collections.ArrayList outCodeStreamList, string proxyUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertSchemaStreamToCodeSourceStream(bool clientProxy, string outputDirectory, class System.IO.Stream inputStream, class System.Collections.ArrayList outCodeStreamList, string proxyUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertSchemaStreamToCodeSourceStream(System.Boolean,System.String,System.IO.Stream,System.Collections.ArrayList,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientProxy" Type="System.Boolean" />
+        <Parameter Name="outputDirectory" Type="System.String" />
+        <Parameter Name="inputStream" Type="System.IO.Stream" />
+        <Parameter Name="outCodeStreamList" Type="System.Collections.ArrayList" />
+        <Parameter Name="proxyUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientProxy">生成するプロキシの種類を示します。 場合<see langword="true" />チャネルを読み込み、リモート オブジェクトのすべてのメソッドを公開、およびチャネル プロパティにアクセスを自動的にする単純なプロキシ (ラップされたプロキシとも呼ばれます) が生成されます。 場合<see langword="false" />、リモート オブジェクトのすべてのメソッドを公開する透過的なプロキシを生成します。</param>
+        <param name="outputDirectory">ここで、新しい c# ソース コード ファイル、プロキシでディレクトリが作成されます。</param>
+        <param name="inputStream">Web サービス記述言語 (WSDL) 形式でのスキーマ定義を含む入力ストリーム。</param>
+        <param name="outCodeStreamList">生成されるコード ストリームのファイル名の一覧。 なお、<see cref="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertSchemaStreamToCodeSourceStream(System.Boolean,System.String,System.IO.Stream,System.Collections.ArrayList,System.String,System.String)" />メソッドがコード ストリームには複数のソースの作成できます。</param>
+        <param name="proxyUrl">新しいプロキシで表されるターゲットのリモート オブジェクトが配置される URL です。</param>
+        <summary>指定したスキーマ定義を指定した URL に配置されているリモート オブジェクトの c# プロキシ ソース コードに変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  指定した名前を持つファイルは既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertSchemaStreamToCodeSourceStream">
+      <MemberSignature Language="C#" Value="public static void ConvertSchemaStreamToCodeSourceStream (bool clientProxy, string outputDirectory, System.IO.Stream inputStream, System.Collections.ArrayList outCodeStreamList, string proxyUrl, string proxyNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertSchemaStreamToCodeSourceStream(bool clientProxy, string outputDirectory, class System.IO.Stream inputStream, class System.Collections.ArrayList outCodeStreamList, string proxyUrl, string proxyNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertSchemaStreamToCodeSourceStream(System.Boolean,System.String,System.IO.Stream,System.Collections.ArrayList,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientProxy" Type="System.Boolean" />
+        <Parameter Name="outputDirectory" Type="System.String" />
+        <Parameter Name="inputStream" Type="System.IO.Stream" />
+        <Parameter Name="outCodeStreamList" Type="System.Collections.ArrayList" />
+        <Parameter Name="proxyUrl" Type="System.String" />
+        <Parameter Name="proxyNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientProxy">生成するプロキシの種類を示します。 場合<see langword="true" />チャネルを読み込み、リモート オブジェクトのすべてのメソッドを公開、およびチャネル プロパティにアクセスを自動的にする単純なプロキシ (ラップされたプロキシとも呼ばれます) が生成されます。 場合<see langword="false" />、リモート オブジェクトのすべてのメソッドを公開する透過的なプロキシを生成します。</param>
+        <param name="outputDirectory">ここで、新しい c# ソース コード ファイル、プロキシでディレクトリが作成されます。</param>
+        <param name="inputStream">Web サービス記述言語 (WSDL) 形式でのスキーマ定義を含む入力ストリーム。</param>
+        <param name="outCodeStreamList">生成されるコード ストリームのファイル名の一覧。 なお、<see cref="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertSchemaStreamToCodeSourceStream(System.Boolean,System.String,System.IO.Stream,System.Collections.ArrayList,System.String,System.String)" />メソッドがコード ストリームには複数のソースの作成できます。</param>
+        <param name="proxyUrl">新しいプロキシで表されるターゲットのリモート オブジェクトが配置される URL です。</param>
+        <param name="proxyNamespace">新しく作成されたプロキシの名前空間。</param>
+        <summary>指定したスキーマ定義を指定した URL と、指定されたクラスの名前空間にあるリモート オブジェクトの c# プロキシ ソース コードに変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  指定した名前を持つファイルは既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTypesToSchemaToFile">
+      <MemberSignature Language="C#" Value="public static void ConvertTypesToSchemaToFile (System.Runtime.Remoting.MetadataServices.ServiceType[] types, System.Runtime.Remoting.MetadataServices.SdlType sdlType, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertTypesToSchemaToFile(class System.Runtime.Remoting.MetadataServices.ServiceType[] types, valuetype System.Runtime.Remoting.MetadataServices.SdlType sdlType, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertTypesToSchemaToFile(System.Runtime.Remoting.MetadataServices.ServiceType[],System.Runtime.Remoting.MetadataServices.SdlType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Runtime.Remoting.MetadataServices.ServiceType[]" />
+        <Parameter Name="sdlType" Type="System.Runtime.Remoting.MetadataServices.SdlType" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="types"><see cref="T:System.Runtime.Remoting.MetadataServices.ServiceType" /> XML スキーマに変換するインスタンス。</param>
+        <param name="sdlType">XML スキーマを使用するサービス記述言語の型。</param>
+        <param name="path">XML ファイルのパス。</param>
+        <summary>XML スキーマに指定したサービス型を変換しを名前で指定されているファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.MetadataServices.ServiceType>インスタンスを使用すると、オブジェクトと URL を関連付ける<xref:System.Type>です。  
+  
+> [!NOTE]
+>  指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTypesToSchemaToFile">
+      <MemberSignature Language="C#" Value="public static void ConvertTypesToSchemaToFile (Type[] types, System.Runtime.Remoting.MetadataServices.SdlType sdlType, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertTypesToSchemaToFile(class System.Type[] types, valuetype System.Runtime.Remoting.MetadataServices.SdlType sdlType, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertTypesToSchemaToFile(System.Type[],System.Runtime.Remoting.MetadataServices.SdlType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="sdlType" Type="System.Runtime.Remoting.MetadataServices.SdlType" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="types">XML スキーマに変換するオブジェクトの種類。</param>
+        <param name="sdlType">XML スキーマを使用するサービス記述言語の型。</param>
+        <param name="path">XML ファイルのパス。</param>
+        <summary>指定したオブジェクト型を XML スキーマに変換し、名前で指定されているファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.MetadataServices.MetaData.ConvertTypesToSchemaToFile%2A>に、指定された型のスキーマ定義をファイルに書き込みます。  
+  
+ [!code-cpp[MetaData.ConvertTypesToSchemaToFile#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MetaData.ConvertTypesToSchemaToFile/CPP/source.cpp#1)]
+ [!code-csharp[MetaData.ConvertTypesToSchemaToFile#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MetaData.ConvertTypesToSchemaToFile/CS/source.cs#1)]
+ [!code-vb[MetaData.ConvertTypesToSchemaToFile#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MetaData.ConvertTypesToSchemaToFile/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTypesToSchemaToStream">
+      <MemberSignature Language="C#" Value="public static void ConvertTypesToSchemaToStream (System.Runtime.Remoting.MetadataServices.ServiceType[] serviceTypes, System.Runtime.Remoting.MetadataServices.SdlType sdlType, System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertTypesToSchemaToStream(class System.Runtime.Remoting.MetadataServices.ServiceType[] serviceTypes, valuetype System.Runtime.Remoting.MetadataServices.SdlType sdlType, class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertTypesToSchemaToStream(System.Runtime.Remoting.MetadataServices.ServiceType[],System.Runtime.Remoting.MetadataServices.SdlType,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceTypes" Type="System.Runtime.Remoting.MetadataServices.ServiceType[]" />
+        <Parameter Name="sdlType" Type="System.Runtime.Remoting.MetadataServices.SdlType" />
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="serviceTypes"><see cref="T:System.Runtime.Remoting.MetadataServices.ServiceType" /> XML スキーマに変換するインスタンス。</param>
+        <param name="sdlType">XML スキーマを使用するサービス記述言語の型。</param>
+        <param name="outputStream"><see cref="T:System.IO.Stream" />にスキーマを記述します。</param>
+        <summary>XML スキーマに指定されたサービス型を変換し、指定したストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.MetadataServices.ServiceType>インスタンスを使用すると、オブジェクトと URL を関連付ける<xref:System.Type>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTypesToSchemaToStream">
+      <MemberSignature Language="C#" Value="public static void ConvertTypesToSchemaToStream (Type[] types, System.Runtime.Remoting.MetadataServices.SdlType sdlType, System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ConvertTypesToSchemaToStream(class System.Type[] types, valuetype System.Runtime.Remoting.MetadataServices.SdlType sdlType, class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.ConvertTypesToSchemaToStream(System.Type[],System.Runtime.Remoting.MetadataServices.SdlType,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="sdlType" Type="System.Runtime.Remoting.MetadataServices.SdlType" />
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="types">XML スキーマに変換するオブジェクトの種類。</param>
+        <param name="sdlType">XML スキーマを使用するサービス記述言語の型。</param>
+        <param name="outputStream"><see cref="T:System.IO.Stream" />にスキーマを記述します。</param>
+        <summary>指定したオブジェクト型を XML スキーマに変換し、指定したストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.MetadataServices.MetaData.ConvertTypesToSchemaToStream%2A>に指定した型のスキーマ定義をストリームに書き込みます。  
+  
+ [!code-cpp[MetaData.ConvertTypesToSchemaToStream#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MetaData.ConvertTypesToSchemaToStream/CPP/source.cpp#1)]
+ [!code-csharp[MetaData.ConvertTypesToSchemaToStream#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MetaData.ConvertTypesToSchemaToStream/CS/source.cs#1)]
+ [!code-vb[MetaData.ConvertTypesToSchemaToStream#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MetaData.ConvertTypesToSchemaToStream/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrieveSchemaFromUrlToFile">
+      <MemberSignature Language="C#" Value="public static void RetrieveSchemaFromUrlToFile (string url, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RetrieveSchemaFromUrlToFile(string url, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.RetrieveSchemaFromUrlToFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">XML スキーマが配置されている URL です。</param>
+        <param name="path">スキーマに書き込まれるファイルのパス。</param>
+        <summary>URL から XML スキーマをダウンロードし、指定したファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrieveSchemaFromUrlToStream">
+      <MemberSignature Language="C#" Value="public static void RetrieveSchemaFromUrlToStream (string url, System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RetrieveSchemaFromUrlToStream(string url, class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.RetrieveSchemaFromUrlToStream(System.String,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="url">XML スキーマが配置されている URL です。</param>
+        <param name="outputStream"><see cref="T:System.IO.Stream" />にスキーマを記述します。</param>
+        <summary>URL から XML スキーマをダウンロードし、指定したストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveStreamToFile">
+      <MemberSignature Language="C#" Value="public static void SaveStreamToFile (System.IO.Stream inputStream, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SaveStreamToFile(class System.IO.Stream inputStream, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.MetadataServices.MetaData.SaveStreamToFile(System.IO.Stream,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputStream" Type="System.IO.Stream" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputStream">指定したファイルに書き込むストリーム。</param>
+        <param name="path">入力ストリームに書き込まれるファイルです。</param>
+        <summary>入力ストリームを指定した名前のファイルに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

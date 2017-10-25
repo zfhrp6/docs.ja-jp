@@ -1,0 +1,289 @@
+<Type Name="JumpTask" FullName="System.Windows.Shell.JumpTask">
+  <TypeSignature Language="C#" Value="public class JumpTask : System.Windows.Shell.JumpItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JumpTask extends System.Windows.Shell.JumpItem" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shell.JumpTask" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Shell.JumpItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows 7 のタスクバー ジャンプ リスト内のアプリケーションへのショートカットを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Shell.JumpTask>アプリケーションへのショートカットとして考えることができます。 設定して、実行可能ファイルへのパスを指定する、<xref:System.Windows.Shell.JumpTask.ApplicationPath%2A>プロパティです。 場合、<xref:System.Windows.Shell.JumpTask.ApplicationPath%2A>が設定された場合、現在の実行中のプロセスのパスは暗黙的に指定されていません。 必要に応じて指定することができます<xref:System.Windows.Shell.JumpTask.Arguments%2A>起動時にアプリケーションに渡します。  
+  
+ などの基本的な表示プロパティを設定することができます<xref:System.Windows.Shell.JumpTask.Title%2A>、 <xref:System.Windows.Shell.JumpTask.Description%2A>、および<xref:System.Windows.Shell.JumpTask.IconResourcePath%2A>ジャンプ リストにタスクの表示形式を指定します。 使用される、アイコン、<xref:System.Windows.Shell.JumpTask>ネイティブ リソースとして用意する必要があります。 内のオフセットを指定して使用する 1 つを指定する複数のアイコン リソース DLL または実行可能ファイルで使用可能な場合は、<xref:System.Windows.Shell.JumpTask.IconResourceIndex%2A>プロパティです。  
+  
+ 既定では、<xref:System.Windows.Shell.JumpTask>に配置される、**タスク**ジャンプ リストのカテゴリ。 タスクのカスタム グループ化を設定して指定できます、<xref:System.Windows.Shell.JumpItem.CustomCategory%2A>プロパティです。  
+  
+ 作成することで視覚的にジャンプ リスト内の項目を区切ることができます、<xref:System.Windows.Shell.JumpTask>を持たない、<xref:System.Windows.Shell.JumpTask.Title%2A>と<xref:System.Windows.Shell.JumpItem.CustomCategory%2A>指定します。 この空<xref:System.Windows.Shell.JumpTask>ジャンプ リストに水平の線として表示されます。 この場合、その他のプロパティを設定することができますが、何も影響はありません。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ 次の例は、構成する方法を示します、<xref:System.Windows.Shell.JumpTask>のコードにします。 <xref:System.Windows.Shell.JumpTask>電卓アプリケーションを開きます。  
+  
+ [!code-csharp[Shell_JumpListSample#241](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#241)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JumpTask ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpTask.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Shell.JumpTask" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationPath">
+      <MemberSignature Language="C#" Value="public string ApplicationPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.ApplicationPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションへのパスを設定します。</summary>
+        <value>アプリケーションへのパス。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Shell.JumpTask.ApplicationPath%2A>プロパティが指定されていない、し、現在の実行中のプロセスのパスは暗黙的に指定します。 アプリケーションでは、実行可能ファイル自体以外のタスクを含めることができます。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ 次の例は、構成する方法を示します、<xref:System.Windows.Shell.JumpTask>のコードにします。 <xref:System.Windows.Shell.JumpTask>電卓アプリケーションを開きます。  
+  
+ [!code-csharp[Shell_JumpListSample#241](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#241)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arguments">
+      <MemberSignature Language="C#" Value="public string Arguments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Arguments" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.Arguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または起動時にアプリケーションに渡される引数を設定します。</summary>
+        <value>引数は、起動時にアプリケーションに渡されます。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはジャンプ リストで、タスクのツールヒントに表示されるテキストを設定します。</summary>
+        <value>タスクのツールヒントに表示されるテキスト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ 次の例は、構成する方法を示します、<xref:System.Windows.Shell.JumpTask>のコードにします。 <xref:System.Windows.Shell.JumpTask>電卓アプリケーションを開きます。  
+  
+ [!code-csharp[Shell_JumpListSample#241](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#241)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconResourceIndex">
+      <MemberSignature Language="C#" Value="public int IconResourceIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 IconResourceIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.IconResourceIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースに埋め込まれたアイコンの 0 から始まるインデックスを設定します。</summary>
+        <value>アイコン、またはアイコンを使用しない場合は-1 の 0 から始まるインデックス。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される、アイコン、<xref:System.Windows.Shell.JumpTask>ネイティブ リソースとして用意する必要があります。 内のオフセットを指定して使用する 1 つを指定する DLL または実行可能ファイルで複数のアイコンがある場合、<xref:System.Windows.Shell.JumpTask.IconResourceIndex%2A>プロパティです。  
+  
+ アイコン リソースが指定されていない場合、または指定されたアイコンが見つからない場合は、標準のシステム アイコンが表示されます。 アイコンが表示されないことを指定するには、設定、<xref:System.Windows.Shell.JumpTask.IconResourceIndex%2A>プロパティを-1 にします。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconResourcePath">
+      <MemberSignature Language="C#" Value="public string IconResourcePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IconResourcePath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.IconResourcePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはジャンプ リストに表示するアイコンを含むリソースへのパスを設定します。</summary>
+        <value>アイコンを含むリソースへのパス。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される、アイコン、<xref:System.Windows.Shell.JumpTask>ネイティブ リソースとして用意する必要があります。 内のオフセットを指定して使用する 1 つを指定する DLL または実行可能ファイルで複数のアイコンがある場合、<xref:System.Windows.Shell.JumpTask.IconResourceIndex%2A>プロパティです。  
+  
+ アイコン リソースが指定されていない場合、または指定されたアイコンが見つからない場合は、標準のシステム アイコンが表示されます。 アイコンが表示されないことを指定するには、設定、<xref:System.Windows.Shell.JumpTask.IconResourceIndex%2A>プロパティを-1 にします。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ 次の例は、構成する方法を示します、<xref:System.Windows.Shell.JumpTask>のコードにします。 <xref:System.Windows.Shell.JumpTask>電卓アプリケーションを開きます。  
+  
+ [!code-csharp[Shell_JumpListSample#241](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#241)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはジャンプ リスト内のタスクに表示されるテキストを設定します。</summary>
+        <value>ジャンプ リスト内のタスクに表示されるテキストです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Windows.Shell.JumpTask.Title%2A>のプロパティを設定する必要があります、<xref:System.Windows.Shell.JumpTask>クリック可能なタスクとしてジャンプ リストに表示されます。  
+  
+ 代わりに、視覚的に分離するジャンプ リスト内の項目を作成して、<xref:System.Windows.Shell.JumpTask>を持たない、<xref:System.Windows.Shell.JumpTask.Title%2A>と<xref:System.Windows.Shell.JumpItem.CustomCategory%2A>指定します。 この空<xref:System.Windows.Shell.JumpTask>ジャンプ リストに水平の線として表示されます。 この場合、その他のプロパティを設定することができますが、何も影響はありません。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>テキスト ファイル名を開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ 次の例は、構成する方法を示します、<xref:System.Windows.Shell.JumpTask>のコードにします。 <xref:System.Windows.Shell.JumpTask>電卓アプリケーションを開きます。  
+  
+ [!code-csharp[Shell_JumpListSample#241](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#241)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkingDirectory">
+      <MemberSignature Language="C#" Value="public string WorkingDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WorkingDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpTask.WorkingDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または起動時にアプリケーションの作業ディレクトリを設定します。</summary>
+        <value>起動時にアプリケーションの作業ディレクトリです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpTask>マークアップでします。 <xref:System.Windows.Shell.JumpTask>という名前のテキスト ファイルを開きます`readme.txt`メモ帳アプリケーションにします。  
+  
+ [!code-xaml[Shell_JumpListSample#002](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#002)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

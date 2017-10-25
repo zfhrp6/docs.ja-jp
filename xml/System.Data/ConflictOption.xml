@@ -1,0 +1,102 @@
+<Type Name="ConflictOption" FullName="System.Data.ConflictOption">
+  <TypeSignature Language="C#" Value="public enum ConflictOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConflictOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.ConflictOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>どの競合する変更を指定、データ ソースが検出され、解決します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareAllSearchableValues">
+      <MemberSignature Language="C#" Value="CompareAllSearchableValues" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.ConflictOption CompareAllSearchableValues = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.ConflictOption.CompareAllSearchableValues" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ConflictOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Update および delete ステートメント、WHERE 句でテーブルからの検索可能なすべての列が含まれます。 これを指定することと同じ<see langword="CompareAllValuesUpdate" />  | <see langword="CompareAllValuesDelete" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareRowVersion">
+      <MemberSignature Language="C#" Value="CompareRowVersion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.ConflictOption CompareRowVersion = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.ConflictOption.CompareRowVersion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ConflictOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Timestamp 列は、テーブルに存在する場合は、生成された更新プログラムのすべてのステートメントの WHERE 句で使用されます。 これを指定することと同じ<see langword="CompareRowVersionUpdate" />  | <see langword="CompareRowVersionDelete" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwriteChanges">
+      <MemberSignature Language="C#" Value="OverwriteChanges" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.ConflictOption OverwriteChanges = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.ConflictOption.OverwriteChanges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ConflictOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Update および delete ステートメントのすべてのみを含める<see cref="P:System.Data.DataTable.PrimaryKey" />WHERE 句で列です。 いない場合<see cref="P:System.Data.DataTable.PrimaryKey" />は定義されている場合、検索可能なすべての列は、WHERE 句に含まれています。 これに相当<see langword="OverwriteChangesUpdate" />  | <see langword="OverwriteChangesDelete" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

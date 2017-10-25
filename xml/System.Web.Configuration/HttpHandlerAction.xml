@@ -1,0 +1,294 @@
+<Type Name="HttpHandlerAction" FullName="System.Web.Configuration.HttpHandlerAction">
+  <TypeSignature Language="C#" Value="public sealed class HttpHandlerAction : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpHandlerAction extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpHandlerAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、<see cref="T:System.Web.Configuration.HttpHandlersSection" />構成セクション。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerAction>クラスをプログラムでアクセスおよび変更する方法を提供する、`add`の要素、`httpHandlers`構成セクション。  
+  
+ この型が所属するグループの一部、<xref:System.Web.Configuration.HttpHandlerActionCollection>と<xref:System.Web.Configuration.HttpHandlersSection>型です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.HttpHandlerAction>読み書きできる情報セクション プロパティに従って、構成ファイルの関連するセクションと<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.Everywhere>です。  
+  
+ ASP.NET 検索ハンドラーのアセンブリ DLL をアプリケーションのプライベート \bin ディレクトリ最初に、し、システム アセンブリ キャッシュ内を検索し。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.HttpModuleAction>型です。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#2)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#2)]  
+  
+ 次の構成の抜粋は、宣言によっての値を指定する方法を示します、`httpHandlers`セクションです。  
+  
+```  
+<httpHandlers>  
+  <add path="Calculator.custom"  
+    type="Samples.Aspnet.SystemWebConfiguration.Calculator, CalculatorHandler"  
+    verb="GET" validate="false" />  
+</httpHandlers>   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpHandlerAction (string path, string type, string verb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string type, string verb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerAction.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="verb" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Web.Configuration.HttpHandlerAction" /> URL パス。</param>
+        <param name="type">バージョン、カルチャ、および公開キー トークンで構成されるクラスまたはアセンブリのコンマ区切りの組み合わせ。</param>
+        <param name="verb">HTTP 動詞 (たとえば、「GET、PUT、POST」) のコンマ区切りの一覧です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.HttpHandlerAction" />クラス渡されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerAction.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.HttpHandlerAction>クラスを使用して、<xref:System.Web.Configuration.HttpHandlersSection.Handlers%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpHandlerAction (string path, string type, string verb, bool validate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string type, string verb, bool validate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerAction.#ctor(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="verb" Type="System.String" />
+        <Parameter Name="validate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Web.Configuration.HttpHandlerAction" /> URL パス。</param>
+        <param name="type">バージョン、カルチャ、および公開キー トークンで構成されるクラスまたはアセンブリのコンマ区切りの組み合わせ。</param>
+        <param name="verb">HTTP 動詞 (たとえば、「GET、PUT、POST」) のコンマ区切りの一覧です。</param>
+        <param name="validate">
+          <see langword="true" />検証を許可するにはそれ以外の場合、<see langword="false" />です。 場合<see langword="false" />ASP.NET を読み込もうとクラスになるまで、実際に一致する要求、可能性のあるエラーを遅らせることが、スタートアップ時間が向上します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.HttpHandlerAction" />クラス渡されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerAction.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.HttpHandlerAction>クラスを使用して、<xref:System.Web.Configuration.HttpHandlersSection.Handlers%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#3)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerAction.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("path", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.HttpHandlerAction" />パス。</summary>
+        <value><see cref="T:System.Web.Configuration.HttpHandlerAction" /> URL パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerAction.Path%2A>プロパティは、1 つの URL またはワイルドカード文字を含めることができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.HttpHandlerAction.Path%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#5)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerAction.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerAction.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type", IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.HttpHandlerAction" />型です。</summary>
+        <value><see cref="T:System.Web.Configuration.HttpHandlerAction" /> 型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerAction.Type%2A>プロパティは、バージョン、カルチャ、および公開キー トークンで構成されるクラスとアセンブリのコンマ区切りの組み合わせ。  
+  
+> [!NOTE]
+>  ASP.NET 検索ハンドラーのアセンブリ DLL をアプリケーションのプライベート \bin ディレクトリ最初に、し、システム アセンブリ キャッシュ内を検索し。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.HttpHandlerAction.Type%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#6)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public bool Validate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Validate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerAction.Validate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("validate", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.HttpHandlerAction" />検証します。</summary>
+        <value>
+          <see langword="true" />検証できる場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.HttpHandlerAction.Validate%2A>プロパティは`false`ASP.NET を読み込もうとクラスになるまで、実際に一致する要求、可能性のあるエラーを遅らせることが、スタートアップ時間が向上します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.HttpHandlerAction.Validate%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#8)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verb">
+      <MemberSignature Language="C#" Value="public string Verb { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Verb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerAction.Verb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("verb", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で許可されている動詞、<see cref="T:System.Web.Configuration.HttpHandlerAction" />オブジェクト。</summary>
+        <value>オブジェクトで許可されている動詞です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Web.Configuration.HttpHandlerAction.Verb%2A>プロパティは、HTTP 動詞 (たとえば、「GET、PUT、POST」) のコンマ区切りの一覧を指定できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.HttpHandlerAction.Verb%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#7)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

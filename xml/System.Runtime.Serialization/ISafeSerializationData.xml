@@ -1,0 +1,87 @@
+<Type Name="ISafeSerializationData" FullName="System.Runtime.Serialization.ISafeSerializationData">
+  <TypeSignature Language="C#" Value="public interface ISafeSerializationData" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISafeSerializationData" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.ISafeSerializationData" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ透過的なコードでカスタムの例外データのシリアル化を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ To.NET Framework 4.0 の以前のバージョン、セキュリティ透過的なコードでカスタム ユーザー データのシリアル化可能でしたを使用して、<xref:System.Exception.GetObjectData%2A>メソッドです。 .NET Framework 4.0 以降、そのメソッドが付いて、<xref:System.Security.SecurityCriticalAttribute>属性が原因でセキュリティ透過的なコードで実行します。 このような状況を回避するには、実装、<xref:System.Runtime.Serialization.ISafeSerializationData>インターフェイスし、次の例に示すようにカスタム データを追加します。  
+  
+ <xref:System.Runtime.Serialization.ISafeSerializationData.CompleteDeserialization%2A>メソッドは、シリアル化後に呼び出されますを使用して、<xref:System.Runtime.Serialization.SafeSerializationEventArgs>カスタム データを復元します。  
+  
+   
+  
+## Examples  
+ 次の例には実装が含まれています、<xref:System.Runtime.Serialization.ISafeSerializationData>シリアル化されるカスタムのデータの格納に使用されるインターフェイスです。  
+  
+ [!code-csharp[ISafeSerializationData#1](~/samples/snippets/csharp/VS_Snippets_CFX/isafeserializationdata/cs/source.cs#1)]
+ [!code-vb[ISafeSerializationData#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/isafeserializationdata/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompleteDeserialization">
+      <MemberSignature Language="C#" Value="public void CompleteDeserialization (object deserialized);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CompleteDeserialization(object deserialized) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ISafeSerializationData.CompleteDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deserialized" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="deserialized">インスタンスの状態を格納するオブジェクト。</param>
+        <summary>インスタンスが逆シリアル化されるときに、このメソッドが呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装で定義されているプライベート変数に状態オブジェクトが格納されている、<xref:System.Runtime.Serialization.ISafeSerializationData>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、逆シリアル化後に例外の状態を復元します。  
+  
+ [!code-csharp[ISafeSerializationData#2](~/samples/snippets/csharp/VS_Snippets_CFX/isafeserializationdata/cs/source.cs#2)]
+ [!code-vb[ISafeSerializationData#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/isafeserializationdata/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

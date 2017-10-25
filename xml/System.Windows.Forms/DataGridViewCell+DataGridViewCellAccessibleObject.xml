@@ -1,0 +1,508 @@
+<Type Name="DataGridViewCell+DataGridViewCellAccessibleObject" FullName="System.Windows.Forms.DataGridViewCell+DataGridViewCellAccessibleObject">
+  <TypeSignature Language="C#" Value="protected class DataGridViewCell.DataGridViewCellAccessibleObject : System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit DataGridViewCell/DataGridViewCellAccessibleObject extends System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.AccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助クライアント アプリケーションに <see cref="T:System.Windows.Forms.DataGridViewCell" /> の情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームには、ユーザー補助クライアント アプリケーションを使用するアプリケーションは、組み込みのユーザー補助のサポートが含まれています。 ユーザー補助クライアント アプリケーションの例では、音声入力ユーティリティ、オンスクリーン キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ画面拡大ツールおよびレビュー担当者のユーティリティが含まれます。  
+  
+ <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>クラスから継承、<xref:System.Windows.Forms.AccessibleObject>に関する情報を提供するクラス、<xref:System.Windows.Forms.DataGridViewCell>ユーザー補助クライアント アプリケーションにします。 各クラスの視覚的な部分を表す、 <xref:System.Windows.Forms.DataGridView>— など<xref:System.Windows.Forms.DataGridViewColumnHeaderCell>、 <xref:System.Windows.Forms.DataGridViewRowHeaderCell>、<xref:System.Windows.Forms.DataGridViewRow>と<xref:System.Windows.Forms.DataGridViewCell>— もから継承するクラスを含む<xref:System.Windows.Forms.AccessibleObject>外側のクラスに関する情報を提供し、ユーザー補助クライアント アプリケーションの代理としてアクションを実行します。  
+  
+ 名前や説明などの追加情報を提供するインスタンスがある、<xref:System.Windows.Forms.DataGridView>コントロール、ユーザー補助クライアント アプリケーションにします。 この追加情報を提示するための 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>と<xref:System.Windows.Forms.Control.AccessibleDescription%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。  
+  
+> [!NOTE]
+>  変更する必要があります、<xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>と<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティ値の場合など、まれな状況でのみを行う、<xref:System.Windows.Forms.DataGridView>リストのようになります。  
+  
+ 場合によっては、必要がある場合以上のアクセシビリティ情報またはカスタムに付属するアクションをさまざまなユーザー補助<xref:System.Windows.Forms.DataGridView>または<xref:System.Windows.Forms.DataGridViewCell>です。 ユーザー補助機能をカスタマイズするから派生した独自のクラスを記述することができます、<xref:System.Windows.Forms.DataGridView.DataGridViewAccessibleObject>または<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>クラスおよびオーバーライド、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>メソッドです。 たとえば、セル内で特別なヒット テストなど、独自のカスタム動作を実装するカスタムの行ヘッダー セルを作成している場合から継承するクラスを作成する必要があります、<xref:System.Windows.Forms.DataGridViewRowHeaderCell.DataGridViewRowHeaderCellAccessibleObject>クラスをオーバーライド、<xref:System.Windows.Forms.DataGridViewRowHeaderCell.CreateAccessibilityInstance%2A>メソッドです。  
+  
+ <xref:System.Windows.Forms.DataGridView>を使用して、データ構造体を公開<xref:System.Windows.Forms.AccessibleRole>階層の表に、データを定義する値。 Microsoft Active Accessibility をデータ テーブルを公開する方法については、"を公開するデータ テーブルを通じて Microsoft Active Accessibility"http://msdn.microsoft.com/library の MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellAccessibleObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />クラスの初期化がない場合、<see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellAccessibleObject (System.Windows.Forms.DataGridViewCell owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridViewCell owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.#ctor(System.Windows.Forms.DataGridViewCell)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.DataGridViewCell" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> を所有している <see cref="T:System.Windows.Forms.DataGridViewCell" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />クラス、設定、<see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" />プロパティを指定した<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの位置とサイズを取得します。</summary>
+        <value>ユーザー補助オブジェクトの境界を表す <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Bounds%2A>プロパティを画面座標で、オブジェクトの外接する四角形を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAction">
+      <MemberSignature Language="C#" Value="public override string DefaultAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.DefaultAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のアクションを説明する文字列を取得、<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</summary>
+        <value>文字列"Edit"です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DoDefaultAction">
+      <MemberSignature Language="C#" Value="public override void DoDefaultAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DoDefaultAction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.DoDefaultAction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> に関連付けられた既定のアクションを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルに関連付けられた場合<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>は、 <xref:System.Windows.Forms.DataGridViewHeaderCell>、このメソッドは、何も行われません。 それ以外の場合、このメソッドのセルを選択、現在のセルし、は、次のアクションのいずれか。  
+  
+-   場合、セルの<xref:System.Windows.Forms.DataGridViewCell.ReadOnly%2A>プロパティの値が`true`、このメソッドを返します。  
+  
+-   場合、セルの<xref:System.Windows.Forms.DataGridViewCell.EditType%2A>プロパティの値が`null`セルの意味と、編集コントロールをホストできない、このメソッドを返します。  
+  
+-   セルが現在の入力または編集モード (このメソッドが呼び出される場合など、<xref:System.Windows.Forms.DataGridView.CellBeginEdit>または<xref:System.Windows.Forms.DataGridView.CellEndEdit>イベント ハンドラー)、このメソッドを返します。  
+  
+-   セルが現在編集モードである場合は、このメソッドをコミットして、編集を終了します。  
+  
+-   編集モードのセルに含まれていない場合、<xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>、このメソッドを返します。  
+  
+-   上記の操作のいずれもが行われた場合、このメソッドは、セルの編集モードに入るです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。  
+  
+ または  
+  
+ 値、<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />プロパティは使用されません<see langword="null" />と<see cref="P:System.Windows.Forms.DataGridViewCell.RowIndex" />のプロパティ、<see cref="T:System.Windows.Forms.DataGridViewCell" />によって返される、<see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" />プロパティが-1 に等しくします。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChild">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject GetChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject GetChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.GetChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">子ユーザー補助オブジェクトの 0 から始まるインデックス。</param>
+        <summary>指定したインデックスに対応するユーザー補助オブジェクトを返します。</summary>
+        <returns>指定したインデックスに対応する子ユーザー補助オブジェクトを表す <see cref="T:System.Windows.Forms.AccessibleObject" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.GetChild%2A>メソッドを返します。、<xref:System.Windows.Forms.AccessibleObject>場合にのみ、<xref:System.Windows.Forms.DataGridViewCell>を所有している、<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>が編集モードと`index`は 0 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildCount">
+      <MemberSignature Language="C#" Value="public override int GetChildCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetChildCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.GetChildCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>属する子の数を返します、<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />です。</summary>
+        <returns>値 1 の場合、<see cref="T:System.Windows.Forms.DataGridViewCell" />を所有している<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />、それ以外の編集されている – 1。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFocused">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject GetFocused ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject GetFocused() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.GetFocused" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子を返しますキーボード フォーカスのあるユーザー補助オブジェクト。</summary>
+        <returns>
+          常に <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelected">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject GetSelected ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject GetSelected() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.GetSelected" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子を返しますが、現在選択されているユーザー補助オブジェクト。</summary>
+        <returns>
+          常に <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Help">
+      <MemberSignature Language="C#" Value="public override string Help { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Help" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Help" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>所有しているセルの型および基本型の名前を取得します。</summary>
+        <value>所有しているセルの型および基本型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを所有しているセルの種類名、名前をかっこでその基本型のなどを含む文字列を返します"`DataGridViewTextBoxCell` (`DataGridViewCell`)"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> の名前を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Name%2A>プロパティを列ヘッダーのテキストと、行のインデックスを含む文字列を返します、<xref:System.Windows.Forms.DataGridViewCell>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject Navigate (System.Windows.Forms.AccessibleNavigation navigationDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject Navigate(valuetype System.Windows.Forms.AccessibleNavigation navigationDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate(System.Windows.Forms.AccessibleNavigation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigationDirection" Type="System.Windows.Forms.AccessibleNavigation" />
+      </Parameters>
+      <Docs>
+        <param name="navigationDirection"><see cref="T:System.Windows.Forms.AccessibleNavigation" /> 値のいずれか。</param>
+        <summary>他のユーザー補助オブジェクトに移動します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />を表す、<see cref="T:System.Windows.Forms.DataGridViewCell" />内の指定した<see cref="T:System.Windows.Forms.AccessibleNavigation" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表を<xref:System.Windows.Forms.DataGridViewCell>を所有している、<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>によって返される、<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>パラメーター値ごとのメソッドです。  
+  
+|パラメーター値|説明|  
+|---------------------|-----------------|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Right>|<xref:System.Windows.Forms.DataGridViewCell>現在のセルの右側にします。 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>返します`null`右端の列に現在のセルがある場合。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Left>|<xref:System.Windows.Forms.DataGridViewCell>現在のセルの左側にします。 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>現在のセルが左端の列にある場合は、行ヘッダーのユーザー補助オブジェクトを返します。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Next>|<xref:System.Windows.Forms.DataGridViewCell>次に高いインデックスを持ちます。 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>返します`null`最初の列に現在のセルがある場合。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Previous>|<xref:System.Windows.Forms.DataGridViewCell> [次へ] の下のインデックスを持ちます。 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>返します`null`最後の列に現在のセルがある場合。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Up>|<xref:System.Windows.Forms.DataGridViewCell>同じ列と、現在のセル上に 1 行にします。 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>返します`null`最初の行に現在のセルがある場合。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Down>|<xref:System.Windows.Forms.DataGridViewCell>同じ列および現在のセルの下の 1 つの行にします。 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Navigate%2A>返します`null`最後の行に現在のセルがある場合。|  
+|他のすべての<xref:System.Windows.Forms.AccessibleNavigation>値|`null`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewCell Owner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を所有するセル、<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> を所有している <see cref="T:System.Windows.Forms.DataGridViewCell" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティを設定するときに、<see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" />プロパティは既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> の親を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> の親。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Parent%2A>プロパティから返される、<xref:System.Windows.Forms.DataGridViewRow.DataGridViewRowAccessibleObject>を表す、<xref:System.Windows.Forms.DataGridViewRow>を格納している、<xref:System.Windows.Forms.DataGridViewCell>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleRole Role { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleRole Role" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロールを取得、<see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" />です。</summary>
+        <value><see cref="F:System.Windows.Forms.AccessibleRole.Cell" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public override void Select (System.Windows.Forms.AccessibleSelection flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Select(valuetype System.Windows.Forms.AccessibleSelection flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Select(System.Windows.Forms.AccessibleSelection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Windows.Forms.AccessibleSelection" />
+      </Parameters>
+      <Docs>
+        <param name="flags"><see cref="T:System.Windows.Forms.AccessibleSelection" /> 値のいずれか。</param>
+        <summary>選択範囲を変更するか、ユーザー補助オブジェクトのキーボード フォーカスを移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、実行したアクション、<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Select%2A>ごとメソッド`flags`値。  
+  
+|パラメーター値|操作|  
+|---------------------|------------|  
+|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus>|<xref:System.Windows.Forms.DataGridView>フォーカスを取得します。|  
+|<xref:System.Windows.Forms.AccessibleSelection.TakeSelection>|<xref:System.Windows.Forms.DataGridViewCell>を所有しているこの<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>フォーカスを取得します。|  
+|<xref:System.Windows.Forms.AccessibleSelection.AddSelection>|<xref:System.Windows.Forms.DataGridViewCell>に追加、<xref:System.Windows.Forms.DataGridView.SelectedCells%2A>プロパティです。|  
+|<xref:System.Windows.Forms.AccessibleSelection.RemoveSelection>|<xref:System.Windows.Forms.DataGridViewCell>から削除されて、<xref:System.Windows.Forms.DataGridView.SelectedCells%2A>プロパティです。|  
+|他のすべての<xref:System.Windows.Forms.AccessibleSelection>値|処理は行われません。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject" /> の状態を取得します。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Windows.Forms.AccessibleStates" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は常に含まれています、<xref:System.Windows.Forms.AccessibleStates.Selectable>と<xref:System.Windows.Forms.AccessibleStates.Focusable>値。 含まれています、<xref:System.Windows.Forms.AccessibleStates.Selected>以外の場合、関連付けられたセルを選択すると、値、<xref:System.Windows.Forms.AccessibleStates.Focused>値のセルにキーボード フォーカスがある場合、<xref:System.Windows.Forms.AccessibleStates.Offscreen>のセルが現在表示されていない場合は値です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または所有しているセルの書式設定された値を表す文字列を設定します。</summary>
+        <value>A<see cref="T:System.String" />セルの値の表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Value%2A>プロパティには、セルの値を表す文字列が含まれています。<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>プロパティです。 場合<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>は`null`、 <xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Value%2A> "(null)"という文字列が含まれています。  
+  
+ このプロパティの設定は影響しません、所有しているセルが場合ヘッダー セルは読み取り専用、または行に属していません。 それ以外の場合、このプロパティを設定します。  
+  
+-   現在実行中のすべての編集を終了し、値をコミットします。  
+  
+-   セルを使用して<xref:System.Windows.Forms.DataGridViewCell.GetFormattedValue%2A>と<xref:System.Windows.Forms.DataGridViewCell.ParseFormattedValue%2A>のセルに示される型に指定された値を変換するメソッド<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>プロパティです。  
+  
+-   変換後の値をセルの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject.Owner" /> プロパティの値が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

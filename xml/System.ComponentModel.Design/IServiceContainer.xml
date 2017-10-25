@@ -1,0 +1,295 @@
+<Type Name="IServiceContainer" FullName="System.ComponentModel.Design.IServiceContainer">
+  <TypeSignature Language="C#" Value="public interface IServiceContainer : IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServiceContainer implements class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IServiceContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービスのコンテナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス コンテナーは、定義では、サービス プロバイダーです。 サービスを提供するだけでなくはこれも、追加およびサービスを削除するメカニズムを提供します。 サービスは、.NET Framework のデザイン時アーキテクチャの基盤です。 サービスは、特定の機能と、サービスまたはサービスを提供するサービス オブジェクトによって実装されるメソッドへのデザイン時のオブジェクト アクセスを提供します。  
+  
+ デザイン時にサービスを取得する呼び出し、<xref:System.ComponentModel.Component.GetService%2A>デザイン モードで配置されたコンポーネントのメソッドです。 デザイナーおよびその他のオブジェクト追加したり削除したりサービスで、デザイン時に、<xref:System.ComponentModel.Design.IDesignerHost>インターフェイスです。  
+  
+ サービス コンテナーは、サービス コンテナーのツリーを形成する他のサービス コンテナーに含まれていることができます。 既定では、<xref:System.ComponentModel.Design.IServiceContainer>インターフェイスでは、サービスを最も近いサービス コンテナーに追加します。 サービスが追加されると、昇格する手順についてで追加することができます。 サービスを昇格するときに追加されます、親サービス コンテナーのサービス コンテナーのツリーの最上部に到達するまで。 これにより、プロセスの他のオブジェクトが使用できるグローバル サービスを提供するデザイナー。  
+  
+   
+  
+## Examples  
+ 次のコード例にはコードが含まれています、<xref:System.Windows.Forms.Form>リンクされたサービス コンテナーのネットワークの動作を示すために構成されています。  
+  
+ [!code-cpp[IServiceContainerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IServiceContainerExample/CPP/serviceform.cpp#1)]
+ [!code-csharp[IServiceContainerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IServiceContainerExample/CS/serviceform.cs#1)]
+ [!code-vb[IServiceContainerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IServiceContainerExample/VB/serviceform.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddService">
+      <MemberSignature Language="C#" Value="public void AddService (Type serviceType, System.ComponentModel.Design.ServiceCreatorCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddService(class System.Type serviceType, class System.ComponentModel.Design.ServiceCreatorCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IServiceContainer.AddService(System.Type,System.ComponentModel.Design.ServiceCreatorCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="callback" Type="System.ComponentModel.Design.ServiceCreatorCallback" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">追加するサービスの型。</param>
+        <param name="callback">サービスの作成に使用されるコールバック オブジェクト。 これにより、により、宣言するのには、利用可能なサービスが、サービスが要求されるまで、オブジェクトの作成を遅らせます。</param>
+        <summary>指定したサービスをサービス コンテナーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、サービスを追加する方法を示しています、<xref:System.ComponentModel.Design.IServiceContainer>です。  
+  
+ [!code-cpp[ServiceContainerExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ServiceContainerExample/CPP/form1.cpp#3)]
+ [!code-csharp[ServiceContainerExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ServiceContainerExample/CS/form1.cs#3)]
+ [!code-vb[ServiceContainerExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ServiceContainerExample/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddService">
+      <MemberSignature Language="C#" Value="public void AddService (Type serviceType, object serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddService(class System.Type serviceType, object serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IServiceContainer.AddService(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="serviceInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">追加するサービスの型。</param>
+        <param name="serviceInstance">追加するサービスの種類のインスタンス。 このオブジェクトの実装またはによって示される型から継承する必要があります、 <c>serviceType</c>パラメーター。</param>
+        <summary>指定したサービスをサービス コンテナーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、サービスを追加する方法を示しています、<xref:System.ComponentModel.Design.IServiceContainer>です。  
+  
+ [!code-cpp[ServiceContainerExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ServiceContainerExample/CPP/form1.cpp#2)]
+ [!code-csharp[ServiceContainerExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ServiceContainerExample/CS/form1.cs#2)]
+ [!code-vb[ServiceContainerExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ServiceContainerExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddService">
+      <MemberSignature Language="C#" Value="public void AddService (Type serviceType, System.ComponentModel.Design.ServiceCreatorCallback callback, bool promote);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddService(class System.Type serviceType, class System.ComponentModel.Design.ServiceCreatorCallback callback, bool promote) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IServiceContainer.AddService(System.Type,System.ComponentModel.Design.ServiceCreatorCallback,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="callback" Type="System.ComponentModel.Design.ServiceCreatorCallback" />
+        <Parameter Name="promote" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">追加するサービスの型。</param>
+        <param name="callback">サービスの作成に使用されるコールバック オブジェクト。 これにより、により、宣言するのには、利用可能なサービスが、サービスが要求されるまで、オブジェクトの作成を遅らせます。</param>
+        <param name="promote">
+          <see langword="true" />この要求を任意の親サービス コンテナーに昇格するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたサービスをサービス コンテナーに追加し、必要に応じて、サービスを親サービス コンテナーを昇格します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddService">
+      <MemberSignature Language="C#" Value="public void AddService (Type serviceType, object serviceInstance, bool promote);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddService(class System.Type serviceType, object serviceInstance, bool promote) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IServiceContainer.AddService(System.Type,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="serviceInstance" Type="System.Object" />
+        <Parameter Name="promote" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">追加するサービスの型。</param>
+        <param name="serviceInstance">追加するサービスの種類のインスタンス。 このオブジェクトの実装またはによって示される型から継承する必要があります、 <c>serviceType</c>パラメーター。</param>
+        <param name="promote">
+          <see langword="true" />この要求を任意の親サービス コンテナーに昇格するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたサービスをサービス コンテナーに追加し、必要に応じて任意の親サービス コンテナーにサービスを昇格します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveService">
+      <MemberSignature Language="C#" Value="public void RemoveService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IServiceContainer.RemoveService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">削除するサービスの型。</param>
+        <summary>指定されたサービス型をサービス コンテナーから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、サービスから削除する方法、<xref:System.ComponentModel.Design.IServiceContainer>です。  
+  
+ [!code-cpp[ServiceContainerExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ServiceContainerExample/CPP/form1.cpp#4)]
+ [!code-csharp[ServiceContainerExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ServiceContainerExample/CS/form1.cs#4)]
+ [!code-vb[ServiceContainerExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ServiceContainerExample/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveService">
+      <MemberSignature Language="C#" Value="public void RemoveService (Type serviceType, bool promote);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveService(class System.Type serviceType, bool promote) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IServiceContainer.RemoveService(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="promote" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">削除するサービスの型。</param>
+        <param name="promote">
+          <see langword="true" />この要求を任意の親サービス コンテナーに昇格するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたサービス型をサービス コンテナーから削除し、必要に応じて、サービスを親サービス コンテナーを昇格します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、サービスから削除する方法、<xref:System.ComponentModel.Design.IServiceContainer>です。  
+  
+ [!code-cpp[ServiceContainerExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ServiceContainerExample/CPP/form1.cpp#4)]
+ [!code-csharp[ServiceContainerExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ServiceContainerExample/CS/form1.cs#4)]
+ [!code-vb[ServiceContainerExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ServiceContainerExample/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

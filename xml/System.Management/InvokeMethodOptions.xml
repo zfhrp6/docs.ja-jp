@@ -1,0 +1,126 @@
+<Type Name="InvokeMethodOptions" FullName="System.Management.InvokeMethodOptions">
+  <TypeSignature Language="C#" Value="public class InvokeMethodOptions : System.Management.ManagementOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InvokeMethodOptions extends System.Management.ManagementOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Management.InvokeMethodOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>管理メソッドを呼び出すためのオプションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で呼び出して、 **Win32_Process::Create** Calc.exe の新しいプロセスを開始するメソッド。 <xref:System.Management.InvokeMethodOptions>メソッドを呼び出すクラスを使用します。  
+  
+ [!code-csharp[wminet_InvokeMethodOptions#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_InvokeMethodOptions/cs/InvokeMethodOptions.cs#1)]
+ [!code-vb[wminet_InvokeMethodOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_InvokeMethodOptions/vb/InvokeMethodOptions.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvokeMethodOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.InvokeMethodOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.InvokeMethodOptions" />のクラス、<see cref="M:System.Management.ManagementObject.InvokeMethod(System.String,System.Object[])" />操作、既定値を使用します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で呼び出して、 **Win32_Process::Create** Calc.exe の新しいプロセスを開始するメソッド。 既定のコンス トラクター、<xref:System.Management.InvokeMethodOptions>クラスを使用します。  
+  
+ [!code-csharp[wminet_InvokeMethodOptions-1#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_InvokeMethodOptions-1/cs/InvokeMethodOptions-1.cs#1)]
+ [!code-vb[wminet_InvokeMethodOptions-1#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_InvokeMethodOptions-1/vb/InvokeMethodOptions-1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvokeMethodOptions (System.Management.ManagementNamedValueCollection context, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementNamedValueCollection context, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.InvokeMethodOptions.#ctor(System.Management.ManagementNamedValueCollection,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Management.ManagementNamedValueCollection" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="context">プロバイダー固有という名前と値のペアをプロバイダーに渡されるオブジェクト。</param>
+        <param name="timeout">タイムアウトになる前に実行する操作を継続できる時間の長さ。既定値は <see cref="F:System.TimeSpan.MaxValue" /> です。 このパラメーターの設定は、操作を呼び出す半です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.InvokeMethodOptions" />指定された値を使用して呼び出し操作のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で呼び出して、 **Win32_Process::Create** Calc.exe の新しいプロセスを開始するメソッド。 <xref:System.Management.InvokeMethodOptions>メソッドを呼び出すクラスを使用します。  
+  
+ [!code-csharp[wminet_InvokeMethodOptions-2#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_InvokeMethodOptions-2/cs/InvokeMethodOptions-2.cs#1)]
+ [!code-vb[wminet_InvokeMethodOptions-2#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_InvokeMethodOptions-2/vb/InvokeMethodOptions-2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.InvokeMethodOptions.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

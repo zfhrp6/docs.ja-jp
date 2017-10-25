@@ -1,0 +1,85 @@
+<Type Name="TypedDataSetGenerator+GenerateOption" FullName="System.Data.Design.TypedDataSetGenerator+GenerateOption">
+  <TypeSignature Language="C#" Value="public enum TypedDataSetGenerator.GenerateOption" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed TypedDataSetGenerator/GenerateOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>提供、 <see cref="T:System.Data.Design.TypedDataSetGenerator" /> LINQ to DataSet および階層更新をサポートする型指定されたデータセットを作成するための情報を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Design.TypedDataSetGenerator.GenerateOption>列挙体を提供、<xref:System.Data.Design.TypedDataSetGenerator>を作成するときに型指定されたデータセットの種類に関する情報を含む、`TypedDataSetGenerator.Generate`メソッドが呼び出されます。  
+  
+ <xref:System.Data.Design.TypedDataSetGenerator.GenerateOption>列挙型では、新たなオーバー ロードを作成しなくても型指定されたデータセットでの新機能を実装することができます、`TypedDataSetGenerator.Generate`メソッドです。  
+  
+> [!NOTE]
+>  LINQ to DataSet および階層的な更新プログラムで追加された機能は、[!INCLUDE[vs_orcas_long](~/includes/vs-orcas-long-md.md)]です。  
+>   
+>  参照してください[階層の更新の概要](http://msdn.microsoft.com/library/c4f8e8b9-e4a5-4a02-8462-d03d1e8222d6)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HierarchicalUpdate">
+      <MemberSignature Language="C#" Value="HierarchicalUpdate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption HierarchicalUpdate = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Design.TypedDataSetGenerator.GenerateOption.HierarchicalUpdate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Design.TypedDataSetGenerator+GenerateOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TableAdapterManager および、階層更新を有効にするための関連するメソッドを含む、型指定されたデータセットを生成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LinqOverTypedDatasets">
+      <MemberSignature Language="C#" Value="LinqOverTypedDatasets" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption LinqOverTypedDatasets = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Design.TypedDataSetGenerator.GenerateOption.LinqOverTypedDatasets" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Design.TypedDataSetGenerator+GenerateOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継承するデータ テーブルがある型指定されたデータセットを生成<see cref="T:System.Data.TypedTableBase`1" />データ テーブルでの LINQ クエリを実行する機能を有効にするためにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Design.TypedDataSetGenerator.GenerateOption.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Design.TypedDataSetGenerator+GenerateOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョンの Visual Studio で生成される型指定されたデータセットと互換性がある型指定されたデータセットを生成するよりも前[!INCLUDE[vs_orcas_long](~/includes/vs-orcas-long-md.md)]です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

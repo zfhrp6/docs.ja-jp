@@ -1,0 +1,962 @@
+<Type Name="PrincipalCollection" FullName="System.DirectoryServices.AccountManagement.PrincipalCollection">
+  <TypeSignature Language="C#" Value="public class PrincipalCollection : System.Collections.Generic.ICollection&lt;System.DirectoryServices.AccountManagement.Principal&gt;, System.Collections.Generic.IEnumerable&lt;System.DirectoryServices.AccountManagement.Principal&gt;, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrincipalCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;class System.DirectoryServices.AccountManagement.Principal&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.DirectoryServices.AccountManagement.Principal&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.DirectoryServices.AccountManagement.Principal&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.DirectoryServices.AccountManagement.Principal&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>派生したオブジェクトの変更可能なコレクション、<see cref="T:System.DirectoryServices.AccountManagement.Principal" />クラスです。  このクラスは、プリンシパルが含まれる複数値プロパティに使用するように設計されています。  このコレクションの内容を操作する永続化されるときの対応するストア プロパティの内容が変更<see cref="M:System.DirectoryServices.AccountManagement.Principal.Save" />は対応するプリンシパル オブジェクトに対して呼び出されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>コレクションの末尾に指定されたプリンシパルを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove%2A>と<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains%2A>、この関数に次の 4 つのオーバー ロードがありますが、それらはすべて同じ操作を実行します。  ユーザーが Intellisense を使用している開発者を取るオーバー ロードを表示するようにで追加のオーバー ロードは、使いやすさを向上させるためにのみ実装、 <xref:System.DirectoryServices.AccountManagement.UserPrincipal>、 <xref:System.DirectoryServices.AccountManagement.GroupPrincipal>、または<xref:System.DirectoryServices.AccountManagement.ComputerPrincipal>オブジェクト。  呼び出すことと同じではユーザー、グループ、またはコンピューターのオーバー ロードのいずれかを呼び出して、<xref:System.DirectoryServices.AccountManagement.Principal>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.DirectoryServices.AccountManagement.ComputerPrincipal computer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.DirectoryServices.AccountManagement.ComputerPrincipal computer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Add(System.DirectoryServices.AccountManagement.ComputerPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="computer" Type="System.DirectoryServices.AccountManagement.ComputerPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="computer"><see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> オブジェクトをコレクションの末尾に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.DirectoryServices.AccountManagement.PrincipalExistsException>|`computer` はコレクションに既に存在します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.DirectoryServices.AccountManagement.GroupPrincipal group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.DirectoryServices.AccountManagement.GroupPrincipal group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Add(System.DirectoryServices.AccountManagement.GroupPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.DirectoryServices.AccountManagement.GroupPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.AccountManagement.GroupPrincipal" /> オブジェクトをコレクションの末尾に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.DirectoryServices.AccountManagement.PrincipalExistsException>|`group` はコレクションに既に存在します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.DirectoryServices.AccountManagement.Principal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.DirectoryServices.AccountManagement.Principal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Add(System.DirectoryServices.AccountManagement.Principal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.DirectoryServices.AccountManagement.Principal" />
+      </Parameters>
+      <Docs>
+        <param name="principal"><see cref="T:System.DirectoryServices.AccountManagement.Principal" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.AccountManagement.Principal" /> オブジェクトをコレクションの末尾に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.DirectoryServices.AccountManagement.PrincipalExistsException>|`principal` はコレクションに既に存在します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.DirectoryServices.AccountManagement.UserPrincipal user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.DirectoryServices.AccountManagement.UserPrincipal user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Add(System.DirectoryServices.AccountManagement.UserPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.DirectoryServices.AccountManagement.UserPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="user"><see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" /> オブジェクト</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" /> オブジェクトをコレクションの末尾に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.DirectoryServices.AccountManagement.PrincipalExistsException>|`user` はコレクションに既に存在します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.DirectoryServices.AccountManagement.PrincipalContext context, System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Add(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="identityType" Type="System.DirectoryServices.AccountManagement.IdentityType" />
+        <Parameter Name="identityValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />コレクションに追加するプリンシパルのオブジェクト。</param>
+        <param name="identityType"><see cref="T:System.DirectoryServices.AccountManagement.IdentityType" />の形式を指定するオブジェクト<c>identityValue</c></param>
+        <param name="identityValue">指定された形式で、プリンシパルを識別する文字列<c>identityType</c></param>
+        <summary>検索、<see cref="T:System.DirectoryServices.AccountManagement.Principal" />パラメーターに一致して、コレクションの末尾に追加するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.DirectoryServices.AccountManagement.PrincipalExistsException>|既にこれらのパラメーターに一致するプリンシパルは、コレクションに存在します。|  
+|<xref:System.DirectoryServices.AccountManagement.NoMatchingPrincipalException>|指定したパラメーターに一致するプリンシパルは見つかりませんでした。|  
+|<xref:System.DirectoryServices.AccountManagement.MultipleMatchesException>|複数のプリンシパルでは、指定されたパラメーターと一致します。|  
+|<xref:System.DirectoryServices.AccountManagement.ArgumentException>|場合にスローされる`identityType`空の文字列|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべてのプリンシパルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.InvalidOperation>|このメソッドが呼び出された場合、 <xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members> PrincipalCollection、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members>プロパティは、1 つ以上のグループのメンバーがこのグループのプライマリ グループとして、消去できません|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Contains">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>場合は、指定したプリンシパルのメンバーである、PrincipalCollection false それ以外の場合は true を返します。  同様に、プリンシパルを指定することができます、 <see cref="Overload:System.DirectoryServices.AccountManagement.PrincipalCollection.Add" />.methods です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Add%2A>、および<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove%2A>この関数に次の 4 つのオーバー ロードがありますが、それらはすべて同じ処理を行います。  ユーザーが Intellisense を使用している開発者を取るオーバー ロードを表示するようにで追加のオーバー ロードは、使いやすさを向上させるためにのみ実装、 <xref:System.DirectoryServices.AccountManagement.UserPrincipal>、 <xref:System.DirectoryServices.AccountManagement.GroupPrincipal>、または<xref:System.DirectoryServices.AccountManagement.ComputerPrincipal>オブジェクト。  呼び出すことと同じではユーザー、グループ、またはコンピューターのオーバー ロードのいずれかを呼び出して、<xref:System.DirectoryServices.AccountManagement.Principal>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.AccountManagement.ComputerPrincipal computer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.AccountManagement.ComputerPrincipal computer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains(System.DirectoryServices.AccountManagement.ComputerPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="computer" Type="System.DirectoryServices.AccountManagement.ComputerPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="computer"><see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> オブジェクト。</param>
+        <summary>コレクションが含まれていますが、指定した場合、true を返します<see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />オブジェクト。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.AccountManagement.GroupPrincipal group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.AccountManagement.GroupPrincipal group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains(System.DirectoryServices.AccountManagement.GroupPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.DirectoryServices.AccountManagement.GroupPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.DirectoryServices.AccountManagement.GroupPrincipal" /> オブジェクト</param>
+        <summary>コレクションが含まれていますが、指定した場合、true を返します<see cref="T:System.DirectoryServices.AccountManagement.GroupPrincipal" />オブジェクト。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.AccountManagement.Principal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.DirectoryServices.AccountManagement.Principal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains(System.DirectoryServices.AccountManagement.Principal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.DirectoryServices.AccountManagement.Principal" />
+      </Parameters>
+      <Docs>
+        <param name="principal"><see cref="T:System.DirectoryServices.AccountManagement.Principal" /> オブジェクト</param>
+        <summary>コレクションが含まれていますが、指定した場合、true を返します<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクト。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.AccountManagement.UserPrincipal user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.AccountManagement.UserPrincipal user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains(System.DirectoryServices.AccountManagement.UserPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.DirectoryServices.AccountManagement.UserPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="user"><see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" /> オブジェクト。</param>
+        <summary>コレクションが含まれていますが、指定した場合、true を返します<see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" />オブジェクト。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.AccountManagement.PrincipalContext context, System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="identityType" Type="System.DirectoryServices.AccountManagement.IdentityType" />
+        <Parameter Name="identityValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />プリンシパルのオブジェクト。</param>
+        <param name="identityType"><see cref="T:System.DirectoryServices.AccountManagement.IdentityType" />の形式を指定するオブジェクト<c>identityValue</c></param>
+        <param name="identityValue">指定された形式で、プリンシパルを識別する文字列<c>identityType</c></param>
+        <summary>場合は true を返します、<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクトと一致する、 <paramref name="indentityType" /> / <paramref name="idendityValue" />ペアがコレクションには</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.DirectoryServices.AccountManagement.MultipleMatchesException>|これらのパラメーターに一致する複数のプリンシパルがあります。|  
+|<xref:System.DirectoryServices.AccountManagement.ArgumentException>|`identityType`パラメーターを空にすることはできません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.AccountManagement.Principal[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.DirectoryServices.AccountManagement.Principal[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.CopyTo(System.DirectoryServices.AccountManagement.Principal[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.DirectoryServices.AccountManagement.Principal[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />を代入するを<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクト。</param>
+        <param name="index">内の位置<c>配列</c>コレクション内の最初のプリンシパル オブジェクトをコピーする必要があります。</param>
+        <summary>コピー、<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクトからこの<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />配列内の指定した位置のインデックスを開始位置を指定した配列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `array`1 次元に指定する必要があります。  ない場合は、<xref:System.ArgumentException>がスローされます。  コピーする要素の数がから利用可能な領域よりも大きい場合、これ以上の例外がスローされます`index`の末尾に`array`場合は、`array`は`null`、または`index`が 0 未満です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション内のプリンシパルの数のオブジェクトを返します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.DirectoryServices.AccountManagement.Principal&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.DirectoryServices.AccountManagement.Principal&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.DirectoryServices.AccountManagement.Principal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のプリンシパルを反復処理する列挙子を返します、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />内のプリンシパルを含む、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各インスタンス概念的には、<xref:System.DirectoryServices.AccountManagement.PrincipalCollection>が関連付けられている 1 つの列挙子。  複数回呼び出すが<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.System.Collections.IEnumerable.GetEnumerator%2A>distinct を返す<xref:System.Collections.IEnumerator>オブジェクト、同じ内部状態を共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>false を返します。  これは、読み取り専用コレクションではありません。</summary>
+        <value><see langword="bool" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>false を返します。  このコレクションへのアクセスをシリアル化するアプリケーションの責任です。</summary>
+        <value><see langword="bool" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>をコレクションから指定されたプリンシパルを削除し、返します<see langword="true" />指定したプリンシパル オブジェクトは、コレクションのメンバーであった場合、 <see langword="false" /> (操作が実行されない場合) でそれ以外の場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Add%2A>、および<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Contains%2A>この関数に次の 4 つのオーバー ロードがありますが、それらはすべて同じ処理を行います。  ユーザーが Intellisense を使用している開発者を取るオーバー ロードを表示するようにで追加のオーバー ロードは、使いやすさを向上させるためにのみ実装、 <xref:System.DirectoryServices.AccountManagement.UserPrincipal>、 <xref:System.DirectoryServices.AccountManagement.GroupPrincipal>、または<xref:System.DirectoryServices.AccountManagement.ComputerPrincipal>オブジェクト。  呼び出すことと同じではユーザー、グループ、またはコンピューターのオーバー ロードのいずれかを呼び出して、<xref:System.DirectoryServices.AccountManagement.Principal>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.DirectoryServices.AccountManagement.ComputerPrincipal computer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(class System.DirectoryServices.AccountManagement.ComputerPrincipal computer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove(System.DirectoryServices.AccountManagement.ComputerPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="computer" Type="System.DirectoryServices.AccountManagement.ComputerPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="computer"><see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> オブジェクト。</param>
+        <summary>指定<see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />オブジェクトをコレクション、および返しますから<see langword="true" />場合、<see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />これのメンバーであった<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />、および<see langword="false" />それ以外の場合 (この場合、メソッド操作も行いません)。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.InvalidOperation>|このメソッドは、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members>用のコレクション、ドメイン グループおよびドメイン プリンシパルを削除するのとなります。 したがって、グループのメンバーであるその`primaryGroupId`属性。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.DirectoryServices.AccountManagement.GroupPrincipal group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(class System.DirectoryServices.AccountManagement.GroupPrincipal group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove(System.DirectoryServices.AccountManagement.GroupPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.DirectoryServices.AccountManagement.GroupPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.DirectoryServices.AccountManagement.GroupPrincipal" /> オブジェクト。</param>
+        <summary>指定<see cref="T:System.DirectoryServices.AccountManagement.GroupPrincipal" />オブジェクトをコレクション、および返しますから<see langword="true" />場合、<see cref="T:System.DirectoryServices.AccountManagement.GroupPrincipal" />これのメンバーであった<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />、および<see langword="false" />それ以外の場合 (この場合、メソッド操作も行いません)。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.InvalidOperation>|このメソッドは、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members>用のコレクション、ドメイン グループおよびドメイン プリンシパルを削除するのとなります。 したがって、グループのメンバーであるその`primaryGroupId`属性。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.DirectoryServices.AccountManagement.Principal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.DirectoryServices.AccountManagement.Principal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove(System.DirectoryServices.AccountManagement.Principal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.DirectoryServices.AccountManagement.Principal" />
+      </Parameters>
+      <Docs>
+        <param name="principal"><see cref="T:System.DirectoryServices.AccountManagement.Principal" /> オブジェクト。</param>
+        <summary>指定<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクトをコレクション、および返しますから<see langword="true" />場合、<see cref="T:System.DirectoryServices.AccountManagement.Principal" />これのメンバーであった<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />、および<see langword="false" />それ以外の場合 (この場合、メソッド操作も行いません)。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.InvalidOperation>|このメソッドは、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members>用のコレクション、ドメイン グループおよびドメイン プリンシパルを削除するのとなります。 したがって、グループのメンバーであるその`primaryGroupId`属性。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.DirectoryServices.AccountManagement.UserPrincipal user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(class System.DirectoryServices.AccountManagement.UserPrincipal user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove(System.DirectoryServices.AccountManagement.UserPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.DirectoryServices.AccountManagement.UserPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="user"><see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" /> オブジェクト。</param>
+        <summary>指定<see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" />オブジェクトをコレクション、および返しますから<see langword="true" />場合、<see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" />これのメンバーであった<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />、および<see langword="false" />それ以外の場合 (この場合、メソッド操作も行いません)。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.InvalidOperation>|このメソッドは、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members>用のコレクション、ドメイン グループおよびドメイン プリンシパルを削除するのとなります。 したがって、グループのメンバーであるその`primaryGroupId`属性。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.DirectoryServices.AccountManagement.PrincipalContext context, System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.Remove(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="identityType" Type="System.DirectoryServices.AccountManagement.IdentityType" />
+        <Parameter Name="identityValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> オブジェクト。</param>
+        <param name="identityType"><see cref="T:System.DirectoryServices.AccountManagement.IdentityType" />の形式を識別する<c>identityValue</c>です。</param>
+        <param name="identityValue">文字列。</param>
+        <summary>検索、<see cref="T:System.DirectoryServices.AccountManagement.UserPrincipal" />で指定されたオブジェクト、指定された<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />と<paramref name="identityType" /> / <paramref name="identityValue" />コレクション、および返しますからペア<see langword="true" />場合、識別された<see cref="T:System.DirectoryServices.AccountManagement.Principal" />これのメンバーであった<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />、および<see langword="false" />それ以外の場合 (この場合、メソッド操作も行いません)。</summary>
+        <returns><see langword="bool" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、次の例外をスローできます。  
+  
+|例外|説明|  
+|---------------|-----------------|  
+|<xref:System.InvalidOperation>|このメソッドは、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal.Members>用のコレクション、ドメイン グループおよびドメイン プリンシパルを削除するのとなります。 したがって、グループのメンバーであるその`primaryGroupId`属性。|  
+|<xref:System.DirectoryServices.AccountManagement.NoMatchingPrincipalException>|指定したパラメーターに一致するプリンシパルは見つかりませんでした。|  
+|<xref:System.DirectoryServices.AccountManagement.MultipleMatchesException>|複数のプリンシパルでは、指定されたパラメーターと一致します。  理論上は、この得ないため<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.Add%2A>をコレクションに重複するプリンシパルを追加する試みがある場合は例外をスローします。  ただし、他の API が複製を作成することができます。|  
+|<xref:System.DirectoryServices.AccountManagement.ArgumentException>|場合にスローされる`identityType`空の文字列します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションへのアクセスを同期するために使用できる同期オブジェクトを返します。</summary>
+        <value>返します、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />オブジェクト自体です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">代入する T:System.Array<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクト。</param>
+        <param name="index">内の位置<c>配列</c>する最初の<see cref="T:System.DirectoryServices.AccountManagement.Principal" />にオブジェクトをコピーする必要があります。</param>
+        <summary>コピー、<see cref="T:System.DirectoryServices.AccountManagement.Principal" />オブジェクトからこの<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />配列内の指定した位置のインデックスを開始位置を指定した配列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `array`1 次元に指定する必要があります。  ない場合は、<xref:System.ArgumentException>がスローされます。  コピーする要素の数がから利用可能な領域よりも大きい場合、これ以上の例外がスローされます`index`の末尾に`array`場合は、`array`は`null`、または`index`が 0 未満です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション内のプリンシパルの数のオブジェクトを返します。</summary>
+        <value><see langword="integer" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see langword="false" /> を返します。  このコレクションへのアクセスを同期するために、アプリケーションの責任です。</summary>
+        <value><see langword="bool" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションへのアクセスを同期するために使用できる同期オブジェクトを返します。  返します、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />オブジェクト自体です。</summary>
+        <value><see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のプリンシパルを反復処理する列挙子を返します、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />内のプリンシパルを含む、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各インスタンス概念的には、<xref:System.DirectoryServices.AccountManagement.PrincipalCollection>が関連付けられている 1 つの列挙子。  複数回呼び出すが<xref:System.DirectoryServices.AccountManagement.PrincipalCollection.System.Collections.IEnumerable.GetEnumerator%2A>distinct を返す<xref:System.Collections.IEnumerator>オブジェクト、同じ内部状態を共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

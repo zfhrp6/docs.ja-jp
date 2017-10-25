@@ -1,0 +1,124 @@
+<Type Name="ExternalProjectStartedEventArgs" FullName="Microsoft.Build.Framework.ExternalProjectStartedEventArgs">
+  <TypeSignature Language="C#" Value="public class ExternalProjectStartedEventArgs : Microsoft.Build.Framework.CustomBuildEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ExternalProjectStartedEventArgs extends Microsoft.Build.Framework.CustomBuildEventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.ExternalProjectStartedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Framework.CustomBuildEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:Microsoft.Build.Framework.IEventSource.CustomEventRaised" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExternalProjectStartedEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ExternalProjectStartedEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Framework.ExternalProjectStartedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalProjectStartedEventArgs (string message, string helpKeyword, string senderName, string projectFile, string targetNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string helpKeyword, string senderName, string projectFile, string targetNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ExternalProjectStartedEventArgs.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="helpKeyword" Type="System.String" />
+        <Parameter Name="senderName" Type="System.String" />
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントのテキストです。</param>
+        <param name="helpKeyword">イベントに関連付けられているヘルプ キーワード。</param>
+        <param name="senderName">イベントのソース。</param>
+        <param name="projectFile">プロジェクト ファイルの名前。</param>
+        <param name="targetNames">外部プロジェクトでビルドするターゲットの名前。 Null 参照にできます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) 既定のターゲットを持つ外部プロジェクトが構築される場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Build.Framework.ExternalProjectFinishedEventArgs" />クラス、値を指定しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalProjectStartedEventArgs (string message, string helpKeyword, string senderName, string projectFile, string targetNames, DateTime eventTimestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string helpKeyword, string senderName, string projectFile, string targetNames, valuetype System.DateTime eventTimestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ExternalProjectStartedEventArgs.#ctor(System.String,System.String,System.String,System.String,System.String,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="helpKeyword" Type="System.String" />
+        <Parameter Name="senderName" Type="System.String" />
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String" />
+        <Parameter Name="eventTimestamp" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントのテキストです。</param>
+        <param name="helpKeyword">イベントに関連付けられているヘルプ キーワード。</param>
+        <param name="senderName">イベントのソース。</param>
+        <param name="projectFile">プロジェクト ファイルの名前。</param>
+        <param name="targetNames">外部プロジェクトでビルドするターゲットの名前。 Null 参照にできます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) 既定のターゲットを持つ外部プロジェクトが構築される場合。</param>
+        <param name="eventTimestamp">イベントに関連付ける日付と時刻。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Build.Framework.ExternalProjectFinishedEventArgs" />クラス、値を指定しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectFile">
+      <MemberSignature Language="C#" Value="public string ProjectFile { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProjectFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.ExternalProjectStartedEventArgs.ProjectFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたプロジェクト ファイルを取得します。</summary>
+        <value>イベントを発生させたプロジェクト ファイルです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNames">
+      <MemberSignature Language="C#" Value="public string TargetNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetNames" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.ExternalProjectStartedEventArgs.TargetNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクトでビルドされているターゲットの名前を取得します。</summary>
+        <value>外部プロジェクトでビルドされているターゲットの名前。 Null 参照にできます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])、既定のターゲットと外部のプロジェクトが構築される場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

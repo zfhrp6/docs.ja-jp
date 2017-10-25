@@ -1,0 +1,69 @@
+<Type Name="SessionStateActions" FullName="System.Web.SessionState.SessionStateActions">
+  <TypeSignature Language="C#" Value="public enum SessionStateActions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionStateActions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.SessionStateActions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セッション項目データ ストアからは、セッションの初期化を必要とするのかどうかを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateActions>列挙型を使用して、<xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItem%2A>と<xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItemExclusive%2A>のメソッド、<xref:System.Web.SessionState.SessionStateStoreProviderBase>実装します。 セッション項目は、データ ストアから取得されたの列挙値は、セッションが初期化が必要ですか、データと共に格納されている値に基づいていないかどうかを示します。 <xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItem%2A>と<xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItemExclusive%2A>メソッドのセット、`actions`パラメーターを<xref:System.Web.SessionState.SessionStateActions>セッション項目をこの値に基づく列挙型値を取得します。 場合の値、 `actions` InitializeItem にパラメーターが設定されている、<xref:System.Web.SessionState.SessionStateModule>セッションを初期化し、実行、 `Session_OnStart` ASP.NET アプリケーションの Global.asax ファイルで定義されたイベント。 場合の値、`actions`パラメーターは None、現在のセッションの追加の手順は実行されません。  
+  
+ によって作成されたセッション項目、<xref:System.Web.SessionState.SessionStateStoreProviderBase.CreateUninitializedItem%2A>メソッドが作成され、項目には、初期化が必要であることを示す値、<xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItem%2A>と<xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItemExclusive%2A>メソッドを設定する必要があります、 `actions` InitializeItem へのパラメーターです。  
+  
+   
+  
+## Examples  
+ セッション状態の例を使用してプロバイダーの実装を格納する、<xref:System.Web.SessionState.SessionStateActions>列挙型を参照してください[セッション状態ストアのプロバイダーを実装する](http://msdn.microsoft.com/library/baadfec5-c881-468a-9681-7d8796b05a66)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InitializeItem">
+      <MemberSignature Language="C#" Value="InitializeItem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.SessionState.SessionStateActions InitializeItem = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.SessionState.SessionStateActions.InitializeItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateActions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ストアからセッション項目では、初期化を必要とするセッションです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.SessionState.SessionStateActions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.SessionState.SessionStateActions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateActions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化の操作を呼び出し元のコードを実行する必要はありません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

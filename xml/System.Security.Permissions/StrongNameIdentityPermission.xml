@@ -1,0 +1,514 @@
+<Type Name="StrongNameIdentityPermission" FullName="System.Security.Permissions.StrongNameIdentityPermission">
+  <TypeSignature Language="C#" Value="public sealed class StrongNameIdentityPermission : System.Security.CodeAccessPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit StrongNameIdentityPermission extends System.Security.CodeAccessPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.StrongNameIdentityPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>厳密な名前の ID アクセス許可を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、id アクセス許可は使用されません。  
+>   
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 .NET Framework version 2.0 以降では、id アクセス許可、アクセス許可の状態値ことができます。  つまり、バージョン 2.0 以降で、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。 つまり、id の要求は常に成功すると、アセンブリの id に関係なく、アセンブリに完全な信頼が付与されている場合。  
+  
+ 使用して<xref:System.Security.Permissions.StrongNameIdentityPermission>呼び出し元のコードが、特定の厳密な名前のコードのアセンブリであることを確認します。 完全な要求の<xref:System.Security.Permissions.StrongNameIdentityPermission>スタック内のすべてのアセンブリが要求を満たす適切な証拠がある場合にのみ成功します。 リンク要求を使用する、<xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute>属性は、直前の呼び出し元に適切な証拠がある場合にのみ成功します。  
+  
+ 厳密な名前 id は、暗号化を必要に応じて名前と特定のアセンブリのバージョンと組み合わせて使用するバイナリ ラージ オブジェクト (BLOB) と呼ばれる公開キーに基づいています。 キーは、一意の名前空間を定義し、名前の定義が、対応する秘密キーによって署名されているアセンブリ内になければならないために、名前が、正規のものである厳密に検証を提供します。  
+  
+ 厳密な名前キーの有効性の信頼関係または任意の証明書は、必ずしもキーに対して発行されている依存がないことに注意してください。  
+  
+ .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可の要求は、呼び出し元のアセンブリが完全に信頼されている場合でも有効です。 呼び出し元のアセンブリに完全な信頼がある場合でも id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 .NET Framework のバージョンでは、id アクセス許可の 2.0 以降の要求は、呼び出し元アセンブリに完全な信頼がある場合は、有効ではありません。 これにより、すべてのアクセス許可の整合性が確保され、特殊なケースとして id アクセス許可の処理方法を排除します。  
+  
+ 厳密な名前の詳細については、次を参照してください。、<xref:System.Security.Policy.StrongName>リファレンス ページ。 アセンブリの厳密な名前の詳細については、次を参照してください。[厳密な名前付きアセンブリ](~/docs/framework/app-domains/strong-named-assemblies.md)です。  
+  
+ <xref:System.Security.Permissions.StrongNameIdentityPermission>型のパブリック メンバーにアクセスするための厳密な名前の要件を定義するクラスを使用します。 <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute>アセンブリ レベルでの厳密な名前の要件を定義する属性を使用できます。 .NET Framework version 2.0 以降にも使用できます、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性をそのアセンブリ内のすべての非パブリックな型が別のアセンブリから参照できることを指定します。 詳細については、[Friend アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)に関するページを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StrongNameIdentityPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.StrongNameIdentityPermission" /> を使用して、<see cref="T:System.Security.Permissions.PermissionState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するか完全に制限 (`None`) または`Unrestricted`権限です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 .NET Framework version 2.0 以降では、id アクセス許可、アクセス許可の状態値ことができます。  つまり、バージョン 2.0 以降で、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。 つまり、id の要求は常に成功すると、アセンブリの id に関係なく、アセンブリに完全な信頼が付与されている場合。  
+  
+ .NET Framework バージョン 1.0 および 1.1 では、呼び出し元のアセンブリが完全に信頼されている場合でも id アクセス許可の要求は効果的です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 .NET Framework のバージョンでは、id アクセス許可の 2.0 以降の要求は、呼び出し元アセンブリに完全な信頼がある場合は、有効ではありません。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+ アクセス許可の状態値がこのコンス トラクターを使用して<xref:System.Security.Permissions.PermissionState.None>を厳密な名前と一致しない id アクセス許可を作成します。 その後に設定した場合、<xref:System.Security.Permissions.StrongNameIdentityPermission.Name%2A>と<xref:System.Security.Permissions.StrongNameIdentityPermission.Version%2A>のアクセス許可によって、特定の厳密な名前 id のプロパティを表すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#7)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#7)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" /> パラメーターが <see cref="T:System.Security.Permissions.PermissionState" /> の正しい値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StrongNameIdentityPermission (System.Security.Permissions.StrongNamePublicKeyBlob blob, string name, Version version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Permissions.StrongNamePublicKeyBlob blob, string name, class System.Version version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.#ctor(System.Security.Permissions.StrongNamePublicKeyBlob,System.String,System.Version)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="blob" Type="System.Security.Permissions.StrongNamePublicKeyBlob" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="blob">厳密な名前 ID の名前空間を定義する公開キー。</param>
+        <param name="name">厳密な名前 ID の簡易名の部分。 これは、アセンブリの名前に対応します。</param>
+        <param name="version">ID のバージョン番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.StrongNameIdentityPermission" />厳密な名前を指定した id のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`と`version`パラメーターを指定できます`null`アセンブリを識別するに公開キーを使用する場合にのみです。 空の文字列 ("") の代わりに使用しないで`null`です。 場合`name`、空の文字列、<xref:System.ArgumentException>がスローされます。  
+  
+ 名前とアセンブリのバージョン番号の詳細については、次を参照してください。[厳密な名前付きアセンブリ](~/docs/framework/app-domains/strong-named-assemblies.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#8)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#8)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="blob" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> パラメーターが空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.Copy%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.StrongNameIdentityPermission>クラスです。 この例の最適な使用を開始ビルドし全体の例を実行して出力を表示します。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#5)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#5)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="e">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、アクセス許可を再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードでは使用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.FromXml%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.StrongNameIdentityPermission>クラスです。 この例の最適な使用を開始ビルドし全体の例を実行して出力を表示します。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#6)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#6)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="e" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ -または-  
+  
+ <paramref name="e" />パラメーターのバージョン番号が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の積集合を表す新しいアクセス許可または<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、一連の両方に共通する操作を説明する権限です。 元の両方の権限を通過する要求だけでは、積集合を渡されます。  
+  
+ 2 つの同一の厳密な名前 id のアクセス許可の積集合は、同じアクセス許可がします。 積集合の 2 つの異なる (ワイルドカードではない) の式が空のアクセス許可。 ワイルドカードの式と一致する厳密な名前の交差部分は、厳密な名前です。 一致する 2 つのワイルドカードの式の積集合がより長く、2 つの式の詳細。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用した結果を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.Intersect%2A>メソッド、メソッドを使用する方法ではなくです。 この例に示されている例の一部である、<xref:System.Security.Permissions.StrongNameIdentityPermission>クラスです。 この例の最適な使用を開始ビルドし全体の例を実行して出力を表示します。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#4)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#4)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる一連の操作を指定する場合、指定したアクセス許可のサブセットです。 他のプロパティと等しいことでの id をたとえば、<xref:System.Security.Permissions.StrongNameIdentityPermission.Name%2A>と id のサブセットとして MyCompany.MyDepartment.* ワイルドカードの式を含むプロパティを識別、<xref:System.Security.Permissions.StrongNameIdentityPermission.Name%2A>プロパティ MyCompany.MyDepartment.MyFile です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用した結果を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.IsSubsetOf%2A>メソッド、メソッドを使用する方法ではなくです。 この例に示されている例の一部である、<xref:System.Security.Permissions.StrongNameIdentityPermission>クラスです。 この例の最適な使用を開始ビルドし全体の例を実行して出力を表示します。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#2)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#2)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StrongNameIdentityPermission.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な名前 ID の簡易名の部分を取得または設定します。</summary>
+        <value>ID の簡易名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、 <xref:System.Security.Permissions.StrongNameIdentityPermission.Name%2A> MyCompany.MyDepartment.MyFile と MyCompany.MyDepartment.* の両方が有効な名前をたとえば、以外のプロパティの正確な名前を指定できますまたは最後の位置ではワイルドカード文字で変更できます。 設定しようとすると、<xref:System.Security.Permissions.StrongNameIdentityPermission.Name%2A>プロパティを空の文字列 ("")、<xref:System.ArgumentException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値は、空の文字列 ("") です。</exception>
+        <exception cref="T:System.NotSupportedException">あいまいな ID が含まれているので、プロパティ値を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKey">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.StrongNamePublicKeyBlob PublicKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Permissions.StrongNamePublicKeyBlob PublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StrongNameIdentityPermission.PublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StrongNamePublicKeyBlob</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な名前 ID の名前空間を定義する公開キー blob を取得または設定します。</summary>
+        <value>A <see cref="T:System.Security.Permissions.StrongNamePublicKeyBlob" /> 、id の公開キーを格納しているか、<see langword="null" />キーがない場合。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティ値に設定<see langword="null" />です。</exception>
+        <exception cref="T:System.NotSupportedException">あいまいな ID が含まれているので、プロパティ値を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドはアプリケーション コードでは使用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.ToXml%2A>メソッドです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#6)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#6)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.Permissions.StrongNameIdentityPermission.Union%2A>は、現在のアクセス許可と、指定した権限の両方で表されるすべての操作を表す権限。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+ アクセス許可の和集合と`null`ではないアクセス許可は、`null`です。 アクセス許可の和集合とそのアクセス許可のサブセットを含む、他のアクセス許可がします。 その他の組み合わせの結果、<xref:System.ArgumentException>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用した結果を示しています、<xref:System.Security.Permissions.StrongNameIdentityPermission.Union%2A>メソッド、メソッドを使用する方法ではなくです。 この例に示されている例の一部である、<xref:System.Security.Permissions.StrongNameIdentityPermission>クラスです。 この例の最適な使用を開始ビルドし全体の例を実行して出力を表示します。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.StrongNameIdentityPermission#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CPP/strongnameidentity.cpp#3)]
+ [!code-csharp[System.Security.Permissions.StrongNameIdentityPermission#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/CS/strongnameidentity.cs#3)]
+ [!code-vb[System.Security.Permissions.StrongNameIdentityPermission#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.StrongNameIdentityPermission/VB/strongnameidentity.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。  
+  
+ または  
+  
+ 2 つのアクセス許可は等しくありません。その 1 つは、他方のサブセットです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public Version Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StrongNameIdentityPermission.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ID のバージョン番号を取得または設定します。</summary>
+        <value>ID のバージョン。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">あいまいな ID が含まれているので、プロパティ値を取得できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

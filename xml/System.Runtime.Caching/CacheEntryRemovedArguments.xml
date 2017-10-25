@@ -1,0 +1,126 @@
+<Type Name="CacheEntryRemovedArguments" FullName="System.Runtime.Caching.CacheEntryRemovedArguments">
+  <TypeSignature Language="C#" Value="public class CacheEntryRemovedArguments" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheEntryRemovedArguments extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.CacheEntryRemovedArguments" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュから削除されたキャッシュ エントリに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの<xref:System.Runtime.Caching.CacheEntryRemovedArguments>自体には、キャッシュ エントリを表すクラス、<xref:System.Runtime.Caching.ObjectCache>から、エントリが削除されたインスタンスと、削除の理由。 コンス トラクター、<xref:System.Runtime.Caching.CacheEntryRemovedArguments>クラスでは、これらの引数を使用して、クラスの新しいインスタンスを作成します。  
+  
+ A<xref:System.Runtime.Caching.CacheEntryRemovedArguments>キャッシュ エントリがキャッシュから削除するときに、アプリケーションに削除されたキャッシュ エントリに関する情報を渡すコールバック メソッドで通常オブジェクトを作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheEntryRemovedArguments (System.Runtime.Caching.ObjectCache source, System.Runtime.Caching.CacheEntryRemovedReason reason, System.Runtime.Caching.CacheItem cacheItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Caching.ObjectCache source, valuetype System.Runtime.Caching.CacheEntryRemovedReason reason, class System.Runtime.Caching.CacheItem cacheItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.CacheEntryRemovedArguments.#ctor(System.Runtime.Caching.ObjectCache,System.Runtime.Caching.CacheEntryRemovedReason,System.Runtime.Caching.CacheItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Runtime.Caching.ObjectCache" />
+        <Parameter Name="reason" Type="System.Runtime.Caching.CacheEntryRemovedReason" />
+        <Parameter Name="cacheItem" Type="System.Runtime.Caching.CacheItem" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Runtime.Caching.ObjectCache" />元となるインスタンス<c>cacheItem</c>が削除されました。</param>
+        <param name="reason">その原因を示す列挙値のいずれかの<c>cacheItem</c>が削除されました。</param>
+        <param name="cacheItem">削除されたキャッシュ エントリのインスタンス。</param>
+        <summary><see cref="T:System.Runtime.Caching.CacheEntryRemovedArguments" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者が通常使用して、<xref:System.Runtime.Caching.CacheEntryRemovedArguments>クラスのキャッシュ エントリがキャッシュから削除された後に通知するときにします。  
+  
+ キャッシュの実装は、1 つまたは複数のキャッシュ エントリをキャッシュから削除しようとしていますが、キャッシュ実装を呼び出す、<xref:System.Runtime.Caching.CacheEntryRemovedCallback>アプリケーションで登録されたデリゲート。 キャッシュ実装を呼び出すと、デリゲート、これは、 <xref:System.Runtime.Caching.CacheEntryRemovedArguments.%23ctor%2A> 、新しいコールバックに渡すコンス トラクター<xref:System.Runtime.Caching.CacheEntryRemovedArguments>インスタンスを削除するキャッシュ エントリに関する情報を含むです。 コールバックを削除してそのキャッシュ エントリのコールバックを登録して、アプリケーションに通知します。 コンス トラクターは、返された後に、<xref:System.Runtime.Caching.CacheEntryRemovedArguments>インスタンスには、キャッシュ エントリの削除に関する詳細な情報が含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="cacheItem" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheItem">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheItem CacheItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.CacheItem CacheItem" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryRemovedArguments.CacheItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュから削除されたキャッシュ エントリのインスタンスを取得します。</summary>
+        <value>インスタンス、<see cref="T:System.Runtime.Caching.CacheItem" />がキャッシュから削除されたクラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovedReason">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheEntryRemovedReason RemovedReason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Caching.CacheEntryRemovedReason RemovedReason" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryRemovedArguments.RemovedReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ エントリが削除された理由を示す値を取得します。</summary>
+        <value>エントリが削除された理由を示す列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.CacheEntryRemovedReason>エントリを明示的に削除されたか、または期限切れになるようすると、列挙型プログラムが、削除の理由から一連の定義済みのいずれかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.ObjectCache Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.ObjectCache Source" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryRemovedArguments.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.ObjectCache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソースへの参照を取得<see cref="T:System.Runtime.Caching.ObjectCache" />最初、削除されたキャッシュ エントリが含まれているインスタンス。</summary>
+        <value>最初、キャッシュへの参照には、削除されたキャッシュ エントリが含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

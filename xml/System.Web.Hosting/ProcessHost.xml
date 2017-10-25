@@ -1,0 +1,463 @@
+<Type Name="ProcessHost" FullName="System.Web.Hosting.ProcessHost">
+  <TypeSignature Language="C#" Value="public sealed class ProcessHost : MarshalByRefObject, System.Web.Hosting.IAdphManager, System.Web.Hosting.IApplicationPreloadManager, System.Web.Hosting.IPphManager, System.Web.Hosting.IProcessHost, System.Web.Hosting.IProcessHostIdleAndHealthCheck" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProcessHost extends System.MarshalByRefObject implements class System.Web.Hosting.IAdphManager, class System.Web.Hosting.IApplicationPreloadManager, class System.Web.Hosting.IPphManager, class System.Web.Hosting.IProcessHost, class System.Web.Hosting.IProcessHostIdleAndHealthCheck" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.ProcessHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IAdphManager</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IApplicationPreloadManager</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IPphManager</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IProcessHost</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IProcessHostIdleAndHealthCheck</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>プロセス ホストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="EnumerateAppDomains">
+      <MemberSignature Language="C#" Value="public void EnumerateAppDomains (out System.Web.Hosting.IAppDomainInfoEnum appDomainInfoEnum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EnumerateAppDomains([out] class System.Web.Hosting.IAppDomainInfoEnum&amp; appDomainInfoEnum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.EnumerateAppDomains(System.Web.Hosting.IAppDomainInfoEnum@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appDomainInfoEnum" Type="System.Web.Hosting.IAppDomainInfoEnum&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="appDomainInfoEnum">アプリケーション ドメインに関する情報。</param>
+        <summary>アプリケーション ドメインの列挙可能なセットへのアクセスを提供します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public override object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用、プロセス ホスト無期限の有効期間リースが作成されるようにすることができます。</summary>
+        <returns>返します、<see langword="null" />リースの期限がないことを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost.InitializeLifetimeService%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdle">
+      <MemberSignature Language="C#" Value="public bool IsIdle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsIdle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.IsIdle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロセスの状態を取得します。</summary>
+        <returns>
+          <see langword="true" />プロセス ホストがアイドル状態の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost.IsIdle%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Ping">
+      <MemberSignature Language="C#" Value="public void Ping (System.Web.Hosting.IProcessPingCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Ping(class System.Web.Hosting.IProcessPingCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.Ping(System.Web.Hosting.IProcessPingCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.Hosting.IProcessPingCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">Ping 応答を処理するコールバック。</param>
+        <summary>プロセスの ping を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost.Ping%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetApplicationPreloadState">
+      <MemberSignature Language="C#" Value="public void SetApplicationPreloadState (string context, string appId, bool enabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetApplicationPreloadState(string context, string appId, bool enabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.SetApplicationPreloadState(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">アプリケーションのコンテキスト。</param>
+        <param name="appId">アプリケーションの一意の ID。</param>
+        <param name="enabled">
+          <see langword="true" />アプリケーションを示すためをプリロードする必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>ASP.NET に通知する、特定のアプリケーションで実行されている[!INCLUDE[iisver](~/includes/iisver-md.md)]をプリロードするように構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.Web.Hosting.IApplicationPreloadManager.SetApplicationPreloadState%2A>のメソッド、<xref:System.Web.Hosting.IApplicationPreloadManager>インターフェイスです。 [!INCLUDE[iisver](~/includes/iisver-md.md)]呼び出し、<xref:System.Web.Hosting.IApplicationPreloadManager.SetApplicationPreloadState%2A>に読み込まれているアプリケーションが事前読み込みをサポートしているかどうかを ASP.NET に通知するメソッド。  
+  
+> [!NOTE]
+>  このメソッドで実行されるアプリケーションにのみ適用[!INCLUDE[iisver](~/includes/iisver-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enabled" />設定されている<see langword="true" />プロセス ホストは以前は渡されませんでしたと、<see cref="T:System.Web.Hosting.IApplicationPreloadUtil" />インターフェイスをその<see cref="M:System.Web.Hosting.IApplicationPreloadManager.SetApplicationPreloadUtil(System.Web.Hosting.IApplicationPreloadUtil)" />メソッド</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetApplicationPreloadUtil">
+      <MemberSignature Language="C#" Value="public void SetApplicationPreloadUtil (System.Web.Hosting.IApplicationPreloadUtil applicationPreloadUtil);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetApplicationPreloadUtil(class System.Web.Hosting.IApplicationPreloadUtil applicationPreloadUtil) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.SetApplicationPreloadUtil(System.Web.Hosting.IApplicationPreloadUtil)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="applicationPreloadUtil" Type="System.Web.Hosting.IApplicationPreloadUtil" />
+      </Parameters>
+      <Docs>
+        <param name="applicationPreloadUtil">アンマネージ インターフェイスへのハンドル[!INCLUDE[iisver](~/includes/iisver-md.md)]その ASP.NET 呼び出し情報を取得します。</param>
+        <summary>呼び出す型を作成[!INCLUDE[iisver](~/includes/iisver-md.md)]アプリケーションをプリロードするために必要な情報を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.Web.Hosting.IApplicationPreloadManager.SetApplicationPreloadUtil%2A>のメソッド、<xref:System.Web.Hosting.IApplicationPreloadManager>インターフェイスです。 メソッドのインスタンスを作成する、<xref:System.Web.Hosting.IApplicationPreloadUtil>への呼び出しの種類[!INCLUDE[iisver](~/includes/iisver-md.md)]に事前読み込み情報を取得します。  
+  
+> [!NOTE]
+>  このメソッドで実行されるアプリケーションにのみ適用[!INCLUDE[iisver](~/includes/iisver-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.Hosting.IApplicationPreloadUtil" />インスタンス情報を含むが、アプリケーションのプリロード<see langword="null" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロセス ホストをアンロードします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownApplication">
+      <MemberSignature Language="C#" Value="public void ShutdownApplication (string appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShutdownApplication(string appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.ShutdownApplication(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appId">シャット ダウンするアプリケーションの一意の識別子。</param>
+        <summary>指定したアプリケーションを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost.ShutdownApplication%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StartAppDomainProtocolListenerChannel">
+      <MemberSignature Language="C#" Value="public void StartAppDomainProtocolListenerChannel (string appId, string protocolId, System.Web.Hosting.IListenerChannelCallback listenerChannelCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartAppDomainProtocolListenerChannel(string appId, string protocolId, class System.Web.Hosting.IListenerChannelCallback listenerChannelCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StartAppDomainProtocolListenerChannel(System.String,System.String,System.Web.Hosting.IListenerChannelCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="listenerChannelCallback" Type="System.Web.Hosting.IListenerChannelCallback" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID。</param>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="listenerChannelCallback">プロトコルのリスナー チャネルのコールバック。</param>
+        <summary>アプリケーション ドメイン プロトコル リスナー チャネルを開始します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StartApplication">
+      <MemberSignature Language="C#" Value="public void StartApplication (string appId, string appPath, out object runtimeInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartApplication(string appId, string appPath, [out] object&amp; runtimeInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StartApplication(System.String,System.String,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="appPath" Type="System.String" />
+        <Parameter Name="runtimeInterface" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID。</param>
+        <param name="appPath">アプリケーションの仮想パス。</param>
+        <param name="runtimeInterface">ランタイム マネージャー インターフェイスです。</param>
+        <summary>指定したアプリケーションを起動します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcessProtocolListenerChannel">
+      <MemberSignature Language="C#" Value="public void StartProcessProtocolListenerChannel (string protocolId, System.Web.Hosting.IListenerChannelCallback listenerChannelCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartProcessProtocolListenerChannel(string protocolId, class System.Web.Hosting.IListenerChannelCallback listenerChannelCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StartProcessProtocolListenerChannel(System.String,System.Web.Hosting.IListenerChannelCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="listenerChannelCallback" Type="System.Web.Hosting.IListenerChannelCallback" />
+      </Parameters>
+      <Docs>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="listenerChannelCallback">プロトコルのリスナー チャネルのコールバック。</param>
+        <summary>プロセス プロトコル リスナー チャネルを開始します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopAppDomainProtocol">
+      <MemberSignature Language="C#" Value="public void StopAppDomainProtocol (string appId, string protocolId, bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopAppDomainProtocol(string appId, string protocolId, bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StopAppDomainProtocol(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID。</param>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="immediate">プロトコルを直ちに停止するかどうか。</param>
+        <summary>アプリケーション ドメイン プロトコル リスナー チャネルを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost.StopAppDomainProtocol%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopAppDomainProtocolListenerChannel">
+      <MemberSignature Language="C#" Value="public void StopAppDomainProtocolListenerChannel (string appId, string protocolId, int listenerChannelId, bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopAppDomainProtocolListenerChannel(string appId, string protocolId, int32 listenerChannelId, bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StopAppDomainProtocolListenerChannel(System.String,System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="listenerChannelId" Type="System.Int32" />
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID</param>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="listenerChannelId">プロトコル リスナー チャネル id。</param>
+        <param name="immediate">プロトコルのリスナー チャネルを直ちに停止するかどうか。</param>
+        <summary>アプリケーション ドメイン プロトコル リスナー チャネルを停止します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopProcessProtocol">
+      <MemberSignature Language="C#" Value="public void StopProcessProtocol (string protocolId, bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopProcessProtocol(string protocolId, bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StopProcessProtocol(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="immediate">プロトコルを直ちに停止するかどうか。</param>
+        <summary>プロセス プロトコルを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ProcessHost.StopProcessProtocol%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopProcessProtocolListenerChannel">
+      <MemberSignature Language="C#" Value="public void StopProcessProtocolListenerChannel (string protocolId, int listenerChannelId, bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopProcessProtocolListenerChannel(string protocolId, int32 listenerChannelId, bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ProcessHost.StopProcessProtocolListenerChannel(System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="listenerChannelId" Type="System.Int32" />
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="listenerChannelId">プロトコルのリスナー チャネルのコールバック。</param>
+        <param name="immediate">プロトコルのリスナー チャネルを直ちに停止するかどうか。</param>
+        <summary>プロトコルのリスナー チャネルを停止します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

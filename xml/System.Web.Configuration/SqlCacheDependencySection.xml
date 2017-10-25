@@ -1,0 +1,239 @@
+<Type Name="SqlCacheDependencySection" FullName="System.Web.Configuration.SqlCacheDependencySection">
+  <TypeSignature Language="C#" Value="public sealed class SqlCacheDependencySection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlCacheDependencySection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.SqlCacheDependencySection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションの SQL キャッシュ依存関係を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencySection>プログラムからアクセスし、変更することができます、`sqlCacheDependency`の要素、`cache`構成セクション。  
+  
+ SQL キャッシュ依存関係により、元のソースと同期するキャッシュされたデータです。 ASP.NET アプリケーションのキャッシュと SQL Server データベース、特定のテーブルのインスタンスに格納されている項目間のリレーションシップを構成した後、<xref:System.Web.Caching.SqlCacheDependency>とテーブルの変更のアイテム、アイテムがキャッシュから自動的に削除できるように、クラスが、テーブルを監視します。  
+  
+ この要素の設定には、テーブル ベースのバージョンのみに影響する、<xref:System.Web.Caching.SqlCacheDependency>オブジェクト。 行レベル<xref:System.Web.Caching.SqlCacheDependency>と使用するオブジェクト[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]や以降、これらの設定によっては影響しません。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.SqlCacheDependencySection>セクション プロパティによって定義された制限に従って、構成ファイルの関連するセクションに情報を書き込むことが<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.MachineToApplication>です。 階層では許可されませんレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 ただし、このクラスを使用すると、階層内の任意のレベルで構成情報を読み取る。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.SqlCacheDependencySection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencySection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/CS/SqlCacheDependencySection.cs#1)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencySection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/VB/SqlCacheDependencySection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCacheDependencySection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SqlCacheDependencySection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.SqlCacheDependencySection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencySection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.SqlCacheDependencySection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Databases">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.SqlCacheDependencyDatabaseCollection Databases { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.SqlCacheDependencyDatabaseCollection Databases" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencySection.Databases" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("databases")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.SqlCacheDependencyDatabaseCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" />内で格納されているオブジェクト、<see cref="T:System.Web.Configuration.SqlCacheDependencySection" />です。</summary>
+        <value>A<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabaseCollection" />の<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" />オブジェクト</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencySection.Databases%2A>にプログラムでアクセス プロパティを使用する、`databases`の要素、 [sqlCacheDependency 要素 (ASP.NET 設定スキーマ) をキャッシュ用](http://msdn.microsoft.com/en-us/3ffabd95-87b6-4a52-b753-9d298d43841d)の`cache`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.SqlCacheDependencySection.Databases%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencySection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/CS/SqlCacheDependencySection.cs#2)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencySection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/VB/SqlCacheDependencySection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencySection.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencySection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変更をデータベース テーブルを監視する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SQL キャッシュの監視が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET アプリケーションのキャッシュと SQL Server データベース、特定のテーブルのインスタンスに格納されている項目間のリレーションシップを構成した後、<xref:System.Web.Caching.SqlCacheDependency>とテーブルの変更のアイテム、アイテムがキャッシュから自動的に削除できるように、クラスが、テーブルを監視します。  
+  
+ 正常に動作するには、このクラスは、データベースとの依存関係を設定する任意のテーブルが通知を有効になっているが必要です。 詳細については、指定された、「解説」を参照してください。、<xref:System.Web.Caching.SqlCacheDependency>クラスです。  
+  
+> [!NOTE]
+>  設定を示す値を取得またはアクティブであるかどうかのデータベースでテーブルを<xref:System.Web.Caching.SqlCacheDependency>オブジェクトが変更を監視する必要があります。  この設定では、行レベルには影響しません<xref:System.Web.Caching.SqlCacheDependency>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.SqlCacheDependencySection.Enabled%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencySection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/CS/SqlCacheDependencySection.cs#4)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencySection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/VB/SqlCacheDependencySection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PollTime">
+      <MemberSignature Language="C#" Value="public int PollTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PollTime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencySection.PollTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pollTime", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の頻度を指定します、<see cref="T:System.Web.Caching.SqlCacheDependency" />データベース テーブルの変更をポーリングします。</summary>
+        <value>SQL キャッシュ依存関係のポーリング時間 (ミリ秒単位)。 既定値は 500 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencySection.PollTime%2A>プロパティは、ASP.NET がキャッシュされた項目にリンクされているテーブルでの変更のデータベースをポーリングする時間頻度を定義します。  
+  
+ **注**頻度でデータベース レベルでオーバーライドできます、`databases`の要素、`sqlCacheDependency`で、`cache`構成セクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.SqlCacheDependencySection.PollTime%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencySection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/CS/SqlCacheDependencySection.cs#3)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencySection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencySection/VB/SqlCacheDependencySection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostDeserialize">
+      <MemberSignature Language="C#" Value="protected override void PostDeserialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PostDeserialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SqlCacheDependencySection.PostDeserialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencySection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

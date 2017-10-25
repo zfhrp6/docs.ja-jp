@@ -1,0 +1,3780 @@
+<Type Name="SystemInformation" FullName="System.Windows.Forms.SystemInformation">
+  <TypeSignature Language="C#" Value="public class SystemInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SystemInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SystemInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のシステム環境に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation>クラスを提供`static`プロパティを現在のシステム環境に関する情報を取得するために使用できます。 クラスは、Windows の表示要素のサイズ、オペレーティング システムの設定、ネットワークの可用性、およびシステムにインストールされているハードウェアの機能など、情報へのアクセスを提供します。 このクラスをインスタンス化することはできません。  
+  
+ システム全体のパラメーターの詳細についてを参照してください「次」、プラットフォーム SDK のドキュメント[http://msdn.microsoft.com](http://msdn.microsoft.com)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActiveWindowTrackingDelay">
+      <MemberSignature Language="C#" Value="public static int ActiveWindowTrackingDelay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ActiveWindowTrackingDelay" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ActiveWindowTrackingDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブ ウィンドウ トラッキングの遅延時間を取得します。</summary>
+        <value>アクティブ ウィンドウ トラッキングの遅延時間 (ミリ秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeDirection">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ArrangeDirection ArrangeDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.ArrangeDirection ArrangeDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ArrangeDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ArrangeDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが最小化ウィンドウを整列する方向を示す値を取得します。</summary>
+        <value>オペレーティング システムが最小化ウィンドウを整列する方向を示す <see cref="T:System.Windows.Forms.ArrangeDirection" /> 値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ArrangeDirection>プロパティは、デスクトップまたはマルチ ドキュメント インターフェイス (MDI) コンテナーで、最小化されたウィンドウが配置される方向を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeStartingPosition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ArrangeStartingPosition ArrangeStartingPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.ArrangeStartingPosition ArrangeStartingPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ArrangeStartingPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ArrangeStartingPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが最小化ウィンドウの整列を開始する位置を示す <see cref="T:System.Windows.Forms.ArrangeStartingPosition" /> 値を取得します。</summary>
+        <value>オペレーティング システムが最小化ウィンドウの整列を開始する位置を示す <see cref="T:System.Windows.Forms.ArrangeStartingPosition" /> 値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ArrangeStartingPosition>プロパティは、画面、またはオペレーティング システムを最小化されたウィンドウを整列する開始したウィンドウの隅を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BootMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.BootMode BootMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.BootMode BootMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.BootMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BootMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムの起動時のブート モードを示す <see cref="T:System.Windows.Forms.BootMode" /> 値を取得します。</summary>
+        <value>システムの起動時のブート モードを示す <see cref="T:System.Windows.Forms.BootMode" /> 値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.BootMode%2A>プロパティは、オペレーティング システムが、標準またはセーフ ブート モードで開始されたかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このプロパティの値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Border3DSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size Border3DSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size Border3DSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.Border3DSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 次元 (3D) スタイルのウィンドウまたはシステム コントロールの境界線の太さ (ピクセル単位) を取得します。</summary>
+        <value>3D スタイルの垂直方向の境界線の幅と 3D スタイルの水平方向の境界線の高さをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.Border3DSize%2A>プロパティを示します (ピクセル単位) の 3 次元 (3 D) スタイル システム コントロールの境界線の太さ。  
+  
+ <xref:System.Drawing.Size.Width%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation.Border3DSize%2A>プロパティは 3-D 垂直方向の境界線の幅を示します。 <xref:System.Drawing.Size.Height%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation.Border3DSize%2A>プロパティは 3-D 水平方向の境界線の高さを示します。  
+  
+ <xref:System.Windows.Forms.SystemInformation.BorderSize%2A>プロパティは 3-D スタイルの枠線ではないウィンドウまたはシステム コントロール境界線の太さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderMultiplierFactor">
+      <MemberSignature Language="C#" Value="public static int BorderMultiplierFactor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 BorderMultiplierFactor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.BorderMultiplierFactor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのサイズ変更境界線の太さを決定するときに使用する、境界線の乗数を取得します。</summary>
+        <value>ウィンドウのサイズ変更境界線の太さを決定する乗数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size BorderSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size BorderSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.BorderSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フラットスタイルのウィンドウまたはシステム コントロールの境界線の太さ (ピクセル単位) を取得します。</summary>
+        <value>垂直方向の境界線の幅と水平方向の境界線の高さをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.BorderSize%2A>プロパティはピクセル単位でのフラット スタイル システム コントロールの境界線の太さを示します。  
+  
+ <xref:System.Drawing.Size.Width%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation.BorderSize%2A>プロパティは、垂直方向のフラット スタイルの境界線の幅を示します。 <xref:System.Drawing.Size.Height%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation.BorderSize%2A>プロパティは、水平方向のフラット スタイルの境界線の高さを示します。  
+  
+ <xref:System.Windows.Forms.SystemInformation.Border3DSize%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation>クラスは、3 次元 (3 D) スタイルのウィンドウまたはシステム コントロールの境界線の太さをことを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionButtonSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size CaptionButtonSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size CaptionButtonSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.CaptionButtonSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのタイトル バー内のボタンの標準サイズ (ピクセル単位) を取得します。</summary>
+        <value>ウィンドウのタイトル バーのボタンの標準サイズをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.CaptionButtonSize%2A>プロパティは、ウィンドウのタイトル バーのボタンの標準のディメンションを示します。  
+  
+ このプロパティの値は、ボタンのサイズがウィンドウのタイトル バー内に収まるように適切では確実に使用できます。 ウィンドウのキャプションのボタンよりも小さいサイズ以上で表示されるようにすることがでくビューに正しくウィンドウ キャプション ボタンの標準のディメンションにする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionHeight">
+      <MemberSignature Language="C#" Value="public static int CaptionHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 CaptionHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.CaptionHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの標準のタイトル バー領域の高さ (ピクセル単位) を取得します。</summary>
+        <value>ウィンドウの標準のタイトル バー領域の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.CaptionHeight%2A>プロパティはピクセル単位で、標準的なウィンドウのタイトル バー領域の高さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaretBlinkTime">
+      <MemberSignature Language="C#" Value="public static int CaretBlinkTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 CaretBlinkTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.CaretBlinkTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャレットの点滅間隔を取得します。</summary>
+        <value>キャレットの点滅間隔。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaretWidth">
+      <MemberSignature Language="C#" Value="public static int CaretWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 CaretWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.CaretWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディット コントロール内のキャレットの幅 (ピクセル単位) を取得します。</summary>
+        <value>エディット コントロール内のキャレットの幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャレットは、エディット コントロールにテキストまたはグラフィックが挿入する場所を示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、この機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputerName">
+      <MemberSignature Language="C#" Value="public static string ComputerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ComputerName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ComputerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル コンピューターの NetBIOS コンピューター名を取得します。</summary>
+        <value>コンピューターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.ComputerName%2A>プロパティは、ローカル コンピューターの NetBIOS 名を取得します。 これはネイティブ システム情報関数陥るへの呼び出しを使用します。 システム レジストリから読み取るときに、システムの起動時に、この名前が確立されます。 ローカル コンピューターがクラスターでは、ノードの場合<xref:System.Windows.Forms.SystemInformation.ComputerName%2A>クラスター仮想サーバーの名前を返します。  
+  
+ 使用することができます、<xref:System.Windows.Forms.SystemInformation.ComputerName%2A>ネットワーク上の他のユーザーに表示されているコンピューターの名前を確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このプロパティの値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CursorSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size CursorSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size CursorSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.CursorSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カーソルに使用できる最大サイズ (ピクセル単位) を取得します。</summary>
+        <value>カーソルの最大サイズをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムでは、他のサイズのカーソルを作成できません。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbcsEnabled">
+      <MemberSignature Language="C#" Value="public static bool DbcsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool DbcsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.DbcsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが 2 バイト文字セット (DBCS: Double-Byte Character Set) の文字を処理できるかどうかを示す値を取得します。</summary>
+        <value>
+          オペレーティング システムが DBCS をサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.DbcsEnabled%2A>プロパティは、現在のオペレーティング システムが DBCS をサポートするかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugOS">
+      <MemberSignature Language="C#" Value="public static bool DebugOS { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool DebugOS" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.DebugOS" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグ バージョンの USER.EXE がインストールされているかどうかを示す値を取得します。</summary>
+        <value>
+          USER.EXE のデバッグ バージョンがインストールされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このプロパティの値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClickSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size DoubleClickSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size DoubleClickSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.DoubleClickSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 回のクリックがダブルクリックであるとオペレーティング システムに認識されるために、ユーザーがクリックする 2 つの位置が含まれている必要がある範囲のサイズ (ピクセル単位) を取得します。</summary>
+        <value>2 回のクリックがダブルクリックであるとオペレーティング システムに認識されるために、ユーザーが 2 回クリックする必要がある領域のサイズをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>プロパティが最後にクリックが発生したポイントを中心とした四角形領域のサイズを示します。 ダブルクリックを発生させるには、2 番目のクリックがダブルクリック時間が経過する前に、四角形の領域内で行われます。  
+  
+ <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A>プロパティはダブルクリックを発生させる 2 番目のクリックの 2 番目のクリックする前に経過時間をミリ秒単位の最大数を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClickTime">
+      <MemberSignature Language="C#" Value="public static int DoubleClickTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 DoubleClickTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.DoubleClickTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス操作がダブルクリックであると OS に認識されるための、1 回目のクリックと 2 回目のクリックの間の最大経過時間 (ミリ秒単位) を取得します。</summary>
+        <value>マウス操作がダブルクリックであると OS に認識されるための、1 回目のクリックと 2 回目のクリックの間の最大経過時間 (ミリ秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ダブルクリックとは、一連のマウス ボタンを 2 番目から行われているおよび指定した距離内後の時間の指定された長さで、最初の 2 回のクリックします。 ダブルクリック時間とは、最初の時間が経過しても、ダブルクリックの第 2 をクリックをミリ秒単位の最大数です。  
+  
+ <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>プロパティが最後にクリックが発生したポイントを中心とした四角形領域のサイズを示します。 ダブルクリックを発生させるには、2 番目のクリックがダブルクリック時間が経過する前に、四角形の領域内で行われます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragFullWindows">
+      <MemberSignature Language="C#" Value="public static bool DragFullWindows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool DragFullWindows" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.DragFullWindows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがウィンドウ全体のドラッグを有効にしているかどうかを示す値を取得します。</summary>
+        <value>
+          ユーザーがウィンドウ全体のドラッグを有効にしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが`true`ウィンドウの移動中に、ウィンドウの内容を更新または更新されるように、現在の位置とサイズを使用して、サイズ変更をドラッグします。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size DragSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size DragSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.DragSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ操作が開始されない範囲を示す、クリックしたポイントを中心とする四角形の幅と高さを取得します。</summary>
+        <value>ドラッグ操作が開始されない範囲を示す、クリックしたポイントを中心とする四角形領域をピクセル単位で指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.DragSize%2A>プロパティ (ピクセル単位)、マウス ボタンが押されたポイントを中心とした四角形のサイズを示します。 Windows を起動しない、ドラッグ操作を境界として四角形を使用します。  
+  
+ ユーザーは、マウス ボタンを押しし、ドラッグ操作の開始前に、ユーザーをクリックし、意図せず、ドラッグ操作を開始せずに簡単にマウス ボタンを放すに、この領域内でマウスを移動できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FixedFrameBorderSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size FixedFrameBorderSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size FixedFrameBorderSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.FixedFrameBorderSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャプションがあり、サイズを変更できないウィンドウの枠の境界線の太さ (ピクセル単位) を取得します。</summary>
+        <value>固定サイズのウィンドウの境界線の太さをピクセル単位で指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.FixedFrameBorderSize%2A>プロパティは、キャプションはかなりの数ではありませんが、ウィンドウの周囲のピクセル単位で、フレームの幅を示します。  
+  
+ <xref:System.Drawing.Size.Width%2A>のプロパティ<xref:System.Windows.Forms.SystemInformation.FixedFrameBorderSize%2A>水平方向の境界線の高さは、および<xref:System.Drawing.Size.Height%2A>プロパティの<xref:System.Windows.Forms.SystemInformation.FixedFrameBorderSize%2A>が垂直方向の境界線の幅。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSmoothingContrast">
+      <MemberSignature Language="C#" Value="public static int FontSmoothingContrast { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 FontSmoothingContrast" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.FontSmoothingContrast" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ClearType スムージングで使用されるフォント スムージングのコントラスト値を取得します。</summary>
+        <value>ClearType フォント スムージングのコントラスト値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ClearType フォント スムージングの既定値は 1400 ですが、2200 1000 から任意の値であることができます。 ディスプレイ デバイスとユーザーの応答性の色をに応じて上位または下位のコントラスト値に、読みやすさが向上します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、この機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSmoothingType">
+      <MemberSignature Language="C#" Value="public static int FontSmoothingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 FontSmoothingType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.FontSmoothingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォント スムージングの現在のタイプを取得します。</summary>
+        <value>フォント スムージングの現在のタイプを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.FontSmoothingType%2A>プロパティを現在アクティブなフォント スムージングのタイプを示す値を返します。  
+  
+ 次の表では、このプロパティによって返される値の意味を示します。  
+  
+|値|説明|  
+|-----------|-------------|  
+|0|フォント スムージングのタイプを特定できませんでした。|  
+|1|標準のフォント スムージング|  
+|2|ClearType フォント スムージング機能します。|  
+  
+> [!NOTE]
+>  このプロパティは、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、この機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameBorderSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size FrameBorderSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size FrameBorderSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.FrameBorderSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグによるサイズ変更中のウィンドウの周囲に描かれるサイズ変更境界線の太さ (ピクセル単位) を取得します。</summary>
+        <value>垂直方向のサイズ変更境界線の幅の太さと水平方向のサイズ変更境界線の高さをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.FrameBorderSize%2A>プロパティは、ウィンドウのサイズ変更境界線の高さと幅を示します。  
+  
+ <xref:System.Drawing.Size.Width%2A>このプロパティの値は、垂直方向のサイズ変更境界線の幅。 <xref:System.Drawing.Size.Height%2A>このプロパティの値は、水平方向のサイズ変更境界線の高さ。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBorderSizeForDpi">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetBorderSizeForDpi (int dpi);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetBorderSizeForDpi(int32 dpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SystemInformation.GetBorderSizeForDpi(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpi" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dpi">現在のディスプレイ デバイスの DPI 値。</param>
+        <summary>指定した DPI 値のフラットスタイルのウィンドウまたはシステム コントロールの境界線の太さ (ピクセル単位) を取得します。</summary>
+        <returns>垂直方向の境界線の幅と水平方向の境界線の高さをピクセル単位で示す <see cref="T:System.Drawing.Size" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHorizontalScrollBarHeightForDpi">
+      <MemberSignature Language="C#" Value="public static int GetHorizontalScrollBarHeightForDpi (int dpi);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetHorizontalScrollBarHeightForDpi(int32 dpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SystemInformation.GetHorizontalScrollBarHeightForDpi(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpi" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dpi">現在のディスプレイ デバイスの DPI 値。</param>
+        <summary>指定した DPI 値の水平スクロール バーの既定の高さ (ピクセル単位) を取得します。</summary>
+        <returns>水平スクロール バーの既定の高さ (ピクセル単位)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMenuFontForDpi">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font GetMenuFontForDpi (int dpi);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Font GetMenuFontForDpi(int32 dpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SystemInformation.GetMenuFontForDpi(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpi" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dpi">現在のディスプレイ デバイスの DPI 値。</param>
+        <summary>特定のディスプレイ デバイスの DPI の変更で使用するためのメニューに表示するテキストのフォントを取得します。</summary>
+        <returns>メニューに表示するテキストの <see cref="T:System.Drawing.Font" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVerticalScrollBarWidthForDpi">
+      <MemberSignature Language="C#" Value="public static int GetVerticalScrollBarWidthForDpi (int dpi);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetVerticalScrollBarWidthForDpi(int32 dpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SystemInformation.GetVerticalScrollBarWidthForDpi(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpi" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dpi">現在のディスプレイ デバイスの DPI 値。</param>
+        <summary>指定した DPI 値の垂直スクロール バーの既定の高さ (ピクセル単位) を取得します。</summary>
+        <returns>垂直スクロール バーの既定の高さ (ピクセル単位)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HighContrast">
+      <MemberSignature Language="C#" Value="public static bool HighContrast { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool HighContrast" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.HighContrast" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがハイコントラスト モードのユーザー補助機能を有効にしているかどうかを示す値を取得します。</summary>
+        <value>
+          ユーザーがハイコントラスト モードを有効にした場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハイ コントラスト ユーザー補助機能画面をいくつかの別の色の組み合わせを使用して画面のコントラストを強調する画面の配色を有効にすると表示に見やすくすることができます。 スキームの一部も読みやすくするためのフォント サイズを変更します。  
+  
+ ハイ コントラスト モードの機能を有効になっているまたはコントロール パネルのユーザー補助のオプションを無効にできます。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalFocusThickness">
+      <MemberSignature Language="C#" Value="public static int HorizontalFocusThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 HorizontalFocusThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.HorizontalFocusThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム フォーカスを示す四角形の左端と右端の太さ (ピクセル単位) を取得します。</summary>
+        <value>システム フォーカスを示す四角形の左端と右端の太さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.HorizontalFocusThickness%2A>プロパティはピクセル単位で、システム フォーカス四角形の左と右の端の幅を示します。 システム フォーカス四角形は四角形の強調表示されているアウトラインを表示することによって、ウィンドウまたは領域をユーザーの注意を引くに使用されます。  
+  
+> [!NOTE]
+>  これは、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、この機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalResizeBorderThickness">
+      <MemberSignature Language="C#" Value="public static int HorizontalResizeBorderThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 HorizontalResizeBorderThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.HorizontalResizeBorderThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズ変更中のウィンドウの周囲に描かれるサイズ変更境界線の左端と右端の太さ (ピクセル単位) を取得します。</summary>
+        <value>サイズ変更中のウィンドウの周囲に描かれるサイズ変更境界線の左端と右端の幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.HorizontalResizeBorderThickness%2A>プロパティは、サイズ変更中のウィンドウの周囲に描かれる垂直サイズ変更境界線の幅を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarArrowWidth">
+      <MemberSignature Language="C#" Value="public static int HorizontalScrollBarArrowWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 HorizontalScrollBarArrowWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.HorizontalScrollBarArrowWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平スクロール バーの矢印ビットマップの幅 (ピクセル単位) を取得します。</summary>
+        <value>水平スクロール バーの矢印ビットマップの幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarHeight">
+      <MemberSignature Language="C#" Value="public static int HorizontalScrollBarHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 HorizontalScrollBarHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.HorizontalScrollBarHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平スクロール バーの既定の高さ (ピクセル単位) を取得します。</summary>
+        <value>水平スクロール バーの既定の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarThumbWidth">
+      <MemberSignature Language="C#" Value="public static int HorizontalScrollBarThumbWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 HorizontalScrollBarThumbWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.HorizontalScrollBarThumbWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平スクロール バーのスクロール ボックスの幅 (ピクセル単位) を取得します。</summary>
+        <value>水平スクロール バーのスクロール ボックスの幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.HorizontalScrollBarThumbWidth%2A>プロパティの新しい位置にスクロール バーをドラッグおよびスクロール バーの位置を示すために使用するスクロール ボックスの幅を示します。 スクロール ボックスは、thumb ボックスとも呼ばれます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconHorizontalSpacing">
+      <MemberSignature Language="C#" Value="public static int IconHorizontalSpacing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 IconHorizontalSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IconHorizontalSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大きいアイコン表示でアイコンを整列するセルの幅 (ピクセル単位) を取得します。</summary>
+        <value>大きいアイコン表示でアイコンを整列するセルの幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IconHorizontalSpacing%2A>プロパティは、大きいアイコン表示でアイコンの領域の幅を示します。 大きいアイコン表示でアイコンを整列するのにこの距離が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size IconSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size IconSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IconSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows のプログラム アイコンの既定のサイズ (ピクセル単位) を取得します。</summary>
+        <value>プログラム アイコンの既定のサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconSpacingSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size IconSpacingSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size IconSpacingSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IconSpacingSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大きいアイコン表示でアイコンを整列するために使用される四角形グリッドのサイズ (ピクセル単位) を取得します。</summary>
+        <value>大きいアイコン表示でアイコンを整列するために使用される四角形グリッドのサイズ (ピクセル単位) を指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IconSpacingSize%2A>プロパティ システムに、大きいアイコン表示で配置時に、各アイコンが収まるグリッドの四角形のサイズを示します。 この値は、常より大きいまたは等しい<xref:System.Windows.Forms.SystemInformation.IconSize%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconVerticalSpacing">
+      <MemberSignature Language="C#" Value="public static int IconVerticalSpacing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 IconVerticalSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IconVerticalSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大きいアイコン表示でアイコンを整列するセルの高さ (ピクセル単位) を取得します。</summary>
+        <value>大きいアイコン表示でアイコンを整列するセルの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IconVerticalSpacing%2A>プロパティは、大きいアイコン表示でアイコンの領域の高さを示します。 大きいアイコン表示でアイコンを整列するのにこの距離が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActiveWindowTrackingEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsActiveWindowTrackingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsActiveWindowTrackingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsActiveWindowTrackingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブ ウィンドウ トラッキングが有効かどうかを示す値を取得します。</summary>
+        <value>
+          アクティブ ウィンドウ トラッキングが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsActiveWindowTrackingEnabled%2A>プロパティは、アクティブ ウィンドウ トラッキングが有効になっているかどうかを示します。 アクティブ ウィンドウ トラッキングによって、ウィンドウ、マウスが直接置かれてアクティブにすることです。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsComboBoxAnimationEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsComboBoxAnimationEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsComboBoxAnimationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsComboBoxAnimationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスのスライドオープン効果が有効かどうかを示す値を取得します。</summary>
+        <value>
+          コンボ ボックスのスライドオープン効果が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsComboBoxAnimationEnabled%2A>プロパティは、システム コントロールのコンボ ボックスのスライド オープン効果が有効になっているかどうかを示します。  
+  
+ システム コントロールのコンボ ボックスのスライド オープン効果が有効になっているときにが表示されたらそれをビュー内に描画されているすぐに完全ではなく、ドロップ ダウン メニュー、コンボ ボックスのスライドして表示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDropShadowEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsDropShadowEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsDropShadowEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsDropShadowEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップ シャドウ効果が有効かどうかを示す値を取得します。</summary>
+        <value>
+          ドロップ シャドウ効果が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティは、Windows XP および Windows Server 2003 ファミリでのみサポートされます。 その他のプラットフォームでは、このプロパティが返されます`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFlatMenuEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsFlatMenuEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsFlatMenuEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsFlatMenuEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネイティブなユーザー メニューでフラットなメニュー表示形式を使用するかどうかを示す値を取得します。</summary>
+        <value>このプロパティは使用されておらず、常に <see langword="false" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFontSmoothingEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsFontSmoothingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsFontSmoothingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsFontSmoothingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォント スムージングが有効かどうかを示す値を取得します。</summary>
+        <value>
+          フォント スムージング機能が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント スムージング機能では、フォント (アンチエイリアシング) を使用して、フォントの曲線を異なるグレースケールで描画ピクセルより滑らかになります。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHotTrackingEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsHotTrackingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsHotTrackingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsHotTrackingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー バーにあるメニュー名のようなユーザー インターフェイス要素のホット トラッキングが有効かどうかを示す値を取得します。</summary>
+        <value>
+          ユーザー インターフェイス要素のホット トラッキングが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsHotTrackingEnabled%2A>プロパティは、ユーザー インターフェイス要素のホット トラッキングが有効になっているかどうかを示します。 ホット トラッキングは、その、アイテムの上にカーソルが移動したら、それが強調表示されますが、選択されていないことを意味します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIconTitleWrappingEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsIconTitleWrappingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsIconTitleWrappingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsIconTitleWrappingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンタイトルの折り返しが有効かどうかを示す値を取得します。</summary>
+        <value>
+          アイコンタイトルの折り返し機能が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyboardPreferred">
+      <MemberSignature Language="C#" Value="public static bool IsKeyboardPreferred { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsKeyboardPreferred" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsKeyboardPreferred" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがマウスではなくキーボードを主に使用するため、アプリケーションがキーボード インターフェイスを表示するよう設定しているかどうか (設定しない場合は表示されません) を示す値を取得します。</summary>
+        <value>
+          キーボード優先モードが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsKeyboardPreferred%2A>プロパティは、ユーザーが入力インターフェイスのキーボード ベースの環境設定を指定するかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsListBoxSmoothScrollingEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsListBoxSmoothScrollingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsListBoxSmoothScrollingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsListBoxSmoothScrollingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト ボックスのスムーズ スクロール効果が有効かどうかを示す値を取得します。</summary>
+        <value>
+          スムーズスクロールが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsListBoxSmoothScrollingEnabled%2A>プロパティは、システム コントロールのリスト ボックスのスムーズ スクロール効果が有効になっているかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMenuAnimationEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsMenuAnimationEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsMenuAnimationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsMenuAnimationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー フェードまたはスライド アニメーション機能が有効かどうかを示す値を取得します。</summary>
+        <value>
+          メニューのフェード アニメーションまたはスライド アニメーションが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsMenuAnimationEnabled%2A>プロパティは、システム コントロールのメニューのフェードまたはスライド アニメーション機能のいずれかが有効になっているかどうかを示します。  
+  
+ このプロパティの値が場合`true`、<xref:System.Windows.Forms.SystemInformation.IsMenuFadeEnabled%2A>プロパティは、メニュー フェードまたはスライド アニメーションを使用するかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMenuFadeEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsMenuFadeEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsMenuFadeEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsMenuFadeEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー フェード アニメーションが有効かどうかを示す値を取得します。</summary>
+        <value>
+          フェード アニメーションが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsMenuFadeEnabled%2A>プロパティがメニューのアニメーションが有効になっている場合、メニューにフェード アニメーションがで使用するかどうかを示します。 <xref:System.Windows.Forms.SystemInformation.IsMenuAnimationEnabled%2A>プロパティは、メニューのアニメーションが有効になっているかどうかを示します。  
+  
+ メニューのアニメーションが有効になっているし、このプロパティの値がかどうか`true`、メニュー フェード アニメーションを使用します。 メニューのアニメーションが有効になっているし、このプロパティの値がかどうか`false`、メニュー スライド アニメーションを使用します。 メニューのアニメーションが無効になっている場合、このプロパティの値は無意味です。  
+  
+> [!NOTE]
+>  場合の値、<xref:System.Windows.Forms.SystemInformation.IsMenuAnimationEnabled%2A>は`false`、このプロパティの値は意味がありません。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。 その他のプラットフォームでは、このプロパティが返されます`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMinimizeRestoreAnimationEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsMinimizeRestoreAnimationEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsMinimizeRestoreAnimationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsMinimizeRestoreAnimationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの最小化と復元のアニメーションが有効かどうかを示す値を取得します。</summary>
+        <value>
+          ウィンドウの最小化および復元アニメーションが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsMinimizeRestoreAnimationEnabled%2A>プロパティは、ウィンドウを最小化し、復元シーケンスがアニメーション化するかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectionFadeEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsSelectionFadeEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSelectionFadeEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsSelectionFadeEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択フェード効果が有効かどうかを示す値を取得します。</summary>
+        <value>
+          選択フェード効果が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsSelectionFadeEnabled%2A>プロパティは、選択フェード効果が有効になっているかどうかを示します。 選択フェード効果を簡単には、メニューが閉じられた後にフェードアウト中に、画面に残しておくユーザーによって選択されたメニュー項目です。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。 その他のプラットフォームでは、このプロパティが返されます`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSnapToDefaultEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsSnapToDefaultEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSnapToDefaultEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsSnapToDefaultEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のボタンに移動機能が有効かどうかを示す値を取得します。</summary>
+        <value>
+          既定のボタンに移動機能が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsSnapToDefaultEnabled%2A>プロパティは、スナップインの既定のボタンの機能が有効になっているかどうかを示します。 機能が有効になっている場合、マウスのカーソルに自動的に移動、既定のボタンなど**OK**または**適用**、ダイアログ ボックスのです。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTitleBarGradientEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsTitleBarGradientEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsTitleBarGradientEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsTitleBarGradientEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのタイトル バーのグラデーション効果が有効かどうかを示す値を取得します。</summary>
+        <value>
+          ウィンドウのタイトル バーのグラデーション効果が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsTitleBarGradientEnabled%2A>プロパティは、グラデーション塗りつぶし効果を使用してウィンドウのタイトル バーの背景を描画するかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsToolTipAnimationEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsToolTipAnimationEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsToolTipAnimationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.IsToolTipAnimationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolTip" /> アニメーションが有効かどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Windows.Forms.ToolTip" /> アニメーションが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.IsToolTipAnimationEnabled%2A>プロパティ ツールヒントできますフェードまたはスライドして表示するかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。 その他のプラットフォームでは、このプロパティが返されます`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KanjiWindowHeight">
+      <MemberSignature Language="C#" Value="public static int KanjiWindowHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 KanjiWindowHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.KanjiWindowHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 バイト文字セット (DBCS) バージョンの Windows で画面の一番下に表示される漢字ウィンドウの高さ (ピクセル単位) を取得します。</summary>
+        <value>漢字ウィンドウの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.KanjiWindowHeight%2A>プロパティは DBCS をサポートするオペレーティング システム上にある漢字ウィンドウの高さを示します。 <xref:System.Windows.Forms.SystemInformation.DbcsEnabled%2A>プロパティは、オペレーティング システムが DBCS をサポートするかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardDelay">
+      <MemberSignature Language="C#" Value="public static int KeyboardDelay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 KeyboardDelay" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.KeyboardDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボードのリピート遅延設定を取得します。</summary>
+        <value>キーボードのリピート遅延設定の範囲は、0 (約 250 ミリ秒の遅延) ～ 3 (約 1 秒の遅延) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、後、キーが押され、キーストロークがオペレーティング システムでのメッセージを繰り返しまでに経過した時間数を示します。 この値は 0 (約 250 ミリ秒の遅延) ~ 3 (約 1 秒の遅延) の範囲内でです。 ハードウェアによっては、各値に関連付けられた実際の遅延時間が異なる場合があります。  
+  
+ <xref:System.Windows.Forms.SystemInformation.KeyboardSpeed%2A>プロパティは、オペレーティング システムによって送信される各キーストローク繰り返しメッセージ間の時間の長さを決定する繰り返し速度設定を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardSpeed">
+      <MemberSignature Language="C#" Value="public static int KeyboardSpeed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 KeyboardSpeed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.KeyboardSpeed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボードのリピート速度設定を取得します。</summary>
+        <value>キーボードのリピート速度設定の範囲は、0 (1 秒に約 2.5 回の繰り返し) ～ 31 (1 秒に約 30 回の繰り返し) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ユーザーを押すし、キーを押したときに送信されるキーストローク繰り返しメッセージ間の時間を示します。 これは、値は、0 (1 秒間に約 2.5 回の繰り返し) の範囲内で ~ 31 (1 秒間に約 30 回の繰り返し)。 レートはハードウェアに依存して、線形スケール 20% によって異なる場合がありますを実際に繰り返します。  
+  
+ <xref:System.Windows.Forms.SystemInformation.KeyboardDelay%2A>プロパティは、キーが押され、キーストローク繰り返しメッセージは、オペレーティング システムによって送信する前に、押した後、時間の長さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxWindowTrackSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MaxWindowTrackSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MaxWindowTrackSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MaxWindowTrackSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャプションとサイズ変更境界線があるウィンドウの既定の最大サイズ (ピクセル単位) を取得します。</summary>
+        <value>ウィンドウを変更できる最大サイズ (ピクセル単位) を指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MaxWindowTrackSize%2A>プロパティは、ウィンドウ サイズを変更するユーザー ドラッグすることの最大サイズを示します。 によって返される値<xref:System.Windows.Forms.SystemInformation.MaxWindowTrackSize%2A>デスクトップ全体のサイズを指します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuAccessKeysUnderlined">
+      <MemberSignature Language="C#" Value="public static bool MenuAccessKeysUnderlined { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MenuAccessKeysUnderlined" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuAccessKeysUnderlined" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー アクセス キーに常に下線を付けるかどうかを示す値を取得します。</summary>
+        <value>
+          メニュー アクセス キーに常に下線を付ける場合は <see langword="true" />。メニューがアクティブになった場合またはフォーカスを得た場合にのみ下線を付ける場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MenuAccessKeysUnderlined%2A>プロパティは、メニューがアクティブ化または受信されていない場合でも、メニュー テキストのメニューのショートカット キーが下線付きかどうかを示すフォーカスします。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuBarButtonSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MenuBarButtonSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MenuBarButtonSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuBarButtonSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー バー ボタンの既定の幅 (ピクセル単位) とメニュー バーの高さ (ピクセル単位) を取得します。</summary>
+        <value>メニュー バーボタンの既定の幅 (ピクセル単位) とメニュー バーの高さ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Size.Width%2A?displayProperty=nameWithType>このプロパティの値は、メニュー バー、(ピクセル単位) のボタンの既定の幅を示します。 <xref:System.Drawing.Size.Height%2A?displayProperty=nameWithType>このプロパティの値をピクセル単位でのメニュー バーの高さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuButtonSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MenuButtonSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MenuButtonSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuButtonSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー バー ボタンの既定のサイズ (ピクセル単位) を取得します。</summary>
+        <value>メニュー バー ボタンの既定のサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが既定のサイズ (ピクセル単位) のメニュー バーのボタンを示す、子ウィンドウなど、マルチ ドキュメント インターフェイスで使用されるボタンを閉じます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuCheckSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MenuCheckSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MenuCheckSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuCheckSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニューのチェック マーク領域の既定のサイズ (ピクセル単位) を取得します。</summary>
+        <value>メニューのチェック マーク領域の既定のサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MenuCheckSize%2A>プロパティが選択されたメニュー項目の横にあるチェック マーク領域を表示する、Windows によって使用されるイメージのサイズを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuFont">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font MenuFont { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Font MenuFont" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニューに表示するテキストのフォントを取得します。</summary>
+        <value>メニューに表示するテキストの <see cref="T:System.Drawing.Font" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MenuFont%2A>プロパティ メニューに表示するテキストに使用するフォントを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuHeight">
+      <MemberSignature Language="C#" Value="public static int MenuHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MenuHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニューの 1 行の高さ (ピクセル単位) を取得します。</summary>
+        <value>メニューの 1 行の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MenuHeight%2A>プロパティは、メニュー バーの Windows で現在定義されている高さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuShowDelay">
+      <MemberSignature Language="C#" Value="public static int MenuShowDelay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MenuShowDelay" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MenuShowDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスのカーソルがサブメニュー項目の上に置かれてから、ショートカット メニューを重ねて表示するまでにシステムが待機する時間 (ミリ秒単位) を取得します。</summary>
+        <value>マウスのカーソルがサブメニュー項目の上に置かれてから、ショートカット メニューを重ねて表示するまでにシステムが待機する時間 (ミリ秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MenuShowDelay%2A>プロパティは、マウス カーソルがサブメニュー項目上に重ねてショートカット メニューが表示されるまでの待ち時間をミリ秒単位で、時間を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MidEastEnabled">
+      <MemberSignature Language="C#" Value="public static bool MidEastEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MidEastEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MidEastEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムがヘブライ語やアラビア語に対応しているかどうかを示す値を取得します。</summary>
+        <value>
+          オペレーティング システムがヘブライ語やアラビア語に対応している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MidEastEnabled%2A>プロパティは、オペレーティング システムがヘブライ語やアラビア語の言語に対して有効かどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimizedWindowSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MinimizedWindowSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MinimizedWindowSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MinimizedWindowSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準の最小化されたウィンドウのサイズ (ピクセル単位) を取得します。</summary>
+        <value>標準の最小化されたウィンドウのサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MinimizedWindowSize%2A>プロパティは通常の最小化されたウィンドウによって占有される領域のサイズを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimizedWindowSpacingSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MinimizedWindowSpacingSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MinimizedWindowSpacingSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MinimizedWindowSpacingSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最小化されたウィンドウを整列する際に各ウィンドウに割り当てられる領域のサイズ (ピクセル単位) を取得します。</summary>
+        <value>最小化されたウィンドウを整列する際に各ウィンドウに割り当てられる領域を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MinimizedWindowSpacingSize%2A>プロパティ (ピクセル単位) の最小化されたウィンドウの配置グリッド セルのサイズを示します。 最小化された各ウィンドウは、配置時にこのサイズを四角形に適合します。  
+  
+ 以上の値に、このプロパティの値は常に、<xref:System.Windows.Forms.SystemInformation.MinimumWindowSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumWindowSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MinimumWindowSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MinimumWindowSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MinimumWindowSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの最小の幅と高さ (ピクセル単位) を取得します。</summary>
+        <value>ウィンドウを縮小できる最小サイズ (ピクセル単位) を指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MinimumWindowSize%2A>プロパティは、ウィンドウの最小サイズとして、Windows によって指定された寸法を示します。 このプロパティを使用して、このプロパティによって返されるいずれかのサイズを超えていないディメンションをウィンドウのサイズ変更を制限することができます。  
+  
+> [!NOTE]
+>  ウィンドウのサイズ変更できるアプリケーションの開発者は、このプロパティの値を使用しているアプリケーションは行われませんので、ウィンドウのサイズは、システムによって制限されますが、いずれか小さいほうの幅または高さをウィンドウのサイズを変更することを確認する可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWindowTrackSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MinWindowTrackSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MinWindowTrackSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MinWindowTrackSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグによるサイズ変更時のウィンドウの既定の最小サイズ (ピクセル単位) を取得します。</summary>
+        <value>サイズ変更時のウィンドウの既定の最小の幅と高さ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MinWindowTrackSize%2A>プロパティを使用して、罫線をウィンドウのサイズが作成することができます既定最小ウィンドウ サイズを示します。  
+  
+ ユーザーは、ウィンドウ フレームをドラッグして、このサイズよりも小さいサイズにことはできません。 A<xref:System.Windows.Forms.Form>設定してこれらの値を上書きすることができます、<xref:System.Windows.Forms.Form.MinimumSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MonitorCount">
+      <MemberSignature Language="C#" Value="public static int MonitorCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MonitorCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MonitorCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デスクトップ上のディスプレイ モニターの数を取得します。</summary>
+        <value>デスクトップを構成するモニターの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MonitorCount%2A>プロパティは、現在のオペレーティング システムによって認識されるモニターの数を示します。 このプロパティ値を返します 1 より大きい複数のモニターは、オペレーティング システムによって現在認識されている場合にのみです。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MonitorsSameDisplayFormat">
+      <MemberSignature Language="C#" Value="public static bool MonitorsSameDisplayFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MonitorsSameDisplayFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MonitorsSameDisplayFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのディスプレイ モニターで同じピクセル色形式が使用されているかどうかを示す値を取得します。</summary>
+        <value>
+          すべてのモニターのピクセル色形式が同じ場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MonitorsSameDisplayFormat%2A>オペレーティング システムによって認識される現在のすべてのモニターで同じピクセル色形式を使用しているかどうかを示します。  
+  
+ ピクセル形式は、ピクセルの色と明るさの情報をエンコードするために使用するデータ構造を定義します。 <xref:System.Drawing.Imaging.PixelFormat>列挙体は標準のピクセル色形式のセットを示します。 ピクセル値のさまざまなカラー値の範囲での形式でエンコードできるビット精度、およびピクセル データ内のビットの位置を異なる形式の構造。  
+  
+> [!NOTE]
+>  2 つの表示が異なるが、同じビット深さを持つことができますカラー形式です。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseButtons">
+      <MemberSignature Language="C#" Value="public static int MouseButtons { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MouseButtons" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseButtons" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスのボタンの数を取得します。</summary>
+        <value>マウスのボタンの数。マウスが取り付けられていない場合は 0。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MouseButtons%2A>プロパティは、現在インストールされているマウスに認識されるマウス ボタンの数を示します。  
+  
+ 使用することができます<xref:System.Windows.Forms.SystemInformation.MouseButtons%2A>を増減したり、アプリケーションでサポートされているマウス ボタンの標準の数よりも追加の機能を持つユーザーを切り替えるプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseButtonsSwapped">
+      <MemberSignature Language="C#" Value="public static bool MouseButtonsSwapped { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MouseButtonsSwapped" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseButtonsSwapped" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>左右のマウス ボタンの機能が入れ替わっているかどうかを示す値を取得します。</summary>
+        <value>
+          左右のマウス ボタンの機能が入れ替わっている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseHoverSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MouseHoverSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size MouseHoverSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseHoverSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス静止メッセージが生成されるためにマウス静止時間が経過するまでマウス ポインターをとどめておく必要がある四角形の領域のサイズ (ピクセル単位) を取得します。</summary>
+        <value>マウス静止メッセージが生成されるためにマウス静止時間が経過するまでマウス ポインターをとどめておく必要がある四角形の領域のサイズ(ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MouseHoverSize%2A>プロパティは、マウス ホバーにマウス静止メッセージが生成される前に、マウス ポインターがある四角形のサイズを示します。  
+  
+ <xref:System.Windows.Forms.SystemInformation.MouseHoverTime%2A>プロパティは、マウス ポインターをある内で維持領域のサイズをミリ秒単位の時間を示します、<xref:System.Windows.Forms.SystemInformation.MouseHoverSize%2A>マウス静止メッセージを生成するためにプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseHoverTime">
+      <MemberSignature Language="C#" Value="public static int MouseHoverTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MouseHoverTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseHoverTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス静止メッセージが生成されるために静止領域内にマウス ポインターをとどめておく必要がある時間 (ミリ秒単位) を取得します。</summary>
+        <value>マウス静止メッセージが生成されるために静止領域内にマウス ポインターをとどめておく必要がある時間 (ミリ秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MouseHoverTime%2A>プロパティは、マウス ポインターをある内で維持領域のサイズをミリ秒単位での時間を示します、<xref:System.Windows.Forms.SystemInformation.MouseHoverSize%2A>マウス静止メッセージを生成するためにプロパティです。  
+  
+ <xref:System.Windows.Forms.SystemInformation.MouseHoverSize%2A>プロパティは、マウス ホバーにマウス静止メッセージが生成される前に、マウス ポインターがある四角形のサイズを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MousePresent">
+      <MemberSignature Language="C#" Value="public static bool MousePresent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MousePresent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MousePresent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポインティング デバイスが取り付けられているかどうかを示す値を取得します。</summary>
+        <value>
+          マウスが取り付けられている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MousePresent%2A>プロパティは、ポインティング デバイスが存在か、システムにインストールされているかどうかを示します。 これは通常、ケースのため<xref:System.Windows.Forms.SystemInformation.MousePresent%2A>ほぼ常に返します`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseSpeed">
+      <MemberSignature Language="C#" Value="public static int MouseSpeed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MouseSpeed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseSpeed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のマウス速度を取得します。</summary>
+        <value>マウス速度の値の範囲は、1 (最も遅い) ～ 20 (最も速い) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス速度は、マウスの移動距離に対応して、ポインターが移動する距離を決定します。 このプロパティの値の範囲は 1 (最も遅い) および 20 (最も速い) です。 10 の値は、既定値です。 マウス コントロール パネル アプリケーションを使用して、エンドユーザーがアプリケーションを使用して、または値を設定することができます、`SystemParametersInfo`プラットフォーム SDK の機能です。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelPresent">
+      <MemberSignature Language="C#" Value="public static bool MouseWheelPresent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MouseWheelPresent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseWheelPresent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ホイール付きのマウスが取り付けられているかどうかを示す値を取得します。</summary>
+        <value>
+          マウス ホイールが付いているマウスが取り付けられている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MouseWheelPresent%2A>プロパティは、システムが現在のマウスのマウス ホイールを認識するかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは、Windows NT 4.0 以降、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelScrollDelta">
+      <MemberSignature Language="C#" Value="public static int MouseWheelScrollDelta { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MouseWheelScrollDelta" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseWheelScrollDelta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ホイールの 1 目盛りの回転で増分される差分値を取得します。</summary>
+        <value>マウス ホイールの 1 目盛りの回転で増分される差分値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デルタ値は、1 回のマウス ホイールの回転増分値を表す整数値です。 下降傾向のマウス ホイールを回転は、負のデルタ値を生成します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelScrollLines">
+      <MemberSignature Language="C#" Value="public static int MouseWheelScrollLines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MouseWheelScrollLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.MouseWheelScrollLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ホイールを回転したときにスクロールする行数を取得します。</summary>
+        <value>マウス ホイールを回転したときにスクロールする行数。[1 画面ずつスクロールする] マウス オプションが選択されている場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>プロパティは既定では、複数行を持つコントロールをスクロール バーで、スクロールする行数を示します。 対応するプラットフォーム SDK システム全体のパラメーターは、SPI_GETWHEELSCROLLLINES SPI_SETWHEELSCROLLLINES です。 システム全体のパラメーターの詳細についてを参照してください「次」、プラットフォーム SDK のドキュメント[http://msdn.microsoft.com](http://msdn.microsoft.com/)です。  
+  
+> [!NOTE]
+>  1 画面ずつ"マウス オプションが選択されている場合に発生する特別なケースを処理することを確認します。 ここで、 <xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A> -1 の値を持つプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeMouseWheelSupport">
+      <MemberSignature Language="C#" Value="public static bool NativeMouseWheelSupport { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool NativeMouseWheelSupport" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.NativeMouseWheelSupport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが元々マウス ホイールをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          オペレーティング システムが元々マウス ホイールをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウスのホイール操作によって発生した、<xref:System.Windows.Forms.Control>オペレーティング システムが、ホイールをネイティブにサポートしていない場合でも、作業をオブジェクトします。  
+  
+> [!NOTE]
+>  このプロパティは、Windows NT 4.0 以降、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Network">
+      <MemberSignature Language="C#" Value="public static bool Network { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Network" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.Network" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワークが接続されているかどうかを示す値を取得します。</summary>
+        <value>
+          ネットワークに接続されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.Network%2A>プロパティは、システムが現在確立されているネットワーク接続を持つかどうかを示します。  
+  
+> [!NOTE]
+>  このプロパティは常に返します`true`.NET Framework でサポートされているすべての Windows プラットフォームにします。 使用して、<xref:System.Net.NetworkInformation>名前空間をより正確なネットワークの状態を取得します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenWindows">
+      <MemberSignature Language="C#" Value="public static bool PenWindows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool PenWindows" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.PenWindows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft Windows for Pen Computing 拡張機能がインストールされているかどうかを示す値を取得します。</summary>
+        <value>
+          Windows for Pen Computing 拡張機能がインストールされている場合は <see langword="true" />。インストールされていない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.PenWindows%2A>プロパティは、Microsoft Windows for Pen Computing 拡張機能がインストールされているかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopupMenuAlignment">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.LeftRightAlignment PopupMenuAlignment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.LeftRightAlignment PopupMenuAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.PopupMenuAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LeftRightAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポップアップ メニューを、対応するメニュー バー項目のどちら側に整列させるかを取得します。</summary>
+        <value>ポップアップ メニューを、対応するメニュー バー項目の左側に整列させるか、右側に整列させるかを示す <see cref="T:System.Windows.Forms.LeftRightAlignment" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PowerStatus">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.PowerStatus PowerStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.PowerStatus PowerStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.PowerStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PowerStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のシステム電源の状態を取得します。</summary>
+        <value>現在のシステム電源の状態を示す <see cref="T:System.Windows.Forms.PowerStatus" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryMonitorMaximizedWindowSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size PrimaryMonitorMaximizedWindowSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size PrimaryMonitorMaximizedWindowSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.PrimaryMonitorMaximizedWindowSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ ディスプレイ上の最大化されたウィンドウの既定のサイズ (ピクセル単位) を取得します。</summary>
+        <value>プライマリ ディスプレイ上の最大化されたウィンドウのサイズ (ピクセル単位) を指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryMonitorSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size PrimaryMonitorSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size PrimaryMonitorSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.PrimaryMonitorSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ ディスプレイの現在のビデオ モードのサイズ (ピクセル単位) を取得します。</summary>
+        <value>プライマリ ディスプレイの現在のビデオ モードのサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.PrimaryMonitorSize%2A>プロパティは、プライマリ ディスプレイ アダプターの現在のビデオ モードの寸法を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightAlignedMenus">
+      <MemberSignature Language="C#" Value="public static bool RightAlignedMenus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool RightAlignedMenus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.RightAlignedMenus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップダウン メニューが、対応するメニュー バー項目に対して右寄せになっているかどうかを示す値を取得します。</summary>
+        <value>
+          ドロップダウン メニューが、対応するメニュー バー項目に対して右寄せの場合は <see langword="true" />。メニューが左寄せの場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenOrientation">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ScreenOrientation ScreenOrientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.ScreenOrientation ScreenOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ScreenOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ScreenOrientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面の向きを取得します。</summary>
+        <value>画面の向き (角度)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Secure">
+      <MemberSignature Language="C#" Value="public static bool Secure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Secure" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.Secure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムにセキュリティ マネージャーが設定されているかどうかを示す値を取得します。</summary>
+        <value>
+          セキュリティ マネージャーが設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.Secure%2A>プロパティは、セキュリティ マネージャーがオペレーティング システムから利用できるかどうかを示します。 Windows NT、Windows 2000 オペレーティング システムのレジストリとファイル システムにアクセスを決定するセキュリティ マネージャーを提供します。 Windows 98 では、セキュリティ マネージャーが提供されません。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このプロパティの値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSounds">
+      <MemberSignature Language="C#" Value="public static bool ShowSounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool ShowSounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ShowSounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションから通常は音で提供される情報を、視覚的な形で提供するようにユーザーが設定しているかどうかを示す値を取得します。</summary>
+        <value>
+          通常は音で提供されている情報をアプリケーションが視覚的に提供する必要がある場合は <see langword="true" />。オーディオ イベントをアプリケーションが特別な視覚的形式で提供する必要がない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.ShowSounds%2A>プロパティは、ユーザーを示す、セットがオーディオ イベント ビジュアル情報が表示されますを希望するユーザーの設定がされているかどうかを示します。  
+  
+ このプロパティを使用すると、ユーザー補助アプリケーション モードの機能を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizingBorderWidth">
+      <MemberSignature Language="C#" Value="public static int SizingBorderWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 SizingBorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.SizingBorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズ変更中のウィンドウの周囲に描かれるサイズ変更境界線の幅 (ピクセル単位) を取得します。</summary>
+        <value>サイズ変更中のウィンドウの周囲に描かれるサイズ変更境界線の幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallCaptionButtonSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size SmallCaptionButtonSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size SmallCaptionButtonSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.SmallCaptionButtonSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小さいキャプション ボタンの幅 (ピクセル単位) と小さいキャプションの高さ (ピクセル単位) を取得します。</summary>
+        <value>小さいキャプション ボタンの幅 (ピクセル単位) と小さいキャプションの高さ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.SmallCaptionButtonSize%2A>プロパティの小さいキャプション ボタンと小さいキャプションのピクセル単位の高さをピクセル単位の幅を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallIconSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size SmallIconSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size SmallIconSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.SmallIconSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小さいアイコンのサイズ (ピクセル単位) を取得します。</summary>
+        <value>小さいアイコンのサイズ (ピクセル単位) を指定する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.SmallIconSize%2A>プロパティは、Windows に小さいアイコンのサイズを示します。 小さいアイコンは、通常、ウィンドウのキャプションと小さいアイコン ビューは、Windows エクスプ ローラーで、表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TerminalServerSession">
+      <MemberSignature Language="C#" Value="public static bool TerminalServerSession { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool TerminalServerSession" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.TerminalServerSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元のプロセスがターミナル サービスのクライアント セッションに関連付けられているかどうかを示す値を取得します。</summary>
+        <value>
+          呼び出し元のプロセスがターミナル サービスのクライアント セッションに関連付けられている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.TerminalServerSession%2A>プロパティは、呼び出し元のプロセスがターミナル サービスのクライアント セッションに関連付けられているかどうかを示します。  
+  
+> [!NOTE]
+>  Windows NT 4.0 SP4 でのみ、またはそれ以降、このプロパティはサポートされて Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリ。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolWindowCaptionButtonSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size ToolWindowCaptionButtonSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Size ToolWindowCaptionButtonSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ToolWindowCaptionButtonSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小さいキャプション ボタンのサイズ (ピクセル単位) を取得します。</summary>
+        <value>小さいキャプション ボタンのサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.ToolWindowCaptionButtonSize%2A>プロパティは、ツール ウィンドウのキャプションの配置のボタンのサイズを示します。 ツール ウィンドウのキャプションに独自のカスタム ボタンを追加するときに、このプロパティを使用することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolWindowCaptionHeight">
+      <MemberSignature Language="C#" Value="public static int ToolWindowCaptionHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ToolWindowCaptionHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.ToolWindowCaptionHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツール ウィンドウのキャプションの高さ (ピクセル単位) を取得します。</summary>
+        <value>ツール ウィンドウのキャプションの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UIEffectsEnabled">
+      <MemberSignature Language="C#" Value="public static bool UIEffectsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UIEffectsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.UIEffectsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー インターフェイス (UI) 効果が有効にされているか、無効にされているかを示す値を取得します。</summary>
+        <value>
+          UI 効果が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI 効果は、フェード アニメーションが含まれて、ホット トラッキング、およびシステム コントロールのスクロールとマウスのカーソルの影の描画を平滑化します。 UI 効果を無効にすると、これらの機能は無効です。 UI 効果が有効な場合、現在のユーザーのアクティブとして設定されている効果のみが有効にします。  
+  
+ 次の表に、特定の UI 効果が有効になっているかどうかを指定する場合、このプロパティの値がプロパティ`true`:  
+  
+|アイテム|説明|  
+|----------|-----------------|  
+|<xref:System.Windows.Forms.SystemInformation.IsComboBoxAnimationEnabled%2A>|コンボ ボックスのスライド オープン効果が有効になっているかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.IsTitleBarGradientEnabled%2A>|ウィンドウのタイトル バーのグラデーション効果が有効になっているかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.IsHotTrackingEnabled%2A>|メニュー バーにあるメニュー名などのユーザー インターフェイス要素のホット トラッキングが有効になっているかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.IsListBoxSmoothScrollingEnabled%2A>|リスト ボックスのスムーズ スクロール効果が有効になっているかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.IsMenuAnimationEnabled%2A>|アニメーション機能が有効になっているメニュー フェードまたはスライドするかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.MenuAccessKeysUnderlined%2A>|メニュー アクセス キーに常に下線を付けるかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.IsSelectionFadeEnabled%2A>|選択フェード効果が有効になっているかどうかを示します。|  
+|<xref:System.Windows.Forms.SystemInformation.IsToolTipAnimationEnabled%2A>|ツールヒント アニメーションが有効になっているかどうかを示します。|  
+  
+> [!NOTE]
+>  このプロパティは、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。 その他のプラットフォームでは、このプロパティが返されます`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserDomainName">
+      <MemberSignature Language="C#" Value="public static string UserDomainName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string UserDomainName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.UserDomainName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが属するドメインの名前を取得します。</summary>
+        <value>ユーザー ドメインの名前。 同じユーザー名のローカル ユーザー アカウントが存在する場合、このプロパティはコンピューター名を取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じユーザー名のローカル ユーザー アカウントが存在する場合、このプロパティはコンピューター名を取得します。  
+  
+> [!NOTE]
+>  これは Windows 98 および Windows Millennium Edition ではサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">オペレーティング システムは、この機能をサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">環境変数を読み取っています。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UserInteractive">
+      <MemberSignature Language="C#" Value="public static bool UserInteractive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UserInteractive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.UserInteractive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスがユーザー対話モードで実行されているかどうかを示す値を取得します。</summary>
+        <value>
+          現在のプロセスがユーザー対話モードで実行されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.SystemInformation.UserInteractive%2A>プロパティは`false`、モーダル ダイアログを表示またはしないメッセージ ボックスに、ユーザーと対話するためのグラフィカル ユーザー インターフェイスはありません。  
+  
+ このプロパティは`false`サービス プロセスとは、Web アプリケーションから呼び出されたときだけです。  
+  
+> [!NOTE]
+>  このプロパティは、Windows NT 3.51 以降、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public static string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドに関連付けられているユーザー名を取得します。</summary>
+        <value>現在のスレッドに関連付けられているユーザーのユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティは、Windows NT ワークステーション、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このプロパティの値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalFocusThickness">
+      <MemberSignature Language="C#" Value="public static int VerticalFocusThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 VerticalFocusThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.VerticalFocusThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムのフォーカスを示す四角形の上端と下端の太さ (ピクセル単位) を取得します。</summary>
+        <value>システム フォーカスを示す四角形の上端と下端の太さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.VerticalFocusThickness%2A>プロパティが (ピクセル単位) システムのフォーカスされた四角形の上端と下端の高さを示します。 システム フォーカス四角形は四角形の強調表示されているアウトラインを表示することによって、ウィンドウまたは領域をユーザーの注意を引くに使用されます。  
+  
+> [!NOTE]
+>  このプロパティは、Windows XP、および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、この機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalResizeBorderThickness">
+      <MemberSignature Language="C#" Value="public static int VerticalResizeBorderThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 VerticalResizeBorderThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.VerticalResizeBorderThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズ変更中のウィンドウの周囲に描かれるサイズ変更境界線の上端と下端の太さ (ピクセル単位) を取得します。</summary>
+        <value>サイズ変更中のウィンドウの周囲に描かれるサイズ変更境界の上端と下端の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.VerticalResizeBorderThickness%2A>プロパティは、サイズ変更中のウィンドウの周囲に水平方向サイズ変更境界線の高さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarArrowHeight">
+      <MemberSignature Language="C#" Value="public static int VerticalScrollBarArrowHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 VerticalScrollBarArrowHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.VerticalScrollBarArrowHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直スクロール バーの矢印ビットマップの高さ (ピクセル単位) を取得します。</summary>
+        <value>垂直スクロール バーの矢印ビットマップの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.VerticalScrollBarArrowHeight%2A>プロパティは、垂直スクロール バーのシステム コントロールの矢印ビットマップの高さを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarThumbHeight">
+      <MemberSignature Language="C#" Value="public static int VerticalScrollBarThumbHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 VerticalScrollBarThumbHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.VerticalScrollBarThumbHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直スクロール バーのスクロール ボックスの高さ (ピクセル単位) を取得します。</summary>
+        <value>垂直スクロール バーのスクロール ボックスの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.VerticalScrollBarThumbHeight%2A>プロパティの新しい位置にスクロール バーをドラッグおよびスクロール バーの位置を示すために使用するスクロール ボックスの高さを示します。 スクロール ボックスは、thumb ボックスとも呼ばれます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarWidth">
+      <MemberSignature Language="C#" Value="public static int VerticalScrollBarWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 VerticalScrollBarWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.VerticalScrollBarWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直スクロール バーの既定の幅 (ピクセル単位) を取得します。</summary>
+        <value>垂直スクロール バーの既定の幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualScreen">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle VirtualScreen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Rectangle VirtualScreen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.VirtualScreen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仮想画面の範囲を取得します。</summary>
+        <value>仮想画面全体の外接四角形を指定する <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.VirtualScreen%2A>プロパティはマルチ モニター システムでデスクトップ全体の境界を示します。 このプロパティを使用すると、インストールされている複数のモニターを搭載したシステムで使用できる最大の視覚的領域を確認します。  
+  
+ 四角形の位置座標は、プライマリ ディスプレイの画面に表示される領域の左上隅に対する相対仮想画面の領域の左上隅のピクセル単位での位置のオフセットを示します。 四角形のサイズの値は、仮想の画面領域のサイズを表します。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Rectangle.X%2A>プライマリ ディスプレイの左エッジから左へ仮想画面の開始時に、四角形の位置座標は負の値。 <xref:System.Drawing.Rectangle.Y%2A>プライマリ ディスプレイの上部エッジから上の仮想画面の開始時に、四角形の座標が負の値。  
+  
+> [!NOTE]
+>  このプロパティは、Windows 98、Windows Millennium Edition、Windows 2000、Windows XP および Windows Server 2003 ファミリでのみサポートされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkingArea">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle WorkingArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Rectangle WorkingArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SystemInformation.WorkingArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面の作業領域のサイズ (ピクセル単位) を取得します。</summary>
+        <value>画面の作業領域のサイズ (ピクセル単位) を示す <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SystemInformation.WorkingArea%2A>プロパティは、アプリケーションで使用できる画面の境界を示します。 作業領域は、タスク バー、ドッキング ウィンドウは、ドッキング ツール バーを除く、ディスプレイのデスクトップ領域です。  
+  
+ <xref:System.Windows.Forms.SystemInformation.WorkingArea%2A>常にプライマリ モニターの作業領域を返します。 複数の環境の表示でのモニターの作業領域を必要がある場合のオーバー ロードのいずれかを呼び出すことができます<xref:System.Windows.Forms.Screen.GetWorkingArea%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.SystemInformation>クラス内で、<xref:System.Windows.Forms.ListBox>内のプロパティの現在の値を表示し、<xref:System.Windows.Forms.TextBox>ときに選択したアイテムの一覧です。  
+  
+ [!code-cpp[SystemInformationBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemInformationBrowser/CPP/sysinfobrowser.cpp#1)]
+ [!code-csharp[SystemInformationBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemInformationBrowser/CS/sysinfobrowser.cs#1)]
+ [!code-vb[SystemInformationBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemInformationBrowser/VB/sysinfobrowser.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,550 @@
+<Type Name="ResourcePermissionBase" FullName="System.Security.Permissions.ResourcePermissionBase">
+  <TypeSignature Language="C#" Value="public abstract class ResourcePermissionBase : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit ResourcePermissionBase extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.ResourcePermissionBase" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>セキュリティのアクセス許可コードへのアクセスの制御をできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.ResourcePermissionBase>クラスは、序数の並べ替え規則を使用して文字列を比較し、比較対象の文字列の大文字と小文字は無視されます。  
+  
+   
+  
+## Examples  
+ 次の例が継承、<xref:System.Security.Permissions.ResourcePermissionBase>クラスです。 4 種類のコンス トラクターが実装されます。 この例と呼ばれるクラスの実装も用意されています。`MailslotPermissionEntry`です。 <xref:System.Security.Permissions.ResourcePermissionBase.PermissionAccessType%2A>プロパティが個別の種類に設定し、`MailslotPermissionEntry`です。 <xref:System.Security.Permissions.ResourcePermissionBase.TagNames%2A>プロパティが「名前」と"Machine"に個別に設定します。  
+  
+ [!code-cpp[ResourcePermissionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR/ResourcePermissionBase/CPP/resourcepermissionbase.cpp#1)]
+ [!code-csharp[ResourcePermissionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR/ResourcePermissionBase/CS/resourcepermissionbase.cs#1)]
+ [!code-vb[ResourcePermissionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ResourcePermissionBase/VB/resourcepermissionbase.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">証拠を制御する権限です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />です。</permission>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Security.Permissions.ResourcePermissionBase" />、少なくとも 3 つのコンス トラクターを提供、2 つのプロパティを設定および 3 番目のプロパティを提供する必要があります。 必要なコンス トラクターは: 既定のコンス トラクター、1 つを受け取る、<see cref="T:System.Security.Permissions.PermissionState" />され多く必要に応じて、プロパティの値を受け取る、パラメーターとして。 プロパティを設定する必要があるは<see cref="P:System.Security.Permissions.ResourcePermissionBase.PermissionAccessType" />と<see cref="P:System.Security.Permissions.ResourcePermissionBase.TagNames" />です。 いずれかのアクセス許可エントリを表すオブジェクトが 3 番目のプロパティが必要です。 このクラスの実装の例は、次を参照してください。<see cref="T:System.Diagnostics.PerformanceCounterPermission" />です。 <see cref="T:System.Diagnostics.PerformanceCounterPermission" />、<see cref="P:System.Security.Permissions.ResourcePermissionBase.TagNames" />プロパティは、「コンピューター」と「カテゴリ」に個別に設定されて、<see cref="P:System.Security.Permissions.ResourcePermissionBase.PermissionAccessType" />プロパティの型に個別に<see cref="T:System.Diagnostics.PerformanceCounterPermissionAccess" />、および<see cref="P:System.Diagnostics.PerformanceCounterPermission.PermissionEntries" />プロパティには、アクセス許可エントリが返されます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResourcePermissionBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Permissions.ResourcePermissionBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResourcePermissionBase (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.ResourcePermissionBase" />クラスの作成時のリソースへのアクセス レベルを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" /> パラメーターが <see cref="T:System.Security.Permissions.PermissionState" /> の正しい値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermissionAccess">
+      <MemberSignature Language="C#" Value="protected void AddPermissionAccess (System.Security.Permissions.ResourcePermissionBaseEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddPermissionAccess(class System.Security.Permissions.ResourcePermissionBaseEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.AddPermissionAccess(System.Security.Permissions.ResourcePermissionBaseEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Security.Permissions.ResourcePermissionBaseEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">追加する <see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />。</param>
+        <summary>権限へのアクセス許可エントリを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Security.Permissions.ResourcePermissionBase.AddPermissionAccess%2A>クラスの初期化中にアクセス許可のアクセス エントリを追加するメソッド。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.ResourcePermissionBase>クラスです。  
+  
+ [!code-cpp[ResourcePermissionBase#2](~/samples/snippets/cpp/VS_Snippets_CLR/ResourcePermissionBase/CPP/resourcepermissionbase.cpp#2)]
+ [!code-csharp[ResourcePermissionBase#2](~/samples/snippets/csharp/VS_Snippets_CLR/ResourcePermissionBase/CS/resourcepermissionbase.cs#2)]
+ [!code-vb[ResourcePermissionBase#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ResourcePermissionBase/VB/resourcepermissionbase.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">内の要素の数、<see cref="P:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccessPath" />プロパティが内の要素の数と等しくない、<see cref="P:System.Security.Permissions.ResourcePermissionBase.TagNames" />プロパティです。  
+  
+ または  
+  
+ <see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />権限に既に含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Any">
+      <MemberSignature Language="C#" Value="public const string Any;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Any" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ResourcePermissionBase.Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワイルドカード文字を表すために使用する文字を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドの値は"*"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="protected void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加のアクセス許可エントリのアクセス許可を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して、現在のアクセス許可オブジェクトの完全なコピーを返します。</summary>
+        <returns>現在のアクセス許可オブジェクトのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可オブジェクトのコピーは、元のアクセス許可オブジェクトと、リソースに対して同じアクセス権を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("incomplete - need more test")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、セキュリティ オブジェクトを再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="securityElement" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ または  
+  
+ バージョン番号、<paramref name="securityElement" />パラメーターはサポートされていません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="securityElement" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPermissionEntries">
+      <MemberSignature Language="C#" Value="protected System.Security.Permissions.ResourcePermissionBaseEntry[] GetPermissionEntries ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Security.Permissions.ResourcePermissionBaseEntry[] GetPermissionEntries() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.GetPermissionEntries" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ResourcePermissionBaseEntry[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列を返します、<see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />このアクセス許可に追加されたオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />このアクセス許可に追加されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Security.Permissions.ResourcePermissionBase.AddPermissionAccess%2A>と<xref:System.Security.Permissions.ResourcePermissionBase.RemovePermissionAccess%2A>を追加して、この権限へのアクセス許可エントリを削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可オブジェクトと同じ型の権限オブジェクトです。</param>
+        <summary>作成して、現在のアクセス許可の積集合であるアクセス許可オブジェクトとターゲットのアクセス許可オブジェクトを返します。</summary>
+        <returns>現在のオブジェクトと、指定したターゲットの積集合を表す新しいアクセス許可オブジェクトです。 このオブジェクトは<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可オブジェクトの交差部分は、操作に共通して保持、両方のセットを説明する権限です。 具体的には、両方のアクセス許可を渡すための要求時に必要な最小限のアクセス許可を表します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ターゲットのアクセス許可オブジェクトは、現在のアクセス許可オブジェクトと同じ型のではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセットの関係をテストするのには、アクセス許可オブジェクトです。</param>
+        <summary>現在のアクセス許可オブジェクトが、指定した権限のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可オブジェクトが、指定したアクセス許可オブジェクトのサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可オブジェクトは、現在のアクセス許可オブジェクトを指定したアクセス許可オブジェクトによって完全に含まれる一連の操作を指定する場合、指定したアクセス許可オブジェクトのサブセットです。 たとえば、C:\Example.txt へのアクセスを表すアクセス許可は、c: へのアクセスを表すためのアクセス許可のサブセット\\です。 このメソッドが戻る場合`true`、現在のアクセス許可オブジェクトをアクセス保護されたリソースには、指定したアクセス許可オブジェクトを表します。  
+  
+ このメソッドは常に返します`false`の現在のアクセス許可オブジェクトのとは異なる型の指定した権限オブジェクトがの場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可が無制限かどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />アクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無制限のアクセス許可オブジェクトでは、アクセス許可によって保護されていると、すべてのリソースへのアクセスを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Local">
+      <MemberSignature Language="C#" Value="public const string Local;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Local" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ResourcePermissionBase.Local" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルな参照を表すために使用する文字を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドの値が"です。"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionAccessType">
+      <MemberSignature Language="C#" Value="protected Type PermissionAccessType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PermissionAccessType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.ResourcePermissionBase.PermissionAccessType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースに与えているアクセスの種類について説明する列挙値を設定します。</summary>
+        <value>派生した列挙値<see cref="T:System.Type" />リソースに与えているアクセスの種類について説明します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティ値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティ値は、列挙値ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.Permissions.ResourcePermissionBase" />、このプロパティを設定する必要があります。 このクラスの実装の例は、次を参照してください。<see cref="T:System.Diagnostics.PerformanceCounterPermission" />です。 <see cref="T:System.Diagnostics.PerformanceCounterPermission" />、<see cref="P:System.Security.Permissions.ResourcePermissionBase.PermissionAccessType" />プロパティの型に個別に<see cref="T:System.Diagnostics.PerformanceCounterPermissionAccess" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePermissionAccess">
+      <MemberSignature Language="C#" Value="protected void RemovePermissionAccess (System.Security.Permissions.ResourcePermissionBaseEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemovePermissionAccess(class System.Security.Permissions.ResourcePermissionBaseEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.RemovePermissionAccess(System.Security.Permissions.ResourcePermissionBaseEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Security.Permissions.ResourcePermissionBaseEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">削除する <see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />。</param>
+        <summary>アクセス許可からのアクセス許可エントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">内の要素の数、<see cref="P:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccessPath" />プロパティが内の要素の数と等しくない、<see cref="P:System.Security.Permissions.ResourcePermissionBase.TagNames" />プロパティです。  
+  
+ または  
+  
+ <see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />の権限ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TagNames">
+      <MemberSignature Language="C#" Value="protected string[] TagNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TagNames" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.ResourcePermissionBase.TagNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または保護しているリソースを識別する文字列の配列を設定します。</summary>
+        <value>保護しようとしているリソースを識別する文字列の配列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティ値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">配列の長さは 0 です。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.Permissions.ResourcePermissionBase" />、このプロパティを設定する必要があります。 このクラスの実装の例は、次を参照してください。<see cref="T:System.Diagnostics.PerformanceCounterPermission" />です。 <see cref="T:System.Diagnostics.PerformanceCounterPermission" />、<see cref="P:System.Security.Permissions.ResourcePermissionBase.TagNames" />プロパティが「コンピューター」と「カテゴリ」に個別に設定します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成し、セキュリティ オブジェクトとその現在の状態の XML エンコーディングを返します。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBase.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可オブジェクトと結合するアクセス許可オブジェクトです。 現在のアクセス許可オブジェクトと同じ型でなければなりません。</param>
+        <summary>現在のアクセス許可オブジェクトとターゲットのアクセス許可オブジェクトを結合するアクセス許可オブジェクトを作成します。</summary>
+        <returns>現在のアクセス許可オブジェクトと指定したアクセス許可オブジェクトの和集合を表す新しいアクセス許可オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.Permissions.ResourcePermissionBase.Union%2A>権限アクセス許可の現在のオブジェクトと指定したアクセス許可オブジェクトの両方で表されるすべての操作を表すです。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />権限オブジェクトは、現在のアクセス許可オブジェクトと同じ型ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

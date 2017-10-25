@@ -1,0 +1,64 @@
+<Type Name="ChildChangedEventArgs" FullName="System.Windows.Forms.Integration.ChildChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class ChildChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChildChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Integration.ChildChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsFormsIntegration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Integration.WindowsFormsHost.ChildChanged" /> イベントおよび <see cref="E:System.Windows.Forms.Integration.ElementHost.ChildChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Integration.ChildChangedEventArgs>クラスによって使用、<xref:System.Windows.Forms.Integration.WindowsFormsHost>と<xref:System.Windows.Forms.Integration.ElementHost>クラスの場合の値、<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A?displayProperty=nameWithType>または<xref:System.Windows.Forms.Integration.ElementHost.Child%2A?displayProperty=nameWithType>プロパティが変更されます。  
+  
+ 使用して、<xref:System.Windows.Forms.Integration.ChildChangedEventArgs.PreviousChild%2A>既に割り当てられている子コントロールまたは要素を取得するプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChildChangedEventArgs (object previousChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object previousChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.ChildChangedEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="previousChild" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="previousChild">値、<see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Child" />プロパティ、新しい値が割り当てられる前にします。</param>
+        <summary><see cref="T:System.Windows.Forms.Integration.ChildChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousChild">
+      <MemberSignature Language="C#" Value="public object PreviousChild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object PreviousChild" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.ChildChangedEventArgs.PreviousChild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Child" />プロパティ、新しい値が割り当てられる前にします。</summary>
+        <value>値、<see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Child" />プロパティ、新しい値が割り当てられる前にします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,341 @@
+<Type Name="VisualsToXpsDocument" FullName="System.Windows.Xps.VisualsToXpsDocument">
+  <TypeSignature Language="C#" Value="public class VisualsToXpsDocument : System.Windows.Documents.Serialization.SerializerWriterCollator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualsToXpsDocument extends System.Windows.Documents.Serialization.SerializerWriterCollator" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.VisualsToXpsDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Serialization.SerializerWriterCollator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>書き込みのためのメソッドを提供<see cref="T:System.Windows.Media.Visual" />XML 用紙 Specification (XPS) ドキュメント、またはバッチ モードで印刷キューをオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスはコンス トラクターを持たないために、使用、<xref:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator%2A>インスタンスを作成するメソッド。  
+  
+ <xref:System.Windows.Xps.VisualsToXpsDocument>同じターゲットに書き込みます<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>として、<xref:System.Windows.Xps.XpsDocumentWriter>を作成する、<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+ 各<xref:System.Windows.Media.Visual>ドキュメント内のページになります。  
+  
+   
+  
+## Examples  
+ 次の例は、ビジュアル collator を作成しへの書き込みに使用する方法を示しています、[!INCLUDE[TLA#tla_metro](~/includes/tlasharptla-metro-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#createandwritetovisualscollator)]
+ [!code-vb[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#createandwritetovisualscollator)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginBatchWrite">
+      <MemberSignature Language="C#" Value="public override void BeginBatchWrite ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void BeginBatchWrite() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.BeginBatchWrite" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込み操作を開始できることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、このメソッドを呼び出す必要があります<xref:System.Windows.Xps.VisualsToXpsDocument.Write%2A>または<xref:System.Windows.Xps.VisualsToXpsDocument.WriteAsync%2A>メソッドです。  
+  
+ 最後の書き込み操作を呼び出して<xref:System.Windows.Xps.VisualsToXpsDocument.EndBatchWrite%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public override void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>同期書き込み操作をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、例外がスローされます、<xref:System.Windows.Xps.VisualsToXpsDocument.Cancel%2A>メソッドが呼び出され、書き込み操作が実行されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.Xps.XpsWriterException"><see cref="T:System.Windows.Xps.VisualsToXpsDocument" /> の状態は、<see cref="M:System.Windows.Xps.VisualsToXpsDocument.Cancel" /> 操作との互換性がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAsync">
+      <MemberSignature Language="C#" Value="public override void CancelAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CancelAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.CancelAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期書き込み操作をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、例外がスローされます、<xref:System.Windows.Xps.VisualsToXpsDocument.CancelAsync%2A>メソッドが呼び出され、書き込み操作が実行されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.Xps.XpsWriterException"><see cref="T:System.Windows.Xps.VisualsToXpsDocument" /> の状態は、<see cref="M:System.Windows.Xps.VisualsToXpsDocument.CancelAsync" /> 操作との互換性がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndBatchWrite">
+      <MemberSignature Language="C#" Value="public override void EndBatchWrite ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndBatchWrite() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.EndBatchWrite" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込み操作を終了する必要がありますを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最後の呼び出し後<xref:System.Windows.Xps.VisualsToXpsDocument.Write%2A>または<xref:System.Windows.Xps.VisualsToXpsDocument.WriteAsync%2A>、このメソッドを呼び出します。  
+  
+ 呼び出す必要があります<xref:System.Windows.Xps.VisualsToXpsDocument.BeginBatchWrite%2A>書き込み操作前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.Write(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <summary><see cref="T:System.Windows.Media.Visual" /> を <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> または <see cref="T:System.Printing.PrintQueue" /> に同期的に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドへの書き込みに使用する方法、[!INCLUDE[TLA#tla_metro](~/includes/tlasharptla-metro-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#createandwritetovisualscollator)]
+ [!code-vb[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#createandwritetovisualscollator)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Media.Visual visual, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Media.Visual visual, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.Write(System.Windows.Media.Visual,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <summary><see cref="T:System.Windows.Media.Visual" /> を <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> または <see cref="T:System.Printing.PrintQueue" /> に同期的に書き込み、<see cref="T:System.Printing.PrintTicket" /> を含めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <summary><see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> または <see cref="T:System.Printing.PrintQueue" /> に <see cref="T:System.Windows.Media.Visual" /> を非同期に書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="userSuppliedState">呼び出し元が <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" /> イベント ハンドラーに渡すデータを格納するオブジェクト。</param>
+        <summary><see cref="T:System.Windows.Media.Visual" /> を非同期的に <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> または <see cref="T:System.Printing.PrintQueue" /> に書き込み、呼び出し元がイベント ハンドラーに渡す追加情報を含めます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <summary><see cref="T:System.Windows.Media.Visual" /> を <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> または <see cref="T:System.Printing.PrintQueue" /> に非同期に書き込み、<see cref="T:System.Printing.PrintTicket" /> を含みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual, System.Printing.PrintTicket printTicket, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual, class System.Printing.PrintTicket printTicket, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.VisualsToXpsDocument.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <param name="userSuppliedState">呼び出し元に渡すデータを格納しているオブジェクト、<see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" />イベント ハンドラー。</param>
+        <summary><see cref="T:System.Windows.Media.Visual" /> を <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> または <see cref="T:System.Printing.PrintQueue" /> に非同期で書き込みます。また、<see cref="T:System.Printing.PrintTicket" /> および呼び出し元がイベント ハンドラーに渡す追加情報も含めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

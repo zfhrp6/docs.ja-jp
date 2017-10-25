@@ -1,0 +1,103 @@
+<Type Name="ICustomQueryInterface" FullName="System.Runtime.InteropServices.ICustomQueryInterface">
+  <TypeSignature Language="C#" Value="public interface ICustomQueryInterface" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomQueryInterface" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ICustomQueryInterface" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、開発者は、カスタムのマネージ実装を提供する、 [iunknown::queryinterface (REFIID riid、void * * ppvObject)](http://go.microsoft.com/fwlink/?LinkID=144867)メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスにより、高度なユーザーのカスタマイズされたマネージ実装を提供する、`QueryInterface`メソッドです。  
+  
+ 管理されているし、ネイティブ アプリケーションは IID_IUnknown を除く、指定されたインターフェイス ID に対して特定のインターフェイスを返すカスタマイズされた実装を使用できます。 つまり、`QueryInterface`が呼び出されると、それを無視のカスタム実装場合その`riid`IID_IUnknown にパラメーターが設定されています。 ただし、まだ表示[IUnknown](http://go.microsoft.com/fwlink/?LinkId=148003)として、`ppvObject`です。  
+  
+ 開発者は、すべてのインターフェイスのカスタム実装を提供できます (を除き`IUnknown`) を定義するし、有効な対応するインターフェイスを実装します。  
+  
+ 有効なユーザー定義のインターフェイスが、アンマネージの COM インターフェイスを正確に一致する、v テーブル レイアウトとその<xref:System.Runtime.InteropServices.InterfaceTypeAttribute>は<xref:System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetInterface">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.CustomQueryInterfaceResult GetInterface (ref Guid iid, out IntPtr ppv);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Runtime.InteropServices.CustomQueryInterfaceResult GetInterface([in]valuetype System.Guid&amp; iid, [out] native int&amp; ppv) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomQueryInterface.GetInterface(System.Guid@,System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CustomQueryInterfaceResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="ppv" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="iid">要求されたインターフェイスの GUID です。</param>
+        <param name="ppv">このメソッドが戻るとき、要求されたインターフェイスへの参照。</param>
+        <summary>指定したインターフェイス ID に従ってインターフェイスを返します</summary>
+        <returns>示す列挙値のいずれかのカスタム実装するかどうか[iunknown::queryinterface](http://go.microsoft.com/fwlink/?LinkID=144867)が使用されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、マネージ コードを使用して、カスタム インターフェイスと標準的なランタイム インターフェイスの独自の実装を指定することができます。  
+  
+ <xref:System.Runtime.InteropServices.CustomQueryInterfaceResult>戻り値を有効にするにまたは COM アクセス時に特定のインターフェイスと非表示、カスタマイズされた実装を無効に値を使用することができます。  
+  
+ このメソッドは、COM から参照することはありません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

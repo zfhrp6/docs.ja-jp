@@ -1,0 +1,40 @@
+<Type Name="StructureChangedEventHandler" FullName="System.Windows.Automation.StructureChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void StructureChangedEventHandler(object sender, StructureChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StructureChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.StructureChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Automation.StructureChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントを発生させたオブジェクト。</param>
+    <param name="e">イベントに関する情報。</param>
+    <summary>UI オートメーション ツリー構造が変更されたときに発生するイベントを処理するクライアント アプリケーションによって実装されるメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、異なる構造の変更のデリゲートによって受信されたイベント情報を説明します。  
+  
+|`e.structureChangeType`|`sender`|`e.runtimeId`|  
+|-----------------------------|--------------|-------------------|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildAdded>|この子が追加されました。|この子が追加されました。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildRemoved>|削除された子の親です。|削除された子。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildrenBulkAdded>|追加された子の親です。|追加された子の親です。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildrenBulkRemoved>|削除された子の親です。|削除された子の親です。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildrenInvalidated>|無効化された子の親です。|無効化された子の親|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

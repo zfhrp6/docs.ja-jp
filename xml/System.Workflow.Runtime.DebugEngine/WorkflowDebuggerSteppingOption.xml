@@ -1,0 +1,70 @@
+<Type Name="WorkflowDebuggerSteppingOption" FullName="System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption">
+  <TypeSignature Language="C#" Value="public enum WorkflowDebuggerSteppingOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WorkflowDebuggerSteppingOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>複合アクティビティの同時に実行される子アクティビティをワークフロー デバッガーが段階的に実行する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ この列挙体は、次の 2 つの動作を定義するために <xref:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingAttribute> 属性と共に使用されます。  
+  
+-   **同時ステップ実行**です。 このステップ実行モードを使用すれば、ワークフロー内で同時に実行されるアクティビティを段階的に実行してデバッグすることができます。 このオプションを使用すると、現在実行中のアクティビティがワークフロー内で実行されるときに、コントロールの変更を確認できます。  
+  
+-   **シーケンシャル ステップ実行**です。 このステップ実行モードを使用すると、<xref:System.Workflow.Activities.ParallelActivity>、<xref:System.Workflow.Activities.ConditionedActivityGroup> などの複合アクティビティを段階的に実行して特定の分岐をデバッグすることができます。 このオプションを使用してデバッグを実行すると、ワークフローで他のアクティビティが同時に実行されるため、コントロールの変更は確認できません。 デバッガーは、現在選択されている分岐のアクティビティのみステップ スルーし、ワークフロー内の他のアクティビティが同時に実行されていることがあります。 たとえば、既定では、<xref:System.Workflow.Activities.ParallelActivity> アクティビティの左端の分岐と <xref:System.Workflow.Activities.ConditionedActivityGroup> アクティビティの最初の子アクティビティがステッピングに使用されます。 他の分岐または子アクティビティをデバッグする場合には、明示的なブレークポイントをその分岐または子アクティビティに配置する必要があります。 ブレークポイントに達すると、ステッピングはその分岐で続行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Concurrent">
+      <MemberSignature Language="C#" Value="Concurrent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption Concurrent = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption.Concurrent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子アクティビティは同時にデバッグされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sequential">
+      <MemberSignature Language="C#" Value="Sequential" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption Sequential = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption.Sequential" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子アクティビティは順次デバッグされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

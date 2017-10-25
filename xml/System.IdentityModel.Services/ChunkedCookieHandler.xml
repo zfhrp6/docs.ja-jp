@@ -1,0 +1,217 @@
+<Type Name="ChunkedCookieHandler" FullName="System.IdentityModel.Services.ChunkedCookieHandler">
+  <TypeSignature Language="C#" Value="public sealed class ChunkedCookieHandler : System.IdentityModel.Services.CookieHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ChunkedCookieHandler extends System.IdentityModel.Services.CookieHandler" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.ChunkedCookieHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Services.CookieHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Cookie を超えないサイズが設定されるように cookie のデータを書き込むクッキー ハンドラーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.ChunkedCookieHandler>クラスは、これにより、1 つの呼び出しの場合は、指定したしきい値 (チャンク サイズ) を超えるサイズで cookie を論理エンティティとして、cookie を提供、<xref:System.IdentityModel.Services.CookieHandler.Write%2A>メソッドは、一連の実際のクライアント側 cookie のチャンク サイズを超えているどれもに、データを分割します。  
+  
+ Cookie 名では、基に構築されている、`name`パラメーターを<xref:System.IdentityModel.Services.CookieHandler.Write%2A>、 <xref:System.IdentityModel.Services.CookieHandler.Read%2A>、または<xref:System.IdentityModel.Services.CookieHandler.Delete%2A>メソッドです。 Cookie 名は、基本名に番号を付加して構築された: 名前、name1、name2、およびなどです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChunkedCookieHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ChunkedCookieHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.ChunkedCookieHandler" />を既定のチャンク サイズを使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のチャンク サイズがで指定された<xref:System.IdentityModel.Services.ChunkedCookieHandler.DefaultChunkSize>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChunkedCookieHandler (int chunkSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 chunkSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ChunkedCookieHandler.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="chunkSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="chunkSize">Cookie の書き込みに使用されるチャンクのサイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.ChunkedCookieHandler" />を指定されたチャンク サイズを使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャンク サイズを調整するときに注意する必要があります。 Web ブラウザーの cookie と数の合計と、ドメインごとに許可されているクッキーのサイズに異なる制限されている場合。 元の Netscape 仕様がこれらの制限を指定するなど、: (cookie の値だけでなく、メタデータを含む)、[cookie] ヘッダーあたり 4096 バイトと 20 cookie ドメインごと、300 cookie の合計します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="chunkSize" />' が 1,000 の最小のチャンク サイズより小さい (<see cref="F:System.IdentityModel.Services.ChunkedCookieHandler.MinimumChunkSize" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChunkSize">
+      <MemberSignature Language="C#" Value="public int ChunkSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChunkSize" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.ChunkedCookieHandler.ChunkSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスによって使用されるチャンクのサイズを取得します。</summary>
+        <value>チャンク サイズ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultChunkSize">
+      <MemberSignature Language="C#" Value="public const int DefaultChunkSize = 2000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultChunkSize = (2000)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.ChunkedCookieHandler.DefaultChunkSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2000</MemberValue>
+      <Docs>
+        <summary>2000 文字の既定のチャンクのサイズ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCore">
+      <MemberSignature Language="C#" Value="protected override void DeleteCore (string name, string path, string domain, System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DeleteCore(string name, string path, string domain, class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ChunkedCookieHandler.DeleteCore(System.String,System.String,System.String,System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="domain" Type="System.String" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="name">To be added.</param>
+        <param name="path">To be added.</param>
+        <param name="domain">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumChunkSize">
+      <MemberSignature Language="C#" Value="public const int MinimumChunkSize = 1000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MinimumChunkSize = (1000)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.ChunkedCookieHandler.MinimumChunkSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1000</MemberValue>
+      <Docs>
+        <summary>1000 文字の最小のチャンク サイズ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCore">
+      <MemberSignature Language="C#" Value="protected override byte[] ReadCore (string name, System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance unsigned int8[] ReadCore(string name, class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ChunkedCookieHandler.ReadCore(System.String,System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="name">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteCore">
+      <MemberSignature Language="C#" Value="protected override void WriteCore (byte[] value, string name, string path, string domain, DateTime expirationTime, bool secure, bool httpOnly, System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WriteCore(unsigned int8[] value, string name, string path, string domain, valuetype System.DateTime expirationTime, bool secure, bool httpOnly, class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ChunkedCookieHandler.WriteCore(System.Byte[],System.String,System.String,System.String,System.DateTime,System.Boolean,System.Boolean,System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="domain" Type="System.String" />
+        <Parameter Name="expirationTime" Type="System.DateTime" />
+        <Parameter Name="secure" Type="System.Boolean" />
+        <Parameter Name="httpOnly" Type="System.Boolean" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="name">To be added.</param>
+        <param name="path">To be added.</param>
+        <param name="domain">To be added.</param>
+        <param name="expirationTime">To be added.</param>
+        <param name="secure">To be added.</param>
+        <param name="httpOnly">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

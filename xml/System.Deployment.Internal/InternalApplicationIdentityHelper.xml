@@ -1,0 +1,49 @@
+<Type Name="InternalApplicationIdentityHelper" FullName="System.Deployment.Internal.InternalApplicationIdentityHelper">
+  <TypeSignature Language="C#" Value="public static class InternalApplicationIdentityHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit InternalApplicationIdentityHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Internal.InternalApplicationIdentityHelper" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内部プロパティにアクセスできるように、<see cref="T:System.ApplicationIdentity" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetInternalAppId">
+      <MemberSignature Language="C#" Value="public static object GetInternalAppId (ApplicationIdentity id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetInternalAppId(class System.ApplicationIdentity id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalApplicationIdentityHelper.GetInternalAppId(System.ApplicationIdentity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.ApplicationIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="id">識別子を抽出する元のオブジェクト。</param>
+        <summary>取得、 [IDefinitionAppId インターフェイス](~/docs/framework/unmanaged-api/fusion/idefinitionappid-interface.md)の一意の識別子を表す、<see cref="T:System.ApplicationIdentity" />オブジェクト。</summary>
+        <returns>によって保持されている一意の識別子、<see cref="T:System.ApplicationIdentity" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

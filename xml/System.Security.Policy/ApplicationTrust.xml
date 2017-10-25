@@ -1,0 +1,403 @@
+<Type Name="ApplicationTrust" FullName="System.Security.Policy.ApplicationTrust">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationTrust : System.Security.Policy.EvidenceBase, System.Security.ISecurityEncodable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ApplicationTrust extends System.Security.Policy.EvidenceBase implements class System.Security.ISecurityEncodable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.ApplicationTrust" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Policy.EvidenceBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.ISecurityEncodable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーションに関するセキュリティ上の決定をカプセル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.ApplicationTrust> 、信頼マネージャーのオブジェクトが返される<xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationTrust ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationTrust.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Policy.ApplicationTrust" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.Security.Policy.ApplicationTrust>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationTrust (ApplicationIdentity applicationIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ApplicationIdentity applicationIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationTrust.#ctor(System.ApplicationIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="applicationIdentity" Type="System.ApplicationIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="applicationIdentity"><see cref="T:System.ApplicationIdentity" />アプリケーションを一意に識別します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Policy.ApplicationTrust" />クラス、<see cref="T:System.ApplicationIdentity" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション id には、アプリケーションの完全な名前とそのコード ベースの場所が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationTrust (System.Security.PermissionSet defaultGrantSet, System.Collections.Generic.IEnumerable&lt;System.Security.Policy.StrongName&gt; fullTrustAssemblies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.PermissionSet defaultGrantSet, class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Policy.StrongName&gt; fullTrustAssemblies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationTrust.#ctor(System.Security.PermissionSet,System.Collections.Generic.IEnumerable{System.Security.Policy.StrongName})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultGrantSet" Type="System.Security.PermissionSet" />
+        <Parameter Name="fullTrustAssemblies" Type="System.Collections.Generic.IEnumerable&lt;System.Security.Policy.StrongName&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="defaultGrantSet">特定のアクセス許可がないすべてのアセンブリに付与されている既定の権限セットです。</param>
+        <param name="fullTrustAssemblies">アプリケーション ドメインで完全に信頼されていると見なされるアセンブリを表す厳密な名前の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Policy.ApplicationTrust" />クラスの指定されたアクセス許可セットと完全に信頼されたアセンブリのコレクションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `fullTrustAssemblies`内のアセンブリの厳密な名前を識別、<xref:System.AppDomain>完全な信頼を付与する必要があります。 このコンス トラクターを呼び出す、<xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType>メソッドを作成、<xref:System.AppDomain>サンド ボックスとして使用されます。 サンド ボックスで、アプリケーションの実行に関する詳細については、次を参照してください。[する方法: 実行部分信頼コードをサンド ボックスで](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fullTrustAssemblies" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fullTrustAssemblies" />ないアセンブリを含む、<see cref="T:System.Security.Policy.StrongName" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationIdentity">
+      <MemberSignature Language="C#" Value="public ApplicationIdentity ApplicationIdentity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ApplicationIdentity ApplicationIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationTrust.ApplicationIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの信頼オブジェクトのアプリケーション id を設定します。</summary>
+        <value><see cref="T:System.ApplicationIdentity" />のアプリケーションの信頼オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.ApplicationTrust.ApplicationIdentity%2A>プロパティは、新しいドメインでアクティブにするマニフェストに基づくアプリケーションを一意に識別します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.ApplicationIdentity" />値があるために設定することはできません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.EvidenceBase Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.EvidenceBase Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationTrust.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.EvidenceBase</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスの完全なコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このアプリケーションの信頼オブジェクトの複製コピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultGrantSet">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.PolicyStatement DefaultGrantSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.PolicyStatement DefaultGrantSet" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationTrust.DefaultGrantSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の許可セットを定義するポリシー ステートメントを設定します。</summary>
+        <value>A<see cref="T:System.Security.Policy.PolicyStatement" />既定値について説明したを付与します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.ApplicationTrust.DefaultGrantSet%2A>プロパティは、アプリケーションに与えられているアクセス許可を表します。  
+  
+ <xref:System.Security.Policy.PolicyStatement>を使用して初期化は、既定の権限を表す、<xref:System.Security.PermissionSet>と省略可能な属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraInfo">
+      <MemberSignature Language="C#" Value="public object ExtraInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExtraInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationTrust.ExtraInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションに関する追加のセキュリティ情報を設定します。</summary>
+        <value>アプリケーションの追加のセキュリティ情報を格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public void FromXml (System.Security.SecurityElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FromXml(class System.Security.SecurityElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationTrust.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">再構築に使用する XML エンコード、<see cref="T:System.Security.Policy.ApplicationTrust" />オブジェクト。</param>
+        <summary>再構築、 <see cref="T:System.Security.Policy.ApplicationTrust" /> XML エンコードから指定された状態のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.ISecurityPolicyEncodable.ToXml%2A>と<xref:System.Security.ISecurityPolicyEncodable.FromXml%2A>ようにするメソッドが実装されて<xref:System.Security.Policy.ApplicationTrust>XML encodable するセキュリティ ポリシーを使用するオブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">使用する XML エンコード<paramref name="element" />が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTrustAssemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Security.Policy.StrongName&gt; FullTrustAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Security.Policy.StrongName&gt; FullTrustAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationTrust.FullTrustAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Security.Policy.StrongName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションの信頼に完全に信頼されたアセンブリの一覧を取得します。</summary>
+        <value>完全信頼アセンブリの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧内で完全な信頼が付与されたアセンブリを識別する、<xref:System.AppDomain>これに関連付けられている<xref:System.Security.Policy.ApplicationTrust>インスタンス。 アセンブリは、厳密な名前によって識別されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsApplicationTrustedToRun">
+      <MemberSignature Language="C#" Value="public bool IsApplicationTrustedToRun { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsApplicationTrustedToRun" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの必要なアクセス許可の付与と実行が信頼されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、アプリケーションが信頼して実行します。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼マネージャーの設定、<xref:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun%2A>プロパティを`true`を実行するアプリケーションが承認されるとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Persist">
+      <MemberSignature Language="C#" Value="public bool Persist { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Persist" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationTrust.Persist" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの信頼情報が永続化されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />アプリケーションの信頼情報が永続化された; 場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Security.Policy.ApplicationTrust.Persist%2A>プロパティは`true`、ClickOnce アプリケーション ストアにアプリケーションの信頼情報を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationTrust.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML エンコードを作成、<see cref="T:System.Security.Policy.ApplicationTrust" />オブジェクトとその現在の状態。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.ISecurityPolicyEncodable.ToXml%2A>と<xref:System.Security.ISecurityPolicyEncodable.FromXml%2A>ようにするメソッドが実装されて<xref:System.Security.Policy.ApplicationTrust>XML encodable するセキュリティ ポリシーを使用するオブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

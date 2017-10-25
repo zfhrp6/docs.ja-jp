@@ -1,0 +1,287 @@
+<Type Name="ObsoleteAttribute" FullName="System.ObsoleteAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ObsoleteAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ObsoleteAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ObsoleteAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Event | System.AttributeTargets.Interface | System.AttributeTargets.Delegate, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用されなくなったプログラム要素にマークを付けます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ObsoleteAttribute>アセンブリ、モジュール、パラメーター、および戻り値を除くすべてのプログラム要素に適用します。 不使用と要素をマークするには、要素となるユーザーは、製品のバージョンでは将来的に削除が通知されます。  
+  
+ <xref:System.ObsoleteAttribute>クラスには、2 つのプロパティが含まれています。  
+  
+-   <xref:System.ObsoleteAttribute.Message%2A>。 割り当てられた文字列、<xref:System.ObsoleteAttribute.Message%2A>属性ターゲットがコードで使用すると、コンパイラによってプロパティが生成されます。 文字列は、ある属性ターゲットは廃止されており、可能な場合は、いくつかの回避策またはプログラムでの代替手段を提供に注意してください。  
+  
+-   <xref:System.ObsoleteAttribute.IsError%2A>。 これは、ブール値を使用するかどうかをコンパイラに示す、<xref:System.ObsoleteAttribute>属性が原因でエラーが生成する必要があります (<xref:System.ObsoleteAttribute.IsError%2A>は`true`) または警告 (<xref:System.ObsoleteAttribute.IsError%2A>は`false`)。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリ  
+ Windows メタデータ ライブラリ (.winmd ファイル) を作成するときに、<xref:System.ObsoleteAttribute>は両方としてエクスポート、<xref:System.ObsoleteAttribute>属性および[Windows.Foundation.Metadata.DeprecatedAttribute](http://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.deprecatedattribute.aspx)属性だけの場合、<xref:System.ObsoleteAttribute>はソース コード内に存在します。 <xref:System.ObsoleteAttribute>に変換される、`DeprecatedAttribute`次のようにします。  
+  
+-   場合、`message`と`error`引数も存在、`message`に割り当てられている、 `DeprecatedAttribute` `message`引数。 エラー値`true`にマップ[DeprecationType.Remove](http://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.deprecationtype.aspx)、および`error`値`false`にマップ[DeprecationType.Deprecate](http://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.deprecationtype.aspx)です。  
+  
+-   場合、`message`で引数が指定されていません、<xref:System.ObsoleteAttribute>でその既定値、`DeprecatedAttribute`は"*element_name*は推奨されなくなりました"ここで、 *element_name*属性を適用する対象のプログラム要素の名前を指定します。  
+  
+-   場合、`error`で引数がなく、<xref:System.ObsoleteAttribute>でその既定値、`DeprecatedAttribute`は[DeprecationType.Deprecate](http://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.deprecationtype.aspx)です。  
+  
+> [!IMPORTANT]
+>  直接の適用、 [Windows.Foundation.Metadata.DeprecatedAttribute](http://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.deprecatedattribute.aspx)マネージ コードへの属性は使用しないで、このエクスポートは自動的に行われるためです。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティおよびでマークされたメソッドを含むクラスを定義、<xref:System.ObsoleteAttribute>属性。 値にアクセスする、`OldProperty`コード内のプロパティには、警告が、コンパイラが生成されます、`CallOldMethod`メソッドには、コンパイラ エラーが生成されます。 例では、ソース コードをコンパイルしようとしたときに結果の出力も示します。  
+  
+ [!code-csharp[ObsoleteAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/ObsoleteAttribute/CS/obsoleteattributeex1.cs#1)]
+ [!code-vb[ObsoleteAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObsoleteAttribute/vb/obsoleteattributeex1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObsoleteAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ObsoleteAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ObsoleteAttribute" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ObsoleteAttribute> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.ObsoleteAttribute.IsError%2A>|`false`|  
+|<xref:System.ObsoleteAttribute.Message%2A>|`null`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObsoleteAttribute (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ObsoleteAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">代替の回避策を説明する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ObsoleteAttribute" />回避策を指定したメッセージを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ObsoleteAttribute> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.ObsoleteAttribute.IsError%2A>|`false`。|  
+|<xref:System.ObsoleteAttribute.Message%2A>|回避策メッセージです。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObsoleteAttribute (string message, bool error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, bool error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ObsoleteAttribute.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="error" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="message">代替の回避策を説明する文字列。</param>
+        <param name="error">
+          <see langword="true" />古い要素の使用でコンパイラ エラーが発生します。<see langword="false" />場合は、コンパイラの警告が生成されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ObsoleteAttribute" />回避策メッセージと古い要素の使用状況がエラーを考慮するかどうかを示すブール値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ObsoleteAttribute> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.ObsoleteAttribute.IsError%2A>|`error` 値。|  
+|<xref:System.ObsoleteAttribute.Message%2A>|`message` 値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsError">
+      <MemberSignature Language="C#" Value="public bool IsError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsError" />
+      <MemberSignature Language="DocId" Value="P:System.ObsoleteAttribute.IsError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラが、古いプログラム要素の使用法をエラーとして扱うかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />古い要素の使用方法と見なす場合はエラーです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、不使用とマークされている 2 つのメンバーを含んでいるクラスを定義します。 最初、という名前のプロパティ`OldProperty`が呼び出された場合、コンパイラの警告が生成されます。 2 番目、という名前のメソッド`CallOldMethod`、コンパイラ エラーが生成されます。 この例では、リフレクションを使用して、に関する情報を取得、<xref:System.ObsoleteAttribute>属性は、型のメンバーに適用されの値を表示、<xref:System.ObsoleteAttribute.Message%2A>と<xref:System.ObsoleteAttribute.IsError%2A>プロパティです。  
+  
+ [!code-csharp[System.ObsoleteAttribute.Message#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.obsoleteattribute.message/cs/obsoleteattribute_message.cs#1)]
+ [!code-vb[System.ObsoleteAttribute.Message#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.obsoleteattribute.message/vb/obsoleteattribute_message.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.ObsoleteAttribute.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>代替プログラム要素の説明を含むメッセージを回避策を取得します。</summary>
+        <value>回避策の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、不使用とマークされている 2 つのメンバーを含んでいるクラスを定義します。 最初、という名前のプロパティ`OldProperty`が呼び出された場合、コンパイラの警告が生成されます。 2 番目、という名前のメソッド`CallOldMethod`、コンパイラ エラーが生成されます。 この例では、リフレクションを使用して、に関する情報を取得、<xref:System.ObsoleteAttribute>属性は、型のメンバーに適用されの値を表示、<xref:System.ObsoleteAttribute.Message%2A>と<xref:System.ObsoleteAttribute.IsError%2A>プロパティです。  
+  
+ [!code-csharp[System.ObsoleteAttribute.Message#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.obsoleteattribute.message/cs/obsoleteattribute_message.cs#1)]
+ [!code-vb[System.ObsoleteAttribute.Message#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.obsoleteattribute.message/vb/obsoleteattribute_message.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,612 @@
+<Type Name="ColumnHeader" FullName="System.Windows.Forms.ColumnHeader">
+  <TypeSignature Language="C#" Value="public class ColumnHeader : System.ComponentModel.Component, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColumnHeader extends System.ComponentModel.Component implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ColumnHeader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ColumnHeaderConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の 1 つの列ヘッダーを表示、<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列ヘッダーが内の項目、<xref:System.Windows.Forms.ListView>見出しテキストを含むコントロールです。 <xref:System.Windows.Forms.ColumnHeader>オブジェクトに追加することができます、<xref:System.Windows.Forms.ListView>を使用して、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection>クラスです。 列のグループを追加する、 <xref:System.Windows.Forms.ListView>、使用することができます、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection.AddRange%2A>のメソッド、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection>クラスです。 使用することができます、<xref:System.Windows.Forms.ColumnHeader.Index%2A>のプロパティ、<xref:System.Windows.Forms.ColumnHeader>場所を決めるクラスを<xref:System.Windows.Forms.ColumnHeader>内にある、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection>です。  
+  
+ <xref:System.Windows.Forms.ColumnHeader>提供、<xref:System.Windows.Forms.ColumnHeader.Text%2A>と<xref:System.Windows.Forms.ColumnHeader.TextAlign%2A>コントロールと列ヘッダーのテキストの配置に表示されるテキストを設定するプロパティです。 確認するかどうか、<xref:System.Windows.Forms.ColumnHeader>に関連付けられている、<xref:System.Windows.Forms.ListView>コントロールを参照できます、<xref:System.Windows.Forms.ColumnHeader.ListView%2A>プロパティです。 コピーする場合、<xref:System.Windows.Forms.ColumnHeader>用に別の<xref:System.Windows.Forms.ListView>制御を行うこともできます、<xref:System.Windows.Forms.ColumnHeader.Clone%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ListView>コントロール。 例は、作成<xref:System.Windows.Forms.ColumnHeader>オブジェクトおよび列ヘッダーの設定<xref:System.Windows.Forms.ColumnHeader.Text%2A>、<xref:System.Windows.Forms.ColumnHeader.TextAlign%2A>と<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティです。 この例では項目を追加し subitems、<xref:System.Windows.Forms.ListView>です。 例を実行するこの貼り付けを次のコードでは、フォームの呼び出し、`PopulateListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColumnHeader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ColumnHeader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ListView>コントロール。 例は、作成<xref:System.Windows.Forms.ColumnHeader>オブジェクトおよび列ヘッダーの設定<xref:System.Windows.Forms.ColumnHeader.Text%2A>、<xref:System.Windows.Forms.ColumnHeader.TextAlign%2A>と<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティです。 この例では項目を追加し subitems、<xref:System.Windows.Forms.ListView>です。 例を実行するこの貼り付けを次のコードでは、フォームの呼び出し、`PopulateListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColumnHeader (int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="imageIndex">表示するイメージのインデックス、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ColumnHeader" />指定されているイメージを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColumnHeader (string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="imageKey">表示するイメージのキー、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ColumnHeader" />指定されているイメージを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoResize">
+      <MemberSignature Language="C#" Value="public void AutoResize (System.Windows.Forms.ColumnHeaderAutoResizeStyle headerAutoResize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AutoResize(valuetype System.Windows.Forms.ColumnHeaderAutoResizeStyle headerAutoResize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.AutoResize(System.Windows.Forms.ColumnHeaderAutoResizeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="headerAutoResize" Type="System.Windows.Forms.ColumnHeaderAutoResizeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="headerAutoResize"><see cref="T:System.Windows.Forms.ColumnHeaderAutoResizeStyle" /> 値のいずれか。</param>
+        <summary>列の幅にサイズ変更、サイズ変更スタイルで示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.ColumnHeader.AutoResize%2A>メソッドの有効な 1 回のみです、<xref:System.Windows.Forms.ListView>を格納していると<xref:System.Windows.Forms.Form>作成されていると、列には、項目が設定されます。 新しい項目に追加する場合、 <xref:System.Windows.Forms.ListView>、サイズしない限り、列は変更されません<xref:System.Windows.Forms.ColumnHeader.AutoResize%2A>が再度呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">以外の値<see cref="F:System.Windows.Forms.ColumnHeaderAutoResizeStyle.None" />に渡される、<see cref="M:System.Windows.Forms.ColumnHeader.AutoResize(System.Windows.Forms.ColumnHeaderAutoResizeStyle)" />メソッドと、<see cref="P:System.Windows.Forms.ListView.View" />プロパティは、値以外の<see cref="F:System.Windows.Forms.View.Details" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の同一コピーを作成<see cref="T:System.Windows.Forms.ColumnHeader" />ですが、リスト ビュー コントロールにアタッチされていません。</summary>
+        <returns>このコピーを表すオブジェクトを<see cref="T:System.Windows.Forms.ColumnHeader" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既存のコピーを使用することができます<xref:System.Windows.Forms.ColumnHeader>、既存のオブジェクト<xref:System.Windows.Forms.ListView>使用される他のコントロールの<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayIndex">
+      <MemberSignature Language="C#" Value="public int DisplayIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在表示されている列を基準とした列の表示順序を設定または取得します。</summary>
+        <value>現在表示されている列を基準とした、列の表示順序。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ColumnHeader" /> で使用されていたリソース (メモリを除く) を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ColumnHeader.Dispose%2A> を使い終わったら <xref:System.Windows.Forms.ColumnHeader> を呼び出します。 <xref:System.Windows.Forms.ColumnHeader.Dispose%2A> メソッドによって、<xref:System.Windows.Forms.ColumnHeader> は使用不可の状態になります。 呼び出した後<xref:System.Windows.Forms.ColumnHeader.Dispose%2A>、すべての参照を解放する必要があります、<xref:System.Windows.Forms.ColumnHeader>が使用していたメモリをガベージ コレクションによって再要求できるようにします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ColumnHeader.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Windows.Forms.ColumnHeader> を呼び出してください。 それ以外の場合、リソース、<xref:System.Windows.Forms.ColumnHeader>を使用しては解放されませんガベージ コレクション呼び出すまで、<xref:System.Windows.Forms.ColumnHeader>オブジェクトのデストラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageIndex">
+      <MemberSignature Language="C#" Value="public int ImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.ImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageIndexConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるイメージのインデックス、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</summary>
+        <value>表示されるイメージのインデックス、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ColumnHeader.ImageIndex%2A>プロパティで指定されたイメージのインデックスを参照、<xref:System.Windows.Forms.ListView.SmallImageList%2A>のプロパティ、<xref:System.Windows.Forms.ListView>を格納している、<xref:System.Windows.Forms.ColumnHeader>です。 <xref:System.Windows.Forms.ColumnHeader.ImageIndex%2A>プロパティがある場合は-1 を返します。 ない<xref:System.Windows.Forms.ListView.SmallImageList%2A>に含まれている設定<xref:System.Windows.Forms.ListView>です。 列に表示されるイメージは通常、列内の項目の状態を示すために使用されます。  
+  
+ <xref:System.Windows.Forms.ColumnHeader.ImageKey%2A>および<xref:System.Windows.Forms.ColumnHeader.ImageIndex%2A>は相互に排他的な場合は 1 つは、設定すると、他は無効な値に設定し、は無視を意味します。  
+  
+ 関連付けられているイメージ、<xref:System.Windows.Forms.ColumnHeader>は、通常、状態情報を示すために使用します。 設定した場合、<xref:System.Windows.Forms.ColumnHeader.ImageIndex%2A>に関連付けられているイメージ リストの最後の項目のインデックスよりも大きい値を<xref:System.Windows.Forms.ColumnHeader.ImageIndex%2A>イメージ リストの最後の項目のインデックスに設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Windows.Forms.ColumnHeader.ImageIndex" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageKey">
+      <MemberSignature Language="C#" Value="public string ImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.ImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageKeyConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列に表示されるイメージのキーを設定します。</summary>
+        <value>列に表示されるイメージのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ColumnHeader.ImageKey%2A>と<xref:System.Windows.Forms.ColumnHeader.ImageIndex%2A>プロパティが相互に排他的、設定されている場合は 1 つの意味、他が、無効な値に設定され、無視されます。  
+  
+ 場合<xref:System.Windows.Forms.ColumnHeader.ImageKey%2A>設定は無効な値に、イメージは表示されずと、例外はスローされません。  
+  
+ 関連付けられているイメージ、<xref:System.Windows.Forms.ColumnHeader>は、通常、状態情報を示すために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageList">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImageList ImageList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ImageList ImageList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.ImageList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているイメージ一覧を取得、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageList" /> に関連付けられている <see cref="T:System.Windows.Forms.ColumnHeader" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ColumnHeader>の値を返します、<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティを<xref:System.Windows.Forms.ListView>を格納している、<xref:System.Windows.Forms.ColumnHeader>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した場所を取得、<see cref="T:System.Windows.Forms.ListView" />コントロールの<see cref="T:System.Windows.Forms.ListView.ColumnHeaderCollection" />この列の。</summary>
+        <value>内の列ヘッダーの 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ListView.ColumnHeaderCollection" />の<see cref="T:System.Windows.Forms.ListView" />コントロールに含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は必ずしも内の列ヘッダーの現在の表示位置に対応していません、<xref:System.Windows.Forms.ListView>です。 実行時に、列ヘッダーを並べ替え、ユーザーによって指定できます (ときに、<xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>プロパティに設定されている`true`)。 場合、<xref:System.Windows.Forms.ColumnHeader>含まれていない、<xref:System.Windows.Forms.ListView>この機能を制御プロパティが-1 の値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListView">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListView ListView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListView ListView" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.ListView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ListView" />コントロール、<see cref="T:System.Windows.Forms.ColumnHeader" />にあります。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListView" />を含むコントロールを表すコントロール、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するにはどちらかを決定<xref:System.Windows.Forms.ListView>、特定の制御<xref:System.Windows.Forms.ColumnHeader>オブジェクトに関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ColumnHeader" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ColumnHeader" /> の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けるデータを格納しているオブジェクト、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</summary>
+        <value><see cref="T:System.Object" />に関連付けるデータを格納している、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ヘッダーに表示されるテキストを設定します。</summary>
+        <value>列ヘッダーに表示されるテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ListView>コントロール。 例は、作成<xref:System.Windows.Forms.ColumnHeader>オブジェクトおよび列ヘッダーの設定<xref:System.Windows.Forms.ColumnHeader.Text%2A>、<xref:System.Windows.Forms.ColumnHeader.TextAlign%2A>と<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティです。 この例では項目を追加し subitems、<xref:System.Windows.Forms.ListView>です。 例を実行するこの貼り付けを次のコードでは、フォームの呼び出し、`PopulateListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlign">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HorizontalAlignment TextAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.HorizontalAlignment TextAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.TextAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるテキストの水平方向の配置、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.HorizontalAlignment" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.HorizontalAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するにはそれぞれに表示されるテキストの配置設定の別のテキストを提供する<xref:System.Windows.Forms.ColumnHeader>です。  
+  
+> [!NOTE]
+>  制限により、基になるコントロールで、このプロパティも何も起こりませんの最初の列で、<xref:System.Windows.Forms.ListView>コントロールは常に左揃えにします。 この制限を回避するために[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、処理することができます、<xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=nameWithType>イベントおよび列ヘッダーを描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ListView>コントロール。 例は、作成<xref:System.Windows.Forms.ColumnHeader>オブジェクトおよび列ヘッダーの設定<xref:System.Windows.Forms.ColumnHeader.Text%2A>、<xref:System.Windows.Forms.ColumnHeader.TextAlign%2A>と<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティです。 この例では項目を追加し subitems、<xref:System.Windows.Forms.ListView>です。 例を実行するこの貼り付けを次のコードでは、フォームの呼び出し、`PopulateListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnHeader.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Component" /> の名前 (存在する場合) を格納する <see cref="T:System.String" /> を返します。 このメソッドはオーバーライドできません。</summary>
+        <returns><see cref="T:System.ComponentModel.Component" /> の名前 (存在する場合) を格納する <see cref="T:System.String" />。<see cref="T:System.ComponentModel.Component" /> に名前が付いていない場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnHeader.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(60)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅を取得または設定します。</summary>
+        <value>列の幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、設定することができます、<xref:System.Windows.Forms.ColumnHeader.Width%2A>の<xref:System.Windows.Forms.ColumnHeader>です。 <xref:System.Windows.Forms.ColumnHeader>実行時に、列の内容または見出し調整に設定することができます。 列内の最も長いアイテムの幅を調整するには、設定、<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティを-1 にします。 列見出しの幅にサイズを自動調整をするには設定、<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティを-2 です。  
+  
+> [!NOTE]
+>  すべての列の幅の合計は、32,768 ピクセルを超えると予期しない動作が発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ListView>コントロール。 例は、作成<xref:System.Windows.Forms.ColumnHeader>オブジェクトおよび列ヘッダーの設定<xref:System.Windows.Forms.ColumnHeader.Text%2A>、<xref:System.Windows.Forms.ColumnHeader.TextAlign%2A>と<xref:System.Windows.Forms.ColumnHeader.Width%2A>プロパティです。 この例では項目を追加し subitems、<xref:System.Windows.Forms.ListView>です。 例を実行するこの貼り付けを次のコードでは、フォームの呼び出し、`PopulateListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewAndPictureBox#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewAndPictureBox/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

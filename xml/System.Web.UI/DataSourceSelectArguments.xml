@@ -1,0 +1,412 @@
+<Type Name="DataSourceSelectArguments" FullName="System.Web.UI.DataSourceSelectArguments">
+  <TypeSignature Language="C#" Value="public sealed class DataSourceSelectArguments" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataSourceSelectArguments extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceSelectArguments" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロールで操作を要求するデータに関連するデータ ソース コントロールからデータを取得するときに使用する機構を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールを使用して、<xref:System.Web.UI.DataSourceSelectArguments>クラスをデータ ソース コントロールがデータの並べ替えやデータの特定のサブセットを返すなどの結果セットに追加のデータに関連する操作を実行する要求。 これらのデータに関連する操作は列挙、<xref:System.Web.UI.DataSourceCapabilities>列挙します。 次の表に示す方法、<xref:System.Web.UI.DataSourceSelectArguments>クラスは、これらのデータに関連する操作をサポートしています。  
+  
+|機能|関連する DataSourceSelectArguments プロパティ|  
+|----------------|--------------------------------------------------|  
+|<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>|<xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>|  
+|<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>|<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>, <xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>|  
+|<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>|<xref:System.Web.UI.DataSourceSelectArguments.RetrieveTotalRowCount%2A>, <xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>|  
+  
+ データ バインド コントロールを明示的に呼び出す、<xref:System.Web.UI.WebControls.DataBoundControl.PerformSelect%2A>呼び出しのデータをバインドするメソッド、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>関連付けられているデータ ソース コントロールのメソッドです。 この方法では、データ バインド コントロールは、要求時に、データ ソース コントロールからデータを取得します。 <xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッドを受け入れる、<xref:System.Web.UI.DataSourceSelectArguments>パラメーター、データ バインド コントロールが作成および管理を担当する、<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトを渡すと、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッド、データ ソース コントロールからデータを取得する場合。  
+  
+ 場合によっては、データ バインド コントロールは、その他のデータに関連する機能のない必要があります。 この場合、データ バインド コントロールを渡す、<xref:System.Web.UI.DataSourceSelectArguments.Empty%2A>引数オブジェクトを<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッドです。  
+  
+ 並べ替えられた結果セットのデータ バインド コントロールを確認して、データ ソース ビューの<xref:System.Web.UI.DataSourceView.CanSort%2A>プロパティでは実行時に、し、追加、<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>機能を使用して、<xref:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities%28System.Web.UI.DataSourceCapabilities%29>メソッドです。 別の操作として、データ バインド コントロールが並べ替えられた結果を設定してデータ ソース コントロールからセットを要求できます、<xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>プロパティを<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッドです。  
+  
+ ページングのシナリオでのデータ バインド コントロールを確認して、データ ソース ビューの<xref:System.Web.UI.DataSourceView.CanPage%2A>プロパティでは実行時に、し、追加、<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>機能を使用して、<xref:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities%28System.Web.UI.DataSourceCapabilities%29>メソッドです。 別の操作として、データ バインド コントロールを要求できますデータのサブセットからデータ ソース コントロールに設定して、<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>プロパティを<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッドです。  
+  
+ ページングのシナリオの行の合計数を取得するデータ バインド コントロールを確認して、データ ソース ビューの<xref:System.Web.UI.DataSourceView.CanRetrieveTotalRowCount%2A>プロパティでは実行時に、し、追加、<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>機能を使用して、<xref:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities%28System.Web.UI.DataSourceCapabilities%29>メソッドです。 別の操作として、データ バインド コントロールを要求できます行の合計数からデータ ソース コントロールに設定して、<xref:System.Web.UI.DataSourceSelectArguments.RetrieveTotalRowCount%2A>プロパティを<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッドです。 ときに、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>によって行の総数が含まれているメソッドが戻る、<xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  いずれかの場合、<xref:System.Web.UI.DataSourceSelectArguments>プロパティが設定されますが、現在バインドされているデータ ソース コントロールが、要求された機能をサポートしていません、<xref:System.InvalidOperationException>ときに例外がスローされます、<xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29?displayProperty=nameWithType>メソッドが呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceSelectArguments ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.DataSourceSelectArguments" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターを持つクラスのインスタンスを作成する、<xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>プロパティに初期化<xref:System.String.Empty?displayProperty=nameWithType>と<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>プロパティを 0 に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceSelectArguments (string sortExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sortExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sortExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sortExpression">結果が呼び出し元に返される前に、データ取得操作の結果を並べ替えるためデータ ソース コントロールで使用する並べ替え式です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataSourceSelectArguments" />指定した並べ替え式を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.%23ctor%28System.String%29>コンス トラクターを持つクラスのインスタンスを作成する、 <xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A> 、指定された式で初期化され、<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>プロパティを 0 に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceSelectArguments (int startRowIndex, int maximumRows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 startRowIndex, int32 maximumRows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startRowIndex">データ取得操作によって返されるデータの開始をマークするデータ行のインデックス。</param>
+        <param name="maximumRows">データ取得操作を表す行の最大数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataSourceSelectArguments" />指定開始位置とページングのシナリオで返される行の数を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.%23ctor%28System.Int32%2CSystem.Int32%29>コンス トラクターを持つクラスのインスタンスを作成する、<xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>に初期化<xref:System.String.Empty?displayProperty=nameWithType>と<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>に指定された値に初期化されるプロパティ、`startRowIndex`と`maximumRows`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceSelectArguments (string sortExpression, int startRowIndex, int maximumRows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sortExpression, int32 startRowIndex, int32 maximumRows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sortExpression" Type="System.String" />
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sortExpression">結果が呼び出し元に返される前に、データ取得操作の結果を並べ替えるためデータ ソース コントロールで使用する並べ替え式です。</param>
+        <param name="startRowIndex">データ取得操作によって返されるデータの開始をマークするデータ行のインデックス。</param>
+        <param name="maximumRows">データ取得操作を表す行の最大数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataSourceSelectArguments" />した指定した並べ替え式、開始位置、およびページングのシナリオで返される行の数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSupportedCapabilities">
+      <MemberSignature Language="C#" Value="public void AddSupportedCapabilities (System.Web.UI.DataSourceCapabilities capabilities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddSupportedCapabilities(valuetype System.Web.UI.DataSourceCapabilities capabilities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities(System.Web.UI.DataSourceCapabilities)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="capabilities" Type="System.Web.UI.DataSourceCapabilities" />
+      </Parameters>
+      <Docs>
+        <param name="capabilities"><see cref="T:System.Web.UI.DataSourceCapabilities" /> 値のいずれか。</param>
+        <summary>1 つの機能が追加されて、<see cref="T:System.Web.UI.DataSourceSelectArguments" />比較に使用されるインスタンスがサポートされる機能と機能を要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソース コントロールの呼び出し、<xref:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities%28System.Web.UI.DataSourceCapabilities%29>データ ソースをサポートしている各機能のためのメソッドです。 すべての呼び出しに機能を追加した後、<xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29>メソッドが要求された機能に対してサポートされている機能を比較して (設定によって表される、 <xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>、 <xref:System.Web.UI.DataSourceSelectArguments.RetrieveTotalRowCount%2A>、 <xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>、および<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>プロパティ)。 場合など、機能など、<xref:System.Web.UI.DataSourceCapabilities.Sort>は追加されませんが、<xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>プロパティが設定されて、<xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29>メソッドがスローされます、<xref:System.NotSupportedException>例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.DataSourceSelectArguments Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.UI.DataSourceSelectArguments Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceSelectArguments.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceSelectArguments</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataSourceSelectArguments" />に設定した並べ替え式を持つオブジェクト<see cref="F:System.String.Empty" />です。</summary>
+        <value><see cref="T:System.Web.UI.DataSourceSelectArguments" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティから返される、 <xref:System.Web.UI.DataSourceSelectArguments> 、既定で作成されたオブジェクト<xref:System.Web.UI.DataSourceSelectArguments.%23ctor>コンス トラクターです。 使用することができます、<xref:System.Web.UI.DataSourceSelectArguments.Empty%2A>プロパティを呼び出したいときに、<xref:System.Web.UI.DataSourceView.ExecuteSelect%28System.Web.UI.DataSourceSelectArguments%29>追加引数を指定せずには、データ ソース ビュー クラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Web.UI.DataSourceSelectArguments" />現在のものと比較します。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Web.UI.DataSourceSelectArguments" />インスタンスが現在のインスタンスと等しい。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Web.UI.DataSourceSelectArguments" />と等しい、現在のインスタンス。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments>クラスのオーバーライド、<xref:System.Object.Equals%2A?displayProperty=nameWithType>オブジェクトのさまざまなプロパティを使用して等しいかどうかをテストするメソッド。 場合、 <xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>、 <xref:System.Web.UI.DataSourceSelectArguments.RetrieveTotalRowCount%2A>、 <xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>、 <xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>、および<xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>プロパティが値では、すべて等しい、<xref:System.Web.UI.DataSourceSelectArguments.Equals%28System.Object%29>メソッドを返します。`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを返します、<see cref="T:System.Web.UI.DataSourceSelectArguments" />型です。</summary>
+        <returns>ハッシュ コード、<see cref="T:System.Web.UI.DataSourceSelectArguments" />型です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRows">
+      <MemberSignature Language="C#" Value="public int MaximumRows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceSelectArguments.MaximumRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ取得操作でデータ ソース コントロールから返されるデータ行の最大数を表す値を設定します。</summary>
+        <value>データ取得操作でデータ ソースから返されるデータ行の最大数。 既定値は、0 で、すべての可能なデータ行が返されることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>プロパティは、ページングのシナリオをサポートしています。 データ バインド コントロールを確認して、データ ソース ビューの<xref:System.Web.UI.DataSourceView.CanPage%2A>プロパティでは実行時に、し、追加、<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>機能を使用して、<xref:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities%28System.Web.UI.DataSourceCapabilities%29>メソッド ビューには、ページングがサポートされている場合。 データ バインド コントロールが、機能を追加するが失敗するし、ページングのプロパティに設定されて、<xref:System.Web.UI.DataSourceSelectArguments>データ取得操作中に、データ ソース ビューに渡されたオブジェクト、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ データ バインド コントロールは設定してからデータ ソース コントロールにデータのサブセットを要求することができます、<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>プロパティを<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29>メソッドです。  
+  
+> [!IMPORTANT]
+>  いずれかの場合、<xref:System.Web.UI.DataSourceSelectArguments>プロパティが設定されますが、現在バインドされているデータ ソース コントロールが、要求された機能をサポートしていません、<xref:System.InvalidOperationException>ときに例外がスローされます、<xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29?displayProperty=nameWithType>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseUnsupportedCapabilitiesError">
+      <MemberSignature Language="C#" Value="public void RaiseUnsupportedCapabilitiesError (System.Web.UI.DataSourceView view);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseUnsupportedCapabilitiesError(class System.Web.UI.DataSourceView view) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError(System.Web.UI.DataSourceView)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="view" Type="System.Web.UI.DataSourceView" />
+      </Parameters>
+      <Docs>
+        <param name="view">データ ソースのデータ取得操作を実行するビュー。</param>
+        <summary>要求された機能を比較して、<see cref="M:System.Web.UI.DataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />に対して指定されたデータ ソース ビューで、操作をサポートしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29>のプロパティによって表されるその他の要求された機能を比較するメソッドがデータ バインド コントロールで使用される、<xref:System.Web.UI.DataSourceSelectArguments>並べ替えまたはデータ ソース ビューでサポートされている機能を備えた、結果セットを順に表示する機能などのクラスです。 ビューを呼び出す独自<xref:System.Web.UI.DataSourceView.RaiseUnsupportedCapabilityError%28System.Web.UI.DataSourceCapabilities%29>メソッドで定義されている各可能な機能のため、<xref:System.Web.UI.DataSourceCapabilities>列挙します。  
+  
+> [!IMPORTANT]
+>  いずれかの場合、<xref:System.Web.UI.DataSourceSelectArguments>プロパティが設定されますが、現在バインドされているデータ ソース コントロールが、要求された機能をサポートしていません、<xref:System.InvalidOperationException>ときに例外がスローされます、<xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29?displayProperty=nameWithType>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">データ ソース ビューは、指定されたデータ ソースの機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrieveTotalRowCount">
+      <MemberSignature Language="C#" Value="public bool RetrieveTotalRowCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RetrieveTotalRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceSelectArguments.RetrieveTotalRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソース コントロールがデータの取得操作中にすべてのデータ行の数を取得する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、データ ソース コントロールがデータの合計行の数です。 を取得する必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.RetrieveTotalRowCount%2A>プロパティは、ページングのシナリオをサポートしています。 このプロパティを設定`true`データ取得操作中に、データ ソース コントロールから行の合計数を要求します。 チェック、<xref:System.Web.UI.DataSourceView.CanRetrieveTotalRowCount%2A?displayProperty=nameWithType>行の合計数を取得するデータ ソースを表示するかどうかを決定するプロパティをサポートします。 データ ソースがサポートしている場合、<xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>データ取得操作の実行中に、データ ソース コントロールによって設定されたプロパティとで合計データ行の数が返されます、<xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>プロパティ、値と同じが返されたメソッドの出力パラメーターにします。  
+  
+> [!IMPORTANT]
+>  いずれかの場合、<xref:System.Web.UI.DataSourceSelectArguments>プロパティが設定されますが、現在バインドされているデータ ソース コントロールが、要求された機能をサポートしていません、<xref:System.InvalidOperationException>ときに例外がスローされます、<xref:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError%28System.Web.UI.DataSourceView%29?displayProperty=nameWithType>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public string SortExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceSelectArguments.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ ソース ビューがによって取得されるデータの並べ替えに使用する式、<see cref="M:System.Web.UI.DataSourceView.Select(System.Web.UI.DataSourceSelectArguments,System.Web.UI.DataSourceViewSelectCallback)" />メソッドです。</summary>
+        <value>データ ソース ビューをによって取得されるデータの並べ替えに使用する文字列、<see cref="M:System.Web.UI.DataSourceView.Select(System.Web.UI.DataSourceSelectArguments,System.Web.UI.DataSourceViewSelectCallback)" />メソッドです。 <see cref="F:System.String.Empty" />並べ替え式が設定されていないかどうかが返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>プロパティは、並べ替えのシナリオをサポートしています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRowIndex">
+      <MemberSignature Language="C#" Value="public int StartRowIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartRowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceSelectArguments.StartRowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ取得操作中にデータ行を取得するときに、データ ソース コントロールを使用する必要があります最初に現れる位置を表す値を設定します。</summary>
+        <value>元のデータ ソース コントロールの開始行位置は、データを取得します。 既定値は、0 で、開始位置が結果セットの先頭であることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>プロパティは、ページングのシナリオをサポートしています。 データ バインド コントロールを確認して、データ ソース ビューの<xref:System.Web.UI.DataSourceView.CanPage%2A>プロパティでは実行時に、し、追加、<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>機能を使用して、<xref:System.Web.UI.DataSourceSelectArguments.AddSupportedCapabilities%28System.Web.UI.DataSourceCapabilities%29>メソッド ビューには、ページングがサポートされている場合。 データ バインド コントロールが、機能を追加するが失敗するし、ページングのプロパティに設定されて、<xref:System.Web.UI.DataSourceSelectArguments>データ取得操作中に、データ ソース ビューに渡されたオブジェクト、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ 別の操作として、データ バインド コントロールを要求できますデータのサブセット データ ソース コントロールから設定して、<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>プロパティを<xref:System.Web.UI.DataSourceSelectArguments>に渡されるオブジェクト、<xref:System.Web.UI.DataSourceView.Select%28System.Web.UI.DataSourceSelectArguments%2CSystem.Web.UI.DataSourceViewSelectCallback%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalRowCount">
+      <MemberSignature Language="C#" Value="public int TotalRowCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TotalRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceSelectArguments.TotalRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ取得操作中に取得された行の数を設定します。</summary>
+        <value>データの取得操作によって取得されるデータ行の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>プロパティは、ページングのシナリオをサポートしています。 データ ソースとデータ ソース ビューのコントロールは、行の合計数を取得する方法に関する内部の実装が異なります。 チェック、<xref:System.Web.UI.DataSourceView.CanRetrieveTotalRowCount%2A?displayProperty=nameWithType>データ取得操作中に行の合計数を取得するデータ ソースを表示するかどうかを決定するプロパティをサポートします。 データ ソースがサポートしている場合、<xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>プロパティは、データ取得操作の実行中に、データ ソース コントロールによって設定されでデータの合計行の数が返されます、<xref:System.Web.UI.DataSourceSelectArguments.TotalRowCount%2A>プロパティ、値と同じが返されたメソッドの出力パラメーターにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

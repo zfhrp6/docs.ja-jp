@@ -1,0 +1,336 @@
+<Type Name="Inline" FullName="System.Windows.Documents.Inline">
+  <TypeSignature Language="C#" Value="public abstract class Inline : System.Windows.Documents.TextElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Inline extends System.Windows.Documents.TextElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Inline" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.TextElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Documents.TextElementEditingBehavior(IsMergeable=true, IsTypographicOnly=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのインライン フロー コンテンツ要素のベースを提供する抽象クラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Inline ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Inline.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>基本クラスの派生クラスによって呼び出されたときの値を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaselineAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.BaselineAlignment BaselineAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.BaselineAlignment BaselineAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Inline.BaselineAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.BaselineAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のベースラインの配置、<see cref="T:System.Windows.Documents.Inline" />要素。</summary>
+        <value>メンバーまたは<see cref="T:System.Windows.BaselineAlignment" />のベースラインの配置を指定する列挙体、<see cref="T:System.Windows.Documents.Inline" />要素。  
+  
+ 既定値は<see cref="T:System.Windows.BaselineAlignment" />.**ベースライン**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_BaselineAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Inline.BaselineAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaselineAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BaselineAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BaselineAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Inline.BaselineAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Inline.BaselineAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.FlowDirection FlowDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FlowDirection FlowDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Inline.FlowDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のコンテンツのフローの相対的な方向を指定する値、<see cref="T:System.Windows.Documents.Inline" />要素。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FlowDirection" />相対フローの方向を指定する列挙です。  このプロパティを取得するには、現在有効なフローの方向が返されます。  このプロパティを設定するの内容、<see cref="T:System.Windows.Documents.Inline" />再指定された方向にフローする要素。  
+  
+ 既定値は <see cref="F:System.Windows.FlowDirection.LeftToRight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツのフローの方向は、通常、表される言語の固有のフロー方向に対応します。  ヘブライ語やアラビア語は、右から左へから自然なフローの言語の例を紹介します。  英語、ドイツ語、およびロシア語、自然な左から右へからフローされる言語の例を紹介します。  
+  
+ **注:**オペレーティング システムで使用する言語を一致するようにこのプロパティの値が自動的に変更できません。 既定値は、別の値を使用する必要がある場合<xref:System.Windows.FlowDirection.LeftToRight>、自分でに指定する必要があります。  
+  
+<a name="dependencyPropertyInfo_FlowDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Inline.FlowDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Inline.FlowDirection%2A>の属性、<xref:System.Windows.Documents.Inline>要素 (<xref:System.Windows.Documents.Run>)。  
+  
+ [!code-xaml[InlineSnippets#_Inline_FlowDirectionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_inline_flowdirectionxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Inline.FlowDirection%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[InlineSnippets#_Inline_FlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_flowdirection)]
+ [!code-vb[InlineSnippets#_Inline_FlowDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_flowdirection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FlowDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FlowDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Inline.FlowDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Inline.FlowDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextInline">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Inline NextInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Inline NextInline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Inline.NextInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Inline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次の取得<see cref="T:System.Windows.Documents.Inline" />ピアをこの要素にある要素。</summary>
+        <value><see cref="T:System.Windows.Documents.Inline" />次を表すオブジェクトを<see cref="T:System.Windows.Documents.Inline" />ピアをこの要素には、要素または**null**次へ が存在しない場合<see cref="T:System.Windows.Documents.Inline" />要素。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Documents.Inline.NextInline%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[InlineSnippets#_Inline_SiblingBase](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_siblingbase)]
+ [!code-vb[InlineSnippets#_Inline_SiblingBase](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_siblingbase)]  
+  
+ [!code-csharp[InlineSnippets#_Inline_NextSibling](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_nextsibling)]
+ [!code-vb[InlineSnippets#_Inline_NextSibling](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_nextsibling)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousInline">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Inline PreviousInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Inline PreviousInline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Inline.PreviousInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Inline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前の取得<see cref="T:System.Windows.Documents.Inline" />ピアをこの要素にある要素。</summary>
+        <value><see cref="T:System.Windows.Documents.Inline" />前を表すオブジェクト<see cref="T:System.Windows.Documents.Inline" />ピアをこの要素には、要素または**null**がない場合<see cref="T:System.Windows.Documents.Inline" />要素。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Documents.Inline.NextInline%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[InlineSnippets#_Inline_SiblingBase](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_siblingbase)]
+ [!code-vb[InlineSnippets#_Inline_SiblingBase](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_siblingbase)]  
+  
+ [!code-csharp[InlineSnippets#_Inline_PreviousSibling](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_previoussibling)]
+ [!code-vb[InlineSnippets#_Inline_PreviousSibling](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_previoussibling)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SiblingInlines">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.InlineCollection SiblingInlines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.InlineCollection SiblingInlines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Inline.SiblingInlines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.InlineCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.InlineCollection" />を格納している、<see cref="T:System.Windows.Documents.Inline" />この要素の兄弟 (ピア) である要素。</summary>
+        <value><see cref="T:System.Windows.Documents.InlineCollection" />オブジェクトを含む、<see cref="T:System.Windows.Documents.Inline" />この要素の兄弟である要素。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常にこのプロパティによって返されるコレクションには、コレクションが要求された要素が含まれています。  つまり、インライン要素は兄弟要素のコレクションを作成するためにそれ自身の兄弟であると見なされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.Inline.SiblingInlines%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[InlineSnippets#_Inline_SiblingBase](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_siblingbase)]
+ [!code-vb[InlineSnippets#_Inline_SiblingBase](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_siblingbase)]  
+  
+ [!code-csharp[InlineSnippets#_Inline_Siblings](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_siblings)]
+ [!code-vb[InlineSnippets#_Inline_Siblings](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_siblings)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorations">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationCollection TextDecorations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TextDecorationCollection TextDecorations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Inline.TextDecorations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.TextDecorationCollection" />この要素に適用するテキスト装飾を格納しています。</summary>
+        <value>A<see cref="T:System.Windows.TextDecorationCollection" />をこの要素に適用するテキスト装飾を含むコレクション。  
+  
+ 既定値は**null** (テキスト装飾は適用されません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.TextDecoration>オブジェクトがテキストに追加できるビジュアルの装飾します。 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。  テキスト装飾の詳細については、次を参照してください。[する方法: テキスト装飾を作成する](~/docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)です。  
+  
+<a name="dependencyPropertyInfo_TextDecorations"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Inline.TextDecorationsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Inline.TextDecorations%2A>の属性、<xref:System.Windows.Documents.Inline>要素 (<xref:System.Windows.Documents.Run>)。  
+  
+ [!code-xaml[InlineSnippets#_Inline_TextDecXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_inline_textdecxaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: 既定の取り消し線が適用されたテキスト](~/add/media/inline-textdec-strike.png "スクリーン ショット: 既定取り消し線が適用されたテキスト")  
+  
+ 次の図方法、**上線**、**基準**、および**下線**、それぞれします。  
+  
+ ![スクリーン ショット: TextDecorator を上線](~/add/media/inline-textdec-over.png "スクリーン ショット: TextDecorator の上線")  
+  
+ ![スクリーン ショット: 既定のテキストのベースライン効果](~/add/media/inline-textdec-base.png "スクリーン ショット: 既定のテキストのベースライン効果")  
+  
+ ![スクリーン ショット: 既定の下線が適用されたテキスト](~/add/media/inline-textdec-under.png "スクリーン ショット: 既定の下線が適用されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Inline.TextDecorations%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[InlineSnippets#_Inline_TextDec](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_textdec)]
+ [!code-vb[InlineSnippets#_Inline_TextDec](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_textdec)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorationsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextDecorationsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextDecorationsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Inline.TextDecorationsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Inline.TextDecorations" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

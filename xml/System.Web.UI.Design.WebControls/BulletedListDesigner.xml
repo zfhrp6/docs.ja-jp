@@ -1,0 +1,113 @@
+<Type Name="BulletedListDesigner" FullName="System.Web.UI.Design.WebControls.BulletedListDesigner">
+  <TypeSignature Language="C#" Value="public class BulletedListDesigner : System.Web.UI.Design.WebControls.ListControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BulletedListDesigner extends System.Web.UI.Design.WebControls.ListControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.BulletedListDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.ListControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビジュアル デザイナーでデザイン時サポートを提供するために使用、 <see cref="T:System.Web.UI.WebControls.BulletedList" /> Web サーバー コントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.BulletedList>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BulletedListDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BulletedListDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.BulletedListDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.BulletedListDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.BulletedList>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostFilterEvents">
+      <MemberSignature Language="C#" Value="protected override void PostFilterEvents (System.Collections.IDictionary events);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PostFilterEvents(class System.Collections.IDictionary events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BulletedListDesigner.PostFilterEvents(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="events" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="events"><see cref="T:System.Collections.IDictionary" />を格納している、<see cref="T:System.ComponentModel.EventDescriptor" />コントロールのイベントを表すオブジェクト。 内のキー、<see cref="T:System.Collections.IDictionary" />はイベント名。</param>
+        <summary>デザイナーでデザイン時に関連付けられたコントロールを公開するイベントのセットをフィルター処理を許可します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PostFilterEvents%2A?displayProperty=nameWithType>がデザインしているコントロールがを通じて公開される一連のイベントをフィルター処理するメソッド、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.BulletedList>コントロール、<xref:System.Web.UI.Design.WebControls.BulletedListDesigner.PostFilterEvents%2A>メソッドを削除、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>デザイナーによって公開されている一覧からのイベントです。  
+  
+ 内のキー、<xref:System.Collections.IDictionary>のインターフェイスは、イベントの名前。 内の値、<xref:System.Collections.IDictionary>型のオブジェクトは、<xref:System.ComponentModel.EventDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする、<see cref="M:System.Web.UI.Design.WebControls.BulletedListDesigner.PostFilterEvents(System.Collections.IDictionary)" />メソッドは、変更、またはこのコントロールのデザイナーによって公開されているイベントのディクショナリ内の項目を削除する方法を提供します。  
+  
+ を通じてアクセス可能なディクショナリは、直接フィルター処理、<paramref name="events" />パラメーター、またはすることができます変更しないままです。 オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.BulletedListDesigner.PostFilterEvents(System.Collections.IDictionary)" />メソッド、独自のフィルター処理を実行した後、基本実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BulletedListDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するデザイナーに関連付けられている実際のコントロールではなく、一時的なコピーをデザイナーが使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BulletedListDesigner.UsePreviewControl%2A>プロパティは常に`true`、デザイナーを使用して、 <xref:System.Web.UI.WebControls.View> 、関連する一時的なコピーを格納しているコントロール<xref:System.Web.UI.WebControls.BulletedList>コントロールをデザイン時のマークアップを生成します。 <xref:System.Web.UI.WebControls.View>コントロールではのすべての永続化には影響しません、<xref:System.Web.UI.WebControls.BulletedList>です。 場合、<xref:System.Web.UI.Design.WebControls.BulletedListDesigner.UsePreviewControl%2A>プロパティが返す`false`、デザイナーを関連付けられている使用<xref:System.Web.UI.WebControls.BulletedList>自体をデザイン時のマークアップを生成します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl" />を返すプロパティ<see langword="false" />またはコントロールをクラス レベルでマークされているかどうかに基づいて、その値を決定する<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />オブジェクト。 場合、<see cref="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl" />プロパティがオーバーライドされていない、<see cref="T:System.Web.UI.Design.WebControls.BulletedListDesigner" />オブジェクトは無視されます、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

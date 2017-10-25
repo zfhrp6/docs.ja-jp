@@ -1,0 +1,502 @@
+<Type Name="CompilerErrorCollection" FullName="System.CodeDom.Compiler.CompilerErrorCollection">
+  <TypeSignature Language="C#" Value="public class CompilerErrorCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CompilerErrorCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CompilerErrorCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.CodeDom.Compiler.CompilerError" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CompilerErrorCollection> クラスには、一連の <xref:System.CodeDom.Compiler.CompilerError> オブジェクトの格納に使用できる単純なコレクション オブジェクトが用意されています。  
+  
+> [!NOTE]
+>  このクラスには、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>派生クラスに完全信頼アクセス許可があるない場合にスローされます。 継承確認要求の詳細については、「[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ <xref:System.CodeDom.Compiler.CompilerErrorCollection> クラスを使用する方法を次の例に示します。 例では、クラスの新しいインスタンスを作成使用して、いくつかの方法ステートメント、コレクションに追加、インデックスを返すと追加または特定のインデックス位置にある属性を削除します。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#1)]
+ [!code-csharp[CompilerErrorCollectionExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#1)]
+ [!code-vb[CompilerErrorCollectionExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">派生させるため、<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />クラスです。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。<see cref="T:System.Security.PermissionSet" />: <see langword="FullTrust" />.</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerErrorCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、空のインスタンスを作成する方法を示します、<xref:System.CodeDom.Compiler.CompilerErrorCollection>クラスです。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#2)]
+ [!code-csharp[CompilerErrorCollectionExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#2)]
+ [!code-vb[CompilerErrorCollectionExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerErrorCollection (System.CodeDom.Compiler.CompilerError[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.Compiler.CompilerError[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.#ctor(System.CodeDom.Compiler.CompilerError[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.CodeDom.Compiler.CompilerError" />オブジェクトを使用して、コレクションを初期化します。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />の指定した配列を格納している<see cref="T:System.CodeDom.Compiler.CompilerError" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerErrorCollection (System.CodeDom.Compiler.CompilerErrorCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.Compiler.CompilerErrorCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.#ctor(System.CodeDom.Compiler.CompilerErrorCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerErrorCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />クラスの指定されたコンテンツを含む<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.CodeDom.Compiler.CompilerError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.CodeDom.Compiler.CompilerError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.Add(System.CodeDom.Compiler.CompilerError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.CodeDom.Compiler.CompilerError" /> オブジェクト。</param>
+        <summary>指定した追加<see cref="T:System.CodeDom.Compiler.CompilerError" />エラー コレクションにオブジェクト。</summary>
+        <returns>新しい要素の挿入位置のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.Compiler.CompilerErrorCollection.Add%2A>を追加するメソッド、<xref:System.CodeDom.Compiler.CompilerError>オブジェクトを<xref:System.CodeDom.Compiler.CompilerErrorCollection>です。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#3)]
+ [!code-csharp[CompilerErrorCollectionExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#3)]
+ [!code-vb[CompilerErrorCollectionExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.Compiler.CompilerError[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.Compiler.CompilerError[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.AddRange(System.CodeDom.Compiler.CompilerError[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.CodeDom.Compiler.CompilerError" />コレクションに追加するオブジェクトを格納しています。</param>
+        <summary>エラーのコレクションの末尾に、配列の要素をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.Compiler.CompilerErrorCollection.AddRange%28System.CodeDom.Compiler.CompilerError%5B%5D%29>の配列を追加するメソッドのオーバー ロード<xref:System.CodeDom.Compiler.CompilerError>オブジェクトを<xref:System.CodeDom.Compiler.CompilerErrorCollection>です。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CompilerErrorCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CompilerErrorCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.Compiler.CompilerErrorCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.Compiler.CompilerErrorCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.AddRange(System.CodeDom.Compiler.CompilerErrorCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerErrorCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />コレクションに追加するオブジェクトを格納するオブジェクト。</param>
+        <summary>エラーのコレクションの末尾に指定したコンパイラ エラーのコレクションの内容を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.Compiler.CompilerErrorCollection.AddRange%28System.CodeDom.Compiler.CompilerErrorCollection%29>メソッドのオーバー ロードを追加する<xref:System.CodeDom.Compiler.CompilerError>から 1 つのオブジェクト<xref:System.CodeDom.Compiler.CompilerErrorCollection>別<xref:System.CodeDom.Compiler.CompilerErrorCollection>です。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CompilerErrorCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CompilerErrorCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.CodeDom.Compiler.CompilerError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.CodeDom.Compiler.CompilerError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.Contains(System.CodeDom.Compiler.CompilerError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.CodeDom.Compiler.CompilerError" />。</param>
+        <summary>コレクションを含む、指定したかどうかを示す値を取得<see cref="T:System.CodeDom.Compiler.CompilerError" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.CodeDom.Compiler.CompilerError" /> 、それ以外のコレクションに含まれている<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.CodeDom.Compiler.CompilerErrorCollection.Contains%2A>特定を検索する方式<xref:System.CodeDom.Compiler.CompilerError>オブジェクトし、検出されたインデックス値を決定します。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CompilerErrorCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CompilerErrorCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.CodeDom.Compiler.CompilerError[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.CodeDom.Compiler.CompilerError[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.CopyTo(System.CodeDom.Compiler.CompilerError[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.CodeDom.Compiler.CompilerError[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" /> からコピーされる値のコピー先となる 1 次元 <see cref="T:System.Array" />。</param>
+        <param name="index">コピーを開始する位置を示す、配列内のインデックス。</param>
+        <summary>1 次元にコレクションの値をコピー<see cref="T:System.Array" />インスタンスの指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.Compiler.CompilerErrorCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.CodeDom.Compiler.CompilerErrorCollection>指定したインデックス値で始まる、配列にします。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#6](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#6)]
+ [!code-csharp[CompilerErrorCollectionExample#6](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#6)]
+ [!code-vb[CompilerErrorCollectionExample#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">によって示される、配列、<paramref name="array" />パラメーターが多次元です。  
+  
+ または  
+  
+ 内の要素の数、<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />のインデックス値の間で使用可能な領域よりも大きい、<paramref name="arrayIndex" />によって示される配列内のパラメーター、<paramref name="array" />パラメーター、配列の末尾で示される、<paramref name="array" />パラメーター。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターがによって示される配列の lowbound より小さい、<paramref name="array" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasErrors">
+      <MemberSignature Language="C#" Value="public bool HasErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasErrors" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerErrorCollection.HasErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションにエラーが含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションにエラーが含まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasWarnings">
+      <MemberSignature Language="C#" Value="public bool HasWarnings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasWarnings" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerErrorCollection.HasWarnings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに警告が含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションには、警告が含まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.CodeDom.Compiler.CompilerError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.CodeDom.Compiler.CompilerError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.IndexOf(System.CodeDom.Compiler.CompilerError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.CodeDom.Compiler.CompilerError" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.CodeDom.Compiler.CompilerError" />コレクション内に存在する場合、コレクション内のオブジェクトします。</summary>
+        <returns>指定したインデックス<see cref="T:System.CodeDom.Compiler.CompilerError" />で、 <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />、それ以外の場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、特定の検索<xref:System.CodeDom.Compiler.CompilerError>オブジェクトと使用、<xref:System.CodeDom.Compiler.CompilerErrorCollection.IndexOf%2A>で検出された値です。 インデックスを確認するメソッド。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CompilerErrorCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CompilerErrorCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.CodeDom.Compiler.CompilerError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.CodeDom.Compiler.CompilerError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.Insert(System.Int32,System.CodeDom.Compiler.CompilerError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError" />
+      </Parameters>
+      <Docs>
+        <param name="index">コンパイラ エラーを挿入する位置の 0 から始まるインデックス。</param>
+        <param name="value">挿入する <see cref="T:System.CodeDom.Compiler.CompilerError" />。</param>
+        <summary>指定した挿入<see cref="T:System.CodeDom.Compiler.CompilerError" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.Compiler.CompilerErrorCollection.Insert%2A>を挿入する方法、<xref:System.CodeDom.Compiler.CompilerError>オブジェクトに、<xref:System.CodeDom.Compiler.CompilerErrorCollection>です。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#8](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#8)]
+ [!code-csharp[CompilerErrorCollectionExample#8](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#8)]
+ [!code-vb[CompilerErrorCollectionExample#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerError this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CompilerError Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerErrorCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerError</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションでエントリの位置を示す 0 から始まるインデックス番号。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.CodeDom.Compiler.CompilerError" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.Compiler.CompilerError" />有効な各インデックスにします。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">示されたインデックス値、<paramref name="index" />パラメーターが、コレクションのインデックスの有効範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.CodeDom.Compiler.CompilerError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.CodeDom.Compiler.CompilerError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerErrorCollection.Remove(System.CodeDom.Compiler.CompilerError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.Compiler.CompilerError" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.CodeDom.Compiler.CompilerError" /> から削除する <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />。</param>
+        <summary>特定の削除<see cref="T:System.CodeDom.Compiler.CompilerError" />コレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、削除する方法を示します、<xref:System.CodeDom.Compiler.CompilerError>項目を<xref:System.CodeDom.Compiler.CompilerErrorCollection>です。  
+  
+ [!code-cpp[CompilerErrorCollectionExample#9](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerErrorCollectionExample/CPP/class1.cpp#9)]
+ [!code-csharp[CompilerErrorCollectionExample#9](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerErrorCollectionExample/CS/class1.cs#9)]
+ [!code-vb[CompilerErrorCollectionExample#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerErrorCollectionExample/VB/class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したオブジェクトがコレクション内に見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

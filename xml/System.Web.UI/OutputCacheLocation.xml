@@ -1,0 +1,129 @@
+<Type Name="OutputCacheLocation" FullName="System.Web.UI.OutputCacheLocation">
+  <TypeSignature Language="C#" Value="public enum OutputCacheLocation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OutputCacheLocation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.OutputCacheLocation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>出力キャッシュの HTTP 応答のリソースの場所を制御するための有効な値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含める場合にこの列挙体によって指定された値が使用される、`@ OutputCache`ディレクティブを .aspx ファイル。 これらの値は、ページ出力キャッシュの場所を決定します。 詳細については、次を参照してください。 [ASP.NET ページのキャッシュ](http://msdn.microsoft.com/library/e9666a1b-88df-4931-af0b-a754fc65660b)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サーバーの値を使用する方法、Web サーバーで、ページをキャッシュするかを指定して、要求は処理を示しています。  
+  
+ [!code-aspx-csharp[OutputCacheLocation_Resubmit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/OutputCacheLocation_Resubmit/CS/outputcachelocationcs.aspx#1)]
+ [!code-aspx-vb[OutputCacheLocation_Resubmit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/OutputCacheLocation_Resubmit/VB/outputcachelocationvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Any">
+      <MemberSignature Language="C#" Value="Any" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.OutputCacheLocation Any = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.OutputCacheLocation.Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュは、ブラウザー クライアント (要求の送信元)、要求に参加しているプロキシ サーバー (または他の任意のサーバー)、または要求が処理されたサーバーに配置できます。 この値に対応、<see cref="F:System.Web.HttpCacheability.Public" />列挙値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Client">
+      <MemberSignature Language="C#" Value="Client" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.OutputCacheLocation Client = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.OutputCacheLocation.Client" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュは、要求の送信元のブラウザー クライアントに配置されます。 この値に対応、<see cref="F:System.Web.HttpCacheability.Private" />列挙値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Downstream">
+      <MemberSignature Language="C#" Value="Downstream" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.OutputCacheLocation Downstream = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.OutputCacheLocation.Downstream" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュは、送信元サーバー以外のすべての HTTP 1.1 キャッシュ対応デバイスに格納できます。 これには、プロキシ サーバーおよび要求を出したクライアントも含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.OutputCacheLocation None = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.OutputCacheLocation.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュは、要求されたページに対して無効です。 この値に対応、<see cref="F:System.Web.HttpCacheability.NoCache" />列挙値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="Server" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.OutputCacheLocation Server = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.OutputCacheLocation.Server" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュは、要求の処理元の Web サーバーに配置されます。 この値に対応、<see cref="F:System.Web.HttpCacheability.Server" />列挙値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerAndClient">
+      <MemberSignature Language="C#" Value="ServerAndClient" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.OutputCacheLocation ServerAndClient = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.OutputCacheLocation.ServerAndClient" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュは、元のサーバーまたは要求側のクライアントにだけ格納されます。 プロキシ サーバーは応答をキャッシュすることはできません。 この値の組み合わせに対応、<see cref="F:System.Web.HttpCacheability.Private" />と<see cref="F:System.Web.HttpCacheability.Server" />列挙値。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

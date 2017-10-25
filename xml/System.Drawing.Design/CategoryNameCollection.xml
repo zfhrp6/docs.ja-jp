@@ -1,0 +1,161 @@
+<Type Name="CategoryNameCollection" FullName="System.Drawing.Design.CategoryNameCollection">
+  <TypeSignature Language="C#" Value="public sealed class CategoryNameCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CategoryNameCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.CategoryNameCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カテゴリ名の文字列のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションは、ツールボックスのカテゴリ名のコレクションを格納に使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の取得を試みます、<xref:System.Drawing.Design.IToolboxService>コントロールをデザイン モードで配置するときにします。 場合、<xref:System.Drawing.Design.IToolboxService>は取得コードは、各ツールボックス カテゴリの名前を取得します。 また、それぞれの名前をコントロールの表面に描画します。  
+  
+ [!code-cpp[CategoryNameCollectionExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/CategoryNameCollectionExample/CPP/toolboxcategorynamescontrol.cpp#2)]
+ [!code-csharp[CategoryNameCollectionExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/CategoryNameCollectionExample/CS/toolboxcategorynamescontrol.cs#2)]
+ [!code-vb[CategoryNameCollectionExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CategoryNameCollectionExample/VB/toolboxcategorynamescontrol.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CategoryNameCollection (System.Drawing.Design.CategoryNameCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Design.CategoryNameCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.CategoryNameCollection.#ctor(System.Drawing.Design.CategoryNameCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Design.CategoryNameCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Drawing.Design.CategoryNameCollection" />にコレクションの値を初期化するために名前を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.CategoryNameCollection" />クラス、指定されたコレクションを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CategoryNameCollection (string[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.CategoryNameCollection.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションの値を初期化するために、カテゴリの名前を格納する文字列の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.CategoryNameCollection" />クラス名の指定した配列を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.CategoryNameCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内に確認する文字列。</param>
+        <summary>指定したカテゴリが、コレクションに含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />コレクション内の指定したカテゴリが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (string[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(string[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.CategoryNameCollection.CopyTo(System.String[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.String[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="index">コピー先の配列のコピーを開始する位置のインデックス。</param>
+        <summary>指定したインデックス位置の指定した配列にコレクションの要素をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.CategoryNameCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内のインデックスを取得するカテゴリ名。</param>
+        <summary>指定した値のインデックスを取得します。</summary>
+        <returns>コレクション内のインデックスまたは<see langword="null" />文字列がコレクションに存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.CategoryNameCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセスするコレクション要素のインデックス。</param>
+        <summary>指定したインデックス位置には、カテゴリ名を取得します。</summary>
+        <value>指定したインデックス位置のカテゴリ名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,273 @@
+<Type Name="BitmapSizeOptions" FullName="System.Windows.Media.Imaging.BitmapSizeOptions">
+  <TypeSignature Language="C#" Value="public class BitmapSizeOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BitmapSizeOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapSizeOptions" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュされたビットマップ イメージのサイズ関連の属性を定義します。 ビットマップは、このクラスで定義されている値に基づいてスケーリングされます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FromEmptyOptions">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSizeOptions FromEmptyOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSizeOptions FromEmptyOptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSizeOptions</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" />空のサイズ変更プロパティを持つ。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Windows.Media.Imaging.BitmapSizeOptions>がその<xref:System.Windows.Media.Imaging.BitmapSizeOptions.Rotation%2A>プロパティに設定<xref:System.Windows.Media.Imaging.Rotation.Rotate0>、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PreservesAspectRatio%2A>に設定`true`、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>セットには、0 とその<xref:System.Windows.Media.Imaging.BitmapSource.PixelWidth%2A>を 0 に設定します。  
+  
+ 渡されるときに、<xref:System.Windows.Media.Imaging.TransformedBitmap>入力、出力と同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHeight">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSizeOptions FromHeight (int pixelHeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSizeOptions FromHeight(int32 pixelHeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapSizeOptions.FromHeight(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSizeOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixelHeight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pixelHeight">結果のビットマップの高さ (ピクセル単位)。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" />元のビットマップの縦横比を維持し、初期を指定する<see cref="P:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Windows.Media.Imaging.BitmapSizeOptions>がその<xref:System.Windows.Media.Imaging.BitmapSizeOptions.Rotation%2A>プロパティに設定<xref:System.Windows.Media.Imaging.Rotation.Rotate0>、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PreservesAspectRatio%2A>に設定`true`、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>の値に設定`pixelHeight`、およびその<xref:System.Windows.Media.Imaging.BitmapSource.PixelWidth%2A>を 0 に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">発生したときに<paramref name="pixelHeight" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromRotation">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSizeOptions FromRotation (System.Windows.Media.Imaging.Rotation rotation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSizeOptions FromRotation(valuetype System.Windows.Media.Imaging.Rotation rotation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapSizeOptions.FromRotation(System.Windows.Media.Imaging.Rotation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSizeOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rotation" Type="System.Windows.Media.Imaging.Rotation" />
+      </Parameters>
+      <Docs>
+        <param name="rotation">適用する初期回転値。 サポートされているのは 90 度単位のインクリメントだけです。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" />元のビットマップの縦横比を維持し、初期を指定する<see cref="T:System.Windows.Media.Imaging.Rotation" />を適用します。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" /> の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果のビットマップは、元の縦横比とサイズ変更を保持します。  
+  
+ 返された<xref:System.Windows.Media.Imaging.BitmapSizeOptions>がその<xref:System.Windows.Media.Imaging.BitmapSizeOptions.Rotation%2A>プロパティの値に設定する`rotation`、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PreservesAspectRatio%2A>に設定`true`、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>を 0 に設定とその<xref:System.Windows.Media.Imaging.BitmapSource.PixelWidth%2A>を 0 に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromWidth">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSizeOptions FromWidth (int pixelWidth);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSizeOptions FromWidth(int32 pixelWidth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapSizeOptions.FromWidth(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSizeOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixelWidth" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pixelWidth">結果のビットマップの幅 (ピクセル単位)。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" />元のビットマップの縦横比を維持し、初期を指定する<see cref="P:System.Windows.Media.Imaging.BitmapSizeOptions.PixelWidth" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Windows.Media.Imaging.BitmapSizeOptions>がその<xref:System.Windows.Media.Imaging.BitmapSizeOptions.Rotation%2A>プロパティに設定<xref:System.Windows.Media.Imaging.Rotation.Rotate0>、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PreservesAspectRatio%2A>に設定`true`、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>0 に設定してその<xref:System.Windows.Media.Imaging.BitmapSource.PixelWidth%2A>の値に設定`pixelWidth`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">発生したときに<paramref name="pixelWidth" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromWidthAndHeight">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSizeOptions FromWidthAndHeight (int pixelWidth, int pixelHeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSizeOptions FromWidthAndHeight(int32 pixelWidth, int32 pixelHeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapSizeOptions.FromWidthAndHeight(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSizeOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixelWidth" Type="System.Int32" />
+        <Parameter Name="pixelHeight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pixelWidth">結果のビットマップの幅 (ピクセル単位)。</param>
+        <param name="pixelHeight">結果のビットマップの高さ (ピクセル単位)。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" />元のビットマップの縦横比を保持しません。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.BitmapSizeOptions" /> の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果のビットマップが、有効なサイズの`pixelHeight`×`pixelWidth`です。  
+  
+ 返された<xref:System.Windows.Media.Imaging.BitmapSizeOptions>がその<xref:System.Windows.Media.Imaging.BitmapSizeOptions.Rotation%2A>プロパティに設定<xref:System.Windows.Media.Imaging.Rotation.Rotate0>、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PreservesAspectRatio%2A>に設定`false`、その<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>の値に設定`pixelHeight`、およびその<xref:System.Windows.Media.Imaging.BitmapSource.PixelWidth%2A>の値に設定`pixelWidth`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">発生したときに<paramref name="pixelHeight" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelHeight">
+      <MemberSignature Language="C#" Value="public int PixelHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PixelHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ画像の高さ (ピクセル単位)。</summary>
+        <value>ビットマップの高さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>有効である 0 より大きくなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelWidth">
+      <MemberSignature Language="C#" Value="public int PixelWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PixelWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapSizeOptions.PixelWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ イメージの幅 (ピクセル単位)。</summary>
+        <value>ビットマップの幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelWidth%2A>有効である 0 より大きくなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreservesAspectRatio">
+      <MemberSignature Language="C#" Value="public bool PreservesAspectRatio { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreservesAspectRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapSizeOptions.PreservesAspectRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のビットマップ イメージの縦横比を保持するかどうかを決定する値を取得します。</summary>
+        <value>
+          <see langword="true" />元の縦横比が維持される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、元の縦横比は維持されます<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelWidth%2A>と<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>ビットマップの最大サイズ値を表します。 結果のビットマップは幅または指定した値と一致する、高さのいずれかにのみ保証されます。 縦横比は保持されません、指定した<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelWidth%2A>と<xref:System.Windows.Media.Imaging.BitmapSizeOptions.PixelHeight%2A>両方を使用し、それらの値を使用するビットマップを拡大します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotation">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.Rotation Rotation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Imaging.Rotation Rotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapSizeOptions.Rotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.Rotation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップに適用される回転角度を表す値を取得します。</summary>
+        <value>イメージに適用される回転角度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 90 度ずつのみがサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

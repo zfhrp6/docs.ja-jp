@@ -1,0 +1,74 @@
+<Type Name="LayoutSettings" FullName="System.Windows.Forms.LayoutSettings">
+  <TypeSignature Language="C#" Value="public abstract class LayoutSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit LayoutSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LayoutSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>レイアウト スキームの特性を収集するためには、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.LayoutSettings>クラスなど、特定のユーザー インターフェイス (UI) のレイアウト機能を一般的なさまざまな特性を収集する型の基本クラスは、<xref:System.Windows.Forms.TableLayoutSettings>と<xref:System.Windows.Forms.FlowLayoutSettings>です。  
+  
+   
+  
+## Examples  
+ 次の例は、初期化する方法を示します、<xref:System.Windows.Forms.TableLayoutSettings>オブジェクトに対して、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。 完全なコードの一覧については、次を参照してください。[する方法: カスタム ToolStripRenderer を実装する](~/docs/framework/winforms/controls/how-to-implement-a-custom-toolstriprenderer.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#2)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LayoutSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LayoutSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.LayoutSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LayoutEngine">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Layout.LayoutEngine LayoutEngine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Layout.LayoutEngine LayoutEngine" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LayoutSettings.LayoutEngine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Layout.LayoutEngine</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のテーブルのレイアウト エンジンを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Layout.LayoutEngine" />現在使用されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutSettings.LayoutEngine%2A>プロパティは、通常、2 つのコンテキストで使用: レイアウト スキーム、およびレイアウト スキームを適用するコンテナーの子コントロールを使用するコンテナーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

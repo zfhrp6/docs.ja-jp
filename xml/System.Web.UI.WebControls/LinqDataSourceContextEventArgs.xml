@@ -1,0 +1,128 @@
+<Type Name="LinqDataSourceContextEventArgs" FullName="System.Web.UI.WebControls.LinqDataSourceContextEventArgs">
+  <TypeSignature Language="C#" Value="public class LinqDataSourceContextEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinqDataSourceContextEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LinqDataSourceContextEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.LinqDataSource.ContextCreating" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールで指定されている型のインスタンスを作成、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティです。 <xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、オブジェクトのインスタンスを作成するデータ コンテキスト オブジェクトの既定のコンス トラクターを呼び出します。  
+  
+ 処理することにより、データ コンテキスト オブジェクトを手動で作成することができます、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベント。 既定以外のコンス トラクターを使用する場合は、このタイプを行います。  
+  
+ 処理することも、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベントで指定されているとは異なるデータ コンテキスト オブジェクトを作成する場合、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティです。 その場合を設定する、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティを作成したオブジェクト。 <xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、データの選択を作成したオブジェクトを使用します。 、挿入、更新するか、データを削除する必要がありますを設定するときに、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティから派生したオブジェクトを、<xref:System.Data.Linq.DataContext>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーで既定以外のコンス トラクターを呼び出すことによってデータ コンテキスト オブジェクトを作成する方法を示します、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベント。 カスタム オブジェクトを代入して、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.ContextCreating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.ContextCreating/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.ContextCreating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.ContextCreating/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceContextEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.LinqDataSourceContextEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceContextEventArgs (System.Web.UI.DataSourceOperation operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.DataSourceOperation operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.#ctor(System.Web.UI.DataSourceOperation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="operation" Type="System.Web.UI.DataSourceOperation" />
+      </Parameters>
+      <Docs>
+        <param name="operation">実行中のデータ操作。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LinqDataSourceContextEventArgs" />指定したデータ操作のクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectInstance">
+      <MemberSignature Language="C#" Value="public object ObjectInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ObjectInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または作成するデータ コンテキスト オブジェクトを設定します。</summary>
+        <value>データ コンテキスト オブジェクトに設定した、<see cref="P:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance" />プロパティ以外の場合、<see langword="null" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールに指定されたクラスのインスタンスを作成、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティです。 これは、そのクラスの既定のコンス トラクターを呼び出すことによって実行します。  
+  
+ 処理することにより、オブジェクトのデータ操作を手動で作成することができます、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベントと設定、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティを作成したオブジェクト。  
+  
+ オブジェクトを作成する、手動で既定以外のコンス トラクターを使用するかで指定されているとは異なるオブジェクトを作成する場合、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティで指定された型のインスタンスに格納されません、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティ、そのインスタンスが後に作成されるため、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベント。 <xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティには、中にデータ コンテキスト オブジェクトを手動で作成する場合にのみ、使用、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベント。 、挿入、更新するか、データを削除する必要がありますを設定するときに、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティから派生したオブジェクトを、<xref:System.Data.Linq.DataContext>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーで既定以外のコンス トラクターを呼び出すことによってデータ コンテキスト オブジェクトを作成する方法を示します、<xref:System.Web.UI.WebControls.LinqDataSource.ContextCreating>イベント。 カスタム オブジェクトを代入して、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.ContextCreating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.ContextCreating/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.ContextCreating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.ContextCreating/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operation">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceOperation Operation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceOperation Operation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.Operation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行されているデータの操作を取得します。</summary>
+        <value>実行されているデータ操作の種類を表す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

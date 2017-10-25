@@ -1,0 +1,25 @@
+<Namespace Name="System.Speech.Recognition.SrgsGrammar">
+  <Docs>
+    <summary>メンバーと共に、<see cref="N:System.Speech.Recognition.SrgsGrammar" />名前空間をプログラムで準拠している文法を使用して作成 W3C<see href="http://go.microsoft.com/fwlink/?LinkId=201761">音声認識の文法の仕様のバージョン 1.0</see> (SRGS)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SRGS 文法をプログラムで作成するには、空を構築<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>インスタンスし、SRGS 要素を表すクラスのインスタンスを追加します。 <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag>、および<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>クラスは、SRGS 仕様で定義された要素を表します。 一部のプロパティの<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>クラスなど、SRGS 仕様内の属性を表す<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Root%2A>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Mode%2A>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Culture%2A>、および<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.XmlBase%2A>です。 参照してください[SRGS 文法 XML](http://msdn.microsoft.com/en-us/b888942f-637c-4243-b49f-1fbb6c12d9f1)要素と System.Speech でサポートされている SRGS 仕様の属性への参照。  
+  
+ 文法規則を追加する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>を使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Add%2A>のメソッド、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>クラスです。 SRGS 要素を使用して、内のテキストを変更することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsText.Text%2A>のプロパティ、<xref:System.Speech.Recognition.SrgsGrammar.SrgsText>インスタンス。  
+  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsSubset>クラスとから一致モードを選択することができる、一致する順序に完全な句のサブセットを指定することによって、文法中のフレーズの認識を最適化できます、<xref:System.Speech.Recognition.SubsetMatchingMode>列挙します。  
+  
+ 参照してください[文法を使用して SrgsGrammar の作成](http://msdn.microsoft.com/en-us/e4d9f96e-2241-4c39-b9e0-ac9ef4e9a906)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細と例についてはします。  
+  
+ 構築することも<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>のインスタンスからの既存の SRGS 準拠の XML 文法ファイルからインスタンス<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>、またはのインスタンスから<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ メソッドを使用することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler>を準備するクラスが完了した<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>音声認識エンジンで使用するためのオブジェクト。  
+  
+ メンバーで作成された文法、<xref:System.Speech.Recognition.SrgsGrammar>のコンス トラクターによって名前空間を使用することができます、<xref:System.Speech.Recognition.Grammar>クラスを作成する<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

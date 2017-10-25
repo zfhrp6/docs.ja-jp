@@ -1,0 +1,321 @@
+<Type Name="StorageInfo" FullName="System.IO.Packaging.StorageInfo">
+  <TypeSignature Language="C#" Value="public class StorageInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StorageInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.StorageInfo" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセスとデータ ストアを操作するための情報を提供する<see cref="T:System.IO.Packaging.Package" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateStream">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StreamInfo CreateStream (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StreamInfo CreateStream(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.CreateStream(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StreamInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しいストリームの名前です。</param>
+        <summary>指定した名前を持つ新しいストリームを作成します。</summary>
+        <returns>指定された新しいストリーム<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.IO.Packaging.StorageInfo.CreateStream%2A>メソッドが作成された新しいストリーム<xref:System.IO.Packaging.StreamInfo>CompressionOption に既定の設定が設定<xref:System.IO.Packaging.CompressionOption.NotCompressed>と EncryptionOption。<xref:System.IO.Packaging.EncryptionOption.None>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStream">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StreamInfo CreateStream (string name, System.IO.Packaging.CompressionOption compressionOption, System.IO.Packaging.EncryptionOption encryptionOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StreamInfo CreateStream(string name, valuetype System.IO.Packaging.CompressionOption compressionOption, valuetype System.IO.Packaging.EncryptionOption encryptionOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.CreateStream(System.String,System.IO.Packaging.CompressionOption,System.IO.Packaging.EncryptionOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StreamInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="compressionOption" Type="System.IO.Packaging.CompressionOption" />
+        <Parameter Name="encryptionOption" Type="System.IO.Packaging.EncryptionOption" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しいストリームの名前です。</param>
+        <param name="compressionOption">データ ストリームの圧縮オプション。</param>
+        <param name="encryptionOption">データ ストリームの暗号化オプションです。</param>
+        <summary>指定した名前を持つ新しいストリームを作成<see cref="T:System.IO.Packaging.CompressionOption" />、および<see cref="T:System.IO.Packaging.EncryptionOption" />です。</summary>
+        <returns>指定された新しいストリーム<paramref name="name" />、 <paramref name="compressionOption" />、および<paramref name="encryptionOption" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSubStorage">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StorageInfo CreateSubStorage (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StorageInfo CreateSubStorage(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.CreateSubStorage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StorageInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい子のデータ ストアの名前。</param>
+        <summary>新しい子作成<see cref="T:System.IO.Packaging.StorageInfo" />この<see cref="T:System.IO.Packaging.StorageInfo" />親として。</summary>
+        <returns>新しい子のデータ ストア。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteStream">
+      <MemberSignature Language="C#" Value="public void DeleteStream (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteStream(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.DeleteStream(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.IO.Packaging.StreamInfo" />を削除するストリームの名前。</param>
+        <summary>指定した名前のストリームを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteSubStorage">
+      <MemberSignature Language="C#" Value="public void DeleteSubStorage (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteSubStorage(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.DeleteSubStorage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するサブ ストアの名前。</param>
+        <summary>指定したサブ ストアを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したサブ ストア自体には、子サブストアが含まれている場合<xref:System.IO.Packaging.StorageInfo.DeleteSubStorage%2A>も再帰的にはすべての子孫にあたるサブ ストアを削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamInfo">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StreamInfo GetStreamInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StreamInfo GetStreamInfo(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.GetStreamInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StreamInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.IO.Packaging.StreamInfo" />インスタンスを返します。</param>
+        <summary>返します、<see cref="T:System.IO.Packaging.StreamInfo" />指定した名前のインスタンス。</summary>
+        <returns>指定したストリーム<paramref name="name" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreams">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StreamInfo[] GetStreams ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StreamInfo[] GetStreams() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.GetStreams" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StreamInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列を返します、<see cref="T:System.IO.Packaging.StreamInfo" />このストアに現在格納されているインスタンス。</summary>
+        <returns>配列、<see cref="T:System.IO.Packaging.StreamInfo" />オブジェクトをこのストア内で定義されている各 I/O ストリームをポイントします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.StorageInfo.GetStreams%2A>常に返します、<xref:System.IO.Packaging.StreamInfo>が、配列、配列、ストアに定義された空 (長さが 0) のストリームが存在しない場合する可能性があります。  
+  
+ <xref:System.IO.Packaging.StorageInfo.GetStreams%2A>ストアに現在定義されているストリームのスナップショットを提供します。  個人<xref:System.IO.Packaging.StreamInfo>オブジェクトの各ストリームの更新された状態が反映されますが、返される配列は、追加や削除では更新されません。  呼び出す<xref:System.IO.Packaging.StorageInfo.GetStreams%2A>追加または削除をストアに、ストリームとして更新された配列を取得するには、もう一度です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubStorageInfo">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StorageInfo GetSubStorageInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StorageInfo GetSubStorageInfo(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.GetSubStorageInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StorageInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">返すサブストアの名前。</param>
+        <summary>所定の名前を持つ子サブストアを返します。</summary>
+        <returns>指定した子サブストア<paramref name="name" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubStorages">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StorageInfo[] GetSubStorages ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.StorageInfo[] GetSubStorages() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.GetSubStorages" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StorageInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このストアに現在格納されている子サブストアの配列を返します。</summary>
+        <returns>配列<see cref="T:System.IO.Packaging.StorageInfo" />オブジェクトをそれぞれこのストア内で定義されているサブストアをポイントします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.StorageInfo.GetSubStorages%2A>常に返します、<xref:System.IO.Packaging.StorageInfo>配列が配列を空にすることがあります (長さが 0) サブストアが存在しない場合。  
+  
+ <xref:System.IO.Packaging.StorageInfo.GetSubStorages%2A>このストアに現在定義されているサブストアのスナップショットを提供します。  個人<xref:System.IO.Packaging.StorageInfo>オブジェクト、個々 のストアの更新された状態が反映されますが、返される配列は、追加や削除では更新されません。  呼び出す<xref:System.IO.Packaging.StorageInfo.GetSubStorages%2A>サブストアを追加または削除をストアと更新された配列を取得するには、もう一度です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.StorageInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアの名前を取得します。</summary>
+        <value>このストアの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブ ストアの名を指定して、<xref:System.IO.Packaging.StorageInfo.CreateSubStorage%2A>メソッドの作成後は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StreamExists">
+      <MemberSignature Language="C#" Value="public bool StreamExists (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool StreamExists(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.StreamExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.IO.Packaging.StreamInfo" />を確認する名前。</param>
+        <summary>指定されたストリームが存在するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、指定したストリーム<paramref name="name" />が存在します。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubStorageExists">
+      <MemberSignature Language="C#" Value="public bool SubStorageExists (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SubStorageExists(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StorageInfo.SubStorageExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">子<see cref="T:System.IO.Packaging.StorageInfo" />を確認する名前。</param>
+        <summary>特定の子サブストアが存在するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、指定した子サブストア<paramref name="name" />が存在します。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

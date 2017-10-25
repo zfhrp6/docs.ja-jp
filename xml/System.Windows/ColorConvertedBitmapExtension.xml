@@ -1,0 +1,97 @@
+<Type Name="ColorConvertedBitmapExtension" FullName="System.Windows.ColorConvertedBitmapExtension">
+  <TypeSignature Language="C#" Value="public class ColorConvertedBitmapExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColorConvertedBitmapExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ColorConvertedBitmapExtension" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Windows.Media.Imaging.ColorConvertedBitmap))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>有効にするマークアップ拡張機能を実装<see cref="T:System.Windows.Media.Imaging.ColorConvertedBitmap" />作成します。 A<see cref="T:System.Windows.Media.Imaging.ColorConvertedBitmap" />埋め込みのプロファイル、代わりに、送信元と送信先の値に基づいているプロファイルがありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マークアップ拡張機能の実装です。 マークアップ拡張機能クラスの存在の一部の側面のインフラストラクチャをサポートするには、主に、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装と、マークアップ拡張機能によって公開されるメンバーは通常呼び出されませんユーザー コードからです。 この拡張機能をサポートしている、 [ColorConvertedBitmap マークアップ拡張機能](~/docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md)から使用状況[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+<a name="xamlTextUsage_ColorConvertedBitmapExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[ColorConvertedBitmap マークアップ拡張機能](~/docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorConvertedBitmapExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ColorConvertedBitmapExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.ColorConvertedBitmapExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorConvertedBitmapExtension (object image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ColorConvertedBitmapExtension.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="image">3 つを決定する解析される文字列[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]: イメージ ソース、ソースのカラー コンテキスト、および変換先のカラー コンテキスト。</param>
+        <summary><see cref="T:System.Windows.ColorConvertedBitmapExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ColorConvertedBitmapExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。 このサービスがの結果を提供する予定が<see cref="T:System.Windows.Markup.IUriContext" />です。</param>
+        <summary>この拡張機能を適用するプロパティで設定するオブジェクトを返します。 <see cref="T:System.Windows.ColorConvertedBitmapExtension" />、これは、完成した<see cref="T:System.Windows.Media.Imaging.ColorConvertedBitmap" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.ColorConvertedBitmap" />コンス トラクターに渡された値に基づいています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

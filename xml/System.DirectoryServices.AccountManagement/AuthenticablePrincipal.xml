@@ -1,0 +1,1141 @@
+<Type Name="AuthenticablePrincipal" FullName="System.DirectoryServices.AccountManagement.AuthenticablePrincipal">
+  <TypeSignature Language="C#" Value="public class AuthenticablePrincipal : System.DirectoryServices.AccountManagement.Principal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticablePrincipal extends System.DirectoryServices.AccountManagement.Principal" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.AccountManagement.Principal</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.DirectoryServices.AccountManagement.DirectoryRdnPrefix("CN")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>認証できるプリンシパルに共通のアカウント、連絡先データをカプセル化します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" /> クラスの新しいインスタンスを初期化します。 このコンス トラクターは、基本クラスを初期化するために派生したクラスのコンス トラクターによって呼び出され、コードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから派生するカスタム拡張機能クラスは、派生クラス コンス トラクターから基本クラスを初期化するためにこのコンス トラクターを呼び出すことができます。 詳細については、次を参照してください。、[プリンシパル拡張](http://msdn.microsoft.com/en-us/49d1b257-d652-4224-bdae-2edabced8f00)概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AuthenticablePrincipal (System.DirectoryServices.AccountManagement.PrincipalContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.AccountManagement.PrincipalContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" />指定したコンテキストを使用してクラスです。 このコンス トラクターは、基本クラスを初期化するために派生したクラスのコンス トラクターによって呼び出され、コードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから派生するカスタム拡張機能クラスは、派生クラス コンス トラクターから基本クラスを初期化するためにこのコンス トラクターを呼び出すことができます。 詳細については、次を参照してください。、[プリンシパル拡張](http://msdn.microsoft.com/en-us/49d1b257-d652-4224-bdae-2edabced8f00)概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AuthenticablePrincipal (System.DirectoryServices.AccountManagement.PrincipalContext context, string samAccountName, string password, bool enabled);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.AccountManagement.PrincipalContext context, string samAccountName, string password, bool enabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="samAccountName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="samAccountName">このプリンシパルの SAM アカウント名。</param>
+        <param name="password">このアカウントのパスワード。</param>
+        <param name="enabled">アカウントが有効になっているかどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" />クラスの指定したコンテキスト、SAM アカウント名、パスワードを使用して、値を有効にします。 このコンス トラクターは、基本クラスを初期化するために派生したクラスのコンス トラクターによって呼び出され、コードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから派生するカスタム拡張機能クラスは、派生クラス コンス トラクターから基本クラスを初期化するためにこのコンス トラクターを呼び出すことができます。 詳細については、次を参照してください。、[プリンシパル拡張](http://msdn.microsoft.com/en-us/49d1b257-d652-4224-bdae-2edabced8f00)概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccountExpirationDate">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; AccountExpirationDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AccountExpirationDate" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountExpirationDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 Nullable<see cref="T:System.DateTime" />アカウントが期限切れになる日時を指定します。</summary>
+        <value>A<see cref="T:System.DateTime" />アカウントの期限がない場合、日付と、アカウントが期限切れになる時刻または null を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様<xref:System.DateTime>プロパティ<xref:System.DirectoryServices.AccountManagement>、UTC 形式では、時間が返されます。  ローカル時刻に変換を呼び出し、<xref:System.DateTime.ToLocalTime%2A>戻り値のオブジェクトのメソッドです。  
+  
+ 設定すると、<xref:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountExpirationDate%2A>時刻は既定で UTC にします。  ローカル時間で作成する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、<xref:System.DateTime>オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccountLockoutTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; AccountLockoutTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AccountLockoutTime" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountLockoutTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Null 値を取得<see cref="T:System.DateTime" />アカウントがロックアウトされる日時を指定します。</summary>
+        <value>A<see cref="T:System.DateTime" />アカウントのロックアウト時間が設定されていない場合、日付と、アカウントがロックアウトされた時刻または null を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アカウント ロックアウトの時間は、システムに依存、およびアカウント管理 API では設定できません。 アカウントのロックを解除するを使用して、<xref:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.UnlockAccount%2A>メソッドです。  
+  
+ アカウントが場合にロックされていない可能性がありますが、 <xref:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountLockoutTime%2A> null 以外の値を返します。 アプリケーションを使用する必要があります、<xref:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.IsAccountLockedOut%2A>アカウントをロックアウトするかどうかを調べます。  
+  
+ 同様<xref:System.DateTime>プロパティ<xref:System.DirectoryServices.AccountManagement>、UTC 形式では、時間が返されます。  ローカル時刻に変換を呼び出し、<xref:System.DateTime.ToLocalTime%2A>戻り値のオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AdvancedSearchFilter">
+      <MemberSignature Language="C#" Value="public virtual System.DirectoryServices.AccountManagement.AdvancedFilters AdvancedSearchFilter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.AccountManagement.AdvancedFilters AdvancedSearchFilter" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AdvancedSearchFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.AdvancedFilters</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:System.DirectoryServices.AccountManagement.AdvancedSearchFilter" />で使用するためのオブジェクト[クエリの例で](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)読み取り専用のプロパティを設定するオブジェクトを渡す前に、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearcher" />です。</summary>
+        <value><see cref="T:System.DirectoryServices.AccountManagement.AdvancedSearchFilter" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、[クエリの例で](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)例についてはドキュメントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowReversiblePasswordEncryption">
+      <MemberSignature Language="C#" Value="public bool AllowReversiblePasswordEncryption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowReversiblePasswordEncryption" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AllowReversiblePasswordEncryption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアカウントのパスワードの可逆暗号化が有効になっているかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />このアカウントのパスワードの可逆暗号化が有効になっている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BadLogonCount">
+      <MemberSignature Language="C#" Value="public int BadLogonCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BadLogonCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.BadLogonCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアカウントに不適切な資格情報を使用したログオン試行の数を取得します。</summary>
+        <value>ログオンの数は、このアカウントに不適切な資格情報を使用しようとします。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificates">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2Collection Certificates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2Collection Certificates" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.Certificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Collection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアカウントの X509 証明書が格納された <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> を取得します。</summary>
+        <value>A <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> X509 を格納しているこのアカウントの証明書。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePassword">
+      <MemberSignature Language="C#" Value="public void ChangePassword (string oldPassword, string newPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ChangePassword(string oldPassword, string newPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.ChangePassword(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldPassword" Type="System.String" />
+        <Parameter Name="newPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oldPassword">変更するパスワード。</param>
+        <param name="newPassword">新しいパスワード。</param>
+        <summary>古いパスワードから新しいパスワードに、アカウントのパスワードを変更します。 これを <see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> と使用しないでください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンピューターのプリンシパルのものではありません。 この関数を呼び出す、<xref:System.DirectoryServices.AccountManagement.ComputerPrincipal>により、<xref:System.NotSupportedException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プリンシパルが永続化されていません。</exception>
+        <exception cref="T:System.DirectoryServices.AccountManagement.PasswordException">新しいパスワードは複雑さの要件を満たしていません。</exception>
+        <exception cref="T:System.NotSupportedException">プリンシパルは、ユーザーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DelegationPermitted">
+      <MemberSignature Language="C#" Value="public bool DelegationPermitted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DelegationPermitted" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.DelegationPermitted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアカウントが委任されるかどうかを指定する null 許容のブール値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、アカウントを委任することがあります。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアカウントで認証が有効かどうかを指定する null 許容のブール値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、プリンシパルが有効になっている、または null の場合は、アカウントが永続化されていません。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルは、ストアに永続化されていない、このプロパティは null を返します。 プリンシパルは、永続化後に有効になっている既定の設定は、ストアによって異なります。 AD DS および AD LDS ストアを無効にする新しいプリンシパル、永続化するときに SAM 永続化するときに、新しいプリンシパルを有効にする一方です。 アプリケーションがストアに永続化された後、このプロパティを値に設定のみできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+        <exception cref="T:System.ArgumentNullException">アプリケーションは、このプロパティの null 値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpirePasswordNow">
+      <MemberSignature Language="C#" Value="public void ExpirePasswordNow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExpirePasswordNow() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.ExpirePasswordNow" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このアカウントのパスワードの期限が切れます。 これは、ユーザーに求める、次回のログオン時にパスワードを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [次へ] のログオン時にパスワードを変更するユーザーを強制するには、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.AccountManagement.PrincipalOperationException">変更をストアに保存するときに例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByBadPasswordAttempt">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByBadPasswordAttempt (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByBadPasswordAttempt(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByBadPasswordAttempt(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> オブジェクト。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻の正しくないパスワードの試行を識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録される無効なログオン試行の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>正しくないパスワード試行が指定した日付と時間の範囲で記録される認証のプリンシパル オブジェクトのコレクションを返します。</summary>
+        <returns>1 つまたは複数の <see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" /> オブジェクトを含む <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult'1" />、または結果が見つからない場合は空のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByBadPasswordAttempt&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt; FindByBadPasswordAttempt&lt;T&gt; (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;!!T&gt; FindByBadPasswordAttempt&lt;T&gt;(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByBadPasswordAttempt``1(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のパスワード セットを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるパスワード設定の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定された日時範囲内に誤ったパスワード試行があるオブジェクトの <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> コレクションを返します。 これは、この機能を実装する拡張されたクラスのテンプレート関数です。</summary>
+        <returns>適切なプリンシパルの種類の 1 つまたは複数の <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> を含むオブジェクト、または一致なしの場合は空のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByExpirationTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByExpirationTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByExpirationTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByExpirationTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />アカウントの有効期限の日時を識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるアカウントの有効期限の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定した日時範囲内にアカウントの有効期限が記録されている認証プリンシパル オブジェクトのコレクションを返します。</summary>
+        <returns>1 つ以上の <see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" /> オブジェクトを含む <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByExpirationTime&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt; FindByExpirationTime&lt;T&gt; (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;!!T&gt; FindByExpirationTime&lt;T&gt;(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByExpirationTime``1(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のパスワード セットを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるパスワード設定の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定された日時範囲内に有効期限があるオブジェクトの <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> コレクションを返します。 これは、この機能を実装する拡張されたクラスのテンプレート関数です。</summary>
+        <returns>適切なプリンシパルの種類の 1 つまたは複数の <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> を含むオブジェクト、または一致なしの場合は空のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByLockoutTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByLockoutTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByLockoutTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByLockoutTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付およびアカウント ロックアウトの時間を識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるアカウントのロックアウトの時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定した日時範囲内にアカウントのロックアウト時間が記録されている認証プリンシパル オブジェクトのコレクションを返します。</summary>
+        <returns>1 つ以上の <see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" /> オブジェクトを含む <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByLockoutTime&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt; FindByLockoutTime&lt;T&gt; (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;!!T&gt; FindByLockoutTime&lt;T&gt;(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByLockoutTime``1(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のパスワード セットを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるパスワード設定の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定された日時範囲内にロックアウト時間があるオブジェクトの <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> コレクションを返します。 これは、この機能を実装する拡張されたクラスのテンプレート関数です。</summary>
+        <returns>適切なプリンシパルの種類の 1 つまたは複数の <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> を含むオブジェクト、または一致なしの場合は空のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByLogonTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByLogonTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByLogonTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByLogonTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のログオン レコードを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるアカウントのログオンの時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定した日時範囲内にアカウントのログオン時間が記録されている認証プリンシパル オブジェクトのコレクションを返します。</summary>
+        <returns>1 つ以上の <see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" /> オブジェクトを含む <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコードは、サーバーのポート番号「5000」で"adamHost1.fabrikam.com"によってホストされている ADAM インスタンスに接続します。 (AdamAdmin) のユーザー名とパスワード (SecretPwd123) が指定されて、<xref:System.DirectoryServices.AccountManagement.PrincipalContext>コンス トラクターです。  
+  
+ コンテナーの下のすべての authenticable プリンシパルの検索を実行"DC adamApp1、DC = = fabrikam、DC = com"をログオンしていないこの ADAM インスタンスを過去 45 日間のです。 検索によって返されたプリンシパルが削除されます。  
+  
+```  
+PrincipalContext ctx = new PrincipalContext(  
+                                      ContextType.ApplicationDirectory,   
+                                      "adamHost1.fabrikam.com:5000",   
+                                      "DC=adamApp1,DC=fabrikam,DC=com",   
+                                      "adamAdmin", "SecretPwd123");  
+  
+PrincipalSearchResult<AuthenticablePrincipal> oldPrincipals =   
+                     AuthenticablePrincipal.FindByLogonTime(ctx,   
+                            (DateTime.Now - new TimeSpan(45, 0, 0, 0)),   
+                            MatchType.LessThan);  
+  
+foreach (Principal p in oldPrincipals)  
+{  
+    p.Delete();  
+}  
+  
+oldPrincipals.Dispose();  
+ctx.Dispose();  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByLogonTime&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt; FindByLogonTime&lt;T&gt; (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;!!T&gt; FindByLogonTime&lt;T&gt;(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByLogonTime``1(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のパスワード セットを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるパスワード設定の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定された日時範囲内にログオン時間があるオブジェクトの <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> コレクションを返します。 これは、この機能を実装する拡張されたクラスのテンプレート関数です。</summary>
+        <returns>適切なプリンシパルの種類の 1 つまたは複数の <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> を含むオブジェクト、または一致なしの場合は空のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByPasswordSetTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByPasswordSetTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt; FindByPasswordSetTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByPasswordSetTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.AuthenticablePrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のパスワード セットを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるパスワード設定の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定した日時範囲内にアカウント パスワードのセットが記録されている認証プリンシパル オブジェクトのコレクションを返します。</summary>
+        <returns>1 つ以上の <see cref="T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal" /> オブジェクトを含む <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByPasswordSetTime&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt; FindByPasswordSetTime&lt;T&gt; (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;!!T&gt; FindByPasswordSetTime&lt;T&gt;(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.FindByPasswordSetTime``1(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />日付と時刻のパスワード セットを識別するオブジェクト。 このパラメーターは型パラメーターと共に使用して、返されるオブジェクトに記録されるパスワード設定の時間範囲を特定します。</param>
+        <param name="type">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />に適用される一致の種類を指定する列挙値、<c>時間</c>パラメーター。</param>
+        <summary>指定された日時範囲内にパスワード設定時間があるオブジェクトの <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> コレクションを返します。  これは、この機能を実装する拡張されたクラスのテンプレート関数です。</summary>
+        <returns>適切なプリンシパルの種類の 1 つまたは複数の <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1" /> を含むオブジェクト、または一致なしの場合は空のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HomeDirectory">
+      <MemberSignature Language="C#" Value="public string HomeDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HomeDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.HomeDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアカウントのホーム ディレクトリを設定します。</summary>
+        <value>このアカウントのディレクトリ、またはホーム ディレクトリが存在しない場合は、null のホームです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HomeDrive">
+      <MemberSignature Language="C#" Value="public string HomeDrive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HomeDrive" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.HomeDrive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアカウントのホームのドライブを設定します。</summary>
+        <value>アカウント、またはホーム ドライブが存在しない場合は null のホーム ドライブです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAccountLockedOut">
+      <MemberSignature Language="C#" Value="public bool IsAccountLockedOut ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsAccountLockedOut() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.IsAccountLockedOut" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アカウントが現在ロックアウトされているかどうかを指定するブール値を返します。</summary>
+        <returns>
+          アカウントがロックアウトされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アカウントが場合にロックされていない可能性がありますが、 <xref:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountLockoutTime%2A> null 以外の値を返します。 このメソッドは、アカウントをロックアウトするかどうかを決定する適切なストアに固有のロックアウト値を計算します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastBadPasswordAttempt">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; LastBadPasswordAttempt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; LastBadPasswordAttempt" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.LastBadPasswordAttempt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Null 値を取得<see cref="T:System.DateTime" />このアカウントに、前回のパスワードが正しくないときの日時を指定します。</summary>
+        <value>Nullable<see cref="T:System.DateTime" />このアカウントに、前回のパスワードが正しくないときの日時を指定するか、正しくないパスワードの試行の記録される場合、null です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様<xref:System.DateTime>プロパティ<xref:System.DirectoryServices.AccountManagement>、UTC 形式では、時間が返されます。  ローカル時刻に変換を呼び出し、<xref:System.DateTime.ToLocalTime%2A>戻り値のオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastLogon">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; LastLogon { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; LastLogon" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.LastLogon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Null 値を取得<see cref="T:System.DateTime" />日付とこのアカウントのログオンが最後の時刻を指定します。</summary>
+        <value>Nullable<see cref="T:System.DateTime" />日付とこのアカウントのログオンが最後の時刻を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様<xref:System.DateTime>プロパティ<xref:System.DirectoryServices.AccountManagement>、UTC 形式では、時間が返されます。  ローカル時刻に変換を呼び出し、<xref:System.DateTime.ToLocalTime%2A>戻り値のオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastPasswordSet">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; LastPasswordSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; LastPasswordSet" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.LastPasswordSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Null 値を取得<see cref="T:System.DateTime" />最後の日付とこのアカウントのパスワードが設定されている時刻を指定します。</summary>
+        <value>Nullable<see cref="T:System.DateTime" />最後の日付とこのアカウントのパスワードが設定されている時刻を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様<xref:System.DateTime>プロパティ<xref:System.DirectoryServices.AccountManagement>、UTC 形式では、時間が返されます。  ローカル時刻に変換を呼び出し、<xref:System.DateTime.ToLocalTime%2A>戻り値のオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordNeverExpires">
+      <MemberSignature Language="C#" Value="public bool PasswordNeverExpires { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PasswordNeverExpires" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.PasswordNeverExpires" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアカウントのパスワードが期限切れかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />このアカウントのパスワードの有効期限が切れた場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordNotRequired">
+      <MemberSignature Language="C#" Value="public bool PasswordNotRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PasswordNotRequired" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.PasswordNotRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスワードがこのアカウントに必要かどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />パスワードがこのアカウントに必要な場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PermittedLogonTimes">
+      <MemberSignature Language="C#" Value="public byte[] PermittedLogonTimes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] PermittedLogonTimes" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.PermittedLogonTimes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリンシパルがログオンできる時間を設定します。</summary>
+        <value>このアカウントに許可されるログオン回数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PermittedWorkstations">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.PrincipalValueCollection&lt;string&gt; PermittedWorkstations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.AccountManagement.PrincipalValueCollection`1&lt;string&gt; PermittedWorkstations" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.PermittedWorkstations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalValueCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークステーションにログインに許可されているこのプリンシパルの一覧を取得します。</summary>
+        <value>このプリンシパルがログオンを許可するワークステーションの変更可能なリスト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshExpiredPassword">
+      <MemberSignature Language="C#" Value="public void RefreshExpiredPassword ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RefreshExpiredPassword() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.RefreshExpiredPassword" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>期限切れのパスワードを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.AccountManagement.PrincipalOperationException">変更をストアに保存するときに例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptPath">
+      <MemberSignature Language="C#" Value="public string ScriptPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ScriptPath" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.ScriptPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアカウントのスクリプトのパスを設定します。</summary>
+        <value>このアカウント、またはスクリプトのパスが存在しない場合は null のスクリプトのパスです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPassword">
+      <MemberSignature Language="C#" Value="public void SetPassword (string newPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPassword(string newPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.SetPassword(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="newPassword">新しいパスワード。</param>
+        <summary>アカウントのパスワードを指定した値に設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.AccountManagement.PasswordException">呼び出し元が適切な権限を持たない、新しいパスワードがパスワードの複雑さの要件を満たしていない、またはパスワードを変更する、基になる、却下が格納される他の何らかの理由で例外をスローします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SmartcardLogonRequired">
+      <MemberSignature Language="C#" Value="public bool SmartcardLogonRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SmartcardLogonRequired" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.SmartcardLogonRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアカウントにログオンするスマート カードが必要かどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />スマート カードが必要な場合です。 このアカウントにログオンするにはそれ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockAccount">
+      <MemberSignature Language="C#" Value="public void UnlockAccount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnlockAccount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.UnlockAccount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在ロックされている場合、アカウントのロックを解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、LDAP ドメインとユーザー名 (管理者) には、"fabrikam.com"に接続し、パスワード (SecretPwd123) の初期化で、<xref:System.DirectoryServices.AccountManagement.PrincipalContext>コンス トラクターです。  
+  
+ 指定されたコンテナーにある"John Smith"の名前を持つユーザーを検索する検索を実行、<xref:System.DirectoryServices.AccountManagement.PrincipalContext>コンス トラクター:"CN = Users, DC = fabrikam、DC = com"。  ユーザーが見つかった場合、このユーザーのアカウントがロックアウトされているかどうかを決定するチェックが実行されます。アカウントがロックアウトされている場合、コード例には、アカウントがロック解除します。  
+  
+```  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain,   
+                                         "fabrikam.com",   
+                                         "CN=Users,DC=fabrikam,DC=com",   
+                                         "administrator",   
+                                         "SecretPwd123");  
+  
+UserPrincipal usr = UserPrincipal.FindByIdentity(ctx, "John Smith");  
+if (usr != null)  
+{  
+    if (usr.IsAccountLockedOut())  
+        usr.UnlockAccount();  
+  
+    usr.Dispose();  
+}  
+ctx.Dispose();   
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.AccountManagement.PrincipalOperationException">変更をストアに保存するときに例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserCannotChangePassword">
+      <MemberSignature Language="C#" Value="public bool UserCannotChangePassword { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UserCannotChangePassword" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.UserCannotChangePassword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがこのアカウントのパスワードを変更できるかどうかを指定するブール値を取得または設定します。 これを <see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> と使用しないでください。</summary>
+        <value>
+          ユーザーがパスワードの変更を許可されていない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンピューターのプリンシパルのものではありません。 この関数を呼び出す、<xref:System.DirectoryServices.AccountManagement.ComputerPrincipal>により、<xref:System.NotSupportedException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基盤となるになるストアは、このプロパティをサポートしていません。</exception>
+        <exception cref="T:System.NotSupportedException">このプリンシパルのオブジェクトは、ユーザーではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

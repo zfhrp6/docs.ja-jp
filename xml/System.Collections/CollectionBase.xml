@@ -1,0 +1,1555 @@
+<Type Name="CollectionBase" FullName="System.Collections.CollectionBase">
+  <TypeSignature Language="C#" Value="public abstract class CollectionBase : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit CollectionBase extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.CollectionBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>提供、<see langword="abstract" />厳密に型指定されたコレクションの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Collections.CollectionBase>インスタンスは変更可能では常にします。 参照してください<xref:System.Collections.ReadOnlyCollectionBase>このクラスの読み取り専用バージョン。  
+  
+ 容量、<xref:System.Collections.CollectionBase>要素の数が、<xref:System.Collections.CollectionBase>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.CollectionBase>容量を増やすは自動的に再割り当て、必要に応じて。 設定して、容量を削減することができます、<xref:System.Collections.CollectionBase.Capacity%2A>プロパティに明示的にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ この実装は同期済みは提供されませんの (スレッド セーフな) ラッパー、 <see cref="T:System.Collections.CollectionBase" />、派生クラスは、独自の同期されたバージョンを作成できますが、<see cref="T:System.Collections.CollectionBase" />を使用して、<see cref="P:System.Collections.ICollection.SyncRoot" />プロパティです。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+    <block subset="none" type="overrides">
+      <para>この基本クラスは、厳密に型指定のカスタム コレクションを容易にできるようにするものです。 実装する場合は、独自に作成する代わりにこの基本クラスを拡張することをお勧めします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CollectionBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.CollectionBase" />既定の初期容量を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.CollectionBase>は要素の数を<xref:System.Collections.CollectionBase>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.CollectionBase>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.CollectionBase>です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CollectionBase (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">新しいリストに格納できる要素の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.CollectionBase" />容量を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.CollectionBase>は要素の数を<xref:System.Collections.CollectionBase>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.CollectionBase>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.CollectionBase>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capacity">
+      <MemberSignature Language="C#" Value="public int Capacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Capacity" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.Capacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.CollectionBase" /> に格納できる要素の数を取得または設定します。</summary>
+        <value><see cref="T:System.Collections.CollectionBase" /> に格納できる要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.CollectionBase.Capacity%2A>要素の数を<xref:System.Collections.CollectionBase>格納できます。 <xref:System.Collections.CollectionBase.Count%2A>実際には、要素の数、<xref:System.Collections.CollectionBase>です。  
+  
+ <xref:System.Collections.CollectionBase.Capacity%2A>常により大きいまたは等しい<xref:System.Collections.CollectionBase.Count%2A>です。 場合<xref:System.Collections.CollectionBase.Count%2A>を超える<xref:System.Collections.CollectionBase.Capacity%2A>要素を追加するには、中に容量が前の要素をコピーし、新しい要素を追加する前に、内部配列の再割り当てによって自動的に増加します。  
+  
+ 設定して、容量を削減することができます、<xref:System.Collections.CollectionBase.Capacity%2A>プロパティに明示的にします。 ときに、値の<xref:System.Collections.CollectionBase.Capacity%2A>が設定されている、明示的に指定した容量、それに合わせて内部の配列が再割り当てもします。  
+  
+ このプロパティの値を取得する場合は、o (1) 操作です。O は、プロパティの設定 (`n`) 操作、場所`n`新しい容量します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Collections.CollectionBase.Capacity" /> は <see cref="P:System.Collections.CollectionBase.Count" /> より小さい値に設定されます。</exception>
+        <exception cref="T:System.OutOfMemoryException">システムで使用可能なメモリが不足しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオブジェクトを削除、<see cref="T:System.Collections.CollectionBase" />インスタンス。 このメソッドはオーバーライドできません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.CollectionBase.Count%2A>0 に設定します。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ カスタム アクションを実行する前に、または後にコレクションをクリアする、保護されたオーバーライド<xref:System.Collections.CollectionBase.OnClear%2A>または<xref:System.Collections.CollectionBase.OnClearComplete%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれる要素の数を取得、<see cref="T:System.Collections.CollectionBase" />インスタンス。 このプロパティはオーバーライドできません。</summary>
+        <value>含まれる要素の数、<see cref="T:System.Collections.CollectionBase" />インスタンス。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理する列挙子を返します、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <returns><see cref="T:System.Collections.CollectionBase" /> インスタンスの <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 この位置で、呼び出す<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、呼び出し元<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Current%2A>、<xref:System.Collections.IEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+ 列挙子には、コレクションへの排他アクセスがありません。したがって、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 中に、<xref:System.Collections.CollectionBase.GetEnumerator%2A>メソッドは既定では、COM クライアントに表示されていない継承、<xref:System.Collections.CollectionBase>クラスが公開することし、COM クライアントの望ましくない動作が発生することができます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerList">
+      <MemberSignature Language="C#" Value="protected System.Collections.ArrayList InnerList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList InnerList" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.InnerList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ArrayList" />内の要素の一覧を含む、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />を表す、<see cref="T:System.Collections.CollectionBase" />自体をインスタンス化します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="protected System.Collections.IList List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList List" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.List" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IList" />内の要素の一覧を含む、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <value><see cref="T:System.Collections.IList" />を表す、<see cref="T:System.Collections.CollectionBase" />自体をインスタンス化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClear">
+      <MemberSignature Language="C#" Value="protected virtual void OnClear ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnClear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内容をクリアするときに、追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、コレクションが消去される前に、何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ プロセスが失敗した場合、コレクションは、以前の状態に戻ります。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるからすべての要素を削除する前に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnClear" />一方、標準のクリア動作する前に呼び出される<see cref="M:System.Collections.CollectionBase.OnClearComplete" />が標準のクリア動作後に呼び出されます。  
+  
+ たとえば、実装者は、グローバルな Clear による削除の特定の要素を除外できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClearComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnClearComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClearComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnClearComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内容を消去した後に追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、コレクションをクリアした後に何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるからすべての要素を削除した後に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnClear" />一方、標準のクリア動作する前に呼び出される<see cref="M:System.Collections.CollectionBase.OnClearComplete" />が標準のクリア動作後に呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsert">
+      <MemberSignature Language="C#" Value="protected virtual void OnInsert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInsert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnInsert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス<c>値</c>です。</param>
+        <param name="value">位置にある要素の新しい値<c>インデックス</c>です。</param>
+        <summary>新しい要素を挿入する前に追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素が挿入される前に、いくつかの操作を実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ プロセスが失敗した場合、コレクションは、以前の状態に戻ります。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用する要素が、基になることを挿入する前に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnInsert(System.Int32,System.Object)" />一方、標準的な Insert の動作前に呼び出される<see cref="M:System.Collections.CollectionBase.OnInsertComplete(System.Int32,System.Object)" />が標準的な Insert 動作後に呼び出されます。  
+  
+ たとえば、実装者が挿入可能オブジェクトの種類を制限することができます、<see cref="T:System.Collections.ArrayList" />です。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />このメソッドが呼び出されました。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsertComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnInsertComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInsertComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス<c>値</c>です。</param>
+        <param name="value">位置にある要素の新しい値<c>インデックス</c>です。</param>
+        <summary>新しい要素を挿入した後に追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素を挿入した後に何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ コレクションは、次のいずれかが発生した場合、以前の状態に戻ります。  
+  
+-   プロセスは失敗します。  
+  
+-   このメソッドをオーバーライドして、例外をスローします。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になる要素に挿入した後に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnInsert(System.Int32,System.Object)" />一方、標準的な Insert の動作前に呼び出される<see cref="M:System.Collections.CollectionBase.OnInsertComplete(System.Int32,System.Object)" />が標準的な Insert 動作後に呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemove">
+      <MemberSignature Language="C#" Value="protected virtual void OnRemove (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemove(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>にあります。</param>
+        <param name="value">削除する要素の値<c>インデックス</c>です。</param>
+        <summary>要素を削除するときに、追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素が削除される前に、いくつかの操作を実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ プロセスが失敗した場合、コレクションは、以前の状態に戻ります。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるから要素を削除する前に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />一方、標準的な削除動作をする前に呼び出される<see cref="M:System.Collections.CollectionBase.OnRemoveComplete(System.Int32,System.Object)" />が標準的な削除動作後に呼び出されます。  
+  
+ たとえば、実行者常に例外をスローしての要素の削除を防ぐことができます<see cref="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />です。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />このメソッドが呼び出されました。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemoveComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnRemoveComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemoveComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnRemoveComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>にあります。</param>
+        <param name="value">削除する要素の値<c>インデックス</c>です。</param>
+        <summary>要素を削除した後、追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素が削除された後に何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ コレクションは、次のいずれかが発生した場合、以前の状態に戻ります。  
+  
+-   プロセスは失敗します。  
+  
+-   このメソッドをオーバーライドして、例外をスローします。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるから要素を削除した後に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />一方、標準的な削除動作をする前に呼び出される<see cref="M:System.Collections.CollectionBase.OnRemoveComplete(System.Int32,System.Object)" />が標準的な削除動作後に呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSet">
+      <MemberSignature Language="C#" Value="protected virtual void OnSet (int index, object oldValue, object newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSet(int32 index, object oldValue, object newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnSet(System.Int32,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="oldValue" Type="System.Object" />
+        <Parameter Name="newValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>oldValue</c>にあります。</param>
+        <param name="oldValue">置き換えられる値<c>newValue</c>です。</param>
+        <param name="newValue">位置にある要素の新しい値<c>インデックス</c>です。</param>
+        <summary>値を設定する前に追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素の設定前に、何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ プロセスが失敗した場合、コレクションは、以前の状態に戻ります。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるに指定した要素を設定する前に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnSet(System.Int32,System.Object,System.Object)" />一方、標準的な機能の設定前に呼び出される<see cref="M:System.Collections.CollectionBase.OnSetComplete(System.Int32,System.Object,System.Object)" />が標準的な機能の設定後に呼び出されます。  
+  
+ たとえば、実装者が内のチェックを実行することによってどの値を上書きできるを制限することができます<see cref="M:System.Collections.CollectionBase.OnSet(System.Int32,System.Object,System.Object)" />です。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />このメソッドが呼び出されました。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSetComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnSetComplete (int index, object oldValue, object newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSetComplete(int32 index, object oldValue, object newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnSetComplete(System.Int32,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="oldValue" Type="System.Object" />
+        <Parameter Name="newValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>oldValue</c>にあります。</param>
+        <param name="oldValue">置き換えられる値<c>newValue</c>です。</param>
+        <param name="newValue">位置にある要素の新しい値<c>インデックス</c>です。</param>
+        <summary>値を設定後に追加のカスタム処理を実行、<see cref="T:System.Collections.CollectionBase" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素を設定した後に何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ コレクションは、次のいずれかが発生した場合、以前の状態に戻ります。  
+  
+-   プロセスは失敗します。  
+  
+-   このメソッドをオーバーライドして、例外をスローします。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるで指定した要素を設定した後に実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnSet(System.Int32,System.Object,System.Object)" />一方、標準的な機能の設定前に呼び出される<see cref="M:System.Collections.CollectionBase.OnSetComplete(System.Int32,System.Object,System.Object)" />が標準的な機能の設定後に呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected virtual void OnValidate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValidate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証対象のオブジェクト。</param>
+        <summary>値を検証するときは、追加のカスタム処理を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装を決定するかどうか`value`は`null`、し、必要な場合は、スロー<xref:System.ArgumentNullException>です。 指定した要素が検証されると、追加の操作を実行する派生クラスでオーバーライドされるようにしています。  
+  
+ によって返されるインスタンスでのみでのメソッドが呼び出される、<xref:System.Collections.CollectionBase.List%2A>プロパティによって返されるインスタンスではなく、<xref:System.Collections.CollectionBase.InnerList%2A>プロパティです。  
+  
+ このメソッドの既定の実装は、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用すると、基になるは、標準の動作を実行するときに実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />です。 このメソッドを定義すると、実行者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />コレクションに受け付けられるオブジェクトの種類に制限を強制するために使用します。 既定の実装<see langword="null" />が追加または削除、基になるから<see cref="T:System.Collections.ArrayList" />です。  
+  
+ <see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />前のバージョンが呼び出された<see cref="M:System.Collections.CollectionBase.OnInsert(System.Int32,System.Object)" />、 <see cref="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />、および<see cref="M:System.Collections.CollectionBase.OnSet(System.Int32,System.Object,System.Object)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある要素を削除、<see cref="T:System.Collections.CollectionBase" />インスタンス。 このメソッドはオーバーライド可能ではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.CollectionBase.Count" /> 以上になっています。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを呼び出す<see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />、 <see cref="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />、および<see cref="M:System.Collections.CollectionBase.OnRemoveComplete(System.Int32,System.Object)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.CollectionBase" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.CollectionBase" /> 全体を、互換性のある 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、コピー先の配列の指定したインデックスから始まる部分に行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された配列は、互換性のある型でなければなりません。  
+  
+ このメソッドを使用して<xref:System.Array.Copy%2A?displayProperty=nameWithType>要素のコピー。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.CollectionBase" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.CollectionBase" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.CollectionBase" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.CollectionBase" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Collections.CollectionBase>インスタンスが同期されていません。 派生クラスでの同期されたバージョンを提供できる、<xref:System.Collections.CollectionBase>を使用して、<xref:System.Collections.ICollection.SyncRoot%2A>プロパティです。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中に。  
+  
+ [!code-cpp[System.Collections.CollectionBase#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/remarks.cpp#2)]
+ [!code-csharp[System.Collections.CollectionBase#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/remarks.cs#2)]
+ [!code-vb[System.Collections.CollectionBase#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/remarks.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.CollectionBase" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.CollectionBase" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、独自の同期されたバージョンを指定できます、<xref:System.Collections.CollectionBase>を使用して、<xref:System.Collections.ICollection.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.ICollection.SyncRoot%2A>の<xref:System.Collections.CollectionBase>、上で直接、<xref:System.Collections.CollectionBase>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.CollectionBase>オブジェクト。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中に。  
+  
+ [!code-cpp[System.Collections.CollectionBase#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/remarks.cpp#2)]
+ [!code-csharp[System.Collections.CollectionBase#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/remarks.cs#2)]
+ [!code-vb[System.Collections.CollectionBase#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/remarks.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> の末尾に追加する <see cref="T:System.Collections.CollectionBase" />。</param>
+        <summary><see cref="T:System.Collections.CollectionBase" /> の末尾にオブジェクトを追加します。</summary>
+        <returns><paramref name="value" /> が追加された位置の <see cref="T:System.Collections.CollectionBase" /> インデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.CollectionBase.Count%2A>容量に既に等しい、自動的に内部の配列を再割り当てし、新しい要素が追加される前に、既存の要素を新しい配列にコピーして、リストの容量が 2 倍になります。  
+  
+ 場合<xref:System.Collections.CollectionBase.Count%2A>が少なく、容量よりも、このメソッドは、o (1) 操作になります。 容量は、新しい要素を格納するためにする必要があります、このメソッドが O (`n`) 操作、場所`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.CollectionBase" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.CollectionBase" /> は固定サイズです。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを呼び出す<see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />、 <see cref="M:System.Collections.CollectionBase.OnInsert(System.Int32,System.Object)" />、および<see cref="M:System.Collections.CollectionBase.OnInsertComplete(System.Int32,System.Object)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.CollectionBase" /> 内で検索される <see cref="T:System.Object" />。</param>
+        <summary><see cref="T:System.Collections.CollectionBase" /> に特定の要素が格納されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Collections.CollectionBase" /> 、指定されたを含む<paramref name="value" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ このメソッドを呼び出すことで等しいかどうかを判断<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.CollectionBase" /> 内で検索される <see cref="T:System.Object" />。</param>
+        <summary>指定された検索<see cref="T:System.Object" />全体内で最初に見つかった位置の 0 から始まるインデックスを返しますと<see cref="T:System.Collections.CollectionBase" />です。</summary>
+        <returns><paramref name="value" /> 全体を対象に <see cref="T:System.Collections.CollectionBase" /> を検索し、見つかった場合は、インデックス番号の最も小さい要素の 0 から始まるインデックス番号、それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ このメソッドを呼び出すことで等しいかどうかを判断<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value">挿入する <see cref="T:System.Object" />。</param>
+        <summary><see cref="T:System.Collections.CollectionBase" /> 内の指定したインデックスの位置に要素を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.CollectionBase.Count%2A>容量に既に等しい、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、リストの容量が 2 倍になります。  
+  
+ 場合`index`と等しい<xref:System.Collections.CollectionBase.Count%2A>、`value`の末尾に追加された<xref:System.Collections.CollectionBase>です。  
+  
+ リストなどの連続する要素のコレクションでは、新しい要素を挿入するために、挿入位置より後にある要素の位置が繰り下げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.CollectionBase.Count" /> より大きくなっています。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.CollectionBase" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.CollectionBase" /> は固定サイズです。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを呼び出す<see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />、 <see cref="M:System.Collections.CollectionBase.OnInsert(System.Int32,System.Object)" />、および<see cref="M:System.Collections.CollectionBase.OnInsertComplete(System.Int32,System.Object)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.CollectionBase" /> が固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が固定サイズの場合は <see cref="T:System.Collections.CollectionBase" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 固定サイズのコレクションでは、コレクションの作成後に要素の追加または削除はできませんが、既存の要素の変更はできます。  
+  
+ 固定サイズ コレクションが追加および削除する要素を防止するラッパーで単純なコレクションそのための追加または削除、要素を含む、基になるコレクションが変更された場合、固定サイズ コレクションにはそれらの変更が反映されます。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.CollectionBase" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.CollectionBase" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+ 読み取り専用であるコレクションは、コレクションのコレクションの変更を防止するラッパーです。そのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CollectionBase.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ このプロパティの値を取得する場合は、o (1) 操作です。プロパティの設定は、o (1) 操作ではもです。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.CollectionBase.Count" /> 以上になっています。</exception>
+        <block subset="none" type="overrides">
+          <para>このプロパティ設定されている場合、メソッド<see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />、 <see cref="M:System.Collections.CollectionBase.OnSet(System.Int32,System.Object,System.Object)" />、および<see cref="M:System.Collections.CollectionBase.OnSetComplete(System.Int32,System.Object,System.Object)" />と呼ばれます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CollectionBase.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> から削除する <see cref="T:System.Collections.CollectionBase" />。</param>
+        <summary>特定のオブジェクトが <see cref="T:System.Collections.CollectionBase" /> 内にあるときに、最初に出現したものを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、 <xref:System.Collections.CollectionBase> 、指定したオブジェクトが含まれていない、<xref:System.Collections.CollectionBase>は変更されません。 例外をスローすることはありません。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ このメソッドを呼び出すことで等しいかどうかを判断<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。  
+  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.CollectionBase>クラスし、その実装を使用して、コレクションを作成する<xref:System.Int16>オブジェクト。  
+  
+ [!code-cpp[System.Collections.CollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CPP/collectionbase.cpp#1)]
+ [!code-csharp[System.Collections.CollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CollectionBase/CS/collectionbase.cs#1)]
+ [!code-vb[System.Collections.CollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CollectionBase/VB/collectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="value" />にパラメーターが見つかりません、<see cref="T:System.Collections.CollectionBase" />オブジェクト。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.CollectionBase" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.CollectionBase" /> は固定サイズです。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを呼び出す<see cref="M:System.Collections.CollectionBase.OnValidate(System.Object)" />、 <see cref="M:System.Collections.CollectionBase.OnRemove(System.Int32,System.Object)" />、および<see cref="M:System.Collections.CollectionBase.OnRemoveComplete(System.Int32,System.Object)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="ManagementProbeAttribute" FullName="System.Management.Instrumentation.ManagementProbeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ManagementProbeAttribute : System.Management.Instrumentation.ManagementMemberAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagementProbeAttribute extends System.Management.Instrumentation.ManagementMemberAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.ManagementProbeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.Instrumentation.ManagementMemberAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ManagementProbe 属性は、プロパティまたはフィールドが読み取り専用 WMI プロパティを表していることを示します。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティまたはフィールドは、パブリックである必要があります。 プロパティを含むクラスをマークする必要があります、<xref:System.Management.Instrumentation.ManagementEntityAttribute>属性。 フィールドまたは同じまたは別のプロバイダーの WMI 拡張機能属性でマークされていないクラス内のプロパティはインストルメント化されません。  
+  
+   
+  
+## Examples  
+ 次の例では、フィールドが読み取り専用の WMI プロパティを表すことを示すために、ManagementProbe 属性を使用する方法を示します。  
+  
+```csharp  
+[ManagementProbe]  
+string count;  
+```  
+  
+ 次の例では、ManagementProbe 属性を使用してプロパティをマークする方法を示します。  
+  
+```csharp  
+// Use the ManagementProbe attribute to specify that a property  
+// is a read-only property in the provider. Consumers will be  
+// able to get this property value through WMI.  
+[ManagementProbe]  
+public int ReadOnlyProperty  
+{  
+    get { return this.propertyValue; }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementProbeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.ManagementProbeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementProbeAttribute" /> クラスの新しいインスタンスを初期化します。 これは、クラスの既定のコンス トラクターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public Type Schema { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementProbeAttribute.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ManagementProbe 属性でマークされているプロパティを出力する出力の種類を定義する値を設定します。</summary>
+        <value>A <see cref="T:System.Type" /> ManagementProbe 属性でマークされているプロパティを出力する出力の種類を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の型が場合<xref:System.Object?displayProperty=nameWithType>、出力は、型の値として処理される必要があります<xref:System.Object?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

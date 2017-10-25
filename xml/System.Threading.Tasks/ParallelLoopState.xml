@@ -1,0 +1,352 @@
+<Type Name="ParallelLoopState" FullName="System.Threading.Tasks.ParallelLoopState">
+  <TypeSignature Language="C#" Value="public class ParallelLoopState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParallelLoopState extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.ParallelLoopState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("ShouldExitCurrentIteration = {ShouldExitCurrentIteration}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>他のイテレーションと対話するように、並列ループのイテレーションを有効にします。 このクラスのインスタンスは、<see cref="T:System.Threading.Tasks.Parallel" /> クラスから各ループに提供されるため、コードでインスタンスを作成することはできません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスをインスタンス化できないことに注意してください。 これは自動的にコンパイラによって生成されたへの呼び出しで引数として、<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>または<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>メソッドです。 具体的な例を次に示します。  
+  
+ コンストラクト`for`と`foreach`(C# の場合) と`For`と`For Each`(Visual Basic) の順に実行またはセットの最初のオブジェクトから最高の値を最小のインデックスから最後のです。 これに対し、<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>と<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>メソッドがありません。 ループの各イテレーションが並列で実行しているために開始し、任意の順序で終了できます。 <xref:System.Threading.Tasks.ParallelLoopState>クラスが相互に対話する並列ループの各イテレーションを使用できます。 <xref:System.Threading.Tasks.ParallelLoopState>クラスでは、することができます。  
+  
+-   現在のイテレーションを終了し、追加のイテレーションを呼び出すことによって開始を防ぐため、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドです。 これは、実行が既に開始されているイテレーションには影響ありません。  
+  
+-   現在のインデックスよりも大きいインデックスをイテレーションを呼び出すことによって実行されないようにする、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 これは、実行が既に開始されているイテレーションには影響ありません。  
+  
+-   値を取得することによって、ループ反復で例外が発生したかどうかを判断、<xref:System.Threading.Tasks.ParallelLoopState.IsExceptional%2A>プロパティです。  
+  
+-   ループのいずれかのイテレーションと呼ばれるかどうかを判断、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドの値を取得することによって、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>プロパティです。 このプロパティを使用するには呼び出しの前に開始されたループのイテレーションから返される、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッド実行中であるが、します。  
+  
+-   ループのいずれかのイテレーションと呼ばれるかどうかを判断、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>または<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドまたはの値を取得することによって、例外がスローされた、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>プロパティです。  
+  
+-   インデックスが Break がの値を取得することによって呼び出されたイテレーションのインデックスよりも大きい実行時間の長いイテレーションからの終了時、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、並列ループの最大 100 個のイテレーションを実行します。 各イテレーションは、1 から 1,000 ミリ秒単位までのランダムな間隔を停止します。 ランダムに生成された値の決定、ループのイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが呼び出されます。 例に示す、インデックスがより大きくないイテレーションからの出力として、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティへの呼び出し後の開始の値、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。  
+  
+ [!code-csharp[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/break1.cs#2)]
+ [!code-vb[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/break1.vb#2)]  
+  
+ ループの繰り返しがまだときに実行されている可能性が高いため、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが呼び出されると、各イテレーションを呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>別のイテレーションと呼ばれるかどうかを確認するプロパティ、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 プロパティの値がある場合`true`、イテレーションがの値を調べて、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティと、現在のイテレーションのインデックス値よりも大きい場合は、直ちに返されます。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>A<see cref="T:System.Threading.Tasks.ParallelLoopState" />インスタンスはインスタンスが提供されるループの本体でのみ使用するためのものです。  提供されたを使用する安全ではありません<see cref="T:System.Threading.Tasks.ParallelLoopState" />関連付けられているループの後のインスタンスが終了するも明示的に渡す他のスレッド セーフの説明とそれらのスレッドがいつでもアクセスできます。  異なる<see cref="T:System.Threading.Tasks.ParallelLoopState" />インスタンスは、ループに含まれる各スレッドに提供されます。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Break">
+      <MemberSignature Language="C#" Value="public void Break ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Break() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ParallelLoopState.Break" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のイテレーションの終了後、システムはできるだけ早く <see cref="T:System.Threading.Tasks.Parallel" /> ループの実行を終了する必要があることを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Tasks.ParallelLoopState.Break%2A>現在のイテレーション後のイテレーションを実行するないことを示します。 ループの追加、イテレーションを効果的に取り消します。 ただし、実行が既に開始されているすべてのイテレーションは停止しません。 たとえば場合、 <xref:System.Threading.Tasks.ParallelLoopState.Break%2A> 100 反復処理する 0 から 1,000、すべてのイテレーションを 100 よりも小さいまだ実行が 1000 を持っていないを開始していないことを 101 からイテレーションを実行するか、並列ループのイテレーションから呼び出されます。  
+  
+ 既に実行中、実行時間の長いイテレーション<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>設定、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティの現在の値より小さい、現在のインデックスがある場合、現在のイテレーションのインデックスを<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>です。 インデックスが競合する実行から最も低い中断イテレーションより大きいイテレーションを停止するには、次の操作を行う必要があります。  
+  
+1.  確認するかどうか、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>プロパティは`true`します。  
+  
+2.  インデックスよりも大きい場合は、イテレーションを終了、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティの値。  
+  
+ 具体的な例を次に示します。  
+  
+ <xref:System.Threading.Tasks.ParallelLoopState.Break%2A>通常、順序付けは、データ ソースに存在検索ベースのアルゴリズムで使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、並列ループの最大 100 個のイテレーションを実行します。 各イテレーションは、1 から 1,000 ミリ秒単位までのランダムな間隔を停止します。 ランダムに生成された値の決定、ループのイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが呼び出されます。 例に示す、インデックスがより大きくないイテレーションからの出力として、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティへの呼び出し後の開始の値、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。  
+  
+ [!code-csharp[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/break1.cs#2)]
+ [!code-vb[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/break1.vb#2)]  
+  
+ ループの繰り返しがまだときに実行されている可能性が高いため、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが呼び出されると、各イテレーションを呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>別のイテレーションと呼ばれるかどうかを確認するプロパティ、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 プロパティの値がある場合`true`、イテレーションがの値を調べて、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティと、現在のイテレーションのインデックス値よりも大きい場合は、直ちに返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" />メソッドが以前に呼び出されます。 <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />および<see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" />同じループのイテレーションで組み合わせて使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExceptional">
+      <MemberSignature Language="C#" Value="public bool IsExceptional { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsExceptional" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelLoopState.IsExceptional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ループのいずれかのイテレーションが、そのイテレーションによって処理されなかった例外をスローしたかどうかを示す値を取得します。</summary>
+        <value>
+          処理されない例外がスローされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStopped">
+      <MemberSignature Language="C#" Value="public bool IsStopped { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStopped" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelLoopState.IsStopped" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ループのいずれかのイテレーションが <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> メソッドを呼び出したかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" /> メソッドを呼び出していずれかのイテレーションが停止した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ループの実行時間の長い繰り返しの値を取得できます、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>を決定するかどうか、ループのイテレーションを開始した呼び出しの前に実行プロパティ、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドがまだ実行中です。 値を使用することができますし、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>プロパティかを判断する必要がありますをすぐに返す正常に実行します。  
+  
+   
+  
+## Examples  
+ 次の例では、並列ループの最大 10,000 個のイテレーションを実行します。 各イテレーションは、1 から 1,000 ミリ秒単位までのランダムな間隔を停止します。 ランダムに生成された値の決定、ループのイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドが呼び出されます。 ループの繰り返しがまだときに実行されている可能性が高いため、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドは、ラムダ式の呼び出し、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>別のイテレーションと呼ばれるかどうかを確認する方法を<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドです。 返された場合`true`イテレーションが直ちに返されます。  
+  
+ [!code-csharp[System.Threading.Tasks.ParallelLoopState#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/stop1.cs#1)]
+ [!code-vb[System.Threading.Tasks.ParallelLoopState#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/stop1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LowestBreakIteration">
+      <MemberSignature Language="C#" Value="public Nullable&lt;long&gt; LowestBreakIteration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int64&gt; LowestBreakIteration" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> を呼び出したループのイテレーションのうち、最下位のイテレーションを取得します。</summary>
+        <value><see cref="M:System.Threading.Tasks.ParallelLoopState.Break" /> を呼び出したイテレーションのうち、最下位のイテレーション。 <see cref="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})" /> ループの場合、値は内部的に生成されたインデックスに基づきます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す並列ループの複数のイテレーションに可能であれば、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 この値は、最小のインデックスと呼ばれることがイテレーションの場合は、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>です。 ループの繰り返しが呼び出されない場合<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>、このプロパティを返します`null`です。 プロパティの値がへの呼び出しによって影響を受けることに注意してください、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドです。  
+  
+ 呼び出す反復処理した後、すべてのイテレーションが実行時間の長い一連のイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが実行されない必要があります、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティを使用する呼び出しの前に実行を開始するイテレーションの終了、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 インデックスが競合する実行から最も低い中断イテレーションより大きいイテレーションを停止するには、次の操作を行う必要があります。  
+  
+1.  確認するかどうか、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>プロパティは`true`します。  
+  
+2.  インデックスよりも大きい場合は、イテレーションを終了、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティの値。  
+  
+ 具体的な例を次に示します。  
+  
+   
+  
+## Examples  
+ 次の例では、並列ループの最大 100 個のイテレーションを実行します。 各イテレーションは、1 から 1,000 ミリ秒単位までのランダムな間隔を停止します。 ランダムに生成された値の決定、ループのイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが呼び出されます。 これにより、インデックスがより大きいイテレーション、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>への呼び出し後に開始からのプロパティ値、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが、すでに実行されており、イテレーションは影響しません。 これらの完了を防ぐためには、各イテレーションを呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>別のイテレーションと呼ばれるかどうかを確認する方法を<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 イテレーションがの値をチェックするため場合、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティと、現在のイテレーションのインデックス値よりも大きい場合は、直ちに返されます。  
+  
+ [!code-csharp[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/break1.cs#2)]
+ [!code-vb[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/break1.vb#2)]  
+  
+ なお、ため、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>並列ループの外側のスコープ外の値は、その値を保持する場合に、ループの外側に表示される変数に割り当てる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldExitCurrentIteration">
+      <MemberSignature Language="C#" Value="public bool ShouldExitCurrentIteration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldExitCurrentIteration" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイテレーションまたは他のイテレーションからの要求に基づいて、ループの現在のイテレーションを終了する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          現在のイテレーションを終了する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>プロパティに設定されている`true`次の条件のいずれか。  
+  
+-   ループの呼び出しのイテレーション<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>または<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>です。  
+  
+-   ループのイテレーションでは、例外をスローします。  
+  
+-   ループが取り消されました。  
+  
+ このプロパティが`true`、<xref:System.Threading.Tasks.Parallel>クラスは能動的にしようと、ループのイテレーションの回数が実行を開始することを禁止します。 ただし、開始から追加のイテレーションを防ぐことができない場合があります。  
+  
+ 実行時間の長いイテレーションでの実行が既に開始されている場合もあります。 このような場合は、イテレーションを明示的にチェック、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>プロパティと中止の実行プロパティを返す場合`true`です。  
+  
+   
+  
+## Examples  
+ 次の例では、並列ループの最大 100 個のイテレーションを実行します。 各イテレーションは、1 から 1,000 ミリ秒単位までのランダムな間隔を停止します。 ランダムに生成された値の決定、ループのイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが呼び出されます。 これにより、インデックスがより大きいイテレーション、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>への呼び出し後に開始からのプロパティ値、<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドが、すでに実行されており、イテレーションは影響しません。 これらの完了を防ぐためには、各イテレーションを呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A>別のイテレーションと呼ばれるかどうかを確認する方法を<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>メソッドです。 イテレーションがの値をチェックするため場合、<xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A>プロパティと、現在のイテレーションのインデックス値よりも大きい場合は、直ちに返されます。  
+  
+ [!code-csharp[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/break1.cs#2)]
+ [!code-vb[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/break1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ParallelLoopState.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>システムはできるだけ早く <see cref="T:System.Threading.Tasks.Parallel" /> ループの実行を終了する必要があることを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドでは、まだ開始されていないループの繰り返しが実行する必要があることを示します。 ループの追加、イテレーションを効果的に取り消します。 ただし、実行が既に開始されているすべてのイテレーションは停止しません。  
+  
+ 呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッド原因、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>返されるプロパティを`true`がまだ実行中、ループのいずれかのイテレーションにします。 これは、実行時間の長いイテレーションは、確認できる場合に特に便利、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>プロパティとその値が場合に初期終了`true`です。  
+  
+ <xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>結果が検出された、他のイテレーション必要がありますを実行する場所、検索ベースのアルゴリズムで通常使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、並列ループの最大 10,000 個のイテレーションを実行します。 各イテレーションは、1 から 1,000 ミリ秒単位までのランダムな間隔を停止します。 ランダムに生成された値の決定、ループのイテレーションで、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドが呼び出されます。 呼び出し後のイテレーションが実行されません、出力の例に示す、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドです。  
+  
+ [!code-csharp[System.Threading.Tasks.ParallelLoopState#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/stop1.cs#1)]
+ [!code-vb[System.Threading.Tasks.ParallelLoopState#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/stop1.vb#1)]  
+  
+ ループの繰り返しがまだときに実行されている可能性が高いため、<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドが呼び出されると、各イテレーションを呼び出す、<xref:System.Threading.Tasks.ParallelLoopState.IsStopped%2A>別のイテレーションと呼ばれるかどうかを確認する方法を<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>メソッドです。 返された場合`true`イテレーションが直ちに返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />メソッドが以前に呼び出されます。 <see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />および<see cref="M:System.Threading.Tasks.ParallelLoopState.Stop" />同じループのイテレーションで組み合わせて使用できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

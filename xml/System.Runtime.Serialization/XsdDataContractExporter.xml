@@ -1,0 +1,525 @@
+<Type Name="XsdDataContractExporter" FullName="System.Runtime.Serialization.XsdDataContractExporter">
+  <TypeSignature Language="C#" Value="public class XsdDataContractExporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XsdDataContractExporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.XsdDataContractExporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一連の XML スキーマ ファイル (.xsd) にデータ コントラクトで使用されている .NET Framework 型に変換できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter> クラスは、共通言語ランタイム (CLR) 型で表されるデータを組み込む Web サービスを作成した場合、および他の Web サービスが消費できるように各型の XML スキーマをエクスポートする必要がある場合に使用します。 つまり、<xref:System.Runtime.Serialization.XsdDataContractExporter> は、CLR 型のセットを XML スキーマに変換します  (使用できる種類の詳細については、次を参照してください[データ コントラクト シリアライザーでサポートされる型](~/docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)。)。変換した後、Web サービス記述言語 (WSDL) ドキュメントを通じてスキーマを公開することで、作成されたサービスと相互運用する必要がある他の Web サービスで使用することができます。  
+  
+ 逆に、既存の Web サービスを組み込む必要がある Web サービスを作成する場合は、<xref:System.Runtime.Serialization.XsdDataContractImporter> を使用して XML スキーマを変換し、選択したプログラミング言語でデータを表す CLR 型を作成します。  
+  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter> は、スキーマのコレクションを含む <xref:System.Xml.Schema.XmlSchemaSet> オブジェクトを生成します。 スキーマのセットには <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> プロパティを通じてアクセスします。  
+  
+> [!NOTE]
+>  他の Web サービスが消費できる XML スキーマ定義 (XSD) ファイルをすばやく生成するには、<xref:System.Runtime.Serialization.XsdDataContractExporter> を使用します。  
+  
+## <a name="exporting-schemas-into-an-xmlschemaset"></a>XmlSchemaSet へのスキーマのエクスポート  
+ XML スキーマ ファイルを含む <xref:System.Xml.Schema.XmlSchemaSet> クラスのインスタンスを作成する際は、次の事項に注意します。  
+  
+ エクスポートする型のセットは、データ コントラクトの内部セットとして記録されます。 したがって、<xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%2A> メソッドを複数回呼び出して、スキーマ セットに新しい型を追加できます。このとき、新しい型だけがセットに追加されるので、パフォーマンスが低下することはありません。 <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> 操作中に、既存のスキーマが、追加される新しいスキーマと比較されます。 競合が発生した場合は、例外がスローされます。 通常、競合は、データ コントラクトの名前は同じだが、コントラクトが異なる (メンバーが異なる) 2 つの型が、同一の <xref:System.Runtime.Serialization.XsdDataContractExporter> インスタンスによってエクスポートされた場合に検出されます。  
+  
+## <a name="using-the-exporter"></a>エクスポーターの使用  
+ このクラスを使用する際の推奨方法を次に示します。  
+  
+1.  いずれかの <xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%2A> オーバーロードを使用して、指定した型または型のセットがエクスポート可能かどうかを決定します。 各自の要件に適したいずれかのオーバーロードを使用します。  
+  
+2.  対応する <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> メソッドを呼び出します。  
+  
+3.  <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティからスキーマを取得します。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter> のインスタンスを作成し、<xref:System.Runtime.Serialization.XsdDataContractExporter.Export%28System.Type%29> メソッドを呼び出す例を次に示します。  
+  
+ [!code-csharp[XsdDataContractExporter#0](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractexporter/cs/overview.cs#0)]
+ [!code-vb[XsdDataContractExporter#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractexporter/vb/overview.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsdDataContractExporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.XsdDataContractExporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsdDataContractExporter (System.Xml.Schema.XmlSchemaSet schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.#ctor(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">エクスポートするスキーマを含む <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <summary>スキーマのセットを指定して、<see cref="T:System.Runtime.Serialization.XsdDataContractExporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバーロードは、新しいスキーマを追加する既存の <xref:System.Xml.Schema.XmlSchemaSet> が存在する場合に使用します。 このオーバーロードを使用して <xref:System.Runtime.Serialization.XsdDataContractExporter> を構築した後、<xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> メソッドを呼び出して既存のセットに新しい型を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CanExport">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>1 つの共通言語ランタイム (CLR) 型 (または型のセット) がエクスポート可能かどうかを示す値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての CLR 型がデータ コントラクトで使用できるわけではありません。 シリアル化可能な詳細については、次を参照してください。[データ コントラクト シリアライザーでサポートされる型](~/docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CanExport">
+      <MemberSignature Language="C#" Value="public bool CanExport (System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt; assemblies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanExport(class System.Collections.Generic.ICollection`1&lt;class System.Reflection.Assembly&gt; assemblies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.CanExport(System.Collections.Generic.ICollection{System.Reflection.Assembly})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">A<see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Reflection.Assembly" />をエクスポートする型とアセンブリを格納しています。</param>
+        <summary>アセンブリのセットに含まれている共通言語ランタイム (CLR) 型がエクスポート可能かどうかどうかを示す値を取得します。</summary>
+        <returns>
+          型をエクスポートできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExport">
+      <MemberSignature Language="C#" Value="public bool CanExport (System.Collections.Generic.ICollection&lt;Type&gt; types);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanExport(class System.Collections.Generic.ICollection`1&lt;class System.Type&gt; types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.CanExport(System.Collections.Generic.ICollection{System.Type})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Collections.Generic.ICollection&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="types">A<see cref="T:System.Collections.Generic.ICollection`1" />をエクスポートする指定された型を格納しています。</param>
+        <summary><see cref="T:System.Collections.Generic.ICollection`1" /> に含まれる共通言語ランタイム (CLR) 型がエクスポート可能かどうかどうかを示す値を取得します。</summary>
+        <returns>
+          型をエクスポートできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExport">
+      <MemberSignature Language="C#" Value="public bool CanExport (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanExport(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.CanExport(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">エクスポートする <see cref="T:System.Type" />。</param>
+        <summary>指定した共通言語ランタイム (CLR) 型がエクスポート可能かどうかどうかを示す値を取得します。</summary>
+        <returns>
+          型をエクスポートできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%28System.Type%29> メソッドを呼び出す前に <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%28System.Type%29> メソッドを呼び出す例を次に示します。  
+  
+ [!code-csharp[XsdDataContractExporter#1](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractexporter/cs/overview.cs#1)]
+ [!code-vb[XsdDataContractExporter#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractexporter/vb/overview.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Export">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>共通言語ランタイム (CLR) 型を XML スキーマのセットに変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの <xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%2A> オーバーロードを使用して、指定した型または型のセットがエクスポート可能かどうかを決定することをお勧めします。  
+  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> メソッドを呼び出した後、<xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティからスキーマを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public void Export (System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt; assemblies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Export(class System.Collections.Generic.ICollection`1&lt;class System.Reflection.Assembly&gt; assemblies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.Export(System.Collections.Generic.ICollection{System.Reflection.Assembly})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">A <see cref="T:System.Collections.Generic.ICollection`1" /> (の<see cref="T:System.Reflection.Assembly" />) をエクスポートする型を含むです。</param>
+        <summary>指定されたアセンブリのコレクションに含まれた型を変換します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assemblies" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">コレクション内の <see cref="T:System.Reflection.Assembly" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public void Export (System.Collections.Generic.ICollection&lt;Type&gt; types);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Export(class System.Collections.Generic.ICollection`1&lt;class System.Type&gt; types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.Export(System.Collections.Generic.ICollection{System.Type})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Collections.Generic.ICollection&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="types">エクスポートする型を含む (<see cref="T:System.Collections.Generic.ICollection`1" /> の) <see cref="T:System.Type" />。</param>
+        <summary>このメソッドに渡された <see cref="T:System.Collections.Generic.ICollection`1" /> に含まれた型を変換します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="types" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">コレクション内の型が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public void Export (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Export(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.Export(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">XML スキーマに変換する <see cref="T:System.Type" />。</param>
+        <summary>指定した [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 型を XML スキーマ定義言語 (XSD) のスキーマに変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%2A> を呼び出して、型がエクスポート可能かどうかを決定します。 <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> メソッドを呼び出した後、<xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティを通じてスキーマを取得できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRootElementName">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName GetRootElementName (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName GetRootElementName(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">照会する <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Type" /> のトップレベル名と名前空間を返します。</summary>
+        <returns>この <see cref="T:System.Xml.XmlQualifiedName" /> のトップレベル名と名前空間を表す <see cref="T:System.Type" />。この名前が、このオブジェクトを書き込むときにストリームに書き込まれます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaType">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaType GetSchemaType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchemaType GetSchemaType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">スキーマを返す型。</param>
+        <summary>指定した型の XML スキーマの型を返します。</summary>
+        <returns>XML スキーマを含む <see cref="T:System.Xml.Schema.XmlSchemaType" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの主要目的は、XML スキーマの匿名型を表すことを可能にすることです。 匿名型にはコントラクト名と名前空間がないため、<xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A> を使用して検索できません。 このメソッドは、こうした型の <xref:System.Xml.Schema.XmlSchemaType> 定義を返します。 <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A> メソッドが有効な名前を返す型の場合、このメソッドは `null` を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTypeName">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName GetSchemaTypeName (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName GetSchemaTypeName(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">エクスポートされた <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Type" /> のコントラクト名とコントラクト名前空間を返します。</summary>
+        <returns>型のコントラクト名とその名前空間を表す <see cref="T:System.Xml.XmlQualifiedName" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ExportOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ExportOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.XsdDataContractExporter.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ExportOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポート操作に対して設定できるオプションを含む <see cref="T:System.Runtime.Serialization.ExportOptions" /> を取得または設定します。</summary>
+        <value>スキーマへの型のエクスポート方法をカスタマイズするために使用されるオプションを含む <see cref="T:System.Runtime.Serialization.ExportOptions" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemas">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet Schemas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaSet Schemas" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.XsdDataContractExporter.Schemas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポートされた XML スキーマのコレクションを取得します。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaSet" /> メソッドの呼び出し後の、共通言語ランタイム (CLR) の型のセットから変換されたスキーマを含む <see cref="Overload:System.Runtime.Serialization.XsdDataContractExporter.Export" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

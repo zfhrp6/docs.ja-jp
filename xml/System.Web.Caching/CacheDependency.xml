@@ -1,0 +1,745 @@
+<Type Name="CacheDependency" FullName="System.Web.Caching.CacheDependency">
+  <TypeSignature Language="C#" Value="public class CacheDependency : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi CacheDependency extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.CacheDependency" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ASP.NET アプリケーションに格納されている項目間の依存関係を確立<see cref="T:System.Web.Caching.Cache" />オブジェクトと、ファイル、キャッシュ キー、いずれか、または別の配列<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。 <see cref="T:System.Web.Caching.CacheDependency" /> クラスが依存関係を監視するため、いずれかが変更された場合はキャッシュされた項目が自動的に削除されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルまたはファイルの配列などの別のオブジェクトに依存するキャッシュにアイテムを追加する場合、オブジェクトが変更されたときに依存する項目がキャッシュから自動的に削除します。 たとえば、作成する、<xref:System.Data.DataSet>オブジェクトが XML ファイル内のデータに基づいています。 追加することができます、<xref:System.Data.DataSet>によってキャッシュに、<xref:System.Web.Caching.CacheDependency>により、オブジェクト、 <xref:System.Data.DataSet> XML ファイルに依存します。 XML ファイルが変更された場合、<xref:System.Data.DataSet>キャッシュから削除します。  
+  
+ 依存関係を持つ項目を追加するには、アプリケーションのキャッシュを<xref:System.Web.Caching.Cache.Add%2A>と<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドです。 使用することはできません、<xref:System.Web.Caching.Cache.Item%2A>依存関係を持つ、キャッシュにアイテムを追加するプロパティです。  
+  
+ 依存関係を設定するには、インスタンスを作成、<xref:System.Web.Caching.CacheDependency>クラス、ファイル、キー、または項目が、依存しているディレクトリを指定して、依存関係を<xref:System.Web.Caching.Cache.Add%2A>または<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Web.Caching.CacheDependency>インスタンスは、1 つのファイルまたはディレクトリ、ファイルまたはディレクトリの配列またはファイルまたはディレクトリ キャッシュ キーの配列の配列を表すことができます (これらに格納されているその他の項目を表す、<xref:System.Web.Caching.Cache>オブジェクト)。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.Caching.CacheDependency.HasChanged%2A>プロパティを決定するかどうか、<xref:System.Web.Caching.CacheDependency>内の項目の前の要求以降に変更された、<xref:System.Web.Caching.Cache>です。 `dt`に渡された値、`start`にパラメーターが設定されている<xref:System.DateTime.Now%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Web.Caching.CacheDependency_HasChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.CacheDependency_HasChanged/CS/t.cs.aspx#1)]
+ [!code-vb[System.Web.Caching.CacheDependency_HasChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.CacheDependency_HasChanged/VB/t.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CacheDependency ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Caching.CacheDependency" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 独自のクラスを派生する場合<xref:System.Web.Caching.CacheDependency>、このバージョンの実装、<xref:System.Web.Caching.CacheDependency.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このバージョンを実装するクラス、<xref:System.Web.Caching.CacheDependency>から派生するすべてのクラスとしてコンス トラクター<xref:System.Web.Caching.CacheDependency>するが必要です。  
+  
+ [!code-vb[CacheDependency_Whidbey_Example1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency_Whidbey_Example1/VB/cachedependencysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">ファイルまたはキャッシュされたオブジェクトが依存しているディレクトリへのパス。 このリソースが変更されたときに、キャッシュされたオブジェクトは古いようになり、キャッシュから削除します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />ファイルまたはディレクトリの変更を監視するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリまたはファイルで指定されている場合、`filename`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>ディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、 <xref:System.Web.Caching.CacheDependency> XML ファイルへの依存関係を持つクラス。 <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドに項目を追加し、<xref:System.Web.Caching.Cache>は、そのファイルに依存します。  
+  
+ [!code-csharp[Classic CacheDependency.CacheDependency Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CacheDependency.CacheDependency Example/CS/source.cs#1)]
+ [!code-vb[Classic CacheDependency.CacheDependency Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CacheDependency.CacheDependency Example/VB/source.vb#1)]  
+  
+ 項目を追加する、次の手法を使用することもできます、<xref:System.Web.Caching.Cache>ファイルに依存しています。  
+  
+ [!code-csharp[Single File Dependency Cache entry#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Single File Dependency Cache entry/CS/DependencySingleFilecs.aspx#1)]
+ [!code-vb[Single File Dependency Cache entry#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Single File Dependency Cache entry/VB/DependencySingleFilevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string[] filenames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filenames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">パスのファイルまたはディレクトリ)、キャッシュされたオブジェクトが依存している配列。 ときにこれらのリソースの変更のいずれか、キャッシュされたオブジェクトは古いようになり、キャッシュから削除されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />配列へのパスのファイルまたはディレクトリ) の変更を監視するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルまたは配列内のディレクトリのいずれかを変更または、配列から削除、キャッシュされた項目不使用となりますが、アプリケーションから削除<xref:System.Web.Caching.Cache>オブジェクト。  
+  
+ また、任意のディレクトリまたはファイルで指定した場合、`filenames`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>そのディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+> [!NOTE]
+>  ファイルの依存関係を格納している配列を作成するときは、ファイルの数を定義する必要がある、項目を追加する、<xref:System.Web.Caching.Cache>に依存します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>に項目を追加する方法、<xref:System.Web.Caching.Cache>ファイルの配列に依存します。 行うことも、項目ディレクトリの配列に依存します。  
+  
+ [!code-csharp[Multiple file based dependency#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Multiple file based dependency/CS/DependencyMultiFilecs.aspx#1)]
+ [!code-vb[Multiple file based dependency#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Multiple file based dependency/VB/DependencyMultiFilevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string filename, DateTime start);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filename, valuetype System.DateTime start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="start" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="filename">ファイルまたはキャッシュされたオブジェクトが依存しているディレクトリへのパス。 このリソースが変更されたときに、キャッシュされたオブジェクトは古いようになり、キャッシュから削除します。</param>
+        <param name="start">ディレクトリまたはファイルの最終更新日をチェックする時間です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />ファイルまたはディレクトリの変更を監視するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリまたはファイルで指定されている場合、`filename`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>ディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+> [!NOTE]
+>  変更の追跡をすぐに開始し、は直接に基づかない、`start`パラメーター。 使用して、`start`ディレクトリの最終更新日時または渡されたファイルをチェックする対象となる過去の日時に渡すパラメーターを`filename`パラメーター。 場合は、最終更新日付が日付よりも後とで設定した時間が渡された、`start`パラメーターをキャッシュされた項目が、<xref:System.Web.Caching.Cache>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、インスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.Caching.CacheDependency>オブジェクト、しに項目を挿入、<xref:System.Web.Caching.Cache>その依存関係とします。 `dt`に渡された値、`start`にパラメーターが設定されている<xref:System.DateTime.Now%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Web.Caching.CacheDependency_HasChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.CacheDependency_HasChanged/CS/t.cs.aspx#1)]
+ [!code-vb[System.Web.Caching.CacheDependency_HasChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.CacheDependency_HasChanged/VB/t.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string[] filenames, DateTime start);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filenames, valuetype System.DateTime start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String[],System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+        <Parameter Name="start" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">パスのファイルまたはディレクトリ)、キャッシュされたオブジェクトが依存している配列。 ときにこれらのリソースの変更のいずれか、キャッシュされたオブジェクトは古いようになり、キャッシュから削除されます。</param>
+        <param name="start">配列内のオブジェクトの最終更新日をチェックする時間です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />配列へのパスのファイルまたはディレクトリ) の変更を監視し、変更の監視を開始する時刻を指定するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリまたはで指定されたファイルのいずれかの場合、`filenames`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>そのディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+> [!NOTE]
+>  変更の追跡をすぐに開始し、は直接に基づかない、`start`パラメーター。 使用して、`start`に渡された配列の最終更新日をチェックする対象となる過去の日時に渡すパラメーターを`filenames`パラメーター。 任意のオブジェクトの配列内の日付が日より後とで設定した時間が渡された場合は、最終変更日、`start`パラメーターをキャッシュされた項目が、<xref:System.Web.Caching.Cache>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Web.Caching.CacheDependency>を 2 つの XML ファイルを渡すオブジェクトおよび<xref:System.DateTime.Now%2A?displayProperty=nameWithType>オブジェクトがパラメーターの引数として含まれるときに、<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドの呼び出しです。  
+  
+ [!code-csharp[CacheDependency Constructor4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CacheDependency Constructor4/CS/depmultifilestimecs.aspx#1)]
+ [!code-vb[CacheDependency Constructor4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency Constructor4/VB/depmultifilestimevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string[] filenames, string[] cachekeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filenames, string[] cachekeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String[],System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+        <Parameter Name="cachekeys" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">パスのファイルまたはディレクトリ)、キャッシュされたオブジェクトが依存している配列。 ときにこれらのリソースの変更のいずれか、キャッシュされたオブジェクトは古いようになり、キャッシュから削除されます。</param>
+        <param name="cachekeys">変更、新しいオブジェクトを監視するキャッシュ キーの配列。 これらすべてのキャッシュ キー変更、この依存関係オブジェクトに関連付けられているキャッシュ オブジェクト古くし、キャッシュから削除されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />配列へのパスのファイルまたはディレクトリ)、キャッシュ キーの配列、またはその両方の変更を監視するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ また、任意のディレクトリまたはファイルで指定した場合、`filenames`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>そのディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+   
+  
+## Examples  
+ 次のコード フラグメントは、アプリケーションのアイテムを挿入する方法を示します<xref:System.Web.Caching.Cache>別のアイテムのキーに依存してキャッシュに配置します。 このメソッドは、配列の構文を使用するため、キーの数を定義する必要がありますが、項目を追加する、<xref:System.Web.Caching.Cache>が依存しています。  
+  
+ [!code-csharp[Key based dependency#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Key based dependency/CS/DependencyKeycs.aspx#1)]
+ [!code-vb[Key based dependency#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Key based dependency/VB/DependencyKeyvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string[] filenames, string[] cachekeys, DateTime start);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filenames, string[] cachekeys, valuetype System.DateTime start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String[],System.String[],System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+        <Parameter Name="cachekeys" Type="System.String[]" />
+        <Parameter Name="start" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">パスのファイルまたはディレクトリ)、キャッシュされたオブジェクトが依存している配列。 ときにこれらのリソースの変更のいずれか、キャッシュされたオブジェクトは古いようになり、キャッシュから削除されます。</param>
+        <param name="cachekeys">変更、新しいオブジェクトを監視するキャッシュ キーの配列。 これらすべてのキャッシュ キー変更、この依存関係オブジェクトに関連付けられているキャッシュ オブジェクト古くし、キャッシュから削除されます。</param>
+        <param name="start">渡された日付と時刻をオブジェクトの最終更新日をチェックする、<c>ファイル名</c>と<c>cachekeys</c>配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />配列へのパスのファイルまたはディレクトリ)、キャッシュ キーの配列、またはその両方の変更を監視するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ また、任意のディレクトリまたはファイルで指定した場合、`filenames`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>そのディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+> [!NOTE]
+>  変更の追跡をすぐに開始し、は直接に基づかない、`start`パラメーター。 使用して、`start`日と最終更新日の任意のオブジェクトを確認する対象となる過去の時刻に渡すパラメーターが渡された、`filenames`または`cachekeys`パラメーター。 それらのオブジェクトのいずれかの日付が日より後とに設定した時間が渡された場合は、最終変更日、`start`パラメーターをキャッシュされた項目が、<xref:System.Web.Caching.Cache>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、`CreateDependency`メソッドです。 このメソッドが呼び出されると、作成、<xref:System.DateTime>オブジェクトおよび<xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType>とキャッシュにアイテムを追加するプロパティを使用、`key`のパラメーター`key1`と値の`Value 1`します。 文字列の配列`dependencyKey`の値を作成し、`key1`もします。 これは、<xref:System.Web.Caching.CacheDependency>コンス トラクターのインスタンスを作成し、<xref:System.Web.Caching.CacheDependency>を渡すオブジェクト`dependencyKey`と<xref:System.DateTime>オブジェクト パラメーターの引数として。 <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドは次を使用して、<xref:System.Web.Caching.CacheDependency>オブジェクトをパラメーターとして。 これにより、オブジェクトを使用してキャッシュに追加された、<xref:System.Web.Caching.Cache.Insert%2A>メソッドに依存する、`key1`キー。  
+  
+ [!code-csharp[CacheDependency Constructor6#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CacheDependency Constructor6/CS/depkeytimecs.aspx#1)]
+ [!code-vb[CacheDependency Constructor6#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency Constructor6/VB/depkeytimevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string[] filenames, string[] cachekeys, System.Web.Caching.CacheDependency dependency);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filenames, string[] cachekeys, class System.Web.Caching.CacheDependency dependency) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String[],System.String[],System.Web.Caching.CacheDependency)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+        <Parameter Name="cachekeys" Type="System.String[]" />
+        <Parameter Name="dependency" Type="System.Web.Caching.CacheDependency" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">パスのファイルまたはディレクトリ)、キャッシュされたオブジェクトが依存している配列。 ときにこれらのリソースの変更のいずれか、キャッシュされたオブジェクトは古いようになり、キャッシュから削除されます。</param>
+        <param name="cachekeys">変更、新しいオブジェクトを監視するキャッシュ キーの配列。 これらすべてのキャッシュ キー変更、この依存関係オブジェクトに関連付けられているキャッシュ オブジェクト古くし、キャッシュから削除されます。</param>
+        <param name="dependency">別のインスタンス、<see cref="T:System.Web.Caching.CacheDependency" />このインスタンスが依存するクラス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />配列へのパスのファイルまたはディレクトリ)、キャッシュ キーの配列、またはその両方の変更を監視するクラス。 また、それ自体の個別のインスタンスに依存して、<see cref="T:System.Web.Caching.CacheDependency" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ また、任意のディレクトリまたはファイルで指定した場合、`filenames`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>そのディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、`CreateDependency`メソッドです。 このメソッドが呼び出されると、それを使用して、<xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType>によってキャッシュにアイテムを追加するプロパティ、`key`のパラメーター`key1`と値の`Value 1`します。 文字列の配列`dependencyKey`の値を作成し、`key1`もします。 <xref:System.Web.Caching.CacheDependency.%23ctor%2A?displayProperty=nameWithType>コンス トラクターを使用して作成する、<xref:System.Web.Caching.CacheDependency>オブジェクト、 `dep1`、どのパス`dependencyKey`パラメーターの引数として。 1 秒あたり<xref:System.Web.Caching.CacheDependency>オブジェクト、`dep2`でこのコンス トラクターを使用して作成された`dep1`3 番目のパラメーターの引数として渡されます。 この 2 番目の依存関係は、最初に依存します。 <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドは次に、2 番目の<xref:System.Web.Caching.CacheDependency>オブジェクトをパラメーターとして。 最初の依存関係は、任意の方法で変更する場合は、キャッシュされた項目が無効になります。  
+  
+ [!code-csharp[CacheDependency Constructor7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CacheDependency Constructor7/CS/dependencycs.aspx#1)]
+ [!code-vb[CacheDependency Constructor7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency Constructor7/VB/dependencyvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheDependency (string[] filenames, string[] cachekeys, System.Web.Caching.CacheDependency dependency, DateTime start);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filenames, string[] cachekeys, class System.Web.Caching.CacheDependency dependency, valuetype System.DateTime start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.#ctor(System.String[],System.String[],System.Web.Caching.CacheDependency,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+        <Parameter Name="cachekeys" Type="System.String[]" />
+        <Parameter Name="dependency" Type="System.Web.Caching.CacheDependency" />
+        <Parameter Name="start" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">パスのファイルまたはディレクトリ)、キャッシュされたオブジェクトが依存している配列。 ときにこれらのリソースの変更のいずれか、キャッシュされたオブジェクトは古いようになり、キャッシュから削除されます。</param>
+        <param name="cachekeys">変更、新しいオブジェクトを監視するキャッシュ キーの配列。 これらすべてのキャッシュ キー変更、この依存関係オブジェクトに関連付けられているキャッシュ オブジェクト古くし、キャッシュから削除されます。</param>
+        <param name="dependency">別のインスタンス、<see cref="T:System.Web.Caching.CacheDependency" />このインスタンスが依存するクラス。</param>
+        <param name="start">配列内のオブジェクトの最終更新日をチェックする時間と<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.CacheDependency" />配列へのパスのファイルまたはディレクトリ)、キャッシュ キーの配列、またはその両方の変更を監視するクラス。 また、それ自体の別のインスタンスに依存して、<see cref="T:System.Web.Caching.CacheDependency" />クラスと、変更の監視を開始する時刻。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ また、任意のディレクトリまたはファイルで指定した場合、`filenames`パラメーターが見つかりません、ファイル システムに存在しないものとして扱われます。 ディレクトリまたはファイルが見つからない場合、依存関係を持つオブジェクトが加わった時点を<xref:System.Web.Caching.Cache>、キャッシュされたオブジェクトから削除されます、<xref:System.Web.Caching.Cache>そのディレクトリまたはファイルの作成時にします。  
+  
+ たとえば、オブジェクトを追加すること、<xref:System.Web.Caching.Cache>次のファイル パスに依存して: c:\stocks\xyz.dat です。 そのファイルが見つからない場合に場合、 <xref:System.Web.Caching.CacheDependency> xyz.dat ファイルの作成時に、キャッシュされたオブジェクトが削除された、オブジェクトが作成されるが、後で作成します。  
+  
+> [!NOTE]
+>  変更の追跡をすぐに開始し、は直接に基づかない、`start`パラメーター。 使用して、`start`に日付と任意のオブジェクトの最終更新日をチェックする対象となる過去の時刻に渡すパラメーターが渡された、 `filenames`、 `cachekeys`、または`dependency`パラメーター。 それらのオブジェクトのいずれかの日付が日付よりも後とで時間が経過場合は、最終変更日、`start`パラメーターをキャッシュされた項目が、<xref:System.Web.Caching.Cache>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`CreateDependency`メソッドです。 このメソッドが呼び出されると、作成、<xref:System.DateTime>オブジェクトおよび<xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType>のキー パラメーターを持つキャッシュにアイテムを追加するプロパティは使用`key1`と値の`Value 1`します。 文字列の配列`dependencyKey`の値をその最初の (そして唯一の) インデックスの値に設定し、作成`key1`もします。 <xref:System.Web.Caching.CacheDependency.%23ctor%2A?displayProperty=nameWithType>コンス トラクターを使用して、作成、<xref:System.Web.Caching.CacheDependency>オブジェクト、 `dep1`、どのパス`dependencyKey`パラメーターの引数として。 1 秒あたり<xref:System.Web.Caching.CacheDependency>オブジェクト、`dep2`でこのコンス トラクターを使用して作成し、`dep1`と<xref:System.DateTime>パラメーター引数として渡されるオブジェクト。 この 2 番目の依存関係は、最初に依存するため、依存関係の監視が開始 10 秒後、`CreateDependency`メソッドが呼び出されます。 <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドは次に、2 番目の<xref:System.Web.Caching.CacheDependency>オブジェクトをパラメーターとして。 最初の依存関係は、任意の方法で変更する場合は、キャッシュされた項目が無効になります。  
+  
+ [!code-csharp[CacheDependency Constructor8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CacheDependency Constructor8/CS/dependencytimecs.aspx#1)]
+ [!code-vb[CacheDependency Constructor8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency Constructor8/VB/dependencytimevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyDispose">
+      <MemberSignature Language="C#" Value="protected virtual void DependencyDispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DependencyDispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.DependencyDispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるリソースを解放、<see cref="T:System.Web.Caching.CacheDependency" />クラスおよびクラスから派生する<see cref="T:System.Web.Caching.CacheDependency" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Web.Caching.CacheDependency>クラスは、派生クラスが使用されているリソースをクリーンアップするのには、このメソッドを実装するために必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例から継承するクラスを示しています、<xref:System.Web.Caching.CacheDependency>クラスおよびオーバーライド、<xref:System.Web.Caching.CacheDependency.DependencyDispose%2A>メソッドです。 という名前のカスタム ブール型プロパティを設定して、このメソッドが呼び出されると、`Disposed`に`true`です。  
+  
+ [!code-vb[CacheDependency_Whidbey_Example1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency_Whidbey_Example1/VB/cachedependencysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Caching.CacheDependency" /> オブジェクトによって使用されているリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FinishInit">
+      <MemberSignature Language="C#" Value="protected void FinishInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void FinishInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.FinishInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化が完了した、<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.CacheDependency.FinishInit%2A>メソッドの初期化を完了すると、<xref:System.Web.Caching.CacheDependency>オブジェクト。 このメソッドはすべて<xref:System.Web.Caching.CacheDependency>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.Caching.CacheDependency.FinishInit" />派生クラスの初期化を完了するためのコンス トラクターの末尾にメソッドを呼び出す必要があります、<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDependencies">
+      <MemberSignature Language="C#" Value="public virtual string[] GetFileDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFileDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.GetFileDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルの依存関係を取得します。</summary>
+        <returns>ファイルの依存関係。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUniqueID">
+      <MemberSignature Language="C#" Value="public virtual string GetUniqueID ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetUniqueID() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.GetUniqueID" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一意の識別子を取得、<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。</summary>
+        <returns>一意の識別子、<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはの複数のインスタンスを追跡するため特に役に立ちます、<xref:System.Web.Caching.CacheDependency>アイテムまたはアプリケーションに関連付けられているクラスです。  
+  
+ 識別子は、(ファイルの依存関係) のファイル名または (キャッシュ キーの依存関係) のキーの名前と、依存関係にこのメソッドが割り当てる文字列のいずれかの組み合わせです。 派生したクラスで、<xref:System.Web.Caching.CacheDependency>クラス、一意の識別子を生成する方法をカスタマイズするには、このメソッドをオーバーライドすることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Web.Caching.AggregateCacheDependency>という名前のオブジェクト`aggDep`、2 つの<xref:System.Web.Caching.CacheDependency>その配列内のオブジェクト。 1 回`aggDep`がインスタンス化されるコードの呼び出し、<xref:System.Web.Caching.CacheDependency.GetUniqueID%2A>両方の依存関係の一意の識別子を生成する方法を`aggDep`が含まれており、識別子を含むページに表示されます。 アイテムを追加し、<xref:System.Web.Caching.Cache>を使用して、<xref:System.Web.Caching.Cache.Insert%2A>メソッドで`aggDep`依存関係として。  
+  
+ [!code-vb[CachingSamples_AggregateCacheDependency1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_AggregateCacheDependency1/VB/aggregatecachedependencysamplevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasChanged">
+      <MemberSignature Language="C#" Value="public bool HasChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.CacheDependency.HasChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.Caching.CacheDependency" />オブジェクトが変更されました。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.Caching.CacheDependency" />オブジェクトが変更されました。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を追加するには、ASP.NET アプリケーションの<xref:System.Web.Caching.Cache>で、<xref:System.Web.Caching.CacheDependency>です。 ときに、<xref:System.Web.Caching.CacheDependency>に追加する項目が変更された、<xref:System.Web.Caching.Cache>は無効になり、キャッシュから削除します。 決定するこのプロパティを使用するかどうか、<xref:System.Web.Caching.CacheDependency>が変更され、内の項目を作成し直す、<xref:System.Web.Caching.Cache>が発生したかどうか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.Caching.CacheDependency.HasChanged%2A>プロパティを決定するかどうか、<xref:System.Web.Caching.CacheDependency>内の項目の前の要求以降に変更された、<xref:System.Web.Caching.Cache>です。 `dt`に渡された値、`start`にパラメーターが設定されている<xref:System.DateTime.Now%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Web.Caching.CacheDependency_HasChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.CacheDependency_HasChanged/CS/t.cs.aspx#1)]
+ [!code-vb[System.Web.Caching.CacheDependency_HasChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.CacheDependency_HasChanged/VB/t.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemRemoved">
+      <MemberSignature Language="C#" Value="public void ItemRemoved ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ItemRemoved() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.ItemRemoved" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>監視対象のキャッシュ エントリが削除されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepDependenciesAlive">
+      <MemberSignature Language="C#" Value="public void KeepDependenciesAlive ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void KeepDependenciesAlive() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.KeepDependenciesAlive" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この項目に依存するすべてのキャッシュ項目の最終アクセス時刻を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyDependencyChanged">
+      <MemberSignature Language="C#" Value="protected void NotifyDependencyChanged (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void NotifyDependencyChanged(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.NotifyDependencyChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>ベースの通知<see cref="T:System.Web.Caching.CacheDependency" />、依存関係が派生によって表されるオブジェクト<see cref="T:System.Web.Caching.CacheDependency" />クラスが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Web.Caching.CacheDependency>クラスは、このメソッドを実装する必要があります。  
+  
+ 継承する場合、<xref:System.Web.Caching.CacheDependency>クラス、メソッドやオーバーライドしていないプロパティの基本機能を使用します。 派生クラスのインスタンスを作成するときに、ファイル、キャッシュ キー、データベース テーブル、またはキャッシュされたアイテムに依存するその他の任意のオブジェクトを表します。 依存関係の項目の変更されたときにこのメソッドは通知の基本機能、<xref:System.Web.Caching.CacheDependency>項目が変更されているクラスようにの値、<xref:System.Web.Caching.CacheDependency.HasChanged%2A>と<xref:System.Web.Caching.CacheDependency.UtcLastModified%2A>プロパティを更新することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例から継承するクラスを示しています、<xref:System.Web.Caching.CacheDependency>クラスです。 パブリック メソッドでは、作成`ResetDependency`を使用して、<xref:System.Web.Caching.CacheDependency.SetUtcLastModified%2A>を依存関係が変更された時刻を変更するメソッドを呼び出し、続いて、<xref:System.Web.Caching.CacheDependency.NotifyDependencyChanged%2A>メソッドです。  
+  
+ [!code-vb[CacheDependency_Whidbey_Example1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency_Whidbey_Example1/VB/cachedependencysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCacheDependencyChanged">
+      <MemberSignature Language="C#" Value="public void SetCacheDependencyChanged (Action&lt;object,EventArgs&gt; dependencyChangedAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCacheDependencyChanged(class System.Action`2&lt;object, class System.EventArgs&gt; dependencyChangedAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.SetCacheDependencyChanged(System.Action{System.Object,System.EventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyChangedAction" Type="System.Action&lt;System.Object,System.EventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyChangedAction">依存関係によってアクションが変更されました。</param>
+        <summary>変更において関係者への通知を処理するアクション メソッドをこの依存関係に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUtcLastModified">
+      <MemberSignature Language="C#" Value="protected void SetUtcLastModified (DateTime utcLastModified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetUtcLastModified(valuetype System.DateTime utcLastModified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.SetUtcLastModified(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="utcLastModified" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="utcLastModified">依存関係が最後に変更された時刻。</param>
+        <summary>依存関係が最後に変更された時刻をマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から継承するクラスを示しています、<xref:System.Web.Caching.CacheDependency>クラスです。 パブリック メソッドでは、作成`ResetDependency`を使用して、<xref:System.Web.Caching.CacheDependency.SetUtcLastModified%2A>を依存関係が変更された時刻を変更するメソッドを呼び出し、続いて、<xref:System.Web.Caching.CacheDependency.NotifyDependencyChanged%2A>メソッドです。  
+  
+ [!code-vb[CacheDependency_Whidbey_Example1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CacheDependency_Whidbey_Example1/VB/cachedependencysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TakeOwnership">
+      <MemberSignature Language="C#" Value="public bool TakeOwnership ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TakeOwnership() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.CacheDependency.TakeOwnership" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この依存関係の排他的所有権を宣言する最初のユーザーを許可します。</summary>
+        <returns>
+          <see langword="true" />
+          <see langword="true" />項目が所有権を取得するそれ以外の場合、最初のかどうか<see langword="false" />です。 <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存関係が使用されることを宣言します。 別のアイテムはそれまでこのメソッドを呼び出すし、所有権を取得`false`が返されます。 A <xref:System.Web.Caching.CacheDependency> 1 つのキャッシュ エントリによってのみ使用できます。 指定された、キャッシュ依存関係を持つ項目がキャッシュに追加されると、キャッシュは、それらは再利用されませんどこかにそれ以外の場合かどうかを確認する依存関係の所有権を取得する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UtcLastModified">
+      <MemberSignature Language="C#" Value="public DateTime UtcLastModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime UtcLastModified" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.CacheDependency.UtcLastModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係の最終更新時刻を取得します。</summary>
+        <value>依存関係が最後に変更された時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、世界協定時刻 (UTC) で (とも呼ばれるグリニッジ標準時) で測定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Web.Caching.AggregateCacheDependency> 、2 つの項目を追加するクラス<xref:System.Web.Caching.CacheDependency>にオブジェクトの依存関係、<xref:System.Web.Caching.Cache>です。 要求時に、<xref:System.Web.Caching.Cache>アイテムの切り替えは、コードは、項目があるかどうかを確認、<xref:System.Web.Caching.Cache>です。 である場合、<xref:System.Web.Caching.CacheDependency.UtcLastModified%2A>プロパティが、文字列に変換され、ページに表示されます。 アイテムとその 2 つの依存関係が作成されに追加されていない場合、<xref:System.Web.Caching.Cache>です。  
+  
+ [!code-vb[CachingSamples_AggregateCacheDependency1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_AggregateCacheDependency1/VB/aggregatecachedependencysamplevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

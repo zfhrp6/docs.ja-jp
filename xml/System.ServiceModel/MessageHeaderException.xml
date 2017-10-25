@@ -1,0 +1,401 @@
+<Type Name="MessageHeaderException" FullName="System.ServiceModel.MessageHeaderException">
+  <TypeSignature Language="C#" Value="public class MessageHeaderException : System.ServiceModel.ProtocolException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MessageHeaderException extends System.ServiceModel.ProtocolException" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageHeaderException" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ProtocolException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージを処理するときに、メッセージ ヘッダーに関する想定が満たされないときにスローされる例外です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、この例外は、ヘッダーが多すぎるか、メッセージにヘッダーが見つからない場合にスローされます。 Action ヘッダーや Reliable Message ヘッダーなどのインフラストラクチャ ヘッダーが含まれることがあります。 この例外は <xref:System.ServiceModel.ProtocolException> から派生し、その例外は <xref:System.ServiceModel.CommunicationException> から派生します。 <xref:System.ServiceModel.CommunicationException> クラスは、エンドポイント間の通信中にスローされる可能性があり、堅牢な [!INCLUDE[indigo1](~/includes/indigo1-md.md)] のクライアント アプリケーションとサービス アプリケーションが処理することを想定している回復可能なエラー クラスを表します。 より汎用的な <xref:System.ServiceModel.CommunicationException> ハンドラーが詳細な <xref:System.ServiceModel.ProtocolException> をキャッチしないようにするには、<xref:System.ServiceModel.CommunicationException> を処理する前にこの例外をキャッチします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーにエラー メッセージを渡す場合は、<xref:System.ServiceModel.MessageHeaderException.%23ctor%28System.String%29> コンストラクターを使用します。  
+  
+ 例外の原因となった内部例外のエラー メッセージとその参照をユーザーに渡す場合は、<xref:System.ServiceModel.MessageHeaderException.%23ctor%28System.String%2CSystem.Exception%29> コンストラクターを使用します。  
+  
+ シリアル化情報およびストリーム コンテキストを渡す場合は、<xref:System.ServiceModel.MessageHeaderException.%23ctor%28System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext%29> コンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外に含まれるメッセージ。</param>
+        <summary>指定したメッセージを使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラー メッセージをユーザーに渡す場合は、このコンストラクターを使用します。 メッセージ パラメーターの内容は、想定されるユーザーが理解できるものであることが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageHeaderException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>データを <see cref="T:System.ServiceModel.MessageHeaderException" /> オブジェクトに逆シリアル化するために使用される <see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ストリームを介して送信される例外オブジェクトを復元する逆シリアル化中に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message, bool isDuplicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, bool isDuplicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="isDuplicate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外メッセージ。</param>
+        <param name="isDuplicate">
+          複数のメッセージ ヘッダーが重複する場合は <see langword="true" />、メッセージ ヘッダーが存在しない場合は <see langword="false" />。</param>
+        <summary>指定したメッセージと、メッセージ ヘッダーが重複しているか失われていることを示す値を使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外メッセージ。</param>
+        <param name="innerException">例外を引き起こした内部例外を格納する <see cref="T:System.Exception" />。</param>
+        <summary>指定したメッセージと、例外の原因となった内部例外を使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部例外についてのエラー メッセージと情報をユーザーに渡す場合にこのコンストラクターを使用します。 メッセージ パラメーターの内容は、想定されるユーザーが理解できるものであることが必要です。  
+  
+ 前の例外の直接の結果としてスローされる例外は、<xref:System.Exception.InnerException%2A> プロパティに前の例外への参照を含んでいる場合があります。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡される値と同じ値を返します。また、`null` プロパティが内部例外の値をコンストラクターに提供しない場合は、`Nothing` 参照 (Visual Basic では <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message, string headerName, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string headerName, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="headerName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外メッセージ。</param>
+        <param name="headerName">メッセージ ヘッダーの名前。</param>
+        <param name="ns">メッセージ ヘッダーの名前空間。</param>
+        <summary>指定したメッセージ、ヘッダー名、および名前空間を使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message, string headerName, string ns, bool isDuplicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string headerName, string ns, bool isDuplicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="headerName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="isDuplicate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外メッセージ。</param>
+        <param name="headerName">メッセージ ヘッダーの名前。</param>
+        <param name="ns">メッセージ ヘッダーの名前空間。</param>
+        <param name="isDuplicate">
+          複数のメッセージ ヘッダーが重複する場合は <see langword="true" />、メッセージ ヘッダーが存在しない場合は <see langword="false" />。</param>
+        <summary>指定したメッセージ、ヘッダー名と名前空間、およびメッセージ ヘッダーが重複しているか失われていることを示す値を使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message, string headerName, string ns, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string headerName, string ns, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String,System.String,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="headerName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外メッセージ。</param>
+        <param name="headerName">メッセージ ヘッダーの名前。</param>
+        <param name="ns">メッセージ ヘッダーの名前空間。</param>
+        <param name="innerException">例外を引き起こした内部例外を格納する <see cref="T:System.Exception" />。</param>
+        <summary>指定したメッセージ、ヘッダー名と名前空間、および例外の原因となった内部例外を使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderException (string message, string headerName, string ns, bool isDuplicate, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string headerName, string ns, bool isDuplicate, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderException.#ctor(System.String,System.String,System.String,System.Boolean,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="headerName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="isDuplicate" Type="System.Boolean" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外メッセージ。</param>
+        <param name="headerName">メッセージ ヘッダーの名前。</param>
+        <param name="ns">メッセージ ヘッダーの名前空間。</param>
+        <param name="isDuplicate">
+          複数のメッセージ ヘッダーが重複する場合は <see langword="true" />、メッセージ ヘッダーが存在しない場合は <see langword="false" />。</param>
+        <param name="innerException">例外を引き起こした内部例外を格納する <see cref="T:System.Exception" />。</param>
+        <summary>指定したメッセージ、ヘッダー名と名前空間、メッセージ ヘッダーが重複しているか失われていることを示す値、および例外の原因となった内部例外を使用して、<see cref="T:System.ServiceModel.MessageHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderName">
+      <MemberSignature Language="C#" Value="public string HeaderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageHeaderException.HeaderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となった SOAP ヘッダーの名前を取得します。</summary>
+        <value>SOAP ヘッダーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderNamespace">
+      <MemberSignature Language="C#" Value="public string HeaderNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageHeaderException.HeaderNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となった SOAP ヘッダーの名前空間を取得します。</summary>
+        <value>SOAP ヘッダーの名前空間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDuplicate">
+      <MemberSignature Language="C#" Value="public bool IsDuplicate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDuplicate" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageHeaderException.IsDuplicate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数のメッセージ ヘッダーが存在するか、メッセージ ヘッダーが存在しないかを示す値を取得します。</summary>
+        <value>
+          複数のメッセージ ヘッダーが重複する場合は <see langword="true" />、メッセージ ヘッダーが存在しない場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,304 @@
+<Type Name="NavigatingCancelEventArgs" FullName="System.Windows.Navigation.NavigatingCancelEventArgs">
+  <TypeSignature Language="C#" Value="public class NavigatingCancelEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NavigatingCancelEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigatingCancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 **Navigating**イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのイベント引数には、要求されたのハンドラーに渡されたナビゲーションに関する情報が含まれて、 **Navigating**次によって実装されるイベント。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigating?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.Frame.Navigating?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Application.Navigating?displayProperty=nameWithType>  
+  
+ <xref:System.Windows.Navigation.NavigatingCancelEventArgs>ナビゲーション要求の次の詳細をカプセル化します。  
+  
+-   **ナビゲーション開始**: <xref:System.Windows.Navigation.NavigatingCancelEventArgs.NavigationMode%2A>、 <xref:System.Windows.Navigation.NavigatingCancelEventArgs.Navigator%2A>、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.IsNavigationInitiator%2A>です。  
+  
+-   **ナビゲーション コンテンツ**: <xref:System.Windows.Navigation.NavigatingCancelEventArgs.Uri%2A>、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Content%2A>です。  
+  
+-   **ナビゲーション要求**:<xref:System.Windows.Navigation.NavigationFailedEventArgs.WebRequest%2A>です。  
+  
+-   **ナビゲーション状態**: <xref:System.Windows.Navigation.NavigatingCancelEventArgs.ExtraData%2A>、 <xref:System.Windows.Navigation.NavigatingCancelEventArgs.ContentStateToSave%2A>、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.TargetContentState%2A>です。  
+  
+ この情報を使用すると、ナビゲーション要求の種類を評価し、表示し、ナビゲーションが発生する前に、指定された要求の詳細を更新できます。  
+  
+ によって提供されるナビゲーション要求の情報に基づく<xref:System.Windows.Navigation.NavigatingCancelEventArgs>、アプリケーション固有の状態またはコードに基づく、禁止したりできます完全にナビゲーションを設定して、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`(既定では、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>は`false`)。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.Navigating>を 1 つが、要求をキャンセルする方法および静的なコンテンツを更新する要求が行われたかどうかを検出します。  
+  
+ <xref:System.Windows.Navigation.NavigationService.Navigating>。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigatingCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigatingcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigatingCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigatingcode)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public object Content { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Content" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のコンテンツのオブジェクトへの参照を取得します。</summary>
+        <value>A<see cref="T:System.Object" />以外の場合は、移動先のコンテンツ オブジェクトへの参照を<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかを使用してコンテンツを移動することができます、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]またはオブジェクト。 呼び出すときに発生する、オブジェクトへの移動時に<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>と<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Content%2A>移動先のコンテンツのオブジェクトへの参照が含まれています。 さらに、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Uri%2A>プロパティ`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStateToSave">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.CustomContentState ContentStateToSave { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Navigation.CustomContentState ContentStateToSave" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.ContentStateToSave" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.CustomContentState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定、<see cref="T:System.Windows.Navigation.CustomContentState" />から移動先ページの [戻る] ナビゲーション履歴のエントリに関連付けられているオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Navigation.CustomContentState" />から移動先ページの [戻る] ナビゲーション履歴のエントリに関連付けられているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.Navigating>イベントは別にコンテンツを 1 つから移動するときに発生します。 移動元のコンテンツは、戻るナビゲーション履歴に追加されます。 設定することができます<xref:System.Windows.Navigation.NavigatingCancelEventArgs.ContentStateToSave%2A>をカスタム<xref:System.Windows.Navigation.CustomContentState>ナビゲーション履歴の内容と状態情報を関連付けるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraData">
+      <MemberSignature Language="C#" Value="public object ExtraData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExtraData" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.ExtraData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能なデータを取得<see cref="T:System.Object" />ナビゲーションが開始されたときに渡されました。</summary>
+        <value>省略可能なデータ<see cref="T:System.Object" />ナビゲーションが開始されたときに渡されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigatingCancelEventArgs.ExtraData%2A>特定のナビゲーションに固有のコンテキストに固有のデータを渡すために使用します。 <xref:System.Windows.Navigation.NavigatingCancelEventArgs.ExtraData%2A>いずれかを呼び出すときに、2 番目の引数として渡されるオブジェクトへの参照を含む<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>または<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>です。 それ以外の場合は `null` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNavigationInitiator">
+      <MemberSignature Language="C#" Value="public bool IsNavigationInitiator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNavigationInitiator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.IsNavigationInitiator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうかナビゲーター (<see cref="T:System.Windows.Navigation.NavigationWindow" />、 <see cref="T:System.Windows.Controls.Frame" />) で指定された<see cref="P:System.Windows.Navigation.NavigatingCancelEventArgs.Navigator" />このナビゲーションを処理するかどうか親のナビゲーターは、これにより、または。</summary>
+        <value>A<see cref="T:System.Boolean" />値が<see langword="true" />場合、ナビゲーターで指定されている<see cref="P:System.Windows.Navigation.NavigatingCancelEventArgs.Navigator" />このナビゲーションはサービスを提供します。 それ以外の場合、<see langword="false" />が返されます、このような時と、入れ子になった<see cref="T:System.Windows.Controls.Frame" />ナビゲーション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.NavigationMode NavigationMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Navigation.NavigationMode NavigationMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.NavigationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Navigation.NavigationMode" />発生しているナビゲーションの種類を示す値。</summary>
+        <value>A<see cref="T:System.Windows.Navigation.NavigationMode" />発生しているナビゲーションの種類を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発生する可能性がナビゲーションの種類は次のとおりです。  
+  
+-   新しいコンテンツへの移動 (<xref:System.Windows.Navigation.NavigationMode.New>)。  
+  
+-   ナビゲーション履歴を戻るの前の項目に移動 (<xref:System.Windows.Navigation.NavigationMode.Back>)。  
+  
+-   次に進むナビゲーション履歴に次の項目に移動する (<xref:System.Windows.Navigation.NavigationMode.Forward>)。  
+  
+-   既存のコンテンツを更新する (<xref:System.Windows.Navigation.NavigationMode.Refresh>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigator">
+      <MemberSignature Language="C#" Value="public object Navigator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Navigator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.Navigator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントを発生させたナビゲーター。</summary>
+        <value><see cref="T:System.Object" />このイベントを発生させたナビゲーターは</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Navigator%2A>ナビゲーターは、このイベントを発生させたナビゲーターへの参照を格納可能性がありますが実際に開始されませんナビゲーション。 このナビゲーターが現在のナビゲーションを開始したかどうかを確認するには、調査、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.IsNavigationInitiator%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetContentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.CustomContentState TargetContentState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Navigation.CustomContentState TargetContentState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.TargetContentState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.CustomContentState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Navigation.CustomContentState" />を移動先のコンテンツに適用するオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Navigation.CustomContentState" />を移動先のコンテンツに適用するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigatingCancelEventArgs.TargetContentState%2A>含まれます、<xref:System.Windows.Navigation.CustomContentState>がナビゲーション履歴を前後にオブジェクトのコンテンツに移動する場合、<xref:System.Windows.Navigation.CustomContentState>オブジェクトが関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]の移動先のコンテンツ。</summary>
+        <value><see cref="T:System.Uri" />の移動先のコンテンツ。 オブジェクトに移動する場合<see cref="P:System.Windows.Navigation.NavigatingCancelEventArgs.Uri" />は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかを使用してコンテンツを移動することができます、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]またはオブジェクト。 移動するとき、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]を呼び出す場合に発生する<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>と<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Uri%2A>が含まれています、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の移動先のコンテンツ。 さらに、<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Content%2A>プロパティ`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebRequest">
+      <MemberSignature Language="C#" Value="public System.Net.WebRequest WebRequest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebRequest WebRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigatingCancelEventArgs.WebRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.WebRequest" />指定されたコンテンツを要求するために使用できるオブジェクト。</summary>
+        <value>取得、<see cref="T:System.Net.WebRequest" />指定されたコンテンツを要求するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebRequest?displayProperty=nameWithType>Web 要求をカプセル化する抽象基本クラス、プロトコルに依存しません。 一般的なプロトコルごとに、[!INCLUDE[TLA#tla_titlewinfx](~/includes/tlasharptla-titlewinfx-md.md)]から派生するクラスが含まれています<xref:System.Net.WebRequest?displayProperty=nameWithType>およびプロトコルの特定の状態と動作拡張を含みます。  
+  
+-   <xref:System.IO.Packaging.PackWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`pack://`アプリケーション データ ファイルを要求するスキーム (を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+-   <xref:System.Net.HttpWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`http://`要求ファイルを Web サーバーからのスキーム。  
+  
+-   <xref:System.Net.FtpWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`ftp://`要求ファイルを FTP サーバーからのスキーム。  
+  
+-   <xref:System.Net.FileWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`file://`スキームがローカル ファイルを要求します。  
+  
+ 両方を表示および変更できます<xref:System.Net.WebRequest>詳細です。  
+  
+ <xref:System.Windows.Navigation.NavigatingCancelEventArgs.WebRequest%2A>`null`でナビゲーションが発生した場合。  
+  
+-   使用して、<xref:System.Windows.Controls.WebBrowser>コントロール。  
+  
+-   呼び出す<xref:System.Windows.Navigation.NavigationService.Navigate%2A>  
+  
+-   設定<xref:System.Windows.Navigation.NavigationService.Content%2A?displayProperty=nameWithType>です。  
+  
+-   HTML コンテンツを移動する、<xref:System.Windows.Controls.Frame>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

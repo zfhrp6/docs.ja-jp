@@ -1,0 +1,51 @@
+<Type Name="ControllableStoryboardAction" FullName="System.Windows.Media.Animation.ControllableStoryboardAction">
+  <TypeSignature Language="C#" Value="public abstract class ControllableStoryboardAction : System.Windows.TriggerAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ControllableStoryboardAction extends System.Windows.TriggerAction" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.ControllableStoryboardAction" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerAction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Animation.BeginStoryboard" /> アクションによって適用された <see cref="T:System.Windows.Media.Animation.Storyboard" /> を操作します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="pause-resume-stop-or-otherwise-control-a-storyboard-interactively"></a>一時停止、再開、停止、またはそれ以外の場合、ストーリー ボードを対話的に制御  
+ 一時停止するには、再開、またはその他の制御、<xref:System.Windows.Media.Animation.BeginStoryboard.Storyboard%2A>対話的に設定、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>のプロパティ、<xref:System.Windows.Media.Animation.BeginStoryboard>を使用して、<xref:System.Windows.Media.Animation.ControllableStoryboardAction>オブジェクト (など<xref:System.Windows.Media.Animation.PauseStoryboard>、 <xref:System.Windows.Media.Animation.ResumeStoryboard>、または<xref:System.Windows.Media.Animation.StopStoryboard>) を参照することで制御するその<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>です。 場合、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>の<xref:System.Windows.Media.Animation.BeginStoryboard>は指定されていない、<xref:System.Windows.Media.Animation.BeginStoryboard.Storyboard%2A>を開始した後に対話的に制御できません。 参照してください[する方法: イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](~/docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginStoryboardName">
+      <MemberSignature Language="C#" Value="public string BeginStoryboardName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BeginStoryboardName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.ControllableStoryboardAction.BeginStoryboardName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Media.Animation.BeginStoryboard.Name" />の<see cref="T:System.Windows.Media.Animation.BeginStoryboard" />開始した、<see cref="T:System.Windows.Media.Animation.Storyboard" />を対話的に制御します。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.BeginStoryboard.Name" />の<see cref="T:System.Windows.Media.Animation.BeginStoryboard" />開始した、<see cref="T:System.Windows.Media.Animation.Storyboard" />を対話的に制御します。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

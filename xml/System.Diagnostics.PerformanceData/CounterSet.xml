@@ -1,0 +1,264 @@
+<Type Name="CounterSet" FullName="System.Diagnostics.PerformanceData.CounterSet">
+  <TypeSignature Language="C#" Value="public class CounterSet : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CounterSet extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceData.CounterSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>論理カウンターのセットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Diagnostics.PerformanceData.CounterSet.Dispose%2A>マネージし、アンマネージ リソースのしたら、プロバイダーの登録を削除し、すべてを解放するメソッド。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Diagnostics.PerformanceData>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterSet (Guid providerGuid, Guid counterSetGuid, System.Diagnostics.PerformanceData.CounterSetInstanceType instanceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid providerGuid, valuetype System.Guid counterSetGuid, valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType instanceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.#ctor(System.Guid,System.Guid,System.Diagnostics.PerformanceData.CounterSetInstanceType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="providerGuid" Type="System.Guid" />
+        <Parameter Name="counterSetGuid" Type="System.Guid" />
+        <Parameter Name="instanceType" Type="System.Diagnostics.PerformanceData.CounterSetInstanceType" />
+      </Parameters>
+      <Docs>
+        <param name="providerGuid">カウンター データのプロバイダーを一意に識別する Guid です。 マニフェストで指定された Guid を使用します。</param>
+        <param name="counterSetGuid">プロバイダーのカウンター セットを一意に識別する Guid です。 マニフェストで指定された Guid を使用します。</param>
+        <param name="instanceType">カウンター セットの種類を識別します。</param>
+        <summary><see cref="T:System.Diagnostics.PerformanceData.CounterSet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーを登録します。 呼び出す、<xref:System.Diagnostics.PerformanceData.CounterSet.Dispose%2A>メソッドは、登録を削除します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Diagnostics.PerformanceData>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InsufficientMemoryException">操作を完了するのに十分なメモリがあります。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows Vista より前はサポートされていません。</exception>
+        <exception cref="T:System.ArgumentException">パラメーターの 1 つは、NULL または無効です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">基になる Win32 関数呼び出しが失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCounter">
+      <MemberSignature Language="C#" Value="public void AddCounter (int counterId, System.Diagnostics.PerformanceData.CounterType counterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCounter(int32 counterId, valuetype System.Diagnostics.PerformanceData.CounterType counterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.AddCounter(System.Int32,System.Diagnostics.PerformanceData.CounterType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="counterId" Type="System.Int32" />
+        <Parameter Name="counterType" Type="System.Diagnostics.PerformanceData.CounterType" />
+      </Parameters>
+      <Docs>
+        <param name="counterId">カウンターを識別します。 カウンターの定義に、マニフェストで使用している同じ値を使用します。</param>
+        <param name="counterType">カウンターの種類を識別します。 カウンター タイプは、カウンター データを計算、平均、および表示する方法を決定します。</param>
+        <summary>指定されたカウンターの識別子と型を使用して、カウンター セットにカウンターを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カウンターのカウンター セットのインスタンスを作成する前にセットにカウンターを追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">カウンターの識別子は既にセットに存在するか、負の値、またはカウンターの型が NULL または有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">カウンター セットのカウンターのインスタンスを作成した後のセットにカウンターを追加することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCounter">
+      <MemberSignature Language="C#" Value="public void AddCounter (int counterId, System.Diagnostics.PerformanceData.CounterType counterType, string counterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCounter(int32 counterId, valuetype System.Diagnostics.PerformanceData.CounterType counterType, string counterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.AddCounter(System.Int32,System.Diagnostics.PerformanceData.CounterType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="counterId" Type="System.Int32" />
+        <Parameter Name="counterType" Type="System.Diagnostics.PerformanceData.CounterType" />
+        <Parameter Name="counterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="counterId">カウンターを識別します。 カウンターの定義に、マニフェストで使用している同じ値を使用します。</param>
+        <param name="counterType">カウンターの種類を識別します。 カウンター タイプは、カウンター データを計算、平均、および表示する方法を決定します。</param>
+        <param name="counterName">カウンターの名前です。 この名前を使用すると、カウンター セット インスタンスのカウンターのインデックスを作成します。 (「<see cref="P:System.Diagnostics.PerformanceData.CounterSetInstanceCounterDataSet.Item(System.String)" />」を参照)。</param>
+        <summary>指定されたカウンターの識別子と型と、カウンターの表示名を使用して、カウンター セットにカウンターを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カウンターのカウンター セットのインスタンスを作成する前にセットにカウンターを追加する必要があります。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Diagnostics.PerformanceData>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">カウンターの識別子は既にセットに存在するか、負の値、またはカウンターの型が NULL または有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">カウンター セットのカウンターのインスタンスを作成した後のセットにカウンターを追加することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCounterSetInstance">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceData.CounterSetInstance CreateCounterSetInstance (string instanceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Diagnostics.PerformanceData.CounterSetInstance CreateCounterSetInstance(string instanceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.CreateCounterSetInstance(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instanceName">インスタンスの名前です。 名前は一意である必要があります。</param>
+        <summary>カウンター セットのインスタンスを作成します。</summary>
+        <returns>カウンター データを格納するカウンター セットのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一インスタンスのカウンター セットと 1 回または複数のインスタンスのカウンター セットの 1 回このメソッドを呼び出します。  
+  
+ プロバイダーは、インスタンスを作成するタイミングを決定します。 カウンターのデータが複数の静的な場合は、プロバイダーは、初期化時にインスタンスを作成できます。 たとえば、コンピューター上のプロセッサの数と見なされます、静的なため、プロセッサのカウンター データを提供するプロバイダーは初期化時に、コンピューターで各プロセッサのインスタンスを作成する可能性があります。 プロセス カウンターやディスクより動的なカウンターの場合は、プロバイダーは、追加される新しい USB デバイスまたは作成する新しいプロセスに対応の新しいインスタンスを作成します。  
+  
+ プロバイダーは、常にデータを最新の状態カウンターを保持してください。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Diagnostics.PerformanceData>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">インスタンス名は NULL です。</exception>
+        <exception cref="T:System.InvalidOperationException">カウンターのカウンター セットのインスタンスを作成する前にセットにカウンターを追加する必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトによって使用されているすべてのアンマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="True" />これが Dispose メソッドから呼び出された場合<see langword="False" />ファイナライザーから呼び出された場合。</param>
+        <summary>リリースすべてのアンマネージ リソースがこのオブジェクトによって使用され、必要に応じてマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~CounterSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterSet.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトがガベージ コレクションによって回収される前に、リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ランタイムによって自動的に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

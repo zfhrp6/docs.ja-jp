@@ -1,0 +1,3058 @@
+<Type Name="HttpResponse" FullName="System.Web.HttpResponse">
+  <TypeSignature Language="C#" Value="public sealed class HttpResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpResponse extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET 操作からの HTTP 応答情報をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドとプロパティの<xref:System.Web.HttpResponse>を通じてクラスが公開される、<xref:System.Web.HttpApplication.Response%2A>のプロパティ、 <xref:System.Web.HttpApplication>、 <xref:System.Web.HttpContext>、 <xref:System.Web.UI.Page>、および<xref:System.Web.UI.UserControl>クラスです。  
+  
+ 次のメソッド、<xref:System.Web.HttpResponse>クラス ポスト バックのシナリオでのみサポートされているし、非同期の投稿ではなくバックアップ シナリオ。  
+  
+-   <xref:System.Web.HttpResponse.BinaryWrite%2A>  
+  
+-   <xref:System.Web.HttpResponse.Clear%2A>  
+  
+-   <xref:System.Web.HttpResponse.ClearContent%2A>  
+  
+-   <xref:System.Web.HttpResponse.ClearHeaders%2A>  
+  
+-   <xref:System.Web.HttpResponse.Close%2A>  
+  
+-   <xref:System.Web.HttpResponse.End%2A>  
+  
+-   <xref:System.Web.HttpResponse.Flush%2A>  
+  
+-   <xref:System.Web.HttpResponse.TransmitFile%2A>  
+  
+-   <xref:System.Web.HttpResponse.Write%2A>  
+  
+-   <xref:System.Web.HttpResponse.WriteFile%2A>  
+  
+-   <xref:System.Web.HttpResponse.WriteSubstitution%2A>  
+  
+ 使用するときに、部分ページ更新が有効になっている<xref:System.Web.UI.UpdatePanel>ポスト バックにページ全体が更新ではなく、ページの選択した地域を更新するコントロール。 詳細については、次を参照してください。 [UpdatePanel コントロールの概要](http://msdn.microsoft.com/library/29a2265d-9674-4c19-b70e-e5560ee9689a)と[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+   
+  
+## Examples  
+ 次の例は、ページが要求されたときに、重複する 3 つの四角形を描画します。 設定して、コードの開始、 <xref:System.Web.HttpResponse.ContentType%2A> image/jpeg、プロパティ ページ全体は JPEG 画像としてレンダリングするようにします。 コードを呼び出すし、<xref:System.Web.HttpResponse.Clear%2A>メソッドをこの応答に不要なコンテンツが送信されなかったことを確認してください。 コードを次に、設定、<xref:System.Web.HttpResponse.BufferOutput%2A>プロパティを要求するクライアントに送信される前に、ページが完全に処理できるようにを true にします。 四角形の描画に使用する 2 つのオブジェクトが作成されます。<xref:System.Drawing.Bitmap>と<xref:System.Drawing.Graphics>オブジェクト。 ページで作成された変数は、四角形と最大の四角形内に表示される文字列を描画する座標として使用されます。  
+  
+ 次の 3 つの四角形とその内部に表示される文字列が描画されると、<xref:System.Drawing.Bitmap>に保存される、<xref:System.IO.Stream>オブジェクトに関連付けられている、<xref:System.Web.HttpResponse.OutputStream%2A>プロパティとその形式は jpeg 形式に設定します。 コードの呼び出し、<xref:System.Drawing.Image.Dispose%2A>と<xref:System.Drawing.Graphics.Dispose%2A>メソッドを 2 つの描画オブジェクトによって使用されているリソースを解放します。 最後に、コードを呼び出し、<xref:System.Web.HttpResponse.Flush%2A>要求元のクライアントにバッファーされた応答を送信する方法です。  
+  
+> [!NOTE]
+>  コードでは、<xref:System.Web.HttpResponse>オブジェクトは、キーワードで参照`Response`です。 たとえば、`Response.Clear()`を指す、<xref:System.Web.HttpResponse.Clear%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Web.UI.Page>クラス プロパティが含まれるという<xref:System.Web.UI.Page.Response%2A>の現在のインスタンスを公開する<xref:System.Web.HttpResponse>です。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Samples1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/CS/responsesamplescs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpResponse_Samples1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/VB/responsesamplesvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpResponse (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.#ctor(System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">カスタム HTTP 出力を有効にする <see cref="T:System.IO.TextWriter" /> オブジェクト。</param>
+        <summary><see cref="T:System.Web.HttpResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。  
+  
+ メソッドとプロパティの<xref:System.Web.HttpResponse>クラスは、組み込みを通じて公開される<xref:System.Web.HttpContext.Response%2A>ASP.NET 内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCacheDependency">
+      <MemberSignature Language="C#" Value="public void AddCacheDependency (params System.Web.Caching.CacheDependency[] dependencies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCacheDependency(class System.Web.Caching.CacheDependency[] dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddCacheDependency(System.Web.Caching.CacheDependency[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencies" Type="System.Web.Caching.CacheDependency[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="dependencies">アプリケーション依存関係のリストに追加するファイル、キャッシュ キー、または <see cref="T:System.Web.Caching.CacheDependency" />。</param>
+        <summary>応答が出力キャッシュに格納されていて、指定した依存関係が変化した場合、キャッシュ依存関係のセットを応答に関連付け、応答を効率的に無効化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.AddCacheDependency%2A>メソッドにより、キャッシュされた応答の間で作成する依存関係と<xref:System.Web.Caching.CacheDependency>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を使用してキャッシュの依存関係を作成する方法を示します、<xref:System.Web.HttpResponse.AddCacheDependency%2A>メソッドおよび<xref:System.Web.Caching.CacheDependency>オブジェクト。  
+  
+ [!code-aspx-csharp[HttpResponse.AddCacheDependency#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpResponse.AddCacheDependency/CS/httpresponse.addcachedependency_cs.aspx#1)]
+ [!code-aspx-vb[HttpResponse.AddCacheDependency#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpResponse.AddCacheDependency/VB/httpresponse.addcachedependency_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="dependencies" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドは、キャッシュされた応答が既に作成された後、キャッシュを処理パイプラインで、遅すぎます呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCacheItemDependencies">
+      <MemberSignature Language="C#" Value="public void AddCacheItemDependencies (System.Collections.ArrayList cacheKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCacheItemDependencies(class System.Collections.ArrayList cacheKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddCacheItemDependencies(System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cacheKeys" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="cacheKeys">現在のキャッシュされた応答が依存しているアイテムのキーを格納する <see cref="T:System.Collections.ArrayList" />。</param>
+        <summary>キャッシュ内の他のアイテムに依存するキャッシュされた応答を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目が参照されるときに、`cacheKeys`パラメーターは、キャッシュから削除され、現在のアイテムのキャッシュされた応答が無効です。  
+  
+   
+  
+## Examples  
+ 次の例では、ASP.NET ページ出力キャッシュされたを使用する方法を示します。 ページのコードを作成、<xref:System.Collections.ArrayList>に格納されている項目に関連付けられているキーのオブジェクト、<xref:System.Web.Caching.Cache>オブジェクト。 次に、コードを渡します、<xref:System.Collections.ArrayList>への呼び出しでパラメーターとして、<xref:System.Web.HttpResponse.AddCacheItemDependencies%2A>メソッドです。 これにより、出力キャッシュされた応答、有効ではありませんで指定されたファイルのいずれかの場合、<xref:System.Collections.ArrayList>を変更します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Samples2#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples2/CS/cacheitemsdepscs.aspx#5)]
+ [!code-aspx-vb[System.Web.HttpResponse_Samples2#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples2/VB/cacheitemsdepsvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCacheItemDependencies">
+      <MemberSignature Language="C#" Value="public void AddCacheItemDependencies (string[] cacheKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCacheItemDependencies(string[] cacheKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddCacheItemDependencies(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cacheKeys" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="cacheKeys">キャッシュされた応答が依存するアイテム キーの配列。</param>
+        <summary>キャッシュ内の他のアイテムに依存するキャッシュされたアイテムを有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のときに、 `cacheKey`s がキャッシュから削除され、現在のアイテムのキャッシュされた応答が無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCacheItemDependency">
+      <MemberSignature Language="C#" Value="public void AddCacheItemDependency (string cacheKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCacheItemDependency(string cacheKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddCacheItemDependency(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cacheKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cacheKey">キャッシュされた応答が依存するアイテムのキー。</param>
+        <summary>キャッシュ内の他のアイテムに依存するキャッシュされた応答を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに対応する項目、`cacheKey`パラメーターがキャッシュから削除された、現在のアイテムのキャッシュされた応答が無効です。  
+  
+   
+  
+## Examples  
+ 次の例は、出力キャッシュされた ASP.NET ユーザー コントロールです。 コントロールの呼び出しのため、コード、<xref:System.Web.HttpResponse.AddCacheItemDependency%2A>に格納されているアイテムのキーを持つメソッド、<xref:System.Web.Caching.Cache>オブジェクトのパラメーターとして渡されます。 項目がキャッシュに存在しない場合、出力キャッシュに保存されているコントロールの応答が無効になります。 これは、後続の要求では、コントロールの応答の新しいバージョンに追加されます、出力キャッシュを意味します。  
+  
+ 次に、このコードは項目に関連付けられているかどうかをチェックする`bookData`にキーが格納されている、`Cache`オブジェクト、および 2 つの行の結果に依存してテキストのいずれかが表示されます。 コードを設定し、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGrid>と呼ばれるコントロール`dgBooks`、カスタムへの呼び出しに`DataHelper`クラスの共有`GetBookData`メソッドを取り込んで、<xref:System.Web.UI.WebControls.DataGrid>で、<xref:System.Web.UI.Control.DataBind%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Samples2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples2/CS/bookscs.ascx#3)]
+ [!code-aspx-vb[System.Web.HttpResponse_Samples2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples2/VB/booksvb.ascx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFileDependencies">
+      <MemberSignature Language="C#" Value="public void AddFileDependencies (System.Collections.ArrayList filenames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFileDependencies(class System.Collections.ArrayList filenames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddFileDependencies(System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">追加するファイルのコレクション。</param>
+        <summary>ファイル名のグループを、現在の応答が依存しているファイル名のコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、出力キャッシュされた ASP.NET ページです。 ページのコードを作成、<xref:System.Collections.ArrayList>ファイル パス、パスの<xref:System.Collections.ArrayList>への呼び出しでパラメーターとして、<xref:System.Web.HttpResponse.AddFileDependencies%2A>メソッドです。 これにより、出力キャッシュされた無効な場合に、応答で指定されたファイルのいずれか、<xref:System.Collections.ArrayList>変更します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Samples2#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples2/CS/responsefiledepscs.aspx#6)]
+ [!code-aspx-vb[System.Web.HttpResponse_Samples2#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples2/VB/responsefiledepsvb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFileDependencies">
+      <MemberSignature Language="C#" Value="public void AddFileDependencies (string[] filenames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFileDependencies(string[] filenames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddFileDependencies(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filenames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="filenames">追加するファイルの配列。</param>
+        <summary>ファイル名の配列を、現在の応答が依存しているファイル名のコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ファイル名の配列、<xref:System.Web.HttpResponse.AddFileDependencies%2A>ファイル依存関係の一覧です。 ファイルが変更された場合、キャッシュされた応答が無効になります。  
+  
+ [!code-aspx-csharp[Response.AddFileDependency#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Response.AddFileDependency/CS/addfiledependency_cs.aspx#1)]
+ [!code-aspx-vb[Response.AddFileDependency#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Response.AddFileDependency/VB/addfiledependency_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFileDependency">
+      <MemberSignature Language="C#" Value="public void AddFileDependency (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFileDependency(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddFileDependency(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">追加するファイルの名前。</param>
+        <summary>現在の応答が依存しているファイル名のコレクションに、ファイル名を 1 つ追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、<xref:System.Web.HttpResponse.AddFileDependency%2A>ファイルの依存関係を追加するメソッドを出力キャッシュをプログラムから、または宣言によって指定することも必要があります。 たとえば、宣言によって出力キャッシュを指定するには、ディレクティブを使用します。 詳細については、次を参照してください。[する方法: キャッシュ ページの出力ファイルの依存関係を持つ](http://msdn.microsoft.com/library/95ad1c54-329e-45af-9343-a03a1d2ce9db)します。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つのファイル名を追加する方法を示します、<xref:System.Web.HttpResponse.AddFileDependency%2A>ファイル依存関係の一覧です。 ファイルが変更された場合、キャッシュされた応答が無効になります。  
+  
+ [!code-csharp[Classic HttpResponse.AddFileDependency Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.AddFileDependency Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.AddFileDependency Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.AddFileDependency Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHeader">
+      <MemberSignature Language="C#" Value="public void AddHeader (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddHeader(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddHeader(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加する HTTP ヘッダーの名前<c>値</c>にします。</param>
+        <param name="value">ヘッダーに追加する文字列。</param>
+        <summary>HTTP ヘッダーを出力ストリームに追加します。 <see cref="M:System.Web.HttpResponse.AddHeader(System.String,System.String)" /> は、ASP の旧バージョンとの互換性のために提供されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.AddHeader%2A>同じ<xref:System.Web.HttpResponse.AppendHeader%2A>ASP の旧バージョンと互換性のためだけに提供されます。 ASP.NET を使用して<xref:System.Web.HttpResponse.AppendHeader%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnSendingHeaders">
+      <MemberSignature Language="C#" Value="public System.Web.ISubscriptionToken AddOnSendingHeaders (Action&lt;System.Web.HttpContext&gt; callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.ISubscriptionToken AddOnSendingHeaders(class System.Action`1&lt;class System.Web.HttpContext&gt; callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AddOnSendingHeaders(System.Action{System.Web.HttpContext})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ISubscriptionToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Action&lt;System.Web.HttpContext&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="callback">コールバック メソッド。</param>
+        <summary>[.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
+  
+ この要求に対応する応答ヘッダーを送信する直前に、ASP.NET ランタイムが呼び出すコールバックを登録します。</summary>
+        <returns>OnSendingHeaders 疑似イベントへのサブスクリプションを表す <see cref="T:System.Web.ISubscriptionToken" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  ネイティブ モジュールは最初の応答をフラッシュする場合、AddOnSendingHeaders メソッドは呼び出されません。  
+  
+ アプリケーションごとのサブスクリプションではなく、要求ごとのサブスクリプションがあるという点で、擬似イベント OnSendingHeaders は IHttpModule レベル パイプライン イベントとは異なります。 意図は、コールバックが応答状態コードを変更することがありますか、応答のクッキーまたはヘッダーを設定することがあります。 その他の使用上の注意と注意事項:  
+  
+-   このメソッドは、IIS 統合パイプライン モード パイプラインで実行時にのみ、および応答ヘッダーは、現在の要求に対するまだ送信されていない場合にのみ有効です。  
+  
+-   ASP.NET ランタイムでは、スレッドでコールバックが呼び出されるに関して何も保証はされません。 たとえば、コールバックが呼び出された同期的にバック グラウンド スレッドでフラッシュのバック グラウンドで実行される場合。 <xref:System.Web.HttpContext.Current%2A>このようなスレッドで使用できるは保証されません。  
+  
+-   コールバックは、または結果をフラッシュが応答エンティティ ボディを処理したり、任意のメソッドを呼び出さないでください。 コールバックを呼び出してはならないなど<xref:System.Web.HttpResponse.Redirect%2A>、そのメソッドが応答エンティティ ボディを操作します。  
+  
+-   コールバックは、実行時間が短い同期コードのみを含める必要があります。 非同期操作を呼び出すか、このような操作を待機すると、デッドロック可能性があります。  
+  
+-   コールバックが例外をスローする必要がありますいません。それ以外の場合の動作は定義されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendCookie">
+      <MemberSignature Language="C#" Value="public void AppendCookie (System.Web.HttpCookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendCookie(class System.Web.HttpCookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AppendCookie(System.Web.HttpCookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Web.HttpCookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">出力ストリームに追加する <see cref="T:System.Web.HttpCookie" />。</param>
+        <summary>HTTP クッキーを組み込みクッキー コレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、という名前の新しい cookie`LastVisit`を現在の日付と時刻、cookie の値を設定し、cookie を現在のクッキー コレクションに追加します。 クッキー コレクションのすべての cookie がクライアントに送信される、`Set-Cookie`の HTTP ヘッダー出力ストリーム。  
+  
+ [!code-csharp[Classic HttpResponse.AppendCookie Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.AppendCookie Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.AppendCookie Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.AppendCookie Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーが送信された後に、cookie が追加されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendHeader">
+      <MemberSignature Language="C#" Value="public void AppendHeader (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendHeader(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AppendHeader(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">出力ストリームに追加する HTTP ヘッダーの名前。</param>
+        <param name="value">ヘッダーに追加する文字列。</param>
+        <summary>HTTP ヘッダーを出力ストリームに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、<xref:System.Web.HttpResponse.AppendHeader%2A>キャッシュ固有のヘッダーを送信し、同時にキャッシュ オブジェクト モデルを使用する方法 (<xref:System.Web.HttpResponse.Cache%2A>) をキャッシュに関連する HTTP 応答ヘッダーのキャッシュ ポリシーを設定する (`Cache-Control`、 `Expires`、 `Last-Modified`、 `Pragma`、および`Vary`)、キャッシュのオブジェクト モデルを使用すると、削除された可能性があります。 この動作は、最も制限の厳しい設定を維持するために ASP.NET を有効します。 たとえば、ユーザー コントロールを含むページがあるとします。 これらのコントロールには、キャッシュの競合するポリシーがある、最も制限の厳しいキャッシュ ポリシーが使用されます。 1 つのユーザー コントロールがヘッダーを設定する場合"`Cache-Control: Public`「より制限の厳しいヘッダーを設定して別のユーザー コントロール」`Cache-Control: Private`"への呼び出しを使用して<xref:System.Web.HttpCachePolicy.SetCacheability%2A>、次に、"`Cache-Control: Private`"ヘッダーを応答に送信されます。  
+  
+ 標準 http/1.1 ヘッダーの一覧で 14、「Header Field Definitions」セクションを参照して、[ハイパー テキスト転送プロトコル--http/1.1](http://go.microsoft.com/fwlink/?LinkID=73147) World Wide Web Consortium (W3C) の Web サイトを指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.HttpResponse.AppendHeader%2A>にカスタム ヘッダーを追加するメソッドを<xref:System.Web.HttpResponse>要求元のクライアントに送信されるオブジェクト。  
+  
+ [!code-csharp[System.Web.HttpResponse.AppendHeader_Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.AppendHeader_Example/CS/responseappendheader.cs.aspx#1)]
+ [!code-vb[System.Web.HttpResponse.AppendHeader_Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.AppendHeader_Example/VB/responseappendheader.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーが送信された後に、ヘッダーが追加されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendToLog">
+      <MemberSignature Language="C#" Value="public void AppendToLog (string param);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendToLog(string param) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.AppendToLog(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="param" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="param">ログ ファイルに追加するテキスト。</param>
+        <summary>カスタム ログ情報をインターネット インフォメーション サービス (IIS: Internet Information Services) ログ ファイルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できるように、ログ ファイルに記録する指定した文字列を最初にする必要がありますを有効にした、 **URI クエリ**のオプション、**拡張ログ プロパティ**IIS でのアクティビティ ログに記録する、サイトのダイアログ ボックス。  
+  
+ IIS 6.0 で拡張ログをカスタマイズするには、次の手順を実行します。  
+  
+1.  IIS マネージャーで、ローカル コンピューターのノードを展開し、Web または FTP サイトのフォルダーを展開、Web または FTP サイトを右クリックし、をクリックして**プロパティ**です。  
+  
+2.  クリックして、 **Web または FTP サイト**、タブをクリックし、**ログ記録を有効にする**(既に選択されていない) 場合はチェック ボックスです。  
+  
+3.  **アクティブなログ形式**ボックスで、クリックして**W3C 拡張ログ ファイル形式**です。  
+  
+4.  をクリックして**プロパティ**です。  
+  
+5.  をクリックして、 **詳細設定**  タブで、ログ、およびをクリックするプロパティを選択して**OK**です。  
+  
+   
+  
+## Examples  
+ 次の例では、ログに文字列を追加する方法を示します。  
+  
+ [!code-csharp[Classic HttpResponse.AppendToLog Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.AppendToLog Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.AppendToLog Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.AppendToLog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyAppPathModifier">
+      <MemberSignature Language="C#" Value="public string ApplyAppPathModifier (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ApplyAppPathModifier(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.ApplyAppPathModifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">リソースへの仮想パス。</param>
+        <summary>セッションが <see cref="P:System.Web.Configuration.SessionStateSection.Cookieless" /> セッション状態を使用している場合に、セッション ID を仮想パスに追加し、その ID を組み合わせたパスを返します。 <see cref="P:System.Web.Configuration.SessionStateSection.Cookieless" /> セッション状態が使用されていない場合、<see cref="M:System.Web.HttpResponse.ApplyAppPathModifier(System.String)" /> は元の仮想パスを返します。</summary>
+        <returns>セッション ID が挿入された <paramref name="virtualPath" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.ApplyAppPathModifier%2A>絶対 HREFs を構築するために cookie なしのセッションでのみ使用されます。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前の文字列変数を宣言`urlConverted`の結果に設定し、<xref:System.Web.HttpResponse.ApplyAppPathModifier%2A>メソッドの呼び出しです。 変数の値を渡しますコード、<xref:System.Web.UI.WebControls.HyperLink>コントロールの<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.HttpResponse_Sample5#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/CS/responseapppathmodifiercs.aspx#5)]
+ [!code-vb[System.Web.HttpResponse_Sample5#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/VB/responseapppathmodifiervb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginFlush">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginFlush (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginFlush(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.BeginFlush(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">コールバック オブジェクト。</param>
+        <param name="state">応答状態。</param>
+        <summary>現在バッファリングされているすべての応答をクライアントへ送信します。</summary>
+        <returns>非同期の結果オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、基になる<xref:System.Web.HttpWorkerRequest>オブジェクトが非同期フラッシュ操作をサポートしていると非同期モジュール イベントとは、非同期ハンドラーからこのメソッドを呼び出すのフラッシュ操作を非同期的に実行します。 それ以外の場合のフラッシュ操作は同期的に実行します。 IIS 6.0 以降の非同期フラッシュはサポートされています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">応答が既に完了します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryWrite">
+      <MemberSignature Language="C#" Value="public void BinaryWrite (byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BinaryWrite(unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.BinaryWrite(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">出力ストリームに書き込むバイト。</param>
+        <summary>HTTP 出力ストリームにバイナリ文字の文字列を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、バッファーにテキスト ファイルを読み取ってし、バッファー、HTTP 出力ストリームに書き込みます。  
+  
+ [!code-csharp[Classic HttpResponse.BinaryWrite Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.BinaryWrite Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.BinaryWrite Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.BinaryWrite Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Buffer">
+      <MemberSignature Language="C#" Value="public bool Buffer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Buffer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Buffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答全体の処理が完了した後に、出力をバッファリングしてから送信するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          クライアントへの出力をバッファリングする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.Buffer%2A>時に優先プロパティは廃止されて、<xref:System.Web.HttpResponse.BufferOutput%2A>プロパティ ASP の旧バージョンと互換性のためだけに提供されます。 ASP.NET を使用して<xref:System.Web.HttpResponse.BufferOutput%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferOutput">
+      <MemberSignature Language="C#" Value="public bool BufferOutput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BufferOutput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.BufferOutput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページ全体の処理が完了した後に、出力をバッファリングしてから送信するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          クライアントへの出力をバッファリングする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のセット、 <xref:System.Web.HttpResponse.ContentType%2A> image/jpeg への応答のプロパティを呼び出し、<xref:System.Web.HttpResponse.Clear%2A>応答に添付し、設定をその他のコンテンツを削除する方法、<xref:System.Web.HttpResponse.BufferOutput%2A>ページ全体ができるように、true にプロパティ任意のコンテンツは、要求するクライアントに送信する前に処理されます。  
+  
+ 完全な例では、次を参照してください。、<xref:System.Web.HttpResponse>クラスです。  
+  
+ [!code-csharp[System.Web.HttpResponse_Samples1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/CS/responsesamplescs.aspx#2)]
+ [!code-vb[System.Web.HttpResponse_Samples1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/VB/responsesamplesvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCachePolicy Cache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCachePolicy Cache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Cache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web ページのキャッシュ ポリシー (expiration time 句、privacy settings 句、および vary 句) を取得します。</summary>
+        <value>現在の応答のキャッシュ ポリシーに関する情報を格納する <see cref="T:System.Web.HttpCachePolicy" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、現在のキャッシュ ポリシーのプロパティを HTTP 出力ストリームに書き込みます。  
+  
+ [!code-csharp[Classic HttpResponse.Cache Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.Cache Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.Cache Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.Cache Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheControl">
+      <MemberSignature Language="C#" Value="public string CacheControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CacheControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.CacheControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.HttpCacheability" /> 列挙値の 1 つに一致する <see langword="Cache-Control" /> HTTP ヘッダーを取得または設定します。</summary>
+        <value><see cref="T:System.Web.HttpCacheability" /> 列挙値の文字列表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、 `Private`、 `Public`、および`No-Cache`文字列は、引用符で囲む必要があります ("") です。 場合、<xref:System.Web.HttpResponse.CacheControl%2A>のいずれかに一致しない値に設定されて、<xref:System.Web.HttpCacheability>列挙値、<xref:System.ArgumentException>がスローされます。 場合、<xref:System.Web.HttpResponse.CacheControl%2A>プロパティが設定されていない、応答のキャッシュの設定が に設定されている<xref:System.Web.HttpCacheability.NoCache>です。  
+  
+ `CacheControl`、 <xref:System.Web.HttpResponse.Expires%2A>、および<xref:System.Web.HttpResponse.ExpiresAbsolute%2A>プロパティは推奨されません。 代わりのメソッド、<xref:System.Web.HttpCachePolicy>で使用可能なクラス、<xref:System.Web.HttpResponse.Cache%2A>インターネット インフォメーション サービス (IIS) を制御する組み込みのオブジェクトがキャッシュとクライアントのキャッシュを出力します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">いずれとも設定されている文字列値が一致しない、<see cref="T:System.Web.HttpCacheability" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Charset">
+      <MemberSignature Language="C#" Value="public string Charset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Charset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Charset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ストリームの HTTP 文字セットを取得または設定します。</summary>
+        <value>出力ストリームの HTTP 文字セット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Charset`プロパティに設定することができます`null`を抑制する状況、HTTP`Content-Type`ヘッダー。  
+  
+   
+  
+## Examples  
+ 次の例では、出力ストリームの文字セットが中央ヨーロッパ言語 (ISO) であるかどうかを確認します。  
+  
+ [!code-csharp[System.Web.HttpResponse.Charset#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.Charset/cs/default.aspx#1)]
+ [!code-vb[System.Web.HttpResponse.Charset#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.Charset/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see langword="Charset" />ヘッダーが送信された後にプロパティが設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての内容出力をバッファー ストリームから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.Clear%2A>メソッドでは、ヘッダー情報は消去されません。  
+  
+   
+  
+## Examples  
+ 次の例のセット、 <xref:System.Web.HttpResponse.ContentType%2A> image/jpeg への応答のプロパティを呼び出し、<xref:System.Web.HttpResponse.Clear%2A>応答に添付し、設定をその他のコンテンツを削除する方法、<xref:System.Web.HttpResponse.BufferOutput%2A>できるように、[完了] ページは、true にプロパティ任意のコンテンツは、要求するクライアントに送信する前に処理されます。  
+  
+ 完全な例では、次を参照してください。、<xref:System.Web.HttpResponse>クラスです。  
+  
+ [!code-csharp[System.Web.HttpResponse_Samples1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/CS/responsesamplescs.aspx#2)]
+ [!code-vb[System.Web.HttpResponse_Samples1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/VB/responsesamplesvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContent">
+      <MemberSignature Language="C#" Value="public void ClearContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.ClearContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての内容出力をバッファー ストリームから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.ClearContent%2A>メソッドでは、ヘッダー情報は消去されません。  
+  
+   
+  
+## Examples  
+ 次の例では、バッファー ストリームからすべてのコンテンツを消去します。  
+  
+ [!code-csharp[Classic HttpResponse.ClearContent Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.ClearContent Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.ClearContent Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.ClearContent Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearHeaders">
+      <MemberSignature Language="C#" Value="public void ClearHeaders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearHeaders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.ClearHeaders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バッファー ストリームからすべてのヘッダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Web.HttpResponse.ClearHeaders%2A>メソッドを現在の応答のヘッダーが送信されないことを確認してください。 この方法は、ASP.NET の応答には、JPEG ファイルなどの画像が生成する場合に特に重要です。 この例では、<xref:System.Web.HttpResponse.ContentType%2A>イメージ/jpeg 形式に設定されます。  
+  
+ [!code-csharp[System.Web.HttpResponse_Sample5#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/CS/httpresponseclearheaderscs.aspx#2)]
+ [!code-vb[System.Web.HttpResponse_Sample5#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/VB/httpresponseclearheadersvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーが送信された後に、ヘッダーはクリアされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientDisconnectedToken">
+      <MemberSignature Language="C#" Value="public System.Threading.CancellationToken ClientDisconnectedToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken ClientDisconnectedToken" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.ClientDisconnectedToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントの接続が切断されるとトリップされる <see cref="T:System.Threading.CancellationToken" /> オブジェクトを取得します。</summary>
+        <value>キャンセル トークン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この API は、スレッド セーフです。 ただし、キャンセル トークンの使用方法のいくつかの制限があります。 不適切な使用には、競合状態、デッドロック、またはその他の予期しない動作をする可能性があります。 次のガイドラインに留意してください。  
+  
+-   ASP.NET は、最後の要求のキャンセル トークンの破棄するために 1 つの要求の境界の外側には、この API を呼び出すしないことを確認します。 破棄される前に、トークンは取り消された状態に移行ことの保証はありません。 たとえば、切断を持つクライアントを使用せず、要求が完了すると場合、最初取り消されたことがなく、トークンが破棄されます。  
+  
+-   待機しない、<xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType>ように、この非同期通知の目的を達成できないし、デッドロックが発生することができます。  
+  
+-   呼び出す必要はありません、<xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType>呼び出し元にコールバックするオーバー ロード<xref:System.Threading.SynchronizationContext>オブジェクト。  
+  
+-   使用しないで、<xref:System.Web.HttpContext>オブジェクトまたはその他の非スレッド セーフな ASP.NET 組み込みのオブジェクトからに提供されるコールバック内で、<xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType>メソッドです。 その他の ASP.NET と同時に、コールバックが実行されている可能性がありますまたはアプリケーション コードです。  
+  
+-   コールバック メソッドの実行時間が短いと非ブロッキングを保持します。  
+  
+-   コールバック メソッド内から例外がスローされないようにするには、あらゆる努力を確認します。  
+  
+ このプロパティは統合モードでのみインターネット インフォメーション サービス (IIS) 7.5 を適用します。 右側の IIS バージョンまたはパイプライン モードを使用せずに実行する場合、<xref:System.PlatformNotSupportedException>がスローされます。 IIS のバージョンを確認するに<xref:System.Web.HttpRuntime.IISVersion%2A>です。 パイプライン モードを確認するに<xref:System.Web.HttpRuntime.UsingIntegratedPipeline%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントへのソケット接続を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、急激な方法でクライアントへの接続を終了し、通常の HTTP 要求処理のためのものではありません。 メソッドは、サーバー、クライアント、または削除する間に別の場所で応答データがバッファーに保存される可能性がありますクライアントに、リセット パケットを送信します。  
+  
+ ただし、通常を呼び出す必要があります<xref:System.Web.HttpApplication.CompleteRequest%2A>代わりに身にする場合、<xref:System.Web.HttpApplication.EndRequest>イベントと、クライアントへの応答を送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding ContentEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding ContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.ContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ストリームの HTTP 文字セットを取得または設定します。</summary>
+        <value>現在の応答の文字セットに関する情報を格納している <see cref="T:System.Text.Encoding" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の`ContentEncoding`ASP.NET 構成ファイル内に指定することができます、[グローバリゼーション要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7)セクションです。 場合<xref:System.Web.HttpResponse.ContentEncoding%2A>が指定されて、クライアントによって既定の構成設定が上書きされます。  
+  
+   
+  
+## Examples  
+ 次の例では、文字セットを出力ストリームのエンコーディングの人間が判読できる説明を書き込みます。  
+  
+ [!code-csharp[Classic HttpResponse.ContentEncoding Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.ContentEncoding Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.ContentEncoding Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.ContentEncoding Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Web.HttpResponse.ContentEncoding" /> を <see langword="null" /> に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ストリームの HTTP MIME タイプを取得または設定します。</summary>
+        <value>出力ストリームの HTTP MIME タイプ。 既定値は "<see langword="text/html" />" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のセット、 <xref:System.Web.HttpResponse.ContentType%2A> image/jpeg への応答のプロパティを呼び出し、<xref:System.Web.HttpResponse.Clear%2A>応答に添付し、設定をその他のコンテンツを削除する方法、<xref:System.Web.HttpResponse.BufferOutput%2A>できるように、[完了] ページは、true にプロパティ任意のコンテンツは、要求するクライアントに送信する前に処理されます。  
+  
+ 完全な例では、次を参照してください。、<xref:System.Web.HttpResponse>クラスです。  
+  
+ [!code-csharp[System.Web.HttpResponse_Samples1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/CS/responsesamplescs.aspx#2)]
+ [!code-vb[System.Web.HttpResponse_Samples1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/VB/responsesamplesvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.HttpResponse.ContentType" /> プロパティが <see langword="null" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookieCollection Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCookieCollection Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のクッキー コレクションを取得します。</summary>
+        <value>応答のクッキー コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、2 つの組み込みクッキー コレクションが含まれています。 使用してアクセスするコレクション、<xref:System.Web.HttpRequest.Cookies%2A>のコレクション<xref:System.Web.HttpRequest>内のサーバーにクライアントによって送信された cookie が含まれています、`Cookie`ヘッダー。 使用してアクセスするコレクション、<xref:System.Web.HttpResponse.Cookies%2A>のコレクション<xref:System.Web.HttpResponse>、サーバー上に作成され、クライアントに送信された cookie が含まれています、`Set-Cookie`ヘッダー。  
+  
+ 使用して cookie を追加した後、<xref:System.Web.HttpResponse.Cookies%2A?displayProperty=nameWithType>コレクション、cookie がですぐに使用できる、<xref:System.Web.HttpRequest.Cookies%2A?displayProperty=nameWithType>応答がクライアントに送信されていない場合でも、コレクション。  
+  
+   
+  
+## Examples  
+ 次の例では、という名前の新しい cookie `LastVisit`、現在の日付と時刻に cookie の値を設定し、cookie を現在のクッキー コレクションに追加します。 クッキー コレクションのすべての cookie がクライアントに送信される、`Set-Cookie`の HTTP ヘッダー出力ストリーム。  
+  
+ [!code-csharp[Classic HttpResponse.Cookies Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.Cookies Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.Cookies Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.Cookies Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableKernelCache">
+      <MemberSignature Language="C#" Value="public void DisableKernelCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisableKernelCache() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.DisableKernelCache" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の応答に対するカーネル キャッシュを無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カーネル キャッシュがサポートされていない場合は、このメソッドに効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableUserCache">
+      <MemberSignature Language="C#" Value="public void DisableUserCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisableUserCache() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.DisableUserCache" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この応答に対する IIS ユーザー モードのキャッシュを無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IIS ユーザー モードのキャッシュがサポートされていない場合、このメソッドは、アクションを実行しないで返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public void End ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void End() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.End" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在バッファリングされているすべての出力をクライアントへ送信し、ページの実行を停止して、<see cref="E:System.Web.HttpApplication.EndRequest" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは ASP との互換性のためだけに提供: は、ASP.NET の前に COM ベースの Web プログラミング テクノロジとの互換性。 身にする場合、<xref:System.Web.HttpApplication.EndRequest>イベントと、クライアントへの応答の送信、勧めを呼び出す<xref:System.Web.HttpApplication.CompleteRequest%2A>代わりにします。  
+  
+ 動作を模倣するために、`End`メソッドの ASP では、このメソッドは、生成を試みます、<xref:System.Threading.ThreadAbortException>例外。 この試行が成功した場合は、呼び出し元のスレッドが中止されました、これは、サイトのパフォーマンスを低下させます。 その場合、呼び出しの後にコードなしで、<xref:System.Web.HttpResponse.End%2A>メソッドを実行します。  
+  
+ 場合、<xref:System.Web.HttpResponse.End%2A>メソッドを上げることはありません、<xref:System.Threading.ThreadAbortException>に代わりに、応答のバイト数をクライアントにフラッシュします。 これは、同期的に、サイトのパフォーマンスに悪影響を及ぼすすることができます。  
+  
+ どちらの場合 (かどうか、<xref:System.Threading.ThreadAbortException>例外が発生しました)、応答パイプライン ジャンプ、<xref:System.Web.HttpApplication.EndRequest>イベント。  
+  
+ <xref:System.Web.HttpApplication.CompleteRequest%2A>メソッドは、例外を発生させるされず、コードの呼び出しの後に、<xref:System.Web.HttpApplication.CompleteRequest%2A>メソッドを実行する可能性があります。 後続のコードの実行を回避するのには、場合のパフォーマンスの低下<xref:System.Web.HttpResponse.End%2A>は呼び出すことができます、許容<xref:System.Web.HttpResponse.End%2A>の代わりに<xref:System.Web.HttpApplication.CompleteRequest%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.ThreadAbortException"><see cref="M:System.Web.HttpResponse.End" /> の呼び出しは、現在の要求を終了しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndFlush">
+      <MemberSignature Language="C#" Value="public void EndFlush (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndFlush(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.EndFlush(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">非同期の結果オブジェクト。</param>
+        <summary>非同期のフラッシュ操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">非同期のフラッシュがサポートされていません、<paramref name="asyncResult" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">非同期のフラッシュがサポートされていません、<paramref name="asyncResult" />にパラメーターをキャストすることはできません、 <c>FlushAsyncResult</c>オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expires">
+      <MemberSignature Language="C#" Value="public int Expires { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Expires" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Expires" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーでキャッシュされたページの有効期限が切れるまでの時間を分単位で取得または設定します。 有効期限が切れる前にユーザーが同じページに戻った場合、キャッシュされたバージョンが表示されます。 <see cref="P:System.Web.HttpResponse.Expires" /> は、ASP の旧バージョンとの互換性のために提供されています。</summary>
+        <value>ページの有効期限が切れるまでの分単位の時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Expires`、<xref:System.Web.HttpResponse.ExpiresAbsolute%2A>と<xref:System.Web.HttpResponse.CacheControl%2A>のメソッドを優先するためのプロパティは推奨されません、<xref:System.Web.HttpCachePolicy>クラスを通じて利用可能な<xref:System.Web.HttpResponse.Cache%2A>インターネット インフォメーション サービス (IIS) を制御する組み込みのオブジェクトがキャッシュとクライアントのキャッシュを出力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpiresAbsolute">
+      <MemberSignature Language="C#" Value="public DateTime ExpiresAbsolute { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ExpiresAbsolute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.ExpiresAbsolute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされた情報をキャッシュから削除する絶対日時を取得または設定します。 <see cref="P:System.Web.HttpResponse.ExpiresAbsolute" /> は、ASP の旧バージョンとの互換性のために提供されています。</summary>
+        <value>ページの有効期限が切れる日付と時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ExpiresAbsolute`、 <xref:System.Web.HttpResponse.Expires%2A>、および<xref:System.Web.HttpResponse.CacheControl%2A>のメソッドを優先するためのプロパティは推奨されません、<xref:System.Web.HttpCachePolicy>クラスを通じて利用可能な<xref:System.Web.HttpResponse.Cache%2A>インターネット インフォメーション サービス (IIS) を制御する組み込みのオブジェクトがキャッシュとクライアントのキャッシュを出力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送する前に HTTP エンティティ本体を変更するために使用される、ラッピング フィルター オブジェクトを取得または設定します。</summary>
+        <value>出力フィルターとして機能する <see cref="T:System.IO.Stream" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、`Stream`オブジェクトし、設定、<xref:System.Web.HttpResponse.Filter%2A>プロパティを`Stream`オブジェクト、すべての HTTP によって送信される出力<xref:System.Web.HttpResponse.Write%2A>フィルターを通過します。  
+  
+   
+  
+## Examples  
+ 次の例は、ASP.NET ページを設定する、<xref:System.Web.HttpResponse.Filter%2A>プロパティの新しいインスタンスを`UpperCaseFilter`クラス、カスタム<xref:System.IO.Stream>を大文字に通過するすべてのテキストに変換するクラス。 要求に関する情報が、テキスト ファイルに保存し、<xref:System.Web.HttpResponse.Filter%2A>プロパティを設定します。 応答フィルターを配置した後、コードを呼び出し、<xref:System.Web.HttpRequest.MapPath%2A>という名前のテキスト ファイルへの絶対パスを取得するメソッド`TestFile.txt`応答のコンテンツのソースとして機能します。 コードは、作成し、新しい<xref:System.IO.StreamReader>を終了するには最初の呼び出しからテキスト ファイルを読み込むため、<xref:System.Web.HttpResponse.Write%2A>ページ上のファイルの内容を表示するメソッド。  
+  
+ [!code-aspx-csharp[System.Web.HttpRequest_Samples2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_Samples2/CS/requestsamples2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest_Samples2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_Samples2/VB/requestsamples2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">エンティティには、フィルター処理することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在バッファリングされているすべての出力をクライアントへ送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 強制的に実行は、クライアントに送信される出力中のすべてをバッファーします。 <xref:System.Web.HttpResponse.Flush%2A>メソッドは、要求の処理中に複数回呼び出すことがあります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Drawing.Graphics.Save%2A>を保存する方法、<xref:System.Drawing.Bitmap>オブジェクトを<xref:System.Web.HttpResponse.OutputStream%2A>プロパティに変換し、イメージ、jpeg 形式に書式を設定します。 コードで、`Dispose`メソッドを<xref:System.Drawing.Bitmap>オブジェクトおよび<xref:System.Drawing.Graphics>使用されていたリソースを解放するオブジェクト。 呼び出して、<xref:System.Web.HttpResponse.Flush%2A>要求元のクライアントへの応答のコンテンツを送信するメソッド。  
+  
+ 完全な例では、次を参照してください。、<xref:System.Web.HttpResponse>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Samples1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/CS/responsesamplescs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpResponse_Samples1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/VB/responsesamplesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">応答が送信された後、キャッシュがフラッシュします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FlushAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FlushAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.FlushAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在バッファリングされているすべての出力をクライアントへ非同期的に送信します。</summary>
+        <returns>非同期操作を表す <see cref="T:System.Threading.Tasks.Task" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding HeaderEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding HeaderEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.HeaderEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のヘッダー出力ストリームのエンコーディングを表す <see cref="T:System.Text.Encoding" /> オブジェクトを取得または設定します。</summary>
+        <value>現在のヘッダーの文字セットに関する情報が格納されている <see cref="T:System.Text.Encoding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.HeaderEncoding%2A>プロパティは、無効化または変更する機能を提供、<xref:System.Text.Encoding>応答ヘッダーを使用して上のオブジェクト、 <xref:System.Text.ASCIIEncoding>、 <xref:System.Text.UnicodeEncoding>、 <xref:System.Text.UTF7Encoding>、または<xref:System.Text.UTF8Encoding>オブジェクト。 既定のエンコーディング値は、<xref:System.Text.UTF8Encoding>クラスです。  
+  
+ 型を変更することによって、<xref:System.Web.HttpResponse.HeaderEncoding%2A>プロパティ、する可能性のあるリスクが大きく特定の悪意のある攻撃や、応答ヘッダーを使用して送信する機密性の高いデータの原因です。 ヘッダー インジェクション攻撃を回避するの一部にすることで、<xref:System.Web.HttpResponse.HeaderEncoding%2A>既定の設定への応答のプロパティです。 影響を受けるアプリケーションに対する攻撃は、信頼された応答ヘッダーの一部としてデータをエコーでしたです。 場合、<xref:System.Web.HttpResponse.HeaderEncoding%2A>ヘッダー内の行を継続するか、応答ストリームに送信する前に、ヘッダー データを検証する必要があります任意のヘッダーが信頼されていないデータの結果に基づいて構築される場合に、要件のため無効にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">エンコーディング値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">エンコーディング値は <see cref="P:System.Text.Encoding.Unicode" /> です。  
+  
+ \- または  
+  
+ ヘッダーは既に送信されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答ヘッダーのコレクションを取得します。</summary>
+        <value>応答ヘッダーの <see cref="T:System.Collections.Specialized.NameValueCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.Headers%2A>プロパティでのみサポートされます、[!INCLUDE[iisver](~/includes/iisver-md.md)]統合パイプライン モードと、少なくとも .NET Framework 3.0。 アクセスしようとすると、<xref:System.Web.HttpResponse.Headers%2A>プロパティと、これら 2 つの条件のいずれかが満たされない、<xref:System.PlatformNotSupportedException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">操作には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]と、少なくとも .NET Framework バージョン 3.0。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HeadersWritten">
+      <MemberSignature Language="C#" Value="public bool HeadersWritten { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HeadersWritten" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.HeadersWritten" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
+  
+ 応答ヘッダーが既に作成されたかどうかを示す値を取得します。</summary>
+        <value>
+          応答ヘッダーが書き込まれている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClientConnected">
+      <MemberSignature Language="C#" Value="public bool IsClientConnected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClientConnected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.IsClientConnected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントがサーバーにまだ接続されているかどうかを示す値を取得します。</summary>
+        <value>
+          クライアントが現在接続されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.IsClientConnected%2A>プロパティから返される`false`次の条件が当てはまる場合。  
+  
+-   クライアントへの接続が終了しました。 これは、場合に発生することができます、<xref:System.Web.HttpResponse.Close%2A>メソッドが呼び出されたか、クライアントが Web ページの実行を停止しているか、別のページを参照します。  
+  
+-   <xref:System.Web.HttpWorkerRequest>要求を処理しているオブジェクトが`null`または<xref:System.Web.HttpWorkerRequest.IsClientConnected%2A?displayProperty=nameWithType>メソッドを返します。`false`です。 場合、カスタム<xref:System.Web.HttpWorkerRequest>オブジェクトは、要求を処理し、<xref:System.Web.HttpWorkerRequest.IsClientConnected%2A?displayProperty=nameWithType>メソッドに設定できるに基づいてカスタム条件。 たとえば、カスタム ワーカー要求は、一定時間のタイムアウトを強制する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.HttpResponse.IsClientConnected%2A>ページを要求しているクライアントがサーバーに接続されているかどうかを確認するプロパティです。 場合<xref:System.Web.HttpResponse.IsClientConnected%2A>が true の場合、コードの呼び出し、<xref:System.Web.HttpResponse.Redirect%2A>メソッド、およびクライアントが別のページに表示されます。 場合<xref:System.Web.HttpResponse.IsClientConnected%2A>が false で、コードを呼び出し、<xref:System.Web.HttpResponse.End%2A>メソッドとページのすべての処理を終了します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Sample4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample4/CS/page1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpResponse_Sample4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample4/VB/page1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequestBeingRedirected">
+      <MemberSignature Language="C#" Value="public bool IsRequestBeingRedirected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequestBeingRedirected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.IsRequestBeingRedirected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが新しい場所へ転送されている最中かどうかを示すブール値を取得します。</summary>
+        <value>
+          Location 応答ヘッダーの値が現在の場所と異なる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.HttpResponse.IsRequestBeingRedirected%2A>を持つプロパティ、<xref:System.Web.HttpResponse.RedirectLocation%2A>をテストし、確認するかどうかの絶対 URI であるプロパティ、HTTP でクライアントに送信され`Location`ヘッダーは現在の URI となる新しい意図された URI に転送されるよりも異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Output">
+      <MemberSignature Language="C#" Value="public System.IO.TextWriter Output { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.TextWriter Output" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Output" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発信 HTTP 応答ストリームへのテキストの出力を有効にします。</summary>
+        <value>クライアントへのカスタム出力を有効にする <see cref="T:System.IO.TextWriter" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ASP.NET ページが含まれていますが、<xref:System.Web.UI.WebControls.TextBox>を持つコントロールをその<xref:System.Web.UI.WebControls.TextBox.TextMode%2A>プロパティに設定<xref:System.Web.UI.WebControls.TextBoxMode.MultiLine>です。 ページのコードでユーザーが入力したテキストでは、<xref:System.Web.UI.WebControls.TextBox.TextMode%2A>を使用して、<xref:System.Web.HttpServerUtility.HtmlEncode%2A>メソッドを HTML エンコードして、および<xref:System.Web.HttpResponse.Output%2A>ページに、エンコードされた文字列を表示するプロパティです。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse.Output_Sample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.Output_Sample/CS/responseoutputcs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpResponse.Output_Sample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.Output_Sample/VB/responseoutputvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream OutputStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream OutputStream" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.OutputStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発信 HTTP コンテンツ本体へのバイナリ出力を有効にします。</summary>
+        <value>発信 HTTP コンテンツ本体の生の内容を表す IO <see cref="T:System.IO.Stream" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降、.NET Framework version 2.0 では、使用する場合、<xref:System.IO.Stream.Write%28System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドによって返される IO ストリームのメソッド、<xref:System.Web.HttpResponse.OutputStream%2A>プロパティ、次の例外がスローされます。  
+  
+-   <xref:System.ArgumentOutOfRangeException>、場合、`offset`または`count`パラメーターが負の値と、`buffer`引いたパラメーターの長さ、`offset`パラメーターが 0 未満です。  
+  
+-   <xref:System.ArgumentNullException>、場合、`buffer`パラメーターは`null`します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Drawing.Image.Save%2A>を保存する方法、<xref:System.Drawing.Bitmap>オブジェクトを<xref:System.Web.HttpResponse.OutputStream%2A>プロパティ、および画像を JPEG 形式に変換します。 コードは、の Dispose メソッドを呼び出し、<xref:System.Drawing.Bitmap>オブジェクトと<xref:System.Drawing.Graphics>オブジェクト、使用されていたリソースを解放します。 最後に、コードが呼び出され、<xref:System.Web.HttpResponse.Flush%2A>要求元のクライアントへの応答のコンテンツを送信するメソッド。  
+  
+ 完全な例では、次を参照してください。、<xref:System.Web.HttpResponse>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Samples1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/CS/responsesamplescs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpResponse_Samples1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Samples1/VB/responsesamplesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="OutputStream" /> が使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pics">
+      <MemberSignature Language="C#" Value="public void Pics (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pics(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Pics(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see langword="PICS-Label" /> ヘッダーに追加する文字列。</param>
+        <summary>HTTP <see langword="PICS-Label" /> ヘッダーを出力ストリームに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プラットフォームのインターネット コンテンツの選択 (写真) は、コンテンツのラベル付けの World Wide Web Consortium (W3C) 標準です。 写真は基本的に、言語規制システムを作成するためです。  
+  
+ 任意の値は、写真のラベルを指定できます。ASP.NET では、ラベルは検証しません。 文字列の最大長は、255 文字です。 写真の標準と構文の詳細については、次を参照してください。、 [World Wide Web Consortium](http://go.microsoft.com/fwlink/?LinkID=37125) Web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例は、イメージを表示する ASP.NET ページです。 ページのコードの呼び出し、 <xref:System.Web.HttpResponse.Pics%2A> HTTP を設定するメソッドを`PICS-Label`応答のヘッダー。 パラメーターとして渡された文字列、<xref:System.Web.HttpResponse.Pics%2A>メソッドは、インターネット コンテンツ評価サイトを参照) の Web サイトから生成された評価ラベルを表します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Sample4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample4/CS/page2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.HttpResponse_Sample4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample4/VB/page2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushPromise">
+      <MemberSignature Language="C#" Value="public void PushPromise (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PushPromise(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.PushPromise(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">プッシュ要求の URL です。 サーバーがクライアントにプッシュする相対リソースの仮想パスになります。</param>
+        <summary>この API は、プッシュ promise を HTTP 2.0 クライアントに送信する アプリケーションをサポートするためのものです。 詳細を見ることができます Http2 サーバー プッシュに関する[http/2 仕様セクション 8.2: サーバー プッシュ](http://http2.github.io/http2-spec/#PushResources)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ PushPromise は非決定的であると、アプリケーションがそれに依存するロジックを含めることはできません。 唯一の目的は、場合によってはパフォーマンスが得られます。 プッシュ要求を完全に無視する原因となる多くの条件 (プロトコルと実装) があります。 期待値が、火災忘れたに基づいています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushPromise">
+      <MemberSignature Language="C#" Value="public void PushPromise (string path, string method, System.Collections.Specialized.NameValueCollection headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PushPromise(string path, string method, class System.Collections.Specialized.NameValueCollection headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.PushPromise(System.String,System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="headers" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="path">プッシュ要求の URL です。 サーバーがクライアントにプッシュする相対リソースの仮想パスになります。</param>
+        <param name="method">プッシュ要求で使用される http 要求メソッド。</param>
+        <param name="headers">プッシュ要求で使用される http 要求ヘッダー。</param>
+        <summary>この API は、プッシュ promise を HTTP 2.0 クライアントに送信する アプリケーションをサポートするためのものです。 詳細を見ることができます Http2 サーバー プッシュに関する[http/2 仕様セクション 8.2: サーバー プッシュ](http://http2.github.io/http2-spec/#PushResources)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ PushPromise は非決定的であると、アプリケーションがそれに依存するロジックを含めることはできません。 唯一の目的は、場合によってはパフォーマンスが得られます。 プッシュ要求を完全に無視する原因となる多くの条件 (プロトコルと実装) があります。 期待値が、火災忘れたに基づいています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Redirect">
+      <MemberSignature Language="C#" Value="public void Redirect (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Redirect(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Redirect(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">対象となる位置。</param>
+        <summary>新しい URL に要求をリダイレクトして、新しい URL を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Web.HttpResponse.Redirect%2A>は呼び出すことと同じ<xref:System.Web.HttpResponse.Redirect%2A>2 番目のパラメーターを設定して`true`です。  
+  
+ <xref:System.Web.HttpResponse.Redirect%2A>呼び出し<xref:System.Web.HttpResponse.End%2A>どのスロー、<xref:System.Threading.ThreadAbortException>完了時に例外です。 この例外は、Web アプリケーションのパフォーマンスに悪影響を与えます。 そのため、ことをお勧めこのオーバー ロードではなくを使用すること、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>オーバー ロードして渡す`false`の`endResponse`パラメーター、およびを呼び出します、<xref:System.Web.HttpApplication.CompleteRequest%2A>メソッドです。 詳細については、<xref:System.Web.HttpResponse.End%2A> メソッドを参照してください。  
+  
+> [!NOTE]
+>  モバイル ページに対してのみ場合、アプリケーションが cookie なしのセッションに依存または cookie なしのセッションを必要とするモバイル デバイスから要求を受信する可能性がありますパスにティルダ (~) を使用可能性新しいセッションが作成され、セッション データが失われる可能性があります。 など、パスを持つモバイル コントロールのプロパティを設定する"~/パス"を使用してパスを解決する<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"~/パス"プロパティに割り当てる前にします。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。 別のページにコントロールを転送することも、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 <xref:System.Web.HttpServerUtility.Transfer%2A>メソッドでは通常より効率的なクライアントのラウンド トリップが発生しません。 詳細については、次を参照してください。[する方法: 別のページにユーザーをリダイレクト](http://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)です。  
+  
+   
+  
+## Examples  
+ 次の例では、別の Web サイトへのリダイレクトを無条件を強制します。  
+  
+ [!code-csharp[Classic HttpResponse.Redirect Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.Redirect Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.Redirect Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.Redirect Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーが送信された後にリダイレクトしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Redirect">
+      <MemberSignature Language="C#" Value="public void Redirect (string url, bool endResponse);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Redirect(string url, bool endResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Redirect(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="endResponse" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="url">リダイレクト先の場所。</param>
+        <param name="endResponse">現在のページの実行を終了するかどうかを示します。</param>
+        <summary>クライアントを新しい URL にリダイレクトします。 新しい URL を指定し、さらに現在のページの実行を終了するかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲットの場所の絶対 URL (たとえば、http://www.contoso.com/default.aspx) または相対 URL (たとえば、Default.aspx) を指定することができますが、一部のブラウザーは相対 URL を拒否することがあります。  
+  
+ ときにこのメソッドを使用するページのハンドラーのセットを 1 つのページし、他のページの新しい要求の開始の要求を終了`endResponse`に`false`を呼び出すと、<xref:System.Web.HttpApplication.CompleteRequest%2A>メソッドです。 指定する場合`true`の`endResponse`パラメーターでは、このメソッドは、<xref:System.Web.HttpResponse.End%2A>メソッドをスロー、元の要求を<xref:System.Threading.ThreadAbortException>完了時に例外です。 この例外は渡す理由は、Web アプリケーションのパフォーマンスに悪影響を与えます`false`の`endResponse`パラメーターをお勧めします。 詳細については、<xref:System.Web.HttpResponse.End%2A> メソッドを参照してください。  
+  
+> [!NOTE]
+>  モバイル ページは、場合は、アプリケーションが cookie なしのセッションに依存または cookie なしのセッションを必要とするモバイル デバイスから要求を受信する可能性がありますを新しいセッションを作成し、セッション データが失われる可能性があることができますパスにティルダ (~) を使用します。 など、パスを持つモバイル コントロールのプロパティを設定する"~/パス"を使用してパスを解決する<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"~/パス"プロパティに割り当てる前にします。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。 別のページにコントロールを転送することも、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 <xref:System.Web.HttpServerUtility.Transfer%2A>メソッドでは通常より効率的なクライアントのラウンド トリップが発生しません。 詳細については、次を参照してください。[する方法: 別のページにユーザーをリダイレクト](http://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.HttpResponse.IsClientConnected%2A>ページを要求しているクライアントがサーバーに接続されているかどうかを確認するプロパティです。 場合<xref:System.Web.HttpResponse.IsClientConnected%2A>が true の場合、コードの呼び出し、<xref:System.Web.HttpResponse.Redirect%2A>メソッド、およびクライアントが別のページに表示されます。 場合<xref:System.Web.HttpResponse.IsClientConnected%2A>が false で、コードを呼び出し、<xref:System.Web.HttpResponse.End%2A>メソッドとページのすべての処理を終了します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Sample4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample4/CS/page1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpResponse_Sample4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample4/VB/page1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="url" />改行文字が含まれています。</exception>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーが送信された後にリダイレクトしようとしました。</exception>
+        <exception cref="T:System.ApplicationException">ページ要求がコールバックの結果となっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectLocation">
+      <MemberSignature Language="C#" Value="public string RedirectLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RedirectLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.RedirectLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP <see langword="Location" /> ヘッダーの値を取得または設定します。</summary>
+        <value>HTTP <see langword="Location" /> ヘッダーのクライアントに送信される絶対 URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このプロパティを使用して HTTP 301 応答コードを使用して永続的なリダイレクトをコーディングする場合、リダイレクト URL を指定する方法を示します。  
+  
+```csharp  
+Response.StatusCode = 301;  
+Response.Status = "301 Moved Permanently";  
+Response.RedirectLocation = "http://www.newurl.com ";  
+Response.End();  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーは既に書き込まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectPermanent">
+      <MemberSignature Language="C#" Value="public void RedirectPermanent (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectPermanent(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectPermanent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">要求のリダイレクト先の場所。</param>
+        <summary>要求された URL から指定された URL への永続的なリダイレクトを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.RedirectPermanent%28System.String%29>メソッドのオーバー ロードが応答で 301 HTTP ステータス コードを提供し、要求をリダイレクトする URL を備えています。 301 の HTTP ステータス コードとは、HTTP 応答で標準的なコードです。 示して永続的なリダイレクトが存在する場合、リダイレクトの場所が提供されます。  
+  
+ 呼び出す、<xref:System.Web.HttpResponse.RedirectPermanent%28System.String%29>メソッドのオーバー ロードは、応答を終了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="url" />改行文字が含まれています (<c>\n</c>)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectPermanent">
+      <MemberSignature Language="C#" Value="public void RedirectPermanent (string url, bool endResponse);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectPermanent(string url, bool endResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectPermanent(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="endResponse" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="url">要求のリダイレクト先の場所。</param>
+        <param name="endResponse">
+          応答を終了する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</param>
+        <summary>要求された URL から指定された URL への永続的なリダイレクトを実行し、応答を完了するためのオプションを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.RedirectPermanent%28System.String%2CSystem.Boolean%29>メソッドのオーバー ロードが応答で 301 HTTP ステータス コードを提供し、要求をリダイレクトする URL を備えています。 このメソッドのオーバー ロードには、終了するのか、リダイレクトが行われた後に、応答を完了するかを指定するオプションも用意されています。 301 の HTTP ステータス コードとは、HTTP 応答で標準的なコードです。 示して永続的なリダイレクトが存在する場合、リダイレクトの場所が提供されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="url" />改行文字が含まれています (<c>\n</c>)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoute">
+      <MemberSignature Language="C#" Value="public void RedirectToRoute (object routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoute(object routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoute(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeValues" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値を使用して、新しい URL に要求をリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドに渡されるオブジェクトは変換`routeValues`を<xref:System.Web.Routing.RouteValueDictionary?displayProperty=nameWithType>オブジェクトを使用して、<xref:System.Web.Routing.RouteValueDictionary.%23ctor%28System.Object%29?displayProperty=nameWithType>コンス トラクターです。 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認するメソッドが呼び出されます。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は名前付きパラメーターを持つルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoute(  
+  New With {.productid = "1", .category = "widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoute(  
+  new { productid = "1", category = "widgets" });  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoute">
+      <MemberSignature Language="C#" Value="public void RedirectToRoute (string routeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoute(string routeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <summary>ルート名を使用して、新しい URL に要求をリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドは変換されたルート名は、渡された`routeName`を使用して URL を<xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`Products`です。  
+  
+```vb  
+Response.RedirectToRoute("Products")  
+```  
+  
+```csharp  
+Response.RedirectToRoute("Products");  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoute">
+      <MemberSignature Language="C#" Value="public void RedirectToRoute (System.Web.Routing.RouteValueDictionary routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoute(class System.Web.Routing.RouteValueDictionary routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoute(System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeValues" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値を使用して、新しい URL に要求をリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドは、 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認します。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は名前付きパラメーターを持つルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoute(  
+  new RouteValueDictionary {productId="1", category="widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoute(  
+  (new RouteValueDictionary {productId="1", category="widgets"});  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoute">
+      <MemberSignature Language="C#" Value="public void RedirectToRoute (string routeName, object routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoute(string routeName, object routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoute(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeValues" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値とルート名を使用して、新しい URL に要求をリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドに渡されるオブジェクトは変換`routeValues`を<xref:System.Web.Routing.RouteValueDictionary?displayProperty=nameWithType>オブジェクトを使用して、<xref:System.Web.Routing.RouteValueDictionary.%23ctor%28System.Object%29?displayProperty=nameWithType>コンス トラクターです。 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認するメソッドが呼び出されます。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`Product`は名前付きパラメーターを持つと`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoute("Product",  
+  New With {.productid = "1", .category = "widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoute("Product",  
+  new { productid = "1", category = "widgets" });  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoute">
+      <MemberSignature Language="C#" Value="public void RedirectToRoute (string routeName, System.Web.Routing.RouteValueDictionary routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoute(string routeName, class System.Web.Routing.RouteValueDictionary routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoute(System.String,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeValues" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値とルート名を使用して、新しい URL に要求をリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認するメソッドが呼び出されます。  
+  
+ ASP.NET は、302 HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`Product`は名前付きパラメーターを持つと`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoute("Product",  
+  new RouteValueDictionary {productId="1", category="widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoute("Product",  
+  (new RouteValueDictionary {productId="1", category="widgets"});  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoutePermanent">
+      <MemberSignature Language="C#" Value="public void RedirectToRoutePermanent (object routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoutePermanent(object routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoutePermanent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeValues" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値を使用して、要求された URL から新しい URL への永続的なリダイレクトを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.RedirectPermanent%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドに渡されるオブジェクトは変換`routeValues`を<xref:System.Web.Routing.RouteValueDictionary?displayProperty=nameWithType>オブジェクトを使用して、<xref:System.Web.Routing.RouteValueDictionary.%23ctor%28System.Object%29?displayProperty=nameWithType>コンス トラクターです。 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認するメソッドが呼び出されます。  
+  
+ ASP.NET は、301 の HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は名前付きパラメーターを持つルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoutePermanent(  
+  New With {.productid = "1", .category = "widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoutePermanent(  
+  new { productid = "1", category = "widgets" });  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoutePermanent">
+      <MemberSignature Language="C#" Value="public void RedirectToRoutePermanent (string routeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoutePermanent(string routeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoutePermanent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <summary>ルート名を使用して、要求された URL から新しい URL への永続的なリダイレクトを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.RedirectPermanent%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドは変換されたルート名は、渡された`routeName`を使用して URL を<xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ASP.NET は、301 の HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`Products`です。  
+  
+```vb  
+Response.RedirectToRoutePermanent("Products")  
+```  
+  
+```csharp  
+Response.RedirectToRoutePermanent("Products");  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoutePermanent">
+      <MemberSignature Language="C#" Value="public void RedirectToRoutePermanent (System.Web.Routing.RouteValueDictionary routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoutePermanent(class System.Web.Routing.RouteValueDictionary routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoutePermanent(System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeValues" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値を使用して、要求された URL から新しい URL への永続的なリダイレクトを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドは、 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認します。  
+  
+ ASP.NET は、301 の HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は名前付きパラメーターを持つルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoutePermanent(  
+  new RouteValueDictionary {productId="1", category="widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoutePermanent(  
+  new RouteValueDictionary {productId="1", category="widgets"});  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoutePermanent">
+      <MemberSignature Language="C#" Value="public void RedirectToRoutePermanent (string routeName, object routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoutePermanent(string routeName, object routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoutePermanent(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeValues" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>新しい URL に対応するルートのパラメーター値とルート名を使用して、要求された URL から新しい URL への永続的なリダイレクトを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.RedirectPermanent%2A>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドに渡されるオブジェクトは変換`routeValues`を<xref:System.Web.Routing.RouteValueDictionary?displayProperty=nameWithType>オブジェクトを使用して、<xref:System.Web.Routing.RouteValueDictionary.%23ctor%28System.Object%29?displayProperty=nameWithType>コンス トラクターです。 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認するメソッドが呼び出されます。  
+  
+ ASP.NET は、301 の HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`Product`は名前付きパラメーターを持つと`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoutePermanent("Product",  
+  New With {.productid = "1", .category = "widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoutePermanent("Product",  
+  new { productid = "1", category = "widgets" });  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToRoutePermanent">
+      <MemberSignature Language="C#" Value="public void RedirectToRoutePermanent (string routeName, System.Web.Routing.RouteValueDictionary routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedirectToRoutePermanent(string routeName, class System.Web.Routing.RouteValueDictionary routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RedirectToRoutePermanent(System.String,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeValues" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeValues">ルートのパラメーター値。</param>
+        <summary>ルートのパラメーター値とルート名を使用して、要求された URL から新しい URL への永続的なリダイレクトを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29>に設定する 2 番目のパラメーターを持つメソッド`false`です。  
+  
+ このメソッドは、 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A?displayProperty=nameWithType> URL を確認します。  
+  
+ ASP.NET は、301 の HTTP ステータス コードを返すことで、リダイレクトを実行します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルートにリダイレクトするには、このメソッドを呼び出す方法を示しています。`Product`は名前付きパラメーターを持つと`productid`と`category`です。  
+  
+```vb  
+Response.RedirectToRoutePermanent("Product",  
+  new RouteValueDictionary {productId="1", category="widgets"})  
+```  
+  
+```csharp  
+Response.RedirectToRoutePermanent("Product",  
+  new RouteValueDictionary {productId="1", category="widgets"});  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したルート パラメーターに対応するルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">リダイレクトは、HTTP ヘッダーが送信された後にしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveOutputCacheItem">
+      <MemberSignature Language="C#" Value="public static void RemoveOutputCacheItem (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveOutputCacheItem(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RemoveOutputCacheItem(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">キャッシュから削除されるアイテムへの仮想絶対パス。</param>
+        <summary>既定の出力キャッシュ プロバイダーに関連付けられているキャッシュされたアイテムをすべてキャッシュから削除します。 これは静的メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の出力キャッシュ プロバイダーに関連付けられている出力キャッシュ アイテムを削除するには、このメソッドを呼び出します。 呼び出す、 <xref:System.Web.HttpResponse.RemoveOutputCacheItem%2A> Web サイトの構成ファイルで指定されているカスタムの出力キャッシュ プロバイダーに関連付けられている出力キャッシュ アイテムを削除する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />絶対仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveOutputCacheItem">
+      <MemberSignature Language="C#" Value="public static void RemoveOutputCacheItem (string path, string providerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveOutputCacheItem(string path, string providerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.RemoveOutputCacheItem(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="providerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">キャッシュから削除されるアイテムへの絶対仮想パス。</param>
+        <param name="providerName">指定されたパスに関連付けられている出力キャッシュの成果物を削除するのに使用されるプロバイダー。</param>
+        <summary>指定された出力キャッシュ プロバイダーを使用して、指定されたパスに関連付けられている出力キャッシュ アイテムをすべて削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サイトの構成ファイルで指定されているカスタム出力キャッシュ プロバイダーに関連付けられている出力キャッシュ アイテムを削除するには、このメソッドを呼び出します。 既定の出力キャッシュ プロバイダーに関連付けられている出力キャッシュ アイテムを削除するには、呼び出し、<xref:System.Web.HttpResponse.RemoveOutputCacheItem%28System.String%29>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />無効なパスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCookie">
+      <MemberSignature Language="C#" Value="public void SetCookie (System.Web.HttpCookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCookie(class System.Web.HttpCookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.SetCookie(System.Web.HttpCookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Web.HttpCookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">更新するコレクションに存在するクッキー。</param>
+        <summary><b>HttpResponse.SetCookie</b>メソッドは、内部使用のみを呼び出す必要はありませんが、コードでします。 代わりに、呼び出すことができます、 <b>HttpResponse.Cookies.Set</b>メソッドを次の例のようにします。<br /> クッキー コレクションの既存のクッキーを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、既存のクッキーの値を更新します。  
+  
+ [!code-csharp[Classic HttpResponse.SetCookie Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.SetCookie Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.SetCookie Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.SetCookie Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">HTTP ヘッダーが送信された後に cookie を設定しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public string Status { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Status" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントに返される <see langword="Status" /> ラインを設定します。</summary>
+        <value>ステータス コードを設定すると、HTTP 出力のステータスを記述する文字列がクライアントへ返されます。 既定値は 200 (OK) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.Status%2A>代わりには廃止されて<xref:System.Web.HttpResponse.StatusDescription%2A>ASP の旧バージョンと互換性のためだけに提供されます。 ASP.NET を使用して<xref:System.Web.HttpResponse.StatusDescription%2A>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">状態は、無効なステータス コードに設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public int StatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントへ返される出力の HTTP ステータス コードを取得または設定します。</summary>
+        <value>クライアントへ返される HTTP 出力のステータスを表す整数。 既定値は 200 (OK) です。 有効なステータス コードの一覧については、次を参照してください。 [Http ステータス コード](http://go.microsoft.com/fwlink/?LinkId=73157)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、出力ストリームの状態コードを確認します。 ステータス コードが 200 と等しくない場合は、追加のコードが実行されます。  
+  
+ [!code-csharp[System.Web.HttpResponse.StatusCode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.StatusCode/cs/default.aspx#1)]
+ [!code-vb[System.Web.HttpResponse.StatusCode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.StatusCode/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <see cref="P:System.Web.HttpResponse.StatusCode" />HTTP ヘッダーが送信された後に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusDescription">
+      <MemberSignature Language="C#" Value="public string StatusDescription { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StatusDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.StatusDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントへ返される出力の HTTP ステータス文字列を取得または設定します。</summary>
+        <value>クライアントへ返される HTTP 出力のステータスを記述する文字列。 既定値は "OK" です。 有効なステータス コードの一覧については、次を参照してください。 [Http ステータス コード](http://go.microsoft.com/fwlink/?LinkId=73157)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、出力ストリームのステータス文字列を確認します。 状態が"ok"と等しくない場合は、追加のコードが実行されます。  
+  
+ [!code-csharp[System.Web.HttpResponse.StatusDescription#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.StatusDescription/cs/default.aspx#1)]
+ [!code-vb[System.Web.HttpResponse.StatusDescription#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.StatusDescription/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="StatusDescription" />HTTP ヘッダーが送信された後に設定されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、512 以上長さです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubStatusCode">
+      <MemberSignature Language="C#" Value="public int SubStatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SubStatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.SubStatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のステータス コードを修飾する値を取得または設定します。</summary>
+        <value>[!INCLUDE[iisver](~/includes/iisver-md.md)] のサブステータス コードを表す整数の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.SubStatusCode%2A>プロパティは、統合パイプライン モードでのみサポートされます[!INCLUDE[iisver](~/includes/iisver-md.md)]と、少なくとも .NET Framework バージョン 3.0。 設定すると、<xref:System.Web.HttpResponse.SubStatusCode%2A>プロパティ、状態がログオンして[!INCLUDE[iisver](~/includes/iisver-md.md)]失敗した要求トレースが構成されている場合。 トレースを構成するかどうかに関係なく、コードは、要求に最後の応答の一部としては送信されません。 詳細については、次を参照してください。[のトラブルシューティングに失敗しました要求を使用して失敗した要求トレース IIS 7.0 で](http://www.iis.net/default.aspx?tabid=2&subtabid=25&i=969&p=1)です。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Web.HttpResponse.SubStatusCode%2A>のイベント ハンドラーのプロパティ、<xref:System.Web.HttpApplication>のインスタンス、<xref:System.Web.HttpApplication.PostAuthenticateRequest>イベント。 コード ファイル、Web アプリケーションの App_Code フォルダーに配置し、モジュールを登録する Web.config ファイルを構成します。 詳細については、次を参照してください。[チュートリアル: カスタム HTTP モジュールの登録の作成と](http://msdn.microsoft.com/library/7787d5be-40a4-4072-9075-c2b767428453)です。  
+  
+ [!code-csharp[System.Web.HttpResponse.SubStatusCode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.SubStatusCode/CS/App_Code/TestModule.cs#1)]
+ [!code-vb[System.Web.HttpResponse.SubStatusCode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.SubStatusCode/VB/App_Code/TestModule.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">操作には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]と、少なくとも .NET Framework バージョン 3.0。</exception>
+        <exception cref="T:System.Web.HttpException">状態コードは、すべての HTTP ヘッダーの送信後に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsAsyncFlush">
+      <MemberSignature Language="C#" Value="public bool SupportsAsyncFlush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsAsyncFlush" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.SupportsAsyncFlush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続が非同期のフラッシュ操作をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          接続が非同期フラッシュ操作をサポートする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を返します、<xref:System.Web.HttpWorkerRequest.SupportsAsyncFlush%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressContent">
+      <MemberSignature Language="C#" Value="public bool SuppressContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressContent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.SuppressContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP コンテンツをクライアントに送信するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          出力しない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をチェックするかどうか、<xref:System.Web.HttpRequest.IsSecureConnection%2A>プロパティが false に設定します。 である場合、<xref:System.Web.HttpResponse.SuppressContent%2A>プロパティが送信されてからの応答を停止する場合は true に設定します。  
+  
+ [!code-csharp[System.Web.HttpResponse_Sample5#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/CS/httpresponsesuppresscontentcs.aspx#3)]
+ [!code-vb[System.Web.HttpResponse_Sample5#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/VB/httpresponsesuppresscontentvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressDefaultCacheControlHeader">
+      <MemberSignature Language="C#" Value="public bool SuppressDefaultCacheControlHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressDefaultCacheControlHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.SuppressDefaultCacheControlHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
+  
+ 既定値を抑制するかどうかを示す値を取得または<c>Cache-control: プライベート</c>の現在の HTTP 応答ヘッダー。</summary>
+        <value>
+          <see langword="true" />既定値を抑制する<c>Cache Control: プライベート</c>の現在の HTTP 応答ヘッダーそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ASP.NET の送信、`Cache-Control: private`応答ヘッダーしない限り、この応答には、明示的なキャッシュ ポリシーを指定されています。 このプロパティは、要求ごとにこの既定の応答ヘッダーを抑制できます。 ヘッダーはまだ設定アプリケーション全体の抑制された<xref:System.Web.Configuration.HttpRuntimeSection.SendCacheControlHeader%2A>で[httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369)または[outputCache 要素 (ASP.NET 設定スキーマ) をキャッシュ用](http://msdn.microsoft.com/en-us/47cd2b47-316f-4dfd-bbf8-539be3066fee)です。  
+  
+ 既定値の抑制を不用意に`Cache-Control: private`プロキシとして、ヘッダーなどの中継ぎ局がこのヘッダーのない応答として扱うキャッシュ可能な既定ではします。 この処理は、機密情報の誤ったキャッシュをする可能性があります。 参照してください[RFC 2616, 秒 13.4](http://tools.ietf.org/html/rfc2616)詳細についてはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressFormsAuthenticationRedirect">
+      <MemberSignature Language="C#" Value="public bool SuppressFormsAuthenticationRedirect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressFormsAuthenticationRedirect" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.SuppressFormsAuthenticationRedirect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログイン ページへのフォーム認証のリダイレクトを抑制する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          フォーム認証のリダイレクトを抑制する必要がある場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、フォーム認証は、ログイン ページにリダイレクトするために HTTP 401 ステータス コードを 302 に変換します。 これが特定の認証が成功した場合も、承認などのエラーのクラスが失敗した場合、または現在の要求が AJAX 機能または web サービス要求の場合は適切でないです。 このプロパティは、リダイレクトの動作を抑制して、元の状態コードをクライアントに送信する方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransmitFile">
+      <MemberSignature Language="C#" Value="public void TransmitFile (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransmitFile(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.TransmitFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">HTTP 出力に書き込むファイルの名前。</param>
+        <summary>指定されたファイル ディレクトリを、メモリにバッファリングせずに、HTTP 応答出力ストリームに直接書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filename" />パラメーターは、<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransmitFile">
+      <MemberSignature Language="C#" Value="public void TransmitFile (string filename, long offset, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransmitFile(string filename, int64 offset, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.TransmitFile(System.String,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="filename">HTTP 出力に書き込むファイルの名前。</param>
+        <param name="offset">HTTP 出力への書き出しを始める、ファイル内の位置。</param>
+        <param name="length">送信されるバイト数。</param>
+        <summary>指定したファイル ディレクトリの一部を、メモリにバッファリングせずに、HTTP 応答出力ストリームに直接書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として 0 を指定する場合、`offset`パラメーターおよび-1 である場合、`length`パラメーター、ファイル全体が送信されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="offset" />パラメーターが 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="length" />パラメーターが-1 未満です。  
+  
+ \- または  
+  
+ <paramref name="length" />パラメーターからのオフセットを差し引いたファイルに含まれるバイト数を超えるバイトの数を指定します。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">アウト プロセス ワーカー要求はサポートされていません。  
+  
+ \- または  
+  
+ 応答が使用されていない、<see cref="T:System.Web.HttpWriter" />オブジェクト。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" />パラメーターは、ゼロ未満か、ファイルのサイズより大きい。  
+  
+ \- または  
+  
+ <paramref name="length" />パラメーターが-1 の値より大きいか小さい、<paramref name="offset" />パラメーターとファイル サイズの合計。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrySkipIisCustomErrors">
+      <MemberSignature Language="C#" Value="public bool TrySkipIisCustomErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrySkipIisCustomErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpResponse.TrySkipIisCustomErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[iisver](~/includes/iisver-md.md)] カスタム エラーが無効かどうかを指定する値を取得または設定します。</summary>
+        <value>
+          IIS カスタム エラーが無効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>プロパティは、アプリケーションが IIS 7.0 でホストされている場合にのみ使用します。 IIS 7.0 でクラシック モードで実行されている場合、<xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>プロパティの既定値は`true`します。 統合モードで実行されている場合、<xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>プロパティの既定値は`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (char ch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(char ch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Write(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ch" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="ch">HTTP 出力ストリームに書き込む文字。</param>
+        <summary>文字を HTTP 応答出力ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、一連の書き込みメソッドを使用して、ASP.NET ページに書き込まれる定数を作成します。 コードでは、このバージョンの個々 の文字定数をページに書き込む、書き込みメソッドを呼び出します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Sample5#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/CS/httpresponsewritecharscs.aspx#4)]
+ [!code-aspx-vb[System.Web.HttpResponse_Sample5#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/VB/httpresponsewritecharsvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Write(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">HTTP 出力ストリームに書き込む <see cref="T:System.Object" />。</param>
+        <summary><see cref="T:System.Object" /> を HTTP 応答出力ストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">HTTP 出力ストリームに書き込む文字列。</param>
+        <summary>文字列を HTTP 応答出力ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的に生成された HTML ページは、クライアントから受信したときに、またはクライアントに送信する場合、Web クライアントから受信した入力が検証されていない場合、セキュリティ上のリスクを導入できます。 信頼できるソースから送信する Web サイトに送信され、後で出力をクライアントに入力に埋め込まれている悪意のあるスクリプトを表示できます。 このセキュリティ上のリスクは、クロスサイト スクリプティング攻撃と呼ばれます。 常にクライアントのブラウザーに、サイトから送信するときに、クライアントから受信するデータを検証する必要があります。  
+  
+ さらに、記述するときに html 形式で入力として受信したすべてのデータ、する必要がありますを使用してエンコード技法など<xref:System.Web.HttpServerUtility.HtmlEncode%2A>または<xref:System.Web.HttpServerUtility.UrlEncode%2A>を悪意のあるスクリプトが実行するを防ぐためにします。 この手法は、受信したときに検証されなかったデータに役立ちます。  
+  
+ エンコードまたはデータをフィルター処理するときに、Web ページの設定、フィルターを識別し、属していないれるバイトのシーケンスで、(など、英数字以外のシーケンス) を設定しに埋め込まれている悪意のあるスクリプトを持つ可能性がある可能性がありますを削除できるように文字を指定する必要があります。  
+  
+ クロスサイト スクリプティング攻撃の詳細については、記事 Q252985、「方法に防ぐクロスサイト スクリプティング セキュリティの問題」を参照して、[マイクロソフト サポート技術情報](http://go.microsoft.com/fwlink/?LinkID=37115)Web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例では、クライアントのブラウザーに、クライアントの名前がエコーされます。 <xref:System.Web.HttpServerUtility.HtmlEncode%2A>メソッドは、無効な文字で送信される可能性がありますが、悪意のあるスクリプトを切り離します、`UserName`入力フィールドです。  
+  
+ [!code-csharp[System.Web.HttpResponse.Write#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.Write/CS/systemwebhttpresponsewrite.cs#1)]
+ [!code-vb[System.Web.HttpResponse.Write#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.Write/vb/systemwebhttpresponsewrite.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.Write(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込む文字配列。</param>
+        <param name="index">書き込みを開始する文字配列内の位置。</param>
+        <param name="count">書き込む文字数で始まる<c>インデックス</c>です。</param>
+        <summary>文字配列を HTTP 応答出力ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、一連の書き込みメソッドを使用して、ASP.NET ページに書き込まれる定数を作成します。 コードでは、このバージョンの個々 の文字定数をページに書き込む、書き込みメソッドを呼び出します。  
+  
+ [!code-aspx-csharp[System.Web.HttpResponse_Sample5#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/CS/httpresponsewritecharscs.aspx#4)]
+ [!code-aspx-vb[System.Web.HttpResponse_Sample5#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse_Sample5/VB/httpresponsewritecharsvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteFile">
+      <MemberSignature Language="C#" Value="public void WriteFile (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteFile(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.WriteFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">HTTP 出力に書き込むファイルの名前。</param>
+        <summary>指定されたファイルの内容を、ファイル ブロックとして HTTP 応答出力ストリームに直接書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズの大きなファイルにこのメソッドが使用する場合、メソッドを呼び出すと例外がスローする可能性があります。 このメソッドで使用できるファイルのサイズは、Web サーバーのハードウェア構成によって異なります。 詳細については、812406、「prb:: Response.WriteFile ことはできません、大きなファイルのダウンロード」の記事を参照して、[マイクロソフト サポート技術情報](http://go.microsoft.com/fwlink/?linkid=149903)Web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のテキスト ファイルのすべての内容を書き込みます`Login.txt`(リテラルの HTML テキストと入力コントロールを含む可能性があります) に出力ストリームに直接できます。  
+  
+ [!code-csharp[Classic HttpResponse.WriteFile Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.WriteFile Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.WriteFile Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.WriteFile Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filename" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteFile">
+      <MemberSignature Language="C#" Value="public void WriteFile (string filename, bool readIntoMemory);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteFile(string filename, bool readIntoMemory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.WriteFile(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="readIntoMemory" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filename">メモリ ブロックに書き込むファイルの名前。</param>
+        <param name="readIntoMemory">ファイルがメモリ ブロックに書き込まれるかどうかを示します。</param>
+        <summary>指定されたファイルの内容を、メモリ ブロックとして HTTP 応答出力ストリームに直接書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズの大きなファイルにこのメソッドが使用する場合、メソッドを呼び出すと例外がスローする可能性があります。 このメソッドで使用できるファイルのサイズは、Web サーバーのハードウェア構成によって異なります。 詳細については、812406、「prb:: Response.WriteFile ことはできません、大きなファイルのダウンロード」の記事を参照して、[マイクロソフト サポート技術情報](http://go.microsoft.com/fwlink/?linkid=149903)Web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例は、ファイルをメモリに書き込みます。  
+  
+ [!code-csharp[Classic HttpResponse.WriteFile1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.WriteFile1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.WriteFile1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.WriteFile1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filename" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteFile">
+      <MemberSignature Language="C#" Value="public void WriteFile (IntPtr fileHandle, long offset, long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteFile(native int fileHandle, int64 offset, int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.WriteFile(System.IntPtr,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileHandle" Type="System.IntPtr" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="fileHandle">HTTP 出力ストリームに書き込むファイルのファイル ハンドル。</param>
+        <param name="offset">書き込みを開始するファイル内のバイト位置。</param>
+        <param name="size">出力ストリームに書き込むバイト数。</param>
+        <summary>指定したファイルを HTTP 応答出力ストリームに直接書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズの大きなファイルにこのメソッドが使用する場合、メソッドを呼び出すと例外がスローする可能性があります。 このメソッドで使用できるファイルのサイズは、Web サーバーのハードウェア構成によって異なります。 詳細については、812406、「prb:: Response.WriteFile ことはできません、大きなファイルのダウンロード」の記事を参照して、[マイクロソフト サポート技術情報](http://go.microsoft.com/fwlink/?linkid=149903)Web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のテキスト ファイルのすべての内容を書き込みます`Login.txt`(リテラルの HTML テキストと入力コントロールを含む可能性があります) に出力ストリームに直接できます。  
+  
+ [!code-csharp[Classic HttpResponse.WriteFile3 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.WriteFile3 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.WriteFile3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.WriteFile3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileHandler" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="offset" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="size" />負符号、ファイルのサイズより大きい<paramref name="offset" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteFile">
+      <MemberSignature Language="C#" Value="public void WriteFile (string filename, long offset, long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteFile(string filename, int64 offset, int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.WriteFile(System.String,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="filename">HTTP 出力ストリームに書き込むファイルの名前。</param>
+        <param name="offset">書き込みを開始するファイル内のバイト位置。</param>
+        <param name="size">出力ストリームに書き込むバイト数。</param>
+        <summary>指定したファイルを HTTP 応答出力ストリームに直接書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズの大きなファイルにこのメソッドが使用する場合、メソッドを呼び出すと例外がスローする可能性があります。 このメソッドで使用できるファイルのサイズは、Web サーバーのハードウェア構成によって異なります。 詳細については、812406、「prb:: Response.WriteFile ことはできません、大きなファイルのダウンロード」の記事を参照して、[マイクロソフト サポート技術情報](http://go.microsoft.com/fwlink/?linkid=149903)Web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のテキスト ファイルのすべての内容を書き込みます`Login.txt`(入力コントロールのリテラル テキストと HTML を含んでいる可能性があります) に出力ストリームに直接できます。  
+  
+ [!code-csharp[Classic HttpResponse.WriteFile2 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.WriteFile2 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.WriteFile2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.WriteFile2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="offset" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="size" />負符号、ファイルのサイズより大きい<paramref name="offset" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filename" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSubstitution">
+      <MemberSignature Language="C#" Value="public void WriteSubstitution (System.Web.HttpResponseSubstitutionCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteSubstitution(class System.Web.HttpResponseSubstitutionCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpResponse.WriteSubstitution(System.Web.HttpResponseSubstitutionCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.HttpResponseSubstitutionCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">置換するメソッド、ユーザー コントロール、またはオブジェクト。</param>
+        <summary>応答置換ブロックを応答に挿入できます。これにより、出力キャッシュされた応答の指定された応答領域を動的に生成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.HttpResponse.WriteSubstitution%2A>出力キャッシュのページ キャッシュ後置換用のメソッドです。 渡すことによって、<xref:System.Web.HttpContext>オブジェクトを持つ、指定されたコールバック メソッドに<xref:System.Web.HttpResponseSubstitutionCallback>署名、出力キャッシュを置き換えることができますページ キャッシュ内の任意の指定した場所にコンテンツ。 交換を開始するには、呼び出し、<xref:System.Web.HttpResponse.WriteSubstitution%2A>メソッドをコールバック メソッドは、スレッド セーフである必要があります、次のいずれかを渡します。  
+  
+-   コンテナーのページやユーザー コントロールの静的メソッド。  
+  
+-   静的な他の任意のオブジェクトでメソッドまたはインスタンス メソッドです。  
+  
+ ページに最初の要求で、<xref:System.Web.HttpResponse.WriteSubstitution%2A>呼び出し、<xref:System.Web.HttpResponseSubstitutionCallback>出力を生成するためにデリゲートします。 次に、今後の要求を呼び出すデリゲートを保持すると、応答に代替バッファーを追加します。 最後に、クライアント側キャッシュからパブリック サーバーのみをキャッシュしないと、クライアント上でデリゲートをページを再度呼び出してに今後の要求に確保が低下します。  
+  
+> [!NOTE]
+>  キャッシュされたユーザー コントロールがユーザーの制御レベル出力キャッシュの適用先では、キャッシュ後置換はサポートされていません。 これは、フラグメント キャッシュとも呼ばれます。 詳細については、次を参照してください。 [ASP.NET ページの一部をキャッシュ](http://msdn.microsoft.com/library/cdd8e523-7305-4685-a456-c5be1de1367e)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">対象、<paramref name="callback" />パラメーターの型は<see cref="T:System.Web.UI.Control" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

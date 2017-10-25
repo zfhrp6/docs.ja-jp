@@ -1,0 +1,67 @@
+<Type Name="HandoffBehavior" FullName="System.Windows.Media.Animation.HandoffBehavior">
+  <TypeSignature Language="C#" Value="public enum HandoffBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HandoffBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.HandoffBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>プロパティに既に適用されている既存のアニメーションと新しいアニメーションが相互作用する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>、作成を使用して、プロパティに<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムは、時計を自動的に削除されません。  
+  
+ パフォーマンスの問題を避けるためには、多数の作成を使用するクロックを適用するときに、完了した後アニメーションのプロパティから作成中のクロックを削除する必要があります。 クロックを削除するいくつかの方法があります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックがプロパティから削除されます。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>クロックの有効期間が forever の場合、イベントは発生しません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションされる場合は、そのクロックも切断されて、ガベージ コレクションされます。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compose">
+      <MemberSignature Language="C#" Value="Compose" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.HandoffBehavior Compose = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.HandoffBehavior.Compose" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.HandoffBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいアニメーションは、複合チェーンの末尾に新しいアニメーションを追加することにより、既存のアニメーションに組み合わされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SnapshotAndReplace">
+      <MemberSignature Language="C#" Value="SnapshotAndReplace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.HandoffBehavior SnapshotAndReplace = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.HandoffBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいアニメーションは、プロパティに適用された既存のアニメーションを置き換えます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

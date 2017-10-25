@@ -1,0 +1,1220 @@
+<Type Name="ListControl" FullName="System.Web.UI.WebControls.ListControl">
+  <TypeSignature Language="C#" Value="public abstract class ListControl : System.Web.UI.WebControls.DataBoundControl, System.Web.UI.IEditableTextControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ListControl extends System.Web.UI.WebControls.DataBoundControl implements class System.Web.UI.IEditableTextControl, class System.Web.UI.ITextControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataBoundControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IEditableTextControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("SelectedIndexChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.ListControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlValueProperty("SelectedValue")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.DataBindingHandler("System.Web.UI.Design.WebControls.ListControlDataBindingHandler, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "Items")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのリスト型コントロールに共通なプロパティ、メソッド、およびイベントを定義する抽象基本クラスの役割を果たします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.WebControls.ListControl>抽象クラスを直接作成することはできません。 代わりに、このクラスは、他のクラスによって継承など、 <xref:System.Web.UI.WebControls.CheckBoxList>、 <xref:System.Web.UI.WebControls.DropDownList>、 <xref:System.Web.UI.WebControls.ListBox>、および<xref:System.Web.UI.WebControls.RadioButtonList>クラスは、共通の基本的な機能を提供します。  
+  
+ プロパティ、<xref:System.Web.UI.WebControls.ListControl>クラスを使用するリスト コントロールに表示するデータのソースを指定します。 使用して、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティ リスト コントロールにバインドするデータ ソースを指定します。 データ ソースに複数のテーブルが含まれている場合を使用して、<xref:System.Web.UI.WebControls.DataBoundControl.DataMember%2A>プロパティを使用するテーブルを指定します。 データ ソース内の各フィールドをバインドすることができます、<xref:System.Web.UI.WebControls.ListItem.Text%2A?displayProperty=nameWithType>と<xref:System.Web.UI.WebControls.ListItem.Value%2A?displayProperty=nameWithType>を設定して、リスト コントロール内の項目のプロパティ、<xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>と<xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>プロパティ、それぞれします。 表示されることができます、リスト コントロール内の各項目のテキストの書式を設定して、<xref:System.Web.UI.WebControls.ListControl.DataTextFormatString%2A>プロパティです。  
+  
+ リスト コントロールに表示されるすべての項目に格納されている、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション。 プログラムで指定するかを使用して、リスト コントロールで選択した項目のインデックスを確認、<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>プロパティです。 選択した項目のプロパティを使用してアクセスできる、<xref:System.Web.UI.WebControls.ListControl.SelectedItem%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.ListControl>クラスを提供、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>サーバーへのポスト間でリスト コントロールでの選択が変更されたときに発生するイベントです。 これにより、このイベントのカスタム ハンドラーを提供することができます。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.ListControl>クラスが実装する、<xref:System.Web.UI.IEditableTextControl>リスト型コントロールを派生するためのインターフェイスは、他のコントロールのテンプレート モードで使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、項目を選択する方法を示します、<xref:System.Web.UI.WebControls.ListBox>コントロール。 項目が見つかった場合、テキスト ボックスに、項目が選択され、選択した項目の名前を示すメッセージが表示されます。 項目が見つからない場合は、項目が選択されていないと項目が見つからなかったことを示すメッセージが表示されます。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[ListControlSelectedValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedValue/CS/listcontrolselectedvaluecs.aspx#1)]
+ [!code-aspx-vb[ListControlSelectedValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedValue/VB/listcontrolselectedvaluevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示す方法プログラム  
+  
+ 作成、<xref:System.Web.UI.WebControls.ListBox>コントロール。 この例では、<xref:System.Web.UI.WebControls.PlaceHolder>コントロールのコンテナーとして、<xref:System.Web.UI.WebControls.ListBox>です。  
+  
+ [!code-aspx-csharp[ListControlctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlctor/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlctor/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML コンテンツをクライアントに表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトの表示に HTML 属性およびスタイルを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.AddAttributesToRender%2A>メソッドに追加の属性を挿入する、主にコントロールの開発者によって使用されにスタイル、<xref:System.Web.UI.HtmlTextWriter>から派生したコントロールの出力ストリームは、<xref:System.Web.UI.WebControls.ListControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.ListControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />メソッドのオーバーライド、<see cref="M:System.Web.UI.WebControls.WebControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendDataBoundItems">
+      <MemberSignature Language="C#" Value="public virtual bool AppendDataBoundItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AppendDataBoundItems" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.AppendDataBoundItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングの前にリスト項目が消去されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          データ バインディングの前にリスト項目が消去されない場合は <see langword="true" />。データ バインディングが行われる前に項目のコレクションが消去される場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.AppendDataBoundItems%2A>プロパティでは、項目を追加することができます、<xref:System.Web.UI.WebControls.ListControl>オブジェクトのデータ バインディングが行われる前にします。 データ バインディングの後、項目コレクションには、データ ソースからの項目と、以前に追加された項目の両方が含まれています。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ バインド項目とのデータ バインドされていない項目の両方を含める方法を示します、<xref:System.Web.UI.WebControls.ListBox>コントロール。 <xref:System.Web.UI.Control.Load>イベントを<xref:System.Web.UI.Page>に 1 つの項目を追加、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクションおよび<xref:System.Web.UI.WebControls.ListControl.AppendDataBoundItems%2A>プロパティに設定されている`true`です。 次に、<xref:System.Web.UI.WebControls.ListBox>コントロールにバインドする、<xref:System.Data.DataTable>コントロール。 その結果<xref:System.Web.UI.WebControls.ListBox>コントロールには、データ バインド項目とに個別に追加された項目の両方が含まれています。  
+  
+ [!code-aspx-csharp[ListControlAppendDataBoundItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlAppendDataBoundItems/CS/AppendItemsCs.aspx#1)]
+ [!code-aspx-vb[ListControlAppendDataBoundItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlAppendDataBoundItems/VB/AppendItemsVb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoPostBack">
+      <MemberSignature Language="C#" Value="public virtual bool AutoPostBack { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoPostBack" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.AutoPostBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストの選択を変更したときに、サーバーへのポストバックが自動的に発生するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          リストの選択を変更するたびにサーバーへのポストバックが自動的に発生する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`場合は、サーバーに加えられるとすぐに、選択範囲をキャプチャする必要があります。 たとえば、Web ページの他のコントロールは、リスト コントロールから、ユーザーの選択に応じて自動的に入力します。  
+  
+ 一覧からユーザーの選択に基づいて、Web ページの他のコントロールの自動作成を許可するのには、このプロパティを使用できます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例は、有効にする方法を示します<xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A>の<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ [!code-aspx-csharp[ListControlAutoPostBack#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlAutoPostBack/CS/ListControlAutoPostBackcs.aspx#1)]
+ [!code-aspx-vb[ListControlAutoPostBack#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlAutoPostBack/VB/ListControlAutoPostBackvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListControl" /> クラスから派生したコントロールがクリックされたときに検証を実行するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Web.UI.WebControls.ListControl" /> コントロールがクリックされたときに検証を実行する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>検証を実行するかどうかを決定するプロパティと、<xref:System.Web.UI.WebControls.ListControl>コントロールがクリックされました。 ページの検証は、検証コントロールによって指定されている検証規則を合格すべて ページで、検証に関連付けられている入力コントロールを制御するかどうかを判断します。  
+  
+ 既定から派生したコントロールをクリックすると、<xref:System.Web.UI.WebControls.ListControl>クラスでは、ページの検証は発生しません。 コントロールであるときに、ページの検証を実行するから派生した、<xref:System.Web.UI.WebControls.ListControl>クラスがクリックされると、設定、<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティを`true`です。  
+  
+ ときの値、<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティに設定されている`true`、使用することも、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.ListControl>コントロールが原因で検証します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearSelection">
+      <MemberSignature Language="C#" Value="public virtual void ClearSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ClearSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.ClearSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リストの選択を解除して、すべての項目の <see cref="P:System.Web.UI.WebControls.ListItem.Selected" /> プロパティを false に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、コントロールをリセットして、項目が選択されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextField">
+      <MemberSignature Language="C#" Value="public virtual string DataTextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.DataTextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト項目のテキストの内容を提供するデータ ソースのフィールドを取得または設定します。</summary>
+        <value>リスト項目のテキストの内容を提供するデータ ソースのフィールド。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してフィールドを指定する、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>リスト コントロールの一覧の項目として表示するプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例は、指定する方法を示します、<xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>の<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。 <xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>に表示されるテキスト、<xref:System.Web.UI.WebControls.RadioButtonList>です。  
+  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataTextFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.DataTextFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールに連結されたデータの表示方法を制御するために使用する書式指定文字列を取得または設定します。</summary>
+        <value>コントロールに連結されたデータの書式指定文字列。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListControl.DataTextFormatString%2A>リスト コントロール内の項目にカスタムの表示形式を提供するプロパティです。  
+  
+ データの書式指定文字列は、フォームで、コロンで区切られた 2 つの部分で構成されます { `A` : `Bxx` }。 たとえば、{0: f2} の書式設定文字列には、小数点以下 2 桁の固定小数点数を表示するセルが書式設定します。  
+  
+> [!NOTE]
+>  文字列全体は、書式指定文字列とリテラル文字列ではなくであることを示すために中かっこで囲む必要があります。 かっこの外側の任意のテキストは、リテラル テキストとして表示されます。  
+  
+ コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのパラメーターのインデックスを指定します。  
+  
+> [!NOTE]
+>  各セルには 1 つだけの値がないために、この値を 0 に設定だけことができます。  
+  
+ コロンの後に文字 (`B`一般的な例で)、値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  形式の文字はを除き、大文字小文字が区別されません`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。  
+  
+ 次の表には、書式指定文字列と、結果の例が含まれています。 これには、標準英語に設定が想定しています。  
+  
+|数値の値|書式文字列|結果|  
+|-------------------|-------------------|------------|  
+|12345.6789|"{0: C}"|$12,345.68|  
+|-12345.6789|"{0: C}"|($12,345.68)|  
+|12345|"{0: D}"|12345|  
+|12345|"{0:D8}"|00012345|  
+|12345.6789|"{0: E}"|1234568E + 004|  
+|12345.6789|"{0:E10}"|1.2345678900E + 004|  
+|12345.6789|"{0: F}"|12345.68|  
+|12345.6789|"{0:F0}"|12346|  
+|12345.6789|"{0: G}"|12345.6789|  
+|123456789|"{0:G7}"|1.234568E8|  
+|12345.6789|"{0: N}"|12,345.68|  
+|123456789|"{0:N4}"|123,456,789.0000|  
+|12345.6789|"合計: {0: c}"|合計: $ 12345.68|  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataValueField">
+      <MemberSignature Language="C#" Value="public virtual string DataValueField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataValueField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.DataValueField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各リスト項目の値を提供するデータ ソースのフィールドを取得または設定します。</summary>
+        <value>各リスト項目の値を提供するデータ ソースのフィールド。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、リスト コントロール内の各項目の値を格納するフィールドを指定します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例は、指定する方法を示します、<xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>の<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。 <xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>内の各項目の値は、<xref:System.Web.UI.WebControls.RadioButtonList>です。  
+  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.ListItemsCollectionEditor,System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールの項目のコレクションを取得します。</summary>
+        <value>リスト内の項目。 既定値は空のリストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、リスト コントロールの項目のプロパティを取得します。 このプロパティは、リスト コントロールで選択した項目を決定するためにことができます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ListControl.Items%2A>の選択した項目を決定するプロパティ、<xref:System.Web.UI.WebControls.CheckBoxList>コントロール。  
+  
+ [!code-aspx-csharp[ListControlItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlItems/CS/ListControlItemscs.aspx#1)]
+ [!code-aspx-vb[ListControlItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlItems/VB/ListControlItemsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Web.UI.WebControls.ListControl" /> 派生コントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary>以前に保存した <see cref="T:System.Web.UI.WebControls.DetailsView" /> コントロールのビュー ステートを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.LoadViewState%2A>メソッドはの以前に保存したビューステートの読み込みに使用、 <xref:System.Web.UI.WebControls.ListControl> -コントロールを派生します。  
+  
+> [!NOTE]
+>  拡張する場合、このメソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.ListControl>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBinding">
+      <MemberSignature Language="C#" Value="protected override void OnDataBinding (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataBinding(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnDataBinding(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.DataBinding" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、ビュー状態と内容の表示を保存する前に、必要な表示前の手順を実行するサーバー コントロールに通知します。通常は、使用コントロールの開発者によって拡張するとき、<xref:System.Web.UI.WebControls.ListControl>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.OnPreRender%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.ListControl.OnPreRender(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedIndexChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnSelectedIndexChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.ListControl.SelectedIndexChanged" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>イベントは、サーバーへのポスト間でリスト コントロールの選択が変更されたときに発生します。  
+  
+> [!NOTE]
+>  リスト コントロールには、このイベントが正しく動作するためにサーバーにポスト間でのいくつかの値を保持する必要があります。 リスト コントロールのビュー ステートが有効になっていることを確認します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次の例には、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>ユーザーが行った選択内容を表示するイベントです。  
+  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.ListControl.TextChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.OnTextChanged%2A>メソッドから派生したコントロールによって呼び出されます、<xref:System.Web.UI.WebControls.ListControl>を発生させるクラス、<xref:System.Web.UI.WebControls.ListControl.TextChanged>イベント。 一般に、<xref:System.Web.UI.WebControls.ListControl.OnTextChanged%2A>を拡張するときにメソッドがコントロールの開発者によって使用される、<xref:System.Web.UI.WebControls.ListControl>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.OnTextChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" />を呼び出して派生クラスでメソッドが必ず、<see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformDataBinding">
+      <MemberSignature Language="C#" Value="protected override void PerformDataBinding (System.Collections.IEnumerable dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void PerformDataBinding(class System.Collections.IEnumerable dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.PerformDataBinding(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Collections.IEnumerable" />。</param>
+        <summary>指定したデータ ソースを、<see cref="T:System.Web.UI.WebControls.ListControl" /> クラスから派生したコントロールにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.PerformDataBinding%2A>メソッドから派生したコントロールによって呼び出されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ListControl>コントロールに指定されたデータ ソースをバインドするクラス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">キャッシュされた値<see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />が範囲外です。</exception>
+        <exception cref="T:System.ArgumentException">キャッシュされた値の<see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />と<see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" />が一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformSelect">
+      <MemberSignature Language="C#" Value="protected override void PerformSelect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PerformSelect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.PerformSelect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連するデータ ソースからデータを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.PerformSelect%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.ListControl.PerformDataBinding%2A>データ バインド コントロールの要素にデータをバインドするデータが取得された後メソッド。 詳細については、「<xref:System.Web.UI.WebControls.DataBoundControl.PerformSelect%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">Web ページにコンテンツを書き込むために使用する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListControl" /> コントロールの各項目を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListControl.RenderContents%2A>メソッド内の項目を表示するために、<xref:System.Web.UI.WebControls.ListControl>クライアントに制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListControl" /> 派生コントロールおよびそれに含まれる項目の現在のビュー状態を保存します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.ListControl" /> コントロールの保存された状態を格納している <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView.SaveViewState%2A>メソッドは、ヘルパー メソッドによって呼び出される、<xref:System.Web.UI.WebControls.ListControl>コントロール、コントロールの状態を保存します。  
+  
+> [!NOTE]
+>  拡張する場合、このメソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.ListControl>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndex">
+      <MemberSignature Language="C#" Value="public virtual int SelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストで選択された項目の最小の序数インデックスを取得または設定します。</summary>
+        <value>リストで選択された項目の最小の序数インデックス。 既定値は -1 です。これは、何も選択されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、リスト コントロールで 1 つだけ選択できる場合は、一覧で現在選択されている項目のインデックスを決定します。 リスト コントロールでは、複数の選択をサポートする場合は、このプロパティを使用して、選択した項目の最小のインデックスを決定します。  
+  
+ 値、<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>ポストバック時にプロパティが具体的には保存されません。 ポストバックを使用するのにはその復元、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティです。 たとえば場合、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティは、4、ポストバックで、<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>プロパティのインデックスに設定されて、<xref:System.Web.UI.WebControls.ListItem>を持つオブジェクト、 <xref:System.Web.UI.WebControls.ListItem.Value%2A> 4 のプロパティです。 1 つ以上の場合<xref:System.Web.UI.WebControls.ListItem>オブジェクトには、 <xref:System.Web.UI.WebControls.ListItem.Value%2A> 4 では、最初の項目のプロパティ、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクションを選択します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>で選択された項目の最小のインデックスを決定する、<xref:System.Web.UI.WebControls.CheckBoxList>です。  
+  
+ [!code-aspx-csharp[ListControlSelectedIndex#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedIndex/CS/ListControlSelectedIndexcs.aspx#1)]
+ [!code-aspx-vb[ListControlSelectedIndex#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedIndex/VB/ListControlSelectedIndexvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">-1 より小さい値にインデックスが設定されたか、リストがレンダリング時の一覧の項目の数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndexChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectedIndexChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectedIndexChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.ListControl.SelectedIndexChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロール内の選択項目がサーバーへのポスト間で変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>イベントは、サーバーへのポスト間でリスト コントロールの選択が変更されたときに発生します。  
+  
+> [!NOTE]
+>  リスト コントロールには、このイベントが正しく動作するためにサーバーにポスト間でのいくつかの値を保持する必要があります。 リスト コントロールのビュー ステートが有効になっていることを確認します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次の例には、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>ユーザーが行った選択内容を表示するイベントです。  
+  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListItem SelectedItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListItem SelectedItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.SelectedItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールで最小のインデックスを持つ選択された項目を取得します。</summary>
+        <value>リスト コントロールで選択された最小のインデックスを持つ項目。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールでは、1 つの選択のみを許可している場合は、このプロパティを使用して、選択した項目の個別のプロパティを取得します。 リスト コントロールでは、複数の選択を許可している場合は、このプロパティを使用して、使用できるインデックス付きのリスト コントロールで選択された項目のプロパティを取得します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Web.UI.WebControls.ListControl.SelectedItem%2A>で現在選択されているアイテムの個々 のプロパティを取得する、<xref:System.Web.UI.WebControls.RadioButtonList>し、そのアイテムとその値を表示します。  
+  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedValue">
+      <MemberSignature Language="C#" Value="public virtual string SelectedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.SelectedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true, System.ComponentModel.BindingDirection.TwoWay)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロール内の選択されている項目の値を取得します。または、指定した値が含まれるリスト コントロール内の項目を選択します。</summary>
+        <value>リスト コントロール内の選択されている項目の値。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します、<xref:System.Web.UI.WebControls.ListItem.Value%2A>の選択したプロパティ<xref:System.Web.UI.WebControls.ListItem>です。 <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>リスト コントロールで選択した項目の値を決定する通常プロパティを使用します。 複数の項目が選択されている場合は、最小のインデックスを選択した項目の値が返されます。 項目が選択されていない場合、空の文字列 ("") が返されます。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティは、項目を選択リスト コントロールの項目の値を設定することによっても使用できます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ 選択した値が使用可能な値の一覧に含まれないし、ポストバックを実行すると、ときに、<xref:System.ArgumentOutOfRangeException>例外がスローされます。 次の例では、ポストバックが発生する前に、無効な値をキャッチする方法を示します。  
+  
+```vb  
+Me.DropDownList1.Items.Add(New ListItem( Text="Hello", Value="1" ))   
+If DropDownList1.Items.FindByValue("2") IsNot Nothing Then   
+    Response.Write("Found")   
+End If  
+```  
+  
+```csharp  
+this.DropDownList1.Items.Add(new ListItem{ Text="Hello", Value="1" });  
+if(DropDownList1.Items.FindByValue("2") != null) {  
+    Response.Write("Found");  
+}  
+```  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>内の項目を選択するプロパティを<xref:System.Web.UI.WebControls.ListBox>コントロール。 このプロパティは、選択した項目の値を取得するも使用することを確認します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[ListControlSelectedValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedValue/CS/listcontrolselectedvaluecs.aspx#1)]
+ [!code-aspx-vb[ListControlSelectedValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedValue/VB/listcontrolselectedvaluevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値が使用可能な値、表示状態、またはその他の状態の一覧でが読み込まれていません (ポストバックが実行されています)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPostDataSelection">
+      <MemberSignature Language="C#" Value="protected void SetPostDataSelection (int selectedIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetPostDataSelection(int32 selectedIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.SetPostDataSelection(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectedIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="selectedIndex"><see cref="P:System.Web.UI.WebControls.ListControl.Items" /> コレクション内の選択された項目のインデックス。</param>
+        <summary>ページがポストされた後、<see cref="T:System.Web.UI.WebControls.ListItem" /> コントロールの <see cref="P:System.Web.UI.WebControls.ListItem.Selected" /> プロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.SetPostDataSelection%2A>メソッドで選択した項目を保持するヘルパー メソッド、<xref:System.Web.UI.WebControls.ListControl>ページがポストされた後に制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlTextWriterTag" /> コントロールの <see cref="T:System.Web.UI.WebControls.ListControl" /> 値を取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListControl" /> コントロールの <see cref="T:System.Web.UI.HtmlTextWriterTag" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.TagKey%2A>プロパティから派生したコントロールの適切な HTML マークアップを記述する出力ストリームを使用する、<xref:System.Web.UI.WebControls.ListControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.WebControls.ListControl.TagKey" />プロパティを指定する<see cref="T:System.Web.UI.HtmlTextWriterTag" />派生したコントロールに使用する値。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListControl" /> コントロールの <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" /> プロパティを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListControl" /> の <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.Text%2A>プロパティを取得し、同じ値を設定、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティにします。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>で選択した項目の値を決定するプロパティは通常使用、<xref:System.Web.UI.WebControls.ListControl>コントロール。 項目が選択されていない場合、空の文字列 ("") が返されます。  
+  
+ 使用することも、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>内の項目を選択するプロパティを<xref:System.Web.UI.WebControls.ListControl>項目の値を設定することによって制御されます。 場合に項目がありません、<xref:System.Web.UI.WebControls.ListControl>コントロールが、指定した値を含む、<xref:System.ArgumentOutOfRangeException?displayProperty=nameWithType>例外がスローされます。  
+  
+ コントロール開発者、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティに関連付けられていない機能をサポートする、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティです。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.ListControl.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.WebControls.ListControl.Text" /> プロパティと <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" /> プロパティが変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.TextChanged>イベントが発生したときに、<xref:System.Web.UI.WebControls.ListControl.Text%2A>と<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>プロパティが変更されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.OnTextChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" />を呼び出して派生クラスでメソッドが必ず、<see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListControl" /> 派生コントロールに対するビュー状態の変更の追跡と保存を始める開始点にマークを付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドして、コントロールのビュー ステートの一部としてコントロールに対する変更の追跡と保存を開始する開始位置をマークします。  
+  
+> [!NOTE]
+>  拡張する場合、このメソッドは、主にコントロールの開発者によって使用<xref:System.Web.UI.WebControls.ListControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへのポストバック時に、<see cref="T:System.Web.UI.WebControls.ListControl" /> クラスから派生したコントロールによって発生する検証の対象となるコントロールのグループを取得または設定します。</summary>
+        <value>サーバーへのポストバック時に、派生した <see cref="T:System.Web.UI.WebControls.ListControl" /> によって発生する検証の対象となるコントロールのグループ。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループから個別に検証できます。 使用して、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>の検証グループの名前を指定するプロパティから派生したコントロール、<xref:System.Web.UI.WebControls.ListControl>クラスは、サーバーへのポストバック時に検証を実行します。  
+  
+ <xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティは、有効される場合にのみの値、<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティに設定されている`true`です。 値を指定すると、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティ、指定されたグループの一部である検証コントロールだけは、検証、<xref:System.Web.UI.WebControls.ListControl>コントロールは、サーバーに再度ポストします。 値を指定しない場合、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティおよび<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティに設定されている`true`サーバーへのコントロールのポストバック時に検証グループに割り当てられていないページ上のすべての検証コントロールが検証されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyMultiSelect">
+      <MemberSignature Language="C#" Value="protected virtual void VerifyMultiSelect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void VerifyMultiSelect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.VerifyMultiSelect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスト コントロールが複数選択モードをサポートするかどうかを決定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListControl.VerifyMultiSelect%2A>メソッドは何も複数選択がサポートされている場合。 それ以外の場合、スロー、<xref:System.Web.HttpException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <see cref="P:System.Web.UI.WebControls.ListBox.SelectionMode" /> が <see cref="F:System.Web.UI.WebControls.ListSelectionMode.Single" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

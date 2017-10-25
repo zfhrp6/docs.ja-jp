@@ -1,0 +1,483 @@
+<Type Name="InPlaceHostingManager" FullName="System.Deployment.Application.InPlaceHostingManager">
+  <TypeSignature Language="C#" Value="public class InPlaceHostingManager : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InPlaceHostingManager extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.InPlaceHostingManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>インストールするか、コンピューターで ClickOnce の配置を更新します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Deployment.Application.InPlaceHostingManager>書き込むプログラムのインストールを[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション プログラムでします。 たとえば、管理されたシステム管理ソフトウェア (SMS) 環境か、または複雑なインストール数、ローカル コンピューター上の事前インストールまたはインストール後の操作を実行する必要がある状況では、このクラスを使用できます。 一般に、特定の順序で、このクラスのメンバーを使用するされます。  
+  
+1.  <xref:System.Deployment.Application.InPlaceHostingManager> の新しいインスタンスを作成します。  
+  
+2.  使用して、配置マニフェストをダウンロード<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync%2A>です。  
+  
+3.  使用して適切なアクセス許可を持つ、アプリケーションを実行できることを確認して<xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>です。  
+  
+4.  使用して、アプリケーションのインストールをダウンロードして<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync%2A>です。  
+  
+-   これらのパラメーターのいずれかの順序を呼び出す場合、例外がスローされます。  
+  
+ <xref:System.Deployment.Application.InPlaceHostingManager>インストールできます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションが、実行はできません。 これの一部のメソッド クラスなど、 <xref:System.Deployment.Application.InPlaceHostingManager.Execute%2A>、Web ブラウザー内で実行される Windows Presentation Foundation ベースのアプリケーションをダウンロードするときに使用するために予約されています。  
+  
+ 使用する<xref:System.Deployment.Application.InPlaceHostingManager>をダウンロードしてアプリケーションをインストールする必要があること確認する署名の証明書、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]信頼された発行元としてクライアント コンピューターにインストールする予定のアプリケーションが既にインストールされています。 信頼された発行元の詳細については、次を参照してください。[信頼されたアプリケーション展開の概要](http://msdn.microsoft.com/library/b24a1702-8fbe-45b1-87a0-9618a0708f1d)です。  
+  
+> [!NOTE]
+>  により、製品の制限が現在<xref:System.Deployment.Application.InPlaceHostingManager>を使用して、コードをデバッグする場合に正常に動作から[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。 アプリケーションをデバッグする場合[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]F5 キーを使用すると、このサンプルは例外をスロー不可解なを呼び出すとき<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync%2A>です。 使用してデバッグする[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、デバッグ機能なし、アプリケーションを起動し、デバッガーをアタッチします。 代わりに、WinDbg などの別のデバッガーを使用することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示しています。<xref:System.Deployment.Application.InPlaceHostingManager>をインストールする、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]クライアント コンピューターでプログラムによってアプリケーションです。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#1)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InPlaceHostingManager (Uri deploymentManifest);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri deploymentManifest) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="deploymentManifest" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="deploymentManifest">Uniform Resource Identifier (<see cref="T:System.Uri" />) に、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションの配置マニフェスト。</param>
+        <summary>新しいインスタンスを作成<see cref="T:System.Deployment.Application.InPlaceHostingManager" />をダウンロードして、指定されたブラウザーによってホストされるアプリケーションをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、Web ブラウザーでホストされている Windows Presentation Foundation ベースのアプリケーションをダウンロードするときに使用されます。 Windows フォーム ベースのアプリケーションを使用して展開をダウンロードする[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を使用して、<xref:System.Deployment.Application.InPlaceHostingManager.%23ctor%2A>を持つコンス トラクター、`launchInHostProcess`パラメーターに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.Deployment.Application.InPlaceHostingManager" />Windows XP または Windows オペレーティング システムの以降のバージョンでのみ使用できます。</exception>
+        <exception cref="T:System.ArgumentNullException">渡せません<see langword="null" />の<paramref name="deploymentManifest" />引数。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="deploymentManifest" />サポートされていない URI スキームを使用して[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InPlaceHostingManager (Uri deploymentManifest, bool launchInHostProcess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri deploymentManifest, bool launchInHostProcess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.#ctor(System.Uri,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="deploymentManifest" Type="System.Uri" />
+        <Parameter Name="launchInHostProcess" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deploymentManifest">UNIFORM Resource Identifier () をインストールするアプリケーションの配置マニフェストにします。</param>
+        <param name="launchInHostProcess">かどうかこのアプリケーションは、Web ブラウザーなどのホストで実行されます。 スタンドアロンのアプリケーションでは、この値に設定<see langword="false" />です。</param>
+        <summary>新しいインスタンスを作成<see cref="T:System.Deployment.Application.InPlaceHostingManager" />をダウンロードして、スタンドアロンの Windows フォーム ベースのアプリケーションまたは Web ブラウザーでホストされるアプリケーションのいずれかにすることができます、指定されたアプリケーションをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ インスタンスを作成する方法を次のコード例に示します<xref:System.Deployment.Application.InPlaceHostingManager>Windows フォーム ベースのアプリケーションを使用して展開をダウンロードすることができる[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#2)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.Deployment.Application.InPlaceHostingManager" />Windows XP または Windows オペレーティング システムの以降のバージョンでのみ使用できます。</exception>
+        <exception cref="T:System.ArgumentNullException">渡せません<see langword="null" />の<paramref name="deploymentManifest" />引数。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="deploymentManifest" />サポートされていない URI スキームを使用して[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertApplicationRequirements">
+      <MemberSignature Language="C#" Value="public void AssertApplicationRequirements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AssertApplicationRequirements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうか、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションがローカル コンピューター上で実行するには、適切なアクセス許可とプラットフォームの依存関係。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります<xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>後<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync%2A>が正常に完了します。 呼び出す必要はありません<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync%2A>ない限り、 <xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>、エラーなくを返します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>、成功の本体でそれを呼び出した<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted>イベント ハンドラー。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#3)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">前にこのメソッドが呼び出された場合に発生する、<see cref="M:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertApplicationRequirements">
+      <MemberSignature Language="C#" Value="public void AssertApplicationRequirements (bool grantApplicationTrust);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AssertApplicationRequirements(bool grantApplicationTrust) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="grantApplicationTrust" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="grantApplicationTrust">場合<see langword="true" />アプリケーションは、必要なレベルへのアクセス許可の昇格を試みます。</param>
+        <summary>指定するかどうか、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションがローカル コンピューター上で実行するには、適切なアクセス許可とプラットフォームの依存関係。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`grantApplicationTrust`は`true`、<xref:System.Deployment.Application.InPlaceHostingManager>それらが必要な場合、アプリケーションがアクセス許可を管理者特権が与えられます。 これは場合にのみ可能<xref:System.Deployment.Application.InPlaceHostingManager>をこれらのアクセス許可を付与することができます。 たとえば場合、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]より大きなパッケージの一部としてアプリケーションをインストールして、インストーラーに、完全な信頼が付与されて<xref:System.Deployment.Application.InPlaceHostingManager>を付与することができます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション完全な信頼。 場合`grantApplicationTrust`は`false`アプリケーションが権限を付与しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAsync">
+      <MemberSignature Language="C#" Value="public void CancelAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.CancelAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期ダウンロード操作をキャンセルします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Deployment.Application.InPlaceHostingManager" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.InPlaceHostingManager.Dispose%2A> を使い終わったら <xref:System.Deployment.Application.InPlaceHostingManager> を呼び出します。 <xref:System.Deployment.Application.InPlaceHostingManager.Dispose%2A> メソッドによって、<xref:System.Deployment.Application.InPlaceHostingManager> は使用不可の状態になります。 呼び出した後<xref:System.Deployment.Application.InPlaceHostingManager.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Deployment.Application.InPlaceHostingManager>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Deployment.Application.InPlaceHostingManager>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Deployment.Application.InPlaceHostingManager.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Deployment.Application.InPlaceHostingManager> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Deployment.Application.InPlaceHostingManager> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadApplicationAsync">
+      <MemberSignature Language="C#" Value="public void DownloadApplicationAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DownloadApplicationAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バック グラウンドでアプリケーションの更新プログラムをダウンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出した後に呼び出す必要があります<xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync%2A>、正常に実行の最後に呼び出した、<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted>イベント ハンドラー。  
+  
+ 次のコード例では、既に定義しているのインスタンスを作成前提としています<xref:System.Deployment.Application.InPlaceHostingManager>という`iphm`です。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#3)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">前にこのメソッドが呼び出された場合に発生する、<see cref="M:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync" />と<see cref="M:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadApplicationCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Deployment.Application.DownloadApplicationCompletedEventArgs&gt; DownloadApplicationCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Deployment.Application.DownloadApplicationCompletedEventArgs&gt; DownloadApplicationCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Deployment.Application.DownloadApplicationCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは終了して、ローカル コンピューターにダウンロードするときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォーム ベースのアプリケーションをインストールする場合は自分自身; アプリケーションを起動するユーザーに指示する必要があります。使用してプログラムから Windows フォーム ベースのアプリケーションを起動することはできません、<xref:System.Deployment.Application.InPlaceHostingManager.Execute%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例ではの<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationCompleted>イベント。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#7)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadProgressChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Deployment.Application.DownloadProgressChangedEventArgs&gt; DownloadProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Deployment.Application.DownloadProgressChangedEventArgs&gt; DownloadProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.InPlaceHostingManager.DownloadProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Deployment.Application.DownloadProgressChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションまたはマニフェストのダウンロードの状態の変更がある場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンソール アプリケーションでのイベントは、スレッド プールからスレッドに割り当てられます。 そのため、進行状況の更新イベント順序で前のイベントと比較して減少を示すイベントを後があります。 Windows フォームのイベントは、ユーザー インターフェイス (UI) スレッドのメッセージ キューから順番に処理されるため、Windows フォーム ベースのアプリケーションでは、このような動作は表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、更新、<xref:System.Windows.Forms.ToolStripProgressBar>内に含まれているが、<xref:System.Windows.Forms.StatusStrip>です。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#6)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.ObjectHandle Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Runtime.Remoting.ObjectHandle Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>起動、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションは、Windows Presentation Foundation ベースのアプリケーションを Web ブラウザーで実行されている場合にのみです。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.ObjectHandle" />起動するアプリケーションに対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Web ブラウザーでホストできる Windows Presentation Foundation ベースのアプリケーションに対してのみ有効です (つまり、その配置マニフェストの定義、 `hostInBrowser` XML 要素)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetManifestAsync">
+      <MemberSignature Language="C#" Value="public void GetManifestAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetManifestAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配置マニフェストをダウンロード、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]バック グラウンドでアプリケーションし、操作が完了したかエラーが発生したときにイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが完了したときの通知を受信する、イベント ハンドラーを作成、<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted>イベント。 このイベントが呼び出され、によってエラーが示されていないかどうかは<xref:System.Deployment.Application.GetManifestCompletedEventArgs>、次に呼び出す必要があります<xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>をアプリケーションがローカル コンピューター上で実行する権限を持つことを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示す、<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync%2A>メソッドです。 ハンドラーを<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted>イベント コールバックかどうか確認マニフェストのダウンロードが正常に完了した場合と、そのアプリケーションに関する追加情報を持つユーザー メッセージが表示されます。 インストールを続行する、ユーザーが同意した場合、ハンドラーを呼び出します<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync%2A>です。  
+  
+ 次のコード例では、既に定義しているのインスタンスを作成前提としています<xref:System.Deployment.Application.InPlaceHostingManager>という`iphm`です。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#3)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#3)]  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetManifestCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Deployment.Application.GetManifestCompletedEventArgs&gt; GetManifestCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Deployment.Application.GetManifestCompletedEventArgs&gt; GetManifestCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Deployment.Application.GetManifestCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配置マニフェストがローカル コンピューターにダウンロードされている場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティ<xref:System.Deployment.Application.GetManifestCompletedEventArgs>を確認するかどうか<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync%2A>正常に完了したか、エラーが返されます。 場合<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>が null、<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync%2A>を正常に完了し、呼び出すことができます<xref:System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示す、<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestAsync%2A>メソッドです。 ハンドラーを<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted>イベント コールバックかどうか確認マニフェストのダウンロードが正常に完了した場合と、そのアプリケーションに関する追加情報を持つユーザー メッセージが表示されます。 インストールを続行する、ユーザーが同意した場合、ハンドラーを呼び出します<xref:System.Deployment.Application.InPlaceHostingManager.DownloadApplicationAsync%2A>です。  
+  
+ 次のコード例では、既に定義しているのインスタンスを作成前提としています<xref:System.Deployment.Application.InPlaceHostingManager>という`iphm`です。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#2)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#2)]  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#3)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallCustomAddIn">
+      <MemberSignature Language="C#" Value="public static void UninstallCustomAddIn (string subscriptionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallCustomAddIn(string subscriptionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.UninstallCustomAddIn(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subscriptionId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="subscriptionId">アドインを削除することを示します、サブスクリプションの識別子を表す文字列。</param>
+        <summary>アプリケーションの以前にインストールしたユーザー定義のコンポーネントを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" />有効なサブスクリプション id ではないか、名前、公開キー トークン、プロセッサ アーキテクチャ、およびバージョン番号は含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subscriptionId" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallCustomUXApplication">
+      <MemberSignature Language="C#" Value="public static void UninstallCustomUXApplication (string subscriptionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallCustomUXApplication(string subscriptionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.InPlaceHostingManager.UninstallCustomUXApplication(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subscriptionId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="subscriptionId">かを示すサブスクリプション識別子を表す文字列、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションを削除します。</param>
+        <summary>削除、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を含むアプリケーションを&lt;customUX&gt;要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは以前にインストールされたアンインストール[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を使用するアプリケーション、`<customUX>`内の要素、 [ &lt;entryPoint&gt;要素](http://msdn.microsoft.com/library/10ad3083-10c1-4189-a870-9bba2eab244f)です。  
+  
+ カスタム インストーラーを追加または削除するプログラムのエントリを作成しない、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションで見つかったサブスクリプション識別子を格納する必要があります、<xref:System.Deployment.Application.GetManifestCompletedEventArgs.SubscriptionIdentity%2A>のインストール時にプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

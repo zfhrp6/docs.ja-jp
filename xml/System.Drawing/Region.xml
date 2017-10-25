@@ -1,0 +1,1966 @@
+<Type Name="Region" FullName="System.Drawing.Region">
+  <TypeSignature Language="C#" Value="public sealed class Region : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Region extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Region" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>四角形とパスで構成されるグラフィックス図形の内部をについて説明します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワールド座標での座標が指定されているために、領域はスケーラブルなです。 描画サーフェイスに、その内部が表すピクセルの形状とサイズに依存します。 アプリケーションは、描画操作の出力のクリップ領域を使用することができます。 これらの領域は、クリッピング領域と呼ばれます。 クリッピング領域の使用の詳細については、次を参照してください。[する方法: 使用クリッピング領域を含む](~/docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)です。  
+  
+ アプリケーションでは、地域点または四角形が領域と交差するかどうかをチェックなど、ヒット テストの操作でも使用できます。 ヒット テスト領域の使用の詳細については、次を参照してください。[する方法: 領域で使用するのテスト ヒット](~/docs/framework/winforms/advanced/how-to-use-hit-testing-with-a-region.md)です。  
+  
+ アプリケーションを使用して領域を埋めることができます、<xref:System.Drawing.Graphics.FillRegion%2A?displayProperty=nameWithType>メソッドおよび<xref:System.Drawing.Brush>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。  コード例を使用する方法を示します、<xref:System.Drawing.Drawing2D.RegionData.Data%2A>いずれかから<xref:System.Drawing.Drawing2D.RegionData>を設定するオブジェクト、<xref:System.Drawing.Drawing2D.RegionData.Data%2A>別<xref:System.Drawing.Drawing2D.RegionData>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#13](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#13)]
+ [!code-csharp[System.Drawing.MiscExamples#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#13)]
+ [!code-vb[System.Drawing.MiscExamples#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Region ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Drawing.Region" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを新しい初期化<xref:System.Drawing.Region>無限の内部使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Region (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.#ctor(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path">新しい <see cref="T:System.Drawing.Region" /> を定義する <see cref="T:System.Drawing.Drawing2D.GraphicsPath" />。</param>
+        <summary>指定した <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> で新しい <see cref="T:System.Drawing.Region" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Drawing.Region>で、<xref:System.Drawing.Drawing2D.GraphicsPath>です。 内部として、新しい領域が定義されている、<xref:System.Drawing.Drawing2D.GraphicsPath>によって指定された、`path`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Region (System.Drawing.Drawing2D.RegionData rgnData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Drawing2D.RegionData rgnData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.#ctor(System.Drawing.Drawing2D.RegionData)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rgnData" Type="System.Drawing.Drawing2D.RegionData" />
+      </Parameters>
+      <Docs>
+        <param name="rgnData">新しい <see cref="T:System.Drawing.Region" /> の内部を定義する <see cref="T:System.Drawing.Drawing2D.RegionData" />。</param>
+        <summary>指定したデータから新しい <see cref="T:System.Drawing.Region" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Drawing.Region>既存で定義されている、内部使用<xref:System.Drawing.Region>です。 `rgnData`パラメーターは、既存の定義を含む配列<xref:System.Drawing.Region>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rgnData" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Region (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.#ctor(System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />新しいの内部を定義する構造体<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.Region" />から、指定した<see cref="T:System.Drawing.Rectangle" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Drawing.Region>四角形の内部にします。 内部がによって定義された、`rect`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Region.%23ctor%2A>コンス トラクターと<xref:System.Drawing.Region.MakeEmpty%2A>メソッドです。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`FillEmptyRegion`メソッドで、フォームの<xref:System.Windows.Forms.Control.Paint>イベント処理メソッドを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.MiscExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.MiscExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Region (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.#ctor(System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />新しいの内部を定義する構造体<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.Region" />から、指定した<see cref="T:System.Drawing.RectangleF" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Drawing.Region>四角形の内部にします。 内部がによって定義された、`rect`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Drawing.Region Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Region Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Region</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Region" /> の同一コピーを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Region" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complement">
+      <MemberSignature Language="C#" Value="public void Complement (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complement(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Complement(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Drawing.Drawing2D.GraphicsPath" />を補足する<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この <see cref="T:System.Drawing.Region" /> と交差しない指定の <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> の部分が含まれるように、この <see cref="T:System.Drawing.Region" /> を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形を作成し、黒の画面に描画します。  
+  
+-   1 つ目と交差して、赤で画面に描画する 2 つ目の四角形を作成します。  
+  
+-   最初の四角形を使用して領域を作成します。  
+  
+-   作成、 <xref:System.Drawing.Drawing2D.GraphicsPath>、し、2 つ目の四角形を追加します。  
+  
+-   組み合わせると、領域の補数を取得、<xref:System.Drawing.Drawing2D.GraphicsPath>です。  
+  
+-   青でビットごとの補数領域を塗りつぶし、画面に描画します。  
+  
+ 注意しての領域では、<xref:System.Drawing.Drawing2D.GraphicsPath>と交差しない、領域の色は青です。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Complement">
+      <MemberSignature Language="C#" Value="public void Complement (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complement(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Complement(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />構造を補足する<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />を指定した部分を含む<see cref="T:System.Drawing.Rectangle" />これと交差しない構造<see cref="T:System.Drawing.Region" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、次を参照してください。、<xref:System.Drawing.Region.Complement%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complement">
+      <MemberSignature Language="C#" Value="public void Complement (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complement(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Complement(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.RectangleF" />構造を補足する<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />を指定した部分を含む<see cref="T:System.Drawing.RectangleF" />これと交差しない構造<see cref="T:System.Drawing.Region" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形を作成し、黒の画面に描画します。  
+  
+-   1 つ目と交差して、赤で画面に描画する 2 つ目の四角形を作成します。  
+  
+-   最初の四角形を使用して領域を作成します。  
+  
+-   2 つ目の四角形と組み合わせて使用する地域の補数を取得します。  
+  
+-   青でビットごとの補数領域を塗りつぶし、画面に描画します。  
+  
+ 領域と交差しない 2 つ目の四角形の領域を青に色が設定することがわかります。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complement">
+      <MemberSignature Language="C#" Value="public void Complement (System.Drawing.Region region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complement(class System.Drawing.Region region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Complement(System.Drawing.Region)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Drawing.Region" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Drawing.Region" />オブジェクトを補足する<see cref="T:System.Drawing.Region" />オブジェクト。</param>
+        <summary>この <see cref="T:System.Drawing.Region" /> と交差しない指定の <see cref="T:System.Drawing.Region" /> の部分が含まれるように、この <see cref="T:System.Drawing.Region" /> を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形を作成し、黒の画面に描画  
+  
+-   1 つ目と交差して、赤で画面に描画する 2 つ目の四角形を作成します。  
+  
+-   最初の四角形を使用して 1 つの領域を作成し、2 つ目の四角形を使用して 2 つ目の領域を作成します。  
+  
+-   2 つ目の領域と組み合わせた場合にその最初の地域の補数を取得します。  
+  
+-   青でビットごとの補数領域を塗りつぶし、画面に描画します。  
+  
+ 最初の領域と交差しない 2 つ目の領域の領域を青に色が設定することがわかります。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="region" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Region" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Drawing.Region.Dispose%2A>により、これによって使用されるリソース<xref:System.Drawing.Region>を他の目的に再割り当てされます。  
+  
+ <xref:System.Drawing.Region.Dispose%2A> を使い終わったら <xref:System.Drawing.Region> を呼び出します。 <xref:System.Drawing.Region.Dispose%2A> メソッドによって、<xref:System.Drawing.Region> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.Region.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.Region>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.Region>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Region.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Region> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Region> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Drawing.Region.%23ctor%2A>コンス トラクターと<xref:System.Drawing.Region.Exclude%2A>と<xref:System.Drawing.Region.Dispose%2A>メソッドです。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`FillRegionExcludingPath`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.GraphicsProperties#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.GraphicsProperties#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.GraphicsProperties#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Drawing.Region region, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.Drawing.Region region, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Equals(System.Drawing.Region,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Drawing.Region" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="region">テスト対象の <see cref="T:System.Drawing.Region" />。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />描画サーフェイスを表すです。</param>
+        <summary>テストするかどうか、指定した<see cref="T:System.Drawing.Region" />はこれと同じ<see cref="T:System.Drawing.Region" />指定した画面を描画します。</summary>
+        <returns>
+          <see langword="true" />変換が関連付けられている場合は、領域の内部がこの領域の内部と同じで、<paramref name="g" />パラメーターが適用されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換`g`描画サーフェイス上の領域の内部の計算に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> または <paramref name="region" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="public void Exclude (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Exclude(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Exclude(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Drawing.Drawing2D.GraphicsPath" />これから除外する<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />を指定したと交差しないの内部の部分のみを含む<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Drawing.Region.%23ctor%2A>コンス トラクターと<xref:System.Drawing.Region.Exclude%2A>と<xref:System.Drawing.Region.Dispose%2A>メソッドです。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`FillRegionExcludingPath`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.GraphicsProperties#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.GraphicsProperties#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.GraphicsProperties#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="public void Exclude (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Exclude(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Exclude(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />これから除外する構造体<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />を指定したと交差しないの内部の部分のみを含む<see cref="T:System.Drawing.Rectangle" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Exclude%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="public void Exclude (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Exclude(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Exclude(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.RectangleF" />これから除外する構造体<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />を指定したと交差しないの内部の部分のみを含む<see cref="T:System.Drawing.RectangleF" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形を作成し、黒の画面に描画  
+  
+-   1 つ目と交差して、赤で画面に描画する 2 つ目の四角形を作成します。  
+  
+-   最初の四角形を使用して領域を作成します。  
+  
+-   2 つ目の四角形と組み合わせると、領域の非除外の領域を取得します。  
+  
+-   青で非除外領域を塗りつぶし、画面に描画します。  
+  
+ 領域、四角形と交差しない、領域の領域の色は青に注意してください。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="public void Exclude (System.Drawing.Region region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Exclude(class System.Drawing.Region region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Exclude(System.Drawing.Region)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Drawing.Region" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Drawing.Region" />これから除外する<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />を指定したと交差しないの内部の部分のみを含む<see cref="T:System.Drawing.Region" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例については、次を参照してください。、<xref:System.Drawing.Region.Exclude%28System.Drawing.RectangleF%29>と<xref:System.Drawing.Region.Complement%28System.Drawing.Region%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="region" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Region ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHrgn">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Region FromHrgn (IntPtr hrgn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Region FromHrgn(native int hrgn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.FromHrgn(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Region</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hrgn" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hrgn">既存のハンドル<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.Region" />指定した既存のハンドルから[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]領域。</summary>
+        <returns>新しい <see cref="T:System.Drawing.Region" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Drawing.Region>既存で定義されている、内部使用<xref:System.Drawing.Region>でハンドルによって参照される、`hrgn`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 列挙体を関連<see cref="T:System.Security.Permissions.SecurityPermissionFlag" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetBounds (System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetBounds(class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.GetBounds(System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この<see cref="T:System.Drawing.Region" />を描画します。</param>
+        <summary>取得、<see cref="T:System.Drawing.RectangleF" />この領域に外接する四角形を表す構造<see cref="T:System.Drawing.Region" />の描画サーフェイス、<see cref="T:System.Drawing.Graphics" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />この外接する四角形を表す構造<see cref="T:System.Drawing.Region" />指定した画面を描画します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、描画サーフェイス領域の内部の計算に使用されます。 外接する四角形は、常に最小の可能な外接する四角形によっては、現在の変換ではないです。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.GraphicsPath>し、省略記号を追加します。  
+  
+-   青でパスを入力し、画面に描画します。  
+  
+-   使用する領域を作成、<xref:System.Drawing.Drawing2D.GraphicsPath>です。  
+  
+-   2 つ目の四角形と組み合わせると、領域の非除外の領域を取得します。  
+  
+-   領域に外接する四角形を取得し、赤で画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHrgn">
+      <MemberSignature Language="C#" Value="public IntPtr GetHrgn (System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance native int GetHrgn(class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.GetHrgn(System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この<see cref="T:System.Drawing.Region" />を描画します。</param>
+        <summary>この Windows ハンドルを返します<see cref="T:System.Drawing.Region" />で指定したグラフィックス コンテキスト。</summary>
+        <returns>この <see cref="T:System.Drawing.Region" /> を識別する Windows ハンドル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegionData">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.RegionData GetRegionData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Drawing2D.RegionData GetRegionData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.GetRegionData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.RegionData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Drawing.Drawing2D.RegionData" />これを説明する情報を表す<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.Drawing2D.RegionData" />これを説明する情報を表す<see cref="T:System.Drawing.Region" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Region>クラスでは、カスタムの形状を定義することができます。 図形は、線、多角形、および曲線の構成できます。 <xref:System.Drawing.Region.GetRegionData%2A>これに含まれている構造が記述<xref:System.Drawing.Region>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。  コード例を使用する方法を示します、<xref:System.Drawing.Drawing2D.RegionData.Data%2A>いずれかから<xref:System.Drawing.Drawing2D.RegionData>を設定するオブジェクト、<xref:System.Drawing.Drawing2D.RegionData.Data%2A>別<xref:System.Drawing.Drawing2D.RegionData>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#13](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#13)]
+ [!code-csharp[System.Drawing.MiscExamples#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#13)]
+ [!code-vb[System.Drawing.MiscExamples#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegionScans">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF[] GetRegionScans (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF[] GetRegionScans(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.GetRegionScans(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />領域に適用するジオメトリック変換を表すです。</param>
+        <summary>配列を返します<see cref="T:System.Drawing.RectangleF" />おおよそのこの構造<see cref="T:System.Drawing.Region" />指定した行列変換の適用後にします。</summary>
+        <returns>配列<see cref="T:System.Drawing.RectangleF" />おおよそのこの構造<see cref="T:System.Drawing.Region" />指定した行列変換の適用後にします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="matrix" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public void Intersect (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Intersect(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Intersect(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path">この <see cref="T:System.Drawing.Region" /> と交差する <see cref="T:System.Drawing.Drawing2D.GraphicsPath" />。</param>
+        <summary>この <see cref="T:System.Drawing.Region" /> をそれ自体と指定の <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> の交差部分に更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例については、次を参照してください。、<xref:System.Drawing.RectangleF.Intersect%28System.Drawing.RectangleF%29?displayProperty=nameWithType>と<xref:System.Drawing.Region.Complement%28System.Drawing.Drawing2D.GraphicsPath%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public void Intersect (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Intersect(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Intersect(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect">この <see cref="T:System.Drawing.Region" /> と交差する <see cref="T:System.Drawing.Rectangle" /> 構造体。</param>
+        <summary>この <see cref="T:System.Drawing.Region" /> をそれ自体と指定の <see cref="T:System.Drawing.Rectangle" /> 構造体の交差部分に更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Intersect%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public void Intersect (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Intersect(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Intersect(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect">この <see cref="T:System.Drawing.Region" /> と交差する <see cref="T:System.Drawing.RectangleF" /> 構造体。</param>
+        <summary>この <see cref="T:System.Drawing.Region" /> をそれ自体と指定の <see cref="T:System.Drawing.RectangleF" /> 構造体の交差部分に更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   最初の四角形を作成し、黒の画面に描画します。  
+  
+-   2 つ目の四角形を作成し、赤で画面に描画します。  
+  
+-   最初の四角形の領域を作成します。  
+  
+-   2 つ目の四角形と組み合わせたときの積集合の領域を取得します。  
+  
+-   領域に、青と交差し、画面に描画します。  
+  
+ 領域と四角形の重複した部分のみが青であることを確認します。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public void Intersect (System.Drawing.Region region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Intersect(class System.Drawing.Region region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Intersect(System.Drawing.Region)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Drawing.Region" />
+      </Parameters>
+      <Docs>
+        <param name="region">この <see cref="T:System.Drawing.Region" /> と交差する <see cref="T:System.Drawing.Region" />。</param>
+        <summary>この <see cref="T:System.Drawing.Region" /> をそれ自体と指定の <see cref="T:System.Drawing.Region" /> の交差部分に更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例については、次を参照してください、<xref:System.Drawing.Region.Intersect%28System.Drawing.RectangleF%29>と<xref:System.Drawing.Region.Complement%28System.Drawing.Drawing2D.GraphicsPath%29>メソッド。`.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty (System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmpty(class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsEmpty(System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />描画サーフェイスを表すです。</param>
+        <summary>テストするかどうかこの<see cref="T:System.Drawing.Region" />指定された描画サーフェイス上の内部が空です。</summary>
+        <returns>
+          <see langword="true" />場合のこの内部<see cref="T:System.Drawing.Region" />、変換に関連付けられている場合は、空白<paramref name="g" />が適用されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換`g`描画サーフェイス上の領域の内部の計算に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInfinite">
+      <MemberSignature Language="C#" Value="public bool IsInfinite (System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsInfinite(class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsInfinite(System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />描画サーフェイスを表すです。</param>
+        <summary>テストするかどうかこの<see cref="T:System.Drawing.Region" />無限内部が指定された描画サーフェイスです。</summary>
+        <returns>
+          <see langword="true" />場合のこの内部<see cref="T:System.Drawing.Region" />は、変換が関連付けられている場合、無限<paramref name="g" />が適用されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換`g`描画サーフェイス上の領域の内部の計算に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Drawing.Point" />をテストします。</param>
+        <summary>テストするかどうか、指定した<see cref="T:System.Drawing.Point" />構造に含まれるこの<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="point" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.PointF point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.PointF point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Drawing.PointF" />をテストします。</param>
+        <summary>テストするかどうか、指定した<see cref="T:System.Drawing.PointF" />構造に含まれるこの<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="point" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />をテストします。</param>
+        <summary>かどうかをテストする指定した部分<see cref="T:System.Drawing.Rectangle" />構造に含まれるこの<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />ときの任意の部分<paramref name="rect" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.RectangleF" />をテストします。</param>
+        <summary>かどうかをテストする指定した部分<see cref="T:System.Drawing.RectangleF" />構造に含まれるこの<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>
+          <see langword="true" />ときの任意の部分<paramref name="rect" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   最初の四角形を作成し、青色で示される画面に描画します。  
+  
+-   2 つ目の四角形を作成し、赤で画面に描画します。  
+  
+-   最初の四角形の領域を作成します。  
+  
+-   四角形の任意の部分が、領域と交差するかどうかを判断します。  
+  
+-   表示、`true`または`false`画面上の結果。  
+  
+ 四角形に、地域が交差するので、結果ことに注意してください`true`です。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.Point point, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.Point point, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.Point,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Drawing.Point" />をテストします。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>テストするかどうか、指定した<see cref="T:System.Drawing.Point" />構造に含まれるこの<see cref="T:System.Drawing.Region" />指定して描画した場合<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="point" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、領域の内部と描画サーフェイス上のポイント座標の計算に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.PointF point, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.PointF point, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.PointF,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Drawing.PointF" />をテストします。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>テストするかどうか、指定した<see cref="T:System.Drawing.PointF" />構造に含まれるこの<see cref="T:System.Drawing.Region" />指定して描画した場合<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="point" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、領域の内部と描画サーフェイス上のポイント座標の計算に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.Rectangle rect, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.Rectangle rect, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.Rectangle,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />をテストします。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>かどうかをテストする指定した部分<see cref="T:System.Drawing.Rectangle" />構造に含まれるこの<see cref="T:System.Drawing.Region" />指定して描画した場合<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときの任意の部分、<paramref name="rect" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、計算領域の内部と描画サーフェイスに四角形の座標に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.RectangleF rect, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.RectangleF rect, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Drawing.RectangleF,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.RectangleF" />をテストします。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>かどうかをテストする指定した部分<see cref="T:System.Drawing.RectangleF" />構造に含まれるこの<see cref="T:System.Drawing.Region" />指定して描画した場合<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="rect" />これに含まれる<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、計算領域の内部と描画サーフェイスに四角形の座標に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (float x, float y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(float32 x, float32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <summary>指定した点がこの内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>
+          <see langword="true" />ときに、指定したポイントに含まれるこの<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (int x, int y, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(int32 x, int32 y, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Int32,System.Int32,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>指定した点がこの内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />指定を使用して描画されるとオブジェクト<see cref="T:System.Drawing.Graphics" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />ときに、指定したポイントに含まれるこの<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、領域の内部と描画サーフェイス上のポイント座標の計算に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (float x, float y, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(float32 x, float32 y, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Single,System.Single,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>指定した点がこの内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />指定して描画されたときに<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときに、指定したポイントに含まれるこの<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、領域の内部と描画サーフェイス上のポイント座標の計算に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (int x, int y, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(int32 x, int32 y, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする四角形の左上隅の x 座標。</param>
+        <param name="y">テストする四角形の左上隅の y 座標。</param>
+        <param name="width">テストする四角形の幅。</param>
+        <param name="height">テストする四角形の高さ。</param>
+        <summary>指定した四角形の任意の部分は、この内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>
+          <see langword="true" />ときに指定された四角形の任意の部分に含まれるこの<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (float x, float y, float width, float height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(float32 x, float32 y, float32 width, float32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする四角形の左上隅の x 座標。</param>
+        <param name="y">テストする四角形の左上隅の y 座標。</param>
+        <param name="width">テストする四角形の幅。</param>
+        <param name="height">テストする四角形の高さ。</param>
+        <summary>指定した四角形の任意の部分は、この内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />です。</summary>
+        <returns>
+          <see langword="true" />内で指定した四角形の任意の部分が含まれているときに<see cref="T:System.Drawing.Region" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (int x, int y, int width, int height, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(int32 x, int32 y, int32 width, int32 height, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする四角形の左上隅の x 座標。</param>
+        <param name="y">テストする四角形の左上隅の y 座標。</param>
+        <param name="width">テストする四角形の幅。</param>
+        <param name="height">テストする四角形の高さ。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>指定した四角形の任意の部分は、この内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />指定して描画されたときに<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときに指定された四角形の任意の部分に含まれるこの<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、計算領域の内部と描画サーフェイスに四角形の座標に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (float x, float y, float width, float height, System.Drawing.Graphics g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(float32 x, float32 y, float32 width, float32 height, class System.Drawing.Graphics g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.IsVisible(System.Single,System.Single,System.Single,System.Single,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする四角形の左上隅の x 座標。</param>
+        <param name="y">テストする四角形の左上隅の y 座標。</param>
+        <param name="width">テストする四角形の幅。</param>
+        <param name="height">テストする四角形の高さ。</param>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />グラフィックス コンテキストを表すです。</param>
+        <summary>指定した四角形の任意の部分は、この内に含まれるかどうかをテスト<see cref="T:System.Drawing.Region" />指定して描画されたときに<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>
+          <see langword="true" />ときに指定された四角形の任意の部分に含まれるこの<see cref="T:System.Drawing.Region" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス コンテキストの現在の変換は、計算領域の内部と描画サーフェイスに四角形の座標に使用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.IsVisible%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeEmpty">
+      <MemberSignature Language="C#" Value="public void MakeEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.MakeEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを初期化<see cref="T:System.Drawing.Region" />空の内部にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Region.%23ctor%2A>コンス トラクターと<xref:System.Drawing.Region.MakeEmpty%2A>メソッドです。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`FillEmptyRegion`メソッドで、フォームの<xref:System.Windows.Forms.Control.Paint>イベント処理メソッドを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.MiscExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.MiscExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeInfinite">
+      <MemberSignature Language="C#" Value="public void MakeInfinite ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeInfinite() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.MakeInfinite" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを初期化<see cref="T:System.Drawing.Region" />無限の内部オブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Region.MakeInfinite%2A> メソッドの使用方法を示します。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`FillEmptyRegion`メソッドで、フォームの<xref:System.Windows.Forms.Control.Paint>イベント処理メソッドを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.MiscExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.MiscExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHrgn">
+      <MemberSignature Language="C#" Value="public void ReleaseHrgn (IntPtr regionHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReleaseHrgn(native int regionHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.ReleaseHrgn(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regionHandle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="regionHandle">ハンドル、<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>ハンドルを解放、<see cref="T:System.Drawing.Region" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="regionHandle" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 列挙体を関連<see cref="T:System.Security.Permissions.SecurityPermissionFlag" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Transform(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />この変換に使用する<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この変換<see cref="T:System.Drawing.Region" />において指定した<see cref="T:System.Drawing.Drawing2D.Matrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形を作成し、青色で示される画面に描画します。  
+  
+-   四角形の領域を作成します。  
+  
+-   変換行列を作成し、45 度に設定します。  
+  
+-   領域を変換を適用します。  
+  
+-   赤で変換後の領域を塗りつぶします、赤で画面に変換後の領域を描画します。  
+  
+ 赤色の四角形は、青色で表示される、元の四角形から 45 度回転であることを確認します。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="matrix" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public void Translate (int dx, int dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Translate(int32 dx, int32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Translate(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Int32" />
+        <Parameter Name="dy" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dx">これをオフセットする量<see cref="T:System.Drawing.Region" />水平方向にします。</param>
+        <param name="dy">これをオフセットする量<see cref="T:System.Drawing.Region" />垂直方向にします。</param>
+        <summary>これの座標のオフセット<see cref="T:System.Drawing.Region" />を指定の量。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形を作成し、青色で示される画面に描画します。  
+  
+-   四角形の領域を作成します。  
+  
+-   領域を平行移動を適用します。  
+  
+-   赤で翻訳済みの領域を塗りつぶします、赤で画面に翻訳済みの領域を描画します。  
+  
+ ダウンし、元の四角形の右側には青で示さ赤色の四角形が移動されたことを確認します。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#10)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#10)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public void Translate (float dx, float dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Translate(float32 dx, float32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Translate(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="dx">これをオフセットする量<see cref="T:System.Drawing.Region" />水平方向にします。</param>
+        <param name="dy">これをオフセットする量<see cref="T:System.Drawing.Region" />垂直方向にします。</param>
+        <summary>これの座標のオフセット<see cref="T:System.Drawing.Region" />を指定の量。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Translate%28System.Single%2CSystem.Single%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Union(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Drawing.Drawing2D.GraphicsPath" />この統合<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />自体と、指定したの和集合を<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Union%28System.Drawing.RectangleF%29>と<xref:System.Drawing.Region.Complement%28System.Drawing.Drawing2D.GraphicsPath%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Union(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />このを統一する構造体<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />自体と、指定したの和集合を<see cref="T:System.Drawing.Rectangle" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Union%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Union(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.RectangleF" />このを統一する構造体<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />自体と、指定したの和集合を<see cref="T:System.Drawing.RectangleF" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`です。 コードは、次のアクションを実行します。  
+  
+-   最初の四角形を作成し、黒の画面に描画します。  
+  
+-   2 つ目の四角形を作成し、赤で画面に描画します。  
+  
+-   最初の四角形を使用して領域を作成します。  
+  
+-   共用体の領域を取得`myRegion`と組み合わせた場合`complementRect`です。  
+  
+-   青で共用体の領域を塗りつぶしし、画面に描画します。  
+  
+ 両方の四角形が青、重複部分を含むで塗りつぶされますことに注意してください。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#11](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#11)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#11)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Drawing.Region region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(class System.Drawing.Region region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Union(System.Drawing.Region)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Drawing.Region" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Drawing.Region" />この統合<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />自体と、指定したの和集合を<see cref="T:System.Drawing.Region" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Union%28System.Drawing.RectangleF%29>と<xref:System.Drawing.Region.Complement%28System.Drawing.Drawing2D.GraphicsPath%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="region" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="public void Xor (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Xor(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Xor(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Drawing.Drawing2D.GraphicsPath" />に<see cref="Overload:System.Drawing.Region.Xor" />この<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />マイナス自体の交差部分に、指定した共用体に<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Xor%28System.Drawing.RectangleF%29>と<xref:System.Drawing.Region.Complement%28System.Drawing.Drawing2D.GraphicsPath%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="public void Xor (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Xor(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Xor(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />構造の<see cref="Overload:System.Drawing.Region.Xor" />この<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />マイナス自体の交差部分に、指定した共用体に<see cref="T:System.Drawing.Rectangle" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Xor%28System.Drawing.RectangleF%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="public void Xor (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Xor(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Xor(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.RectangleF" />構造の<see cref="M:System.Drawing.Region.Xor(System.Drawing.Drawing2D.GraphicsPath)" />この<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />マイナス自体の交差部分に、指定した共用体に<see cref="T:System.Drawing.RectangleF" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   最初の四角形を作成し、黒の画面に描画します。  
+  
+-   2 つ目の四角形を作成し、赤で画面に描画します。  
+  
+-   最初の四角形を使用して領域を作成します。  
+  
+-   取得、<xref:System.Drawing.Region.Xor%2A>領域`myRegion`と組み合わせた場合`complementRect`です。  
+  
+-   入力、<xref:System.Drawing.Region.Xor%2A>青で領域し、画面に描画します。  
+  
+ 重複部分を除く、青は両方の四角形が格納することがわかります。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#12](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#12)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#12)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="public void Xor (System.Drawing.Region region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Xor(class System.Drawing.Region region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Region.Xor(System.Drawing.Region)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Drawing.Region" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Drawing.Region" />に<see cref="Overload:System.Drawing.Region.Xor" />この<see cref="T:System.Drawing.Region" />です。</param>
+        <summary>この更新プログラムの<see cref="T:System.Drawing.Region" />マイナス自体の交差部分に、指定した共用体に<see cref="T:System.Drawing.Region" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Region.Xor%28System.Drawing.RectangleF%29>と<xref:System.Drawing.Region.Complement%28System.Drawing.Drawing2D.GraphicsPath%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="region" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

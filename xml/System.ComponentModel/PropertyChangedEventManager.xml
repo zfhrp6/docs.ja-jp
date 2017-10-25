@@ -1,0 +1,234 @@
+<Type Name="PropertyChangedEventManager" FullName="System.ComponentModel.PropertyChangedEventManager">
+  <TypeSignature Language="C#" Value="public class PropertyChangedEventManager : System.Windows.WeakEventManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyChangedEventManager extends System.Windows.WeakEventManager" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.PropertyChangedEventManager" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.WeakEventManager</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Windows.WeakEventManager" />実装のリスナーをアタッチする、「脆弱なイベントのリスナー」パターンを使用できるように、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンでリスナーをするために、リスナー オブジェクトを実装する必要があります<xref:System.Windows.IWeakEventListener>です。 実装する必要はありません<xref:System.Windows.IWeakEventListener>イベントのソースであるクラスにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddHandler">
+      <MemberSignature Language="C#" Value="public static void AddHandler (System.ComponentModel.INotifyPropertyChanged source, EventHandler&lt;System.ComponentModel.PropertyChangedEventArgs&gt; handler, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddHandler(class System.ComponentModel.INotifyPropertyChanged source, class System.EventHandler`1&lt;class System.ComponentModel.PropertyChangedEventArgs&gt; handler, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.AddHandler(System.ComponentModel.INotifyPropertyChanged,System.EventHandler{System.ComponentModel.PropertyChangedEventArgs},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.INotifyPropertyChanged" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.ComponentModel.PropertyChangedEventArgs&gt;" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">基になるオブジェクトが発生し、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</param>
+        <param name="handler">処理するデリゲート、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</param>
+        <param name="propertyName">上に存在するプロパティの名前<c>ソース</c>基になると、変更をリッスンします。 設定<see cref="F:System.String.Empty" />「プロパティ」を示すためにします。</param>
+        <summary>指定されたソースが発生したときに呼び出される指定されたイベント ハンドラーを追加、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />指定したプロパティのイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定期受信に使用するイベント ハンドラーを指定するには、このメソッドを使用して、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged>イベント.  リスナー オブジェクトを実装する必要はありませんこのメソッドを使用するときに、<xref:System.Windows.IWeakEventListener>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">1 つ以上のメソッドに関連付けられている<paramref name="handler" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddListener">
+      <MemberSignature Language="C#" Value="public static void AddListener (System.ComponentModel.INotifyPropertyChanged source, System.Windows.IWeakEventListener listener, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddListener(class System.ComponentModel.INotifyPropertyChanged source, class System.Windows.IWeakEventListener listener, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.AddListener(System.ComponentModel.INotifyPropertyChanged,System.Windows.IWeakEventListener,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.INotifyPropertyChanged" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントを持つオブジェクト。</param>
+        <param name="listener">リスナーとして追加するオブジェクト。</param>
+        <param name="propertyName">上に存在するプロパティの名前<c>ソース</c>基になると、変更をリッスンします。 設定<see cref="F:System.String.Empty" />「プロパティ」を示すためにします。</param>
+        <summary>指定したソースのリスナーのリストを指定されたリスナーを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewListenerList">
+      <MemberSignature Language="C#" Value="protected override System.Windows.WeakEventManager.ListenerList NewListenerList ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.WeakEventManager/ListenerList NewListenerList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.NewListenerList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager+ListenerList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスナーを格納する新しいオブジェクトを返します、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</summary>
+        <returns>リスナーを格納する新しいオブジェクト、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Purge">
+      <MemberSignature Language="C#" Value="protected override bool Purge (object source, object data, bool purgeAll);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool Purge(object source, object data, bool purgeAll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.Purge(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="purgeAll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="source">すべてのリスナーを削除するソース オブジェクト。</param>
+        <param name="data">削除するデータ。 これは、<see cref="T:System.Collections.Specialized.HybridDictionary" />です。</param>
+        <param name="purgeAll">設定<see langword="true" />待機を停止して、すべてのデータを完全に削除します。</param>
+        <summary>指定されたソースのデータからアクティブになっているリスナーを削除します。</summary>
+        <returns>
+          <see langword="true" />いくつかのエントリが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveHandler (System.ComponentModel.INotifyPropertyChanged source, EventHandler&lt;System.ComponentModel.PropertyChangedEventArgs&gt; handler, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveHandler(class System.ComponentModel.INotifyPropertyChanged source, class System.EventHandler`1&lt;class System.ComponentModel.PropertyChangedEventArgs&gt; handler, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.RemoveHandler(System.ComponentModel.INotifyPropertyChanged,System.EventHandler{System.ComponentModel.PropertyChangedEventArgs},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.INotifyPropertyChanged" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.ComponentModel.PropertyChangedEventArgs&gt;" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">基になるオブジェクトが発生し、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</param>
+        <param name="handler">処理するデリゲート、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />イベント。</param>
+        <param name="propertyName">上に存在するプロパティの名前<c>ソース</c>基になると、変更のリッスンを停止します。 設定<see cref="F:System.String.Empty" />「プロパティ」を示すためにします。</param>
+        <summary>指定したソースから指定されたイベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">1 つ以上のメソッドに関連付けられている<paramref name="handler" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveListener">
+      <MemberSignature Language="C#" Value="public static void RemoveListener (System.ComponentModel.INotifyPropertyChanged source, System.Windows.IWeakEventListener listener, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveListener(class System.ComponentModel.INotifyPropertyChanged source, class System.Windows.IWeakEventListener listener, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.RemoveListener(System.ComponentModel.INotifyPropertyChanged,System.Windows.IWeakEventListener,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.INotifyPropertyChanged" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">リスナーを削除するオブジェクト。</param>
+        <param name="listener">削除するリスナー。</param>
+        <param name="propertyName">上に存在するプロパティの名前<c>ソース</c>基になると、変更のリッスンを停止します。 設定<see cref="F:System.String.Empty" />「プロパティ」を示すためにします。</param>
+        <summary>指定されたソースのリスナーのリストから、指定されたリスナーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="protected override void StartListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void StartListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.StartListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">待機を開始する対象となるオブジェクト<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />です。</param>
+        <summary>リッスンを開始、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />指定されたソースのイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、プロパティが指定されていませんソース上のすべてのプロパティには、イベント マネージャーが開始されると、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged>通知を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="protected override void StopListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void StopListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyChangedEventManager.StopListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">リッスンを停止する対象となるソース オブジェクト<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />です。</param>
+        <summary>リッスンが停止、<see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />指定されたソースのイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

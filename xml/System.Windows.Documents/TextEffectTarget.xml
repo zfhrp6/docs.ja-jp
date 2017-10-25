@@ -1,0 +1,153 @@
+<Type Name="TextEffectTarget" FullName="System.Windows.Documents.TextEffectTarget">
+  <TypeSignature Language="C#" Value="public class TextEffectTarget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextEffectTarget extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.TextEffectTarget" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用してから結果<see cref="T:System.Windows.Documents.TextEffectResolver" />をテキストに影響を設定します。 これから成る、<see cref="T:System.Windows.Media.TextEffect" />作成および<see cref="T:System.Windows.DependencyObject" />を<see cref="T:System.Windows.Media.TextEffect" />設定する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に適用する方法を示しています、 <xref:System.Windows.Media.TranslateTransform>、 <xref:System.Windows.Media.ScaleTransform>、および<xref:System.Windows.Media.RotateTransform>テキストにテキスト効果。 この例の XAML を次に示します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#TextEffectTargetExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/texteffecttargetexample.xaml#texteffecttargetexamplewholepage)]  
+  
+ この例のコードを次に示します。  
+  
+ [!code-csharp[FlowMiscSnippets_snip#TextEffectTargetCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/texteffecttargetexample.xaml.cs#texteffecttargetcodeexamplewholepage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disable">
+      <MemberSignature Language="C#" Value="public void Disable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Disable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextEffectTarget.Disable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>無効になります、<see cref="T:System.Windows.Media.TextEffect" />効果ターゲットにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に適用する方法を示しています、 <xref:System.Windows.Media.TranslateTransform>、 <xref:System.Windows.Media.ScaleTransform>、および<xref:System.Windows.Media.RotateTransform>テキストにテキスト効果。 この例の XAML を次に示します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#TextEffectTargetExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/texteffecttargetexample.xaml#texteffecttargetexamplewholepage)]  
+  
+ この例のコードを次に示します。  
+  
+ [!code-csharp[FlowMiscSnippets_snip#TextEffectTargetCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/texteffecttargetexample.xaml.cs#texteffecttargetcodeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Element">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject Element { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject Element" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextEffectTarget.Element" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.DependencyObject" />を<see cref="T:System.Windows.Media.TextEffect" />がターゲットとします。</summary>
+        <value><see cref="T:System.Windows.DependencyObject" />を<see cref="T:System.Windows.Media.TextEffect" />がターゲットとします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enable">
+      <MemberSignature Language="C#" Value="public void Enable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Enable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextEffectTarget.Enable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲット テキスト上の <see cref="T:System.Windows.Media.TextEffect" /> を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Media.TextEffect>は既に有効になっている、メソッドになります、no-op (操作なし)。  
+  
+   
+  
+## Examples  
+ 次の例に適用する方法を示しています、 <xref:System.Windows.Media.TranslateTransform>、 <xref:System.Windows.Media.ScaleTransform>、および<xref:System.Windows.Media.RotateTransform>テキストにテキスト効果。 この例の XAML を次に示します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#TextEffectTargetExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/texteffecttargetexample.xaml#texteffecttargetexamplewholepage)]  
+  
+ この例のコードを次に示します。  
+  
+ [!code-csharp[FlowMiscSnippets_snip#TextEffectTargetCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/texteffecttargetexample.xaml.cs#texteffecttargetcodeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextEffectTarget.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象の要素のテキスト効果が有効になっているかどうかを決定する値を取得します。</summary>
+        <value>**true**場合、<see cref="T:System.Windows.Media.TextEffect" />がターゲットで有効であるそれ以外の場合、 **false**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffect">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TextEffect TextEffect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TextEffect TextEffect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextEffectTarget.TextEffect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextEffect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TextEffect" /> の <see cref="T:System.Windows.Documents.TextEffectTarget" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Documents.TextEffectTarget" /> の <see cref="T:System.Windows.Media.TextEffect" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

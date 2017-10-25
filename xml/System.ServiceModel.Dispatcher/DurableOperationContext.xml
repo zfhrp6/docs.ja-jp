@@ -1,0 +1,85 @@
+<Type Name="DurableOperationContext" FullName="System.ServiceModel.Dispatcher.DurableOperationContext">
+  <TypeSignature Language="C#" Value="public static class DurableOperationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DurableOperationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.DurableOperationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連情報および機能へのアクセスを取得する静的メソッドのセットを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbortInstance">
+      <MemberSignature Language="C#" Value="public static void AbortInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AbortInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.DurableOperationContext.AbortInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>操作完了後にメモリから現在の永続性サービス インスタンスをパージします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスの `ConcurrencyMode` 値が `Single` に、<xref:System.ServiceModel.Description.DurableServiceAttribute.SaveStateInOperationTransaction%2A> が `false` にそれぞれ設定されない限り、このメソッドの呼び出しは失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompleteInstance">
+      <MemberSignature Language="C#" Value="public static void CompleteInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CompleteInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.DurableOperationContext.CompleteInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>操作完了後にメモリから永続性サービス インスタンスをアンロードし、永続化データからこれを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public static Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DurableOperationContext.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービス インスタンスのサービス ID を取得します。</summary>
+        <value>サービスの ID を含む <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

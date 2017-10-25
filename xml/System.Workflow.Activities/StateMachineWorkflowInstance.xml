@@ -1,0 +1,337 @@
+<Type Name="StateMachineWorkflowInstance" FullName="System.Workflow.Activities.StateMachineWorkflowInstance">
+  <TypeSignature Language="C#" Value="public sealed class StateMachineWorkflowInstance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StateMachineWorkflowInstance extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.StateMachineWorkflowInstance" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> の現在のインスタンスを管理するクラスを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このクラスは、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> の現在のインスタンスに対してクエリ インターフェイスも提供します。 このクラスのインスタンスを使用することによって、<xref:System.Workflow.Activities.StateMachineWorkflowInstance> に対してさまざまなクエリを実行できます。  
+  
+ 実行できる一般的なクエリは、次のとおりです。  
+  
+-   ステート マシンの現在の状態  
+  
+-   現在の状態からの考えられる遷移  
+  
+-   ステート マシンのインスタンスの遷移履歴  
+  
+-   ステート マシンのすべての状態の列挙  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StateMachineWorkflowInstance (System.Workflow.Runtime.WorkflowRuntime runtime, Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.Runtime.WorkflowRuntime runtime, valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowInstance.#ctor(System.Workflow.Runtime.WorkflowRuntime,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="runtime" Type="System.Workflow.Runtime.WorkflowRuntime" />
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="runtime">現在のワークフロー ランタイム。</param>
+        <param name="instanceId"><see cref="T:System.Guid" /> のインスタンスを示す <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" />。</param>
+        <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowInstance" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.Activities.StateMachineWorkflowInstance> オブジェクトの新しいインスタンスを作成する方法を示します。 この例は、注文処理ステート マシンの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ステート マシンのサンプルを順序付け](http://msdn.microsoft.com/en-us/59272cf4-bc98-439c-bcfa-b66999ebce5c)です。  
+  
+ [!code-csharp[wf_samples#128](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#128)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="runtime" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="instanceId" /> が空の <see cref="T:System.Guid" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentState">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.StateActivity CurrentState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.StateActivity CurrentState" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.CurrentState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.StateActivity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在実行中の <see cref="T:System.Workflow.Activities.StateActivity" /> を取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.Activities.StateActivity" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStateName">
+      <MemberSignature Language="C#" Value="public string CurrentStateName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrentStateName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.CurrentStateName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.StateActivity" /> の名前を取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.Activities.StateActivity" /> の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnqueueItem">
+      <MemberSignature Language="C#" Value="public void EnqueueItem (IComparable queueName, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnqueueItem(class System.IComparable queueName, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowInstance.EnqueueItem(System.IComparable,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="queueName">ワークフロー キューの名前。</param>
+        <param name="item">キューに登録されるオブジェクト。</param>
+        <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowInstance" /> にメッセージをポストします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnqueueItem">
+      <MemberSignature Language="C#" Value="public void EnqueueItem (IComparable queueName, object item, System.Workflow.Runtime.IPendingWork pendingWork, object workItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnqueueItem(class System.IComparable queueName, object item, class System.Workflow.Runtime.IPendingWork pendingWork, object workItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowInstance.EnqueueItem(System.IComparable,System.Object,System.Workflow.Runtime.IPendingWork,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="pendingWork" Type="System.Workflow.Runtime.IPendingWork" />
+        <Parameter Name="workItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="queueName">ワークフロー キューの名前。</param>
+        <param name="item">キューに登録されるオブジェクト。</param>
+        <param name="pendingWork">項目が配信されたときに送信者が通知を受けられるようにする <see cref="T:System.Workflow.Runtime.IPendingWork" />。</param>
+        <param name="workItem"><see cref="T:System.Workflow.Runtime.IPendingWork" /> メソッドに渡すオブジェクト。</param>
+        <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowInstance" /> にメッセージをポストします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Guid" /> の現在のインスタンスを示す <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> を取得します。</summary>
+        <value><see cref="T:System.Guid" /> の現在のインスタンスを示す <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PossibleStateTransitions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; PossibleStateTransitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; PossibleStateTransitions" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.PossibleStateTransitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.StateActivity" /> が実行できる状態遷移のコレクションを取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.Activities.StateActivity" /> が実行できる状態遷移のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetState">
+      <MemberSignature Language="C#" Value="public void SetState (string targetStateName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetState(string targetStateName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowInstance.SetState(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetStateName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetStateName">遷移先の <see cref="T:System.Workflow.Activities.StateActivity" /> の名前。</param>
+        <summary><see cref="T:System.Workflow.Activities.StateActivity" /> の名前を使用して、指定した <see cref="T:System.Workflow.Activities.StateActivity" /> への遷移を提供します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetStateName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="T:System.Workflow.Activities.StateActivity" /> によって指定された <paramref name="targetStateName" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetState">
+      <MemberSignature Language="C#" Value="public void SetState (System.Workflow.Activities.StateActivity targetState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetState(class System.Workflow.Activities.StateActivity targetState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowInstance.SetState(System.Workflow.Activities.StateActivity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetState" Type="System.Workflow.Activities.StateActivity" />
+      </Parameters>
+      <Docs>
+        <param name="targetState">遷移先の <see cref="T:System.Workflow.Activities.StateActivity" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.Activities.StateActivity" /> への遷移を提供します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetState" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StateHistory">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; StateHistory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; StateHistory" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateHistory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステート マシンのワークフロー インスタンスが遷移したステート アクティビティのコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.Activities.StateActivity" /> が実行した遷移のコレクション</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> が使用されている場合のみ状態の履歴を返します。 `InvalidOperationException` がインストールされていない場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> が発生します。  新しく作成されたインスタンスの状態履歴がない場合、インスタンスの開始を待たずに状態履歴が作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateMachineWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.StateMachineWorkflowActivity StateMachineWorkflow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.StateMachineWorkflowActivity StateMachineWorkflow" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.StateMachineWorkflowActivity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> の最新の定義を取得します。</summary>
+        <value><see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> の最新の定義。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ワークフロー定義のコピーだけを返します。実際のインスタンス ツリーは返しません。 したがって、このプロパティによって返されるアクティビティ ツリーを使用してランタイム値のクエリを実行することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフローが既に完了している場合、現在の <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> を取得できないため、前の定義を取得します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="States">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Activities.StateActivity&gt; States { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.Activities.StateActivity&gt; States" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.States" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Activities.StateActivity&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.StateActivity" /> 内の <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" /> クラスのリストを取得します。</summary>
+        <value><see cref="T:System.Workflow.Activities.StateActivity" /> 内の <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" /> クラスのリスト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowInstance">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance WorkflowInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.WorkflowInstance WorkflowInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowInstance.WorkflowInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> を取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

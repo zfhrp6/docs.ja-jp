@@ -1,0 +1,352 @@
+<Type Name="ActivityTrackingRecord" FullName="System.Workflow.Runtime.Tracking.ActivityTrackingRecord">
+  <TypeSignature Language="C#" Value="public class ActivityTrackingRecord : System.Workflow.Runtime.Tracking.TrackingRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityTrackingRecord extends System.Workflow.Runtime.Tracking.TrackingRecord" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Tracking.TrackingRecord</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> の照合時にランタイム追跡インフラストラクチャによって追跡サービスに送られるデータを格納します。 また、<see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.ActivityEvents" /> プロパティの戻りリストの中でも使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> 内の <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を照合するときに、追跡サービスに関連付けられている <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> を介して <xref:System.Workflow.Runtime.Tracking.TrackingChannel> をその追跡サービスに送信します。 追跡サービスは、追跡レコード内のデータに対して必要なあらゆるアクションを実行できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターは、ランタイム追跡インフラストラクチャによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingRecord ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ランタイム追跡インフラストラクチャによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingRecord (Type activityType, string qualifiedName, Guid contextGuid, Guid parentContextGuid, System.Workflow.ComponentModel.ActivityExecutionStatus executionStatus, DateTime eventDateTime, int eventOrder, EventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type activityType, string qualifiedName, valuetype System.Guid contextGuid, valuetype System.Guid parentContextGuid, valuetype System.Workflow.ComponentModel.ActivityExecutionStatus executionStatus, valuetype System.DateTime eventDateTime, int32 eventOrder, class System.EventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.#ctor(System.Type,System.String,System.Guid,System.Guid,System.Workflow.ComponentModel.ActivityExecutionStatus,System.DateTime,System.Int32,System.EventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+        <Parameter Name="qualifiedName" Type="System.String" />
+        <Parameter Name="contextGuid" Type="System.Guid" />
+        <Parameter Name="parentContextGuid" Type="System.Guid" />
+        <Parameter Name="executionStatus" Type="System.Workflow.ComponentModel.ActivityExecutionStatus" />
+        <Parameter Name="eventDateTime" Type="System.DateTime" />
+        <Parameter Name="eventOrder" Type="System.Int32" />
+        <Parameter Name="eventArgs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">アクティビティ ステータス イベントに関連付けられているアクティビティの <see cref="T:System.Type" />。</param>
+        <param name="qualifiedName">アクティビティ ステータス イベントに関連付けられているアクティビティの <see cref="P:System.Workflow.ComponentModel.Activity.QualifiedName" />。</param>
+        <param name="contextGuid">アクティビティ ステータス イベントに関連付けられているアクティビティの <see cref="T:System.Guid" /> を識別する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</param>
+        <param name="parentContextGuid">アクティビティ ステータス イベントに関連付けられているアクティビティの親アクティビティの <see cref="T:System.Guid" /> を識別する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</param>
+        <param name="executionStatus"><see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> 値のいずれか。</param>
+        <param name="eventDateTime">追跡レコードに関連したアクティビティ ステータス イベントの日時を示す <see cref="T:System.DateTime" />。</param>
+        <param name="eventOrder">ワークフロー インスタンス内で、この追跡レコードに関連したアクティビティ ステータス イベントが発生した相対的順序。</param>
+        <param name="eventArgs">null 参照 (Visual Basic の場合は <see langword="Nothing" />)。 このフィールドは、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> に関しては設定されません。</param>
+        <summary>指定されたパラメーターを使用して、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityType">
+      <MemberSignature Language="C#" Value="public Type ActivityType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ActivityType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ActivityType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> に関連したアクティビティの共通言語ランタイム (CLR) 型を取得または設定します。</summary>
+        <value>この <see cref="T:System.Type" /> の作成対象となったアクティビティの <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ActivityType%2A> は、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public override System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingAnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>照合された <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> に関連した注釈のコレクションを取得します。</summary>
+        <value>この追跡レコードに対応する <see cref="T:System.Workflow.Runtime.Tracking.TrackingAnnotationCollection" /> に関連した注釈を格納する <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.TrackingDataItem&gt; Body { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.TrackingDataItem&gt; Body" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.TrackingDataItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>照合された <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> に関して、ワークフローから抽出されたすべてのデータを格納するリストを取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Tracking.TrackingDataItem" /> オブジェクトのリスト。各オブジェクトには、抽出した 1 つのデータとそのデータに関連付けられている注釈が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> が照合されるときに、ランタイム追跡インフラストラクチャはワークフロー インスタンスからデータを抽出することができます。 抽出対象のデータは、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A?displayProperty=nameWithType> によって指定されます。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A?displayProperty=nameWithType> には 2 種類のオブジェクト (アクティビティ ステータス イベントに関連したアクティビティから抽出されるメンバー データを指定する <xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> オブジェクト、およびワークフローのルート アクティビティから抽出されるメンバー データを指定する <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> オブジェクト) を格納することができます。 さらに、どちらの種類の抽出でも、抽出データと共に返される注釈を指定できます。 ランタイム追跡インフラストラクチャは抽出データの各部分、および関連する注釈を <xref:System.Workflow.Runtime.Tracking.TrackingDataItem> 内にカプセル化して、この <xref:System.Workflow.Runtime.Tracking.TrackingDataItem> を <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.Body%2A> に追加します。  
+  
+ このプロパティは、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextGuid">
+      <MemberSignature Language="C#" Value="public Guid ContextGuid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContextGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ContextGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティのコンテキスト。</summary>
+        <value>
+          アクティビティ ステータス イベントに関連付けられているアクティビティの <see cref="T:System.Guid" /> を識別する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventArgs">
+      <MemberSignature Language="C#" Value="public override EventArgs EventArgs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventArgs EventArgs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventArgs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="null" /> の場合は、常に <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" />。</summary>
+        <value><see langword="Nothing" /> に関しては null 参照 (<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventArgs%2A> は <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> に関しては意味がなく、常に null 参照 (`Nothing`) です。  
+  
+ このプロパティは、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime EventDateTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime EventDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ ステータス イベントが発生した日時を取得または設定します。</summary>
+        <value><see cref="T:System.DateTime" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DateTime> はグリニッジ標準時 (UTC) です。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventDateTime%2A> は、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventOrder">
+      <MemberSignature Language="C#" Value="public override int EventOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventOrder" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> を照合したアクティビティ ステータス イベントの、ワークフロー インスタンス内での順序を示す値を取得または設定します。</summary>
+        <value>ワークフロー インスタンス内のアクティビティ ステータス イベントの順序を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventOrder%2A> は、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> を照合したイベントのワークフロー インスタンス内での相対的順序を示します。  <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventOrder%2A> はワークフロー インスタンス内で一意ですが、必ずしも連続しているとは限りません。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.EventOrder%2A> は、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutionStatus">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.ActivityExecutionStatus ExecutionStatus { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus ExecutionStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ExecutionStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> に関連付けられているアクティビティの実行ステータスを取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ インスタンスの実行ステータスが変化したとき、ワークフロー インスタンスはアクティビティ ステータス イベントだけを出します。 したがって、アクティビティ実行ステータスが変化した場合にのみ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> が照合可能です。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ExecutionStatus%2A> には、照合を起動して <xref:System.Workflow.ComponentModel.ActivityExecutionStatus?displayProperty=nameWithType> 送出の原因となった <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> が格納されます。 これはアクティビティ インスタンスの現在のステータスを反映します。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ExecutionStatus%2A> は、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentContextGuid">
+      <MemberSignature Language="C#" Value="public Guid ParentContextGuid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ParentContextGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.ParentContextGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親アクティビティのコンテキスト。</summary>
+        <value>
+          アクティビティ ステータス イベントに関連付けられているアクティビティの <see cref="T:System.Guid" /> を識別する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QualifiedName">
+      <MemberSignature Language="C#" Value="public string QualifiedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QualifiedName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.QualifiedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> に関連付けられているアクティビティの識別子を取得または設定します。</summary>
+        <value>この追跡レコードの作成対象となった <see cref="P:System.Workflow.ComponentModel.Activity.QualifiedName" /> の <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.QualifiedName%2A> は、ランタイム追跡インフラストラクチャによって設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

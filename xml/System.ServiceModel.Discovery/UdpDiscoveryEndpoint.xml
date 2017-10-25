@@ -1,0 +1,238 @@
+<Type Name="UdpDiscoveryEndpoint" FullName="System.ServiceModel.Discovery.UdpDiscoveryEndpoint">
+  <TypeSignature Language="C#" Value="public class UdpDiscoveryEndpoint : System.ServiceModel.Discovery.DiscoveryEndpoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UdpDiscoveryEndpoint extends System.ServiceModel.Discovery.DiscoveryEndpoint" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Discovery.DiscoveryEndpoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>UDP マルチキャスト バインディング上での探索操作用に事前構成済みの標準エンドポイント。 このエンドポイントは、<see cref="T:System.ServiceModel.Discovery.DiscoveryEndpoint" /> から継承されます。固定コントラクトがあり、2 つの WS-Discovery プロトコル バージョンをサポートしています。 また、WS-Discovery の仕様 (WS-Discovery April 2005 または WS-Discovery V1.1) に規定された固定 UDP バインディングと既定のアドレスも備えています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpDiscoveryEndpoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpDiscoveryEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">使用する <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" />。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> で <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、WS-Discovery April 2005 および WS-Discovery V1.1 という WS-Discovery プロトコルの 2 つのバージョンがサポートされています。これらのバージョンは、<xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscoveryApril2005%2A> 列挙値および  <xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscovery11%2A> 列挙値に対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpDiscoveryEndpoint (string multicastAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string multicastAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="multicastAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="multicastAddress">マルチキャスト アドレス。</param>
+        <summary>指定されたマルチキャスト アドレスを使用して <see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpDiscoveryEndpoint (Uri multicastAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri multicastAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="multicastAddress" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="multicastAddress">マルチキャスト アドレス。</param>
+        <summary>指定されたマルチキャスト アドレスを使用して <see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpDiscoveryEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, string multicastAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, string multicastAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+        <Parameter Name="multicastAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">使用する <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" />。</param>
+        <param name="multicastAddress">UDP 探索エンドポイント用のマルチキャスト アドレス。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> とマルチキャスト アドレスを使用して <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、WS-Discovery April 2005 および WS-Discovery V1.1 という WS-Discovery プロトコルの 2 つのバージョンがサポートされています。これらのバージョンは、<xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscoveryApril2005%2A> 列挙値および  <xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscovery11%2A> 列挙値に対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpDiscoveryEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, Uri multicastAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, class System.Uri multicastAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+        <Parameter Name="multicastAddress" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">使用する <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" />。</param>
+        <param name="multicastAddress">マルチキャスト アドレスのある <see cref="T:System.Uri" />。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> とマルチキャスト アドレスを使用して <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、WS-Discovery April 2005 および WS-Discovery V1.1 という WS-Discovery プロトコルの 2 つのバージョンがサポートされています。これらのバージョンは、<xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscoveryApril2005%2A> 列挙値および  <xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscovery11%2A> 列挙値に対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultIPv4MulticastAddress">
+      <MemberSignature Language="C#" Value="public static readonly Uri DefaultIPv4MulticastAddress;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri DefaultIPv4MulticastAddress" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.DefaultIPv4MulticastAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IPv4 用の既定の UDP マルチキャスト アドレス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultIPv6MulticastAddress">
+      <MemberSignature Language="C#" Value="public static readonly Uri DefaultIPv6MulticastAddress;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri DefaultIPv6MulticastAddress" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.DefaultIPv6MulticastAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IPv6 用の既定の UDP マルチキャスト アドレス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MulticastAddress">
+      <MemberSignature Language="C#" Value="public Uri MulticastAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri MulticastAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.MulticastAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マルチキャスト アドレスを取得または設定します。</summary>
+        <value>マルチキャスト アドレスを格納する <see cref="T:System.Uri" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.DefaultIPv4MulticastAddress> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.UdpTransportSettings TransportSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Discovery.UdpTransportSettings TransportSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("TranportSettings property in System.SerivceModel.Discovery.UdpDiscoveryEndpoint is obsolete. Consider using System.ServiceModel.Channels.UdpTransportBindingElement for setting the transport properties.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.UdpTransportSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.UdpTransportSettings" /> に関連付けられている  <see cref="T:System.ServiceModel.Discovery.UdpDiscoveryEndpoint" /> インスタンスを取得します。</summary>
+        <value>そのエンドポイント用の UDP トランスポート設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.UdpTransportSettings> を使用して、UDP エンドポイント用の UDP トランスポートを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

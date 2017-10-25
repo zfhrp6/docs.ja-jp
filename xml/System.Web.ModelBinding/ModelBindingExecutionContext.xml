@@ -1,0 +1,147 @@
+<Type Name="ModelBindingExecutionContext" FullName="System.Web.ModelBinding.ModelBindingExecutionContext">
+  <TypeSignature Language="C#" Value="public class ModelBindingExecutionContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModelBindingExecutionContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.ModelBindingExecutionContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのモデル バインディング システムを必要とするモデル バインド システムの外部にある情報をカプセル化します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelBindingExecutionContext (System.Web.HttpContextBase httpContext, System.Web.ModelBinding.ModelStateDictionary modelState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContextBase httpContext, class System.Web.ModelBinding.ModelStateDictionary modelState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelBindingExecutionContext.#ctor(System.Web.HttpContextBase,System.Web.ModelBinding.ModelStateDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+        <Parameter Name="modelState" Type="System.Web.ModelBinding.ModelStateDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">HTTP コンテキスト。</param>
+        <param name="modelState">モデルの状態。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />クラス、HTTP コンテキストおよびモデルの状態を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="httpContext" /> パラメーターまたは <paramref name="modelState" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService&lt;TService&gt;">
+      <MemberSignature Language="C#" Value="public virtual TService GetService&lt;TService&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!TService GetService&lt;TService&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelBindingExecutionContext.GetService``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TService</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TService" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TService">モデル バインディングに使用される値を含むオブジェクトの型。</typeparam>
+        <summary>モデル バインディングに使用してを使用して格納された値を含むオブジェクトを取得、<see cref="M:System.Web.ModelBinding.ModelBindingExecutionContext.PublishService``1(``0)" />メソッドです。</summary>
+        <returns>モデル バインディングのために使用される値を含むオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpContext">
+      <MemberSignature Language="C#" Value="public virtual System.Web.HttpContextBase HttpContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContextBase HttpContext" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingExecutionContext.HttpContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContextBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP コンテキストを取得します。</summary>
+        <value>HTTP コンテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelState">
+      <MemberSignature Language="C#" Value="public virtual System.Web.ModelBinding.ModelStateDictionary ModelState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelStateDictionary ModelState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingExecutionContext.ModelState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelStateDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの状態を取得します。</summary>
+        <value>モデルの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublishService&lt;TService&gt;">
+      <MemberSignature Language="C#" Value="public virtual void PublishService&lt;TService&gt; (TService service);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PublishService&lt;TService&gt;(!!TService service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelBindingExecutionContext.PublishService``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TService" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="service" Type="TService" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TService">格納する値を含むオブジェクトの型。</typeparam>
+        <param name="service">格納する値を含むオブジェクト。</param>
+        <summary>モデル バインディングの使用されているを使用してアクセスする値を含むオブジェクトを格納、<see cref="M:System.Web.ModelBinding.ModelBindingExecutionContext.GetService``1" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetService&lt;TService&gt;">
+      <MemberSignature Language="C#" Value="public virtual TService TryGetService&lt;TService&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!TService TryGetService&lt;TService&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelBindingExecutionContext.TryGetService``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TService</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TService" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TService">モデル バインディングに使用される値を含むオブジェクトの型。</typeparam>
+        <summary>モデル バインディングに使用してを使用して格納された値を含むオブジェクトを取得、<see cref="M:System.Web.ModelBinding.ModelBindingExecutionContext.PublishService``1(``0)" />メソッドです。</summary>
+        <returns>モデル バインディングのための値がまたはの既定値を格納しているオブジェクト<paramref name="TService" />要求されたオブジェクトが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

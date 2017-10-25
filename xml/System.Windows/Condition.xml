@@ -1,0 +1,434 @@
+<Type Name="Condition" FullName="System.Windows.Condition">
+  <TypeSignature Language="C#" Value="public sealed class Condition : System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Condition extends System.Object implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Condition" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XamlSetMarkupExtension("ReceiveMarkupExtension")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XamlSetTypeConverter("ReceiveTypeConverter")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>条件を表す、<see cref="T:System.Windows.MultiTrigger" />と<see cref="T:System.Windows.MultiDataTrigger" />一連の条件に基づくプロパティの値に変更を適用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.MultiTrigger>s および<xref:System.Windows.MultiDataTrigger>s を使用する一連の条件に基づくプロパティ値を設定できます。 要素、またはデータ項目のプロパティの値が指定された一致する場合に、条件が満たされる<xref:System.Windows.Condition.Value%2A>(等価性のチェックを参照)。 すべての指定した条件が満たされている場合は、トリガーが適用されます。  
+  
+ 例外が発生するケースの一覧を次に示します。  
+  
+-   各<xref:System.Windows.Condition>、のみを設定するか、<xref:System.Windows.Condition.Property%2A>プロパティまたは<xref:System.Windows.Condition.Binding%2A>プロパティです。 両方のプロパティを設定すると、例外がスローされます。  
+  
+-   場合、<xref:System.Windows.Condition>は、 <xref:System.Windows.MultiTrigger>、<xref:System.Windows.Condition.Property%2A>プロパティを null にすることはできません。  
+  
+-   場合、<xref:System.Windows.Condition>は、 <xref:System.Windows.MultiDataTrigger>、<xref:System.Windows.Condition.Binding%2A>プロパティを null にすることはできません。  
+  
+-   場合、例外がスローされます、指定した<xref:System.Windows.Condition.Value%2A>は指定した型に対して無効<xref:System.Windows.Condition.Property%2A>です。  
+  
+ されている場合、<xref:System.Windows.Condition>は、 <xref:System.Windows.MultiTrigger>、<xref:System.Windows.Condition.Property%2A>と<xref:System.Windows.Condition.Value%2A>プロパティを設定する必要があります。 場合は、 <xref:System.Windows.MultiDataTrigger>、<xref:System.Windows.Condition.Binding%2A>と<xref:System.Windows.Condition.Value%2A>プロパティを設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例には 2 つ<xref:System.Windows.MultiTrigger>s。 最初のセット、 **MinWidth**プロパティ値の場合、 **HasItems**プロパティが false と**幅**プロパティは**自動**です。2 つ目は似ていますが、 **MinHeight**プロパティです。  
+  
+ [!code-xaml[ControlTemplateExamples_snip#MultiTriggerExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples_snip/CS/Page1.xaml#multitriggerexample1)]  
+  
+ 参照してください、<xref:System.Windows.Condition.Binding%2A>プロパティで使用される条件の例については、<xref:System.Windows.MultiDataTrigger>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Condition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Condition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Condition (System.Windows.Data.BindingBase binding, object conditionValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Data.BindingBase binding, object conditionValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.#ctor(System.Windows.Data.BindingBase,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Data.BindingBase" />
+        <Parameter Name="conditionValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="binding">条件のプロパティを指定するバインディング。</param>
+        <param name="conditionValue">現在の状態の値です。</param>
+        <summary><see cref="T:System.Windows.Condition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Condition (System.Windows.DependencyProperty conditionProperty, object conditionValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DependencyProperty conditionProperty, object conditionValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.#ctor(System.Windows.DependencyProperty,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="conditionProperty" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="conditionValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="conditionProperty">条件のプロパティです。</param>
+        <param name="conditionValue">現在の状態の値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Condition" />指定したプロパティと値を持つクラス。 このコンス トラクターでは、パラメーターの検証を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Condition (System.Windows.DependencyProperty conditionProperty, object conditionValue, string sourceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DependencyProperty conditionProperty, object conditionValue, string sourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.#ctor(System.Windows.DependencyProperty,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="conditionProperty" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="conditionValue" Type="System.Object" />
+        <Parameter Name="sourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="conditionProperty">条件のプロパティです。</param>
+        <param name="conditionValue">現在の状態の値です。</param>
+        <param name="sourceName">
+          <c>X:name</c>を持つオブジェクトの<c>conditionProperty</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Condition" />指定されたプロパティ、値、およびソース オブジェクトの名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingBase Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingBase Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Condition.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>条件のプロパティを指定するバインドを取得または設定します。 これはのみに適用<see cref="T:System.Windows.MultiDataTrigger" />オブジェクト。</summary>
+        <value>既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.MultiDataTrigger>s を使用すると、プロパティの値が返されるデータの値に基づいて設定できます。 たとえば、作業項目の一覧を表示する場合、優先度の高いは、2 週間以上で参照されていない場合は、背景が赤のタスクを表示します。  
+  
+ バインディングを作成して使用する、<xref:System.Windows.Data.Binding.Path%2A>特定のオブジェクト (バインディング ソース オブジェクト) のプロパティにバインドするプロパティです。 バインドする場合など、*優先度*のプロパティ、*タスク*です。 詳しくは、「 [データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)」をご覧ください。  
+  
+ 条件が場合は、 <xref:System.Windows.MultiDataTrigger>、<xref:System.Windows.Condition.Binding%2A>と<xref:System.Windows.Condition.Value%2A>プロパティを設定する必要があります。 設定、<xref:System.Windows.Condition.Property%2A>値は例外が発生する、という点です。  
+  
+<a name="xamlAttributeUsage_PriorityBinding"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="{Binding  declaration}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_Binding"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Binding>  
+    <Binding …/>  
+  </object.Binding>  
+</object>  
+```  
+  
+<a name="xamlValues_PriorityBinding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *declaration*  
+ バインディングの宣言。 参照してください[バインディング宣言の概要](~/docs/framework/wpf/data/binding-declarations-overview.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListBox>にバインドされた*場所*、<xref:System.Collections.ObjectModel.ObservableCollection%601>の*場所*オブジェクト。 *場所*オブジェクト プロパティがある*名前*と*状態*です。  
+  
+ 各<xref:System.Windows.Controls.ListBoxItem>の<xref:System.Windows.Controls.ListBox>が表示されます、*場所*オブジェクト。 <xref:System.Windows.Style>の例では、各に適用される<xref:System.Windows.Controls.ListBoxItem>です。 <xref:System.Windows.Condition>の s、<xref:System.Windows.MultiDataTrigger>が指定されてように場合、*名前*と*状態*の*場所*データ項目は"Portland"と「または」、それぞれ、対応のバック グラウンド<xref:System.Windows.Controls.ListBoxItem>シアンに設定されています。  
+  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty Property { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty Property" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Condition.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または条件のプロパティを設定します。 これはのみに適用<see cref="T:System.Windows.MultiTrigger" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.DependencyProperty" />条件のプロパティを指定します。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.MultiTrigger>s を使用すると、一連の条件に基づくプロパティ値を設定できます。 条件がときに満たされたプロパティの値 (によって指定された、<xref:System.Windows.Condition.Property%2A>プロパティ) 要素の指定された一致<xref:System.Windows.Condition.Value%2A>(等価性のチェックを参照)。 すべての指定した条件が満たされている場合は、トリガーが適用されます。  
+  
+ 場合`TargetType`トリガーを格納しているテンプレートのスタイルが設定されていません。 使用して、プロパティ名を修飾する必要があります、`ClassName.PropertyName`構文です。  
+  
+ 条件が場合は、 <xref:System.Windows.MultiTrigger>、<xref:System.Windows.Condition.Property%2A>と<xref:System.Windows.Condition.Value%2A>プロパティを設定する必要があります。 設定、<xref:System.Windows.Condition.Binding%2A>値は例外が発生する、という点です。  
+  
+ <xref:System.Windows.Condition>S <xref:System.Windows.MultiDataTrigger>、s、<xref:System.Windows.Condition.Binding%2A>プロパティは、このプロパティの代わりに使用する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例には 2 つ<xref:System.Windows.MultiTrigger>s。 最初のセット、 **MinWidth**プロパティ値の場合、 **HasItems**プロパティが false と**幅**プロパティは**自動**です。2 つ目は似ていますが、 **MinHeight**プロパティです。  
+  
+ [!code-xaml[ControlTemplateExamples_snip#MultiTriggerExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples_snip/CS/Page1.xaml#multitriggerexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveMarkupExtension">
+      <MemberSignature Language="C#" Value="public static void ReceiveMarkupExtension (object targetObject, System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveMarkupExtension(object targetObject, class System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.ReceiveMarkupExtension(System.Object,System.Windows.Markup.XamlSetMarkupExtensionEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">マークアップ拡張機能値が設定されるオブジェクト。</param>
+        <param name="eventArgs">マークアップ拡張機能の処理に関連するデータ。</param>
+        <summary>マークアップ拡張機能がのプロパティの値を提供する場合の処理、<see cref="T:System.Windows.Condition" />オブジェクト</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、適用されているによって参照されるメソッド<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>このメソッドがの値を設定するすべての試行を処理することを意味するクラス レベルで属性<xref:System.Windows.Condition>マークアップ拡張機能でします。 呼び出すことはない通常このメソッド直接。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTypeConverter">
+      <MemberSignature Language="C#" Value="public static void ReceiveTypeConverter (object targetObject, System.Windows.Markup.XamlSetTypeConverterEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveTypeConverter(object targetObject, class System.Windows.Markup.XamlSetTypeConverterEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.ReceiveTypeConverter(System.Object,System.Windows.Markup.XamlSetTypeConverterEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.Windows.Markup.XamlSetTypeConverterEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">型コンバーターは、値が設定されるオブジェクト。</param>
+        <param name="eventArgs">型コンバーターの処理に関連するデータ。</param>
+        <summary>実行する型コンバーターが on のプロパティの値を提供する場合の処理、<see cref="T:System.Windows.Condition" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、適用されているによって参照されるメソッド<xref:System.Windows.Markup.XamlSetTypeConverterAttribute>このメソッドがの値を設定するすべての試行を処理することを意味するクラス レベルで属性<xref:System.Windows.Condition>型コンバーターを使用しました。 呼び出すことはない通常このメソッド直接。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceName">
+      <MemberSignature Language="C#" Value="public string SourceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Condition.SourceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を適用する関連付けられている setter の原因となるプロパティを使用してオブジェクトの名前。 これはのみに適用<see cref="T:System.Windows.MultiTrigger" />オブジェクト。</summary>
+        <value>既定のプロパティは<see langword="null" />します。 このプロパティは、する場合<see langword="null" />、スタイルを設定するオブジェクトのプロパティによって関連付けられている setter が適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トリガーのコレクション (この条件を含むトリガーが含まれるコレクション) の適用先のスコープ内の要素の名前には、このプロパティを設定することができます。 通常は、トリガーを格納しているテンプレート内にある名前付きの要素を選択します。  
+  
+ オブジェクトを使用して、名前を付けることができます、 [X:name ディレクティブ](~/docs/framework/xaml-services/x-name-directive.md)構文です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">後に、<see cref="T:System.Windows.Condition" />は使用中で、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の開始を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Condition> のインスタンスが <xref:System.ComponentModel.ISupportInitialize> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Condition.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の完了を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Condition> のインスタンスが <xref:System.ComponentModel.ISupportInitialize> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Condition.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.SetterTriggerConditionValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または条件の値を設定します。</summary>
+        <value><see cref="P:System.Windows.Condition.Value" />プロパティを null にすることはできません、指定された<see cref="T:System.Windows.Condition" />です。  
+  
+ [例外] セクションを参照してください。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.MultiTrigger>s および<xref:System.Windows.MultiDataTrigger>s を使用する一連の条件に基づくプロパティ値を設定できます。 要素、またはデータ項目のプロパティの値が指定された一致する場合に、条件が満たされる<xref:System.Windows.Condition.Value%2A>です。 すべての指定した条件が満たされている場合は、トリガーが適用されます。 すべての指定した条件が満たされている場合は、トリガーが適用されます。  
+  
+   
+  
+## Examples  
+ 次の例には 2 つ<xref:System.Windows.MultiTrigger>s。 最初のセット、 **MinWidth**プロパティ値の場合、 **HasItems**プロパティが false と**幅**プロパティは**自動**です。2 つ目は似ていますが、 **MinHeight**プロパティです。  
+  
+ [!code-xaml[ControlTemplateExamples_snip#MultiTriggerExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples_snip/CS/Page1.xaml#multitriggerexample1)]  
+  
+ 参照してください、<xref:System.Windows.Condition.Binding%2A>プロパティで使用される条件の例については、<xref:System.Windows.MultiDataTrigger>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">式はサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

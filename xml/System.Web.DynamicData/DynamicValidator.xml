@@ -1,0 +1,312 @@
+<Type Name="DynamicValidator" FullName="System.Web.DynamicData.DynamicValidator">
+  <TypeSignature Language="C#" Value="public class DynamicValidator : System.Web.UI.WebControls.BaseValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicValidator extends System.Web.UI.WebControls.BaseValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseValidator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.DynamicData.DynamicValidator), "DynamicValidator.bmp")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ モデルでスローされる例外を強制してキャッチし、エラーを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicValidator>コントロールをデータ フィールドまたはエンティティのデータで使用できます。 LINQ to SQL クラスまたはデータ モデルの拡張メソッドのエンティティでスローされる例外をキャッチします。 <xref:System.Web.DynamicData.DynamicValidator>コントロールがユーザー入力を受け取るコントロールに関連付けられています。 たとえば、 <xref:System.Web.DynamicData.DynamicValidator> UnitsInStock テーブルのフィールドに、製品のユーザー入力を受け付けるテキスト ボックスに関連付けられているコントロールをキャッチして、入力が大きい、またはデータ モデルの使用可能なユニットより小さい場合にスローされる例外を表示します。  
+  
+ 既定では、ASP.NET 動的データは表示されません、データ モデルからのすべての例外 ページで、いくつかのデータベースの例外には、機密情報が含まれているためです。 動的なデータを表示<xref:System.Web.DynamicData.DynamicValidator.ValidationException%2A>値のみです。 その他の例外を表示するアプリケーションを実行する場合は、作成、<xref:System.Web.DynamicData.DynamicValidator>制御を表示する場合、例外を提供する例外をアタッチ、<xref:System.Web.DynamicData.DynamicValidator>コントロール。 データ モデルでスローされる例外は、アプリケーションのすべてのページに表示されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.DynamicData.DynamicValidator>をすべてのページにその他の例外を表示するクラスを制御します。  
+  
+```vb  
+''' <summary>   
+''' Display other exceptions in all pages.   
+''' </summary>   
+Public Class MyDynamicValidator   
+    Inherits DynamicValidator   
+  
+    Protected Overloads Overrides Sub ValidateException(ByVal exception As Exception)   
+        ' If it's not an exception that DynamicValidator displays find   
+        ' the innermost exception.   
+        If Not (TypeOf exception Is IDynamicValidatorException) AndAlso _  
+                Not (TypeOf exception Is ValidationException) Then   
+            While exception.InnerException IsNot Nothing   
+                exception = exception.InnerException   
+            End While   
+  
+            ' Wrap it in a ValidationException so that the base code   
+            ' does not ignore it.   
+            If ExceptionShouldBeDisplayedInPage(exception) Then   
+                exception = New ValidationException(Nothing, exception)   
+            End If   
+        End If   
+  
+        ' Call the base class for the exception that is modified.  
+        MyBase.ValidateException(exception)   
+    End Sub   
+  
+    Private Function ExceptionShouldBeDisplayedInPage(ByVal e As Exception) _  
+            As Boolean   
+        ' Add code to find the exception and   
+        ' decide whether it should be shown in the page.  
+  
+        Return True   
+    End Function   
+End Class  
+```  
+  
+```csharp  
+/// <summary>  
+/// Display other exceptions in all pages.   
+/// </summary>  
+public class MyDynamicValidator : DynamicValidator {  
+  
+    protected override void ValidateException(Exception exception) {  
+        // If it's not an exception that DynamicValidator displays find   
+        // the innermost exception.  
+        if (!(exception is IDynamicValidatorException) && !(exception   
+              is ValidationException)) {  
+            while (exception.InnerException != null) {  
+                exception = exception.InnerException;  
+            }  
+  
+            // Wrap it in a ValidationException so that the base code   
+            // does not ignore it.  
+            if (ExceptionShouldBeDisplayedInPage(exception)) {  
+                exception = new ValidationException(null, exception);  
+            }  
+        }  
+  
+        // Call the base class on the exception that is modified.  
+        base.ValidateException(exception);  
+    }  
+  
+    private bool ExceptionShouldBeDisplayedInPage(Exception e) {  
+        // Add your code to find the exception and  
+        // decides whether it should be shown in the page.  
+  
+           return true;  
+    }  
+}  
+```  
+  
+ 次の例では、web.config ファイルにタグが再マップを使用して、すべての Web ページには、例外を表示する方法を示します。  
+  
+```xml  
+<pages>  
+  <tagMapping>  
+    <add tagType="System.Web.DynamicData.DynamicValidator"   
+        mappedTagType="MyDynamicValidator"/>  
+  </tagMapping>  
+</pages>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaColumn Column { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicValidator.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証する列を設定します。</summary>
+        <value>検証する列または<see langword="null" />データ エンティティが検証された場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnName">
+      <MemberSignature Language="C#" Value="public string ColumnName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ColumnName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicValidator.ColumnName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証する列の名前を取得します。</summary>
+        <value>検証は、列の名前または<see langword="null" />データ エンティティが検証された場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPropertiesValid">
+      <MemberSignature Language="C#" Value="protected override bool ControlPropertiesValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ControlPropertiesValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicValidator.ControlPropertiesValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すかどうかの指定したプロパティ<see cref="T:System.Web.DynamicData.DynamicValidator" />コントロールが有効では。</summary>
+        <returns>
+          <see langword="true" />、場合は、指定した検証コントロールのプロパティが無効です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスからは、このメソッドをオーバーライドします。 検証しようとするコントロールには、検証プロパティはありません。 基底クラスへの呼び出しは失敗します。 たとえば、コントロールがある場合、 <xref:System.Web.UI.WebControls.GridView>、基本クラスは失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateIsValid">
+      <MemberSignature Language="C#" Value="protected override bool EvaluateIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool EvaluateIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicValidator.EvaluateIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>検証する入力コントロールの値が有効であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />評価される検証コントロールが無効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicValidator.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see langword="Init" />初期化するためにイベント、<see cref="T:System.Web.DynamicData.DynamicValidator" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateException">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateException (Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateException(class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicValidator.ValidateException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="exception">この例外がスローされます。</param>
+        <summary>データ モデルで例外が発生した場合は検証例外を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、例外がスローされたときに呼び出されます。 検証例外に関連付けられている内部例外が含まれていますが、ときにグローバル検証が失敗するときに、列固有の検証が失敗した非検証例外が発生します。  
+  
+> [!NOTE]
+>  例外の場合のみこのメソッドを使用して、<xref:System.Web.DynamicData.DynamicValidator.ValidationException%2A>です。 このメソッドを使用すると機密性の高いデータベース エラーが表示できる例外の原因が、データベースのエラーである場合  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationException">
+      <MemberSignature Language="C#" Value="protected virtual Exception ValidationException { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception ValidationException" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicValidator.ValidationException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証中に発生する検証の例外を設定します。</summary>
+        <value>検証の例外がスローされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、値を編集する際にエラーが発生した場合、またはデータ モデルに新しい値が挿入されたときにスローされる検証例外を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="IComparable&lt;T&gt;" FullName="System.IComparable&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IComparable&lt;in T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComparable`1&lt;- T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.IComparable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <summary>インスタンスの並べ替えなどを目的とし、型固有の比較メソッドを作成するために値型またはクラスで実装する、汎用の比較メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、値を持つ順序付けしたり並べ替えの種類によって実装され、厳密に型指定された比較メソッドのジェネリック コレクション オブジェクトのメンバーの順序を提供します。 たとえば、1 つの数値が 2 番目の数を超えることがあるし、1 つの文字列は、前に別のアルファベット順に表示できます。 実装する型が 1 つのメソッドを定義することが必要です<xref:System.IComparable%601.CompareTo%28%600%29>がかどうか、現在のインスタンスの位置を並べ替え順序で前に、その後、同じ型の 2 番目のオブジェクトと同じかを示すです。 通常、このメソッドは、開発者のコードから直接は呼び出されません。 代わりに、自動的に呼び出されますメソッドによってなど<xref:System.Collections.Generic.List%601.Sort?displayProperty=nameWithType>と<xref:System.Collections.Generic.SortedList%602.Add%2A>です。  
+  
+ 通常、型を提供する、<xref:System.IComparable%601>実装でも実装する、<xref:System.IEquatable%601>インターフェイスです。 <xref:System.IEquatable%601>インターフェイスを定義、<xref:System.IEquatable%601.Equals%2A>メソッドを実装する型のインスタンスが等しいかどうかを決定します。  
+  
+ 実装、<xref:System.IComparable%601.CompareTo%28%600%29>メソッドが返す必要があります、<xref:System.Int32>が 3 つの値のいずれかの次の表に示すようにします。  
+  
+|値|説明|  
+|-----------|-------------|  
+|0 より小さい値|このオブジェクトで指定されたオブジェクトの前に、<xref:System.IComparable%601.CompareTo%2A>並べ替え順序のメソッドです。|  
+|0|この現在のインスタンスが並べ替え順序内で指定されたオブジェクトとしての同じ位置で発生する、<xref:System.IComparable%601.CompareTo%2A>メソッドの引数。|  
+|0 より大きい値|この現在のインスタンスで指定されたオブジェクトに依存して、<xref:System.IComparable%601.CompareTo%2A>並べ替え順序でメソッド引数。|  
+  
+ すべての数値型 (など<xref:System.Int32>と<xref:System.Double>) 実装<xref:System.IComparable%601>と同様、 <xref:System.String>、 <xref:System.Char>、および<xref:System.DateTime>です。 カスタム型は、独自の実装も提供する必要があります<xref:System.IComparable%601>オブジェクトのインスタンスを並べ替える、または並べ替えを有効にします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の実装を示しています。<xref:System.IComparable%601>シンプルな`Temperature`オブジェクト。 例は、作成、<xref:System.Collections.Generic.SortedList%602>と文字列のコレクション`Temperature`オブジェクトのキー、および気温と文字列のペアを複数を異なる順序の一覧に追加します。 呼び出しで、 <xref:System.Collections.Generic.SortedList%602.Add%2A> 、メソッド、<xref:System.Collections.Generic.SortedList%602>コレクションの使用、<xref:System.IComparable%601>温度が高くなるという順序で表示し、一覧のエントリの並べ替えを実装します。  
+  
+ [!code-cpp[IComparable\`1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/IComparable`1 Example/CPP/source.cpp#1)]
+ [!code-csharp[IComparable\`1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/IComparable`1 Example/CS/source.cs#1)]
+ [!code-vb[IComparable\`1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IComparable`1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>型パラメーターを置き換える、<see cref="T:System.IComparable`1" />がこのインターフェイスを実装している型を持つインターフェイスです。  
+  
+ 実装する場合<see cref="T:System.IComparable`1" />、オーバー ロードする必要があります、 <see langword="op_GreaterThan" />、 <see langword="op_GreaterThanOrEqual" />、 <see langword="op_LessThan" />、および<see langword="op_LessThanOrEqual" />演算子と一致する値を返す<see cref="M:System.IComparable`1.CompareTo(`0)" />です。 さらに、実行する必要も<see cref="T:System.IEquatable`1" />します。 参照してください、<see cref="T:System.IEquatable`1" />完全な情報の記事です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (T other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(!T other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IComparable`1.CompareTo(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="other">このインスタンスと比較するオブジェクト。</param>
+        <summary>現在のインスタンスを同じ型の別のオブジェクトと比較し、現在のインスタンスの並べ替え順序での位置が、比較対象のオブジェクトと比べて前か、後か、または同じかを示す整数を返します。</summary>
+        <returns>比較対象オブジェクトの相対順序を示す値。 戻り値の意味は次のとおりです。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスの前に<paramref name="other" />並べ替え順序で。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスが、並べ替え順序内の同じ位置で発生する<paramref name="other" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスに依存して<paramref name="other" />並べ替え順序で。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IComparable%601.CompareTo%2A>ジェネリック コレクション オブジェクトのメンバーの順序の厳密に型指定された比較メソッドを提供します。 このため、これは通常呼び出されません開発者のコードから直接。 代わりに、自動的に呼び出されますメソッドによってなど<xref:System.Collections.Generic.List%601.Sort?displayProperty=nameWithType>と<xref:System.Collections.Generic.SortedList%602.Add%2A>です。  
+  
+ このメソッドは定義のみであるため、効果が特定のクラスまたは値の型によって実装する必要があります。 (「の前に」、「と同じ位置で発生する」および"に依存) のセクションでは、特定の実装によって異なります。 戻り値で指定された比較の意味です。  
+  
+ 定義では、任意のオブジェクトを比較してより大きい`null`、互いに等しい 2 つの null 参照を比較します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の実装を示しています。<xref:System.IComparable>シンプルな`Temperature`オブジェクト。 例は、作成、<xref:System.Collections.Generic.SortedList%602>と文字列のコレクション`Temperature`オブジェクトのキー、および気温と文字列のペアを複数を異なる順序の一覧に追加します。 呼び出しで、 <xref:System.Collections.Generic.SortedList%602.Add%2A> 、メソッド、<xref:System.Collections.Generic.SortedList%602>コレクションの使用、<xref:System.IComparable%601>温度が高くなるという順序で表示し、一覧のエントリの並べ替えを実装します。  
+  
+ [!code-cpp[IComparable\`1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/IComparable`1 Example/CPP/source.cpp#1)]
+ [!code-csharp[IComparable\`1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/IComparable`1 Example/CS/source.cs#1)]
+ [!code-vb[IComparable\`1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IComparable`1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>A、B、および C は、オブジェクトを次が満たす必要があります。  
+  
+ <c>A.CompareTo(A)</c> 0 を返すために必要なです。  
+  
+ 場合<c>A.CompareTo(B)</c> 0 が返されます、し<c>B.CompareTo(A)</c> 0 を返すために必要なです。  
+  
+ 場合<c>A.CompareTo(B)</c>は 0 を返しますと<c>B.CompareTo(C)</c> 0 が返されます、し<c>A.CompareTo(C)</c> 0 を返すために必要なです。  
+  
+ 場合<c>A.CompareTo(B)</c>し、0 以外の値を返します<c>B.CompareTo(A)</c>逆の符号の値を返すために必要なです。  
+  
+ 場合<c>A.CompareTo(B)</c>値を返します<paramref name="x" />れていない場合は 0 に等しいと<c>B.CompareTo(C)</c>値を返します<paramref name="y" />と同じ符号の<paramref name="x" />、し<c>A.CompareTo(C)</c>と同じ符号の値を返すために必要な<paramref name="x" />と<paramref name="y" />です。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>使用して、<see cref="M:System.IComparable`1.CompareTo(`0)" />メソッド、クラスのインスタンスの構成を決定します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

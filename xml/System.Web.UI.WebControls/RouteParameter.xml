@@ -1,0 +1,262 @@
+<Type Name="RouteParameter" FullName="System.Web.UI.WebControls.RouteParameter">
+  <TypeSignature Language="C#" Value="public class RouteParameter : System.Web.UI.WebControls.Parameter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RouteParameter extends System.Web.UI.WebControls.Parameter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RouteParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Parameter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("RouteKey")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>URL セグメントの値をパラメーター オブジェクトにバインドします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、Web サイトで ASP.NET のルーティングを実装する場合、<xref:System.Web.UI.WebControls.RouteParameter>データベース クエリやコマンドに、要求された URL のセグメントの値をバインドするオブジェクト。 宣言することができます<xref:System.Web.UI.WebControls.RouteParameter>データ用のマークアップ内のオブジェクト ソース コントロールまたは<xref:System.Web.UI.WebControls.QueryExtender>コントロール。  
+  
+ Visual Studio の Web サイト プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=168640)です。  
+  
+   
+  
+## Examples  
+ このセクションの例を使用する方法を示して<xref:System.Web.UI.WebControls.RouteParameter>ソース コントロールのデータに対して指定されているクエリに URL パラメーター値を渡すマークアップ内のオブジェクト。  
+  
+ 次の例では、コードを示しますという名前のルートを定義する Global.asax ページで`ProductRoute`です。 ルート定義の名前は URL パラメーター`productname`です。 ルートはという省略可能な汎用パラメーターも定義`culture`、これは、製品の説明が表示されている言語を指定を使用できます。 Product.aspx ページでは、このルートの要求を処理します。  
+  
+  
+  
+  
+  
+ 次の例では、Product.aspx ページを示します。 このページには、<xref:System.Web.UI.WebControls.SqlDataSource>製品の名前のいずれかと、製品の説明の言語の 1 つの 2 つのパラメーターを必要とするクエリを持つコントロールをします。 <xref:System.Web.UI.WebControls.RouteParameter>クエリ パラメーターの値を提供するオブジェクトが使用されます。 ルートの URL パラメーターの値`productname`クエリ パラメーターに渡される`@productname`です。 ルートの URL パラメーターの値`culture`クエリ パラメーターに渡される`@culture`です。 ルート URL が URL パラメーターを指定しないかどうかは`culture`、"en"の既定値が使用されます。  
+  
+  
+  
+ 次の例では、ルート Url を使用して、Product.aspx ページにリンクするハイパーリンクを含む ProductLinks.aspx というページを示します。 これらのハイパーリンクを使用して`RouteUrl`を作成する式は、Url をルーティングします。 最初のリンクを含まない、`culture`パラメーターをルーティングします。 そのため、既定値で定義されている"en"の<xref:System.Web.UI.WebControls.RouteParameter>オブジェクトに対する`@culture`クエリ パラメーターがクエリで使用されます。 2 番目のリンクを提供する`culture`"fr"、これにより、フランス語で表示される説明の値。 使用する方法の詳細についての`RouteUrl`式を参照してください[する方法: ルートからの Url の構築](http://msdn.microsoft.com/library/1ffd4085-71f6-4822-be8f-f682ca638650)です。  
+  
+  
+  
+ 次の値を持つ Product.aspx ページが表示された最初のハイパーリンクをクリックすると、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+|ProductID|名前|説明|  
+|---------------|----------|-----------------|  
+|`994`|`LL Bottom Bracket`|`Chromoly steel.`|  
+  
+ 次の値を参照して 2 番目のハイパーリンクをクリックすると、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+|ProductID|名前|説明|  
+|---------------|----------|-----------------|  
+|`994`|`LL Bottom Bracket`|`Acier chromé.`|  
+  
+ この例を実行する 2 つの .aspx ページと、コードを追加、Global.asax ファイルという名前の接続文字列を定義している ASP.NET Web サイトまたは Web アプリケーションに`AdventureWorksLTConnectionString`AdventureWorksLT データベース用です。 AdventureWorksLT データベースへの接続を設定する方法については、次を参照してください。[する方法: an AdventureWorksLT サンプル データベースのセットアップの ASP.NET 開発](http://msdn.microsoft.com/library/2baad633-9d63-49cc-a6b2-917cafd35356)です。  
+  
+ ASP.NET ルーティングの詳細については、次を参照してください。 [ASP.NET ルーティング](http://msdn.microsoft.com/library/892441af-8f1d-483e-ab5f-b82c23576f5a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RouteParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター メソッドを使用して初期化するために、<xref:System.Web.UI.WebControls.RouteParameter>オブジェクトし、既定値を設定します。 プロパティは、次の値に初期化されます。  
+  
+-   <xref:System.Web.UI.WebControls.RouteParameter.RouteKey%2A>空の文字列に設定されている ("") です。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.Name%2A>空の文字列に設定されます。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.Type%2A> が <xref:System.TypeCode.Empty> に設定されます。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.Direction%2A> が <xref:System.Data.ParameterDirection.Input> に設定されます。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A> が `null` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RouteParameter (System.Web.UI.WebControls.RouteParameter original);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.RouteParameter original) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.#ctor(System.Web.UI.WebControls.RouteParameter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="original" Type="System.Web.UI.WebControls.RouteParameter" />
+      </Parameters>
+      <Docs>
+        <param name="original">現在のインスタンスの初期化元となるオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.RouteParameter" />指定したインスタンスの値を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは複製に使用される、<xref:System.Web.UI.WebControls.RouteParameter>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteParameter (string name, string routeKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string routeKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="routeKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターのインスタンスの名前。</param>
+        <param name="routeKey">パラメーターの値を含むルート セグメントの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.RouteParameter" />ルート データのパラメーターに指定された名前および指定したキーを使用して、クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteParameter (string name, System.Data.DbType dbType, string routeKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.DbType dbType, string routeKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.#ctor(System.String,System.Data.DbType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dbType" Type="System.Data.DbType" />
+        <Parameter Name="routeKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターのインスタンスの名前。</param>
+        <param name="dbType">パラメーター インスタンスのデータベースの種類。</param>
+        <param name="routeKey">パラメーターの値を含むルート セグメントの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.RouteParameter" />クラス パラメーターには、指定した名前とデータベースの種類を使用して、ルート データの指定したキーを使用しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteParameter (string name, TypeCode type, string routeKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.TypeCode type, string routeKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.#ctor(System.String,System.TypeCode,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.TypeCode" />
+        <Parameter Name="routeKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターのインスタンスの名前。</param>
+        <param name="type">パラメーターを表す型。</param>
+        <param name="routeKey">パラメーターの値を含むルート セグメントの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.RouteParameter" />クラス パラメーターには、指定した名前と型を使用して、ルート データの指定したキーを使用しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Parameter Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Parameter Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Parameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の複製を返します<see cref="T:System.Web.UI.WebControls.RouteParameter" />インスタンス。</summary>
+        <returns>現在の複製であるオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="protected override object Evaluate (System.Web.HttpContext context, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object Evaluate(class System.Web.HttpContext context, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RouteParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />要求のインスタンス。</param>
+        <param name="control">パラメーターにバインドされるコントロールです。</param>
+        <summary>要求 URL を評価し、パラメーターの値を返します。</summary>
+        <returns>パラメーターの現在の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteKey">
+      <MemberSignature Language="C#" Value="public string RouteKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RouteKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RouteParameter.RouteKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルートのパラメーターの値を取得する対象のルート セグメントの名前を設定します。</summary>
+        <value>パラメーターの値を含むルート セグメントの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルートのパターンを定義するときは、Web 要求の URL で実際の値のプレース ホルダーとしてセグメントを含めることができます。 中かっこで囲み、プレース ホルダーを定義する (`{`と`}`)。 たとえば、ルート パターンの形式で`blog/{action}/{entry}`という名前のプレース ホルダーを含む`action`と`entry`です。 プレース ホルダーの値を取得するには設定、<xref:System.Web.UI.WebControls.RouteParameter.RouteKey%2A>プロパティの名前のプレース ホルダーと呼び出しを<xref:System.Web.UI.WebControls.RouteParameter.Evaluate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

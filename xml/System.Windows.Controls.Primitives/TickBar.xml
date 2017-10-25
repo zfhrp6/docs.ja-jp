@@ -1,0 +1,751 @@
+<Type Name="TickBar" FullName="System.Windows.Controls.Primitives.TickBar">
+  <TypeSignature Language="C#" Value="public class TickBar : System.Windows.FrameworkElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi TickBar extends System.Windows.FrameworkElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.TickBar" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>目盛りを描画するコントロールのマークを表す、<see cref="T:System.Windows.Controls.Slider" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.TickBar>コントロールは、幅が 1 つのピクセルの目盛りを描画します。 目盛りの場所を定義するには、繰り返しの間隔または一連の明示的なポイントを指定します。  
+  
+ <xref:System.Windows.Controls.Primitives.TickBar>コントロールは具体的を使用するように設計されています、<xref:System.Windows.Controls.Slider>コントロール。 A<xref:System.Windows.Controls.Slider>目盛り が表示されます。 次の図は、<xref:System.Windows.Controls.Slider>を持つ、<xref:System.Windows.Controls.Primitives.TickBar>です。  
+  
+ **TickBar が付いたスライダー**  
+  
+ ![スライダーの図](~/add/media/genericslider.png "スライダーの図")  
+  
+ <xref:System.Windows.Controls.Primitives.TickBar>コントロールは、通常で定義されている、<xref:System.Windows.Style>の<xref:System.Windows.Controls.Slider>です。 例については、<xref:System.Windows.Controls.Primitives.TickBar>に含まれている、 <xref:System.Windows.Controls.Slider> <xref:System.Windows.Style>を参照してください[スライダーのスタイルとテンプレート](~/docs/framework/wpf/controls/slider-styles-and-templates.md)です。  
+  
+ <xref:System.Windows.Controls.Primitives.TickBar>と<xref:System.Windows.Controls.Slider>コントロール両方にはに同じ機能を実行するプロパティが含まれています。 次の表に、<xref:System.Windows.Controls.Primitives.TickBar>プロパティと、対応する<xref:System.Windows.Controls.Slider>バインドされているプロパティ。 <xref:System.Windows.Controls.Primitives.TickBar>プロパティが優先とき<xref:System.Windows.Controls.Slider>と<xref:System.Windows.Controls.Primitives.TickBar>関連したプロパティの両方を指定します。  
+  
+ **関連する TickBar とスライダー プロパティ**  
+  
+|<xref:System.Windows.Controls.Primitives.TickBar> プロパティ|<xref:System.Windows.Controls.Slider> プロパティ|  
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.Primitives.TickBar.IsDirectionReversed%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.IsDirectionReversed%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabled%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.IsSelectionRangeEnabled%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.Maximum%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.Minimum%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.SelectionEnd%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.SelectionEnd%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.SelectionStart%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.SelectionStart%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.TickFrequency%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.TickFrequency%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.TickBar.Ticks%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.Ticks%2A?displayProperty=nameWithType>|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TickBar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.TickBar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.TickBar" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fill">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Fill { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Fill" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.Fill" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />目盛りを描画するために使用されます。</summary>
+        <value>A<see cref="T:System.Windows.Media.Brush" />目盛りを描画に使用します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Fill"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.FillProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FillProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FillProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.FillProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.Fill" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.TickBar.Fill%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirectionReversed">
+      <MemberSignature Language="C#" Value="public bool IsDirectionReversed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirectionReversed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.IsDirectionReversed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または目盛りの値を増加させる方向を設定します。</summary>
+        <value>
+          <see langword="true" />値を増加させる方向が水平方向の左側に場合<see cref="T:System.Windows.Controls.Slider" />または垂直方向の一覧の<see cref="T:System.Windows.Controls.Slider" />、それ以外の<see langword="false" />します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsDirectionReversed"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.IsDirectionReversedProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirectionReversedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDirectionReversedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDirectionReversedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.IsDirectionReversedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.IsDirectionReversed" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.TickBar.IsDirectionReversed%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectionRangeEnabled">
+      <MemberSignature Language="C#" Value="public bool IsSelectionRangeEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelectionRangeEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、<see cref="T:System.Windows.Controls.Primitives.TickBar" />選択範囲を表示します。</summary>
+        <value>
+          選択範囲を表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Slider.SelectionStart%2A>と<xref:System.Windows.Controls.Slider.SelectionEnd%2A>プロパティが選択範囲を定義します。 表示される選択範囲のこれらのプロパティを設定する必要があります<xref:System.Windows.Controls.Slider.IsSelectionRangeEnabled%2A>に設定されている`true`です。  
+  
+ 次の図は、<xref:System.Windows.Controls.Slider>が含まれるコントロール、<xref:System.Windows.Controls.Primitives.TickBar>定義された選択範囲を持ちます。  
+  
+ ![スライダー選択範囲](~/add/media/sliderselectionrange.GIF "スライダー選択範囲")  
+  
+<a name="dependencyPropertyInfo_IsSelectionRangeEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectionRangeEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsSelectionRangeEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsSelectionRangeEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Slider.IsSelectionRangeEnabled" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public double Maximum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または目盛りの指定可能な最大の値を設定します。</summary>
+        <value>目盛りの最大有効値。 既定値は 100.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 主目盛りは、<xref:System.Windows.Controls.Primitives.TickBar.Minimum%2A>と<xref:System.Windows.Controls.Primitives.TickBar.Maximum%2A>値、およびセカンダリのタイマー刻みは以外の値を表示します。 水平方向の<xref:System.Windows.Controls.Primitives.TickBar>、主目盛りの高さと等しい、<xref:System.Windows.FrameworkElement.ActualHeight%2A>の<xref:System.Windows.Controls.Primitives.TickBar>です。 垂直方向の<xref:System.Windows.Controls.Primitives.TickBar>、主目盛りの幅と等しい、<xref:System.Windows.FrameworkElement.ActualWidth%2A>の<xref:System.Windows.Controls.Primitives.TickBar>です。 セカンダリのタイマー刻みのサイズは、プライマリのタイマー刻みのサイズの 75% です。  
+  
+<a name="dependencyPropertyInfo_Maximum"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.MaximumProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaximumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaximumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.MaximumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.Maximum" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public double Minimum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または目盛りの指定可能な最小の値を設定します。</summary>
+        <value>ティックの最小有効値。 既定値は、0 (0.0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 主目盛りは、<xref:System.Windows.Controls.Primitives.TickBar.Minimum%2A>と<xref:System.Windows.Controls.Primitives.TickBar.Maximum%2A>値、およびセカンダリのタイマー刻みは以外の値を表示します。 水平方向の<xref:System.Windows.Controls.Primitives.TickBar>、主目盛りの高さと等しい、<xref:System.Windows.FrameworkElement.ActualHeight%2A>の<xref:System.Windows.Controls.Primitives.TickBar>です。 垂直方向の<xref:System.Windows.Controls.Primitives.TickBar>、主目盛りの幅と等しい、<xref:System.Windows.FrameworkElement.ActualWidth%2A>の<xref:System.Windows.Controls.Primitives.TickBar>です。 セカンダリのタイマー刻みのサイズは、プライマリのタイマー刻みのサイズの 75% です。  
+  
+<a name="dependencyPropertyInfo_Minimum"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.MinimumProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinimumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinimumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.MinimumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.Minimum" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRender">
+      <MemberSignature Language="C#" Value="protected override void OnRender (System.Windows.Media.DrawingContext dc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRender(class System.Windows.Media.DrawingContext dc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.TickBar.OnRender(System.Windows.Media.DrawingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Windows.Media.DrawingContext" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Windows.Media.DrawingContext" />目盛りを描画するために使用されます。</param>
+        <summary>目盛りを描画する<see cref="T:System.Windows.Controls.Slider" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Controls.Primitives.TickBar.Placement%2A>プロパティおよび<xref:System.Windows.Controls.Primitives.TickBar.IsDirectionReversed%2A>プロパティ目盛りを描画する場所を決定する<xref:System.Windows.Controls.Primitives.TickBar>です。  
+  
+ 主目盛りは、<xref:System.Windows.Controls.Primitives.TickBar.Minimum%2A>と<xref:System.Windows.Controls.Primitives.TickBar.Maximum%2A>値、およびセカンダリのタイマー刻みは以外の値を表示します。 水平方向の<xref:System.Windows.Controls.Primitives.TickBar>、主目盛りの高さと等しい、<xref:System.Windows.FrameworkElement.ActualHeight%2A>の<xref:System.Windows.Controls.Primitives.TickBar>です。 垂直方向の<xref:System.Windows.Controls.Primitives.TickBar>、主目盛りの幅と等しい、<xref:System.Windows.FrameworkElement.ActualWidth%2A>の<xref:System.Windows.Controls.Primitives.TickBar>です。 セカンダリのタイマー刻みのサイズは、プライマリのタイマー刻みのサイズの 75% です。  
+  
+ このメソッドは、場合も、先頭と選択範囲の末尾に目盛りを描画、<xref:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabled%2A>プロパティは`true`場合に、<xref:System.Windows.Controls.Primitives.TickBar.SelectionStart%2A>と<xref:System.Windows.Controls.Primitives.TickBar.SelectionEnd%2A>プロパティが有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Placement">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.TickBarPlacement Placement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.TickBarPlacement Placement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.Placement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.TickBarPlacement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>に対して相対的な目盛りが表示される場所を取得または設定、<see cref="T:System.Windows.Controls.Primitives.Track" />の<see cref="T:System.Windows.Controls.Slider" />コントロール。</summary>
+        <value>A<see cref="T:System.Windows.Controls.Primitives.TickBarPlacement" />の位置を識別する列挙値、<see cref="T:System.Windows.Controls.Primitives.TickBar" />で、<see cref="T:System.Windows.Style" />のレイアウト、<see cref="T:System.Windows.Controls.Slider" />です。 既定値は <see cref="F:System.Windows.Controls.Primitives.TickBarPlacement.Top" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.TickBar.Placement%2A>ことを確認する値が使用される表示部分の<xref:System.Windows.Controls.Primitives.TickBar>選択範囲の終了位置インジケーターが正しく表示されるなど、します。  
+  
+<a name="dependencyPropertyInfo_Placement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.PlacementProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.PlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.Placement" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReservedSpace">
+      <MemberSignature Language="C#" Value="public double ReservedSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ReservedSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.ReservedSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が指定されている目盛りはには含まれています、領域の空間バッファー、<see cref="T:System.Windows.Controls.Primitives.TickBar" />です。</summary>
+        <value>行または目盛りの列のいずれかの側の合計バッファー領域を表す値。 既定値は、0 (0.0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義されている領域のバッファー、<xref:System.Windows.Controls.Primitives.TickBar.ReservedSpace%2A>プロパティが、スペースのために設計されているを<xref:System.Windows.Controls.Primitives.Thumb>の先頭または末尾にあるときにコントロールを使用して、<xref:System.Windows.Controls.Primitives.TickBar>です。 値、<xref:System.Windows.Controls.Primitives.TickBar.ReservedSpace%2A>プロパティが半分に分かれています。 1 つのスペースの半分は、目盛りコレクションの 1 つの側でバッファーとして使用され、領域の残りの半分は、コレクションの相手側のバッファーとして使用します。  
+  
+<a name="dependencyPropertyInfo_ReservedSpace"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.ReservedSpaceProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReservedSpaceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ReservedSpaceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ReservedSpaceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.ReservedSpaceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.ReservedSpace" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionEnd">
+      <MemberSignature Language="C#" Value="public double SelectionEnd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SelectionEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.SelectionEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択範囲の終了位置を設定します。</summary>
+        <value>選択範囲の値の範囲の最後の値。 既定値は、-1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabled%2A>プロパティに設定する必要があります`true`の<xref:System.Windows.Controls.Primitives.TickBar.SelectionStart%2A>と<xref:System.Windows.Controls.Primitives.TickBar.SelectionEnd%2A>プロパティを使用します。  
+  
+<a name="dependencyPropertyInfo_SelectionEnd"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.SelectionEndProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionEndProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectionEndProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectionEndProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.SelectionEndProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.SelectionEnd" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionStart">
+      <MemberSignature Language="C#" Value="public double SelectionStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SelectionStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.SelectionStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択範囲の始点を設定します。</summary>
+        <value>選択範囲の値の範囲の最初の値。 既定値は、-1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.TickBar.IsSelectionRangeEnabled%2A>プロパティに設定する必要があります`true`の<xref:System.Windows.Controls.Primitives.TickBar.SelectionStart%2A>と<xref:System.Windows.Controls.Primitives.TickBar.SelectionEnd%2A>プロパティを使用します。  
+  
+<a name="dependencyPropertyInfo_SelectionStart"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.SelectionStartProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionStartProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectionStartProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectionStartProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.SelectionStartProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.SelectionStart" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TickFrequency">
+      <MemberSignature Language="C#" Value="public double TickFrequency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 TickFrequency" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.TickFrequency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>目盛りの間隔を取得または設定します。</summary>
+        <value>目盛り間の距離。 既定値は、1 つ (1.0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Controls.Slider.Ticks%2A>ではない値に設定されて`null`、<xref:System.Windows.Controls.Slider.TickFrequency%2A>プロパティは使用されません。 指定された間隔で目盛りが描画される、<xref:System.Windows.Controls.Slider.TickFrequency%2A>プロパティの値で始まる、<xref:System.Windows.Controls.Primitives.TickBar.Minimum%2A>プロパティは、の値になるまで続行、<xref:System.Windows.Controls.Primitives.TickBar.Maximum%2A>プロパティに達しました。  
+  
+<a name="dependencyPropertyInfo_TickFrequency"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.TickFrequencyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TickFrequencyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TickFrequencyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TickFrequencyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.TickFrequencyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.TickFrequency" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ticks">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DoubleCollection Ticks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DoubleCollection Ticks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.TickBar.Ticks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または目盛りの位置にマークを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Media.DoubleCollection" />目盛りの場所を指定します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目盛りで定義されている、<xref:System.Windows.Controls.Primitives.TickBar.Ticks%2A>プロパティおよびで定義されている範囲が、<xref:System.Windows.Controls.Primitives.TickBar.Minimum%2A>と<xref:System.Windows.Controls.Primitives.TickBar.Maximum%2A>プロパティの値は表示されません。  
+  
+ ときに、<xref:System.Windows.Controls.Primitives.TickBar.Ticks%2A>プロパティが設定されて、<xref:System.Windows.Controls.Primitives.TickBar.TickFrequency%2A>プロパティは使用されません。  
+  
+<a name="dependencyPropertyInfo_Ticks"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.TickBar.TicksProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TicksProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TicksProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TicksProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.TickBar.TicksProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.TickBar.Ticks" /> 依存関係プロパティを識別します。 このプロパティは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

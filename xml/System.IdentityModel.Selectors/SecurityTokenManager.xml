@@ -1,0 +1,132 @@
+<Type Name="SecurityTokenManager" FullName="System.IdentityModel.Selectors.SecurityTokenManager">
+  <TypeSignature Language="C#" Value="public abstract class SecurityTokenManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityTokenManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.SecurityTokenManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ トークンを提供、認証、およびシリアル化する方法を指定するセキュリティ トークン マネージャーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム セキュリティ トークン、セキュリティ トークン認証システム、またはセキュリティ トークン プロバイダーが必要な場合は <xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスを使用します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] でサポートされていない資格情報を処理するには、カスタム セキュリティ トークンを使用します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] の認証メソッドでは不十分な場合は、カスタム セキュリティ トークン認証システムを使用します。 <xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスは、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> メソッドでセキュリティ トークン認証システムを返します。 セキュリティ トークン プロバイダーは、送信 SOAP メッセージのセキュリティ トークンを提供します。 <xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスは、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> メソッドでセキュリティ トークン プロバイダーを返します。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]カスタム セキュリティ トークン認証システムとセキュリティ トークン プロバイダーを使用して、参照してください[カスタム資格情報と資格情報の検証](~/docs/framework/wcf/extending/custom-credential-and-credential-validation.md)です。 [!INCLUDE[crabout](~/includes/crabout-md.md)]カスタム セキュリティ トークンを作成するを参照してください[する方法: カスタム トークンを作成する](~/docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityTokenManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.SecurityTokenManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenAuthenticator">
+      <MemberSignature Language="C#" Value="public abstract System.IdentityModel.Selectors.SecurityTokenAuthenticator CreateSecurityTokenAuthenticator (System.IdentityModel.Selectors.SecurityTokenRequirement requirement, out System.IdentityModel.Selectors.SecurityTokenResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Selectors.SecurityTokenAuthenticator CreateSecurityTokenAuthenticator(class System.IdentityModel.Selectors.SecurityTokenRequirement requirement, [out] class System.IdentityModel.Selectors.SecurityTokenResolver&amp; resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator(System.IdentityModel.Selectors.SecurityTokenRequirement,System.IdentityModel.Selectors.SecurityTokenResolver@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenAuthenticator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenRequirement" Type="System.IdentityModel.Selectors.SecurityTokenRequirement" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="requirement">To be added.</param>
+        <param name="resolver">To be added.</param>
+        <summary>指定されたセキュリティ トークン要件を満たすセキュリティ トークン認証システムを取得します。</summary>
+        <returns>指定された要件を満たす受信 SOAP メッセージのセキュリティ トークンを認証する <see cref="T:System.IdentityModel.Selectors.SecurityTokenAuthenticator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスは、送信 SOAP メッセージのセキュリティ トークンの提供、および受信 SOAP メッセージのセキュリティ トークンの認証を行うことができる種類を提供します。 <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> メソッドは、`tokenRequirement` パラメーターに指定された条件に一致するセキュリティ トークンを認証するクラスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenProvider">
+      <MemberSignature Language="C#" Value="public abstract System.IdentityModel.Selectors.SecurityTokenProvider CreateSecurityTokenProvider (System.IdentityModel.Selectors.SecurityTokenRequirement requirement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Selectors.SecurityTokenProvider CreateSecurityTokenProvider(class System.IdentityModel.Selectors.SecurityTokenRequirement requirement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider(System.IdentityModel.Selectors.SecurityTokenRequirement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenRequirement" Type="System.IdentityModel.Selectors.SecurityTokenRequirement" />
+      </Parameters>
+      <Docs>
+        <param name="requirement">To be added.</param>
+        <summary>指定されたセキュリティ トークン要件を満たすセキュリティ トークン プロバイダーを取得します。</summary>
+        <returns>送信 SOAP メッセージに対して指定された要件を満たすセキュリティ トークンを提供する <see cref="T:System.IdentityModel.Selectors.SecurityTokenProvider" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスは、送信 SOAP メッセージのセキュリティ トークンの提供、および受信 SOAP メッセージのセキュリティ トークンの認証を行うことができる種類を提供します。 <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> メソッドは、`tokenRequirement` パラメーターに指定された条件に一致するセキュリティ トークンを提供するセキュリティ トークンを認証するクラスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenSerializer">
+      <MemberSignature Language="C#" Value="public abstract System.IdentityModel.Selectors.SecurityTokenSerializer CreateSecurityTokenSerializer (System.IdentityModel.Selectors.SecurityTokenVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Selectors.SecurityTokenSerializer CreateSecurityTokenSerializer(class System.IdentityModel.Selectors.SecurityTokenVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer(System.IdentityModel.Selectors.SecurityTokenVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenSerializer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.IdentityModel.Selectors.SecurityTokenVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">セキュリティ トークンが準拠する WS-* 仕様のバージョンを示す <see cref="T:System.IdentityModel.Selectors.SecurityTokenVersion" />。</param>
+        <summary>WS-* 仕様の指定したバージョンのセキュリティ トークンをシリアル化する XML シリアライザーを取得します。</summary>
+        <returns>セキュリティ トークンをシリアル化する <see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム トークンをサポートするシリアル化を追加するには、<xref:System.ServiceModel.Security.WSSecurityTokenSerializer> からクラスを派生し、このクラスのインスタンスを返して <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> メソッドを使用できるようにします。 <xref:System.ServiceModel.Security.WSSecurityTokenSerializer> クラスから派生した <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> クラスは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クラスに付属するセキュリティ トークンをシリアル化および逆シリアル化する機能を持ちます。 このように、シリアライザーにカスタム トークンのサポートを追加するには、<xref:System.ServiceModel.Security.WSSecurityTokenSerializer> クラスで仮想メソッドをオーバーライドし、対象のセキュリティ トークンがカスタム トークンであるかどうかをチェックするコードを追加して、カスタム トークンではない場合は基本クラスのメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

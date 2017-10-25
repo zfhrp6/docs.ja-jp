@@ -1,0 +1,673 @@
+<Type Name="ControlBindingsCollection" FullName="System.Windows.Forms.ControlBindingsCollection">
+  <TypeSignature Language="C#" Value="public class ControlBindingsCollection : System.Windows.Forms.BindingsCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlBindingsCollection extends System.Windows.Forms.BindingsCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ControlBindingsCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.BindingsCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("CollectionChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Forms.Design.ControlBindingsConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールのデータ バインドのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単純データ バインディングを追加することで実現<xref:System.Windows.Forms.Binding>オブジェクトを<xref:System.Windows.Forms.ControlBindingsCollection>です。 継承する任意のオブジェクト、<xref:System.Windows.Forms.Control>クラスがアクセスできる、<xref:System.Windows.Forms.ControlBindingsCollection>を通じて、<xref:System.Windows.Forms.Control.DataBindings%2A>プロパティです。 Windows の一覧は、バインディングをサポートするデータを制御するを参照してください、<xref:System.Windows.Forms.Binding>クラスです。  
+  
+ <xref:System.Windows.Forms.ControlBindingsCollection>などの標準的な収集方法を含む<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>、 <xref:System.Windows.Forms.ControlBindingsCollection.Clear%2A>、および<xref:System.Windows.Forms.ControlBindingsCollection.Remove%2A>です。  
+  
+ コントロールを取得する、<xref:System.Windows.Forms.ControlBindingsCollection>が属しているを使用して、<xref:System.Windows.Forms.ControlBindingsCollection.Control%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加<xref:System.Windows.Forms.Binding>オブジェクトを<xref:System.Windows.Forms.ControlBindingsCollection>5 つのコントロールの: 次の 4 つ<xref:System.Windows.Forms.TextBox>コントロールと<xref:System.Windows.Forms.DateTimePicker>コントロール。 <xref:System.Windows.Forms.ControlBindingsCollection> には、<xref:System.Windows.Forms.Control.DataBindings%2A> クラスの <xref:System.Windows.Forms.Control> プロパティを使用してアクセスします。  
+  
+ [!code-cpp[Classic ControlBindingsCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlBindingsCollection (System.Windows.Forms.IBindableComponent control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.IBindableComponent control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.#ctor(System.Windows.Forms.IBindableComponent)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.IBindableComponent" />
+      </Parameters>
+      <Docs>
+        <param name="control">バインディング コレクションが属する <see cref="T:System.Windows.Forms.IBindableComponent" />。</param>
+        <summary>指定したバインドできるコントロールを使用して <see cref="T:System.Windows.Forms.ControlBindingsCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Forms.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Windows.Forms.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.Windows.Forms.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="binding">追加する <see cref="T:System.Windows.Forms.Binding" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Forms.Binding" /> をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Binding.DataSourceUpdateMode%2A>のプロパティ、<xref:System.Windows.Forms.Binding>のこのオーバー ロードによって作成された、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>方法の値に設定されて、<xref:System.Windows.Forms.ControlBindingsCollection.DefaultDataSourceUpdateMode%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベント、変更が完了したときに発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.Binding>使用して、インスタンスを<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>にインスタンスを追加する方法、<xref:System.Windows.Forms.ControlBindingsCollection>の<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ [!code-cpp[Classic ControlBindingsCollection.Add Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Add Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="binding" />が null です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Windows.Forms.Binding" />の有効な列が指定されていません、<see cref="P:System.Windows.Forms.Binding.DataSource" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Add (string propertyName, object dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Binding Add(string propertyName, object dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.String,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <summary>指定したコントロール プロパティ名、データ ソース、およびデータ メンバーを使用して <see cref="T:System.Windows.Forms.Binding" /> を作成し、コレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Windows.Forms.Binding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Binding.DataSourceUpdateMode%2A>のプロパティ、<xref:System.Windows.Forms.Binding>のこのオーバー ロードによって作成された、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>方法の値に設定されて、<xref:System.Windows.Forms.ControlBindingsCollection.DefaultDataSourceUpdateMode%2A>プロパティです。  
+  
+ 追加する、<xref:System.Windows.Forms.Binding>により、<xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.ControlBindingsCollection.Add%2A> 3 を追加するメソッドを<xref:System.Windows.Forms.Binding>オブジェクトを<xref:System.Windows.Forms.ControlBindingsCollection>の<xref:System.Windows.Forms.TextBox>コントロール。 <xref:System.Windows.Forms.ControlBindingsCollection> には、<xref:System.Windows.Forms.Control.DataBindings%2A> クラスの <xref:System.Windows.Forms.Control> プロパティを使用してアクセスします。  
+  
+ [!code-cpp[Classic ControlBindingsCollection.Add1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Add1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection.Add1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Add1 Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection.Add1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection.Add1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Exception"><paramref name="dataMember" />の有効なメンバーが指定されていない、<paramref name="dataSource" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Add (string propertyName, object dataSource, string dataMember, bool formattingEnabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Binding Add(string propertyName, object dataSource, string dataMember, bool formattingEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.String,System.Object,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定したコントロール プロパティ名、データ ソース、データ メンバー、および書式指定を有効にするかどうかに関する情報を使用してバインディングを作成し、コレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Windows.Forms.Binding" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。  
+  
+ または  
+  
+ 指定されたプロパティは、読み取り専用プロパティです。</exception>
+        <exception cref="T:System.Exception">書式設定が無効になっている場合、<paramref name="propertyName" />がどちらも、コントロールの有効なプロパティも、空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Add (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode updateMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Binding Add(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode updateMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="updateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <summary>指定したコントロール プロパティを、指定したデータ ソースの指定したデータ メンバーにバインドするバインディングを作成します。さらに、オプションで書式指定を有効にし、指定した更新設定に基づいてデータ ソースに値を反映し、バインディングをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Windows.Forms.Binding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>メソッドが発生し、<xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールが存在しないか、読み取り専用です。  
+  
+ または  
+  
+ 指定したデータ メンバーは、データ ソースではありません。  
+  
+ または  
+  
+ データ ソース、データ メンバー、またはコントロールのプロパティ コレクション内の別のバインディングに関連付けられているを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Add (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode updateMode, object nullValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Binding Add(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode updateMode, object nullValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="nullValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="updateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <param name="nullValue">データ ソースにこの値がある場合、バインドされたプロパティを <see cref="T:System.DBNull" /> に設定します。</param>
+        <summary>指定したコントロール プロパティを、指定したデータ ソースの指定したデータ メンバーにバインドするバインディングを作成します。さらに、オプションで書式指定を有効にし、指定した更新設定に基づいてデータ ソースに値を反映し、データ ソースから <see cref="T:System.DBNull" /> が返されたときにプロパティに指定した値を設定し、バインディングをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Windows.Forms.Binding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>メソッドが発生し、<xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールが存在しないか、読み取り専用です。  
+  
+ または  
+  
+ 指定したデータ メンバーは、データ ソースではありません。  
+  
+ または  
+  
+ データ ソース、データ メンバー、またはコントロールのプロパティ コレクション内の別のバインディングに関連付けられているを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Add (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode updateMode, object nullValue, string formatString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Binding Add(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode updateMode, object nullValue, string formatString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="nullValue" Type="System.Object" />
+        <Parameter Name="formatString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="updateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <param name="nullValue">データ ソースにこの値がある場合、バインドされたプロパティを <see cref="T:System.DBNull" /> に設定します。</param>
+        <param name="formatString">値の表示方法を示す 1 つ以上の書式指定子文字。</param>
+        <summary>指定したコントロール プロパティを、指定したデータ ソースの指定したデータ メンバーにバインドするバインディングを作成します。さらに、オプションで指定した書式指定文字列を使用して書式指定を有効にし、指定した更新設定に基づいてデータ ソースに値を反映し、データ ソースから <see cref="T:System.DBNull" /> が返されたときにプロパティに指定した値を設定し、バインディングをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Windows.Forms.Binding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>メソッドが発生し、<xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールが存在しないか、読み取り専用です。  
+  
+ または  
+  
+ 指定したデータ メンバーは、データ ソースではありません。  
+  
+ または  
+  
+ データ ソース、データ メンバー、またはコントロールのプロパティ コレクション内の別のバインディングに関連付けられているを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Add (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode updateMode, object nullValue, string formatString, IFormatProvider formatInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Binding Add(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode updateMode, object nullValue, string formatString, class System.IFormatProvider formatInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Add(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object,System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="nullValue" Type="System.Object" />
+        <Parameter Name="formatString" Type="System.String" />
+        <Parameter Name="formatInfo" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="updateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <param name="nullValue">データ ソースにこの値がある場合、バインドされたプロパティを <see cref="T:System.DBNull" /> に設定します。</param>
+        <param name="formatString">値の表示方法を示す 1 つ以上の書式指定子文字。</param>
+        <param name="formatInfo">既定の書式指定動作をオーバーライドする <see cref="T:System.IFormatProvider" /> の実装。</param>
+        <summary>指定したコントロール プロパティを、指定したデータ ソースの指定したデータ メンバーにバインドするバインディングを作成します。さらに、オプションで指定した書式指定文字列を使用して書式指定を有効にし、指定した更新設定に基づいてデータ ソースに値を反映し、データ ソースから <see cref="T:System.DBNull" /> が返されたときにプロパティに指定した値を設定し、指定した書式プロバイダーを設定し、バインディングをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Windows.Forms.Binding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>メソッドが発生し、<xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールが存在しないか、読み取り専用です。  
+  
+ または  
+  
+ 指定したデータ メンバーは、データ ソースではありません。  
+  
+ または  
+  
+ データ ソース、データ メンバー、またはコントロールのプロパティ コレクション内の別のバインディングに関連付けられているを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCore">
+      <MemberSignature Language="C#" Value="protected override void AddCore (System.Windows.Forms.Binding dataBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddCore(class System.Windows.Forms.Binding dataBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.AddCore(System.Windows.Forms.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBinding" Type="System.Windows.Forms.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="dataBinding">追加する <see cref="T:System.Windows.Forms.Binding" />。</param>
+        <summary>バインディングをコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindableComponent">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IBindableComponent BindableComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IBindableComponent BindableComponent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ControlBindingsCollection.BindableComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IBindableComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング コレクションが属する <see cref="T:System.Windows.Forms.IBindableComponent" /> を取得します。</summary>
+        <value>バインディング コレクションが属する <see cref="T:System.Windows.Forms.IBindableComponent" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ControlBindingsCollection.BindableComponent%2A>プロパティと同じオブジェクトを返します、<xref:System.Windows.Forms.ControlBindingsCollection.Control%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディングのコレクションを消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベントのコレクションが消去されるときに発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ControlBindingsCollection.Clear%2A>を消去するメソッド、<xref:System.Windows.Forms.ControlBindingsCollection>フォーム上の各コントロールです。  
+  
+ [!code-cpp[Classic ControlBindingsCollection.Clear Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Clear Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearCore">
+      <MemberSignature Language="C#" Value="protected override void ClearCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.ClearCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション内のバインディングを消去します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Control" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ControlBindingsCollection.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが属するコントロールを取得します。</summary>
+        <value>コレクションが属する <see cref="T:System.Windows.Forms.Control" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、コントロールに関する情報を出力する、<xref:System.Windows.Forms.ControlBindingsCollection>に属しています。  
+  
+ [!code-cpp[Classic ControlBindingsCollection.Control Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Control Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection.Control Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Control Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection.Control Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection.Control Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultDataSourceUpdateMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataSourceUpdateMode DefaultDataSourceUpdateMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataSourceUpdateMode DefaultDataSourceUpdateMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ControlBindingsCollection.DefaultDataSourceUpdateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataSourceUpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに含まれる <see cref="T:System.Windows.Forms.Binding" /> の既定の <see cref="P:System.Windows.Forms.Binding.DataSourceUpdateMode" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ControlBindingsCollection.DefaultDataSourceUpdateMode%2A>プロパティがの場合に使用場所、<xref:System.Windows.Forms.Binding>せず、<xref:System.Windows.Forms.Binding.DataSourceUpdateMode%2A>指定したコレクションに追加します。 Windows フォーム コントロールの既定値は<xref:System.Windows.Forms.DataSourceUpdateMode.OnValidation>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding this[string propertyName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Binding Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ControlBindingsCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">データ バインドされたコントロールのプロパティの名前。</param>
+        <summary>コントロールのプロパティ名で指定した <see cref="T:System.Windows.Forms.Binding" /> を取得します。</summary>
+        <value>指定したコントロール プロパティをデータ ソースにバインドする <see cref="T:System.Windows.Forms.Binding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したプロパティが、コレクション内のバインディングと一致しない場合<xref:System.Windows.Forms.ControlBindingsCollection.Item%2A>返します`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、1 つを返します<xref:System.Windows.Forms.Binding>から、<xref:System.Windows.Forms.ControlBindingsCollection>です。  
+  
+ [!code-cpp[BindingsCollectionItem Property#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingsCollectionItem Property/CPP/bindingscollectionthis.cpp#1)]
+ [!code-csharp[BindingsCollectionItem Property#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingsCollectionItem Property/CS/bindingscollectionthis.cs#1)]
+ [!code-vb[BindingsCollectionItem Property#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingsCollectionItem Property/VB/bindingscollectionthis.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.Forms.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Forms.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.Remove(System.Windows.Forms.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="binding">削除する <see cref="T:System.Windows.Forms.Binding" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.Binding" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が、固有の仕様を削除<xref:System.Windows.Forms.Binding>から、<xref:System.Windows.Forms.TextBox>コントロールの<xref:System.Windows.Forms.ControlBindingsCollection>します。 この例で必要な取得<xref:System.Windows.Forms.Binding>を使用して、<xref:System.Windows.Forms.ControlBindingsCollection.Item%2A>プロパティ、および削除、<xref:System.Windows.Forms.Binding>で、<xref:System.Windows.Forms.ControlBindingsCollection.Remove%2A>メソッドです。  
+  
+ [!code-cpp[Classic ControlBindingsCollection.Remove Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Remove Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="binding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスの <see cref="T:System.Windows.Forms.Binding" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingsCollection.CollectionChanged>イベントは、削除が成功した場合に発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BaseCollection.Count%2A>インデックスがコレクションの範囲内かどうかを決定するプロパティです。 場合は、3 番目<xref:System.Windows.Forms.Binding>を削除します。  
+  
+ [!code-cpp[Classic ControlBindingsCollection.RemoveAt Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ControlBindingsCollection.RemoveAt Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ControlBindingsCollection.RemoveAt Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ControlBindingsCollection.RemoveAt Example/CS/source.cs#1)]
+ [!code-vb[Classic ControlBindingsCollection.RemoveAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ControlBindingsCollection.RemoveAt Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />値が 0 未満か、コレクション内のバインドの数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCore">
+      <MemberSignature Language="C#" Value="protected override void RemoveCore (System.Windows.Forms.Binding dataBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveCore(class System.Windows.Forms.Binding dataBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlBindingsCollection.RemoveCore(System.Windows.Forms.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBinding" Type="System.Windows.Forms.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="dataBinding">コレクションから削除する <see cref="T:System.Windows.Forms.Binding" />。</param>
+        <summary>指定したバインディングをコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">バインディングが属する別<see cref="T:System.Windows.Forms.ControlBindingsCollection" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

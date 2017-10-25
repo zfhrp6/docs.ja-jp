@@ -1,0 +1,251 @@
+<Type Name="ControlFilterExpression" FullName="System.Web.DynamicData.ControlFilterExpression">
+  <TypeSignature Language="C#" Value="public class ControlFilterExpression : System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlFilterExpression extends System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.ControlFilterExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.DataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロールで選択される項目のデータ キーを使用して、データベース クエリを変更します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.ControlFilterExpression>など、ページに次の 2 つのデータ バインド コントロールが含まれている場合に使用するように設計されたクラス、<xref:System.Web.UI.WebControls.GridView>コントロールと<xref:System.Web.UI.WebControls.ListView>コントロール。 1 つのコントロールは、データ キー (行) が選択されている、ソースです。 他のコントロールは、選択したデータ キーに基づいて、データが表示される対象です。 定義されているクエリを実行するデータ ソース コントロールによって、ターゲット データが取得した、<xref:System.Web.UI.WebControls.QueryExtender>クラスとするは、選択したデータ キーを使用して構築されています。  
+  
+ 使用する、<xref:System.Web.DynamicData.ControlFilterExpression>クラス ページでは、次の手順。  
+  
+-   追加、<xref:System.Web.UI.WebControls.QueryExtender>ページを制御します。  
+  
+-   設定、`TargetControlID`のプロパティ、<xref:System.Web.UI.WebControls.QueryExtender>ターゲット データ ソース コントロールの ID を制御します。  
+  
+-   追加、<xref:System.Web.DynamicData.ControlFilterExpression>インスタンスを<xref:System.Web.UI.WebControls.QueryExtender>コントロール。  
+  
+-   設定、`ControlID`のプロパティ、<xref:System.Web.DynamicData.ControlFilterExpression>要素を元のデータ バインド コントロールです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.ControlFilterExpression>クラス、データ キーが選択されている元のデータ バインド コントロールを参照します。 <xref:System.Web.UI.WebControls.QueryExtender>ポイントを選択したデータ キーを使用してフィルター処理されたデータを取得する対象のデータ ソース コントロールに制御します。 例では、元のデータ バインド コントロールは、親テーブルを参照し、対象のデータ バインド コントロールは、子テーブルを参照します。  
+  
+```  
+<asp:QueryExtender ID="QueryExtenderID"   
+    TargetControlID="TargetDataSourceID" runat="server">  
+    <asp:ControlFilterExpression ControlID="SourceGridViewID" />  
+</asp:QueryExtender>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlFilterExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ControlFilterExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.ControlFilterExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public string Column { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Column" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.ControlFilterExpression.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に基づくクエリでは、列の名前。</summary>
+        <value>基づくクエリでは、列の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが空の場合、<xref:System.Web.DynamicData.ControlFilterExpression>コントロールは、現在のテーブルの主キーとして選択されたデータ キーを処理します。 これは、ソースとターゲットのデータ バインド コントロールと同じテーブルからデータを操作で詳細を一覧表示のシナリオに役立ちます。  
+  
+ プロパティの値を割り当てた場合、<xref:System.Web.DynamicData.ControlFilterExpression>コントロールは、外部キーとして、データ キーを処理します。 このプロパティに割り当てられている値では、対象のデータ バインド コントロールに表示される列の名前になります。 これは、対象のデータ バインド コントロールは、子テーブルからデータを操作しの親テーブルからデータ ソースのデータ バインド コントロールを操作は、親-子シナリオで役立ちます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.ControlFilterExpression>フィルターを適用する列を設定するクラス。  
+  
+```  
+<asp:QueryExtender ID="QueryExtenderID"   
+    TargetControlID="TargetDataSourceID" runat="server">  
+    <asp:ControlFilterExpression ControlID="GridViewID" Column="Category"/>  
+</asp:QueryExtender>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlID">
+      <MemberSignature Language="C#" Value="public string ControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.ControlFilterExpression.ControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または元のデータ バインド コントロールの ID を設定します。</summary>
+        <value>元のデータ バインド コントロールの ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.ControlFilterExpression.ControlID%2A>プロパティは、データ キーの選択元となるソース データ バインド コントロールを識別します。 によって、選択したデータ キーを使用して、<xref:System.Web.DynamicData.ControlFilterExpression>クエリを作成するコントロール。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.ControlFilterExpression>クラスを元のデータ バインド コントロールの ID を設定します。  
+  
+```  
+<asp:QueryExtender ID="QueryExtenderID"   
+    TargetControlID="TargetDataSourceID" runat="server">  
+    <asp:ControlFilterExpression ControlID="GridViewID" Column="Category"/>  
+</asp:QueryExtender>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ControlFilterExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">変更するデータ ソース クエリ。</param>
+        <summary>変更するデータ ソースのクエリを取得します。</summary>
+        <returns>これによって変更されたデータ ソース クエリを表すオブジェクト<see cref="T:System.Web.DynamicData.ControlFilterExpression" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.ControlFilterExpression.GetQueryable%28System.Linq.IQueryable%29>メソッドは、ソース データ バインド コントロールの選択されたデータ キーに基づくクエリを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ControlFilterExpression.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元する状態。</param>
+        <summary>以前に保存したビューステートを復元します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ControlFilterExpression.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページがサーバーにポストされた時間以降のビューステートへの変更を保存します。</summary>
+        <returns>状態を表示する変更を含むオブジェクト。 このメソッドが戻るかどうかは、オブジェクトに関連付けられているビュー ステートがない、<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public override void SetContext (System.Web.UI.Control owner, System.Web.HttpContext context, System.Web.UI.WebControls.IQueryableDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetContext(class System.Web.UI.Control owner, class System.Web.HttpContext context, class System.Web.UI.WebControls.IQueryableDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ControlFilterExpression.SetContext(System.Web.UI.Control,System.Web.HttpContext,System.Web.UI.WebControls.IQueryableDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.IQueryableDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="owner">これで、コントロール、<see cref="T:System.Web.DynamicData.ControlFilterExpression" />ようなインスタンスが含まれる、<see cref="T:System.Web.UI.WebControls.QueryExtender" />コントロール。</param>
+        <param name="context">アプリケーションの現在<see cref="T:System.Web.HttpContext" />オブジェクト。</param>
+        <param name="dataSource">ターゲット データ ソース、<see cref="T:System.Web.DynamicData.ControlFilterExpression" />インスタンス。 場合、<see cref="T:System.Web.DynamicData.DynamicFilterExpression" />にインスタンスが含まれている、<see cref="T:System.Web.UI.WebControls.QueryExtender" />コントロール、このパラメーターは、データ ソースを<see cref="T:System.Web.UI.WebControls.QueryExtender" />コントロールが参照するには</param>
+        <summary>データ ソース情報をフィルター式を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ControlFilterExpression.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.Web.DynamicData.ControlFilterExpression" />コントロールのビュー状態のオブジェクトに保存できるように、そのビュー ステートに変更を追跡して、同じページに対する要求間で永続化するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

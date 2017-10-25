@@ -1,0 +1,165 @@
+<Type Name="HttpModuleBase" FullName="System.IdentityModel.Services.HttpModuleBase">
+  <TypeSignature Language="C#" Value="public abstract class HttpModuleBase : System.Web.IHttpModule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpModuleBase extends System.Object implements class System.Web.IHttpModule" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.HttpModuleBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpModule</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>で構成される HTTP モジュールから基本クラス、 [ &lt;system.identityModel.services&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)要素 (<see cref="T:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection" />) 派生されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HttpModuleBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.HttpModuleBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.HttpModuleBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.HttpModuleBase.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>(メモリ) を除くの現在のインスタンスによって使用されるリソースを解放、<see cref="T:System.IdentityModel.Services.HttpModuleBase" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースを解放する派生クラスでこのメソッドをオーバーライドします。 既定の実装は、空です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FederationConfiguration">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.Configuration.FederationConfiguration FederationConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.Configuration.FederationConfiguration FederationConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.Configuration.FederationConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />オブジェクトが現在のモジュールに対して有効です。</summary>
+        <value><see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />オブジェクトが現在のモジュールに対して有効です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.HttpApplication context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Web.HttpApplication context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.HttpModuleBase.Init(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="context">このモジュールを含む、アプリケーション オブジェクトです。</param>
+        <summary>HTTP モジュールを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.Web.IHttpModule.Init%2A?displayProperty=nameWithType>メソッドを初期化することによって、<xref:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration%2A>プロパティの値を<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティを呼び出す、<xref:System.IdentityModel.Services.HttpModuleBase.InitializeModule%2A>メソッド、およびを呼び出す、<xref:System.IdentityModel.Services.HttpModuleBase.InitializePropertiesFromConfiguration%2A>メソッドです。  
+  
+ 派生したクラスのオーバーライド、<xref:System.IdentityModel.Services.HttpModuleBase.InitializeModule%2A>と<xref:System.IdentityModel.Services.HttpModuleBase.InitializePropertiesFromConfiguration%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeModule">
+      <MemberSignature Language="C#" Value="protected abstract void InitializeModule (System.Web.HttpApplication context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeModule(class System.Web.HttpApplication context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.HttpModuleBase.InitializeModule(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="context">このモジュールを含む、アプリケーション オブジェクトです。</param>
+        <summary>派生クラスでオーバーライドされると、現在のモジュールを初期化し、ASP.NET アプリケーション オブジェクトからイベントを処理するために準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IdentityModel.Services.HttpModuleBase.InitializeModule%2A>によって発生した特定のイベントにイベント処理メソッドを登録したり、追加の構成状態もを読み込むにはメソッド、<xref:System.Web.HttpApplication>オブジェクト。 このメソッドが呼び出されたとき、 <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> 、メソッド、<xref:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration%2A>プロパティは既に初期化されています。 このプロパティからこのモジュールに適用される構成オブジェクトを取得できます。 <xref:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration%2A>プロパティは、このモジュールのすべてのトークン処理に使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializePropertiesFromConfiguration">
+      <MemberSignature Language="C#" Value="protected abstract void InitializePropertiesFromConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializePropertiesFromConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.HttpModuleBase.InitializePropertiesFromConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、初期化のモジュールのプロパティの値に基づいて、<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />を有効になっているオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されたとき、 <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> 、メソッド、<xref:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration%2A>プロパティは既に初期化されています。 このプロパティからこのモジュールに適用される構成オブジェクトを取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

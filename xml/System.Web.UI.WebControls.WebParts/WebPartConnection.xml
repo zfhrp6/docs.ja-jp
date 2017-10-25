@@ -1,0 +1,1051 @@
+<Type Name="WebPartConnection" FullName="System.Web.UI.WebControls.WebParts.WebPartConnection">
+  <TypeSignature Language="C#" Value="public sealed class WebPartConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartConnection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "Transformers")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 つを有効にするオブジェクトを提供<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール接続を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットの接続でリンクまたは 2 つの間のアソシエーション<xref:System.Web.UI.WebControls.WebParts.WebPart>(またはその他のサーバーまたはユーザー) のデータを共有できるようにするコントロール。 データを共有するには、この機能により、分離されたコントロールによって提供される機能を以下の方法で使用する接続されているコントロールです。 たとえば、1 つのコントロールは、郵便番号データを提供し、別のコントロールがそのデータが読み込まれ、郵便番号に基づく地域の気象情報を提供、接続されている 2 つのコントロールの機能を提供より多くの価値をユーザーにします。 この例を拡張するには、また表示情報に基づいて、郵便番号、ローカルのニュースへのリンクを持つコントロールなど、郵便番号データの使用できるようにこれらのすべてのコントロールは郵便番号コードを提供する 1 つのコントロールとデータを共有する可能性がありますに他のコントロールを作成する。 作成およびによって提供される標準の接続のユーザー インターフェイス (UI) を使用して、Web ブラウザーから直接このような互換性のあるすべてのコントロール間の接続を管理するエンドユーザーの Web パーツ アプリケーション、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール、または開発者によって提供されるカスタム UI を使用します。  
+  
+ これは、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>クラスの概要は、基本の詳細の接続を作成するための一般的なステートメントです。 詳細については、特定のコンポーネントおよび接続の作成に関連する要件は、次を参照してください。 [Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)、コード例を次の説明に記載されているや参照クラスを参照してください。 Web パーツ接続のいくつかの基本的な点があります。  
+  
+-   2 つ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 すべての Web パーツ接続は、2 つのコントロールで構成されます。 コントロールを同時に複数の接続に参加できますが、1 つのすべての接続は、正確に 2 つのコントロールで構成されます。 コントロールがから直接派生させることができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラス、またはこれらには、ASP.NET コントロール、カスタム サーバー コントロールおよびユーザー コントロールを含む、他のサーバー コントロールを指定できます。 派生していないコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスに配置されている場合、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンで自動的にラップされて、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクトから継承することができます、実行時に、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスと関数の実行時刻として<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   コントロール内に存在する<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 両方<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールおよびサーバー コントロールの他の任意の型である必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーン Web パーツの接続 (とその他のほとんどの Web パーツ機能) に参加させることができます。  
+  
+-   コンシューマーとプロバイダー。 すべての Web パーツ接続では、2 つのコントロールがあります: データとデータのコンシューマーのプロバイダー。 プロバイダーは、データを返すインターフェイスの形式で指定されたコールバック メソッドをコンシューマーにデータを提供します。 (を作成し、コールバック メソッドを指定する方法の例は、このトピックの例」のセクションを参照してください)。このコールバック メソッドは、プロバイダー接続ポイントと呼びます。 この接続ポイント (その「わかりやすい」名前、ID、および、返されたインターフェイスの型) の詳細が含まれている、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>プロバイダー コントロールに関連付けられているオブジェクト。 コンシューマーは、インターフェイスのインスタンスを受け入れることができる指定された方法でデータを受け取ります。 このメソッドがコンシューマー接続ポイントと呼ばれ、接続ポイント (名前、ID、およびインターフェイスの型) の詳細についてに含まれる、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>コンシューマー コントロールに関連付けられているオブジェクト。  
+  
+-   互換性のあるコントロールまたは有効なトランスフォーマー。 接続が機能するには、コンシューマーおよびプロバイダーする必要がありますか、互換性のある (つまり、インターフェイスの同じ型を持つ、指定した接続ポイントのメソッドが操作できること)、またはそこにしてください、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>コンシューマーによって認識される型に、プロバイダーによって提供される型に変換する機能を持つオブジェクト。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> オブジェクト。 接続が存在する必要がありますのインスタンス、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>接続ポイントの詳細と共に、プロバイダーとコンシューマー コントロールへの参照を含むクラスです。 かどうかは互換性がなく、代わりに使用して、プロバイダーとコンシューマー、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクトに接続する接続参照トランスフォーマー。  
+  
+-   接続を確立することを意味します。 正しく接続ポイントのメソッドを設計し、ゾーンに配置されてコンシューマーおよびプロバイダーの互換性のあるコントロールと<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトは利用できますが、最後の基本的な手順の必要な接続を開始します。 これは発生する 1 つの方法は、UI を使用して接続を作成するユーザーです。 配置した場合、`<asp:connectionszone>`接続用のコンポーネントは、代わりに、実行時にユーザーを使用して、ページを接続の表示モードに切り替えることができます動詞をクリックして、接続プロバイダーまたはコンシューマー、および接続の UI のいずれかの動詞メニューを開き、ページと、他の要素が必要な (に基づいて、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール) が表示されます。 この UI を通じて、ユーザーは、接続を開始できます。 接続を開始する別の方法では、プログラムによって実行します。 どちらの場合、UI またはプログラムでは、基になるメソッドを介して接続を開始するかどうかは、同じです。 アプリケーションの呼び出し、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッド (または<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッド トランスフォーマーを使用する場合) で、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>を制御する、プロバイダー、コンシューマー、およびそれらの各接続ポイント オブジェクトを渡すと、メソッドを返します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>クラスは 2 つの間の接続の重要な詳細をカプセル化するオブジェクトを定義<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 クラスは、ほとんどすべての特定の接続の詳細に関連するプロパティで構成されます。 いくつかのプロパティでは、接続のコンシューマー コントロールに関するものです。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer%2A>プロパティはコンシューマー コントロール自体を参照し、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID%2A>プロパティは、コンシューマーの ID を参照 <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> 、コンシューマーの接続ポイントの詳細が含まれているオブジェクトは、コンシューマーのによって参照される<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPoint%2A>プロパティです。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>プロパティ参照の ID、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。 これらすべてのコンシューマーに関連する接続プロパティに値を割り当てるには接続を作成する必要があります。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>クラスも、接続のプロバイダーのコントロールに関連するいくつかのプロパティがあり、これらは、コンシューマーのプロパティに対応しています。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider%2A>プロパティ プロバイダー コントロール自体を参照するときに、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID%2A>プロパティは、その ID を参照 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPoint%2A>プロパティ参照、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト、および<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>プロパティは、プロバイダーの接続ポイントの ID を参照します。  
+  
+ いくつかのプロパティには、接続の状態が関係します。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive%2A>プロパティは、接続が (データを交換現在) アクティブまたは非アクティブな (まだ接続されているが、アクティブに共有ではないデータ) があるかどうかを示します。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>プロパティは、接続が共有するかどうかを示します (ページのすべてのユーザーが使用可能) またはユーザー固有の接続と<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>プロパティは、かどうか、コントロールは、静的 (ページのマークアップでしたがって永続的な宣言) を示しますまたは動的 (プログラムによって作成された、削除することを意味する)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つの単純な接続を作成する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 接続の構成の 3 つの方法を示します Web ページのマークアップで接続するためのタグを配置することにより宣言によって、。コードで、接続を作成してプログラムでは、ui に配置することによって、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>ページで、ユーザーの接続を確立できるようにするコントロール。  
+  
+ このコード例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Overview/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Overview/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイスとコントロールのソース コードを示します。 ソース ファイルには、という名前の単純なインターフェイスが含まれています。`IZipCode`です。 <xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のクラス`ZipCodeWebPart`インターフェイスを実装して、プロバイダー コントロールとして機能します。 その`ProvideIZipCode`インターフェイスの唯一のメンバーを実装するコールバック メソッドです。 このメソッドは、単に、インターフェイスのインスタンスを返します。 メソッドが付いている、`ConnectionProvider`メタデータ内の属性です。 これは、プロバイダーの接続ポイントのコールバック メソッドとしてメソッドを識別するためのメカニズムです。 他の<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの名前は`WeatherWebPart`、し、接続のコンシューマーとして機能します。 このクラスは、という名前のメソッドを持つ`GetZipCode`のインスタンスを取得する、`IZipCode`プロバイダー コントロールからのインターフェイスです。 このメソッドが、コンシューマーの接続ポイント メソッドとしてマークされていることに注意してください、`ConnectionConsumer`メタデータ内の属性です。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Overview/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Overview/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 上部には、`Register`ユーザー コントロールとカスタム ディレクティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コントロールのソース コードが App_Code サブフォルダー; にする必要がありますので、この例では、コントロールの動的なコンパイル、`Register`ページ内のタグは、任意のタグ プリフィックスのみと、コントロールの名前空間を参照します。 カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>の Web ページ内のコントロール (プロバイダーおよびコンシューマー) が宣言されている`<asp:webpartzone>`要素では、内部、`<zonetemplate>`要素。  
+  
+ ページは、カスタム コントロール間の接続を構成する 3 つの方法を提供します。 最初のメソッドは、宣言型です。 ページのマークアップで、<`StaticConnections>`要素を宣言し、するには、`<asp:WebPartConnections>`さまざまなコンシューマーおよびプロバイダーの詳細属性として指定された接続での要素。 これは、具体的には内では、Web ページで、直接宣言することにより、接続を作成する方法の 1 つ、`<asp:WebPartManager>`要素。 この静的な接続のため、2 つのカスタム コントロール間の接続は、ページが読み込まれる最初にすぐに作成されます。  
+  
+ コントロール間の接続を構成するための 2 番目のメソッドは、によって提供される、`<asp:connectionszone>`ページ内の要素。 ユーザーが実行時に、接続の表示モードを切り替えます、カスタムのコントロールの 1 つの connect 動詞がクリックした場合、`<asp:connectionszone>`要素が自動的に接続を作成するための UI を表示します。  
+  
+ ページには、プログラムで行うが、接続の作成の 3 番目の方法も示します。 `Button1_Click`メソッドは、コードの作成、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>プロバイダー コントロールとの接続ポイントの詳細を呼び出すことによって取得オブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints%2A>メソッドです。 コンシューマー コントロールは、同様のタスク実行の呼び出し、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetConsumerConnectionPoints%2A>メソッドです。 最後に、新しく作成<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトを呼び出して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Overview/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Overview/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ 最初の接続は既に存在内で宣言されているため、ブラウザーで Web ページを読み込んだ後、`<StaticConnections>`要素。 いくつかのテキストを入力、 **ZIP コード プロバイダー**制御、およびそれがコンシューマー コントロールに表示されます。 次に、2 つのコントロールを切断します。 使用して、**表示モード**ドロップダウン リスト コントロール、ページを表示モードの接続を変更します。 各 (タイトル バーに下向きの矢印で表される) の動詞メニューをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、およびそれぞれを持つことを確認、**接続**オプション。 動詞メニューに表示される、接続の動詞は、このページが接続モードでは場合のみです。 コントロール、および接続によって提供される UI の 1 つの connect 動詞をクリックして、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールが表示されます。 クリックして、**切断**コントロール間の静的な接続を終了するボタンをクリックします。 使用して、**表示モード**コントロールをページをブラウズ モードを返します。 プロバイダーでもう一度、いくつかの新しいテキストを入力し、コントロールが切断されているため、テキストが失敗するコンシューマー コントロールで更新するために注意してくださいしようとします。  
+  
+ 次に、上記と同じメソッドを使用して、もう一度接続表示モードに切り替えます。 コントロールの 1 つの connect 動詞をクリックします。 をクリックして、**接続を作成**リンク、およびによって提供される UI を使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール間の接続を作成するコントロール。 これは、接続を作成する 2 番目のメソッドです。 接続が形成されるとすぐに、最後の文字列で入力した (つまり、コントロールの接続が切断されたために、表示に失敗しました) プロバイダー コントロールに注意してください。 接続が再作成されているために、コンシューマーに突然表示されます。 クリックして、**切断**を作成した、現在の接続を終了するボタンをクリックします。 ページをブラウズ モードを返します。 示すテキストが更新されないこと、およびコントロールが再び切断されているプロバイダーに新しいテキストを入力します。  
+  
+ 表示モードを接続するページを返します。 Connect 動詞をクリックすると、代わりをクリックして、 **web パーツ コントロールの接続**ボタンで、接続を形成する 3 番目の方法を示しています。 この方法では、1 つの簡単な手順で、プログラムによってコントロールを接続を使用しなくても、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 接続が作成されると、突然、プロバイダーで入力した最後の文字列が表示されるコンシューマー コントロールに注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.%23ctor%2A> ASP.NET パーサーは、接続が Web ページのマークアップで宣言されているときにインスタンスを作成できるようにするパブリック コンス トラクターです。 このコンス トラクターは、開発者のコードで使用するものではありません。  
+  
+ 作成するときに、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>必要がありますを使用するプログラムでは、オブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A?displayProperty=nameWithType>または<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A?displayProperty=nameWithType>で提供されるメソッド、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 これらのメソッドは、接続を作成する多くの詳細を処理し、返す、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.%23ctor%2A>のコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>クラスの値の設定、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>プロパティ`true`です。 したがって、新しい接続の既定の状態は (含まれる Web ページのマークアップで宣言されていることを意味する) 静的され共有 (ページのすべてのユーザーに表示)。 ある場合、このページのマークアップで接続を宣言することで、典型的なシナリオで接続を追加するときに、`<asp:webpartconnection>`要素。 ただし、他の状況で、接続は、これらのプロパティに別の値があります。 たとえば、コードでは、接続オブジェクトを作成することで、接続をプログラムで追加すると、ユーザーは、ページを表示する既定のユーザーのパーソナル化スコープには、接続が動的、user(visible only to the specific user) あたり接続として作成されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>プロパティは読み取り専用との接続の種類を特定するこれらのプロパティの設定によって内部的に、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager> (ページのマークアップで宣言またはプログラムによって経由で、コードまたはユーザー インターフェイス) に接続を作成する方法によって制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Consumer">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart Consumer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart Consumer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />接続のコンシューマー コントロールとして動作しているオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />接続でコンシューマーとして機能する Web パーツ コントロールを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての Web パーツ接続は、データを共有する 2 つのコントロールで構成されます。 1 つのコントロールは、データのプロバイダーとして機能し、他のコントロールは、受信および処理プロバイダーからのデータ コンシューマーとして機能します。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer%2A>プロパティへの参照を取得する、<xref:System.Web.UI.WebControls.WebParts.WebPart>接続関係コンシューマーとしての動作を制御します。  
+  
+   
+  
+## Examples  
+ プログラムによる使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer%2A>プロパティです。  
+  
+ このコード例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_Consumer#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Consumer/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_Consumer#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Consumer/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コンシューマーおよびプロバイダーの接続と接続ポイントに使用されるインターフェイスとして機能するコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_Consumer#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Consumer/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_Consumer#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Consumer/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、コントロールをホストしを使用する Web ページのコード、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer%2A>プロパティです。 ページの上部には、`Register`ユーザー コントロールとカスタム コントロールのディレクティブ。 この例は、動的なコンパイルを使用しているため、`Register`ソース ファイルのディレクティブは、アセンブリ名を参照する必要はありません。 任意のタグ プリフィックスのみと、コントロールの名前空間が含まれています。 `Button2_Click`メソッド、コードにアクセスする、接続オブジェクトを通じて、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>制御、およびコンシューマー コントロールへの参照を取得します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_Consumer#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Consumer/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_Consumer#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Consumer/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後を使用して、**表示モード**ページを接続モードを切り替えるにはドロップダウン リスト コントロール。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 使用して、 **web パーツ コントロールの接続**ボタン、または指定された接続のユーザー インターフェイス (UI)、2 つのコントロール間の接続を作成します。 クリックして、**コンシューマーの情報を表示**を示すコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">長さ、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID" />プロパティが 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumerConnectionPoint">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint ConsumerConnectionPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint ConsumerConnectionPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続でコンシューマーとして機能するコントロール用の接続ポイントとして機能するオブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />接続のコンシューマー コントロールに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの間の接続を作成するため、必要な手順のいずれかの<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、各コントロールの接続ポイントを作成します。 コンシューマー接続ポイントは、コンシューマーとして機能するコントロールに接続する方法に関する情報を含むオブジェクトです。 いずれかのコンシューマーのソース コード内で識別する必要があります、`ConnectionConsumer`属性。 <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>コンシューマー コントロールに関連付けられているオブジェクトには、メソッドと、属性、メソッド、ユーザー インターフェイス (UI) で使用するための表示名の ID を含む詳細についてが含まれ、どのようなインターフェイス メソッドを取得できます。 このコンシューマーに関する情報、接続、およびに認識されるインターフェイスの型を形成するためには、そのメソッドのセットは、総称してコンシューマー接続ポイントを形成します。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトは、1 つのみに接続できる<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>一度にオブジェクト。 コンシューマーは、使用可能なコンシューマー接続ポイントとして識別される複数のメソッドを持つ可能性がありますが、コンシューマーのみに参加できますコンシューマーとして 1 つの接続 (そのため、そのコンシューマー接続ポイントのいずれかでアクティブにできます) のみ、時にします。 これに対し、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>の任意の数に接続できる<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。 この既定の動作をオーバーライドすることで変更することができます、<xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute>属性。  
+  
+   
+  
+## Examples  
+ プログラムによる使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPoint%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ConsumerConnectionPoint#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPoint/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ConsumerConnectionPoint#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPoint/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コンシューマーおよびプロバイダーの接続と接続ポイントに使用されるインターフェイスとして機能するコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ConsumerConnectionPoint#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPoint/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ConsumerConnectionPoint#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPoint/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、コントロールをホストしを使用する Web ページのコード、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPoint%2A>プロパティです。 `Button1_Click`メソッド、接続の形成に必要なすべてのオブジェクト作成など、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。 これらのオブジェクトがすべてに渡される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッドを接続を作成します。 `Button2_Click`メソッド、コードにアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPoint%2A>接続の詳細の一部がポイント プロパティを表示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ConsumerConnectionPoint#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPoint/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ConsumerConnectionPoint#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPoint/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後を使用して、**表示モード**ページを接続モードを切り替えるにはドロップダウン リスト コントロール。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 使用して、 **web パーツ コントロールの接続**ボタン、または指定された接続の UI を 2 つのコントロール間の接続を作成します。 クリックして、 **ConnectionPoint 詳細**を示すコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPoint%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumerConnectionPointID">
+      <MemberSignature Language="C#" Value="public string ConsumerConnectionPointID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConsumerConnectionPointID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("default")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続のコンシューマー接続ポイントとして機能しているオブジェクトの ID を参照する接続のプロパティの値を設定します。</summary>
+        <value>コンシューマー接続の ID を表す文字列をポイントします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を割り当てることで、接続のどのコンシューマー接続ポイントが使用される Web ページのマークアップで宣言された静的な接続の開発者が指定できます、`ConsumerConnectionPointID`属性を`<asp:webpartconnection>`要素。 値は、属性に割り当てられていない場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID>プロパティの値を使用します。  
+  
+ 動的 (プログラムによる) 接続を作成するときに通常設定を適用しないでの値、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>プロパティです。 単に呼び出すことができます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>、制御を渡すコンシューマーとコンシューマー接続ポイント (その他の必要なパラメータと共に)、オブジェクトとそのメソッドが、コンシューマーの接続ポイントで使用する正しい ID を決定します。 同様に、切断するを呼び出すことができます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts%2A>メソッドを指定せず、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>プロパティの値。  
+  
+> [!NOTE]
+>  指定すると、コンシューマーの接続ポイントの ID を決定できます、<xref:System.Web.UI.WebControls.WebParts.WebPart>またはコンシューマーとして他のサーバー コントロールです。 プロバイダーのコントロールまたはトランスフォーマーによって提供されたインターフェイスのインスタンスを取得する、コンシューマーでメソッドを指定する必要があります。 メソッドを指定するを使用してマークする、`ConnectionConsumer`コードの属性です。 この属性を追加する場合は、コンシューマーの ID として機能する省略可能な文字列値パラメーターを追加することができます<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。 省略可能な ID パラメーターの値を指定すると、その値がの値、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>接続のプロパティです。 ID 値を指定しない場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID>プロパティの値を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言とプログラムの使用を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ConsumerConnectionPointID#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPointID/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ConsumerConnectionPointID#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPointID/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ConsumerConnectionPointID#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPointID/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ConsumerConnectionPointID#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPointID/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 接続がページのマークアップで宣言されていることに注意してください。 を使用して、`<StaticConnections>`と`<asp:WebPartsConnection>`要素。 接続の宣言が含まれていますが、必要な`ConsumerConnectionPointID`属性。 接続を作成するための 2 番目のメソッドが表示されます、`Button1_Click`メソッド、コードがコンシューマー コントロールで定義されている接続ポイントを使用して、新しい接続を作成します。 次に、`Button2_Click`メソッド、コードにアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ConsumerConnectionPointID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPointID/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ConsumerConnectionPointID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerConnectionPointID/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後、ページで宣言された静的な接続のための接続は既にが存在します。 プロバイダー コントロールで、いくつかのテキストを入力し、接続のため、コンシューマーに表示されることに注意してください。 次に、コントロールを切断します。 使用して、**表示モード**ドロップダウン リスト コントロール、ページ接続モードを切り替えます。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 クリックして、**切断**ボタンをクリックします。 使用して、 **web パーツ コントロールの接続**を 2 つのコントロール間の接続を再作成するボタンをクリックします。 クリックして、 **ConnectionPoint 詳細**にアクセスするコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID%2A>プロパティの値。 値は、コントロールの下のラベルで out を書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumerID">
+      <MemberSignature Language="C#" Value="public string ConsumerID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConsumerID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはの ID を参照する接続のプロパティの値を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />その接続のコンシューマーとしての動作を制御します。</summary>
+        <value>接続でコンシューマーとして機能するコントロールの ID を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID%2A>間の接続を作成するときに、プロパティの値が必要な<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 プロパティの値が割り当てられていない場合、例外がスロー、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、接続をアクティブ化を試行します。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言とプログラムの使用を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ConsumerID#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerID/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ConsumerID#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerID/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ConsumerID#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerID/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ConsumerID#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerID/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 接続がページのマークアップで宣言されていることに注意してください。 を使用して、`<StaticConnections>`と`<asp:WebPartsConnection>`要素。 接続の宣言が含まれていますが、必要な`ConsumerID`属性。 接続を作成するための 2 番目のメソッドが表示されます、`Button1_Click`メソッド、コードがコンシューマー コントロールで定義されている接続ポイントを使用して、新しい接続を作成します。 次に、`Button2_Click`メソッド、コードの値にアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID%2A>プロパティ ラベルに表示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ConsumerID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerID/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ConsumerID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ConsumerID/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後、ページで宣言された静的な接続のための接続は既にが存在します。 プロバイダー コントロールで、いくつかのテキストを入力し、接続のため、コンシューマーに表示されることに注意してください。 次に、コントロールを切断します。 使用して、**表示モード**ドロップダウン リスト コントロール、ページ接続モードを切り替えます。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 クリックして、**切断**ボタンをクリックします。 使用して、 **web パーツ コントロールの接続**を 2 つのコントロール間の接続を再作成するボタンをクリックします。 をクリックして、**コンシューマー詳細**にアクセスするコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public string ID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の ID、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <value>ID を表す文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトに割り当てられている一意の値にはその<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ID%2A>プロパティです。 これは、複数の接続を区別する方法があることを確認します。  
+  
+ 宣言することによって、静的な接続を作成する場合、 `<asp:webpartconnection>` Web ページにある要素に値を割り当てないでください、`ID`属性、接続の場合、例外がスローされた、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、接続をアクティブ化を試行します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが新しい動的な接続を作成し、呼び出し、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDynamicConnectionID%2A>接続の一意の ID を生成する方法です。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言とプログラムの使用を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ID%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ID#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ID/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ID#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ID/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ID#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ID/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ID#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ID/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 接続がページのマークアップで宣言されていることに注意してください。 を使用して、`<StaticConnections>`と`<asp:WebPartsConnection>`要素。 接続の宣言が含まれていますが、必要な`ID`属性。 接続を作成するための 2 番目のメソッドが表示されます、`Button1_Click`メソッド、コードがコンシューマー コントロールで定義されている接続ポイントを使用して、新しい接続を作成します。 ここでは、ID プロパティは必要ありません、接続が動的であるため、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、接続に ID を割り当てます。 `Button2_Click`メソッド、コードの値にアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ID%2A>プロパティ ラベルに表示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ID/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ID/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後、ページで宣言された静的な接続のための接続は既にが存在します。 プロバイダー コントロールで、いくつかのテキストを入力し、接続のため、コンシューマーに表示されることに注意してください。 次に、コントロールを切断します。 使用して、**表示モード**ドロップダウン リスト コントロール、ページ接続モードを切り替えます。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 クリックして、**切断**ボタンをクリックします。 使用して、 **web パーツ コントロールの接続**を 2 つのコントロール間の接続を再作成するボタンをクリックします。 クリックして、**接続の詳細**にアクセスするコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ID%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActive">
+      <MemberSignature Language="C#" Value="public bool IsActive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsActive" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクトは、現在のプロバイダーとコンシューマーのコントロールの間で確立でき、exchange データ。</summary>
+        <value>
+          <see langword="true" />接続がアクティブである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive%2A>プロパティの状態を示します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。 通信していると、共通のインターフェイスを介してデータを交換すること、接続のプロバイダーとコンシューマーのコントロールは、接続がこの状態になった場合、または<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクト。  
+  
+ ユーザーは、通常のブラウズ モードで確立された接続を含む、表示されたページを表示、(ページが読み込まれるときに、いくつかの競合またはその他の問題のためアクティブ化に失敗した) 場合、接続には通常アクティブです。 プロパティの値には、ページおよびコントロールのライフ サイクルの初期の段階で`false`です。 接続がアクティブにした直後、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated>でイベントを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが発生します。 具体的には、接続は、コンシューマーがプロバイダーから、指定したインターフェイスのインスタンスを取得した後にアクティブ化されて、または<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクト。  
+  
+ かどうか接続がアクティブな場合に知っておくと便利である場合、競合やページ上の複数の接続のための同期の問題がある可能性があります。 たとえば、ある種の 2 つの接続間の競合がある場合、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、競合を回避するライセンス認証を行わない、接続のいずれかのオプションがあります。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの使用、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive%2A>プロパティです。  
+  
+ この例では、3 つの部分があります。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ コード例の最初の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_IsActive#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsActive/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_IsActive#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsActive/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 上部にあるが、`Register`動的にコンパイルされる 2 つのソース コードを参照するディレクティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 静的な接続が内で宣言されている、`<StaticConnections>`ページ上の要素。 内で、`<script>`要素は次の 4 つのイベント ハンドラー。 各イベント ハンドラーの値を調べて、 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive%2A> 、静的な接続のプロパティにメッセージを書き込みます、<xref:System.Web.UI.WebControls.Label>ページおよびコントロールのライフ サイクルの状態では、アクティブまたは非アクティブに接続するかどうかを示す、コントロール。 表示されることはアクティブなままページの後とどの時点で、接続がアクティブになった、これを示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_IsActive#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsActive/CS/wpConnectIsActiveCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_IsActive#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsActive/VB/wpConnectIsActiveVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 静的な接続が既に作成され、メッセージは、接続がページおよびコントロールのライフ サイクルのさまざまな時点でアクティブだったかどうかを示すラベルに既に書き込まれています。 クリックして、**接続の詳細**ボタンをクリックし、接続がないアクティブである時点が、接続が後に毎回の再アクティブ化したことに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated>イベント、およびそれがアクティブである (され続ける) した後、<xref:System.Web.UI.Control.PreRender>ページのイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsShared">
+      <MemberSignature Language="C#" Value="public bool IsShared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsShared" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクトがすべてのユーザーに、または現在のユーザーにのみ表示されます。</summary>
+        <value>
+          <see langword="true" />接続が共有されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 個々 のと同様<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトは、共有またはユーザーごとのインスタンスを指定できます。 共有インスタンスにすると、接続は、Web ページのすべてのユーザーに表示されているユーザーごとのインスタンスは、接続が特定のユーザーにのみ表示されることを意味します。  
+  
+ 一般に、接続は、ページに追加する方法は、接続が共有されているかどうかを判断します。 接続が、Web ページのマークアップで宣言されているかどうかは、接続が共有され、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>プロパティの値が`true`です。 さらに、Web ページは、接続が追加されたときに共有パーソナル化スコープでは、接続も共有します。 通常、ユーザーを使用する場合、`<asp:connectionszone>`接続、ページを追加するユーザー インターフェイス (UI) が、ユーザーのパーソナル化スコープ、接続が共有されていないため、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>プロパティの値が`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>プロパティです。  
+  
+ このコード例では、5 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   例を実行する必要がある Web.config ファイル内のエントリ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_IsShared#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsShared/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_IsShared#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsShared/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_IsShared#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsShared/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_IsShared#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsShared/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 `Button2_Click`チェック メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>既存の接続のプロパティ ページで結果を表示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_IsShared#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsShared/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_IsShared#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsShared/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ コード例の 4 番目の部分は、共有パーソナル化スコープ内のページを編集できるようにするように例を実行するユーザー アカウントに必要である Web.config ファイル内のエントリです。 これが有効にする必要がありますエントリ内の Web.config ファイルに、`<system.web>`次の例のようなセクションです。  
+  
+```  
+<webParts>  
+  <personalization>  
+    <authorization>  
+      <allow users="UserAccount"  
+             roles="admin"  
+             verbs="enterSharedScope"/>  
+    </authorization>            
+  </personalization>  
+</webParts>  
+```  
+  
+ ブラウザーでページを読み込んだ後を使用して、**表示モード**ドロップダウン リスト コントロールの表示モードを接続するページに切り替えます。 クリックして、 **web パーツ コントロールの接続**の接続を構成するボタンをクリックします。 次をクリックして、**接続の詳細**接続が共有されているかどうかを表示するボタンをクリックします。 既定のユーザーのパーソナル化スコープ内のページで、接続を作成した場合、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>プロパティの値にする必要があります`false`接続します。  
+  
+ いずれかの動詞メニューを開き、 <xref:System.Web.UI.WebControls.WebParts.WebPart> (タイトル バーに下向きの矢印で示されます)、コントロールは、connect 動詞をクリックします。 接続の UI が表示されたら、クリックして、**切断**接続を終了するにはボタン。 使用して、**表示モード**コントロールをページをブラウズ モードを返します。  
+  
+ **表示モード**コントロール、select、**共有**にページを切り替えるオプションは、パーソナル化スコープを共有します。 接続を作成し、もう一度クリックして上と同じ手順に従って、**接続の詳細**接続が共有されているかどうかを表示するボタンをクリックします。 この場合の値、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared%2A>プロパティにする必要があります`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStatic">
+      <MemberSignature Language="C#" Value="public bool IsStatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStatic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクトが、Web ページのマークアップで宣言されているか、プログラムによって作成します。</summary>
+        <value>
+          <see langword="true" />場合は、接続が静的です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール間の接続は、静的または動的のどちらかにできます。 静的な接続が、Web ページのマークアップで宣言を使用して、`<asp:WebPartConnection>`要素。 動的接続がプログラムによって作成されたか、ユーザーがによって定義されたユーザー インターフェイス (UI) を経由して接続を作成するときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ 静的な接続は、共有オブジェクトであるため、Web ページのすべてのユーザーに利用します。 また、これらは本質的に永続的なためなどの静的な<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、完全に削除することはできません。  
+  
+> [!NOTE]
+>  静的な接続オブジェクトは完全に削除中に、完全に切断できます。 ここでは、切断されたオブジェクトは、サーバーに存在しますが、エンド ユーザーは決してページで、オブジェクトの存在を認識します。  
+  
+   
+  
+## Examples  
+ プログラムによる使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>プロパティです。  
+  
+ このコード例では、3 つの部分があります。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   コントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ コード例の最初の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_IsStatic#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsStatic/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_IsStatic#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsStatic/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 上部にあるが、`Register`動的にコンパイルされる 2 つのソース コードを参照するディレクティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 静的な接続が内で宣言されている、`<StaticConnections>`ページ上の要素。 `Button1_Click`メソッドへのアクセス、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>接続が静的かどうかを確認するプロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_IsStatic#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_IsStatic/CS/wpConnectIsStaticCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_IsStatic#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_IsStatic/VB/wpConnectIsStaticVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 静的な接続は既に作成されています。 プロバイダー コントロールで、いくつかのテキストを入力し、コンシューマー コントロールのテキストが表示されることに注意してください。 クリックして、**接続の詳細**の値を表示するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> Web パーツ接続のプロバイダーとして機能するコントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />データのプロバイダーとして機能します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての Web パーツ接続から成る 2 つ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール--コンシューマーおよびプロバイダー--と<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider%2A>プロパティは、接続でプロバイダーのコントロールへの参照を返します。  
+  
+ 接続 (コンシューマー制御) 内の対応するなどの接続を確立するためにプロバイダー コントロールが必要です。 プログラムから、またはページ永続形式で宣言することにより、接続を作成するかどうかは、接続のプロバイダーとして機能するコントロールを指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの使用、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider%2A>プロパティです。  
+  
+ このコード例では、3 つの部分があります。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   コントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ コード例の最初の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_Provider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Provider/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_Provider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Provider/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 上部にあるが、`Register`動的にコンパイルされる 2 つのソース コードを参照するディレクティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 静的な接続が内で宣言されている、`<StaticConnections>`ページ上の要素。 注意、`<asp:webpartconnection>`要素、`ProviderID`属性に割り当てられたプロバイダーのコントロールの ID。 これは、静的な接続のプロバイダーを識別する必要があります。 `Button1_Click`メソッドへのアクセス、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider%2A>プロパティの詳細情報をラベルを書き込みます。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_Provider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_Provider/CS/wpConnectProviderCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_Provider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_Provider/VB/wpConnectProviderVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 静的な接続は既に作成されています。 プロバイダー コントロールで、いくつかのテキストを入力し、コンシューマー コントロールのテキストが表示されることに注意してください。 クリックして、**プロバイダーの詳細**経由でアクセスするプロパティの値の一部を表示するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">長さ、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID" />プロパティの値は 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderConnectionPoint">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ProviderConnectionPoint ProviderConnectionPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint ProviderConnectionPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ProviderConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続ポイントとして機能するオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />接続用のプロバイダーとしての動作を制御します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />接続のプロバイダーのコントロールに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの間の接続を作成するため、必要な手順のいずれかの<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、各コントロールの接続ポイントを作成します。 プロバイダー接続ポイントは、プロバイダーとして機能するコントロールに接続する方法に関する情報を含むオブジェクトです。 いずれかのプロバイダーのソース コード内で識別する必要があります、`ConnectionProvider`属性。 <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>が関連付けられているプロバイダーとは、コントロールには、メソッドと、属性、メソッド、ユーザー インターフェイス (UI) で使用するための表示名の ID を含む詳細についてにが含まれており、コンシューマー コントロールを返すことができます、メソッドのインターフェイスのインスタンスの種類します。 このプロバイダーについては、接続、およびそれが提供するインターフェイスの型を形成するためには、そのメソッドのセットは、プロバイダー接続ポイントを総称して構成します。  
+  
+ 既定では、 <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> 1 つのみに接続できる<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>一度にオブジェクト。 コンシューマーは、使用可能なコンシューマー接続ポイントとして識別される複数のメソッドを持つ可能性がありますが、コンシューマーのみに参加できますコンシューマーとして 1 つの接続 (そのため、そのコンシューマー接続ポイントのいずれかでアクティブにできます) のみ、時にします。 これに対し、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>の任意の数に接続できる<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>既定ではオブジェクトです。 たとえば、郵便番号コードを提供するプロバイダー コントロールは、気象データ、ニュースなどの郵便番号コードに基づくデータのさまざまな種類を作成する郵便番号コードを使用する複数のコンシューマー コントロール接続でした。 この既定の動作をオーバーライドすることで変更することができます、<xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute.AllowsMultipleConnections%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute>属性。  
+  
+   
+  
+## Examples  
+ プログラムによる使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPoint%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ProviderConnectionPoint#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPoint/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ProviderConnectionPoint#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPoint/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コンシューマーおよびプロバイダーの接続と接続ポイントに使用されるインターフェイスとして機能するコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ProviderConnectionPoint#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPoint/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ProviderConnectionPoint#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPoint/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、コントロールをホストしを使用する Web ページのコード、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPoint%2A>プロパティです。 `Button1_Click`メソッド、接続の形成に必要なすべてのオブジェクト作成など、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト。 呼び出しに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 さまざまな作成されたオブジェクトがすべてに渡される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッドを接続を作成します。 `Button2_Click`メソッド、コードにアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPoint%2A>接続の詳細の一部がポイント プロパティを表示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ProviderConnectionPoint#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPoint/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ProviderConnectionPoint#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPoint/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後を使用して、**表示モード**ページを接続モードを切り替えるにはドロップダウン リスト コントロール。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 使用して、 **web パーツ コントロールの接続**ボタン、または指定された接続の UI を 2 つのコントロール間の接続を作成します。 クリックして、 **ConnectionPoint 詳細**を示すコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPoint%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderConnectionPointID">
+      <MemberSignature Language="C#" Value="public string ProviderConnectionPointID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderConnectionPointID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("default")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続のプロバイダー接続ポイントとして機能しているオブジェクトの ID を参照する接続のプロパティの値を設定します。</summary>
+        <value>プロバイダー接続ポイント オブジェクトの ID を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を割り当てることで、接続のどのプロバイダー接続ポイントが使用される Web ページのマークアップで宣言された静的な接続の開発者が指定できます、`ProviderConnectionPointID`属性を`<asp:webpartconnection>`要素。 値は、属性に割り当てられていない場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID>プロパティの値を使用します。  
+  
+ 動的 (プログラムによる) 接続を作成するときに通常設定を適用しないでの値、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>プロパティです。 単に呼び出すことができます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>、制御を渡すプロバイダーとプロバイダー接続ポイント (その他の必要なパラメータと共に)、オブジェクトとそのメソッドは、プロバイダーの接続ポイントで使用する正しい ID を決定します。 同様に、切断するを呼び出すことができます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts%2A>メソッドを指定せず、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>プロパティの値。  
+  
+> [!NOTE]
+>  指定するときに、プロバイダーの接続ポイントの ID を決定できます、<xref:System.Web.UI.WebControls.WebParts.WebPart>またはその他のサーバー コントロール プロバイダーとして。 コンシューマーへのデータを格納しているインターフェイスのインスタンスを提供するプロバイダーのコールバック メソッドを指定する必要があります。 メソッドを指定するを使用してマークする、`ConnectionProvider`コードの属性です。 この属性を追加する場合は、プロバイダーの ID として機能する省略可能な文字列値パラメーターを追加することができます<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト。 省略可能な ID パラメーターの値を指定すると、その値がの値、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>接続のプロパティです。 ID 値を指定しない場合、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>オブジェクトが作成されたときに、コントロールは、既定の ID を割り当てます。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言とプログラムの使用を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ProviderConnectionPointID#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPointID/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ProviderConnectionPointID#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPointID/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ProviderConnectionPointID#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPointID/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ProviderConnectionPointID#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPointID/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 接続がページのマークアップで宣言されていることに注意してください。 を使用して、`<StaticConnections>`と`<asp:WebPartsConnection>`要素。 接続の宣言が含まれていますが、必要な`ProviderConnectionPointID`属性。 接続を作成するための 2 番目のメソッドが表示されます、`Button1_Click`メソッド、コードは、新しい接続を作成する場合、接続ポイント (と ID) を使用してで定義されているプロバイダー コントロール。 次に、`Button2_Click`メソッド、コードにアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ProviderConnectionPointID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPointID/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ProviderConnectionPointID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderConnectionPointID/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後、ページで宣言された静的な接続のための接続は既にが存在します。 プロバイダー コントロールで、いくつかのテキストを入力し、接続のため、コンシューマーに表示されることに注意してください。 次に、コントロールを切断します。 使用して、**表示モード**ドロップダウン リスト コントロール、ページ接続モードを切り替えます。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 クリックして、**切断**ボタンをクリックします。 使用して、 **web パーツ コントロールの接続**を 2 つのコントロール間の接続を再作成するボタンをクリックします。 クリックして、 **ConnectionPoint 詳細**にアクセスするコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID%2A>プロパティの値。 値は、コントロールの下のラベルで out を書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderID">
+      <MemberSignature Language="C#" Value="public string ProviderID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはの ID を参照する接続のプロパティの値を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />その接続のプロバイダーとしての動作を制御します。</summary>
+        <value>プロバイダーのコントロールの ID を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID%2A>プロパティの値は、2 つの間の接続を作成するときに必要な<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 プロパティの値が割り当てられていない場合、例外がスロー、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、接続をアクティブ化を試行します。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言とプログラムの使用を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID%2A>プロパティです。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ProviderID#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderID/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ProviderID#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderID/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ProviderID#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderID/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ProviderID#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderID/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 接続がページのマークアップで宣言されていることに注意してください。 を使用して、`<StaticConnections>`と`<asp:WebPartsConnection>`要素。 接続の宣言が含まれていますが、必要な`ProviderID`属性。 接続を作成するための 2 番目のメソッドが表示されます、`Button1_Click`メソッド、コードがコンシューマー コントロールで定義されている接続ポイントを使用して、新しい接続を作成します。 次に、`Button2_Click`メソッド、コードの値にアクセスする、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID%2A>プロパティ ラベルに表示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ProviderID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderID/CS/wpmgrConnectWebPartsCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ProviderID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ProviderID/VB/wpmgrConnectWebPartsVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後、ページで宣言された静的な接続のための接続は既にが存在します。 プロバイダー コントロールで、いくつかのテキストを入力し、接続のため、コンシューマーに表示されることに注意してください。 次に、コントロールを切断します。 実行するには、使用、**表示モード**ページを接続モードを切り替えるにはドロップダウン リスト コントロール。 動詞メニュー (タイトル バーに下向きの矢印で表される) のいずれかをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および connect 動詞をクリックします。 クリックして、**切断** ボタン、およびコントロールを切断します。 次に、使用、 **web パーツ コントロールの接続**を 2 つのコントロール間の接続を再作成するボタンをクリックします。 をクリックして、**コンシューマー詳細**にアクセスするコードを実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartConnection.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>継承したオーバーライド<see cref="M:System.Object.ToString" />メソッドと short の型は、接続オブジェクト名を返します。</summary>
+        <returns>短い (非修飾) 型名を含む文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは利便性のほとんどの場合コントロール デザイナーが使用されます。 デザイン ビューで完全修飾型名ではなく、短い型名を使用して、接続オブジェクトの表示が向上します。 ただし、メソッドを呼び出せる、コードのどの時点でも、接続オブジェクトの型名を知りたいです。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ToString%2A>の短い型名を返すメソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。  
+  
+ このコード例では、3 つの部分があります。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   コントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ コード例の最初の部分では、インターフェイス、およびコンシューマーおよびプロバイダーのコントロールのソース コードを示します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartConnection_ToString#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ToString/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_WebPartConnection_ToString#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ToString/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 上部にあるが、`Register`動的にコンパイルされる 2 つのソース コードを参照するディレクティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 静的な接続が内で宣言されている、`<StaticConnections>`ページ上の要素。 `Button1_Click`メソッドの呼び出し、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ToString%2A>ラベルに、接続の種類の名前を書き込みます。  
+  
+ [!code-aspx-csharp[WebParts_WebPartConnection_ToString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartConnection_ToString/CS/wpConnectToStringCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartConnection_ToString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartConnection_ToString/VB/wpConnectToStringVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 静的な接続は既に作成されています。 プロバイダー コントロールで、いくつかのテキストを入力し、コンシューマー コントロールのテキストが表示されることに注意してください。 クリックして、**接続の詳細**を実行するボタン、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ToString%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transformer">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartTransformer Transformer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartTransformer Transformer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartTransformer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" /> Web パーツ接続において、それ以外の場合に互換性がない接続の 2 点間のデータを変換するために使用できるオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" /> 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツの接続は、接続のプロバイダーとコンシューマーのコントロールの接続に使用できる 2 つの方法があります。 それぞれ経由で直接接続する<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>オブジェクトとは、両方のコントロールによって認識されているインターフェイス型です。 または、それらに互換性がない場合、直接接続できるされませんを使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>インターフェイス インスタンス プロバイダーからコンシューマーによって認識される型に変換するオブジェクト。  
+  
+ トランスフォーマーは、接続の一環として必要なときに、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformer%2A>プロパティへの参照を提供する、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクト。 カスタム トランスフォーマー (または Web パーツ コントロール セットに用意されているトランスフォーマーのいずれか) のタグを追加することで、Web ページのマークアップで宣言によって接続のトランスフォーマーを追加するには内で、`<asp:WebPartConnection>`要素。 追加することも、トランスフォーマー プログラムでは、コードで、そのインスタンスを作成して、呼び出し、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%28System.Web.UI.WebControls.WebParts.WebPart%2CSystem.Web.UI.WebControls.WebParts.ProviderConnectionPoint%2CSystem.Web.UI.WebControls.WebParts.WebPart%2CSystem.Web.UI.WebControls.WebParts.ConsumerConnectionPoint%2CSystem.Web.UI.WebControls.WebParts.WebPartTransformer%29>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール オブジェクトを渡すことを (トランスフォーマーを)、その他の必要なパラメーターと共に、接続を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transformers">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartTransformerCollection Transformers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartTransformerCollection Transformers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartTransformerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />Web パーツ コントロール セットによって内部的に使用されるオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformerCollection" /> オブジェクトを含んでいる <see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformers%2A>開発者がプロパティのもので使用することはありません。 接続に関連付けられているトランスフォーマーをアクセスするには、常に使用してください、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformer%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformers%2A>プロパティは、Web パーツ コントロール セット内のトランスフォーマー要素を宣言するページの開発者を有効にするによって内部的に使用、 `<asp:webpartconnection>` Web ページのマークアップ内の要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

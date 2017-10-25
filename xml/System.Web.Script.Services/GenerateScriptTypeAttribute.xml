@@ -1,0 +1,126 @@
+<Type Name="GenerateScriptTypeAttribute" FullName="System.Web.Script.Services.GenerateScriptTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class GenerateScriptTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GenerateScriptTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Services.GenerateScriptTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Interface, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロキシ オブジェクトに、サーバーの種類を生成する必要があるかを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ AJAX 対応の ASP.NET Web サイトで ASP.NET が Web サービス クラスのメソッドのプロキシ オブジェクトを自動的に生成できます。 これは、入力パラメーターとでマークされている任意の Web メソッドの戻り値の最上位のほとんどの型に<xref:System.Web.Script.Services.ScriptServiceAttribute>です。  
+  
+ それ以外の場合で場合に、サーバーの型を生成するプロキシ オブジェクト適用<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>手動でします。 適用できる<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>を Web サービス自体または任意の web サービス メソッドまたは`static`ページ メソッドでマークされて<xref:System.Web.Services.WebMethodAttribute>です。  
+  
+ 場合によっては、型が、入力パラメーターまたは Web サービス メソッドの戻り値に対応する場合でも、プロキシは生成されません自動的にします。 その場合は、使用する必要があります、<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>属性の種類のプロキシ オブジェクトを生成します。 これはジェネリック型およびなどを持つ複数の引数は、配列の場合に発生`Dictionary<string,<T>>`です。  
+  
+ 1 つまたは複数のインスタンス<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>Web サービス クラスまたはメソッドに適用できます。 ASP.NET は最上位レベルの各宣言によって参照される各種のように ECMAScript (JavaScript) プロキシ クラスを生成し、<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>です。  
+  
+> [!NOTE]
+>  手動で適用する必要がある入れ子にされた型プロキシ オブジェクトを生成する場合は、<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>それぞれに入れ子にされた型。 ASP.NET はトップレベルの型にのみプロキシを生成しは自動的に再帰的に属性を適用しない入れ子にされた型にします。  
+  
+ 属性を使用する方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、適用する方法を示しています。 <xref:System.Web.Script.Services.GenerateScriptTypeAttribute> Web サービス クラスおよび Web メソッドにします。 その結果、`ColorObject`型およびその入れ子になった型`FavoriteColors`プロキシ オブジェクトに含まれています。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GenerateScriptTypeAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Services.GenerateScriptTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">プロキシ クラスに含める型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Script.Services.GenerateScriptTypeAttribute" />指定した型のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Services.GenerateScriptTypeAttribute.ScriptTypeId%2A>このコンス トラクターのパラメーターを名前付きプロパティはオプションです。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>メタデータ マーカーについて、特定の型識別子を使用する指定した型のプロキシ オブジェクトを生成します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptTypeId">
+      <MemberSignature Language="C#" Value="public string ScriptTypeId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ScriptTypeId" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Services.GenerateScriptTypeAttribute.ScriptTypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型のメタデータのマーカーの種類の識別子を設定します。</summary>
+        <value>シリアル化された JavaScript Object Notation (JSON) 文字列の型メタデータ マーカーの種類の識別子です。 既定値は、型のアセンブリ修飾名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは省略可能です。 値を指定します。 場合<xref:System.Web.Script.Services.GenerateScriptTypeAttribute.ScriptTypeId%2A>型メタデータ マーカー ("_ _type") の型のアセンブリ修飾名ではなく、シリアル化された JSON 文字列に使用します。 逆シリアル化型競合回避モジュールに関連付けられている、<xref:System.Web.Script.Serialization.JavaScriptSerializer>オブジェクトは適切なマネージ型にマップする型のメタデータのマーカー値を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Services.GenerateScriptTypeAttribute.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロキシ オブジェクトに含まれている型を取得します。</summary>
+        <value>生成されたプロキシ オブジェクトに含まれている型のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,211 @@
+<Type Name="ControlPager" FullName="System.Web.UI.MobileControls.ControlPager">
+  <TypeSignature Language="C#" Value="public class ControlPager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlPager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ControlPager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ページのコントロールのコントロールをフォームで使用します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 改ページ調整中、<xref:System.Web.UI.MobileControls.ControlPager>オブジェクトは、フォーム上の各コントロールに渡され、コントロールによって、コントロールのページのインデックスを特定するために使用します。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlPager (System.Web.UI.MobileControls.Form form, int pageWeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.MobileControls.Form form, int32 pageWeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ControlPager.#ctor(System.Web.UI.MobileControls.Form,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="form" Type="System.Web.UI.MobileControls.Form" />
+        <Parameter Name="pageWeight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="form">フォームのページです。</param>
+        <param name="pageWeight">指定されたフォーム ページの重み。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.MobileControls.ControlPager" />ページの指定された重みを使用する指定されたフォームのクラスです。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultWeight">
+      <MemberSignature Language="C#" Value="public static readonly int DefaultWeight;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 DefaultWeight" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.MobileControls.ControlPager.DefaultWeight" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの割り当てられた重みを返します。 このフィールドは読み取り専用です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最適なページの重みとコントロールの重みを使用する単位の選択は、柔軟性があります。 デバイス アダプターは、重み付けの両方の種類を提供可能なために、アダプターのセットは、重み単位の適切な規則を調整できます。 ただし、既定のユニット システムを実行する場合、アダプターはコントロールの既定の加重値を使用できます。 既定のユニット システムに基づきますが 100 単位は、1 つの行定数によって示される<xref:System.Web.UI.MobileControls.ControlPager.DefaultWeight>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemPager">
+      <MemberSignature Language="C#" Value="public System.Web.UI.MobileControls.ItemPager GetItemPager (System.Web.UI.MobileControls.MobileControl control, int itemCount, int itemsPerPage, int itemWeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.MobileControls.ItemPager GetItemPager(class System.Web.UI.MobileControls.MobileControl control, int32 itemCount, int32 itemsPerPage, int32 itemWeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ControlPager.GetItemPager(System.Web.UI.MobileControls.MobileControl,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MobileControls.ItemPager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.MobileControls.MobileControl" />
+        <Parameter Name="itemCount" Type="System.Int32" />
+        <Parameter Name="itemsPerPage" Type="System.Int32" />
+        <Parameter Name="itemWeight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="control">改ページ調整するコントロール。</param>
+        <param name="itemCount">内の項目数、<see cref="T:System.Web.UI.MobileControls.ItemPager" />オブジェクト。</param>
+        <param name="itemsPerPage">ページ上の項目の最大数。</param>
+        <param name="itemWeight">最適な重み、<see cref="T:System.Web.UI.MobileControls.ItemPager" />オブジェクト。</param>
+        <summary>作成して返します、<see cref="T:System.Web.UI.MobileControls.ItemPager" />オブジェクトを指定されたコントロールの内容を改ページ調整します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns><see cref="T:System.Web.UI.MobileControls.ItemPager" />の特定のコントロールの内容を改ページ調整します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPage">
+      <MemberSignature Language="C#" Value="public int GetPage (int weight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetPage(int32 weight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ControlPager.GetPage(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="weight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="weight">コントロールの重み。</param>
+        <summary>コントロールの重み付けに基づいて、新しく割り当てられたページのインデックスを返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>コントロールの重み付けに基づいて、新しく割り当てられたページのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールは、このメソッドを繰り返し、割り当てられるページを取得するには、改ページ調整中に呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCount">
+      <MemberSignature Language="C#" Value="public int PageCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ControlPager.PageCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定またはポケットベルによって作成される現在のフォーム ページの数を返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>ポケットベルによって作成される現在のフォーム ページの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageWeight">
+      <MemberSignature Language="C#" Value="public int PageWeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ControlPager.PageWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム ページの最適な太さを返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>フォーム ページの最適な重み。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemainingWeight">
+      <MemberSignature Language="C#" Value="public int RemainingWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RemainingWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ControlPager.RemainingWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定または現在の ASP.NET モバイル Web フォーム ページに残っている重みを返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>現在 ASP.NET モバイル Web フォーム ページ上の残りの重み。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultWeight">
+      <MemberSignature Language="C#" Value="public static readonly int UseDefaultWeight;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 UseDefaultWeight" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.MobileControls.ControlPager.UseDefaultWeight" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を使用するかどうかを返します、<see cref="F:System.Web.UI.MobileControls.ControlPager.DefaultWeight" />改ページのフィールドです。 このフィールドは読み取り専用です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張、<xref:System.Web.UI.MobileControls.ControlPager>クラスし、このフィールドを変更し、<xref:System.Web.UI.MobileControls.ControlPager.DefaultWeight>以外の何らかの値を使用する必要がある場合、フィールド、<xref:System.Web.UI.MobileControls.ControlPager.DefaultWeight>ページの既定の重みとしてフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

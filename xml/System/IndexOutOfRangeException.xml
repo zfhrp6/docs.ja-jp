@@ -1,0 +1,277 @@
+<Type Name="IndexOutOfRangeException" FullName="System.IndexOutOfRangeException">
+  <TypeSignature Language="C#" Value="public sealed class IndexOutOfRangeException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit IndexOutOfRangeException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.IndexOutOfRangeException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>境界外のインデックスを使用して配列またはコレクションの要素にアクセスしようとしたときにスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IndexOutOfRangeException>配列またはコレクションのメンバーにアクセスするかを読み取ったり書き込んだりするバッファーの特定の場所から無効なインデックスを使用すると、例外がスローされます。 この例外が継承、<xref:System.Exception>クラスがない一意のメンバーを追加ができます。  
+  
+ 通常、<xref:System.IndexOutOfRangeException>開発者のエラーの結果として例外がスローされます。 例外を処理する代わりに、エラーの原因を診断し、コードの修正ください。 エラーの最も一般的な原因は次のとおりです。  
+  
+-   0 から始まる配列またはコレクションの上限が、1 つになることを忘れてしまった次の例として、要素またはメンバーの数よりも小さいを示しています。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/length1.cs#3)]
+     [!code-vb[System.IndexOutOfRangeException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/length1.vb#3)]  
+  
+     このエラーを修正するには、次のようにコードを使用できます。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/length2.cs#4)]
+     [!code-vb[System.IndexOutOfRangeException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/length2.vb#4)]  
+  
+     代わりに、そのインデックスによって反復処理には、配列内のすべての要素ではなく行うこともできます、(C# の場合) または (Visual Basic で)。  
+  
+-   配列の要素を適切に次元されていないと、元の配列よりも少ない要素を持つ別の配列に割り当てるしようとしています。 次の例が、最後の要素を代入しようとしています。、`value1`配列内の同じ要素を、`value2`配列。 ただし、`value2`配列がされて正しく多次元化されていない 7 つの要素の代わりに 6 個にします。 割り当ての結果として、スロー、<xref:System.IndexOutOfRangeException>例外。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/Uninit1.cs#10)]
+     [!code-vb[System.IndexOutOfRangeException#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/Uninit1.vb#10)]  
+  
+-   配列またはコレクションの特定のインデックス位置からの一部を反復処理するメソッドを検索によって返される値を使用します。 ランタイムは、スロー、検索操作では、一致が見つかった、かどうかを確認するを忘れた場合、<xref:System.IndexOutOfRangeException>例外、この例で示すようにします。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/negative1.cs#5)]
+     [!code-vb[System.IndexOutOfRangeException#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/negative1.vb#5)]  
+  
+     ここで、<xref:System.Collections.Generic.List%601.IndexOf%2A?displayProperty=nameWithType>メソッドに無効なインデックス値を一致を見つけ、失敗した場合は-1 を返します。 このエラーを解決するには、この例のように、配列を反復処理する前に検索メソッドの戻り値を確認します。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/negative2.cs#6)]
+     [!code-vb[System.IndexOutOfRangeException#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/negative2.vb#6)]  
+  
+-   使用するか、結果セット、コレクション、または、返されたオブジェクトに有効なデータがあるかどうかをテストすることがなく、クエリによって返される配列を列挙しようとします。  
+  
+-   開始インデックス、終了インデックス、または反復処理するのに項目の数を定義するのにには、計算された値を使用します。 計算の結果が予想される場合は、ことになります、<xref:System.IndexOutOfRangeException>例外。 インデックス値の計算で、プログラムのロジックを確認し、配列またはコレクションを反復処理する前に値を検証する必要があります。 次の条件すべて必要があります。それ以外の場合、<xref:System.IndexOutOfRangeException>例外がスローされます。  
+  
+    -   開始インデックスが以上にする必要があります<xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType>、反復処理する配列の次元のまたはコレクションの場合は 0 以上。  
+  
+    -   終了インデックスを超えないように<xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType>反復処理する、またはことはできませんよりも大きくするか、または等しいする配列の次元の`Count`コレクションのプロパティです。  
+  
+    -   次の式は、反復処理する配列の次元の場合は true である必要があります。  
+  
+        ```  
+        start_index >= lower_bound And start_index + items_to_iterate – 1 <= upper_bound  
+        ```  
+  
+         コレクションは、次の式は true にする必要があります。  
+  
+        ```  
+        start_index >= 0 And start_index + items_to_iterate <= Count  
+        ```  
+  
+        > [!TIP]
+        >  配列またはコレクションの開始インデックスは、負の数値をすることはできません。  
+  
+-   0 から始まる配列である必要があると仮定します。 0 から始まる配列を作成できます、<xref:System.Array.CreateInstance%28System.Type%2CSystem.Int32%5B%5D%2CSystem.Int32%5B%5D%29?displayProperty=nameWithType>メソッドが CLS に準拠していないが、COM 相互運用機能から返されることができます。 次の例を示しています、<xref:System.IndexOutOfRangeException>によって作成された非ゼロ ベースの配列を反復処理しようとしたときにスローされる、<xref:System.Array.CreateInstance%28System.Type%2CSystem.Int32%5B%5D%2CSystem.Int32%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/nonzero1.cs#1)]
+     [!code-vb[System.IndexOutOfRangeException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/nonzero1.vb#1)]  
+  
+     次の例のように、エラーを修正を呼び出すことができます、<xref:System.Array.GetLowerBound%2A>配列の開始インデックスについて推測するのではなくメソッドです。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/nonzero2.cs#2)]
+     [!code-vb[System.IndexOutOfRangeException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/nonzero2.vb#2)]  
+  
+     呼び出すときに注意してください、 <xref:System.Array.GetLowerBound%2A> 、配列の開始インデックスを取得するメソッドを呼び出す必要もあります、<xref:System.Array.GetUpperBound%28System.Int32%29?displayProperty=nameWithType>終了インデックスを取得します。  
+  
+-   インデックスと数値の配列またはコレクション内のインデックスにある値を混乱します。 この問題が発生するは通常を使用する場合、`foreach`ステートメント (c#) または`For Each`ステートメント (Visual Basic の場合)。 この問題を説明する例を次に示します。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/foreach1.cs#7)]
+     [!code-vb[System.IndexOutOfRangeException#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/foreach1.vb#7)]  
+  
+     イテレーションの構成体には、配列またはコレクションは、インデックスなしの各値を返します。 例外を回避するのには、このコードを使用します。  
+  
+     [!code-csharp[System.IndexOutOfRangeException#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.indexoutofrangeexception/cs/foreach2.cs#8)]
+     [!code-vb[System.IndexOutOfRangeException#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.indexoutofrangeexception/vb/foreach2.vb#8)]  
+  
+-   無効な列名を指定する、<xref:System.Data.DataView.Sort%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   スレッド セーフに違反します。 同じからの読み取りなどの操作<xref:System.IO.StreamReader>オブジェクト、同じへの書き込み<xref:System.IO.StreamWriter>または内のオブジェクトを列挙するオブジェクトの複数のスレッドから、<xref:System.Collections.Hashtable>異なるスレッドからスローすることが、<xref:System.IndexOutOfRangeException>オブジェクトは、スレッド セーフな方法でアクセスされていない場合。 この例外は、競合状態に依存しているために、通常断続的なです。  
+  
+ ハード コーディングされたインデックス値を使用して配列を操作するは、インデックス値が正しくないか、無効な場合、または操作されている配列のサイズは予期しない例外をスローする可能性があります。 スローされることから、操作を防ぐために、<xref:System.IndexOutOfRangeException>の例外を除き、次を行うことができます。  
+  
+-   使用して、配列の要素を反復処理する、 [foreach](https://msdn.microsoft.com/library/ttw7t8t6.aspx)ステートメント (c#) または[ごとにしています.[次へ]](https://msdn.microsoft.com/library/5ebk1751.aspx) (Visual Basic) のインデックスを使用して要素を繰り返し処理ではなくを作成します。  
+  
+-   によって返されるインデックスから始まるインデックスを使用して要素を反復処理する、<xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType>メソッドとによって返されるインデックスで終了するまで、<xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   別の 1 つの配列内の要素を割り当てる場合はあることを確認対象となる配列には、少なくとも同じ数の要素ソース配列と比較することによって、<xref:System.Array.Length%2A?displayProperty=nameWithType>プロパティです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.IndexOutOfRangeException>を参照してください、<xref:System.IndexOutOfRangeException>コンス トラクターです。  
+  
+ 中間言語 (IL) の次の手順をスロー <xref:System.IndexOutOfRangeException>:  
+  
+-   ldelem です。\<型 >  
+  
+-   ldelema  
+  
+-   stelem です。\<型 >  
+  
+ <xref:System.IndexOutOfRangeException>値は 0x80131508 HRESULT COR_E_INDEXOUTOFRANGE を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IndexOutOfRangeException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IndexOutOfRangeException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IndexOutOfRangeException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「配列のインデックスが範囲外です」などに、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.IndexOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IndexOutOfRangeException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IndexOutOfRangeException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.IndexOutOfRangeException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Exception.Message%2A?displayProperty=nameWithType>の新しい例外を使用して、プロパティ、`message`パラメーター。 コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.IndexOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IndexOutOfRangeException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IndexOutOfRangeException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で) で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.IndexOutOfRangeException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 `InnerException` プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は `InnerException`) を返します。  
+  
+ <xref:System.IndexOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

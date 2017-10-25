@@ -1,0 +1,74 @@
+<Type Name="ThreadWorkerController" FullName="System.Activities.Debugger.ThreadWorkerController">
+  <TypeSignature Language="C#" Value="public class ThreadWorkerController" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThreadWorkerController extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Debugger.ThreadWorkerController" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>専用のワーカー スレッド上での補助デバッグ スレッドまたはアイランドの作成と実行をサポートします。 この型は、フレームワークにより使用されるユーティリティ クラスで、一般的な使用を意図したものではありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このワーカー スレッドは、マルチスレッドのような並列アクティビティの実行をシミュレーションするために必要になります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThreadWorkerController ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Debugger.ThreadWorkerController.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Debugger.ThreadWorkerController" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IslandWorker">
+      <MemberSignature Language="C#" Value="public static void IslandWorker (System.Activities.Debugger.ThreadWorkerController controller);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void IslandWorker(class System.Activities.Debugger.ThreadWorkerController controller) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Debugger.ThreadWorkerController.IslandWorker(System.Activities.Debugger.ThreadWorkerController)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controller" Type="System.Activities.Debugger.ThreadWorkerController" />
+      </Parameters>
+      <Docs>
+        <param name="controller">実行する補助デバッガー スレッド。</param>
+        <summary>特定の補助デバッガー スレッドに実行を割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは静的関数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,105 @@
+<Type Name="SqlColumnEncryptionCertificateStoreProvider" FullName="System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider">
+  <TypeSignature Language="C#" Value="public class SqlColumnEncryptionCertificateStoreProvider : System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlColumnEncryptionCertificateStoreProvider extends System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows 証明書ストアのキー ストア プロバイダーの実装。 このクラスは、Windows 証明書ストアに格納されている証明書を、列マスター キーとして使用できるようにします。 詳細については、「 [Always Encrypted](https://msdn.microsoft.com/library/mt163865.aspx)です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlColumnEncryptionCertificateStoreProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Windows 証明書ストアのキー ストア プロバイダー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptColumnEncryptionKey">
+      <MemberSignature Language="C#" Value="public override byte[] DecryptColumnEncryptionKey (string masterKeyPath, string encryptionAlgorithm, byte[] encryptedColumnEncryptionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] DecryptColumnEncryptionKey(string masterKeyPath, string encryptionAlgorithm, unsigned int8[] encryptedColumnEncryptionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider.DecryptColumnEncryptionKey(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="masterKeyPath" Type="System.String" />
+        <Parameter Name="encryptionAlgorithm" Type="System.String" />
+        <Parameter Name="encryptedColumnEncryptionKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="masterKeyPath">マスター キーのパス。</param>
+        <param name="encryptionAlgorithm">暗号化アルゴリズム。 現在、唯一の有効な値は: <c>RSA_OAEP</c></param>
+        <param name="encryptedColumnEncryptionKey">暗号化された列暗号化キー。</param>
+        <summary>列暗号化キーの指定された暗号化値の暗号化を解除します。 暗号化された値は、指定されたキーのパスを持つ証明書と指定されたアルゴリズムを使用して暗号化する必要があります。 キーのパスの形式は、"ローカル Machine/my/&lt;certificate_thumbrint&gt;"または"現在 User/my/&lt;certificate_thumbprint&gt;"です。</summary>
+        <returns><see cref="T:System.Byte" /> を返します。   
+暗号化が解除された列暗号化キー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptColumnEncryptionKey">
+      <MemberSignature Language="C#" Value="public override byte[] EncryptColumnEncryptionKey (string masterKeyPath, string encryptionAlgorithm, byte[] columnEncryptionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] EncryptColumnEncryptionKey(string masterKeyPath, string encryptionAlgorithm, unsigned int8[] columnEncryptionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider.EncryptColumnEncryptionKey(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="masterKeyPath" Type="System.String" />
+        <Parameter Name="encryptionAlgorithm" Type="System.String" />
+        <Parameter Name="columnEncryptionKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="masterKeyPath">マスター キーのパス。</param>
+        <param name="encryptionAlgorithm">暗号化アルゴリズム。 現在、唯一の有効な値は: <c>RSA_OAEP</c></param>
+        <param name="columnEncryptionKey">暗号化された列暗号化キー。</param>
+        <summary>指定されたキーのパスの証明書を使用し、指定されたアルゴリズムを使用して列暗号化キーを暗号化します。 キーのパスの形式は、"ローカル Machine/my/&lt;certificate_thumbrint&gt;"または"現在 User/my/&lt;certificate_thumbprint&gt;"です。</summary>
+        <returns><see cref="T:System.Byte" /> を返します。   
+暗号化された列暗号化キー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public const string ProviderName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ProviderName" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider.ProviderName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダー名。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

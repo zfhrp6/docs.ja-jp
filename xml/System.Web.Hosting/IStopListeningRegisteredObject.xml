@@ -1,0 +1,62 @@
+<Type Name="IStopListeningRegisteredObject" FullName="System.Web.Hosting.IStopListeningRegisteredObject">
+  <TypeSignature Language="C#" Value="public interface IStopListeningRegisteredObject : System.Web.Hosting.IRegisteredObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStopListeningRegisteredObject implements class System.Web.Hosting.IRegisteredObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IStopListeningRegisteredObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Hosting.IRegisteredObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>[.NET Framework 4.5.1 以降のバージョンでサポート]  
+  
+ リッスン<c>GL_STOP_LISTENING</c> IIS からの通知です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装することができます、<xref:System.Web.Hosting.IStopListeningRegisteredObject>インターフェイス オブジェクトを渡すことによって、<xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A>メソッドです。 渡されたオブジェクトをリッスン`GL_STOP_LISTENING`IIS からの通知です。 ASP.NET が受信すると、この実装を呼び出すことができます、 `GL_STOP_LISTENING` IIS で、IIS が不要になったこのアプリケーションに対する新しい要求をリッスンしていることを通知を通知します。 Web サーバーが完了するまで実行する実行中の要求を許可することができます。 場合は、アプリケーション プロセスの要求が長時間実行することができますが、アプリケーションは、その要求を適切に風にこれらの IIS 通知をリッスンします。 <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>とは対照的メソッド、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>メソッドで、即時のアプリケーションのシャット ダウンを通知します。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型のインスタンス メンバーは、スレッド セーフである保証はありません。 <see cref="M:System.Web.Hosting.IStopListeningRegisteredObject.StopListening" />メソッドを別のメソッドの呼び出し中に含め、いつでも呼び出すことができます (など<see cref="M:System.Web.Hosting.IRegisteredObject.Stop(System.Boolean)" />) この同じオブジェクトが実行されて、またはその他のオブジェクトへの呼び出し中に<see cref="M:System.Web.Hosting.IStopListeningRegisteredObject.StopListening" />メソッドを実行します。 間隔があるこれらのメソッドの実行は、マルチ スレッドであるため、<see cref="M:System.Web.Hosting.IStopListeningRegisteredObject.StopListening" />への呼び出し後にメソッドを呼び出すことがあります<see cref="M:System.Web.Hosting.HostingEnvironment.UnregisterObject(System.Web.Hosting.IRegisteredObject)" />が完了しました。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="public void StopListening ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopListening() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IStopListeningRegisteredObject.StopListening" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>[.NET Framework 4.5.1 以降のバージョンでサポート]  
+  
+ 新しい要求のリッスンを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>統合モードの IIS で実行されている場合にのみ、メソッドはサポートされています。 ASP.NET ランタイムとは限りませんを<xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>メソッドが必ず発生します。  
+  
+ <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>メソッドが例外をスローする必要があります、それ以外の場合、動作は未定義と、プロセスが終了する可能性があります。 さらに、作成、デッドロックを回避する、<xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>メソッドは実行をブロックする必要があります。  
+  
+> [!IMPORTANT]
+>  多くのアプリケーションで、<xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>と同時に実行方法、<xref:System.AppDomain.Unload%2A>メソッドです。  場合<xref:System.AppDomain>アンロードが発生すると、<xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening%2A>の実行が完了する前に、メソッドを強制的に中止される可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

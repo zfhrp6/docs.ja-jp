@@ -1,0 +1,281 @@
+<Type Name="ConnectionStringsExpressionBuilder" FullName="System.Web.Compilation.ConnectionStringsExpressionBuilder">
+  <TypeSignature Language="C#" Value="public class ConnectionStringsExpressionBuilder : System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionStringsExpressionBuilder extends System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ConnectionStringsExpressionBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Compilation.ExpressionBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionEditor("System.Web.UI.Design.ConnectionStringsExpressionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionPrefix("ConnectionStrings")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>取得した場合、またはから値を取得するコードを生成、 &lt; <see langword="connectionStrings" /> &gt; Web.config ファイルのセクションです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>クラス内の値へのアクセスを提供する、<`connectionStrings`> Web.config ファイルのセクションです。 <`connectionStrings`> Web.config ファイルのセクションには、名前/値ペア内の接続文字列の値が含まれています。  
+  
+ フォームの式を割り当てることによって接続文字列の値を取得します。  
+  
+ `<%$ ConnectionStrings: secureConnectionString %>`  
+  
+ コントロールのプロパティです。 コロン (:) の前に式の一部は、コロンは、接続文字列の名前を示します後に式を取得して、一部の種類を指定します。 直前の正規表現は、Web.config ファイルから次の値を取得するは。  
+  
+ `<connectionStrings>`  
+  
+ `<add name="secureConnectionString" connectionString="Data`  
+  
+ `Source=localhost;Integrated Security=SSPI;Initial`  
+  
+ `Catalog=Northwind;" providerName="System.Data.SqlClient" />`  
+  
+ `</connectionStrings>`  
+  
+ ページのパーサーが、プレフィックスを持つ式を検出すると`ConnectionStrings`のインスタンスを作成、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>式を処理するクラス。  
+  
+ 式がコンパイルされるページで、発生した場合、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>オブジェクトは、Web.config ファイルから指定された接続文字列を取得するコードを生成します。 式はコンパイルされませんが、ページで、発生した場合、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>オブジェクトでは、ページが解析される際に、Web.config ファイルから値を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、宣言を使用して、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを Microsoft SQL Server を実行しているコンピューターからデータを取得し、表示、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_3sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3sql/CS/sql3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_3sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3sql/VB/sql3vb.aspx#1)]
+  
+ コードは、Web.config ファイルから次の接続文字列を取得します。  
+  
+ `<configuration   xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">`  
+  
+ `<connectionStrings>`  
+  
+ `<add name="MyNorthwind" connectionString="Data`  
+  
+ `Source=localhost;Integrated Security=SSPI;Initial`  
+  
+ `Catalog=Northwind;" providerName="System.Data.SqlClient" />`  
+  
+ `</connectionStrings>`  
+  
+ `</configuration>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionStringsExpressionBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.ConnectionStringsExpressionBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (object target, System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(object target, class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="target">式を含むオブジェクト。</param>
+        <param name="entry">式がバインドされているプロパティです。</param>
+        <param name="parsedData">表すオブジェクトを解析済みデータがによって返される<see cref="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>値を返します、 &lt; <see langword="connectionStrings" /> &gt; Web.config ファイルのセクションです。</summary>
+        <returns><see cref="T:System.Object" />内のキーに関連付けられている、 &lt; <see langword="connectionStrings" /> &gt; Web.config ファイルのセクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、フォームの式`<%$ ConnectionStrings: secureConnectionString %>`がコンパイルされていないページで、発生しました。 適切な値を取得、<`connectionStrings`> Web.config ファイルのセクションです。 このメソッドは、<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>メソッドを呼び出して、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionString%2A>メソッドで、接続文字列が含まれている場合、`parsedData`パラメーター、または呼び出すことによって、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionStringProviderName%2A>メソッドで、接続文字列が含まれていない場合、`parsedData`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続文字列名は、Web.config ファイルで見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeExpression">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.CodeExpression GetCodeExpression (System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="entry">式でバインドされているプロパティに関する情報を表すオブジェクト。</param>
+        <param name="parsedData">表すオブジェクトを解析済みデータがによって返される<see cref="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>コード ページの解析中に評価する式を返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeExpression" />メソッドを呼び出します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ページまたはコントロールの CodeDOM の作成時に呼び出されます。 <xref:System.CodeDom.CodeExpression>返されるオブジェクトの種類が<xref:System.CodeDom.CodeMethodInvokeExpression>接続文字列の値を取得するときに呼び出すメソッドを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionString">
+      <MemberSignature Language="C#" Value="public static string GetConnectionString (string connectionStringName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetConnectionString(string connectionStringName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionStringName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionStringName">接続文字列の名前。</param>
+        <summary>接続文字列を返します、 &lt; <see langword="connectionStrings" /> &gt; Web.config ファイルのセクションです。</summary>
+        <returns>接続文字列として、<see cref="T:System.String" />この接続文字列名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationManager.ConnectionStrings%2A>プロパティが接続のコレクションを文字列値を返します。 <xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionString%2A>メソッドは、この接続文字列名に関連付けられているコレクションから値を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続文字列名は、Web.config ファイルで見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionStringProviderName">
+      <MemberSignature Language="C#" Value="public static string GetConnectionStringProviderName (string connectionStringName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetConnectionStringProviderName(string connectionStringName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionStringProviderName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionStringName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionStringName">接続文字列の名前。</param>
+        <summary>接続文字列のプロバイダーを返します、 &lt; <see langword="connectionStrings" /> &gt; Web.config ファイルのセクションです。</summary>
+        <returns>プロバイダーとして、<see cref="T:System.String" />この接続文字列名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationManager.ConnectionStrings%2A?displayProperty=nameWithType>プロパティが接続のコレクションを文字列値を返します。 <xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionStringProviderName%2A>メソッドは、この接続文字列名に関連付けられているコレクションから、値のプロバイダーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続文字列名は、Web.config ファイルで見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseExpression">
+      <MemberSignature Language="C#" Value="public override object ParseExpression (string expression, Type propertyType, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ParseExpression(string expression, class System.Type propertyType, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ConnectionStringsExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="expression">宣言型の式の値。</param>
+        <param name="propertyType">式の対象となる型。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>解析された式を表すオブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" />を含む式の解析済み表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Object>型では<xref:System.Web.UI.Pair>します。 これは、<xref:System.Web.UI.Pair>オブジェクトを渡すには、両方の<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.EvaluateExpression%2A>メソッドおよび<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetCodeExpression%2A>メソッドとして`parsedData`です。 <xref:System.Web.UI.Pair>オブジェクトには、名前と接続文字列の値が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEvaluate">
+      <MemberSignature Language="C#" Value="public override bool SupportsEvaluate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEvaluate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ConnectionStringsExpressionBuilder.SupportsEvaluate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイルされていない ページで、式を評価できるかどうかを示す値を返します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.SupportsEvaluate%2A>プロパティを示すかどうか、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.EvaluateExpression%2A>メソッドをクラスに実装されています。 <xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.EvaluateExpression%2A>コンパイルされていない ページで評価される式の式ビルダー以内に実装する必要があります。 <xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>そのため、接続文字列のコンパイルなしの評価をサポートしている`true`が常に返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

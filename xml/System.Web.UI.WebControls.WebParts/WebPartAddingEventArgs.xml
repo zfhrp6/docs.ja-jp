@@ -1,0 +1,96 @@
+<Type Name="WebPartAddingEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartAddingEventArgs : System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartAddingEventArgs extends System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding>によってイベントが発生した、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdding%2A> Web パーツ ゾーンにコントロールを追加する前にメソッドです。 このイベントは、完了する前に、プロセスをキャンセルする機会を提供します。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded>コントロールが Web パーツ ゾーンに追加された後にイベントが呼び出されます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs>クラスには内で使用できる情報が含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding>イベント。 追加される Web パーツ コントロールと、ゾーンに追加されるへのアクセスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartAddingEventArgs (System.Web.UI.WebControls.WebParts.WebPart webPart, System.Web.UI.WebControls.WebParts.WebPartZoneBase zone, int zoneIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart webPart, class System.Web.UI.WebControls.WebParts.WebPartZoneBase zone, int32 zoneIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.WebPartZoneBase,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="zone" Type="System.Web.UI.WebControls.WebParts.WebPartZoneBase" />
+        <Parameter Name="zoneIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="webPart"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> (またはサーバーまたはユーザー コントロール) を Web ページに追加したり、ページに開いたりします。</param>
+        <param name="zone"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />を<c>webPart</c>に追加されています。</param>
+        <param name="zoneIndex">序数を表す整数を配置する<c>webPart</c>で占める<c>ゾーン</c>での他のコントロールへの相対パス<c>ゾーン</c>です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zone">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartZoneBase Zone { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartZoneBase Zone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs.Zone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartZoneBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールに追加されている Web パーツ ゾーンを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" /> Web パーツ コントロールに追加されています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoneIndex">
+      <MemberSignature Language="C#" Value="public int ZoneIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ZoneIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs.ZoneIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインデックス位置を<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ゾーン内のコントロールです。</summary>
+        <value>そのゾーン内のコントロールの数値順序。 ゾーン内の最初のコントロールには、0 のインデックス値があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs.ZoneIndex%2A>プロパティ内のゾーンに追加する Web パーツ コントロールを番号順 (または序数位置) を示す、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded>イベント。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールでは、このプロパティを使用して、追跡し、その Web ページ上の Web パーツ コントロールのコレクションを管理します。  
+  
+> [!IMPORTANT]
+>  値、<xref:System.Web.UI.WebControls.WebParts.WebPartAddingEventArgs.ZoneIndex%2A>コントロールのプロパティでは、同じコントロール内のインデックス値が等しくない可能性があります、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.WebParts%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

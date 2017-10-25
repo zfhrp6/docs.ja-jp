@@ -1,0 +1,282 @@
+<Type Name="MACTripleDES" FullName="System.Security.Cryptography.MACTripleDES">
+  <TypeSignature Language="C#" Value="public class MACTripleDES : System.Security.Cryptography.KeyedHashAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MACTripleDES extends System.Security.Cryptography.KeyedHashAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.MACTripleDES" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.KeyedHashAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.TripleDES" /> を使用して、入力データ <see cref="T:System.Security.Cryptography.CryptoStream" /> の MAC (Message Authentication Code) を計算します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信者と受信者に、共有シークレット キーを共有すると、安全でないチャネル経由で送信されたメッセージが改ざんされているかどうかを決定する、MAC を使用できます。 送信者は、元のデータの MAC を計算し、単一のメッセージとして両方を送信します。 受信者が受信したメッセージの MAC が再計算され、計算された MAC に送信された MAC が一致することを確認  
+  
+ メッセージを変更し、正しい MAC を再現する秘密キーの知識が必要なため、不一致が MAC 結果や、データを変更します。 したがって、コードが一致する場合、メッセージが認証されます。  
+  
+ <xref:System.Security.Cryptography.MACTripleDES>16 ~ 24 バイト長、および 8 バイト長であるハッシュを生成するキーを使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、という名前のファイル用の MAC `input.txt`、実行可能ファイルの例では、含まれているフォルダー内に配置されています。 MAC と元のテキストがという名前のファイルに書き込まれます`encrypted.hsh`同じフォルダーにあります。 署名付きのファイルは読み取りしれ MAC が計算テキスト部分では、ファイルのテキストに含まれている MAC に比較します。  
+  
+ [!code-csharp[MAC3DES#1](~/samples/snippets/csharp/VS_Snippets_CLR/MAC3DES/CS/program.cs#1)]
+ [!code-vb[MAC3DES#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MAC3DES/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MACTripleDES ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.MACTripleDES" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの既定の実装を使用して<xref:System.Security.Cryptography.TripleDES>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MACTripleDES (byte[] rgbKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rgbKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey"><see cref="T:System.Security.Cryptography.MACTripleDES" /> 暗号化の共有キー。</param>
+        <summary>キー データを指定して、<see cref="T:System.Security.Cryptography.MACTripleDES" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの既定の実装を使用して<xref:System.Security.Cryptography.TripleDES>です。 `rgbKey`パラメーターは長さが 16 個 24 バイトである必要があります。  
+  
+   
+  
+## Examples  
+ このコンス トラクターを使用する方法の例は、次を参照してください。、<xref:System.Security.Cryptography.MACTripleDES>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rgbKey" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MACTripleDES (string strTripleDES, byte[] rgbKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string strTripleDES, unsigned int8[] rgbKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.#ctor(System.String,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="strTripleDES" Type="System.String" />
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="strTripleDES">使用する <see cref="T:System.Security.Cryptography.TripleDES" /> 実装の名前。</param>
+        <param name="rgbKey"><see cref="T:System.Security.Cryptography.MACTripleDES" /> 暗号化の共有キー。</param>
+        <summary>指定したキー データと <see cref="T:System.Security.Cryptography.TripleDES" /> の指定した実装を使用して、<see cref="T:System.Security.Cryptography.MACTripleDES" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `strTripleDES`のフレンドリ名がパラメーター、<xref:System.Security.Cryptography.TripleDES>実装の型。 既定の実装は、System.Security.Cryptography.TripleDES です。  
+  
+ `rgbKey`パラメーターは長さが 16 個 24 バイトである必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rgbKey" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException"><paramref name="strTripleDES" />パラメーターがの有効な名前ではありません、<see cref="T:System.Security.Cryptography.TripleDES" />実装します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see cref="M:System.IDisposable.Dispose" /> の実装からメソッドを呼び出した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Security.Cryptography.MACTripleDES" /> インスタンスによって使用されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび`Finalize`メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`disposing パラメーター設定したメソッド`true`です。 `Finalize`呼び出す`Dispose`するメソッドと`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Security.Cryptography.MACTripleDES> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />を以前の呼び出しで既に破棄されているオブジェクトを参照しないように注意、<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see langword="Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HashCore">
+      <MemberSignature Language="C#" Value="protected override void HashCore (byte[] rgbData, int ibStart, int cbSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void HashCore(unsigned int8[] rgbData, int32 ibStart, int32 cbSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.HashCore(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbData" Type="System.Byte[]" />
+        <Parameter Name="ibStart" Type="System.Int32" />
+        <Parameter Name="cbSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rgbData">入力データ。</param>
+        <param name="ibStart">バイト配列内のデータの使用開始位置を示すオフセット。</param>
+        <param name="cbSize">配列内でデータとして使用されるバイトの数。</param>
+        <summary>MAC (Message Authentication Code) を計算するために、オブジェクトに書き込まれたデータを <see cref="T:System.Security.Cryptography.TripleDES" /> 暗号化プログラムにルーティングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashFinal">
+      <MemberSignature Language="C#" Value="protected override byte[] HashFinal ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance unsigned int8[] HashFinal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.HashFinal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのデータがオブジェクトに書き込まれた後に、計算された MAC (Message Authentication Code) を返します。</summary>
+        <returns>計算された MAC。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのデータが書き込まれると、後でより多くのデータを書き込むことはできません後にのみ、この値を読み取ることができます。 新しいインスタンスを作成する<xref:System.Security.Cryptography.MACTripleDES>データ用の MAC を計算するデータの個別のセグメントごとにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.MACTripleDES.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.MACTripleDES" /> のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クラスの既定のコンス トラクターを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.PaddingMode Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.PaddingMode Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.MACTripleDES.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ アルゴリズムで使用する埋め込みモードを取得または設定します。</summary>
+        <value>ハッシュ アルゴリズムで使用する埋め込みモード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのプレーン テキスト メッセージは、ブロックが完全に入力するバイト数ので構成されていません。 多くの場合、最後のブロックを格納するための十分なバイトがありません。 この場合、テキストに埋め込み文字列が追加されます。 たとえば、ブロックの長さは 64 ビット、最後のブロックには、40 ビットだけが含まれている場合は、24 ビットのパディングが追加されます。 参照してください<xref:System.Security.Cryptography.PaddingMode>特定のモードの詳細についてはします。  
+  
+ このフィールドには、<xref:System.Security.Cryptography.SymmetricAlgorithm.Padding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">パディング モードが無効であるために、プロパティを設定できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

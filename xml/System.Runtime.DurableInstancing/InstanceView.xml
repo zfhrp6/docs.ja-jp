@@ -1,0 +1,301 @@
+<Type Name="InstanceView" FullName="System.Runtime.DurableInstancing.InstanceView">
+  <TypeSignature Language="C#" Value="public sealed class InstanceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InstanceView extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.DurableInstancing.InstanceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのビューを表します。 たとえば、<see cref="M:System.Runtime.DurableInstancing.InstanceStore.Execute(System.Runtime.DurableInstancing.InstanceHandle,System.Runtime.DurableInstancing.InstancePersistenceCommand,System.TimeSpan)" /> メソッドを実装する場合は、永続ストアのインスタンス データに関するビューを提供する <see cref="T:System.Runtime.DurableInstancing.InstanceView" /> オブジェクトを返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各 InstanceView オブジェクトは、InstanceHandle と関連付けられます。 InstanceStore.Execute から返される InstanceView に対しては、関連付けられたハンドルが Execute に渡されます。 InstancePersistenceContext.InstanceView から返される InstanceView に対しては、関連付けられたハンドルは TryCommand に渡されます。  
+  
+ InstanceHandle には、一度に 0 個以上の InstanceView オブジェクトが関連付けられている場合があります。 InstanceStore.Execute から返された InstanceView オブジェクトは不変であり、そのコマンドが正常に完了した後で、インスタンスの既知の状態を示すスナップショットを表します。 InstancePersistenceContext から返された InstanceView オブジェクトは可変であり、コマンドの実行中に更新される現在のインスタンスの既知の状態を表します   (コマンドが最終的に失敗すると、この中間状態は破棄されます)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InstanceData">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; InstanceData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; InstanceData" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前と値のディクショナリとしてインスタンス データを取得します。</summary>
+        <value>インスタンス データ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceDataConsistency">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceValueConsistency InstanceDataConsistency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.DurableInstancing.InstanceValueConsistency InstanceDataConsistency" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceDataConsistency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceValueConsistency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InstanceData プロパティの一貫性のステータスを取得します。</summary>
+        <value>インスタンス データの一貫性 (None、In Doubt、Partial)。 InstanceValueConsistency.None は、InstanceData プロパティが完全に作成されロックされたインスタンス データのセットを保持することを示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスの識別子 (ID) を GUID として取得します。</summary>
+        <value>関連付けられたインスタンス ハンドルがインスタンスにバインドされていない場合のインスタンスまたは Guid.Empty の ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceKeys">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;Guid,System.Runtime.DurableInstancing.InstanceKeyView&gt; InstanceKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;valuetype System.Guid, class System.Runtime.DurableInstancing.InstanceKeyView&gt; InstanceKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Guid,System.Runtime.DurableInstancing.InstanceKeyView&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス キーの識別子と関連付けられた <see cref="T:System.Runtime.DurableInstancing.InstanceKeyView" /> オブジェクトとして、インスタンス キーを取得します。</summary>
+        <value>インスタンス キーの識別子とそれに関連付けられたインスタンス キーのビュー オブジェクトのディクショナリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceKeysConsistency">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceValueConsistency InstanceKeysConsistency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.DurableInstancing.InstanceValueConsistency InstanceKeysConsistency" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceKeysConsistency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceValueConsistency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InstanceKeys プロパティの一貫性のステータスを取得します。</summary>
+        <value>インスタンス キーの一貫性の値です。 InstanceValueConsistency.None は、InstanceKeys プロパティが完全に作成されロックされたインスタンス キーのセットを保持することを示します (ただし、各キーのメタデータとは限りません)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; InstanceMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; InstanceMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトとして、インスタンスのメタデータを取得します。</summary>
+        <value>インスタンスのメタデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceMetadataConsistency">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceValueConsistency InstanceMetadataConsistency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.DurableInstancing.InstanceValueConsistency InstanceMetadataConsistency" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceMetadataConsistency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceValueConsistency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InstanceMetadata プロパティの一貫性のステータスを取得します。</summary>
+        <value>インスタンス メタデータの一貫性。 InstanceValueConsistency.None は、InstanceMetadata プロパティが完全に作成されロックされたインスタンス メタデータのセットを保持することを示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceOwner">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceOwner InstanceOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.DurableInstancing.InstanceOwner InstanceOwner" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceOwner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスの所有者を取得します。</summary>
+        <value>インスタンスの所有者。 関連付けられたインスタンス ハンドルがインスタンス所有者にバインドされていない場合は、null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceOwnerMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; InstanceOwnerMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; InstanceOwnerMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceOwnerMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前と値のディクショナリとして、インスタンス所有者のメタデータを取得します。</summary>
+        <value>インスタンス所有者のメタデータを含んでいるディクショナリです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceOwnerMetadataConsistency">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceValueConsistency InstanceOwnerMetadataConsistency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.DurableInstancing.InstanceValueConsistency InstanceOwnerMetadataConsistency" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceOwnerMetadataConsistency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceValueConsistency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InstanceOwnerMetadata プロパティの一貫性のステータスを取得します。</summary>
+        <value>インスタンス所有者のメタデータの一貫性。  関連付けられたインスタンス ハンドルがインスタンス所有者にバインドされていない場合は、null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceState">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceState InstanceState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.DurableInstancing.InstanceState InstanceState" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス (不明、初期化されていない、初期化済み、または完了) の状態を取得します。</summary>
+        <value>インスタンスの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceStoreQueryResults">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Runtime.DurableInstancing.InstanceStoreQueryResult&gt; InstanceStoreQueryResults { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Runtime.DurableInstancing.InstanceStoreQueryResult&gt; InstanceStoreQueryResults" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.InstanceStoreQueryResults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Runtime.DurableInstancing.InstanceStoreQueryResult&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Runtime.DurableInstancing.InstanceStoreQueryResult" /> オブジェクトのコレクションを取得します。 コレクションは、関連付けられているインスタンス ハンドルに対してコマンドが実行されるたびに自動的に空の状態にリセットされます。</summary>
+        <value><see cref="T:System.Runtime.DurableInstancing.InstanceStoreQueryResult" /> オブジェクトのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoundToInstance">
+      <MemberSignature Language="C#" Value="public bool IsBoundToInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBoundToInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.IsBoundToInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたインスタンス ハンドルが、インスタンスにバインドされているかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />関連付けられたインスタンス ハンドルにバインド インスタンスです。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoundToInstanceOwner">
+      <MemberSignature Language="C#" Value="public bool IsBoundToInstanceOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBoundToInstanceOwner" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.IsBoundToInstanceOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたインスタンス ハンドルが、インスタンス所有者にバインドされているかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />関連付けられたインスタンス ハンドルにバインド インスタンスの所有者です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoundToLock">
+      <MemberSignature Language="C#" Value="public bool IsBoundToLock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBoundToLock" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstanceView.IsBoundToLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたインスタンス ハンドルが、インスタンス ロックにバインドされているかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />関連付けられたインスタンスを処理する場合は、インスタンス ロックにバインドされてそれ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

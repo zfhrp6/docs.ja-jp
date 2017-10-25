@@ -1,0 +1,56 @@
+<Type Name="IMessageFilter" FullName="System.Windows.Forms.IMessageFilter">
+  <TypeSignature Language="C#" Value="public interface IMessageFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessageFilter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IMessageFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージのフィルター インターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、コントロールまたはフォームにディスパッチされる前にメッセージをキャプチャするアプリケーションを使用します。  
+  
+ 実装するクラス、<xref:System.Windows.Forms.IMessageFilter>インターフェイスは、メッセージをフィルター処理またはフォームまたはコントロールにメッセージがディスパッチされる前に、その他の操作を実行するアプリケーションのメッセージ ポンプに追加できます。 アプリケーションのメッセージ ポンプにメッセージ フィルターを追加するには、使用、<xref:System.Windows.Forms.Application.AddMessageFilter%2A>メソッドで、<xref:System.Windows.Forms.Application>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PreFilterMessage">
+      <MemberSignature Language="C#" Value="public bool PreFilterMessage (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool PreFilterMessage(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">ディスパッチされるメッセージ。 このメッセージは変更できません。</param>
+        <summary>メッセージがディスパッチされる前に、フィルターで排除します。</summary>
+        <returns>
+          <see langword="true" /> の場合、メッセージはフィルターで排除され、ディスパッチされません。<see langword="false" /> の場合、メッセージは次のフィルターまたはコントロールに継続されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>コントロールまたはフォームにディスパッチされる前に、メッセージをフィルター処理します。 例については、停止、<xref:System.Windows.Forms.Control.Click>のイベント、<xref:System.Windows.Forms.Button>コントロールを実装するコントロールにディスパッチするから、<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>メソッドと戻り値、`true`ときの値、<xref:System.Windows.Forms.Control.Click>メッセージが発生します。 このメソッドを使用して、メッセージがディスパッチされる前に実行する必要があるコードの作業を行うことができますも。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">必要があります<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />リンク時に許可します。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

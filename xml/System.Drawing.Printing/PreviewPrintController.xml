@@ -1,0 +1,261 @@
+<Type Name="PreviewPrintController" FullName="System.Drawing.Printing.PreviewPrintController">
+  <TypeSignature Language="C#" Value="public class PreviewPrintController : System.Drawing.Printing.PrintController" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PreviewPrintController extends System.Drawing.Printing.PrintController" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PreviewPrintController" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Printing.PrintController</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ドキュメントを一連のイメージとして画面に表示するプリント コントローラーを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する印刷プレビュー機能を使用するには、通常、<xref:System.Windows.Forms.PrintPreviewControl>または<xref:System.Windows.Forms.PrintPreviewDialog>クラスし、設定、<xref:System.Windows.Forms.PrintPreviewControl.Document%2A>プロパティです。 <xref:System.Drawing.Printing.PreviewPrintController>によって使用される、<xref:System.Windows.Forms.PrintPreviewControl>と<xref:System.Windows.Forms.PrintPreviewDialog>クラスを使用できますが、<xref:System.Drawing.Printing.PreviewPrintController>独自の印刷プレビュー ウィンドウの表示を管理する場合。  
+  
+ 使用する場合、<xref:System.Windows.Forms.PrintPreviewControl>または<xref:System.Windows.Forms.PrintPreviewDialog>、<xref:System.Drawing.Printing.PreviewPrintController>設定、<xref:System.Drawing.Printing.PrintController>関連付けられている<xref:System.Windows.Forms.PrintPreviewControl.Document%2A>に、<xref:System.Windows.Forms.PrintControllerWithStatusDialog>印刷のプレビューを実行し、設定、<xref:System.Drawing.Printing.PrintController>元の値に戻します。  
+  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷プレビュー期間中に表示されます。 後に<xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>が呼び出されたが、<xref:System.Drawing.Printing.PreviewPrintController.OnStartPage%2A>メソッドのセット、<xref:System.Drawing.Graphics>単一ページの画像にします。 <xref:System.Drawing.Printing.PreviewPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>中、<xref:System.Drawing.Printing.PreviewPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PreviewPrintController ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PreviewPrintController.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.PreviewPrintController" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreviewPageInfo">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PreviewPageInfo[] GetPreviewPageInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Printing.PreviewPageInfo[] GetPreviewPageInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PreviewPrintController.GetPreviewPageInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PreviewPageInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドキュメントのページを一連のイメージとしてキャプチャします。</summary>
+        <returns>型の配列<see cref="T:System.Drawing.Printing.PreviewPageInfo" />のページを含む、<see cref="T:System.Drawing.Printing.PrintDocument" />を一連のイメージとして。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Printing.PrintDocument>画像の表現に含まれている、<xref:System.Drawing.Printing.PreviewPageInfo>独自の印刷プレビューの形式を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPreview">
+      <MemberSignature Language="C#" Value="public override bool IsPreview { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPreview" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PreviewPrintController.IsPreview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコント ローラーを使用して、印刷プレビューをするかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPage">
+      <MemberSignature Language="C#" Value="public override void OnEndPage (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnEndPage(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PreviewPrintController.OnEndPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />プレビュー中のドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintPageEventArgs" />印刷ドキュメントのページをプレビューする方法に関するデータを格納します。</param>
+        <summary>印刷ドキュメントのページをプレビューする時点とプレビュー方法を決定する制御シーケンスを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnEndPage%2A>直後後に呼び出される、<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 内部例外がスローされた場合、<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント、 <xref:System.Drawing.Printing.PrintDocument>、このメソッドは呼び出されません。  
+  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷プレビュー期間中に表示されます。 後に<xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>が呼び出されたが、<xref:System.Drawing.Printing.PreviewPrintController.OnStartPage%2A>メソッドのセット、<xref:System.Drawing.Graphics>単一ページの画像にします。 <xref:System.Drawing.Printing.PreviewPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>中、<xref:System.Drawing.Printing.PreviewPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPrint">
+      <MemberSignature Language="C#" Value="public override void OnEndPrint (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnEndPrint(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PreviewPrintController.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />プレビュー中のドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintEventArgs" />印刷ドキュメントをプレビューする方法に関するデータを格納します。</param>
+        <summary>印刷ドキュメントをプレビューする時点とプレビュー方法を決定する制御シーケンスを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直後後にこのメソッドが呼び出される<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.EndPrint>イベント。 印刷プレビューの処理中にキャッチされない例外がスローされた場合でも<xref:System.Drawing.Printing.PreviewPrintController.OnEndPrint%2A>と呼びます。  
+  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷プレビュー期間中に表示されます。 後に<xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>が呼び出されたが、<xref:System.Drawing.Printing.PreviewPrintController.OnStartPage%2A>メソッドのセット、<xref:System.Drawing.Graphics>単一ページの画像にします。 <xref:System.Drawing.Printing.PreviewPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>中、<xref:System.Drawing.Printing.PreviewPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Graphics OnStartPage (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Drawing.Graphics OnStartPage(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PreviewPrintController.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />プレビュー中のドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintPageEventArgs" />印刷ドキュメントのページをプレビューする方法に関するデータを格納します。 最初に、<see cref="P:System.Drawing.Printing.PrintPageEventArgs.Graphics" />このパラメーターのプロパティになります<see langword="null" />です。 このメソッドによって返された値は、このプロパティを設定するために使用されます。</param>
+        <summary>印刷ドキュメントのページをプレビューする時点とプレビュー方法を決定する制御シーケンスを開始します。</summary>
+        <returns>A<see cref="T:System.Drawing.Graphics" />からページを表す、<see cref="T:System.Drawing.Printing.PrintDocument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPage%2A>直前に呼び出されます<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。  
+  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷プレビュー期間中に表示されます。 後に<xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>が呼び出されたが、<xref:System.Drawing.Printing.PreviewPrintController.OnStartPage%2A>メソッドのセット、<xref:System.Drawing.Graphics>単一ページの画像にします。 <xref:System.Drawing.Printing.PreviewPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>中、<xref:System.Drawing.Printing.PreviewPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+> [!NOTE]
+>  アンチ エイリアス、グレーとも呼ばれるには、外観をよく印刷プレビューでは、スケーリング、によってできます。 ただしのアンチエイリアシングの使用できる速度は遅くレンダリングします。 アンチ エイリアス処理の詳細については、次を参照してください。、<xref:System.Drawing.Printing.PreviewPrintController.UseAntiAlias%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPrint">
+      <MemberSignature Language="C#" Value="public override void OnStartPrint (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnStartPrint(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PreviewPrintController.OnStartPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />プレビュー中のドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintEventArgs" />文書を印刷する方法に関するデータを格納します。</param>
+        <summary>印刷ドキュメントをプレビューする時点とプレビュー方法を決定する制御シーケンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>直後後に呼び出される<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.BeginPrint>イベント。  
+  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷プレビュー期間中に表示されます。 後に<xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>が呼び出されたが、<xref:System.Drawing.Printing.PreviewPrintController.OnStartPage%2A>メソッドのセット、<xref:System.Drawing.Graphics>単一ページの画像にします。 <xref:System.Drawing.Printing.PreviewPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>中、<xref:System.Drawing.Printing.PreviewPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ <xref:System.Drawing.Printing.PreviewPrintController.OnStartPrint%2A>プリンターの設定が有効であることを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティは存在しません。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAntiAlias">
+      <MemberSignature Language="C#" Value="public virtual bool UseAntiAlias { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAntiAlias" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PreviewPrintController.UseAntiAlias" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷プレビューを表示するときに、アンチエイリアスを使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />印刷プレビューでのアンチエイリアシングを使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンチエイリアシング、グレーとも呼ばれますスケーリングを使用していくつかのグレースケールの曲線およびテキストで斜線の領域の周囲のテキストの外観を滑らかになります。  
+  
+> [!NOTE]
+>  印刷プレビューは、アンチエイリアシングを使用して外観をよく、レンダリング速度は遅くなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

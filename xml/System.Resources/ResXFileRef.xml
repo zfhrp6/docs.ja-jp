@@ -1,0 +1,184 @@
+<Type Name="ResXFileRef" FullName="System.Resources.ResXFileRef">
+  <TypeSignature Language="C#" Value="public class ResXFileRef" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ResXFileRef extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.ResXFileRef" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Resources.ResXFileRef/Converter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>外部リソースへのリンクを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResXFileRef>クラスは、XML リソース (.resx) ファイルにファイルへの参照を含めるために使用します。 A<xref:System.Resources.ResXFileRef>オブジェクトは、XML リソース (.resx) ファイル内の外部のリソースへのリンクを表します。 追加する、<xref:System.Resources.ResXFileRef>オブジェクトを呼び出すことによって、.resx ファイルに、<xref:System.Resources.ResXResourceWriter.AddResource%28System.Resources.ResXDataNode%29?displayProperty=nameWithType>メソッドです。  
+  
+ 種類は、.resx ファイル内のデータ エントリ、内<xref:System.Resources.ResXFileRef>値はディスク上のパスの場所。 リソース マネージャーが、オブジェクトを逆シリアル化時に、<xref:System.Resources.ResXFileRef>ファイルを取得する I/O を実行します。 .Resx ファイルの例を次に示します。  
+  
+```  
+<data name="iconclip" type="System.Resources.ResXFileRef, System.Windows.Forms">  
+ <value>lookout.bmp;System.Drawing.Bitmap, System.Drawing</value>  
+</data>  
+<data name="mailbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">  
+ <value>mailbackground.bmp;System.Drawing.Bitmap, System.Drawing</value>  
+</data>  
+<data name="xplogo" type="System.Resources.ResXFileRef, System.Windows.Forms">  
+ <value>xplogo.png;System.Drawing.Bitmap, System.Drawing</value>  
+</data>  
+```  
+  
+ 追加する、<xref:System.Resources.ResXFileRef>オブジェクト .resx ファイルにプログラムを呼び出す、<xref:System.Resources.ResXDataNode.%23ctor%28System.String%2CSystem.Resources.ResXFileRef%29?displayProperty=nameWithType>をインスタンス化するコンス トラクター、<xref:System.Resources.ResXDataNode>オブジェクト。 これを渡す<xref:System.Resources.ResXDataNode>オブジェクトを<xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType>メソッドです。  
+  
+ .Resx ファイルをコンパイルするときに[Resgen.exe (リソース ファイル ジェネレーター)](~/docs/framework/tools/resgen-exe-resource-file-generator.md)、.resx ファイルに指定されたリソースには、結果のドキュメント リソース ファイルに埋め込まれています。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXFileRef (string fileName, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXFileRef.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">参照するファイル。</param>
+        <param name="typeName">参照されているリソースの種類。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Resources.ResXFileRef" />指定されたファイルを参照するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって参照される型、`typeName`パラメーターを受け取るパブリック コンス トラクターをサポートする必要があります、<xref:System.IO.Stream>オブジェクトをパラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> または <paramref name="typeName" /> が <see langword="null" /> です。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXFileRef (string fileName, string typeName, System.Text.Encoding textFileEncoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string typeName, class System.Text.Encoding textFileEncoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXFileRef.#ctor(System.String,System.String,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="textFileEncoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">参照するファイル。</param>
+        <param name="typeName">参照されているリソースの型名。</param>
+        <param name="textFileEncoding">参照先のファイルで使用するエンコーディング。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Resources.ResXFileRef" />指定されたファイルを参照するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって参照される型、`typeName`パラメーターを受け取るパブリック コンス トラクターをサポートする必要があります、<xref:System.IO.Stream>オブジェクトをパラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResXFileRef.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の指定されたファイル名を取得<see cref="Overload:System.Resources.ResXFileRef.#ctor" />コンス トラクターです。</summary>
+        <value>参照先のファイルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextFileEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding TextFileEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding TextFileEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResXFileRef.TextFileEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の指定されたエンコーディングを取得<see cref="Overload:System.Resources.ResXFileRef.#ctor" />コンス トラクターです。</summary>
+        <value>参照先のファイルで使用するエンコーディング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXFileRef.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のテキスト表現を取得<see cref="T:System.Resources.ResXFileRef" />オブジェクト。</summary>
+        <returns>現在の指定されたパラメーターの連結されたテキスト表現で構成される文字列<see cref="Overload:System.Resources.ResXFileRef.#ctor" />コンス トラクターです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResXFileRef.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の指定された型名を取得<see cref="Overload:System.Resources.ResXFileRef.#ctor" />コンス トラクターです。</summary>
+        <value>参照されているリソースの型名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,398 @@
+<Type Name="InputLanguageManager" FullName="System.Windows.Input.InputLanguageManager">
+  <TypeSignature Language="C#" Value="public sealed class InputLanguageManager : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InputLanguageManager extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputLanguageManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) の入力言語を管理するための機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その他の言語は、コントロール パネルの 地域と言語のオプションを使用して登録できます。 言語 タブの「テキスト サービスとの入力言語」を選択し、その他の言語を登録する「詳細」ボタンをクリックします。 次のダイアログ ボックスが表示されます。  
+  
+ ![テキスト サービスと入力言語ダイアログ ボックス。](~/add/media/tsf-dialog.PNG "テキスト サービスと入力言語ダイアログ。")  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputLanguageManager>の入力言語を設定する、<xref:System.Windows.Controls.TextBox>要素。  
+  
+ [!code-csharp[languageManager#1](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[languageManager#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AvailableInputLanguages">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable AvailableInputLanguages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable AvailableInputLanguages" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputLanguageManager.AvailableInputLanguages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在使用可能な入力言語の列挙子を取得します。</summary>
+        <value>現在使用可能な入力言語では、列挙子または**null**入力言語が利用できない場合。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputLanguageManager>を使用可能な入力言語を列挙します。  
+  
+ [!code-csharp[languageManager#1](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[languageManager#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.InputLanguageManager Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.InputLanguageManager Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputLanguageManager.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputLanguageManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストに関連付けられている入力言語マネージャーを取得します。</summary>
+        <value><see cref="T:System.Windows.Input.InputLanguageManager" />現在のコンテキストに関連付けられているオブジェクト。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputLanguageManager>現在のコンテキストに関連付けられている、言語マネージャーにアクセスします。  
+  
+ [!code-csharp[languageManager#1](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[languageManager#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentInputLanguage">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo CurrentInputLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo CurrentInputLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputLanguageManager.CurrentInputLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CultureInfoIetfLanguageTagConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の入力言語を設定します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />現在選択されている入力言語を表すオブジェクト。  このプロパティを設定しない場合があります**null**です。  
+  
+ 既定値は <see cref="P:System.Globalization.CultureInfo.InvariantCulture" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputLanguageManager>現在を取得する言語を入力します。  
+  
+ [!code-csharp[languageManager#3](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[languageManager#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたがときに発生する**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInputLanguage">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo GetInputLanguage (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo GetInputLanguage(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.GetInputLanguage(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CultureInfoIetfLanguageTagConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">入力言語を取得する依存関係オブジェクト。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputLanguageManager.InputLanguage" /> 添付プロパティの値を返します。</summary>
+        <returns>指定された依存関係オブジェクトの入力言語を表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputLanguageManager>の入力言語を取得する、<xref:System.Windows.Controls.TextBox>要素。  
+  
+ [!code-csharp[languageManager#1](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[languageManager#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRestoreInputLanguage">
+      <MemberSignature Language="C#" Value="public static bool GetRestoreInputLanguage (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetRestoreInputLanguage(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.GetRestoreInputLanguage(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を取得する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" />です。</param>
+        <summary>値を返します<see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <returns>現在の値<see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" />の指定した依存関係オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InputLanguageChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.InputLanguageEventHandler InputLanguageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.InputLanguageEventHandler InputLanguageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputLanguageManager.InputLanguageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputLanguageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力言語の変更が完了したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputLanguageChanging">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.InputLanguageEventHandler InputLanguageChanging;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.InputLanguageEventHandler InputLanguageChanging" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputLanguageManager.InputLanguageChanging" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputLanguageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力言語の変更が開始されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputLanguageProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty InputLanguageProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty InputLanguageProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputLanguageManager.InputLanguageProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputLanguageManager.InputLanguage" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterInputLanguageSource">
+      <MemberSignature Language="C#" Value="public void RegisterInputLanguageSource (System.Windows.Input.IInputLanguageSource inputLanguageSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterInputLanguageSource(class System.Windows.Input.IInputLanguageSource inputLanguageSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.RegisterInputLanguageSource(System.Windows.Input.IInputLanguageSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputLanguageSource" Type="System.Windows.Input.IInputLanguageSource" />
+      </Parameters>
+      <Docs>
+        <param name="inputLanguageSource">登録する入力言語を指定するオブジェクト。  このオブジェクトは <see cref="T:System.Windows.Input.IInputLanguageSource" /> インターフェイスを実装している必要があります。</param>
+        <summary>入力言語のソースを登録、<see cref="T:System.Windows.Input.InputLanguageManager" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="inputLanguageSource" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportInputLanguageChanged">
+      <MemberSignature Language="C#" Value="public void ReportInputLanguageChanged (System.Globalization.CultureInfo newLanguageId, System.Globalization.CultureInfo previousLanguageId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReportInputLanguageChanged(class System.Globalization.CultureInfo newLanguageId, class System.Globalization.CultureInfo previousLanguageId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.ReportInputLanguageChanged(System.Globalization.CultureInfo,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newLanguageId" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="previousLanguageId" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="newLanguageId">A<see cref="T:System.Globalization.CultureInfo" />新しい入力言語を表すオブジェクト。</param>
+        <param name="previousLanguageId">A<see cref="T:System.Globalization.CultureInfo" />以前入力言語を表すオブジェクト。</param>
+        <summary>入力言語の変更の完了を報告、<see cref="T:System.Windows.Input.InputLanguageManager" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="newLanguageId" />または<paramref name="previousLanguageId" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportInputLanguageChanging">
+      <MemberSignature Language="C#" Value="public bool ReportInputLanguageChanging (System.Globalization.CultureInfo newLanguageId, System.Globalization.CultureInfo previousLanguageId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ReportInputLanguageChanging(class System.Globalization.CultureInfo newLanguageId, class System.Globalization.CultureInfo previousLanguageId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.ReportInputLanguageChanging(System.Globalization.CultureInfo,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newLanguageId" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="previousLanguageId" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="newLanguageId">A<see cref="T:System.Globalization.CultureInfo" />新しい入力言語を表すオブジェクト。</param>
+        <param name="previousLanguageId">A<see cref="T:System.Globalization.CultureInfo" />以前入力言語を表すオブジェクト。</param>
+        <summary>入力言語の変更の開始を報告、<see cref="T:System.Windows.Input.InputLanguageManager" />です。</summary>
+        <returns>**true**受理、それ以外の入力言語の変更の報告をしたことを示す**false**です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="newLanguageId" />または<paramref name="previousLanguageId" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreInputLanguageProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RestoreInputLanguageProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RestoreInputLanguageProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputLanguageManager.RestoreInputLanguageProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetInputLanguage">
+      <MemberSignature Language="C#" Value="public static void SetInputLanguage (System.Windows.DependencyObject target, System.Globalization.CultureInfo inputLanguage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetInputLanguage(class System.Windows.DependencyObject target, class System.Globalization.CultureInfo inputLanguage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.SetInputLanguage(System.Windows.DependencyObject,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="inputLanguage" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputLanguageManager.InputLanguage" />添付プロパティ。</param>
+        <param name="inputLanguage"><see cref="P:System.Windows.Input.InputLanguageManager.InputLanguage" /> 添付プロパティの新しい値を表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputLanguageManager.InputLanguage" /> 添付プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputLanguageManager>の入力言語を設定する、<xref:System.Windows.Controls.TextBox>要素。  
+  
+ [!code-csharp[languageManager#1](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[languageManager#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRestoreInputLanguage">
+      <MemberSignature Language="C#" Value="public static void SetRestoreInputLanguage (System.Windows.DependencyObject target, bool restore);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetRestoreInputLanguage(class System.Windows.DependencyObject target, bool restore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageManager.SetRestoreInputLanguage(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="restore" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を設定する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" />です。</param>
+        <param name="restore"><see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" /> 添付プロパティの設定対象のブール値。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputLanguageManager.RestoreInputLanguage" /> 依存関係プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

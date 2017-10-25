@@ -1,0 +1,281 @@
+<Type Name="DashStyle" FullName="System.Windows.Media.DashStyle">
+  <TypeSignature Language="C#" Value="public sealed class DashStyle : System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DashStyle extends System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.DashStyle" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって適用される破線のシーケンスを表す、<see cref="T:System.Windows.Media.Pen" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.DashStyle.Dashes%2A>このクラスのプロパティの代替ダッシュと空白の長さをについて説明します。  コレクション内の値の倍数に関しては、<xref:System.Windows.Media.Pen.Thickness%2A>の<xref:System.Windows.Media.Pen>です。  たとえば、配列の`1`、`2`ダッシュの長さを指定します (`1` * <xref:System.Windows.Media.Pen.Thickness%2A>) の長さの時間差を続けて (`2` * <xref:System.Windows.Media.Pen.Thickness%2A>)。  
+  
+> [!NOTE]
+>  スタイルが描画される破線の実際の長さが依存して<xref:System.Windows.Media.Pen.DashCap%2A>ダッシュ ボードの先頭と末尾に追加されています。 既定値<xref:System.Windows.Media.Pen.DashCap%2A>値を<xref:System.Windows.Media.Pen>は<xref:System.Windows.Media.PenLineCap.Square>します。 これにより、ペンのストロークの各端の上に追加される線の太さの半分をある端点キャップ。 (を参照してください<xref:System.Windows.Media.PenLineCap>例についてはします)。そのための配列を指定する場合`0`、`2`および正方形<xref:System.Windows.Media.Pen.DashCap%2A>、実際のダッシュの長さになります (`0` * <xref:System.Windows.Media.Pen.Thickness%2A>) + (`2` * <xref:System.Windows.Media.Pen.DashCap%2A>)。  
+  
+ コレクション内の値の数が奇数の場合は、値が偶数の値を生成するために 1 回、繰り返されたいた場合と同様に解釈されます。  たとえば、コレクションを格納する`2`、`3`、`5`は解釈を含むコレクションと同じ`2`、`3`、`5`、`2`、`3`、`5`です。  
+  
+ 負の値、配列では、その絶対値として解釈されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.DashStyle>のプロパティ、<xref:System.Windows.Media.Pen>テキストの下の破線の行を作成します。  
+  
+ [!code-xaml[DrawingMiscSnippets_snip#DashStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DashStyleExample.xaml#dashstyle)]  
+  
+ 次の図は、前の例の生成を示します。  
+  
+ ![下に破線が付いたテキスト。](~/add/media/graphicsdashstyle.gif "の下に破線が付いたテキスト。")  
+  
+ 次の図は、下線に適用される異なるダッシュ スタイルの例を示します。  
+  
+ ![いくつかの異なるダッシュ スタイルを示します。](~/add/media/graphicsdashstyles.gif "複数の異なるダッシュ スタイルを表示します。")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DashStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.DashStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DashStyle (System.Collections.Generic.IEnumerable&lt;double&gt; dashes, double offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;float64&gt; dashes, float64 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.#ctor(System.Collections.Generic.IEnumerable{System.Double},System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dashes" Type="System.Collections.Generic.IEnumerable&lt;System.Double&gt;" />
+        <Parameter Name="offset" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="dashes"><see cref="T:System.Windows.Media.DashStyle" /> の <see cref="P:System.Windows.Media.DashStyle.Dashes" />。</param>
+        <param name="offset"><see cref="T:System.Windows.Media.DashStyle" /> の <see cref="P:System.Windows.Media.DashStyle.Offset" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.DashStyle" /> と <see cref="P:System.Windows.Media.DashStyle.Dashes" /> を使用して、<see cref="P:System.Windows.Media.DashStyle.Offset" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DashStyle Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DashStyle Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DashStyle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.DashStyle" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ 依存関係プロパティをコピーするときに、このメソッドは、アニメーションやその現在の値ではありませんが、(解決が不要になった) リソース参照とデータ バインディングをコピーします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DashStyle CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DashStyle CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DashStyle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.DashStyle" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="false" />場合でも、ソースの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dashes">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DoubleCollection Dashes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DoubleCollection Dashes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DashStyle.Dashes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この破線のコレクションを取得または<see cref="T:System.Windows.Media.DashStyle" />です。</summary>
+        <value>破線のコレクションです。  既定値は空の <see cref="T:System.Windows.Media.DoubleCollection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションには、代替ダッシュと空白の長さがについて説明します。  コレクション内の値の倍数に関しては、<xref:System.Windows.Media.Pen.Thickness%2A>の<xref:System.Windows.Media.Pen>です。  たとえば、配列の`1`、`2`ダッシュの長さを指定します (`1` * <xref:System.Windows.Media.Pen.Thickness%2A>) の長さの時間差を続けて (`2` * <xref:System.Windows.Media.Pen.Thickness%2A>)。  
+  
+> [!NOTE]
+>  スタイルが描画される破線の実際の長さが依存して<xref:System.Windows.Media.Pen.DashCap%2A>ダッシュ ボードの先頭と末尾に追加されています。 既定値<xref:System.Windows.Media.Pen.DashCap%2A>値を<xref:System.Windows.Media.Pen>は<xref:System.Windows.Media.PenLineCap.Square>します。 これにより、ペンのストロークの各端の上に追加される線の太さの半分をある端点キャップ。 (を参照してください<xref:System.Windows.Media.PenLineCap>例についてはします)。そのための配列を指定する場合`0`、`2`および正方形<xref:System.Windows.Media.Pen.DashCap%2A>、実際のダッシュの長さになります (`0` * <xref:System.Windows.Media.Pen.Thickness%2A>) + (`2` * <xref:System.Windows.Media.Pen.DashCap%2A>)。  
+  
+ コレクション内の値の数が奇数の場合は、値が偶数の値を生成するために 1 回、繰り返されたいた場合と同様に解釈されます。  たとえば、コレクションを格納する`2`、`3`、`5`は解釈を含むコレクションと同じ`2`、`3`、`5`、`2`、`3`、`5`です。  
+  
+ 負の値、配列では、その絶対値として解釈されます。  
+  
+<a name="dependencyPropertyInfo_Dashes"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DashStyle.DashesProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.DashStyle>のプロパティ、<xref:System.Windows.Media.Pen>テキストの下の破線の行を作成します。  
+  
+ [!code-xaml[DrawingMiscSnippets_snip#DashStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DashStyleExample.xaml#dashstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DashesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DashesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DashesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DashStyle.DashesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DashStyle.Dashes" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public double Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DashStyle.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または線は開始破線の距離を設定します。</summary>
+        <value>破線シーケンスのオフセットです。  既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 破線の途中に解決されるオフセット値を使用することを強くお勧めします。  これにより、ほとんどのストロークの先頭し、末尾のスペースではなく破線の途中で。  
+  
+<a name="dependencyPropertyInfo_Offset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DashStyle.OffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DashStyle.OffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DashStyle.Offset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

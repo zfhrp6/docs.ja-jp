@@ -1,0 +1,91 @@
+<Type Name="CreateVisualBasicManifestResourceName" FullName="Microsoft.Build.Tasks.CreateVisualBasicManifestResourceName">
+  <TypeSignature Language="C#" Value="public class CreateVisualBasicManifestResourceName : Microsoft.Build.Tasks.CreateManifestResourceName" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CreateVisualBasicManifestResourceName extends Microsoft.Build.Tasks.CreateManifestResourceName" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.CreateVisualBasicManifestResourceName" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.CreateManifestResourceName</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したリソース ファイル名から Visual Basic スタイルのマニフェスト名を作成します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CreateVisualBasicManifestResourceName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.CreateVisualBasicManifestResourceName.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.CreateVisualBasicManifestResourceName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateManifestName">
+      <MemberSignature Language="C#" Value="protected override string CreateManifestName (string fileName, string linkFileName, string rootNamespace, string dependentUponFileName, System.IO.Stream binaryStream);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string CreateManifestName(string fileName, string linkFileName, string rootNamespace, string dependentUponFileName, class System.IO.Stream binaryStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.CreateVisualBasicManifestResourceName.CreateManifestName(System.String,System.String,System.String,System.String,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="linkFileName" Type="System.String" />
+        <Parameter Name="rootNamespace" Type="System.String" />
+        <Parameter Name="dependentUponFileName" Type="System.String" />
+        <Parameter Name="binaryStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] マニフェスト名の作成元のリソース ファイルの名前。</param>
+        <param name="linkFileName">リンク ファイルの名前。</param>
+        <param name="rootNamespace">通常はプロジェクト ファイルから取得される、リソース ファイルのルート名前空間。 <see langword="null" /> でもかまいません。</param>
+        <param name="dependentUponFileName">リソース ファイルの親のファイル名 (通常は .vb ファイル)。 <see langword="null" /> でもかまいません。</param>
+        <param name="binaryStream">ファイル コンテンツのバイナリ ストリーム。 <see langword="null" /> でもかまいません。</param>
+        <summary>返します、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]-指定したリソース ファイルに対応するスタイルのマニフェスト リソース名。</summary>
+        <returns>指定したリソース ファイルに対応するマニフェスト リソース名。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsSourceFile">
+      <MemberSignature Language="C#" Value="protected override bool IsSourceFile (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsSourceFile(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.CreateVisualBasicManifestResourceName.IsSourceFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">検査するファイルの名前。</param>
+        <summary>指定したファイルがあるかを示す、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ソース ファイルです。</summary>
+        <returns>
+          <see langword="true" />指定したファイルがある場合、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ソース ファイルです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

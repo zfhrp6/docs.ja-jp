@@ -1,0 +1,271 @@
+<Type Name="StronglyTypedResourceBuilder" FullName="System.Resources.Tools.StronglyTypedResourceBuilder">
+  <TypeSignature Language="C#" Value="public static class StronglyTypedResourceBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit StronglyTypedResourceBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.Tools.StronglyTypedResourceBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>厳密に型指定されたリソースのサポートを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、リソースは、アプリケーション内のコンテンツからコードを分離します。 これらのリソースの作成とでは、ローカライズ可能なアプリケーションの開発も容易にします。 .NET Framework のリソースは通常を使用して消費、<xref:System.Resources.ResourceManager>クラスは、実行時にカルチャ固有のリソースへのアクセスを提供するメソッドが含まれています。 作成して、リソースを消費に関する詳細については、次を参照してください。[デスクトップ アプリでのリソース](http://msdn.microsoft.com/library/8ad495d4-2941-40cf-bf64-e82e85825890)です。  
+  
+ 厳密に型指定されたリソースのサポートは読み取り専用の静的セットが含まれているクラスを作成してリソースへのアクセスをカプセル化するコンパイル時の機能 (`get`) プロパティです。 これにより、呼び出し元ではなくリソースを消費する別の方法、<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>と<xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 厳密に型指定されたリソースのサポートの基本的な機能がによって提供される、<xref:System.Resources.Tools.StronglyTypedResourceBuilder>クラス (だけでなく`/str`コマンド ライン オプションに、 [Resgen.exe (リソース ファイル ジェネレーター)](~/docs/framework/tools/resgen-exe-resource-file-generator.md))。 出力、<xref:System.Resources.Tools.StronglyTypedResourceBuilder.Create%2A>メソッドは、入力パラメーターで参照されているリソースと一致する厳密に型指定のプロパティを含むクラスです。 このクラスは、処理されたファイルで使用可能なリソースへの読み取り専用のアクセスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例には、という名前のクラスが生成されます`DemoResources`(この例のソース コード) に応じて c# または Visual Basic で記述されました。 このクラスは、`DemoApp`名前空間とは、ロゴのビットマップと、アプリケーションの名前を返すプロパティがあります。 呼び出しの例、`CreateResourceFile`必要 .resw ファイルを作成する方法、Logo.bmp をという名前のビットマップ ファイルに、例の現在のディレクトリにある必要があります。 コード例では、次のリソース ファイルは、示す demo.resx という名前を使用します。  
+  
+ [!code-csharp[System.Resources.Tools.StronglyTypedResourceBuilder.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.tools.stronglytypedresourcebuilder.class/cs/example1.cs#1)]
+ [!code-vb[System.Resources.Tools.StronglyTypedResourceBuilder.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.tools.stronglytypedresourcebuilder.class/vb/example1.vb#1)]  
+  
+ アプリケーション コードからクラスを使用には、次のように。  
+  
+ [!code-csharp[System.Resources.Tools.StronglyTypedResourceBuilder.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.tools.stronglytypedresourcebuilder.class/cs/demoresources.cs#2)]
+ [!code-vb[System.Resources.Tools.StronglyTypedResourceBuilder.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.tools.stronglytypedresourcebuilder.class/vb/demoresources.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.CodeCompileUnit Create (System.Collections.IDictionary resourceList, string baseName, string generatedCodeNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, out string[] unmatchable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.CodeCompileUnit Create(class System.Collections.IDictionary resourceList, string baseName, string generatedCodeNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, [out] string[]&amp; unmatchable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.Tools.StronglyTypedResourceBuilder.Create(System.Collections.IDictionary,System.String,System.String,System.CodeDom.Compiler.CodeDomProvider,System.Boolean,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceList" Type="System.Collections.IDictionary" />
+        <Parameter Name="baseName" Type="System.String" />
+        <Parameter Name="generatedCodeNamespace" Type="System.String" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="internalClass" Type="System.Boolean" />
+        <Parameter Name="unmatchable" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="resourceList"><see cref="T:System.Collections.IDictionary" />各ディクショナリ エントリのキー/値ペアがリソースの名前とリソースの値をコレクション。</param>
+        <param name="baseName">生成するクラスの名前。</param>
+        <param name="generatedCodeNamespace">生成するクラスの名前空間。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスを生成する言語を提供するクラス。</param>
+        <param name="internalClass">
+          <see langword="true" />内部クラスを生成するには<see langword="false" />パブリック クラスを生成します。</param>
+        <param name="unmatchable">プロパティを生成できない各リソース名が含まれる配列。 通常、プロパティが生成できないのは、リソース名が有効な識別子ではないためです。</param>
+        <summary>指定されたコレクションで参照されたリソースと一致する、厳密に型指定されたプロパティが含まれるクラス ファイルを生成します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />コンテナーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Resources.Tools.StronglyTypedResourceBuilder.Create%2A>に含まれているリソースにアクセスする厳密に型指定された、読み取り専用のラッパーを提供するクラスを生成する方法を`resourceList`パラメーター。  
+  
+ <xref:System.Resources.Tools.StronglyTypedResourceBuilder>クラスは、文字「$」で始まるすべてのリソース名を無視または">>"です。 リソース名"Culture"と"ResourceManager"は、無効な識別子です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceList" />、<paramref name="basename" />、または <paramref name="codeProvider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">リソース ノード名が内のキーと一致しません<paramref name="resourceList" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.CodeCompileUnit Create (string resxFile, string baseName, string generatedCodeNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, out string[] unmatchable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.CodeCompileUnit Create(string resxFile, string baseName, string generatedCodeNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, [out] string[]&amp; unmatchable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.Tools.StronglyTypedResourceBuilder.Create(System.String,System.String,System.String,System.CodeDom.Compiler.CodeDomProvider,System.Boolean,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resxFile" Type="System.String" />
+        <Parameter Name="baseName" Type="System.String" />
+        <Parameter Name="generatedCodeNamespace" Type="System.String" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="internalClass" Type="System.Boolean" />
+        <Parameter Name="unmatchable" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="resxFile">入力として使用される .resx ファイルの名前。</param>
+        <param name="baseName">生成するクラスの名前。</param>
+        <param name="generatedCodeNamespace">生成するクラスの名前空間。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスを生成する言語を提供するクラス。</param>
+        <param name="internalClass">
+          <see langword="true" />内部クラスを生成するには<see langword="false" />パブリック クラスを生成します。</param>
+        <param name="unmatchable">A<see cref="T:System.String" />プロパティを生成できない各リソース名を格納する配列。 通常、プロパティが生成できないのは、リソース名が有効な識別子ではないためです。</param>
+        <summary>指定された .resx ファイル内のリソースに一致する厳密に型指定のプロパティを含むクラス ファイルを生成します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />コンテナーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Resources.Tools.StronglyTypedResourceBuilder.Create%2A>に含まれているリソースへの厳密に型指定された、読み取り専用のアクセスを提供するクラスを生成する方法を`resxFile`パラメーター。  
+  
+ <xref:System.Resources.Tools.StronglyTypedResourceBuilder>クラスは、文字「$」で始まるすべてのリソース名を無視または">>"です。 リソース名"Culture"と"ResourceManager"は、無効な識別子です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="basename" /> または <paramref name="codeProvider" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.CodeCompileUnit Create (System.Collections.IDictionary resourceList, string baseName, string generatedCodeNamespace, string resourcesNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, out string[] unmatchable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.CodeCompileUnit Create(class System.Collections.IDictionary resourceList, string baseName, string generatedCodeNamespace, string resourcesNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, [out] string[]&amp; unmatchable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.Tools.StronglyTypedResourceBuilder.Create(System.Collections.IDictionary,System.String,System.String,System.String,System.CodeDom.Compiler.CodeDomProvider,System.Boolean,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceList" Type="System.Collections.IDictionary" />
+        <Parameter Name="baseName" Type="System.String" />
+        <Parameter Name="generatedCodeNamespace" Type="System.String" />
+        <Parameter Name="resourcesNamespace" Type="System.String" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="internalClass" Type="System.Boolean" />
+        <Parameter Name="unmatchable" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="resourceList"><see cref="T:System.Collections.IDictionary" />各ディクショナリ エントリのキー/値ペアがリソースの名前とリソースの値をコレクション。</param>
+        <param name="baseName">生成するクラスの名前。</param>
+        <param name="generatedCodeNamespace">生成するクラスの名前空間。</param>
+        <param name="resourcesNamespace">生成するリソースの名前空間。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスを生成する言語を提供するオブジェクト。</param>
+        <param name="internalClass">
+          <see langword="true" />内部クラスを生成するには<see langword="false" />パブリック クラスを生成します。</param>
+        <param name="unmatchable">A<see cref="T:System.String" />プロパティを生成できない各リソース名を格納する配列。 通常、プロパティが生成できないのは、リソース名が有効な識別子ではないためです。</param>
+        <summary>指定されたコレクションで参照されたリソースと一致する、厳密に型指定されたプロパティが含まれるクラス ファイルを生成します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />コンテナーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードでは、使用することができます、`resourcesNamespace`パラメーターを生成されたリソースの名前空間を指定します。 この場合、生成されたコードは次のとおりです。  
+  
+```  
+System.Resources.ResourceManager rm = new System.Resources.ResourceManager("<resourceNamespace>.<baseName>",typeof(baseName).Assembly);  
+```  
+  
+ ほとんどの場合は、アプリケーション コードからこのメソッドを呼び出す必要はありません。  
+  
+ <xref:System.Resources.Tools.StronglyTypedResourceBuilder>クラスは、文字「$」で始まるすべてのリソース名を無視または">>"です。 リソース名"Culture"と"ResourceManager"は、無効な識別子です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceList" />、<paramref name="basename" />、または <paramref name="codeProvider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">リソース ノード名が内のキーと一致しません<paramref name="resourceList" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.CodeCompileUnit Create (string resxFile, string baseName, string generatedCodeNamespace, string resourcesNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, out string[] unmatchable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.CodeCompileUnit Create(string resxFile, string baseName, string generatedCodeNamespace, string resourcesNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, bool internalClass, [out] string[]&amp; unmatchable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.Tools.StronglyTypedResourceBuilder.Create(System.String,System.String,System.String,System.String,System.CodeDom.Compiler.CodeDomProvider,System.Boolean,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resxFile" Type="System.String" />
+        <Parameter Name="baseName" Type="System.String" />
+        <Parameter Name="generatedCodeNamespace" Type="System.String" />
+        <Parameter Name="resourcesNamespace" Type="System.String" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="internalClass" Type="System.Boolean" />
+        <Parameter Name="unmatchable" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="resxFile">入力として使用される .resx ファイルの名前。</param>
+        <param name="baseName">生成するクラスの名前。</param>
+        <param name="generatedCodeNamespace">生成するクラスの名前空間。</param>
+        <param name="resourcesNamespace">生成するリソースの名前空間。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスを生成する言語を提供するクラス。</param>
+        <param name="internalClass">
+          <see langword="true" />内部クラスを生成するには<see langword="false" />パブリック クラスを生成します。</param>
+        <param name="unmatchable">A<see cref="T:System.String" />プロパティを生成できない各リソース名を格納する配列。 通常、プロパティが生成できないのは、リソース名が有効な識別子ではないためです。</param>
+        <summary>指定された .resx ファイル内のリソースに一致する厳密に型指定のプロパティを含むクラス ファイルを生成します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />コンテナーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Resources.Tools.StronglyTypedResourceBuilder.Create%2A>に含まれているリソースへの厳密に型指定された、読み取り専用のアクセスを提供するクラスを生成する方法を`resxFile`パラメーター。  
+  
+ <xref:System.Resources.Tools.StronglyTypedResourceBuilder>クラスは、文字「$」で始まるすべてのリソース名を無視または">>"です。 リソース名"Culture"と"ResourceManager"は、無効な識別子です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="basename" /> または <paramref name="codeProvider" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyResourceName">
+      <MemberSignature Language="C#" Value="public static string VerifyResourceName (string key, System.CodeDom.Compiler.CodeDomProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string VerifyResourceName(string key, class System.CodeDom.Compiler.CodeDomProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.Tools.StronglyTypedResourceBuilder.VerifyResourceName(System.String,System.CodeDom.Compiler.CodeDomProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="provider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+      </Parameters>
+      <Docs>
+        <param name="key">検証し、必要に応じて、有効なリソース名に変換する文字列。</param>
+        <param name="provider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />を使用する対象の言語を指定するオブジェクト。</param>
+        <summary>指定した入力文字列とコード プロバイダーに基づく有効なリソース文字列を生成します。</summary>
+        <returns>有効なリソース名から派生した、<paramref name="key" />パラメーター。 無効なトークンは置き換えられますアンダー スコア (_) 文字、または<see langword="null" />かどうか、派生まだ文字を含む文字列が無効で指定された言語に従って、<paramref name="provider" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`key`文字の有効な文字列をパラメーターには、その文字列が返されます。 場合、`key`パラメーターが無効な文字列か、無効な文字を含む文字列、<xref:System.Resources.Tools.StronglyTypedResourceBuilder.VerifyResourceName%2A>メソッドに基づく有効な文字列を生成しようとしました。、`key`と`provider`パラメーター。 文字列が返されること、有効な文字列を生成することができる場合それ以外の場合、`null`が返されます。  
+  
+ 場合、`key`パラメーターが空の文字列 ("")、1 つのアンダー スコア文字 (_) で構成される文字列が返されます。 場合、`key`パラメーターが空の文字列ではない、<xref:System.Resources.Tools.StronglyTypedResourceBuilder.VerifyResourceName%2A>メソッドで指定した言語に基づいて無効なトークンのセットを文字列内の各文字を比較し、`provider`パラメーター。 文字列に無効な文字はアンダー スコア文字に置き換えられます。 置き換えられますアンダー スコア文字は次のとおりです。  
+  
+ '' (領域)、U +0 00A0 (改行なしスペース) ' です '。(ピリオド) '、' (コンマ)、';'(semicolon), '&#124;', '~', '@', '#', '%', '^', '&', '*', '+', '-', '/', '\\', '\<', '>', '?', '[', ']', '(', ')', '{', '}', '"' (quote), ''' (apostrophe), ':', and '!'.  
+  
+> [!NOTE]
+>  厳密に型指定されたリソースは、言語のキーワードの使用を許可しない (など`if`、`for`など) としてリソース キー名。 ただし、<xref:System.CodeDom>デザイン パターンは、アンダー スコア文字でキーワードを付けることで言語のキーワードの使用を許可します。 <xref:System.Resources.Tools.StronglyTypedResourceBuilder.VerifyResourceName%2A>メソッドの呼び出し、<xref:System.CodeDom.Compiler.ICodeGenerator.CreateValidIdentifier%2A>この設計を適用するメソッド。 。 たとえば、リソース名を使用する場合が言語のキーワードと同じように`for`、として名前が表示されます`_for`で生成される厳密に型指定されたリソース クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> または <paramref name="provider" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

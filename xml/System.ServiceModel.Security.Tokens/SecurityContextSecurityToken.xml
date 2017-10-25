@@ -1,0 +1,571 @@
+<Type Name="SecurityContextSecurityToken" FullName="System.ServiceModel.Security.Tokens.SecurityContextSecurityToken">
+  <TypeSignature Language="C#" Value="public class SecurityContextSecurityToken : System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityContextSecurityToken extends System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityToken</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <summary>WS-SecureConversation 仕様で定義されたトークンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスには、キー マテリアルと、クライアントを表す認証情報が含まれています。 ユーザーは、それに使用する特定の暗号化アルゴリズムを選択します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextSecurityToken (System.Xml.UniqueId contextId, byte[] key, DateTime validFrom, DateTime validTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId, unsigned int8[] key, valuetype System.DateTime validFrom, valuetype System.DateTime validTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.#ctor(System.Xml.UniqueId,System.Byte[],System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="key">キーを表すバイト配列。</param>
+        <param name="validFrom">有効な開始時刻。</param>
+        <param name="validTo">有効期限。</param>
+        <summary><see cref="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextId` は、サービスによって発行されるすべてのセキュリティ コンテキスト トークン間で一意である必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextSecurityToken (System.Xml.UniqueId contextId, string id, byte[] key, DateTime validFrom, DateTime validTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId, string id, unsigned int8[] key, valuetype System.DateTime validFrom, valuetype System.DateTime validTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.#ctor(System.Xml.UniqueId,System.String,System.Byte[],System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="id">トークン ID。</param>
+        <param name="key">キーを表すバイト配列。</param>
+        <param name="validFrom">有効な開始時刻。</param>
+        <param name="validTo">有効期限。</param>
+        <summary><see cref="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextId` は、サービスによって発行されるすべてのセキュリティ コンテキスト トークン間で一意である必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextSecurityToken (System.Xml.UniqueId contextId, string id, byte[] key, DateTime validFrom, DateTime validTo, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId, string id, unsigned int8[] key, valuetype System.DateTime validFrom, valuetype System.DateTime validTo, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.#ctor(System.Xml.UniqueId,System.String,System.Byte[],System.DateTime,System.DateTime,System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Policy.IAuthorizationPolicy})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+        <Parameter Name="authorizationPolicies" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="id">トークン ID。</param>
+        <param name="key">キーを表すバイト配列。</param>
+        <param name="validFrom">有効な開始時刻。</param>
+        <param name="validTo">有効期限。</param>
+        <param name="authorizationPolicies">読み取り専用コレクション<see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />トークンの発行先のパーティを表すインスタンス。</param>
+        <summary><see cref="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextId` は、サービスによって発行されるすべてのセキュリティ コンテキスト トークン間で一意である必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextSecurityToken (System.Xml.UniqueId contextId, string id, byte[] key, DateTime validFrom, DateTime validTo, System.Xml.UniqueId keyGeneration, DateTime keyEffectiveTime, DateTime keyExpirationTime, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId, string id, unsigned int8[] key, valuetype System.DateTime validFrom, valuetype System.DateTime validTo, class System.Xml.UniqueId keyGeneration, valuetype System.DateTime keyEffectiveTime, valuetype System.DateTime keyExpirationTime, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.#ctor(System.Xml.UniqueId,System.String,System.Byte[],System.DateTime,System.DateTime,System.Xml.UniqueId,System.DateTime,System.DateTime,System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Policy.IAuthorizationPolicy})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+        <Parameter Name="keyGeneration" Type="System.Xml.UniqueId" />
+        <Parameter Name="keyEffectiveTime" Type="System.DateTime" />
+        <Parameter Name="keyExpirationTime" Type="System.DateTime" />
+        <Parameter Name="authorizationPolicies" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="id">トークン ID。</param>
+        <param name="key">キーを表すバイト配列。</param>
+        <param name="validFrom">有効な開始時刻。</param>
+        <param name="validTo">有効期限。</param>
+        <param name="keyGeneration">キー生成を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="keyEffectiveTime">キーの有効な開始時刻。</param>
+        <param name="keyExpirationTime">キーの有効期限。</param>
+        <param name="authorizationPolicies">読み取り専用コレクション<see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />トークンの発行先のパーティを表すインスタンス。</param>
+        <summary><see cref="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextId` は、サービスによって発行されるすべてのセキュリティ コンテキスト トークン間で一意である必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizationPolicies">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; AuthorizationPolicies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; AuthorizationPolicies" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.AuthorizationPolicies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンの承認ポリシーの読み取り専用のコレクションを取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" /> インスタンスの読み取り専用のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BootstrapMessageProperty">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityMessageProperty BootstrapMessageProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityMessageProperty BootstrapMessageProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.BootstrapMessageProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityMessageProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブートストラップ メッセージから抽出された <see cref="T:System.ServiceModel.Security.SecurityMessageProperty" /> を取得または設定します。</summary>
+        <value>セキュリティ メッセージ プロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanCreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanCreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.CanCreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">指定したキー識別句型。</typeparam>
+        <summary>指定したキー識別子句型を作成するかどうかを示します。</summary>
+        <returns>
+          指定したキー識別句型を作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextId">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId ContextId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId ContextId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.ContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト ID を取得します。</summary>
+        <value>コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCookieSecurityContextToken">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.Tokens.SecurityContextSecurityToken CreateCookieSecurityContextToken (System.Xml.UniqueId contextId, string id, byte[] key, DateTime validFrom, DateTime validTo, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies, System.ServiceModel.Security.SecurityStateEncoder securityStateEncoder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Security.Tokens.SecurityContextSecurityToken CreateCookieSecurityContextToken(class System.Xml.UniqueId contextId, string id, unsigned int8[] key, valuetype System.DateTime validFrom, valuetype System.DateTime validTo, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies, class System.ServiceModel.Security.SecurityStateEncoder securityStateEncoder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.CreateCookieSecurityContextToken(System.Xml.UniqueId,System.String,System.Byte[],System.DateTime,System.DateTime,System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Policy.IAuthorizationPolicy},System.ServiceModel.Security.SecurityStateEncoder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.SecurityContextSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+        <Parameter Name="authorizationPolicies" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;" />
+        <Parameter Name="securityStateEncoder" Type="System.ServiceModel.Security.SecurityStateEncoder" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="id">トークン ID。</param>
+        <param name="key">キーを表すバイト配列。</param>
+        <param name="validFrom">有効な開始時刻。</param>
+        <param name="validTo">有効期限。</param>
+        <param name="authorizationPolicies"><see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" /> インスタンスの読み取り専用のコレクション。</param>
+        <param name="securityStateEncoder">セキュリティ状態エンコーダー。</param>
+        <summary>セキュリティ コンテキスト トークン クッキーを作成します。</summary>
+        <returns>セキュリティ コンテキスト トークン クッキー</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCookieSecurityContextToken">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.Tokens.SecurityContextSecurityToken CreateCookieSecurityContextToken (System.Xml.UniqueId contextId, string id, byte[] key, DateTime validFrom, DateTime validTo, System.Xml.UniqueId keyGeneration, DateTime keyEffectiveTime, DateTime keyExpirationTime, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies, System.ServiceModel.Security.SecurityStateEncoder securityStateEncoder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Security.Tokens.SecurityContextSecurityToken CreateCookieSecurityContextToken(class System.Xml.UniqueId contextId, string id, unsigned int8[] key, valuetype System.DateTime validFrom, valuetype System.DateTime validTo, class System.Xml.UniqueId keyGeneration, valuetype System.DateTime keyEffectiveTime, valuetype System.DateTime keyExpirationTime, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; authorizationPolicies, class System.ServiceModel.Security.SecurityStateEncoder securityStateEncoder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.CreateCookieSecurityContextToken(System.Xml.UniqueId,System.String,System.Byte[],System.DateTime,System.DateTime,System.Xml.UniqueId,System.DateTime,System.DateTime,System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Policy.IAuthorizationPolicy},System.ServiceModel.Security.SecurityStateEncoder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.SecurityContextSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="key" Type="System.Byte[]" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+        <Parameter Name="keyGeneration" Type="System.Xml.UniqueId" />
+        <Parameter Name="keyEffectiveTime" Type="System.DateTime" />
+        <Parameter Name="keyExpirationTime" Type="System.DateTime" />
+        <Parameter Name="authorizationPolicies" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;" />
+        <Parameter Name="securityStateEncoder" Type="System.ServiceModel.Security.SecurityStateEncoder" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">コンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="id">トークン ID。</param>
+        <param name="key">キーを表すバイト配列。</param>
+        <param name="validFrom">有効な開始時刻。</param>
+        <param name="validTo">有効期限。</param>
+        <param name="keyGeneration">キー生成を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="keyEffectiveTime">キーの有効な開始時刻。</param>
+        <param name="keyExpirationTime">キーの有効期限。</param>
+        <param name="authorizationPolicies"><see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" /> インスタンスの読み取り専用のコレクション。</param>
+        <param name="securityStateEncoder">セキュリティ状態エンコーダー。</param>
+        <summary>セキュリティ コンテキスト トークン クッキーを作成します。</summary>
+        <returns>セキュリティ コンテキスト トークン クッキー</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T CreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T CreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.CreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">指定された型。</typeparam>
+        <summary>指定した型のキー識別句を作成します。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" /> 型にキャストされた <paramref name="T" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのこのインスタンスによって使用されているアンマネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このインターフェイスを実装するクラスのインスタンスが保持する、ファイル、ストリーム、ハンドルなどのアンマネージ リソースを閉じたり解放したりする場合に使用します。 通常、このメソッドは、オブジェクトが保持するリソースの解放や、オブジェクトの再利用の準備に関連付けられたすべてのタスクで使用されます。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.IDisposable.Dispose%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public override string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークン ID を取得します。</summary>
+        <value>トークン ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCookieMode">
+      <MemberSignature Language="C#" Value="public bool IsCookieMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCookieMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.IsCookieMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cookie の処理方法を指定するモード設定のセキュリティ コンテキスト トークン (SCT) が読み込まれたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クッキー モードの SCT は読み取り; の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyEffectiveTime">
+      <MemberSignature Language="C#" Value="public DateTime KeyEffectiveTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime KeyEffectiveTime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.KeyEffectiveTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの有効な開始時刻を取得します。</summary>
+        <value>キーの有効な開始時刻を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyExpirationTime">
+      <MemberSignature Language="C#" Value="public DateTime KeyExpirationTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime KeyExpirationTime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.KeyExpirationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの有効期限を取得します。</summary>
+        <value>キーの有効期限を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyGeneration">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId KeyGeneration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId KeyGeneration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.KeyGeneration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー生成を取得します。</summary>
+        <value>キー生成を表す <see cref="T:System.Xml.UniqueId" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で、 [!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)]、として、ネットワーク上でこのプロパティが生成されます、<`sc:Instance`> 要素。 以前のバージョンので、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、として出力されますが、<`sc:Generation`> 要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public override bool MatchesKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MatchesKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.MatchesKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>現在のトークンのキー識別句が指定したキー識別句と一致するかどうかを示します。</summary>
+        <returns>
+          現在のトークンのキー識別句が指定したキー識別句に一致する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.SecurityKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用のセキュリティ キーのコレクションを取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SecurityKey" /> インスタンスの読み取り専用のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトの現在のインスタンスのテキスト表現を生成します。</summary>
+        <returns>このオブジェクトの現在のインスタンスのテキスト表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public override DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンの有効開始時刻を取得します。</summary>
+        <value>トークンの有効な開始時刻を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidTo">
+      <MemberSignature Language="C#" Value="public override DateTime ValidTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidTo" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.ValidTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンの有効期限を取得します。</summary>
+        <value>トークンの有効期限を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,209 @@
+<Type Name="Executor" FullName="System.CodeDom.Compiler.Executor">
+  <TypeSignature Language="C#" Value="public static class Executor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Executor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.Executor" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイラを呼び出すためには、コマンド実行の関数を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから、通常、コンパイラを呼び出すために使用するメソッドのコレクションを提供する、<xref:System.CodeDom.Compiler.ICodeCompiler>実装します。  
+  
+> [!NOTE]
+>  このクラスには、クラス レベルのすべてのメンバーに適用されるリンク確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元に完全信頼アクセス許可があるない場合にスローされます。 詳細については、次を参照してください。[リンク確認要求](~/docs/framework/misc/link-demands.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="ExecWait">
+      <MemberSignature Language="C#" Value="public static void ExecWait (string cmd, System.CodeDom.Compiler.TempFileCollection tempFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExecWait(string cmd, class System.CodeDom.Compiler.TempFileCollection tempFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.Executor.ExecWait(System.String,System.CodeDom.Compiler.TempFileCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cmd" Type="System.String" />
+        <Parameter Name="tempFiles" Type="System.CodeDom.Compiler.TempFileCollection" />
+      </Parameters>
+      <Docs>
+        <param name="cmd">実行するコマンド。</param>
+        <param name="tempFiles">コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</param>
+        <summary>指定した一時ファイルを使用してコマンドを実行し、呼び出しが戻るのを待ちます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecWaitWithCapture">
+      <MemberSignature Language="C#" Value="public static int ExecWaitWithCapture (string cmd, System.CodeDom.Compiler.TempFileCollection tempFiles, ref string outputName, ref string errorName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ExecWaitWithCapture(string cmd, class System.CodeDom.Compiler.TempFileCollection tempFiles, string&amp; outputName, string&amp; errorName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.Executor.ExecWaitWithCapture(System.String,System.CodeDom.Compiler.TempFileCollection,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cmd" Type="System.String" />
+        <Parameter Name="tempFiles" Type="System.CodeDom.Compiler.TempFileCollection" />
+        <Parameter Name="outputName" Type="System.String&amp;" RefType="ref" />
+        <Parameter Name="errorName" Type="System.String&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="cmd">実行するコマンド。</param>
+        <param name="tempFiles">コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</param>
+        <param name="outputName">コンパイラのメッセージ出力を格納する文字列への参照。</param>
+        <param name="errorName">エラーか発生したエラーの名前を格納する文字列への参照。</param>
+        <summary>指定された一時ファイルを使用して、指定されたコマンドを実行し、コンパイラから出力とエラーの情報を格納すると、指定した文字列の戻るには、呼び出しを待機します。</summary>
+        <returns>コンパイラからの戻り値。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecWaitWithCapture">
+      <MemberSignature Language="C#" Value="public static int ExecWaitWithCapture (IntPtr userToken, string cmd, System.CodeDom.Compiler.TempFileCollection tempFiles, ref string outputName, ref string errorName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ExecWaitWithCapture(native int userToken, string cmd, class System.CodeDom.Compiler.TempFileCollection tempFiles, string&amp; outputName, string&amp; errorName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.Executor.ExecWaitWithCapture(System.IntPtr,System.String,System.CodeDom.Compiler.TempFileCollection,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userToken" Type="System.IntPtr" />
+        <Parameter Name="cmd" Type="System.String" />
+        <Parameter Name="tempFiles" Type="System.CodeDom.Compiler.TempFileCollection" />
+        <Parameter Name="outputName" Type="System.String&amp;" RefType="ref" />
+        <Parameter Name="errorName" Type="System.String&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="userToken">コンパイラ プロセスを開始するトークンです。</param>
+        <param name="cmd">実行するコマンド。</param>
+        <param name="tempFiles">コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</param>
+        <param name="outputName">コンパイラのメッセージ出力を格納する文字列への参照。</param>
+        <param name="errorName">エラーか発生したエラーの名前を格納する文字列への参照。</param>
+        <summary>指定した文字列で、コンパイラから出力とエラーの情報を格納するファイルを使用して、指定したユーザー トークンと一時的な呼び出しを待機戻るには、指定されたコマンドを実行します。</summary>
+        <returns>コンパイラからの戻り値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `userToken`パラメーターは、Win32 のセキュリティのアクセス トークンで起動するプロセスのセキュリティ コンテキストを示すです。 詳細については、Windows を参照してください。 `CreateProcessAsUser` MSDN のプラットフォーム SDK ドキュメントのメソッドのドキュメントです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecWaitWithCapture">
+      <MemberSignature Language="C#" Value="public static int ExecWaitWithCapture (string cmd, string currentDir, System.CodeDom.Compiler.TempFileCollection tempFiles, ref string outputName, ref string errorName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ExecWaitWithCapture(string cmd, string currentDir, class System.CodeDom.Compiler.TempFileCollection tempFiles, string&amp; outputName, string&amp; errorName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.Executor.ExecWaitWithCapture(System.String,System.String,System.CodeDom.Compiler.TempFileCollection,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cmd" Type="System.String" />
+        <Parameter Name="currentDir" Type="System.String" />
+        <Parameter Name="tempFiles" Type="System.CodeDom.Compiler.TempFileCollection" />
+        <Parameter Name="outputName" Type="System.String&amp;" RefType="ref" />
+        <Parameter Name="errorName" Type="System.String&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="cmd">実行するコマンド。</param>
+        <param name="currentDir">現在のフォルダー。</param>
+        <param name="tempFiles">コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</param>
+        <param name="outputName">コンパイラのメッセージ出力を格納する文字列への参照。</param>
+        <param name="errorName">エラーか発生したエラーの名前を格納する文字列への参照。</param>
+        <summary>指定した文字列で、コンパイラから出力とエラーの情報を格納する戻るには、現在のディレクトリを指定し、一時ファイル、および呼び出しを待機を使用して、指定されたコマンドを実行します。</summary>
+        <returns>コンパイラからの戻り値。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecWaitWithCapture">
+      <MemberSignature Language="C#" Value="public static int ExecWaitWithCapture (IntPtr userToken, string cmd, string currentDir, System.CodeDom.Compiler.TempFileCollection tempFiles, ref string outputName, ref string errorName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ExecWaitWithCapture(native int userToken, string cmd, string currentDir, class System.CodeDom.Compiler.TempFileCollection tempFiles, string&amp; outputName, string&amp; errorName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.Executor.ExecWaitWithCapture(System.IntPtr,System.String,System.String,System.CodeDom.Compiler.TempFileCollection,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userToken" Type="System.IntPtr" />
+        <Parameter Name="cmd" Type="System.String" />
+        <Parameter Name="currentDir" Type="System.String" />
+        <Parameter Name="tempFiles" Type="System.CodeDom.Compiler.TempFileCollection" />
+        <Parameter Name="outputName" Type="System.String&amp;" RefType="ref" />
+        <Parameter Name="errorName" Type="System.String&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="userToken">コンパイラ プロセスを開始するトークンです。</param>
+        <param name="cmd">実行するコマンド。</param>
+        <param name="currentDir">プロセスを開始するディレクトリ。</param>
+        <param name="tempFiles">コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</param>
+        <param name="outputName">コンパイラのメッセージ出力を格納する文字列への参照。</param>
+        <param name="errorName">エラーか発生したエラーの名前を格納する文字列への参照。</param>
+        <summary>指定したユーザー トークン、現在のディレクトリ、および一時ファイルを使用して、指定したコマンドを実行します。呼び出しを待機戻るには、指定した文字列で、コンパイラから出力とエラーの情報を格納します。</summary>
+        <returns>コンパイラからの戻り値。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

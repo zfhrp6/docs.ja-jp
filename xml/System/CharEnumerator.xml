@@ -1,0 +1,334 @@
+<Type Name="CharEnumerator" FullName="System.CharEnumerator">
+  <TypeSignature Language="C#" Value="public sealed class CharEnumerator : ICloneable, System.Collections.Generic.IEnumerator&lt;char&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit CharEnumerator extends System.Object implements class System.Collections.Generic.IEnumerator`1&lt;char&gt;, class System.Collections.IEnumerator, class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.CharEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerator&lt;System.Char&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.String" /> オブジェクトの反復処理と個別の文字の読み取りをサポートします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.CharEnumerator> 、参照先の文字に読み取り専用のアクセスを提供<xref:System.String>オブジェクト。 たとえば、`foreach`コレクションの要素を反復処理し、Microsoft Visual Basic および c# のプログラミング言語のステートメントを取得、<xref:System.CharEnumerator>から、<xref:System.String>そのオブジェクト内の文字を反復処理するためにオブジェクト。  
+  
+ パブリック コンス トラクターがない<xref:System.CharEnumerator>です。 代わりに、<xref:System.String>オブジェクトの<xref:System.String.GetEnumerator%2A>を取得するメソッド、<xref:System.CharEnumerator>参照文字列を初期化します。  
+  
+ A<xref:System.CharEnumerator>内部インデックス文字列の文字に保持されて、<xref:System.CharEnumerator>参照します。 インデックスの状態は、文字列内の文字を参照している場合は、文字列内の文字位置の最後の文字の前後、最初の文字に論理的に参照している場合は無効であり、有効です。 インデックスは、最初の文字の前に論理的な位置に初期化または、イテレーションが完了すると、最後の文字の後の位置に設定が。 インデックスが有効でないときに文字にアクセスしようとする場合は、例外がスローされます。  
+  
+ <xref:System.CharEnumerator.MoveNext%2A>メソッドは、最初と後続の文字は順番にアクセスするため、いずれかによって、インデックスをインクリメントします。 <xref:System.CharEnumerator.Reset%2A>メソッドは、最初の文字の前に論理的に位置するインデックスを設定します。 <xref:System.CharEnumerator.Current%2A>プロパティがインデックスによって参照される現在の文字を取得します。 <xref:System.CharEnumerator.Clone%2A>メソッドのコピーを作成、<xref:System.CharEnumerator>です。  
+  
+> [!NOTE]
+>  複数の独立したインスタンス<xref:System.CharEnumerator>1 つまたは複数のスレッド間での単一のインスタンスへのアクセスを持つことができます<xref:System.String>です。 このクラスがサポートするために実装されている、<xref:System.Collections.IEnumerator>インターフェイスです。 列挙子の使用に関する詳細については、次を参照してください。、<xref:System.Collections.IEnumerator>トピックです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.CharEnumerator>文字列内の個々 の文字を列挙するクラス。 インスタンス化、<xref:System.CharEnumerator>オブジェクトを呼び出して、<xref:System.String.GetEnumerator%2A?displayProperty=nameWithType>メソッドを移動し、1 文字から、次に呼び出すことによって、<xref:System.CharEnumerator.MoveNext%2A>メソッド、しの値を取得することによって、現在の文字を表示、<xref:System.CharEnumerator.Current%2A>プロパティです。  
+  
+ [!code-cpp[System.CharEnumerator.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#1)]
+ [!code-csharp[System.CharEnumerator.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#1)]
+ [!code-vb[System.CharEnumerator.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CharEnumerator.Class/vb/CharEnumerator1.vb#1)]  
+  
+ ただしを使用して、同じ操作をより直感的に実行することができます`foreach`(C# の場合) または`For Each`(Visual Basic の場合) の次の例として示します。  
+  
+ [!code-cpp[System.CharEnumerator.Class#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#2)]
+ [!code-csharp[System.CharEnumerator.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#2)]
+ [!code-vb[System.CharEnumerator.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CharEnumerator.Class/vb/CharEnumerator1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CharEnumerator.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコピーを作成<see cref="T:System.CharEnumerator" />オブジェクト。</summary>
+        <returns><see cref="T:System.Object" /> 、現在のコピーである<see cref="T:System.CharEnumerator" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値のこのインスタンスのコピーである<xref:System.CharEnumerator>と現在の状態。 これは反復処理中に、状態を保存するために便利な<xref:System.String>オブジェクト。  
+  
+ たとえば、アプリケーションで使用する、元のインスタンスの<xref:System.CharEnumerator>内の各文字を反復処理する、<xref:System.String>です。 アプリケーションが処理を一時停止し、呼び出す一意な文字が検出されたときに、<xref:System.CharEnumerator.Clone%2A>メソッドです。 これを実際には、保存、<xref:System.CharEnumerator>内のオブジェクトのインデックス、<xref:System.String>です。  
+  
+ アプリケーションの別の部分に移動する、複製を使用して、`String`補足的な処理を実行します。 このナビゲーションの副作用は、複製が処理が停止した位置のトラックを失ったです。 ただし、補助処理が完了したら、アプリケーション、複製され、元を使用して<xref:System.CharEnumerator>に関する作業を再開するインスタンス、<xref:System.String>元の処理が停止しました。  
+  
+> [!NOTE]
+>  このメソッドがサポートするために実装されている、<xref:System.ICloneable>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public char Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char Current" />
+      <MemberSignature Language="DocId" Value="P:System.CharEnumerator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって列挙文字列の現在参照されている文字を取得<see cref="T:System.CharEnumerator" />オブジェクト。</summary>
+        <value>これによって現在参照されている Unicode 文字<see cref="T:System.CharEnumerator" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CharEnumerator>クラスは、列挙型の文字列を内部のインデックスを保持し、<xref:System.CharEnumerator.Current%2A>プロパティは、インデックスによって現在参照されている文字を返します。 このプロパティは、インデックスが有効である場合にのみ呼び出す必要があります。それ以外の場合、例外がスローされます。  
+  
+ インデックスは常に空の文字列 ("") です。 インデックスが正しくありませんも後に、<xref:System.String.GetEnumerator%2A?displayProperty=nameWithType>または<xref:System.CharEnumerator.Reset%2A>メソッドが呼び出されます。 これらのメソッドのいずれかが呼び出された後の呼び出し、<xref:System.CharEnumerator.MoveNext%2A>列挙文字列の最初の文字のインデックスを調整する方法です。 インデックスが有効なときに、<xref:System.CharEnumerator.MoveNext%2A>メソッドを返します。`true`です。  
+  
+ <xref:System.CharEnumerator.Current%2A>連続して呼び出すと、インデックスを移動しません<xref:System.CharEnumerator.Current%2A>まで同じ文字を返す<xref:System.CharEnumerator.MoveNext%2A>、 <xref:System.CharEnumerator.Reset%2A>、または<xref:System.String.GetEnumerator%2A?displayProperty=nameWithType>と呼びます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.CharEnumerator>文字列内の個々 の文字を列挙するクラス。 インスタンス化、<xref:System.CharEnumerator>オブジェクトを呼び出して、<xref:System.String.GetEnumerator%2A?displayProperty=nameWithType>メソッドを移動し、1 文字から、次に呼び出すことによって、<xref:System.CharEnumerator.MoveNext%2A>メソッド、しの値を取得することによって、現在の文字を表示、<xref:System.CharEnumerator.Current%2A>プロパティです。  
+  
+ [!code-cpp[System.CharEnumerator.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#1)]
+ [!code-csharp[System.CharEnumerator.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#1)]
+ [!code-vb[System.CharEnumerator.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CharEnumerator.Class/vb/CharEnumerator1.vb#1)]  
+  
+ ただしを使用して、同じ操作をより直感的に実行することができます`foreach`(C# の場合) または`For Each`(Visual Basic の場合) の次の例として示します。  
+  
+ [!code-cpp[System.CharEnumerator.Class#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#2)]
+ [!code-csharp[System.CharEnumerator.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#2)]
+ [!code-vb[System.CharEnumerator.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CharEnumerator.Class/vb/CharEnumerator1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">インデックスが無効です。つまり、列挙された文字列の最後の文字の前後に、最初です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CharEnumerator.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CharEnumerator" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CharEnumerator.Dispose%2A> を使い終わったら <xref:System.CharEnumerator> を呼び出します。 <xref:System.CharEnumerator.Dispose%2A> メソッドによって、<xref:System.CharEnumerator> は使用不可の状態になります。 呼び出した後<xref:System.CharEnumerator.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.CharEnumerator>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.CharEnumerator>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.CharEnumerator.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.CharEnumerator> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.CharEnumerator> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CharEnumerator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の内部のインデックスをインクリメント<see cref="T:System.CharEnumerator" />列挙文字列の次の文字をオブジェクト。</summary>
+        <returns>
+          <see langword="true" />インデックスが正常にインクリメントされた場合と列挙文字列内でそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CharEnumerator>クラスは、列挙型の文字列を内部のインデックスを保持し、<xref:System.CharEnumerator.MoveNext%2A>メソッドは、いずれかによって、インデックスをインクリメントします。 呼び出す<xref:System.CharEnumerator.MoveNext%2A>呼び出した後<xref:System.String.GetEnumerator%2A>または<xref:System.CharEnumerator.Reset%2A>を最初の文字に列挙された文字列内の現在の文字位置をインクリメントします。 戻り値がチェック`true`を現在の文字位置が有効であるかを判断します。  
+  
+ インデックスが変更されていないインデックスが列挙された文字列の最後の文字を超える場合、および`false`が返されます。  
+  
+ 列挙された文字列が空の場合を注意してください ("") では、状態、<xref:System.CharEnumerator>は常に使用します。 これは内部のインデックス、<xref:System.CharEnumerator>最初に列挙された文字列の最初の文字の前に、無効です。 <xref:System.CharEnumerator.MoveNext%2A>論理的にも有効ではない列挙文字列の最後の (存在しない) 文字の後にインデックスを設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.CharEnumerator>文字列内の個々 の文字を列挙するクラス。 インスタンス化、<xref:System.CharEnumerator>オブジェクトを呼び出して、<xref:System.String.GetEnumerator%2A?displayProperty=nameWithType>メソッドを移動し、1 文字から、次に呼び出すことによって、<xref:System.CharEnumerator.MoveNext%2A>メソッド、しの値を取得することによって、現在の文字を表示、<xref:System.CharEnumerator.Current%2A>プロパティです。  
+  
+ [!code-cpp[System.CharEnumerator.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#1)]
+ [!code-csharp[System.CharEnumerator.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#1)]
+ [!code-vb[System.CharEnumerator.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CharEnumerator.Class/vb/CharEnumerator1.vb#1)]  
+  
+ ただしを使用して、同じ操作をより直感的に実行することができます`foreach`(C# の場合) または`For Each`(Visual Basic の場合) の次の例として示します。  
+  
+ [!code-cpp[System.CharEnumerator.Class#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#2)]
+ [!code-csharp[System.CharEnumerator.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#2)]
+ [!code-vb[System.CharEnumerator.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CharEnumerator.Class/vb/CharEnumerator1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CharEnumerator.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙された文字列の最初の文字の前に論理的に位置するインデックスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CharEnumerator>クラスは、列挙型の文字列を内部のインデックスを保持し、<xref:System.CharEnumerator.Reset%2A>メソッドは、無効な状態にインデックスを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerator.Current">
+      <MemberSignature Language="C#" Value="object System.Collections.IEnumerator.Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IEnumerator.Current" />
+      <MemberSignature Language="DocId" Value="P:System.CharEnumerator.System#Collections#IEnumerator#Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって列挙文字列の現在参照されている文字を取得<see cref="T:System.CharEnumerator" />オブジェクト。 このメンバーの詳細については、「<see cref="P:System.Collections.IEnumerator.Current" />」を参照してください。</summary>
+        <value>これによって現在参照されているボックス化された Unicode 文字<see cref="T:System.CharEnumerator" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CharEnumerator> のインスタンスが <xref:System.Collections.IEnumerator> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">列挙は開始しません。  
+  
+ または  
+  
+ 列挙体が終了します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,474 @@
+<Type Name="DataSourceProvider" FullName="System.Windows.Data.DataSourceProvider">
+  <TypeSignature Language="C#" Value="public abstract class DataSourceProvider : System.ComponentModel.INotifyPropertyChanged, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataSourceProvider extends System.Object implements class System.ComponentModel.INotifyPropertyChanged, class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.DataSourceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Windows.Data.DataSourceProvider" /> オブジェクトの共通の基底クラスおよびコントラクトです。このオブジェクトは、バインド ソース オブジェクトとして使用可能な 1 つのオブジェクトまたはオブジェクトの一覧を生成するためにいくつかのクエリを実行するファクトリです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.DataSourceProvider>利便性のためのラッパーです。 既存のデータ モデルには任意のデータ モデルは置換されません。 データ プロバイダーはしようなどの複雑さとデータ モデルの用途のために圧縮される[!INCLUDE[TLA2#tla_ado](~/includes/tla2sharptla-ado-md.md)]いくつかのプロパティを持つ単一のオブジェクトを 1 つにします。  
+  
+ <xref:System.Windows.Data.DataSourceProvider> は抽象クラスです。 派生クラスのいずれかを使用して<xref:System.Windows.Data.XmlDataProvider>と<xref:System.Windows.Data.ObjectDataProvider>です。 <xref:System.Windows.Data.DataSourceProvider>を認識して、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]スレッドとディスパッチャーのモデル。 作成時に、スレッドを想定しています、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドです。 イベントは、アプリケーションの UI スレッドへのワーカー スレッドからマーシャ リングが取得されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataSourceProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.DataSourceProvider" /> クラスの新しいインスタンスを初期化します。 これは、protected コンス トラクターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="protected virtual void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この初期化を示すオブジェクトが開始されます。暗黙<see cref="M:System.Windows.Data.DataSourceProvider.Refresh" />、一致するまで発生<see cref="M:System.Windows.Data.DataSourceProvider.EndInit" />メソッドが呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginQuery">
+      <MemberSignature Language="C#" Value="protected virtual void BeginQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void BeginQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.BeginQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この基本クラスがこのメソッドを呼び出して派生クラスでオーバーライドされると、ときに<see cref="M:System.Windows.Data.DataSourceProvider.InitialLoad" />または<see cref="M:System.Windows.Data.DataSourceProvider.Refresh" />が呼び出されています。 更新が遅延されるか、初期読み込みが無効になっている場合、基本クラスは、呼び出しを遅延します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **実装時の注意:**または背景上で同じスレッドでクエリを実行することもできますスレッドまたはを使用して`IsAsynchronous`です。 クエリが完了したら、呼び出す<xref:System.Windows.Data.DataSourceProvider.OnQueryFinished%2A>にパブリック プロパティが更新されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public object Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Data" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.DataSourceProvider.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ オブジェクトを取得します。</summary>
+        <value>データ オブジェクトの基になる型 <see cref="T:System.Object" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Data.DataSourceProvider>使用が結果として得られるバインド ソース オブジェクトは、このバインディングのソースとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DataChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Data.DataSourceProvider.DataChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Data.DataSourceProvider.Data" />新しい値を持つプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **実装時の注意:**新しいデータ オブジェクトが 利用可能になったら、このイベントを発生させる、<xref:System.Windows.Data.DataSourceProvider.Data%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferRefresh">
+      <MemberSignature Language="C#" Value="public virtual IDisposable DeferRefresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IDisposable DeferRefresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.DeferRefresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーと遅延の自動更新のプロパティを変更するのに使用できる遅延サイクルを入力します。</summary>
+        <returns>呼び出し元のオブジェクトを破棄するために使用できる <see cref="T:System.IDisposable" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な用途を作成するには、`using`このメソッドを使用してスコープを設定して、スコープ内で複数のプロパティの変更を配置します。 これにより、遅延サイクルが終了するまで、自動更新が遅延します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispatcher">
+      <MemberSignature Language="C#" Value="protected System.Windows.Threading.Dispatcher Dispatcher { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Threading.Dispatcher Dispatcher" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.DataSourceProvider.Dispatcher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.Dispatcher</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の設定を取得または<see cref="T:System.Windows.Threading.Dispatcher" />オブジェクトを[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]を使用するスレッド。</summary>
+        <value>現在<see cref="T:System.Windows.Threading.Dispatcher" />オブジェクトを[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]を使用するスレッド。 既定では、これは、<see cref="T:System.Windows.Threading.Dispatcher" />このインスタンスが作成されたスレッドに関連付けられているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="protected virtual void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトの初期化が完了したことを示しますこれが原因で、<see cref="M:System.Windows.Data.DataSourceProvider.Refresh" />場合の他の<see cref="M:System.Windows.Data.DataSourceProvider.DeferRefresh" />保留状態になっています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public Exception Error { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Error" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.DataSourceProvider.Error" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のクエリ操作のエラーを取得します。</summary>
+        <value>型の値<see cref="T:System.Exception" />最後のクエリ操作のエラーが表示されているまたは<see langword="null" />エラーがない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialLoad">
+      <MemberSignature Language="C#" Value="public void InitialLoad ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InitialLoad() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.InitialLoad" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるデータ モデルには、最初のクエリを開始します。 結果が返されます、<see cref="P:System.Windows.Data.DataSourceProvider.Data" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存データ バインディングがアクティブになったときに通常バインディング エンジンによって呼び出されます。 設定<xref:System.Windows.Data.DataSourceProvider.IsInitialLoadEnabled%2A>に`false`を回避またはデータの自動読み込みを遅延します。  
+  
+ <xref:System.Windows.Data.DataSourceProvider.InitialLoad%2A>メソッドは、複数回呼び出すことができます。 プロバイダーがビジー状態です。 最初のクエリを実行する後続の呼び出しは無視されます。プロバイダーは、既に実行されているを再起動していないときにクエリ<xref:System.Windows.Data.DataSourceProvider.InitialLoad%2A>が再度呼び出されます。 ときに、クエリが正常に完了、いずれかの<xref:System.Windows.Data.DataSourceProvider.InitialLoad%2A>呼び出しもは再度データをクエリできません。 <xref:System.Windows.Data.DataSourceProvider.InitialLoad%2A>操作は、一般的な非同期、<xref:System.Windows.Data.DataSourceProvider.DataChanged>イベントが発生したときに、<xref:System.Windows.Data.DataSourceProvider.Data%2A>プロパティが新しい値と見なされます。  
+  
+ アプリケーションの呼び出し<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>データの更新が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitialLoadEnabled">
+      <MemberSignature Language="C#" Value="public bool IsInitialLoadEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialLoadEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.DataSourceProvider.IsInitialLoadEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または回避またはデータの自動読み込みを遅延するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="false" />防止またはデータの自動読み込みを遅らせるそれ以外の場合、<see langword="true" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Windows.Data.DataSourceProvider>そのクエリを実行し、設定、<xref:System.Windows.Data.DataSourceProvider.Data%2A>プロパティ初めて、バインドによって使われるとき、または<xref:System.Windows.Data.CollectionViewSource>です。 この手順を省略すると設定して、<xref:System.Windows.Data.DataSourceProvider.IsInitialLoadEnabled%2A>プロパティを`false`です。 この場合、アプリケーションを呼び出す必要があります明示的に<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>がプロバイダーをそのデータを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRefreshDeferred">
+      <MemberSignature Language="C#" Value="protected bool IsRefreshDeferred { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRefreshDeferred" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.DataSourceProvider.IsRefreshDeferred" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>あるかどうか、保留状態を示す値を取得<see cref="M:System.Windows.Data.DataSourceProvider.DeferRefresh" />で使用します。</summary>
+        <value>
+          <see langword="true" />ある場合、未処理<see cref="M:System.Windows.Data.DataSourceProvider.DeferRefresh" />使用中です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **実装時の注意:**の更新の遅延を取得するには呼び出す必要はありません<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>ときに、このプロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanged (System.ComponentModel.PropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanged(class System.ComponentModel.PropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.PropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">発生するイベントの引数。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Data.DataSourceProvider.PropertyChanged" />イベント指定引数を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnQueryFinished">
+      <MemberSignature Language="C#" Value="protected void OnQueryFinished (object newData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnQueryFinished(object newData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.OnQueryFinished(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="newData">クエリの結果のデータです。</param>
+        <summary>派生クラスでは、クエリが完了したことを示すためには、このメソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコールバックは、任意のスレッドから呼び出すことができます。 この実装は再マーシャ リング結果を[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドのパブリック プロパティを設定する前にあり、すべてのイベントを発生させる前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnQueryFinished">
+      <MemberSignature Language="C#" Value="protected virtual void OnQueryFinished (object newData, Exception error, System.Windows.Threading.DispatcherOperationCallback completionWork, object callbackArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnQueryFinished(object newData, class System.Exception error, class System.Windows.Threading.DispatcherOperationCallback completionWork, object callbackArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.OnQueryFinished(System.Object,System.Exception,System.Windows.Threading.DispatcherOperationCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newData" Type="System.Object" />
+        <Parameter Name="error" Type="System.Exception" />
+        <Parameter Name="completionWork" Type="System.Windows.Threading.DispatcherOperationCallback" />
+        <Parameter Name="callbackArguments" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="newData">クエリの結果のデータです。</param>
+        <param name="error">クエリを実行しているときに発生したエラー。 この値は<see langword="null" />エラーがない場合。</param>
+        <param name="completionWork">完了作業を実行するために使用する省略可能なデリゲート、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッド、たとえば、追加のプロパティを設定します。</param>
+        <param name="callbackArguments">省略可能な引数を使用して、パラメーターとして送信する、 <c>completionWork</c>を委任します。</param>
+        <summary>派生クラスでは、クエリが完了したことを示すためには、このメソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコールバックは、任意のスレッドから呼び出すことができます。 この実装は再マーシャ リング結果を[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドのパブリック プロパティを設定する前にあり、すべてのイベントを発生させる前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.PropertyChangedEventHandler PropertyChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Data.DataSourceProvider.PropertyChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ値が変更するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるデータ モデルへの更新操作を開始します。 結果が返されます、<see cref="P:System.Windows.Data.DataSourceProvider.Data" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 更新操作は、一般的な非同期、<xref:System.Windows.Data.DataSourceProvider.DataChanged>イベントが発生したときに、<xref:System.Windows.Data.DataSourceProvider.Data%2A>プロパティが新しい値と見なされます。 更新操作に失敗した場合、<xref:System.Windows.Data.DataSourceProvider.Data%2A>プロパティに設定されている`null`;<xref:System.Windows.Data.DataSourceProvider.Error%2A>プロパティは、エラーの例外。 アプリケーションが呼び出すことができます<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>がまだ進行中で、前の更新中にします。 呼び出す<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>2 回発生、<xref:System.Windows.Data.DataSourceProvider.DataChanged>イベントを 2 回クリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.DataSourceProvider.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

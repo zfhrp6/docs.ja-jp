@@ -1,0 +1,1018 @@
+<Type Name="IPGlobalStatistics" FullName="System.Net.NetworkInformation.IPGlobalStatistics">
+  <TypeSignature Language="C#" Value="public abstract class IPGlobalStatistics" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IPGlobalStatistics extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.IPGlobalStatistics" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット プロトコル (IP) の統計データを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは使用、<xref:System.Net.NetworkInformation.IPGlobalProperties.GetIPv4GlobalStatistics%2A>と<xref:System.Net.NetworkInformation.IPGlobalProperties.GetIPv6GlobalStatistics%2A>メソッドで IP トラフィックの情報です。  
+  
+ セットアップ先コンピューターに、ソース コンピュータから IP パケットを移動するには、インターネット プロトコルを使用します。 IP は、パケットの断片化と呼ばれるプロセスでのトランスポートのため大きさは、複数のパケットには大きすぎる分割することも処理します。  
+  
+ このクラスのプロパティは、IETF RFC 2011 で定義されている IP の管理情報ベースのオブジェクトに関連付けます。  
+  
+   
+  
+## Examples  
+ 次のコードのコード例では、IP の統計を表示します。  
+  
+ [!code-cpp[NCLNetInfoReport#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfoReport/CPP/netinfo.cpp#1)]
+ [!code-csharp[NCLNetInfoReport#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfoReport/CS/netinfo.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected IPGlobalStatistics ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.IPGlobalStatistics.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.IPGlobalStatistics" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはから派生するクラスによってのみ呼び出すことができます<xref:System.Net.NetworkInformation.IPGlobalStatistics>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTtl">
+      <MemberSignature Language="C#" Value="public abstract int DefaultTtl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultTtl" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.DefaultTtl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) パケットの既定の有効期間 (TTL) 値を取得します。</summary>
+        <value><see cref="T:System.Int64" /> TTL を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TTL 値は、破棄される前に、パケットを転送できるルーティングのノードの数として報告されます。 各ノードは、転送する前に、現在の TTL がパケットで値をデクリメントします。 TTL 値はゼロに達すると、パケットが配信不能と見なされる、破棄されます。 パケットは、別に、1 つのノードから移動したときにこれがあるとも呼ばれる「ホップ」に注意してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#14](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#14)]
+ [!code-csharp[NCLNetInfo2#14](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#14)]
+ [!code-vb[NCLNetInfo2#14](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForwardingEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool ForwardingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ForwardingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ForwardingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />パケット転送のインターネット プロトコル (IP) が有効になっているかどうかを指定する値。</summary>
+        <value>A<see cref="T:System.Boolean" />パケット転送が有効になっているかどうかを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、コンピューターが別のコンピューターの IP データグラムを転送するかどうかを判断します。 通常、ルーターのパケットを転送するホスト コンピューターしないようにしてください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#14](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#14)]
+ [!code-csharp[NCLNetInfo2#14](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#14)]
+ [!code-vb[NCLNetInfo2#14](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfInterfaces">
+      <MemberSignature Language="C#" Value="public abstract int NumberOfInterfaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfInterfaces" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.NumberOfInterfaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク インターフェイスの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />これを取得するために使用するアドレス ファミリ用のネットワーク インターフェイスの数を含む値<see cref="T:System.Net.NetworkInformation.IPGlobalStatistics" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるデータには、ループバック インターフェイスが含まれています。  
+  
+ ネットワーク インターフェイスは、ネットワーク アダプターとも呼ばれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfIPAddresses">
+      <MemberSignature Language="C#" Value="public abstract int NumberOfIPAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfIPAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.NumberOfIPAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル コンピューターに割り当てられているインターネット プロトコル (IP) アドレスの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />をこのオブジェクトによって記述アドレス ファミリ (Internet Protocol version 4 または Internet Protocol version 6) に割り当てられた IP アドレスの数を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるデータには、トンネルなどの仮想ネットワーク インターフェイスのアドレスが含まれます。  
+  
+ このインスタンスは、呼び出すことによって取得された場合<xref:System.Net.NetworkInformation.IPGlobalProperties.GetIPv4GlobalStatistics%2A>、このプロパティは、ローカル コンピューターに割り当てられた IPv4 アドレスの数を返します。 同様に、このインスタンスは、呼び出すことによって取得された場合<xref:System.Net.NetworkInformation.IPGlobalProperties.GetIPv6GlobalStatistics%2A>、このプロパティは、ローカル コンピューターに割り当てられている IPv6 アドレスの数を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfRoutes">
+      <MemberSignature Language="C#" Value="public abstract int NumberOfRoutes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfRoutes" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.NumberOfRoutes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) ルーティング テーブル内のルートの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />ルーティング テーブル内のルートの合計数を指定する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputPacketRequests">
+      <MemberSignature Language="C#" Value="public abstract long OutputPacketRequests { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OutputPacketRequests" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.OutputPacketRequests" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) の送信パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />発信パケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発信パケットの数では、転送されたパケットの数は含まれません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの送信の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#17](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#17)]
+ [!code-csharp[NCLNetInfo2#17](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#17)]
+ [!code-vb[NCLNetInfo2#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputPacketRoutingDiscards">
+      <MemberSignature Language="C#" Value="public abstract long OutputPacketRoutingDiscards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OutputPacketRoutingDiscards" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.OutputPacketRoutingDiscards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング テーブルから破棄されたルートの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />破棄された有効なルートの合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なルーティング テーブルのエントリを破棄するの 1 つの考えられる理由は、その他のエントリのバッファー領域を解放する可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの送信の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#17](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#17)]
+ [!code-csharp[NCLNetInfo2#17](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#17)]
+ [!code-vb[NCLNetInfo2#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputPacketsDiscarded">
+      <MemberSignature Language="C#" Value="public abstract long OutputPacketsDiscarded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OutputPacketsDiscarded" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.OutputPacketsDiscarded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>破棄された転送のインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />が破棄された送信パケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるデータでは、加えたパケット配信不能なエラーのため破棄されたパケットは含まれません。 このデータに含まれるパケットは通常バッファー領域の不足などのネットワークの問題が破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの送信の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#17](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#17)]
+ [!code-csharp[NCLNetInfo2#17](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#17)]
+ [!code-vb[NCLNetInfo2#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputPacketsWithNoRoute">
+      <MemberSignature Language="C#" Value="public abstract long OutputPacketsWithNoRoute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OutputPacketsWithNoRoute" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.OutputPacketsWithNoRoute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) のパケットをローカル コンピューターを特定できませんでした宛先アドレスへのルートの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />ルートが見つからなかったために、送信できませんでしたパケットの数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカテゴリに分類される IP パケットは破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの送信の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#17](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#17)]
+ [!code-csharp[NCLNetInfo2#17](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#17)]
+ [!code-vb[NCLNetInfo2#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketFragmentFailures">
+      <MemberSignature Language="C#" Value="public abstract long PacketFragmentFailures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PacketFragmentFailures" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.PacketFragmentFailures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>断片化できなかったインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />のために必要な断片化が「しないフラグメント」したパケットの総数を指定する値のビット セット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP トランスポートの最大サイズを超えるパケットはフラグメントに分割され、転送先に再構築します。 このプロパティによって返される値では、IP トランスポートのフラグメント化する必要しますが、できませんでした、パケットを断片化しないこと、パケット ヘッダーが指定されているためパケットの数を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの再構成の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#18](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#18)]
+ [!code-csharp[NCLNetInfo2#18](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#18)]
+ [!code-vb[NCLNetInfo2#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketReassembliesRequired">
+      <MemberSignature Language="C#" Value="public abstract long PacketReassembliesRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PacketReassembliesRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.PacketReassembliesRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その必要な再構築、インターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />のために必要なパケット reassemblies の合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP トランスポートの最大サイズを超えるパケットはフラグメントに分割され、転送先に再構築します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの再構成の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#18](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#18)]
+ [!code-csharp[NCLNetInfo2#18](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#18)]
+ [!code-vb[NCLNetInfo2#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketReassemblyFailures">
+      <MemberSignature Language="C#" Value="public abstract long PacketReassemblyFailures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PacketReassemblyFailures" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.PacketReassemblyFailures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正常に再構成されていないインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />再構築されませんでしたパケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP トランスポートの最大サイズを超えるパケットはフラグメントに分割され、転送先に再構築します。 一部のフラグメントは失われます、一定の時間内に到着しない場合、再構築は成功しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの再構成の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#18](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#18)]
+ [!code-csharp[NCLNetInfo2#18](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#18)]
+ [!code-vb[NCLNetInfo2#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketReassemblyTimeout">
+      <MemberSignature Language="C#" Value="public abstract long PacketReassemblyTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PacketReassemblyTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.PacketReassemblyTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パケットが到着する必要があるすべてのフラグメントのインターネット プロトコル (IP) 内で時間の最大量を取得します。</summary>
+        <value><see cref="T:System.Int64" />破棄されないようにするパケットのすべてのフラグメント内でミリ秒単位の最大数を指定する値が到着する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP トランスポートの最大サイズを超えるパケットはフラグメントに分割され、転送先に再構築します。 断片化された IP パケットを構成するすべてのフラグメントが許可された時間内に到着しない、パケットは破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの再構成の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#18](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#18)]
+ [!code-csharp[NCLNetInfo2#18](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#18)]
+ [!code-vb[NCLNetInfo2#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketsFragmented">
+      <MemberSignature Language="C#" Value="public abstract long PacketsFragmented { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PacketsFragmented" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.PacketsFragmented" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>断片化されているインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />断片化されたパケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP トランスポートの最大サイズを超えるパケットはフラグメントに分割され、転送先に再構築します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの再構成の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#18](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#18)]
+ [!code-csharp[NCLNetInfo2#18](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#18)]
+ [!code-vb[NCLNetInfo2#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketsReassembled">
+      <MemberSignature Language="C#" Value="public abstract long PacketsReassembled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PacketsReassembled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.PacketsReassembled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>再アセンブルされ、インターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />正常に再構築、断片化されたパケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP トランスポートの最大サイズを超えるセッション レイヤー パケットはフラグメントに分割され、転送先に再構築します。 一部のフラグメントは失われます、一定の時間内に到着しない場合、再構築は成功しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、IP パケットの再構成の統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#18](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#18)]
+ [!code-csharp[NCLNetInfo2#18](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#18)]
+ [!code-vb[NCLNetInfo2#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPackets">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPackets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPackets" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPackets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信したインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />受信した IP パケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値には、エラーで受信したパケットが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、受信した IP パケットの統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#15)]
+ [!code-csharp[NCLNetInfo2#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#15)]
+ [!code-vb[NCLNetInfo2#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPacketsDelivered">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPacketsDelivered { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPacketsDelivered" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsDelivered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配信されたインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> IP パケットの総数を示す値を配信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値には、インターネット制御メッセージ プロトコル (ICMP) メッセージが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、受信した IP パケットの統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#15)]
+ [!code-csharp[NCLNetInfo2#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#15)]
+ [!code-vb[NCLNetInfo2#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPacketsDiscarded">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPacketsDiscarded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPacketsDiscarded" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsDiscarded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信され、破棄されているインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />が破棄された受信パケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値には、再構築や配信を妨げるようなエラーを含まないにもかかわらず、破棄されたパケットだけが含まれています。 通常、このカテゴリのパケットは、バッファーの領域不足のため破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、受信した IP パケットの統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#15)]
+ [!code-csharp[NCLNetInfo2#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#15)]
+ [!code-vb[NCLNetInfo2#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPacketsForwarded">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPacketsForwarded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPacketsForwarded" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsForwarded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>転送されたインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />の合計数を指定する値は、パケットを転送します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル コンピューターは、ルーターではない場合、このプロパティによって返される値には、ローカル コンピューターを使用して正しくソース送信されたパケットが含まれます。 ソースのルーティングは、パケットのソースが宛先アドレスへのルートを指定する、IP オプションです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、受信した IP パケットの統計情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#15)]
+ [!code-csharp[NCLNetInfo2#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#15)]
+ [!code-vb[NCLNetInfo2#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPacketsWithAddressErrors">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPacketsWithAddressErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPacketsWithAddressErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithAddressErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信したエラーのアドレスには、インターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />ヘッダーのアドレス部分でエラーが受信した IP パケットの総数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値には、アドレスの破棄されたパケットが含まれています。 無効なアドレスなど、ヘッダー フィールドの関連する問題です。 パケットの転送が有効でない場合、このプロパティによって返される値には、送信先アドレスがローカル アドレスではなかったために破棄されたパケットが含まれます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、エラーが受信した IP パケットの統計情報が表示されます。  
+  
+ [!code-cpp[NCLNetInfo2#16](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#16)]
+ [!code-csharp[NCLNetInfo2#16](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#16)]
+ [!code-vb[NCLNetInfo2#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPacketsWithHeadersErrors">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPacketsWithHeadersErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPacketsWithHeadersErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithHeadersErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信したエラーのヘッダーには、インターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> IP パケットの総数を示す値を受信して、ヘッダー内のエラーにより破棄します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値には、不適切なチェックサムなどのヘッダー フィールドに関連する問題のアドレス以外の破棄されたパケット、有効期間の値を超えると、および正しくない IP オプションが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、エラーが受信した IP パケットの統計情報が表示されます。  
+  
+ [!code-cpp[NCLNetInfo2#16](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#16)]
+ [!code-csharp[NCLNetInfo2#16](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#16)]
+ [!code-vb[NCLNetInfo2#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceivedPacketsWithUnknownProtocol">
+      <MemberSignature Language="C#" Value="public abstract long ReceivedPacketsWithUnknownProtocol { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReceivedPacketsWithUnknownProtocol" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPGlobalStatistics.ReceivedPacketsWithUnknownProtocol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダーに不明なプロトコルを使用してローカル コンピューターで受信するインターネット プロトコル (IP) パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />を不明なプロトコルで受信した IP パケットの総数を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP ヘッダーのプロトコル フィールドでは、IP データグラムのデータ部分で使用される次のレベルのプロトコルを示します。 プロトコルが認識されない場合は、正しいアプリケーションに、データを渡すことはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、エラーが受信した IP パケットの統計情報が表示されます。  
+  
+ [!code-cpp[NCLNetInfo2#16](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#16)]
+ [!code-csharp[NCLNetInfo2#16](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#16)]
+ [!code-vb[NCLNetInfo2#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

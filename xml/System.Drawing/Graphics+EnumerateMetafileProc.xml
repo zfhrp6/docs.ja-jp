@@ -1,0 +1,46 @@
+<Type Name="Graphics+EnumerateMetafileProc" FullName="System.Drawing.Graphics+EnumerateMetafileProc">
+  <TypeSignature Language="C#" Value="public delegate bool Graphics.EnumerateMetafileProc(EmfPlusRecordType recordType, int flags, int dataSize, IntPtr data, PlayRecordCallback callbackData);" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed Graphics/EnumerateMetafileProc extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Graphics.EnumerateMetafileProc" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="recordType" Type="System.Drawing.Imaging.EmfPlusRecordType" />
+    <Parameter Name="flags" Type="System.Int32" />
+    <Parameter Name="dataSize" Type="System.Int32" />
+    <Parameter Name="data" Type="System.IntPtr" />
+    <Parameter Name="callbackData" Type="System.Drawing.Imaging.PlayRecordCallback" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="recordType">メンバー、<see cref="T:System.Drawing.Imaging.EmfPlusRecordType" />メタファイル レコードの種類を指定する列挙です。</param>
+    <param name="flags">レコードの属性を指定するフラグのセット。</param>
+    <param name="dataSize">レコード データのバイト数。</param>
+    <param name="data">レコード データを格納するバッファーへのポインター。</param>
+    <param name="callbackData">使用しません。</param>
+    <summary>コールバック メソッドを提供、<see cref="Overload:System.Drawing.Graphics.EnumerateMetafile" />メソッドです。</summary>
+    <returns>返す<see langword="true" />; レコードの列挙を続行する場合は、それ以外の場合、<see langword="false" />です。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを組み合わせて使用、<xref:System.Drawing.Graphics.EnumerateMetafile%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。 特定のオーバー ロード、<xref:System.Drawing.Graphics.EnumerateMetafile%2A>メソッドは、指定されたメタファイル内の各レコードのこの種類のアプリケーション定義のコールバック メソッドを呼び出します。 コールバック関数を呼び出して各レコード (または選択したレコード) を表示できます、<xref:System.Drawing.Imaging.Metafile.PlayRecord%2A>のメソッド、<xref:System.Drawing.Imaging.Metafile>が列挙されています。  
+  
+ このコールバック メソッドのユーザーの宣言と同じパラメーターを持つ必要があります、<xref:System.Drawing.Graphics.EnumerateMetafileProc>宣言を委任します。  
+  
+   
+  
+## Examples  
+ 例については、次を参照してください。<xref:System.Drawing.Graphics.EnumerateMetafile%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

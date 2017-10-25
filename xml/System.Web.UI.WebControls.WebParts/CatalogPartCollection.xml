@@ -1,0 +1,377 @@
+<Type Name="CatalogPartCollection" FullName="System.Web.UI.WebControls.WebParts.CatalogPartCollection">
+  <TypeSignature Language="C#" Value="public sealed class CatalogPartCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CatalogPartCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エンド ユーザーが Web ページに追加できる Web サーバー コントロールのカタログを提供する <see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" /> コントロールのコレクションを格納します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスは読み取り専用コレクションの<xref:System.Web.UI.WebControls.WebParts.CatalogPart>で通常使用される、制御、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>のセットを追跡するためにゾーン<xref:System.Web.UI.WebControls.WebParts.CatalogPart>ゾーンに含まれるコントロール。  
+  
+ 新しいゾーンを作成、Web パーツ ページがカタログ モードになる<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトから成る、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 各<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コレクション内のコントロールは、0 個以上の Web サーバー コントロールに、利用可能なサーバー コントロールのカタログの形式で表示される参照を含めることができます。  
+  
+ 作成することができます、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>独自のプログラムなど、一連の一括操作を実行する必要がある場合は、コントロールのコレクション<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 場合でも、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトは読み取り専用、コレクション内で参照されている基になるコントロールにプログラムで変更を加えることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかを示します、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスです。 このコード例は次の 4 つの部分で構成されます。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   カスタム クラス<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のコントロール`TextDisplayWebPart`、Web ページで参照されのいずれかに含まれる、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。  
+  
+-   Web ページを参照する、`TextDisplayWebPart`コントロールを含む、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>で 2 つのコントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>ゾーンでは、宣言されている設定、Web パーツ コントロールからを制御し、イベント ドリブンのコード作成および操作にはが含まれています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクト。  
+  
+-   ブラウザーに読み込むときのコード例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザー コントロールです。 ユーザー コントロールのソース コードの別のトピックに由来します。 このコード例を実行するには、.ascx ファイルからユーザー コントロールを取得する必要があります、[チュートリアル: Web パーツ ページの表示モードを変更する](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)」および「このコード例では、.aspx ページと同じフォルダーにファイルの場所。  
+  
+ コード例の 2 番目の部分は、`TextDisplayWebPart`コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。 コントロールにという名前のプロパティがあることに注意してください`ContentText`です。 このプロパティは、ユーザーは、テキスト ボックスに入力した値を保持します。  
+  
+ [!code-csharp[WebParts_CatalogPartCollection_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/textdisplaywebpart.cs#3)]
+ [!code-vb[WebParts_CatalogPartCollection_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/textdisplaywebpart.vb#3)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 注意して、`<asp:catalogzone>`ページの要素には、2 つの宣言が含まれています。<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 これらのコントロール、カスタムの一部になります<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>ときに作成されるオブジェクト、`Button1_Click`メソッドを実行します。 <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロールには、ユーザーが実行時に以前閉じられたする Web サーバー コントロールが含まれています。 コントロールで、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>ページに戻るコントロールを追加することができます。 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールには、ユーザー設定の宣言が含まれている`TextDisplayWebPart`コントロール。 ユーザーを追加できるページは、カタログのモードでは、ときに、`TextDisplayWebPart`コントロールをページには、通常のブラウズ モードで使用できるようにします。  
+  
+ [!code-aspx-csharp[WebParts_CatalogPartCollection_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/catalogpartcollectioncs.aspx#1)]
+ [!code-aspx-vb[WebParts_CatalogPartCollection_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/catalogpartcollectionvb.aspx#1)]  
+  
+ ブラウザーでページを読み込むときに、ページに切り替えますカタログ モードを選択して**カタログ**で、**表示モード**ドロップダウン リスト コントロール。 ユーザー設定を追加する<xref:System.Web.UI.WebControls.WebParts.WebPart>隣のチェック ボックスを選択してをクリックして、ページにコントロール**追加**です。 をクリックして**閉じる**ブラウズ モードをページに戻します。 コントロールに追加した、動詞メニュー (タイトル バーに表示される下向きの矢印) をクリックし、をクリックしていて**閉じる**、コントロールがページから削除されに追加、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール。 カタログのモードにページを返しをクリックして、**ページ カタログ**の内容を表示するリンク、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール。 閉じられたか、コントロールがある表示されることに注意してください。 クリックすると、**表示 CatalogPart プロパティ**へのアクセスのボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトし、コンテナー内の特定のプロパティを表示<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>を含むゾーン<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールが作成するコントロールでは通常、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトを通じて、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CreateCatalogParts%2A>メソッドです。 ただし、作成することも、独自<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>プログラムによるその他の目的のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CatalogPartCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.%23ctor%2A>コンス トラクターの空のインスタンスを初期化します、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスです。 このコンス トラクターのオーバー ロードが内部で使用される、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラス内でその<xref:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts%2A>空のコレクション オブジェクトを作成するメソッド。 ゾーンのすべてのインスタンスを作成し、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールは、子ゾーンのテンプレートで宣言され、コレクションの内部メソッドを使用して、それらを追加します。  
+  
+ このオーバー ロードを使用することはできません、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.%23ctor%2A>の新しいインスタンスを作成するコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>追加<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールをします。 他のオーバー ロードのいずれかを使用する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.%23ctor%2A>コンス トラクター代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CatalogPartCollection (System.Collections.ICollection catalogParts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection catalogParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="catalogParts" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="catalogParts"><see cref="T:System.Collections.ICollection" />の<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />クラスを渡すことによって、<see cref="T:System.Collections.ICollection" />のコレクション<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.%23ctor%2A>コンス トラクターのインスタンスを初期化します、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスとパスのコレクションの<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 これは、1 つのオーバー ロード、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.%23ctor%2A>新規作成に使用できるコンス トラクター<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトを追加<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールをします。  
+  
+ ただし、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>コンス トラクターによって作成されたインスタンスは読み取り専用、個別にアクセスできます<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コレクション内にプログラムでコントロールし、そのプロパティとメソッドを呼び出します。  
+  
+ このコンス トラクターを使用するための 1 つの一般的なシナリオは、のセット全体でいくつかのバッチ操作を実行するかどうかでしょう<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コンテンツ、外観、またはアイテムの関連するグループの位置を変更するなどのコントロールです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カスタムを作成する方法を示します<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>、バッチ操作で、個々 の変更と<xref:System.Web.UI.WebControls.WebParts.CatalogPart>読み取り専用である場合でも、コレクション内で制御します。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスの概要に関するトピック。  
+  
+ 内のコード、`Button1_Click`メソッドを作成、<xref:System.Collections.ArrayList>オブジェクト、2 つの追加<xref:System.Web.UI.WebControls.WebParts.CatalogPart>、オブジェクトのページを制御し、新たに作成し、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.%23ctor%2A>コンス トラクターです。 バッチの変更を加える、基にする方法も示します<xref:System.Web.UI.WebControls.WebParts.CatalogPart>を制御する場合でも、コレクション自体は読み取り専用です。 コレクションをループ処理、コードの更新、<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>各コントロールのプロパティです。  
+  
+ [!code-csharp[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/catalogpartcollectioncs.aspx#2)]
+ [!code-vb[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/catalogpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込むときに、ページに切り替えますカタログ モードを選択して**カタログ**で、**表示モード**ドロップダウン リスト コントロール。 クリックすると、**表示 CatalogPart プロパティ**へのアクセスのボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトし、コンテナー内の特定のプロパティを表示<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 また、タイトル テキストの境界線内で上にマウス ポインターを配置するかどうか、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール、(説明はツールヒントに表示されます)、ボタンがクリックされたときに、コントロールに追加された新しい説明テキストを表示できます。 クリックした場合、**ページ カタログ**表示へのリンク、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロールも説明が更新されている検索されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CatalogPartCollection (System.Web.UI.WebControls.WebParts.CatalogPartCollection existingCatalogParts, System.Collections.ICollection catalogParts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.CatalogPartCollection existingCatalogParts, class System.Collections.ICollection catalogParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartCollection.#ctor(System.Web.UI.WebControls.WebParts.CatalogPartCollection,System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="existingCatalogParts" Type="System.Web.UI.WebControls.WebParts.CatalogPartCollection" />
+        <Parameter Name="catalogParts" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="existingCatalogParts"><see cref="T:System.Collections.ICollection" />既存の<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ゾーン内のコントロールです。</param>
+        <param name="catalogParts"><see cref="T:System.Collections.ICollection" />追加の<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />クラスを渡すことによって、 <see cref="T:System.Collections.ICollection" /> 、既存のコレクション<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ゾーン、およびコントロールの追加のコレクション内のコントロールです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WebParts.CatalogPart catalogPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Contains(System.Web.UI.WebControls.WebParts.CatalogPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="catalogPart" Type="System.Web.UI.WebControls.WebParts.CatalogPart" />
+      </Parameters>
+      <Docs>
+        <param name="catalogPart">A<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />は、チェックをコレクション内にあるかどうかを判断します。</param>
+        <summary>コレクション内の特定のコントロールが存在するかどうかを示す値を返します。</summary>
+        <returns>特定のコントロールがコレクション内にあるかどうかを示すブール値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Contains%2A>メソッドでは、特定するかどうかを確認できます。<xref:System.Web.UI.WebControls.WebParts.CatalogPart>オブジェクトの一部である、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ことを確認する方法を示して かどうか、特定<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールのメンバーである、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクト。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスの概要に関するトピック。  
+  
+ 内のコード、`Button1_Click`メソッドが新たに作成<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>という名前のオブジェクト`myParts`です。 メソッドを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、`PageCatalogPart1`コントロールが存在し場合は、コントロールを取得し、プロパティ値を変更します。  
+  
+ [!code-csharp[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/catalogpartcollectioncs.aspx#2)]
+ [!code-vb[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/catalogpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込むときに、ページに切り替えますカタログ モードを選択して**カタログ**で、**表示モード**ドロップダウン リスト コントロール。 追加のカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>隣のチェック ボックスを選択してをクリックして、ページにコントロール**追加**です。 をクリックして**閉じる**ブラウズ モードをページに戻します。 コントロールに追加した、動詞メニュー (タイトル バーに表示される下向きの矢印) をクリックし、をクリックしていて**閉じる**、コントロールがページから削除されに追加、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール。 カタログのモードにページを返しをクリックして、**ページ カタログ**の内容を表示するリンク、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール。 閉じられたか、コントロールが追加されたことに注意してください。 クリックすると、**表示 CatalogPart プロパティ**へのアクセスのボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトし、コンテナー内の特定のプロパティを表示<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 含まれるサーバー コントロールの横にあるチェック ボックスをオンに、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロールをクリックして**追加**をページに移動して追加し、をクリックして**閉じる**ブラウズ モードをページに戻します。 もう一度、コントロールの動詞メニューをクリックし、閉じる動詞が消えてことを確認します。 内のコードによって削除された、`Button1_Click`メソッドを使用する場合、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Contains%2A>をチェックするメソッド`PageCatalogPart1`、し、設定、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowClose%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.CatalogPart[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.CatalogPart[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartCollection.CopyTo(System.Web.UI.WebControls.WebParts.CatalogPart[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.CatalogPart[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コピーされたコレクションを格納するオブジェクト。</param>
+        <param name="index">コレクションの内容を格納する配列内の開始点です。</param>
+        <summary>コレクションの配列にコピーします<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.CopyTo%2A>メソッドは、含めることができるカスタムの配列を構築する場合に便利です、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクト、またはそれらのコントロールのサブセットです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.CatalogPartCollection Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.CatalogPartCollection Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.CatalogPartCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションの静的な読み取り専用、空のインスタンスを参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な読み取り専用、空のインスタンス<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>場合、メソッドから、適切なオブジェクトの型を返すか、別のオブジェクトのインスタンスと比較する空のコレクション インスタンスを作成するは、インスタンスにメンバーを追加する必要はありませんが、メモリ使用率を削減します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WebParts.CatalogPart catalogPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartCollection.IndexOf(System.Web.UI.WebControls.WebParts.CatalogPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="catalogPart" Type="System.Web.UI.WebControls.WebParts.CatalogPart" />
+      </Parameters>
+      <Docs>
+        <param name="catalogPart">A<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コレクションのメンバーであります。</param>
+        <summary>コレクションの特定のメンバーの位置を返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />のメンバーである、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.IndexOf%2A>メソッドが複数ある場合に役立ちます。 <xref:System.Web.UI.WebControls.WebParts.CatalogPart> Web パーツ ページには、コレクション内で、特定のコントロールを検索する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メンバーの位置を判断する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>コレクションを使用してその<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.IndexOf%2A>プロパティです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスの概要に関するトピック。  
+  
+ 内のコード、`Button1_Click`メソッドが新たに作成<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>という名前のオブジェクト`myParts`です。 メソッドを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.IndexOf%2A>の位置を取得するプロパティを<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>制御、およびコントロールのプロパティ値を変更します。  
+  
+ [!code-csharp[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/catalogpartcollectioncs.aspx#2)]
+ [!code-vb[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/catalogpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込んだ後、ページに切り替えますカタログ モードを選択して**カタログ**で、**表示モード**ドロップダウン リスト コントロール。 クリックすると、**表示 CatalogPart プロパティ**へのアクセスのボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトし、コンテナー内の特定のプロパティを表示<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 クリックして、**ページ カタログ**の内容を表示するリンク、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール。 あるタイトルのみと、境界線ので注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPart.ChromeType%2A>プロパティの値に変更されました<xref:System.Web.UI.WebControls.WebParts.PartChromeType.TitleOnly>ために使用するコードで、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.IndexOf%2A>コントロールを取得するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.CatalogPart this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.CatalogPart Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.CatalogPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定のインデックス<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コレクション内で。</param>
+        <summary>取得またはコレクション内での位置に基づいて、コレクションのメンバーを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item%2A>インデクサー アクセスできるように、基になる<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>インデックスでオブジェクトしプロパティ値を変更またはメソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メンバーにアクセスする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトのインデックスを使用します。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスの概要に関するトピック。  
+  
+ 内のコード、`Button1_Click`メソッドが新たに作成<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>という名前のオブジェクト`myParts`です。 メソッドを使用している、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item%2A>コレクションの最初のメンバーから情報を取得するためのインデクサーです。  
+  
+ [!code-csharp[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/catalogpartcollectioncs.aspx#2)]
+ [!code-vb[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/catalogpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込むときに、ページに切り替えますカタログ モードを選択して**カタログ**で、**表示モード**ドロップダウン リスト コントロール。 クリックすると、**表示 CatalogPart プロパティ**へのアクセスのボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトし、コンテナー内の特定のプロパティを表示<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 内で使用可能なサーバー コントロールの数、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>を使用してコントロールを取得、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item%2A>のインデクサー、`Button1_Click`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.CatalogPart this[string id] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.CatalogPart Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.CatalogPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">特定の一意識別子<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コレクション。</param>
+        <summary>一意の文字列識別子に基づくコレクションのメンバーを返します。</summary>
+        <value>最初の<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ID を持つコレクション内の値に等しい<paramref name="id" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item%2A>インデクサー アクセスできるように、基になる<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>文字列識別子を使用してオブジェクト。 ただし、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>読み取り専用では、オブジェクトがプロパティ値を変更またはインデクサーがアクセスする基になるコントロールのメソッドを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メンバーにアクセスする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトの文字列 ID 値を使用します。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>クラスの概要に関するトピック。  
+  
+ 内のコード、`Button1_Click`メソッドが新たに作成<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>という名前のオブジェクト`myParts`です。 メソッドを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item%2A>に関する情報を取得するためのインデクサー、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コレクションの 2 番目のメンバーであるコントロールです。  
+  
+ [!code-csharp[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/CS/catalogpartcollectioncs.aspx#2)]
+ [!code-vb[WebParts_CatalogPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartCollection_Overview/VB/catalogpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込むときに、ページに切り替えますカタログ モードを選択して**カタログ**で、**表示モード**ドロップダウン リスト コントロール。 クリックすると、**表示 CatalogPart プロパティ**へのアクセスのボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection>オブジェクトし、コンテナー内の特定のプロパティを表示<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 内で使用可能なサーバー コントロールの数、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>を使用してコントロールを取得、<xref:System.Web.UI.WebControls.WebParts.CatalogPartCollection.Item%2A>のインデクサー、`Button1_Click`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

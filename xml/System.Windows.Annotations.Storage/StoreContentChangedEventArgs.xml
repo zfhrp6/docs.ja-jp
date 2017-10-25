@@ -1,0 +1,98 @@
+<Type Name="StoreContentChangedEventArgs" FullName="System.Windows.Annotations.Storage.StoreContentChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class StoreContentChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StoreContentChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.Storage.StoreContentChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Annotations.Storage.AnnotationStore.StoreContentChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.StoreContentChangedEventArgs>データが含まれています、<xref:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.Annotation%2A>イベントに関連付けられていると、<xref:System.Windows.Annotations.Storage.StoreContentAction>の<xref:System.Windows.Annotations.Storage.StoreContentAction.Added>または<xref:System.Windows.Annotations.Storage.StoreContentAction.Deleted>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StoreContentChangedEventArgs (System.Windows.Annotations.Storage.StoreContentAction action, System.Windows.Annotations.Annotation annotation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Annotations.Storage.StoreContentAction action, class System.Windows.Annotations.Annotation annotation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.#ctor(System.Windows.Annotations.Storage.StoreContentAction,System.Windows.Annotations.Annotation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Windows.Annotations.Storage.StoreContentAction" />
+        <Parameter Name="annotation" Type="System.Windows.Annotations.Annotation" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントのアクション。</param>
+        <param name="annotation">追加または削除された注釈。</param>
+        <summary><see cref="M:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.#ctor(System.Windows.Annotations.Storage.StoreContentAction,System.Windows.Annotations.Annotation)" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="annotation" /> または <paramref name="action" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Windows.Annotations.Storage.StoreContentAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Annotations.Storage.StoreContentAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Storage.StoreContentAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行されるアクションを取得します。</summary>
+        <value>アクション<see cref="F:System.Windows.Annotations.Storage.StoreContentAction.Added" />または<see cref="F:System.Windows.Annotations.Storage.StoreContentAction.Deleted" />操作を識別する値を実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 影響を受ける注釈が指定されて、<xref:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.Annotation%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotation">
+      <MemberSignature Language="C#" Value="public System.Windows.Annotations.Annotation Annotation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Annotations.Annotation Annotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.Annotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Annotations.Annotation" />ストア内に変更します。</summary>
+        <value><see cref="T:System.Windows.Annotations.Annotation" />ストア内に変更します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行される操作、<xref:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.Annotation%2A>で指定された、<xref:System.Windows.Annotations.Storage.StoreContentChangedEventArgs.Action%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

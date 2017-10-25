@@ -1,0 +1,47 @@
+<Type Name="INamespacePrefixLookup" FullName="System.Xaml.INamespacePrefixLookup">
+  <TypeSignature Language="C#" Value="public interface INamespacePrefixLookup" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INamespacePrefixLookup" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.INamespacePrefixLookup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>XAML 名前空間のマッピングの推奨されるプレフィックスをコンシューマーに返すことができるサービスを表します。 コンシューマーは、デザイン環境やシリアライザーなどがあります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、特定の XAML 名前空間のプレフィックスを返すサービスを表します。 テクノロジは、アセンブリ レベルの情報の一部としての XAML 名前空間のマッピングの推奨されるプレフィックスを報告します。 このサービスは、その情報を取得します。  
+  
+ .NET Framework XAML サービス実装は提供<xref:System.Windows.Markup.XmlnsPrefixAttribute>アセンブリ レベルで適切なプレフィックスの情報を適用するためのメカニズムとして。 既存のサービス プロバイダーを提供する、<xref:System.Xaml.INamespacePrefixLookup>サービスは、情報が利用可能な場合に、その属性からの情報を読み取ることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LookupPrefix">
+      <MemberSignature Language="C#" Value="public string LookupPrefix (string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string LookupPrefix(string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.INamespacePrefixLookup.LookupPrefix(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">プレフィックスを取得する対象の XAML 名前空間の識別子の文字列。</param>
+        <summary>指定の XAML 名前空間識別子に対して推奨されるプレフィックスを返します。</summary>
+        <returns>推奨されるプレフィックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

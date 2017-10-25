@@ -1,0 +1,163 @@
+<Type Name="CorrelationQuery" FullName="System.ServiceModel.CorrelationQuery">
+  <TypeSignature Language="C#" Value="public class CorrelationQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CorrelationQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.CorrelationQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージが正しいインスタンスにルーティングされるように、メッセージ固有の特性を識別する <see cref="P:System.ServiceModel.CorrelationQuery.Where" /> 句と <see cref="P:System.ServiceModel.CorrelationQuery.Select" /> 句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.CorrelationQuery> は、受信または送信メッセージで実行され、インスタンス キーのセットを生成する一連のクエリです。 <xref:System.Runtime.DurableInstancing.InstanceKey> は、クエリから選択されたデータと特定のサービス インスタンス間のアソシエーションを表します。  
+  
+ この場合、<xref:System.ServiceModel.CorrelationQuery.Where%2A> 句では、この <xref:System.ServiceModel.CorrelationQuery> が実行されるメッセージのセットをフィルター処理できます。 <xref:System.ServiceModel.CorrelationQuery.Select%2A> 句は、受信メッセージのディスパッチ対象のサービス インスタンスを一意に識別するために使用するクエリ セットを表します。 <xref:System.ServiceModel.CorrelationQuery.SelectAdditional%2A> 句は、そのデータをサービス インスタンスと関連付けるために作成する必要のある新しいインスタンス キーを表す一連のクエリ セットです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CorrelationQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CorrelationQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.CorrelationQuery" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CorrelationQuery.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較対象のオブジェクト。</param>
+        <summary>現在の <see cref="T:System.ServiceModel.CorrelationQuery" /> が、指定されたオブジェクトと等しいかどうかを決定します。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.ServiceModel.CorrelationQuery" />と等しい、指定したオブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.CorrelationQuery> インスタンスは、その <xref:System.ServiceModel.CorrelationQuery.Where%2A> 句が等しければ等しいと見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CorrelationQuery.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.CorrelationQuery" /> のハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ServiceModel.CorrelationQuery" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.CorrelationQuery.GetHashCode%2A> は、<xref:System.ServiceModel.CorrelationQuery.Where%2A> 句の値に基づくハッシュ コードを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageQuerySet Select { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageQuerySet Select" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CorrelationQuery.Select" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageQuerySet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージを一意に識別するインスタンス キーを作成するメッセージ内の要素を格納する <see cref="T:System.ServiceModel.MessageQuerySet" /> を取得または設定します。</summary>
+        <value>メッセージを一意に識別するインスタンス キーを作成するメッセージ内の要素を格納する <see cref="T:System.ServiceModel.MessageQuerySet" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAdditional">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.MessageQuerySet&gt; SelectAdditional { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.MessageQuerySet&gt; SelectAdditional" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CorrelationQuery.SelectAdditional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.MessageQuerySet&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれ関連するキーを構成するメッセージ内の要素のセットを定義する句のコレクションを取得します。</summary>
+        <value>それぞれ関連するキーを構成するメッセージ内の要素のセットを定義する句のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Where">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.MessageFilter Where { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.MessageFilter Where" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CorrelationQuery.Where" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.MessageFilter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクエリが適用されるメッセージのセットを定義する <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> を取得または設定します。</summary>
+        <value>このクエリが適用されるメッセージのセットを定義するメッセージ フィルター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

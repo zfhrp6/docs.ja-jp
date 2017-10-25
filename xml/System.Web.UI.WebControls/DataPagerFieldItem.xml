@@ -1,0 +1,124 @@
+<Type Name="DataPagerFieldItem" FullName="System.Web.UI.WebControls.DataPagerFieldItem">
+  <TypeSignature Language="C#" Value="public class DataPagerFieldItem : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPagerFieldItem extends System.Web.UI.Control implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataPagerFieldItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataPager" /> コントロールのページャー フィールド項目を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.WebControls.DataPagerFieldItem>のページャー コントロールを保持するクラスが作成される、<xref:System.Web.UI.WebControls.DataPager>コントロール。 <xref:System.Web.UI.INamingContainer>インターフェイスは、コンテナー コントロールで表されることを示すマーカー、<xref:System.Web.UI.WebControls.DataPagerFieldItem>クラスの一部である、<xref:System.Web.UI.Page>オブジェクトのコントロールの階層です。  
+  
+ <xref:System.Web.UI.WebControls.DataPagerFieldItem>クラスがのハンドラーで通常使用される、<xref:System.Web.UI.WebControls.TemplatePagerField.PagerCommand>のイベント、<xref:System.Web.UI.WebControls.TemplatePagerField>オブジェクト。 内のコントロールへのアクセスに使用される、<xref:System.Web.UI.WebControls.TemplatePagerField>オブジェクトのプロパティにアクセスする、<xref:System.Web.UI.WebControls.DataPager>コントロール。 <xref:System.Web.UI.WebControls.DataPagerCommandEventArgs.Item%2A?displayProperty=nameWithType>プロパティはページャー フィールド項目を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPagerFieldItem (System.Web.UI.WebControls.DataPagerField field, System.Web.UI.WebControls.DataPager pager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataPagerField field, class System.Web.UI.WebControls.DataPager pager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldItem.#ctor(System.Web.UI.WebControls.DataPagerField,System.Web.UI.WebControls.DataPager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataPagerField" />
+        <Parameter Name="pager" Type="System.Web.UI.WebControls.DataPager" />
+      </Parameters>
+      <Docs>
+        <param name="field">ページャー フィールド オブジェクトです。</param>
+        <param name="pager">ページャー フィールド オブジェクトを含むページャー コントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataPagerFieldItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldItem.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>サーバー コントロールのイベントをページの UI サーバー コントロールの階層構造に渡すかどうかを決定します。</summary>
+        <returns>
+          <see langword="true" />イベントは、親コントロールに送信された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pager">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataPager Pager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataPager Pager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerFieldItem.Pager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページャー フィールド オブジェクトを含むページャー コントロールを取得します。</summary>
+        <value>ページャー コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPagerFieldItem.Pager%2A>取得するプロパティを<xref:System.Web.UI.WebControls.DataPager>コントロール。 このプロパティは、通常のイベント ハンドラー内のコントロールのプロパティにアクセスする使用、<xref:System.Web.UI.WebControls.TemplatePagerField.PagerCommand?displayProperty=nameWithType>イベント。  
+  
+   
+  
+## Examples  
+ 次の例のプロパティにアクセスする方法を示しています、<xref:System.Web.UI.WebControls.DataPager>コントロールを使用して、<xref:System.Web.UI.WebControls.DataPagerFieldItem.Pager%2A>のハンドラーのプロパティ、<xref:System.Web.UI.WebControls.TemplatePagerField.PagerCommand?displayProperty=nameWithType>イベント。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataPagerCommandEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.DataPagerCommandEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPagerCommandEventArgs/CS/DataPagerCommandEventArgsCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.DataPagerCommandEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPagerCommandEventArgs/VB/DataPagerCommandEventArgsVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PagerField">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataPagerField PagerField { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataPagerField PagerField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerFieldItem.PagerField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerField</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクト。</summary>
+        <value>ページャー フィールド オブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

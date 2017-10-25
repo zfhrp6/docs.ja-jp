@@ -1,0 +1,104 @@
+<Type Name="ResolveResponseInfo" FullName="System.ServiceModel.PeerResolvers.ResolveResponseInfo">
+  <TypeSignature Language="C#" Value="public class ResolveResponseInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveResponseInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolvers.ResolveResponseInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.MessageContract(IsWrapped=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ピア リゾルバーでのピア エンドポイント解決操作の結果として返される応答情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Resolve%28System.ServiceModel.PeerResolvers.ResolveInfo%29>またはの実装<xref:System.ServiceModel.PeerResolvers.IPeerResolverContract.Resolve%28System.ServiceModel.PeerResolvers.ResolveInfo%29>が呼び出されると、このオブジェクトは、クライアントに返されます。 ピア リゾルバーに送信された、以前の対応する <xref:System.ServiceModel.PeerResolvers.ResolveInfo> インスタンスで指定されているピアに登録されているエンドポイントを格納しています。  
+  
+ このクラスのインスタンスは主に、リゾルバー サービスからそのサービスのネットワーク クライアントに情報を渡すために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveResponseInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.ResolveResponseInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.PeerResolvers.ResolveResponseInfo" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveResponseInfo (System.ServiceModel.PeerNodeAddress[] addresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.PeerNodeAddress[] addresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.ResolveResponseInfo.#ctor(System.ServiceModel.PeerNodeAddress[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="addresses" Type="System.ServiceModel.PeerNodeAddress[]" />
+      </Parameters>
+      <Docs>
+        <param name="addresses">以前の解決操作でエンドポイントを要求したピアに登録されているエンドポイント アドレスを格納した <see cref="T:System.ServiceModel.PeerNodeAddress" /> オブジェクトの配列。</param>
+        <summary>一連のピア エンドポイント アドレスを指定して、<see cref="T:System.ServiceModel.PeerResolvers.ResolveResponseInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Addresses">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.ServiceModel.PeerNodeAddress&gt; Addresses { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.ServiceModel.PeerNodeAddress&gt; Addresses" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.ResolveResponseInfo.Addresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.ServiceModel.PeerNodeAddress&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ノード アドレスのコレクションを取得または設定します。</summary>
+        <value>ジェネリック リスト&lt;IList&gt;の<see cref="T:System.ServiceModel.PeerNodeAddress" />以前の解決操作でエンドポイントを要求したピアに登録されているエンドポイント アドレスを格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBody">
+      <MemberSignature Language="C#" Value="public bool HasBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasBody() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.ResolveResponseInfo.HasBody" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型のシリアル化されたインスタンスを含むメッセージの本文が正しく書式設定されているかどうかを示します。</summary>
+        <returns>送信側が解決応答情報の本文を正しく書式設定している場合は True。正しくない場合は False。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,93 @@
+<Type Name="ContextConfiguration" FullName="System.Web.DynamicData.ContextConfiguration">
+  <TypeSignature Language="C#" Value="public class ContextConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContextConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.ContextConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタマイズできるようにするためにデータ コンテキスト インスタンスに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.ContextConfiguration>クラスでは、データ アクセスをカスタマイズすることができます。 たとえば、またはカスタム メタデータ プロバイダーを定義する Web アプリケーションのスキャフォールディングを有効にするのには、このクラスを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.ContextConfiguration>クラスを呼び出すとき、<xref:System.Web.DynamicData.MetaModel.RegisterContext%2A>スキャフォールディングが有効になっていると、データ コンテキストを登録するためのメソッドです。  
+  
+ [!code-csharp[System.Web.DynamicData.MetaModel#99](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.MetaModel/CS/global.asax.cs#99)]
+ [!code-vb[System.Web.DynamicData.MetaModel#99](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DynamicData.MetaModel/VB/global.asax.vb#99)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.ContextConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.ContextConfiguration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataProviderFactory">
+      <MemberSignature Language="C#" Value="public Func&lt;Type,System.ComponentModel.TypeDescriptionProvider&gt; MetadataProviderFactory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Type, class System.ComponentModel.TypeDescriptionProvider&gt; MetadataProviderFactory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.ContextConfiguration.MetadataProviderFactory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Type,System.ComponentModel.TypeDescriptionProvider&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメタデータ プロバイダーを設定します。</summary>
+        <value>メタデータ プロバイダーの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、特定のデータ コンテキストのカスタム メタデータ プロバイダーを定義することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaffoldAllTables">
+      <MemberSignature Language="C#" Value="public bool ScaffoldAllTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ScaffoldAllTables" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.ContextConfiguration.ScaffoldAllTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキャフォールディングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />スキャフォールディングが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

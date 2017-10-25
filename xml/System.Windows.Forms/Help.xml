@@ -1,0 +1,312 @@
+<Type Name="Help" FullName="System.Windows.Forms.Help">
+  <TypeSignature Language="C#" Value="public class Help" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Help extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Help" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTML ヘルプ 1.0 エンジンをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成することはできません、<xref:System.Windows.Forms.Help>クラスです。 アプリケーションのヘルプを提供する、静的なを呼び出す<xref:System.Windows.Forms.Help.ShowHelp%2A>と<xref:System.Windows.Forms.Help.ShowHelpIndex%2A>メソッドです。  
+  
+ 使用することができます<xref:System.Windows.Forms.Help>を表示するヘルプ ファイル (.chm) または HTML ヘルプ形式の HTML ファイルをコンパイルします。 コンパイル済みヘルプ ファイルは、目次、キーワード、検索機能、およびページ内のキーワードのリンクのテーブルを提供します。 ショートカットは、コンパイル済みヘルプ ファイルでのみ使用できます。  
+  
+ HTML Help Workshop を使用して、HTML ヘルプ 1.x のファイルを生成することができます。 HTML ヘルプの詳細については、"HTML Help Workshop"と他の HTML ヘルプ トピックを参照してください[Microsoft HTML ヘルプ](http://go.microsoft.com/fwlink/?LinkId=178661)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ファイルとの対話に使用できる 3 つのボタンを含むフォームを表示します。 **ヘルプの表示**ボタンが表示されます、**インデックス**ヘルプ ファイルのタブです。 **ヘルプを表示する**ボタンで選択されている値に基づいてヘルプ ファイル内のコンテンツを表示する、**ヘルプ ナビゲーター**  ボックスの一覧です。 **表示キーワード**ボタンがで指定されているキーワードに基づいてヘルプ ファイルのコンテンツを表示、**キーワード**テキスト ボックス。  
+  
+ たとえば、ページを表示楕円のヘルプ インデックス値によって、次のように選択します、<xref:System.Windows.Forms.HelpNavigator?displayProperty=nameWithType>値で、**ヘルプ ナビゲーター**ドロップダウン リストで、「**楕円**で、**パラメーター** 。テキスト ボックスに入力し、**ヘルプを表示する**ボタンをクリックします。 キーワードを使用して、ブラシで描画します。"するには」のヘルプ トピックを表示するには、入力**mspaint.chm::/paint_brush.htm**で、**キーワード**テキスト ボックスに入力し、**表示キーワード**ボタンをクリックします。  
+  
+ この例では、<xref:System.Windows.Forms.Help.ShowHelp%2A>各種タブのヘルプおよびヘルプ トピックを表示するメソッドと<xref:System.Windows.Forms.Help.ShowHelpIndex%2A>ヘルプを表示するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Help/CPP/helpsnippet.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Help/CS/helpsnippet.cs#1)]
+ [!code-vb[System.Windows.Forms.Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Help/VB/helpsnippet.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public static void ShowHelp (System.Windows.Forms.Control parent, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowHelp(class System.Windows.Forms.Control parent, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Help.ShowHelp(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Forms.Control" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parent">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ダイアログ ボックスの親を識別します。</param>
+        <param name="url">パスと、ヘルプ ファイルの名前。</param>
+        <summary>指定された url には、ヘルプ ファイルの内容を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `url`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.Help.ShowHelp%2A>メソッドです。 この例を実行するには、という名前のボタンを含むフォームに次のコードを貼り付ける`Button1`です。  
+  
+ [!code-cpp[System.Windows.Forms.HelpExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">HTTP 経由での HTML ヘルプ ファイルにアクセスするため次のように要求します。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">いない HTML ヘルプ ファイルにアクセスするためには、HTTP サーバーから提供します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public static void ShowHelp (System.Windows.Forms.Control parent, string url, string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowHelp(class System.Windows.Forms.Control parent, string url, string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Help.ShowHelp(System.Windows.Forms.Control,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Forms.Control" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parent">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ダイアログ ボックスの親を識別します。</param>
+        <param name="url">パスと、ヘルプ ファイルの名前。</param>
+        <param name="keyword">ヘルプを表示するキーワードです。</param>
+        <summary>指定された URL で検出された、特定のキーワードについてのヘルプ ファイルの内容を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `url`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+ キーワードを指定する場合`null`、ヘルプ ファイルの目次が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ファイルとの対話に使用できる 3 つのボタンを備えたフォームが表示されます。 **ヘルプの表示**ボタンが表示されます、**インデックス**ヘルプ ファイルのタブです。 **ヘルプを表示する**ボタンで選択されている値に基づいてヘルプ ファイル内のコンテンツを表示する、**ヘルプ ナビゲーター**  ボックスの一覧です。 **表示キーワード**ボタンがで指定されているキーワードに基づいてヘルプ ファイルのコンテンツを表示、**キーワード**テキスト ボックス。  
+  
+ たとえば、ページを表示楕円のヘルプ インデックス値によって、次のように選択します、<xref:System.Windows.Forms.HelpNavigator?displayProperty=nameWithType>値で、**ヘルプ ナビゲーター**ドロップダウン リストで、「**楕円**で、**パラメーター** 。テキスト ボックスに入力し、**ヘルプを表示する**ボタンをクリックします。 キーワードを使用して、ブラシで描画します。"するには」のヘルプ トピックを表示するには、入力**mspaint.chm::/paint_brush.htm**で、**キーワード**テキスト ボックスに入力し、**表示キーワード**ボタンをクリックします。  
+  
+ この例の呼び出しのみを示しています、<xref:System.Windows.Forms.Help.ShowHelp%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.Help>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.Help#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Help/CPP/helpsnippet.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Help#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Help/CS/helpsnippet.cs#4)]
+ [!code-vb[System.Windows.Forms.Help#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Help/VB/helpsnippet.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">HTTP 経由での HTML ヘルプ ファイルにアクセスするため次のように要求します。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">いない HTML ヘルプ ファイルにアクセスするためには、HTTP サーバーから提供します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public static void ShowHelp (System.Windows.Forms.Control parent, string url, System.Windows.Forms.HelpNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowHelp(class System.Windows.Forms.Control parent, string url, valuetype System.Windows.Forms.HelpNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Help.ShowHelp(System.Windows.Forms.Control,System.String,System.Windows.Forms.HelpNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Forms.Control" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="navigator" Type="System.Windows.Forms.HelpNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="parent">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ダイアログ ボックスの親を識別します。</param>
+        <param name="url">パスと、ヘルプ ファイルの名前。</param>
+        <param name="navigator"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <summary>指定された URL で検出された、特定のトピックについてのヘルプ ファイルの内容を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `url`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+ コンパイル済みヘルプ ファイルは、目次、インデックス、検索、およびページ内のキーワードのリンクを提供します。 次の値を使用することができます、`navigator`パラメーター: <xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Find>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Topic>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Help.ShowHelp%2A>をインデックスのページにヘルプ ファイルを開くメソッドです。 この例を実行するには、という名前のボタンを含むフォームに次のコードを貼り付ける`Button2`です。  
+  
+ [!code-cpp[System.Windows.Forms.HelpExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.HelpExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpExample/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HelpExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">HTTP 経由での HTML ヘルプ ファイルにアクセスするため次のように要求します。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">いない HTML ヘルプ ファイルにアクセスするためには、HTTP サーバーから提供します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public static void ShowHelp (System.Windows.Forms.Control parent, string url, System.Windows.Forms.HelpNavigator command, object parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowHelp(class System.Windows.Forms.Control parent, string url, valuetype System.Windows.Forms.HelpNavigator command, object parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Help.ShowHelp(System.Windows.Forms.Control,System.String,System.Windows.Forms.HelpNavigator,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Forms.Control" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="command" Type="System.Windows.Forms.HelpNavigator" />
+        <Parameter Name="parameter" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parent">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ダイアログ ボックスの親を識別します。</param>
+        <param name="url">パスと、ヘルプ ファイルの名前。</param>
+        <param name="command"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <param name="parameter">トピック識別子を表す文字列。</param>
+        <summary>ユーザーによって指定された URL にあるヘルプ ファイルの内容を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイル済みヘルプ ファイルはページ内のコンテンツのテーブル、インデックス、検索、およびキーワードのリンクを提供します。 使用することができます、`param`さらに詳しく定義を提供するパラメーター、 <xref:System.Windows.Forms.HelpNavigator.Topic>、 <xref:System.Windows.Forms.HelpNavigator.TopicId>、 <xref:System.Windows.Forms.HelpNavigator.KeywordIndex>、または<xref:System.Windows.Forms.HelpNavigator.AssociateIndex>コマンド。 値が指定されている場合、`command`パラメーターは<xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Find>、この値にする必要があります、`empty string`です。 場合、`command`パラメーター参照<xref:System.Windows.Forms.HelpNavigator.Topic>、 <xref:System.Windows.Forms.HelpNavigator.TopicId>、 <xref:System.Windows.Forms.HelpNavigator.KeywordIndex>、または<xref:System.Windows.Forms.HelpNavigator.AssociateIndex>、この値は、トピック名または表示するトピックのキーワードまたは数値識別子を表す文字列をする必要があります。  
+  
+ `url`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ファイルとの対話に使用できる 3 つのボタンを備えたフォームが表示されます。 **ヘルプの表示**ボタンが表示されます、**インデックス**ヘルプ ファイルのタブです。 **ヘルプを表示する**ボタンで選択されている値に基づいてヘルプ ファイル内のコンテンツを表示する、**ヘルプ ナビゲーター**  ボックスの一覧です。 **表示キーワード**ボタンがで指定されているキーワードに基づいてヘルプ ファイルのコンテンツを表示、**キーワード**テキスト ボックス。  
+  
+ たとえば、ページを表示楕円のヘルプ インデックス値によって、次のように選択します、<xref:System.Windows.Forms.HelpNavigator?displayProperty=nameWithType>値で、**ヘルプ ナビゲーター**ドロップダウン リストで、「**楕円**で、**パラメーター** 。テキスト ボックスに入力し、**ヘルプを表示する**ボタンをクリックします。 キーワードを使用して、ブラシで描画します。"するには」のヘルプ トピックを表示するには、入力**mspaint.chm::/paint_brush.htm**で、**キーワード**テキスト ボックスに入力し、**表示キーワード**ボタンをクリックします。  
+  
+ この例の呼び出しのみを示しています、<xref:System.Windows.Forms.Help.ShowHelp%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.Help>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.Help#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Help/CPP/helpsnippet.cpp#3)]
+ [!code-csharp[System.Windows.Forms.Help#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Help/CS/helpsnippet.cs#3)]
+ [!code-vb[System.Windows.Forms.Help#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Help/VB/helpsnippet.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameter" />整数です。</exception>
+        <permission cref="T:System.Net.WebPermission">HTTP 経由での HTML ヘルプ ファイルにアクセスするため次のように要求します。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">いない HTML ヘルプ ファイルにアクセスするためには、HTTP サーバーから提供します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelpIndex">
+      <MemberSignature Language="C#" Value="public static void ShowHelpIndex (System.Windows.Forms.Control parent, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowHelpIndex(class System.Windows.Forms.Control parent, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Help.ShowHelpIndex(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Forms.Control" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parent">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ダイアログ ボックスの親を識別します。</param>
+        <param name="url">パスと、ヘルプ ファイルの名前。</param>
+        <summary>指定したヘルプ ファイルのインデックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `url`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ファイルとの対話に使用できる 3 つのボタンを備えたフォームが表示されます。 **ヘルプの表示**ボタンが表示されます、**インデックス**ヘルプ ファイルのタブです。 **ヘルプを表示する**ボタンで選択されている値に基づいてヘルプ ファイル内のコンテンツを表示する、**ヘルプ ナビゲーター**  ボックスの一覧です。 **表示キーワード**ボタンがで指定されているキーワードに基づいてヘルプ ファイルのコンテンツを表示、**キーワード**テキスト ボックス。  
+  
+ たとえば、ページを表示楕円のヘルプ インデックス値によって、次のように選択します、<xref:System.Windows.Forms.HelpNavigator?displayProperty=nameWithType>値で、**ヘルプ ナビゲーター**ドロップダウン リストで、「**楕円**で、**パラメーター** 。テキスト ボックスに入力し、**ヘルプを表示する**ボタンをクリックします。 キーワードを使用して、ブラシで描画します。"するには」のヘルプ トピックを表示するには、入力**mspaint.chm::/paint_brush.htm**で、**キーワード**テキスト ボックスに入力し、**表示キーワード**ボタンをクリックします。  
+  
+ この例の呼び出しのみを示しています、<xref:System.Windows.Forms.Help.ShowHelpIndex%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.Help>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.Help#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Help/CPP/helpsnippet.cpp#2)]
+ [!code-csharp[System.Windows.Forms.Help#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Help/CS/helpsnippet.cs#2)]
+ [!code-vb[System.Windows.Forms.Help#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Help/VB/helpsnippet.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">HTTP 経由での HTML ヘルプ ファイルにアクセスするため次のように要求します。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">いない HTML ヘルプ ファイルにアクセスするためには、HTTP サーバーから提供します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPopup">
+      <MemberSignature Language="C#" Value="public static void ShowPopup (System.Windows.Forms.Control parent, string caption, System.Drawing.Point location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowPopup(class System.Windows.Forms.Control parent, string caption, valuetype System.Drawing.Point location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Help.ShowPopup(System.Windows.Forms.Control,System.String,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Forms.Control" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="location" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="parent">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ダイアログ ボックスの親を識別します。</param>
+        <param name="caption">ポップアップ ウィンドウに表示するメッセージ。</param>
+        <param name="location">画面の左上隅を基準とした、ポップアップ ウィンドウを表示する位置を示す水平および垂直方向の座標を指定する値。</param>
+        <summary>ヘルプのポップアップ ウィンドウを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.Control.KeyUp>イベントと、<xref:System.Windows.Forms.Help>をユーザーにポップアップ スタイルのヘルプを表示するクラス。  
+  
+ [!code-cpp[Control.KeyUp#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.KeyUp/CPP/form1.cpp#1)]
+ [!code-csharp[Control.KeyUp#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.KeyUp/CS/form1.cs#1)]
+ [!code-vb[Control.KeyUp#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.KeyUp/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

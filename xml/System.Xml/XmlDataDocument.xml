@@ -1,0 +1,635 @@
+<Type Name="XmlDataDocument" FullName="System.Xml.XmlDataDocument">
+  <TypeSignature Language="C#" Value="public class XmlDataDocument : System.Xml.XmlDocument" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDataDocument extends System.Xml.XmlDocument" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlDataDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlDocument</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("XmlDataDocument class will be removed in a future release.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、構造化データを格納、取得、およびリレーショナルを通じて操作<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは拡張<xref:System.Xml.XmlDocument>です。 リレーショナル データまたは XML データを読み込むし、World Wide Web Consortium (W3C) ドキュメント オブジェクト モデル (DOM) を使用してデータを操作することができます。 DOM は、ノード オブジェクトの階層としてデータを表示します。 `XmlDataDocument`を実装する、<xref:System.Xml.XPath.IXPathNavigable>インターフェイスのソース ドキュメントとしても使用できます、<xref:System.Xml.Xsl.XslTransform>クラスです。  
+  
+ `XmlDataDocument`閉じる、会社名を持つ、`DataSet`読み込まれた XML データのリレーショナル ビューを提供するクラス。 加えられた変更、`XmlDataDocument`に反映されますが、`DataSet`およびその逆です。  
+  
+ 読み込み、 `DataSet` XML データを使用して<xref:System.Data.DataSet.ReadXmlSchema%2A>リレーショナルのマッピングを作成します。 使用して、XML データを読み込むことができますし、<xref:System.Xml.XmlDataDocument.Load%2A>または<xref:System.Xml.XmlDocument.LoadXml%2A>です。  
+  
+ リレーショナル データを読み込むには、指定、`DataSet`でパラメーターとしてそのリレーショナル データを含む、<xref:System.Xml.XmlDataDocument.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDataDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlDataDocument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空<xref:System.Data.DataSet>が作成され、関連付け、`XmlDataDocument`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDataDocument (System.Data.DataSet dataset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataSet dataset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.#ctor(System.Data.DataSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataset" Type="System.Data.DataSet" />
+      </Parameters>
+      <Docs>
+        <param name="dataset"><see langword="DataSet" />に読み込む<see langword="XmlDataDocument" />します。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlDataDocument" /> を使用して、<see cref="T:System.Data.DataSet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDataDocument`が同期されている、指定した`DataSet`です。 内のデータ、`DataSet`はから直ちに使用できる、`XmlDataDocument`です。 変更、`DataSet`で反映されますが、`XmlDataDocument`です。 行った変更、`XmlDataDocument`と一致していれば、`DataSet`スキーマ内で伝達される、`DataSet`です。  
+  
+   
+  
+## Examples  
+ 次の例に customer テーブルの読み込み、`XmlDataDocument`です。  
+  
+ この例では、SQL Server 2000 の Northwind データベースを使用します。  
+  
+ [!code-cpp[Classic WebData XmlDataDocument.XmlDataDocument1 Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlDataDocument.XmlDataDocument1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlDataDocument.XmlDataDocument1 Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlDataDocument.XmlDataDocument1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlDataDocument.XmlDataDocument1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlDataDocument.XmlDataDocument1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.CloneNode(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">
+          指定したノードの下にあるサブツリーのクローンを順次作成していく場合は <see langword="true" />。指定したノードだけのクローンを作成する場合は <see langword="false" />。</param>
+        <summary>現在のノードの複製を作成します。</summary>
+        <returns>クローンとして作成されたノード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製、`XmlDataDocument`ものクローンを作成、<xref:System.Data.DataSet>スキーマです。  
+  
+ 場合`deep`に設定されている`false`、複製された`DataSet`持ち、データがありません; である行はありません。  
+  
+ 場合`deep`に設定されている`true`、複製された`DataSet`がスキーマに設定され、データが設定されます。  
+  
+ 参照してください<xref:System.Xml.XmlNode.CloneNode%2A>で、`XmlNode`クラスの別のノードの種類ごとにこのメソッドの動作について説明した表を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例、`DataSet`に、`XmlDataDocument`のシャロー クローンを作成し、`XmlDataDocument`です。  
+  
+ この例では、SQL Server 2000 の Northwind データベースを使用します。  
+  
+ [!code-cpp[Classic WebData XmlDataDocument.CloneNode Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlDataDocument.CloneNode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlDataDocument.CloneNode Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlDataDocument.CloneNode Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlDataDocument.CloneNode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlDataDocument.CloneNode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateElement">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlElement CreateElement (string prefix, string localName, string namespaceURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlElement CreateElement(string prefix, string localName, string namespaceURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.CreateElement(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">新しい要素のプレフィックス。 場合は String.Empty または<see langword="null" />プレフィックスはありません。</param>
+        <param name="localName">新しい要素のローカル名。</param>
+        <param name="namespaceURI">名前空間 Uniform Resource Identifier () の新しい要素。 場合は String.Empty または<see langword="null" />namespaceURI がありません。</param>
+        <summary>指定した要素を作成する<see cref="P:System.Xml.XmlNode.Prefix" />、 <see cref="P:System.Xml.XmlDocument.LocalName" /> 、および<see cref="P:System.Xml.XmlNode.NamespaceURI" />です。</summary>
+        <returns>新しい <see cref="T:System.Xml.XmlElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Note to Inheritors`この関数をオーバー ロードする場合は、拡張機能を使用できません。 代わりに、この場合、基本クラスによって作成された要素を返すことができます`XmlDataDocument`です。 次の例を参照してください。  
+  
+```  
+class MyXmlDataDocument : XmlDataDocument {  
+ public override XmlElement CreateElement(string prefix, string localName, string nsURI) {  
+   //Ensure we are returning the base class implementation of element.  
+   XmlElement e = base.CreateElement(prefix, localName, nsURI);  
+   //Add additional code here.  
+   return e;    //Return the element created by XmlDataDocument.  
+ }      
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntityReference">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlEntityReference CreateEntityReference (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlEntityReference CreateEntityReference(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.CreateEntityReference(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlEntityReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンティティ参照の名前。</param>
+        <summary>指定した名前を使用して、<see cref="T:System.Xml.XmlEntityReference" /> を作成します。</summary>
+        <returns><see cref="T:System.Xml.XmlEntityReference" />指定した名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlEntityReference>ノードを作成できません<xref:System.Xml.XmlDataDocument>オブジェクト。 このメソッドを呼び出すには、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドを呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNavigator">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XPath.XPathNavigator CreateNavigator (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XPath.XPathNavigator CreateNavigator(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.CreateNavigator(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">ナビゲーターを最初に配置する <see cref="T:System.Xml.XmlNode" />。</param>
+        <summary>このドキュメント内を移動するための、新しい <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクトを作成します。 <see langword="XPathNavigator" />で指定されたノードに配置されて、<paramref name="node" />パラメーター。</summary>
+        <returns><see langword="XPathNavigator" />文書内を移動するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XPathNavigator`データへの読み取り専用で、ランダム アクセスを提供します。 XSLT 変換用に最適化された、利点がパフォーマンスに入力メカニズムとして使用する場合、<xref:System.Xml.Xsl.XslTransform.Transform%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ XSLT 変換を使用してを表示する`XmlDataDocument`と`XPathNavigator`を参照してください、<xref:System.Xml.Xsl.XslTransform.Transform%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSet">
+      <MemberSignature Language="C#" Value="public System.Data.DataSet DataSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataSet DataSet" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDataDocument.DataSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataSet" />内のデータのリレーショナル表現を提供する、<see langword="XmlDataDocument" />です。</summary>
+        <value>A<see langword="DataSet" />内のデータへのアクセスに使用できる、<see langword="XmlDataDocument" />リレーショナル モデルを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DataSet`データにアクセスすることができます、`XmlDataDocument`リレーショナル モデルを使用します。 これは、テーブル、ビュー、行、列、リレーション、として、データを処理およびにできることを意味します。 行われた変更によって、`DataSet`にすぐに表示されて、`XmlDataDocument`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、書籍の価格の変更、`DataSet`メソッドです。  
+  
+ [!code-cpp[Classic WebData XmlDataDocument.DataSet Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlDataDocument.DataSet Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlDataDocument.DataSet Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/VB/source.vb#1)]  
+  
+ この例では、入力として次の 2 つのファイルを使用します。  
+  
+ `2books.xml`  
+  
+ [!code-xml[Classic WebData XmlDataDocument.DataSet Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/XML/source.xml#2)]  
+  
+ `store.xsd`  
+  
+ [!code-xml[Classic WebData XmlDataDocument.DataSet Example#3](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/XML/source.xml#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementById">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlElement GetElementById (string elemId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlElement GetElementById(string elemId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.GetElementById(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elemId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elemId">一致する属性 ID。</param>
+        <summary>指定した ID の <see cref="T:System.Xml.XmlElement" /> を取得します。 このメソッドでサポートされていない、<see cref="T:System.Xml.XmlDataDocument" />クラスです。 このメソッドを呼び出すには、例外がスローされます。</summary>
+        <returns><see cref="T:System.Xml.XmlElement" />指定した ID に置き換えます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでサポートされていない、<xref:System.Xml.XmlDataDocument>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドを呼び出します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementFromRow">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetElementFromRow (System.Data.DataRow r);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement GetElementFromRow(class System.Data.DataRow r) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.GetElementFromRow(System.Data.DataRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="r" Type="System.Data.DataRow" />
+      </Parameters>
+      <Docs>
+        <param name="r"><see langword="DataRow" />が関連付けられている<see langword="XmlElement" />を取得します。</param>
+        <summary>取得、<see cref="T:System.Xml.XmlElement" />に指定された関連付けられている<see cref="T:System.Data.DataRow" />です。</summary>
+        <returns><see langword="XmlElement" />の指定された表現を含む<see langword="DataRow" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例、`DataSet`に、`XmlDataDocument`し、作成、`XmlElement`最初の顧客レコードを表すです。  
+  
+ この例では、SQL Server 2000 の Northwind データベースを使用します。  
+  
+ [!code-cpp[Classic WebData XmlDataDocument.GetElementFromRow Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlDataDocument.GetElementFromRow Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlDataDocument.GetElementFromRow Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlDataDocument.GetElementFromRow Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlDataDocument.GetElementFromRow Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlDataDocument.GetElementFromRow Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementsByTagName">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeList GetElementsByTagName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNodeList GetElementsByTagName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.GetElementsByTagName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">一致する限定名。 一致するノードの <see cref="P:System.Xml.XmlDocument.Name" /> プロパティに一致します。 特殊値の "*" は、すべてのタグに一致します。</param>
+        <summary>指定した <see cref="P:System.Xml.XmlDocument.Name" /> に一致するすべての子孫の要素のリストを格納している <see cref="T:System.Xml.XmlNodeList" /> を返します。</summary>
+        <returns>一致しているすべてのノードのリストを格納している <see cref="T:System.Xml.XmlNodeList" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  使用することをお勧め、<xref:System.Xml.XmlNode.SelectNodes%2A?displayProperty=nameWithType>または<xref:System.Xml.XmlNode.SelectSingleNode%2A?displayProperty=nameWithType>メソッドの代わりに、<xref:System.Xml.XmlDataDocument.GetElementsByTagName%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRowFromElement">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow GetRowFromElement (System.Xml.XmlElement e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetRowFromElement(class System.Xml.XmlElement e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.GetRowFromElement(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see langword="XmlElement" />が関連付けられている<see langword="DataRow" />を取得します。</param>
+        <summary>取得、<see cref="T:System.Data.DataRow" />に指定された関連付けられている<see cref="T:System.Xml.XmlElement" />です。</summary>
+        <returns><see langword="DataRow" />の表現を含む、<see langword="XmlElement" />です。<see langword="null" />がある場合ありません<see langword="DataRow" />に関連付けられている、<see langword="XmlElement" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、最初の書籍の価格を変更します。  
+  
+ [!code-cpp[XmlDataDocument.GetRowFromElement#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlDataDocument.GetRowFromElement/CPP/getrow.cpp#1)]
+ [!code-csharp[XmlDataDocument.GetRowFromElement#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlDataDocument.GetRowFromElement/CS/getrow.cs#1)]
+ [!code-vb[XmlDataDocument.GetRowFromElement#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlDataDocument.GetRowFromElement/VB/getrow.vb#1)]  
+  
+ 例では、次の入力ファイルを使用します。  
+  
+ `2books.xml`  
+  
+ [!code-xml[Classic WebData XmlDataDocument.DataSet Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/XML/source.xml#2)]  
+  
+ `store.xsd`  
+  
+ [!code-xml[Classic WebData XmlDataDocument.DataSet Example#3](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlDataDocument.DataSet Example/XML/source.xml#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>読み込み、<see langword="XmlDataDocument" />指定されたデータ ソースを使用して、同期、<see cref="T:System.Data.DataSet" />読み込まれたデータです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  リレーション形式を XML データを表示するのには、最初にデータのマッピングに使用するスキーマを指定する必要があります。 これに呼び出すか、<xref:System.Data.DataSet.ReadXmlSchema%2A>メソッドまたは内の列とテーブルを作成することで、`DataSet`手動でします。 この手順を呼び出す前に行う必要があります`Load`です。  
+  
+ `XmlDataDocument`作成元のエンティティ参照はサポートされません。 データには、エンティティ参照が含まれている場合、`Load`メソッドを解決し、任意のエンティティ参照を展開します。 ただし、使用する場合、`Load`を受け取るオーバー ロード、<xref:System.Xml.XmlReader>を引数として指定する必要があります、`XmlReader`エンティティを解決することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load (System.IO.Stream inStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load(class System.IO.Stream inStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.Load(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="inStream">読み込む XML ドキュメントが含まれているストリーム。</param>
+        <summary>読み込み、<see langword="XmlDataDocument" />指定したストリームからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDataDocument`作成元のエンティティ参照はサポートされません。 データには、エンティティ参照が含まれている場合、`Load`メソッドを解決し、任意のエンティティ参照を展開します。  
+  
+> [!NOTE]
+>  リレーション形式を XML データを表示するのには、最初にデータのマッピングに使用するスキーマを指定する必要があります。 これに呼び出すか、<xref:System.Data.DataSet.ReadXmlSchema%2A>メソッドまたは内の列とテーブルを作成することで、`DataSet`手動でします。 この手順を呼び出す前に行う必要があります`Load`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load (System.IO.TextReader txtReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load(class System.IO.TextReader txtReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.Load(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="txtReader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="txtReader">XML データをドキュメントに送るために使用する <see langword="TextReader" />。</param>
+        <summary>読み込み、<see langword="XmlDataDocument" />から、指定した<see cref="T:System.IO.TextReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDataDocument`作成元のエンティティ参照はサポートされません。 データには、エンティティ参照が含まれている場合、`Load`メソッドを解決し、任意のエンティティ参照を展開します。  
+  
+> [!NOTE]
+>  リレーション形式を XML データを表示するのには、最初にデータのマッピングに使用するスキーマを指定する必要があります。 これに呼び出すか、<xref:System.Data.DataSet.ReadXmlSchema%2A>メソッドまたは内の列とテーブルを作成することで、`DataSet`手動でします。 この手順を呼び出す前に行う必要があります`Load`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.Load(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">読み込む XML ドキュメントを含むファイルの URL。</param>
+        <summary>読み込み、<see langword="XmlDataDocument" />指定した URL を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDataDocument`作成元のエンティティ参照はサポートされません。 データには、エンティティ参照が含まれている場合、`Load`メソッドを解決し、任意のエンティティ参照を展開します。  
+  
+> [!NOTE]
+>  リレーション形式を XML データを表示するのには、最初にデータのマッピングに使用するスキーマを指定する必要があります。 これに呼び出すか、<xref:System.Data.DataSet.ReadXmlSchema%2A>メソッドまたは内の列とテーブルを作成することで、`DataSet`手動でします。 この手順を呼び出す前に行う必要があります`Load`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDataDocument.Load(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see langword="XmlReader" />読み込む XML ドキュメントを格納します。</param>
+        <summary>読み込み、<see langword="XmlDataDocument" />から、指定した<see cref="T:System.Xml.XmlReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDataDocument`作成元のエンティティ参照はサポートされません。 作成する必要がありますが、データ ソースにエンティティ参照が含まれている場合、<xref:System.Xml.XmlValidatingReader>で、<xref:System.Xml.XmlValidatingReader.EntityHandling%2A>プロパティ (これは、既定の動作です) で entityhandling.expandentities が使用する設定し、を渡す、`XmlValidatingReader`を`Load`メソッドです。 使用しない場合、 `XmlValidatingReader`、`Load`メソッドが例外をスローします。  
+  
+ `Load`メソッドは、有意の空白を常に保存します。 <xref:System.Xml.XmlDocument.PreserveWhitespace%2A>プロパティは、空白文字は保持されているかどうかを決定します。 既定値は`false`、空白文字は保持されません。  
+  
+ リーダーが初期状態 (つまり、ReadState=ReadState.Initial) の場合`Load`リーダーの内容全体を使用して、検出した内容からの DOM をビルドします。  
+  
+ "N"の深さでいくつかのノードには、既に、リーダーが配置されて、そのノードと"n"の深さを閉じる終了タグまでのすべての後続の兄弟このメソッドが読み込みます。 これは、次の結果です。  
+  
+ 場合は、現在のノードとその次の兄弟には、次のようになります。  
+  
+```  
+<!--comment--><element1>one</element1><element2>two</element2>  
+```  
+  
+ `Load`ドキュメントが 2 つのルート レベル要素にはできないため、例外がスローされます。 場合は、現在のノードとその次の兄弟には、次のようになります。  
+  
+```  
+<!--comment--><?process  
+    instruction?><!--comment--></endtag>  
+```  
+  
+ `Load`成功します。ただしは、未完了の DOM ツリー ルート レベルの要素がありません。 ドキュメントを保存する前に、ルート レベルの要素を追加する必要があります。それ以外の場合、<xref:System.Xml.XmlDocument.Save%2A>メソッドが例外をスローします。  
+  
+ ドキュメントのルート レベルとしては無効なリーフ ノード (たとえば空白ノードや属性ノード) にリーダーが位置している場合、リーダーはルートとして使用できるノードに移動するまで読み込みを続行します。 ドキュメントの読み込みは、この位置から開始されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、書籍の価格の変更、`DataSet`メソッドです。  
+  
+ [!code-cpp[XmlDataDocument.Load#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlDataDocument.Load/CPP/loadrdr.cpp#1)]
+ [!code-csharp[XmlDataDocument.Load#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlDataDocument.Load/CS/loadrdr.cs#1)]
+ [!code-vb[XmlDataDocument.Load#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlDataDocument.Load/VB/loadrdr.vb#1)]  
+  
+ 次の 2 つの入力ファイルを使用します。  
+  
+ `2books.xml`  
+  
+ [!code-xml[XmlDataDocument.Load#2](~/samples/snippets/xml/VS_Snippets_Data/XmlDataDocument.Load/XML/2books.xml#2)]  
+  
+ `store.xsd`  
+  
+ [!code-xml[XmlDataDocument.Load#3](~/samples/snippets/xml/VS_Snippets_Data/XmlDataDocument.Load/XML/test.xsd#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み込まれる XML には、エンティティ参照が含まれているし、リーダーがエンティティを解決できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

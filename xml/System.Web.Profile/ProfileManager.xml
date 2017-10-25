@@ -1,0 +1,1050 @@
+<Type Name="ProfileManager" FullName="System.Web.Profile.ProfileManager">
+  <TypeSignature Language="C#" Value="public static class ProfileManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ProfileManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー プロファイル データと設定を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET プロファイルが格納およびデータベースなどのデータ ソースのユーザー設定を取得するために使用します。 使用して、ユーザー プロファイルをアクセス、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>です。 プロファイル情報およびプロパティの値は、プロファイル プロバイダーを使用して管理します。  
+  
+ <xref:System.Web.Profile.ProfileManager>プロファイル設定の管理、ユーザー プロファイルの検索し、使用できなくなったユーザー プロファイルを削除するクラスを使用します。 <xref:System.Web.Profile.ProfileManager>クラスの静的メソッドとプロパティを参照してアクセスできる提供、<xref:System.Web.Profile.ProfileManager>アプリケーション コードでクラスです。 例についてを参照してくださいこのトピックの「例」のセクションとトピックは、その他例のメンバー、<xref:System.Web.Profile.ProfileManager>クラスです。  
+  
+ 既定では、すべての ASP.NET アプリケーションのユーザー プロファイルは無効です。 ユーザー プロファイルを有効にするには設定、`enabled`を true に、次の例に示すように構成要素の属性です。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <profile enabled="true" />  
+  </system.web>  
+</configuration>  
+```  
+  
+ ユーザー プロファイルの詳細については、次を参照してください。 [ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+ プロファイル プロバイダーは格納およびユーザー プロファイルのプロパティを取得するために使用します。 .NET Framework が含まれています、<xref:System.Web.Profile.SqlProfileProvider>を SQL Server データベースのユーザー プロファイル プロパティを格納するクラス。 A<xref:System.Web.Profile.SqlProfileProvider>という名前のインスタンス`AspNetSqlProvider`は既定のプロファイル プロバイダーとして、マシンの構成で指定します。 `AspNetSqlProvider`インスタンスは、ローカル Web サーバー上の SQL Server データベースに接続します。 指定することができます、<xref:System.Web.Profile.SqlProfileProvider>構成要素を使用して既定のプロファイル プロバイダーとして別の SQL Server に接続して、`defaultProvider`次の例のように、構成要素の属性です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString=  
+      "Data Source=MySqlServer;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  <system.web>  
+    <profile defaultProvider="SqlProvider">  
+      <providers>  
+        <clear />  
+        <add name="SqlProvider"  
+          type="System.Web.Profile.SqlProfileProvider"  
+          connectionStringName="SqlServices"  
+          applicationName="MyApplication" />  
+      </providers>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する ASP.NET ページを示しています、<xref:System.Web.Profile.ProfileManager>を非アクティブなプロファイルを管理するクラス。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/DeleteInactiveProfilescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/DeleteInactiveProfilesvb.aspx#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddDynamicProfileProperty">
+      <MemberSignature Language="C#" Value="public static void AddDynamicProfileProperty (System.Web.Configuration.ProfilePropertySettings property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddDynamicProfileProperty(class System.Web.Configuration.ProfilePropertySettings property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.AddDynamicProfileProperty(System.Web.Configuration.ProfilePropertySettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Web.Configuration.ProfilePropertySettings" />
+      </Parameters>
+      <Docs>
+        <param name="property">プロパティの設定を追加します。</param>
+        <summary>プロファイル プロパティをプログラムで追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、機能的にプロパティを追加するのには、`profile`構成ファイルのセクションです。 プロファイル プロパティを追加するには、このメソッドを呼び出すでマークされているメソッドの呼び出しを行う必要があります、<xref:System.Web.PreApplicationStartMethodAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public static string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileManager.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を保存し、プロファイル情報を取得する対象のアプリケーションの名前。</summary>
+        <value>プロファイル情報格納および取得する対象のアプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager>を使用して、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>にプロファイル情報を別のアプリケーションに関連付けるプロパティ。 これにより、複数のアプリケーションで重複するユーザーの間での競合を実行しなくてもユーザー情報を格納する、同じデータベースを使用できます。 複数の ASP.NET アプリケーションは、同じユーザー データベースを使用してに同じ値を指定することによって、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティです。 <xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティをプログラムで設定できるまたはことで設定できます宣言によって、Web アプリケーションの構成ファイルを使用して、`applicationName`属性。  
+  
+ 値が指定されていない場合、 `applicationName` 、.NET Framework に付属するプロファイル プロバイダーを使用して、Web アプリケーションの構成ファイルで属性、 <xref:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath%2A> ASP.NET アプリケーションのプロパティの値。 非 ASP.NET アプリケーションの既定値は、<xref:System.Diagnostics.ProcessModule.ModuleName%2A>ファイル拡張子を除いた、プロパティの値。  
+  
+ <xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティが公開、<xref:System.Configuration.SettingsProvider.ApplicationName%2A?displayProperty=nameWithType>既定のプロファイル プロバイダーのプロパティです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合は、別のアプリケーションの名前を持つ構成可能性があります。 既定のプロバイダー以外のプロファイル プロバイダーのアプリケーション名にアクセスするプロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティとアクセス、<xref:System.Configuration.SettingsProvider.ApplicationName%2A>直接プロバイダーのプロパティです。  
+  
+> [!CAUTION]
+>  すべてで処理された要求の 1 つの既定のプロファイル プロバイダーのインスタンスが使用されるため、<xref:System.Web.HttpApplication>オブジェクトを同時に実行して、設定しようとしています。 複数の要求を持つことができます、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティの値。 <xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティは複数の書き込みでは、安全と変化するスレッドではありません、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティの値は、アプリケーションの複数のユーザーに対して予期しない動作になります。 ユーザーに設定できるようにするコードを記述しないことをお勧め、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティが必要になる場合を除き、します。 アプリケーションの例の設定が、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティが必要な可能性がありますは、複数のアプリケーションのプロファイル データを管理する管理アプリケーションです。 このようなアプリケーションは、シングル ユーザー アプリケーションと Web アプリケーションではなくにする必要があります。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋では、ASP.NET アプリケーションの Web.config ファイルのセクションで、要素が表示されます。 アプリケーションの既定のプロファイル プロバイダーを設定、<xref:System.Web.Profile.SqlProfileProvider>インスタンスとセット、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>に`MyApplication`です。  
+  
+```  
+<profile enabled="true" defaultProvider="SqlProvider">  
+  <providers>  
+  <add name="SqlProvider"  
+    type="System.Web.Profile.SqlProfileProvider"  
+    connectionStringName="SqlServices"  
+    applicationName="MyApplication" />  
+  </providers>  
+</profile>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomaticSaveEnabled">
+      <MemberSignature Language="C#" Value="public static bool AutomaticSaveEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool AutomaticSaveEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileManager.AutomaticSaveEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET ページの実行の最後に、ユーザー プロファイルを自動的に保存するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ASP.NET ページの実行の最後に、ユーザー プロファイルが自動的に保存されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A>プロパティは、アプリケーションのユーザー プロファイルの自動保存が有効になっているかどうかを示します。 自動保存が有効になっている場合、<xref:System.Web.Profile.ProfileModule>オブジェクト、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントと呼び出し、<xref:System.Web.Profile.ProfileBase.Save%2A>メソッド中に、 <xref:System.Web.HttpApplication.EndRequest> ASP.NET ページの実行の終了時にイベント。  
+  
+ <xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A>プロパティを使用して、 `automaticSaveEnabled` ASP.NET アプリケーションの Web.config ファイル内の要素の属性です。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋では、ASP.NET アプリケーションの Web.config ファイルのセクションで、要素が表示されます。 アプリケーションの既定のプロファイル プロバイダーを指定、<xref:System.Web.Profile.SqlProfileProvider>インスタンスとセット、`automaticSaveEnabled`属性を`true`です。  
+  
+```  
+<profile enabled="true"  
+  automaticSaveEnabled="true"  
+  defaultProvider="SqlProvider">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Profile.SqlProfileProvider"  
+      connectionStringName="SqlServices"  
+      applicationName="MyApplication" />  
+  </providers>  
+</profile>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">取得しようとしましたが、<see cref="P:System.Web.Profile.ProfileManager.AutomaticSaveEnabled" />プロパティの値なしには、少なくとも<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />権限です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteInactiveProfiles">
+      <MemberSignature Language="C#" Value="public static int DeleteInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 DeleteInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.DeleteInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが削除されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <summary>対象の最後のアクティビティの日付と時刻までに発生した指定した日付と時刻のユーザー プロファイル データを削除します。</summary>
+        <returns>データ ソースから削除されたプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.DeleteInactiveProfiles%2A>メソッドを使用してで指定されたアプリケーションのデータ ソースから未使用のプロファイル データを削除、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。 検索対象のプロファイルのいずれかのプロファイルが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値を削除します。  
+  
+ <xref:System.Web.Profile.ProfileManager.DeleteInactiveProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のデータ ソース内のプロファイル情報は削除されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されている非アクティブなプロファイルを削除するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非アクティブなプロファイルを管理する ASP.NET ページを示します。 ボタンは、使用されていない指定した日数の非アクティブなれますすべてのプロファイルを削除するものです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/DeleteInactiveProfilescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/DeleteInactiveProfilesvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteProfile">
+      <MemberSignature Language="C#" Value="public static bool DeleteProfile (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DeleteProfile(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.DeleteProfile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">削除するプロファイルのユーザー名。</param>
+        <summary>データ ソースから指定されたユーザー名のプロファイルを削除します。</summary>
+        <returns>
+          <see langword="true" />ユーザー プロファイルが見つかり削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.DeleteProfile%2A>メソッドは、すべてのプロファイル情報と、指定されたユーザー プロファイルのプロパティを削除します。 `username` 、指定されたデータ ソースから<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>です。  
+  
+ <xref:System.Web.Profile.ProfileManager.DeleteProfile%2A>メソッドの呼び出し、 <xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A> delete 操作を実行する既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルには、既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれていますは削除されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルのプロパティを削除するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非アクティブなプロファイルを管理する ASP.NET ページを示します。 <xref:System.Web.Profile.ProfileManager.DeleteProfile%2A>を削除する 1 つのプロファイルを選択すると、メソッドが呼び出されます。 指定された日付に基づき、プロファイルがアクティブでないと見なされるかどうかは、`userInactiveSinceDate`に渡されたパラメーター値、<xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/DeleteProfilecs.aspx#10)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/DeleteProfilevb.aspx#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空の文字列 ("") またはコンマが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteProfiles">
+      <MemberSignature Language="C#" Value="public static int DeleteProfiles (string[] usernames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 DeleteProfiles(string[] usernames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.DeleteProfiles(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">削除するプロファイルのユーザー名の文字列配列。</param>
+        <summary>プロファイル プロパティとユーザー名の指定された一覧の情報を削除します。</summary>
+        <returns>データ ソースから削除されたプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.DeleteProfiles%2A>メソッドで指定されたアプリケーションのデータ ソースからのすべてのプロファイル情報と、指定されたプロファイルのプロパティの削除、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティです。 削除するプロファイルの一覧はユーザー名の文字列の配列として指定します。 プロファイル プロパティと情報でユーザー名のデータ ソースに存在する場合、`usernames`パラメーター、削除されます。  
+  
+ 戻り値の指定した配列の長さが異なる場合があります`usernames`です。 これが示すいくつかの指定した配列内のプロファイルの`usernames`データ ストアから既に削除されていた。  
+  
+ <xref:System.Web.Profile.ProfileManager.DeleteProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルには、既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれていますは削除されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルのプロパティを削除するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非アクティブなプロファイルを管理する ASP.NET ページを示します。 A<xref:System.Web.UI.WebControls.GridView>コントロールには、返された非アクティブなプロファイルが表示されます。 行ごと、<xref:System.Web.UI.WebControls.GridView>コントロールにはへの呼び出しを持つデータ ソースからその行のプロファイルを削除するボタンが含まれています、<xref:System.Web.Profile.ProfileManager.DeleteProfiles%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/DeleteInactiveProfilescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/DeleteInactiveProfilesvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="usernames" /> の長さが 0 です。  
+  
+ \- または  
+  
+ 内の項目のいずれかの<paramref name="usernames" />空の文字列 ("") またはコンマが含まれています。  
+  
+ \- または  
+  
+ 2 つ以上の項目で<paramref name="usernames" />値が同じであります。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernames" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ 内の項目のいずれかの<paramref name="usernames" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteProfiles">
+      <MemberSignature Language="C#" Value="public static int DeleteProfiles (System.Web.Profile.ProfileInfoCollection profiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 DeleteProfiles(class System.Web.Profile.ProfileInfoCollection profiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.DeleteProfiles(System.Web.Profile.ProfileInfoCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="profiles" Type="System.Web.Profile.ProfileInfoCollection" />
+      </Parameters>
+      <Docs>
+        <param name="profiles">A<see cref="T:System.Web.Profile.ProfileInfoCollection" />を削除するプロファイルのプロファイル情報を格納します。</param>
+        <summary>指定されたプロファイルの一覧のデータ ソースからプロパティと情報を削除します。</summary>
+        <returns>データ ソースから削除されたプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.DeleteProfiles%2A>メソッドで指定されたアプリケーションのデータ ソースからのすべてのプロファイル情報と、指定されたプロファイルのプロパティの削除、<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティです。 使用して削除するプロファイルの一覧を指定、<xref:System.Web.Profile.ProfileInfoCollection>として渡された、`profiles`パラメーター。 A<xref:System.Web.Profile.ProfileInfoCollection>から返される、 <xref:System.Web.Profile.ProfileManager.GetAllProfiles%2A>、 <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>、 <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>、および<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドです。  
+  
+ 戻り値が異なる場合があります注、<xref:System.Web.Profile.ProfileInfoCollection.Count%2A>指定された値<xref:System.Web.Profile.ProfileInfoCollection>です。 これが示す、指定したプロファイルの一部<xref:System.Web.Profile.ProfileInfoCollection>データ ストアから既に削除されていた。  
+  
+ <xref:System.Web.Profile.ProfileManager.DeleteProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A?displayProperty=nameWithType>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルには、既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれていますは削除されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルのプロパティを削除するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してプロファイルを検索するユーザーの許可、<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>と<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドです。 ユーザーへの呼び出しで返されるプロファイルを削除できます、<xref:System.Web.Profile.ProfileManager.DeleteProfiles%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserNamecs.aspx#5)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserNamevb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="profiles" /><see cref="P:System.Web.Profile.ProfileInfoCollection.Count" />値は 0 です。  
+  
+ \- または  
+  
+ いずれかの<see cref="T:System.Web.Profile.ProfileInfo" />内のオブジェクト<paramref name="profiles" />が、<see cref="P:System.Web.Profile.ProfileInfo.UserName" />は空の文字列 ("") またはコンマが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="profiles" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ 1 つ、<see cref="T:System.Web.Profile.ProfileInfo" />オブジェクト<paramref name="profiles" />が、<see cref="P:System.Web.Profile.ProfileInfo.UserName" />つまり<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public static bool Enabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileManager.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのユーザー プロファイルが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザー プロファイルが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、アプリケーションのユーザー プロファイルが有効になっている、`enabled`構成要素の属性です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユーザー プロファイルが有効になっている ASP.NET アプリケーションの Web.config ファイルのセクションで、要素を示します。  
+  
+```  
+<profile enabled="true" defaultProvider="SqlProvider">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Profile.SqlProfileProvider"  
+      connectionStringName="SqlServices"  
+      applicationName="MyApplication" />  
+  </providers>  
+</profile>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInactiveProfilesByUserName">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection FindInactiveProfilesByUserName (System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection FindInactiveProfilesByUserName(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="usernameToMatch">検索対象のユーザー名。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <summary>または指定した日付より前に、最後のアクティビティの日付が発生したし、時間と、ユーザー プロファイルの名前が指定した名前と一致するすべてのプロファイルのプロファイル情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />をユーザー名と一致する、指定された無効なプロファイルのユーザー プロファイル情報を含む<paramref name="usernameToMatch" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>で指定されたアプリケーションのすべての未使用のユーザー プロファイルのプロファイル情報を取得するメソッドが使用される、`applicationName`構成ファイル内の属性です。 このメソッドは対象のプロファイルのユーザー名と一致する、指定されたプロファイルのみを取得`usernameToMatch`パラメーターの値。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。 検索対象のプロファイルのいずれかのプロファイルが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値が返されます。  
+  
+ オーバー ロードを使用してデータのページでこの情報を取得することができます、<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%28System.Web.Profile.ProfileAuthenticationOption%2CSystem.String%2CSystem.DateTime%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%40%29>を受け取る追加メソッド`pageIndex`と`pageSize`パラメーター。  
+  
+> [!NOTE]
+>  プロファイル プロバイダーでのワイルドカード文字がサポートして可能性があります、`usernameToMatch`パラメーター。 たとえば、<xref:System.Web.Profile.SqlProfileProvider.FindInactiveProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.SqlProfileProvider>クラスでのワイルドカード文字をサポートしている、`usernameToMatch`パラメーター。  
+  
+ <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A?displayProperty=nameWithType>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されている非アクティブなプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例により、ユーザーを指定する、`usernameToMatch`値と<xref:System.Web.Profile.ProfileAuthenticationOption>列挙値と取得プロファイルのプロファイルを一致するすべての情報です。 サンプルは、ユーザーのみに無効なプロファイルを返すかどうかを指定できます。 ユーザーが非アクティブなプロファイルのみを指定した場合、<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドが呼び出される、それ以外の<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>メソッドが呼び出されます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserName2cs.aspx#8)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserName2vb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInactiveProfilesByUserName">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection FindInactiveProfilesByUserName (System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection FindInactiveProfilesByUserName(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="usernameToMatch">検索対象のユーザー名。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、プロファイルの合計数を識別する整数が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>データ、または指定した日付より前に、最後のアクティビティの日付が発生したを時間と、ユーザー プロファイルの名前が指定した名前と一致するプロファイルのページでのプロフィール情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />のユーザー名と一致する、指定された無効なプロファイルのユーザー プロファイル情報を含む<paramref name="usernameToMatch" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>で指定されたアプリケーションの未使用のユーザー プロファイルのプロファイル情報を取得するメソッドが使用される、`applicationName`構成ファイル内の属性です。 このメソッドは対象のユーザー名と一致する、指定されたプロファイルのみを取得`usernameToMatch`パラメーターの値。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。 検索対象のプロファイルのすべてのプロファイルが返されますが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>コレクション。 `pageIndex`返される結果ページを識別するパラメーターです。 0 は最初のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、`authenticationOption`と`userInactiveSinceDate`パラメーター。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値は 1 と、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>が返されるは 6 ~ 10 番目の無効なプロファイルが含まれて。 `totalRecords`パラメーターは 13 に設定されます。  
+  
+ プロファイル プロバイダーが可能性がありますでワイルドカード文字をサポートしているに注意してください、`usernameToMatch`パラメーター。 たとえば、<xref:System.Web.Profile.SqlProfileProvider.FindInactiveProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.SqlProfileProvider>クラスでのワイルドカード文字をサポートしている、`usernameToMatch`パラメーター。  
+  
+ <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されている非アクティブなプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例により、ユーザーを指定する、`usernameToMatch`値と<xref:System.Web.Profile.ProfileAuthenticationOption>値し、一致するプロファイルをすべてのプロファイル情報を取得します。 この例では、ユーザーを排他的にアクティブでないプロファイルを返すかどうかを指定します。 ユーザーが非アクティブなプロファイルのみを指定した場合、<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドが呼び出される、それ以外の<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>メソッドが呼び出されます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserNamecs.aspx#5)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserNamevb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" /> が空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 1 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" />乗算<paramref name="pageSize" />よりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindProfilesByUserName">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection FindProfilesByUserName (System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection FindProfilesByUserName(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.FindProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="usernameToMatch">検索対象のユーザー名。</param>
+        <summary>ユーザー名が指定した名前に一致するプロファイルのすべてのプロファイル情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />のユーザー名と一致する、指定されたプロファイルのユーザー プロファイル情報を含む<paramref name="usernameToMatch" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>メソッドすべてのプロファイル情報をユーザー名と一致する、指定された一覧を返します`usernameToMatch`構成済みのパラメーター値<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>プロパティの値。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。  
+  
+ オーバー ロードを使用してデータのページのユーザー プロファイルのプロファイル情報を取得することができます、<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>を受け取る追加メソッド`pageIndex`と`pageSize`パラメーター。  
+  
+ プロファイル プロバイダーが可能性がありますでワイルドカード文字をサポートしているに注意してください、`usernameToMatch`パラメーター。 たとえば、<xref:System.Web.Profile.SqlProfileProvider.FindProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.SqlProfileProvider>クラスでのワイルドカード文字をサポートしている、`usernameToMatch`パラメーター。  
+  
+ <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例により、ユーザーを指定する、`usernameToMatch`値と<xref:System.Web.Profile.ProfileAuthenticationOption>列挙値と取得プロファイルのプロファイルを一致するすべての情報です。 この例では、ユーザーを排他的にアクティブでないプロファイルを返すかどうかを指定します。 ユーザーが非アクティブなプロファイルのみを指定した場合、<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドが呼び出される、それ以外の<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>メソッドが呼び出されます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserName2cs.aspx#8)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserName2vb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindProfilesByUserName">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection FindProfilesByUserName (System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection FindProfilesByUserName(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.FindProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="usernameToMatch">検索対象のユーザー名。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、プロファイルの合計数を識別する整数が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ユーザー名が指定した名前に一致するプロファイルのデータのページでのプロフィール情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />のユーザー名と一致する、指定されたプロファイルのユーザー プロファイル情報を含む<paramref name="usernameToMatch" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドをプロファイルのユーザー名と一致する、指定されたプロファイル情報の一覧を返します`usernameToMatch`構成されているパラメーター値<xref:System.Web.Profile.ProfileManager.ApplicationName%2A>です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。  
+  
+ プロファイル プロバイダーが可能性がありますでワイルドカード文字をサポートしているに注意してください、`usernameToMatch`パラメーター。 たとえば、<xref:System.Web.Profile.SqlProfileProvider.FindProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.SqlProfileProvider>クラスでのワイルドカード文字をサポートしている、`usernameToMatch`パラメーター。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターは、返される結果のどのページを特定します。 0 は最初のページを識別します。 `totalRecords`パラメーターは、`out`パラメーターで指定されたアプリケーションの使用頻度の低いユーザー プロファイルの合計数に設定されている、`applicationName`に基づいて、指定された構成ファイルで属性`authenticationOption`です。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値は 1 と、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>が返されるは 6 ~ 10 番目のプロファイルが含まれて。 `totalRecords`パラメーターは 13 に設定されます。  
+  
+ <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例により、ユーザーを指定する、`usernameToMatch`値と<xref:System.Web.Profile.ProfileAuthenticationOption>および取得プロファイルすべて一致するプロファイルの情報です。 この例では、ユーザーを排他的にアクティブでないプロファイルを返すかどうかを指定します。 ユーザーが非アクティブなプロファイルのみを指定した場合、<xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName%2A>メソッドが呼び出される、それ以外の<xref:System.Web.Profile.ProfileManager.FindProfilesByUserName%2A>メソッドが呼び出されます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserNamecs.aspx#5)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserNamevb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" /> が空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 1 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" />乗算<paramref name="pageSize" />よりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllInactiveProfiles">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection GetAllInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection GetAllInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.GetAllInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <summary>プロファイルにまたは指定した日付および時刻以前に発生した最後のアクティビティの日付のすべてのユーザー プロファイル データを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />は非アクティブなプロファイルのユーザー プロファイル情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>メソッドがで指定されたアプリケーションのすべての未使用のユーザー プロファイル用のデータ ソースからのプロファイル情報の取得に使用される、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。 検索対象のプロファイルのすべてのプロファイルが返されますが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値。  
+  
+ オーバー ロードを使用してデータのページで、使用頻度の低いユーザー プロファイルのプロファイル情報を取得することができます、<xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>を受け取る追加メソッド`pageIndex`と`pageSize`パラメーター。  
+  
+ <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されている未使用のプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非アクティブなプロファイルを管理する ASP.NET ページを示します。 ボタンは、すべての非アクティブなプロファイルを削除するものです。 指定された日付に基づき、プロファイルがアクティブでないと見なされるかどうかは、`userInactiveSinceDate`パラメーター。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/DeleteInactiveProfiles2cs.aspx#7)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/DeleteInactiveProfiles2vb.aspx#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllInactiveProfiles">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection GetAllInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection GetAllInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.GetAllInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、プロファイルの合計数を識別する整数が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ページを取得<see cref="T:System.Web.Profile.ProfileInfo" />または指定した日付および時刻以前に発生した最後のアクティビティの日付のユーザー プロファイル用のオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />は非アクティブなプロファイルのユーザー プロファイル情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>メソッドが未使用のユーザー プロファイルで指定されたアプリケーション用のデータ ソースからのプロファイル情報の取得に使用される、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。 検索対象のプロファイルのすべてのプロファイルが返されますが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定の前に発生する`userInactiveSinceDate`パラメーターの値。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターは、返される結果のどのページを特定します。 0 は最初のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、`authenticationOption`と`userInactiveSinceDate`パラメーター。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値 1 では、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>が返されますは 6 ~ 10 番目の無効なプロファイルが含まれて。 `totalRecords`パラメーターは 13 に設定されます。  
+  
+ <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、非アクティブなプロファイルを管理する ASP.NET Web ページを示しています。 ボタンは、すべての非アクティブなプロファイルを削除するものです。 指定された日付に基づき、プロファイルがアクティブでないと見なされるかどうかは、`userInactiveSinceDate`パラメーター。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/DeleteInactiveProfilescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/DeleteInactiveProfilesvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllProfiles">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection GetAllProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection GetAllProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.GetAllProfiles(System.Web.Profile.ProfileAuthenticationOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <summary>データ ソース内のプロファイルのユーザー プロファイル データを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />データ ソース内のプロファイルのすべてのユーザー プロファイル情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.GetAllProfiles%2A>メソッドがで指定されたアプリケーションのデータ ソースからのプロファイル情報の取得に使用される、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。  
+  
+ ページを取得する<xref:System.Web.Profile.ProfileInfo>のオーバー ロードを使用して、ユーザー プロファイル用のオブジェクト、<xref:System.Web.Profile.ProfileManager.GetAllProfiles%2A>を受け取る追加メソッド`pageIndex`と`pageSize`パラメーター。  
+  
+ <xref:System.Web.Profile.ProfileManager.GetAllProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例には、すべての構成済みのプロファイルのプロファイル情報が表示されます。`applicationName`です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/ShowProfiles2cs.aspx#6)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/ShowProfiles2vb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllProfiles">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileInfoCollection GetAllProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileInfoCollection GetAllProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.GetAllProfiles(System.Web.Profile.ProfileAuthenticationOption,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、プロファイルの合計数を識別する整数が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ユーザー プロファイル データのページを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />データ ソース内のプロファイルのすべてのユーザー プロファイル情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.GetAllProfiles%2A>メソッドがで指定されたアプリケーションのデータ ソースからのプロファイル情報の取得に使用される、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターは、返される結果のどのページを特定します。 0 は最初のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、指定された`authenticationOption`です。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値 1 では、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>が返されますは 6 ~ 10 番目のプロファイルが含まれて。 `totalRecords`パラメーターは 13 に設定されます。  
+  
+ <xref:System.Web.Profile.ProfileManager.GetAllProfiles%2A>メソッドの呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>既定のプロファイル プロバイダーのメソッドです。 使用して既定のプロファイル プロバイダーが指定されて、`defaultProvider`構成要素の属性です。 ユーザー プロファイルの既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロパティが含まれている場合、その他のプロファイル プロバイダーのデータ ソースは検索されません。 既定のプロバイダー以外のプロファイル プロバイダーによって管理されているプロファイルを検索するには、プロファイルを使用してプロバイダーへの参照を取得、<xref:System.Web.Profile.ProfileManager.Providers%2A>プロパティと呼び出し、<xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>直接プロバイダーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例には、すべての構成済みのプロファイルのプロファイル情報が表示されます。`applicationName`データのページにします。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/ShowProfilescs.aspx#3)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/ShowProfilesvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNumberOfInactiveProfiles">
+      <MemberSignature Language="C#" Value="public static int GetNumberOfInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetNumberOfInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />オブジェクトを識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <summary>指定した日付までには、最後のアクティビティの日付が発生したプロファイルの数を取得します。</summary>
+        <returns>最後のアクティビティの日付が指定した日付と時刻の前に発生したデータ ソース内のプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles%2A>で指定されたアプリケーションのデータ ソースからのすべての未使用のユーザー プロファイルの数を取得するメソッドが使用される、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。 検索対象のプロファイルのすべてのプロファイルがカウントされますが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、表示し、検索条件に基づいて、アクティブおよび非アクティブのプロファイルの情報を削除するユーザーができます。 結果を使用して無効なプロファイルの数が表示されます、<xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserNamecs.aspx#5)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserNamevb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNumberOfProfiles">
+      <MemberSignature Language="C#" Value="public static int GetNumberOfProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetNumberOfProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileManager.GetNumberOfProfiles(System.Web.Profile.ProfileAuthenticationOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />列挙値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <summary>データ ソース内のプロファイルの数を取得します。</summary>
+        <returns>データ ソース内のプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.GetNumberOfProfiles%2A>で指定されたアプリケーションのデータ ソースからのすべてのユーザー プロファイルの数を取得するメソッドが使用される、`applicationName`構成ファイル内の属性です。 使用して、`authenticationOption`のみ匿名プロファイルするかどうかを指定するパラメーターは、プロファイル、または検索対象のすべてのプロファイルにのみ認証します。  
+  
+   
+  
+## Examples  
+ 次のコード例には、すべての構成済みのプロファイルのプロファイル情報が表示されます。`applicationName`し、プロファイルの数を返します。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/ShowProfiles2cs.aspx#6)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/ShowProfiles2vb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Profile.ProfileProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileManager.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの既定のプロファイル プロバイダーへの参照を取得します。</summary>
+        <value>アプリケーションの既定のプロファイル プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.Provider%2A>プロパティでは、アプリケーションの既定のプロファイル プロバイダーを直接参照することができます。 これを一般的使用にアクセスされていないプロファイル プロバイダーのカスタム メンバーの一部、<xref:System.Web.Profile.ProfileProvider>抽象基本クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定のプロファイル プロバイダーのプロパティを一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/Providercs.aspx#2)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/Providervb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">取得しようとしましたが、<see cref="P:System.Web.Profile.ProfileManager.Provider" />プロパティの値なしには、少なくとも<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />権限です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileProviderCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Profile.ProfileProviderCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileManager.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET アプリケーションのプロファイル プロバイダーのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Profile.ProfileProviderCollection" />の ASP.NET アプリケーション用に構成されたプロファイル プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileManager.Providers%2A>マシンの構成で追加されたプロバイダーを含むプロパティは、すべてのアプリケーションに対して有効になっているプロファイル プロバイダーの参照、およびプロバイダーは、すべての Web.config ファイルに追加します。 プロファイル プロバイダーは、構成ファイルでセクションの要素を使用してアプリケーションの使用を制御できます。 たとえば、次の Web.config ファイルは親構成ファイルで指定されたプロファイル プロバイダーを削除し、追加、<xref:System.Web.Profile.SqlProfileProvider>アプリケーションのプロファイル プロバイダーとしてのインスタンス。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString=  
+      "Data Source=MySqlServer;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  <system.web>  
+    <profile enabled="true" defaultProvider="SqlProvider">  
+      <providers>  
+        <clear />  
+        <add name="SqlProvider"  
+          type="System.Web.Profile.SqlProfileProvider"  
+          connectionStringName="SqlServices"  
+          applicationName="MyApplication" />  
+      </providers>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 設定して既定のプロバイダーを指定する必要がありますのセクションを指定する場合、`defaultProvider`属性。 コンピューター構成から値を使用する場合は、Web.config ファイルでセクションを指定しないと、および<xref:System.Web.Profile.SqlProfileProvider>AspNetSqlProvider をという名前のインスタンスが既定のプロバイダーとして確立します。  
+  
+ プロバイダーへの参照を厳密に型を取得することができます、<xref:System.Web.Profile.ProfileManager.Providers%2A>コレクション名前でプロファイル プロバイダーのインデックスを作成し、目的の型としてキャストします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションとそれらの種類に対して有効なプロバイダーが一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/Providerscs.aspx#9)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/Providersvb.aspx#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">取得しようとしましたが、<see cref="P:System.Web.Profile.ProfileManager.Providers" />プロパティの値なしには、少なくとも<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />権限です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

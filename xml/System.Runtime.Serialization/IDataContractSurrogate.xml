@@ -1,0 +1,301 @@
+<Type Name="IDataContractSurrogate" FullName="System.Runtime.Serialization.IDataContractSurrogate">
+  <TypeSignature Language="C#" Value="public interface IDataContractSurrogate" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataContractSurrogate" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.IDataContractSurrogate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化、逆シリアル化、および XML スキーマ ドキュメント (XSD) のエクスポート、インポートの間に <see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によって型を置き換えるために必要なメソッドを用意します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate> は、<xref:System.Runtime.Serialization.DataContractSerializer> の使用時に、型またはオブジェクトを別の型またはオブジェクトに置き換える必要がある場合、またはスキーマのバリエーションを動的に生成する必要がある場合に使用します。 サンプル アプリケーションについては、次を参照してください。 [DataContract のサロゲート](~/docs/framework/wcf/samples/datacontract-surrogate.md)です。 データ コントラクトの詳細については、次を参照してください。[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+ 実行時に、<xref:System.Runtime.Serialization.DataContractSerializer> を使用して <xref:System.ServiceModel.Description.OperationDescription> インスタンスを検出することによって、サービス内の任意の操作のための <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> を見つけることができます。 サロゲートを作成するインターフェイスの実装の詳細については、次を参照してください。[データ コントラクト サロゲート](~/docs/framework/wcf/extending/data-contract-surrogates.md)です。  
+  
+ また、<xref:System.Runtime.Serialization.IDataContractSurrogate> を使用して、<xref:System.Runtime.Serialization.XsdDataContractExporter> クラスと <xref:System.Runtime.Serialization.XsdDataContractImporter> クラスを使用したときの XML スキーマのインポートとエクスポートに影響を与えることができます。 これは、<xref:System.Runtime.Serialization.IDataContractSurrogate> を、<xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A> クラスの <xref:System.Runtime.Serialization.ExportOptions> プロパティに適用するか、<xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> クラスの <xref:System.Runtime.Serialization.ImportOptions> プロパティに適用することで実行できます。  詳細については、次を参照してください。[スキーマのインポートとエクスポート](~/docs/framework/wcf/feature-details/schema-import-and-export.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate> インターフェイスを実装する例を次に示します。 このコードは、`Person` クラスを `PersonSurrogated` 型のシリアル化で置き換えます。  
+  
+ [!code-csharp[IDataContractSurrogate#0](~/samples/snippets/csharp/VS_Snippets_CFX/idatacontractsurrogate/cs/source.cs#0)]
+ [!code-vb[IDataContractSurrogate#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/idatacontractsurrogate/vb/source.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCustomDataToExport">
+      <MemberSignature Language="C#" Value="public object GetCustomDataToExport (System.Reflection.MemberInfo memberInfo, Type dataContractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetCustomDataToExport(class System.Reflection.MemberInfo memberInfo, class System.Type dataContractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport(System.Reflection.MemberInfo,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="memberInfo" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="dataContractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="memberInfo">メンバーを説明する <see cref="T:System.Reflection.MemberInfo" />。</param>
+        <param name="dataContractType"><see cref="T:System.Type" />。</param>
+        <summary>スキーマ エクスポート操作中に、null 以外の戻り値に適用される注釈をスキーマに挿入します。</summary>
+        <returns>XML スキーマ定義に挿入される注釈を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomDataToExport">
+      <MemberSignature Language="C#" Value="public object GetCustomDataToExport (Type clrType, Type dataContractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetCustomDataToExport(class System.Type clrType, class System.Type dataContractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clrType" Type="System.Type" />
+        <Parameter Name="dataContractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="clrType">置き換えられる CLR 型。</param>
+        <param name="dataContractType">注釈が付けられるデータ コントラクト型。</param>
+        <summary>スキーマ エクスポート操作中に、null 以外の戻り値に適用される注釈をスキーマに挿入します。</summary>
+        <returns>XML スキーマ定義に挿入される注釈を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataContractType">
+      <MemberSignature Language="C#" Value="public Type GetDataContractType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetDataContractType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">置き換える CLR 型 <see cref="T:System.Type" />。</param>
+        <summary>シリアル化、逆シリアル化、およびスキーマのインポートとエクスポートの間に、指定した型を置き換えるデータ コントラクト型を返します。</summary>
+        <returns><see cref="T:System.Type" /> 値を置き換えるための <paramref name="type" />。 この型は、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によってシリアル化可能である必要があります。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性でマークされているか、シリアライザーが認識できる他のメカニズムが使用されている必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> メソッドを実装する例を次に示します。  
+  
+ [!code-csharp[IDataContractSurrogate#1](~/samples/snippets/csharp/VS_Snippets_CFX/idatacontractsurrogate/cs/source.cs#1)]
+ [!code-vb[IDataContractSurrogate#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/idatacontractsurrogate/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeserializedObject">
+      <MemberSignature Language="C#" Value="public object GetDeserializedObject (object obj, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetDeserializedObject(object obj, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">置き換えの対象となる逆シリアル化されたオブジェクト。</param>
+        <param name="targetType">置き換えられたオブジェクトに割り当てる <see cref="T:System.Type" />。</param>
+        <summary>逆シリアル化中に、指定したオブジェクトの代替物であるオブジェクトを返します。</summary>
+        <returns>置き換えられて逆シリアル化されたオブジェクト。 このオブジェクトは、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によってシリアル化可能な型である必要があります。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性でマークされているか、シリアライザーが認識できる他のメカニズムが使用されている必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単純な実装では、if...then...else 制御構造体を使用して、`obj` 値がサロゲートされた型であるかどうかをテストできます。 該当する場合は、必要に応じて変換し、置き換えられたオブジェクトを返します。 置き換えられたオブジェクトは、新しいインスタンスになるか、`obj` インスタンスになることができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> メソッドを実装する例を次に示します。  
+  
+ [!code-csharp[IDataContractSurrogate#3](~/samples/snippets/csharp/VS_Snippets_CFX/idatacontractsurrogate/cs/source.cs#3)]
+ [!code-vb[IDataContractSurrogate#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/idatacontractsurrogate/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownCustomDataTypes">
+      <MemberSignature Language="C#" Value="public void GetKnownCustomDataTypes (System.Collections.ObjectModel.Collection&lt;Type&gt; customDataTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetKnownCustomDataTypes(class System.Collections.ObjectModel.Collection`1&lt;class System.Type&gt; customDataTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetKnownCustomDataTypes(System.Collections.ObjectModel.Collection{System.Type})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customDataTypes" Type="System.Collections.ObjectModel.Collection&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="customDataTypes">A<see cref="T:System.Collections.ObjectModel.Collection`1" />の<see cref="T:System.Type" />既知の型を追加します。</param>
+        <summary>カスタム データ オブジェクトのシリアル化と逆シリアル化で使用する既知の型のコレクションを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スキーマのエクスポートまたはインポート中に、<xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A> メソッドを使用してスキーマに注釈を挿入する場合のみ必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectToSerialize">
+      <MemberSignature Language="C#" Value="public object GetObjectToSerialize (object obj, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetObjectToSerialize(object obj, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">置き換えるオブジェクト。</param>
+        <param name="targetType">置き換えられたオブジェクトに割り当てる <see cref="T:System.Type" />。</param>
+        <summary>シリアル化中に、指定したオブジェクトを置き換えるオブジェクトを返します。</summary>
+        <returns>シリアル化される置き換えられたオブジェクト。 このオブジェクトは、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によってシリアル化可能である必要があります。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性でマークされているか、シリアライザーが認識できる他のメカニズムが使用されている必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが返す必要がありますいない`null`型に逆シリアル化で、データがキャストするため<xref:System.Object>と<xref:System.InvalidCastException>がスローされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> メソッドを実装する例を次に示します。  
+  
+ [!code-csharp[IDataContractSurrogate#2](~/samples/snippets/csharp/VS_Snippets_CFX/idatacontractsurrogate/cs/source.cs#2)]
+ [!code-vb[IDataContractSurrogate#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/idatacontractsurrogate/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReferencedTypeOnImport">
+      <MemberSignature Language="C#" Value="public Type GetReferencedTypeOnImport (string typeName, string typeNamespace, object customData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetReferencedTypeOnImport(string typeName, string typeNamespace, object customData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeNamespace" Type="System.String" />
+        <Parameter Name="customData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">スキーマ内の型の名前。</param>
+        <param name="typeNamespace">スキーマ内の型の名前空間。</param>
+        <param name="customData">XML スキーマ定義に挿入された注釈を表すオブジェクト。これは、参照された型を検索するために使用できるデータです。</param>
+        <summary>スキーマのインポート中に、スキーマによって参照された型を返します。</summary>
+        <returns>参照された型で使用する <see cref="T:System.Type" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマ型を表す CLR 型が存在しない場合は `Null` が返ります。 これにより、スキーマのインポート中に新しい型が生成されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%2A> メソッドを実装する例を次に示します。  
+  
+ [!code-csharp[IDataContractSurrogate#4](~/samples/snippets/csharp/VS_Snippets_CFX/idatacontractsurrogate/cs/source.cs#4)]
+ [!code-vb[IDataContractSurrogate#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/idatacontractsurrogate/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessImportedType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeDeclaration ProcessImportedType (System.CodeDom.CodeTypeDeclaration typeDeclaration, System.CodeDom.CodeCompileUnit compileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeTypeDeclaration ProcessImportedType(class System.CodeDom.CodeTypeDeclaration typeDeclaration, class System.CodeDom.CodeCompileUnit compileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IDataContractSurrogate.ProcessImportedType(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeDeclaration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDeclaration" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="typeDeclaration">スキーマのインポート中に生成された型宣言を表す、処理するための <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</param>
+        <param name="compileUnit">スキーマのインポート中に生成された他のコードを含む <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
+        <summary>インポートされたスキーマから生成された型を処理します。</summary>
+        <returns>処理された型を含む <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、入力された <xref:System.CodeDom.CodeTypeDeclaration> または <xref:System.CodeDom.CodeCompileUnit> 内の他の情報をこのメソッドで変更できます。 `null` が返された場合は、型は生成されません。 新しい <xref:System.CodeDom.CodeTypeDeclaration> が返った場合は、それが生成された元の型に置き換わります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,460 @@
+<Type Name="ConfigurationSectionGroup" FullName="System.Configuration.ConfigurationSectionGroup">
+  <TypeSignature Language="C#" Value="public class ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConfigurationSectionGroup extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内の関連セクションのグループを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイル (Web.config ファイル) などの設定は、セクションに分かれています。 いくつかのセクションが関連しているために、セクション グループにグループ化する便利なは多くの場合です。 <xref:System.Configuration.ConfigurationSectionGroup>クラスを表します、 `sectionGroup` XML 要素で定義されているときにグループ セクションに使用される、`configSections`構成ファイルの要素。 セクション グループが入れ子にすることができます (その他のセクション グループと同様のセクションでは、セクション グループを含めることができます)。 次の例は、 `configSections` 3 つの入れ子になったセクション グループを定義する要素。  
+  
+```  
+<configSections>  
+  <sectionGroup name="system.web.extensions"...>  
+    <sectionGroup name="scripting" ...>  
+      <section name="scriptResourceHandler".../>  
+      <sectionGroup name="webServices"...>  
+        <section name="jsonSerialization" .../>  
+        <section name="profileService" ... />        <section name="authenticationService" .../>  
+        <section name="roleService" .../>  
+      </sectionGroup>  
+    </sectionGroup>  
+  </sectionGroup>  
+</configSections>  
+```  
+  
+ 構成システムに構成ファイルから設定を読み込みます<xref:System.Configuration.ConfigurationSectionGroup>オブジェクト。 使用することができます、<xref:System.Configuration.ConfigurationSectionGroup.Sections%2A>と<xref:System.Configuration.ConfigurationSectionGroup.SectionGroups%2A>セクションおよびに含まれているセクション グループにアクセスするプロパティ、<xref:System.Configuration.ConfigurationSectionGroup>オブジェクト。  
+  
+ 構成ファイルから情報にアクセスする方法の詳細については、次を参照してください。、<xref:System.Configuration.ConfigurationManager>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationSectionGroup>構成設定を取得するクラス。 例は、コンソール アプリケーションの構成設定を読み取り、各構成セクション グループとセクションでは、それをコンソールに関する情報を書き込みます。  
+  
+ `Main`メソッドは、構成設定を読み込みます、<xref:System.Configuration.Configuration>オブジェクトを取得、<xref:System.Configuration.Configuration.SectionGroups%2A>コレクションから、<xref:System.Configuration.Configuration>オブジェクトを呼び出し、続いて、`ShowSectionGroupCollectionInfo`セクション プロパティ値を表示するメソッド。  
+  
+ `ShowSectionGroupCollectionInfo`メソッドは、セクション グループと呼び出しを反復処理、`ShowSectionGroupInfo`それぞれのメソッドです。  
+  
+ `ShowSectionGroupInfo`メソッドは、セクション グループ、プロパティ値の一部、およびそれに含まれるセクションの名前の名前を表示します。 セクション グループ セクション グループが含まれている場合に、このメソッドが呼び出す`ShowSectionGroupCollectionInfo`セクション グループを表示するには、再帰的にします。  
+  
+ `indentLevel`に論理的なグループを表示する表示されている行の左側にあるスペースを追加するフィールドを使用します。 すべての行が難しくなり、論理的にグループ化を区別するために、行の折り返しを回避するテキストの 79 文字に制限されます。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationSectionGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceDeclaration">
+      <MemberSignature Language="C#" Value="public void ForceDeclaration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ForceDeclaration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionGroup.ForceDeclaration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この宣言を強制<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationSectionGroup.ForceDeclaration%2A>メソッドが強制できます、<xref:System.Configuration.ConfigurationSectionGroup>親ファイルで既に宣言されているためにが必要ない場合でも、構成ファイルに書き込むオブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionGroup.ForceDeclaration%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#12)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceDeclaration">
+      <MemberSignature Language="C#" Value="public void ForceDeclaration (bool require);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ForceDeclaration(bool require) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionGroup.ForceDeclaration(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="force" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="require">To be added.</param>
+        <summary>この宣言を強制<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationSectionGroup.ForceDeclaration%2A>メソッドは、この<xref:System.Configuration.ConfigurationSectionGroup>場合に、ファイルに書き込まれる宣言`force`は`true`します。 場合`force`は`false`場合、この操作を無視する場合があります、<xref:System.Configuration.ConfigurationSectionGroup>オブジェクトには、システムで必要です。  
+  
+ <xref:System.Configuration.ConfigurationSectionGroup.ForceDeclaration%2A>メソッドが強制できます、<xref:System.Configuration.ConfigurationSectionGroup>親ファイルで既に宣言されているためにが必要ない場合でも、構成ファイルに書き込むオブジェクト。 また、グループが必要ない場合、構成ファイルからグループを削除、ことができます。  
+  
+ 使用することができます、<xref:System.Configuration.ConfigurationSectionGroup.ForceDeclaration%2A>を既にグループ宣言が存在するかどうかを心配せずに、1 台のコンピューターからポータブル ファイル構成を行うメソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionGroup.ForceDeclaration%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#13)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクトは、ルート セクション グループ。  
+  
+ \- または  
+  
+ <see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクトには、場所。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeclarationRequired">
+      <MemberSignature Language="C#" Value="public bool IsDeclarationRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeclarationRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.IsDeclarationRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクトの宣言が必要です。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Configuration.ConfigurationSectionGroup" />宣言は必須です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を決定するかどうかのこのインスタンスの<xref:System.Configuration.ConfigurationSectionGroup>宣言が必要です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeclared">
+      <MemberSignature Language="C#" Value="public bool IsDeclared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeclared" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.IsDeclared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクトを宣言します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Configuration.ConfigurationSectionGroup" />、それ以外の宣言された<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セクション グループが構成ファイルで宣言されている場合、<xref:System.Configuration.ConfigurationSectionGroup.IsDeclared%2A>プロパティから返される`true`です。  
+  
+ <xref:System.Configuration.ConfigurationSectionGroup.IsDeclared%2A>プロパティから返される`false`場合、このセクションは Machine.config または親の構成ファイルから継承します。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定するかどうかのこのインスタンス<xref:System.Configuration.ConfigurationSectionGroup>が宣言されています。 これは、概要で提供された大きな例の一部、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この名前のプロパティを取得<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <value>これの名前プロパティ<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationSectionGroup.Name%2A>プロパティの値が親セクション グループが含まれていないセクション グループの名前。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のこのインスタンスの名前を表示する方法を示します、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。 これは、概要で提供された大きな例の一部、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SectionGroupName">
+      <MemberSignature Language="C#" Value="public string SectionGroupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SectionGroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.SectionGroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているセクション グループ名を取得<see cref="T:System.Configuration.ConfigurationSectionGroup" />です。</summary>
+        <value>このセクション グループ名<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationSectionGroup.SectionGroupName%2A>プロパティの値が親セクション グループを含む、セクション グループの完全なパス名.  
+  
+   
+  
+## Examples  
+ 次のコード例は、のこのインスタンスの名前を表示する方法を示します、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。 これは、概要で提供された大きな例の一部、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#11)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SectionGroups">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroupCollection SectionGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionGroupCollection SectionGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.SectionGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSectionGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />オブジェクトすべてを含む、<see cref="T:System.Configuration.ConfigurationSectionGroup" />これの子であるオブジェクト<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />オブジェクトすべてを含む、<see cref="T:System.Configuration.ConfigurationSectionGroup" />これの子であるオブジェクト<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionGroup.SectionGroups%2A> プロパティへのアクセス方法を次のコード例に示します。 これは、概要で提供された大きな例の一部、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sections">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionCollection Sections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionCollection Sections" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.Sections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSectionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ConfigurationSectionCollection" />を含むすべてのオブジェクト<see cref="T:System.Configuration.ConfigurationSection" />内でオブジェクト<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクトすべてを含む、<see cref="T:System.Configuration.ConfigurationSection" />内でオブジェクト<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionGroup.Sections%2A> プロパティへのアクセス方法を次のコード例に示します。 これは、概要で提供された大きな例の一部、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSectionGroupInTargetVersion">
+      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeSectionGroupInTargetVersion (System.Runtime.Versioning.FrameworkName targetFramework);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializeSectionGroupInTargetVersion(class System.Runtime.Versioning.FrameworkName targetFramework) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionGroup.ShouldSerializeSectionGroupInTargetVersion(System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFramework" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="targetFramework">ターゲット バージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</param>
+        <summary>示すかどうか、現在<see cref="T:System.Configuration.ConfigurationSectionGroup" />構成オブジェクトの階層が指定されたターゲット バージョンのシリアル化する場合は、インスタンスをシリアル化される必要があります、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</summary>
+        <returns>
+          <see langword="true" />現在のセクション グループをシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各構成セクション グループが作成されますが、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以降のバージョンは、このメソッドをオーバーライドされを返す必要があります明示的に`true`、セクション グループが指定のバージョンの有効な場合にのみが、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 以前のバージョンの用に作成された既存の構成セクション グループ、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を変更する必要はありません。  
+  
+ 基本データ型には、常に返す、このメソッドの既定の実装が含まれています。`true`です。 つまり、構成セクション グループの実装側がこのメソッドをオーバーライドしていない場合は、既定では構成セクション グループ シリアル化されますすべてのバージョンのフレームワーク。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionGroup.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を設定を取得または<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <value>この <see cref="T:System.Configuration.ConfigurationSectionGroup" /> オブジェクトの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のこのインスタンスの<xref:System.Configuration.ConfigurationSectionGroup>クラスが派生型では、<xref:System.Configuration.ConfigurationSectionGroup.Type%2A>プロパティは拡張する派生型の名前を返します、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationSectionGroup.Type%2A> プロパティの使用方法を示しています。 これは、概要で提供された大きな例の一部、<xref:System.Configuration.ConfigurationSectionGroup>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionGroup#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/CS/ConfigurationSectionGroup.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationSectionGroup#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionGroup/VB/ConfigurationSectionGroup.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクトは、ルート セクション グループ。  
+  
+ \- または  
+  
+ <see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクトには、場所。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">セクション、またはグループは、既に別のレベルで定義されます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

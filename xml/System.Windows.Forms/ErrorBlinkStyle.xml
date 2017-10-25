@@ -1,0 +1,82 @@
+<Type Name="ErrorBlinkStyle" FullName="System.Windows.Forms.ErrorBlinkStyle">
+  <TypeSignature Language="C#" Value="public enum ErrorBlinkStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ErrorBlinkStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ErrorBlinkStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>いつかを示す定数を指定によって提供される、エラー アイコン、<see cref="T:System.Windows.Forms.ErrorProvider" />エラーが発生したことをユーザーに警告するために点滅します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って<xref:System.Windows.Forms.ErrorProvider>です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AlwaysBlink">
+      <MemberSignature Language="C#" Value="AlwaysBlink" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ErrorBlinkStyle AlwaysBlink = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ErrorBlinkStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー アイコンが最初に表示されるかとコントロールのエラーを説明する文字列が設定されており、エラー アイコンが表示されてときに、常に点滅します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BlinkIfDifferentError">
+      <MemberSignature Language="C#" Value="BlinkIfDifferentError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ErrorBlinkStyle BlinkIfDifferentError = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ErrorBlinkStyle.BlinkIfDifferentError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ErrorBlinkStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンが既に表示されていると、コントロールのセットは新しいエラー文字列を点滅します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NeverBlink">
+      <MemberSignature Language="C#" Value="NeverBlink" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ErrorBlinkStyle NeverBlink = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ErrorBlinkStyle.NeverBlink" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ErrorBlinkStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー アイコンが点滅ことはありません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

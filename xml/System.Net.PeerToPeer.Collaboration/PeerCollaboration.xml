@@ -1,0 +1,764 @@
+<Type Name="PeerCollaboration" FullName="System.Net.PeerToPeer.Collaboration.PeerCollaboration">
+  <TypeSignature Language="C#" Value="public static class PeerCollaboration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PeerCollaboration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピア コラボレーション インフラストラクチャと対話します。 コア コラボレーションのシナリオの多くは、このクラスで始まります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、静的クラス: sealed、abstract、パブリック コンス トラクターがありません。 含めるし、アプリケーション、オブジェクト、およびコラボレーション セッションへの招待を受け入れたピアのプレゼンス情報を管理するために使用します。 ピア、オブジェクト、およびアプリケーションの場合は、観点からは、PeerCollaboration クラスは、インターフェイスまたはコンピューターの他にどんなが起こっているかの接続ポイントとして、コレクションごとに 1 つ、3 つのアクセサーを提供します。  このクラスは継承できません。この封印されたクラスが基底クラスとして指定されている場合、コンパイル時エラーが発生します。  
+  
+ このクラスのメソッドおよびプロパティを使用できます。  
+  
+-   起動し、共同作業アプリケーションの管理  
+  
+-   登録し、アプリケーションとのコラボレーション オブジェクト (証明書、画像、アバター、テキストの説明など) を削除  
+  
+-   スコープと、インターネット経由で識別するオブジェクトなどの項目を含む、コラボレーション セッションにピアを招待します。  
+  
+-   ピアを許可する<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A>と<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignOut%2A>コラボレーション インフラストラクチャの連絡先の一覧を管理または相互に自分の存在を発行  
+  
+-   利用<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SynchronizingObject%2A>プロパティおよび特にでの変更の名前、プレゼンス、アプリケーション、またはその他のオブジェクトの非同期のアプリケーション通信を調整するイベントです。  
+  
+ 「リンク ローカル クラウド」、「呼び出し元のサブネットのピア」、および「近くの人スコープ」は同義の用語です。 「インターネット スコープ」と「サーバーレス プレゼンス」は同じ意味です。 サイト ローカル<xref:System.Net.PeerToPeer.PnrpScope>コラボレーション名前空間に該当するショートカットを持ちません。  
+  
+ すべてのメソッドまたはこのクラスのプロパティの使用を必要とする<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態は、ピア コラボレーション セッションの開始時に作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationLaunchInfo">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo ApplicationLaunchInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo ApplicationLaunchInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.ApplicationLaunchInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo" />リモートのピアからのコラボレーション要求により、アプリケーションが開始されたときに必要な情報を含むオブジェクトです。</summary>
+        <value>招待のため、アプリケーションを起動した場合、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo" />アプリケーションへの招待と自体への招待を送信したピアに関する情報の両方を格納しているオブジェクトを返します。 それ以外の場合、<see langword="null" />が返されます。  このプロパティの既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コラボレーションに対応するによって使用される、このプロパティは<xref:System.Net.PeerToPeer.Collaboration.PeerApplication>リモートのピアからのコラボレーション要求により起動されたかどうかを決定する起動された後のインスタンスします。  呼び出し元のアプリケーションを調査する必要があります、<xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Data%2A>と<xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Message%2A>プロパティをさらに招待要求に関する情報を取得します。  
+  
+ このプロパティへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContactManager">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.ContactManager ContactManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.PeerToPeer.Collaboration.ContactManager ContactManager" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.ContactManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.ContactManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてを含む永続的ストアを取得<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />リモート ピアのオブジェクト。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />リモートのピアに対してすべてのピア連絡先オブジェクトを含むオブジェクトです。 このプロパティの既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteObject">
+      <MemberSignature Language="C#" Value="public static void DeleteObject (System.Net.PeerToPeer.Collaboration.PeerObject peerObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeleteObject(class System.Net.PeerToPeer.Collaboration.PeerObject peerObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.DeleteObject(System.Net.PeerToPeer.Collaboration.PeerObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerObject" Type="System.Net.PeerToPeer.Collaboration.PeerObject" />
+      </Parameters>
+      <Docs>
+        <param name="peerObject">登録を解除する <see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />。</param>
+        <summary>呼び出し元のピアに関連付けられている <see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" /> の登録を解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア オブジェクトは、(削除) をピア コラボレーション インフラストラクチャからオブジェクトへの参照が有効では不要になったときに自動的に登録解除します。  呼び出し元がオブジェクトへの参照を保持していない場合、そのはピア コラボレーション インフラストラクチャから登録解除します。  または、オブジェクトを手動で登録解除するこのメソッドを使用しています。  
+  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerObject" /> パラメーターとして <see langword="null" /> を使用することはできません。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.DeleteObject(System.Net.PeerToPeer.Collaboration.PeerObject)" /> 操作を完了できません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetLocalRegisteredApplications">
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />ローカル コンピューターに登録されているオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元を介したピア コラボレーション インフラストラクチャへのサインインに必要な<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A>メソッド、またはこのメソッドを使用する前にします。  
+  
+ このプロパティへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コラボレーション インフラストラクチャに登録されているアプリケーションのコレクションを取得する方法を示します。  
+  
+ [!code-csharp[NCLPNRPContacts#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetLocalRegisteredApplications">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerApplicationCollection GetLocalRegisteredApplications ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.Collaboration.PeerApplicationCollection GetLocalRegisteredApplications() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.GetLocalRegisteredApplications" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerApplicationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを取得<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />ローカル コンピューターに登録されているオブジェクト。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationCollection" />ローカル コンピューターに登録されているすべてのアプリケーションを格納しています。 アプリケーションが見つからない場合、コレクション サイズのゼロ (0) が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元が、ピア コラボレーション インフラストラクチャを使用してにサインインするために必要な<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A>このメソッドを使用する前にメソッドです。  
+  
+ このプロパティへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">このメソッドは、このピアに登録されているアプリケーションを列挙しようとした場合、無効な値が返されました。 すべてのアプリケーションが有効なレジストリ値を持つことを確認してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalRegisteredApplications">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerApplicationCollection GetLocalRegisteredApplications (System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.Collaboration.PeerApplicationCollection GetLocalRegisteredApplications(valuetype System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.GetLocalRegisteredApplications(System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerApplicationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />
+      </Parameters>
+      <Docs>
+        <param name="type">
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />指定されたアプリケーションに対してを返します。</param>
+        <summary>すべてのコレクションを取得<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />、指定されたローカル コンピューターに登録されているオブジェクト<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />です。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationCollection" />の指定されたすべてのアプリケーションを格納している<paramref name="type" />ローカル コンピューターに登録されています。 アプリケーションが見つからない場合、コレクション サイズのゼロ (0) が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 介したピア コラボレーション インフラストラクチャにサインインするには、呼び出し元が必要、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A>このメソッドを使用する前にメソッドです。  
+  
+ このメソッドへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="type" />で既知の値にパラメーターが設定されていない、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />列挙します。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">このメソッドは、このピアに登録されているアプリケーションを列挙しようとした場合、無効な値が返されました。 すべてのアプリケーションが有効なレジストリ値を持つことを確認してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalSetObjects">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerObjectCollection GetLocalSetObjects ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.Collaboration.PeerObjectCollection GetLocalSetObjects() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.GetLocalSetObjects" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて取得<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />で呼び出し元のピアでインスタンスが登録されている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />このマシン上のインフラストラクチャです。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObjectCollection" />すべて含まれる、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />で呼び出し元のピアでインスタンスが登録されている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />ローカル コンピューター上のインフラストラクチャです。  
+  
+ 登録されている場合<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />インスタンスは、ローカル コンピューターで検出されない、サイズがゼロ (0) のコレクションが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">このメソッドが使用可能なすべてを列挙しようとしたときに無効な値が返されました<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />インスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPeersNearMe">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerNearMeCollection GetPeersNearMe ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.Collaboration.PeerNearMeCollection GetPeersNearMe() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.GetPeersNearMe" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerNearMeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのコレクションを返します、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />現在サインインして呼び出し元のピアのネットワーク サブネット上のエンドポイント。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMeCollection" />すべてを格納している、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />現在サインインして、' 近くの人 ' スコープ エンドポイント。  
+  
+ ピアは検出されない場合、そのサブネットに、サイズがゼロ (0) のコレクションが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全に作成されたを返す<xref:System.Net.PeerToPeer.Collaboration.PeerNearMeCollection>このメソッドを使用してサインインに対応するネットワーク トポロジと待機時間の後までの時間を予測を要求できます。  
+  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、PeerNearMeCollection として PeersNearMe を取得する方法を示します。  
+  
+ [!code-csharp[NCLPNRPContacts#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">'近くの' スコープ、ピアが署名されていません。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">このメソッドがすべて正常近くの人をエンドポイントを列挙しようとした場合、無効な値が返されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalApplicationChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs&gt; LocalApplicationChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs&gt; LocalApplicationChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalApplicationChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するか、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />で、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationCollection" />ローカル ホスト上のローカルのピアが変更されたりします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalEndPointName">
+      <MemberSignature Language="C#" Value="public static string LocalEndPointName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string LocalEndPointName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalEndPointName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />呼び出し元のピアに関連付けられています。</summary>
+        <value>
+          <see cref="T:System.String" />呼び出し元のピアのエンドポイントに関連付けられた名前を格納している (として提供される、<see cref="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Name" />プロパティ)。 このプロパティの既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">設定できません。<see cref="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalEndPointName" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalNameChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt; LocalNameChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt; LocalNameChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalNameChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するかの名前、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />ローカル ピアのローカル ホスト上で変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalObjectChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs&gt; LocalObjectChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs&gt; LocalObjectChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalObjectChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />で、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObjectCollection" />ローカル ホスト上のローカルのピアが変更されたりします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalPresenceChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Net.PeerToPeer.Collaboration.PresenceChangedEventArgs&gt; LocalPresenceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.PresenceChangedEventArgs&gt; LocalPresenceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalPresenceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.PresenceChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.PeerToPeer.Collaboration.PeerPresenceInfo" />のローカル ホスト上のローカルのピアが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalPresenceInfo">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerPresenceInfo LocalPresenceInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.PeerToPeer.Collaboration.PeerPresenceInfo LocalPresenceInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalPresenceInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerPresenceInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が存在する呼び出し元のピア内で、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />インフラストラクチャです。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerPresenceInfo" />の登録が呼び出し元のピアのプレゼンス情報を含む、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />セッションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerPresenceInfo" />指定できません。<see langword="null" /></exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   <see cref="T:System.Net.PeerToPeer.Collaboration.PeerPresenceStatus" />オフライン  
+  
+-   設定できません。<see cref="T:System.Net.PeerToPeer.Collaboration.PeerPresenceInfo" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterApplication">
+      <MemberSignature Language="C#" Value="public static void RegisterApplication (System.Net.PeerToPeer.Collaboration.PeerApplication application, System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterApplication(class System.Net.PeerToPeer.Collaboration.PeerApplication application, valuetype System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.RegisterApplication(System.Net.PeerToPeer.Collaboration.PeerApplication,System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.Net.PeerToPeer.Collaboration.PeerApplication" />
+        <Parameter Name="type" Type="System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />
+      </Parameters>
+      <Docs>
+        <param name="application">関連付けられたスコープ内 (グローバル、ローカル、およびリンク ローカル) の呼び出し元ピアを登録するための <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />。</param>
+        <param name="type">実行する登録の型。  アプリケーションは、呼び出し元のピアだけに登録することも、またはコンピューターを使用するすべてのピアに登録することもできます。</param>
+        <summary>呼び出し元のピアとのグループ作業セッションのために指定した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> を登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のピアがピア コラボレーション インフラストラクチャへのサインインに必要な<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A>前に、このメソッドを呼び出すメソッド。  
+  
+ このメソッドへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コラボレーション インフラストラクチャにアプリケーションを登録する方法を示します。  
+  
+ [!code-csharp[NCLPNRPContacts#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">-   <paramref name="application" /> に渡された <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> オブジェクトの <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Path" /> プロパティが <see langword="null." /> です。  
+  
+-   指定された Peer Application のインスタンスには、既に登録されているアプリケーションと同じグローバル一意識別子 <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Id" /> があります。  指定した識別子で新しいアプリケーションを登録する前に、既存の登録を解除する必要があります。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="application" /> パラメーターと <paramref name="type" /> パラメーターを <see langword="null" /> にすることはできません。  両方のパラメーターを指定する必要があります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">型パラメーターがの既知の値に設定されていない、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />列挙します。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">呼び出し元がインフラストラクチャにサインインするまでは<see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.RegisterApplication(System.Net.PeerToPeer.Collaboration.PeerApplication,System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType)" /> 操作を完了できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetObject">
+      <MemberSignature Language="C#" Value="public static void SetObject (System.Net.PeerToPeer.Collaboration.PeerObject peerObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetObject(class System.Net.PeerToPeer.Collaboration.PeerObject peerObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SetObject(System.Net.PeerToPeer.Collaboration.PeerObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerObject" Type="System.Net.PeerToPeer.Collaboration.PeerObject" />
+      </Parameters>
+      <Docs>
+        <param name="peerObject">登録する <see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />。</param>
+        <summary>呼び出し元のピアに関連付けられている <see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" /> を登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトが登録されているスコープに参加しているリモートのピアが照会するオブジェクトを使用します。 オブジェクトを以前に登録された場合、このメソッドは、その登録を更新します。 使用して取得できる登録済みのオブジェクトがスコープ外になった場合、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.GetLocalSetObjects%2A>メソッドです。  
+  
+ データ部分のサイズ、 <xref:System.Net.PeerToPeer.Collaboration.PeerObject> 16,384 バイト未満である必要があります。  
+  
+ このメソッドへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">既に登録されているオブジェクト</exception>
+        <exception cref="T:System.ArgumentNullException">-   <see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" /> として <see langword="null." /> を使用することはできません。  
+  
+-   <see cref="P:System.Net.PeerToPeer.Collaboration.PeerObject.Id" /> として <see langword="null." /> を使用することはできません。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SetObject(System.Net.PeerToPeer.Collaboration.PeerObject)" /> 操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignIn">
+      <MemberSignature Language="C#" Value="public static void SignIn (System.Net.PeerToPeer.Collaboration.PeerScope peerScope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignIn(valuetype System.Net.PeerToPeer.Collaboration.PeerScope peerScope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn(System.Net.PeerToPeer.Collaboration.PeerScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerScope" Type="System.Net.PeerToPeer.Collaboration.PeerScope" />
+      </Parameters>
+      <Docs>
+        <param name="peerScope"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" /> アクティビティを結合するためにピアが使用しているスコープ。</param>
+        <summary>指定された <see cref="T:System.Net.PeerToPeer.Collaboration.PeerScope" /> でコラボレーション インフラストラクチャへのピアに署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示名は必ずしも一意ではありません。 ユーザーが電子メールを使用して表示名を使用するユーザーの id を確認する必要があります電話番号、または、共同作業への招待を受け入れる前に持参します。  
+  
+ この関数は、コラボレーション インフラストラクチャにユーザーをサインインします。  
+  
+ このメソッドへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コラボレーション インフラストラクチャにユーザーをサインインする方法を示しています。  
+  
+ [!code-csharp[NCLPNRPContacts#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="peerScope" /> が <see cref="F:System.Net.PeerToPeer.Collaboration.PeerScope.None" /> に設定されます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="peerScope" /> パラメーターに正しくない列挙値が含まれています。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn(System.Net.PeerToPeer.Collaboration.PeerScope)" /> 操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInScope">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerScope SignInScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Net.PeerToPeer.Collaboration.PeerScope SignInScope" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignInScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerScope" />呼び出し元のピアがあるかどうか、機能およびオブジェクトの情報を発行できます。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerScope" />呼び出し元のピアが参加するスコープを指定するオブジェクト。 このプロパティの既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピアのホストまたはホスト アプリケーションが制限または個別のスコープを使用してコラボレーション アクティビティへのピアの参加を区別可能性があります。  
+  
+ 呼び出し元のピアでは、正常に行うことがさらにアクションを決定するには、このメソッドからの戻り値を調べる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Net.PeerToPeer.Collaboration.PeerScope peerScope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(valuetype System.Net.PeerToPeer.Collaboration.PeerScope peerScope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignOut(System.Net.PeerToPeer.Collaboration.PeerScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerScope" Type="System.Net.PeerToPeer.Collaboration.PeerScope" />
+      </Parameters>
+      <Docs>
+        <param name="peerScope"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerScope" /> によって指定された列挙体をスコープします。</param>
+        <summary>指定したスコープ外のピアに署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション固有の操作ではありませんし、サインアウトすると、現在実行されている他のアプリケーションが変わる可能性があります。 指定されたスコープの呼び出し元に、ユーザーが既に署名されていない場合、このメソッドは、no-op になります。  
+  
+ ユーザーがサインアウト近くの人から、公開された情報は削除、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration>エンドポイント オブジェクトのセット。  これが含まれます<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalEndPointName%2A>と<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalPresenceInfo%2A>、他にも、コラボレーション インフラストラクチャに呼び出し元のピアで登録されているオブジェクトを識別します。 この情報が削除されるため、リモートのピアまたはピアのコラボレーションをホストに使用可能なは不要になったです。 観点から、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration>クラス、他の情報の共有、同じ信頼されたアドレス帳とは関係ありません。 の使用、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration>クラスではリモートのピアなど、この情報を保持したその他のオブジェクトには影響しません<xref:System.Net.PeerToPeer.Collaboration.ContactManager>オブジェクト。 同様に、ピアから削除すると、<xref:System.Net.PeerToPeer.Collaboration.ContactManager>その存在コラボレーション アプリケーション以外で影響を与えません他の連絡先は、その存在を表示し、共同作業がします。  
+  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="peerScope" /> パラメーターに正しくない列挙値が含まれています。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignOut(System.Net.PeerToPeer.Collaboration.PeerScope)" /> 操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizingObject">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SynchronizingObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Description("SynchronizingObject")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISynchronizeInvoke</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべてのイベント ハンドラーのコールバック オブジェクトのイベント ハンドラーを設定します。</summary>
+        <value>持つオブジェクト<see cref="T:System.ComponentModel.ISynchronizeInvoke" />アプリケーション スレッドの同期に使用することで実装します。  
+  
+ このプロパティの既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterApplication">
+      <MemberSignature Language="C#" Value="public static void UnregisterApplication (System.Net.PeerToPeer.Collaboration.PeerApplication application, System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterApplication(class System.Net.PeerToPeer.Collaboration.PeerApplication application, valuetype System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.UnregisterApplication(System.Net.PeerToPeer.Collaboration.PeerApplication,System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.Net.PeerToPeer.Collaboration.PeerApplication" />
+        <Parameter Name="type" Type="System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" />
+      </Parameters>
+      <Docs>
+        <param name="application">呼び出し元のピアに対して登録を解除する <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />。</param>
+        <param name="type">型は、呼び出し側のピアでのいずれか、またはコンピューター上に存在するすべてのピアに対してを実行する登録解除します。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" /> インフラストラクチャから、指定した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> の登録を解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録を解除、<xref:System.Net.PeerToPeer.Collaboration.PeerApplication>の共同作業への招待を受信できない呼び出し元のピアを停止します。  登録解除する対象アプリケーションが以前に登録されていない場合は no-op です。  
+  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したアプリケーションのグローバルに一意な <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Id" /> は、存在しないか空です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="application" /> または <paramref name="type" /> パラメーターが <see langword="null." /> に設定されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="type" /> パラメーターが、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" /> の既知の値に設定されていません。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.UnregisterApplication(System.Net.PeerToPeer.Collaboration.PeerApplication,System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType)" /> 操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

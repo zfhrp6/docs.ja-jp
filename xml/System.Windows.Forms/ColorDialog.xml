@@ -1,0 +1,460 @@
+<Type Name="ColorDialog" FullName="System.Windows.Forms.ColorDialog">
+  <TypeSignature Language="C#" Value="public class ColorDialog : System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColorDialog extends System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ColorDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.CommonDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Color")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用できる一連の色と、ユーザーがカスタム カラーを定義するために使用できるコントロールを表示するコモン ダイアログ ボックスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承されたメンバー<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>この特定のコモン ダイアログ ボックスの作成を呼び出す必要があります。 <xref:System.Windows.Forms.CommonDialog.HookProc%2A>特定のダイアログ ボックスのフック機能の実装をオーバーライドできます。 使用して<xref:System.Windows.Forms.ColorDialog.Color%2A>ユーザーが選択した色を取得します。  
+  
+ インスタンスを作成する場合<xref:System.Windows.Forms.ColorDialog>読み取り/書き込みプロパティの一部は、初期値に設定されます。 これらの値の一覧は、次を参照してください。、<xref:System.Windows.Forms.ColorDialog.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例の作成新規<xref:System.Windows.Forms.ColorDialog>です。 この例を持つ既存のフォーム内から、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Button>に配置されます。  
+  
+ [!code-cpp[Classic ColorDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ColorDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ColorDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ColorDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic ColorDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ColorDialog Example/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColorDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ColorDialog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合<xref:System.Windows.Forms.ColorDialog>、次の読み取り/書き込みプロパティの初期値に設定されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>|`true`|  
+|<xref:System.Windows.Forms.ColorDialog.AnyColor%2A>|`false`|  
+|<xref:System.Windows.Forms.ColorDialog.Color%2A>|`Color.Black`|  
+|<xref:System.Windows.Forms.ColorDialog.CustomColors%2A>|`null`|  
+|<xref:System.Windows.Forms.ColorDialog.FullOpen%2A>|`false`|  
+|<xref:System.Windows.Forms.ColorDialog.ShowHelp%2A>|`false`|  
+|<xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>|`false`|  
+  
+ プロパティに別個の呼び出しでこれらのプロパティのいずれかの値を変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowFullOpen">
+      <MemberSignature Language="C#" Value="public virtual bool AllowFullOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowFullOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.AllowFullOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがダイアログ ボックスを使用してカスタム カラーを定義できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーがカスタム カラーを定義できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると`false`、 ダイアログ ボックスで、関連付けられたボタンが無効になり、ユーザーがダイアログ ボックスでカスタム カラー コントロールにアクセスできません。  
+  
+   
+  
+## Examples  
+ 次の例の作成新規<xref:System.Windows.Forms.ColorDialog>です。 この例を持つ既存のフォーム内から、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Button>に配置されます。  
+  
+ [!code-cpp[Classic ColorDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ColorDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ColorDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ColorDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic ColorDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ColorDialog Example/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnyColor">
+      <MemberSignature Language="C#" Value="public virtual bool AnyColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AnyColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.AnyColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能なすべての色を基本色セットとしてダイアログ ボックスに表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ダイアログ ボックスは、一連の基本色は; で使用可能なすべての色を表示それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ColorDialog>設定、 <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>、<xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>プロパティです。 <xref:System.Windows.Forms.ColorDialog>を有効にカスタムの色を設定することができますの完全なセットは基本色が表示されます。 設定すると、<xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>プロパティを`false`256 システムで他の色の組み合わせは、色の表示を有効、または以下の色します。 例では、設定も示しています、<xref:System.Windows.Forms.ColorDialog.ShowHelp%2A>プロパティと処理、<xref:System.Windows.Forms.CommonDialog.HelpRequest>ダイアログのイベントです。 例を実行するには、フォームと呼び出しで、次のコードを貼り付けます、`InitializeColorDialog`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。 この例では、する必要があります、`Click`ボタンのイベントがこの例で定義されたイベント ハンドラー メソッドに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color Color" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが選択した色を取得または設定します。</summary>
+        <value>ユーザーが選択した色。 色が選択されていない場合の既定値は黒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義されている、実行時に、ダイアログ ボックスで、ユーザーが選択した色<xref:System.Drawing.Color>構造体。  
+  
+   
+  
+## Examples  
+ 次の例の作成新規<xref:System.Windows.Forms.ColorDialog>です。 この例を持つ既存のフォーム内から、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Button>に配置されます。  
+  
+ [!code-cpp[Classic ColorDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ColorDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ColorDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ColorDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic ColorDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ColorDialog Example/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomColors">
+      <MemberSignature Language="C#" Value="public int[] CustomColors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] CustomColors" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.CustomColors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスに表示されるカスタム カラー セットを取得または設定します。</summary>
+        <value>ダイアログ ボックスに表示されるカスタム カラー セット。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、独自のカスタム カラー セットを作成できます。 これらの色に含まれている、 <xref:System.Int32> (青、緑、赤) に含まれる ◇ 値の色を作成するために必要なので構成されます。 このデータの構造の詳細については、次を参照してください。<xref:System.Drawing.Color>です。  
+  
+ 場合、カスタムの色を定義することができますのみ<xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>に設定されている`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、型の配列を追加する方法を示します<xref:System.Int32>にカスタムの色を表す<xref:System.Windows.Forms.ColorDialog.CustomColors%2A>です。 この例では、内からコードを実行する必要があります、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[System.Windows.Forms.ColorDialog CustomColors Property Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialog CustomColors Property Example/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ColorDialog CustomColors Property Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialog CustomColors Property Example/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ColorDialog CustomColors Property Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ColorDialog CustomColors Property Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullOpen">
+      <MemberSignature Language="C#" Value="public virtual bool FullOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FullOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.FullOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスが開かれたときに、カスタム カラーの作成用のコントロールを表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />カスタム カラー コントロールが使用可能な場合、ダイアログ ボックスを開いたときにします。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ダイアログ ボックスが初めて開いたときにカスタム カラー コントロールは表示されません。 クリックする必要があります、`Custom Colors`それらを表示するボタンをクリックします。  
+  
+> [!NOTE]
+>  場合<xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>は`false`、し<xref:System.Windows.Forms.ColorDialog.FullOpen%2A>も何も起こりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="protected virtual IntPtr Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Instance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるウィンドウのインスタンス ハンドル (HINSTANCE) を取得します。</summary>
+        <value><see cref="T:System.IntPtr" />ウィンドウ ハンドルの HINSTANCE 値を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>されないようにする、信頼されていないコードから呼び出す以外の直前の呼び出し元のみする必要がある<xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType>権限です。 場合は、コードは、部分的に信頼されたコードから呼び出すことができますはユーザーの入力を渡さない<xref:System.Runtime.InteropServices.Marshal>クラスの検証を伴わないメソッドです。 使用してに関する重要な制限事項、 `LinkDemand` 、メンバーを参照してください[Demand とします。LinkDemand](http://msdn.microsoft.com/en-us/1ab877f2-70f4-4e0d-8116-943999dfe8f5)です。  
+  
+ このプロパティを使用しても、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>セキュリティ属性がある、このメンバーをオーバーライドする派生クラスである必要があります、`CustomPermission`権限です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="protected virtual int Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Options" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化するために値を取得、<see cref="T:System.Windows.Forms.ColorDialog" />です。</summary>
+        <value>初期化する内部値のビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ColorDialog" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ColorDialog.Options%2A>プロパティは Win32 を使用して、色のダイアログ ボックスを初期化するために使用されているフラグに対応します。 プロパティを使用して、<xref:System.Windows.Forms.ColorDialog>クラスを取得し、オプションを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColorDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオプションを既定値に、最後に選択した色を黒に、カスタム カラーを既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected override bool RunDialog (IntPtr hwndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool RunDialog(native int hwndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColorDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwndOwner">コモン ダイアログ ボックスのオーナー ウィンドウのウィンドウ ハンドルを表す値。</param>
+        <summary>派生クラスでオーバーライドされるときに、コモン ダイアログ ボックスを指定します。</summary>
+        <returns>
+          ダイアログ ボックスが正常に動作した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public virtual bool ShowHelp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.ShowHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カラー ダイアログ ボックスに [?] ボタンを表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスで、[ヘルプ] ボタンが表示されている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新規の作成を示しています<xref:System.Windows.Forms.ColorDialog>です。 この例を持つ既存のフォーム内から、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Button>に配置されます。  
+  
+ [!code-cpp[Classic ColorDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ColorDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ColorDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ColorDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic ColorDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ColorDialog Example/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SolidColorOnly">
+      <MemberSignature Language="C#" Value="public virtual bool SolidColorOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SolidColorOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColorDialog.SolidColorOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスでユーザーが選択できる色を純色だけに制限するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが純色だけを選択できる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、256 個以下の色のシステムに適用します。 この種のシステムでは、上では、一部の色は、他の合成を。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ColorDialog>設定、 <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>、<xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>プロパティです。 <xref:System.Windows.Forms.ColorDialog>を有効にカスタムの色を設定することができますの完全なセットは基本色が表示されます。 設定すると、<xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>プロパティを`false`256 システムで他の色の組み合わせは、色の表示を有効、または以下の色します。 この例では、設定も示しています、<xref:System.Windows.Forms.ColorDialog.ShowHelp%2A>プロパティと処理、<xref:System.Windows.Forms.CommonDialog.HelpRequest>イベント ダイアログ ボックスをします。 例を実行するには、フォームと呼び出しで、次のコードを貼り付けます、`InitializeColorDialog`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。 この例は、`Click`ボタンのイベントがこの例で定義されたイベント ハンドラー メソッドに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColorDialog.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す文字列を返します、<see cref="T:System.Windows.Forms.ColorDialog" />です。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.ColorDialog" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の文字列には、型との値が含まれている、<xref:System.Windows.Forms.ColorDialog.Color%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,147 @@
+<Type Name="ChannelPoolSettings" FullName="System.ServiceModel.Channels.ChannelPoolSettings">
+  <TypeSignature Language="C#" Value="public class ChannelPoolSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChannelPoolSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ChannelPoolSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス エンドポイントによって使用されるチャネルのプールに属するチャネルに対するクォータを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クォータは、リソースの過剰な消費を防ぐためのポリシー メカニズムとして使用されます。 クォータは、悪質な、または意図的でないサービス拒否 (DOS) 攻撃を防ぎます。 カスタム チャネルにチャネル クォータを設定するには、このクラスを使用します。  
+  
+ <xref:System.ServiceModel.Channels.ChannelPoolSettings> では、次の 3 つのクォータを指定します。  
+  
+-   プール内のチャネルがアイドル状態を継続できる最大時間を指定する <xref:System.ServiceModel.Channels.ChannelPoolSettings.IdleTimeout%2A>。この時間を経過すると、プール内のチャネルが閉じられます。  
+  
+-   プールに返されたときに、チャネルが閉じられるまでの時間を指定する <xref:System.ServiceModel.Channels.ChannelPoolSettings.LeaseTimeout%2A>。  
+  
+-   リモート エンドポイントごとにプールに格納できるチャネルの最大数を指定する <xref:System.ServiceModel.Channels.ChannelPoolSettings.MaxOutboundChannelsPerEndpoint%2A>。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelPoolSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelPoolSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ChannelPoolSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値のセットは、次のとおりです。  
+  
+-   <xref:System.ServiceModel.Channels.ChannelPoolSettings.IdleTimeout%2A>: 2 分です。  
+  
+-   <xref:System.ServiceModel.Channels.ChannelPoolSettings.LeaseTimeout%2A> : 10 分。  
+  
+-   <xref:System.ServiceModel.Channels.ChannelPoolSettings.MaxOutboundChannelsPerEndpoint%2A> : 10 チャネル。  
+  
+ これらの既定クォータ値は控えめなリソース割り当てに基づいており、開発環境および小規模なインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、チャネル クォータを確認し、個別のクォータ値を調整する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan IdleTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan IdleTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelPoolSettings.IdleTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プール内のチャネルがアイドル状態を継続できる最大時間を取得または設定します。この時間を経過すると、チャネルが閉じられます。</summary>
+        <value>プール内のチャネルがアイドル状態を継続できる最大時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、チャネルが閉じられます。 既定値は、2 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ChannelPoolSettings.IdleTimeout%2A> クォータは、サーバーでは、長時間リソースを停滞させることによるサービス拒否 (DOS) 攻撃を軽減するために使用されます。 クライアントでは、適切な値を設定することで、サービスとの接続の信頼性を高めることができます。 既定値では、リソースが控えめに割り当てられています。 開発環境、および小規模のインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は値をレビューする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、0 より小さいか、またはミリ秒単位で T:System.Int32.MaxValue を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaseTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan LeaseTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan LeaseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelPoolSettings.LeaseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルの有効期間を取得または設定します。この期間を過ぎると、チャネルは閉じられます。</summary>
+        <value>チャネルの有効期間を指定する <see cref="T:System.TimeSpan" />。この期間を経過すると、チャネルが閉じられます。 既定値は、10 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ChannelPoolSettings.LeaseTimeout%2A> クォータは、負荷分散機能との統合、および信頼性の向上のために使用されます。 既定値では、リソースが控えめに割り当てられています。 開発環境、および小規模のインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は値をレビューする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxOutboundChannelsPerEndpoint">
+      <MemberSignature Language="C#" Value="public int MaxOutboundChannelsPerEndpoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxOutboundChannelsPerEndpoint" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelPoolSettings.MaxOutboundChannelsPerEndpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが開始できるリモート エンドポイントに接続するチャネルの最大数を取得または設定します。</summary>
+        <value>サービスによって開始できる、リモート エンドポイントに対するチャネルのプール内の最大数を指定する正の整数。 既定値は、10 チャネルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ChannelPoolSettings.MaxOutboundChannelsPerEndpoint%2A> クォータは、サーバーとクライアントの両方に対するキャッシュ制限を設定し、信頼性向上のために使用されます。 既定値ではリソースが控えめに割り当てられており、開発環境および小規模なインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は値をレビューする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

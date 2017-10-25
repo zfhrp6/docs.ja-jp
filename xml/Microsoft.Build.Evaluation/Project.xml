@@ -1,0 +1,2407 @@
+<Type Name="Project" FullName="Microsoft.Build.Evaluation.Project">
+  <TypeSignature Language="C#" Value="public class Project" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Project extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Evaluation.Project" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{FullPath} EffectiveToolsVersion={ToolsVersion} #GlobalProperties={data.globalProperties.Count} #Properties={data.Properties.Count} #ItemTypes={data.ItemTypes.Count} #ItemDefinitions={data.ItemDefinitions.Count} #Items={data.Items.Count} #Targets={data.Targets.Count}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時のセマンティクスを持つプロジェクトを表します。 このクラスでは、プロジェクト ファイルを読み込み、アイテムとプロパティを編集、およびプロジェクトをビルドできます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>グローバル プロジェクト コレクションのグローバル プロパティと既定のツール バージョンを使用して空のプロジェクトを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プロジェクトを保存することによって、ソース プロジェクト ファイルの完全なパスを指定した場合、このプロジェクトはグローバル プロジェクト コレクションに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (Microsoft.Build.Construction.ProjectRootElement xml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Construction.ProjectRootElement xml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(Microsoft.Build.Construction.ProjectRootElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xml" Type="Microsoft.Build.Construction.ProjectRootElement" />
+      </Parameters>
+      <Docs>
+        <param name="xml">評価に使用する ProjectRootElement です。</param>
+        <summary>空のプロジェクトを構築し、指定したプロジェクトのルートと、グローバル プロジェクト コレクション グローバル プロパティ、および既定のツール バージョンを使用して評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトはグローバル プロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (Microsoft.Build.Evaluation.ProjectCollection projectCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Evaluation.ProjectCollection projectCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(Microsoft.Build.Evaluation.ProjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="projectCollection">プロジェクト コレクションに新しいプロジェクトが追加されます。</param>
+        <summary>指定されたプロジェクト コレクションのグローバル プロパティと既定のツール バージョンを使用して空のプロジェクトを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プロジェクトを保存することによってソース プロジェクト ファイルの完全なパスが指定されている場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (string projectFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string projectFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">評価するソース プロジェクト ファイルです。</param>
+        <summary>プロジェクトの構築を使用して、グローバル プロジェクト コレクションのグローバル プロパティと既定のツール バージョンを使用して指定したソース プロジェクト ファイルから評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトがグローバル プロジェクト コレクションに追加されます。  
+  
+ このソース プロジェクト ファイルを評価するプロジェクト コレクションでプロジェクトが既に InvalidOperationException をスローします。 IO 関連の例外をスローすることがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:Microsoft.Build.Exceptions.InvalidProjectFileException">評価が失敗するとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (System.Xml.XmlReader xmlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader xmlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">プロジェクトのソース コードを読み取る XML リーダー。</param>
+        <summary>プロジェクトを構築し、指定した XML リーダーからソース コードを評価します。 ソース コードは、グローバル プロジェクト コレクションのグローバル プロパティと既定のツール バージョンで評価されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プロジェクトを保存することによって、ソース プロジェクト ファイルの完全なパスを指定した場合、このプロジェクトはグローバル プロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (Microsoft.Build.Construction.ProjectRootElement xml, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Construction.ProjectRootElement xml, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(Microsoft.Build.Construction.ProjectRootElement,System.Collections.Generic.IDictionary{System.String,System.String},System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xml" Type="Microsoft.Build.Construction.ProjectRootElement" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xml">評価に使用するプロジェクトのルートです。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <summary>空のプロジェクトを構築して、指定したプロジェクトのルートを使用して評価し、指定のグローバル プロパティとツール バージョン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトはグローバル プロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">プロジェクトを評価するために使用するツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">新しいプロジェクトのプロジェクト コレクションに追加されます。</param>
+        <summary>特定のプロジェクト コレクションを使用して、指定のグローバル プロパティを使用して評価するツール バージョンを指定する、空のプロジェクトを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プロジェクトを保存することによって、ソース プロジェクト ファイルの完全なパスを指定した場合、プロジェクトが指定されたプロジェクト コレクションに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (string projectFile, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string projectFile, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">評価するソース プロジェクト ファイルへのパス。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <summary>プロジェクトを構築し、指定したソース プロジェクト ファイルから、指定のグローバル プロパティとツール バージョンを評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトがグローバル プロジェクト コレクションに追加されます。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。 IO 関連の例外をスローすることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (System.Xml.XmlReader xmlReader, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader xmlReader, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.Xml.XmlReader,System.Collections.Generic.IDictionary{System.String,System.String},System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">プロジェクトのソース コードを読み取る XML リーダー。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <summary>プロジェクトを構築し、指定した XML リーダーからソース コードを評価します。 ソース コードが指定のグローバル プロパティを使用して評価し、ツール バージョンを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プロジェクトを保存することによって、ソース プロジェクト ファイルの完全なパスを指定した場合、このプロジェクトはグローバル プロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (Microsoft.Build.Construction.ProjectRootElement xml, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Construction.ProjectRootElement xml, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(Microsoft.Build.Construction.ProjectRootElement,System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xml" Type="Microsoft.Build.Construction.ProjectRootElement" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="xml">評価に使用するプロジェクトのルートです。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。</param>
+        <summary>プロジェクトを構築して、指定したプロジェクトのルートを使用して評価し、指定のグローバル プロパティとツール バージョン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (string projectFile, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string projectFile, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">評価するソース プロジェクト ファイルへのパス。</param>
+        <param name="globalProperties">グローバル プロパティ。 null も指定できます。</param>
+        <param name="toolsVersion">ツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <summary>プロジェクトを構築し、指定したソース プロジェクト ファイルから、指定のグローバル プロパティとツール バージョンを評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトが特定のプロジェクト コレクションに追加されます。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。 IO 関連の例外をスローすることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (System.Xml.XmlReader xmlReader, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader xmlReader, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.Xml.XmlReader,System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">プロジェクトのソース コードを読み取る XML リーダー。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <summary>プロジェクトを構築し、指定した XML リーダーからソース コードを評価します。 ソース コードが指定のグローバル プロパティを使用して評価し、ツール バージョンを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (Microsoft.Build.Construction.ProjectRootElement xml, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Construction.ProjectRootElement xml, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection, valuetype Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(Microsoft.Build.Construction.ProjectRootElement,System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection,Microsoft.Build.Evaluation.ProjectLoadSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xml" Type="Microsoft.Build.Construction.ProjectRootElement" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+        <Parameter Name="loadSettings" Type="Microsoft.Build.Evaluation.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="xml">評価に使用するプロジェクトのルートです。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <param name="loadSettings">評価に使用する設定の読み込みします。</param>
+        <summary>プロジェクトを構築して、指定したプロジェクトのルートを使用して評価し、指定のグローバル プロパティとツール バージョン、および読み込みの設定を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (string projectFile, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string projectFile, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection, valuetype Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection,Microsoft.Build.Evaluation.ProjectLoadSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+        <Parameter Name="loadSettings" Type="Microsoft.Build.Evaluation.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">評価するソース プロジェクト ファイルへのパス。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">ツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <param name="loadSettings">評価に使用する設定の読み込みします。</param>
+        <summary>プロジェクトを構築し、ツール バージョン、および読み込み設定の指定のグローバル プロパティを使用して指定したソース プロジェクト ファイルから、それを評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトが特定のプロジェクト コレクションに追加されます。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。 IO 関連の例外をスローすることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (System.Xml.XmlReader xmlReader, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader xmlReader, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection, valuetype Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.Xml.XmlReader,System.Collections.Generic.IDictionary{System.String,System.String},System.String,Microsoft.Build.Evaluation.ProjectCollection,Microsoft.Build.Evaluation.ProjectLoadSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+        <Parameter Name="loadSettings" Type="Microsoft.Build.Evaluation.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">プロジェクトのソース コードを読み取り元の Xml リーダーです。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <param name="loadSettings">評価に使用する設定の読み込みします。</param>
+        <summary>プロジェクトを構築し、指定した XML リーダーからソース コードを評価します。 ソース コードが指定のグローバル プロパティを使用して評価し、ツール バージョンを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (Microsoft.Build.Construction.ProjectRootElement xml, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, string subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Construction.ProjectRootElement xml, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, string subToolsetVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection, valuetype Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(Microsoft.Build.Construction.ProjectRootElement,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.String,Microsoft.Build.Evaluation.ProjectCollection,Microsoft.Build.Evaluation.ProjectLoadSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xml" Type="Microsoft.Build.Construction.ProjectRootElement" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="subToolsetVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+        <Parameter Name="loadSettings" Type="Microsoft.Build.Evaluation.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="xml">評価に使用するプロジェクトのルートです。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <param name="subToolsetVersion">評価に使用するには、ツールセットのバージョンを sub です。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <param name="loadSettings">評価に使用する設定の読み込みします。</param>
+        <summary>プロジェクトを構築、指定したプロジェクトのルートを使用して評価しで指定のグローバル プロパティ、ツール、サブツール セットのバージョンのプロジェクト コレクション、および設定を読み込めません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (string projectFile, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, string subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string projectFile, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, string subToolsetVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection, valuetype Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.String,Microsoft.Build.Evaluation.ProjectCollection,Microsoft.Build.Evaluation.ProjectLoadSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="subToolsetVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+        <Parameter Name="loadSettings" Type="Microsoft.Build.Evaluation.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">評価するソース プロジェクト ファイルへのパス。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">ツール バージョン。 null も指定できます。</param>
+        <param name="subToolsetVersion">Sub ツールセットのバージョン。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <param name="loadSettings">評価に使用する設定の読み込みします。</param>
+        <summary>プロジェクトを構築して、指定のグローバル プロパティ、ツール、サブツール セットのバージョン、プロジェクト コレクション、および設定の読み込みを使用して指定したソース プロジェクト ファイルから評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトが特定のプロジェクト コレクションに追加されます。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。 IO 関連の例外をスローすることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Project (System.Xml.XmlReader xmlReader, System.Collections.Generic.IDictionary&lt;string,string&gt; globalProperties, string toolsVersion, string subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader xmlReader, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; globalProperties, string toolsVersion, string subToolsetVersion, class Microsoft.Build.Evaluation.ProjectCollection projectCollection, valuetype Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.#ctor(System.Xml.XmlReader,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.String,Microsoft.Build.Evaluation.ProjectCollection,Microsoft.Build.Evaluation.ProjectLoadSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="globalProperties" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+        <Parameter Name="subToolsetVersion" Type="System.String" />
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+        <Parameter Name="loadSettings" Type="Microsoft.Build.Evaluation.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">プロジェクトのソース コードを読み取る XML リーダー。</param>
+        <param name="globalProperties">評価に使用するグローバル プロパティ。 null も指定できます。その場合は、親プロジェクト コレクションのグローバル プロパティが使用されます。</param>
+        <param name="toolsVersion">評価に使用するツール バージョン。 null も指定できます。</param>
+        <param name="subToolsetVersion">評価に使用するツールセットのバージョンをサブです。 null も指定できます。</param>
+        <param name="projectCollection">プロジェクト コレクション、プロジェクトが追加されます。 Null は許可されません。</param>
+        <param name="loadSettings">評価に使用する設定の読み込みします。</param>
+        <summary>プロジェクトを構築し、指定した XML リーダーからソース コードを評価します。 ソース コードは、指定のグローバル プロパティ、ツール、サブツール セットのバージョン、プロジェクト コレクション、および設定の読み込みと評価されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトまたは指定されたプロジェクトのルートには、ソース プロジェクト ファイルへの完全パスを指定した場合、このプロジェクトは特定のプロジェクト コレクションに追加します。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。 スローされます InvalidOperationException 同等のプロジェクトが既にある場合は、プロジェクト コレクションに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddItem">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt; AddItem (string itemType, string unevaluatedInclude);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; AddItem(string itemType, string unevaluatedInclude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.AddItem(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.String" />
+        <Parameter Name="unevaluatedInclude" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">追加する項目の項目の種類。</param>
+        <param name="unevaluatedInclude">追加する項目の属性が含まれます。</param>
+        <summary>メタデータの項目をプロジェクトに追加しません。</summary>
+        <returns>追加された項目を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのメタデータは、後で追加できます。 既にワイルドカードの式には、新しい項目が含まれている場合は、プロジェクトのソースを変更しません。  
+  
+ 評価は、ベスト エフォートの原則で行われます。 次の新しい項目のプロジェクトのソースで定義されている項目を使用して、評価版の可能性があります。 このアイテムのみが評価されます。 依存しているその他の項目には影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddItem">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt; AddItem (string itemType, string unevaluatedInclude, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,string&gt;&gt; metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; AddItem(string itemType, string unevaluatedInclude, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, string&gt;&gt; metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.AddItem(System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.String" />
+        <Parameter Name="unevaluatedInclude" Type="System.String" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.String&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">追加する項目の項目の種類。</param>
+        <param name="unevaluatedInclude">追加する項目の属性が含まれます。</param>
+        <param name="metadata">追加する項目のメタデータ。</param>
+        <summary>指定したメタデータを持つ項目をプロジェクトに追加します。</summary>
+        <returns>追加された項目を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータがあります null でないことを示しますメタデータ。  
+  
+ 評価は、ベスト エフォートの原則で行われます。 次の新しい項目のプロジェクトのソースで定義されている項目を使用して、評価版の可能性があります。 このアイテムのみが評価されます。 依存しているその他の項目には影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddItemFast">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt; AddItemFast (string itemType, string unevaluatedInclude);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; AddItemFast(string itemType, string unevaluatedInclude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.AddItemFast(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.String" />
+        <Parameter Name="unevaluatedInclude" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">追加する項目の種類。</param>
+        <param name="unevaluatedInclude">項目に追加する未評価の Include 属性です。</param>
+        <summary>メタデータの項目をプロジェクトに追加しません。  項目グループの最初の項目である場合を除き、かどうか既存のワイルドカードが一致する、新しい項目を表示するには、残存作業時間は行いません。  類似した項目の近くの新しい項目を検索するための努力を行いません。</summary>
+        <returns>追加されたプロジェクト項目の一覧を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の子は、同じ種類のアイテムまたはする条件を持たない、子がないか、最初の項目グループに、項目を追加します。  
+  
+ ベスト エフォートで評価:-すべての項目が展開されます。 実際の評価でことができない場合でも、新しい項目の下の XML で定義されている項目を使用することがあります。  
+  
+ このアイテムのみが評価されます。 依存しているその他の項目には影響しません。  
+  
+ これは、利便性のため理解されているが必ずしものままにして完全に自己の一貫性のある状態でプロジェクトを再評価されるまでです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddItemFast">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt; AddItemFast (string itemType, string unevaluatedInclude, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,string&gt;&gt; metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; AddItemFast(string itemType, string unevaluatedInclude, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, string&gt;&gt; metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.AddItemFast(System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.String" />
+        <Parameter Name="unevaluatedInclude" Type="System.String" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.String&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">追加する項目の種類。</param>
+        <param name="unevaluatedInclude">項目に追加する未評価の Include 属性です。</param>
+        <param name="metadata">追加するメタデータ。</param>
+        <summary>プロジェクトにメタデータを持つ項目を追加します。 メタデータが null であるメタデータがないことを示します。 項目グループの最初の項目である場合を除き、かどうか既存のワイルドカードが一致する、新しい項目を表示するには、残存作業時間は行いません。 類似した項目の近くの新しい項目を検索するための努力を行いません。</summary>
+        <returns>追加されたプロジェクト項目の一覧を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の子は、同じ種類のアイテムまたはする条件を持たない、子がないか、最初の項目グループに、項目を追加します。  
+  
+ ベスト エフォートで評価:-すべての項目が展開されます。 実際の評価でことができない場合でも、新しい項目の下の XML で定義されている項目を使用することがあります。  
+  
+ このアイテムのみが評価されます。 依存しているその他の項目は影響はありません。  
+  
+ これは、利便性のため理解されているが必ずしものままにして完全に自己の一貫性のある状態でプロジェクトを再評価されるまでです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllEvaluatedItemDefinitionMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectMetadata&gt; AllEvaluatedItemDefinitionMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectMetadata&gt; AllEvaluatedItemDefinitionMetadata" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.AllEvaluatedItemDefinitionMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectMetadata&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価中に発生したすべてのアイテム定義のメタデータを取得します。</summary>
+        <value>評価中に発生したすべてのアイテム定義のメタデータを返します。 これは、すべての要素の条件が true に評価されなかったも最後の評価されてから追加された任意のアイテム定義メタデータには含まれません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目メタデータは、2 つ目の評価パス中に読み取られます。 異なり ItemDefinitions プロパティによって返されるメタデータは、このメタデータが順序付けに、項目の種類と同じ名前で後でオーバーライドされたメタデータが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllEvaluatedItems">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt; AllEvaluatedItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; AllEvaluatedItems" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.AllEvaluatedItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価中に検出されたすべての項目に対する列挙子を取得します。 これらは、3 つ目の評価パス中に読み取られます。</summary>
+        <value>評価中に発生したすべての項目には、列挙子を返します。 これらは、3 つ目の評価パス中に読み取られます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目プロパティによって返されるそれらのアイテムとは異なり、同じ項目の種類の項目に対してだけでなく順序付けの評価中に発生した他のすべてのアイテムに関してこれら並べ替えられています。  
+  
+ 一部のアプリケーションでこの完全な相互順序付けは重大であるとこのようなホストは、このプロパティを使用できます。  
+  
+ 列挙体では、条件が true に評価されなかったすべての要素は含まれません。 またが含まれて最後の評価以降に追加された項目には。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllEvaluatedProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectProperty&gt; AllEvaluatedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectProperty&gt; AllEvaluatedProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.AllEvaluatedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価中に検出されたすべてのプロパティを取得します。</summary>
+        <value>評価中に発生したすべてのプロパティを返します。 これは、任意のプロパティの条件が true に評価されなかったも最後の評価されてから追加された任意のプロパティには含まれません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのプロパティは、最初の評価パス中に読み取られます。 プロパティがプロパティのプロパティによって返される、これらは順序付けし、異なり、同じ名前で後でオーバーライドされたプロパティを含みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のターゲットを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (Microsoft.Build.Framework.ILogger logger);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(class Microsoft.Build.Framework.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(Microsoft.Build.Framework.ILogger)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logger" Type="Microsoft.Build.Framework.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="logger">ビルド時に使用するロガー。</param>
+        <summary>既定のターゲットと指定したロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; loggers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; loggers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.Collections.Generic.IEnumerable{Microsoft.Build.Framework.ILogger})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="loggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="loggers">ビルド中に使用されるすべてのロガーに対する列挙子。</param>
+        <summary>既定のターゲットと指定したロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">ビルドするターゲット。</param>
+        <summary>指定したターゲットを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (string[] targets);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(string[] targets) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targets" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="targets">ビルドされるターゲットの配列。</param>
+        <summary>特定のターゲットを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; loggers, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt; remoteLoggers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; loggers, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Logging.ForwardingLoggerRecord&gt; remoteLoggers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.Collections.Generic.IEnumerable{Microsoft.Build.Framework.ILogger},System.Collections.Generic.IEnumerable{Microsoft.Build.Logging.ForwardingLoggerRecord})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="loggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;" />
+        <Parameter Name="remoteLoggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="loggers">ビルド時に使用するロガー。</param>
+        <param name="remoteLoggers">ビルド中に使用されるリモート ロガー。</param>
+        <summary>既定のターゲットと指定したロガーとリモート ロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (string target, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; loggers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(string target, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; loggers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.String,System.Collections.Generic.IEnumerable{Microsoft.Build.Framework.ILogger})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="loggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="target">ビルドするターゲット。</param>
+        <param name="loggers">ビルド時に使用するロガー。</param>
+        <summary>指定されたターゲットの構築と、指定したロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (string[] targets, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; loggers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(string[] targets, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; loggers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.String[],System.Collections.Generic.IEnumerable{Microsoft.Build.Framework.ILogger})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targets" Type="System.String[]" />
+        <Parameter Name="loggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="targets">ビルドするターゲット。</param>
+        <param name="loggers">ビルド時に使用するロガー。</param>
+        <summary>ビルド ターゲットを指定し、指定したロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (string target, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; loggers, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt; remoteLoggers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(string target, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; loggers, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Logging.ForwardingLoggerRecord&gt; remoteLoggers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.String,System.Collections.Generic.IEnumerable{Microsoft.Build.Framework.ILogger},System.Collections.Generic.IEnumerable{Microsoft.Build.Logging.ForwardingLoggerRecord})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="loggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;" />
+        <Parameter Name="remoteLoggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="target">ビルドするターゲット。</param>
+        <param name="loggers">ビルド時に使用するロガー。</param>
+        <param name="remoteLoggers">ビルド中に使用されるリモート ロガー。</param>
+        <summary>指定したターゲットと指定したロガーとリモート ロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public bool Build (string[] targets, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; loggers, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt; remoteLoggers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Build(string[] targets, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; loggers, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Logging.ForwardingLoggerRecord&gt; remoteLoggers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Build(System.String[],System.Collections.Generic.IEnumerable{Microsoft.Build.Framework.ILogger},System.Collections.Generic.IEnumerable{Microsoft.Build.Logging.ForwardingLoggerRecord})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targets" Type="System.String[]" />
+        <Parameter Name="loggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;" />
+        <Parameter Name="remoteLoggers" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="targets">ビルドするターゲット。</param>
+        <param name="loggers">ビルド時に使用するロガー。</param>
+        <param name="remoteLoggers">ビルド中に使用されるリモート ロガー。</param>
+        <summary>特定のターゲットをビルドして、指定したロガーとリモート ロガーを使用して、このプロジェクトをビルドします。</summary>
+        <returns>成功した場合は true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定または仮想アイテム ビルドのため、プロジェクトのインスタンスを明示的に複製を取得します。 このメソッドは、プロジェクトのオブジェクトを変更しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionedProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,System.Collections.Generic.List&lt;string&gt;&gt; ConditionedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.Collections.Generic.List`1&lt;string&gt;&gt; ConditionedProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ConditionedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Collections.Generic.List&lt;System.String&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ、プロパティ グループ、インポート、検出された条件を評価するためのプロパティの有効なプロパティ値のコレクションを取得し、場合のです。</summary>
+        <value>プロパティ、プロパティ グループ、インポート、検出された条件を評価するためのプロパティの有効なプロパティ値のコレクションを返しますとタイミングのです。 コレクションは、正規の形式です。 エントリの名前は、評価するプロパティの名前と値が有効なプロパティ値の一覧を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、プロジェクトのプロパティで、次の条件が存在していた場合: Condition="'$(Configuration) &#124;$(Platform) ' = = 'デバッグ &#124; x86'"Condition="'$(Configuration)' 'Release' = ="{「構成」、{"Debug"、"Release"}} は、テーブルに設定する {"Platform"、{"x86"}} このコレクションは、プロジェクトで定義されている構成を決定するを Visual Studio によって使用  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateProjectInstance">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>このプロジェクトに基づいていますが、そこから完全に切断されているプロジェクトのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 個別にビルドするために使用します。 必要に応じて、元のプロジェクトとしてマークされているように変更されていない場合、元のプロジェクトは、インスタンスを作成する前に評価されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateProjectInstance">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.ProjectInstance CreateProjectInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Execution.ProjectInstance CreateProjectInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.CreateProjectInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.ProjectInstance</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このプロジェクトに基づいていますが、そこから完全に切断されているプロジェクトのインスタンスを作成します。</summary>
+        <returns>プロジェクト インスタンスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 個別にビルドするために使用します。 必要に応じて、元のプロジェクトとしてマークされているように変更されていない場合、元のプロジェクトは、インスタンスを作成する前に評価されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProjectInstance">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.ProjectInstance CreateProjectInstance (Microsoft.Build.Execution.ProjectInstanceSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Execution.ProjectInstance CreateProjectInstance(valuetype Microsoft.Build.Execution.ProjectInstanceSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.CreateProjectInstance(Microsoft.Build.Execution.ProjectInstanceSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.ProjectInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="settings" Type="Microsoft.Build.Execution.ProjectInstanceSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">作成されたプロジェクト インスタンスが変更可能かどうかと、パフォーマンスを向上させるためにテーブルを検索してが含まれているかどうかを判断します。</param>
+        <summary>このプロジェクトに基づいていますが、そこから完全に切断されているプロジェクトのインスタンスを作成します。</summary>
+        <returns>プロジェクト インスタンスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 個別にビルドするために使用します。 必要に応じて、元のプロジェクトとしてマークされているように変更されていない場合、元のプロジェクトは、インスタンスを作成する前に評価されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryPath">
+      <MemberSignature Language="C#" Value="public string DirectoryPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DirectoryPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.DirectoryPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトのルート ディレクトリを取得します。</summary>
+        <value>このプロジェクトのルート ディレクトリを返します。 ルート ディレクトリが null 以外ではありません。メモリ内のプロジェクトでは、プロジェクトの読み込み時に、現在のディレクトリを使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableMarkDirty">
+      <MemberSignature Language="C#" Value="public bool DisableMarkDirty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableMarkDirty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.DisableMarkDirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フラグの設定を取得またはを決定するかどうか<see cref="M:Microsoft.Build.Evaluation.Project.MarkDirty" />一時的に無効にします。 これにより、たとえば、グローバル プロパティを設定して、結果として再評価マーク プロジェクトもできます。</summary>
+        <value>フラグを返しますを決定するかどうか<see langword="MarkDirty" />一時的に無効にします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluationCounter">
+      <MemberSignature Language="C#" Value="public int EvaluationCounter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EvaluationCounter" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.EvaluationCounter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのプロジェクトが再評価されるたびにインクリメントされる値を取得します。</summary>
+        <value>インクリメントされた値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、プロジェクトが再度評価されたかどうかに表示する前の値と比較する必要があります。 1 つ以上の特定の再評価の増加する可能性がありますので、プロジェクトが再評価された回数を決定するは使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandString">
+      <MemberSignature Language="C#" Value="public string ExpandString (string unexpandedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ExpandString(string unexpandedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.ExpandString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unexpandedValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unexpandedValue">評価する文字列。</param>
+        <summary>アイテムとプロパティを展開して、指定した文字列を評価します。 文字列は、プロジェクト ファイルの最後に検出されたかのように評価します。</summary>
+        <returns>評価済みの文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ベスト エフォートの評価であるための十分なときに使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullPath">
+      <MemberSignature Language="C#" Value="public string FullPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.FullPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロジェクトのソース ファイルへの完全パスを設定します。</summary>
+        <value>プロジェクトのソース ファイルへの完全なパスを返します。 プロジェクトがディスクから読み込まれていない場合は、空の文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクト コレクション内のプロジェクトでこのプロパティの設定、プロジェクトの名前を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvaluatedItemIncludeEscaped">
+      <MemberSignature Language="C#" Value="public static string GetEvaluatedItemIncludeEscaped (Microsoft.Build.Evaluation.ProjectItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetEvaluatedItemIncludeEscaped(class Microsoft.Build.Evaluation.ProjectItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetEvaluatedItemIncludeEscaped(Microsoft.Build.Evaluation.ProjectItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.Evaluation.ProjectItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">評価してエスケープする項目。</param>
+        <summary>指定した項目の Include 属性の値をエスケープ、評価を取得します。</summary>
+        <returns>評価を返しますには、提供されているアイテムの Include 属性の値がエスケープされます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvaluatedItemIncludeEscaped">
+      <MemberSignature Language="C#" Value="public static string GetEvaluatedItemIncludeEscaped (Microsoft.Build.Evaluation.ProjectItemDefinition item);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetEvaluatedItemIncludeEscaped(class Microsoft.Build.Evaluation.ProjectItemDefinition item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetEvaluatedItemIncludeEscaped(Microsoft.Build.Evaluation.ProjectItemDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.Evaluation.ProjectItemDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="item">評価してエスケープするアイテム定義です。</param>
+        <summary>指定した項目の定義の Include 属性の評価、エスケープされた値を取得します。</summary>
+        <returns>Include 属性の値を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItems">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt; GetItems (string itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; GetItems(string itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetItems(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">取得する項目の種類。</param>
+        <summary>指定した項目の種類のプロジェクト内のすべての項目を取得します。 資格情報がない場合は、空のリストを返します。 このプロジェクトで項目を変更するのにには、AddItem または RemoveItem を使用します。</summary>
+        <returns>指定した項目の種類のプロジェクト内のすべての項目を返します。 指定した項目の名前を持つ項目がない場合は、空のリストを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトで項目を変更するのにには、AddItem または RemoveItem を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemsByEvaluatedInclude">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt; GetItemsByEvaluatedInclude (string evaluatedInclude);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; GetItemsByEvaluatedInclude(string evaluatedInclude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetItemsByEvaluatedInclude(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evaluatedInclude" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="evaluatedInclude">評価の Include 属性です。</param>
+        <summary>特定の評価の Include 属性を持つすべての項目を取得します。</summary>
+        <returns>特定の評価の Include 属性を持つすべての項目を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、このメソッドは、評価された Include 属性"component.cpp"を持つすべての項目を返す可能性があります。 通常、0 個または 1 つの項目が返されます。 ただし、複数の項目を同じパスと異なる項目の種類、または項目の種類が同じでもあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemsIgnoringCondition">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt; GetItemsIgnoringCondition (string itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; GetItemsIgnoringCondition(string itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetItemsIgnoringCondition(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">取得する項目の種類。</param>
+        <summary>Condition 属性が true に評価されるかどうかは、プロジェクト内の指定された型のすべての項目を取得します。 これは、読み取り専用のリスト: AddItem または RemoveItem を使用してこのプロジェクトの項目を変更します。</summary>
+        <returns>Condition 属性が true に評価されるかどうかは、プロジェクト内の指定された型のすべての項目を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、読み取り専用のリストです。 このプロジェクトで項目を変更するのにには、AddItem または RemoveItem を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLogicalProject">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Construction.ProjectElement&gt; GetLogicalProject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Construction.ProjectElement&gt; GetLogicalProject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetLogicalProject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Construction.ProjectElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>"論理"プロジェクト内のすべての要素に対する列挙子を取得します。 結果である 1 つの MSBuild ファイルから取得した未評価プロジェクトとして論理プロジェクトが定義されているインライン展開元 MSBuild プロジェクトのマニフェスト ファイルのインポートはすべてのテキスト。</summary>
+        <returns>"論理"プロジェクト内のすべての要素に対する列挙子を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理のプロジェクトは、元の MSBuild プロジェクトのマニフェスト ファイルのインポートはすべてのテキストのようなインラインの結果である 1 つの MSBuild ファイルから取得した未評価のプロジェクトに定義されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataValueEscaped">
+      <MemberSignature Language="C#" Value="public static string GetMetadataValueEscaped (Microsoft.Build.Evaluation.ProjectMetadata metadatum);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetMetadataValueEscaped(class Microsoft.Build.Evaluation.ProjectMetadata metadatum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetMetadataValueEscaped(Microsoft.Build.Evaluation.ProjectMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadatum" Type="Microsoft.Build.Evaluation.ProjectMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadatum">エスケープするメタデータ。</param>
+        <summary>指定したメタデータのエスケープ値を取得します。</summary>
+        <returns>指定したメタデータのエスケープ値を取得します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataValueEscaped">
+      <MemberSignature Language="C#" Value="public static string GetMetadataValueEscaped (Microsoft.Build.Evaluation.ProjectItem item, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetMetadataValueEscaped(class Microsoft.Build.Evaluation.ProjectItem item, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetMetadataValueEscaped(Microsoft.Build.Evaluation.ProjectItem,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.Evaluation.ProjectItem" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="item">エスケープするのには、メタデータを持つ項目。</param>
+        <param name="name">エスケープするメタデータの名前。</param>
+        <summary>指定した項目には、指定された名前のメタデータのエスケープ値を取得します。</summary>
+        <returns>指定した項目には、指定された名前のメタデータのエスケープ値を取得します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataValueEscaped">
+      <MemberSignature Language="C#" Value="public static string GetMetadataValueEscaped (Microsoft.Build.Evaluation.ProjectItemDefinition item, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetMetadataValueEscaped(class Microsoft.Build.Evaluation.ProjectItemDefinition item, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetMetadataValueEscaped(Microsoft.Build.Evaluation.ProjectItemDefinition,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.Evaluation.ProjectItemDefinition" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="item">エスケープするのには、メタデータを持つアイテム定義です。</param>
+        <param name="name">エスケープするメタデータの名前。</param>
+        <summary>指定した項目の定義で指定された名前のメタデータのエスケープ値を取得します。</summary>
+        <returns>指定した項目の定義で指定された名前のメタデータのエスケープ値を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.ProjectProperty GetProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Evaluation.ProjectProperty GetProperty(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するプロパティの名前。</param>
+        <summary>指定した名前をプロジェクト内の任意のプロパティを取得します。</summary>
+        <returns>指定の名前を持つプロジェクト内の任意のプロパティを返します。 その名前のプロパティがない場合、null を返しますが存在します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public string GetPropertyValue (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPropertyValue(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetPropertyValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">値を取得するプロパティの名前。</param>
+        <summary>このプロジェクトで指定されたプロパティの値を取得します。</summary>
+        <returns>このプロジェクトで指定されたプロパティの値を返します。 その名前のプロパティが存在しない場合は、空の文字列を返します。 エスケープ シーケンスは、文字列を返す前に変換されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の文字列値を持つプロパティとプロパティはありませんすべてのでは区別されない間でこのメソッドです。 プロジェクトで、すべてのかどうか、プロパティを設定するには、GetProperty(name) を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValueEscaped">
+      <MemberSignature Language="C#" Value="public static string GetPropertyValueEscaped (Microsoft.Build.Evaluation.ProjectProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPropertyValueEscaped(class Microsoft.Build.Evaluation.ProjectProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.GetPropertyValueEscaped(Microsoft.Build.Evaluation.ProjectProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="Microsoft.Build.Evaluation.ProjectProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">エスケープするプロパティです。</param>
+        <summary>指定されたプロパティのエスケープ値を取得します。</summary>
+        <returns>指定されたプロパティのエスケープ後の値を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; GlobalProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GlobalProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.GlobalProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトの評価に使用されるグローバル プロパティのディクショナリを取得します。</summary>
+        <value>このプロジェクトの評価に使用されるグローバル プロパティの辞書を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、パブリックに公開された get アクセス操作子、読み取り専用の配信不能 IDictionary に変換する\<, string >。  
+  
+ しているダーティになったを簡単に判断するために設定して、グローバル プロパティを削除するが使用して行われます<xref:Microsoft.Build.Evaluation.Project.SetGlobalProperty%2A>と<xref:Microsoft.Build.Evaluation.Project.RemoveGlobalProperty%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imports">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ResolvedImport&gt; Imports { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype Microsoft.Build.Evaluation.ResolvedImport&gt; Imports" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.Imports" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ResolvedImport&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトの評価に寄与するすべてのファイルの一覧を取得します。</summary>
+        <value>このプロジェクトの評価に貢献するすべてのファイルの一覧を返します。  
+  
+ 各項目の名前は、インポートするファイルの原因となったインポート要素です。 各項目の値は、インポートされたプロジェクトのプロジェクトのルートです。 Import 要素の条件属性を false に評価は含まれません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクトのプロジェクトのルートは含まれません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportsIncludingDuplicates">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ResolvedImport&gt; ImportsIncludingDuplicates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype Microsoft.Build.Evaluation.ResolvedImport&gt; ImportsIncludingDuplicates" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ImportsIncludingDuplicates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Evaluation.ResolvedImport&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポートがインポートされた複数回場合は、重複するインポートの一覧を取得します。 ただし、最初のインポートだけが評価で使用されました。</summary>
+        <value>重複するインポートの一覧を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBuildEnabled">
+      <MemberSignature Language="C#" Value="public bool IsBuildEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBuildEnabled" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.IsBuildEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲットとこのプロジェクトのタスクを作成できるかどうかを選択するプロパティを設定します。</summary>
+        <value>ターゲットとタスクのこのプロジェクトをビルドすることができます。 場合、true を返しますfalse それ以外の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティのために使用できます。 新しいプロジェクトの既定値はそれを含む親プロジェクト コレクションと同じ IsBuildEnabled 設定です。 IsBuildEnabled が false の場合は、このプロジェクトでビルド メソッドが失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirty">
+      <MemberSignature Language="C#" Value="public bool IsDirty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.IsDirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトが変更されているため、再評価する必要があるかどうかを示すプロパティを取得します。</summary>
+        <value>このプロジェクトが変更されているため、再評価する必要があるかどうかを示すプロパティを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトが変更され、変更を含む、基になるプロジェクト ソース コード ファイルをインポートする場合に再評価する必要があります。 プロジェクトが変更も、プロジェクトのツール セットが変更された場合に再評価する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemDefinitions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,Microsoft.Build.Evaluation.ProjectItemDefinition&gt; ItemDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class Microsoft.Build.Evaluation.ProjectItemDefinition&gt; ItemDefinitions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ItemDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,Microsoft.Build.Evaluation.ProjectItemDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトで、項目の種類によってキー指定された項目の定義のディクショナリを取得します。</summary>
+        <value>このプロジェクトで、項目の種類によってキー指定された項目の定義のディクショナリを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt; Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; Items" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトで、項目の種類のグループ内に順序付けのすべての項目に対する列挙子を取得します。</summary>
+        <value>項目の種類のグループ内に順序付け、このプロジェクトのすべてのアイテムに対する列挙子を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsIgnoringCondition">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt; ItemsIgnoringCondition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; ItemsIgnoringCondition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ItemsIgnoringCondition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトで、項目の種類のグループ内に順序付けのすべての項目に対する列挙子を取得します。</summary>
+        <value>このプロジェクトに、条件が false に評価されるまたは条件が false と評価された項目のグループ内に含まれる項目を含む項目の種類のグループ内に順序付けのすべての項目に対する列挙子を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の構成でビルドの一部でない場合でも、すべての項目を表示する使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;string&gt; ItemTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;string&gt; ItemTypes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ItemTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトで、すべての項目の種類に対する列挙子を取得します。</summary>
+        <value>このプロジェクトのすべての項目の種類に対する列挙子を返します。 これは、順序付けられたコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkDirty">
+      <MemberSignature Language="C#" Value="public void MarkDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MarkDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.MarkDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このプロジェクトを変更済みとしてマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更として自動的にプロジェクトに影響するすべての編集マークするため、明示的に、このメソッドを呼び出す必要はほとんどありません。  
+  
+ 場合によっては、ただし、このメソッド呼び出す必要があります。 たとえば、プロジェクトには、ディスク上に存在するファイルに条件が依存 Import 要素があります。 場合は、評価時にそのファイルが存在しないため、変更項目として、プロジェクトを明示的に設定する必要がありますし、評価した後で作成されます。  
+  
+ <xref:Microsoft.Build.Evaluation.Project.ReevaluateIfNecessary%2A>メソッドはこのプロパティを使用して、評価版が必要かを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectCollection">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.ProjectCollection ProjectCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Evaluation.ProjectCollection ProjectCollection" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ProjectCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトを含むプロジェクト コレクションを取得します。</summary>
+        <value>このプロジェクトを含むプロジェクト コレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectFileLocation">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ElementLocation ProjectFileLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation ProjectFileLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ProjectFileLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自体内ではなく特定のコンテンツ ファイルの元の場所。 ファイルに名前が指定されていない場合は空の場所です。 これは、場所を持たないの正当なケースです。</summary>
+        <value>元のファイルの場所または空の場所を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectProperty&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.ProjectProperty&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.ProjectProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトで、すべてのプロパティに対する列挙子を取得します。 これは、順序付けられていないコレクションです。</summary>
+        <value>このプロジェクトのすべてのプロパティに対する列挙子を返します。 プロパティは、表示されるとおりに評価されますが、これは順序付けられていないコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReevaluateIfNecessary">
+      <MemberSignature Language="C#" Value="public void ReevaluateIfNecessary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReevaluateIfNecessary() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.ReevaluateIfNecessary" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての変更を組み込むプロジェクトを再評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトが変更済みとしてマークされている場合にのみ再評価されます。 再評価には、プロジェクトのソース コードに加えられたすべての変更が組み込まれています。  
+  
+ 評価に失敗した場合は、InvalidProjectFileException をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveGlobalProperty">
+      <MemberSignature Language="C#" Value="public bool RemoveGlobalProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveGlobalProperty(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.RemoveGlobalProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するグローバル プロパティの名前。</param>
+        <summary>グローバル プロパティを削除し、プロジェクトを変更済みとしてマークします。</summary>
+        <returns>グローバル プロパティの値が設定された場合は true を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="public bool RemoveItem (Microsoft.Build.Evaluation.ProjectItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveItem(class Microsoft.Build.Evaluation.ProjectItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.RemoveItem(Microsoft.Build.Evaluation.ProjectItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.Evaluation.ProjectItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">削除する項目。</param>
+        <summary>プロジェクトから項目を削除します。 削除する項目は、プロジェクト内に存在する必要があり、インポートされたファイルから取得する必要がありますされません。</summary>
+        <returns>項目が評価されたこのプロジェクトに存在する場合、true を返しますそれ以外の場合は false。 通常このメソッドは、メソッドが例外をスローする場合は、要求された項目が存在しないので true の場合、返します。 項目が ItemsIgnoringCondition コレクションにのみ存在する場合、ただし、false が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を含む項目グループが空になった場合にも削除されます。  
+  
+ ワイルドカードまたはセミコロンで区切られた式から項目を生成する場合、式は最初に複数のアイテムに展開されます。  
+  
+ プロジェクトを更新するが再評価されるまでそれ以上の評価は行われません。 たとえば場合の項目"i"の種類が削除、"j"から評価される"@(i)"再評価されるまでは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItems">
+      <MemberSignature Language="C#" Value="public void RemoveItems (System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Evaluation.ProjectItem&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveItems(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Evaluation.ProjectItem&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.RemoveItems(System.Collections.Generic.IEnumerable{Microsoft.Build.Evaluation.ProjectItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Evaluation.ProjectItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="items">削除する項目。</param>
+        <summary>インポートされたプロジェクトから発生する場合を除き、プロジェクトから、指定されたすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インポートされたプロジェクトから項目を生成する場合は単にスキップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProperty">
+      <MemberSignature Language="C#" Value="public bool RemoveProperty (Microsoft.Build.Evaluation.ProjectProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveProperty(class Microsoft.Build.Evaluation.ProjectProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.RemoveProperty(Microsoft.Build.Evaluation.ProjectProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="Microsoft.Build.Evaluation.ProjectProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">削除するプロパティ。</param>
+        <summary>プロジェクトから、プロパティを削除します。 削除するプロパティは、プロジェクト内に存在する必要があり、インポートされたファイルから取得する必要がありますされません。</summary>
+        <returns>プロパティが評価されたこのプロジェクトに存在する場合、true を返しますそれ以外の場合は false。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを含むプロパティ グループが空になった場合にも削除されます。  
+  
+ プロジェクトを更新するが再評価されるまでそれ以上の評価は行われません。 たとえば、"p"が削除された場合は評価は「$(p)」から"q"が再評価されるまで変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更された場合、既定の文字エンコーディングを使用して、ファイル システムにプロジェクトを保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Save(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">プロジェクトを保存するテキスト ライター。</param>
+        <summary>プロジェクトが変更されたかどうか、指定されたテキスト ライターに、プロジェクトを保存します。 テキスト ライターの文字エンコーディングを使用し、変更されていないとプロジェクトをマークします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Save(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">プロジェクトのソース コードへのパス。</param>
+        <summary>変更またはプロジェクトのソース コードへのパスが変更された場合は、既定の文字エンコーディングを使用している場合は、ファイル システムにプロジェクトを保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Save(System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="encoding">プロジェクトを保存に使用する文字エンコーディングします。</param>
+        <summary>変更された場合、指定された文字エンコーディングを使用して、ファイル システムにプロジェクトを保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string path, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string path, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.Save(System.String,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="path">プロジェクトのソース コードへのパス。</param>
+        <param name="encoding">プロジェクトを保存に使用する文字エンコーディングします。</param>
+        <summary>変更またはプロジェクトのソース コードへのパスが変更された場合は、指定した文字エンコーディングを使用している場合は、ファイル システムにプロジェクトを保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveLogicalProject">
+      <MemberSignature Language="C#" Value="public void SaveLogicalProject (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveLogicalProject(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.SaveLogicalProject(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">プロジェクト ファイルを保存するライター。</param>
+        <summary>1 つのファイルを形成する場合と同様に、インポートされたすべてのファイルを含む、「論理」または「前処理済み」のプロジェクト ファイルを保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetGlobalProperty">
+      <MemberSignature Language="C#" Value="public bool SetGlobalProperty (string name, string escapedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SetGlobalProperty(string name, string escapedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.SetGlobalProperty(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="escapedValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">グローバル プロパティを設定の名前。</param>
+        <param name="escapedValue">グローバル プロパティの新しい値。</param>
+        <summary>プロジェクトが評価された後は、グローバル プロパティを設定します。 値が変更された場合、プロジェクトが要再評価としてマークはします。</summary>
+        <returns>返します<see langword="true" />値が変更された場合、それ以外の場合を返します<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.ProjectProperty SetProperty (string name, string unevaluatedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Evaluation.ProjectProperty SetProperty(string name, string unevaluatedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.Project.SetProperty(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="unevaluatedValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定するプロパティの名前。</param>
+        <param name="unevaluatedValue">プロパティの新しい未評価の値。</param>
+        <summary>設定または指定された名前と値を持つプロパティをプロジェクトに追加します。 インポートされたファイルに基づいている場合は、同じ名前のプロパティの値を上書きします。</summary>
+        <returns>プロパティを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した名前のプロパティが存在しない場合は、インポートされたファイル外の発生しない限り、指定した名前をそのリング自体またはそのプロパティ グループの条件を持たない最後の既存のプロパティを更新します。  
+  
+ それ以外の場合、最初のプロパティ グループ、条件がない最後既存のプロパティ グループ、プロジェクトの開始時に他の後に必要な場合は、プロパティ グループを作成する新しいプロパティを追加します。  
+  
+ 評価は、ベスト エフォートの原則で行われます。 新しいプロパティに続いて、プロジェクトのソースで定義されているプロパティは、評価のために使用できます。 このプロパティのみが評価されます。 依存しているその他のプロパティは影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipEvaluation">
+      <MemberSignature Language="C#" Value="public bool SkipEvaluation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipEvaluation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.SkipEvaluation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、フラグ、ReevaluateIfNecessary を一時的に無効にするかどうかを決定します。 これは、ホストが読み取りの数を行う必要がプロジェクトに書き込むときに、一時的にパフォーマンスの正確性を犠牲にする必要があり。</summary>
+        <value>ReevaluateIfNecessary を一時的に無効にするかどうかを決定するフラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubToolsetVersion">
+      <MemberSignature Language="C#" Value="public string SubToolsetVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SubToolsetVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.SubToolsetVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合は、SubToolsetVersion 属性の値を取得します。 この値は、このプロジェクトのツールセットのプロパティを決定する ToolsVersion 属性の値と結合されました。</summary>
+        <value>SubToolsetVersion 属性値を返します。 属性が存在しない場合は、空の文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Targets">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,Microsoft.Build.Execution.ProjectTargetInstance&gt; Targets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class Microsoft.Build.Execution.ProjectTargetInstance&gt; Targets" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.Targets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,Microsoft.Build.Execution.ProjectTargetInstance&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット名によってキー指定された、このプロジェクト内のすべてのターゲットのディクショナリを取得します。</summary>
+        <value>このプロジェクトで、ターゲット名によってキー指定には、すべてのターゲットのディクショナリを返します。 オーバーライドされたターゲットは、このコレクションには含まれません。 このディクショナリは、読み取り専用です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolsVersion">
+      <MemberSignature Language="C#" Value="public string ToolsVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolsVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.ToolsVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合は、このプロジェクトの評価時に使用したツール バージョンを取得します。</summary>
+        <value>存在する場合は、このプロジェクトの評価時に使用したツール バージョンを取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターによって設定されます。 これは必ずしもプロジェクト タグでは、ツールのバージョンと同じです。可能性がありますが外部から指定されて、たとえばコマンド ラインで/tv スイッチを使用しています。 プロジェクト タグの実際のツール バージョンをから取得できる<xref:Microsoft.Build.Evaluation.Project.Xml%2A>です。 プロジェクトを作成した後、ツール バージョンを変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xml">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectRootElement Xml { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectRootElement Xml" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.Project.Xml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectRootElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトに関連付けられているルート プロジェクトを取得します。 Null することはできません。</summary>
+        <value>このプロジェクトに関連付けられているルート プロジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する方法はありません。 新しいプロジェクトのルートがある場合は、新しいプロジェクトに評価します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

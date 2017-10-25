@@ -1,0 +1,90 @@
+<Type Name="CreateUserErrorEventArgs" FullName="System.Web.UI.WebControls.CreateUserErrorEventArgs">
+  <TypeSignature Language="C#" Value="public class CreateUserErrorEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CreateUserErrorEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CreateUserErrorEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.CreateUserWizard.CreateUserError" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.CreateUserWizard.CreateUserError>しようとしている新しいユーザーを作成するイベントが発生した、<xref:System.Web.UI.WebControls.CreateUserWizard>失敗を制御します。 <xref:System.Web.UI.WebControls.CreateUserErrorEventArgs>クラスを提供、<xref:System.Web.UI.WebControls.CreateUserErrorEventArgs.CreateUserError%2A>を示すプロパティを<xref:System.Web.Security.MembershipCreateStatus>発生したエラーに対応する列挙値。  
+  
+   
+  
+## Examples  
+ 次の例では、ときに、<xref:System.Web.UI.WebControls.CreateUserWizard.CreateUserError>のイベントが発生、<xref:System.Web.UI.WebControls.CreateUserErrorEventArgs.CreateUserError%2A>のプロパティ、<xref:System.Web.UI.WebControls.CreateUserErrorEventArgs>でオブジェクトを表示、<xref:System.Web.UI.WebControls.Label>コントロール、 `Label1`、理由に関する情報を提供する、<xref:System.Web.UI.WebControls.CreateUserWizard.CreateUserError>イベントが発生しました。  
+  
+ [!code-csharp[System.Web.UI.WebControls.CreateUserErrorEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.CreateUserErrorEventArgs/CS/createuserwizarderror.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.CreateUserErrorEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.CreateUserErrorEventArgs/VB/createuserwizarderror.vb#2)]  
+  
+ 上記の例を実行するために使用する .aspx ファイルを次に示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.CreateUserErrorEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.CreateUserErrorEventArgs/CS/createuserwizarderrorcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.CreateUserErrorEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.CreateUserErrorEventArgs/VB/createuserwizarderrorvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CreateUserErrorEventArgs (System.Web.Security.MembershipCreateStatus s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.Security.MembershipCreateStatus s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CreateUserErrorEventArgs.#ctor(System.Web.Security.MembershipCreateStatus)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.Security.MembershipCreateStatus" />
+      </Parameters>
+      <Docs>
+        <param name="s">A<see cref="T:System.Web.Security.MembershipCreateStatus" />の結果を記述するオブジェクト、<see cref="Overload:System.Web.Security.Membership.CreateUser" />しようとします。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.CreateUserErrorEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserError">
+      <MemberSignature Language="C#" Value="public System.Web.Security.MembershipCreateStatus CreateUserError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.MembershipCreateStatus CreateUserError" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CreateUserErrorEventArgs.CreateUserError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipCreateStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の結果を示す値、<see cref="E:System.Web.UI.WebControls.CreateUserWizard.CreatingUser" />イベント。</summary>
+        <value><see cref="T:System.Web.Security.MembershipCreateStatus" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CreateUserErrorEventArgs.CreateUserError%2A>プロパティを示します、<xref:System.Web.Security.MembershipCreateStatus>中に発生したエラーに対応する列挙値、<xref:System.Web.UI.WebControls.CreateUserWizard.CreatingUser>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.WebControls.CreateUserWizard.CreateUserError>を表示するイベント、<xref:System.Web.UI.WebControls.CreateUserErrorEventArgs.CreateUserError%2A>プロパティ値を<xref:System.Web.UI.WebControls.Label>コントロール、`Label1`です。 例を実行するために使用する .aspx ファイルを参照してください、<xref:System.Web.UI.WebControls.CreateUserErrorEventArgs>トピックです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.CreateUserErrorEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.CreateUserErrorEventArgs/CS/createuserwizarderror.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.CreateUserErrorEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.CreateUserErrorEventArgs/VB/createuserwizarderror.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,103 @@
+<Type Name="InkCanvasSelectionChangingEventArgs" FullName="System.Windows.Controls.InkCanvasSelectionChangingEventArgs">
+  <TypeSignature Language="C#" Value="public class InkCanvasSelectionChangingEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InkCanvasSelectionChangingEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.InkCanvasSelectionChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Controls.InkCanvas.SelectionChanging" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetSelectedElements">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.UIElement&gt; GetSelectedElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.UIElement&gt; GetSelectedElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasSelectionChangingEventArgs.GetSelectedElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.UIElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した要素を返します。</summary>
+        <returns>選択した要素です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedStrokes">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection GetSelectedStrokes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Ink.StrokeCollection GetSelectedStrokes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasSelectionChangingEventArgs.GetSelectedStrokes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択されたストロークを返します。</summary>
+        <returns>選択されたストロークです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectedElements">
+      <MemberSignature Language="C#" Value="public void SetSelectedElements (System.Collections.Generic.IEnumerable&lt;System.Windows.UIElement&gt; selectedElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectedElements(class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.UIElement&gt; selectedElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasSelectionChangingEventArgs.SetSelectedElements(System.Collections.Generic.IEnumerable{System.Windows.UIElement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectedElements" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.UIElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="selectedElements">選択する要素。</param>
+        <summary>選択した要素を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="selectedElements" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectedStrokes">
+      <MemberSignature Language="C#" Value="public void SetSelectedStrokes (System.Windows.Ink.StrokeCollection selectedStrokes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectedStrokes(class System.Windows.Ink.StrokeCollection selectedStrokes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasSelectionChangingEventArgs.SetSelectedStrokes(System.Windows.Ink.StrokeCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectedStrokes" Type="System.Windows.Ink.StrokeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="selectedStrokes">選択するストロークです。</param>
+        <summary>選択されたストロークを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="selectedStrokes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,456 @@
+<Type Name="SqlTrackingService" FullName="System.Workflow.Runtime.Tracking.SqlTrackingService">
+  <TypeSignature Language="C#" Value="public sealed class SqlTrackingService : System.Workflow.Runtime.Tracking.TrackingService, System.Workflow.Runtime.Tracking.IProfileNotification" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlTrackingService extends System.Workflow.Runtime.Tracking.TrackingService implements class System.Workflow.Runtime.Tracking.IProfileNotification" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.SqlTrackingService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Tracking.TrackingService</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Workflow.Runtime.Tracking.IProfileNotification</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SQL データベースを使用して追跡情報を格納する追跡サービスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> クラスは、完全な機能を持つ追跡サービスを表します。 このサービスをそのまま使用して、追跡情報を収集および保存できるだけでなく、追跡プロファイルを保存して、ワークフロー ランタイム エンジンによって要求されたときにそれを提供できます。 SQL 追跡サービスは、ランタイム追跡インフラストラクチャから送られてきた追跡データを SQL データベースに書き込みます。  
+  
+ 多くの場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> がそのデータベースとワークフロー ランタイム エンジンの状態の整合性を維持することが重要です。 このため、`SqlTrackingChannel` クラスは、<xref:System.Workflow.Runtime.IPendingWork> によって提供されるワークフロー トランザクション バッチ機能に参加するために、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> インターフェイスを利用します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional%2A> を設定するか、適切なパラメーターをコンストラクターに渡すことにより、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> をバッチに参加するように構成し、SQL データベースの保留状態の変更を表すオブジェクトを <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に追加できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、そのデータベースに追跡プロファイルも保持します。 ワークフロー ランタイム エンジンは、使用している追跡プロファイルの変更を常に把握する必要があります。 データベースに保存された <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> が変更された場合にワークフロー ランタイム エンジンに通知するために、<xref:System.Workflow.Runtime.Tracking.IProfileNotification> は <xref:System.Workflow.Runtime.Tracking.TrackingProfile> インターフェイスを実装し、データベース内の追跡プロファイルを定期的に調べます。 プロファイルの変更を追跡ランタイムに通知するために、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> を設定するか、適切なパラメーターをコンストラクターに渡すことで、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> が追跡プロファイルを調べる間隔を設定できます。  
+  
+> [!NOTE]
+>  ワークフロー アプリケーションで <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> と <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> の両方を使用する場合は、永続化と追跡に 1 つのデータベースを使用することをお勧めします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlTrackingService (System.Collections.Specialized.NameValueCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.NameValueCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.#ctor(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="parameters"><see cref="T:System.Collections.Specialized.NameValueCollection" /> のプロパティとそれぞれの初期値を指定する <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" />。</param>
+        <summary>指定された <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> を使用して、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> を指定するアプリケーション構成ファイルからワークフロー ランタイム エンジンが初期化されたときに、ワークフロー ランタイム エンジンによって呼び出されます。 このコンストラクターを使用して、ホスト アプリケーションから <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> を初期化することもできます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、<xref:System.Collections.Specialized.NameValueCollection> に格納されたキーと値のペアに基づいて初期化されます。 可能なキー (各値が初期化するプロパティ) と各プロパティの型を、次の表に示します。 各キーに関連付けられる値は、そのキーが指すプロパティの該当する型に相当する文字列である必要があります。 これらのキーと値のペアの 1 つ以上を指定できます。  
+  
+|キー|プロパティの型|プロパティの説明|  
+|---------|-------------------|--------------------------|  
+|`"IsTransactional"`|`bool`|<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> が <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> を使用してワークフロー トランザクションに参加するかどうかを指定します。 既定値は `true` です。これは、追跡の変更をデータベースに同期的に書き込むことを指定します。|  
+|`"UseDefaultProfile"`|`bool`|<xref:System.Workflow.Runtime.Tracking.TrackingService.GetProfile%2A> 呼び出しで追跡プロファイルが見つからなかった場合に既定の追跡プロファイルが返されるようにするかどうかを指定します。 既定値は `true` です。これは、既定の追跡プロファイルを使用することを指定します。|  
+|`"ProfileChangeCheckInterval"`|`double`|データベース内の追跡プロファイルの変更を調べる時間間隔をミリ秒単位で指定します。 既定値は 60000 ミリ秒です。|  
+|`"ConnectionString"`|`string`|データベース接続文字列を指定します。 既定値は null 参照 (Visual Basic では `Nothing`) です。|  
+|`"PartitionOnCompletion"`|`bool`|ワークフロー インスタンスが完了したときにワークフロー インスタンスの追跡データをデータベース内の現在アクティブなパーティションに移動するかどうかを指定します。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parameters" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.FormatException"><see langword="string" /> 内の <see langword="Boolean" /> プロパティ キーに関連付けられた <paramref name="parameters" /> 値が、<see cref="F:System.Boolean.TrueString" /> と <see cref="F:System.Boolean.FalseString" /> のどちらによっても表されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlTrackingService (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">有効なデータベース接続文字列。</param>
+        <summary>指定したデータベース接続文字列を使用して、<see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">データベース接続文字列が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingService.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡データベースの接続文字列を取得します。</summary>
+        <value>追跡データベースの接続文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableRetries">
+      <MemberSignature Language="C#" Value="public bool EnableRetries { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableRetries" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingService.EnableRetries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> がデータベース操作の実行時に再試行するかどうかを指定する値を取得および設定します。</summary>
+        <value>
+          <see langword="true" /> が操作を再試行する場合は <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional%2A> プロパティが `false` に設定されて <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.EnableRetries%2A> が `true` に設定されている場合、トランザクションのすべての再試行は <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.EnableRetries%2A> プロパティの値で決まります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional%2A> が `true` に設定されている場合は特定の作業がバッチ処理され、このような作業バッチ トランザクションの再試行は、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> の派生型の <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> や <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> などによって処理されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional%2A> が `true` に設定されているかどうかにかかわらず、次の作業項目はバッチ処理できません。トランザクションの再試行は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.EnableRetries%2A> プロパティを介して処理する必要があります。  
+  
+-   追跡プロファイルの変更のポーリング  
+  
+-   <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional%2A> が `false` に設定されているときの SQL Server データベースへの書き込みのすべて  
+  
+ この機能は、プログラムで設定する以外に、構成ファイルを使用して有効にすることもできます。 構成ファイルでこのプロパティを設定する方法の詳細については、次を参照してください。[ワークフロー構成ファイル](http://msdn.microsoft.com/en-us/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909)です。  
+  
+ 作業バッチ トランザクションの再試行に関する概要については、次を参照してください。[ワークフローの状態情報をバッチ処理](http://msdn.microsoft.com/en-us/ecda18ba-9140-4bd7-b13d-6787fdf5959d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProfile">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.Runtime.Tracking.TrackingProfile GetProfile (Guid scheduleInstanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.Runtime.Tracking.TrackingProfile GetProfile(valuetype System.Guid scheduleInstanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.GetProfile(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scheduleInstanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="scheduleInstanceId">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProfile">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.Runtime.Tracking.TrackingProfile GetProfile (Type workflowType, Version profileVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.Runtime.Tracking.TrackingProfile GetProfile(class System.Type workflowType, class System.Version profileVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.GetProfile(System.Type,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="profileVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">To be added.</param>
+        <param name="profileVersion">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTrackingChannel">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.Runtime.Tracking.TrackingChannel GetTrackingChannel (System.Workflow.Runtime.Tracking.TrackingParameters parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.Runtime.Tracking.TrackingChannel GetTrackingChannel(class System.Workflow.Runtime.Tracking.TrackingParameters parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.GetTrackingChannel(System.Workflow.Runtime.Tracking.TrackingParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Workflow.Runtime.Tracking.TrackingParameters" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransactional">
+      <MemberSignature Language="C#" Value="public bool IsTransactional { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTransactional" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> がワークフロー トランザクションに参加するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> がワークフロー トランザクションに参加する場合は <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡データは通常、データベースに同期的に書き込まれます。つまり、追跡チャネルで受信されたデータは直ちに書き込まれます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.IsTransactional%2A> が `true` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> はワークフロー トランザクションに参加します。 つまり、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> で定義されたセマンティクスに従うことになり、データベースに対する変更を <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に対する作業項目として追加します。 サービスは、ワークフロー ランタイム エンジンから指示を受けると、これらの変更をコミットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartitionOnCompletion">
+      <MemberSignature Language="C#" Value="public bool PartitionOnCompletion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PartitionOnCompletion" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingService.PartitionOnCompletion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが完了したときにワークフロー インスタンスの追跡データをデータベース内の現在アクティブなパーティションに移動するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          ワークフロー完了時に追跡データを現在アクティブなパーティションに移動する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> を使用する場合、追跡レコードのアーカイブと削除を効率的な方式で行えるように、データベースをパーティション分割することができます。 データベースのダウン時間相互の間隔が長い場合やデータベースのダウン時間が予定されていない場合は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.PartitionOnCompletion%2A> を設定することにより、ワークフロー インスタンスが完了したときに、ワークフロー インスタンスに関連付けられた追跡レコードを、アクティブなインスタンス テーブルから現在アクティブなパーティションに移動させることができます。 こうすることで、データベースのアクティブなインスタンス テーブル内のデータをロックすることなく、これらのレコードをアーカイブまたは削除できます。 パーティション分割の詳細については、次を参照してください。 [SqlTrackingService でのデータ メンテナンス](http://msdn.microsoft.com/en-us/a62d5719-d6cd-4871-a3ab-56ea629d4e00)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileChangeCheckInterval">
+      <MemberSignature Language="C#" Value="public double ProfileChangeCheckInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ProfileChangeCheckInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベースにある追跡プロファイルのうちの 1 つ以上に変更があったかどうかをチェックする間隔を指定する値を取得または設定します。</summary>
+        <value>間隔の長さ (ミリ秒単位)。 既定値は 60000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> はデータベースを定期的に調べて、追跡プロファイルのうちの 1 つ以上が変更されているかどうか、または削除されているかどうかを判断します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> が削除されていると判断すると、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileRemoved> イベントを発生させます。プロファイルが変更されていると判断したときは、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileUpdated> イベントを発生させます。 ランタイム追跡インフラストラクチャはこれらのイベントの両方に定期受信し、これらのイベントが発生すると、追跡プロファイル キャッシュを適宜、更新します。 また、追跡プロファイルが変更された場合に通知を受ける必要があれば、これらのイベントのどちらか一方または両方に定期受信できます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> を設定することにより、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> がこのような変更をテストする頻度を指定できます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> に新しい値を指定すると、タイマー間隔は直ちにその新しい値に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileRemoved">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs&gt; ProfileRemoved;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs&gt; ProfileRemoved" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileRemoved" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> が削除されていることを <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> が検出すると、発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、そのデータベースを定期的に調べて、追跡プロファイルのうちの 1 つ以上が削除されているかどうかを判断します。 <xref:System.Workflow.Runtime.Tracking.TrackingProfile> が削除されていることを検出した場合は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileRemoved> イベントを発生させます。このとき、ワークフローの <xref:System.Type> を <xref:System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs> に格納します。 ランタイム追跡インフラストラクチャは、このイベントを使用してプロファイル キャッシュを更新します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> を設定して、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> でデータベースを調べる頻度を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileUpdated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs&gt; ProfileUpdated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs&gt; ProfileUpdated" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileUpdated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> が変更されていることを <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> が検出すると、発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、そのデータベースを定期的に調べて、追跡プロファイルのうちの 1 つ以上が変更されているかどうかを判断します。 <xref:System.Workflow.Runtime.Tracking.TrackingProfile> が変更されていることを検出した場合は、その追跡プロファイルを <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileUpdated> にカプセル化して <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs> イベントを発生させます。 ランタイム追跡インフラストラクチャは、このイベントを使用してプロファイル キャッシュを更新します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> を設定して、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> でデータベースを調べる頻度を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="protected override void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetProfile">
+      <MemberSignature Language="C#" Value="protected override bool TryGetProfile (Type workflowType, out System.Workflow.Runtime.Tracking.TrackingProfile profile);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool TryGetProfile(class System.Type workflowType, [out] class System.Workflow.Runtime.Tracking.TrackingProfile&amp; profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.TryGetProfile(System.Type,System.Workflow.Runtime.Tracking.TrackingProfile@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="profile" Type="System.Workflow.Runtime.Tracking.TrackingProfile&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">To be added.</param>
+        <param name="profile">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReloadProfile">
+      <MemberSignature Language="C#" Value="protected override bool TryReloadProfile (Type workflowType, Guid scheduleInstanceId, out System.Workflow.Runtime.Tracking.TrackingProfile profile);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool TryReloadProfile(class System.Type workflowType, valuetype System.Guid scheduleInstanceId, [out] class System.Workflow.Runtime.Tracking.TrackingProfile&amp; profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingService.TryReloadProfile(System.Type,System.Guid,System.Workflow.Runtime.Tracking.TrackingProfile@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="scheduleInstanceId" Type="System.Guid" />
+        <Parameter Name="profile" Type="System.Workflow.Runtime.Tracking.TrackingProfile&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">To be added.</param>
+        <param name="scheduleInstanceId">To be added.</param>
+        <param name="profile">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultProfile">
+      <MemberSignature Language="C#" Value="public bool UseDefaultProfile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultProfile" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingService.UseDefaultProfile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡プロファイルを持たないワークフロー型に既定の <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> を使用するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          既定の追跡プロファイルが使用される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.UseDefaultProfile%2A> が `true` の場合、ワークフロー ランタイム エンジンがワークフロー <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> の追跡プロファイルを取得しようとしたときに、そのワークフロー型に関連付けられた <xref:System.Workflow.Runtime.Tracking.TrackingProfile> が追跡サービスになければ、<xref:System.Type> は既定の <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を返します。  
+  
+ そのまますぐに使用できる既定の追跡プロファイルは、ワークフロー インスタンスによって出されるすべてのアクティビティ イベント、ユーザー イベント、およびワークフロー イベントに適合します。 `UpdateDefaultProfile` ストアド プロシージャを使用することにより、既定の追跡プロファイルを変更できます。  
+  
+> [!NOTE]
+>  `UpdateDefaultProfile` ストアド プロシージャは、既定の追跡プロファイルを変更します。 あるワークフロー型のプロファイルをワークフロー ランタイム エンジンが要求したときに、そのワークフロー型に関連付けられた追跡プロファイルが追跡サービスになければ、この新しい既定プロファイルが返されます。 従来の既定のプロファイルに既に関連付けられているワークフロー型は、`UpdateDefaultProfile` が呼び出された後もそのプロファイルに関連付けられています。これらのワークフロー型のうち、新しい既定のプロファイルに関連付けるものに対して、明示的に `UpdateTrackingProfile` ストアド プロシージャを呼び出す必要があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.UseDefaultProfile%2A> が true の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、そのデータベースで追跡プロファイルが関連付けられていないワークフロー型については、既定の追跡プロファイルをワークフロー ランタイム エンジンに返します。 後で <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.UseDefaultProfile%2A> を false に設定しても、データベースではこれらのワークフロー型に既定のプロファイルが関連付けられています。 追跡プロファイルとワークフロー型の関連付けを解除するには、そのワークフロー型に対する `DeleteTrackingProfile` ストアド プロシージャを呼び出します。ワークフロー型に関連付けられた追跡プロファイルを変更するには、そのワークフロー型に対する `UpdateTrackingProfile` ストアド プロシージャを呼び出します。  
+  
+> [!NOTE]
+>  ワークフロー ランタイム エンジンは、追跡プロファイルをキャッシュします。 したがってワークフロー ランタイム エンジンは、追跡プロファイルが既にキャッシュで関連付けられているワークフロー型に関して <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileRemoved> イベントを受け取る必要があります。このイベントを受け取ると、そのワークフロー型の新しいインスタンスに対して、キャッシュされたプロファイルが使用されなくなります。 さらに、このようなワークフロー型に関して、ワークフロー ランタイム エンジンは <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileUpdated> イベントも受け取る必要があります。このイベントを受け取ると、新しい追跡プロファイルをキャッシュに読み込んで、そのワークフロー型の新しいインスタンスに関連付けます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、データベース内の追跡プロファイルの変更を調べて、該当するワークフロー型に関して適切なイベントを発生させます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> がこの操作を実行する頻度は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> によって設定されます。  したがって、`UpdateTrackingProfile` または `DeleteTrackingProfile` ストアド プロシージャを呼び出したとき、ワークフロー ランタイム エンジンが変更をプロファイル キャッシュに反映するまでに、最大で <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileChangeCheckInterval%2A> で指定した時間だけ遅れる場合があります。  
+>   
+>  追跡プロファイルの詳細については、次を参照してください。[を使用して追跡プロファイルの作成と](http://msdn.microsoft.com/en-us/f018ad09-d20f-4626-9792-31d9f278d0b0)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

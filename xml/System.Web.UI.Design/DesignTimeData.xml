@@ -1,0 +1,303 @@
+<Type Name="DesignTimeData" FullName="System.Web.UI.Design.DesignTimeData">
+  <TypeSignature Language="C#" Value="public sealed class DesignTimeData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignTimeData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DesignTimeData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロール デザイナーがデザイン時にデータ バインドされたプロパティ用のサンプル データを生成するために使用するヘルパー メソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateDummyDataBoundDataTable">
+      <MemberSignature Language="C#" Value="public static System.Data.DataTable CreateDummyDataBoundDataTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataTable CreateDummyDataBoundDataTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.CreateDummyDataBoundDataTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Data.DataTable" />列がデータ ソースに接続されていることを示す名前を持つ 3 つの列を含むオブジェクトです。</summary>
+        <returns>新しい<see cref="T:System.Data.DataTable" />のオブジェクト 3 つの列とデータがありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際には、テーブルは、データ ソースにはバインドされません。 それぞれの列名では、単にデータ バインドされた列であることを示します。 列のデータ型は文字列、整数、および文字列です。 呼び出し側デザイナー コンポーネントでは、結果のテーブルに行とデータを追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDummyDataTable">
+      <MemberSignature Language="C#" Value="public static System.Data.DataTable CreateDummyDataTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataTable CreateDummyDataTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.CreateDummyDataTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Data.DataTable" />列がサンプル データを含むことを示す名前の 3 つの列を含むオブジェクトです。</summary>
+        <returns>新しい<see cref="T:System.Data.DataTable" />3 つの列です。 これらの列には、文字列型のデータを含めることができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列のデータ型は、すべての文字列です。 呼び出し側デザイナー コンポーネントを呼び出すことができます、<xref:System.Web.UI.Design.DesignTimeData.GetDesignTimeDataSource%2A>結果のテーブルに行のデータを追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSampleDataTable">
+      <MemberSignature Language="C#" Value="public static System.Data.DataTable CreateSampleDataTable (System.Collections.IEnumerable referenceData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataTable CreateSampleDataTable(class System.Collections.IEnumerable referenceData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.CreateSampleDataTable(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="referenceData" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="referenceData">このサンプルの形式として使用する目的のスキーマとデータ ソース<see cref="T:System.Data.DataTable" />オブジェクト。</param>
+        <summary>サンプルを作成<see cref="T:System.Data.DataTable" />指定されたデータと同じスキーマを持つオブジェクト。</summary>
+        <returns>A <see cref="T:System.Data.DataTable" /> 、提供されている同じ名前とデータ型の列を含むオブジェクト<paramref name="referenceData" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成できるデータ型は、数値、文字列、および日付型などのプリミティブ型です。 その他の型が型の列で置き換えられます`String`です。 呼び出し側デザイナー コンポーネントを呼び出すことができます、<xref:System.Web.UI.Design.DesignTimeData.GetDesignTimeDataSource%2A>結果のテーブルに行のデータを追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSampleDataTable">
+      <MemberSignature Language="C#" Value="public static System.Data.DataTable CreateSampleDataTable (System.Collections.IEnumerable referenceData, bool useDataBoundData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataTable CreateSampleDataTable(class System.Collections.IEnumerable referenceData, bool useDataBoundData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.CreateSampleDataTable(System.Collections.IEnumerable,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="referenceData" Type="System.Collections.IEnumerable" />
+        <Parameter Name="useDataBoundData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="referenceData"><see cref="T:System.Collections.IEnumerable" />データを含むオブジェクト。</param>
+        <param name="useDataBoundData">場合<see langword="true" />列名がバインドされたデータが含まれているを指定します。</param>
+        <summary>作成、<see cref="T:System.Data.DataTable" />指定されたデータと同じスキーマでオブジェクトを必要に応じて、データがバインドされたデータであることを示す列の名前を格納します。</summary>
+        <returns><see cref="T:System.Data.DataTable" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成できるデータ型は、数値、文字列、および日付型などのプリミティブ型です。 その他の型が型の列で置き換えられます`String`です。 呼び出し側デザイナー コンポーネントを使用できます<xref:System.Web.UI.Design.DesignTimeData.GetDesignTimeDataSource%2A>結果のテーブルにデータの行を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindingHandler">
+      <MemberSignature Language="C#" Value="public static readonly EventHandler DataBindingHandler;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.EventHandler DataBindingHandler" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Design.DesignTimeData.DataBindingHandler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングのイベント ハンドラーを取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataFields">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetDataFields (System.Collections.IEnumerable dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetDataFields(class System.Collections.IEnumerable dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.GetDataFields(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ フィールドを取得する対象のデータ ソース。</param>
+        <summary>指定したデータ ソースのデータ フィールドのプロパティ記述子のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />を指定したデータ ソースのデータ フィールドを記述するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataMember">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable GetDataMember (System.ComponentModel.IListSource dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable GetDataMember(class System.ComponentModel.IListSource dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.GetDataMember(System.ComponentModel.IListSource,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.ComponentModel.IListSource" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource"><see cref="T:System.ComponentModel.IListSource" />メンバーを検索するためのデータを格納します。</param>
+        <param name="dataMember">取得するデータ メンバーの名前。</param>
+        <summary>指定したデータ ソースから指定したデータ メンバーを取得します。</summary>
+        <returns>実装するオブジェクト<see cref="T:System.Collections.IEnumerable" />存在する場合は、指定されたデータ ソースから指定されたデータ メンバーを含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したデータ メンバーを指定したデータ ソースを検索します。 場合`dataMember`は`null`、指定したデータ ソースの最初のデータ メンバーが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataSource" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="dataMember" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataMembers">
+      <MemberSignature Language="C#" Value="public static string[] GetDataMembers (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetDataMembers(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.GetDataMembers(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">メンバーの名前を取得する対象のデータ ソース。</param>
+        <summary>指定したデータ ソース内のデータ メンバーの名前を取得します。</summary>
+        <returns>型の配列<see langword="String" />指定されたデータ ソースのデータ メンバーの名前を格納しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeDataSource">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable GetDesignTimeDataSource (System.Data.DataTable dataTable, int minimumRows);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable GetDesignTimeDataSource(class System.Data.DataTable dataTable, int32 minimumRows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.GetDesignTimeDataSource(System.Data.DataTable,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataTable" Type="System.Data.DataTable" />
+        <Parameter Name="minimumRows" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dataTable"><see cref="T:System.Data.DataTable" />オブジェクトをサンプル行が追加されます。</param>
+        <param name="minimumRows">追加する行の最小数。</param>
+        <summary>指定されたデータ テーブルには、指定数のサンプル行を追加します。</summary>
+        <returns>実装するオブジェクト<see cref="T:System.Collections.IEnumerable" />デザイン時に使用するためのサンプル データを格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedDataSource">
+      <MemberSignature Language="C#" Value="public static object GetSelectedDataSource (System.ComponentModel.IComponent component, string dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSelectedDataSource(class System.ComponentModel.IComponent component, string dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.GetSelectedDataSource(System.ComponentModel.IComponent,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="dataSource" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />データ ソースを含むオブジェクト。</param>
+        <param name="dataSource">取得するデータ ソースの名前。</param>
+        <summary>デザイン ホストの名前で選択された、指定したコンポーネントのサイトのプロパティで表され、指定されたデータ ソース名で識別されるデータ ソースを取得します。</summary>
+        <returns>いずれかを実装するオブジェクト<see cref="T:System.ComponentModel.IListSource" />または<see cref="T:System.Collections.IEnumerable" />選択したデータ ソースを表すまたは<see langword="null" />場合は、データ ソースまたはデザイナーのホストにアクセスできませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedDataSource">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable GetSelectedDataSource (System.ComponentModel.IComponent component, string dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable GetSelectedDataSource(class System.ComponentModel.IComponent component, string dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignTimeData.GetSelectedDataSource(System.ComponentModel.IComponent,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="dataSource" Type="System.String" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="component">実装するオブジェクト<see cref="T:System.ComponentModel.IComponent" />データ ソースのプロパティを格納しています。</param>
+        <param name="dataSource">取得するデータ ソース。</param>
+        <param name="dataMember">取得するデータ メンバーです。</param>
+        <summary>デザイン ホストの名前で選択された、指定したコンポーネントのサイトのプロパティによって表され、指定したデータ ソース名とメンバー名で識別されるデータ ソースを取得します。</summary>
+        <returns>実装するオブジェクト<see cref="T:System.Collections.IEnumerable" />データ メンバーを含むまたは<see langword="null" />かどうか、データ ソース、メンバー、またはコンポーネントのサイトにアクセスできませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

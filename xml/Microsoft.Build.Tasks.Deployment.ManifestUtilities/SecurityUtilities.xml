@@ -1,0 +1,223 @@
+<Type Name="SecurityUtilities" FullName="Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities">
+  <TypeSignature Language="C#" Value="public static class SecurityUtilities" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SecurityUtilities extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セキュリティ アクセス許可のセットと署名を操作するための、ユーティリティ関数のセットを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ComputeZonePermissionSet">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet ComputeZonePermissionSet (string targetZone, System.Security.PermissionSet includedPermissionSet, string[] excludedPermissions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet ComputeZonePermissionSet(string targetZone, class System.Security.PermissionSet includedPermissionSet, string[] excludedPermissions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.ComputeZonePermissionSet(System.String,System.Security.PermissionSet,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetZone" Type="System.String" />
+        <Parameter Name="includedPermissionSet" Type="System.Security.PermissionSet" />
+        <Parameter Name="excludedPermissions" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="targetZone">コンピューター ポリシーから取得される、ゾーンの既定のアクセス許可セットを指定します。 有効な値は、<see langword="Internet" />、<see langword="LocalIntranet" />、または <see langword="Custom" /> です。 場合<see langword="Custom" />を指定すると、生成されたアクセス許可セットがのみに基づいた、 <c>includedPermissionSet</c>パラメーター。</param>
+        <param name="includedPermissionSet">生成されたアクセス許可セットに明示的に含めるアクセス許可セットを格納している <see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.PermissionSet" /> オブジェクト。 このパラメーターに指定されたアクセス許可は逐語的に含める、生成されたアクセス許可セットに関係なく<c>targetZone</c>または<c>excludedPermissions</c>パラメーター。</param>
+        <param name="excludedPermissions">ゾーンの既定のアクセス許可セットから除外されるアクセス許可 ID 文字列の配列。 アクセス許可 ID 文字列は、<see cref="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.PermissionSetToIdentityList(System.Security.PermissionSet)" /> メソッドを使用して計算できます。 場合、このパラメーターは無視されます<c>targetZone</c>は<see langword="Internet" />または<see langword="LocalIntranet" />です。</param>
+        <summary>ゾーンの既定のアクセス許可セットを計算して、除外されたアクセス許可を削除し、含めるアクセス許可を追加することにより、アクセス許可セットを生成します。</summary>
+        <returns>生成されたアクセス許可セットを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdentityListToPermissionSet">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet IdentityListToPermissionSet (string[] ids);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet IdentityListToPermissionSet(string[] ids) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.IdentityListToPermissionSet(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ids" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="ids">アクセス許可 ID 文字列の配列。</param>
+        <summary>アクセス許可 ID 文字列の配列をアクセス許可のセット オブジェクトに変換します。</summary>
+        <returns>変換されたアクセス許可セットを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionSetToIdentityList">
+      <MemberSignature Language="C#" Value="public static string[] PermissionSetToIdentityList (System.Security.PermissionSet permissionSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] PermissionSetToIdentityList(class System.Security.PermissionSet permissionSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.PermissionSetToIdentityList(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permissionSet" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="permissionSet">変換する入力のアクセス許可セット。</param>
+        <summary>アクセス許可セット オブジェクトをアクセス許可 ID 文字列の配列に変換します。</summary>
+        <returns>アクセス許可 ID 文字列の配列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignFile">
+      <MemberSignature Language="C#" Value="public static void SignFile (System.Security.Cryptography.X509Certificates.X509Certificate2 cert, Uri timestampUrl, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignFile(class System.Security.Cryptography.X509Certificates.X509Certificate2 cert, class System.Uri timestampUrl, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.SignFile(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cert" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="timestampUrl" Type="System.Uri" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cert">ファイルに署名をするために使用される証明書。</param>
+        <param name="timestampUrl">指定された HTTP アドレスのタイム スタンプ サーバーによってファイルにタイム スタンプが押されることを示します。 タイム スタンプが不要な場合には、このパラメーターに NULL を指定することができます。</param>
+        <param name="path">署名するファイルの名前。</param>
+        <summary>ClickOnce マニフェストまたは PE ファイルに署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、X509Certificate2 パラメーターは、現在のユーザーの個人証明書ストアに証明書を表す場合にのみ、PE ファイルに署名できます。  
+  
+ このメソッドのオーバー ロードが必要し、なる SignTool.exe を呼び出し、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]をインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignFile">
+      <MemberSignature Language="C#" Value="public static void SignFile (string certThumbprint, Uri timestampUrl, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignFile(string certThumbprint, class System.Uri timestampUrl, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.SignFile(System.String,System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certThumbprint" Type="System.String" />
+        <Parameter Name="timestampUrl" Type="System.Uri" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="certThumbprint">個人用証明書ストアで保存される、署名証明書の SHA1 ハッシュであるサムプリントを指定します。</param>
+        <param name="timestampUrl">指定した HTTP アドレスにあるタイムスタンプ サーバーにより、ファイルにタイムスタンプを付けることを示します。 タイム スタンプが不要な場合には、このパラメーターに NULL を指定することができます。</param>
+        <param name="path">署名するファイルの名前。</param>
+        <summary>ClickOnce マニフェストまたは PE ファイルに署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードが必要し、なる SignTool.exe を呼び出し、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]をインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignFile">
+      <MemberSignature Language="C#" Value="public static void SignFile (string certPath, System.Security.SecureString certPassword, Uri timestampUrl, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignFile(string certPath, class System.Security.SecureString certPassword, class System.Uri timestampUrl, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.SignFile(System.String,System.Security.SecureString,System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certPath" Type="System.String" />
+        <Parameter Name="certPassword" Type="System.Security.SecureString" />
+        <Parameter Name="timestampUrl" Type="System.Uri" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="certPath">ファイルに署名をするために使用される証明書。 証明書には秘密キーが含まれている必要があります。 <see langword="KeyUsage" />拡張オプションですが、存在する場合は、<see langword="DigitalSignature" />に設定する必要があります<see langword="True" />です。 <see langword="EnhancedKeyUsage" />拡張機能もオプションですが存在する場合、証明書はオブジェクト識別子 (OID) のサポートを含める必要があります。</param>
+        <param name="certPassword">証明書パスワード。</param>
+        <param name="timestampUrl">指定した HTTP アドレスにあるタイムスタンプ サーバーにより、ファイルにタイムスタンプを付けることを示します。 タイム スタンプが不要な場合には、このパラメーターに NULL を指定することができます。</param>
+        <param name="path">署名するファイルの名前。</param>
+        <summary>ClickOnce マニフェストに署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は PE ファイルではなく、マニフェストの署名のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlToPermissionSet">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet XmlToPermissionSet (System.Xml.XmlElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet XmlToPermissionSet(class System.Xml.XmlElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.XmlToPermissionSet(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">アクセス許可セットを表す XML。</param>
+        <summary>XML 要素をアクセス許可セット オブジェクトに変換します。</summary>
+        <returns>変換されたアクセス許可セット オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換、<xref:System.Xml.XmlElement>オブジェクトを<xref:System.Security.PermissionSet>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

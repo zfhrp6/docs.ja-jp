@@ -1,0 +1,171 @@
+<Type Name="InterfaceTypeAttribute" FullName="System.Runtime.InteropServices.InterfaceTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class InterfaceTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InterfaceTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.InterfaceTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ インターフェイスがデュアル、ディスパッチ専用かどうかを示すまたは<see langword="IUnknown" />-COM に公開された場合にのみ</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターフェイスには、この属性を適用することができます。  
+  
+ 既定では、 [Tlbexp.exe (タイプ ライブラリ エクスポーター)](~/docs/framework/tools/tlbexp-exe-type-library-exporter.md)を柔軟に遅延バインディングまたは事前バインディングのパフォーマンスが提供、デュアル インターフェイスとして COM にマネージ インターフェイスを公開します。 <xref:System.Runtime.InteropServices.ComInterfaceType>列挙体を使用すると、既定の動作をオーバーライドし、遅延バインドのみか、事前バインドのみを指定します。 たとえば、適用`InterfaceType (ComInterfaceType.InterfaceIsIDispatch)`遅延バインディングのみに制限するメタデータを生成するために、インターフェイスにします。 派生したインターフェイスが、`IDispatch`インターフェイスがデュアル、多くの場合、`InterfaceIsIDispatch`列挙体のメンバーは、インターフェイス メソッドに遅延バインディング呼び出しのみを許可します。 この属性には、インターフェイスのマネージ ビューへの影響がありません。 Com インターフェイスを公開する方法の詳細については、次を参照してください。[型変換のエクスポート](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)です。  
+  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)でも、この属性を nondual インターフェイスのインポート、以外の場合は、インターフェイスがディスパッチ専用であることを示す適切な列挙型のメンバーを適用または`IUnknown`-だけです。  
+  
+   
+  
+## Examples  
+ 例を次にどのように`InterfaceTypeAttribute`インターフェイスを COM に公開する方法を制御します。  
+  
+ [!code-cpp[Classic InterfaceTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic InterfaceTypeAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InterfaceTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic InterfaceTypeAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic InterfaceTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic InterfaceTypeAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InterfaceTypeAttribute (short interfaceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 interfaceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.InterfaceTypeAttribute.#ctor(System.Int16)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="interfaceType" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="interfaceType">インターフェイスを COM クライアントに公開する方法について説明します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.InteropServices.InterfaceTypeAttribute" /> 、指定したクラス<see cref="T:System.Runtime.InteropServices.ComInterfaceType" />列挙体のメンバーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはそれぞれが表す基になる 16 ビット整数<xref:System.Runtime.InteropServices.ComInterfaceType>列挙体のメンバーです。 [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)このコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InterfaceTypeAttribute (System.Runtime.InteropServices.ComInterfaceType interfaceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.InteropServices.ComInterfaceType interfaceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.InterfaceTypeAttribute.#ctor(System.Runtime.InteropServices.ComInterfaceType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="interfaceType" Type="System.Runtime.InteropServices.ComInterfaceType" />
+      </Parameters>
+      <Docs>
+        <param name="interfaceType">1 つ、<see cref="T:System.Runtime.InteropServices.ComInterfaceType" />インターフェイスを COM クライアントに公開する方法を記述する値。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.InteropServices.InterfaceTypeAttribute" /> 、指定したクラス<see cref="T:System.Runtime.InteropServices.ComInterfaceType" />列挙体のメンバーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り可能なコードでエラーが発生しにくくなりました、常にこのコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.ComInterfaceType Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.ComInterfaceType Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.InterfaceTypeAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ComInterfaceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.InteropServices.ComInterfaceType" />インターフェイスを COM に公開する方法を記述する値</summary>
+        <value><see cref="T:System.Runtime.InteropServices.ComInterfaceType" />インターフェイスを COM に公開する方法を記述する値</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

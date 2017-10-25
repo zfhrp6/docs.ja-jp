@@ -1,0 +1,79 @@
+<Type Name="IWebFormsBuilderUIService" FullName="System.Web.UI.Design.IWebFormsBuilderUIService">
+  <TypeSignature Language="C#" Value="public interface IWebFormsBuilderUIService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebFormsBuilderUIService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IWebFormsBuilderUIService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時にプロパティを作成するための特定のユーザー インターフェイスを開始する方法を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuildColor">
+      <MemberSignature Language="C#" Value="public string BuildColor (System.Windows.Forms.Control owner, string initialColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string BuildColor(class System.Windows.Forms.Control owner, string initialColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormsBuilderUIService.BuildColor(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Control" />
+        <Parameter Name="initialColor" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">表示されるダイアログ ボックスの親に使用されるコントロール、<see cref="T:System.Web.UI.Design.ColorBuilder" />です。</param>
+        <param name="initialColor">事前に選択するエディターの初期の色です。</param>
+        <summary>開始、<see cref="T:System.Web.UI.Design.ColorBuilder" />色のプロパティを構築します。</summary>
+        <returns>選択された色です。 この値は、名前付きの色、または HTML 色形式 (#RRGGBB) で表される RGB 色になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `initialColor`パラメーターは名前付きの色、または HTML 色形式 (#RRGGBB) で表される RGB 色にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildUrl">
+      <MemberSignature Language="C#" Value="public string BuildUrl (System.Windows.Forms.Control owner, string initialUrl, string baseUrl, string caption, string filter, System.Web.UI.Design.UrlBuilderOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string BuildUrl(class System.Windows.Forms.Control owner, string initialUrl, string baseUrl, string caption, string filter, valuetype System.Web.UI.Design.UrlBuilderOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormsBuilderUIService.BuildUrl(System.Windows.Forms.Control,System.String,System.String,System.String,System.String,System.Web.UI.Design.UrlBuilderOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Control" />
+        <Parameter Name="initialUrl" Type="System.String" />
+        <Parameter Name="baseUrl" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="filter" Type="System.String" />
+        <Parameter Name="options" Type="System.Web.UI.Design.UrlBuilderOptions" />
+      </Parameters>
+      <Docs>
+        <param name="owner">表示されるダイアログ ボックスの親に使用されるコントロール、<see cref="T:System.Web.UI.Design.UrlBuilder" />です。</param>
+        <param name="initialUrl">選択範囲のインターフェイスに表示する最初の URL。</param>
+        <param name="baseUrl">相対 Url を構築するために使用される基本 URL です。</param>
+        <param name="caption">選択インターフェイスでメッセージを表示するキャプションです。</param>
+        <param name="filter">必要に応じて選択インターフェイスに表示されているファイルをフィルター選択に使用するフィルター文字列。</param>
+        <param name="options">A<see cref="T:System.Web.UI.Design.UrlBuilderOptions" />のオプションを示す、<see cref="T:System.Web.UI.Design.UrlBuilder" />です。</param>
+        <summary>URL プロパティを構築するエディターを起動します。</summary>
+        <returns>によって返される URL を含む文字列、<see cref="T:System.Web.UI.Design.UrlBuilder" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

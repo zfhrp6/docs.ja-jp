@@ -1,0 +1,865 @@
+<Type Name="StickyNoteControl" FullName="System.Windows.Controls.StickyNoteControl">
+  <TypeSignature Language="C#" Value="public sealed class StickyNoteControl : System.Windows.Controls.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StickyNoteControl extends System.Windows.Controls.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.StickyNoteControl" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_CloseButton", Type=typeof(System.Windows.Controls.Button))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_TitleThumb", Type=typeof(System.Windows.Controls.Primitives.Thumb))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ResizeBottomRightThumb", Type=typeof(System.Windows.Controls.Primitives.Thumb))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ContentControl", Type=typeof(System.Windows.Controls.ContentControl))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_IconButton", Type=typeof(System.Windows.Controls.Button))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_CopyMenuItem", Type=typeof(System.Windows.Controls.MenuItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_PasteMenuItem", Type=typeof(System.Windows.Controls.MenuItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_InkMenuItem", Type=typeof(System.Windows.Controls.MenuItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_SelectMenuItem", Type=typeof(System.Windows.Controls.MenuItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_EraseMenuItem", Type=typeof(System.Windows.Controls.MenuItem))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>入力したテキストまたは手書きの注釈をユーザーがドキュメントに結び付けることができるコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 付箋は、四角形領域の内容とは別のテキスト、画像、またはメモが固定されているその他の資料を提供します。  
+  
+ <xref:System.Windows.Controls.StickyNoteControl>クラスとそのメンバーはパブリックのスタイルを設定することができますには、パブリック コンス トラクターがないようにします。  インスタンスを作成、<xref:System.Windows.Annotations.AnnotationService.CreateTextStickyNoteCommand>と<xref:System.Windows.Annotations.AnnotationService.CreateInkStickyNoteCommand>の<xref:System.Windows.Annotations.AnnotationService>クラスです。  
+  
+ 付箋の作成時に、次の 2 種類の 1 つとして指定されます。  
+  
+-   **テキスト**付箋が、<xref:System.Windows.Controls.RichTextBox>コンテンツ領域に書き込まれるおよびその他の任意のリッチ テキスト領域のように編集できます。 ユーザーに入力できます切り取ることができますも、コピー、および注記内とメモと他のアプリケーション間の両方を貼り付けます。 イメージは、ノートに貼り付けることもできます。 通常のリッチ テキストのキーボード ショートカットも使用できます。  
+  
+-   **インク**付箋が、<xref:System.Windows.Controls.InkCanvas>コンテンツの他のインク canvasses と同じように、領域とそれを編集できます。 たとえば、ストロークを消去することができます。 Tablet PC、またはその他の適切なハードウェア、ユーザーは、手書きメモを入力できます。  
+  
+ [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]の<xref:System.Windows.Controls.StickyNoteControl>ハードコピーをマークすることや、物理手書きメモを使用するよりもマテリアルの注釈を付けるより強力な方法になります。  単への追加を行ったり、ドキュメント内のテキストをよりも柔軟です。  
+  
+-   付箋のサイズを変更できます。  
+  
+-   付箋をアイコンに最小化および展開できます。  
+  
+-   最大表示しているときに、アンカーの場所を変更することがなく、付箋をウィンドウ内の新しい位置にドラッグできます。  
+  
+-   付箋を適用する正確な内容が強調表示され、角かっこでマークします。  
+  
+-   2 つ以上の付箋には、同じコンテンツをまたは重複するコンテンツを適用できます。  
+  
+-   付箋が固定されているドキュメントのコンテンツ内で変更する場合は、付箋の位置にバインドするコンテンツに対する相対的な位置に移動します。  
+  
+-   テキスト付箋で行が自動的に折り返されます。 メモのサイズが変更される場合、必要に応じて、行が折り返さ再れます。 付箋の最下部より下のコンテンツが拡張される場合は、垂直スクロール バーが表示されます。  
+  
+-   インク付箋でコンテンツがノートの境界を超えるたびに垂直および水平スクロール バーが表示されます。  
+  
+   
+  
+## Examples  
+ 次の例でのメニューのコマンド、<xref:System.Windows.Controls.DocumentViewer>を実行するように構成できる、<xref:System.Windows.Annotations.AnnotationService.CreateTextStickyNoteCommand>と<xref:System.Windows.Annotations.AnnotationService.CreateInkStickyNoteCommand>の<xref:System.Windows.Annotations.AnnotationService>クラスです。 例を読み取る方法を示します、[!INCLUDE[TLA#tla_metro](~/includes/tlasharptla-metro-md.md)]に文書化、<xref:System.Windows.Controls.DocumentViewer>を制御し、ユーザーが作成した付箋を追加するためのサポートを有効にします。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnchorInfo">
+      <MemberSignature Language="C#" Value="public System.Windows.Annotations.IAnchorInfo AnchorInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Annotations.IAnchorInfo AnchorInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.AnchorInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.IAnchorInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈付きオブジェクトに関する情報を提供するオブジェクトを取得します。</summary>
+        <value>注釈付きオブジェクトに関する情報を提供する <see cref="T:System.Windows.Annotations.IAnchorInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、対応する注釈付きオブジェクトの付箋に一致することができます。  
+  
+ <xref:System.Windows.Controls.StickyNoteControl.AnchorInfo%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Author">
+      <MemberSignature Language="C#" Value="public string Author { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Author" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.Author" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>付箋を作成した作成者の名前を取得します。</summary>
+        <value>付箋を作成した作成者の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Author"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.AuthorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AuthorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AuthorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.AuthorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.Author" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily CaptionFontFamily { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily CaptionFontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.CaptionFontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> のキャプションのフォント ファミリを取得または設定します。</summary>
+        <value>コントロールのキャプションの <see cref="T:System.Drawing.FontFamily" />。 既定値は、<see cref="P:System.Windows.SystemFonts.MessageFontFamily" /> の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_CaptionFontFamily"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.CaptionFontFamilyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontFamilyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CaptionFontFamilyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CaptionFontFamilyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.CaptionFontFamilyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.CaptionFontFamily" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontSize">
+      <MemberSignature Language="C#" Value="public double CaptionFontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 CaptionFontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.CaptionFontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> のキャプションに使用されるフォントのサイズを取得または設定します。</summary>
+        <value>フォント サイズを表す <see cref="T:System.Double" />。 既定値は、<see cref="P:System.Windows.SystemFonts.MessageFontSize" /> の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_CaptionFontSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.CaptionFontSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CaptionFontSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CaptionFontSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.CaptionFontSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.CaptionFontSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontStretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch CaptionFontStretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch CaptionFontStretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.CaptionFontStretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> のキャプションに使用されるフォントの伸縮度を取得または設定します。</summary>
+        <value>フォントの標準縦横比と比較した伸縮度を表す <see cref="T:System.Windows.FontStretch" /> 構造体。 既定値は、<see cref="P:System.Windows.FontStretches.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_CaptionFontStretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.CaptionFontStretchProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontStretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CaptionFontStretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CaptionFontStretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.CaptionFontStretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.CaptionFontStretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle CaptionFontStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle CaptionFontStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.CaptionFontStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> のキャプションに使用されるフォントのスタイルを取得または設定します。</summary>
+        <value>キャプションのスタイルを標準または斜体として表す <see cref="T:System.Windows.FontStyle" /> 構造体。 既定値は、<see cref="P:System.Windows.SystemFonts.MessageFontStyle" /> の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_CaptionFontStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.CaptionFontStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CaptionFontStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CaptionFontStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.CaptionFontStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.CaptionFontStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontWeight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight CaptionFontWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight CaptionFontWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.CaptionFontWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> のキャプションに使用されるフォントの太さを取得または設定します。</summary>
+        <value>太字、極太字、特細字などのフォントの太さを表す <see cref="T:System.Windows.FontWeight" /> 構造体。 既定値は、<see cref="P:System.Windows.SystemFonts.MessageFontWeight" /> の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_CaptionFontWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.CaptionFontWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionFontWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CaptionFontWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CaptionFontWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.CaptionFontWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.CaptionFontWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteNoteCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand DeleteNoteCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand DeleteNoteCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.DeleteNoteCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Windows.Input.RoutedCommand.Execute(System.Object,System.Windows.IInputElement)" /> を削除する <see cref="T:System.Windows.Controls.StickyNoteControl" /> メソッドを持つコマンドを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InkCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand InkCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand InkCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.InkCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インク付箋内のカーソルを描画と消去を含む、使用可能ないくつかのモードのいずれかに切り替える <see cref="M:System.Windows.Input.RoutedCommand.Execute(System.Object,System.Windows.IInputElement)" /> メソッドを持つコマンドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、<xref:System.Windows.Controls.StickyNoteControl.InkCommand>型のパラメーターを受け取る<xref:System.Windows.Controls.InkCanvasEditingMode>です。 コマンドの<xref:System.Windows.Input.RoutedCommand.Execute%2A>メソッドは、パラメーターで指定されたモードでカーソルを置きます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InkSchemaName">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName InkSchemaName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName InkSchemaName" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.InkSchemaName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インク付箋の注釈の XML 型を取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActive">
+      <MemberSignature Language="C#" Value="public bool IsActive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsActive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.IsActive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> がアクティブであるかどうかを示す値を取得します。</summary>
+        <value>
+          コントロールがアクティブな場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、このプロパティを直接読み取る。  
+  
+<a name="dependencyPropertyInfo_IsActive"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.IsActiveProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActiveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsActiveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsActiveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.IsActiveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.IsActive" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.StickyNoteControl.IsActive%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpanded">
+      <MemberSignature Language="C#" Value="public bool IsExpanded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsExpanded" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.IsExpanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.StickyNoteControl" /> が展開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          コントロールが展開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。  
+  
+<a name="dependencyPropertyInfo_IsExpanded"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.IsExpandedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpandedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsExpandedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsExpandedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.IsExpandedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.IsExpanded" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 識別子、<xref:System.Windows.Controls.StickyNoteControl.IsExpanded%2A>依存関係プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMouseOverAnchor">
+      <MemberSignature Language="C#" Value="public bool IsMouseOverAnchor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMouseOverAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.IsMouseOverAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス カーソルが <see cref="T:System.Windows.Controls.StickyNoteControl" /> のアンカーの上にあるかどうかを示す値を取得します。</summary>
+        <value>
+          マウス カーソルがアンカーの上にある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、このプロパティを直接読み取る。  
+  
+<a name="dependencyPropertyInfo_IsMouseOverAnchor"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.IsMouseOverAnchorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMouseOverAnchorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsMouseOverAnchorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsMouseOverAnchorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.IsMouseOverAnchorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.IsMouseOverAnchor" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.StickyNoteControl.IsMouseOverAnchor%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.StickyNoteControl.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テンプレートのすべての子のイベント ハンドラーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.StickyNoteControl.OnApplyTemplate%2A>自動的に実行後、制御、インクまたはテキスト付箋テンプレートをコントロールに適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGotKeyboardFocus">
+      <MemberSignature Language="C#" Value="protected override void OnGotKeyboardFocus (System.Windows.Input.KeyboardFocusChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnGotKeyboardFocus(class System.Windows.Input.KeyboardFocusChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.StickyNoteControl.OnGotKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.Input.KeyboardFocusChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsKeyboardFocusWithinChanged">
+      <MemberSignature Language="C#" Value="protected override void OnIsKeyboardFocusWithinChanged (System.Windows.DependencyPropertyChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnIsKeyboardFocusWithinChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.StickyNoteControl.OnIsKeyboardFocusWithinChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTemplateChanged">
+      <MemberSignature Language="C#" Value="protected override void OnTemplateChanged (System.Windows.Controls.ControlTemplate oldTemplate, System.Windows.Controls.ControlTemplate newTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTemplateChanged(class System.Windows.Controls.ControlTemplate oldTemplate, class System.Windows.Controls.ControlTemplate newTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.StickyNoteControl.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldTemplate" Type="System.Windows.Controls.ControlTemplate" />
+        <Parameter Name="newTemplate" Type="System.Windows.Controls.ControlTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="oldTemplate">To be added.</param>
+        <param name="newTemplate">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenWidth">
+      <MemberSignature Language="C#" Value="public double PenWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PenWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.PenWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インク <see cref="T:System.Windows.Controls.StickyNoteControl" /> に対するペンの幅を取得または設定します。</summary>
+        <value>ペンの幅を表す <see cref="T:System.Double" />。 既定値は、<see cref="P:System.Windows.Ink.DrawingAttributes.Width" /> の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、読み取りまたはこのプロパティの書き込みを直接実行します。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_PenWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.PenWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<br /><br /> <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PenWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PenWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.PenWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.PenWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StickyNoteType">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.StickyNoteType StickyNoteType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.StickyNoteType StickyNoteType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.StickyNoteControl.StickyNoteType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.StickyNoteType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>付箋がテキストとインクのどちらであるかを示す値を取得します。</summary>
+        <value>付箋の種類を示す <see cref="T:System.Windows.Controls.StickyNoteType" /> 値。 既定値は、<see cref="F:System.Windows.Controls.StickyNoteType.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インク<xref:System.Windows.Controls.StickyNoteControl>手書きされたノート tablet PC で手書き入力をサポートするその他のハードウェアを使用できます。  
+  
+ インスタンスへの参照を取得しないでことをお勧め<xref:System.Windows.Controls.StickyNoteControl>も、そのため、このプロパティを直接読み取る。 このプロパティは、スタイル設定でのみ使用する必要があります<xref:System.Windows.Controls.StickyNoteControl>s。  
+  
+<a name="dependencyPropertyInfo_StickyNoteType"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.StickyNoteControl.StickyNoteTypeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StickyNoteTypeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StickyNoteTypeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StickyNoteTypeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.StickyNoteTypeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.StickyNoteControl.StickyNoteType" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.StickyNoteControl.StickyNoteType%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextSchemaName">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName TextSchemaName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName TextSchemaName" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StickyNoteControl.TextSchemaName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト付箋の注釈の XML 型を取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

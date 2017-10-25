@@ -1,0 +1,405 @@
+<Type Name="TtsEngineSsml" FullName="System.Speech.Synthesis.TtsEngine.TtsEngineSsml">
+  <TypeSignature Language="C#" Value="public abstract class TtsEngineSsml" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TtsEngineSsml extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのテキストを音声合成エンジンによって実装される抽象基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム音声合成エンジンを構築するために、アプリケーションする必要があります常にクラスを実装する抽象基本クラスから派生した<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>です。  
+  
+ 登録を適切な実装<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>によってシンセサイザー音声として使用できます<xref:System.Speech.Synthesis>ベースのアプリケーションの名前空間。  
+  
+ オブジェクトから継承する<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>メンバーをオーバーライドする必要があります: <xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.%23ctor%2A>、 <xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon%2A>、 <xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon%2A>、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.GetOutputFormat%2A>と<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>です。  
+  
+ 最も重要なメンバー、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>実装するクラスは、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>メソッドです。  
+  
+ <xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>メソッドは受信インフラストラクチャ テキスト パーサーによって呼び出されます。  
+  
+1.  参照、<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite>もキューやオーディオ出力の書き込みなどのシステム サービスへのアクセスを提供するインターフェイスです。  
+  
+2.  配列<xref:System.Speech.Synthesis.TtsEngine.TextFragment>音声合成マークアップ言語 (SSML) 入力からインスタンスが生成されます。 音声として表示するテキスト、だけでなく SSML の解析での音声の要求された属性に関する情報を格納、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>各受信に関連付けられたインスタンス<xref:System.Speech.Synthesis.TtsEngine.TextFragment>オブジェクト。  
+  
+ 音声シンセサイザー アプリケーションで、実装することでの指定した出力形式の要求を行うことが必要に応じてできます<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.GetOutputFormat%2A>ときに呼び出されるプラットフォームによって正しいオーディオ出力を提供しようとします。  
+  
+ 実装者は、の実装によって発音、またはの辞書の外部の定義を管理するためのサポートも提供<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon%2A>と<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TtsEngineSsml (string registryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string registryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="registryKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="registryKey">完全な名前のレジストリ キーの音声トークンに関連付けられたの<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />実装します。 エンジン。</param>
+        <summary>新しいインスタンスを構築<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />適切な音声トークン レジストリ キーに基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの呼び出しがによって生成される通常<xref:System.Speech.Synthesis>ベースのアプリケーションは、シンセサイザー音声を選択するのインスタンスによって使用される<xref:System.Speech.Synthesis.SpeechSynthesizer>です。  
+  
+ A <xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens で登録する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLexicon">
+      <MemberSignature Language="C#" Value="public abstract void AddLexicon (Uri uri, string mediaType, System.Speech.Synthesis.TtsEngine.ITtsEngineSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddLexicon(class System.Uri uri, string mediaType, class System.Speech.Synthesis.TtsEngine.ITtsEngineSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon(System.Uri,System.String,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="mediaType" Type="System.String" />
+        <Parameter Name="site" Type="System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />
+      </Parameters>
+      <Docs>
+        <param name="uri">有効なインスタンス<see langword="System.Uri" />辞書情報の場所を示すです。</param>
+        <param name="mediaType">辞書のメディアの種類を含む文字列。 メディアの種類は大文字小文字を区別します。</param>
+        <param name="site">参照、<see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />プラットフォームのインフラストラクチャと対話するためのインターフェイスです。</param>
+        <summary>辞書を追加、 <see langword="Synthesizer" /> <see langword="Voice" />現在によって実装される<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発音辞書は、単語または語句とその発音の適切な発音アルファベットを使用して指定のコレクションです。  
+  
+ このメソッドと通常呼ばれるプラットフォーム インフラストラクチャに応答して、<xref:System.Speech.Synthesis>ベースのアプリケーションを呼び出す<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon%2A>シンセサイザー音声が現在の実装を使用して<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>インスタンス。  
+  
+ 値`mediaType`は、通常、MIME 仕様 SSML の仕様で MIME のメディアの仕様の使用として。  
+  
+   
+  
+## Examples  
+ 実装<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon%2A>を使用して、<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite>インターフェイスに渡されたリソースから辞書を読み込みます。 格納し、 `System.IO.Stream` 、辞書内に、`System.Collections.Generic.Dictionary`辞書 URI によってインデックス設定のインスタンス。  
+  
+```  
+public static Dictionary<Uri, Stream> _aLexicons = new Dictionary<Uri, Stream>();  
+  
+ public void AddLexicon(Uri uri, string mediaType, ITtsEngineSite site) {  
+    Stream stream = site.LoadResource(uri, mediaType);  
+    _aLexicons.Add(uri, stream);  
+}  
+  
+ public void RemoveLexicon(Uri uri, ITtsEngineSite site) {  
+     Stream stream;  
+     if (_aLexicons.TryGetValue(uri, out stream)) {  
+         stream.Close();  
+         _aLexicons.Remove(uri);  
+     }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>完全に理解しておくし、辞書に格納されているを処理できるようにする実装の責任である<paramref name="uri" />です。 実装の追跡し、すべての辞書に追加の有効期間を管理する必要がありますもします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutputFormat">
+      <MemberSignature Language="C#" Value="public abstract IntPtr GetOutputFormat (System.Speech.Synthesis.TtsEngine.SpeakOutputFormat speakOutputFormat, IntPtr targetWaveFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int GetOutputFormat(valuetype System.Speech.Synthesis.TtsEngine.SpeakOutputFormat speakOutputFormat, native int targetWaveFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.GetOutputFormat(System.Speech.Synthesis.TtsEngine.SpeakOutputFormat,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="speakOutputFormat" Type="System.Speech.Synthesis.TtsEngine.SpeakOutputFormat" />
+        <Parameter Name="targetWaveFormat" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="speakOutputFormat">有効なメンバー、<see cref="T:System.Speech.Synthesis.TtsEngine.SpeakOutputFormat" />要求されたオーディオ出力形式の種類を示す列挙値。</param>
+        <param name="targetWaveFormat">ポインター、<see langword="struct" />によって要求されたオーディオ形式の種類の詳細設定を含む、 <c>speakOutputFormat</c>引数。</param>
+        <summary>最も一致する特定の出力形式のサポートについては、シンセサイザー エンジンへの要求に指定された synthesize エンジン応答でサポートされているオーディオ出力を返します。</summary>
+        <returns>有効なを返します<see langword="IntPtr" />インスタンスを参照する、<see langword="struct" />出力形式に関する詳細な情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として使用される構造`targetWaveFormat`によって返されるとメソッドと互換性のある、 `WAVEFORMATEX` SAPI で使用可能な戻り値を使用して割り当てる必要があると`CoTaskMemAlloc`です。  
+  
+ `struct`に相当する機能を提供する必要があります。  
+  
+```  
+internal struct WaveFormat  
+{  
+    public Int16 FormatTag;  
+    public Int16 Channels;  
+    public int SamplesPerSec;  
+    public int AvgBytesPerSec;  
+    public Int16 BlockAlign;  
+    public Int16 BitsPerSample;  
+    public Int16 Size;  
+}  
+```  
+  
+   
+  
+## Examples  
+ 次のサンプルの実装では、許容範囲内にある場合、それらを使用して、それ以外の場合の既定値を使用して、選択した入力を検証します。  
+  
+```  
+public IntPtr GetOutputFormat(SpeakOutputFormat format, IntPtr targetWaveFormat) {  
+    WaveFormat waveFormat = new WaveFormat();  
+    WaveFormat rq=new WaveFormat();  
+    Marshal.PtrToStructure(targetWaveFormat,rq);  
+  
+    waveFormat.AvgBytesPerSec = AvgBytesPerSec Min < rq.AvgBytesPerSec && rq.AvgBytesPerSec < AvgBytesPerSecMax? rq.AvgBytesPerSec : 3200;  
+    waveFormat.BitsPerSample = BitsPerSampleMin < rq.AvgBytesPerSec && rq.BitsPerSample < BitsPerSampleMax ? rq.AvgBytesPerSec : 3200; 16;  
+    waveFormat.BlockAlign = 2;  
+    waveFormat.Channels = 1;  
+    waveFormat.FormatTag = 1;  
+    waveFormat.SamplesPerSec = 16000;  
+    waveFormat.Size = 0;  
+  
+    IntPtr wfx = Marshal.AllocCoTaskMem(Marshal.SizeOf(waveFormat));  
+    Marshal.StructureToPtr(waveFormat, wfx, false);  
+  
+    //Console.WriteLine ("GetOutputFormat called");  
+    return wfx;  
+}  
+internal struct WaveFormat {  
+    public Int16 FormatTag;  
+    public Int16 Channels;  
+    public int SamplesPerSec;  
+    public int AvgBytesPerSec;  
+    public Int16 BlockAlign;  
+    public Int16 BitsPerSample;  
+    public Int16 Size;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承するオブジェクト<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />で指定された要求の出力形式を調べる必要があります<paramref name="targetWaveFormat" />し、サポートされる最も近い形式を返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLexicon">
+      <MemberSignature Language="C#" Value="public abstract void RemoveLexicon (Uri uri, System.Speech.Synthesis.TtsEngine.ITtsEngineSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveLexicon(class System.Uri uri, class System.Speech.Synthesis.TtsEngine.ITtsEngineSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon(System.Uri,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="site" Type="System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />
+      </Parameters>
+      <Docs>
+        <param name="uri">有効なインスタンス<see langword="System.Uri" />辞書情報の場所を示すです。</param>
+        <param name="site">参照、<see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />インフラストラクチャ リソースへのアクセスを許可するプラットフォームのインフラストラクチャによって渡されるインターフェイスです。</param>
+        <summary>によって現在読み込まれている辞書の削除、 <see langword="Synthesizer" /> <see langword="Voice" />現在によって実装される<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発音辞書は、単語または語句とその発音の適切な発音アルファベットを使用して指定のコレクションです。  
+  
+ このメソッドは通常への応答と呼ばれる、<xref:System.Speech.Synthesis>ベースのアプリケーションを呼び出す<xref:System.Speech.Synthesis.SpeechSynthesizer.RemoveLexicon%2A>シンセサイザー音声が現在の実装を使用して<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>インスタンス。  
+  
+   
+  
+## Examples  
+ 実装<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon%2A>辞書 URI を使用してインスタンスを照会`System.Collections.Generic.Dictionary`の`System.IO.Stream`ストリームを閉じ、および、辞書を参照する uri を削除します。  
+  
+```  
+public static Dictionary<Uri, Stream> _aLexicons = new Dictionary<Uri, Stream>();  
+  
+ public void AddLexicon(Uri uri, string mediaType, ITtsEngineSite site) {  
+    Stream stream = site.LoadResource(uri, mediaType);  
+    _aLexicons.Add(uri, stream);  
+}  
+  
+ public void RemoveLexicon(Uri uri, ITtsEngineSite site) {  
+     Stream stream;  
+     if (_aLexicons.TryGetValue(uri, out stream)) {  
+         stream.Close();  
+         _aLexicons.Remove(uri);  
+     }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>完全に理解しておくし、辞書に格納されているを処理できるようにする実装の責任である<paramref name="uri" />です。 実装の追跡し、を削除したすべての辞書の有効期間を管理する必要がありますもします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Speak">
+      <MemberSignature Language="C#" Value="public abstract void Speak (System.Speech.Synthesis.TtsEngine.TextFragment[] fragment, IntPtr waveHeader, System.Speech.Synthesis.TtsEngine.ITtsEngineSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Speak(class System.Speech.Synthesis.TtsEngine.TextFragment[] fragment, native int waveHeader, class System.Speech.Synthesis.TtsEngine.ITtsEngineSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fragment" Type="System.Speech.Synthesis.TtsEngine.TextFragment[]" />
+        <Parameter Name="waveHeader" Type="System.IntPtr" />
+        <Parameter Name="site" Type="System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />
+      </Parameters>
+      <Docs>
+        <param name="fragment">配列<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />音声に表示するテキストを含むインスタンス。</param>
+        <param name="waveHeader"><see langword="IntPtr" />オーディオ出力形式を含む構造体をポイントします。</param>
+        <param name="site">参照、<see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />インフラストラクチャ リソースへのアクセスを許可するプラットフォームのインフラストラクチャによって渡されるインターフェイスです。</param>
+        <summary>指定されたレンダリング<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />指定した出力形式の配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として使用される構造`waveHeader`によって返されるとメソッドと互換性のある、 `WAVEFORMATEX` SAPI で使用できます。  
+  
+ `struct`に相当する機能を提供する必要があります。  
+  
+```  
+internal struct WaveFormat  
+{  
+    public Int16 FormatTag;  
+    public Int16 Channels;  
+    public int SamplesPerSec;  
+    public int AvgBytesPerSec;  
+    public Int16 BlockAlign;  
+    public Int16 BitsPerSample;  
+    public Int16 Size;  
+}  
+```  
+  
+   
+  
+## Examples  
+ 次の例から継承するカスタム音声合成の実装の一部である<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>の使用を使用して<xref:System.Speech.Synthesis.TtsEngine.TextFragment>、 <xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>、 <xref:System.Speech.Synthesis.TtsEngine.FragmentState>、および<xref:System.Speech.Synthesis.TtsEngine.TtsEventId>  
+  
+ 実装<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>  
+  
+1.  配列を受け取る<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンスし、新しい配列を作成<xref:System.Speech.Synthesis.TtsEngine.TextFragment>に渡されるインスタンス、`Speak`基になる合成エンジンでのメソッドです。  
+  
+2.  場合、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>から列挙値がによって検出された、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返される、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>の各プロパティ<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンスが<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Speak>実装では、  
+  
+    -   読み上げるテキストで Britishisms に Americanism を変換します。  
+  
+    -   場合、<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.EventInterest%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite>実装サポートを提供するインターフェイス、<xref:System.Speech.Synthesis.TtsEngine.TtsEventId.WordBoundary>イベントの種類、<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>シンセサイザー進行状況インジケーターが作成されるドライブにイベントを作成するインスタンスを使用します。  
+  
+3.  音声認識のレンダリング エンジンが呼び出されます、変更されたと<xref:System.Speech.Synthesis.TtsEngine.TextFragment>配列。  
+  
+```  
+private const int WordBoundaryFlag = 1 << (int)TtsEventId.WordBoundary;  
+private readonly char[] spaces = new char[] { ' ', '\t', '\r', '\n' };  
+internal struct UsVsUk  
+{  
+  internal string UK;  
+  internal string US;  
+}  
+  
+override public void Speak (TextFragment [] frags, IntPtr wfx, ITtsEngineSite site)  
+{  
+  TextFragment [] newFrags=new TextFragment[frags.Length];  
+  
+  for (int i=0;i<frags.Length;i++){  
+    newFrags[i].State=frags[i].State;  
+    //truncate  
+    newFrags[i].TextToSpeak = frags[i].TextToSpeak.Substring(frags[i].TextOffset,  
+                               frags[i].TextLength);  
+    newFrags[i].TextLength = newFrags[i].TextToSpeak.Length;  
+    newFrags[i].TextOffset = 0;  
+    if (newFrags[i].State.Action == TtsEngineAction.Speak) {  
+      //Us to UK conversion  
+      foreach (UsVsUk term in TransList) {  
+      newFrags[i].TextToSpeak.Replace(term.US, term.UK);  
+      }  
+      //Generate progress meter events if supported  
+      if ((site.EventInterest & WordBoundaryFlag) != 0) {  
+      string[] subs = newFrags[i].TextToSpeak.Split(spaces);  
+  
+      foreach (string s in subs) {  
+        int offset = newFrags[i].TextOffset;  
+        SpeechEventInfo spEvent = new SpeechEventInfo((Int16)TtsEventId.WordBoundary,   
+                (Int16)EventParameterType.Undefined,   
+                 s.Length, new IntPtr(offset));  
+        offset += s.Length;  
+        if (s.Trim().Length > 0) {  
+          SpeechEventInfo[] events = new SpeechEventInfo[1];  
+          events[0] = spEvent;  
+          site.AddEvents(events, 1);  
+        }  
+      }  
+      }  
+    }  
+  }  
+    _baseSynthesize.Speak(newFrags, wfx, site);  
+  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム音声シンセサイザー実装を使用して<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />と<see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />フィルターまたはのメンバーをプラットフォームのインフラストラクチャを使用して構築シンセサイザー アプリケーション間の仲介役として機能、<see cref="N:System.Speech.Synthesis" />名前空間とシステムの音声合成エンジンを基になります。  
+  
+ A<see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />実装します。  
+  
+1.  または、入力方向の側面を変更するトラップ<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />オブジェクト  
+  
+2.  サイト参照を使用して、必要なイベントが生成されます、<see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />インスタンス  
+  
+3.  実際の合成の音声を生成します。  
+  
+ 音声の生成が呼び出すことによって行われます一般的<c>Speak</c>オペレーティング システムによって提供されるエンジンのレンダリングの音声の 1 つにします。  
+  
+ 使用可能な音声のレンダリング エンジンのいずれかを使用しない場合から継承するオブジェクト<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />独自の音声のレンダリング エンジンを作成する必要があります。  
+  
+ アクセス、 <c>Speak</c>レジストリとリフレクションを使用して取得したメソッド。 。  
+  
+ 継承する場合<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />、次のメンバーをオーバーライドする必要があります: <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.#ctor(System.String)" />、 <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon(System.Uri,System.String,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />、 <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon(System.Uri,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />、 <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.GetOutputFormat(System.Speech.Synthesis.TtsEngine.SpeakOutputFormat,System.IntPtr)" />、および<see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,99 @@
+<Type Name="ServiceDescriptionImportStyle" FullName="System.Web.Services.Description.ServiceDescriptionImportStyle">
+  <TypeSignature Language="C#" Value="public enum ServiceDescriptionImportStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServiceDescriptionImportStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.ServiceDescriptionImportStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サーバーまたはクライアント コンピューターにインポートを行うかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント コンピューターに対して行われたインポートは、XML Web サービス内の各メソッドを呼び出すための同期および非同期のメソッドのプロキシ クラスを生成します。 サーバーのインポートは、その一方で、必要な実装を提供するためにオーバーライドする必要がありますの抽象メンバーを持つ抽象クラスを生成します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionImportStyle_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionImportStyle_Client/CPP/servicedescriptionimportstyle_client.cpp#1)]
+ [!code-csharp[ServiceDescriptionImportStyle_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionImportStyle_Client/CS/servicedescriptionimportstyle_client.cs#1)]
+ [!code-vb[ServiceDescriptionImportStyle_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionImportStyle_Client/VB/servicedescriptionimportstyle_client.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Client">
+      <MemberSignature Language="C#" Value="Client" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.ServiceDescriptionImportStyle Client = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.ServiceDescriptionImportStyle.Client" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("client")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント コンピューターに、インポートが行われることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="Server" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.ServiceDescriptionImportStyle Server = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.ServiceDescriptionImportStyle.Server" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("server")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーにインポートが行われることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerInterface">
+      <MemberSignature Language="C#" Value="ServerInterface" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.ServiceDescriptionImportStyle ServerInterface = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.ServiceDescriptionImportStyle.ServerInterface" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("serverInterface")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーのインターフェイスに、インポートが行われることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

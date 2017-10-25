@@ -1,0 +1,221 @@
+<Type Name="SoapHeaderException" FullName="System.Web.Services.Protocols.SoapHeaderException">
+  <TypeSignature Language="C#" Value="public class SoapHeaderException : System.Web.Services.Protocols.SoapException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SoapHeaderException extends System.Web.Services.Protocols.SoapException" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHeaderException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.SoapException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サーバー エラーの SOAP 表現。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントがで XML Web サービス メソッド呼び出しに SOAP ヘッダーを追加するときに、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティに設定`true`、XML Web サービス メソッドを設定する必要があります、<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>プロパティを`true`です。 それ以外の場合、<xref:System.Web.Services.Protocols.SoapHeaderException>がスローされます。  
+  
+ <xref:System.Web.Services.Protocols.SoapException.Detail%2A> SOAP 仕様に基づいてプロパティを設定することはできません、<xref:System.Web.Services.Protocols.SoapHeaderException>です。  
+  
+> [!NOTE]
+>  サービス プロトコルを使用できるように、SOAP 1.1 仕様を使用するアプリケーション、<xref:System.Web.Services.Protocols.SoapHeaderException>アクセス SOAP エラーにします。 ただし、SOAP 1.2 仕様を使用するアプリケーションを使用する必要があります、<xref:System.Web.Services.Protocols.SoapException>アクセス SOAP エラーにします。  
+  
+   
+  
+## Examples  
+ 次の例では、XML Web サービス クライアントで、 `MyWebMethod` XML Web サービスのメソッド、型の SOAP ヘッダーに渡すこと`MyHeader`で、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティに設定`true`です。 XML Web サービス メソッドが設定されていない場合、<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>のプロパティ、 `MyHeader` SOAP ヘッダーを`true`、<xref:System.Web.Services.Protocols.SoapHeaderException>がスローされます。  
+  
+ [!code-cpp[Classic SoapHeader.MustUnderstand Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeader.MustUnderstand Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeader.MustUnderstand Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeader.MustUnderstand Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeader.MustUnderstand Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeader.MustUnderstand Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapHeaderException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化および逆シリアル化の際に使用する値を格納している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">シリアル化ストリームの転送元および転送先に関するデータを格納している <see cref="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapHeaderException" />クラスをシリアル化を制御するパラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException (string message, System.Xml.XmlQualifiedName code);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlQualifiedName code) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外が発生した理由を示すメッセージ。 このパラメーターは、<see cref="P:System.Exception.Message" /> プロパティを設定します。</param>
+        <param name="code">発生したエラーの種類。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Code" /> プロパティを設定します。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException (string message, System.Xml.XmlQualifiedName code, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlQualifiedName code, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.String,System.Xml.XmlQualifiedName,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外が発生した理由を示すメッセージ。 このパラメーターは、<see cref="P:System.Exception.Message" /> プロパティを設定します。</param>
+        <param name="code">発生したエラーの種類。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Code" /> プロパティを設定します。</param>
+        <param name="innerException">例外の根本原因への参照。 このパラメーターは、<see cref="P:System.Exception.InnerException" /> プロパティを設定します。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException (string message, System.Xml.XmlQualifiedName code, string actor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlQualifiedName code, string actor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.String,System.Xml.XmlQualifiedName,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="actor" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外が発生した理由を示すメッセージ。 このパラメーターは、<see cref="P:System.Exception.Message" /> プロパティを設定します。</param>
+        <param name="code">発生したエラーの種類。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Code" /> プロパティを設定します。</param>
+        <param name="actor">例外の原因となったコードの一部。 通常、これは XML Web サービス メソッドへの URL です。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Actor" /> プロパティを設定します。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException (string message, System.Xml.XmlQualifiedName code, string actor, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlQualifiedName code, string actor, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.String,System.Xml.XmlQualifiedName,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="actor" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外が発生した理由を示すメッセージ。 このパラメーターは、<see cref="P:System.Exception.Message" /> プロパティを設定します。</param>
+        <param name="code">発生したエラーの種類。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Code" /> プロパティを設定します。</param>
+        <param name="actor">例外の原因となったコードの一部。 通常、これは XML Web サービス メソッドへの URL です。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Actor" /> プロパティを設定します。</param>
+        <param name="innerException">例外の根本原因への参照。 このパラメーターは、<see cref="P:System.Exception.InnerException" /> プロパティを設定します。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeaderException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException (string message, System.Xml.XmlQualifiedName code, string actor, string role, System.Web.Services.Protocols.SoapFaultSubCode subCode, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlQualifiedName code, string actor, string role, class System.Web.Services.Protocols.SoapFaultSubCode subCode, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.String,System.Xml.XmlQualifiedName,System.String,System.String,System.Web.Services.Protocols.SoapFaultSubCode,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="actor" Type="System.String" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="subCode" Type="System.Web.Services.Protocols.SoapFaultSubCode" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外が発生した理由を示すメッセージ。 このパラメーターは、<see cref="P:System.Exception.Message" /> プロパティを設定します。</param>
+        <param name="code">発生したエラーの種類。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Code" /> プロパティを設定します。</param>
+        <param name="actor">例外の原因となったコードの一部。 通常、これは XML Web サービス メソッドへの URL です。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Actor" /> プロパティを設定します。</param>
+        <param name="role">SOAP メッセージの処理中に XML Web サービスのロールを表す URI。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Role" /> プロパティを設定します。</param>
+        <param name="subCode">A<see cref="T:System.Web.Services.Protocols.SoapFaultSubCode" />の内容を格納している、 <see langword="&lt;subcode&gt;" /> SOAP エラーの要素。</param>
+        <param name="innerException">例外の根本原因への参照。 このパラメーターは、<see cref="P:System.Exception.InnerException" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapHeaderException" />クラスに関連付けられているデータ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderException (string message, System.Xml.XmlQualifiedName code, string actor, string role, string lang, System.Web.Services.Protocols.SoapFaultSubCode subCode, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlQualifiedName code, string actor, string role, string lang, class System.Web.Services.Protocols.SoapFaultSubCode subCode, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderException.#ctor(System.String,System.Xml.XmlQualifiedName,System.String,System.String,System.String,System.Web.Services.Protocols.SoapFaultSubCode,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="actor" Type="System.String" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="lang" Type="System.String" />
+        <Parameter Name="subCode" Type="System.Web.Services.Protocols.SoapFaultSubCode" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外が発生した理由を示すメッセージ。 このパラメーターは、<see cref="P:System.Exception.Message" /> プロパティを設定します。</param>
+        <param name="code">発生したエラーの種類。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Code" /> プロパティを設定します。</param>
+        <param name="actor">例外の原因となったコードの一部。 通常、これは XML Web サービス メソッドへの URL です。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Actor" /> プロパティを設定します。</param>
+        <param name="role">SOAP メッセージの処理中に XML Web サービスのロールを表す URI。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Role" /> プロパティを設定します。</param>
+        <param name="lang">例外に関連付けられている人間の言語を識別する文字列。 このパラメーターは、<see cref="P:System.Web.Services.Protocols.SoapException.Lang" /> プロパティを設定します。</param>
+        <param name="subCode">A<see cref="T:System.Web.Services.Protocols.SoapFaultSubCode" />の内容を格納している、 <see langword="subcode" /> SOAP エラーの要素。</param>
+        <param name="innerException">例外の根本原因への参照。 このパラメーターは、<see cref="P:System.Exception.InnerException" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapHeaderException" />クラスに関連付けられているデータ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,806 @@
+<Type Name="EventWaitHandleSecurity" FullName="System.Security.AccessControl.EventWaitHandleSecurity">
+  <TypeSignature Language="C#" Value="public sealed class EventWaitHandleSecurity : System.Security.AccessControl.NativeObjectSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventWaitHandleSecurity extends System.Security.AccessControl.NativeObjectSecurity" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.EventWaitHandleSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.NativeObjectSecurity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>名前付きシステム待機ハンドルに適用される Windows アクセス制御セキュリティを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトを指定のアクセスが名前付きシステム ハンドルを待機するための権限し、もアクセス試行を監査する方法を指定します。 待機ハンドルへのアクセス権がによって表される各アクセス規則と、規則で表される、<xref:System.Security.AccessControl.EventWaitHandleAccessRule>オブジェクト。 によって表される各監査規則、<xref:System.Security.AccessControl.EventWaitHandleAuditRule>オブジェクト。  
+  
+ これには、セキュリティ保護可能なオブジェクトごとに最大で 1 つ随意アクセス制御リスト (DACL) に最大で 1 つシステム アクセス制御リスト (SACL) を指定するアクセス試行を監査する、セキュリティで保護されたオブジェクトとのアクセスを制御する、基になる Windows セキュリティ システムがミラー化します。 DACL および SACL は、アクセスおよび監査のユーザーとグループを指定するアクセス制御エントリ (ACE) の一覧を並べ替えられています。 <xref:System.Security.AccessControl.EventWaitHandleAccessRule>または<xref:System.Security.AccessControl.EventWaitHandleAuditRule>オブジェクトは、1 つ以上の ACE を表す場合があります。  
+  
+> [!NOTE]
+>  <xref:System.Threading.EventWaitHandle>オブジェクトは、ローカルの待機ハンドルを表すことができる、名前付きシステムがハンドルを待機します。 Windows アクセス制御セキュリティは、名前付きシステム待機ハンドルに対してのみ有効です。  
+  
+ <xref:System.Security.AccessControl.EventWaitHandleSecurity>、 <xref:System.Security.AccessControl.EventWaitHandleAccessRule>、および<xref:System.Security.AccessControl.EventWaitHandleAuditRule>クラスは、Acl や Ace の実装の詳細を非表示にします。 これらによって、17 個の異なる ACE 型との継承とアクセス権の伝達を正しく維持するための複雑さの制約を無視できます。 これらのオブジェクトは、次の一般的なアクセス制御エラーを防ぐためにも設計されています。  
+  
+-   Null DACL のセキュリティ記述子を作成しています。 DACL を null 参照では、可能性のあるサービス拒否攻撃を作成する、オブジェクトへのアクセス ルールを追加するすべてのユーザーを許可します。 新しい<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトは常にすべてのユーザーのすべてのアクセスを拒否する空の DACL で起動します。  
+  
+-   Ace の正規の順序に違反します。 DACL の ACE リストが正規の順序で維持されない場合ユーザー誤ってを付与するアクセス セキュリティで保護されたオブジェクト。 たとえば、拒否されたアクセス権は必要があります許可されるアクセス権の前に常に表示されます。 <xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトは、内部的に正しい順序を維持します。  
+  
+-   操作に使用するセキュリティ記述子のフラグ、リソース マネージャーの制御だけである必要があります。  
+  
+-   ACE フラグの無効な組み合わせを作成します。  
+  
+-   継承された Ace を操作します。 継承と伝達は、アクセスおよび監査規則に対して行った変更への応答で、リソース マネージャーによって処理されます。  
+  
+-   Acl に無意味な Ace を挿入します。  
+  
+ .NET セキュリティ オブジェクトでサポートされていませんのみの機能は、次のようなアプリケーションの開発者の過半数によって避ける必要がある危険なアクティビティが。  
+  
+-   通常、リソース マネージャーで実行される低レベルのタスクです。  
+  
+-   追加または正規の順序を保持しない方法でアクセス制御エントリを削除します。  
+  
+ 名前付きの待機ハンドルの Windows アクセス制御セキュリティを変更するには、使用、<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。 追加し、ルールを削除して、セキュリティ オブジェクトを変更し、<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>に再接続します。  
+  
+> [!IMPORTANT]
+>  変更を加える、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトには影響しません、名前付きの待機ハンドルのアクセス レベルが呼び出されるまで、<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>名前付きの待機ハンドルには、変更されたセキュリティ オブジェクトを割り当てる方法です。  
+  
+ 1 つの待機ハンドルから別のアクセス制御セキュリティをコピーするには、使用、<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Security.AccessControl.EventWaitHandleSecurity>最初の待機ハンドルのアクセスおよび監査規則を表すオブジェクトをクリックして、<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>メソッド、またはを受け取るコンス トラクター、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトは、2 つ目の待機ハンドルにそれらの規則を割り当てる。  
+  
+ セキュリティ記述子定義言語 (SDDL) で、初期投資をユーザーが使用できる、 <xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorSddlForm%2A> 、名前付きの待機ハンドルのアクセス規則を設定するメソッドと<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorSddlForm%2A>SDDL 形式でのアクセス規則を表す文字列を取得するメソッド。 これは、説明は、新規の開発は推奨されません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します間を分離<xref:System.Security.AccessControl.AccessControlType.Allow>ルールと<xref:System.Security.AccessControl.AccessControlType.Deny>規則し、互換性のあるルール で、権限の組み合わせを示しています。 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトが許可し、現在のユーザーのさまざまな権限を拒否する規則を追加し、ルールの結果のペアを表示します。 例では、現在のユーザーに対して新しい権限を許可し、新しい権限が、既存のマージされたことを示す、結果を表示<xref:System.Security.AccessControl.AccessControlType.Allow>ルール。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWaitHandleSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトは常に空の随意アクセス リスト (DACL)、すべてのユーザーのすべてのアクセスを拒否するで起動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このクラスは、Windows 98 または Windows Millennium Edition ではサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessRightType">
+      <MemberSignature Language="C#" Value="public override Type AccessRightType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AccessRightType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.EventWaitHandleSecurity.AccessRightType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙型を取得、<see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />クラスのアクセス権を表現するために使用します。</summary>
+        <value>A<see cref="T:System.Type" />オブジェクトを表す、<see cref="T:System.Security.AccessControl.EventWaitHandleRights" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Security.AccessControl.ObjectSecurity>クラスのオーバーライド、<xref:System.Security.AccessControl.ObjectSecurity.AccessRightType%2A>プロパティと戻り値のアクセス権を表すために使用する型。 配列または複数の種類のセキュリティ オブジェクトを格納するコレクションを操作するときは、このプロパティを使用して、各セキュリティ オブジェクトで使用する適切な列挙型を判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessRuleFactory">
+      <MemberSignature Language="C#" Value="public override System.Security.AccessControl.AccessRule AccessRuleFactory (System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.AccessControl.AccessRule AccessRuleFactory(class System.Security.Principal.IdentityReference identityReference, int32 accessMask, bool isInherited, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.AccessRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessRule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identityReference" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="isInherited" Type="System.Boolean" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identityReference"><see cref="T:System.Security.Principal.IdentityReference" />ユーザーを識別するまたはにグループのルールを適用します。</param>
+        <param name="accessMask">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.EventWaitHandleRights" />、許可または拒否するアクセス権を指定する値が整数にキャストします。</param>
+        <param name="isInherited">名前付きの待機ハンドルの無意味な階層がないためです。</param>
+        <param name="inheritanceFlags">名前付きの待機ハンドルの無意味な階層がないためです。</param>
+        <param name="propagationFlags">名前付きの待機ハンドルの無意味な階層がないためです。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを指定する値。</param>
+        <summary>指定したアクセス権、アクセス制御、およびフラグを指定したユーザーの新しいアクセス制御規則を作成します。</summary>
+        <returns><see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />指定したユーザーの指定された権限を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス制御規則を作成することをお勧めはのコンス トラクターを使用する、<xref:System.Security.AccessControl.EventWaitHandleAccessRule>クラスです。  
+  
+> [!NOTE]
+>  継承と伝達フラグは、名前付きイベントに対しては無効ですはそれらを指定することも可能です。 これは使用しないで、不必要に複雑になる、ルールのメンテナンスたとえばするには互換性のある規則の組み合わせに干渉することであるためです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="accessMask" />、 <paramref name="inheritanceFlags" />、 <paramref name="propagationFlags" />、または<paramref name="type" />に無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identityReference" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="accessMask" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identityReference" />型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />、やなどの型の<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessRuleType">
+      <MemberSignature Language="C#" Value="public override Type AccessRuleType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AccessRuleType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.EventWaitHandleSecurity.AccessRuleType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を取得、<see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />クラスのアクセス規則を表現するために使用します。</summary>
+        <value>A<see cref="T:System.Type" />オブジェクトを表す、<see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Security.AccessControl.ObjectSecurity>クラスのオーバーライド、<xref:System.Security.AccessControl.ObjectSecurity.AccessRuleType%2A>プロパティと戻り値のアクセス規則を表すために使用する型。 配列または複数の種類のセキュリティ オブジェクトを格納するコレクションを操作するときは、このプロパティを使用して、各セキュリティ オブジェクトで使用する適切なアクセス ルールの種類を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAccessRule">
+      <MemberSignature Language="C#" Value="public void AddAccessRule (System.Security.AccessControl.EventWaitHandleAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAccessRule(class System.Security.AccessControl.EventWaitHandleAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule(System.Security.AccessControl.EventWaitHandleAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">アクセス制御規則を追加します。</param>
+        <summary>使用する新しい規則をマージできる一致するアクセス制御規則を検索します。 何も見つからない場合は、新しい規則を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule%2A>メソッドは、同じユーザーまたはグループと同じ規則を検索<xref:System.Security.AccessControl.AccessControlType>として`rule`です。 見つからない場合は、`rule`を追加します。 照合ルールが見つからないかどうかは、rights in`rule`既存の規則とマージされます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します間を分離<xref:System.Security.AccessControl.AccessControlType.Allow>ルールと<xref:System.Security.AccessControl.AccessControlType.Deny>規則し、互換性のあるルール で、権限の組み合わせを示しています。 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトが許可し、現在のユーザーのさまざまな権限を拒否する規則を追加し、ルールの結果のペアを表示します。 例では、現在のユーザーに対して新しい権限を許可し、新しい権限が、既存のマージされたことを示す、結果を表示<xref:System.Security.AccessControl.AccessControlType.Allow>ルール。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAuditRule">
+      <MemberSignature Language="C#" Value="public void AddAuditRule (System.Security.AccessControl.EventWaitHandleAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAuditRule(class System.Security.AccessControl.EventWaitHandleAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.AddAuditRule(System.Security.AccessControl.EventWaitHandleAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加する監査規則。 このルールで指定されたユーザーは、検索を決定します。</param>
+        <summary>使用する新しい規則をマージできる監査規則を検索します。 何も見つからない場合は、新しい規則を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.EventWaitHandleSecurity.AddAuditRule%2A>メソッド検索ルールと同じユーザーまたはグループとして`rule`です。 見つからない場合は、`rule`を追加します。 照合ルールが見つからないかどうかでフラグ`rule`既存のルールにマージされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditRuleFactory">
+      <MemberSignature Language="C#" Value="public override System.Security.AccessControl.AuditRule AuditRuleFactory (System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.AccessControl.AuditRule AuditRuleFactory(class System.Security.Principal.IdentityReference identityReference, int32 accessMask, bool isInherited, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.AuditRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AuditFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AuditRule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identityReference" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="isInherited" Type="System.Boolean" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.AuditFlags" />
+      </Parameters>
+      <Docs>
+        <param name="identityReference"><see cref="T:System.Security.Principal.IdentityReference" />ユーザーを識別するまたはにグループのルールを適用します。</param>
+        <param name="accessMask">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.EventWaitHandleRights" />を監査するへのアクセス権を指定する値が整数にキャストします。</param>
+        <param name="isInherited">名前付きの待機ハンドルの無意味な階層がないためです。</param>
+        <param name="inheritanceFlags">名前付きの待機ハンドルの無意味な階層がないためです。</param>
+        <param name="propagationFlags">名前付きの待機ハンドルの無意味な階層がないためです。</param>
+        <param name="flags">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.AuditFlags" />アクセスが成功した、失敗したアクセス、またはその両方を監査するかどうかを指定する値。</param>
+        <summary>規則、監査へのアクセス権、および監査規則をトリガーする結果を適用するユーザーを指定して、新しい監査規則を作成します。</summary>
+        <returns><see cref="T:System.Security.AccessControl.EventWaitHandleAuditRule" />指定したユーザーの指定された監査規則を表すオブジェクト。 メソッドの戻り値の型は、基本クラス<see cref="T:System.Security.AccessControl.AuditRule" />、派生クラスを戻り値を安全にキャストされることができますが、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用するのには、監査規則を作成することをお勧め、<xref:System.Security.AccessControl.EventWaitHandleAuditRule>クラスです。  
+  
+> [!NOTE]
+>  継承と伝達フラグは、名前付きイベントに対しては無効ですはそれらを指定することも可能です。 これは使用しないで、不必要に複雑になる、ルールのメンテナンスたとえばするには互換性のある規則の組み合わせに干渉することであるためです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="accessMask" />、 <paramref name="inheritanceFlags" />、 <paramref name="propagationFlags" />、または<paramref name="flags" />に無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identityReference" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="accessMask" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identityReference" />型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />、やなどの型の<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditRuleType">
+      <MemberSignature Language="C#" Value="public override Type AuditRuleType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AuditRuleType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.EventWaitHandleSecurity.AuditRuleType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を取得、<see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />監査規則を表すクラスします。</summary>
+        <value>A<see cref="T:System.Type" />オブジェクトを表す、<see cref="T:System.Security.AccessControl.EventWaitHandleAuditRule" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Security.AccessControl.ObjectSecurity>クラスのオーバーライド、<xref:System.Security.AccessControl.ObjectSecurity.AuditRuleType%2A>プロパティと監査権限を表すために使用する型を戻り値。 配列または複数の種類のセキュリティ オブジェクトを格納するコレクションを操作するときは、このプロパティを使用して、各セキュリティ オブジェクトで使用する適切な監査規則の種類を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRule">
+      <MemberSignature Language="C#" Value="public bool RemoveAccessRule (System.Security.AccessControl.EventWaitHandleAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAccessRule(class System.Security.AccessControl.EventWaitHandleAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule(System.Security.AccessControl.EventWaitHandleAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule"><see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />ユーザーを指定し、<see cref="T:System.Security.AccessControl.AccessControlType" />を検索し、ルール、一致する場合の継承と伝達のフラグのセットが見つかりませんと互換性のある必要があります。 場合は、互換性のあるルールから削除する権限を指定します。</param>
+        <summary>同じユーザーがアクセス制御規則を検索し、 <see cref="T:System.Security.AccessControl.AccessControlType" /> (許可または拒否) ようなルールが見つかった場合、指定されたアクセス規則に含まれる権限がそのから削除されます互換性のある継承と伝達のフラグです。 使用して、指定されたアクセス規則として。</summary>
+        <returns>
+          <see langword="true" />互換性のある規則が見つかった場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在<xref:System.Security.AccessControl.EventWaitHandleSecurity>は同じユーザーと同じを持つルールの検索は<xref:System.Security.AccessControl.AccessControlType>として値`rule`です。 このような規則が見つからないかどうか、アクションは実行されませんし、メソッドを返します`false`です。 指定されたフラグと互換性のための継承との互換性フラグをチェック照合ルールが見つかった場合、`rule`です。 互換性のある規則が見つからないかどうか、アクションは実行されませんし、メソッドを返します`false`です。 権限がで指定された互換性フラグを含むルールが見つかった場合、 `rule` 、互換性のあるルールから削除されますが返されます`true`です。 場合`rule`互換性のあるルールに含まれていない権限を指定、それらの権利に関するアクションは実行されません。 現在の全体の規則が削除される場合は、すべての権限は、互換性のある規則から削除されます、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。  
+  
+> [!IMPORTANT]
+>  これらを作成することで、イベントのアクセス ルールの継承と伝達のフラグを指定できますが、<xref:System.Security.AccessControl.EventWaitHandleSecurity.AccessRuleFactory%2A>メソッド、お勧めしません。 継承と伝達に、名前付きイベントの意味がなくと複雑アクセス ルールのメンテナンスを行います。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule%2A>から権限を削除する方法、<xref:System.Security.AccessControl.AccessControlType.Allow>でルール、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。 内の他の権限も示します`rule`は無視されます。  
+  
+ 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトを許可して、現在のユーザーのさまざまな権限を拒否する規則を追加します。 権限の許可を含める<xref:System.Security.AccessControl.EventWaitHandleRights.Modify>、 <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions>、および<xref:System.Security.AccessControl.EventWaitHandleRights.Synchronize>です。 現在のユーザーに対して、新しいルールを作成しなど<xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions>と<xref:System.Security.AccessControl.EventWaitHandleRights.TakeOwnership>、および権限には、そのルールを使用、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule%2A>を削除する<xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions>から、<xref:System.Security.AccessControl.AccessControlType.Allow>でルール、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。 <xref:System.Security.AccessControl.EventWaitHandleRights.TakeOwnership>右`rule`は無視されます。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRuleAll">
+      <MemberSignature Language="C#" Value="public void RemoveAccessRuleAll (System.Security.AccessControl.EventWaitHandleAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAccessRuleAll(class System.Security.AccessControl.EventWaitHandleAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll(System.Security.AccessControl.EventWaitHandleAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule"><see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />ユーザーを指定し、<see cref="T:System.Security.AccessControl.AccessControlType" />を検索します。 このルールで指定された権限は無視されます。</param>
+        <summary>同じユーザーが制御規則をアクセスするすべての検索と<see cref="T:System.Security.AccessControl.AccessControlType" />(許可または拒否)、指定されたルールし、見つかった場合は、削除にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在<xref:System.Security.AccessControl.EventWaitHandleSecurity>は同じユーザーと同じであるルールの検索は<xref:System.Security.AccessControl.AccessControlType>として値`rule`です。 指定された権限をまったく`rule`この検索を実行する場合は無視されます。 すべての照合ルールが削除されます。 照合ルールが見つからない場合、処理は行われません。  
+  
+   
+  
+## Examples  
+ 次のコード例はことを示しています、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll%2A>メソッドは、ユーザーに一致するすべての規則を削除および<xref:System.Security.AccessControl.AccessControlType>権限を無視しています。  
+  
+ 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトを許可して、現在のユーザーのさまざまな権限を拒否する規則を追加しに追加の権限をその後、マージ、<xref:System.Security.AccessControl.AccessControlType.Allow>ルール。 その規則を使用して、削除、所有権を取得する現在のユーザーを許可する新しい規則を作成し、<xref:System.Security.AccessControl.AccessControlType.Allow>からルール、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRuleSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAccessRuleSpecific (System.Security.AccessControl.EventWaitHandleAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAccessRuleSpecific(class System.Security.AccessControl.EventWaitHandleAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific(System.Security.AccessControl.EventWaitHandleAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する <see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />。</param>
+        <summary>完全に一致する、指定したアクセス制御規則を検索し、削除を見つかった場合は、そのです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルールが削除されるは、完全に一致する場合にのみ`rule`フラグを含むすべての詳細。 同じユーザーがその他の規則と<xref:System.Security.AccessControl.AccessControlType>には影響しません。  
+  
+> [!IMPORTANT]
+>  以上基になるアクセス制御エントリ (ACE) およびこれらのエントリが分割またはユーザーのアクセスのセキュリティ ルールを変更する場合に、必要に応じて、結合またはルールが 1 つを表します。 このため、ルールがあります存在しなくおよびそのケースがあったが追加されると、特定のフォームで、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific%2A>方法はそれを削除することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例はことを示しています、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific%2A>メソッドは、ルールを削除するために完全に一致するを必要とし、許可し、権限を拒否する規則は、互いに独立しています。  
+  
+ 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトを許可して、現在のユーザーのさまざまな権限を拒否する規則を追加しに追加の権限をその後、マージ、<xref:System.Security.AccessControl.AccessControlType.Allow>アクセス規則。 元の渡します<xref:System.Security.AccessControl.AccessControlType.Allow>の規則を<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific%2A>メソッド、および何が削除されたことを示すの結果が表示されます。 例では、一致するルールを構築し、<xref:System.Security.AccessControl.AccessControlType.Allow>でルール、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトが正常に使用して、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific%2A>ルールを削除する方法です。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRule">
+      <MemberSignature Language="C#" Value="public bool RemoveAuditRule (System.Security.AccessControl.EventWaitHandleAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAuditRule(class System.Security.AccessControl.EventWaitHandleAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAuditRule(System.Security.AccessControl.EventWaitHandleAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule"><see cref="T:System.Security.AccessControl.EventWaitHandleAuditRule" />を検索するユーザーと一致するルールは、継承と伝達のフラグのセットを指定する場合は、互換性がある必要があります。 場合は、互換性のあるルールから削除する権限を指定します。</param>
+        <summary>指定した規則と同じユーザーと互換性のある継承および伝達フラグは、監査規則の検索互換性のある規則が見つかった場合、指定されたルールに含まれる権限はそこから削除されます。</summary>
+        <returns>
+          <see langword="true" />互換性のある規則が見つかった場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在<xref:System.Security.AccessControl.EventWaitHandleSecurity>を同一のユーザーを持つ監査規則の検索`rule`です。 このような規則が見つからないかどうか、アクションは実行されませんし、メソッドを返します`false`です。 指定されたフラグと互換性のための継承との互換性フラグをチェック照合ルールが見つかった場合、`rule`です。 互換性のある規則が見つからないかどうか、アクションは実行されませんし、メソッドを返します`false`です。 権限がで指定された互換性フラグを含むルールが見つかった場合、 `rule` 、互換性のあるルールから削除されますが返されます`true`です。 場合`rule`互換性のあるルールに含まれていない権限を指定、それらの権利に関するアクションは実行されません。 現在の全体の規則が削除される場合は、すべての権限は、互換性のある規則から削除されます、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。  
+  
+> [!IMPORTANT]
+>  これらを作成することで、イベントの監査規則の継承と伝達のフラグを指定できますが、<xref:System.Security.AccessControl.EventWaitHandleSecurity.AuditRuleFactory%2A>メソッド、お勧めしません。 継承と伝達に、名前付きイベントの意味がなくより複雑な監査規則のメンテナンスを行います。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRuleAll">
+      <MemberSignature Language="C#" Value="public void RemoveAuditRuleAll (System.Security.AccessControl.EventWaitHandleAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditRuleAll(class System.Security.AccessControl.EventWaitHandleAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAuditRuleAll(System.Security.AccessControl.EventWaitHandleAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule"><see cref="T:System.Security.AccessControl.EventWaitHandleAuditRule" />を検索するユーザーを指定します。 このルールで指定された権限は無視されます。</param>
+        <summary>場合とすべての監査規則を指定した規則と同じユーザーの検索を発見し、それらを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在<xref:System.Security.AccessControl.EventWaitHandleSecurity>監査規則を持つと同じユーザーが検索`rule`です。 指定された権限をまったく`rule`この検索を実行する場合は無視されます。 すべての照合ルールが削除されます。 照合ルールが見つからない場合、処理は行われません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRuleSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAuditRuleSpecific (System.Security.AccessControl.EventWaitHandleAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditRuleSpecific(class System.Security.AccessControl.EventWaitHandleAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAuditRuleSpecific(System.Security.AccessControl.EventWaitHandleAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する <see cref="T:System.Security.AccessControl.EventWaitHandleAuditRule" />。</param>
+        <summary>完全に一致する、指定された監査規則の検索と削除、見つかった場合は、そのします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルールが削除されるは、完全に一致する場合にのみ`rule`フラグを含むすべての詳細。 同じユーザーの場合は、その他の監査規則には影響しません。  
+  
+> [!IMPORTANT]
+>  以上基になるアクセス制御エントリ (ACE) およびこれらのエントリが分割またはユーザーの監査のセキュリティ ルールを変更する場合に、必要に応じて、結合またはルールが 1 つを表します。 このため、ルールがあります存在しなくおよびそのケースがあったが追加されると、特定のフォームで、<xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAuditRuleSpecific%2A>方法はそれを削除することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetAccessRule">
+      <MemberSignature Language="C#" Value="public void ResetAccessRule (System.Security.AccessControl.EventWaitHandleAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetAccessRule(class System.Security.AccessControl.EventWaitHandleAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule(System.Security.AccessControl.EventWaitHandleAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加する <see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />。 このルールで指定されたユーザーは、この規則を追加する前に削除する規則を決定します。</param>
+        <summary>関係なく、指定した規則と同じユーザーを持つすべてのアクセス制御規則を削除<see cref="T:System.Security.AccessControl.AccessControlType" />、指定されたルールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが、指定されたルールに一致するアクセス規則がない場合`rule`を追加します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule%2A>メソッドは、一致する指定された規則に一致するユーザーのすべての規則を置き換えます。  
+  
+ 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトを許可して、現在のユーザーのさまざまな権限を拒否する規則を追加します。 により、現在のユーザーのフル コントロール、および使用する新しい規則を作成し、<xref:System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule%2A>メソッドに、既存のルール両方を新しいルールに置き換えます。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessRule">
+      <MemberSignature Language="C#" Value="public void SetAccessRule (System.Security.AccessControl.EventWaitHandleAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessRule(class System.Security.AccessControl.EventWaitHandleAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule(System.Security.AccessControl.EventWaitHandleAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加する <see cref="T:System.Security.AccessControl.EventWaitHandleAccessRule" />。 ユーザーと<see cref="T:System.Security.AccessControl.AccessControlType" />この規則には、この規則を追加する前に削除の規則を決定します。</param>
+        <summary>同じユーザーを持つすべてのアクセス制御規則を削除し、 <see cref="T:System.Security.AccessControl.AccessControlType" /> (許可または拒否)、指定されたルールとしてし、指定されたルールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、指定されたルール<xref:System.Security.AccessControl.AccessControlType.Allow>をすべて削除するのには、このメソッドの効果<xref:System.Security.AccessControl.AccessControlType.Allow>指定されたルールに置き換える、指定したユーザーのルール。 指定されたルールがある場合<xref:System.Security.AccessControl.AccessControlType.Deny>すべて、<xref:System.Security.AccessControl.AccessControlType.Deny>指定したユーザーのルールは、指定されたルールに置き換えられます。  
+  
+ 規則がないユーザーの場合と<xref:System.Security.AccessControl.AccessControlType>指定の規則に一致`rule`を追加します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule%2A>メソッドは、ユーザーの両方に一致するすべての規則を削除し、<xref:System.Security.AccessControl.AccessControlType>の`rule`に置き換えられます`rule`です。  
+  
+ 例は、作成、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクトを許可して、現在のユーザーのさまざまな権限を拒否する規則を追加します。 により、現在のユーザーのフル コントロール、および使用する新しい規則を作成し、<xref:System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule%2A>を置き換えますメソッド<xref:System.Security.AccessControl.AccessControlType.Allow>新しいルールのルール。 アクセスを拒否する規則が影響を受けません。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.EventWaitHandle>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.EventWaitHandle.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.EventWaitHandle.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAuditRule">
+      <MemberSignature Language="C#" Value="public void SetAuditRule (System.Security.AccessControl.EventWaitHandleAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAuditRule(class System.Security.AccessControl.EventWaitHandleAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.EventWaitHandleSecurity.SetAuditRule(System.Security.AccessControl.EventWaitHandleAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.EventWaitHandleAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加する <see cref="T:System.Security.AccessControl.EventWaitHandleAuditRule" />。 このルールで指定されたユーザーは、この規則を追加する前に削除する規則を決定します。</param>
+        <summary>関係なくすべての監査規則、指定されたルールと同じユーザーを削除、<see cref="T:System.Security.AccessControl.AuditFlags" />値に設定して、指定されたルールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが、指定されたルールに一致する監査規則がない場合`rule`を追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,181 @@
+<Type Name="IRowPosition" FullName="Microsoft.VisualBasic.Compatibility.VB6.IRowPosition">
+  <TypeSignature Language="C#" Value="public interface IRowPosition" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRowPosition" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.IRowPosition" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("0C733A94-2A1C-11CE-ADE5-00AA0044773D")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>OLE DB の実装を提供<see langword="IRowPosition" />Visual Basic 6.0 からアップグレードしたアプリケーションで使用するためのインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClearRowPosition">
+      <MemberSignature Language="C#" Value="public void ClearRowPosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void ClearRowPosition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowPosition.ClearRowPosition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行の位置を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRowPosition">
+      <MemberSignature Language="C#" Value="public void GetRowPosition (out int hChapter, out int hRow, out int dbPositionFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void GetRowPosition([out] int32&amp; hChapter, [out] int32&amp; hRow, [out] int32&amp; dbPositionFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowPosition.GetRowPosition(System.Int32@,System.Int32@,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hChapter" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="hRow" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="dbPositionFlags" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hChapter">現在の行に関連付けられている章を返すメモリへのポインター。 行セットのチャプターがない場合<c>hChapter</c>に設定されている<see langword="DB_NULL_HCHAPTER" />です。 場合<c>hChapter</c> null ポインターの入力で章値は返されません。</param>
+        <param name="hRow">返すメモリへのポインター、<see langword="hRow" />の現在の行位置または<see langword="DB_NULL_HROW" />現在の行位置が存在しない場合。</param>
+        <param name="dbPositionFlags">行の位置に関する追加情報を返すメモリへのポインター。</param>
+        <summary>現在の行位置を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRowset">
+      <MemberSignature Language="C#" Value="public void GetRowset (ref Guid iid, out object rowset);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void GetRowset([in]valuetype System.Guid&amp; iid, [out] object&amp; rowset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowPosition.GetRowset(System.Guid@,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rowset" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="iid">返される行セットに対して要求された IID<c>行セット</c>です。</param>
+        <param name="rowset">基になる行セットのインターフェイス ポインターを返すメモリへのポインター。</param>
+        <summary>現在基になるを返します<see langword="Rowset" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (object rowset);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void Initialize([in]object rowset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowPosition.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowset" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rowset">ソース行セットのインターフェイスへのポインター。</param>
+        <summary>ソース行セットを設定して行位置オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRowPosition">
+      <MemberSignature Language="C#" Value="public void SetRowPosition (int hChapter, int hRow, int dbPositionFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void SetRowPosition([in]int32 hChapter, [in]int32 hRow, [in]int32 dbPositionFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowPosition.SetRowPosition(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hChapter" Type="System.Int32" />
+        <Parameter Name="hRow" Type="System.Int32" />
+        <Parameter Name="dbPositionFlags" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="hChapter">または、現在の行と関連付けられた章<see langword="DB_NULL_HCHAPTER" />行セットのチャプターがない場合。</param>
+        <param name="hRow">新しい現在の行。</param>
+        <param name="dbPositionFlags">詳細については、新しい行位置を示すフラグ。</param>
+        <summary>現在の行位置を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,200 @@
+<Type Name="FederationManagement" FullName="System.IdentityModel.Services.FederationManagement">
+  <TypeSignature Language="C#" Value="public static class FederationManagement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FederationManagement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.FederationManagement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フェデレーション メタデータ ドキュメントを作成し、フェデレーション メタデータ ドキュメントに基づいてアプリケーションの構成を更新するための静的メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーション メタデータ ドキュメントの詳細については、次の仕様の 3 番目のセクションを参照してください: [Web Services Federation Language (Ws-federation) Version 1.2](http://go.microsoft.com/fwlink/?LinkID=210152) (http://go.microsoft.com/fwlink/?LinkID=210152)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateApplicationFederationMetadata">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlReader CreateApplicationFederationMetadata (Uri applicationUri, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Metadata.DisplayClaim&gt; claimsRequired, System.IdentityModel.Services.ApplicationType applicationType, System.Collections.ObjectModel.Collection&lt;Uri&gt; audienceUris);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlReader CreateApplicationFederationMetadata(class System.Uri applicationUri, class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Metadata.DisplayClaim&gt; claimsRequired, valuetype System.IdentityModel.Services.ApplicationType applicationType, class System.Collections.ObjectModel.Collection`1&lt;class System.Uri&gt; audienceUris) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationManagement.CreateApplicationFederationMetadata(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Collections.ObjectModel.Collection{System.IdentityModel.Metadata.DisplayClaim},System.IdentityModel.Services.ApplicationType,System.Collections.ObjectModel.Collection{System.Uri})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="applicationUri" Type="System.Uri" />
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="claimsRequired" Type="System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Metadata.DisplayClaim&gt;" />
+        <Parameter Name="applicationType" Type="System.IdentityModel.Services.ApplicationType" />
+        <Parameter Name="audienceUris" Type="System.Collections.ObjectModel.Collection&lt;System.Uri&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="applicationUri">アプリケーションの URI。</param>
+        <param name="certificate">メタデータの署名に使用する X.509 証明書。</param>
+        <param name="claimsRequired">アプリケーションで必要なクレーム。</param>
+        <param name="applicationType">1 つ、<see cref="T:System.IdentityModel.Services.ApplicationType" />メタデータについて説明したアプリケーションの種類を指定します。 これについては、作成するためのエンドポイントを決定に使用します。</param>
+        <param name="audienceUris">このアプリケーションのために使用される許容可能な Uri のコレクション。</param>
+        <summary>フェデレーション メタデータを含む XML ドキュメントを作成します。</summary>
+        <returns>パラメーターを使用して作成されたメタデータ ドキュメントを含む XML リーダーです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateIdentityProviderTrustInfo">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlReader UpdateIdentityProviderTrustInfo (System.Xml.XmlReader metadataReader, System.Xml.XmlReader inputConfiguration, bool claimsOfferedUpdate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlReader UpdateIdentityProviderTrustInfo(class System.Xml.XmlReader metadataReader, class System.Xml.XmlReader inputConfiguration, bool claimsOfferedUpdate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationManagement.UpdateIdentityProviderTrustInfo(System.Xml.XmlReader,System.Xml.XmlReader,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="inputConfiguration" Type="System.Xml.XmlReader" />
+        <Parameter Name="claimsOfferedUpdate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="metadataReader">メタデータ ドキュメントを含む XML リーダーです。</param>
+        <param name="inputConfiguration">構成を含む XML リーダーです。</param>
+        <param name="claimsOfferedUpdate">
+          <see langword="true" />クレームは、一覧を更新する必要があります。 提供されている場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>必要に応じて、指定されたフェデレーション メタデータ ドキュメントと一覧を更新する必要があります、信頼性情報が提供されるかどうかを指定する値に基づいて、指定したアプリケーションの構成を更新します。</summary>
+        <returns>更新された構成を格納する XML リーダーまたは<see langword="null" />場合は、構成を更新できませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="metadataReader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="inputConfiguration" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateIdentityProviderTrustInfo">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlReader UpdateIdentityProviderTrustInfo (System.Xml.XmlReader metadataReader, System.Xml.XmlReader inputConfiguration, bool claimsOfferedUpdate, System.IdentityModel.Metadata.MetadataSerializer metadataSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlReader UpdateIdentityProviderTrustInfo(class System.Xml.XmlReader metadataReader, class System.Xml.XmlReader inputConfiguration, bool claimsOfferedUpdate, class System.IdentityModel.Metadata.MetadataSerializer metadataSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationManagement.UpdateIdentityProviderTrustInfo(System.Xml.XmlReader,System.Xml.XmlReader,System.Boolean,System.IdentityModel.Metadata.MetadataSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="inputConfiguration" Type="System.Xml.XmlReader" />
+        <Parameter Name="claimsOfferedUpdate" Type="System.Boolean" />
+        <Parameter Name="metadataSerializer" Type="System.IdentityModel.Metadata.MetadataSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="metadataReader">メタデータ ドキュメントを含む XML リーダーです。</param>
+        <param name="inputConfiguration">構成を含む XML リーダーです。</param>
+        <param name="claimsOfferedUpdate">
+          <see langword="true" />クレームは、一覧を更新する必要があります。 提供されている場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="metadataSerializer">STS メタデータの読み取りに使用するシリアライザー。</param>
+        <summary>必要に応じて、指定されたフェデレーション メタデータ ドキュメントと一覧を更新する必要があります、信頼性情報が提供されるかどうかを指定する値に基づいて、指定したアプリケーションの構成を更新します。 セキュリティ トークン サービス (STS) のメタデータの読み取りに使用するシリアライザーが指定されてもします。</summary>
+        <returns>更新された構成を格納する XML リーダーまたは<see langword="null" />場合は、構成を更新できませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="metadataReader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="inputConfiguration" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="metadataSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateIdentityProviderTrustInfo">
+      <MemberSignature Language="C#" Value="public static void UpdateIdentityProviderTrustInfo (System.Xml.XmlReader metadataReader, System.Xml.XmlReader inputConfiguration, out System.Xml.XmlNodeReader newIssuerNameRegistry, out System.Xml.XmlNodeReader claimTypesOffered);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UpdateIdentityProviderTrustInfo(class System.Xml.XmlReader metadataReader, class System.Xml.XmlReader inputConfiguration, [out] class System.Xml.XmlNodeReader&amp; newIssuerNameRegistry, [out] class System.Xml.XmlNodeReader&amp; claimTypesOffered) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationManagement.UpdateIdentityProviderTrustInfo(System.Xml.XmlReader,System.Xml.XmlReader,System.Xml.XmlNodeReader@,System.Xml.XmlNodeReader@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="inputConfiguration" Type="System.Xml.XmlReader" />
+        <Parameter Name="newIssuerNameRegistry" Type="System.Xml.XmlNodeReader&amp;" RefType="out" />
+        <Parameter Name="claimTypesOffered" Type="System.Xml.XmlNodeReader&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="metadataReader">メタデータ ドキュメントを含む XML リーダーです。</param>
+        <param name="inputConfiguration">構成を含む XML リーダーです。</param>
+        <param name="newIssuerNameRegistry">このメソッドが戻るときに、発行者名レジストリを指定する要素を格納する XML ノード リーダーが含まれています。 <see langword="null" />ある場合は、発行者名レジストリの指定されていません。 このパラメーターは初期化前として処理されます。</param>
+        <param name="claimTypesOffered">ときにこのメソッドを返します。、提供されるクレームの種類の一覧が変更された場合に、新しいリストを指定する要素を含む XML ノード リーダーが含まれています。 一覧が変更されていない場合を返します<see langword="null" />です。 このパラメーターは初期化前として処理されます。</param>
+        <summary>指定されたフェデレーション メタデータ ドキュメントに基づいて、必要な場合は、指定したアプリケーションの構成を更新します。 返します発行者名レジストリの構成要素と要求の種類の更新リストの構成要素、提供される場合に更新されました。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="metadataReader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="inputConfiguration" /><paramref name="metadataReader" />is <see langword="null" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateIdentityProviderTrustInfo">
+      <MemberSignature Language="C#" Value="public static void UpdateIdentityProviderTrustInfo (System.Xml.XmlReader metadataReader, System.Xml.XmlReader inputConfiguration, out System.Xml.XmlNodeReader newIssuerNameRegistry, out System.Xml.XmlNodeReader claimTypesOffered, System.IdentityModel.Metadata.MetadataSerializer metadataSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UpdateIdentityProviderTrustInfo(class System.Xml.XmlReader metadataReader, class System.Xml.XmlReader inputConfiguration, [out] class System.Xml.XmlNodeReader&amp; newIssuerNameRegistry, [out] class System.Xml.XmlNodeReader&amp; claimTypesOffered, class System.IdentityModel.Metadata.MetadataSerializer metadataSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationManagement.UpdateIdentityProviderTrustInfo(System.Xml.XmlReader,System.Xml.XmlReader,System.Xml.XmlNodeReader@,System.Xml.XmlNodeReader@,System.IdentityModel.Metadata.MetadataSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="inputConfiguration" Type="System.Xml.XmlReader" />
+        <Parameter Name="newIssuerNameRegistry" Type="System.Xml.XmlNodeReader&amp;" RefType="out" />
+        <Parameter Name="claimTypesOffered" Type="System.Xml.XmlNodeReader&amp;" RefType="out" />
+        <Parameter Name="metadataSerializer" Type="System.IdentityModel.Metadata.MetadataSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="metadataReader">メタデータ ドキュメントを含む XML リーダーです。</param>
+        <param name="inputConfiguration">構成を含む XML リーダーです。</param>
+        <param name="newIssuerNameRegistry">このメソッドが戻るときに、発行者名レジストリを指定する要素を格納する XML ノード リーダーが含まれています。 <see langword="null" />ある場合は、発行者名レジストリの指定されていません。 このパラメーターは初期化前として処理されます。</param>
+        <param name="claimTypesOffered">ときにこのメソッドを返します。、提供されるクレームの種類の一覧が変更された場合に、新しいリストを指定する要素を含む XML ノード リーダーが含まれています。 一覧が変更されていない場合を返します<see langword="null" />です。 このパラメーターは初期化前として処理されます。</param>
+        <param name="metadataSerializer">STS メタデータの読み取りに使用するシリアライザー。</param>
+        <summary>指定されたフェデレーション メタデータ ドキュメントに基づいて、必要な場合は、指定したアプリケーションの構成を更新します。 発行者名レジストリの構成要素を返し、要求の種類の更新リストの構成要素、提供される場合に更新されました。 セキュリティ トークン サービス (STS) のメタデータの読み取りに使用するシリアライザーが指定されてもします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="metadataReader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="inputConfiguration" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="metadataSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

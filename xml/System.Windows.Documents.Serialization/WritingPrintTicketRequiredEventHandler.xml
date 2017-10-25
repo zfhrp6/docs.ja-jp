@@ -1,0 +1,34 @@
+<Type Name="WritingPrintTicketRequiredEventHandler" FullName="System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WritingPrintTicketRequiredEventHandler(object sender, WritingPrintTicketRequiredEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WritingPrintTicketRequiredEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired" />のイベント、<see cref="T:System.Windows.Xps.XpsDocumentWriter" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが発生したときに、<xref:System.Windows.Xps.XpsDocumentWriter>必要があります、<xref:System.Printing.PrintTicket>印刷ジョブのです。  
+  
+ <xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

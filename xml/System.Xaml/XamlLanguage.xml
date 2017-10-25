@@ -1,0 +1,1276 @@
+<Type Name="XamlLanguage" FullName="System.Xaml.XamlLanguage">
+  <TypeSignature Language="C#" Value="public static class XamlLanguage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit XamlLanguage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlLanguage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列、または、XAML マークアップのまたは XAML 型を使用したプログラミングに便利です。 オブジェクトを提供する定数を定義します。 これらの文字列またはオブジェクトは、.NET Framework XAML サービスでの XAML 言語の概念の実装に、XAML 言語の概念をあるいはその両方に関連します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlLanguage> API には、内部の残りの XAML スキーマ コンテキストに基づく照合結果が返されます。 このスキーマ コンテキストで<xref:System.Xaml.XamlSchemaContext.SupportMarkupExtensionsWithDuplicateArity%2A>は`true`します。 それ以外の場合、.NET Framework XAML サービスとその定義済みの XAML リーダーと XAML ライターの既定値として報告されている XAML スキーマ コンテキストは、既定の設定を使用します。 全体的に見て、定義済みの XAML リーダーと XAML ライターに使用される、XAML スキーマ コンテキストが、同じに基づきます。<xref:System.Xaml.XamlSchemaContext>設定または取得するための Api から使用可能なインスタンス、<xref:System.Xaml.XamlSchemaContext>です。 .NET Framework XAML サービスの既定の XAML スキーマ コンテキストは、CLR の概念とリフレクションに基づいています。 CLR バッキングの既定の証拠をご覧の取得中に特定<xref:System.Xaml.XamlLanguage>いるプロパティ、<xref:System.Xaml.XamlType>チェックするときに、<xref:System.Xaml.XamlType.UnderlyingType%2A>です。 同様に、<xref:System.Xaml.XamlLanguage>いるプロパティ、<xref:System.Xaml.XamlMember>の CLR はリフレクション ベースの値がある<xref:System.Xaml.XamlMember.UnderlyingMember%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllDirectives">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Xaml.XamlDirective&gt; AllDirectives { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Xaml.XamlDirective&gt; AllDirectives" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.AllDirectives" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Xaml.XamlDirective&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれの読み取り専用ジェネリック コレクションを取得<see cref="T:System.Xaml.XamlDirective" />.NET Framework XAML サービスで定義されている識別子。</summary>
+        <value>それぞれの読み取り専用ジェネリック コレクション<see cref="T:System.Xaml.XamlDirective" />.NET Framework XAML サービスで定義されている識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllTypes">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Xaml.XamlType&gt; AllTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Xaml.XamlType&gt; AllTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.AllTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>個別の読み取り専用ジェネリック コレクションを取得<see cref="T:System.Xaml.XamlType" />に一致する値または別名、XAML 言語組み込み .NET Framework XAML サービスで定義されています。</summary>
+        <value>それぞれの読み取り専用ジェネリック コレクション<see cref="T:System.Xaml.XamlType" />組み込み XAML 言語に一致します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;5.2](http://go.microsoft.com/fwlink/?LinkId=114525)組み込み XAML 言語の情報項目の一覧についてはします。 注として 5.2 のサブセクションとして示されているすべての項目が実装されている、<xref:System.Xaml.XamlType>です。 たとえば、`x:Code`型ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arguments">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Arguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Arguments" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Arguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Arguments" />ファクトリ メソッドのジェネリックの使用法。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Arguments" />工場出荷時のメソッドまたはジェネリックの使用状況のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 工場出荷時のメソッドは、 [!INCLUDE[xaml2009](~/includes/xaml2009-md.md)] XAML 型の基になる型を構築する代替手法を識別するための機能です。 `Arguments`ファクトリ メソッドの入力を指定し、マークアップでその情報を指定することを有効にします。 ファクトリ メソッドがない場合、既定の手法では、既定のコンス トラクターを検索しようとし、その後、型、メンバー、または変換先の型の識別された型コンバーターの検索を試みますです。  
+  
+ 一般的な使用法の場合、`Arguments`オブジェクトまたはの必要に応じて指定されているすべての構築入力の初期化のテキストを折り返す、`TypeArguments`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Array">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Array { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Array" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Array" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Array" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Array" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.18](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncRecords">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective AsyncRecords { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective AsyncRecords" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.AsyncRecords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="AsyncRecords" />pseudomember です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="AsyncRecords" />pseudomember です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `AsyncRecords`概念の一部である[!INCLUDE[xaml2009](~/includes/xaml2009-md.md)]です。 参照してください[XAML 2009 言語機能](~/docs/framework/xaml-services/xaml-2009-language-features.md)します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Base">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Base { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Base" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Base" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="base" />XML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="base" />XML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.3.15](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Boolean">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Boolean { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Boolean" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Boolean" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Boolean" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Boolean" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.17](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Byte">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Byte { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Byte" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Byte" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Byte" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Byte" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.10](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Char">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Char { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Char" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Char" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Char" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Char" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.7](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Class">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Class { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Class" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Class" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Class" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Class" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;5.3.7 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassAttributes">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective ClassAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective ClassAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.ClassAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="ClassAttributes" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="ClassAttributes" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このディレクティブの一部である[!INCLUDE[xaml2009](~/includes/xaml2009-md.md)]です。 参照してください[XAML 2009 言語機能](~/docs/framework/xaml-services/xaml-2009-language-features.md)します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassModifier">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective ClassModifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective ClassModifier" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.ClassModifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="ClassModifier" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="ClassModifier" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;5.3.9 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Code">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Code { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Code" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Code" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Code" />[MS-XAML] のに関する詳細。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Code" />[MS-XAML] で、詳しく説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.22](http://go.microsoft.com/fwlink/?LinkId=114525)ここで、`Code`型であると示されてただし、`Code`として提供される、<xref:System.Xaml.XamlDirective>この API でします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionId">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective ConnectionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective ConnectionId" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.ConnectionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />配線イベント ハンドラーへの接続ポイントを識別します。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />配線イベント ハンドラーへの接続ポイントを識別します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decimal">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Decimal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Decimal" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Decimal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Decimal" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Decimal" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.14](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Double">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Double { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Double" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Double" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Double" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Double" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.9](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FactoryMethod">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective FactoryMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective FactoryMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.FactoryMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Xaml.XamlDirective" /> XAML のファクトリ メソッドを識別します。</summary>
+        <value>A <see cref="T:System.Xaml.XamlDirective" /> XAML のファクトリ メソッドを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 工場出荷時のメソッドは、 [!INCLUDE[xaml2009](~/includes/xaml2009-md.md)] XAML 型の基になる型を構築する代替手法を識別するための機能です。 既定手法、ファクトリ メソッドが使用できない場合は、既定のコンス トラクターを検索してから、型、メンバー、または変換先の型で識別された型コンバーターの検索を試みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldModifier">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective FieldModifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective FieldModifier" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.FieldModifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="FieldModifier" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="FieldModifier" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;5.3.10 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialization">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Initialization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Initialization" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Initialization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Initialization" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Initialization" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このディレクティブが XAML ノードを表します。 または XAML 情報セットの初期化のテキスト表現であり、オブジェクト要素内の文字列が周辺のオブジェクト要素の型の構造情報を提供します。  
+  
+ 生のノードの解釈や視覚エフェクトが表示されている場合`Initialization`として文字列の形式では、されることがあります`_Initialization`(先頭にアンダー スコアに注意してください) と、XAML 言語の XAML 名前空間内にある (先行して記号を付けるよう`Namespace`ノード)。 見出しの下にある [MS-XAML] のこの概念が説明されている`x:InitializationText`です。 参照してください[& #91。MS-XAML &#93;セクション 5.3.3](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Int16">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Int16 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Int16" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Int16" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Int16" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Int16" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.11](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Int32">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Int32 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Int32" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Int32" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Int32" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Int32" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.12](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Int64">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Int64 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Int64" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Int64" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Int64" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Int64" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.13](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Items" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Items" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Items" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Items`ディレクティブは、ノード表現のラッパー、周囲のオブジェクト内の複数のオブジェクト値です。 参照してください[& #91。MS-XAML &#93;セクション 5.3.1](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ XAML ノード ストリームの生の解釈や視覚エフェクトを確認する場合`Items`として文字列の形式では、されることがあります`_Items`(先頭にアンダー スコアに注意してください) と、XAML 言語の XAML 名前空間内にある (先行して記号を付けるよう`Namespace`ノード)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Key" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Key" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Key" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`Key`ディレクティブは、ディクショナリ内のオブジェクトに対して使用します。 参照してください[& #91。MS-XAML &#93;5.3.5 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lang">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Lang { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Lang" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Lang" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="lang" />XML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="lang" />XML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.3.13](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Member" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の項目の種類である型の<see cref="P:System.Xaml.XamlLanguage.Members" />します。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の項目の種類である型の<see cref="P:System.Xaml.XamlLanguage.Members" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework XAML サービス実装では、 `Member` <xref:System.Xaml.XamlType>支えられた<xref:System.Windows.Markup.MemberDefinition?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Members">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Members { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Members" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Members" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Members" />XAML での概念です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Members" />XAML での概念です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Members`概念が具体的には [MS-XAML] で定義されていません。 `Members`バッキング型の参照ではなく、マークアップで型のメンバーを定義するための概念。 詳細については、「<xref:System.Windows.Markup.PropertyDefinition>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Name" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Name" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`Name`マークアップ内のオブジェクトの識別子のディレクティブを使用します。 参照してください[& #91。MS-XAML &#93;5.3.4 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ この概念の`Name`は通常使用することができます [MS-XAML] で指定されている使用と完全に一致しません、`Name`ディレクティブまたは`Name`マークアップ内のオブジェクトの XAML と XAML で作成される実行時の表現との間の概念的な接続を提供する属性のマークアップを処理します。 この使用方法の特定のフレームワーク上に、一般的なオブジェクト モデルに XAML を統合するプログラミング モデルを実装します。 詳細については、次を参照してください。 [X:name ディレクティブ](~/docs/framework/xaml-services/x-name-directive.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Null { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Null" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Null" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Null" />または<see langword="NullExtension" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Null" /> / <see langword="NullExtension" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この XAML 型では、マークアップでのオブジェクトの値を null 値を提供します。 XAML の型は (または必要があります) を割り当てることができる`MarkupExtension`です。 参照してください[& #91。MS-XAML &#93;セクション 5.2.4](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Object">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Object { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Object" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Object" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Object" />XAML 言語の概念です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Object" />XAML 言語の概念です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML で規定`x:Object`特別な言語の概念とします。 参照してください[& #91。MS-XAML &#93;5.2.5 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionalParameters">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective PositionalParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective PositionalParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.PositionalParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="PositionalParameters" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="PositionalParameters" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `PositionalParameters`一連のオブジェクト ノードのマークアップ拡張機能の入力として指定できる複数のオブジェクトをラップするディレクティブです。 参照してください[& #91。MS-XAML &#93;セクション 6.6.7](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ 生のノードの解釈や視覚エフェクトが表示されている場合`PositionalParameters`として文字列の形式では、されることがあります`_PositionalParameters`(先頭にアンダー スコアに注意してください) と、XAML 言語の XAML 名前空間内にある (先行して記号を付けるよう`Namespace`ノード)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Property { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Property" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Property" />XAML での概念です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Property" />XAML での概念です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Property`特殊な形式として識別される XAML 型の<xref:System.Xaml.XamlLanguage.Member%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reference">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Reference { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Reference" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Reference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />を表す、 <see langword="Reference" /> xaml です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />を表す、 <see langword="Reference" /> xaml です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Reference`[!INCLUDE[xaml2009](~/includes/xaml2009-md.md)]マークアップ内の別のオブジェクト ノードを参照するための機能です。 .NET Framework XAML サービスの実装に存在<xref:System.Windows.Markup.Reference?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shared">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Shared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Shared" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Shared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Shared" />xaml ディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Shared" />xaml ディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`Shared`ディレクティブ (に設定すると`true`) 返すように指定項目が見つかった場合に、ディクショナリ、オブジェクトへの参照は常に新しいインスタンスではなく単一です。 この動作はディクショナリ可能性がありますとして使用すること、ソース コンテンツまたはテンプレートの共有メカニズムの XAML を使用する特定のフレームワークによって概念に関連しています。 `Shared`[MS-XAML] で指定されていませんの一部である、 `x` WPF と .NET Framework の xaml 名前空間: 定義の動作バージョン 3.0 と 3.5 のバージョン。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Single { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Single" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Single" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Single" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Single" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.8](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Space">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Space { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Space" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Space" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="space" />XML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="space" />XML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.3.14](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Static">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Static { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Static" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Static" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Static" /> / <see langword="StaticExtension" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Static" /> / <see langword="StaticExtension" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この XAML 型では、マークアップ、バッキング メンバーが静的メンバーの値を提供します。 XAML の型は (または必要があります) を割り当てることができる`MarkupExtension`です。 参照してください[& #91。MS-XAML &#93;5.2.2 をセクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="String">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType String { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType String" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.String" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="String" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="String" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.6](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subclass">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Subclass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Subclass" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Subclass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Subclass" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Subclass" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;5.3.8 セクション](http://go.microsoft.com/fwlink/?LinkId=114525)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronousMode">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective SynchronousMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective SynchronousMode" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.SynchronousMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Xaml.XamlDirective" /> XAML プロセッサは、このようなモードをサポートしている場合、XAML を非同期的に読み込みを有効にします。</summary>
+        <value>A <see cref="T:System.Xaml.XamlDirective" /> XAML を非同期的に読み込みを有効にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`SynchronousMode`ディレクティブ (に設定すると`Async`) を使用する XAML ファイルが読み込まれるときに、ルート ノードが最初に処理を指定します。 そのコンテンツがまだ処理されている場合でも、結果のオブジェクトを挿入できます。 このモードでは、最下位のノードからルートへの作業の既定の XAML 処理の動作を回避できます。 既定の XAML の処理ロジックが、ルート オブジェクトを待機している任意の呼び出し元は、完全な解析が完了するまでブロックされます。 `SynchronousMode`[MS-XAML] で指定されていませんの一部である、 `x` .NET framework version 3.5 SP1 (またはそれ以降の service pack を適用) 以降の WPF の xaml 名前空間: 定義の動作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpan">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType TimeSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType TimeSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.TimeSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="TimeSpan" />XAML 言語の概念です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="TimeSpan" />XAML 言語の概念です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.16](http://go.microsoft.com/fwlink/?LinkId=114525)です。 `TimeSpan`true、組み込み形式では、一般的に使用される型になっているため、XAML の仕様で指定されました。 XAML の仕様の作成者と見なさ派生ボキャブラリで XAML 表現を標準化するために便利です。 関連項目[共通の XAML 言語プリミティブの組み込みの型](~/docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Type" /> / <see langword="TypeExtension" />組み込み XAML 言語。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Type" /> / <see langword="TypeExtension" />組み込み XAML 言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この XAML 型を提供<xref:System.Xaml.XamlType>値から、バインディングを使用して、バッキング型システムを参照します。 XAML の型は (または必要があります) を割り当てることができる`MarkupExtension`です。 参照してください[& #91。MS-XAML &#93;5.2.3 をセクション](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeArguments">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective TypeArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective TypeArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.TypeArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="TypeArguments" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="TypeArguments" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`TypeArguments`ディレクティブが XAML オブジェクトとして指定すると、汎用的なジェネリック型の制約を指定します。 参照してください[& #91。MS-XAML &#93;セクション 5.3.11](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uid">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective Uid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective Uid" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Uid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="Uid" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="Uid" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`Uid`ディレクティブが XAML のマークアップ要素の一意の識別子を指定します。 厳密には、このような一意の識別子は、XAML 実装フレームワーク内でいくつかの目的に適用できませんでした。 `Uid`異なります`Name`で`Name`一方、XAML ソースからオブジェクト グラフの出力に存在する識別子の宣言の [MS-XAML] の定義で、特定のロールを持つ`Uid`特定のロールがありません。 .NET Framework XAML サービスを使用する既存の XAML 実装フレームワークで`Uid`は通常、ローカライズのために使用します。 参照してください[& #91。MS-XAML &#93;セクション 5.3.6](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownContent">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlDirective UnknownContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlDirective UnknownContent" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.UnknownContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlDirective" />の<see langword="UnknownContent" />XAML からディレクティブです。</summary>
+        <value>A<see cref="T:System.Xaml.XamlDirective" />の<see langword="UnknownContent" />XAML からディレクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `UnknownContent`リーダーが不明なコンテンツ ノードの値を検出した場合は、設定の XAML ノードで使用するプレース ホルダー ディレクティブまたは初期化のテキスト (組み込みまたはテキストの構文を使用できることができますの変換なし) です。  
+  
+ 生のノードの解釈や視覚エフェクトが表示されている場合`UnknownContent`として文字列の形式では、されることがあります`_UnknownContent`(先頭にアンダー スコアに注意してください) と、XAML 言語の XAML 名前空間内にある (先行して記号を付けるよう`Namespace`ノード)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の<see langword="Uri" />XAML 言語の概念です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />の<see langword="Uri" />XAML 言語の概念です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[& #91。MS-XAML &#93;セクション 5.2.15](http://go.microsoft.com/fwlink/?LinkId=114525)です。 `Uri`頻繁に使用される型になっているために、XAML の仕様で組み込み形式では、true が指定されました。 XAML の仕様の作成者と見なさ派生ボキャブラリで XAML 表現を標準化するために便利です。 関連項目[共通の XAML 言語プリミティブの組み込みの型](~/docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xaml2006Namespace">
+      <MemberSignature Language="C#" Value="public const string Xaml2006Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Xaml2006Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Xaml.XamlLanguage.Xaml2006Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(2006) 言語の XAML 名前空間を識別する文字列の文字列値を取得します。 定義されている、その名前空間が"x"プレフィックスが指定された名前空間は、XAML (2006) に対応する[[MS-XAML] セクション 5.1.1](http://go.microsoft.com/fwlink/?LinkId=114525)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XamlNamespaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; XamlNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IList`1&lt;string&gt; XamlNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.XamlNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML の名前空間の識別子のコレクションを取得します。</summary>
+        <value>XAML 名前空間の識別子のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在このコレクションが含まれていますのみ、<xref:System.Xaml.XamlLanguage.Xaml2006Namespace>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XData">
+      <MemberSignature Language="C#" Value="public static System.Xaml.XamlType XData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.XamlType XData" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.XData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />をバックする XAML の型の<see langword="XData" />XAML でブロックされます。</summary>
+        <value><see cref="T:System.Xaml.XamlType" />をバックする XAML の型の<see langword="XData" />ブロックします。 参照してください[[MS-XAML] セクション 5.2.23](http://go.microsoft.com/fwlink/?LinkId=114525)です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xml1998Namespace">
+      <MemberSignature Language="C#" Value="public const string Xml1998Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Xml1998Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Xaml.XamlLanguage.Xml1998Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(1998) 言語の XML 名前空間を識別する文字列の文字列値を取得します。 その名前空間、XML プレフィックス"xml"名前空間に対応で参照している[[MS-XAML] セクション 5.1.2](http://go.microsoft.com/fwlink/?LinkId=114525)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNamespaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; XmlNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IList`1&lt;string&gt; XmlNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlLanguage.XmlNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML の名前空間の識別子のコレクションを取得します。</summary>
+        <value>XML 名前空間の識別子のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在このコレクションが含まれていますのみ、<xref:System.Xaml.XamlLanguage.Xml1998Namespace>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

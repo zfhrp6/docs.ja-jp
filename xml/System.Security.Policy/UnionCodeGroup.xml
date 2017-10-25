@@ -1,0 +1,208 @@
+<Type Name="UnionCodeGroup" FullName="System.Security.Policy.UnionCodeGroup">
+  <TypeSignature Language="C#" Value="public sealed class UnionCodeGroup : System.Security.Policy.CodeGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UnionCodeGroup extends System.Security.Policy.CodeGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.UnionCodeGroup" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Policy.CodeGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ポリシー ステートメントを持つ現在のコード グループのポリシー ステートメントと一致しているその子コード グループのポリシー ステートメントの和集合は、コード グループを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード グループとは、コード アクセス セキュリティ ポリシーの構成要素です。 各ポリシー レベルは、以下を含む子コード グループ (とそのために)、ツリーを形成するルート コード グループで構成されます。 各コード グループは、特定のアセンブリに属しているか、または、そのアセンブリの証拠に基づいて決定するメンバーシップ条件を持ちます。 メンバーシップ条件を持つ指定したアセンブリと一致する唯一のコード グループとその子コード グループは、ポリシーを適用します。  
+  
+ <xref:System.Security.Policy.UnionCodeGroup>コード グループの最も一般的な型です。一致するすべての子コード グループのポリシー ステートメント (さらに拡張してその子コード グループ) は、一致する親コード グループの権限のセットの結合します。 したがって、そのメンバーシップ条件に一致すると、コード グループを形成証拠にも一致するすべての子コード グループのポリシー ステートメントの和集合とします。  
+  
+ <xref:System.Security.Policy.UnionCodeGroup>コード グループは、CASPOL ユーティリティによって作成されたコード グループ (を参照してください[Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](~/docs/framework/tools/caspol-exe-code-access-security-policy-tool.md))。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnionCodeGroup (System.Security.Policy.IMembershipCondition membershipCondition, System.Security.Policy.PolicyStatement policy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Policy.IMembershipCondition membershipCondition, class System.Security.Policy.PolicyStatement policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.UnionCodeGroup.#ctor(System.Security.Policy.IMembershipCondition,System.Security.Policy.PolicyStatement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="membershipCondition" Type="System.Security.Policy.IMembershipCondition" />
+        <Parameter Name="policy" Type="System.Security.Policy.PolicyStatement" />
+      </Parameters>
+      <Docs>
+        <param name="membershipCondition">このコード グループにポリシーが適用されるかどうかを決定する証拠をテストするメンバーシップ条件です。</param>
+        <param name="policy">メンバーシップ条件に一致するコードを許可するアクセス許可セットと属性の形式で、コード グループのポリシー ステートメントです。</param>
+        <summary><see cref="T:System.Security.Policy.UnionCodeGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、基本的なコード グループを作成し、カスタム コード グループのコンス トラクターから呼び出す必要があります。 使用して子コード グループを追加することができます、<xref:System.Security.Policy.CodeGroup.AddChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型、<paramref name="membershipCondition" />パラメーターが無効です。  
+  
+ または  
+  
+ 型、<paramref name="policy" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.CodeGroup Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.CodeGroup Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.UnionCodeGroup.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコード グループのディープ コピーを作成します。</summary>
+        <returns>メンバーシップ条件と子コード グループを含む、現在のコード グループの同等のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード グループに含まれるすべてのオブジェクトのコピーは作成もできるように、コード グループの詳細コピーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeLogic">
+      <MemberSignature Language="C#" Value="public override string MergeLogic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MergeLogic" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.UnionCodeGroup.MergeLogic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マージ ロジックを取得します。</summary>
+        <value>常に、文字列"Union"です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.PolicyStatement Resolve (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.PolicyStatement Resolve(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.UnionCodeGroup.Resolve(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>コード グループのポリシーと証拠のセットをその子孫を解決します。</summary>
+        <returns>省略可能な属性は、コード グループによって付与された権限で構成されるポリシー ステートメントまたは<see langword="null" />コード グループが適用されない場合 (メンバーシップ条件は、指定した証拠を一致していません)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、最初に指定された証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、子コード グループの評価を含む、コード グループのポリシー ステートメントを返します。  
+  
+ 合併コード グループのすべての子コード グループのメンバーシップ条件に一致証拠も解決されると、およびすべての結果として得られるポリシー ステートメントが親合併コード グループのポリシー ステートメントを使用して、和集合を形成します。 各子コード グループの種類の決定方法に応じて、その子グループの適用方法、それぞれ<xref:System.Security.Policy.UnionCodeGroup.Resolve%2A>メソッドは動作します。  
+  
+ .NET Framework セキュリティ システムを使用して<xref:System.Security.Policy.UnionCodeGroup.Resolve%2A>アセンブリで、結果として得られる、ポリシー ステートメントと、コードから読み込まれているコードに与えるアクセス許可を要求を決定するポリシー レベル上。  
+  
+ このメソッドが戻るメンバーシップ条件と一致しない、指定した証拠、 `null`、それ以外のコード グループのポリシーのステートメントに等しいアクセス許可セットを返す (P) を設定しして続行します。 子コード グループのそれぞれに対して、メソッドは同じ証拠; を使用して、コード グループを解決します。場合は、結果は`null`P と同じ P と子コード グループのポリシー ステートメントの和集合に設定します。 P で、現在のコード グループのポリシー ステートメントと子グループのすべてのポリシー ステートメントの和集合が、次を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">(親コード グループと子コード グループを含む) 2 つ以上のコード グループがマークされている<see cref="F:System.Security.Policy.PolicyStatementAttribute.Exclusive" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMatchingCodeGroups">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.CodeGroup ResolveMatchingCodeGroups (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.CodeGroup ResolveMatchingCodeGroups(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.UnionCodeGroup.ResolveMatchingCodeGroups(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>一致するコード グループを解決します。</summary>
+        <returns>証拠と一致したコード グループの完全なセット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、最初に指定された証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、ルート コード グループを返します。 返されるコード グループは、さらに含むことができるも子コード グループでは、戻り値が指定された証拠と一致したコード グループの完全なセットを反映するための子コード グループを含めることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

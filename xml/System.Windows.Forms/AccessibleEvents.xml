@@ -1,0 +1,712 @@
+<Type Name="AccessibleEvents" FullName="System.Windows.Forms.AccessibleEvents">
+  <TypeSignature Language="C#" Value="public enum AccessibleEvents" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessibleEvents extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleEvents" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ユーザー補助アプリケーションで報告されたイベントを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムとユーザー補助機能のサーバー アプリケーションは、ユーザー インターフェイスの変更に応答内のユーザー補助のイベントを生成します。  
+  
+ この列挙体を使って<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control>です。  
+  
+ ユーザー補助アプリケーションの詳細については、"Microsoft Active Accessibility"、MSDN ライブラリを検索します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例が、実際はないため<xref:System.Windows.Forms.Control>-ベースの制御が、代わりに描画されるグラフ コントロールでは、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ この例では、<xref:System.Windows.Forms.AccessibleEvents>列挙が、<xref:System.Windows.Forms.Control.AccessibilityNotifyClients%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#5)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#5)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AcceleratorChange">
+      <MemberSignature Language="C#" Value="AcceleratorChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents AcceleratorChange = int32(32786)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.AcceleratorChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.KeyboardShortcut" />プロパティを変更します。 サーバー アプリケーションは、それらのユーザー補助オブジェクトのイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="Create" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Create = int32(32768)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Create" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが作成されました。 インターフェイス要素に次のユーザーのイベントを送信する、オペレーティング システム: キャレット、ヘッダー コントロール、リスト ビュー コントロール、タブ コントロール、ツール バー コントロール、ツリー ビュー コントロール、およびウィンドウのオブジェクト。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 サーバーは、親オブジェクトのイベントを送信する前に、オブジェクトのすべての子オブジェクトは、このイベントを送信する必要があります。 サーバーでは、すべての子オブジェクトが完全に作成され、親オブジェクトがイベントを送信するときに、クライアントからの呼び出しを受け入れる準備ができていることを確認する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultActionChange">
+      <MemberSignature Language="C#" Value="DefaultActionChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents DefaultActionChange = int32(32785)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.DefaultActionChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.DefaultAction" />プロパティを変更します。 システムでは、ダイアログ ボックスにこのイベントを送信します。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 そのため、サーバー アプリケーションでは、子オブジェクトは、このイベントを送信する必要はありません。 非表示のオブジェクトの状態である<see cref="F:System.Windows.Forms.AccessibleStates.Invisible" />オブジェクトを表示しないようにしてください。 型のイベント<see langword="AccessibleEvents.Hide" />ことを示すための状態<see cref="F:System.Windows.Forms.AccessibleStates.Invisible" />が設定されています。 そのため、サーバーは、送信する必要はありません、<see langword="AccessibleEvents.StateChange" />ここではイベントです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DescriptionChange">
+      <MemberSignature Language="C#" Value="DescriptionChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents DescriptionChange = int32(32781)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.DescriptionChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.Description" />プロパティを変更します。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Destroy">
+      <MemberSignature Language="C#" Value="Destroy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Destroy = int32(32769)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Destroy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが破棄されました。 インターフェイス要素に次のユーザーは、このイベントを送信するシステム: キャレット、ヘッダー コントロール、リスト ビュー コントロール、タブ コントロール、ツール バー コントロール、ツリー ビュー コントロール、およびウィンドウのオブジェクト。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 このイベントは、子オブジェクトに送信されないことができます。 ただし、クライアントは、親オブジェクトは、このイベントを送信するときに、オブジェクトのすべての子が破棄されたことを判断できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="Focus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Focus = int32(32773)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Focus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは、キーボード フォーカスを受信しました。 インターフェイス要素に次のユーザーは、このイベントを送信するシステム: ビュー コントロール、メニュー バー、ショートカット メニューのスイッチ ウィンドウ、タブ コントロール、ツリー ビュー コントロール、およびウィンドウ オブジェクトを一覧表示します。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpChange">
+      <MemberSignature Language="C#" Value="HelpChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents HelpChange = int32(32784)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.HelpChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.Help" />プロパティを変更します。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Hide">
+      <MemberSignature Language="C#" Value="Hide" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Hide = int32(32771)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Hide" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは表示されません。 インターフェイス要素に次のユーザーのイベントを送信するシステム: キャレットとカーソル。 サーバー アプリケーションは、それらのユーザー補助オブジェクトのイベントを送信します。 親オブジェクトのイベントが生成されると、すべての子オブジェクトが非表示になっています。 そのため、サーバー アプリケーションでは、子オブジェクトのイベントを送信する必要はありません。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LocationChange">
+      <MemberSignature Language="C#" Value="LocationChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents LocationChange = int32(32779)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.LocationChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトには、場所、図形、またはサイズが変更されました。 インターフェイス要素に次のユーザーは、このイベントを送信するシステム: カレットおよびウィンドウのオブジェクト。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 このイベントは、含まれるすべての子ではなく、変更されたオブジェクトの階層内の最上位のオブジェクトへの応答で生成されます。 たとえば、ユーザーがウィンドウのサイズ、システムは、ウィンドウには、メニュー バー、タイトル バー、スクロール バー、またはも変更されている他のオブジェクトは、この通知を送信します。 システムでは、親に移動すると、すべてのフローティングでない子ウィンドウは、このイベントは送信しません。 ただし場合は、アプリケーションには、子ウィンドウのサイズ変更の結果として明示的にサイズ変更、システムは、サイズを変更した子の複数のイベントを送信します。 オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.State" />プロパティに設定されている<see cref="F:System.Windows.Forms.AccessibleStates.Floating" />サーバーは、オブジェクトの場所を変更するたびに位置変更イベントを送信する必要があります。 オブジェクトには、この状態はありません、サーバーは、オブジェクトがその親に移動したときに、このイベントを発生させる必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NameChange">
+      <MemberSignature Language="C#" Value="NameChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents NameChange = int32(32780)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.NameChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.Name" />プロパティを変更します。 システム インターフェイス要素に次のユーザーは、このイベントを送信します。 チェック ボックスを、カーソル、リスト ビュー コントロール、プッシュ ボタン、オプション ボタン、ステータス バー コントロール、ツリー ビュー コントロール、およびウィンドウのオブジェクト。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentChange">
+      <MemberSignature Language="C#" Value="ParentChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents ParentChange = int32(32783)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.ParentChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトには、新しい親オブジェクトがあります。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Reorder">
+      <MemberSignature Language="C#" Value="Reorder" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Reorder = int32(32772)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Reorder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー オブジェクトが追加、削除、またはその子の順序を変更します。 システム インターフェイス要素に次のユーザーは、このイベントを送信します。 ヘッダー コントロール、リスト ビュー コントロール、ツール バー コントロール、およびウィンドウのオブジェクト。 サーバー アプリケーションは、それらのユーザー補助オブジェクトに適したとしてこのイベントを送信します。 このイベントは、子ウィンドウの z オーダーが変化したときに、親ウィンドウによっても送信されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Selection">
+      <MemberSignature Language="C#" Value="Selection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Selection = int32(32774)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Selection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー オブジェクト内でアクセス可能なオブジェクトが選択されています。 このイベントは、1 つの選択肢を通知します。 子が既に含まれていません。 選択された子にコンテナーで選択されているか、選択範囲が 1 つの子から別に変更します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionAdd">
+      <MemberSignature Language="C#" Value="SelectionAdd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SelectionAdd = int32(32775)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SelectionAdd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー オブジェクト内の項目は、選択範囲に追加されました。 インターフェイス要素に次のユーザーは、このイベントを送信するシステム: リスト ボックス、リスト ビュー コントロール、およびツリー ビュー コントロール。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 このイベントは、既存の選択に子が追加されたことを通知します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionRemove">
+      <MemberSignature Language="C#" Value="SelectionRemove" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SelectionRemove = int32(32776)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SelectionRemove" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー オブジェクト内の項目は、選択範囲から削除されました。 インターフェイス要素に次のユーザーは、このイベントを送信するシステム: リスト ボックス、リスト ビュー コントロール、およびツリー ビュー コントロール。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 このイベントは、既存の選択項目から子が削除されたことを通知します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionWithin">
+      <MemberSignature Language="C#" Value="SelectionWithin" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SelectionWithin = int32(32777)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SelectionWithin" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー オブジェクト内で複数の選択変更が発生しました。 システムでは、リスト ボックスのこのイベントを送信します。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 コントロール内で選択した項目が大幅に変更されたときに、このイベントを送信できます。 このイベントは、選択範囲の多くの変更が発生したことをクライアントに通知します。 これは、いくつかを送信することをお勧め<see langword="SelectionAdd" />または<see langword="SelectionRemove" />イベント。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="Show" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents Show = int32(32770)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.Show" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非表示のオブジェクトが表示されています。 システム インターフェイス要素に次のユーザーは、このイベントを送信します。 カーソル、カーソル、およびウィンドウのオブジェクト。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。 クライアントは、親オブジェクトがこのイベントが送信されると、その子オブジェクトすべて表示されていると判断できます。 そのため、サーバー アプリケーションでは、子オブジェクトは、このイベントを送信する必要はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StateChange">
+      <MemberSignature Language="C#" Value="StateChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents StateChange = int32(32778)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.StateChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの状態が変更されました。 システムは、次のユーザーのイベント インターフェイスの要素を送信します。 チェック ボックス、コンボ ボックス、ヘッダー コントロール、プッシュ ボタン、オプション ボタン、スクロール バー、ツール バー コントロール、ツリー ビュー コントロール、アップダウン コントロールと window オブジェクト。 サーバー アプリケーションは、それらのユーザー補助オブジェクトのイベントを送信します。 ボタン オブジェクトが押されたまたはリリースされたとき、またはオブジェクトがされているときに、状態の変更が発生することが、有効または無効にします。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemAlert">
+      <MemberSignature Language="C#" Value="SystemAlert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemAlert = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemAlert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アラートが生成されました。 サーバー アプリケーションは、ユーザーがについて知っておく必要があります、重要なユーザー インターフェイスの変更が発生するたびにこのイベントを送信します。 システムでは、ダイアログ ボックスのオブジェクトを一貫してイベントを送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemCaptureEnd">
+      <MemberSignature Language="C#" Value="SystemCaptureEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemCaptureEnd = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemCaptureEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウがマウス キャプチャを失った。 システムは、イベントを送信します。サーバーは、このイベントを送信しないでください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemCaptureStart">
+      <MemberSignature Language="C#" Value="SystemCaptureStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemCaptureStart = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemCaptureStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウが移動またはサイズを変更します。 システムは、イベントを送信します。サーバーは、このイベントを送信しないでください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemContextHelpEnd">
+      <MemberSignature Language="C#" Value="SystemContextHelpEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemContextHelpEnd = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemContextHelpEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウは、状況依存のヘルプ モードを終了します。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemContextHelpStart">
+      <MemberSignature Language="C#" Value="SystemContextHelpStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemContextHelpStart = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemContextHelpStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウは、状況依存のヘルプ モードに入りました。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDialogEnd">
+      <MemberSignature Language="C#" Value="SystemDialogEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemDialogEnd = int32(17)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemDialogEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスが閉じられました。 システムでは、標準的なダイアログ ボックスにイベントを送信しません。 サーバーは、カスタム ダイアログ ボックスにこのイベントを送信します。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDialogStart">
+      <MemberSignature Language="C#" Value="SystemDialogStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemDialogStart = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemDialogStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスが表示されます。 システムでは、標準的なダイアログ ボックスにイベントを送信します。 サーバーは、カスタム ダイアログ ボックスにこのイベントを送信します。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDragDropEnd">
+      <MemberSignature Language="C#" Value="SystemDragDropEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemDragDropEnd = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemDragDropEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは、ドラッグ アンド ドロップのモードを終了しようとしています。 ドラッグ アンド ドロップ操作をサポートするアプリケーションは、このイベントを送信する必要があります。システムされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDragDropStart">
+      <MemberSignature Language="C#" Value="SystemDragDropStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemDragDropStart = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemDragDropStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは、ドラッグ アンド ドロップ モードに切り替わるしようとしています。 ドラッグ アンド ドロップ操作をサポートするアプリケーションは、このイベントを送信する必要があります。システムされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemForeground">
+      <MemberSignature Language="C#" Value="SystemForeground" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemForeground = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemForeground" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前面のウィンドウが変更されました。 前面のウィンドウが、同一スレッド内の別のウィンドウに変更された場合でも、システムはこのイベントを送信します。 サーバー アプリケーションは、このイベントを送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMenuEnd">
+      <MemberSignature Language="C#" Value="SystemMenuEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMenuEnd = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMenuEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー バーのメニューが閉じられました。 システムでは、標準のメニューにこのイベントを送信します。 サーバーは、カスタムのメニューにこのイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMenuPopupEnd">
+      <MemberSignature Language="C#" Value="SystemMenuPopupEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMenuPopupEnd = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMenuPopupEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ショートカット メニューが閉じられました。 システムでは、標準のメニューにこのイベントを送信します。 サーバーは、カスタムのメニューにこのイベントを送信します。 クライアントがほぼ直後にこのメッセージを受信してショートカット メニューを閉じたときに、<see langword="SystemMenuEnd" />イベント。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMenuPopupStart">
+      <MemberSignature Language="C#" Value="SystemMenuPopupStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMenuPopupStart = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMenuPopupStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ショートカット メニューが表示されます。 システムでは、標準のメニューにこのイベントを送信します。 サーバーは、カスタムのメニューにこのイベントを送信します。 システムでは、イベントを一貫して送信しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMenuStart">
+      <MemberSignature Language="C#" Value="SystemMenuStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMenuStart = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMenuStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー バーのメニュー項目が選択されました。 システムでは、標準のメニューにこのイベントを送信します。 サーバーは、カスタムのメニューにこのイベントを送信します。 システムは 1 つ以上を発生させる可能性があります<see langword="MenuStart" />可能性や、対応するがない可能性があるイベント<see langword="MenuEnd" />イベント。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMinimizeEnd">
+      <MemberSignature Language="C#" Value="SystemMinimizeEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMinimizeEnd = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMinimizeEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ オブジェクトが最小化または最大化します。 システムは、イベントを送信します。サーバーは、このイベントを送信しないでください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMinimizeStart">
+      <MemberSignature Language="C#" Value="SystemMinimizeStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMinimizeStart = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMinimizeStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ オブジェクトが最小化または最大化します。 システムは、イベントを送信します。サーバーは、このイベントを送信しないでください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMoveSizeEnd">
+      <MemberSignature Language="C#" Value="SystemMoveSizeEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMoveSizeEnd = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMoveSizeEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動またはウィンドウのサイズ変更が完了しました。 システムは、イベントを送信します。サーバーは、このイベントを送信しないでください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemMoveSizeStart">
+      <MemberSignature Language="C#" Value="SystemMoveSizeStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemMoveSizeStart = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemMoveSizeStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウが移動またはサイズを変更します。 システムは、イベントを送信します。サーバーは、このイベントを送信しないでください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemScrollingEnd">
+      <MemberSignature Language="C#" Value="SystemScrollingEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemScrollingEnd = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemScrollingEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロール バーのスクロールが終了しました。 システムでは、スクロール バーのウィンドウにアタッチ、および標準のスクロール バー コントロールは、このイベントを送信します。 サーバーは、カスタムのスクロール バーは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemScrollingStart">
+      <MemberSignature Language="C#" Value="SystemScrollingStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemScrollingStart = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemScrollingStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロール バーのスクロールが開始されました。 システムでは、スクロール バーのウィンドウにアタッチ、および標準のスクロール バー コントロールのイベントを送信します。 サーバーは、カスタムのスクロール バーは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemSound">
+      <MemberSignature Language="C#" Value="SystemSound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemSound = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemSound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サウンドが再生されました。 システムでは、メニューなど、サウンド、ときに、システムは、このイベントを送信、音が聞こえる音がない場合でも、再生します。 サウンド カード、サウンド ファイルの不足が考えられます。 サーバーは、カスタム ユーザー インターフェイス要素はサウンドを生成する場合、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemSwitchEnd">
+      <MemberSignature Language="C#" Value="SystemSwitchEnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemSwitchEnd = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemSwitchEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーは、ALT + TAB キーをリリースしました。 システムは、送信、<see langword="SwitchEnd" />イベント以外のサーバーがこのイベントを送信しません。 システムが送信する 1 つのアプリケーションは、ユーザーが ALT + TAB を押したときに実行している、だけの場合、<see langword="SwitchEnd" />のに、対応するイベント<see langword="SwitchStart" />イベント。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemSwitchStart">
+      <MemberSignature Language="C#" Value="SystemSwitchStart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents SystemSwitchStart = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.SystemSwitchStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーは、ALT + タブのウィンドウを切り替えるを押しました。 1 つのアプリケーションは、ユーザーが ALT + TAB を押したときに実行している、だけの場合、システムを発生させます、<see langword="SwitchEnd" />のに、対応するイベント<see langword="SwitchStart" />イベント。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueChange">
+      <MemberSignature Language="C#" Value="ValueChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleEvents ValueChange = int32(32782)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleEvents.ValueChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleEvents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの<see cref="P:System.Windows.Forms.AccessibleObject.Value" />プロパティを変更します。 システムを発生させる、<see langword="ValueChange" />の次のユーザー インターフェイス要素のイベント: コントロール、ヘッダー コントロール、ホット キー コントロール、進行状況バー コントロール、スクロール バー、スライダー コントロール、およびアップダウン コントロールを編集します。 サーバー アプリケーションは、それらのアクセス可能なオブジェクトは、このイベントを送信します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

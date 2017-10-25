@@ -1,0 +1,86 @@
+<Type Name="CompiledTemplateBuilder" FullName="System.Web.UI.CompiledTemplateBuilder">
+  <TypeSignature Language="C#" Value="public sealed class CompiledTemplateBuilder : System.Web.UI.ITemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CompiledTemplateBuilder extends System.Object implements class System.Web.UI.ITemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.CompiledTemplateBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.ITemplate</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.ITemplate" />生成されたページ クラスのコードから呼び出される実装します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.CompiledTemplateBuilder>クラスを使用、ASP.NET によって生成されたクラスのコードからテンプレート コントロールのテンプレートを作成します。 コード内で直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompiledTemplateBuilder (System.Web.UI.BuildTemplateMethod buildTemplateMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.BuildTemplateMethod buildTemplateMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CompiledTemplateBuilder.#ctor(System.Web.UI.BuildTemplateMethod)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="buildTemplateMethod" Type="System.Web.UI.BuildTemplateMethod" />
+      </Parameters>
+      <Docs>
+        <param name="buildTemplateMethod">処理に使用されるデリゲート、<see cref="M:System.Web.UI.CompiledTemplateBuilder.InstantiateIn(System.Web.UI.Control)" />メソッドの呼び出しです。</param>
+        <summary><see cref="T:System.Web.UI.CompiledTemplateBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、内部的に ASP.NET で使用されるの新しいインスタンスを作成する、<xref:System.Web.UI.CompiledTemplateBuilder>クラスです。 コード内で直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InstantiateIn">
+      <MemberSignature Language="C#" Value="public void InstantiateIn (System.Web.UI.Control container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InstantiateIn(class System.Web.UI.Control container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CompiledTemplateBuilder.InstantiateIn(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="container">A<see cref="T:System.Web.UI.Control" />テンプレートで子コントロールを格納するために使用するコンテナーを表すです。</param>
+        <summary>追加、<see cref="T:System.Web.UI.Control" />テンプレートに含まれる子コントロールを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.CompiledBindableTemplateBuilder.InstantiateIn%2A>メソッドは、<xref:System.Web.UI.TemplateBuilder>のクラスの実装、<xref:System.Web.UI.ITemplate.InstantiateIn%2A?displayProperty=nameWithType>メソッドです。 テンプレートのコントロールの階層構造を作成する ASP.NET で使用され、コード内で直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

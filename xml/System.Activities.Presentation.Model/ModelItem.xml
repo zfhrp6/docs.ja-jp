@@ -1,0 +1,518 @@
+<Type Name="ModelItem" FullName="System.Activities.Presentation.Model.ModelItem">
+  <TypeSignature Language="C#" Value="public abstract class ModelItem : System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ModelItem extends System.Object implements class System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Model.ModelItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>編集モデル内の単一の項目を表します。 項目には、複雑なデータ構想から色や整数まで、あらゆるものがあります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目のプロパティには、その <xref:System.Activities.Presentation.Model.ModelItem.Properties%2A> コレクションを通じてアクセスでき、プロパティの値に変更を加えることができます。  
+  
+ <xref:System.Activities.Presentation.Model.ModelItem> は、デザイナーの基になるデータ モデルを包むラッパーです。 基になるモデルには、<xref:System.Activities.Presentation.Model.ModelItem.GetCurrentValue%2A> メソッドを使用してアクセスできます。  
+  
+> [!NOTE]
+>  <xref:System.Activities.Presentation.Model.ModelItem.GetCurrentValue%2A> メソッドから返されたオブジェクトに加えた変更は、デザイナーのシリアル化および取り消しシステムに反映されません。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Presentation.Model.ModelItem> は、これが指示しているオブジェクトのシン プロキシと考えることができます。 まず、単純な `Animal` オブジェクトを定義します。  
+  
+```  
+  
+public class Animal  
+{  
+    // simple property  
+    public string Name { get; set; }  
+    // complex property   
+    public Location Residence { get; set; }   
+    // list   
+    public List<Animal> CloseRelatives { get; set; }  
+    // dictionary  
+    public Dictionary<string, object> Features { get; set; }   
+}  
+  
+public class Location  
+{  
+    public string StreetAddress { get; set; }  
+    public string City { get; set; }  
+    public string State { get; set; }   
+}  
+  
+```  
+  
+ 次に、その `Animal` のインスタンスと、そのプロキシである <xref:System.Activities.Presentation.Model.ModelItem> を作成します。 オブジェクトは、<xref:System.Activities.Presentation.Model.ModelItem.GetCurrentValue%2A> を呼び出して取得できます。 次のコードは、<xref:System.Activities.Presentation.Model.ModelItem> によって定義されている他のプロパティの使用方法も示しています。  
+  
+```  
+  
+EditingContext ec = new EditingContext();  
+var companion1 = new Animal { Name = "Houdini the parakeet" };  
+var companion2 = new Animal { Name = "Groucho the fish" };  
+var animal = new Animal   
+   {  
+      Name = "Sasha the pug",  
+      Residence = new Location   
+      {  
+         StreetAddress = "123 Main Street",  
+         City = "AnyTown",  
+         State = "Washington"  
+      },  
+      Features = new Dictionary<string, object> {   
+         {"noise", "snort" },  
+         {"MeanTimeUntilNaps", TimeSpan.FromMinutes(15) }  
+      },  
+      CloseRelatives = new List<Animal> { companion1, companion2 }   
+   };  
+ModelTreeManager mtm = new ModelTreeManager(ec);  mtm.Load(animal);  
+ModelItem mi = mtm.Root;  
+  
+//Testing other properties of the class  
+ModelItem root = mtm.Root;  
+Assert.IsTrue(root.GetCurrentValue() == animal, "GetCurrentValue() returns same object");  
+Assert.IsTrue(root.ItemType == typeof(Animal),"ItemType describes the item");  
+Assert.IsTrue(root.Parent == null,"root parent is null");  
+Assert.IsTrue(root.Source == null, "root source is null");  
+Assert.IsTrue(((List<Animal>)root.Properties["CloseRelatives"].ComputedValue)[0] == companion1,   
+   "ComputedValue of prop == actual object");  
+Assert.IsFalse(((List<Animal>)root.Properties["CloseRelatives"].ComputedValue)[0] == companion2,   
+   "ComputedValue of prop == actual object");  
+Assert.AreEqual(root.Properties["Residence"].  
+   Value.  
+   Properties["StreetAddress"].  
+   Value.GetCurrentValue(), "123 Main Street", "get actual value back out");  
+Assert.AreEqual(root, root.Properties["Residence"].Parent, "property points to owner");  
+ModelItem location = root.Properties["Residence"].Value;  
+Assert.AreEqual(root.Properties["Residence"], location.Source, "sources point to the right place");  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ModelItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.Model.ModelItem" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目で宣言された属性を取得します。</summary>
+        <value>項目の属性を含むコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelEditingScope BeginEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.Model.ModelEditingScope BeginEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.BeginEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelEditingScope</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナーの編集スコープを開きます。 編集スコープが開かれた後、すべてのオブジェクトの変更はすべて、トランザクションが完了するか、元に戻されるまでスコープに保存されます。 編集スコープは入れ子にできますが、一定の順序でコミットする必要があります。</summary>
+        <returns>A <see cref="T:System.Activities.Presentation.Model.ModelEditingScope" />、する必要がある完了したか元に戻します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 編集スコープでは、1 つのトランザクションとして適用されるモデルに複数の変更を加えることができます。 編集スコープ内で行われたすべての変更は、トランザクションの完了前にいつでも元に戻すことができます。  
+  
+ 編集スコープはデザイナーに対してグローバルです。 デザイナーでは、すべての項目について編集スコープを作成できます。変更する特定の項目について編集スコープを作成する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public virtual System.Activities.Presentation.Model.ModelEditingScope BeginEdit (bool shouldApplyChangesImmediately);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.Model.ModelEditingScope BeginEdit(bool shouldApplyChangesImmediately) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.BeginEdit(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelEditingScope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="shouldApplyChangesImmediately" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="shouldApplyChangesImmediately">
+          <see langword="true" />変更がすぐに適用されることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>デザイナーの編集スコープを開きます。</summary>
+        <returns>A <see cref="T:System.Activities.Presentation.Model.ModelEditingScope" />、する必要がある完了したか元に戻します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelEditingScope BeginEdit (string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.Model.ModelEditingScope BeginEdit(string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.BeginEdit(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelEditingScope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">省略可能な変更の説明。 これは、編集スコープの <see cref="P:System.Activities.Presentation.Model.ModelEditingScope.Description" /> プロパティに設定されます。</param>
+        <summary>デザイナーの編集スコープを開きます。 編集スコープが開かれた後、すべてのオブジェクトの変更はすべて、トランザクションが完了するか、元に戻されるまでスコープに保存されます。 編集スコープは入れ子にできますが、一定の順序でコミットする必要があります。</summary>
+        <returns>A <see cref="T:System.Activities.Presentation.Model.ModelEditingScope" />、する必要がある完了したか元に戻します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 編集スコープでは、1 つのトランザクションとして適用されるモデルに複数の変更を加えることができます。 編集スコープ内で行われたすべての変更は、トランザクションの完了前にいつでも元に戻すことができます。  
+  
+ 編集スコープはデザイナーに対してグローバルです。 デザイナーでは、すべての項目について編集スコープを作成できます。変更する特定の項目について編集スコープを作成する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public virtual System.Activities.Presentation.Model.ModelEditingScope BeginEdit (string description, bool shouldApplyChangesImmediately);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.Model.ModelEditingScope BeginEdit(string description, bool shouldApplyChangesImmediately) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.BeginEdit(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelEditingScope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="shouldApplyChangesImmediately" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="description">省略可能な変更の説明。 これは、編集スコープの <see cref="P:System.Activities.Presentation.Model.ModelEditingScope.Description" /> プロパティに設定されます。</param>
+        <param name="shouldApplyChangesImmediately">
+          <see langword="true" />変更がすぐに適用されることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>デザイナーの編集スコープを開きます。</summary>
+        <returns>A <see cref="T:System.Activities.Presentation.Model.ModelEditingScope" />、する必要がある完了したか元に戻します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelProperty Content { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelProperty Content" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="ContentPropertyAttribute" /> 、アイテムのまたは<see langword="null" />です。</summary>
+        <value><see langword="ContentPropertyAttribute" />アイテムの<see cref="T:System.Activities.Presentation.Model.ModelProperty" />です。 場合、<see langword="ContentPropertyAttribute" />で宣言されていません、<see cref="P:System.Activities.Presentation.Model.ModelItem.ItemType" />この項目の<see cref="P:System.Activities.Presentation.Model.ModelItem.Content" />返します<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValue">
+      <MemberSignature Language="C#" Value="public abstract object GetCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.GetCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.Model.ModelItem" /> がラップしている、基になるモデル オブジェクトの現在の値を返します。</summary>
+        <returns>基になるモデルの現在の値がオブジェクトを<see cref="T:System.Activities.Presentation.Model.ModelItem" />としてラップ、<see cref="T:System.Object" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトを検査できますが、変更は加えないでください。 返されたオブジェクトに加えられた変更はデザイナーに組み込まれません。 <xref:System.Activities.Presentation.Model.ModelItem.GetCurrentValue%2A> メソッドは、オブジェクトの既存のインスタンスか、新しく複製されたインスタンスを返すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public abstract Type ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目を表すオブジェクトの種類を取得します。</summary>
+        <value>項目を表すオブジェクトの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名またはアイテムの ID を設定します。</summary>
+        <value>名前またはアイテムの ID、<see cref="T:System.String" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を持つこと、ため、これを返す可能性がありますいないすべての項目が必要な`null`します。 項目の型、および階層におけるその位置に応じ、項目について <xref:System.Activities.Presentation.Model.ModelItem.Name%2A> を設定すること必ずしも有効でない場合があります。 場合、<xref:System.Activities.Presentation.Model.ModelItem.ItemType%2A>この項目の宣言、 `RuntimeNamePropertyAttribute`、<xref:System.Activities.Presentation.Model.ModelItem.Name%2A>プロパティは、その属性で使用されるプロパティに直接マップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItem Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目の親である項目を取得します。</summary>
+        <value>A<see cref="T:System.Activities.Presentation.Model.ModelItem" />この項目の親であります。 項目がコレクション内またはディクショナリ内に格納されている場合、代わりに、そのコレクションまたはディクショナリを所有するオブジェクトが返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parents">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.Activities.Presentation.Model.ModelItem&gt; Parents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; Parents" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Parents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Activities.Presentation.Model.ModelItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目のすべての親を取得します。</summary>
+        <value>この項目の親。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目上のパブリック プロパティを取得します。</summary>
+        <value>A<see cref="T:System.Activities.Presentation.Model.ModelItemCollection" />この項目のパブリック プロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたプロパティのセットは、添付プロパティに基づいて変更されるか、または編集スコープに変更されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyChanged">
+      <MemberSignature Language="C#" Value="public abstract event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.PropertyChangedEventHandler PropertyChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.Model.ModelItem.PropertyChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装して<see langword="INotifyPropertyChanged" />です。 モデルに対する変更をリッスンするには、このイベントを使用します。 また、このイベントは、WPF のデータ バインド機能によっても使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの処理が完了すると、イベントを項目から切り離します。 切り離さないと、ガベージ コレクションで、使用しなくなった項目を破棄できなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Root">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItem Root { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem Root" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Root" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このツリーのルートであるアイテムを取得します。</summary>
+        <value>A<see cref="T:System.Activities.Presentation.Model.ModelItem" />はこのツリーのルートまたは<see langword="null" />この項目は、ツリーの一部ではない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelProperty Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelProperty Source" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値を提供するプロパティを取得します。</summary>
+        <value>A<see cref="T:System.Activities.Presentation.Model.ModelProperty" />この値のソースを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、項目は、オブジェクト グラフのルートを表すが返されます`null`です。 項目がコレクションまたはディクショナリのメンバーである場合、Source プロパティから返されたプロパティは、そのコレクションまたはディクショナリによって指定される擬似プロパティとなります。 その他の値については、Source プロパティは、値が実際に設定されているプロパティを返します。 したがって、値が継承されている場合は、Source プロパティを使用することで、値の本来の提供元を検出できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sources">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.Activities.Presentation.Model.ModelProperty&gt; Sources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Activities.Presentation.Model.ModelProperty&gt; Sources" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.Sources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Activities.Presentation.Model.ModelProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値を保持するすべてのプロパティを取得します。</summary>
+        <value>この値のソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelItem.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このモデル アイテムに格納されている、基になるモデル オブジェクトの文字列表現を返します。</summary>
+        <returns>このモデル アイテムに格納されている、基になるモデル オブジェクトの文字列表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="View">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.DependencyObject View { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject View" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelItem.View" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.DependencyObject" />を視覚的には、この項目を表すです。</summary>
+        <value>A<see cref="T:System.Windows.DependencyObject" />を視覚的に、この項目を表すまたは<see langword="null" />このような表現が存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

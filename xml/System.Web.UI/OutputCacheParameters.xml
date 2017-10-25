@@ -1,0 +1,285 @@
+<Type Name="OutputCacheParameters" FullName="System.Web.UI.OutputCacheParameters">
+  <TypeSignature Language="C#" Value="public sealed class OutputCacheParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OutputCacheParameters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.OutputCacheParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解析された出力キャッシュの初期化の設定をカプセル化、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2) ASP.NET によってページ ディレクティブ。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.OutputCacheParameters>クラスは ASP.NET ページまたはコントロールの開発者によって使用されません。 解析キャッシュ設定の格納に使用するデータ構造を提供する[@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブを ASP.NET ページによってページおよびパーサーをなど、制御<xref:System.Web.UI.PageParser>と<xref:System.Web.UI.TemplateControlParser>です。 <xref:System.Web.UI.OutputCacheParameters>でオブジェクトを使用して、<xref:System.Web.UI.Page.InitOutputCache%2A?displayProperty=nameWithType>実行時に、ページとその内容の出力キャッシュを初期化します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutputCacheParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.OutputCacheParameters.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.OutputCacheParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheProfile">
+      <MemberSignature Language="C#" Value="public string CacheProfile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CacheProfile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.CacheProfile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.OutputCacheProfile" />出力キャッシュ エントリの設定に関連付けられている名前です。</summary>
+        <value><see cref="T:System.Web.Configuration.OutputCacheProfile" />出力キャッシュ エントリの設定に関連付けられている名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイルのキャッシュ設定のセットを識別する、`<outputCacheSettings>`出力キャッシュ エントリの基本設定として使用されている構成です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public int Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または出力キャッシュ内に存続するキャッシュ エントリがある時間を設定します。</summary>
+        <value>時間 (秒)、出力キャッシュに保持されるキャッシュ エントリの量。 既定では 0 で、無限の期間を示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のコンテンツの出力キャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />現在のコンテンツの出力キャッシュが有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Web.UI.OutputCacheLocation Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.OutputCacheLocation Location" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュ エントリの場所を決定する値を設定します。</summary>
+        <value><see cref="T:System.Web.UI.OutputCacheLocation" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoStore">
+      <MemberSignature Language="C#" Value="public bool NoStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoStore" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.NoStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、HTTP<see langword="Cache-Control: no-store" />ディレクティブが設定されます。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="Cache-Control: no-store" />ディレクティブに設定されている<see cref="T:System.Web.HttpResponse" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlDependency">
+      <MemberSignature Language="C#" Value="public string SqlDependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SqlDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.SqlDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュ エントリが依存するデータベースとテーブルの名前のペアのセットを設定します。</summary>
+        <value>キャッシュ エントリが依存するデータベースとテーブルの名前のペアのセットを識別する文字列。 テーブルのデータが更新または変更時に、キャッシュ エントリが有効期限が切れています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.OutputCacheParameters.SqlDependency%2A>データベースと構成で SQL Server のキャッシュ依存の名前に従ってテーブルを識別する文字列 (通常を使用して追加、`<sqlcachedependency>`構成要素)。 SQL Server 2005 を使用する場合は、設定、<xref:System.Web.UI.OutputCacheParameters.SqlDependency%2A>プロパティを"CommandNotification"は、現在の ASP.NET ページのコンテキスト内で発行されたすべての SQL コマンドの行レベルの依存関係を作成するように指示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByContentEncoding">
+      <MemberSignature Language="C#" Value="public string VaryByContentEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.VaryByContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンマで区切られた一連のキャッシュ エントリの変更に使用される文字セット (コンテンツのエンコード) を設定します。</summary>
+        <value>コンテンツの変更に使用する文字の一覧を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが複数の文字セットに設定されている場合、出力キャッシュには、指定したセットごとに、要求されたドキュメントの別のバージョンが含まれています。  
+  
+ <xref:System.Web.UI.OutputCacheParameters.VaryByContentEncoding%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByControl">
+      <MemberSignature Language="C#" Value="public string VaryByControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.VaryByControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセミコロンで区切られた一連の現在のキャッシュ エントリの変更に使用される現在のページやユーザー コントロール内に含まれるコントロールの id を設定します。</summary>
+        <value>エントリを変更するために使用される文字列のセミコロンで区切られた一覧には、キャッシュを出力します。 <see cref="P:System.Web.UI.OutputCacheParameters.VaryByControl" />プロパティの完全修飾コントロール id に設定されている識別子は、最上位の親から Id を制御し、ドル記号 ($) 文字で区切られたコントロールの連結。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByCustom">
+      <MemberSignature Language="C#" Value="public string VaryByCustom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByCustom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.VaryByCustom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュを使用してキャッシュ エントリを変更するカスタムの文字列の一覧を取得します。</summary>
+        <value>カスタム文字列のリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、"browser"を指定すると、キャッシュ エントリはブラウザーの種類とメジャー バージョン番号が変更されます。 オーバーライドする必要があります、カスタムの文字列が入力した場合、<xref:System.Web.HttpApplication.GetVaryByCustomString%2A?displayProperty=nameWithType>アプリケーションの Global.asax ファイル内のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByHeader">
+      <MemberSignature Language="C#" Value="public string VaryByHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.VaryByHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンマで区切られた一連のキャッシュ エントリの変更に使用されるヘッダー名を設定します。 ヘッダー名では、要求に関連付けられている HTTP ヘッダーを識別します。</summary>
+        <value>コンテンツの変更に使用するヘッダーの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが複数のヘッダーに設定されている場合、出力キャッシュには、指定したヘッダーごとに、要求されたドキュメントの別のバージョンが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByParam">
+      <MemberSignature Language="C#" Value="public string VaryByParam { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByParam" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.OutputCacheParameters.VaryByParam" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュを使用してキャッシュ エントリを変更する POST パラメーター クエリ文字列またはフォームのセミコロン区切りのリストを取得します。</summary>
+        <value>クエリ文字列またはフォーム ポスト パラメーターの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが複数のパラメーターに設定されている場合、出力キャッシュには、指定したパラメーターごとに、要求されたドキュメントの別のバージョンが含まれています。 指定できる値は"none"、"*"と有効なクエリ文字列またはポスト パラメーターの名前。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,234 @@
+<Type Name="InternalRemotingServices" FullName="System.Runtime.Remoting.InternalRemotingServices">
+  <TypeSignature Language="C#" Value="public class InternalRemotingServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InternalRemotingServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.InternalRemotingServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>.NET Framework リモート処理インフラストラクチャで使用するためのユーティリティ メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、`static`のメソッド、<xref:System.Runtime.Remoting.InternalRemotingServices>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InternalRemotingServices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.InternalRemotingServices.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.InternalRemotingServices" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugOutChnl">
+      <MemberSignature Language="C#" Value="public static void DebugOutChnl (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DebugOutChnl(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.InternalRemotingServices.DebugOutChnl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("_LOGGING")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">メッセージで指定する文字列。</param>
+        <summary>アンマネージ デバッガーへのリモート処理チャネルをに関するメッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、`static`のメソッド、<xref:System.Runtime.Remoting.InternalRemotingServices>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCachedSoapAttribute">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Metadata.SoapAttribute GetCachedSoapAttribute (object reflectionObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Metadata.SoapAttribute GetCachedSoapAttribute(object reflectionObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.InternalRemotingServices.GetCachedSoapAttribute(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Metadata.SoapAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reflectionObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="reflectionObject">クラス メンバー、またはメソッド パラメーター。</param>
+        <summary>指定したクラスのメンバーまたはメソッドのパラメーターの適切な SOAP に関連する属性を取得します。</summary>
+        <returns>指定されたクラス メンバーまたはメソッド パラメーターに対して SOAP に関連する属性です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、`static`のメソッド、<xref:System.Runtime.Remoting.InternalRemotingServices>クラスです。  
+  
+ A`"_LOGGING"`プリプロセッサ シンボルがによりメソッドに適用された、<xref:System.Diagnostics.ConditionalAttribute>属性。  
+  
+ <xref:System.Runtime.Remoting.Metadata.SoapAttribute>クラスは、さまざまな SOAP に関連する属性クラスの基本クラス、<xref:System.Runtime.Remoting.Metadata>名前空間。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemotingAssert">
+      <MemberSignature Language="C#" Value="public static void RemotingAssert (bool condition, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemotingAssert(bool condition, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.InternalRemotingServices.RemotingAssert(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("_DEBUG")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          <see langword="true" />メッセージが表示されるようにするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="message">場合に表示するメッセージ<c>条件</c>は<see langword="false" />します。</param>
+        <summary>条件をチェックし、条件の場合にメッセージを表示するための内部デバッガーに対して指示<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、`static`のメソッド、<xref:System.Runtime.Remoting.InternalRemotingServices>クラスです。  
+  
+ A`"_DEBUG"`プリプロセッサ シンボルがによりメソッドに適用された、<xref:System.Diagnostics.ConditionalAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemotingTrace">
+      <MemberSignature Language="C#" Value="public static void RemotingTrace (params object[] messages);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemotingTrace(object[] messages) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.InternalRemotingServices.RemotingTrace(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("_LOGGING")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messages" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="messages">型の配列<see cref="T:System.Object" />メッセージの任意の数を格納しています。</param>
+        <summary>任意の数の内部のデバッガーをリモート処理チャネルをに関するメッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、`static`のメソッド、<xref:System.Runtime.Remoting.InternalRemotingServices>クラスです。  
+  
+ A`"_LOGGING"`プリプロセッサ シンボルがによりメソッドに適用された、<xref:System.Diagnostics.ConditionalAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetServerIdentity">
+      <MemberSignature Language="C#" Value="public static void SetServerIdentity (System.Runtime.Remoting.Messaging.MethodCall m, object srvID);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetServerIdentity(class System.Runtime.Remoting.Messaging.MethodCall m, object srvID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.InternalRemotingServices.SetServerIdentity(System.Runtime.Remoting.Messaging.MethodCall,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Runtime.Remoting.Messaging.MethodCall" />
+        <Parameter Name="srvID" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="m">A<see cref="T:System.Runtime.Remoting.Messaging.MethodCall" />リモート オブジェクトに対するメソッドの呼び出しを表すです。</param>
+        <param name="srvID">リモート処理サーバー オブジェクトの内部の識別情報。</param>
+        <summary>各メソッド呼び出しのリモート処理サーバー オブジェクトの内部の識別情報をクライアントからサーバーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、`static`のメソッド、<xref:System.Runtime.Remoting.InternalRemotingServices>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

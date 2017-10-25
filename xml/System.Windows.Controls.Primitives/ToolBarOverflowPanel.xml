@@ -1,0 +1,178 @@
+<Type Name="ToolBarOverflowPanel" FullName="System.Windows.Controls.Primitives.ToolBarOverflowPanel">
+  <TypeSignature Language="C#" Value="public class ToolBarOverflowPanel : System.Windows.Controls.Panel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolBarOverflowPanel extends System.Windows.Controls.Panel" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.ToolBarOverflowPanel" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Panel</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オーバーフローを配置に使用される<see cref="T:System.Windows.Controls.ToolBar" />項目。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.ToolBar>すべての項目を表示するには、十分な領域がいない可能性があります。  この場合、内の項目、<xref:System.Windows.Controls.ToolBar>に配置することができます、<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>で指定される、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ToolBar>です。  使用する方法の例については、<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>で、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ToolBar>を参照してください[ツール バー スタイルとテンプレート](~/docs/framework/wpf/controls/toolbar-styles-and-templates.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolBarOverflowPanel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ToolBarOverflowPanel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.ToolBarOverflowPanel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ToolBarOverflowPanel.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeBounds" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeBounds">子要素を配置するツールバーのオーバーフロー パネルが想定するサイズ。</param>
+        <summary>コンテンツのサイズを設定して、配置、<see cref="T:System.Windows.Controls.Primitives.ToolBarOverflowPanel" />オブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Controls.Primitives.ToolBarOverflowPanel" /> のサイズ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUIElementCollection">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Controls.UIElementCollection CreateUIElementCollection (System.Windows.FrameworkElement logicalParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Controls.UIElementCollection CreateUIElementCollection(class System.Windows.FrameworkElement logicalParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ToolBarOverflowPanel.CreateUIElementCollection(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.UIElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="logicalParent">新しいコレクションの論理上の親です。</param>
+        <summary>新しい <see cref="T:System.Windows.Controls.UIElementCollection" /> を作成します。</summary>
+        <returns>新しいコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいコレクションは、すべての子にキャッシュされた情報を追加したり、レイアウトの更新などの操作を中断に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ToolBarOverflowPanel.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">制約のサイズは、上限値です。 戻り値は、このサイズを超えない必要があります。</param>
+        <summary>Remeasures、<see cref="T:System.Windows.Controls.Primitives.ToolBarOverflowPanel" />です。</summary>
+        <returns>必要なサイズ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapWidth">
+      <MemberSignature Language="C#" Value="public double WrapWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 WrapWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>推奨される幅オーバーフローを取得または設定<see cref="T:System.Windows.Controls.ToolBar" />項目が次の行に配置する前にします。</summary>
+        <value>推奨される幅を表す double 値、<see cref="T:System.Windows.Controls.ToolBar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidth%2A>100、オーバーフローの幅に<xref:System.Windows.Controls.ToolBar>100 のメイン ページでは、すべてのアイテムにも、特定のサイズの領域に収まる<xref:System.Windows.Controls.ToolBar>です。 1 つだけの項目は、120 のサイズが必要な場合は、ツールバーの幅は自動的に拡張、100 人から 120 にします。  
+  
+<a name="dependencyPropertyInfo_WrapWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidth%2A>を持つプロパティ、<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>です。  
+  
+ [!code-xaml[ToolBarOverflowPanel_snip#ToolBarOverflowPanelWrapWidth](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarOverflowPanel_snip/CS/pane1.xaml#toolbaroverflowpanelwrapwidth)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WrapWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WrapWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel.WrapWidth%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,523 @@
+<Type Name="ModelProperty" FullName="System.Activities.Presentation.Model.ModelProperty">
+  <TypeSignature Language="C#" Value="public abstract class ModelProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ModelProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Model.ModelProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.Presentation.Model.ModelProperty" /> は、<see cref="T:System.Activities.Presentation.Model.ModelItem" /> に関するプロパティを表します。 モデル プロパティは項目のインスタンスに関連付けられます。これによって、<see cref="T:System.ComponentModel.PropertyDescriptor" /> の扱いにくい GetValue/SetValue メカニズムを使用する代わりに、単純な Value 型の取得/設定プロパティをモデル プロパティに使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.Model.ModelProperty> の値はローカルで設定されている値から取得するか、要素階層の上位から継承できます。 プロパティ値のソースを特定するには、<xref:System.Activities.Presentation.Model.ModelItem.Source*> によって返された値の <xref:System.Activities.Presentation.Model.ModelProperty.Value%2A> プロパティを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ModelProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Activities.Presentation.Model.ModelProperty" /> を作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachedOwnerType">
+      <MemberSignature Language="C#" Value="public abstract Type AttachedOwnerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AttachedOwnerType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.AttachedOwnerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場合、このプロパティを定義する型を返します<see cref="P:System.Activities.Presentation.Model.ModelProperty.IsAttached" />返します<see langword="true" />、それ以外を返します<see langword="null" />です。</summary>
+        <value><see cref="T:System.Type" /> または <see langword="null" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティに対して宣言された属性を返します。</summary>
+        <value><see cref="T:System.ComponentModel.AttributeCollection" /> として属性を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearValue">
+      <MemberSignature Language="C#" Value="public abstract void ClearValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ClearValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.ClearValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティのローカル値をクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティに対してローカル値が設定されていない場合、値はプロパティ階層の上位から継承できます。 値を設定する場合`null`、呼び出す<xref:System.Activities.Presentation.Model.ModelProperty.SetValue%2A>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collection">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItemCollection Collection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItemCollection Collection" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Collection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Activities.Presentation.Model.ModelProperty.Value" /> として型変換された <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" /> を返します。</summary>
+        <value>プロパティ値が返されます、 <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" />、または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値がないかどうか、コレクション、このプロパティを返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedValue">
+      <MemberSignature Language="C#" Value="public abstract object ComputedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ComputedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.ComputedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティについて現在計算されている値を返します。 このプロパティに対して値を設定することは、<see cref="M:System.Activities.Presentation.Model.ModelProperty.SetValue(System.Object)" /> を呼び出すことと同じです。ただし、これはデータ バインド式で使用できます。</summary>
+        <value>計算値を <see cref="T:System.Object" /> として返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Converter">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.TypeConverter Converter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.TypeConverter Converter" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Converter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティについて使用する型コンバーターを返します。</summary>
+        <value>このプロパティで使用するための <see cref="T:System.ComponentModel.TypeConverter" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になる型コンバーターは、<xref:System.Activities.Presentation.Model.ModelItem> オブジェクトを受け入れられるように、すべてラップされます。 特定の値への変換を行った場合、型コンバーターの戻り値の型はラップされません。 標準値を返す型コンバーターも、<xref:System.Activities.Presentation.Model.ModelItem> オブジェクトとして値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public abstract object DefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの既定値を返します。 プロパティが既定値を定義いないかどうか、これが返されます<see langword="null" />です。</summary>
+        <value>返します、<see cref="T:System.Object" />または<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dictionary">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItemDictionary Dictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItemDictionary Dictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Dictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItemDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Activities.Presentation.Model.ModelProperty.Value" /> として型変換された <see cref="T:System.Activities.Presentation.Model.ModelItemDictionary" /> を返します。 このプロパティを返しますが、プロパティ値がないかどうか、ディクショナリ、<see langword="null" />です。</summary>
+        <value><see cref="T:System.Activities.Presentation.Model.ModelItemDictionary" /> または <see langword="null" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このプロパティと比較するプロパティです。</param>
+        <summary>プロパティの等価性を判断します。 同じ名前と親を持つ場合、それらのプロパティは等価です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は、<see cref="T:System.Activities.Presentation.Model.ModelProperty" />このプロパティに等しいをそれ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.Model.ModelProperty" /> のハッシュ関数として機能します。</summary>
+        <returns><see cref="T:System.Int32" /> としてハッシュ コードを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAttached">
+      <MemberSignature Language="C#" Value="public abstract bool IsAttached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAttached" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.IsAttached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが、別の型の添付プロパティを表すかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />プロパティは、別の種類から添付プロパティを表す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBrowsable">
+      <MemberSignature Language="C#" Value="public abstract bool IsBrowsable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBrowsable" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.IsBrowsable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティをプロパティ ウィンドウに表示できるかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />プロパティをプロパティ ウィンドウに表示できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCollection">
+      <MemberSignature Language="C#" Value="public abstract bool IsCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.IsCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティに含まれている値が <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" /> かどうかを判断します。</summary>
+        <value>
+          <see langword="true" />プロパティに含まれている値の場合、 <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDictionary">
+      <MemberSignature Language="C#" Value="public abstract bool IsDictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.IsDictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティに含まれている値が <see cref="T:System.Activities.Presentation.Model.ModelItemDictionary" /> かどうかを判断します。</summary>
+        <value>
+          <see langword="true" />プロパティに含まれている値の場合、 <see cref="T:System.Activities.Design.Model.ModelItemDictionary" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public abstract bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが読み取り専用であるかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />場合は、プロパティは読み取り専用です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSet">
+      <MemberSignature Language="C#" Value="public abstract bool IsSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSet" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.IsSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの値がローカルに設定されているかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />プロパティの値がローカルに設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの名前を取得します。</summary>
+        <value>このプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Activities.Presentation.Model.ModelProperty first, System.Activities.Presentation.Model.ModelProperty second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Activities.Presentation.Model.ModelProperty first, class System.Activities.Presentation.Model.ModelProperty second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.op_Equality(System.Activities.Presentation.Model.ModelProperty,System.Activities.Presentation.Model.ModelProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="first" Type="System.Activities.Presentation.Model.ModelProperty" />
+        <Parameter Name="second" Type="System.Activities.Presentation.Model.ModelProperty" />
+      </Parameters>
+      <Docs>
+        <param name="first">最初のプロパティ。</param>
+        <param name="second">2 番目のプロパティ。</param>
+        <summary>プロパティが等価であるかどうかを判断します。 同じ名前と親を持つ場合、それらのプロパティは等価です。</summary>
+        <returns>
+          <see langword="true" />最初のプロパティが 2 番目のプロパティと等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Activities.Presentation.Model.ModelProperty first, System.Activities.Presentation.Model.ModelProperty second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Activities.Presentation.Model.ModelProperty first, class System.Activities.Presentation.Model.ModelProperty second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.op_Inequality(System.Activities.Presentation.Model.ModelProperty,System.Activities.Presentation.Model.ModelProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="first" Type="System.Activities.Presentation.Model.ModelProperty" />
+        <Parameter Name="second" Type="System.Activities.Presentation.Model.ModelProperty" />
+      </Parameters>
+      <Docs>
+        <param name="first">最初のプロパティ。</param>
+        <param name="second">2 番目のプロパティ。</param>
+        <summary>プロパティが非等価であるかどうかを判断します。 同じ名前と親を持つ場合、それらのプロパティは等価です。</summary>
+        <returns>
+          <see langword="false" />最初のプロパティが 2 番目のプロパティと等しい場合それ以外の場合、<see langword="true" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItem Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの親を返します。</summary>
+        <value>このプロパティの親を <see cref="T:System.Activities.Design.Model.ModelItem" /> として返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public abstract Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティのデータ型を返します。</summary>
+        <value>プロパティの <see cref="T:System.Type" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItem SetValue (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.Model.ModelItem SetValue(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.ModelProperty.SetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">設定する新しい値。</param>
+        <summary>プロパティに対するローカル値を設定します。</summary>
+        <returns><paramref name="value" /> として <see cref="T:System.Activities.Presentation.Model.ModelItem" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value` が <xref:System.Activities.Presentation.Model.ModelItem> でない場合、<xref:System.Activities.Presentation.Model.ModelItem> にラップされ、呼び出し元に返されます。 設定することは`value`に`null`、後者<xref:System.Activities.Presentation.Model.ModelProperty.Value%2A>なります`null`です。 この設定は、<xref:System.Activities.Presentation.Model.ModelProperty.ClearValue%2A> を呼び出すこととは異なります。  
+  
+> [!NOTE]
+>  このメソッドを使用して、値を設定できません基になるプロパティの編集コンテキストが完了するまでです。 基になるプロパティをすぐに更新するには、次のように使用します。<xref:System.Activities.Presentation.ArgumentAccessor.Setter%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.Model.ModelItem Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem Value" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.ModelProperty.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティに設定する値を返します。</summary>
+        <value>プロパティ値が返されます、 <see cref="T:System.Activities.Presentation.Model.ModelItem" />、または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは、さらに継承されている値を返す可能性がありますアップ要素階層の場合はこのプロパティは、値を返しますが<xref:System.Activities.Presentation.Model.ModelItem.Source%2A>は`this`します。 かどうかの値がこれまで設定されていないプロパティの<xref:System.Activities.Presentation.Model.ModelProperty.Value%2A>戻ります`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

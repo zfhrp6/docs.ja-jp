@@ -1,0 +1,82 @@
+<Type Name="DeploymentProgressState" FullName="System.Deployment.Application.DeploymentProgressState">
+  <TypeSignature Language="C#" Value="public enum DeploymentProgressState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DeploymentProgressState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.DeploymentProgressState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ClickOnce ダウンロード操作の現在のステージを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.DeploymentProgressState>によって渡される、<xref:System.Deployment.Application.DownloadProgressChangedEventArgs.State%2A>のメンバー<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs>が使用して、 <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>、 <xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>、および<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>イベント。 のどの部分を決定する、この列挙体のメンバーを使用して、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開は、ローカル コンピューターに既にダウンロードされています。  
+  
+   
+  
+## Examples  
+ 次のコード例が、最新バージョンをインストール[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションが非同期的に更新します。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DownloadingApplicationFiles">
+      <MemberSignature Language="C#" Value="DownloadingApplicationFiles" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Deployment.Application.DeploymentProgressState DownloadingApplicationFiles = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Deployment.Application.DeploymentProgressState.DownloadingApplicationFiles" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションが含まれる Dll とデータ ファイルをダウンロードしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadingApplicationInformation">
+      <MemberSignature Language="C#" Value="DownloadingApplicationInformation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Deployment.Application.DeploymentProgressState DownloadingApplicationInformation = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Deployment.Application.DeploymentProgressState.DownloadingApplicationInformation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション マニフェストをダウンロードしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadingDeploymentInformation">
+      <MemberSignature Language="C#" Value="DownloadingDeploymentInformation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Deployment.Application.DeploymentProgressState DownloadingDeploymentInformation = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Deployment.Application.DeploymentProgressState.DownloadingDeploymentInformation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]配置マニフェストをダウンロードしています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,562 @@
+<Type Name="Attachment" FullName="System.Net.Mail.Attachment">
+  <TypeSignature Language="C#" Value="public class Attachment : System.Net.Mail.AttachmentBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Attachment extends System.Net.Mail.AttachmentBase" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mail.Attachment" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.Mail.AttachmentBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>電子メールの添付ファイルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.Attachment>クラスが使用されて、<xref:System.Net.Mail.MailMessage>クラスです。 すべてのメッセージが含まれて、<xref:System.Net.Mail.MailMessage.Body%2A>メッセージの内容が含まれています。 に加えて、本文は、追加のファイルを送信することができます。 これらの添付ファイルとして送信されるおよびとして表される<xref:System.Net.Mail.Attachment>インスタンス。 メール メッセージの添付ファイルを追加するを追加、<xref:System.Net.Mail.MailMessage.Attachments?displayProperty=nameWithType>コレクション。  
+  
+ 添付ファイルのコンテンツを指定できます、 <xref:System.String>、 <xref:System.IO.Stream>、またはファイル名。 いずれかを使用して、添付ファイルのコンテンツを指定することができます、<xref:System.Net.Mail.Attachment.%23ctor%2A>コンス トラクターです。  
+  
+ 添付ファイルの MIME コンテンツ タイプ ヘッダー情報がによって表される、<xref:System.Net.Mail.AttachmentBase.ContentType%2A>プロパティです。 Content-type ヘッダーには、メディア タイプとサブタイプと関連するパラメーターを指定します。 使用して<xref:System.Net.Mail.AttachmentBase.ContentType%2A>添付ファイルに関連付けられているインスタンスを取得します。  
+  
+ MIME Content-disposition ヘッダーがによって表される、<xref:System.Net.Mail.Attachment.ContentDisposition%2A>プロパティです。 Content-disposition ヘッダーは、プレゼンテーション層と添付ファイルのファイルのタイムスタンプを指定します。 添付ファイルがファイルである場合にのみ、Content-disposition ヘッダーが送信されます。 使用して、<xref:System.Net.Mail.Attachment.ContentDisposition%2A>添付ファイルに関連付けられているインスタンスを取得するプロパティです。  
+  
+ MIME コンテンツ-転送-エンコード ヘッダーがによって表される、<xref:System.Net.Mail.AttachmentBase.TransferEncoding%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ファイルを電子メール メッセージに添付するを示しています。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Attachment (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />この添付ファイルの作成に使用するファイルのパスを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.Attachment" />コンテンツ文字列を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは、次のように設定されます。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Net.Mime.ContentType.MediaType%2A>|<xref:System.Net.Mime.MediaTypeNames.Text.Plain>。|  
+|<xref:System.Net.Mail.AttachmentBase.TransferEncoding%2A>|<xref:System.Net.Mime.TransferEncoding.QuotedPrintable>。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#13](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#13)]
+ [!code-csharp[NclMailSync#13](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fileName" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Attachment (System.IO.Stream contentStream, System.Net.Mime.ContentType contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream contentStream, class System.Net.Mime.ContentType contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.#ctor(System.IO.Stream,System.Net.Mime.ContentType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentStream" Type="System.IO.Stream" />
+        <Parameter Name="contentType" Type="System.Net.Mime.ContentType" />
+      </Parameters>
+      <Docs>
+        <param name="contentStream">読み取り可能な<see cref="T:System.IO.Stream" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="contentType">A<see cref="T:System.Net.Mime.ContentType" />内のデータを説明する<c>ストリーム</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.Attachment" />指定したストリームとコンテンツの種類を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.AttachmentBase.TransferEncoding%2A> プロパティが <xref:System.Net.Mime.TransferEncoding.Base64> に設定されている。  
+  
+ 場合、ストリームの<xref:System.IO.Stream.CanSeek%2A>プロパティは`false`、添付ファイルと<xref:System.Net.Mail.MailMessage>それを含むは再利用できません。 添付ファイルを再利用を検索できるストリームを指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#14](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#14)]
+ [!code-csharp[NclMailSync#14](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contentType" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="contentStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Attachment (System.IO.Stream contentStream, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream contentStream, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.#ctor(System.IO.Stream,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentStream" Type="System.IO.Stream" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentStream">読み取り可能な<see cref="T:System.IO.Stream" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="name">A<see cref="T:System.String" />の値を格納している、<see cref="P:System.Net.Mime.ContentType.Name" />のプロパティ、<see cref="T:System.Net.Mime.ContentType" />この添付ファイルに関連付けられています。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.Attachment" />として、指定したストリーム名です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`name`は`null`か等しい<xref:System.String?displayProperty=nameWithType>("") では、<xref:System.Net.Mime.ContentType>にこの添付ファイルを構築するため、<xref:System.Net.Mime.ContentType.Name%2A>プロパティに設定`name`です。 <xref:System.Net.Mail.AttachmentBase.TransferEncoding%2A> プロパティが <xref:System.Net.Mime.TransferEncoding.Base64> に設定されている。  
+  
+ 場合、ストリームの<xref:System.IO.Stream.CanSeek%2A>プロパティは`false`、添付ファイルと<xref:System.Net.Mail.MailMessage>それを含むは再利用できません。 添付ファイルを再利用するために検索できるストリームを指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#15)]
+ [!code-csharp[NclMailSync#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contentStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Attachment (string fileName, System.Net.Mime.ContentType contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, class System.Net.Mime.ContentType contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.#ctor(System.String,System.Net.Mime.ContentType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="contentType" Type="System.Net.Mime.ContentType" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />この添付ファイルの作成に使用するファイルのパスを格納しています。</param>
+        <param name="contentType">A<see cref="T:System.Net.Mime.ContentType" />内のデータを説明する<c>文字列</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.Attachment" />コンテンツ文字列を指定して、<see cref="T:System.Net.Mime.ContentType" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mediaType" />正しい形式ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Attachment (string fileName, string mediaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string mediaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="mediaType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="mediaType">A<see cref="T:System.String" />この添付ファイルの MIME コンテンツ ヘッダーの情報を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.Attachment" />コンテンツの文字列を指定して MIME の種類の情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`mediaType`は`null`以上<xref:System.String?displayProperty=nameWithType>("") では、<xref:System.Net.Mime.ContentType.MediaType%2A>この添付ファイルのプロパティに設定されて<xref:System.Net.Mime.MediaTypeNames.Text.Plain>です。 場合`mediaType`は`null`が長さ 0 の文字列、および構築するために使用されます、<xref:System.Net.Mime.ContentType>この添付ファイルに関連付けられています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#12](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#12)]
+ [!code-csharp[NclMailSync#12](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="mediaType" />正しい形式ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Attachment (System.IO.Stream contentStream, string name, string mediaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream contentStream, string name, string mediaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.#ctor(System.IO.Stream,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentStream" Type="System.IO.Stream" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="mediaType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentStream">読み取り可能な<see cref="T:System.IO.Stream" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="name">A<see cref="T:System.String" />の値を格納している、<see cref="P:System.Net.Mime.ContentType.Name" />のプロパティ、<see cref="T:System.Net.Mime.ContentType" />この添付ファイルに関連付けられています。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="mediaType">A<see cref="T:System.String" />この添付ファイルの MIME コンテンツ ヘッダーの情報を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.Attachment" />指定したストリーム、名、および MIME の種類の情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`mediaType`は`null`以上<xref:System.String?displayProperty=nameWithType>("")、構築するために使用されます、<xref:System.Net.Mime.ContentType>この添付ファイルに関連付けられているクラスです。  
+  
+ 場合`mediaType`と`name`両方含まれている<xref:System.Net.Mime.ContentType.Name%2A>についてで指定された値`name`を使用します。 <xref:System.Net.Mail.AttachmentBase.TransferEncoding%2A> プロパティが <xref:System.Net.Mime.TransferEncoding.Base64> に設定されている。  
+  
+ 場合、ストリームの<xref:System.IO.Stream.CanSeek%2A>プロパティは`false`、添付ファイルと<xref:System.Net.Mail.MailMessage>それを含むは再利用できません。 添付ファイルを再利用するために検索できるストリームを指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#16](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#16)]
+ [!code-csharp[NclMailSync#16](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="mediaType" />正しい形式ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentDisposition">
+      <MemberSignature Language="C#" Value="public System.Net.Mime.ContentDisposition ContentDisposition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mime.ContentDisposition ContentDisposition" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.Attachment.ContentDisposition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.ContentDisposition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この添付ファイルの MIME コンテンツの配置を取得します。</summary>
+        <value>A<see cref="T:System.Net.Mime.ContentDisposition" />この添付ファイルのプレゼンテーション情報を提供します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の情報、<xref:System.Net.Mime.ContentDisposition>クラスは、MIME Content-disposition ヘッダーを表します。 このヘッダーについては、「RFC 2183、で利用可能な[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.Mime.ContentDisposition>添付ファイルをそのプロパティを表示します。  
+  
+ [!code-cpp[NclMailSync#11](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#11)]
+ [!code-csharp[NclMailSync#11](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAttachmentFromString">
+      <MemberSignature Language="C#" Value="public static System.Net.Mail.Attachment CreateAttachmentFromString (string content, System.Net.Mime.ContentType contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Mail.Attachment CreateAttachmentFromString(string content, class System.Net.Mime.ContentType contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.CreateAttachmentFromString(System.String,System.Net.Mime.ContentType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.Attachment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+        <Parameter Name="contentType" Type="System.Net.Mime.ContentType" />
+      </Parameters>
+      <Docs>
+        <param name="content">A<see cref="T:System.String" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="contentType">A<see cref="T:System.Net.Mime.ContentType" />を使用する Multipurpose Internet Mail Exchange (MIME) コンテンツの種類のプロトコル ヘッダーを表すオブジェクト。</param>
+        <summary>指定した文字列と、指定したからコンテンツを使用するメールの添付ファイルを作成<see cref="T:System.Net.Mime.ContentType" />です。</summary>
+        <returns><see cref="T:System.Net.Mail.Attachment" /> 型のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAttachmentFromString">
+      <MemberSignature Language="C#" Value="public static System.Net.Mail.Attachment CreateAttachmentFromString (string content, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Mail.Attachment CreateAttachmentFromString(string content, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.CreateAttachmentFromString(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.Attachment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="content">A<see cref="T:System.String" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="name">この添付ファイルに関連付けられているコンテンツの種類の MIME コンテンツ タイプ名の値。</param>
+        <summary>指定した文字列と指定された MIME コンテンツ タイプ名からコンテンツを使用して、メールの添付ファイルを作成します。</summary>
+        <returns><see cref="T:System.Net.Mail.Attachment" /> 型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合はコンテンツが ASCII 形式で、文字エンコーディング設定 ascii 値算出します。 その他の形式、文字エンコーディング utf-8 に設定されます。 既定のメディア タイプは、プレーン テキストです。  
+  
+ 内容が ASCII 形式ではありませんし、エンコードが null、utf-8 エンコードが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAttachmentFromString">
+      <MemberSignature Language="C#" Value="public static System.Net.Mail.Attachment CreateAttachmentFromString (string content, string name, System.Text.Encoding contentEncoding, string mediaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Mail.Attachment CreateAttachmentFromString(string content, string name, class System.Text.Encoding contentEncoding, string mediaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.Attachment.CreateAttachmentFromString(System.String,System.String,System.Text.Encoding,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.Attachment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="contentEncoding" Type="System.Text.Encoding" />
+        <Parameter Name="mediaType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="content">A<see cref="T:System.String" />この添付ファイルのコンテンツを格納しています。</param>
+        <param name="name">この添付ファイルに関連付けられているコンテンツの種類の MIME コンテンツ タイプ名の値。</param>
+        <param name="contentEncoding"><see cref="T:System.Text.Encoding" />。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="mediaType">A<see cref="T:System.String" />この添付ファイルの MIME コンテンツ ヘッダーの情報を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>添付ファイルの指定した文字列、指定された MIME コンテンツ タイプの名前、文字エンコーディング、および MIME ヘッダー情報の内容を使用して、メールの添付ファイルを作成します。</summary>
+        <returns><see cref="T:System.Net.Mail.Attachment" /> 型のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.Attachment.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの添付ファイルに関連付けられているコンテンツの種類の MIME コンテンツ タイプ名の値を設定します。</summary>
+        <value>A<see cref="T:System.String" />コンテンツの種類の値を格納している<paramref name="name" />によって表される、<see cref="P:System.Net.Mime.ContentType.Name" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.Attachment.Name%2A>プロパティは、この添付ファイルの生成、Content-type ヘッダーに使用します。 <xref:System.Net.Mail.Attachment.Name%2A>は、ファイルが添付された電子メールを受信したときに、添付ファイルの名前として表示されます。 RFC 2045 のセクション 5.1 は、Content-type ヘッダーの構文の詳細を示す文法を説明します。 RFC 2046 には、MIME メディアの種類とそのパラメーターに関する詳細情報が提供されています。 これらの Rfc は、「 [http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、添付ファイルに関する情報を表示する方法を示します。  
+  
+ [!code-cpp[NclMailSync#19](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#19)]
+ [!code-csharp[NclMailSync#19](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">設定操作は指定された値<see cref="F:System.String.Empty" />("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NameEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding NameEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding NameEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.Attachment.NameEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンコーディングを指定します、 <see cref="T:System.Net.Mail.Attachment" /><see cref="P:System.Net.Mail.Attachment.Name" />です。</summary>
+        <value><see cref="T:System.Text.Encoding" />名のエンコードの種類を指定する値。 既定値は、添付ファイルの名前から決定されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

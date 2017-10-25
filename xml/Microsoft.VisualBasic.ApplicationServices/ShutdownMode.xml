@@ -1,0 +1,57 @@
+<Type Name="ShutdownMode" FullName="Microsoft.VisualBasic.ApplicationServices.ShutdownMode">
+  <TypeSignature Language="C#" Value="public enum ShutdownMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ShutdownMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.ShutdownMode" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Windows フォーム アプリケーションをシャット ダウンの原因にはどの条件を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してアプリケーションのシャット ダウン モードを設定することができます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle%2A>プロパティです。 既定では、<xref:System.Windows.Forms.ApplicationContext.OnMainFormClosed%2A>メソッドの値を調べて、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle%2A>アプリケーションをシャット ダウンかどうかを決定するプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AfterAllFormsClose">
+      <MemberSignature Language="C#" Value="AfterAllFormsClose" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.ApplicationServices.ShutdownMode AfterAllFormsClose = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterAllFormsClose" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.ShutdownMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のフォームを閉じた後にのみ停止します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterMainFormCloses">
+      <MemberSignature Language="C#" Value="AfterMainFormCloses" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.ApplicationServices.ShutdownMode AfterMainFormCloses = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.ShutdownMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メイン フォームが閉じたときをシャット ダウンします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

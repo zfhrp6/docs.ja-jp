@@ -1,0 +1,326 @@
+<Type Name="Debugger" FullName="System.Diagnostics.Debugger">
+  <TypeSignature Language="C#" Value="public sealed class Debugger" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Debugger extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Debugger" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デバッガーとの通信を有効にします。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Debugger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Debugger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Call the static methods directly on this type", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.Debugger" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Break">
+      <MemberSignature Language="C#" Value="public static void Break ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Break() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Debugger.Break" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アタッチされたデバッガーにブレークポイントを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバッガーがアタッチされていない場合、ユーザーは、デバッガーをアタッチするかどうかを求められます。 [はい] とユーザーが言って、デバッガーが開始されます。 デバッガーをアタッチすると、デバッガーがユーザー ブレークポイント イベントをシグナル状態になり、デバッガーは、デバッガーのブレークポイントに到達した場合と同様に、プロセスの実行を中断します。  
+  
+> [!WARNING]
+>  以降で[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、ランタイムが不要になった用のデバッガーを起動するための緊密なコントロールを実行、<xref:System.Diagnostics.Debugger.Break%2A>メソッドが、代わりに Windows エラー報告 (WER) サブシステムに、エラーを報告します。 WER は、レポートでは、WER がオペレーティング システムのバージョン、プロセス、セッション、ユーザー、コンピューター、およびドメインなどのエラーに応答する方法は多数の要因の影響を与えるようにを環境では、問題をカスタマイズする多くの設定を提供します。 発生した場合の呼び出し時に予期しない結果、<xref:System.Diagnostics.Debugger.Break%2A>メソッド、コンピューターに、WER の設定を確認します。 WER をカスタマイズする方法の詳細については、次を参照してください。 [WER の設定](https://msdn.microsoft.com/library/windows/desktop/bb513638.aspx)です。 WER の設定に関係なく、デバッガーが起動されたことを確認する場合は、必ずを呼び出して、<xref:System.Diagnostics.Debugger.Launch%2A>メソッド代わりにします。  
+  
+   
+  
+## Examples  
+ 次のコード例への呼び出しでデバッガーを停止する方法を示します<xref:System.Console.WriteLine%2A>です。  
+  
+```vb  
+Debugger.Break()  
+Console.WriteLine("Hello, world.")  
+```  
+  
+```csharp  
+Debugger.Break();  
+Console.WriteLine("Hello, world.");  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException"><see cref="T:System.Security.Permissions.UIPermission" />デバッガーを中断に設定されていません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">デバッガーを起動する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCategory">
+      <MemberSignature Language="C#" Value="public static readonly string DefaultCategory;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string DefaultCategory" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Debugger.DefaultCategory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定数を持つメッセージの既定のカテゴリを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この既定の定数の値が`null`です。 <xref:System.Diagnostics.Debugger.DefaultCategory>によって使用される<xref:System.Diagnostics.Debugger.Log%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAttached">
+      <MemberSignature Language="C#" Value="public static bool IsAttached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsAttached" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Debugger.IsAttached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッガーがプロセスにアタッチされているかどうかを示す値を取得します。</summary>
+        <value>
+          デバッガーがアタッチされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLogging">
+      <MemberSignature Language="C#" Value="public static bool IsLogging ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsLogging() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Debugger.IsLogging" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アタッチされたデバッガーによってログ記録が有効になっているかどうかを確認します。</summary>
+        <returns>
+          デバッガーがアタッチされ、ログ記録が有効の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 アタッチされたデバッガーは、<see langword="DbgManagedDebugger" /> レジストリ キー内に登録されたマネージ デバッガーです。 このキーの詳細については、次を参照してください。 [JIT アタッチ デバッグを有効にする](~/docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Launch">
+      <MemberSignature Language="C#" Value="public static bool Launch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Launch() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Debugger.Launch" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デバッガーを起動し、プロセスにアタッチします。</summary>
+        <returns>
+          起動に成功した場合、またはデバッガーが既にアタッチされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバッガーが既にアタッチされている場合は、何も起こりません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException"><see cref="T:System.Security.Permissions.UIPermission" />デバッガーの起動時に設定されていません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">デバッガーを起動する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public static void Log (int level, string category, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Log(int32 level, string category, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="level" Type="System.Int32" />
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="level">メッセージの重要度の記述。</param>
+        <param name="category">メッセージのカテゴリ。</param>
+        <param name="message">表示するメッセージ。</param>
+        <summary>アタッチされたデバッガーのメッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アタッチされたデバッガーがない場合は、このメソッドは影響を与えません。 デバッガーは報告されず、メッセージの設定に応じてもあります。  
+  
+> [!NOTE]
+>  Category パラメーターは、256 文字に制限されます。 256 文字より長い文字列は切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyOfCrossThreadDependency">
+      <MemberSignature Language="C#" Value="public static void NotifyOfCrossThreadDependency ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void NotifyOfCrossThreadDependency() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行が、スレッド間の依存関係を含むパスに入ろうとしていることをデバッガーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバッガーには、受信を希望するコールバック具体的には有効にする必要があります。 スレッド間の依存関係のコールバックを受信するデバッガーには、メソッドを呼び出す必要があります。  
+  
+ 選択したデバッガー<xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A>通知時に適切なアクションを実行できます。 たとえば、通常の関数の評価を実行するには、評価を実行しているスレッドを除くすべてのスレッドを凍結が必要です。 関数の評価では、リモート処理のシナリオで発生する可能性と、1 つ以上のスレッド上で実行が必要とする場合、評価がブロックされます。 <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A>通知は、スレッドを解放または関数の評価を中止する必要があることをデバッガーに通知します。 通知は、このメソッドが返された後コレクションの対象とです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

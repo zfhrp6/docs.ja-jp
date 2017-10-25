@@ -1,0 +1,2903 @@
+<Type Name="DataGrid" FullName="System.Web.UI.WebControls.DataGrid">
+  <TypeSignature Language="C#" Value="public class DataGrid : System.Web.UI.WebControls.BaseDataList, System.Web.UI.INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGrid extends System.Web.UI.WebControls.BaseDataList implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGrid" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseDataList</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.DataGridDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.DataGridComponentEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.ComponentModel.ComponentEditor))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テーブルのデータ ソースから取得した項目を表示するデータ連結リスト コントロール。 <see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロールではこれらの項目の選択、並べ替え、および編集を行えます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#Introduction)  
+  
+-   [ユーザー補助](#Accessibility)  
+  
+-   [宣言型の構文](#DeclarativeSyntax)  
+  
+    > [!NOTE]
+    >  使用する前に、<xref:System.Web.UI.WebControls.DataGrid>使用を検討して、制御、<xref:System.Web.UI.WebControls.GridView>代わりを制御します。 <xref:System.Web.UI.WebControls.GridView>の後継となるまでは、.NET Framework version 2.0 で導入された、制御、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+<a name="Introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid>テーブル内の列としてデータ ソースのフィールドを表示するコントロール。 内の行ごと、<xref:System.Web.UI.WebControls.DataGrid>コントロールがデータ ソースのレコードを表します。 <xref:System.Web.UI.WebControls.DataGrid>コントロールは、選択、編集、削除すると、ページング、および並べ替えをサポートしています。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+ 別の列の型は、コントロール内の列の動作を決定します。 次の表には、使用できるさまざまな列の型が一覧表示します。  
+  
+|列の型|説明|  
+|-----------------|-----------------|  
+|<xref:System.Web.UI.WebControls.BoundColumn>|データ ソースのフィールドにバインドされている列を表示します。 フィールドにテキストとして各項目を表示します。 これは、既定の列の種類、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.ButtonColumn>|列内の各項目に対してコマンド ボタンを表示します。 これによりなどのカスタム ボタン コントロールの列を作成する`Add`または`Remove`ボタン。|  
+|<xref:System.Web.UI.WebControls.EditCommandColumn>|列内の各項目の編集コマンドを含む列を表示します。|  
+|<xref:System.Web.UI.WebControls.HyperLinkColumn>|ハイパーリンクとして、列の各項目の内容を表示します。 列の内容は、データ ソースまたは静的なテキスト フィールドにバインドできます。|  
+|<xref:System.Web.UI.WebControls.TemplateColumn>|指定したテンプレートを次の列で各項目を表示します。 これにより、列内のカスタム コントロールを提供することができます。|  
+  
+ 既定では、<xref:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns%2A>プロパティに設定されている`true`、作成する、<xref:System.Web.UI.WebControls.BoundColumn>オブジェクト データ ソース内の各フィールドです。 各フィールドが内の列として表示し、<xref:System.Web.UI.WebControls.DataGrid>データ ソース内の各フィールドが表示される順序で制御します。  
+  
+ 表示する列を制御することができますも手動で、<xref:System.Web.UI.WebControls.DataGrid>コントロールを設定して、<xref:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns%2A>プロパティを`false`し、開始タグと終了の間に挿入する列の一覧と`<Columns>`タグ。 指定された列を追加、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>順序でコレクションが一覧表示します。 これにより、プログラムからの列を制御したり、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  列に表示される順序、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、列に表示される順序によって制御されます、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。 プログラムで操作することで、列の順序を変更することができますが、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション、方が簡単希望の表示順序で列を一覧表示します。  
+  
+ 明示的に宣言された列は、自動的に生成された列と組み合わせて表示できます。 列を明示的に宣言の両方を使用して、最初に表示されときに、自動的に生成された列に続きます。  
+  
+> [!NOTE]
+>  自動的に生成された列は追加されません、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+ 外観、<xref:System.Web.UI.WebControls.DataGrid>コントロールのさまざまな部分のスタイル プロパティを設定してコントロールをカスタマイズすることがあります。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>|代替項目にスタイルを指定します、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>|編集されているアイテムのスタイルを指定、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>|フッター セクションのスタイルを指定します、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>|ヘッダー セクションのスタイルを指定、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>|内の項目のスタイルを指定、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.PagerStyle%2A>|ページの選択 セクションのスタイルを指定、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>|選択した項目のスタイルを指定、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+  
+ コントロールのさまざまな部分を非表示を切り替えることができますも。 次の表は、どの部分を表示または非表示を制御するプロパティを一覧表示します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataGrid.ShowFooter%2A>|フッター セクションの表示と非表示を切り替えます、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataGrid.ShowHeader%2A>|表示またはのヘッダー セクションを非表示、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+  
+ 外観を制御することができます、<xref:System.Web.UI.WebControls.DataGrid>プログラムで属性を追加することによってコントロール、`<td>`と`<tr>`タグがコントロールによって、ブラウザーにレンダリングされます。 イベント ハンドラーでコードを提供することによってプログラムで属性を追加することができます、<xref:System.Web.UI.WebControls.DataGrid.OnItemCreated%2A>または<xref:System.Web.UI.WebControls.DataGrid.OnItemDataBound%2A>イベント。  
+  
+ 属性を追加する、`<td>`タグ、まず、<xref:System.Web.UI.WebControls.TableCell>でセルを表すオブジェクト、<xref:System.Web.UI.WebControls.DataGrid>する属性を追加するコントロール。 <xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>のコレクション、<xref:System.Web.UI.WebControls.DataGridItemEventArgs.Item%2A>のプロパティ、 <xref:System.Web.UI.WebControls.DataGridItemEventArgs> 、必要なため、イベント ハンドラーに渡されたオブジェクトを使用できます<xref:System.Web.UI.WebControls.TableCell>オブジェクト。 使用してできます、<xref:System.Web.UI.AttributeCollection.Add%2A?displayProperty=nameWithType>のメソッド、<xref:System.Web.UI.WebControls.WebControl.Attributes%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>属性を追加するオブジェクト、`<td>`タグ。  
+  
+ 属性を追加する、`<tr>`タグ、まず、<xref:System.Web.UI.WebControls.DataGridItem>内の行を表すオブジェクト、<xref:System.Web.UI.WebControls.DataGrid>する属性を追加するコントロール。 <xref:System.Web.UI.WebControls.DataGridItemEventArgs.Item%2A>のプロパティ、 <xref:System.Web.UI.WebControls.DataGridItemEventArgs> 、必要なため、イベント ハンドラーに渡されたオブジェクトを使用できます<xref:System.Web.UI.WebControls.DataGridItem>オブジェクト。 使用してできます、<xref:System.Web.UI.AttributeCollection.Add%2A?displayProperty=nameWithType>のメソッド、<xref:System.Web.UI.WebControls.WebControl.Attributes%2A>のコレクション、<xref:System.Web.UI.WebControls.DataGridItem>属性を追加するオブジェクト、`<tr>`タグ。  
+  
+<a name="Accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DataGrid  
+    AccessKey="string"  
+    AllowCustomPaging="True|False"  
+    AllowPaging="True|False"  
+    AllowSorting="True|False"  
+    AutoGenerateColumns="True|False"  
+    BackColor="color name|#dddddd"  
+    BackImageUrl="uri"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    Caption="string"  
+    CaptionAlign="NotSet|Top|Bottom|Left|Right"  
+    CellPadding="integer"  
+    CellSpacing="integer"  
+    CssClass="string"  
+    DataKeyField="string"  
+    DataMember="string"  
+    DataSource="string"  
+    DataSourceID="string"  
+    EditItemIndex="integer"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    GridLines="None|Horizontal|Vertical|Both"  
+    Height="size"  
+    HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+    ID="string"  
+    OnCancelCommand="CancelCommand event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeleteCommand="DeleteCommand event handler"  
+    OnDisposed="Disposed event handler"  
+    OnEditCommand="EditCommand event handler"  
+    OnInit="Init event handler"  
+    OnItemCommand="ItemCommand event handler"  
+    OnItemCreated="ItemCreated event handler"  
+    OnItemDataBound="ItemDataBound event handler"  
+    OnLoad="Load event handler"  
+    OnPageIndexChanged="PageIndexChanged event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelectedIndexChanged="SelectedIndexChanged event handler"  
+    OnSortCommand="SortCommand event handler"  
+    OnUnload="Unload event handler"  
+    OnUpdateCommand="UpdateCommand event handler"  
+    PageSize="integer"  
+    runat="server"  
+    SelectedIndex="integer"  
+    ShowFooter="True|False"  
+    ShowHeader="True|False"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    UseAccessibleHeader="True|False"  
+    Visible="True|False"  
+    Width="size"  
+>  
+        <AlternatingItemStyle />  
+        <Columns>  
+                <asp:BoundColumn  
+                    DataField="string"  
+                    DataFormatString="string"  
+                    FooterText="string"  
+                    HeaderImageUrl="uri"  
+                    HeaderText="string"  
+                    ReadOnly="True|False"  
+                    SortExpression="string"  
+                    Visible="True|False"  
+>  
+                        <FooterStyle />  
+                        <HeaderStyle />  
+                        <ItemStyle />  
+                </asp:BoundColumn>  
+                <asp:ButtonColumn  
+                    ButtonType="LinkButton|PushButton"  
+                    CausesValidation="True|False"  
+                    CommandName="string"  
+                    DataTextField="string"  
+                    DataTextFormatString="string"  
+                    FooterText="string"  
+                    HeaderImageUrl="uri"  
+                    HeaderText="string"  
+                    SortExpression="string"  
+                    Text="string"  
+                    ValidationGroup="string"  
+                    Visible="True|False"  
+>  
+                        <FooterStyle />  
+                        <HeaderStyle />  
+                        <ItemStyle />  
+                </asp:ButtonColumn>  
+                <asp:EditCommandColumn  
+                    ButtonType="LinkButton|PushButton"  
+                    CancelText="string"  
+                    CausesValidation="True|False"  
+                    EditText="string"  
+                    FooterText="string"  
+                    HeaderImageUrl="uri"  
+                    HeaderText="string"  
+                    SortExpression="string"  
+                    UpdateText="string"  
+                    ValidationGroup="string"  
+                    Visible="True|False"  
+>  
+                        <FooterStyle />  
+                        <HeaderStyle />  
+                        <ItemStyle />  
+                </asp:EditCommandColumn>  
+                <asp:HyperLinkColumn  
+                    DataNavigateUrlField="string"  
+                    DataNavigateUrlFormatString="string"  
+                    DataTextField="string"  
+                    DataTextFormatString="string"  
+                    FooterText="string"  
+                    HeaderImageUrl="uri"  
+                    HeaderText="string"  
+                    NavigateUrl="uri"  
+                    SortExpression="string"  
+                    Target="string|_blank|_parent|_search|_self|_top"  
+                    Text="string"  
+                    Visible="True|False"  
+>  
+                        <FooterStyle />  
+                        <HeaderStyle />  
+                        <ItemStyle />  
+                </asp:HyperLinkColumn>  
+                <asp:TemplateColumn  
+                    FooterText="string"  
+                    HeaderImageUrl="uri"  
+                    HeaderText="string"  
+                    SortExpression="string"  
+                    Visible="True|False"  
+>  
+                            <FooterStyle />  
+                            <HeaderStyle />  
+                            <ItemStyle />  
+                        <EditItemTemplate>  
+                            <!-- child controls -->  
+                        </EditItemTemplate>  
+                        <FooterTemplate>  
+                            <!-- child controls -->  
+                        </FooterTemplate>  
+                        <HeaderTemplate>  
+                            <!-- child controls -->  
+                        </HeaderTemplate>  
+                        <ItemTemplate>  
+                            <!-- child controls -->  
+                        </ItemTemplate>  
+                </asp:TemplateColumn>  
+        </Columns>  
+        <EditItemStyle />  
+        <FooterStyle />  
+        <HeaderStyle />  
+        <ItemStyle />  
+        <PagerStyle  
+            BackColor="color name|#dddddd"  
+            BorderColor="color name|#dddddd"  
+            BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|  
+                Groove|Ridge|Inset|Outset"  
+            BorderWidth="size"  
+            CssClass="string"  
+            Font-Bold="True|False"  
+            Font-Italic="True|False"  
+            Font-Names="string"  
+            Font-Overline="True|False"  
+            Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|  
+                Medium|Large|X-Large|XX-Large"  
+            Font-Strikeout="True|False"  
+            Font-Underline="True|False"  
+            ForeColor="color name|#dddddd"  
+            Height="size"  
+            HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+            Mode="NextPrev|NumericPages"  
+            NextPageText="string"  
+            OnDisposed="Disposed event handler"  
+            PageButtonCount="integer"  
+            Position="Bottom|Top|TopAndBottom"  
+            PrevPageText="string"  
+            VerticalAlign="NotSet|Top|Middle|Bottom"  
+            Visible="True|False"  
+            Width="size"  
+            Wrap="True|False"  
+        />  
+        <SelectedItemStyle />  
+</asp:DataGrid>  
+```  
+  
+   
+  
+## Examples  
+ Visual Studio の Web サイト プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmsdnexamples&DownloadId=11217)です。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid>コントロールをデータ ソースの項目を表示します。  
+  
+ [!code-aspx-csharp[Classic DataGrid Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid Example 2/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid>簡単なショッピング カートを制御します。  
+  
+ [!code-aspx-csharp[Classic DataGrid Example 2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid Example 2/CS/source2cs.aspx#2)]
+ [!code-aspx-vb[Classic DataGrid Example 2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid Example 2/VB/source2vb.aspx#2)]  
+  
+ 次のコード例は、属性を動的に追加する方法を示します、`<td>`と`<tr>`によって生成されるタグ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridTrTdTags#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridTrTdTags/CS/datagridtdtrtagcs.aspx#1)]
+ [!code-aspx-vb[DataGridTrTdTags#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridTrTdTags/VB/datagridtdtrtagvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridExample/CS/datagridcs.aspx#1)]
+ [!code-aspx-vb[DataGridExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridExample/VB/datagridvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGrid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGrid" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataGrid>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid>クラスです。  
+  
+ [!code-aspx-csharp[DataGridCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridCtor/CS/datagridctorcs.aspx#1)]
+ [!code-aspx-vb[DataGridCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridCtor/VB/datagridctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowCustomPaging">
+      <MemberSignature Language="C#" Value="public virtual bool AllowCustomPaging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowCustomPaging" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.AllowCustomPaging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ページングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />カスタム ページングが有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページングでは、内容を表示することができます、<xref:System.Web.UI.WebControls.DataGrid>ページ セグメント単位で制御します。 ページ上の項目の数がによって決まりますが、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>プロパティです。 値が指定されていない場合、 <xref:System.Web.UI.WebControls.DataGrid.PageSize%2A> 、プロパティ、<xref:System.Web.UI.WebControls.DataGrid>ページに 10 個の項目が表示されます。  
+  
+ 通常、すべての行を含むデータ ソース、<xref:System.Web.UI.WebControls.DataGrid>コントロールが読み込まれるたびに、<xref:System.Web.UI.WebControls.DataGrid>コントロールが別のページに移動します。 データ ソースが非常に大きい場合は、多くのリソースが使用できます。 カスタム ページングを使用すると、1 つのページを表示するために必要なデータのセグメントだけを読み込むことができます。  
+  
+ カスタム ページングを有効にするには、両方を設定、<xref:System.Web.UI.WebControls.DataGrid.AllowPaging%2A>と<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティ`true`です。 処理するコードを次に、提供、<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベント。  
+  
+ 一般的なロジック、<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベント ハンドラーが最初に設定するには、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティを表示するページのインデックス。  
+  
+> [!NOTE]
+>  イベント ハンドラーは、<xref:System.Web.UI.WebControls.DataGridPageChangedEventArgs>オブジェクトをパラメーターとして。 使用することができます、 <xref:System.Web.UI.WebControls.DataGridPageChangedEventArgs.NewPageIndex%2A> 、ページの選択範囲の要素からユーザーが選択したページのインデックスを確認するには、このパラメーターのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 次に、1 つのページを表示し、使用してデータを含むデータ ソースを作成、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>にデータをバインドするメソッド、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  設定する必要があります、データのセグメントのみが読み込まれるため、<xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A>プロパティ内のアイテムの合計数を<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、コントロール内のすべての項目を表示するために必要なページの合計数を決定する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このプロパティは、通常プログラムで設定 1 回のアイテムの合計数、<xref:System.Web.UI.WebControls.DataGrid>コントロールが決定されます。  
+  
+ ページングが有効な場合、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティに設定されている`false`、<xref:System.Web.UI.WebControls.DataGrid>コントロールでは、データ ソースに表示されるすべての項目が含まれている前提としています。 <xref:System.Web.UI.WebControls.DataGrid>コントロールで指定された、ページのインデックスに基づいて、表示されるページ上の項目のインデックスが計算されます、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティ、およびページで指定された項目の数、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>プロパティです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、データ ソースに定めるところによる項目にはのみが含まれている前提としています。、<xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A>プロパティです。 すべての項目で指定された項目の数に達するまで、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>プロパティが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>カスタム ページングを有効にするプロパティです。  
+  
+ [!code-aspx-csharp[DataGridCustomPaging#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridCustomPaging/CS/datagridcustompagingcs.aspx#1)]
+ [!code-aspx-vb[DataGridCustomPaging#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridCustomPaging/VB/datagridcustompagingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPaging">
+      <MemberSignature Language="C#" Value="public virtual bool AllowPaging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPaging" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.AllowPaging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ページングが有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページングでは、内容を表示することができます、<xref:System.Web.UI.WebControls.DataGrid>ページ セグメント単位で制御します。 ページ上の項目の数がによって決まりますが、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>プロパティです。 値が指定されていない場合、 <xref:System.Web.UI.WebControls.DataGrid.PageSize%2A> 、プロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールがページに 10 個の項目を表示します。  
+  
+ 既定では、ページングは無効です。 ページングを有効にするには、このプロパティを設定`true`を処理するコードを提供し、<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベント。  
+  
+ 一般的なロジック、<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベントは、設定する、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティを表示し、使用するページのインデックスを<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>にデータをバインドするメソッド、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  イベント ハンドラーは、<xref:System.Web.UI.WebControls.DataGridPageChangedEventArgs>オブジェクトをパラメーターとして。 使用することができます、 <xref:System.Web.UI.WebControls.DataGridPageChangedEventArgs.NewPageIndex%2A> 、ページの選択範囲の要素からユーザーが選択したページのインデックスを確認するには、このパラメーターのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 標準のページング、<xref:System.Web.UI.WebControls.DataGrid>コントロールでは、データ ソースに表示されるすべての項目が含まれている前提としています。 <xref:System.Web.UI.WebControls.DataGrid>コントロールで指定された、ページのインデックスに基づいて、表示されるページ上の項目のインデックスが計算されます、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティ、および項目で指定された、ページ上の項目の数、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>プロパティです。  
+  
+ 通常、表示されるすべての項目を含むデータ ソースがたびに読み込まれた、<xref:System.Web.UI.WebControls.DataGrid>コントロールをページングします。 データ ソースが非常に大きい場合は、多くのリソースが使用できます。 カスタム ページングを使用すると、1 つのページを表示するために必要なデータのセグメントだけを読み込むことができます。 カスタム ページングの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.AllowPaging%2A>プロパティ ページングを有効にします。  
+  
+ [!code-aspx-csharp[Classic DataGrid.AllowPaging Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.AllowPaging Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.AllowPaging Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.AllowPaging Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridAllowPaging#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowPaging/CS/datagridallowpagingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowPaging#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowPaging/VB/datagridallowpagingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowSorting">
+      <MemberSignature Language="C#" Value="public virtual bool AllowSorting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowSorting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.AllowSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または並べ替えが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />並べ替えが有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 並べ替えを有効にすると、<xref:System.Web.UI.WebControls.LinkButton>コントロールは各列のヘッダー セクションにレンダリングされます場所、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>プロパティを設定します。 これら<xref:System.Web.UI.WebControls.LinkButton>コントロールを使用すると、並べ替え、<xref:System.Web.UI.WebControls.DataGrid>選択した列を制御します。 使用する場合は、例外、<xref:System.Web.UI.WebControls.TemplateColumn>列の型を<xref:System.Web.UI.WebControls.TemplateColumn.HeaderTemplate%2A>プロパティ セットです。 この場合は、指定する必要があります、<xref:System.Web.UI.WebControls.Button>内の制御、<xref:System.Web.UI.WebControls.TemplateColumn.HeaderTemplate%2A>列の。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントは 1 つの<xref:System.Web.UI.WebControls.LinkButton>コントロールをクリックします。 イベント ハンドラーのコードを指定する責任です。 ハンドラーの一般的なロジックが、一覧を並べ替えることでデータをバインドし、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.AllowSorting%2A>プロパティ並べ替えを有効にします。  
+  
+ [!code-aspx-csharp[Classic DataGrid.AllowSorting Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.AllowSorting Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.AllowSorting Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.AllowSorting Example 2/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridAllowSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowSorting/CS/datagridallowsortingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowSorting/VB/datagridallowsortingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternatingItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle AlternatingItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle AlternatingItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>代替のアイテムのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />交互のスタイル プロパティを表すオブジェクトの項目を<see cref="T:System.Web.UI.WebControls.DataGrid" />です。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>の項目を代替のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 交互の項目にカスタム スタイルを指定するには、配置、`<AlternatingItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<AlternatingItemStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>の代替項目に別の背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridAlternatingItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAlternatingItemStyle/CS/datagridalternatingitemstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridAlternatingItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAlternatingItemStyle/VB/datagridalternatingitemstylevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemStyle/CS/datagriditemstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemStyle/VB/datagriditemstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoGenerateColumns">
+      <MemberSignature Language="C#" Value="public virtual bool AutoGenerateColumns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoGenerateColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="T:System.Web.UI.WebControls.BoundColumn" />オブジェクトが自動的に作成されに表示される、<see cref="T:System.Web.UI.WebControls.DataGrid" />データ ソース内の各フィールドのコントロールです。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.Web.UI.WebControls.BoundColumn" />オブジェクトが自動的に作成したと表示されている、それ以外の<see langword="false" />します。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して自動的に作成する、<xref:System.Web.UI.WebControls.BoundColumn>データ ソース内の各フィールドのオブジェクト。 各フィールドが内の列として表示し、<xref:System.Web.UI.WebControls.DataGrid>データ ソースのフィールドの順序で制御します。  
+  
+ すべてのデータ型にバインドできる、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 フィールドに、サポートされていないデータ型が含まれている場合、そのフィールドの列は作成されません。 データ ソースには、サポートされていないデータ型を持つ 1 つの列にはのみが含まれています、例外がスローされます。 次の表は、コントロールにバインドできるデータ型を表示します。  
+  
+|データ型|説明|  
+|---------------|-----------------|  
+|プリミティブ|プリミティブ データ型など<xref:System.Int32?displayProperty=nameWithType>、 <xref:System.Char>、<xref:System.Double>のようにします。 完全な一覧については、「<xref:System.Type.IsPrimitive%2A?displayProperty=nameWithType>」を参照してください。|  
+|String|<xref:System.String?displayProperty=nameWithType> オブジェクト。|  
+|DateTime|<xref:System.DateTime?displayProperty=nameWithType> オブジェクト。|  
+|Decimal (10 進数型)|<xref:System.Decimal?displayProperty=nameWithType> オブジェクト。|  
+  
+> [!NOTE]
+>  明示的に宣言された列は、自動生成された列と組み合わせて使用可能性があります。 列を明示的に宣言の両方を使用して、最初に表示されときに、自動生成された列に続きます。 自動生成された列は追加されません、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns%2A>自動的に作成するプロパティ、<xref:System.Web.UI.WebControls.BoundColumn>データ ソース内の各フィールドのオブジェクト。  
+  
+ [!code-aspx-csharp[Classic DataGrid.AutoGenerateColumns Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.AutoGenerateColumns Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.AutoGenerateColumns Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.AutoGenerateColumns Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string BackImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.BackImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景に表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>背景に表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.BackImageUrl%2A>の背景に表示するイメージを指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  指定したイメージがより小さい場合、<xref:System.Web.UI.WebControls.DataGrid>コントロール、イメージが、コントロールの背景を埋めるために並べて表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用方法、<xref:System.Web.UI.WebControls.DataGrid.BackImageUrl%2A>の背景画像を指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.BackImageUrl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.BackImageUrl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.BackImageUrl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.BackImageUrl Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridBackImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridBackImageUrl/CS/datagridbackimageurlcs.aspx#1)]
+ [!code-aspx-vb[DataGridBackImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridBackImageUrl/VB/datagridbackimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridCommandEventHandler CancelCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridCommandEventHandler CancelCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.CancelCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see langword="Cancel" />のアイテムのボタンがクリックされた、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベントが発生したときに、`Cancel`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) するデータを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>内のアイテムに行われた編集をキャンセルするイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCommandName">
+      <MemberSignature Language="C#" Value="public const string CancelCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string CancelCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.CancelCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see langword="Cancel" />コマンド名です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.CancelCommandName>を表すフィールド、`Cancel`コマンド名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataGridColumnCollection Columns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGridColumnCollection Columns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.DataGridColumnCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridColumnCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列を表すオブジェクトのコレクションを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataGridColumnCollection" />の列を表すオブジェクトのコレクションを格納するオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してプログラムで列のコレクションを制御する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGrid.Columns%2A>で描画を明示的に宣言された列がコレクションに含まれています、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  明示的に宣言された列は、自動的に生成された列と組み合わせて使用可能性があります。 列を明示的に宣言の両方を使用して、最初に表示されときに、自動的に生成された列に続きます。 自動的に生成された列は追加されません、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+ 列に表示される順序、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、列に表示される順序によって制御されます、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+ 次の表は、別の列のクラスから派生する、<xref:System.Web.UI.WebControls.DataGridColumn>クラスし、で使用できる、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+|列の型|説明|  
+|-----------------|-----------------|  
+|<xref:System.Web.UI.WebControls.BoundColumn>|データ ソースのフィールドにバインドされている列を表示します。 フィールドにテキストとして各項目を表示します。 これは、既定の列の種類、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|<xref:System.Web.UI.WebControls.ButtonColumn>|列内の各項目に対してコマンド ボタンを表示します。 これによりなどのカスタム ボタン コントロールの列を作成する、`Add`または`Remove`ボタンをクリックします。|  
+|<xref:System.Web.UI.WebControls.EditCommandColumn>|列内の各項目の編集コマンドを含む列を表示します。|  
+|<xref:System.Web.UI.WebControls.HyperLinkColumn>|ハイパーリンクとして、列の各項目の内容を表示します。 列の内容は、データ ソースまたは静的なテキスト フィールドにバインドできます。|  
+|<xref:System.Web.UI.WebControls.TemplateColumn>|指定したテンプレートを次の列で各項目を表示します。 これにより、列内のカスタム コントロールを提供することができます。|  
+  
+> [!NOTE]
+>  プログラムで列を追加することができますが、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション、静的に列を一覧表示し、使用して簡単には、<xref:System.Web.UI.WebControls.DataGridColumn.Visible%2A>プロパティまたは列を非表示にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>に列を動的に追加するコレクション、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.Columns Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.Columns Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.Columns Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.Columns Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridColumnVisible#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnVisible/CS/datagridcolumnvisiblecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnVisible#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnVisible/VB/datagridcolumnvisiblevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateColumnSet">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ArrayList CreateColumnSet (System.Web.UI.WebControls.PagedDataSource dataSource, bool useDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ArrayList CreateColumnSet(class System.Web.UI.WebControls.PagedDataSource dataSource, bool useDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.CreateColumnSet(System.Web.UI.WebControls.PagedDataSource,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.PagedDataSource" />
+        <Parameter Name="useDataSource" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">コントロールの階層構造の作成に使用されているデータ ソース</param>
+        <param name="useDataSource">列が自動的に生成するか保存された状態を使用するデータ ソースを使用するかどうか。</param>
+        <summary>コントロールの階層構造を構築するために使用する列のセットを作成します。 ときに<see cref="P:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns" />が true の場合、列を作成すると、データ ソースと一致しで定義されている列のセットに追加されます、<see cref="P:System.Web.UI.WebControls.DataGrid.Columns" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.ArrayList" />正しい順序で列の有効なセットを格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlHierarchy">
+      <MemberSignature Language="C#" Value="protected override void CreateControlHierarchy (bool useDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateControlHierarchy(bool useDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.CreateControlHierarchy(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useDataSource" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useDataSource">列が自動的に生成するか保存された状態を使用するデータ ソースを使用するかどうか。</param>
+        <summary>表示するために使用されるコントロールの階層構造を作成、<see cref="T:System.Web.UI.WebControls.DataGrid" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、コントロール コレクションのすべての子が既にクリアされたことを前提としています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="useDataSource" /><see langword="true" />の値<see cref="P:System.Web.UI.WebControls.DataGrid.VirtualItemCount" />が設定されていない、選択したデータ ソースを実装しない、<see cref="T:System.Collections.ICollection" />インターフェイス。  
+  
+ \- または  
+  
+ <paramref name="useDataSource" /><see langword="true" />し、データ ソースが無効な<see cref="P:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlStyle">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Style CreateControlStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Style CreateControlStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.CreateControlStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいコントロールのスタイルを作成します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Style" />を表す、新しいスタイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.CreateControlStyle%2A>常に表示されるようにカスタム サーバー内のメソッドが制御、<xref:System.Web.UI.WebControls.BaseDataList.GridLines%2A>なし<xref:System.Web.UI.WebControls.BaseDataList.CellSpacing%2A>で、<xref:System.Web.UI.WebControls.DataGrid>です。  
+  
+ [!code-aspx-csharp[CustomDataGridCreateControlStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomDataGridCreateControlStyle/CS/custom_datagrid_createcontrolstylecs.aspx#1)]
+ [!code-aspx-vb[CustomDataGridCreateControlStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomDataGridCreateControlStyle/VB/custom_datagrid_createcontrolstylevb.aspx#1)]  
+[!code-csharp[CustomDataGridCreateControlStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomDataGridCreateControlStyle/CS/custom_datagrid_createcontrolstyle.cs#2)]
+[!code-vb[CustomDataGridCreateControlStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomDataGridCreateControlStyle/VB/custom_datagrid_createcontrolstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateItem">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.DataGridItem CreateItem (int itemIndex, int dataSourceIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.DataGridItem CreateItem(int32 itemIndex, int32 dataSourceIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.CreateItem(System.Int32,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+        <Parameter Name="dataSourceIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">インデックス、<see cref="T:System.Web.UI.WebControls.DataGridItem" />オブジェクト。</param>
+        <param name="dataSourceIndex">データ ソースからデータ項目のインデックス。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>
+          <see cref="T:System.Web.UI.WebControls.DataGridItem" /> オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.DataGridItem" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.CreateItem%2A>で使用されるヘルパー メソッドは、<xref:System.Web.UI.WebControls.DataGrid>クラスを作成するその<xref:System.Web.UI.WebControls.DataGridItem>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドは主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPageIndex">
+      <MemberSignature Language="C#" Value="public int CurrentPageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.CurrentPageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在表示されているページのインデックスを設定します。</summary>
+        <value>現在表示されているページの 0 から始まるインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに現在表示されているページを使用して、<xref:System.Web.UI.WebControls.DataGrid>ページングが有効な場合を制御します。 このプロパティは、プログラムによって表示されるページを制御するも使用されます。  
+  
+ また、ページング コントロールで、ビルドされた非表示にし、カスタム コントロールを作成できます。 特定のページを表示するには、このプロパティを設定、ページにインデックスを表示するデータをバインドし、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティに表示するページをプログラムで制御する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.CurrentPageIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.CurrentPageIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.CurrentPageIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.CurrentPageIndex Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridAllowPaging#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowPaging/CS/datagridallowpagingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowPaging#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowPaging/VB/datagridallowpagingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したページのインデックスは、負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridCommandEventHandler DeleteCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridCommandEventHandler DeleteCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.DeleteCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のアイテムの削除 ボタンがクリックされたときに発生、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>のアイテムの削除 ボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>イベントのデータ ソースから選択した項目を削除および再バインドするデータを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>からアイテムを削除するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCommandName">
+      <MemberSignature Language="C#" Value="public const string DeleteCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DeleteCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.DeleteCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Delete コマンドの名前を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.DataGrid.DeleteCommandName> Delete コマンド名を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridCommandEventHandler EditCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridCommandEventHandler EditCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.EditCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のアイテムの編集 ボタンがクリックされたときに発生、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.EditCommand>のアイテムの編集 ボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.EditCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを選択した行にデータを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.EditCommand>内の項目を編集するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditCommandName">
+      <MemberSignature Language="C#" Value="public const string EditCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string EditCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.EditCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集コマンド名を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.EditCommandName>編集コマンド名を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemIndex">
+      <MemberSignature Language="C#" Value="public virtual int EditItemIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EditItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.EditItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の項目のインデックス、<see cref="T:System.Web.UI.WebControls.DataGrid" />を編集するコントロール。</summary>
+        <value>内の項目のインデックス、<see cref="T:System.Web.UI.WebControls.DataGrid" />を編集するコントロール。 既定値は-1 であることを示す、アイテムではありません、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロールが編集されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティと、<xref:System.Web.UI.WebControls.DataGrid>コントロールに含まれる、<xref:System.Web.UI.WebControls.EditCommandColumn>で選択した項目のインデックスを確認する、<xref:System.Web.UI.WebControls.DataGrid>を編集するコントロール。  
+  
+ このプロパティは編集されている項目をプログラムで制御も使用されます。 このプロパティのアイテムのインデックスを設定、<xref:System.Web.UI.WebControls.DataGrid>コントロールが編集コントロールでは、その項目に対して有効になります、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティは、0 から始まります。  
+  
+ プログラムで編集をキャンセルするには、このプロパティを-1 に設定します。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>で編集するために選択した項目を決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.EditItemIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.EditItemIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.EditItemIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.EditItemIndex Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle EditItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle EditItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.EditItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集するために選択した項目のスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />で編集するために選択した項目のスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>で編集するために選択した項目のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 編集用に選択した項目のカスタム スタイルを指定するには、配置、`<EditItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<EditItemStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>黄色に編集するために選択した項目の背景色を設定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic DataGrid.EditItemStyle Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.EditItemStyle Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.EditItemStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.EditItemStyle Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle FooterStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle FooterStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.FooterStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページ フッターのセクションのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />のフッター セクションのスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのフッターのカスタム スタイルを使用して、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールのスタイル設定を継承する、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。 赤いフォントを指定する場合など、 <xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A> 、プロパティ、<xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>プロパティには、赤いフォントがあります。 これにより、1 つのスタイル プロパティを設定して、コントロールの共通の外観を提供することができます。 設定して、継承したスタイルの設定をオーバーライドすることができます、<xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>プロパティです。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。  
+  
+ フッター セクションのカスタム スタイルを指定するには、配置、`<FooterStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<FooterStyle>`タグ。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataGrid.ShowFooter%2A>プロパティに設定する必要があります`true`を表示するには、このプロパティにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>フッター セクションの背景色を設定するプロパティです。  
+  
+ [!code-aspx-csharp[classic datagrid.footerstyle example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.FooterStyle Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[classic datagrid.footerstyle example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.FooterStyle Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridFooterStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridFooterStyle/CS/datagridfooterstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridFooterStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridFooterStyle/VB/datagridfooterstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle HeaderStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle HeaderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.HeaderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>見出しのセクションのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />に見出しセクションのスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのヘッダー セクションのカスタム スタイルを使用して、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールのスタイル設定を継承する、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。 赤いフォントを指定する場合など、 <xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A> 、プロパティ、<xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>プロパティには、赤いフォントがあります。 これにより、1 つのスタイル プロパティを設定して、コントロールの共通の外観を提供することができます。 設定して、継承したスタイルの設定をオーバーライドすることができます、<xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>プロパティです。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。  
+  
+ ヘッダー セクションのカスタム スタイルを指定するには、配置、`<HeaderStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<HeaderStyle>`タグ。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataGrid.ShowHeader%2A>プロパティに設定する必要があります`true`を表示するには、このプロパティにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>ヘッダー セクションの背景色を設定するプロパティです。  
+  
+ [!code-aspx-csharp[classic datagrid.footerstyle example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.FooterStyle Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[classic datagrid.footerstyle example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.FooterStyle Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridFooterStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridFooterStyle/CS/datagridfooterstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridFooterStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridFooterStyle/VB/datagridfooterstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeItem">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeItem (System.Web.UI.WebControls.DataGridItem item, System.Web.UI.WebControls.DataGridColumn[] columns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeItem(class System.Web.UI.WebControls.DataGridItem item, class System.Web.UI.WebControls.DataGridColumn[] columns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.InitializeItem(System.Web.UI.WebControls.DataGridItem,System.Web.UI.WebControls.DataGridColumn[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataGridItem" />
+        <Parameter Name="columns" Type="System.Web.UI.WebControls.DataGridColumn[]" />
+      </Parameters>
+      <Docs>
+        <param name="item">初期化する <see cref="T:System.Web.UI.WebControls.DataGridItem" />。</param>
+        <param name="columns">配列<see cref="T:System.Web.UI.WebControls.DataGridColumn" />この列に含まれるオブジェクト<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.DataGridItem" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.InitializeItem%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataGrid>クラスを指定された初期化<xref:System.Web.UI.WebControls.DataGridItem>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドは主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializePager">
+      <MemberSignature Language="C#" Value="protected virtual void InitializePager (System.Web.UI.WebControls.DataGridItem item, int columnSpan, System.Web.UI.WebControls.PagedDataSource pagedDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializePager(class System.Web.UI.WebControls.DataGridItem item, int32 columnSpan, class System.Web.UI.WebControls.PagedDataSource pagedDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.InitializePager(System.Web.UI.WebControls.DataGridItem,System.Int32,System.Web.UI.WebControls.PagedDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataGridItem" />
+        <Parameter Name="columnSpan" Type="System.Int32" />
+        <Parameter Name="pagedDataSource" Type="System.Web.UI.WebControls.PagedDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Web.UI.WebControls.DataGridItem" />ポケットベルを格納しています。</param>
+        <param name="columnSpan">ページャーのスパンする列の数。</param>
+        <param name="pagedDataSource">A<see cref="T:System.Web.UI.WebControls.PagedDataSource" />ページャーのプロパティを格納します。</param>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.DataGridItem" />ページング UI を含むオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページング UI を構築された、1 つにあるナビゲーション バー<xref:System.Web.UI.WebControls.TableCell>のすべての列にまたがっている、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGrid.InitializePager%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataGrid>ページャー行を作成するクラス。  
+  
+> [!NOTE]
+>  このメソッドは主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridCommandEventHandler ItemCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridCommandEventHandler ItemCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.ItemCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかのボタンがクリックされたときに発生、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCommand>でいずれかのボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このイベントは通常では、追加など、カスタムの CommandName 値を持つボタン コントロールの処理に使用、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベントを追加またはショッピング カート内の項目を削除します。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCreated">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridItemEventHandler ItemCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridItemEventHandler ItemCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.ItemCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー内の項目で発生した、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロールを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCreated>イベントは内の項目、<xref:System.Web.UI.WebControls.DataGrid>コントロールが作成されると、ラウンド トリップ時と時にデータがコントロールにバインドします。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCreated>内の行の外観と内容を制御するイベントは通常使用、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.ItemCreated>に項目が作成される順序を表示するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ItemCreated Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ItemCreated Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ItemCreated Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ItemCreated Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemCreated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemCreated/CS/datagriditemcreatedcs.aspx#1)]
+ [!code-aspx-vb[DataGridItemCreated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemCreated/VB/datagriditemcreatedvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemCreated2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemCreated2/CS/datagriditemcreated2cs.aspx#1)]
+ [!code-aspx-vb[DataGridItemCreated2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemCreated2/VB/datagriditemcreated2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemDataBound">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridItemEventHandler ItemDataBound;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridItemEventHandler ItemDataBound" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.ItemDataBound" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目がデータにバインドされた後に発生、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemDataBound>イベントは、項目がデータにバインドした後、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このイベントは、クライアントに表示される前に、データ項目にアクセスする最後の機会を提供します。 このイベントが発生した後、データ項目が null になり、使用できなくします。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、 <xref:System.Web.UI.WebControls.DataGrid.ItemDataBound> 項目の順序を表示するイベント、<xref:System.Web.UI.WebControls.DataGrid>は制限されているデータ。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ItemDataBound Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ItemDataBound Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ItemDataBound Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ItemDataBound Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemDataBound/CS/datagriditemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataGridItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemDataBound/VB/datagriditemdataboundvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemDataBound2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemDataBound2/CS/datagriditemdatabound2cs.aspx#1)]
+ [!code-aspx-vb[DataGridItemDataBound2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemDataBound2/VB/datagriditemdatabound2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataGridItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGridItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.DataGridItem" />内の各項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />のコレクションを含む<see cref="T:System.Web.UI.WebControls.DataGridItem" />内の各項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.Items%2A>コレクション内の項目をプログラムで制御する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGrid.Items%2A>コレクションがコレクションにアイテムを追加または削除メソッドを提供していません。 ただしのハンドラーを提供することで、項目の内容を制御することができます、<xref:System.Web.UI.WebControls.DataGrid.ItemCreated>イベント。  
+  
+> [!NOTE]
+>  データ ソースにバインドされている項目のみが含まれている、<xref:System.Web.UI.WebControls.DataGrid.Items%2A>コレクション。 コレクション内では、ヘッダー、フッター、および区切り記号が含まれていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.Items%2A>内の各項目の内容を表示するコレクション、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.Items Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.Items Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.Items Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.Items Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridColumnVisible#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnVisible/CS/datagridcolumnvisiblecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnVisible#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnVisible/VB/datagridcolumnvisiblevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle ItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle ItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.ItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目のスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />内の項目のスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのアイテムのカスタム スタイルを指定を使用して、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 項目にカスタム スタイルを指定する、<xref:System.Web.UI.WebControls.DataGrid>コントロールを配置、`<ItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<ItemStyle>`タグ。  
+  
+ 使用することも、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>の項目を交互に別の外観を指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>内の項目の背景色を設定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>黄色にします。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ItemStyle Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ItemStyle Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ItemStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ItemStyle Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemStyle/CS/datagriditemstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemStyle/VB/datagriditemstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">保存された状態、<see cref="T:System.Web.UI.WebControls.DataGrid" />です。</param>
+        <summary>保存された状態を読み込み、<see cref="T:System.Web.UI.WebControls.DataGrid" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPageCommandArgument">
+      <MemberSignature Language="C#" Value="public const string NextPageCommandArgument;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string NextPageCommandArgument" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.NextPageCommandArgument" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次のコマンド引数を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.NextPageCommandArgument>を次のコマンド引数を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>ページの UI サーバー コントロールの階層構造のコンテナー内のコントロールによって発生するイベントが渡されます。</summary>
+        <returns>
+          <see langword="true" />このメソッドが、ページの UI サーバー コントロールの階層構造です。 コンテナー内のコントロールで発生するイベントを渡すことを示すためにそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnBubbleEvent%2A>メソッドは、ページの UI サーバー コントロールの階層構造のコンテナー内のコントロールで発生するイベントの成功します。  
+  
+> [!NOTE]
+>  このメソッドは主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCancelCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnCancelCommand (System.Web.UI.WebControls.DataGridCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCancelCommand(class System.Web.UI.WebControls.DataGridCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnCancelCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.CancelCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnCancelCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.CancelCommand>内のアイテムを [キャンセル] ボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) するデータを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>内のアイテムに行われた編集をキャンセルするイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnCancelCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnCancelCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeleteCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeleteCommand (System.Web.UI.WebControls.DataGridCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDeleteCommand(class System.Web.UI.WebControls.DataGridCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnDeleteCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.DeleteCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnDeleteCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>のアイテムの削除 ボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>イベントのデータ ソースから選択した項目を削除および再バインドするデータを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>からアイテムを削除するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnDeleteCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnDeleteCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEditCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnEditCommand (System.Web.UI.WebControls.DataGridCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEditCommand(class System.Web.UI.WebControls.DataGridCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnEditCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.EditCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnEditCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.EditCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.EditCommand>のアイテムの編集 ボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.EditCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを選択した行にデータを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.EditCommand>内の項目を編集するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnEditCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnEditCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemCommand (System.Web.UI.WebControls.DataGridCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemCommand(class System.Web.UI.WebControls.DataGridCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnItemCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.ItemCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnItemCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCommand>でいずれかのボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このイベントは通常では、追加など、カスタムの CommandName 値を持つボタン コントロールの処理に使用、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベントを追加またはショッピング カート内の項目を削除します。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnItemCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnItemCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemCreated (System.Web.UI.WebControls.DataGridItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemCreated(class System.Web.UI.WebControls.DataGridItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnItemCreated(System.Web.UI.WebControls.DataGridItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridItemEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.ItemCreated" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnItemCreated%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.ItemCreated>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCreated>イベントは内の項目、<xref:System.Web.UI.WebControls.DataGrid>コントロールが作成されると、ラウンド トリップ時と時にデータがコントロールにバインドします。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCreated>内の行の外観と内容を制御するイベントは通常使用、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.ItemCreated>に項目が作成される順序を表示するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ItemCreated Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ItemCreated Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ItemCreated Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ItemCreated Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemCreated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemCreated/CS/datagriditemcreatedcs.aspx#1)]
+ [!code-aspx-vb[DataGridItemCreated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemCreated/VB/datagriditemcreatedvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemCreated2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemCreated2/CS/datagriditemcreated2cs.aspx#1)]
+ [!code-aspx-vb[DataGridItemCreated2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemCreated2/VB/datagriditemcreated2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnItemCreated(System.Web.UI.WebControls.DataGridItemEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnItemCreated(System.Web.UI.WebControls.DataGridItemEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemDataBound">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemDataBound (System.Web.UI.WebControls.DataGridItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemDataBound(class System.Web.UI.WebControls.DataGridItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnItemDataBound(System.Web.UI.WebControls.DataGridItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridItemEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.ItemDataBound" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnItemDataBound%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.ItemDataBound>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemDataBound>イベントは、項目がデータにバインドした後、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このイベントは、クライアントに表示される前に、データ項目にアクセスする最後の機会を提供します。 このイベントが発生した後、データ項目が null になり、使用できなくします。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、 <xref:System.Web.UI.WebControls.DataGrid.ItemDataBound> 項目の順序を表示するイベント、<xref:System.Web.UI.WebControls.DataGrid>は制限されているデータ。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ItemDataBound Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ItemDataBound Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ItemDataBound Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ItemDataBound Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemDataBound/CS/datagriditemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataGridItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemDataBound/VB/datagriditemdataboundvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridItemDataBound2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemDataBound2/CS/datagriditemdatabound2cs.aspx#1)]
+ [!code-aspx-vb[DataGridItemDataBound2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemDataBound2/VB/datagriditemdatabound2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnItemDataBound(System.Web.UI.WebControls.DataGridItemEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnItemDataBound(System.Web.UI.WebControls.DataGridItemEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPageIndexChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPageIndexChanged (System.Web.UI.WebControls.DataGridPageChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPageIndexChanged(class System.Web.UI.WebControls.DataGridPageChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnPageIndexChanged(System.Web.UI.WebControls.DataGridPageChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridPageChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridPageChangedEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.PageIndexChanged" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnPageIndexChanged%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベントは、ページの選択範囲の要素の 1 つがクリックされたときに発生します。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティのページを表示して、用途のインデックスを<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>にデータをバインドするメソッド、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  イベント ハンドラーは、<xref:System.Web.UI.WebControls.DataGridPageChangedEventArgs>オブジェクトをパラメーターとして。 使用することができます、 <xref:System.Web.UI.WebControls.DataGridPageChangedEventArgs.NewPageIndex%2A> 、ページの選択範囲の要素からユーザーが選択したページのインデックスを確認するには、このパラメーターのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベント。 上のページを表示、 <xref:System.Web.UI.WebControls.DataGrid> 10 項目単位で制御します。  
+  
+ [!code-aspx-csharp[DataGridAllowPaging#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowPaging/CS/datagridallowpagingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowPaging#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowPaging/VB/datagridallowpagingvb.aspx#1)]  
+  
+ [!code-aspx-csharp[PageIndexChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PageIndexChanged/CS/datagridpageindexchangedcs.aspx#1)]
+ [!code-aspx-vb[PageIndexChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PageIndexChanged/VB/datagridpageindexchangedvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnPageIndexChanged(System.Web.UI.WebControls.DataGridPageChangedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnPageIndexChanged(System.Web.UI.WebControls.DataGridPageChangedEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSortCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnSortCommand (System.Web.UI.WebControls.DataGridSortCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSortCommand(class System.Web.UI.WebControls.DataGridSortCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnSortCommand(System.Web.UI.WebControls.DataGridSortCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridSortCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridSortCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.SortCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnSortCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベント列を並べ替えるときに発生します。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントが、リストをソートし、再バインドするデータを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントを並べ替える、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridAllowSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowSorting/CS/datagridallowsortingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowSorting/VB/datagridallowsortingvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridSortCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridSortCommand/CS/datagridsortcommandcs.aspx#1)]
+ [!code-aspx-vb[DataGridSortCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridSortCommand/VB/datagridsortcommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataGrid.OnSortCommand(System.Web.UI.WebControls.DataGridSortCommandEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataGrid.OnSortCommand(System.Web.UI.WebControls.DataGridSortCommandEventArgs)" />メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUpdateCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnUpdateCommand (System.Web.UI.WebControls.DataGridCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUpdateCommand(class System.Web.UI.WebControls.DataGridCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.OnUpdateCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataGrid.UpdateCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.OnUpdateCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>アイテムの更新 ボタンがクリックされたときにイベントが発生します。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>イベント データ、設定を更新する、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを-1 (項目を選択解除します)、データを再バインド数と、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.OnUpdateCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>内の項目の値を更新するイベント、<xref:System.Web.UI.WebControls.DataGrid>ユーザーによって指定された新しい値を制御します。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataGrid.OnUpdateCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataGrid.OnUpdateCommand(System.Web.UI.WebControls.DataGridCommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCommandName">
+      <MemberSignature Language="C#" Value="public const string PageCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string PageCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.PageCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのコマンド名を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.PageCommandName>ページ コマンド名を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCount">
+      <MemberSignature Language="C#" Value="public int PageCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.PageCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目を表示するために必要なページの合計数を取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>内の項目を表示するために必要なページの合計数、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、プログラム内の項目を表示するために必要なページ数を決定する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このプロパティは使用されている場合にのみ、<xref:System.Web.UI.WebControls.DataGrid.AllowPaging%2A>プロパティに設定されている`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.PageCount%2A>プロパティ内の項目を表示するために必要なページ数を調べて、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.PageCount Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.PageCount Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.PageCount Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.PageCount Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageIndexChanged">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridPageChangedEventHandler PageIndexChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridPageChangedEventHandler PageIndexChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.PageIndexChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridPageChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの選択範囲の要素の 1 つがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベントは、ページの選択範囲の要素の 1 つがクリックされたときに発生します。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.CurrentPageIndex%2A>プロパティのページを表示して、用途のインデックスを<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>にデータをバインドするメソッド、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.PageIndexChanged>イベント。 上のページを表示、 <xref:System.Web.UI.WebControls.DataGrid> 10 項目単位で制御します。  
+  
+ [!code-aspx-csharp[DataGridAllowPaging#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowPaging/CS/datagridallowpagingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowPaging#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowPaging/VB/datagridallowpagingvb.aspx#1)]  
+  
+ [!code-aspx-csharp[PageIndexChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PageIndexChanged/CS/datagridpageindexchangedcs.aspx#1)]
+ [!code-aspx-vb[PageIndexChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PageIndexChanged/VB/datagridpageindexchangedvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PagerStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataGridPagerStyle PagerStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGridPagerStyle PagerStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.PagerStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridPagerStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページング セクションのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataGridPagerStyle" />のページングのセクションのスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.DataGridPagerStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのページングのセクションのカスタム スタイルを使用して、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ ページングのセクションのカスタム スタイルを指定するには、配置、`<PagerStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<PagerStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.PagerStyle%2A>のページの選択範囲の要素のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.PagerStyle Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.PagerStyle Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.PagerStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.PagerStyle Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridPagerStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridPagerStyle/CS/datagridpagerstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridPagerStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridPagerStyle/VB/datagridpagerstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSize">
+      <MemberSignature Language="C#" Value="public virtual int PageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.PageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の 1 つのページに表示する項目の数、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>1 つのページに表示する項目の数、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの 1 つのページに表示する項目の数を指定を使用して、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGrid.AllowPaging%2A>プロパティに設定する必要があります`true`このプロパティの影響があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>の 1 つのページで、5 つの項目が表示されることを指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.PageCount Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.PageCount Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.PageCount Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.PageCount Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridPageSize#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridPageSize/CS/datagridpagesizecs.aspx#1)]
+ [!code-aspx-vb[DataGridPageSize#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridPageSize/VB/datagridpagesizevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したページ サイズが 1 より小さい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareControlHierarchy">
+      <MemberSignature Language="C#" Value="protected override void PrepareControlHierarchy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void PrepareControlHierarchy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.PrepareControlHierarchy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコントロールの階層を設定<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.PrepareControlHierarchy%2A>メソッドは、ヘルパー メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.DataGrid>コントロールでコントロールの階層を設定する、<xref:System.Web.UI.WebControls.DataGrid>コントロールが表示される前に制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrevPageCommandArgument">
+      <MemberSignature Language="C#" Value="public const string PrevPageCommandArgument;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string PrevPageCommandArgument" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.PrevPageCommandArgument" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のコマンド引数を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.PrevPageCommandArgument>を前のコマンド引数を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の状態を保存、<see cref="T:System.Web.UI.WebControls.DataGrid" />です。</summary>
+        <returns>保存された状態、<see cref="T:System.Web.UI.WebControls.DataGrid" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectCommandName">
+      <MemberSignature Language="C#" Value="public const string SelectCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string SelectCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.SelectCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Select コマンド名を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.DataGrid.SelectCommandName> Select コマンド名を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndex">
+      <MemberSignature Language="C#" Value="public virtual int SelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.SelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロール内の選択された項目のインデックスを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロール内の選択された項目のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.SelectedIndex%2A>でユーザーが選択した項目のインデックスを決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このプロパティを使用してで選択されている項目をプログラムで指定する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 内のアイテムの選択を解除する、<xref:System.Web.UI.WebControls.DataGrid>コントロールをこのプロパティを-1 に設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.SelectedIndex%2A>で選択した項目のインデックスの数を決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 選択し、プログラムで項目の選択を解除する方法も示しています。  
+  
+ [!code-aspx-csharp[Classic DataGrid.SelectedIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.SelectedIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.SelectedIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.SelectedIndex Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataGridItem SelectedItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGridItem SelectedItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.SelectedItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataGridItem" />で選択した項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataGridItem" />で選択した項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.SelectedItem%2A>を取得するプロパティ、<xref:System.Web.UI.WebControls.DataGridItem>で選択した項目を表すオブジェクト、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 このオブジェクトは、選択した項目のプロパティにアクセスし、使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SelectedItem%2A>プロパティで選択した項目のプロパティにアクセスを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.SelectedIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.SelectedIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.SelectedIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.SelectedIndex Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[BaseDataListSelectedIndexChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListSelectedIndexChanged/CS/basedatalistselectedindexchangedcs.aspx#1)]
+ [!code-aspx-vb[BaseDataListSelectedIndexChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListSelectedIndexChanged/VB/basedatalistselectedindexchangedvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle SelectedItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle SelectedItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.SelectedItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されているアイテムのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />で現在選択されているアイテムのスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>で選択した項目のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 前景色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataGrid.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataGrid.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataGrid.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 選択したアイテムのカスタム スタイルを指定するには、配置、`<SelectedItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 スタイル属性の一覧を表示することができますし、`<SelectedItemStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Web.UI.WebControls.DataGrid.SelectedItemStyle%2A>で選択した項目の背景色を設定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>黄色に制御します。  
+  
+ [!code-aspx-csharp[Classic DataGrid.SelectedIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.SelectedIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.SelectedIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.SelectedIndex Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridSelectedItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridSelectedItemStyle/CS/datagridselecteditemstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridSelectedItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridSelectedItemStyle/VB/datagridselecteditemstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowFooter">
+      <MemberSignature Language="C#" Value="public virtual bool ShowFooter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowFooter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.ShowFooter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはでフッターを表示するかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>
+          <see langword="true" />フッターを表示するにはそれ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`のフッターを表示する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 使用して、ページ フッターの外観を制御、<xref:System.Web.UI.WebControls.DataGrid.FooterStyle%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.ShowFooter%2A>のフッターを表示するプロパティを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ShowFooter Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ShowFooter Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ShowFooter Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ShowFooter Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridShowHeader#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridShowHeader/CS/datagridshowheadercs.aspx#1)]
+ [!code-aspx-vb[DataGridShowHeader#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridShowHeader/VB/datagridshowheadervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHeader">
+      <MemberSignature Language="C#" Value="public virtual bool ShowHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.ShowHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはでヘッダーを表示するかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>
+          <see langword="true" />ヘッダーを表示するにはそれ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`のヘッダーを表示する、<xref:System.Web.UI.WebControls.DataGrid>です。 使用して、ヘッダーの外観を制御、<xref:System.Web.UI.WebControls.DataGrid.HeaderStyle%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.ShowHeader%2A>でヘッダーを非表示にするプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid.ShowHeader Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid.ShowHeader Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid.ShowHeader Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid.ShowHeader Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridShowHeader#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridShowHeader/CS/datagridshowheadercs.aspx#1)]
+ [!code-aspx-vb[DataGridShowHeader#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridShowHeader/VB/datagridshowheadervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridSortCommandEventHandler SortCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridSortCommandEventHandler SortCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.SortCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridSortCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列が並べ替えられるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベント列を並べ替えるときに発生します。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントが、リストをソートし、再バインドするデータを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントを並べ替える、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridAllowSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowSorting/CS/datagridallowsortingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowSorting/VB/datagridallowsortingvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridSortCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridSortCommand/CS/datagridsortcommandcs.aspx#1)]
+ [!code-aspx-vb[DataGridSortCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridSortCommand/VB/datagridsortcommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortCommandName">
+      <MemberSignature Language="C#" Value="public const string SortCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string SortCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.SortCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えのコマンド名を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.SortCommandName>並べ替えコマンド名を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlTextWriterTag" /> コントロールの <see cref="T:System.Web.UI.WebControls.DataGrid" /> 値を取得します。</summary>
+        <value>常に <see langword="HtmlTextWriterTag.Table" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.TagKey%2A>プロパティでは、出力ストリームの適切な HTML マークアップを記述する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGrid.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのビューステートの一部としてコントロールに対する変更の追跡と保存を開始する開始位置をマークします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataGridCommandEventHandler UpdateCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataGridCommandEventHandler UpdateCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataGrid.UpdateCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のアイテムを更新 ボタンがクリックされたときに発生、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>アイテムの更新 ボタンがクリックされたときにイベントが発生します。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>イベント データ、設定を更新する、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) する、データを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>内の項目の値を更新するイベント、<xref:System.Web.UI.WebControls.DataGrid>ユーザーによって指定された新しい値を制御します。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCommandName">
+      <MemberSignature Language="C#" Value="public const string UpdateCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UpdateCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataGrid.UpdateCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新コマンドの名前を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGrid.UpdateCommandName>更新コマンド名を表すフィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualItemCount">
+      <MemberSignature Language="C#" Value="public virtual int VirtualItemCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VirtualItemCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGrid.VirtualItemCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または仮想の項目数を設定、<see cref="T:System.Web.UI.WebControls.DataGrid" />カスタム ページングを使用する場合を制御します。</summary>
+        <value>仮想の項目数、<see cref="T:System.Web.UI.WebControls.DataGrid" />カスタム ページングを使用する場合を制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して仮想内の項目数を指定する、<xref:System.Web.UI.WebControls.DataGrid>カスタム ページングを使用する場合を制御します。 このプロパティは使用されている場合にのみ、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティに設定されている`true`です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティに設定されている`true`、内のすべての項目を表示するために必要なページ数、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、の値に基づいて計算されます、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>と<xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A>プロパティに設定されている`false`に表示されるページの数、<xref:System.Web.UI.WebControls.DataGrid>コントロールは、の値に基づいて計算されます、<xref:System.Web.UI.WebControls.DataGrid.PageSize%2A>プロパティと、データ ソース内のアイテムの合計数。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A>内のアイテムの合計数を指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>カスタム ページングを使用する場合を制御します。  
+  
+ [!code-aspx-csharp[DataGridCustomPaging#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridCustomPaging/CS/datagridcustompagingcs.aspx#1)]
+ [!code-aspx-vb[DataGridCustomPaging#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridCustomPaging/VB/datagridcustompagingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、負の数です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,579 @@
+<Type Name="EventLogEntry" FullName="System.Diagnostics.EventLogEntry">
+  <TypeSignature Language="C#" Value="public sealed class EventLogEntry : System.ComponentModel.Component, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EventLogEntry extends System.ComponentModel.Component implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベント ログの単一レコードをカプセル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常はいないインスタンスを作成するの<xref:System.Diagnostics.EventLogEntry>直接使用するときに、<xref:System.Diagnostics.EventLog>クラスです。 <xref:System.Diagnostics.EventLog.Entries%2A>のメンバー、<xref:System.Diagnostics.EventLog>クラスのコレクションを格納する<xref:System.Diagnostics.EventLogEntry>のインスタンスを使用して読み取るときで反復処理する、<xref:System.Diagnostics.EventLogEntryCollection.Item%2A?displayProperty=nameWithType>クラス インデックス メンバー。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Diagnostics.EventLogEntry>クラスです。 この例では、`switch`ステートメントでは、コンソールの入力を使用して、指定したイベントの種類のイベント ログ エントリの検索します。  一致が見つかった場合は、ログ エントリのソース情報がコンソールに表示されます。  
+  
+ [!code-cpp[EventLogEntry_Source#1](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntry_Source/CPP/eventlogentry_source.cpp#1)]
+ [!code-csharp[EventLogEntry_Source#1](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_Source/CS/eventlogentry_source.cs#1)]
+ [!code-vb[EventLogEntry_Source#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_Source/VB/eventlogentry_source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public string Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The category of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエントリの <see cref="P:System.Diagnostics.EventLogEntry.CategoryNumber" /> プロパティに関連付けられているテキストを取得します。</summary>
+        <value>アプリケーション固有のカテゴリ テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各アプリケーション (イベント ソース) には、独自の番号付けされたカテゴリとがマップされているテキスト文字列を定義できます。 イベント ビューアーでは、ログにイベントをフィルター処理するカテゴリを使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">カテゴリに関連付けられている挿入文字列の 1 つの領域を割り当てられませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryNumber">
+      <MemberSignature Language="C#" Value="public short CategoryNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 CategoryNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.CategoryNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("An ID for the category of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログ エントリのカテゴリ番号を取得します。</summary>
+        <value>このエントリのアプリケーション固有のカテゴリ番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各アプリケーション (イベント ソース) には、独自の番号付けされたカテゴリとがマップされているテキスト文字列を定義できます。 イベント ビューアーでは、ログにイベントをフィルター処理するカテゴリを使用できます。 カテゴリ必要がある連続したから始まるを番号番号 1 です。 カテゴリの番号がで指定された、<xref:System.Diagnostics.EventInstance.CategoryId%2A?displayProperty=nameWithType>プロパティです。 カテゴリ ローカライズされたカテゴリ文字列を表示するリソースの識別子として使用できるまたはイベント ビューアーは、数値の値として、カテゴリを表示できます。 詳細については、「<xref:System.Diagnostics.EventInstance>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public byte[] Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Data" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Binary data associated with this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エントリに関連付けられているバイナリ データを取得します。</summary>
+        <value>エントリに関連付けられているバイナリ データを保持するバイト配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するエントリのイベント固有のバイナリ データ、イベント ビューアーを 16 進数とテキストを組み合わせた形式で表示するコピーを保持する配列を作成します。 イベントに固有のデータが使用されるは、アプリケーションはたとえば、イベント ビューアーとは独立して処理する情報を格納する、ログ ファイルからレポートを作成するのに場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntryType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.EventLogEntryType EntryType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.EventLogEntryType EntryType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.EntryType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The type of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エントリのイベントの種類を取得します。</summary>
+        <value>イベント ログ内のエントリに関連付けられているイベントの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのイベントの種類は、適切に定義された共通のデータを持ち、必要に応じて、イベント固有のデータを含めることができます。 各イベントは、アプリケーションがイベントをレポートするときを示す 1 つの型です。 イベント ビューアーでは、イベントの種類を使用して、イベント ログのリスト ビューに表示するアイコンを決定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Diagnostics.EventLogEntry.EntryType%2A>プロパティです。 この例では、`switch`ステートメントでは、コンソールの入力を使用して、指定されたイベント ログ エントリの検索<xref:System.Diagnostics.EventLogEntry.EntryType%2A>です。  一致が見つかった場合は、ログ エントリのソース情報がコンソールに表示されます。  
+  
+ [!code-cpp[EventLogEntry_Source#1](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntry_Source/CPP/eventlogentry_source.cpp#1)]
+ [!code-csharp[EventLogEntry_Source#1](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_Source/CS/eventlogentry_source.cs#1)]
+ [!code-vb[EventLogEntry_Source#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_Source/VB/eventlogentry_source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Diagnostics.EventLogEntry otherEntry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.Diagnostics.EventLogEntry otherEntry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntry.Equals(System.Diagnostics.EventLogEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherEntry" Type="System.Diagnostics.EventLogEntry" />
+      </Parameters>
+      <Docs>
+        <param name="otherEntry">比較対象の <see cref="T:System.Diagnostics.EventLogEntry" />。</param>
+        <summary>2 つのイベント ログ エントリを比較します。</summary>
+        <returns>
+          <see cref="T:System.Diagnostics.EventLogEntry" /> オブジェクトが同じ場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、2 つのオブジェクト間のバイト単位の比較を実行します。 によって決定されないかどうか、2 つ<xref:System.Diagnostics.EventLogEntry>インスタンスが同じオブジェクトを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventID">
+      <MemberSignature Language="C#" Value="public int EventID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventID" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.EventID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("An ID number for this event entry.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use InstanceId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のイベント エントリのアプリケーション固有のイベント識別子を取得します。</summary>
+        <value>イベント メッセージの、アプリケーション固有の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、イベント ログ、先頭の 2 ビットのマスクがオフで、エントリのイベントの識別子を表します。 <xref:System.Diagnostics.EventLogEntry.InstanceId%2A>プロパティ、イベント ログ エントリをイベント ソースのメッセージ リソース ファイル内のイベントの完全な 32 ビット リソース識別子を表します。 同じソースからの 2 つのイベント ログ エントリの対応することができますが<xref:System.Diagnostics.EventLogEntry.EventID%2A>、値は、異なるが<xref:System.Diagnostics.EventLogEntry.InstanceId%2A>イベント識別子の先頭の 2 ビットの違いにより値。  
+  
+ アプリケーションがのいずれかを使用してイベント エントリを書き込んだかどうか、 <xref:System.Diagnostics.EventLog.WriteEntry%2A> 、メソッド、<xref:System.Diagnostics.EventLogEntry.EventID%2A>と一致する省略可能なプロパティ`eventId`パラメーター。 アプリケーションでは、イベントを使用して、作成した場合<xref:System.Diagnostics.EventLog.WriteEvent%2A>または Win32 API `ReportEvent`、<xref:System.Diagnostics.EventLogEntry.EventID%2A>上位 2 ビットのマスクがオフで、イベントのリソース識別子と一致するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Sequence numer of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログでのこのエントリのインデックスを取得します。</summary>
+        <value>イベント ログでのこのエントリのインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この番号は 0 から始まる必ずしもではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public long InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The instance ID for this event entry.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント エントリのメッセージ テキストを指定するリソース識別子を取得します。</summary>
+        <value>イベント ソースのメッセージ リソース ファイルの文字列定義に対応するリソース識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventLogEntry.InstanceId%2A>プロパティが構成されているイベント ソースのイベントのエントリを一意に識別します。 <xref:System.Diagnostics.EventLogEntry.InstanceId%2A>イベント ログのエントリがイベント ソースのメッセージ リソース ファイル内のイベントの完全な 32 ビット リソース識別子を表します。 <xref:System.Diagnostics.EventLogEntry.EventID%2A>プロパティ equals、<xref:System.Diagnostics.EventLogEntry.InstanceId%2A>上位 2 ビットのマスクがオフにします。 同じソースからの 2 つのイベント ログ エントリの対応することができますが<xref:System.Diagnostics.EventLogEntry.EventID%2A>、値は、異なるが<xref:System.Diagnostics.EventLogEntry.InstanceId%2A>リソース識別子の先頭の 2 ビットの違いにより値。  
+  
+ アプリケーションがのいずれかを使用してイベント エントリを書き込んだかどうか、 <xref:System.Diagnostics.EventLog.WriteEntry%2A> 、メソッド、<xref:System.Diagnostics.EventLogEntry.InstanceId%2A>と一致する省略可能なプロパティ`eventId`パラメーター。 アプリケーションでは、イベントを使用して、作成した場合<xref:System.Diagnostics.EventLog.WriteEvent%2A>、<xref:System.Diagnostics.EventLogEntry.InstanceId%2A>で指定されたリソース識別子と一致するプロパティ、<xref:System.Diagnostics.EventInstance.InstanceId%2A>の`instance`パラメーター。 アプリケーションが Win32 API を使用して、イベントを書き込んだかどうか`ReportEvent`、<xref:System.Diagnostics.EventLogEntry.InstanceId%2A>で指定されたリソース識別子と一致するプロパティ、`dwEventID`パラメーター。  
+  
+ イベント メッセージの定義とリソースのイベント ログ ファイルを作成する詳細については、プラットフォーム SDK のドキュメントの「メッセージ コンパイラ」トピックを参照してください[http://msdn.microsoft.com](http://msdn.microsoft.com/)です。詳細については、イベント ログの識別子は、プラットフォーム SDK の「イベント Identifiers」トピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、特定のリソース識別子を持つエントリをイベント ログを検索します。 コード例では、各一致するエントリのイベント メッセージを表示し、ログに一致するエントリの合計数をカウントします。 各エントリのメッセージ テキストがでなくてもかまいません同じです。各イベント メッセージは、イベント ソースのメッセージ ファイル、挿入文字列、およびそれに書き込まれたときに使用されるパラメーターに依存します。  
+  
+ [!code-cpp[EventLog_WriteEvent#10](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#10)]
+ [!code-csharp[EventLog_WriteEvent#10](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#10)]
+ [!code-vb[EventLog_WriteEvent#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The Computer on which this event entry occured.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エントリを生成したコンピューターの名前を取得します。</summary>
+        <value>イベント ログを格納しているコンピューターの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.BinaryEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The message of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント エントリに関連付けられているローカライズ済みのメッセージを取得します。</summary>
+        <value>メッセージ用の書式設定されローカライズされたテキスト。 これには関連付けられた置換文字列が含まれます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、ローカライズされたテキストを含む .dll ファイルのファイル名を確認するレジストリが表示されます。 ソース コードをテストするときに、レジストリ エラーが発生する場合は、.dll ファイルがコンピューターに存在することを確認します。 メッセージには、挿入文字列が含まれている、それらの割り当てにおけるエラーをキャッチします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">メッセージに関連付けられている挿入文字列の 1 つの領域を割り当てられませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplacementStrings">
+      <MemberSignature Language="C#" Value="public string[] ReplacementStrings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ReplacementStrings" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.ReplacementStrings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Application strings for this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログ エントリに関連付けられている置換文字列を取得します。</summary>
+        <value>イベント エントリに格納されている置換文字列を保持する配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、エントリの置換文字列のみを取得します。 完全なメッセージを取得するには、読み取り、<xref:System.Diagnostics.EventLogEntry.Message%2A>プロパティです。  
+  
+ <xref:System.Diagnostics.EventLogEntry.ReplacementStrings%2A>プロパティには、イベント ログ エントリで使用されている置換文字列のローカライズされたバージョンが含まれています。 アプリケーションの場合は、各ターゲット言語で文字列を含むリソース ファイルを提供する場合は、そのコンピューターで使用される言語でのイベント ログ メッセージを生成できます。 インスタンスを作成するには、<xref:System.Resources.ResourceManager>を置換文字列を含むリソース アセンブリのクラスです。 最初のパラメーター、<xref:System.Resources.ResourceManager.%23ctor%28System.String%2CSystem.Reflection.Assembly%29>コンス トラクターを使用するリソース アセンブリを識別します。 使用して、<xref:System.Resources.ResourceManager.GetString%2A>ログ イベントのローカライズされたメッセージを指定するには、そのインスタンスのメソッドです。 次のコードは、現在のカルチャの言語を自動的にメッセージを設定します。  
+  
+```  
+ResourceManager LocRM = new ResourceManager("ReplacementStrings.TestStrings",   
+      typeof(Program).Assembly);  
+EventLog e1 = new EventLog("LocTest", "MyMachine", "LocTest");  
+// Get the string associated with the current culture.  
+e1.WriteEntry(LocRM.GetString("strMessage"),  
+   EventLogEntryType.Information);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The source application of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントを発生させたアプリケーションの名前を取得します。</summary>
+        <value>このイベントのソースとしてイベント ログに登録される名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ソースは、イベントを記録新機能を示します。 通常は、アプリケーションの名前か、アプリケーションのサブコンポーネントの名前、アプリケーションが大きい場合です。 アプリケーションとサービスへの書き込み通常 (とは)、アプリケーション ログまたはカスタム ログです。 デバイス ドライバーは、通常、システム ログに書き込みます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Diagnostics.EventLogEntry.Source%2A>プロパティです。 この例では、`switch`ステートメントでは、コンソールの入力を使用して、指定されたイベント ログ エントリの検索<xref:System.Diagnostics.EventLogEntry.EntryType%2A>です。  一致が見つかった場合、<xref:System.Diagnostics.EventLogEntry.Source%2A>プロパティについては、コンソールに表示されます。  
+  
+ [!code-cpp[EventLogEntry_Source#1](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntry_Source/CPP/eventlogentry_source.cpp#1)]
+ [!code-csharp[EventLogEntry_Source#1](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_Source/CS/eventlogentry_source.cs#1)]
+ [!code-vb[EventLogEntry_Source#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_Source/VB/eventlogentry_source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntry.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Needs serialization support")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeGenerated">
+      <MemberSignature Language="C#" Value="public DateTime TimeGenerated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeGenerated" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.TimeGenerated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Generation time of this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントが生成された現地時間を取得します。</summary>
+        <value>このイベントが生成された現地時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、イベントが生成された時刻を保持します。 これは、できないときに、イベント情報がイベント ログに書き込まれるときと同じです。 後者の読み取り、<xref:System.Diagnostics.EventLogEntry.TimeWritten%2A>プロパティです。  
+  
+ 通常はログに記録されます時間とイベントが生成される時間の間の遅延があります。 これより知ることが重要イベントが生成されたログ記録で大幅な遅延がないかどうかをしない場合は。 ログ ファイルが別のサーバーと、ボトルネックが発生している場合に発生することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeWritten">
+      <MemberSignature Language="C#" Value="public DateTime TimeWritten { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeWritten" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.TimeWritten" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The time at which this event entry was written to the logfile.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントがログに書き込まれた現地時間を取得します。</summary>
+        <value>このイベントがログに書き込まれた現地時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、イベントの詳細については、イベント ログに書き込まれた時間を保持します。 これによって、イベントが生成されたときと同じ時間ができない可能性があります。 後者の読み取り、<xref:System.Diagnostics.EventLogEntry.TimeGenerated%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The name of a user associated with this event entry.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントを発生させたユーザーの名前を取得します。</summary>
+        <value>ユーザーまたはグループを一意に識別するセキュリティ識別子 (SID: Security Identifier)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、イベント ログ、セキュリティ ログ以外の場合は空白は多くの場合です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.SystemException">ユーザーの SID のアカウント情報を取得できませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,255 @@
+<Type Name="WebBrowsableAttribute" FullName="System.Web.UI.WebControls.WebParts.WebBrowsableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebBrowsableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebBrowsableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web パーツ コントロールの指定されたプロパティを表示するかどうかを示す、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールのカスタム プロパティを編集できるようにする汎用的なユーザー インターフェイス (UI) を提供する<xref:System.Web.UI.WebControls.WebParts.WebPart>サーバー コントロールに配置および<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 ソース コードでマークされているプロパティの編集用の UI が提供される、`WebBrowsable`属性 (から、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute>クラス)。 プロパティがこの属性でマークされている場合、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールは、プロパティの型に基づく編集用の UI を作成し、使用して、<xref:System.ComponentModel.PropertyDescriptor>オブジェクトの各編集コントロールの値をプロパティの型に変換するために必要な場合です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute>属性に表示される利用可能な Web パーツ コントロールのプロパティを示すために、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール。 この例は例については、一部、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>クラスの概要です。  
+  
+ [!code-csharp[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/VB/userinfowebpart.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowsableAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" />クラス、<see cref="P:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable" />プロパティに設定<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターを使用時に、`WebBrowsable`属性の宣言から属性が適用される`[WebBrowsable()]`(C#) または`<WebBrowsable()>`Visual Basic でします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute>属性に表示される利用可能な Web パーツ コントロールのプロパティを示すために、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール。 として参照可能なプロパティが設定されて、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターです。 この例は例については、一部、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>クラスの概要です。  
+  
+ [!code-csharp[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/VB/userinfowebpart.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowsableAttribute (bool browsable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool browsable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="browsable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="browsable">プロパティを表示するかどうかを示すブール値、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" />に指定された値を持つクラス、<see cref="P:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターが使用されるときに、`WebBrowsable`ブール値を持つ属性の宣言から属性を適用します。 プロパティに表示されていることを防ぐため、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール プロパティは、属性でマークすることが`[WebBrowsable(false)]`(C#) または`<WebBrowsable(false)>`Visual Basic でします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Browsable">
+      <MemberSignature Language="C#" Value="public bool Browsable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Browsable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />コントロールは、Web パーツ コントロールの特定のプロパティを表示する必要があります。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />プロパティが表示されます。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable%2A>プロパティが設定されてから、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebBrowsableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebBrowsableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebBrowsableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを表し、<see cref="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" />クラス、<see cref="P:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable" />プロパティは既定値に設定する<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Default>フィールドを呼び出すことと同じ結果を返します、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターを渡して`false`パラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />このインスタンスと比較するか、<see langword="null" />です。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示名の値のハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスが既定値に設定されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" /> equals <see cref="F:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Default" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebBrowsableAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebBrowsableAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebBrowsableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを表し、<see cref="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" />クラス、<see cref="P:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable" />プロパティに設定<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.No>フィールドを呼び出すことと同じ結果を返します、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターを渡して`false`パラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebBrowsableAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebBrowsableAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebBrowsableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを表し、<see cref="T:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute" />クラス、<see cref="P:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Browsable" />プロパティに設定<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.Yes>フィールドを呼び出すことと同じ結果を返します、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute.%23ctor%2A>コンス トラクターを渡して`true`パラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

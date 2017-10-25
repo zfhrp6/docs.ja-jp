@@ -1,0 +1,438 @@
+<Type Name="KeySpline" FullName="System.Windows.Media.Animation.KeySpline">
+  <TypeSignature Language="C#" Value="public class KeySpline : System.Windows.Freezable, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeySpline extends System.Windows.Freezable implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.KeySpline" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Freezable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.KeySplineConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このクラスは、アニメーションの進行状況を定義するためにスプライン キー フレームによって使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 理解する方法、 <xref:System.Windows.Media.Animation.KeySpline> works、3 次ベジエ曲線を理解すると便利です。 3 次ベジエ曲線は、開始点、終点、および 2 つの制御点によって定義されます。 座標を 2 つ、<xref:System.Windows.Media.Animation.KeySpline>これら 2 つの制御点を定義します。 ベジエ曲線の開始点は常にスプライン キーを記述するときに 0、およびエンド ポイントは常に 1、2 つの制御ポイントのみを定義します。 結果として得られる曲線では、時間セグメント; でアニメーションを補間する方法を指定します曲線では、時間セグメントの上でアニメーションの対象の属性の変化率を表します。 アニメーションの進行状況とベジエ曲線の関係よりわかりやすく表示を参照してください[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+<a name="xamlAttributeUsage_KeySpline"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="cp1X,cp1Y cp2X,cp2Y"/>  
+```  
+  
+<a name="xamlValues_KeySpline"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *cp1X*  
+ <xref:System.Windows.Point.X%2A>曲線の最初の制御点のコンポーネントです。 値は、0 ~ 1 の間にする必要があります。  
+  
+ *cp1Y*  
+ <xref:System.Windows.Point.Y%2A>曲線の最初の制御点のコンポーネントです。 値は、0 ~ 1 の間にする必要があります。  
+  
+ *cp2X*  
+ <xref:System.Windows.Point.X%2A>曲線の 2 番目の制御点のコンポーネントです。 値は、0 ~ 1 の間にする必要があります。  
+  
+ *cp2Y*  
+ <xref:System.Windows.Point.Y%2A>曲線の 2 番目の制御点のコンポーネントです。 値は、0 ~ 1 の間にする必要があります。  
+  
+ 値の間の区切り記号には、コンマが可能性がありますまたは 1 つ以上のスペースです。 ここで示す規則、ポイントのコンポーネントとポイント間の領域間のコンマが推奨される規約。 Norm のカルチャである場合でも、ポイント コンポーネントの値で小数点としてコンマを使わないでください。 XAML 値 en として扱われます-すべての型変換の場合と、コンマでは解釈されます、区切り文字として、目的の小数点としてではなくです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeySpline ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.KeySpline" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ に対して、既定値<xref:System.Windows.Media.Animation.KeySpline.ControlPoint1%2A>と<xref:System.Windows.Media.Animation.KeySpline.ControlPoint2%2A>(0, 0) は、(1, 1) と、それぞれが影響を与えません、アニメーションまたはキー フレームの進行状況をします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeySpline (System.Windows.Point controlPoint1, System.Windows.Point controlPoint2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point controlPoint1, valuetype System.Windows.Point controlPoint2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.#ctor(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="controlPoint1" Type="System.Windows.Point" />
+        <Parameter Name="controlPoint2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="controlPoint1">制御点、<see cref="P:System.Windows.Media.Animation.KeySpline.ControlPoint1" />の<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</param>
+        <param name="controlPoint2">制御点、<see cref="P:System.Windows.Media.Animation.KeySpline.ControlPoint2" />の<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Animation.KeySpline" />指定されたコントロール ポイントを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeySpline (double x1, double y1, double x2, double y2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 x1, float64 y1, float64 x2, float64 y2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.#ctor(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x1" Type="System.Double" />
+        <Parameter Name="y1" Type="System.Double" />
+        <Parameter Name="x2" Type="System.Double" />
+        <Parameter Name="y2" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x1">X 座標、<see cref="P:System.Windows.Media.Animation.KeySpline.ControlPoint1" />の<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</param>
+        <param name="y1">Y 座標、<see cref="P:System.Windows.Media.Animation.KeySpline.ControlPoint1" />の<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</param>
+        <param name="x2">X 座標、<see cref="P:System.Windows.Media.Animation.KeySpline.ControlPoint2" />の<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</param>
+        <param name="y2">Y 座標、<see cref="P:System.Windows.Media.Animation.KeySpline.ControlPoint2" />の<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Animation.KeySpline" />の制御点の座標を指定しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Media.Animation.KeySpline" />。</param>
+        <summary>このインスタンスを指定された <see cref="T:System.Windows.Media.Animation.KeySpline" /> の詳細なコピーにします。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.Clone%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.Clone%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Media.Animation.KeySpline" />。</param>
+        <summary>現在のプロパティ値を使用して、このインスタンスを、指定した <see cref="T:System.Windows.Media.Animation.KeySpline" /> の変更可能な詳細コピーにします。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.CloneCurrentValue%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValueCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPoint1">
+      <MemberSignature Language="C#" Value="public System.Windows.Point ControlPoint1 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point ControlPoint1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeySpline.ControlPoint1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の制御点を記述するベジエ曲線を定義するために使用する<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</summary>
+        <value>ベジエ曲線の最初の制御点。 この制御点の <see cref="P:System.Windows.Point.X" /> と <see cref="P:System.Windows.Point.Y" /> の値は、それぞれ 0 以上1 以下の値にする必要があります。 既定値は (0, 0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 理解する方法、 <xref:System.Windows.Media.Animation.KeySpline> works、3 次ベジエ曲線を理解すると便利です。 3 次ベジエ曲線は、開始点、終点、および 2 つの制御点によって定義されます。 座標を 2 つ、<xref:System.Windows.Media.Animation.KeySpline>これら 2 つの制御点を定義します。 ベジエ曲線の開始点は常にスプライン キーを記述するときに 0、およびエンド ポイントは常に 1、2 つの制御ポイントのみを定義します。 結果として得られる曲線では、時間セグメント; でアニメーションを補間する方法を指定します曲線では、時間セグメントの上でアニメーションの対象の属性の変化率を表します。 アニメーションの進行状況とベジエ曲線の関係よりわかりやすく表示を参照してください[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPoint2">
+      <MemberSignature Language="C#" Value="public System.Windows.Point ControlPoint2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point ControlPoint2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeySpline.ControlPoint2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.KeySpline" /> を記述するベジエ曲線を定義するために使用される 2 番目の制御点です。</summary>
+        <value>ベジエ曲線の 2 番目の制御点。 この制御点の <see cref="P:System.Windows.Point.X" /> と <see cref="P:System.Windows.Point.Y" /> の値は、それぞれ 0 以上1 以下の値にする必要があります。 既定値は (1,1) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 理解する方法、 <xref:System.Windows.Media.Animation.KeySpline> works、3 次ベジエ曲線を理解すると便利です。 3 次ベジエ曲線は、開始点、終点、および 2 つの制御点によって定義されます。 座標を 2 つ、<xref:System.Windows.Media.Animation.KeySpline>これら 2 つの制御点を定義します。 ベジエ曲線の開始点は常にスプライン キーを記述するときに 0、およびエンド ポイントは常に 1、2 つの制御ポイントのみを定義します。 結果として得られる曲線では、時間セグメント; でアニメーションを補間する方法を指定します曲線では、時間セグメントの上でアニメーションの対象の属性の変化率を表します。 アニメーションの進行状況とベジエ曲線の関係よりわかりやすく表示を参照してください[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.KeySpline" /> の新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Windows.Media.Animation.KeySpline" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable"><see cref="T:System.Windows.Media.Animation.KeySpline" />クローンを作成するオブジェクト。</param>
+        <summary>このインスタンスの指定した<see cref="T:System.Windows.Media.Animation.KeySpline" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。 これらのプロパティには、データ バインディングまたはリソースの参照が含まれている場合ことに注意して<xref:System.Windows.Freezable.GetAsFrozen%2A>に失敗する、オブジェクトを圧縮しようとしているとスローされます、<xref:System.InvalidOperationException>です。  
+  
+ このメソッドは、<xref:System.Windows.Freezable.GetAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーし、固定する <see cref="T:System.Windows.Media.Animation.KeySpline" />。</param>
+        <summary>このインスタンスの指定された固定された複製<see cref="T:System.Windows.Media.Animation.KeySpline" />です。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetCurrentValueAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSplineProgress">
+      <MemberSignature Language="C#" Value="public double GetSplineProgress (double linearProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetSplineProgress(float64 linearProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.GetSplineProgress(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="linearProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="linearProgress">評価する線形進行状況。</param>
+        <summary>指定した線形進行状況からスプライン進行状況を計算します。</summary>
+        <returns>計算されたスプライン進行状況。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 理解する方法、 <xref:System.Windows.Media.Animation.KeySpline> works、3 次ベジエ曲線を理解すると便利です。 3 次ベジエ曲線は、開始点、終点、および 2 つの制御点によって定義されます。 座標を 2 つ、<xref:System.Windows.Media.Animation.KeySpline>これら 2 つの制御点を定義します。 ベジエ曲線の開始点は常にスプライン キーを記述するときに 0、およびエンド ポイントは常に 1、2 つの制御ポイントのみを定義します。 結果として得られる曲線では、時間セグメント; でアニメーションを補間する方法を指定します曲線では、時間セグメントの上でアニメーションの対象の属性の変化率を表します。 アニメーションの進行状況とベジエ曲線の関係よりわかりやすく表示を参照してください[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected override void OnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.OnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます現在<see cref="T:System.Windows.Media.Animation.KeySpline" />オブジェクトを変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="formatProvider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの文字列表現を作成<see cref="T:System.Windows.Media.Animation.KeySpline" />現在のカルチャに基づきます。</summary>
+        <returns>この文字列表現<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeySpline.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="formatProvider">使用する書式設定プロバイダー。 プロバイダーが場合<see langword="null" />、現在のカルチャを使用します。</param>
+        <summary>この文字列表現を作成<see cref="T:System.Windows.Media.Animation.KeySpline" />に基づいて、指定された<see cref="T:System.IFormatProvider" />です。</summary>
+        <returns>このインスタンスの文字列表現<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

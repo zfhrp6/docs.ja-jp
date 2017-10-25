@@ -1,0 +1,260 @@
+<Type Name="MessageContractMemberAttribute" FullName="System.ServiceModel.MessageContractMemberAttribute">
+  <TypeSignature Language="C#" Value="public abstract class MessageContractMemberAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MessageContractMemberAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageContractMemberAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.MessageBodyMemberAttribute" /> と <see cref="T:System.ServiceModel.MessageHeaderAttribute" /> の基本メンバーを宣言します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、SOAP メッセージのすべての部分に共通するプロパティが含まれます。 たとえば、すべての部分に名前と名前空間があり、セキュリティ レベルが適用されている可能性があります。  
+  
+ 既定の SOAP エンベロープ自体を変更することがなく、SOAP 本体のコンテンツのシリアル化を制御する方法については、次を参照してください。 <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>、[サービス コントラクトのデータ転送を指定する](~/docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)、および[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+ メッセージ コントラクトの作成の詳細については、次を参照してください。[メッセージ コントラクトを使用して](~/docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、操作で使用するカスタム型のメッセージを作成するために、<xref:System.ServiceModel.MessageContractAttribute> 属性、<xref:System.ServiceModel.MessageHeaderAttribute> 属性、および <xref:System.ServiceModel.MessageBodyMemberAttribute> 属性 (すべて <xref:System.ServiceModel.MessageContractMemberAttribute> から継承される属性) を使用するカスタム メッセージ コントラクトを示しています。 この場合、SOAP メッセージの本文要素にシリアル化される 3 つのメンバー (`sourceAccount`、`targetAccount`、および `amount` という名前で要素にシリアル化される `transactionAmount` 値) が存在します。 さらに、`IsAudited` SOAP ヘッダー要素は `http://schemas.contosobank.com/auditing/2005` 名前空間に存在し、`sourceAccount` は暗号化およびデジタル署名されます。  
+  
+> [!NOTE]
+>  `Operation` 型および `Account` 型にはデータ コントラクトが存在する必要があります。  
+  
+```csharp  
+[MessageContract]  
+public class BankingTransaction  
+{  
+  [MessageHeader]   
+  public Operation operation;  
+  [MessageHeader(Namespace="http://schemas.contosobank.com/auditing/2005")]   
+  public bool IsAudited;  
+  [MessageBody(ProtectionLevel=ProtectionLevel.EncryptAndSign)]   
+  public Account sourceAccount;  
+  [MessageBody]   
+  public Account targetAccount;  
+  [MessageBody(Name="transactionAmount")]   
+  public int amount;  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageContractMemberAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageContractMemberAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageContractMemberAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractMemberAttribute.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、メンバーに保護レベルが割り当てられているかどうかを示す値を取得します。</summary>
+        <value>
+          メンバーに保護レベルが設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractMemberAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーに対応する要素の名前を指定します。</summary>
+        <value>このメンバーに対応する要素の名前。 この文字列は、有効な XML 要素名でなければなりません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.MessageContractAttribute> 属性、<xref:System.ServiceModel.MessageHeaderAttribute> 属性、および <xref:System.ServiceModel.MessageBodyMemberAttribute> 属性を使用して、パラメーターとして使用される厳密に型指定されたカスタム メッセージを作成するカスタム メッセージ コントラクトを示しています。 この場合、SOAP メッセージの本文要素にシリアル化される 3 つのデータ メンバー (`sourceAccount`、`targetAccount`、および `amount` という名前で要素にシリアル化される `transactionAmount` 値) が存在します。 また、`IsAudited` SOAP ヘッダー要素が `http://schemas.contosobank.com/auditing/2005` 名前空間に存在します。  
+  
+> [!NOTE]
+>  `Operation` 型および `Account` 型にもデータ コントラクトが存在する必要があります。  
+  
+```csharp  
+[MessageContract]  
+public class BankingTransaction  
+{  
+  [MessageHeader] public Operation operation;  
+  [MessageHeader(Namespace="http://schemas.contosobank.com/auditing/2005")] public bool IsAudited;  
+  [MessageBody] public Account sourceAccount;  
+  [MessageBody] public Account targetAccount;  
+  [MessageBody(Name="transactionAmount")] public int amount;  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractMemberAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーに対応する要素の名前空間を指定します。</summary>
+        <value>このメンバーに対応する要素の名前空間の URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、操作で使用するカスタム型のメッセージを作成するために、<xref:System.ServiceModel.MessageContractAttribute> 属性、<xref:System.ServiceModel.MessageHeaderAttribute> 属性、および <xref:System.ServiceModel.MessageBodyMemberAttribute> 属性 (すべて <xref:System.ServiceModel.MessageContractMemberAttribute> から継承される属性) を使用するカスタム メッセージ コントラクトを示しています。 この場合、SOAP メッセージの本文要素にシリアル化される 3 つのメンバー (`sourceAccount`、`targetAccount`、および `amount` という名前で要素にシリアル化される `transactionAmount` 値) が存在します。 さらに、`IsAudited` SOAP ヘッダー要素は `http://schemas.contosobank.com/auditing/2005` 名前空間に存在し、`sourceAccount` は暗号化およびデジタル署名されます。  
+  
+> [!NOTE]
+>  `Operation` 型および `Account` 型にはデータ コントラクトが存在する必要があります。  
+  
+```csharp  
+[MessageContract]  
+public class BankingTransaction  
+{  
+  [MessageHeader] public Operation operation;  
+  [MessageHeader(Namespace="http://schemas.contosobank.com/auditing/2005")] public bool IsAudited;  
+  [MessageBody] public Account sourceAccount;  
+  [MessageBody] public Account targetAccount;  
+  [MessageBody(Name="transactionAmount")] public int amount;  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーをそのまま送信するのか、署名して送信するのか、または署名と暗号化を行って送信するのかを指定します。</summary>
+        <value><see cref="T:System.Net.Security.ProtectionLevel" /> 値のいずれか。 既定値は、<see cref="F:System.Net.Security.ProtectionLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A> 属性または <xref:System.ServiceModel.MessageHeaderAttribute> 属性のいずれかで <xref:System.ServiceModel.MessageBodyMemberAttribute> プロパティを使用するには、バインドと動作を正しく構成する必要があります。 正しく構成せずにこれらのセキュリティ機能を使用した (たとえば、セキュリティ資格情報を設定せずにメッセージの一部に <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> を使用した) 場合は、実行時に例外がスローされます。  
+  
+ さらに、保護レベルは、ヘッダーごとに個別に決定されます。 ただし、SOAP 本文には、本文の部分数に関係なく、1 つの保護レベルが設定されます。 本文の保護レベルは、本文のすべての部分の中で一番高い <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A> プロパティの値によって決定されます。 たとえば、次のクラスを考えます。  
+  
+```csharp  
+[MessageContract]  
+public class PatientRecord  
+{  
+   [MessageHeader(ProtectionLevel=None)] public int recordID;  
+   [MessageHeader(ProtectionLevel=Sign)] public string patientName;  
+   [MessageHeader(ProtectionLevel=EncryptAndSign)] public string SSN;  
+   [MessageBody(ProtectionLevel=None)] public string comments;  
+   [MessageBody(ProtectionLevel=Sign)] public string diagnosis;  
+   [MessageBody(ProtectionLevel=EncryptAndSign)] public string medicalHistory;  
+}  
+```  
+  
+ この例では、`recordID` ヘッダーは保護されず、`patientName` は署名され、`SSN` は暗号化および署名されます。 本文の `medicalHistory` 部分と <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> 部分に低い保護レベルが設定されている場合でも、少なくとも 1 つの本文部分 (`comments`) に`diagnosis` が設定されているため、メッセージ本文全体が暗号化および署名されます。  
+  
+ 実行時の保護動作は、次のプロパティに設定された保護レベルの値を組み合わせたものになります。 こうしたプロパティは、階層構造を持ちます。 最も外側の値を設定すると、それより狭いスコープで異なる値を明示的に設定していなければ、より狭いスコープでその既定の設定が定まります。 この場合、外側の値は特に設定された値を除いて、それより狭いすべてのスコープで既定の設定として残ります。  
+  
+ たとえば、<xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType> が <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定され、他のより狭いスコープに保護レベル設定が存在しない場合、操作コントラクト内のすべてのメッセージが暗号化および署名されます。 ただし、こうした操作の 1 つで <xref:System.ServiceModel.OperationContractAttribute> が <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定されている場合、その操作のメッセージは署名されますが、コントラクト内の他のすべてのメッセージは暗号化および署名されます。  
+  
+ 保護レベル、前提条件、およびスコープに関する詳細については、「[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ こうした値が設定されるスコープは次のとおりです。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.MessageHeaderAttribute?displayProperty=nameWithType> プロパティ。  
+  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.MessageBodyMemberAttribute?displayProperty=nameWithType> プロパティ。  
+  
+ コントラクト上で明示的に指定された保護レベルが存在せず、基になるバインドで (トランスポート レベルまたはメッセージ レベルを問わず) セキュリティをサポートする場合、コントラクト全体の有効な保護レベルは <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 バインドで (<xref:System.ServiceModel.BasicHttpBinding> などの) セキュリティをサポートしない場合、コントラクト全体の有効な <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> は <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 したがって、コントラクトで <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> を指定している場合でも、エンドポイント バインドによってはクライアントが要求するメッセージ レベルまたはトランスポート レベルのセキュリティ保護が異なる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

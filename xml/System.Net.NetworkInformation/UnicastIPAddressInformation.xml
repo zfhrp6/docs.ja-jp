@@ -1,0 +1,343 @@
+<Type Name="UnicastIPAddressInformation" FullName="System.Net.NetworkInformation.UnicastIPAddressInformation">
+  <TypeSignature Language="C#" Value="public abstract class UnicastIPAddressInformation : System.Net.NetworkInformation.IPAddressInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UnicastIPAddressInformation extends System.Net.NetworkInformation.IPAddressInformation" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.UnicastIPAddressInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.NetworkInformation.IPAddressInformation</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネットワーク インターフェイスのユニキャスト アドレスに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスを作成しません。によって返される配列でインスタンスが返される、<xref:System.Net.NetworkInformation.IPInterfaceProperties.UnicastAddresses%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UnicastIPAddressInformation ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.UnicastIPAddressInformation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.UnicastIPAddressInformation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはから派生するクラスによってのみ呼び出すことができます、<xref:System.Net.NetworkInformation.UnicastIPAddressInformation>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressPreferredLifetime">
+      <MemberSignature Language="C#" Value="public abstract long AddressPreferredLifetime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AddressPreferredLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.AddressPreferredLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアドレスに指定したアドレスがである残り秒の数を取得します。</summary>
+        <value><see cref="T:System.Int64" />優先を維持するには、このアドレスの秒数を指定する値のままです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値を使用して、推奨されるアドレスは有効期間を決定します。 可能な限り、アプリケーションが優先アドレスを使用する必要があります。 使用して<xref:System.Net.NetworkInformation.UnicastIPAddressInformation.DuplicateAddressDetectionState%2A>優先アドレスを特定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このプロパティは、Windows XP より前のオペレーティング システムを実行しているコンピューターでは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressValidLifetime">
+      <MemberSignature Language="C#" Value="public abstract long AddressValidLifetime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AddressValidLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.AddressValidLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアドレスが有効である残り秒の数を取得します。</summary>
+        <value><see cref="T:System.Int64" />秒数を指定する値が割り当てられたままにするには、このアドレスのままです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値を使用して、このアドレスをアプリケーションで使用できるかどうかを決定します。 可能な限り、アプリケーションが優先アドレスを使用する必要があります。 使用して<xref:System.Net.NetworkInformation.UnicastIPAddressInformation.DuplicateAddressDetectionState%2A>優先アドレスを特定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このプロパティは、Windows XP より前のオペレーティング システムを実行しているコンピューターでは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DhcpLeaseLifetime">
+      <MemberSignature Language="C#" Value="public abstract long DhcpLeaseLifetime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 DhcpLeaseLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.DhcpLeaseLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この IP アドレスの動的ホスト構成プロトコル (DHCP) のリースの残り時間を指定します。</summary>
+        <value><see cref="T:System.Int64" />秒の数を表す値の残りのコンピューターをリリースする必要があります前に、<see cref="T:System.Net.IPAddress" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的ホスト構成プロトコル (DHCP) では、コンピューターがネットワーク アドレスを DHCP (固定)、静的なを使用するのではなく、サーバー ネットワーク アドレスから取得できるようにします。 DHCP サーバーがアドレスを完全に割り当てられません代わりに、「リース」数のコンピューターに利用可能なアドレスのいずれか。 アドレスのリースの有効期間と呼ばれる時間の指定された時間内は、コンピューターは、別のコンピューターに割り当てられるように DHCP サーバーのアドレスを解放します。  
+  
+ このプロパティで識別された IP アドレスのリースの有効期間内の残り秒数を取得、<xref:System.Net.NetworkInformation.IPAddressInformation.Address%2A>プロパティです。 コンピューターが、リースの有効期間は時間と共に増加できるように、リースを拡張する DHCP サーバーに要求を送信できることに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DuplicateAddressDetectionState">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.DuplicateAddressDetectionState DuplicateAddressDetectionState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.NetworkInformation.DuplicateAddressDetectionState DuplicateAddressDetectionState" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.DuplicateAddressDetectionState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.DuplicateAddressDetectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重複アドレス検出アルゴリズムの状態を示す値を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Net.NetworkInformation.DuplicateAddressDetectionState" />この IP アドレスの一意性を決定するアルゴリズムの進行状況を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネットワーク上のすべてのネットワーク インターフェイスは、一意のアドレスであるためには、インターフェイスのホストはユニキャスト アドレスに「重複アドレス検出」のアルゴリズムを実行している担当します。 このアルゴリズムの目的は、ネットワーク上で一意でないアドレスを防止しようとします。 このプロセスは、IETF RFC 1971 で定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このプロパティは、Windows XP より前のオペレーティング システムを実行しているコンピューターでは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IPv4Mask">
+      <MemberSignature Language="C#" Value="public abstract System.Net.IPAddress IPv4Mask { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress IPv4Mask" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.IPv4Mask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IPv4 のマスクを取得します。</summary>
+        <value><see cref="T:System.Net.IPAddress" /> IPv4 マスクを含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrefixLength">
+      <MemberSignature Language="C#" Value="public virtual int PrefixLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PrefixLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.PrefixLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP アドレスのプレフィックスまたはネットワークの一部のビット単位の長さを取得します。</summary>
+        <value><see cref="T:System.Int32" /> を返します。  
+  
+ IP アドレスのプレフィックスまたはネットワークの一部のビット単位の長さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrefixOrigin">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.PrefixOrigin PrefixOrigin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.NetworkInformation.PrefixOrigin PrefixOrigin" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.PrefixOrigin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PrefixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユニキャスト インターネット プロトコル (IP) アドレス プレフィックスのソースを識別する値を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Net.NetworkInformation.PrefixOrigin" />プレフィックス情報の取得方法を識別する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP アドレスが 2 つの部分に分かれています。 プレフィックスとサフィックス。 アドレス プレフィックス、IP アドレスのネットワークの部分を識別し、アドレスのサフィックスが、ホスト部分を識別します。 プレフィックスはグローバルの機関によって割り当てられ、サフィックスは、ローカルのシステム管理者によって割り当てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このプロパティは、Windows XP より前のオペレーティング システムを実行しているコンピューターでは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SuffixOrigin">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.SuffixOrigin SuffixOrigin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.NetworkInformation.SuffixOrigin SuffixOrigin" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.UnicastIPAddressInformation.SuffixOrigin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユニキャスト インターネット プロトコル (IP) アドレスのサフィックスのソースを識別する値を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Net.NetworkInformation.SuffixOrigin" />サフィックス情報の取得方法を識別する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP アドレスが 2 つの部分に分かれています。 プレフィックスとサフィックス。 アドレス プレフィックス、IP アドレスのネットワークの部分を識別し、アドレスのサフィックスが、ホスト部分を識別します。 プレフィックスはグローバルの機関によって割り当てられ、サフィックスは、ローカルのシステム管理者によって割り当てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このプロパティは、Windows XP より前のオペレーティング システムを実行しているコンピューターでは有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,413 @@
+<Type Name="VisualStyleInformation" FullName="System.Windows.Forms.VisualStyles.VisualStyleInformation">
+  <TypeSignature Language="C#" Value="public static class VisualStyleInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VisualStyleInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.VisualStyles.VisualStyleInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オペレーティング システムの現在の visual スタイルに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、公開`static`オペレーティング システムの現在の visual スタイルの詳細を提供するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を表示する、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation>プロパティで、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleInformation#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleInformation/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleInformation#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleInformation/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleInformation#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleInformation/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Author">
+      <MemberSignature Language="C#" Value="public static string Author { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Author" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Author" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルの作成者を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルの作成者を指定する文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorScheme">
+      <MemberSignature Language="C#" Value="public static string ColorScheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ColorScheme" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.ColorScheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルのカラー スキームを取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルの配色を指定する文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows XP の視覚スタイルでは、次の 3 つの配色を提供します。 このプロパティは、青色の配色がアクティブな場合は"NormalColor"から返される"HomeStead"オリーブ緑色の配色がアクティブであり、「メタリック」、シルバー色スキームの場合は、アクティブな場合です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Company">
+      <MemberSignature Language="C#" Value="public static string Company { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Company" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Company" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルを作成した会社を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルを作成した会社を指定する文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlHighlightHot">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color ControlHighlightHot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Color ControlHighlightHot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.ControlHighlightHot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルをコントロールのホットな状態を示すために使用する色を取得します。</summary>
+        <value>Visual スタイルが有効な場合、<see cref="T:System.Drawing.Color" />ホットな状態でコントロールの強調表示の描画に使用されます。 それ以外の場合、<see cref="P:System.Drawing.SystemColors.ButtonHighlight" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値のチェック、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>と<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A?displayProperty=nameWithType>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copyright">
+      <MemberSignature Language="C#" Value="public static string Copyright { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Copyright" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Copyright" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルの著作権情報を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルの著作権情報を指定する文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public static string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルの説明を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルを表す文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public static string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルの表示名を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルの表示名を指定する文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledByUser">
+      <MemberSignature Language="C#" Value="public static bool IsEnabledByUser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsEnabledByUser" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがオペレーティング システムで visual スタイルを有効にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザーがこれら; をサポートするオペレーティング システムで visual スタイルを有効にする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーで visual スタイルが有効にすることができます、**外観**のタブ、**表示**コントロール パネルのオプションです。 このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsSupportedByOS%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedByOS">
+      <MemberSignature Language="C#" Value="public static bool IsSupportedByOS { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupportedByOS" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsSupportedByOS" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが visual スタイルをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />オペレーティング システムには、visual スタイルがサポートされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、Windows XP Home Edition、Windows XP Professional、および Windows Server 2003 でのみサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumColorDepth">
+      <MemberSignature Language="C#" Value="public static int MinimumColorDepth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MinimumColorDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.MinimumColorDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルの最小の色深度を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルの最小の色深度それ以外の場合、0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値のチェック、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>と<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A?displayProperty=nameWithType>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public static string Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルのサイズを表す文字列を取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルのサイズを表す文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、"NormalSize"、"LargeFonts"または"ExtraLargeFonts"を返します。 このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFlatMenus">
+      <MemberSignature Language="C#" Value="public static bool SupportsFlatMenus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool SupportsFlatMenus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.SupportsFlatMenus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルがフラットなメニューをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在の visual スタイルがフラットなメニューをサポートしている visual スタイルが有効になっている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値のチェック、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>と<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A?displayProperty=nameWithType>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextControlBorder">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color TextControlBorder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Color TextControlBorder" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.TextControlBorder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルがテキストを含むコントロールの境界線の描画に使用する色を取得します。</summary>
+        <value>Visual スタイルが有効な場合、<see cref="T:System.Drawing.Color" />現在の visual スタイルがテキストを格納しているコントロールの境界線の描画に使用する場合は、<see cref="P:System.Drawing.SystemColors.ControlDarkDark" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定コントロールの境界線の色など<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.ComboBox>です。 このプロパティの値のチェック、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>と<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A?displayProperty=nameWithType>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public static string Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルの作成者によって指定された URL を取得します。</summary>
+        <value>Visual スタイルが有効な場合に、現在の visual スタイルの作成者によって指定された URL を指定する文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public static string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleInformation.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイルのバージョンを取得します。</summary>
+        <value>Visual スタイルが有効な場合は、現在の visual スタイルのバージョンを示す文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>プロパティ内部的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,40 @@
+<Type Name="RoutedEventHandler" FullName="System.Windows.RoutedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void RoutedEventHandler(object sender, RoutedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RoutedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RoutedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>すべてのルーティング イベントに共通なデータ以外の特定のイベント データを持たない、さまざまなルーティング イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.RoutedEventHandler>イベント データのイベントに固有の情報を報告しない任意のルーティング イベントのデリゲートを使用します。 そのような多くのルーティング イベント; があります。目立つ例としては、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>と<xref:System.Windows.FrameworkElement.Loaded>です。  
+  
+ 一般的なのではなくルーティング イベントのハンドラーの記述の違い最も注目に値する[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]イベントは使用する、`sender`イベント (ハンドラーがアタッチされ、呼び出される位置の要素) のことはできませんと見なされるため必ずしもイベントのソース。 ソースは、イベント データでは、プロパティとして報告 (<xref:System.Windows.RoutedEventArgs.Source%2A>)。 違い`sender`と<xref:System.Windows.RoutedEventArgs.Source%2A>要素ツリーを通じてルーティング イベントの検査中に、異なる要素にルーティングされるイベントの結果です。  
+  
+ いずれかを使用する`sender`または<xref:System.Windows.RoutedEventArgs.Source%2A>オブジェクトの参照を直接またはバブルのルーティング イベントのルーティングの動作に興味は意図的に処理する場合のルーティング イベント最初に発生する要素をします。 この状況で`sender`と<xref:System.Windows.RoutedEventArgs.Source%2A>同じオブジェクトです。  
+  
+ ルーティング イベントの固有の機能を活用し、それに応じて、ハンドラーを作成する場合は、イベント ハンドラーを作成するときに作業するため、イベント データの 2 つの最も重要なプロパティは、<xref:System.Windows.RoutedEventArgs.Source%2A>と<xref:System.Windows.RoutedEventArgs.Handled%2A>です。  
+  
+ 入力イベントの特定の組み合わせと[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コントロール クラス、イベントを発生させる要素は、それを処理する機会を持つ最初の要素ではありません。 最初のチャンスには、入力イベントがある場合、イベントのプレビュー バージョンし、要素ツリーのルートを設定できます<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`共有イベント データにし、そのイベント ルート上で残りの要素を入力イベントを報告する方法に影響を与えることができます。 処理の動作は、特定のルーティング イベントではない外観を与えることができます、プレビューは、想定どおりに発生します。 詳細については、次を参照してください。[プレビュー イベント](~/docs/framework/wpf/advanced/preview-events.md)と[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

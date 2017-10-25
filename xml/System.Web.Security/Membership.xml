@@ -1,0 +1,1816 @@
+<Type Name="Membership" FullName="System.Web.Security.Membership">
+  <TypeSignature Language="C#" Value="public static class Membership" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Membership extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.Membership" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーの資格情報を検証し、ユーザー設定を管理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership>クラスは、ASP.NET アプリケーションでユーザーの資格情報の検証しパスワードなどのユーザー設定を管理、および電子メール アドレスを使用します。 <xref:System.Web.Security.Membership>クラスは、それ自体にまたは組み合わせて使用できます、 <xref:System.Web.Security.FormsAuthentication> Web アプリケーションまたはサイトのユーザーを認証するための完全なシステムを作成します。 <xref:System.Web.UI.WebControls.Login>コントロールをカプセル化、<xref:System.Web.Security.Membership>ユーザーを検証するための便利なメカニズムを提供するクラス。  
+  
+> [!NOTE]
+>  ASP.NET のメンバーシップ機能に慣れていない場合は、次を参照してください。[メンバーシップの概要](http://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980)続行する前にします。 メンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+ <xref:System.Web.Security.Membership>クラスの機能を提供します。  
+  
+-   新しいユーザーを作成します。  
+  
+-   または、代替データ ストアに Microsoft SQL Server では、メンバーシップ情報 (ユーザー名、パスワード、電子メール アドレス、およびサポートしているデータ) を格納します。  
+  
+-   サイトを訪問するユーザーを認証します。 プログラムでは、ユーザーを認証するか、使用して、<xref:System.Web.UI.WebControls.Login>ほとんどまたはまったくないコードを必要とする完全な認証システムを作成するコントロール。  
+  
+-   パスワードを管理するには、作成、変更、取得、および、それらのリセットが含まれていますなどです。 必要に応じて、パスワードの質問とそのパスワードを忘れてしまったユーザーのパスワードのリセットまたは取得要求の認証に応答を要求する ASP.NET メンバーシップを構成することができます。  
+  
+ ASP.NET メンバーシップには、ASP.NET で認証の独立した機能は、サイトの承認サービスを提供する ASP.NET ロールの管理と統合できます。 メンバーシップは、ASP.NET のユーザーとも統合できる<xref:System.Web.Profile>カスタマイズが可能なアプリケーション固有のカスタマイズを個々 のユーザーに提供するためです。 詳細については、「[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)と[ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+ <xref:System.Web.Security.Membership>クラスは、データ ソースと通信するメンバーシップ プロバイダーに依存します。 .NET Framework が含まれています、 <xref:System.Web.Security.SqlMembershipProvider>、Microsoft SQL Server データベースのユーザー情報を格納して、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider>、Active Directory または Active Directory Application Mode (ADAM) サーバー上のユーザー情報を格納できます。 使用できる代替のデータ ソースとの通信にカスタム メンバーシップ プロバイダーを実装することも、<xref:System.Web.Security.Membership>クラスです。 カスタム メンバーシップ プロバイダーが継承、<xref:System.Web.Security.MembershipProvider>抽象クラスです。 詳細については、次を参照してください。[メンバーシップ プロバイダーを実装する](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)です。  
+  
+ 既定では、ASP.NET メンバーシップはすべての ASP.NET アプリケーションに対して有効です。 既定のメンバーシップ プロバイダーは、<xref:System.Web.Security.SqlMembershipProvider>名前のマシン構成で指定されたと`AspNetSqlProvider`です。 既定のインスタンス、 <xref:System.Web.Security.SqlMembershipProvider> Microsoft SQL Server のローカル インスタンスに接続するように構成します。  
+  
+ 指定する既定の設定を変更することができます、<xref:System.Web.Security.SqlMembershipProvider>以外の場合、`AspNetSqlProvider`インスタンスとして、既定のプロバイダーまたはカスタム プロバイダーのインスタンスを Web.config ファイルを使用して ASP.NET アプリケーションの既定のプロバイダーとして指定します。 Web.config ファイルで構成セクションを使用して Web アプリケーションの ASP.NET メンバーシップの構成を指定できます。 使用することができます、`providers`以外は既定のプロバイダーのいずれかのメンバーシップ プロバイダーを指定するのには、セクションのサブセクションを示したりします。 たとえば、次のセクションでは現在のアプリケーション構成から既定のメンバーシップ プロバイダーを削除し、という名前で新しいプロバイダーを追加`SqlProvider`という名前の SQL Server インスタンスに接続する`AspSqlServer`です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString="Data Source=AspSqlServer;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+      <providers>  
+        <remove name="AspNetSqlProvider" />  
+        <add name="SqlProvider"  
+          type="System.Web.Security.SqlMembershipProvider"  
+          connectionStringName="SqlServices"  
+          enablePasswordRetrieval="false"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"  
+          passwordFormat="Hashed"  
+          applicationName="/" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーションのログイン ページ、ASP.NET フォーム認証と ASP.NET メンバーシップを使用するように構成を示しています。 指定されたユーザーの資格情報が有効でない場合は、ユーザーにメッセージが表示されます。 ユーザーは、最初に要求された URL にリダイレクトするそれ以外の場合を使用して、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドです。  
+  
+> [!NOTE]
+>  ASP.NET ログイン コントロール (<xref:System.Web.UI.WebControls.Login>、 <xref:System.Web.UI.WebControls.LoginView>、 <xref:System.Web.UI.WebControls.LoginStatus>、 <xref:System.Web.UI.WebControls.LoginName>、および<xref:System.Web.UI.WebControls.PasswordRecovery>) ほぼすべてのユーザーに資格情報を確認し、メンバーシップ システムで資格情報の検証に必要なロジックをカプセル化しを指定できますプログラムによるチェックを使用する代わりに使用される、<xref:System.Web.Security.Membership>クラスです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/logincs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/loginvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public static string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの名前を取得または設定します。</summary>
+        <value>アプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.ApplicationName%2A>をアプリケーションに特定のユーザーを識別するために使用します。 同じユーザー名が異なる複数の ASP.NET アプリケーション用のデータベースに存在できますは、<xref:System.Web.Security.Membership.ApplicationName%2A>です。 これにより、複数のアプリケーションで情報を格納するユーザーの重複するユーザー名の競合を実行しなくても、同じデータベースを使用できます。 同じを指定することによって、複数の ASP.NET アプリケーションが同じユーザー データベースを使用する代わりに、<xref:System.Web.Security.Membership.ApplicationName%2A>です。 <xref:System.Web.Security.Membership.ApplicationName%2A> Web アプリケーションの構成でプログラムから、または宣言によって設定できます。  
+  
+> [!CAUTION]
+>  すべてで処理された要求の 1 つの既定のメンバーシップ プロバイダーのインスタンスが使用されるため、<xref:System.Web.HttpApplication>オブジェクトを同時に実行して、設定しようとしています。 複数の要求を持つことができます、<xref:System.Web.Security.Membership.ApplicationName%2A>プロパティの値。 <xref:System.Web.Security.Membership.ApplicationName%2A>プロパティは複数の書き込みでは、安全と変化するスレッドではありません、<xref:System.Web.Security.Membership.ApplicationName%2A>プロパティの値は、アプリケーションの複数のユーザーに対して予期しない動作になります。 ユーザーに設定できるようにするコードを記述しないことをお勧め、<xref:System.Web.Security.Membership.ApplicationName%2A>プロパティ、必要な場合です。 アプリケーションの例の設定を<xref:System.Web.Security.Membership.ApplicationName%2A>プロパティが必要な可能性があります複数のアプリケーションのメンバーシップ データを管理する管理アプリケーションは、します。 このようなアプリケーションは、シングル ユーザー アプリケーションと Web アプリケーションではなくにする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションを使用していることを指定します、<xref:System.Web.Security.SqlMembershipProvider>インスタンスとセット、<xref:System.Web.Security.Membership.ApplicationName%2A>に`MyApplication`です。  
+  
+```  
+<membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      enablePasswordRetrieval="true"  
+      enablePasswordReset="false"  
+      requiresQuestionAndAnswer="true"  
+      passwordFormat="Encrypted"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser CreateUser (string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser CreateUser(string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.CreateUser(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">新しいユーザーのユーザー名。</param>
+        <param name="password">新しいユーザーのパスワード。</param>
+        <summary>データ ストアに新しいユーザーを追加します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />新しく作成したユーザーのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.CreateUser%2A>データ ストアに新しいユーザーを追加し、返します、<xref:System.Web.Security.MembershipUser>新しく作成したユーザーのオブジェクト。 ユーザーの作成に失敗した場合、<xref:System.Web.Security.MembershipCreateUserException>がスローされます。 取得することができます、<xref:System.Web.Security.MembershipCreateStatus>値から、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>のプロパティ、<xref:System.Web.Security.MembershipCreateUserException>ユーザーの作成が失敗した理由を示すです。  
+  
+ 参照を使用してメンバーシップ ユーザーが作成された後、<xref:System.Web.Security.MembershipUser>オブジェクト、そのユーザーをそのユーザーの設定を変更することができますと、<xref:System.Web.Security.MembershipUser>パブリック メソッドなど<xref:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer%2A>アプリケーションのどこ<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>は`true`、かのプロパティ値を設定して、<xref:System.Web.Security.MembershipUser>オブジェクトとそれらに渡すこと、<xref:System.Web.Security.Membership.UpdateUser%2A>メソッド。  
+  
+ アプリケーションのデータ ソースにユーザーが既に存在する場合は、取得、<xref:System.Web.Security.MembershipUser>された既存のユーザーのオブジェクト、<xref:System.Web.Security.Membership.GetUser%2A>メソッドです。  
+  
+ <xref:System.Web.Security.SqlMembershipProvider>ユーザーごとに一意の電子メール アドレスを要求するオプションを提供します。 場合、<xref:System.Web.Security.SqlMembershipProvider.RequiresUniqueEmail%2A>プロパティは`true`のいずれかを使用する必要があります、<xref:System.Web.Security.Membership.CreateUser%2A>オーバー ロードを作成中のユーザーの電子メール アドレスを指定することができます。 それ以外の場合、<xref:System.Web.Security.MembershipCreateUserException>がスローされます。  
+  
+ すべてのパラメーター値は、先頭と末尾のスペースが切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証と ASP.NET メンバーシップを使用するように構成、ASP.NET アプリケーション用の新しいユーザーを作成します。 ユーザーが正常に作成されていない場合は、ユーザーにメッセージが表示されます。 それ以外の場合、ユーザーは、アプリケーションのログイン ページにリダイレクトされます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/createuser2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.Membership#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/createuser2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Security.MembershipCreateUserException">ユーザーは作成されませんでした。 チェック、<see cref="P:System.Web.Security.MembershipCreateUserException.StatusCode" />プロパティを<see cref="T:System.Web.Security.MembershipCreateStatus" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser CreateUser (string username, string password, string email);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser CreateUser(string username, string password, string email) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.CreateUser(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="email" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">新しいユーザーのユーザー名。</param>
+        <param name="password">新しいユーザーのパスワード。</param>
+        <param name="email">新しいユーザーの電子メール アドレス。</param>
+        <summary>データ ストアを指定した電子メール アドレスを持つ新しいユーザーを追加します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />新しく作成したユーザーのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.CreateUser%2A>データ ストアに新しいユーザーを追加し、返します、<xref:System.Web.Security.MembershipUser>新しく作成したユーザーのオブジェクト。 ユーザーの作成に失敗した場合、<xref:System.Web.Security.MembershipCreateUserException>がスローされます。 取得することができます、<xref:System.Web.Security.MembershipCreateStatus>値から、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>のプロパティ、<xref:System.Web.Security.MembershipCreateUserException>ユーザーの作成が失敗した理由を示すです。  
+  
+ 参照を使用してメンバーシップ ユーザーが作成された後、<xref:System.Web.Security.MembershipUser>オブジェクト、そのユーザーをそのユーザーの設定を変更することができますと、<xref:System.Web.Security.MembershipUser>パブリック メソッドなど<xref:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer%2A>アプリケーションのどこ<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>は`true`、かのプロパティ値を設定して、<xref:System.Web.Security.MembershipUser>オブジェクトとそれらに渡すこと、<xref:System.Web.Security.Membership.UpdateUser%2A>メソッド。  
+  
+ アプリケーションのデータ ソースにユーザーが既に存在する場合は、取得、<xref:System.Web.Security.MembershipUser>された既存のユーザーのオブジェクト、<xref:System.Web.Security.Membership.GetUser%2A>メソッドです。  
+  
+ すべてのパラメーター値は、先頭と末尾のスペースが切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証と ASP.NET メンバーシップを使用するように構成、ASP.NET アプリケーション用の新しいユーザーを作成します。 ユーザーが正常に作成されていない場合は、ユーザーにメッセージが表示されます。 それ以外の場合、ユーザーは、アプリケーションのログイン ページにリダイレクトされます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/createuser1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.Membership#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/createuser1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Security.MembershipCreateUserException">ユーザーは作成されませんでした。 チェック、<see cref="P:System.Web.Security.MembershipCreateUserException.StatusCode" />プロパティを<see cref="T:System.Web.Security.MembershipCreateStatus" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser CreateUser (string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, out System.Web.Security.MembershipCreateStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, [out] valuetype System.Web.Security.MembershipCreateStatus&amp; status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Web.Security.MembershipCreateStatus@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="passwordQuestion" Type="System.String" />
+        <Parameter Name="passwordAnswer" Type="System.String" />
+        <Parameter Name="isApproved" Type="System.Boolean" />
+        <Parameter Name="status" Type="System.Web.Security.MembershipCreateStatus&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="username">新しいユーザーのユーザー名。</param>
+        <param name="password">新しいユーザーのパスワード。</param>
+        <param name="email">新しいユーザーの電子メール アドレス。</param>
+        <param name="passwordQuestion">メンバーシップ ユーザーのパスワードの質問の値。</param>
+        <param name="passwordAnswer">メンバーシップ ユーザーのパスワードの回答値です。</param>
+        <param name="isApproved">新しいユーザーへのログオンが承認されているかどうかを示すブール値。</param>
+        <param name="status">A<see cref="T:System.Web.Security.MembershipCreateStatus" />ユーザーが正常に作成されたことを示すまたは作成が失敗した理由。</param>
+        <summary>データ ストアに指定されたプロパティ値を持つ新しいユーザーを追加し、ユーザーが正常に作成されたこと、またはユーザーの作成失敗の理由を示す状態パラメーターを返します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />新しく作成したユーザーのオブジェクト。 このメソッドが戻るかどうかはユーザーが作成されなかった、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.CreateUser%2A>データ ストアに新しいユーザーを追加し、返します、<xref:System.Web.Security.MembershipUser>新しく作成したユーザーのオブジェクト。 ユーザーの作成が失敗した場合は、取得、<xref:System.Web.Security.MembershipCreateStatus>値から、`status`ユーザーの作成が失敗した理由を示す出力パラメーターです。  
+  
+ <xref:System.Web.Security.Membership.CreateUser%2A>メソッドは`null`場合`password`空の文字列または`null`、`username`空の文字列または`null`コンマ (,) が含まれるか`passwordQuestion`は`null`、空の文字列で、または`passwordAnswer`はありません`null`空の文字列が含まれています。  
+  
+ 参照を使用してメンバーシップ ユーザーが作成された後、<xref:System.Web.Security.MembershipUser>そのユーザーの設定を変更することができます、そのユーザーのオブジェクトと、<xref:System.Web.Security.MembershipUser>パブリック メソッドのプロパティ値を設定したり、<xref:System.Web.Security.MembershipUser>オブジェクトを渡すこと、<xref:System.Web.Security.MembershipUser>オブジェクトを<xref:System.Web.Security.Membership.UpdateUser%2A>メソッドです。  
+  
+ アプリケーションのデータ ソースにユーザーが既に存在する場合は、取得、<xref:System.Web.Security.MembershipUser>された既存のユーザーのオブジェクト、<xref:System.Web.Security.Membership.GetUser%2A>メソッドです。  
+  
+ すべての文字列パラメーターの値からは、先頭と末尾のスペースが切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証と ASP.NET メンバーシップを使用するように構成、ASP.NET アプリケーション用の新しいユーザーを作成します。 ユーザーが正常に作成されていない場合は、ユーザーにメッセージが表示されます。 それ以外の場合、ユーザーは、アプリケーションのログイン ページにリダイレクトされます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/CreateUsercs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/CreateUservb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser CreateUser (string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out System.Web.Security.MembershipCreateStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, [out] valuetype System.Web.Security.MembershipCreateStatus&amp; status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="passwordQuestion" Type="System.String" />
+        <Parameter Name="passwordAnswer" Type="System.String" />
+        <Parameter Name="isApproved" Type="System.Boolean" />
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="status" Type="System.Web.Security.MembershipCreateStatus&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="username">新しいユーザーのユーザー名。</param>
+        <param name="password">新しいユーザーのパスワード。</param>
+        <param name="email">新しいユーザーの電子メール アドレス。</param>
+        <param name="passwordQuestion">メンバーシップ ユーザーのパスワードの質問の値。</param>
+        <param name="passwordAnswer">メンバーシップ ユーザーのパスワードの回答値です。</param>
+        <param name="isApproved">新しいユーザーへのログオンが承認されているかどうかを示すブール値。</param>
+        <param name="providerUserKey">メンバーシップ データ ストアに保存するか、ユーザーのユーザー識別子。</param>
+        <param name="status">A<see cref="T:System.Web.Security.MembershipCreateStatus" />ユーザーが正常に作成されたまたは理由の作成に失敗したことを示しています。</param>
+        <summary>指定されたプロパティ値を持つ新しいユーザーおよび一意の識別子をデータ ストアに追加し、ユーザーが正常に作成されたこと、またはユーザーの作成失敗の理由を示す状態パラメーターを返します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />新しく作成したユーザーのオブジェクト。 このメソッドが戻るかどうかはユーザーが作成されなかった、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.CreateUser%2A>データ ストアに新しいユーザーを追加し、返します、<xref:System.Web.Security.MembershipUser>新しく作成したユーザーのオブジェクト。 ユーザーの作成が失敗した場合は、取得、<xref:System.Web.Security.MembershipCreateStatus>値から、`status`ユーザーの作成が失敗した理由を示す出力パラメーターです。 使用して、データベースの主キーの値などのユーザーの一意の識別子を指定することができます、`providerUserKey`パラメーター。  
+  
+ <xref:System.Web.Security.Membership.CreateUser%2A>メソッドは`null`場合`password`空の文字列または`null`、`username`空の文字列または`null`またはコンマ (,)、含まれている`passwordQuestion`は`null`、空の文字列が含まれていますまたは`passwordAnswer`はありません`null`空の文字列が含まれています。  
+  
+ 参照を使用してメンバーシップ ユーザーが作成された後、<xref:System.Web.Security.MembershipUser>そのユーザーの設定を変更することができます、そのユーザーのオブジェクトと、<xref:System.Web.Security.MembershipUser>パブリック メソッドのプロパティ値を設定したり、<xref:System.Web.Security.MembershipUser>オブジェクトを渡すこと、<xref:System.Web.Security.MembershipUser>オブジェクトを<xref:System.Web.Security.Membership.UpdateUser%2A>メソッドです。  
+  
+ アプリケーションのデータ ソースにユーザーが既に存在する場合は、取得、<xref:System.Web.Security.MembershipUser>された既存のユーザーのオブジェクト、<xref:System.Web.Security.Membership.GetUser%2A>メソッドです。  
+  
+ すべての文字列パラメーターの値からは、先頭と末尾のスペースが切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteUser">
+      <MemberSignature Language="C#" Value="public static bool DeleteUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DeleteUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.DeleteUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">削除するユーザーの名前。</param>
+        <summary>データベースから、ユーザーおよびその関連するユーザー データを削除します。</summary>
+        <returns>
+          <see langword="true" />ユーザーが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベースに格納されているユーザー データ、 <xref:System.Web.Security.Roles>、 <xref:System.Web.HttpContext.Profile%2A>、または<xref:System.Web.UI.WebControls.WebParts.WebPart>を使用しているときにも、個人用設定が削除、 <xref:System.Web.Security.SqlRoleProvider>、 <xref:System.Web.Profile.SqlProfileProvider>、および<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>データ記憶域用のオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在ログオンしているユーザーを削除し、関連するすべてのデータ。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/DeleteUsercs.aspx#8)]
+ [!code-aspx-vb[System.Web.Security.Membership#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/DeleteUservb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空の文字列か、コンマ (,) が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null." /> です</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteUser">
+      <MemberSignature Language="C#" Value="public static bool DeleteUser (string username, bool deleteAllRelatedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DeleteUser(string username, bool deleteAllRelatedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.DeleteUser(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="deleteAllRelatedData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">削除するユーザーの名前。</param>
+        <param name="deleteAllRelatedData">
+          データベースからユーザーに関連するデータを削除するには <see langword="true" />。データベース内のユーザーに関連するデータをそのままにするには <see langword="false" />。</param>
+        <summary>データベースからユーザーを削除します。</summary>
+        <returns>
+          <see langword="true" />ユーザーが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベースから削除されたユーザーが削除のみから構成された`applicationName`です。  
+  
+ 場合`deleteAllRelatedData`は`true`、用のデータベースに格納されているユーザー データ、 <xref:System.Web.Security.Roles>、 <xref:System.Web.HttpContext.Profile%2A>、または<xref:System.Web.UI.WebControls.WebParts.WebPart>を使用しているときにも、個人用設定が削除、 <xref:System.Web.Security.SqlRoleProvider>、 <xref:System.Web.Profile.SqlProfileProvider>、および<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>データ記憶域用のオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在ログオンしているユーザーを削除し、関連するすべてのデータ。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/DeleteUsercs.aspx#6)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/DeleteUservb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空の文字列か、コンマ (,) が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePasswordReset">
+      <MemberSignature Language="C#" Value="public static bool EnablePasswordReset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnablePasswordReset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.EnablePasswordReset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがパスワードをリセットできるようにする、現在のメンバーシップ プロバイダーが構成されているかどうかを示す値を取得します。</summary>
+        <value>
+          メンバーシップ プロバイダーがパスワードのリセットをサポートしている場合は <see langword="true" />、そうでない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスワード リセットとは、ユーザーが自分のパスワードを忘れたか、現在のパスワードが有効では不要になったときに、現在のパスワードを新しいユーザー名をランダムに生成されたパスワードを置換する ASP.NET メンバーシップの機能です。 これは、パスワードの形式に設定されている場合に特に便利です<xref:System.Web.Security.MembershipPasswordFormat.Hashed>ユーザーがパスワードのハッシュ値を取得できません。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>し、パスワードのリセットを有効にします。  
+  
+```  
+<membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      enablePasswordRetrieval="false"  
+      enablePasswordReset="true"  
+      requiresQuestionAndAnswer="true"  
+      passwordFormat="Hashed"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ 次のコード例を最初に検証を<xref:System.Web.Security.Membership.EnablePasswordReset%2A>は`true`、し、ユーザーのパスワードをリセットし、自動的に生成された、新しいパスワードを返します。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/ResetPasswordcs.aspx#8)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/ResetPasswordvb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePasswordRetrieval">
+      <MemberSignature Language="C#" Value="public static bool EnablePasswordRetrieval { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnablePasswordRetrieval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.EnablePasswordRetrieval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメンバーシップ プロバイダーがユーザー パスワードの取得に使用できるように構成されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メンバーシップ プロバイダーがパスワードの取得をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Security.Membership.EnablePasswordRetrieval%2A>は`false`、基になるメンバーシップ プロバイダーがスローする可能性があります、<xref:System.Web.HttpException>です。  
+  
+ .NET Framework に含まれているプロバイダーは、パスワードのセキュリティを強化するために複数のパスワードの形式をサポートします。 パスワードの形式に設定されている場合<xref:System.Web.Security.MembershipPasswordFormat.Hashed>ユーザーは、データベースから、既存のパスワードを取得できません。 <xref:System.Web.Security.MembershipPasswordFormat.Hashed>パスワードの形式は、パスワードの値の一方向のエンコーディングを提供します。 パスワードは「ハッシュ」され、認証用のデータベースに格納されている値と比較されます。 「ハッシュされた」値は、元のパスワード値を取得するにはエンコードされていないにすることはできません。 詳細については、「<xref:System.Web.Security.MembershipPasswordFormat>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>し、パスワードの取得を有効にします。  
+  
+```  
+<membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      enablePasswordRetrieval="true"  
+      enablePasswordReset="false"  
+      requiresQuestionAndAnswer="false"  
+      passwordFormat="Encrypted"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ 次のコード例を最初に検証を<xref:System.Web.Security.Membership.EnablePasswordRetrieval%2A>は`true`、指定されたユーザー名のパスワードを取得し、指定したユーザーの電子メール アドレスに送信します。  
+  
+> [!IMPORTANT]
+>  電子メールを使用してクリア テキストでパスワードを返すことは、高レベルのセキュリティを必要とするサイトには推奨されません。 高度なセキュリティのサイトでは、SSL などの暗号化を使用してパスワードを返すことをお勧めします。  
+>   
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれます。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/RetrievePasswordcs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/RetrievePasswordvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByEmail">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUserCollection FindUsersByEmail (string emailToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUserCollection FindUsersByEmail(string emailToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.FindUsersByEmail(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emailToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="emailToMatch">検索するメール アドレス。</param>
+        <summary>指定したメール アドレスと一致するメール アドレスを持つメンバーシップ ユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />に一致するすべてのユーザーを格納している、<paramref name="emailToMatch" />パラメーター。  
+  
+ 先頭および末尾のスペースがトリミング、<paramref name="emailToMatch" />パラメーターの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.FindUsersByEmail%2A>電子メール アドレスと一致する、指定されたメンバーシップ ユーザーの一覧を返します`emailToMatch`構成済みの`applicationName`します。  
+  
+ <xref:System.Web.Security.SqlMembershipProvider>に対して LIKE 句を使用してその検索を実行、`emailToMatch`パラメーター。 句で使用できるように SQL Server でサポートされているワイルドカード、`emailToMatch`パラメーターの値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.FindUsersByEmail%2A>メンバーシップ データベースからユーザーのメンバーシップ情報を取得する方法をユーザー入力に基づくし、データのページに結果を表示します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/FindUsersByEmailcs.aspx#9)]
+ [!code-aspx-vb[System.Web.Security.Membership#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/FindUsersByEmailvb.aspx#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByEmail">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUserCollection FindUsersByEmail (string emailToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUserCollection FindUsersByEmail(string emailToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emailToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="emailToMatch">検索するメール アドレス。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">一致したユーザーの合計数。</param>
+        <summary>電子メール アドレスが一致するように指定した電子メール アドレスを含む、データのページで、メンバーシップ ユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />のページを含む<paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" />オブジェクトで指定されたページから始まる<paramref name="pageIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.FindUsersByEmail%2A>電子メール アドレスと一致する、指定されたメンバーシップ ユーザーの一覧を返します`emailToMatch`構成済みの`applicationName`します。  
+  
+ <xref:System.Web.Security.SqlMembershipProvider>に対して LIKE 句を使用してその検索を実行、`emailToMatch`パラメーター。 句で使用できるように SQL Server でサポートされているワイルドカード、`emailToMatch`パラメーターの値。  
+  
+ によって返される結果<xref:System.Web.Security.Membership.FindUsersByEmail%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Security.MembershipUser>で返されるオブジェクト、<xref:System.Web.Security.MembershipUserCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する場合に結果のどのページを識別します。 `totalRecords`パラメーターは、`out`パラメーターと一致したメンバーシップ ユーザーの合計数に設定されている、`emailToMatch`値。 たとえば、13 人のユーザーはどこで検出された場合`emailToMatch`の一部または全体の電子メール アドレスを一致と`pageIndex`値が 1 と、 `pageSize` 5 の<xref:System.Web.Security.MembershipUserCollection>返されるは 6 ~ 返される 10 番目のユーザーが含まれます。 `totalRecords`13 に設定されます。  
+  
+ 先頭および末尾のスペースがトリミング、`emailToMatch`パラメーターの値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.FindUsersByEmail%2A>メンバーシップ データベースからユーザーのメンバーシップ情報を取得する方法をユーザー入力に基づくし、データのページに結果を表示します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/FindUsersByEmailcs.aspx#13)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/FindUsersByEmailvb.aspx#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pageIndex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="pageSize" /> が 1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByName">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUserCollection FindUsersByName (string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUserCollection FindUsersByName(string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.FindUsersByName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="usernameToMatch">検索するユーザー名。</param>
+        <summary>指定したユーザー名と一致するユーザー名を持つメンバーシップ ユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />に一致するすべてのユーザーを格納している、<paramref name="usernameToMatch" />パラメーター。  
+  
+ 先頭および末尾のスペースがトリミング、<paramref name="usernameToMatch" />パラメーターの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.SqlMembershipProvider.FindUsersByName%2A>ユーザー名と一致する、指定されたメンバーシップ ユーザーの一覧を返します`usernameToMatch`構成済みの`applicationName`します。  
+  
+ <xref:System.Web.Security.SqlMembershipProvider>に対して LIKE 句を使用してその検索を実行、`usernameToMatch`パラメーター。 句で使用できるように SQL Server でサポートされているワイルドカード、`usernameToMatch`パラメーターの値。  
+  
+ すべてのパラメーター値は、先頭と末尾のスペースが切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.FindUsersByName%2A>メンバーシップ データベースからユーザーのメンバーシップ情報を取得する方法をユーザー入力に基づくし、データのページに結果を表示します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/FindUsersByNamecs.aspx#10)]
+ [!code-aspx-vb[System.Web.Security.Membership#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/FindUsersByNamevb.aspx#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByName">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUserCollection FindUsersByName (string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUserCollection FindUsersByName(string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="usernameToMatch">検索するユーザー名。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">一致したユーザーの合計数。</param>
+        <summary>ユーザー名が一致するように指定されたユーザー名を含む、データのページで、メンバーシップ ユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />のページを含む<paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" />オブジェクトで指定されたページから始まる<paramref name="pageIndex" />です。  
+  
+ 先頭および末尾のスペースがトリミング、<paramref name="usernameToMatch" />パラメーターの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.SqlMembershipProvider.FindUsersByName%2A>ユーザー名と一致する、指定されたメンバーシップ ユーザーの一覧を返します`usernameToMatch`構成済みの`applicationName`します。  
+  
+ <xref:System.Web.Security.SqlMembershipProvider>に対して LIKE 句を使用してその検索を実行、`usernameToMatch`パラメーター。 句で使用できるように SQL Server でサポートされているワイルドカード、`usernameToMatch`パラメーターの値。  
+  
+ によって返される結果<xref:System.Web.Security.Membership.FindUsersByName%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Security.MembershipUser>で返されるオブジェクト、<xref:System.Web.Security.MembershipUserCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する場合に結果のどのページを識別します。 `totalRecords`パラメーターは、`out`パラメーターと一致したメンバーシップ ユーザーの合計数に設定されている、`usernameToMatch`値。 13 人のユーザーはどこで検出された場合など、`usernameToMatch`の一部または全体のユーザー名を一致と`pageIndex`値が 1 と、 `pageSize` 5 の<xref:System.Web.Security.MembershipUserCollection>返されるは 6 ~ 返される 10 番目のユーザーが含まれます。 `totalRecords`13 に設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.FindUsersByName%2A>メンバーシップ データベースからユーザーのメンバーシップ情報を取得する方法をユーザー入力に基づくし、データのページに結果を表示します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/FindUsersByNamecs.aspx#12)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/FindUsersByNamevb.aspx#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="pageSize" /> が 1 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratePassword">
+      <MemberSignature Language="C#" Value="public static string GeneratePassword (int length, int numberOfNonAlphanumericCharacters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GeneratePassword(int32 length, int32 numberOfNonAlphanumericCharacters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GeneratePassword(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="numberOfNonAlphanumericCharacters" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="length">生成されたパスワードの文字数。 長さは、1 ~ 128 文字にする必要があります。</param>
+        <param name="numberOfNonAlphanumericCharacters">英数字以外の文字の最小数 (ように @、#、!、%、&amp;など) で生成されたパスワード。</param>
+        <summary>指定した長さのランダムなパスワードを生成します。</summary>
+        <returns>指定した長さのランダムなパスワードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GeneratePassword%2A>メソッドは、ランダムなパスワードを生成するために使用し、最も広く使用されています、 <xref:System.Web.Security.MembershipProvider.ResetPassword%2A> 、新しい一時パスワードにユーザーのパスワードをリセットするメンバーシップ プロバイダーによって実装されるメソッド。  
+  
+ 文字の英数字と次の区切り記号のみ生成されたパスワードを含む:`!@#$%^&*()_-+=[{]};:<>|./?`です。 生成されたパスワードで非表示または印刷不可能な制御文字が含まれていません。  
+  
+> [!NOTE]
+>  によって作成されたランダムなパスワード、<xref:System.Web.Security.Membership.GeneratePassword%2A>メソッド内の正規表現を渡すは保証されません、<xref:System.Web.Security.Membership.PasswordStrengthRegularExpression%2A>プロパティです。 ただし、ランダムなパスワードがによって確立された条件を満たして、<xref:System.Web.Security.Membership.MinRequiredPasswordLength%2A>プロパティおよび`numberOfNonAlphanumericCharacters`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいメンバーシップ ユーザーを作成し、使用して、<xref:System.Web.Security.Membership.GeneratePassword%2A>をユーザーに表示されるランダムな値に新しいユーザーのパスワードを初期化します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/GeneratePasswordcs.aspx#5)]
+ [!code-aspx-vb[System.Web.Security.Membership#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/GeneratePasswordvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="length" />1 より小さいか、または 128 文字より長く - または -  
+  
+ <paramref name="numberOfNonAlphanumericCharacters" /> が 0 未満であるか、または <paramref name="length" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllUsers">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUserCollection GetAllUsers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUserCollection GetAllUsers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetAllUsers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データベース内のすべてのユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />の<see cref="T:System.Web.Security.MembershipUser" />のすべてのデータベースにユーザーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetAllUsers%2A>すべてのメンバーシップ ユーザーのコレクションとしてアプリケーションの情報を返します<xref:System.Web.Security.MembershipUser>オブジェクト。 使用する場合は注意が必要、 <xref:System.Web.Security.Membership.GetAllUsers%2A> 、その結果として、非常に大きなユーザー データベースを持つメソッド<xref:System.Web.Security.MembershipUserCollection>ページ、ASP.NET で、アプリケーションのパフォーマンスが低下する可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザーの数のカウントと共にユーザーの一覧を返します現在オンラインです。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/ShowUserscs.aspx#5)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/ShowUsersvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllUsers">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUserCollection GetAllUsers (int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUserCollection GetAllUsers(int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetAllUsers(System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pageIndex">返される結果ページのインデックス。 最初のページを示す 0 を使用します。</param>
+        <param name="pageSize">返される結果ページのサイズ。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="totalRecords">ユーザーの合計数。</param>
+        <summary>データのページで、データベース内のすべてのユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />の<see cref="T:System.Web.Security.MembershipUser" />構成済みのデータベース内のすべてのユーザーを表すオブジェクト<see langword="applicationName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される結果<xref:System.Web.Security.Membership.GetAllUsers%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Security.MembershipUser>で返されるオブジェクト、<xref:System.Web.Security.MembershipUserCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する場合に結果のどのページを識別します。 `totalRecords`パラメーターは、`out`構成済みのメンバーシップ ユーザーの合計数に設定されているパラメーター`applicationName`です。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値が 1 と、 `pageSize` 5 の<xref:System.Web.Security.MembershipUserCollection>返されるは 6 ~ 返される 10 番目のユーザーが含まれます。 `totalRecords`13 に設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユーザーの一覧を返しますのデータ ページのユーザーの数のカウントと共に現在オンラインです。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/ShowUserscs.aspx#5)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/ShowUsersvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pageIndex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="pageSize" /> が 1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNumberOfUsersOnline">
+      <MemberSignature Language="C#" Value="public static int GetNumberOfUsersOnline ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetNumberOfUsersOnline() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetNumberOfUsersOnline" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアプリケーションにアクセスするユーザーの数を取得します。</summary>
+        <returns>現在のアプリケーションにアクセスするユーザーの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.SqlMembershipProvider.GetNumberOfUsersOnline%2A>現在のユーザーの数を返します<xref:System.Web.Security.Membership.ApplicationName%2A>最終アクティビティの日付が、現在の日時以前よりも大きい、<xref:System.Web.Security.Membership.UserIsOnlineTimeWindow%2A>です。 最終アクティビティの日付/時刻スタンプによってユーザーの資格情報を検証するときに現在の日付と時刻に更新されました、<xref:System.Web.Security.Membership.ValidateUser%2A>または<xref:System.Web.Security.Membership.UpdateUser%2A>メソッドへの呼び出し時に、または、<xref:System.Web.Security.Membership.GetUser%2A>パラメーターがないか、1 つを使用するオーバー ロードを`userIsOnline`パラメーターを指定した日付/時刻スタンプを更新する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザーの数のカウントと共にユーザーの一覧を返します現在オンラインです。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/ShowUserscs.aspx#5)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/ShowUsersvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser GetUser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser GetUser() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUser" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースから情報を取得し、更新プログラムの最終アクティビティ現在ログオンしているメンバーシップ ユーザーの日付/時刻スタンプします。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />現在ログオンしているユーザーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUser>データ ソースからユーザー情報を取得し、作成、<xref:System.Web.Security.MembershipUser>オブジェクトが返されるデータを設定します。 いずれかを使用する場合、<xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`username`パラメーター、<xref:System.Web.Security.Membership.GetUser%2A>現在ログオンしているメンバーシップ ユーザーの情報を返します。 現在ログオンしているメンバーシップ ユーザーがによって識別される、<xref:System.Security.Principal.IIdentity.Name%2A>の現在のユーザーの<xref:System.Web.HttpContext>します。  
+  
+ かどうかを指定することも<xref:System.Web.Security.Membership.GetUser%2A>最終アクティビティを更新するユーザーの日付/時刻スタンプを使用して取得されている、`userIsOnline`パラメーター。 <xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`userIsOnline`パラメーター、`GetUser()`ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプ暗黙的にします。 `GetUser(System.String)`および`GetUser(System.Object)`しません。  
+  
+   
+  
+## Examples  
+ 次のコード例更新の最終アクティビティ日付/時刻スタンプを現在ログオンしているメンバーシップ ユーザーと、ASP.NET ページ内のユーザー名を表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/default1cs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.Membership#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/default1vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メンバーシップ ユーザーが現在に記録されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser GetUser (bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser GetUser(bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUser(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="userIsOnline">場合<see langword="true" />、指定したユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプします。</param>
+        <summary>現在ログオンしているメンバーシップ ユーザーのデータ ソースから情報を取得します。 日付/時刻スタンプを更新プログラムの最終アクティビティ、現在ログオンしているメンバーシップ ユーザーに対して、指定した場合。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />現在ログオンしているユーザーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUser%2A>メソッドは、データ ソースからユーザー情報を取得し、作成、<xref:System.Web.Security.MembershipUser>オブジェクトが返されるデータを設定します。 いずれかを使用する場合、<xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`username`パラメーター、<xref:System.Web.Security.Membership.GetUser%2A>現在ログオンしているメンバーシップ ユーザーの情報を返します。 現在ログオンしているメンバーシップ ユーザーがによって識別される、<xref:System.Security.Principal.IIdentity.Name%2A>の現在のユーザーの<xref:System.Web.HttpContext>します。  
+  
+ かどうかを指定することも<xref:System.Web.Security.Membership.GetUser%2A>最終アクティビティを更新するユーザーの日付/時刻スタンプを使用して取得されている、`userIsOnline`パラメーター。 <xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`userIsOnline`パラメーター、`GetUser()`ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプ暗黙的にします。 `GetUser(System.String)`および`GetUser(System.Object)`しません。  
+  
+   
+  
+## Examples  
+ ユーザー名を ASP.NET ページに現在ログオンしているメンバーシップ ユーザーの最終アクティビティを更新することがなく次のコード例表示日付/時刻スタンプを。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/default2cs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.Membership#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/default2vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メンバーシップ ユーザーが現在に記録されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser GetUser (object providerUserKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser GetUser(object providerUserKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUser(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerUserKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="providerUserKey">ユーザーのメンバーシップ データ ソースからの一意のユーザー識別子です。</param>
+        <summary>指定された一意の識別子に関連付けられているメンバーシップ ユーザーのデータ ソースから情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />指定の一意の識別子に関連付けられているユーザーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUser%2A>メソッドは、データ ソースからユーザー情報を取得し、作成、<xref:System.Web.Security.MembershipUser>オブジェクトが返されるデータを設定します。 使用して指定のデータ ソースからの一意識別子を使用してユーザーを識別、`providerUserKey`パラメーター。  
+  
+ かどうかを指定することも<xref:System.Web.Security.Membership.GetUser%2A>最終アクティビティの更新を使用して取得されているユーザーの日付/時刻スタンプ、`userIsOnline`パラメーター。 <xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`userIsOnline`パラメーター、`GetUser()`ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプ暗黙的にします。 `GetUser(System.String)`および`GetUser(System.Object)`しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerUserKey" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser GetUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser GetUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">取得するユーザーの名前。</param>
+        <summary>指定されたメンバーシップ ユーザーのデータ ソースから情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />指定したユーザーを表すオブジェクト。 場合、<paramref name="username" />パラメーターは、既存のユーザーに対応していない、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUser%2A>メソッドは、データ ソースからユーザー情報を取得し、作成、<xref:System.Web.Security.MembershipUser>オブジェクトが返されるデータを設定します。 いずれかを使用する場合、<xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`username`パラメーター、<xref:System.Web.Security.Membership.GetUser%2A>現在ログオンしているメンバーシップ ユーザーの情報を返します。 現在ログオンしているメンバーシップ ユーザーがによって識別される、<xref:System.Security.Principal.IIdentity.Name%2A>の現在のユーザーの<xref:System.Web.HttpContext>します。  
+  
+ かどうかを指定することも<xref:System.Web.Security.Membership.GetUser%2A>最終アクティビティの更新を使用して取得されているユーザーの日付/時刻スタンプ、`userIsOnline`パラメーター。 <xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`userIsOnline`パラメーター、<xref:System.Web.Security.Membership.GetUser%2A?displayProperty=nameWithType>ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプ暗黙的にします。 <xref:System.Web.Security.Membership.GetUser%2A?displayProperty=nameWithType>および<xref:System.Web.Security.Membership.GetUser%2A>しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.GetUser%2A>を返すメソッドを<xref:System.Web.Security.MembershipUser>現在ログオンしているユーザーおよびユーザー用の電子メール アドレスの更新プログラムのオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/UpdateEmailcs.aspx#11)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/UpdateEmailvb.aspx#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />コンマ (,) が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser GetUser (object providerUserKey, bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser GetUser(object providerUserKey, bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUser(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="providerUserKey">ユーザーのメンバーシップ データ ソースからの一意のユーザー識別子です。</param>
+        <param name="userIsOnline">場合<see langword="true" />、指定したユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプします。</param>
+        <summary>指定された一意の識別子に関連付けられているメンバーシップ ユーザーのデータ ソースから情報を取得します。 指定されている場合、ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプします。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />指定の一意の識別子に関連付けられているユーザーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUser%2A>メソッドは、データ ソースからユーザー情報を取得し、作成、<xref:System.Web.Security.MembershipUser>オブジェクトが返されるデータを設定します。 指定されたデータ ソースから一意の識別子を持つユーザーを識別、`providerUserKey`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerUserKey" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipUser GetUser (string username, bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.MembershipUser GetUser(string username, bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUser(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">取得するユーザーの名前。</param>
+        <param name="userIsOnline">場合<see langword="true" />、指定したユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプします。</param>
+        <summary>指定されたメンバーシップ ユーザーのデータ ソースから情報を取得します。 指定されている場合、ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプします。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />指定したユーザーを表すオブジェクト。 場合、<paramref name="username" />パラメーターは、既存のユーザーに対応していない、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUser%2A>メソッドは、データ ソースからユーザー情報を取得し、作成、<xref:System.Web.Security.MembershipUser>オブジェクトが返されるデータを設定します。  
+  
+ いずれかを使用する場合、<xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`username`パラメーター、<xref:System.Web.Security.Membership.GetUser%2A>現在ログオンしているメンバーシップ ユーザーの情報を返します。 現在ログオンしているメンバーシップ ユーザーがによって識別される、<xref:System.Security.Principal.IIdentity.Name%2A>の現在のユーザーの<xref:System.Web.HttpContext>します。  
+  
+ かどうかを指定することも<xref:System.Web.Security.Membership.GetUser%2A>最終アクティビティの更新を使用して取得されているユーザーの日付/時刻スタンプ、`userIsOnline`パラメーター。 <xref:System.Web.Security.Membership.GetUser%2A>を受け取らないオーバー ロード、`userIsOnline`パラメーター、<xref:System.Web.Security.Membership.GetUser%2A?displayProperty=nameWithType>ユーザーの更新プログラムの最終アクティビティの日付/時刻スタンプ暗黙的にします。 <xref:System.Web.Security.Membership.GetUser%2A?displayProperty=nameWithType>および<xref:System.Web.Security.Membership.GetUser%2A>しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定されたユーザー名のパスワードを取得し、指定したユーザーの電子メール アドレスに送信します。 呼び出し<xref:System.Web.Security.Membership.GetUser%2A>を最終アクティビティの日付/時刻スタンプを指定のユーザーを更新できません。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/RetrievePasswordcs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/RetrievePasswordvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />コンマ (,) が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserNameByEmail">
+      <MemberSignature Language="C#" Value="public static string GetUserNameByEmail (string emailToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetUserNameByEmail(string emailToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.GetUserNameByEmail(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emailToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="emailToMatch">検索するメール アドレス。</param>
+        <summary>ユーザーの電子メール アドレスが指定した電子メール アドレスと一致するユーザー名を取得します。</summary>
+        <returns>ユーザーの電子メール アドレスが指定した電子メール アドレスと一致するユーザー名。 一致するものが見つからない場合<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.GetUserNameByEmail%2A>場合は、ユーザーがユーザー名を知らないが、ユーザーの電子メール アドレスが認識してメンバーシップ ユーザーのユーザー名を取得するために使用します。 データ ストア内の 1 つ以上のユーザーは、同じ電子メール アドレスを持っている場合は、最初のユーザー名が返されます。  
+  
+ すべてのパラメーター値は、先頭と末尾のスペースが切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定した電子メール アドレスのユーザー名を取得します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/GetUserByEmailcs.aspx#7)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/GetUserByEmailvb.aspx#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithmType">
+      <MemberSignature Language="C#" Value="public static string HashAlgorithmType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string HashAlgorithmType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.HashAlgorithmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードをハッシュに使用するアルゴリズムの識別子。</summary>
+        <value>既定のハッシュ アルゴリズムを使用するパスワードをハッシュ、または空白を使用するアルゴリズムの識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.HashAlgorithmType%2A>プロパティで使用されるカスタムのハッシュ アルゴリズムの識別、<xref:System.Web.Security.Membership>クラスです。 設定する、<xref:System.Web.Security.Membership.HashAlgorithmType%2A>プロパティを使用して、`hashAlgorithmType`要素の属性です。  
+  
+ .NET Framework では、要素の構成セクションを使用してカスタム暗号化クラスを構成することができます。 <xref:System.Web.Security.Membership.HashAlgorithmType%2A>プロパティに一致する必要があります、`name`要素内の要素の属性です。 詳細については、次を参照してください。[暗号化クラスへのアルゴリズム名のマッピング](~/docs/framework/configure-apps/map-algorithm-names-to-cryptography-classes.md)です。  
+  
+ 場合、<xref:System.Web.Security.Membership.HashAlgorithmType%2A>プロパティが設定されていない、<xref:System.Web.Security.Membership>クラスで設定するハッシュ アルゴリズムを使用して、`validation`要素の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxInvalidPasswordAttempts">
+      <MemberSignature Language="C#" Value="public static int MaxInvalidPasswordAttempts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MaxInvalidPasswordAttempts" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.MaxInvalidPasswordAttempts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーシップ ユーザーがロック アウトされるまでの無効なパスワードまたはパスワード解答の試行回数を取得します。</summary>
+        <value>メンバーシップ ユーザーがロック アウトされるまでの無効なパスワードまたはパスワード解答の試行回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>プロパティの動作と組み合わせて、<xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>プロパティを使用して、不要なソースから保護を繰り返し、パスワードまたはメンバーシップ ユーザーのパスワードの回答を推測します。  
+  
+ メンバーシップ ユーザーがの値以上では、無効なパスワードまたはパスワードの解答の数が入力した場合、<xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>プロパティで指定された分数内で、<xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>プロパティ、そのユーザーがロックされている Web サイトから設定して、<xref:System.Web.Security.MembershipUser.IsLockedOut%2A>プロパティを`true`への呼び出しによって、ユーザーのロックが解除されるまで、<xref:System.Web.Security.MembershipUser.UnlockUser%2A>メソッドです。  
+  
+ 値の前に、有効なパスワードまたはパスワードの回答を指定するかどうか、<xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>プロパティに達すると、無効な試行回数を追跡するカウンターが 0 に設定します。  
+  
+ 無効なパスワードおよびパスワードの解答は、個別に追跡されます。 たとえば場合、<xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>プロパティが 5 に設定、ユーザーを正しいパスワードを入力し、ロックアウトされることがなく、正しいパスワードの回答を入力する 5 つの試行は最大 5 つまで試行します。  
+  
+ <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>プロパティ値がアプリケーションの構成を使用して、設定、`maxInvalidPasswordAttempts`構成要素の属性です。  
+  
+ 場合、<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>プロパティは`false`、無効なパスワードの解答の試行は追跡されません。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>メンバーシップ サービス、およびセットを提供するクラス、`maxInvalidPasswordAttempts`属性を 5 つが無効な場合に、`passwordAttemptWindow`を 30 分です。  
+  
+```  
+<membership defaultProvider="SqlProvider"  
+  userIsOnlineTimeWindow = "20>  
+  <providers>  
+    <add  
+      name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      requiresQuestionAndAnswer="true"  
+      maxInvalidPasswordAttempts="5"  
+      passwordAttemptWindow="30"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRequiredNonAlphanumericCharacters">
+      <MemberSignature Language="C#" Value="public static int MinRequiredNonAlphanumericCharacters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MinRequiredNonAlphanumericCharacters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.MinRequiredNonAlphanumericCharacters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効なパスワードに存在する必要がある特殊文字の最小数を取得します。</summary>
+        <value>有効なパスワードに存在する必要がある特殊文字の最小数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.MinRequiredNonAlphanumericCharacters%2A>プロパティで指定されたメンバーシップ プロバイダーの有効なパスワードを作成する入力する必要がある、特別な英数字以外の文字の最小数を返します、<xref:System.Web.Security.Membership.Provider%2A>プロパティです。  
+  
+ <xref:System.Web.Security.Membership.MinRequiredNonAlphanumericCharacters%2A>プロパティ値がアプリケーションの構成を使用して、設定、`minRequiredNonAlphanumericCharacters`構成要素の属性です。  
+  
+ 英数字以外の文字が対象の文字、<xref:System.Char.IsLetterOrDigit%2A>メソッドを返します。`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例の構成要素を示しています、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>メンバーシップ サービス、およびセットを提供するクラス、`minRequiredNonAlphanumericCharacters`属性を 1 文字です。  
+  
+```  
+<membership defaultProvider="SqlProvider"  
+  userIsOnlineTimeWindow = "20>  
+  <providers>  
+    <add  
+      name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      requiresQuestionAndAnswer="true"  
+      minRequiredNonAlphanumericCharacters="1"  
+      />  
+  </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRequiredPasswordLength">
+      <MemberSignature Language="C#" Value="public static int MinRequiredPasswordLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MinRequiredPasswordLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.MinRequiredPasswordLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードに最低限必要な長さを取得します。</summary>
+        <value>パスワードに最低限必要な長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.MinRequiredPasswordLength%2A>プロパティで指定されたメンバーシップ プロバイダーの有効なパスワードを作成する入力する必要がありますの文字の最小数を取得する、<xref:System.Web.Security.Membership.Provider%2A>プロパティです。  
+  
+ <xref:System.Web.Security.Membership.MinRequiredPasswordLength%2A>プロパティ値がアプリケーションの構成を使用して、設定、`minRequiredPasswordLength`構成要素の属性です。  
+  
+   
+  
+## Examples  
+ 次のコード例の構成要素を示しています、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>メンバーシップ サービス、およびセットを提供するクラス、`minRequiredPasswordLength`属性 7 文字をします。  
+  
+```  
+<membership defaultProvider="SqlProvider"  
+  userIsOnlineTimeWindow = "20>  
+  <providers>  
+    <add  
+      name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      requiresQuestionAndAnswer="true"  
+      minRequiredPasswordLength="7"  
+      />  
+  </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordAttemptWindow">
+      <MemberSignature Language="C#" Value="public static int PasswordAttemptWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 PasswordAttemptWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.PasswordAttemptWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効なパスワードまたはパスワードの回答を提供に失敗して、連続して間の時間枠を取得しますが追跡されます。</summary>
+        <value>パスワードの答えは追跡または有効なパスワードを指定する時間枠 (分)、連続して失敗試みます。 既定値は、10 分です。 現在の失敗した試行と失敗した前回の間隔がより大きい場合、<see cref="P:System.Web.Security.Membership.PasswordAttemptWindow" />プロパティを設定すると、失敗とが最初の試行失敗の場合と同様に扱われます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>プロパティの動作と組み合わせて、<xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>回繰り返し試行のパスワードまたはからメンバーシップ ユーザーのパスワードの回答を推測する必要のないソースから保護するためのプロパティです。 ログインに使用、変更、または自分のパスワードをリセットするとと、の連続した試行の特定の数だけが、指定された時間内で許可されます。 この時間枠の長さがで指定された、<xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>プロパティで、無効な試行間の許容時間を分単位を識別します。  
+  
+ ユーザーに連続した試行の失敗の数は、彼をリセットするか、または自分のパスワードに格納されている値に等しい場合、<xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>試行が最後に無効なは分単位で指定された数よりも少ないため、プロパティおよび時間の経過時間、<xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>プロパティ、そのメンバーシップ ユーザーがロックアウトされます。設定して、ユーザーがロックアウト、<xref:System.Web.Security.MembershipUser.IsLockedOut%2A>プロパティを`true`への呼び出しによって、ユーザーのロックが解除されるまで、<xref:System.Web.Security.MembershipUser.UnlockUser%2A>メソッドです。  
+  
+ 現在の失敗した試行と失敗した前回の間隔がより大きい場合、<xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>プロパティを設定すると、現在無効な試行回数は 1 つ目としてカウントされます。 無効な試行の最大数に達する前に、有効なパスワードの回答を指定する場合は無効なパスワードの解答の試行回数は 0 (ゼロ) に設定されます。 最大数が無効な許可される前に、有効なパスワードが指定される場合は、試行回数に達すると、無効なパスワードの試行回数と、無効なパスワードの解答の試行回数が 0 (ゼロ) に設定されます。  
+  
+ 無効なパスワードとパスワードの解答の試行回数は、互いに蓄積されます。 たとえば場合、 <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A> 5 に設定されていると無効なパスワードに 3 回試行によって 2 つの無効なパスワードの解答の試行後に、2 つの複数の無効なパスワード試行 (または複数の無効なパスワードの解答の試行を 3 つ) は、内で行う必要があります<xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>メンバーシップ ユーザーがロックアウトされるのです。  
+  
+ <xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>を使用して、アプリケーションの構成にプロパティ値が設定、`passwordAttemptWindow`構成要素セクションの属性です。  
+  
+ 場合、<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>プロパティに設定されている`false`、無効なパスワードの解答の試行は追跡されません。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>設定と、`maxInvalidPasswordAttempts`属性を 5 つが無効な場合に、`passwordAttemptWindow`を 30 分にします。  
+  
+```  
+<membership defaultProvider="SqlProvider"   
+  userIsOnlineTimeWindow="20">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      requiresQuestionAndAnswer="true"  
+      maxInvalidPasswordAttempts="5"  
+      passwordAttemptWindow="30"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordStrengthRegularExpression">
+      <MemberSignature Language="C#" Value="public static string PasswordStrengthRegularExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PasswordStrengthRegularExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.PasswordStrengthRegularExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードの評価に使用される正規表現を取得します。</summary>
+        <value>パスワードの評価に使用される正規表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.PasswordStrengthRegularExpression%2A>プロパティで指定されたプロバイダーからパスワードの複雑さの評価に使用される正規表現を取得する、<xref:System.Web.Security.Membership.Provider%2A>プロパティです。  
+  
+ <xref:System.Web.Security.Membership.PasswordStrengthRegularExpression%2A>アプリケーションの構成を使用して、プロパティが設定されて、`passwordStrengthRegularExpression`構成要素の属性です。  
+  
+ 正規表現の詳細については、次を参照してください。 [.NET Framework 正規表現](~/docs/standard/base-types/regular-expressions.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の構成要素を示しています、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>メンバーシップ サービス、およびセットを提供するクラス、`passwordStrengthRegularExpression`パスワードを検証する正規表現に属性は、次の条件を満たしています。  
+  
+-   7 文字を超えています。  
+  
+-   少なくとも 1 つの桁が含まれています。  
+  
+-   少なくとも 1 つの特殊 (アルファベット以外の) 文字が含まれています。  
+  
+ パスワードがこれらの条件を満たしていない場合、メンバーシップ プロバイダーによって、パスワードは受け入れられません。  
+  
+```  
+<membership defaultProvider="SqlProvider"  
+  userIsOnlineTimeWindow = "20>  
+  <providers>  
+    <add  
+      name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      requiresQuestionAndAnswer="true"  
+      passwordStrengthRegularExpression=" @\"(?=.{6,})(?=(.*\d){1,})(?=(.*\W){1,})"  
+      />  
+   </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Security.MembershipProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの既定のメンバーシップ プロバイダーへの参照を取得します。</summary>
+        <value>既定のメンバーシップ プロバイダーを使って公開されたアプリケーションに対して、<see cref="T:System.Web.Security.MembershipProvider" />抽象基本クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.Provider%2A>プロパティでは、アプリケーションの既定のメンバーシップ プロバイダーを直接参照することができます。 これはカスタム メンバーシップ プロバイダーのされないされるメンバーにアクセスするの一部、<xref:System.Web.Security.MembershipProvider>抽象基本クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定値にアクセスする<xref:System.Web.Security.SqlMembershipProvider>を使用して、アプリケーションを有効になっている、 <xref:System.Web.Security.Membership.Provider%2A> 、カスタムの値を決定するためにプロパティ<xref:System.Web.Security.SqlMembershipProvider.RequiresUniqueEmail%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/Providercs.aspx#6)]
+ [!code-aspx-vb[System.Web.Security.Membership#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/Providervb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.MembershipProviderCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Security.MembershipProviderCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET アプリケーションのメンバーシップ プロバイダーのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Security.MembershipProviderCollection" />メンバーシップ プロバイダーが ASP.NET アプリケーション用に構成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.Providers%2A>アプリケーションの Web.config ファイルとすべてのアプリケーションの Machine.config ファイルで追加のプロバイダーを含むをプロパティがすべてのアプリケーションに対して有効になっているメンバーシップ プロバイダーを参照します。 メンバーシップ プロバイダーは、アプリケーションを使用して、使用を制御することができます、`providers`アプリケーションの構成のセクションの要素。 たとえば、次の例のセクションを削除するアプリケーションの Web.config ファイルで、<xref:System.Web.Security.SqlMembershipProvider>インスタンス (`AspNetSqlProvider`) マシン構成ファイルで指定し、追加、<xref:System.Web.Security.SqlMembershipProvider>という名前のインスタンス`SqlProvider`として、アプリケーションの既定のメンバーシップ プロバイダー。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString="Data Source=MySqlServer;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+      <providers>  
+        <remove name="AspNetSqlProvider" />  
+          <add name="SqlProvider"  
+            type="System.Web.Security.SqlMembershipProvider"  
+            connectionStringName="SqlServices"  
+            enablePasswordRetrieval="false"  
+            enablePasswordReset="true"  
+            requiresQuestionAndAnswer="true"  
+            passwordFormat="Hashed"  
+            applicationName="/" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 指定する場合、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)を指定する必要があります セクションで、`defaultProvider`属性。 指定しない場合、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)セクションで、Web.config で、コンピューター構成から値を使用し、<xref:System.Web.Security.SqlMembershipProvider>という名前のインスタンス`AspNetSqlProvider`として確立された、`defaultProvider`です。  
+  
+ プロバイダーへの参照を厳密に型を取得することができます、<xref:System.Web.Security.Membership.Providers%2A>コレクション名によって、メンバーシップ プロバイダーのインデックスを作成し、目的の型としてキャストします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションとそれらの種類に対して有効なプロバイダーが一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/Providerscs.aspx#7)]
+ [!code-aspx-vb[System.Web.Security.Membership#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/Providersvb.aspx#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresQuestionAndAnswer">
+      <MemberSignature Language="C#" Value="public static bool RequiresQuestionAndAnswer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool RequiresQuestionAndAnswer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.RequiresQuestionAndAnswer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のメンバーシップ プロバイダーがユーザーにパスワードのリセットと取得のパスワードの質問と回答を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />パスワードのリセットと取得に必要な場合は、パスワードの回答それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスワードの質問と回答を必要とする、追加の取得、またはユーザーのパスワードをリセットする際のセキュリティの層を提供します。 ユーザーを指定できますの質問と回答がユーザー名が作成されたときに、後でを使用できることを取得または忘れたパスワードをリセットします。  
+  
+ <xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>場合にチェックが<xref:System.Web.Security.MembershipUser.ResetPassword%2A>または<xref:System.Web.Security.MembershipUser.GetPassword%2A>と呼びます。 .NET Framework で提供されるプロバイダーは、スロー、<xref:System.NotSupportedException>場合<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>は`true`し、指定されたパスワードの回答は`null`します。  
+  
+ 場合<xref:System.Web.Security.Membership.EnablePasswordReset%2A>と<xref:System.Web.Security.Membership.EnablePasswordRetrieval%2A>が両方とも`false`、<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>質問と回答の作成が行われる新しいユーザーを作成するときにも使用できます。 ただし、の質問と回答は使用されません。 使用して、質問を取得することができます、<xref:System.Web.Security.MembershipUser>クラスです。  
+  
+ 詳細については、<xref:System.Web.Security.MembershipUser.ResetPassword%2A> および <xref:System.Web.Security.MembershipUser.GetPassword%2A> を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>パスワードのリセットを有効にし、リセットを実行するときに、パスワードの回答が必要です。  
+  
+```  
+<membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      enablePasswordRetrieval="false"  
+      enablePasswordReset="true"  
+      requiresQuestionAndAnswer="true"  
+      passwordFormat="Hashed"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ 次のコード サンプルの値を調べて<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>し、パスワードの質問と回答をユーザーの作成時に指定するための必要なコントロールを追加します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれます。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/CreateUsercs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/CreateUservb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateUser">
+      <MemberSignature Language="C#" Value="public static void UpdateUser (System.Web.Security.MembershipUser user);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UpdateUser(class System.Web.Security.MembershipUser user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.UpdateUser(System.Web.Security.MembershipUser)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Security.MembershipUser" />
+      </Parameters>
+      <Docs>
+        <param name="user">A<see cref="T:System.Web.Security.MembershipUser" />を更新するユーザーを表すオブジェクトと、ユーザーの情報を更新します。</param>
+        <summary>指定したユーザーの情報を含むデータベースを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.UpdateUser%2A>入力として受け取り、<xref:System.Web.Security.MembershipUser>オブジェクトは、メンバーシップ ユーザーの現在の情報を設定されのプロパティ値を持つデータ ソースを更新、<xref:System.Web.Security.MembershipUser>オブジェクト。 新しいを構築できます<xref:System.Web.Security.MembershipUser>、または取得、<xref:System.Web.Security.MembershipUser>オブジェクトを使用してデータ ソースに現在の値が設定された、 <xref:System.Web.Security.Membership.GetUser%2A>、 <xref:System.Web.Security.Membership.GetAllUsers%2A>、 <xref:System.Web.Security.Membership.FindUsersByName%2A>、または<xref:System.Web.Security.Membership.FindUsersByEmail%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在ログオンしているユーザーの電子メール アドレスを更新します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/UpdateEmailcs.aspx#11)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/UpdateEmailvb.aspx#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="user" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserIsOnlineTimeWindow">
+      <MemberSignature Language="C#" Value="public static int UserIsOnlineTimeWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 UserIsOnlineTimeWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.Membership.UserIsOnlineTimeWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分後に最終アクティビティの日付/時刻をユーザーがオンライン状態であるユーザーのスタンプの数を指定します。</summary>
+        <value>最終アクティビティの後の分単位の日付/時刻スタンプをユーザーがオンライン状態であるユーザーを。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.UserIsOnlineTimeWindow%2A>プロパティの値が呼び出し中にチェック<xref:System.Web.Security.Membership.GetNumberOfUsersOnline%2A>です。 場合、<xref:System.Web.Security.MembershipUser.LastActivityDate%2A>ユーザーが現在の日付とマイナスの時間よりも大きい、<xref:System.Web.Security.Membership.UserIsOnlineTimeWindow%2A>値の分単位で、ユーザーがオンラインと見なされます。 メンバーシップ ユーザーと見なすかオンラインで指定できます、<xref:System.Web.Security.MembershipUser.IsOnline%2A>のプロパティ、<xref:System.Web.Security.MembershipUser>クラスです。  
+  
+ <xref:System.Web.Security.MembershipUser.LastActivityDate%2A>によってユーザーの資格情報を正常に検証時に、ユーザーが更新されるため、<xref:System.Web.Security.Membership.ValidateUser%2A>メソッドです。 更新することも、<xref:System.Web.Security.MembershipUser.LastActivityDate%2A>のいずれかを呼び出すときに、メンバーシップ ユーザーに対して、<xref:System.Web.Security.Membership.GetUser%2A>オーバー ロードします。 呼び出す場合は、<xref:System.Web.Security.Membership.GetUser%2A>を受け取るオーバー ロード、`userIsOnline`パラメーターの値を指定して`true`を更新する、<xref:System.Web.Security.MembershipUser.LastActivityDate%2A>ユーザーのです。  
+  
+   
+  
+## Examples  
+ 次のコード例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.SqlMembershipProvider>設定と、 `userIsOnlineTimeWindow` 20 分間に属性します。  
+  
+```  
+<membership defaultProvider="SqlProvider"  
+  userIsOnlineTimeWindow="20">  
+  <providers>  
+    <add name="SqlProvider"  
+      type="System.Web.Security.SqlMembershipProvider"  
+      connectionStringName="SqlServices"  
+      enablePasswordRetrieval="true"  
+      enablePasswordReset="false"  
+      requiresQuestionAndAnswer="true"  
+      passwordFormat="Encrypted"  
+      applicationName="MyApplication" />  
+  </providers>  
+</membership>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUser">
+      <MemberSignature Language="C#" Value="public static bool ValidateUser (string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ValidateUser(string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.Membership.ValidateUser(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">検証対象のユーザー名。</param>
+        <param name="password">指定したユーザーのパスワード。</param>
+        <summary>指定されたユーザー名とパスワードが有効かどうかを検証します。</summary>
+        <returns>
+          <see langword="true" />場合は、指定されたユーザー名とパスワードが無効です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership.ValidateUser%2A>ユーザー名と、データ ソースからのパスワードを確認する簡単な方法を提供します。 なお場合、`username`パラメーターが空または`null`、<xref:System.Web.HttpException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーションのログイン ページ、ASP.NET フォーム認証を使用するように構成を示しています。 および<xref:System.Web.Security.Membership>クラスです。 指定されたユーザーの資格情報が有効でない場合は、ユーザーにメッセージが表示されます。 最初に要求された URL にユーザーをリダイレクトするそれ以外の場合、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/logincs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/loginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatingPassword">
+      <MemberSignature Language="C#" Value="public static event System.Web.Security.MembershipValidatePasswordEventHandler ValidatingPassword;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Security.MembershipValidatePasswordEventHandler ValidatingPassword" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Security.Membership.ValidatingPassword" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipValidatePasswordEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが作成されるとき、パスワードが変更されるとき、またはリセットされるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MembershipProvider.ValidatingPassword>イベントが発生したときに、<xref:System.Web.Security.MembershipProvider.CreateUser%2A>メソッド、<xref:System.Web.Security.MembershipProvider.ChangePassword%2A>メソッド、または<xref:System.Web.Security.MembershipProvider.ResetPassword%2A>メンバーシップ プロバイダーのメソッドが呼び出されます。  
+  
+ 使用することができます、<xref:System.Web.Security.MembershipProvider.ValidatingPassword>パスワードの形式とメンバーシップ ユーザーの値を検証するイベントです。  
+  
+ 現在を取り消すことができます<xref:System.Web.Security.MembershipProvider.CreateUser%2A>、 <xref:System.Web.Security.MembershipProvider.ChangePassword%2A>、または<xref:System.Web.Security.MembershipProvider.ResetPassword%2A>アクションを設定して、<xref:System.Web.Security.ValidatePasswordEventArgs.Cancel%2A>指定されたプロパティ<xref:System.Web.Security.ValidatePasswordEventArgs>に`true`中に、<xref:System.Web.Security.MembershipProvider.ValidatingPassword>イベント。  
+  
+ 設定して現在の操作をキャンセルした場合、<xref:System.Web.Security.ValidatePasswordEventArgs.Cancel%2A>プロパティを`true`、設定することができます、<xref:System.Web.Security.ValidatePasswordEventArgs.FailureInformation%2A>指定されたプロパティ<xref:System.Web.Security.ValidatePasswordEventArgs>パスワード検証エラーの理由を説明する例外にします。 呼び出し元のメソッドが例外をスローする、<xref:System.Web.Security.ValidatePasswordEventArgs.FailureInformation%2A>プロパティに設定します。 場合、<xref:System.Web.Security.ValidatePasswordEventArgs.FailureInformation%2A>プロパティは`null`、呼び出し元は、汎用的なパスワードの検証失敗に関する例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Security.MembershipProvider.ValidatingPassword>イベントをユーザーのパスワードの形式を検証し、パスワードが必要な形式と一致しない場合、操作を取り消します。  
+  
+ [!code-csharp[System.Web.Security.Membership#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/CreateUser3cs.aspx#11)]
+ [!code-vb[System.Web.Security.Membership#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/CreateUser3vb.aspx#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

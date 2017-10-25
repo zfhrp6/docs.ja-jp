@@ -1,0 +1,449 @@
+<Type Name="MetadataSection" FullName="System.ServiceModel.Description.MetadataSection">
+  <TypeSignature Language="C#" Value="public class MetadataSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi MetadataSection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.MetadataSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("MetadataSection", Namespace="http://schemas.xmlsoap.org/ws/2004/09/mex")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML メタデータまたは XML メタデータへの参照を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataSection> クラスは WS-Metadata Exchange 仕様の `wsx:Metadata/wsx:MetadataSection` 要素の定義に準拠し、XML メタデータまたは XML メタデータへの参照を格納します。  
+  
+ <xref:System.ServiceModel.Description.MetadataSection> オブジェクトには、XML 形式の 1 つの言語 (Web サービス記述言語や WSDL ファイルなど) のメタデータが格納されます。 <xref:System.ServiceModel.Description.MetadataSection> は <xref:System.ServiceModel.Description.MetadataSet> オブジェクトによって表される XML メタデータのコレクションに追加できます。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] クラスなどの <xref:System.ServiceModel.Description.MetadataExchangeClient> メタデータ システムの多くは、<xref:System.ServiceModel.Description.MetadataSet> クラスを使用して XML 形式のサービス メタデータをインポートまたはエクスポートします。  
+  
+ たとえば、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] のコントラクト オブジェクトまたはエンドポイント オブジェクトを、XML 形式の同等のメタデータを格納している <xref:System.ServiceModel.Description.MetadataSet> オブジェクトにエクスポートするには、<xref:System.ServiceModel.Description.WsdlExporter> オブジェクトまたは <xref:System.ServiceModel.Description.ContractDescription> オブジェクトを渡して <xref:System.ServiceModel.Description.ServiceEndpoint> クラスの適切なエクスポート メソッドを呼び出した後で、<xref:System.ServiceModel.Description.WsdlExporter.GetGeneratedMetadata%2A> メソッドを呼び出します。  
+  
+ <xref:System.ServiceModel.Description.MetadataSet> オブジェクトから [!INCLUDE[indigo2](~/includes/indigo2-md.md)]<xref:System.ServiceModel.Description.ContractDescription>、<xref:System.ServiceModel.Description.ServiceEndpoint>、および <xref:System.ServiceModel.Channels.Binding> の各オブジェクトに XML ベースのメタデータをインポートするには、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトを <xref:System.ServiceModel.Description.WsdlImporter> クラスのコンストラクターに渡し、いずれかのインポート メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataSection> から <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> オブジェクトを取得し、それらを反復して <xref:System.ServiceModel.Description.MetadataSection.Identifier%2A> プロパティおよび <xref:System.ServiceModel.Description.MetadataSection.Dialect%2A> プロパティをコンソールに書き込む方法を次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>言語、識別子、または XML メタデータを指定せずに <see cref="T:System.ServiceModel.Description.MetadataSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataSection (string dialect, string identifier, object metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dialect, string identifier, object metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataSection.#ctor(System.String,System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialect" Type="System.String" />
+        <Parameter Name="identifier" Type="System.String" />
+        <Parameter Name="metadata" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dialect">メタデータの言語。</param>
+        <param name="identifier">メタデータの識別子。</param>
+        <param name="metadata">XML メタデータ。</param>
+        <summary>指定した言語、識別子、および XML メタデータを使用して、<see cref="T:System.ServiceModel.Description.MetadataSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataSection.%23ctor%2A> コンストラクターを使用して、この <xref:System.ServiceModel.Description.MetadataSection> に含めるメタデータ、その言語、およびその識別子を指定します。 <xref:System.Xml.Serialization.XmlSerializer> オブジェクトをシリアル化可能にするために、<xref:System.ServiceModel.Description.MetadataSection> クラスを使用してメタデータ オブジェクトをシリアル化可能にする必要があります。 メタデータ オブジェクトがシリアル化可能でない場合、オブジェクトをシリアル化するときに例外がスローされます。 メタデータ自体ではなくメタデータへの参照を含める場合は、<xref:System.ServiceModel.Description.MetadataLocation> パラメーターの <xref:System.ServiceModel.Description.MetadataReference> オブジェクトまたは `metadata` オブジェクトを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.XmlAttribute&gt; Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlAttribute&gt; Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAnyAttribute</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlAttribute&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータに対して属性の拡張の追加または削除を行うために使用できる XML 属性のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Description.MetadataSection" /> の XML 属性のコレクション。 既定のコレクションは空です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataSection.Attributes%2A> プロパティを使用して、属性の拡張を追加または削除します。  
+  
+> [!NOTE]
+>  言語属性および識別子属性は、このコレクションに含まれません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromPolicy">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.MetadataSection CreateFromPolicy (System.Xml.XmlElement policy, string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.MetadataSection CreateFromPolicy(class System.Xml.XmlElement policy, string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataSection.CreateFromPolicy(System.Xml.XmlElement,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="policy" Type="System.Xml.XmlElement" />
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="policy">WS-Policy に定義されたポリシーの XML 表現。</param>
+        <param name="identifier">ポリシーの識別子。</param>
+        <summary>指定したポリシー情報から <see cref="T:System.ServiceModel.Description.MetadataSection" /> を作成します。</summary>
+        <returns>指定した識別子を持つ指定したポリシー式を含む <see cref="T:System.ServiceModel.Description.MetadataSection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataSection.CreateFromPolicy%2A> メソッドを使用して、WS-Policy ポリシー式の <xref:System.ServiceModel.Description.MetadataSection> を作成します。 <xref:System.ServiceModel.Description.MetadataSection.Dialect%2A> プロパティは <xref:System.ServiceModel.Description.MetadataSection.PolicyDialect%2A> に設定され、`identifier` プロパティに <xref:System.ServiceModel.Description.MetadataSection.Identifier%2A> が割り当てられます。 推奨識別子は、ポリシー式の `wsp:Name` 属性です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">XML 要素はポリシー要素ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">ポリシーが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromSchema">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.MetadataSection CreateFromSchema (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.MetadataSection CreateFromSchema(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataSection.CreateFromSchema(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema">XML スキーマ ドキュメント。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.MetadataSection" /> オブジェクトから <see cref="T:System.Xml.Schema.XmlSchema" /> を作成します。</summary>
+        <returns>指定した XML スキーマを格納している <see cref="T:System.ServiceModel.Description.MetadataSection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的ファクトリ メソッドを使用して、XML スキーマ ドキュメントの <xref:System.ServiceModel.Description.MetadataSection> をすばやく作成できます。 <xref:System.ServiceModel.Description.MetadataSection.Dialect%2A> プロパティには <xref:System.ServiceModel.Description.MetadataSection.XmlSchemaDialect%2A> の値が割り当てられ、<xref:System.ServiceModel.Description.MetadataSection.Identifier%2A> プロパティには XML スキーマ ドキュメントのターゲット名前空間の値が割り当てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">スキーマが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromServiceDescription">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.MetadataSection CreateFromServiceDescription (System.Web.Services.Description.ServiceDescription serviceDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.MetadataSection CreateFromServiceDescription(class System.Web.Services.Description.ServiceDescription serviceDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataSection.CreateFromServiceDescription(System.Web.Services.Description.ServiceDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription"><see cref="T:System.Web.Services.Description.ServiceDescription" /> オブジェクトの作成に使用される <see cref="T:System.ServiceModel.Description.MetadataSection" />。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.MetadataSection" /> を格納している <see cref="T:System.Web.Services.Description.ServiceDescription" /> を返します。</summary>
+        <returns>指定した <see cref="T:System.ServiceModel.Description.MetadataSection" /> を格納している <see cref="T:System.Web.Services.Description.ServiceDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的ファクトリ メソッドを使用して、WSDL ドキュメントの <xref:System.ServiceModel.Description.MetadataSection> をすばやく作成できます。 <xref:System.ServiceModel.Description.MetadataSection.Dialect%2A> プロパティには <xref:System.ServiceModel.Description.MetadataSection.ServiceDescriptionDialect%2A> の値が割り当てられ、<xref:System.ServiceModel.Description.MetadataSection.Identifier%2A> プロパティには WSDL スキーマ ドキュメントのターゲット名前空間の値が割り当てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serviceDescription" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dialect">
+      <MemberSignature Language="C#" Value="public string Dialect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Dialect" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.Dialect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータの種類を示す値を取得または設定します。</summary>
+        <value>メタデータの言語。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 言語は、この <xref:System.ServiceModel.Description.MetadataSection> に含まれるメタデータの種類を示します。 サポートされているオブジェクト モデルの言語文字列は次のとおりです。  
+  
+-   <xref:System.ServiceModel.Description.MetadataSection.MetadataExchangeDialect%2A>  
+  
+-   <xref:System.ServiceModel.Description.MetadataSection.PolicyDialect%2A>  
+  
+-   <xref:System.ServiceModel.Description.MetadataSection.ServiceDescriptionDialect%2A>  
+  
+-   <xref:System.ServiceModel.Description.MetadataSection.XmlSchemaDialect%2A>  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataSection> から <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> オブジェクトを取得し、それらを反復して <xref:System.ServiceModel.Description.MetadataSection.Identifier%2A> プロパティおよび <xref:System.ServiceModel.Description.MetadataSection.Dialect%2A> プロパティをコンソールに書き込む方法を次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identifier">
+      <MemberSignature Language="C#" Value="public string Identifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Identifier" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.Identifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータの識別子を取得または設定します。</summary>
+        <value>メタデータの識別子。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この <xref:System.ServiceModel.Description.MetadataSection> に含まれるメタデータの識別子。 値は、メタデータの種類によって変わります。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataSection> から <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> オブジェクトを取得し、それらを反復して <xref:System.ServiceModel.Description.MetadataSection.Identifier%2A> プロパティおよび <xref:System.ServiceModel.Description.MetadataSection.Dialect%2A> プロパティをコンソールに書き込む方法を次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public object Metadata { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAnyElement</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("Location", IsNullable=false, Namespace="http://schemas.xmlsoap.org/ws/2004/09/mex", Type=typeof(System.ServiceModel.Description.MetadataLocation))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("Metadata", IsNullable=false, Namespace="http://schemas.xmlsoap.org/ws/2004/09/mex", Type=typeof(System.ServiceModel.Description.MetadataSet))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("schema", IsNullable=false, Namespace="http://www.w3.org/2001/XMLSchema", Type=typeof(System.Xml.Schema.XmlSchema))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("definitions", IsNullable=false, Namespace="http://schemas.xmlsoap.org/wsdl/", Type=typeof(System.Web.Services.Description.ServiceDescription))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("MetadataReference", IsNullable=false, Namespace="http://schemas.xmlsoap.org/ws/2004/09/mex", Type=typeof(System.ServiceModel.Description.MetadataReference))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれるメタデータ オブジェクトを取得または設定します。</summary>
+        <value>この <see cref="T:System.ServiceModel.Description.MetadataSection" /> のメタデータの内容。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataSection.Metadata%2A> プロパティを使用して、<xref:System.ServiceModel.Description.MetadataSection> に含まれるメタデータの内容へのアクセスまたは変更を行います。 メタデータ オブジェクトは、<xref:System.ServiceModel.Description.MetadataReference> またはメタデータの内容を参照する <xref:System.ServiceModel.Description.MetadataLocation>です。 <xref:System.ServiceModel.Description.MetadataSection> を逆シリアル化する場合、メタデータの種類は XML コンテンツから決定されます。 戻り値を次の表に示します。  
+  
+|XML メタデータの種類|返される型|  
+|--------------------------|-------------------|  
+|WSDL ドキュメント|<xref:System.Web.Services.Description.ServiceDescription?displayProperty=nameWithType>|  
+|XML スキーマ|<xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType>|  
+|メタデータの参照|<xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType>|  
+|メタデータの場所|<xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType>|  
+|ポリシーと他のすべての XML コンテンツ|<xref:System.Xml.XmlElement?displayProperty=nameWithType>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataExchangeDialect">
+      <MemberSignature Language="C#" Value="public static string MetadataExchangeDialect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MetadataExchangeDialect" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.MetadataExchangeDialect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータ交換言語の値を格納します。</summary>
+        <value>WS-Metadata Exchange ドキュメントの言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WS-Metadata Exchange ドキュメントの言語。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyDialect">
+      <MemberSignature Language="C#" Value="public static string PolicyDialect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PolicyDialect" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.PolicyDialect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Policy 言語の値を格納します。</summary>
+        <value>WS-Policy ポリシー式の言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WS-Policy ポリシー式の言語。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescriptionDialect">
+      <MemberSignature Language="C#" Value="public static string ServiceDescriptionDialect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ServiceDescriptionDialect" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.ServiceDescriptionDialect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) の値を格納します。</summary>
+        <value>WSDL ドキュメントの言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 言語。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSchemaDialect">
+      <MemberSignature Language="C#" Value="public static string XmlSchemaDialect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string XmlSchemaDialect" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataSection.XmlSchemaDialect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML スキーマ言語の値を格納します。</summary>
+        <value>XML スキーマ ドキュメントの言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML スキーマ ドキュメントの言語。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

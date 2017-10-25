@@ -1,0 +1,1216 @@
+<Type Name="EndpointAddress" FullName="System.ServiceModel.EndpointAddress">
+  <TypeSignature Language="C#" Value="public class EndpointAddress" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndpointAddress extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.EndpointAddress" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス エンドポイントとの通信にクライアントが使用する一意のネットワーク アドレスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスのエンドポイントを一意に識別するエンドポイント アドレス。  
+  
+ エンドポイント アドレスは、サービス エンドポイントに属し、バインド、コントラクト、およびエンドポイントの動作を含みます。  
+  
+ <xref:System.ServiceModel.EndpointAddress> は、URI とアドレス プロパティ (ID、WSDL 要素、およびオプションのヘッダーのコレクションを含む) を格納します。 オプションのヘッダーは、エンドポイントの識別または対話に使用される、より詳細なアドレス指定情報を提供するために使用されます。 たとえば、複数のサービス インスタンスが使用できる場合に、これらのヘッダーを使用して、特定ユーザーからの受信メッセージの処理に使用するインスタンスを示すことができます。  
+  
+ サービスのエンドポイント アドレスは、コードを使用して命令的に、または構成を通じて宣言的に指定できます。 設置済みサービスのバインドおよびアドレスは一般的に、サービスの開発中に使用されるものとは異なるので、コード内でエンドポイントを定義することは通常、実用的ではありません。 構成を使用してサービス エンドポイントを定義する方が実用的です。  
+  
+ <xref:System.ServiceModel.EndpointAddress> は <xref:System.Runtime.Serialization.ISerializable> インターフェイスを実装しません。したがって、シリアル化可能ではありません。 エンドポイントをサービス コントラクトの一部として公開するには、エンドポイントがシリアル化可能であると同時に、Web Service Addressing (WS-Addressing) プロトコルに準拠している必要があります。 WS-Addressing のバージョン 1.0 と August 2004 バージョンに準拠するシリアル化可能なエンドポイントは、それぞれ <xref:System.ServiceModel.EndpointAddress10> クラスと <xref:System.ServiceModel.EndpointAddressAugust2004> クラスによって提供されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#0](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/hostapplication.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddress (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">エンドポイントを識別する URI。</param>
+        <summary>指定した URI 文字列を使用して、<see cref="T:System.ServiceModel.EndpointAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#13](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddress (Uri uri, params System.ServiceModel.Channels.AddressHeader[] addressHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, class System.ServiceModel.Channels.AddressHeader[] addressHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.#ctor(System.Uri,System.ServiceModel.Channels.AddressHeader[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="addressHeaders" Type="System.ServiceModel.Channels.AddressHeader[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="uri">エンドポイントの位置を示す <see cref="T:System.Uri" />。</param>
+        <param name="addressHeaders">エンドポイントと対話するためのアドレス情報を含む <see cref="T:System.Array" /> 型の <see cref="T:System.ServiceModel.Channels.AddressHeader" />。</param>
+        <summary>指定した URI とヘッダーを使用して、<see cref="T:System.ServiceModel.EndpointAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、このコンストラクターを使用する方法を示しています。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddress (Uri uri, System.ServiceModel.EndpointIdentity identity, params System.ServiceModel.Channels.AddressHeader[] addressHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, class System.ServiceModel.EndpointIdentity identity, class System.ServiceModel.Channels.AddressHeader[] addressHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.#ctor(System.Uri,System.ServiceModel.EndpointIdentity,System.ServiceModel.Channels.AddressHeader[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="identity" Type="System.ServiceModel.EndpointIdentity" />
+        <Parameter Name="addressHeaders" Type="System.ServiceModel.Channels.AddressHeader[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="uri">エンドポイントの位置を示す <see cref="T:System.Uri" />。</param>
+        <param name="identity">エンドポイントの <see cref="T:System.ServiceModel.EndpointIdentity" />。</param>
+        <param name="addressHeaders">エンドポイントと対話するためのアドレス情報を含む <see cref="T:System.Array" /> 型の <see cref="T:System.ServiceModel.Channels.AddressHeader" />。</param>
+        <summary>指定した URI、ID、およびヘッダーを使用して、<see cref="T:System.ServiceModel.EndpointAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.EndpointAddress>、<xref:System.Uri>、および <xref:System.ServiceModel.EndpointIdentity> オブジェクトの配列を使用して <xref:System.ServiceModel.Channels.AddressHeader> オブジェクトを構築する方法を示しています。  
+  
+ [!code-csharp[EndpointAddress#2](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddress (Uri uri, System.ServiceModel.EndpointIdentity identity, System.ServiceModel.Channels.AddressHeaderCollection headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, class System.ServiceModel.EndpointIdentity identity, class System.ServiceModel.Channels.AddressHeaderCollection headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.#ctor(System.Uri,System.ServiceModel.EndpointIdentity,System.ServiceModel.Channels.AddressHeaderCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="identity" Type="System.ServiceModel.EndpointIdentity" />
+        <Parameter Name="headers" Type="System.ServiceModel.Channels.AddressHeaderCollection" />
+      </Parameters>
+      <Docs>
+        <param name="uri">エンドポイントの位置を示す <see cref="T:System.Uri" />。</param>
+        <param name="identity">エンドポイントの <see cref="T:System.ServiceModel.EndpointIdentity" />。</param>
+        <param name="headers">エンドポイントと対話するためのアドレス情報を含む <see cref="T:System.ServiceModel.Channels.AddressHeaderCollection" />。</param>
+        <summary>指定した URI、ID、およびヘッダーのコレクションを使用して、<see cref="T:System.ServiceModel.EndpointAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.EndpointAddress>、<xref:System.Uri>、および <xref:System.ServiceModel.EndpointIdentity> オブジェクトを使用して <xref:System.ServiceModel.Channels.AddressHeaderCollection> オブジェクトを構築する方法を示しています。  
+  
+ [!code-csharp[EndpointAddress#3](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddress (Uri uri, System.ServiceModel.EndpointIdentity identity, System.ServiceModel.Channels.AddressHeaderCollection headers, System.Xml.XmlDictionaryReader metadataReader, System.Xml.XmlDictionaryReader extensionReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, class System.ServiceModel.EndpointIdentity identity, class System.ServiceModel.Channels.AddressHeaderCollection headers, class System.Xml.XmlDictionaryReader metadataReader, class System.Xml.XmlDictionaryReader extensionReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.#ctor(System.Uri,System.ServiceModel.EndpointIdentity,System.ServiceModel.Channels.AddressHeaderCollection,System.Xml.XmlDictionaryReader,System.Xml.XmlDictionaryReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="identity" Type="System.ServiceModel.EndpointIdentity" />
+        <Parameter Name="headers" Type="System.ServiceModel.Channels.AddressHeaderCollection" />
+        <Parameter Name="metadataReader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="extensionReader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="uri">エンドポイントの位置を示す <see cref="T:System.Uri" />。</param>
+        <param name="identity">エンドポイントの <see cref="T:System.ServiceModel.EndpointIdentity" />。</param>
+        <param name="headers">エンドポイントと対話するためのアドレス情報を含む <see cref="T:System.ServiceModel.Channels.AddressHeaderCollection" />。</param>
+        <param name="metadataReader">エンドポイントのメタデータが取得される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="extensionReader">拡張が取得される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary>指定した URI、ID、ヘッダーのコレクション、メタデータ リーダー、および拡張リーダーを使用して、<see cref="T:System.ServiceModel.EndpointAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WS-Addressing 仕様では、エンドポイント参照 (EPR) の末尾に任意の拡張要素を追加できます。この要素は、<xref:System.Xml.XmlDictionaryReader> を使用して取得できます。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.EndpointAddress>、<xref:System.Uri>、ヘッダーのコレクション、メタデータ <xref:System.ServiceModel.EndpointIdentity>、および拡張 <xref:System.Xml.XmlDictionaryReader> を指定する <xref:System.Xml.XmlDictionaryReader> を示しています。  
+  
+ [!code-csharp[EndpointAddress#6](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnonymousUri">
+      <MemberSignature Language="C#" Value="public static Uri AnonymousUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri AnonymousUri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.AnonymousUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>匿名 URI のバージョンに依存しない表現を取得します。</summary>
+        <value>http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous の値を持つ <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターを初期化するための URI の値が <xref:System.ServiceModel.EndpointAddress.AnonymousUri%2A> である場合、<xref:System.ServiceModel.EndpointAddress.IsAnonymous%2A> が `true` に設定されます。  
+  
+ <xref:System.ServiceModel.EndpointAddress> はバージョンに依存しないクラスであり、<xref:System.ServiceModel.EndpointAddress.AnonymousUri%2A> プロパティはバーションに依存しない形の値を返します。 この値を特定のバージョンに書き出すか、変換すると、そのバージョンの正しい値に変化します。  
+  
+ 現在、広範囲にわたるネットワーク テクノロジ (たとえば NAT、DHCP、ファイアウォールなど) が利用されているので、多くの設置で指定のエンドポイントに意味のあるグローバルな URI を割り当てることができません。 これらを許可する*匿名*Web サービスのアドレス指定仕様で定義されて、メッセージを開始するエンドポイントが交換パターンと、応答が返される、 [URI](http://go.microsoft.com/fwlink/?LinkId=96169)安定で解決可能な URI を持つことができないエンドポイントで使用します。  
+  
+ このアドレスを使用する要求は、応答またはエラーを配布するために何らかの機構を用意する必要があります (たとえば、同じトランスポート接続で応答を返します)。 この機構は、要求/応答トランスポート プロトコルでもかまいません (たとえば HTTP GET または POST)。 この URI は、応答メッセージの宛先として使用できますが、その他の状況で宛先として使用することはできません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#13](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyTo">
+      <MemberSignature Language="C#" Value="public void ApplyTo (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyTo(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ApplyTo(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">ヘッダー値が割り当てられる <see cref="T:System.ServiceModel.Channels.Message" /> 。</param>
+        <summary>エンドポイントの URI とプロパティを、指定したメッセージのヘッダーの値に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress.ApplyTo%28System.ServiceModel.Channels.Message%29> メソッドは、現在の <xref:System.ServiceModel.EndpointAddress.Uri%2A><xref:System.ServiceModel.EndpointAddress>の  でメッセージの "To (送信先)" を設定します。 ここでの "ApplyTo (適用先)" は、"このアドレスをメッセージの 'To' ヘッダーに適用する" という意味であることに注意してください。  
+  
+   
+  
+## Examples  
+ 次のコードは、エンドポイント アドレスの URI とプロパティをメッセージのヘッダーに適用する方法を示しています。  
+  
+ [!code-csharp[EndpointAddress#4](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のエンドポイント アドレスと比較される <see cref="T:System.Object" />。</param>
+        <summary>指定したオブジェクトが現在のエンドポイント アドレスと等しいかどうかを示す値を返します。</summary>
+        <returns>
+          指定したオブジェクトが現在のアドレスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#20](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のエンドポイント アドレスの一意のハッシュ コードを用意します。</summary>
+        <returns>現在のエンドポイント アドレスの一意のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress.GetHashCode%2A> は、ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#21](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReaderAtExtensions">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReader GetReaderAtExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlDictionaryReader GetReaderAtExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.GetReaderAtExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>拡張へのアクセスを提供する XML ディクショナリ リーダーを取得します。</summary>
+        <returns>拡張へのアクセスを提供する <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リーダーは、WS-Addressing により定義されたエンドポイント参照のモデルに含まれない情報へのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#7](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReaderAtMetadata">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReader GetReaderAtMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlDictionaryReader GetReaderAtMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.GetReaderAtMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイントのメタデータへのアクセスを提供する XML ディクショナリ リーダーを取得します。</summary>
+        <returns>エンドポイントのメタデータへのアクセスを提供する <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#8](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.AddressHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.AddressHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AddressHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルダーが作成できるエンドポイントのアドレス ヘッダーのコレクションを取得します。</summary>
+        <value>エンドポイントのアドレス情報が格納されている <see cref="T:System.ServiceModel.Channels.AddressHeaderCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#14](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントを認証するために使用されるエンドポイントの ID を取得します。</summary>
+        <value>エンドポイントの <see cref="T:System.ServiceModel.EndpointIdentity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるエンドポイントとメッセージを交換するエンドポイントが、相手先のエンドポイントの認証を可能にする ID を提供します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#15](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAnonymous">
+      <MemberSignature Language="C#" Value="public bool IsAnonymous { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAnonymous" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.IsAnonymous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントがあるかどうかを示す値を取得*匿名*です。</summary>
+        <value>
+          エンドポイントが <see langword="true" /> の場合は <see cref="P:System.ServiceModel.EndpointAddress.AnonymousUri" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress.AnonymousUri%2A> から <xref:System.ServiceModel.EndpointAddress> または <xref:System.ServiceModel.EndpointAddress10> のいずれかに手動で URI をコピーする場合、このメソッドを使用して <xref:System.ServiceModel.EndpointAddressAugust2004> をチェックします。 この操作を行う必要があるのは、<xref:System.ServiceModel.EndpointAddress10> と <xref:System.ServiceModel.EndpointAddressAugust2004> には両方とも特殊な匿名値があるためです。 コピーされる URI が匿名の場合は、この特殊な値を使用する必要があります。  
+  
+ 現在、広範囲にわたるネットワーク テクノロジ (たとえば NAT、DHCP、ファイアウォールなど) が利用されているので、多くの設置で指定のエンドポイントに意味のあるグローバルな URI を割り当てることができません。 これらを許可する*匿名*Web サービスのアドレス指定仕様で定義されて、メッセージを開始するエンドポイントが交換パターンと、応答が返される、 [URI](http://go.microsoft.com/fwlink/?LinkId=96169)安定で解決可能な URI を持つことができないエンドポイントで使用します。  
+  
+ このアドレスを使用する要求は、応答またはエラーを配布するために何らかの機構を用意する必要があります (たとえば、同じトランスポート接続で応答を返します)。 この機構は、要求/応答トランスポート プロトコルでもかまいません (たとえば HTTP GET または POST)。 この URI は、応答メッセージの宛先として使用できますが、その他の状況で宛先として使用することはできません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#16](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNone">
+      <MemberSignature Language="C#" Value="public bool IsNone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNone" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.IsNone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントの URI が <see cref="P:System.ServiceModel.EndpointAddress.NoneUri" /> であるかどうかを示す値を取得します。</summary>
+        <value>
+          エンドポイントの URI が <see langword="true" /> の場合は <see cref="P:System.ServiceModel.EndpointAddress.NoneUri" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress.NoneUri%2A> から <xref:System.ServiceModel.EndpointAddress> または <xref:System.ServiceModel.EndpointAddress10> のいずれかに手動で URI をコピーする場合、このメソッドを使用して <xref:System.ServiceModel.EndpointAddressAugust2004> をチェックします。 この操作を行う必要があるのは、<xref:System.ServiceModel.EndpointAddress10> と <xref:System.ServiceModel.EndpointAddressAugust2004> には両方とも特殊な非 URI 値があるためです。 コピーされる URI が none の場合は、この特殊な値を使用する必要があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#17](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoneUri">
+      <MemberSignature Language="C#" Value="public static Uri NoneUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri NoneUri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.NoneUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの送信が禁止されているエンドポイントのアドレスで使用される、バージョンに依存しない URI を取得します。</summary>
+        <value>http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/None の値を持つ <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターを初期化するための URI の値が <xref:System.ServiceModel.EndpointAddress.NoneUri%2A> である場合、<xref:System.ServiceModel.EndpointAddress.IsNone%2A> が `true` に設定されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#18](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.ServiceModel.EndpointAddress address1, System.ServiceModel.EndpointAddress address2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.ServiceModel.EndpointAddress address1, class System.ServiceModel.EndpointAddress address2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.op_Equality(System.ServiceModel.EndpointAddress,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address1" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="address2" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address1">比較する <see cref="T:System.ServiceModel.EndpointAddress" /> オブジェクトの 1 つ。</param>
+        <param name="address2">比較する <see cref="T:System.ServiceModel.EndpointAddress" /> オブジェクトの 1 つ。</param>
+        <summary>指定した 2 つのエンドポイント アドレスが等しいかどうかを示す値を返します。</summary>
+        <returns>
+          2 つのエンドポイント アドレスが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.ServiceModel.EndpointAddress.Equals%2A?displayProperty=nameWithType>します。  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#5](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.ServiceModel.EndpointAddress address1, System.ServiceModel.EndpointAddress address2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.ServiceModel.EndpointAddress address1, class System.ServiceModel.EndpointAddress address2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.op_Inequality(System.ServiceModel.EndpointAddress,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address1" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="address2" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address1">比較する <see cref="T:System.ServiceModel.EndpointAddress" /> オブジェクトの 1 つ。</param>
+        <param name="address2">比較する <see cref="T:System.ServiceModel.EndpointAddress" /> オブジェクトの 1 つ。</param>
+        <summary>指定した 2 つのエンドポイント アドレスが等しいかどうかを示す値を返します。</summary>
+        <returns>
+          2 つのエンドポイント アドレスが等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.ServiceModel.EndpointAddress.Equals%2A?displayProperty=nameWithType>します。  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#22](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EndpointAddress ReadFrom (System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.EndpointAddress ReadFrom(class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ReadFrom(System.Xml.XmlDictionaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">エンドポイント アドレスが取得される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary>指定した XML ディクショナリ リーダーからエンドポイント アドレスを読み取ります。</summary>
+        <returns>XML ディクショナリ リーダーから読み取られる <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、XML ディクショナリ リーダーからエンドポイント アドレスを読み取る方法を示しています。  
+  
+ [!code-csharp[EndpointAddress#10](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EndpointAddress ReadFrom (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.EndpointAddress ReadFrom(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ReadFrom(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlDictionaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="reader">エンドポイント アドレスが取得される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary>指定した XML ディクショナリ リーダーから、指定したアドレス バージョンのエンドポイント アドレスを読み取ります。</summary>
+        <returns>XML ディクショナリ リーダーから読み取られる <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#25](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EndpointAddress ReadFrom (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.EndpointAddress ReadFrom(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ReadFrom(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="reader">エンドポイント アドレスが取得される <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>指定した XML リーダーから、指定したアドレス バージョンのエンドポイント アドレスを読み取ります。</summary>
+        <returns>XML リーダーから読み取られた <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、XML ディクショナリ リーダーからエンドポイント アドレスを読み取る方法を示しています。  
+  
+ [!code-csharp[EndpointAddress#12](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EndpointAddress ReadFrom (System.Xml.XmlDictionaryReader reader, System.Xml.XmlDictionaryString localName, System.Xml.XmlDictionaryString ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.EndpointAddress ReadFrom(class System.Xml.XmlDictionaryReader reader, class System.Xml.XmlDictionaryString localName, class System.Xml.XmlDictionaryString ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ReadFrom(System.Xml.XmlDictionaryReader,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="localName" Type="System.Xml.XmlDictionaryString" />
+        <Parameter Name="ns" Type="System.Xml.XmlDictionaryString" />
+      </Parameters>
+      <Docs>
+        <param name="reader">エンドポイント アドレスが取得される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="localName">エンドポイント アドレスを含む XML ノードのローカル名を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+        <param name="ns">エンドポイント アドレスを含む XML ノードの名前空間を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+        <summary>指定した XML ディクショナリ リーダーから、指定した修飾名を持つエンドポイント アドレスを読み取ります。</summary>
+        <returns>XML ディクショナリ リーダーから読み取られた、指定した修飾名を持つ <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、XML ディクショナリ リーダーからエンドポイント アドレスを読み取る方法を示しています。  
+  
+ [!code-csharp[EndpointAddress#11](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EndpointAddress ReadFrom (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlDictionaryReader reader, System.Xml.XmlDictionaryString localName, System.Xml.XmlDictionaryString ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.EndpointAddress ReadFrom(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlDictionaryReader reader, class System.Xml.XmlDictionaryString localName, class System.Xml.XmlDictionaryString ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ReadFrom(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlDictionaryReader,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="localName" Type="System.Xml.XmlDictionaryString" />
+        <Parameter Name="ns" Type="System.Xml.XmlDictionaryString" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="reader">エンドポイント アドレスが取得される <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="localName">エンドポイント アドレスを含む XML ノードのローカル名を含みます。</param>
+        <param name="ns">エンドポイント アドレスを含む XML ノードの名前空間を含みます。</param>
+        <summary>指定した XML ディクショナリ リーダーから、指定した修飾名を持つ特定のアドレス バージョンのエンドポイント アドレスを読み取ります。</summary>
+        <returns>XML リーダーから読み取られた修飾名を含む <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#26](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EndpointAddress ReadFrom (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlReader reader, string localName, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.EndpointAddress ReadFrom(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlReader reader, string localName, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ReadFrom(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlReader,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="reader">エンドポイント アドレスが取得される <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="localName">エンドポイント アドレスを含む XML ノードのローカル名を含みます。</param>
+        <param name="ns">エンドポイント アドレスを含む XML ノードの名前空間を含みます。</param>
+        <summary>指定した XML リーダーから、指定した修飾名を持つ特定のアドレス バージョンのエンドポイント アドレスを読み取ります。</summary>
+        <returns>XML リーダーから読み取られた修飾名を含む <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#26](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイント アドレスに含まれる URI の標準文字列表現を返します。</summary>
+        <returns>エンドポイントを識別する URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#27](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddress.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントの URI を取得します。</summary>
+        <value>エンドポイントの <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この URI は、メッセージの送信先を識別します。 エンドポイント アドレスの URI を設定するには、<xref:System.ServiceModel.EndpointAddressBuilder.Uri%2A> を使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[EndpointAddress#19](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteContentsTo">
+      <MemberSignature Language="C#" Value="public void WriteContentsTo (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlDictionaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteContentsTo(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlDictionaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.WriteContentsTo(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlDictionaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="writer">エンドポイント アドレスが保存される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <summary>指定した XML ディクショナリ ライターに、ノードのすべての子ノードを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#29](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#29)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> または <paramref name="addressingVersion" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteContentsTo">
+      <MemberSignature Language="C#" Value="public void WriteContentsTo (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteContentsTo(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.WriteContentsTo(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="writer">エンドポイント アドレスが保存される <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary>指定した XML ライターに、ノードのすべての子ノードを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#30](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> または <paramref name="addressingVersion" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlDictionaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlDictionaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.WriteTo(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlDictionaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="writer">エンドポイント アドレスが保存される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <summary>指定した XML ディクショナリ ライターに、指定したバージョンの現在のエンドポイント アドレスを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#31](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#31)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> または <paramref name="addressingVersion" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.WriteTo(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="writer">エンドポイント アドレスが保存される <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary>指定した XML ライターに、指定したバージョンの現在のエンドポイント アドレスを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#32](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#32)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> または <paramref name="addressingVersion" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlDictionaryWriter writer, System.Xml.XmlDictionaryString localname, System.Xml.XmlDictionaryString ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlDictionaryWriter writer, class System.Xml.XmlDictionaryString localname, class System.Xml.XmlDictionaryString ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.WriteTo(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlDictionaryWriter,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="localName" Type="System.Xml.XmlDictionaryString" />
+        <Parameter Name="ns" Type="System.Xml.XmlDictionaryString" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="writer">エンドポイント アドレスが保存される <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="localname">To be added.</param>
+        <param name="ns">エンドポイント アドレスを含む XML ノードの名前空間を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+        <summary>XML ディクショナリ ライターに、指定したバージョンの現在のエンドポイント アドレスを、指定した名前空間とローカル名を使用して保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#33](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" />、<paramref name="addressingVersion" />、<paramref name="localName" />、または <paramref name="ns" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.ServiceModel.Channels.AddressingVersion addressingVersion, System.Xml.XmlWriter writer, string localname, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.ServiceModel.Channels.AddressingVersion addressingVersion, class System.Xml.XmlWriter writer, string localname, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddress.WriteTo(System.ServiceModel.Channels.AddressingVersion,System.Xml.XmlWriter,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addressingVersion" Type="System.ServiceModel.Channels.AddressingVersion" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="addressingVersion">現在のエンドポイント アドレスの <see cref="T:System.ServiceModel.Channels.AddressingVersion" />。</param>
+        <param name="writer">エンドポイント アドレスが保存される <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="localname">To be added.</param>
+        <param name="ns">エンドポイント アドレスを含む XML ノードの名前空間を含む <see cref="T:System.Xml.XmlDictionaryString" />。</param>
+        <summary>XML ライターに、指定したバージョンの現在のエンドポイント アドレスを、指定した名前空間とローカル名を使用して保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[EndpointAddress#33](~/samples/snippets/csharp/VS_Snippets_CFX/endpointaddress/cs/snippets.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" />、<paramref name="addressingVersion" />、<paramref name="localName" />、または <paramref name="ns" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

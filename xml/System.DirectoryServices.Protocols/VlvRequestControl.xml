@@ -1,0 +1,239 @@
+<Type Name="VlvRequestControl" FullName="System.DirectoryServices.Protocols.VlvRequestControl">
+  <TypeSignature Language="C#" Value="public class VlvRequestControl : System.DirectoryServices.Protocols.DirectoryControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VlvRequestControl extends System.DirectoryServices.Protocols.DirectoryControl" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.VlvRequestControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.VlvRequestControl" />クラスは、サーバーから仮想一覧の表示 (VLV) のサポートを要求に使用します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VlvRequestControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor" /> コンストラクターは、<see cref="T:System.DirectoryServices.Protocols.VlvRequestControl" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VlvRequestControl (int beforeCount, int afterCount, byte[] target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, unsigned int8[] target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor(System.Int32,System.Int32,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="target" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">クライアントがサーバーから結果のリストを返す要求ターゲット エントリ前に、のエントリの数。</param>
+        <param name="afterCount">クライアントが、結果に返すサーバーから要求するターゲット エントリ後のエントリの数。</param>
+        <param name="target">検索対象のエントリ。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor(System.Int32,System.Int32,System.Byte[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.VlvRequestControl" />クラスの指定されたエントリ数とターゲット エントリを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VlvRequestControl (int beforeCount, int afterCount, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">一覧の結果のサーバーからのクライアント要求を送信するバックアップ ターゲット エントリ前に、のエントリの数。</param>
+        <param name="afterCount">サーバーからのクライアント要求を送信するが結果にバックアップされているターゲット エントリ後のエントリの数。</param>
+        <param name="offset">オフセット値とコンテンツの数の比率。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor(System.Int32,System.Int32,System.Int32)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.VlvRequestControl" />クラス、指定されたエントリ数とオフセットを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VlvRequestControl (int beforeCount, int afterCount, string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor(System.Int32,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">クライアントがサーバーから結果のリストを返す要求ターゲット エントリ前に、のエントリの数。</param>
+        <param name="afterCount">クライアントが、結果に返すサーバーから要求するターゲット エントリ後のエントリの数。</param>
+        <param name="target">検索対象のエントリ。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.VlvRequestControl.#ctor(System.Int32,System.Int32,System.String)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.VlvRequestControl" />クラスの指定されたエントリ数とターゲット エントリを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterCount">
+      <MemberSignature Language="C#" Value="public int AfterCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AfterCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.VlvRequestControl.AfterCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.VlvRequestControl.AfterCount" />プロパティは、一覧の結果を返すターゲット エントリ後エントリの数を指定します。</summary>
+        <value>一覧の結果を返すターゲット エントリ後のエントリの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeCount">
+      <MemberSignature Language="C#" Value="public int BeforeCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BeforeCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.VlvRequestControl.BeforeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.VlvRequestControl.BeforeCount" />プロパティが一覧の結果を返すターゲット エントリ前に、のエントリの数を指定します。</summary>
+        <value>一覧の結果を返すターゲット エントリ前に、のエントリの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextId">
+      <MemberSignature Language="C#" Value="public byte[] ContextId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] ContextId" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.VlvRequestControl.ContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.VlvRequestControl.ContextId" />プロパティには、この検索操作を識別するサーバーによって割り当てられたコンテキスト ID が含まれています。</summary>
+        <value>この検索操作を識別するサーバーによって割り当てられているコンテキスト ID です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EstimateCount">
+      <MemberSignature Language="C#" Value="public int EstimateCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EstimateCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.VlvRequestControl.EstimateCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.VlvRequestControl.EstimateCount" />プロパティにはリストのコンテンツの数が含まれています。</summary>
+        <value>リストのコンテンツの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override byte[] GetValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] GetValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.VlvRequestControl.GetValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.VlvRequestControl.GetValue" />メソッドは、コントロールを指定する BER でエンコードされたシーケンスを返します。</summary>
+        <returns>このコントロールを指定する BER でエンコードされたシーケンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.VlvRequestControl.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.VlvRequestControl.Offset" />プロパティには、ターゲット エントリのオフセット値が含まれています。</summary>
+        <value>ターゲット エントリのオフセット値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public byte[] Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Target" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.VlvRequestControl.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.VlvRequestControl.Target" />プロパティには検索の対象のエントリが含まれています。</summary>
+        <value>検索のターゲット エントリです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,237 @@
+<Type Name="DataBindingHandlerAttribute" FullName="System.Web.UI.DataBindingHandlerAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DataBindingHandlerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataBindingHandlerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataBindingHandlerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロール デザイナー内のデータ バインディングを実行するクラスをデザイン時を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のデータ バインディング ハンドラーを定義`MyDataBindingHandler`、編集モードのデザイナーで使用します。 編集モードの終了時に、`Text`プロパティ値が表示されます。  
+  
+ [!code-csharp[SystemWebUI_DataBindingHandlerAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_DataBindingHandlerAttribute/CS/databindinghandlerattribute.cs#1)]
+ [!code-vb[SystemWebUI_DataBindingHandlerAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_DataBindingHandlerAttribute/VB/databindinghandlerattribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBindingHandlerAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingHandlerAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataBindingHandlerAttribute" />クラスのパラメーターを使用します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.DataBindingHandlerAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[DataBindingHandlerAttribute_Samp2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBindingHandlerAttribute_Samp2/CS/databindinghandlerattribute_samp2.cs#1)]
+ [!code-vb[DataBindingHandlerAttribute_Samp2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBindingHandlerAttribute_Samp2/VB/databindinghandlerattribute_samp2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBindingHandlerAttribute (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingHandlerAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">データ バインディング ハンドラーの完全修飾名<see cref="T:System.Type" />です。</param>
+        <summary>指定した型名を使用して <see cref="T:System.Web.UI.DataBindingHandlerAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの型名は、アセンブリ名を含む、型の完全修飾の名前です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.DataBindingHandlerAttribute.%23ctor%2A>カスタムを指定するコンス トラクター <xref:System.Web.UI.Design.DataBindingHandler> Web コントロールのクラスです。  
+  
+ [!code-csharp[DataBindingHandlerAttribute_Samp1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBindingHandlerAttribute_Samp1/CS/databindinghandlerattribute_samp1.cs#1)]
+ [!code-vb[DataBindingHandlerAttribute_Samp1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBindingHandlerAttribute_Samp1/VB/databindinghandlerattribute_samp1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBindingHandlerAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingHandlerAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />データ ハンドラー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataBindingHandlerAttribute" />の指定されたクラス<see cref="T:System.Type" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性の構文です。  
+  
+```  
+[DataBindingHandlerAttribute  
+  (typeof(dataBindingHandlerType))]  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のデータ バインディング ハンドラーを定義`MyDataBindingHandler`、編集モードのデザイナーで使用します。 編集モードの終了時に、`Text`プロパティ値が表示されます。  
+  
+ [!code-csharp[SystemWebUI_DataBindingHandlerAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_DataBindingHandlerAttribute/CS/databindinghandlerattribute.cs#1)]
+ [!code-vb[SystemWebUI_DataBindingHandlerAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_DataBindingHandlerAttribute/VB/databindinghandlerattribute.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.DataBindingHandlerAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.DataBindingHandlerAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataBindingHandlerAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataBindingHandlerAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の属性を定義、<see cref="T:System.Web.UI.DataBindingHandlerAttribute" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、属性が指定されていないときに使用する既定の属性です。 このフィールドは読み取り専用です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:System.Web.UI.DataBindingHandlerAttribute>に設定されているクラス<xref:System.Web.UI.DataBindingHandlerAttribute.Default>です。  
+  
+ [!code-csharp[DataBindingHandlerAttribute_Default#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBindingHandlerAttribute_Default/CS/databindinghandlerattribute_default.cs#1)]
+ [!code-vb[DataBindingHandlerAttribute_Default#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBindingHandlerAttribute_Default/VB/databindinghandlerattribute_default.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingHandlerAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在と比較するオブジェクト<see cref="T:System.Web.UI.DataBindingHandlerAttribute" />です。</param>
+        <summary>2 つのオブジェクト インスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="obj" />パラメーターと等しい、<see cref="T:System.Web.UI.DataBindingHandlerAttribute" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingHandlerAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerTypeName">
+      <MemberSignature Language="C#" Value="public string HandlerTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HandlerTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingHandlerAttribute.HandlerTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディング ハンドラーの型名を取得します。</summary>
+        <value>ハンドラーの型名。 型の名前が場合<see langword="null" />、このプロパティは、空の文字列を返します ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の取得、<xref:System.Web.UI.DataBindingHandlerAttribute.HandlerTypeName%2A>プロパティのインスタンスから、<xref:System.Web.UI.DataBindingHandlerAttribute>クラスです。  
+  
+ [!code-csharp[DataBindingHandlerAttribute_HandlerTypeName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBindingHandlerAttribute_HandlerTypeName/CS/databindinghandlerattribute_handlertypename.cs#1)]
+ [!code-vb[DataBindingHandlerAttribute_HandlerTypeName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBindingHandlerAttribute_HandlerTypeName/VB/databindinghandlerattribute_handlertypename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

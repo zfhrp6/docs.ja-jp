@@ -1,0 +1,215 @@
+<Type Name="CounterCreationData" FullName="System.Diagnostics.CounterCreationData">
+  <TypeSignature Language="C#" Value="public class CounterCreationData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CounterCreationData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.CounterCreationData" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.CounterCreationDataConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>カウンターの種類、名前、およびカスタムのカウンターのヘルプ文字列を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Diagnostics.CounterCreationData>をカスタム カウンターを定義するクラス。 この例では、操作で処理された項目の数を表示するカウンターを作成します。 例では、カウンターを初期化します、これらのファイルから情報を収集を計算し、結果をコンソールに表示します。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterCreationData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CounterCreationData" />クラス型のカウンターに<see langword="NumberOfItems32" />、および空の名前、およびヘルプ文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の空のインスタンスを作成する方法を示しています、<xref:System.Diagnostics.CounterCreationData>クラスです。 例では、すべてのパラメーターに渡さないため、 <xref:System.Diagnostics.CounterCreationData.CounterHelp%2A>、 <xref:System.Diagnostics.CounterCreationData.CounterName%2A>、および<xref:System.Diagnostics.CounterCreationData.CounterType%2A>プロパティが指定されていないと、後で定義する必要があります。  
+  
+ [!code-cpp[Diagnostics_CounterCreationData#3](~/samples/snippets/cpp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CPP/diagnostics_countercreationdata.cpp#3)]
+ [!code-csharp[Diagnostics_CounterCreationData#3](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CS/diagnostics_countercreationdata.cs#3)]
+ [!code-vb[Diagnostics_CounterCreationData#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_CounterCreationData/VB/diagnostics_countercreationdata.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterCreationData (string counterName, string counterHelp, System.Diagnostics.PerformanceCounterType counterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string counterName, string counterHelp, valuetype System.Diagnostics.PerformanceCounterType counterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationData.#ctor(System.String,System.String,System.Diagnostics.PerformanceCounterType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="counterName" Type="System.String" />
+        <Parameter Name="counterHelp" Type="System.String" />
+        <Parameter Name="counterType" Type="System.Diagnostics.PerformanceCounterType" />
+      </Parameters>
+      <Docs>
+        <param name="counterName">カウンターの名前、カテゴリ内で一意である必要があります。</param>
+        <param name="counterHelp">カウンターの動作を説明するテキスト。</param>
+        <param name="counterType">A<see cref="T:System.Diagnostics.PerformanceCounterType" />カウンターの動作を識別します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CounterCreationData" />ヘルプ文字列と指定されたカウンターの名前を使用して、指定した型のカウンターのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のインスタンスを作成する方法を示しています、<xref:System.Diagnostics.CounterCreationData>クラス、および設定するパラメーターを渡す、 <xref:System.Diagnostics.CounterCreationData.CounterHelp%2A>、<xref:System.Diagnostics.CounterCreationData.CounterName%2A>と<xref:System.Diagnostics.CounterCreationData.CounterType%2A>が初期化される場合、オブジェクトのプロパティです。  
+  
+ [!code-cpp[Diagnostics_CounterCreationData#2](~/samples/snippets/cpp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CPP/diagnostics_countercreationdata.cpp#2)]
+ [!code-csharp[Diagnostics_CounterCreationData#2](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CS/diagnostics_countercreationdata.cs#2)]
+ [!code-vb[Diagnostics_CounterCreationData#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_CounterCreationData/VB/diagnostics_countercreationdata.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値を指定した<paramref name="counterType" />がのメンバーでない、<see cref="T:System.Diagnostics.PerformanceCounterType" />列挙します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="counterHelp" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterHelp">
+      <MemberSignature Language="C#" Value="public string CounterHelp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CounterHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterCreationData.CounterHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Description of this counter.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのカウンターの説明を設定します。</summary>
+        <value>カウンターの動作を説明するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得および設定する方法を示しています、<xref:System.Diagnostics.CounterCreationData.CounterHelp%2A>プロパティです。 この例では 2 つのカウンターし、設定、<xref:System.Diagnostics.CounterCreationData.CounterHelp%2A>さまざまな手法を使用してプロパティです。 最初のカウンターの初期化時に、<xref:System.Diagnostics.CounterCreationData.CounterHelp%2A>データは、2 番目のカウンターが、プロパティを明示的に設定され、コンス トラクターに渡されます。  
+  
+ [!code-cpp[Diagnostics_CounterCreationData#5](~/samples/snippets/cpp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CPP/diagnostics_countercreationdata.cpp#5)]
+ [!code-csharp[Diagnostics_CounterCreationData#5](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CS/diagnostics_countercreationdata.cs#5)]
+ [!code-vb[Diagnostics_CounterCreationData#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_CounterCreationData/VB/diagnostics_countercreationdata.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterName">
+      <MemberSignature Language="C#" Value="public string CounterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CounterName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterCreationData.CounterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Name of this counter.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのカウンターの名前を設定します。</summary>
+        <value>そのカテゴリ内で一意であると、カウンターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得および設定する方法を示しています、<xref:System.Diagnostics.CounterCreationData.CounterName%2A>プロパティです。 この例では 2 つのカウンターし、設定、<xref:System.Diagnostics.CounterCreationData.CounterName%2A>さまざまな手法を使用してプロパティです。 最初のカウンターの初期化時に、<xref:System.Diagnostics.CounterCreationData.CounterName%2A>データは、2 番目のカウンターが、プロパティを明示的に設定され、コンス トラクターに渡されます。  
+  
+ [!code-cpp[Diagnostics_CounterCreationData#4](~/samples/snippets/cpp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CPP/diagnostics_countercreationdata.cpp#4)]
+ [!code-csharp[Diagnostics_CounterCreationData#4](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CS/diagnostics_countercreationdata.cs#4)]
+ [!code-vb[Diagnostics_CounterCreationData#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_CounterCreationData/VB/diagnostics_countercreationdata.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">指定された値は 1 ~ 80 文字までの間ではないまたは二重引用符が含まれていますが、制御文字は先頭または末尾のスペースです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterType CounterType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterType CounterType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterCreationData.CounterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Diagnostics.PerformanceCounterType), "NumberOfItems32")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("Type of this counter.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのカウンターのパフォーマンス カウンターの種類を設定します。</summary>
+        <value>A<see cref="T:System.Diagnostics.PerformanceCounterType" />パフォーマンス カウンターの動作を定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得および設定する方法を示しています、<xref:System.Diagnostics.CounterCreationData.CounterType%2A>プロパティです。 この例では 2 つのカウンターし、設定、<xref:System.Diagnostics.CounterCreationData.CounterType%2A>さまざまな手法を使用してプロパティです。 最初のカウンターの初期化時に、<xref:System.Diagnostics.CounterCreationData.CounterType%2A>データは、2 番目のカウンターが、プロパティを明示的に設定され、コンス トラクターに渡されます。  
+  
+ [!code-cpp[Diagnostics_CounterCreationData#6](~/samples/snippets/cpp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CPP/diagnostics_countercreationdata.cpp#6)]
+ [!code-csharp[Diagnostics_CounterCreationData#6](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_CounterCreationData/CS/diagnostics_countercreationdata.cs#6)]
+ [!code-vb[Diagnostics_CounterCreationData#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_CounterCreationData/VB/diagnostics_countercreationdata.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">メンバーではない型を指定した、<see cref="T:System.Diagnostics.PerformanceCounterType" />列挙します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

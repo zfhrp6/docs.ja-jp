@@ -1,0 +1,125 @@
+<Type Name="StringTrimming" FullName="System.Drawing.StringTrimming">
+  <TypeSignature Language="C#" Value="public enum StringTrimming" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StringTrimming extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.StringTrimming" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>レイアウトの図形に完全に収まらないを文字列から文字をトリミングする方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Drawing.StringFormat.Trimming%2A>プロパティと使用方法、<xref:System.Drawing.StringTrimming>列挙します。 この例は Windows フォームで使用するよう設計されています。 フォームにこのコードを貼り付けるし、フォームを処理するときに、ShowStringTrimming メソッドを呼び出す`Paint`として e を渡すイベント<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.Misc2#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.Misc2#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Character">
+      <MemberSignature Language="C#" Value="Character" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringTrimming Character = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringTrimming.Character" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も近い文字、テキストが切り捨てられることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EllipsisCharacter">
+      <MemberSignature Language="C#" Value="EllipsisCharacter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringTrimming EllipsisCharacter = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringTrimming.EllipsisCharacter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストは、最も近い文字に切り捨てられます、トリミングされた行の末尾にある省略記号が挿入されることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EllipsisPath">
+      <MemberSignature Language="C#" Value="EllipsisPath" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringTrimming EllipsisPath = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringTrimming.EllipsisPath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中央がトリムされる行から削除され、省略記号によって置き換えられます。 アルゴリズムを保持できるだけ多くの可能な行の末尾のスラッシュで区切られたセグメント。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EllipsisWord">
+      <MemberSignature Language="C#" Value="EllipsisWord" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringTrimming EllipsisWord = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringTrimming.EllipsisWord" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も近い word では、テキストは切り捨てられてトリミングされた行の末尾にある省略記号が挿入されることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringTrimming None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringTrimming.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トリムなしを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Word">
+      <MemberSignature Language="C#" Value="Word" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringTrimming Word = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringTrimming.Word" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も近いワードにテキストが切り捨てられることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="GroupByBehavior" FullName="System.Data.Common.GroupByBehavior">
+  <TypeSignature Language="C#" Value="public enum GroupByBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GroupByBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.GroupByBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>SELECT ステートメントの select リストには、GROUP BY 句の列と集計以外の列間のリレーションシップを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.GroupByBehavior>値は相互に排他的です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExactMatch">
+      <MemberSignature Language="C#" Value="ExactMatch" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Common.GroupByBehavior ExactMatch = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.GroupByBehavior.ExactMatch" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.GroupByBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GROUP BY 句は、選択リスト内のすべての非集計列を含める必要があり、選択リストではなく、他の列を含めることはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MustContainAll">
+      <MemberSignature Language="C#" Value="MustContainAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Common.GroupByBehavior MustContainAll = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.GroupByBehavior.MustContainAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.GroupByBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GROUP BY 句は、選択リスト内のすべての非集計列を含める必要があり、選択リストではなく、他の列を含めることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSupported">
+      <MemberSignature Language="C#" Value="NotSupported" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Common.GroupByBehavior NotSupported = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.GroupByBehavior.NotSupported" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.GroupByBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GROUP BY 句はサポートされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Common.GroupByBehavior Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.GroupByBehavior.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.GroupByBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GROUP BY 句のサポート値はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unrelated">
+      <MemberSignature Language="C#" Value="Unrelated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Common.GroupByBehavior Unrelated = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.GroupByBehavior.Unrelated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.GroupByBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GROUP BY 句の列と、選択リスト内の非集約列間の関係はありません。 任意の列でグループ化することがあります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

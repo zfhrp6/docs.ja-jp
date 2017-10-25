@@ -1,0 +1,1130 @@
+<Type Name="SocketAsyncEventArgs" FullName="System.Net.Sockets.SocketAsyncEventArgs">
+  <TypeSignature Language="C#" Value="public class SocketAsyncEventArgs : EventArgs, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SocketAsyncEventArgs extends System.EventArgs implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.SocketAsyncEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>非同期ソケット操作を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SocketAsyncEventArgs>クラスは、一連の機能強化の一部、<xref:System.Net.Sockets.Socket?displayProperty=nameWithType>特殊化された高パフォーマンスのソケット アプリケーションで使用できる代替非同期パターンを提供するクラス。 このクラスは、高パフォーマンスを必要とするネットワーク サーバー アプリケーションを具体的に設計されました。 アプリケーションの拡張の非同期パターンのみを使用できます、のみ対象ホット領域 (大量のデータを受信する場合など)。  
+  
+ この機能強化の主な特徴は、高ボリュームの非同期ソケット I/O 中、オブジェクトの割り当てと同期が繰り返されることを避けることにあります。 によって、現在実装されて、開始/終了デザイン パターン、<xref:System.Net.Sockets.Socket?displayProperty=nameWithType>クラス必要があります、<xref:System.IAsyncResult?displayProperty=nameWithType>非同期ソケット操作ごとにオブジェクトを割り当てられません。  
+  
+ 新しい<xref:System.Net.Sockets.Socket?displayProperty=nameWithType>クラスの拡張機能を再利用可能なによって操作が説明されている非同期ソケット<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクトが割り当てられているし、アプリケーションによって維持されます。 高パフォーマンスのソケット アプリケーションは、維持する必要があるオーバーラップしたソケット操作の量を効率的に認識します。 アプリケーションは <xref:System.Net.Sockets.SocketAsyncEventArgs> オブジェクトを必要な数だけ作成できます。 たとえば、サーバー アプリケーション 15 ソケットが着信クライアント接続の速度をサポートするために、未処理の操作を常にそのまま使用する場合は、割り当てることができます 15 の再利用可能な<xref:System.Net.Sockets.SocketAsyncEventArgs>を目的とするオブジェクト。  
+  
+ このクラスで非同期ソケット操作を実行するパターンは次の手順で構成されます。  
+  
+1.  新しい <xref:System.Net.Sockets.SocketAsyncEventArgs> コンテキスト オブジェクトを割り当てるか、アプリケーション プールから空きコンテキスト オブジェクトを入手します。  
+  
+2.  プロパティの設定にコンテキスト オブジェクトを操作について (完了コールバック メソッド、データ バッファー、オフセット、バッファーと、転送するデータの最大量に) を実行します。  
+  
+3.  適切なソケット メソッド (xxxAsync) を呼び出し、非同期操作を開始します。  
+  
+4.  非同期ソケット メソッド (xxxAsync) が true の場合、コールバックに返される場合は、完了ステータスのコンテキスト プロパティを照会します。  
+  
+5.  非同期ソケット メソッド (xxxAsync) が false を返す場合、操作を同期的に完了します。 コンテキスト プロパティに操作結果が問い合わされることがあります。  
+  
+6.  別の操作でコンテキストを再利用するか、プールに戻すか、破棄します。  
+  
+ 新しい非同期ソケット操作のコンテキスト オブジェクトの有効期間は、参照によって、アプリケーション コードと非同期の I/O 参照によって決まります。 非同期ソケット操作メソッドの 1 つにパラメーターとして送信された後、非同期ソケット操作コンテキスト オブジェクトの参照をアプリケーションが維持する必要はありません。 完了コールバックが戻るまで、参照状態が維持されます。 ただし、今後の非同期ソケット操作の再利用できるように、コンテキストへの参照を保持するアプリケーションの場合に効果的です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するソケット サーバーの接続のロジックを実装して、<xref:System.Net.Sockets.SocketAsyncEventArgs>クラスです。 接続を受け入れた後は、クライアントから読み取られるすべてのデータをクライアントに送信されます。 読み取りと、クライアントが切断されるまで、クライアントのパターンにエコーが続きます。 コード例ではこの例で使用される、BufferManager クラスが表示されます、<xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer%28System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッドです。 コード例では、この例で使用されている SocketAsyncEventArgsPool クラスが表示されます、<xref:System.Net.Sockets.SocketAsyncEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[NCLAsyncSocketServer#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLAsyncSocketServer/CS/AsyncSocketServer.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketAsyncEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketAsyncEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空の <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> インスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの呼び出し後にすべてのプロパティが既定値が得られます。  
+  
+-   オブジェクト参照は null になります。  
+  
+-   整数値を返すプロパティは 0 を返します。  
+  
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.LastOperation%2A>プロパティと等しくなります<xref:System.Net.Sockets.SocketAsyncOperation.None>です。  
+  
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsFlags%2A>プロパティと等しくなります<xref:System.Net.Sockets.TransmitFileOptions.UseDefaultWorkerThread?displayProperty=nameWithType>フラグを指定しませんが適用されます。  
+  
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A>プロパティと等しくなります<xref:System.Net.Sockets.SocketAsyncOperation.None>です。  
+  
+ 呼び出し元には、適切な非同期ソケット (xxxAsync) メソッドにオブジェクトを渡す前に適切なプロパティを設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の再利用可能なコレクションを表します<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクト。  
+  
+ [!code-csharp[NCLAsyncSocketServer#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLAsyncSocketServer/CS/AsyncSocketServer.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">プラットフォームがサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptSocket">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.Socket AcceptSocket { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.Socket AcceptSocket" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.Socket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用するソケットまたは非同期ソケット メソッドを使用して接続を受け入れるために作成されたソケットを設定します。</summary>
+        <value><see cref="T:System.Net.Sockets.Socket" />や非同期ソケット メソッドを使用して接続を受け入れるために作成されたソケットを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、既に作成して使用できます<xref:System.Net.Sockets.Socket>非同期ソケットを使用する操作をそのまま使用します。 受信操作の完了時に、受け入れられた接続を表すソケットを勧めします。 (Null セット) を呼び出す前に指定されていない場合、<xref:System.Net.Sockets.Socket.AcceptAsync%2A?displayProperty=nameWithType>メソッド、新しいソケットは自動的に作成され、このプロパティを使用して、完了コールバックでアクセスできることです。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Buffer">
+      <MemberSignature Language="C#" Value="public byte[] Buffer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Buffer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期ソケット メソッドで使用するデータ バッファーを取得します。</summary>
+        <value>A<see cref="T:System.Byte" />非同期ソケット メソッドで使用するデータ バッファーを表す配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在関連付けられているデータ バッファーを取得、<xref:System.Net.Sockets.SocketAsyncEventArgs>インスタンス。 バッファーを設定する、<xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer%2A>メソッドを使用する必要があります。  
+  
+ このプロパティで使用、 <xref:System.Net.Sockets.Socket.AcceptAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ConnectAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>、および<xref:System.Net.Sockets.Socket.SendToAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferList">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; BufferList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; BufferList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または非同期ソケット メソッドで使用するデータ バッファーの配列を設定します。</summary>
+        <value><see cref="T:System.Collections.IList" />を表す非同期ソケット メソッドで使用するデータ バッファーの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、使用、<xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>と<xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このプロパティは、送信する、または送信したり、データを受信する非同期ソケット操作の受信データを格納するための複数のバッファーを提供するデータの複数のバッファーを提供する使用されます。 使用して複数のバッファー、<xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A>でプロパティがサポートされて、<xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>と<xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 場合、<xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A>プロパティが null 以外の値に設定、<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A>プロパティが null にする必要がありでは無視されます、<xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>と<xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 場合、 <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A> null 以外の値に設定された設定が試行され、<xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A>プロパティを null 以外の値は、例外がスローされます。  
+  
+ 場合、<xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A>プロパティが null 以外の値に設定、<xref:System.Net.Sockets.Socket.ConnectAsync%2A?displayProperty=nameWithType>と<xref:System.Net.Sockets.Socket.AcceptAsync%2A?displayProperty=nameWithType>メソッドがスローされます、<xref:System.ArgumentException>です。  
+  
+ <xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A>パラメーターは無視されます、<xref:System.Net.Sockets.Socket.DisconnectAsync%2A?displayProperty=nameWithType>と<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定操作で指定されたあいまいなバッファーがあります。 場合、この例外が発生した、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティが null 以外の値に設定されているし、設定しようとしましたが、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" />プロパティを null 以外の値にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BytesTransferred">
+      <MemberSignature Language="C#" Value="public int BytesTransferred { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BytesTransferred" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.BytesTransferred" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケット操作で転送されたバイト数を取得します。</summary>
+        <value><see cref="T:System.Int32" />ソケット操作で転送されたバイト数を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、受信したり、データを送信できる非同期ソケット操作で転送されたバイト数を提供します。 0 は、読み取り操作から返される、リモート エンドは、接続を閉じました。  
+  
+ このプロパティを除くすべての非同期ソケット操作によって、<xref:System.Net.Sockets.Socket.DisconnectAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.Sockets.SocketAsyncEventArgs&gt; Completed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.Sockets.SocketAsyncEventArgs&gt; Completed" />
+      <MemberSignature Language="DocId" Value="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.Sockets.SocketAsyncEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作を完了するために使用するイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed>イベントは、クライアント アプリケーションの非同期ソケット操作を完了するための手段を提供します。 内のイベントをイベント ハンドラーをアタッチする必要があります、<xref:System.Net.Sockets.SocketAsyncEventArgs>インスタンス非同期ソケット操作が開始されると、それ以外の場合、アプリケーションことはできません、操作の完了時に決定します。  
+  
+ によって参照される完了コールバック デリゲート、<xref:System.Net.Sockets.SocketAsyncEventArgs.Completed>イベントには、クライアントに対して非同期ソケット操作の処理を完了するプログラム ロジックが含まれています。  
+  
+ イベントがシグナル状態に、アプリケーションを使用して、<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクト パラメーターは、完了した非同期ソケット操作の状態を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectByNameError">
+      <MemberSignature Language="C#" Value="public Exception ConnectByNameError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception ConnectByNameError" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続の障害の場合は、例外を取得するときに、<see cref="T:System.Net.DnsEndPoint" />が使用されました。</summary>
+        <value><see cref="T:System.Exception" />接続エラーの原因を示すときに、<see cref="T:System.Net.DnsEndPoint" />が指定されました、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続エラーが発生時に、<xref:System.Net.DnsEndPoint>が指定されました、 <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A> 、プロパティ、<xref:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError%2A>プロパティは、ソケット エラーの詳細な原因を示す例外が格納されます。  
+  
+ ときに、<xref:System.Net.IPEndPoint>が指定されました、<xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A>プロパティと接続エラーが発生すると、<xref:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError%2A>プロパティになります、`null`参照します。  
+  
+ <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A>プロパティは、接続の障害の場合は常に設定します。 <xref:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError%2A>プロパティが接続に失敗した場合、そのエラーに関する詳細についてには含まれています、<xref:System.Net.DnsEndPoint>です。 アプリケーションにのみ確認する必要な場合は、アプリケーションはのみに関心が、接続操作が成功したか失敗するかどうか、<xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectSocket">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.Socket ConnectSocket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.Socket ConnectSocket" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectSocket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.Socket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成された、接続されている<see cref="T:System.Net.Sockets.Socket" />オブジェクトが正常に完了した後、<see cref="Overload:System.Net.Sockets.Socket.ConnectAsync" />メソッドです。</summary>
+        <value>接続されている<see cref="T:System.Net.Sockets.Socket" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正常に完了した後、<xref:System.Net.Sockets.Socket.ConnectAsync%2A>メソッド、このプロパティは、新しく作成して接続されているが含まれます。<xref:System.Net.Sockets.Socket>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(バイト単位) を送信または受信する非同期操作で、データの最大量を取得します。</summary>
+        <value><see cref="T:System.Int32" />最大量 (バイト単位) を送信または受信のデータを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出して、<xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer%2A>メソッドです。  
+  
+ このプロパティで使用、 <xref:System.Net.Sockets.Socket.AcceptAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ConnectAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>、および<xref:System.Net.Sockets.Socket.SendToAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectReuseSocket">
+      <MemberSignature Language="C#" Value="public bool DisconnectReuseSocket { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisconnectReuseSocket" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.DisconnectReuseSocket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または切断操作の後にソケットを再利用できるかどうかを指定する値を設定します。</summary>
+        <value>A<see cref="T:System.Boolean" />切断操作の後にソケットを再利用できるかどうかを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの使用の動作の変更を<xref:System.Net.Sockets.Socket.DisconnectAsync%2A?displayProperty=nameWithType>メソッドです。 かどうかは true、ソケットによって切断された、<xref:System.Net.Sockets.Socket.DisconnectAsync%2A?displayProperty=nameWithType>メソッドを再利用できる以降のソケットで補完を切断した後を受け入れるか、操作を接続します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketAsyncEventArgs.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるアンマネージ リソースを解放、<see cref="T:System.Net.Sockets.SocketAsyncEventArgs" />インスタンス化し、必要に応じてマネージ リソースを破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Net.Sockets.SocketAsyncEventArgs> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~SocketAsyncEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketAsyncEventArgs.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> クラスによって使用されていたリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SocketAsyncEventArgs>クラスのファイナライザーが閉じ、<xref:System.Net.Sockets.SocketAsyncEventArgs>に関連付けられているリソースを解放し、<xref:System.Net.Sockets.SocketAsyncEventArgs>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastOperation">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.SocketAsyncOperation LastOperation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.SocketAsyncOperation LastOperation" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.LastOperation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketAsyncOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコンテキスト オブジェクトで最も最近実行されたソケット操作の種類を取得します。</summary>
+        <value>A<see cref="T:System.Net.Sockets.SocketAsyncOperation" />ソケット操作の種類を示すインスタンスは、このコンテキスト オブジェクトで最も最近実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、これを使用して最も最近完了した非同期ソケット操作を説明します<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクト。 このプロパティの値になります<xref:System.Net.Sockets.SocketAsyncOperation.None?displayProperty=nameWithType>まで、<xref:System.Net.Sockets.SocketAsyncEventArgs>非同期ソケット操作を開始するインスタンスを使用します。 プロパティを受け取るメソッドで実行される操作の種類を設定し、<xref:System.Net.Sockets.SocketAsyncEventArgs>をパラメーターとして。 このプロパティには、複数の種類の非同期ソケット操作の 1 つの完了コールバック デリゲートを使用してより簡単に容易になります。  
+  
+ このプロパティの値では有効で、<xref:System.Net.Sockets.SocketAsyncEventArgs>をインスタンス化されるまで、<xref:System.Net.Sockets.SocketAsyncEventArgs>インスタンスが別の (xxxAsync) 非同期ソケット操作のために使用します。  
+  
+ このプロパティがすべての非同期ソケット (xxxAsync) メソッド  
+  
+ 非同期ソケット メソッド (xxxAsync) を呼び出す、<xref:System.Net.Sockets.Socket?displayProperty=nameWithType>クラスは、このプロパティの値を設定します。 このプロパティは、アプリケーションによって実装される SocketAsyncCallback 完了ルーチンで使用するものです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって参照されるデータ バッファーにオフセットをバイト単位で取得、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティです。</summary>
+        <value><see cref="T:System.Int32" />によって参照されるデータ バッファーのオフセット (バイト単位) を格納している、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの説明内のデータのバイト オフセット、<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A>プロパティです。 この設定は呼び出すことによって、<xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer%2A>メソッドです。  
+  
+ このプロパティには適用されません、<xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A>プロパティです。  
+  
+ このプロパティで使用、 <xref:System.Net.Sockets.Socket.AcceptAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ConnectAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>、および<xref:System.Net.Sockets.Socket.SendToAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnCompleted (System.Net.Sockets.SocketAsyncEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCompleted(class System.Net.Sockets.SocketAsyncEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Net.Sockets.SocketAsyncEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">通知されるイベントです。</param>
+        <summary>非同期操作が完了したときに呼び出されるメソッドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザー コードから呼び出すことはできません。 このメソッドがの内部から呼び出される、<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクトの現在の操作が完了するとします。 このメソッドは、すべての非同期ソケット (xxxAsync) メソッドを使用します。  
+  
+ 継承するクラスを作成するアプリケーション<xref:System.Net.Sockets.SocketAsyncEventArgs>この完了の通知をフックし、操作に割り当てられているすべてのリソースをクリーンアップするには、このメソッドをオーバーライドします。 既定の実装がだけを生成、<xref:System.Net.Sockets.SocketAsyncEventArgs.Completed>イベント。  
+  
+ このメソッドは、以降の非同期ソケット操作の完了コールバックとして使用するイベント ハンドラーをフックするために使用されます。 呼び出し元がメソッドを使用して、非同期 (xxxAsync) で非同期ソケット操作を開始する前にこのメソッドから継承には、少なくとも 1 つのコールバック デリゲートを実装する必要があります、<xref:System.Net.Sockets.Socket?displayProperty=nameWithType>クラスです。  
+  
+ 呼び出し元の<xref:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted%2A>メソッドは、クライアント アプリケーションの非同期ソケット操作を完了するための手段を提供します。 非同期ソケット操作の開始時に、コールバック デリゲートを実装する必要があります。 継承された完了コールバックの代理人、<xref:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted%2A>メソッドは、クライアントに対して非同期ソケット操作の処理を完了するプログラム ロジックを含める必要があります。  
+  
+ 非同期操作が通知されると、アプリケーションを使用して、<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクト パラメーターは、完了した非同期ソケット操作の状態を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.DisconnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ReceiveAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ReceiveFromAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ReceiveMessageFromAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.SendAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.SendToAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveMessageFromPacketInfo">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.IPPacketInformation ReceiveMessageFromPacketInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.IPPacketInformation ReceiveMessageFromPacketInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.ReceiveMessageFromPacketInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IPPacketInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP アドレスと受信パケットのインターフェイスを取得します。</summary>
+        <value><see cref="T:System.Net.Sockets.IPPacketInformation" />宛先 IP アドレスと受信パケットのインターフェイスが含まれているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して受信したパケットに関する情報を提供する、<xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このプロパティは、使用、<xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteEndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.EndPoint RemoteEndPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.EndPoint RemoteEndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.EndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または非同期操作のリモート IP エンドポイントを設定します。</summary>
+        <value><see cref="T:System.Net.EndPoint" />を表す非同期操作のリモート IP エンドポイント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、リモート エンドポイントを指定します。 このプロパティを使用して接続するリモート エンドポイントを指定できます、<xref:System.Net.Sockets.Socket.ConnectAsync%2A?displayProperty=nameWithType>メソッドです。 このプロパティを使用してデータを送信するリモート エンドポイントを指定できます<xref:System.Net.Sockets.Socket.SendToAsync%2A?displayProperty=nameWithType>メソッドです。 このプロパティを使用してデータの受信元となるリモート エンドポイントを指定できます、<xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A?displayProperty=nameWithType>または<xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このプロパティで指定するリモート エンドポイントは、IPv4 または IPv6 アドレスを含めることができます。  
+  
+ このプロパティは、使用、 <xref:System.Net.Sockets.Socket.ConnectAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A?displayProperty=nameWithType>、または<xref:System.Net.Sockets.Socket.SendToAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPacketsElements">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.SendPacketsElement[] SendPacketsElements { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.SendPacketsElement[] SendPacketsElements" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SendPacketsElement[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で使用される非同期操作に送信するバッファーの配列、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</summary>
+        <value>配列<see cref="T:System.Net.Sockets.SendPacketsElement" />に送信するバッファーの配列を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファーの配列には、ファイルまたはメモリまたは一連のデータ バッファーのメモリ内のファイルを表すことができます。 このプロパティは、使用、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPacketsFlags">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.TransmitFileOptions SendPacketsFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.TransmitFileOptions SendPacketsFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットごとの組み合わせを取得または<see cref="T:System.Net.Sockets.TransmitFileOptions" />によって使用される非同期操作の値、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</summary>
+        <value>A<see cref="T:System.Net.Sockets.TransmitFileOptions" />非同期操作に使用される値のビットごとの組み合わせを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定、<xref:System.Net.Sockets.TransmitFileOptions>で使用されている、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPacketsSendSize">
+      <MemberSignature Language="C#" Value="public int SendPacketsSendSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SendPacketsSendSize" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsSendSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("unused property")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信操作で使用するデータ ブロックのバイト単位のサイズを設定します。</summary>
+        <value><see cref="T:System.Int32" />送信操作で使用するデータ ブロックのバイト単位のサイズを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 0 を既定の送信サイズを選択して sockets layer を使用できます。 このプロパティを設定します。 使用してこのプロパティを 0 xffffffff を有効に設定すると、呼び出し元が、サイズと各送信要求のコンテンツを制御、実行、<xref:System.Net.Sockets.SendPacketsElement.EndOfPacket%2A?displayProperty=nameWithType>プロパティです。 この機能は、個々 の送信要求のサイズに制限を加えるメッセージ プロトコルに役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetBuffer">
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>非同期ソケット メソッドで使用するデータ バッファーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A>プロパティを null と<xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A>と<xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A>プロパティを 0 にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetBuffer">
+      <MemberSignature Language="C#" Value="public void SetBuffer (int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBuffer(int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="offset">操作を開始するデータ バッファー内のバイト オフセット。</param>
+        <param name="count">最大量 (バイト単位) を送信または受信バッファー内のデータ。</param>
+        <summary>非同期ソケット メソッドで使用するデータ バッファーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `offset`と`count`パラメーターが負の数値にすることはできません。 組み合わせ、`offset`と`count`のバッファー配列の境界内のパラメーターがある必要があります、<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A>プロパティです。  
+  
+ このメソッドを設定、<xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A>プロパティを`count`パラメーターおよび<xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A>プロパティを`offset`パラメーター。 場合、<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A>プロパティが null で、このメソッドは無視、`offset`と`count`パラメーターとセット、<xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A>と<xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A>プロパティを 0 にします。  
+  
+ このメソッドは変更されません、<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数が範囲外でした。 場合、この例外が発生した、<paramref name="offset" />パラメーターが 0 の配列の長さより大きいか小さい、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティです。 この例外は、場合にも発生、<paramref name="count" />パラメーターが 0 の配列の長さより大きいか小さい、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティより小さい、<paramref name="offset" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBuffer">
+      <MemberSignature Language="C#" Value="public void SetBuffer (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBuffer(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">非同期ソケット メソッドで使用するデータ バッファー。</param>
+        <param name="offset">操作を開始するデータ バッファー内のバイト オフセット。</param>
+        <param name="count">最大量 (バイト単位) を送信または受信バッファー内のデータ。</param>
+        <summary>非同期ソケット メソッドで使用するデータ バッファーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `offset`と`count`パラメーターが負の数値にすることはできません。 組み合わせ、`offset`と`count`でデータの配列の境界内のパラメーターがある必要があります、`buffer`パラメーター。  
+  
+ このメソッドを設定、[SetBuffer メソッド (バイト\<xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A > プロパティを`buffer`パラメーターで、[SetBuffer メソッド (バイト\<相互参照。System.Net.Sockets.SocketAsyncEventArgs.Count%2A > プロパティを`count`パラメーター、および [SetBuffer メソッド (バイト\<xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A > プロパティを`offset`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を分割し、割り当てられている 1 つの大きなバッファーを作成する [SetBuffer メソッド (バイト\<xref:System.Net.Sockets.SocketAsyncEventArgs > ソケット I/O 操作のそれぞれで使用するオブジェクト。 これにより、バッファーを簡単に再利用して、ヒープ メモリの断片化を防ぐ。  
+  
+ [!code-csharp[NCLAsyncSocketServer#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLAsyncSocketServer/CS/AsyncSocketServer.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">あいまいなバッファーの指定があります。 場合、この例外が発生した、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティも null でないと、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" />またプロパティは null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数が範囲外でした。 場合、この例外が発生した、<paramref name="offset" />パラメーターが 0 の配列の長さより大きいか小さい、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティです。 この例外は、場合にも発生、<paramref name="count" />パラメーターが 0 の配列の長さより大きいか小さい、<see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />プロパティより小さい、<paramref name="offset" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SocketClientAccessPolicyProtocol">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.SocketClientAccessPolicyProtocol SocketClientAccessPolicyProtocol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.SocketClientAccessPolicyProtocol SocketClientAccessPolicyProtocol" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.SocketClientAccessPolicyProtocol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketClientAccessPolicyProtocol</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケット クライアント アクセス ポリシー ファイルのダウンロードに使用するプロトコルを取得または設定します。</summary>
+        <value><see cref="T:System.Net.Sockets.SocketClientAccessPolicyProtocol" /> を返します。  
+  
+ ソケット クライアント アクセス ポリシー ファイルのダウンロードに使用するプロトコル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SocketClientAccessPolicyProtocol>クライアント アクセス ポリシー ファイルをダウンロードする方法を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SocketError">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.SocketError SocketError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.SocketError SocketError" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.SocketError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または非同期ソケット操作の結果を設定します。</summary>
+        <value>A<see cref="T:System.Net.Sockets.SocketError" />非同期ソケット操作の結果を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、非同期ソケット操作の完了ステータスを提供します。 値<xref:System.Net.Sockets.SocketError.Success?displayProperty=nameWithType>操作が正常に完了を示します。 このプロパティはアプリケーションのイベント ハンドラー ルーチンで、主に使用します。  
+  
+ このプロパティは、すべての非同期ソケット (xxxAsync) メソッドで使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.DisconnectAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ReceiveAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ReceiveFromAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.ReceiveMessageFromAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.SendAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="M:System.Net.Sockets.Socket.SendToAsync(System.Net.Sockets.SocketAsyncEventArgs)" />
+        <altmember cref="T:System.Net.Sockets.SocketError" />
+      </Docs>
+    </Member>
+    <Member MemberName="SocketFlags">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.SocketFlags SocketFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.SocketFlags SocketFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期ソケット操作の結果を取得または非同期操作の動作を設定します。</summary>
+        <value>A<see cref="T:System.Net.Sockets.SocketFlags" />非同期ソケット操作の結果を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットごとの組み合わせを示します、<xref:System.Net.Sockets.SocketFlags?displayProperty=nameWithType>非同期ソケット操作に使用します。  
+  
+ このプロパティで使用、 <xref:System.Net.Sockets.Socket.ReceiveAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A?displayProperty=nameWithType>、 <xref:System.Net.Sockets.Socket.SendAsync%2A?displayProperty=nameWithType>、および<xref:System.Net.Sockets.Socket.SendToAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserToken">
+      <MemberSignature Language="C#" Value="public object UserToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserToken" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SocketAsyncEventArgs.UserToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの非同期ソケット操作に関連付けられているユーザーまたはアプリケーションのオブジェクトを設定します。</summary>
+        <value>ユーザーを表すオブジェクトまたはこの非同期ソケット操作に関連付けられているアプリケーションのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに持つアプリケーション状態オブジェクトを関連付けるには、アプリケーションによって使用できます、<xref:System.Net.Sockets.SocketAsyncEventArgs>オブジェクト。 主に、このプロパティは、アプリケーション状態をアプリケーションのイベント ハンドラー (たとえば、非同期操作の完了メソッド) に渡すための方法です。  
+  
+ このプロパティは、すべての非同期ソケット (xxxAsync) メソッドで使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

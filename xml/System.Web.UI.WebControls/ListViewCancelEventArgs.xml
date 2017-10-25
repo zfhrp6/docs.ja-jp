@@ -1,0 +1,146 @@
+<Type Name="ListViewCancelEventArgs" FullName="System.Web.UI.WebControls.ListViewCancelEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewCancelEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewCancelEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewCancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemCanceling" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、 <xref:System.Web.UI.WebControls.ListView.ItemCanceling> [キャンセル] ボタンがクリックされた場合は、終了する前にしたときにイベントを挿入または編集モードです。 ([キャンセル] ボタンは、ボタンが`CommandName`プロパティが"Cancel"に設定されている) 場合は、項目が望ましくない状態になり、[キャンセル] 操作を停止するなど、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewCancelEventArgs>オブジェクトは、イベント処理メソッドに渡されます。 このオブジェクトでは、イベントを発生させた [キャンセル] ボタンを含む項目のインデックスを確認することができます。 どのような操作が取り消されましたも決定することができます。 取り消し操作を停止する、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ <xref:System.Web.UI.WebControls.ListViewCancelEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.ListViewCancelEventArgs> 、ユーザーの挿入または更新操作を取り消すときにメッセージを表示するオブジェクト、<xref:System.Web.UI.WebControls.ListView>コントロール。 <xref:System.Web.UI.WebControls.ListViewCancelEventArgs>オブジェクトが、イベント処理メソッドに渡される、<xref:System.Web.UI.WebControls.ListView.ItemCanceling>イベント。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemCanceling#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemCanceling/CS/ListViewItemCancelingCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemCanceling#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemCanceling/VB/ListViewItemCancelingVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewCancelEventArgs (int itemIndex, System.Web.UI.WebControls.ListViewCancelMode cancelMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 itemIndex, valuetype System.Web.UI.WebControls.ListViewCancelMode cancelMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewCancelEventArgs.#ctor(System.Int32,System.Web.UI.WebControls.ListViewCancelMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+        <Parameter Name="cancelMode" Type="System.Web.UI.WebControls.ListViewCancelMode" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">イベントを発生させた [キャンセル] ボタンを含む項目のインデックス。</param>
+        <param name="cancelMode">1 つ、<see cref="T:System.Web.UI.WebControls.ListViewCancelMode" />操作を表す値のユーザーによって取り消されました。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewCancelEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewCancelEventArgs> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.CancelMode%2A>|`cancelMode` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.ItemIndex%2A>|`itemIndex` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ListViewCancelMode CancelMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ListViewCancelMode CancelMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewCancelEventArgs.CancelMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListViewCancelMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ入力モードを取得、<see cref="T:System.Web.UI.WebControls.ListView" />コントロールの中に [キャンセル] ボタンがクリックしてされました。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListViewCancelMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.CancelMode%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.ListView>コントロールが編集または [キャンセル] ボタンがクリックされたときに、モードを挿入します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.CancelMode%2A>データ入力モードを決定するプロパティを<xref:System.Web.UI.WebControls.ListView>コントロールがユーザーには [キャンセル] ボタンがクリックされたときにします。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemCanceling#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemCanceling/CS/ListViewItemCancelingCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemCanceling#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemCanceling/VB/ListViewItemCancelingVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemIndex">
+      <MemberSignature Language="C#" Value="public int ItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewCancelEventArgs.ItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させた [キャンセル] ボタンが含まれる項目のインデックスを取得します。</summary>
+        <value>イベントを発生させた [キャンセル] ボタンが含まれる項目の 0 から始まるインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.ItemIndex%2A>ユーザーが [キャンセル] ボタンを含む項目のインデックスを決定するプロパティをクリックします。 項目を取得する項目のインデックスが使用される多くの場合、<xref:System.Web.UI.WebControls.ListView.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.ListView>コントロールで、アイテムのプロパティにアクセスすることができます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.CancelMode%2A>プロパティに設定されている`ListViewCancelMode.CancelingInsert`の値、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.ItemIndex%2A>プロパティは常に-1 です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs.ItemIndex%2A>プロパティをユーザーがクリックしてされた [キャンセル] ボタンを含む編集項目のインデックスを確認します。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewCancelEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemCanceling#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemCanceling/CS/ListViewItemCancelingCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemCanceling#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemCanceling/VB/ListViewItemCancelingVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

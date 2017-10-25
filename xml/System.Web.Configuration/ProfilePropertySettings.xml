@@ -1,0 +1,443 @@
+<Type Name="ProfilePropertySettings" FullName="System.Web.Configuration.ProfilePropertySettings">
+  <TypeSignature Language="C#" Value="public sealed class ProfilePropertySettings : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProfilePropertySettings extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ProfilePropertySettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.ProfilePropertySettings" />クラスをプログラムでアクセスおよび変更する方法を提供する、<see langword="profiles" />構成ファイルのセクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProfilePropertySettings>クラスは、プログラムで作成、アクセス、および個々 のプロパティに追加の定義を変更する方法を提供、`properties`のサブセクション、`profile`構成ファイルのセクションです。  
+  
+ `profile`構成ファイルのセクションは、ユーザー プロファイル用にスキーマを指定します。 ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`と呼ばれるクラスを生成するセクション`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 ユーザー プロファイルごとに、このクラスのインスタンスが作成され、個々 のプロファイルの値を使用して、コードでアクセスできることができます、<xref:System.Web.HttpContext.Profile%2A?displayProperty=nameWithType>プロパティです。 プロファイルのプロパティの詳細については、次を参照してください。 [ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。 プロファイル機能の詳細についてに追加の[!INCLUDE[vstecasplong](~/includes/vstecasplong-md.md)]を参照してください[ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例にアクセスする方法を示しています、<xref:System.Web.Configuration.ProfileSection.PropertySettings%2A>プロパティの値のコレクションが含まれて<xref:System.Web.Configuration.ProfilePropertySettings>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#10)]
+ [!code-vb[System.Web.Configuration.ProfileSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfilePropertySettings (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettings.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">一意の名前、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト。</param>
+        <summary>指定した名前を使用して、<see cref="T:System.Web.Configuration.ProfilePropertySettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|設定|既定値|  
+|-------------|-------------------|  
+|<xref:System.Web.Configuration.ProfilePropertySettings.AllowAnonymous%2A>|`false`。|  
+|<xref:System.Web.Configuration.ProfilePropertySettings.DefaultValue%2A>|空の文字列 ("")。|  
+|<xref:System.Web.Configuration.ProfilePropertySettings.ReadOnly%2A>|`false`。|  
+|<xref:System.Web.Configuration.ProfilePropertySettings.SerializeAs%2A>|<xref:System.Web.Configuration.SerializationMode.ProviderSpecific>。|  
+|<xref:System.Web.Configuration.ProfilePropertySettings.Type%2A>|空の文字列 ("")。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfilePropertySettings (string name, bool readOnly, System.Web.Configuration.SerializationMode serializeAs, string providerName, string defaultValue, string profileType, bool allowAnonymous, string customProviderData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, bool readOnly, valuetype System.Web.Configuration.SerializationMode serializeAs, string providerName, string defaultValue, string profileType, bool allowAnonymous, string customProviderData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettings.#ctor(System.String,System.Boolean,System.Web.Configuration.SerializationMode,System.String,System.String,System.String,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="readOnly" Type="System.Boolean" />
+        <Parameter Name="serializeAs" Type="System.Web.Configuration.SerializationMode" />
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.String" />
+        <Parameter Name="profileType" Type="System.String" />
+        <Parameter Name="allowAnonymous" Type="System.Boolean" />
+        <Parameter Name="customProviderData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">一意の名前、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト。</param>
+        <param name="readOnly">
+          <see langword="true" />示す、動的に生成された関連付けられているプロパティ<see langword="ProfileCommon" />読み取り専用、それ以外のクラスにする必要があります<see langword="false" />です。</param>
+        <param name="serializeAs"><see cref="T:System.Web.Configuration.SerializationMode" /> 値のいずれか。</param>
+        <param name="providerName">プロバイダーの名前、<see cref="P:System.Web.Configuration.ProfileSection.Providers" />プロパティ、または空の文字列 ("") です。</param>
+        <param name="defaultValue">既定値を含む文字列は、生成されたページのプロパティに名前付きプロファイル クラスを使用します。</param>
+        <param name="profileType">有効な型の参照または空の文字列。</param>
+        <param name="allowAnonymous">
+          <see langword="true" />動的に生成されたに関連付けられているプロパティを示す<see langword="ProfileCommon" />クラスは、匿名ユーザーをサポートする必要があります。 それ以外の場合、 <see langword="false" />、匿名ユーザーが名前付きのプロパティを変更できないことを示すためにします。</param>
+        <param name="customProviderData">プロパティに関連付けられているプロバイダーによって使用されるプロバイダー固有の情報を含む文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />設定と指定した名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`クラスを生成する構成ファイルのセクションと呼ばれる`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 クラスを使用すると、アクセスし、個々 のユーザー プロファイルの値を変更できます。  
+  
+ `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 インスタンスを作成する場合を指定するパラメーター値、<xref:System.Web.Configuration.ProfilePropertySettings>に関連付けられたプロパティの定義に使用されるクラス、`ProfileCommon`クラスです。  
+  
+ プロファイルのプロパティの詳細については、次を参照してください。 [ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowAnonymous">
+      <MemberSignature Language="C#" Value="public bool AllowAnonymous { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowAnonymous" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.AllowAnonymous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("allowAnonymous", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、動的に生成された関連付けられているプロパティ<see langword="ProfileCommon" />クラスは、匿名ユーザーによって設定できます。</summary>
+        <value>
+          <see langword="true" />場合に関連付けられているプロパティ、<see langword="ProfileCommon" />クラスを匿名ユーザーを設定できるそれ以外の場合、 <see langword="false" />、匿名ユーザーがプロパティの値を変更できないことを示すです。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`クラスを生成する構成ファイルのセクションと呼ばれる`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 クラスを使用すると、アクセスし、個々 のユーザー プロファイルの値を変更できます。  
+  
+ `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 インスタンスの指定したプロパティの値、<xref:System.Web.Configuration.ProfilePropertySettings>に関連付けられたプロパティの定義に使用されるクラス、`ProfileCommon`クラスです。  
+  
+ 内のプロパティの場合、例外がスローされます、`ProfileCommon`クラスは、匿名ユーザーによって変更されたときに、<xref:System.Web.Configuration.ProfilePropertySettings.AllowAnonymous%2A>プロパティの値が`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.AllowAnonymous%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#16)]
+ [!code-vb[System.Web.Configuration.ProfileSection#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomProviderData">
+      <MemberSignature Language="C#" Value="public string CustomProviderData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomProviderData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.CustomProviderData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("customProviderData", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイル プロパティのプロバイダーのカスタム データの文字列を設定します。</summary>
+        <value>プロファイル プロパティのプロバイダー用のカスタム データの文字列。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public string DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultValue", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的に生成されたに関連付けられているプロパティに使用する既定値の設定を取得または<see langword="ProfileCommon" />クラスです。</summary>
+        <value>動的に生成されたに関連付けられているプロパティに使用する既定値を含む文字列<see langword="ProfileCommon" />クラスです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`クラスを生成する構成ファイルのセクションと呼ばれる`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 クラスを使用すると、アクセスし、個々 のユーザー プロファイルの値を変更できます。  
+  
+ `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 インスタンスの指定したプロパティの値、<xref:System.Web.Configuration.ProfilePropertySettings>に関連付けられたプロパティの定義に使用されるクラス、`ProfileCommon`クラスです。  
+  
+ 既定値が関連付けられている初期値として使用される`ProfileCommon`クラス プロパティの個々 のユーザー プロファイルには、プロパティの値が含まれていない場合。 <xref:System.Web.Configuration.ProfilePropertySettings.DefaultValue%2A>プロパティは、XML でエンコードされた値の文字列値にすることがあります (プロパティのシリアル化モードは、XML シリアル化) または base 64 エンコード バイナリ文字列 (プロパティのシリアル化モードがバイナリのシリアル化の場合)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.DefaultValue%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#19](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#19)]
+ [!code-vb[System.Web.Configuration.ProfileSection#19](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクトと関連付けられているプロパティ、動的に生成された<see langword="ProfileCommon" />クラスです。</summary>
+        <value>名前を含む文字列、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`クラスを生成する構成ファイルのセクションと呼ばれる`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 クラスを使用すると、アクセスし、個々 のユーザー プロファイルの値を変更できます。  
+  
+ `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 インスタンスの指定したプロパティの値、<xref:System.Web.Configuration.ProfilePropertySettings>に関連付けられたプロパティの定義に使用されるクラス、`ProfileCommon`クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.Name%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#21](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#21)]
+ [!code-vb[System.Web.Configuration.ProfileSection#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public string Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("provider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前付きのプロパティをシリアル化するときに使用するプロバイダーの名前を設定します。</summary>
+        <value>プロバイダーの名前、<see cref="P:System.Web.Configuration.ProfileSection.Providers" />プロパティ、または空の文字列 ("") です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイル プロバイダーは、ユーザー プロファイルの値が格納されているデータ ソースです。 プロファイル プロバイダーを指定することができます、`providers`のサブセクション、`profile`構成ファイルのセクションです。  
+  
+ このプロパティの値が空の文字列の場合は、既定のプロバイダーが指定された、<xref:System.Web.Configuration.ProfileSection.DefaultProvider%2A?displayProperty=nameWithType>プロパティを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.Provider%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#20)]
+ [!code-vb[System.Web.Configuration.ProfileSection#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("readOnly", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、動的に生成された関連付けられているプロパティ<see langword="ProfileCommon" />クラスは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合に関連付けられているプロパティ、<see langword="ProfileCommon" />クラスは読み取り専用です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`クラスを生成する構成ファイルのセクションと呼ばれる`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 クラスを使用すると、アクセスし、個々 のユーザー プロファイルの値を変更できます。  
+  
+ `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 インスタンスの指定したプロパティの値、<xref:System.Web.Configuration.ProfilePropertySettings>に関連付けられたプロパティの定義に使用されるクラス、`ProfileCommon`クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.ReadOnly%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#15)]
+ [!code-vb[System.Web.Configuration.ProfileSection#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAs">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.SerializationMode SerializeAs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.SerializationMode SerializeAs" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.SerializeAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("serializeAs", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.SerializationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、動的に生成された関連付けられているプロパティの使用のシリアル化メソッド<see langword="ProfileCommon" />クラスです。</summary>
+        <value><see cref="T:System.Web.Configuration.SerializationMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Configuration.SerializationMode.ProviderSpecific" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイルのプロパティの詳細については、次を参照してください。 [ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.SerializeAs%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#17)]
+ [!code-vb[System.Web.Configuration.ProfileSection#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettings.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または動的に生成されたに関連付けられたプロパティの型の名前を設定<see langword="ProfileCommon" />クラスです。</summary>
+        <value>有効な完全修飾型の参照、または空の文字列 ("") です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な型の参照を設定すると、この型は、生成された名前付きプロパティの使用は`ProfileCommon`クラスです。  
+  
+ 型参照は次の形式 (角かっこ内の項目は必要ありません)。`Namespace.Typename, Assemblyname[,] [Version=x,] [Culture=y,] [PublicKeyToken=z]`  
+  
+ 例:  
+  
+ `"ExampleNameSpace.ExampleType, Example.Assembly, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"`  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfilePropertySettings.Type%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#18](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#18)]
+ [!code-vb[System.Web.Configuration.ProfileSection#18](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

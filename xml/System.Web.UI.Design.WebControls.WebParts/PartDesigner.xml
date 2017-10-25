@@ -1,0 +1,68 @@
+<Type Name="PartDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.PartDesigner">
+  <TypeSignature Language="C#" Value="public abstract class PartDesigner : System.Web.UI.Design.WebControls.CompositeControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PartDesigner extends System.Web.UI.Design.WebControls.CompositeControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.PartDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.CompositeControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装するコントロールのデザイン時動作を拡張、<see cref="T:System.Web.UI.WebControls.WebParts.Part" />抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.PartDesigner>クラスは多くのさまざまなデザイナーでの基本クラス、<xref:System.Web.UI.Design.WebControls.WebParts>名前空間は、デザイン時に Web パーツ コントロールの視覚表現を提供します。 <xref:System.Web.UI.Design.WebControls.WebParts.PartDesigner.UsePreviewControl%2A>プロパティは常にオーバーライド`true`ため、<xref:System.Web.UI.Design.WebControls.WebParts.PartDesigner>コントロール自体ではなく、関連付けられたコントロールのコピーは常に表示されます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.Design.WebControls.WebParts.PartDesigner" />クラスに直接の外部から継承できないように、パブリック コンス トラクターがない、<see cref="N:System.Web.UI.Design.WebControls.WebParts" />名前空間。 代わりに、 <see cref="T:System.Web.UI.Design.WebControls.WebParts.WebPartDesigner" />、 <see cref="T:System.Web.UI.Design.WebControls.WebParts.EditorPartDesigner" />、または<see cref="T:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner" />から派生する<see cref="T:System.Web.UI.Design.WebControls.WebParts.PartDesigner" />し、パブリック コンス トラクターと同じ機能を提供します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.PartDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Web.UI.WebControls.WebParts.Part" />このデザイナーと関連付けられているコントロール。</param>
+        <summary>デザイナーに関連付けられているバインドのインスタンスを作成<see cref="T:System.Web.UI.WebControls.WebParts.Part" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.WebParts.PartDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するときに、デザイナーに関連付けられた実際のコントロールではなく、一時的なコピーをデザイナーで使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

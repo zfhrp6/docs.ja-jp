@@ -1,0 +1,85 @@
+<Type Name="TreeNodeMouseClickEventArgs" FullName="System.Windows.Forms.TreeNodeMouseClickEventArgs">
+  <TypeSignature Language="C#" Value="public class TreeNodeMouseClickEventArgs : System.Windows.Forms.MouseEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TreeNodeMouseClickEventArgs extends System.Windows.Forms.MouseEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeNodeMouseClickEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.MouseEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.TreeView.NodeMouseClick" /> イベントおよび <see cref="E:System.Windows.Forms.TreeView.NodeMouseDoubleClick" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.TreeView.NodeMouseDoubleClick>イベントと使用方法、<xref:System.Windows.Forms.TreeNodeMouseClickEventArgs>です。 この例を実行するには、Windows フォームが含まれていますにコードを貼り付けます、<xref:System.Windows.Forms.TreeView>という`treeView1`です。 追加`treeView1`内にあるファイルの名前を持つ、`c:\`サンプルは、実行して、システムのディレクトリと関連付ける、<xref:System.Windows.Forms.TreeView.NodeMouseDoubleClick>のイベント`treeView1`で、`treeView1_NodeMouseDoubleClick`この例ではメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.TreeViewWhidbeyMembers#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/cpp/Form1.cpp#5)]
+ [!code-csharp[System.Windows.Forms.TreeViewWhidbeyMembers#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.TreeViewWhidbeyMembers#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/VB/Form1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeMouseClickEventArgs (System.Windows.Forms.TreeNode node, System.Windows.Forms.MouseButtons button, int clicks, int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode node, valuetype System.Windows.Forms.MouseButtons button, int32 clicks, int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNodeMouseClickEventArgs.#ctor(System.Windows.Forms.TreeNode,System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="clicks" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="node">ノードがクリックされたです。</param>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />メンバー。</param>
+        <param name="clicks">クリックされた回数発生しました。</param>
+        <param name="x">クリックが発生した場所の x 座標。</param>
+        <param name="y">クリックが発生した位置の y 座標。</param>
+        <summary><see cref="T:System.Windows.Forms.TreeNodeMouseClickEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNodeMouseClickEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリックしてされたノードを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.TreeNode" />がクリックしてされました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.TreeView.NodeMouseDoubleClick>イベントと使用方法、<xref:System.Windows.Forms.TreeNodeMouseClickEventArgs>です。 この例を実行するには、Windows フォームが含まれていますにコードを貼り付けます、<xref:System.Windows.Forms.TreeView>という`treeView1`です。 追加、`treeView1`内にあるファイルの名前を持つ、`c:\`サンプルは、実行して、システムのディレクトリと関連付ける、<xref:System.Windows.Forms.TreeView.NodeMouseDoubleClick>のイベント`treeView1`で、`treeView1_NodeMouseDoubleClick`この例ではメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.TreeViewWhidbeyMembers#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/cpp/Form1.cpp#5)]
+ [!code-csharp[System.Windows.Forms.TreeViewWhidbeyMembers#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.TreeViewWhidbeyMembers#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,280 @@
+<Type Name="ISessionStateItemCollection" FullName="System.Web.SessionState.ISessionStateItemCollection">
+  <TypeSignature Language="C#" Value="public interface ISessionStateItemCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISessionStateItemCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.ISessionStateItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ASP.NET セッション状態でセッションを管理するために使用するコレクションのコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスは、アプリケーション コードに公開されるセッション項目のコレクションを定義、<xref:System.Web.SessionState.HttpSessionStateContainer>クラスです。  
+  
+ ASP.NET の実装での<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスは、<xref:System.Web.SessionState.SessionStateItemCollection>クラスです。  
+  
+ 派生するクラスを作成する場合、<xref:System.Web.SessionState.SessionStateStoreProviderBase>セッション データを格納するクラスを使用するか、<xref:System.Web.SessionState.SessionStateItemCollection>保存されているオブジェクトを管理を実装するクラス、<xref:System.Web.SessionState.ISessionStateItemCollection>コレクション マネージャーは、独自のインターフェイスです。  
+  
+ 実装する場合、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスを継承するクラスも作成する必要があります、<xref:System.Web.SessionState.SessionStateStoreProviderBase>ようにするためにクラスの使用、<xref:System.Web.SessionState.ISessionStateItemCollection>セッション変数の管理を実装します。  
+  
+ <xref:System.Web.SessionState.ISessionStateItemCollection>実装する必要がありますのメンバーを実装しても、<xref:System.Collections.ICollection>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Web.SessionState.ISessionStateItemCollection>を使用して、<xref:System.Collections.SortedList>セッション状態変数の名前と値を格納するクラス。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#1)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionStateItemCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッション状態コレクションからすべての値とキーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する際に、<xref:System.Web.SessionState.ISessionStateItemCollection.Clear%2A>設定する必要があります、メソッド、<xref:System.Web.SessionState.ISessionStateItemCollection.Dirty%2A>プロパティを`true`で indicatethatvalues に、<xref:System.Web.SessionState.ISessionStateItemCollection>実装が変更されました。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.SessionState.ISessionStateItemCollection.Clear%2A> メソッドを実装する方法を次のコード例に示します。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスでは、提示された例を参照してください、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#6)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dirty">
+      <MemberSignature Language="C#" Value="public bool Dirty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Dirty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.ISessionStateItemCollection.Dirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコレクションが変更されたものとしてマークされているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.SessionState.SessionStateItemCollection" /> 、それ以外の変更内容であった<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionStateItemCollection.Dirty%2A>プロパティを使用、<xref:System.Web.SessionState.SessionStateModule>を決定するかどうかの値、<xref:System.Web.SessionState.ISessionStateItemCollection>実装が変更されました。  
+  
+ 実装で、<xref:System.Web.SessionState.ISessionStateItemCollection>初期化する必要があります、インターフェイス、<xref:System.Web.SessionState.ISessionStateItemCollection.Dirty%2A>プロパティとして`false`設定と、<xref:System.Web.SessionState.SessionStateItemCollection.Dirty%2A>プロパティを`true`の実装では、 <xref:System.Web.SessionState.ISessionStateItemCollection.Remove%2A>、 <xref:System.Web.SessionState.ISessionStateItemCollection.RemoveAt%2A>、または<xref:System.Web.SessionState.ISessionStateItemCollection.Clear%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.SessionState.ISessionStateItemCollection.Dirty%2A>プロパティです。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスでは、提示された例を参照してください、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#2)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.ISessionStateItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の値の数値インデックス。</param>
+        <summary>取得または数値のインデックスを使用して、コレクション内の値を設定します。</summary>
+        <value>指定したインデックスに格納されているコレクション内の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.SessionState.ISessionStateItemCollection.Item%28System.Int32%29>を使用するプロパティ、<xref:System.Collections.SortedList>セッション変数の名前と値を格納します。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスで提供される例を参照して、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#3)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.ISessionStateItemCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクション内の値のキー名。</param>
+        <summary>取得または名前で、コレクション内の値を設定します。</summary>
+        <value>指定した名前を持つコレクション内の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.SessionState.ISessionStateItemCollection.Item%28System.String%29>を使用するプロパティ、<xref:System.Collections.SortedList>セッション変数の名前と値を格納します。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスで提供される例を参照して、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#4)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameObjectCollectionBase.KeysCollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameObjectCollectionBase/KeysCollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.ISessionStateItemCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameObjectCollectionBase+KeysCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての値のコレクションに格納されている変数名のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />コレクションのすべてのキーを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.SessionState.ISessionStateItemCollection.Keys%2A>を使用するプロパティ、<xref:System.Collections.SortedList>セッション変数の名前と値を格納します。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスで提供される例を参照して、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#5)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionStateItemCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから削除する項目の名前。</param>
+        <summary>コレクションから項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する際に、<xref:System.Web.SessionState.ISessionStateItemCollection.Remove%2A>設定する必要があります、メソッド、<xref:System.Web.SessionState.ISessionStateItemCollection.Dirty%2A>プロパティを`true`で indicatevalues に、<xref:System.Web.SessionState.ISessionStateItemCollection>実装が変更されました。  
+  
+ 場合、<xref:System.Web.SessionState.ISessionStateItemCollection>実装に、指定した要素が含まれていない`name`コレクションのままにして、例外なりますがスローされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.SessionState.ISessionStateItemCollection.Remove%2A> メソッドを実装する方法を次のコード例に示します。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスで提供される例を参照して、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#7)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionStateItemCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから削除する項目のインデックス。</param>
+        <summary>指定したインデックス位置にある項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する際に、<xref:System.Web.SessionState.ISessionStateItemCollection.RemoveAt%2A>設定する必要があります、メソッド、<xref:System.Web.SessionState.ISessionStateItemCollection.Dirty%2A>プロパティを`true`で indicatevalues に、<xref:System.Web.SessionState.ISessionStateItemCollection>実装が変更されました。  
+  
+ 実装、<xref:System.Web.SessionState.ISessionStateItemCollection.RemoveAt%2A>メソッドをスローする必要があります、<xref:System.ArgumentOutOfRangeException>例外場合`index`は、0 より小さいか等しいかより大きい<xref:System.Collections.ICollection.Count%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.SessionState.ISessionStateItemCollection.RemoveAt%2A> メソッドを実装する方法を次のコード例に示します。 完全な実装の例については、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスで提供される例を参照して、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスの概要です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionStateItemCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/CS/isessionstateitemcollectionsnippets.cs#8)]
+ [!code-vb[System.Web.SessionState.ISessionStateItemCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionStateItemCollection/VB/isessionstateitemcollectionsnippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

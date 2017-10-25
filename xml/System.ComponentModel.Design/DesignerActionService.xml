@@ -1,0 +1,566 @@
+<Type Name="DesignerActionService" FullName="System.ComponentModel.Design.DesignerActionService">
+  <TypeSignature Language="C#" Value="public class DesignerActionService : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerActionService extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを管理するデザイン時サービスを確立<see cref="T:System.ComponentModel.Design.DesignerActionItem" />コンポーネント用のオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService>クラスは、コレクションの管理を担当する<xref:System.ComponentModel.Design.DesignerActionItem>デザイン時に、フォーム上に存在するコンポーネントの各インスタンスのオブジェクト。 このクラスは、項目の作成のダイレクト プッシュ モデルを有効にしは、主に使用するものでデザイン時ツール開発者は、コンポーネントおよびカスタム コントロールの開発者が使用することもできます。  
+  
+ デザイン時ツール開発者は、コンポーネント用に表示し、この一覧が変更された時点を決定する項目の一覧を確認する必要があります。 スマート タグ パネルのオブジェクトと組み合わせて動作するアドインを作成する可能性がありますもします。  
+  
+ 拡張コンポーネントの開発者は補ったり、標準のプル モデルのコンポーネントに関連付けられている項目を動的に制御する必要があります。 たとえば、パネルのコマンドは、それらを使用して、コンポーネントのデザイン時の状態のコンテキストによって変更できます。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignerActionService>駆動サービス プッシュとプルの両方のモデルの背後にあります。 ただし、この機能は、暗黙的に後者の場合では、実際には、します。  
+  
+ <xref:System.ComponentModel.Design.DesignerActionService>アクセスし、次のメソッドおよびイベントを含む、各コンポーネントの項目を操作するためには、わかりやすいインターフェイスを提供します。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionService.Contains%2A>メソッドを判断するかどうか、<xref:System.ComponentModel.Design.DesignerActionService>は、現在、特定のコンポーネントを管理します。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A>メソッドは、項目の一覧の列挙をサポートします。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドでは、追加できるように、<xref:System.ComponentModel.Design.DesignerActionList>または<xref:System.ComponentModel.Design.DesignerActionListCollection>コンポーネント インスタンスの既存の項目のセットにします。 これに対し、<xref:System.ComponentModel.Design.DesignerActionService.Remove%2A>メソッドは、1 つまたはすべてのコンポーネントに関連付けられている項目のリストを削除します。  
+  
+    > [!NOTE]
+    >  <xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドは、コンポーネントは、パネルの項目を関連付けるためのダイレクト プッシュ モデルを表します。 オーバーライドのプル モデルは、これに対し、<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>するコンポーネント デザイナー クラスのプロパティです。 デザイン環境が現在にこれらの項目を追加することを担当する<xref:System.ComponentModel.Design.DesignerActionService>デザイン サーフェイス上のコンポーネントの作成時にします。  
+  
+    > [!IMPORTANT]
+    >  <xref:System.ComponentModel.Design.DesignerActionService.Add%2A>、 <xref:System.ComponentModel.Design.DesignerActionService.Remove%2A>、 <xref:System.ComponentModel.Design.DesignerActionService.Contains%2A>、および<xref:System.ComponentModel.Design.DesignerActionService.Clear%2A>メソッドは、のみ検討するか、プッシュ モデル アイテムに影響します。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベントは、コンポーネントの項目のコレクションが変更された時点を示します。  
+  
+ 間の相互運用性のある程度の大規模なが存在するため、多くの場合、コンポーネントのデザイン時のショートカット メニューとそのパネルの両方で同じパネルの項目の一部を使用する必要がある、<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクトおよびデザイナー動詞です。  
+  
+ コンポーネント デザイナーで明示的に指定されていない場合、 <xref:System.ComponentModel.Design.DesignerActionList> (つまり、含まない、オーバーライドされた<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>プロパティ)、既存のデザイナー動詞の一覧が作成されます。 これらの動詞がで指定された、<xref:System.ComponentModel.Design.ComponentDesigner.Verbs%2A>プロパティです。 ここでは、内部動詞 list クラスを使用して、動詞パネル項目のコレクションを格納します。  
+  
+ 場合は、<xref:System.ComponentModel.Design.DesignerActionMethodItem>設定でき、パネル エントリと、デザイン時のショートカット メニュー エントリの両方として使用する、`includeAsDesignerVerb`アイテムのコンス トラクターのパラメーターです。  
+  
+ 使用して、<xref:System.ComponentModel.Design.DesignerActionUIService>のデザイナーの表示を制御する<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionService (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">現在のデザイン時環境のサービス プロバイダー。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス プロバイダーは、選択範囲とコンポーネントの変更を監視する必要があります。 サポートすることが必要ですが、<xref:System.ComponentModel.Design.IDesignerHost>と<xref:System.ComponentModel.Design.IComponentChangeService>型です。 <xref:System.ComponentModel.Design.DesignerActionService>クラスでは、内部テーブルを使用して、コンポーネントとそれに関連付けられた管理<xref:System.ComponentModel.Design.DesignerActionList>スマート タグです。  
+  
+ 通常、コンポーネントの開発者は、このクラスのインスタンスを作成する必要はありません。呼び出すことによって、既存のインスタンスを取得するかが、代わりに、<xref:System.ComponentModel.Component.GetService%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.ComponentModel.IComponent comp, System.ComponentModel.Design.DesignerActionList actionList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ComponentModel.IComponent comp, class System.ComponentModel.Design.DesignerActionList actionList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Add(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="actionList" Type="System.ComponentModel.Design.DesignerActionList" />
+      </Parameters>
+      <Docs>
+        <param name="comp"><see cref="T:System.ComponentModel.IComponent" />にスマート タグを関連付けます。</param>
+        <param name="actionList"><see cref="T:System.ComponentModel.Design.DesignerActionList" />追加する新しいのスマート タグのアイテムを格納しています。</param>
+        <summary>追加、<see cref="T:System.ComponentModel.Design.DesignerActionList" />マネージ スマート タグの現在のコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドは、スマート タグのアイテムの追加のプッシュ モデルを表します。 代替プル モデルは、オーバーライドするのには、<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>対応するコンポーネントのデザイナーでのプロパティです。  
+  
+ いずれかを追加するリストがスキャンされるこのメソッドが呼び出されると、<xref:System.ComponentModel.Design.DesignerActionMethodItem>で、<xref:System.ComponentModel.Design.DesignerActionMethodItem.IncludeAsDesignerVerb%2A>プロパティに設定`true`です。 これらの項目への呼び出しを使用して、このコンポーネントのデザイナー動詞の一覧に追加されます、<xref:System.ComponentModel.Design.MenuCommandService.AddVerb%2A?displayProperty=nameWithType>メソッドです。  
+  
+ スマート タグは、コンポーネントのインスタンスごとに管理されます。 マネージ コレクションには、重複するエントリを含む可能性があります。  
+  
+ このメソッドを発生させる、<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.ComponentModel.IComponent comp, System.ComponentModel.Design.DesignerActionListCollection designerActionListCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ComponentModel.IComponent comp, class System.ComponentModel.Design.DesignerActionListCollection designerActionListCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Add(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="designerActionListCollection" Type="System.ComponentModel.Design.DesignerActionListCollection" />
+      </Parameters>
+      <Docs>
+        <param name="comp"><see cref="T:System.ComponentModel.IComponent" />にスマート タグを関連付けます。</param>
+        <param name="designerActionListCollection"><see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />追加する新しいのスマート タグのアイテムを格納しています。</param>
+        <summary>追加、<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />マネージ スマート タグの現在のコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドは、スマート タグのアイテムの追加のプッシュ モデルを表します。 代替プル モデルは、オーバーライドするのには、<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>対応するコンポーネントのデザイナーでのプロパティです。  
+  
+ いずれかを追加するリストがスキャンされるこのメソッドが呼び出されると、<xref:System.ComponentModel.Design.DesignerActionMethodItem>で、<xref:System.ComponentModel.Design.DesignerActionMethodItem.IncludeAsDesignerVerb%2A>プロパティに設定`true`です。 これらの項目への呼び出しを使用して、このコンポーネントのデザイナー動詞の一覧に追加されます、<xref:System.ComponentModel.Design.MenuCommandService.AddVerb%2A?displayProperty=nameWithType>メソッドです。  
+  
+ スマート タグは、コンポーネントのインスタンスごとに管理されます。 マネージ コレクションには、重複するエントリを含む可能性があります。  
+  
+ このメソッドを発生させる、<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>管理対象からすべてのコンポーネントを解放し、プッシュ モデルのスマート タグのすべてのリストをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.Clear%2A>メソッド情報についてコンポーネントと、プッシュ モデル スマート タグのリストを格納するために使用する内部テーブルを空にします。  
+  
+> [!CAUTION]
+>  このメソッドは、現在のサービスによって管理されるすべてのコンポーネントと現在のコンポーネントだけでなくに影響するため、このメソッドは慎重に使用する必要があります。 通常、デザイン時ツール開発者は、使用してデザイン サーフェイスをリセットする際にします。 コンポーネントの開発者は、のいずれかを使用する必要があります、<xref:System.ComponentModel.Design.DesignerActionService.Remove%2A>個々 のスマート タグを削除する項目を代わりにメソッドまたは一覧表示します。  
+  
+ A<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>が現在のサービスで管理されている各コンポーネントのイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.ComponentModel.IComponent comp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.ComponentModel.IComponent comp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Contains(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="comp">検索対象の <see cref="T:System.ComponentModel.IComponent" />。</param>
+        <summary>現在のスマート タグのサービスが指定されたコンポーネントのアクション リストを管理するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />コンポーネントが、現在のサービスによって管理されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.Contains%2A>メソッドでは、プッシュ モデル、スマート タグを持つコンポーネントに関連付けられているしか認識しません、<xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドです。  
+  
+ 同時実行の数の構造上の制限はありません。<xref:System.ComponentModel.Design.DesignerActionService>デザイン時ツールを使用して作成されたインスタンスでは、通常、サービスのインスタンスが 1 つだけ作成デザイン サーフェスごとです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="comp" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerActionListsChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignerActionListsChangedEventHandler DesignerActionListsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignerActionListsChangedEventHandler DesignerActionListsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListsChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.ComponentModel.Design.DesignerActionList" />が削除されるか、任意のコンポーネントを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、セットに関連付けられている特殊なクラスの<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+|特化された型|説明|  
+|----------------------|-----------------|  
+|<xref:System.ComponentModel.Design.DesignerActionListsChangedEventArgs>|スマート タグの一覧の管理に固有の情報を追加します。 このクラスは<xref:System.EventArgs>します。|  
+|<xref:System.ComponentModel.Design.DesignerActionListsChangedEventHandler>|接続、<xref:System.ComponentModel.Design.DesignerActionListsChangedEventArgs>そのハンドラー。|  
+|<xref:System.ComponentModel.Design.DesignerActionListsChangedType>|一覧が追加または削除されたかどうかを示します。|  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionService" /> クラスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.Dispose%2A>メソッドは、唯一の方法で必須の実装では、<xref:System.IDisposable>インターフェイスです。 <xref:System.ComponentModel.Design.DesignerActionService> を使い終わったら、このメソッドを呼び出します。 これには、2 つの主要なアクションを実行します。  
+  
+-   現在のサービスを呼び出すことによって、デザイン環境で使用可能なサービスの一覧から削除、<xref:System.ComponentModel.Design.IServiceContainer.RemoveService%2A>メソッドです。  
+  
+-   関連付けられたからコンポーネントの変更イベントをアンサブスク ライブ<xref:System.ComponentModel.Design.IComponentChangeService>インターフェイスです。  
+  
+ <xref:System.ComponentModel.Design.DesignerActionService.Dispose%2A> を使い終わったら <xref:System.ComponentModel.Design.DesignerActionService> を呼び出します。 <xref:System.ComponentModel.Design.DesignerActionService.Dispose%2A> メソッドによって、<xref:System.ComponentModel.Design.DesignerActionService> は使用不可の状態になります。 呼び出した後<xref:System.ComponentModel.Design.DesignerActionService.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.ComponentModel.Design.DesignerActionService>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.ComponentModel.Design.DesignerActionService>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignerActionService.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.ComponentModel.Design.DesignerActionService> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.ComponentModel.Design.DesignerActionService> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionService" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.Dispose%2A>メソッドは、唯一の方法で必須の実装では、<xref:System.IDisposable>インターフェイスです。 <xref:System.ComponentModel.Design.DesignerActionService> を使い終わったら、このメソッドを呼び出します。 これには、2 つの主要なアクションを実行します。  
+  
+-   現在のサービスを呼び出すことによって、デザイン環境で使用可能なサービスの一覧から削除、<xref:System.ComponentModel.Design.IServiceContainer.RemoveService%2A>メソッドです。  
+  
+-   関連付けられたからコンポーネントの変更イベントをアンサブスク ライブ<xref:System.ComponentModel.Design.IComponentChangeService>インターフェイスです。  
+  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.ComponentModel.Design.DesignerActionService> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentActions">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerActionListCollection GetComponentActions (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Design.DesignerActionListCollection GetComponentActions(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentActions(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">スマート タグに関連付けられているコンポーネント。</param>
+        <summary>コンポーネントに関連付けられているスマート タグのアイテムの一覧のコレクションを返します。</summary>
+        <returns>指定されたコンポーネントのスマート タグのコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A>メソッドへの呼び出しには、<xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%28System.ComponentModel.IComponent%2CSystem.ComponentModel.Design.ComponentActionsType%29>メソッドを使用して、`type`のパラメーター<xref:System.ComponentModel.Design.ComponentActionsType.All>です。 そのため、返されるコレクションは、スマート タグのプッシュとプルは両方の一覧が含まれます。  
+  
+ 返された<xref:System.ComponentModel.Design.DesignerActionListCollection>によって追加される項目リストの和集合、<xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドとも、リストから取得、<xref:System.ComponentModel.Design.DesignerCommandSet>のインスタンスが、コンポーネントのサイトから取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="comp" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentActions">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Design.DesignerActionListCollection GetComponentActions (System.ComponentModel.IComponent component, System.ComponentModel.Design.ComponentActionsType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.DesignerActionListCollection GetComponentActions(class System.ComponentModel.IComponent component, valuetype System.ComponentModel.Design.ComponentActionsType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentActions(System.ComponentModel.IComponent,System.ComponentModel.Design.ComponentActionsType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="type" Type="System.ComponentModel.Design.ComponentActionsType" />
+      </Parameters>
+      <Docs>
+        <param name="component">スマート タグに関連付けられているコンポーネント。</param>
+        <param name="type"><see cref="T:System.ComponentModel.Design.ComponentActionsType" />と関連付けられているスマート タグをフィルター処理します。</param>
+        <summary>スマート タグのコレクションのコンポーネントに関連付けられている指定した型の項目のリストを返します。</summary>
+        <returns>指定したコンポーネントの指定した型のスマート タグのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのオーバー ロードされた<xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A>でメソッドがフィルター処理、`type`パラメーターで、次の値のいずれかを持つことができます。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|<xref:System.ComponentModel.Design.ComponentActionsType.All>|関連付けられているすべてのスマート タグ。|  
+|<xref:System.ComponentModel.Design.ComponentActionsType.Component>|プル モデルのスマート タグのみです。|  
+|<xref:System.ComponentModel.Design.ComponentActionsType.Service>|プッシュ モデルのスマート タグのみです。|  
+  
+ コンポーネントに関連付けられたデザイナーがスマート タグのプル モデルの一覧を指定しない場合、<xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A>メソッドは、デザイナーのデザイン時のショートカット メニューから項目を使用して代わりに、<xref:System.ComponentModel.Design.ComponentDesigner.Verbs%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="comp" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentDesignerActions">
+      <MemberSignature Language="C#" Value="protected virtual void GetComponentDesignerActions (System.ComponentModel.IComponent component, System.ComponentModel.Design.DesignerActionListCollection actionLists);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetComponentDesignerActions(class System.ComponentModel.IComponent component, class System.ComponentModel.Design.DesignerActionListCollection actionLists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="actionLists" Type="System.ComponentModel.Design.DesignerActionListCollection" />
+      </Parameters>
+      <Docs>
+        <param name="component">スマート タグに関連付けられているコンポーネント。</param>
+        <param name="actionLists">関連付けられているスマート タグを追加するコレクション。</param>
+        <summary>コンポーネントに関連付けられているプル モデルのスマート タグを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions%2A>メソッドは、のヘルパー メソッド、<xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A>メソッドです。 <xref:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions%2A>プル モデルの検索のスマート タグの種類の<xref:System.ComponentModel.Design.ComponentActionsType.Component>、し、これらを指定された追加`actionLists`コレクション。  
+  
+ コンポーネントの開発者がスマート タグからのコレクションを明示的に指定しない場合、<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>そのデザイナーのプロパティは、このメソッドは再利用を介して取得された、デザイン時のショートカット メニュー エントリ、<xref:System.ComponentModel.Design.ComponentDesigner.Verbs%2A>デザイナーのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentServiceActions">
+      <MemberSignature Language="C#" Value="protected virtual void GetComponentServiceActions (System.ComponentModel.IComponent component, System.ComponentModel.Design.DesignerActionListCollection actionLists);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetComponentServiceActions(class System.ComponentModel.IComponent component, class System.ComponentModel.Design.DesignerActionListCollection actionLists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="actionLists" Type="System.ComponentModel.Design.DesignerActionListCollection" />
+      </Parameters>
+      <Docs>
+        <param name="component">スマート タグに関連付けられているコンポーネント。</param>
+        <param name="actionLists">関連付けられているスマート タグを追加するコレクション。</param>
+        <summary>コンポーネントに関連付けられている、プッシュ モデル スマート タグを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions%2A>メソッドは、のヘルパー メソッド、<xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A>メソッドです。 型のプッシュ モデルのスマート タグを検索<xref:System.ComponentModel.Design.ComponentActionsType.Service>、し、これらを指定された追加`actionLists`コレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.Design.DesignerActionList actionList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.Design.DesignerActionList actionList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Remove(System.ComponentModel.Design.DesignerActionList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="actionList" Type="System.ComponentModel.Design.DesignerActionList" />
+      </Parameters>
+      <Docs>
+        <param name="actionList">削除するスマート タグの一覧。</param>
+        <summary>現在のサービスによって管理されるすべてのコンポーネントから指定のスマート タグのリストを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.ComponentModel.Design.DesignerActionService.Remove%2A>メソッドは、通常デザイン ツールの開発者によって使用、コンポーネントが、現在のデザイン領域に存在するコンポーネントの開発者通常不明などの他のためです。  
+  
+ 成功すると、このメソッドを発生させます、<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="actionList" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.IComponent comp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.IComponent comp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Remove(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="comp">スマート タグの関連付けを解除するコンポーネント。</param>
+        <summary>指定されたコンポーネントに関連付けられているすべてのスマート タグのリストを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 成功した場合、<xref:System.ComponentModel.Design.DesignerActionService.Remove%2A>メソッドが発生し、<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="comp" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.IComponent comp, System.ComponentModel.Design.DesignerActionList actionList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.IComponent comp, class System.ComponentModel.Design.DesignerActionList actionList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Remove(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="actionList" Type="System.ComponentModel.Design.DesignerActionList" />
+      </Parameters>
+      <Docs>
+        <param name="comp">スマート タグの関連付けを解除するコンポーネント。</param>
+        <param name="actionList">削除するスマート タグのリスト。</param>
+        <summary>指定されたコンポーネントから指定のスマート タグのリストを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 成功した場合、<xref:System.ComponentModel.Design.DesignerActionService.Remove%2A>メソッドが発生し、<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

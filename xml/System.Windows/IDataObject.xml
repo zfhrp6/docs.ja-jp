@@ -1,0 +1,492 @@
+<Type Name="IDataObject" FullName="System.Windows.IDataObject">
+  <TypeSignature Language="C#" Value="public interface IDataObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.IDataObject" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>データを転送するための形式に依存しないメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.IDataObject>インターフェイスを使用して、<xref:System.Windows.Clipboard>クラスのデータのドラッグ アンド ドロップなどの操作を転送します。  
+  
+ クラスによって実装された場合、<xref:System.Windows.IDataObject>メソッドが複数の形式でデータを提供する 1 つのデータ オブジェクトを有効にします。  複数の形式でデータを提供する単一のデータ形式がサポートされているだけの場合、データをよりも、アプリケーションの多様なで使用できるようにする傾向があります。  
+  
+ <xref:System.Windows.DataObject>クラスの基本実装を提供、<xref:System.Windows.IDataObject>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">データとして取得する形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <summary>指定された書式でのデータ オブジェクトを取得しますデータの形式は、文字列によって指定されます。</summary>
+        <returns>指定された形式でデータを持つデータ オブジェクトまたは**null**データが指定された形式で使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (Type format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(class System.Type format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetData(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />としてデータを取得する形式を指定するオブジェクト。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <summary>指定された書式でのデータ オブジェクトを取得しますデータの形式がで指定された、<see cref="T:System.Type" />オブジェクト。</summary>
+        <returns>指定された形式でデータを持つデータ オブジェクトまたは**null**データが指定された形式で使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (string format, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(string format, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetData(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">データとして取得する形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <param name="autoConvert">
+          <see langword="true" />指定された形式にデータを自動的に変換しようとする<see langword="false" />データ形式変換ではありません。  
+  
+ このパラメーターは場合<see langword="false" />、メソッドは、使用可能な場合は、指定した形式でデータを返しますまたは<see langword="null" />データが指定された形式で使用できない場合。</param>
+        <summary>必要に応じて、データを指定した形式に変換する、指定された形式でデータ オブジェクトを取得します。</summary>
+        <returns>指定された形式でデータを持つデータ オブジェクトまたは**null**データが指定された形式で使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetDataPresent">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>データで使用可能でまたは指定された形式に変換できるかどうかを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す**GetDataPresent** 、指定した書式を呼び出す前にこのデータ オブジェクトで使用できるかどうかを判別<xref:System.Windows.IDataObject.GetData%2A>です。  
+  
+ 呼び出す<xref:System.Windows.IDataObject.GetFormats%2A>データ オブジェクトで使用可能なすべての形式の一覧を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public bool GetDataPresent (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetDataPresent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">チェックする形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <summary>データで使用可能でまたは指定された形式に変換できるかどうかを確認しますデータの形式は、文字列によって指定されます。</summary>
+        <returns>
+          <see langword="true" />データ、または指定された形式に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetDataPresent%2A>です。  
+  
+ 呼び出す**GetDataPresent** 、指定した書式を呼び出す前にこのデータ オブジェクトで使用できるかどうかを判別<xref:System.Windows.IDataObject.GetData%2A>です。  
+  
+ 呼び出す<xref:System.Windows.IDataObject.GetFormats%2A>データ オブジェクトで使用可能なすべての形式の一覧を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public bool GetDataPresent (Type format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(class System.Type format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetDataPresent(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />をチェックする形式を指定します。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <summary>データで使用可能でまたは指定された形式に変換できるかどうかを確認します。 データの形式がで指定された、<see cref="T:System.Type" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />データ、または指定された形式に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装について<xref:System.Windows.DataObject.GetDataPresent%2A>です。  
+  
+ 呼び出す**GetDataPresent** 、指定した書式を呼び出す前にこのデータ オブジェクトで使用できるかどうかを判別<xref:System.Windows.IDataObject.GetData%2A>です。  
+  
+ 呼び出す<xref:System.Windows.IDataObject.GetFormats%2A>データ オブジェクトで使用可能なすべての形式の一覧を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public bool GetDataPresent (string format, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(string format, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetDataPresent(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">チェックする形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <param name="autoConvert">
+          <see langword="false" />指定した形式ののみを確認するには<see langword="true" />指定された形式にこのデータ オブジェクトに格納されているデータを変換できるかどうかも確認します。</param>
+        <summary>データで使用可能でまたは指定された形式に変換できるかどうかを確認します。 A<see langword="Boolean" />フラグには、その形式で使用可能ながない場合、データを指定した形式に変換できるかどうかを確認するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />データ、または指定された形式に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetDataPresent%2A>です。  
+  
+ 呼び出す**GetDataPresent** 、指定した書式を呼び出す前にこのデータ オブジェクトで使用できるかどうかを判別<xref:System.Windows.IDataObject.GetData%2A>です。  
+  
+ 呼び出す<xref:System.Windows.IDataObject.GetFormats%2A>データ オブジェクトで使用可能なすべての形式の一覧を取得します。  
+  
+ このメソッドが戻る**true**とき。  
+  
+-   *AutoConvert*パラメーターは**true**とデータ形式で、指定したか、または指定された形式に変換できます。  
+  
+-   *AutoConvert*パラメーターは**false**データが、指定した書式とします。  
+  
+ このメソッドが戻る**false**とき。  
+  
+-   *AutoConvert*パラメーターは**true**し、データを使用できない指定された形式で指定された形式に変換することはできません。  
+  
+-   *AutoConvert*パラメーターは**false**データは指定された形式で使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormats">
+      <MemberSignature Language="C#" Value="public string[] GetFormats ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFormats() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetFormats" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このデータ オブジェクトのデータでは、またはに変換できるすべての形式の一覧を返します。</summary>
+        <returns>このデータ オブジェクトでサポートされている形式の名前を指定する各文字列に、文字列の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetFormats%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormats">
+      <MemberSignature Language="C#" Value="public string[] GetFormats (bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFormats(bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.GetFormats(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="autoConvert">
+          <see langword="true" />すべての形式を取得するデータ オブジェクトに格納されるデータでは、または; に変換できます。<see langword="false" /> (データに格納されていないが、自動的に変換できる形式を除く) の形式のみを取得するデータ オブジェクトに格納されるデータが格納されています。</param>
+        <summary>このデータ オブジェクトにデータが格納されているすべての形式の一覧を返します。 A<see langword="Boolean" />フラグには、データを自動的に変換できる形式も含めるかどうかを示します。</summary>
+        <returns>このデータ オブジェクトでサポートされている形式の名前を指定する各文字列に、文字列の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.GetFormats%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.SetData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">このデータ オブジェクトに格納するデータ。</param>
+        <summary>指定されたデータを自動的にデータの形式に変換するソース オブジェクトの種類から、このデータ オブジェクトに格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.SetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">内のデータを格納する形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <param name="data">このデータ オブジェクトに格納するデータ。</param>
+        <summary>1 つまたは複数の指定したデータ形式と共に、このデータ オブジェクトに指定されたデータを格納します。 データの形式は、文字列によって指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.SetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (Type format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(class System.Type format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.SetData(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />内のデータを格納する形式を指定します。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <param name="data">このデータ オブジェクトに格納するデータ。</param>
+        <summary>1 つまたは複数の指定したデータ形式と共に、このデータ オブジェクトに指定されたデータを格納します。 データの形式がで指定された、<see cref="T:System.Type" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.SetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (string format, object data, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(string format, object data, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IDataObject.SetData(System.String,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">内のデータを格納する形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <param name="data">このデータ オブジェクトに格納するデータ。</param>
+        <param name="autoConvert">
+          <see langword="true" />取得に別の形式に変換するデータを許可するには<see langword="false" />データの取得に別の形式に変換されることを禁止します。</param>
+        <summary>1 つまたは複数の指定したデータ形式と共に、このデータ オブジェクトに指定されたデータを格納します。 このオーバー ロードが含まれています、<see langword="Boolean" />データを取得に別の形式に変換される可能性があるかどうかを示すフラグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.DataObject.SetData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

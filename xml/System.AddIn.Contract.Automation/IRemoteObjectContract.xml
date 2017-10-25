@@ -1,0 +1,86 @@
+<Type Name="IRemoteObjectContract" FullName="System.AddIn.Contract.Automation.IRemoteObjectContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteObjectContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteObjectContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンポーネントがアプリケーション ドメインとプロセス境界を越えてオブジェクトにアクセスする際に使用するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する場合<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>型に、コンポーネントは、コントラクトを使用して、型のオブジェクトの型情報にアクセスします。 コンポーネントを呼び出して型情報にアクセス、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType%2A>を取得するメソッド、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract>です。 <xref:System.AddIn.Contract.Automation.IRemoteTypeContract>インターフェイスは、特定の型およびメンバーについては、アクセスし、メンバーを呼び出すコンポーネントが使用できるコントラクトを定義します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetRemoteType">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteTypeContract GetRemoteType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteTypeContract GetRemoteType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteTypeContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、 <see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" /> 、現在の型を指定する<see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" /> 、現在の型を指定する<see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType%2A> 、リモートのメンバーにアクセスするメソッドがオブジェクトを現在<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>を識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteCast">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument RemoteCast (string canonicalName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument RemoteCast(string canonicalName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteObjectContract.RemoteCast(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="canonicalName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="canonicalName">オブジェクトにキャストする型の正規名。</param>
+        <summary>現在の識別されるオブジェクトをキャスト<see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />指定した型にします。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.RemoteArgument" />キャスト演算の結果を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正規の名前は、GUID などのグローバルに一意の名前です。 形式の文字列\<*アセンブリ名*>、 \<*完全修飾型名*> をお勧めします。 正規名の推奨される形式の例は、"ShapeApp、Microsoft.VisualStudio.Tools.Applications.Samples.ShapeApp.Application"です。  
+  
+ 型の正規名は、コンポーネントの型がパブリッシュされた後に変更できません。 既に型を使用しているクライアントとの間のコンポーネント区切り互換性の将来のバージョンでの型の正規名を変更します。  
+  
+ 推奨<xref:System.AddIn.Contract.Automation.IRemoteObjectContract.RemoteCast%2A>実装スロー、<xref:System.InvalidCastException>キャスト操作が失敗した場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,143 @@
+<Type Name="SyncFromAllServersOptions" FullName="System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions">
+  <TypeSignature Language="C#" Value="public enum SyncFromAllServersOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SyncFromAllServersOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>同期を実行するときは、追加のオプションを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbortIfServerUnavailable">
+      <MemberSignature Language="C#" Value="AbortIfServerUnavailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions AbortIfServerUnavailable = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.AbortIfServerUnavailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>任意のサーバーに接続できない場合、または任意のサーバーに到達できない場合は、同期を中止します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckServerAlivenessOnly">
+      <MemberSignature Language="C#" Value="CheckServerAlivenessOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions CheckServerAlivenessOnly = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.CheckServerAlivenessOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての同期を無効にします。 トポロジが解析され、使用できないか、到達できないサーバーが識別されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CrossSite">
+      <MemberSignature Language="C#" Value="CrossSite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions CrossSite = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.CrossSite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイトの境界を越えてを同期します。 既定では、このメソッドは、自宅のシステムと同じサイト内のドメイン コント ローラーでのみを同期しようとします。 企業フォレスト内のすべてのドメイン コント ローラーと同期しようとするには、このフラグを設定します。 ただし、ドメイン コント ローラーは、同期 (RPC) トランスポートで接続されている場合にのみ同期できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期オプションはありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PushChangeOutward">
+      <MemberSignature Language="C#" Value="PushChangeOutward" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions PushChangeOutward = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.PushChangeOutward" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>推移的レプリケーションを使用してすべてのパートナーにホーム サーバーからの変更をプッシュします。 通常の実行モードからのレプリケーションの方向は、レプリケーション セットの実行の順序が反転させます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipInitialCheck">
+      <MemberSignature Language="C#" Value="SkipInitialCheck" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions SkipInitialCheck = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.SkipInitialCheck" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのサーバーが応答するいると仮定します。 このメソッドの操作を高速になりますが、一部のサーバーが応答していない場合は、一部の推移的レプリケーションが実行されない可能性があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncAdjacentServerOnly">
+      <MemberSignature Language="C#" Value="SyncAdjacentServerOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions SyncAdjacentServerOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions.SyncAdjacentServerOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>推移的なレプリケーションを無効にします。 同期は、隣接するサーバーでのみ実行されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

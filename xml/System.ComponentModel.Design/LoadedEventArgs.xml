@@ -1,0 +1,84 @@
+<Type Name="LoadedEventArgs" FullName="System.ComponentModel.Design.LoadedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class LoadedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LoadedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.LoadedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.DesignSurface.Loaded" /> イベントのデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoadedEventArgs (bool succeeded, System.Collections.ICollection errors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool succeeded, class System.Collections.ICollection errors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LoadedEventArgs.#ctor(System.Boolean,System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="succeeded" Type="System.Boolean" />
+        <Parameter Name="errors" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="succeeded">
+          <see langword="true" />デザイナーの読み込みが成功したことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="errors">デザイナーの読み込み中に発生したエラーのコレクション。</param>
+        <summary><see cref="T:System.ComponentModel.Design.LoadedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Errors" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.LoadedEventArgs.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの読み込み中に発生したエラーのコレクションを取得します。</summary>
+        <value>デザイナーの読み込み中に発生したエラーのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSucceeded">
+      <MemberSignature Language="C#" Value="public bool HasSucceeded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasSucceeded" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.LoadedEventArgs.HasSucceeded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの読み込みが成功したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />デザイナーの読み込みが成功した場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込みをデザイナーを禁止する重大なエラーなかった場合、読み込みにも成功はエラーを持つことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

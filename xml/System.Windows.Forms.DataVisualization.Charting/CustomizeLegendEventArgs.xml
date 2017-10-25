@@ -1,0 +1,116 @@
+<Type Name="CustomizeLegendEventArgs" FullName="System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs">
+  <TypeSignature Language="C#" Value="public class CustomizeLegendEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomizeLegendEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend" />のイベント、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs>クラスが使用されて、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend>イベント。  
+  
+ このクラスには、2 つのプロパティがあります。 <xref:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.LegendItems%2A>プロパティによりを削除または既定およびカスタムの凡例項目の両方を変更して、カスタムの凡例項目を追加します。 このプロパティは、凡例項目の順序を変更するも使用できます。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.LegendName%2A>プロパティがこのイベントを発生させた、凡例の識別に使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomizeLegendEventArgs (System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection legendItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection legendItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="legendItems" Type="System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" />
+      </Parameters>
+      <Docs>
+        <param name="legendItems"><see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs" /> を使用して、<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomizeLegendEventArgs (System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection legendItems, string legendName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection legendItems, string legendName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="legendItems" Type="System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" />
+        <Parameter Name="legendName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="legendItems"><see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" />。</param>
+        <param name="legendName">凡例の名前。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs" /> 、指定したクラス<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" />と凡例の名前。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegendItems">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection LegendItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection LegendItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.LegendItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更またはカスタムの順序を変更および既定の凡例項目を削除するために使用、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend" />イベント。 カスタムの凡例項目を追加するも使用できます。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.LegendItems%2A>プロパティでは、削除するか、既定およびカスタムの凡例項目の両方を変更することができます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend>イベント、およびカスタムの凡例項目を追加します。 凡例項目の順序を変更することもできます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesPointIndex%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesName>プロパティを使用して、既定の凡例項目に関連付けられているデータ要素を決定します。 カスタム アイテムがグラフのデータに関連付けられていないために、これらのプロパティは、カスタムの凡例項目の長さ 0 の文字列を返します。  
+  
+ このプロパティを使用すると、どちらかを決定<xref:System.Windows.Forms.DataVisualization.Charting.Legend>、イベントが発生したため、個人をカスタマイズできます<xref:System.Windows.Forms.DataVisualization.Charting.Legend>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegendName">
+      <MemberSignature Language="C#" Value="public string LegendName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LegendName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomizeLegendEventArgs.LegendName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Legend" />先の凡例を決定するために使用できるオブジェクトがの送信者に対して、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend" />イベント。</summary>
+        <value>A <see langword="string" /> 、関連する名前を表す値<see cref="T:System.Windows.Forms.DataVisualization.Charting.Legend" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,95 @@
+<Type Name="GCLargeObjectHeapCompactionMode" FullName="System.Runtime.GCLargeObjectHeapCompactionMode">
+  <TypeSignature Language="C#" Value="public enum GCLargeObjectHeapCompactionMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GCLargeObjectHeapCompactionMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.GCLargeObjectHeapCompactionMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>[.NET Framework 4.5.1 以上でサポート]  
+  
+ 次のブロッキング ガベージ コレクションが大きなオブジェクト ヒープ (LOH) を圧縮するかどうかを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>プロパティのメンバーである、<xref:System.Runtime.GCLargeObjectHeapCompactionMode>次へのフル ブロッキング ガベージ コレクションも大きなオブジェクト ヒープ (LOH) を圧縮するかどうかを示す列挙です。 既定では、LOH は圧縮されません。 CompactOnce の値は、ブロッキング ガベージ コレクションが LOH を最適化することを示します。 値であり、ガベージ コレクションの後、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>プロパティは既定値に戻ります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompactOnce">
+      <MemberSignature Language="C#" Value="CompactOnce" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLargeObjectHeapCompactionMode CompactOnce = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLargeObjectHeapCompactionMode.CompactOnce" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLargeObjectHeapCompactionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次のブロッキング generation 2 ガベージ コレクション中に圧縮される大きなオブジェクト ヒープ (LOH) です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLargeObjectHeapCompactionMode Default = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLargeObjectHeapCompactionMode.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLargeObjectHeapCompactionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大きなオブジェクト ヒープ (LOH) は圧縮されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,237 @@
+<Type Name="XpsSerializationManager" FullName="System.Windows.Xps.Serialization.XpsSerializationManager">
+  <TypeSignature Language="C#" Value="public class XpsSerializationManager : System.Windows.Xps.Serialization.PackageSerializationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsSerializationManager extends System.Windows.Xps.Serialization.PackageSerializationManager" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Serialization.XpsSerializationManager" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Xps.Serialization.PackageSerializationManager</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XPS XML Paper Specification () シリアライザーの同期を管理するコンバーターを入力します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Serialization.XpsSerializationManager>同期のシリアライザーと型コンバーターのコンテンツを書き込むことを管理、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ <xref:System.Windows.Xps.Serialization.XpsSerializationManagerAsync>非同期のシリアライザーと内容を保存する型コンバーターを管理、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsSerializationManager (System.Windows.Xps.Serialization.BasePackagingPolicy packagingPolicy, bool batchMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Xps.Serialization.BasePackagingPolicy packagingPolicy, bool batchMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.XpsSerializationManager.#ctor(System.Windows.Xps.Serialization.BasePackagingPolicy,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="packagingPolicy" Type="System.Windows.Xps.Serialization.BasePackagingPolicy" />
+        <Parameter Name="batchMode" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="packagingPolicy">シリアル化のリーダーとライターのさまざまな部分を取得するためのメソッドを提供するオブジェクト、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。</param>
+        <param name="batchMode">
+          <see langword="true" />バッチ モードを指定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Windows.Xps.Serialization.XpsSerializationManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public virtual void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.XpsSerializationManager.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての変更をコミットし、バッファー内のすべてのデータを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBatchMode">
+      <MemberSignature Language="C#" Value="public bool IsBatchMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBatchMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Serialization.XpsSerializationManager.IsBatchMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化マネージャーがバッチ モードであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />管理者がバッチ モードである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ モードが 設定されている、`batchMode`のパラメーター、<xref:System.Windows.Xps.Serialization.XpsSerializationManager.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAsXaml">
+      <MemberSignature Language="C#" Value="public override void SaveAsXaml (object serializedObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SaveAsXaml(object serializedObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.XpsSerializationManager.SaveAsXaml(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]保存するオブジェクトをシリアル化します。</param>
+        <summary>指定した保存[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ドキュメント パッケージにオブジェクトをシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontSubsettingCountPolicy">
+      <MemberSignature Language="C#" Value="public void SetFontSubsettingCountPolicy (int countPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontSubsettingCountPolicy(int32 countPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.XpsSerializationManager.SetFontSubsettingCountPolicy(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="countPolicy" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="countPolicy">ページまたはフォント サブセットの同時に処理するドキュメントの数。</param>
+        <summary>ページまたはフォント サブセット化を処理するドキュメントの数を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のフォントのサブセット化`countPolicy`は 1 です。  
+  
+ `countPolicy`ページの数またはドキュメントに依存するいずれかを定義、<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies>に指定された列挙値、<xref:System.Windows.Xps.Serialization.XpsSerializationManager.SetFontSubsettingPolicy%2A>メソッドです。  
+  
+|FontSubsetterCommitPolicy|化|  
+|-------------------------------|-----------------|  
+|<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitEntireSequence>|常に 1 (ドキュメント全体のシーケンス)。|  
+|<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitPerDocument>|ドキュメントの数。|  
+|<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitPerPage>|ページの数。|  
+|<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.None>|該当なし。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontSubsettingPolicy">
+      <MemberSignature Language="C#" Value="public void SetFontSubsettingPolicy (System.Windows.Xps.Serialization.FontSubsetterCommitPolicies policy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontSubsettingPolicy(valuetype System.Windows.Xps.Serialization.FontSubsetterCommitPolicies policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.XpsSerializationManager.SetFontSubsettingPolicy(System.Windows.Xps.Serialization.FontSubsetterCommitPolicies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="policy" Type="System.Windows.Xps.Serialization.FontSubsetterCommitPolicies" />
+      </Parameters>
+      <Docs>
+        <param name="policy">フォントのサブセット化のポリシーを指定する列挙値の 1 つ。</param>
+        <summary>フォントのサブセット化を実行する粒度を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のフォントのサブセット化ポリシーは<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitEntireSequence>します。  
+  
+ 場合内のテキストのフォント グリフ、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント パッケージに保存するドキュメント、ドキュメントのテキストは、任意のコンピューターまたはプリンターには同じですが表示されます。  ドキュメント内のグリフは保存されません、ローカル コンピューターまたはプリンターに必要なフォントがインストールされていない場合は、レンダリング デバイスが別のフォントからのグリフを置き換える必要があります。  グリフの置換と、別のフォントを使用する場合に、テキストの外観を変更できます。  
+  
+ <xref:System.Windows.Xps.Serialization.XpsSerializationManager.SetFontSubsettingPolicy%2A>フォントのサブセット化の粒度を決定します。  
+  
+ <xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitEntireSequence>(既定値) は最も効率的なとが実際に使用する文字だけを格納している 1 つのフォント サブセットを共有するドキュメント シーケンスのすべてのドキュメントのページは、できます。  
+  
+ インターリーブされたドキュメントを作成するときに、ドキュメント シーケンス全体のフォントのサブセット化は、大量のフォントの最終的なサブセットを決定できるまで、完全なドキュメントを保持するためにメモリを要求できます。  <xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitPerPage>または<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitPerDocument>をアプリケーションのメモリがインターリーブされたドキュメントを作成するときの要件を減らすために指定することができます。  
+  
+ ときに`policy`は<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.None>で使用されているすべてのフォントのすべてのグリフ、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントの保存は、文字のグリフが偶数を実際にはテキストで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XpsSerializationPrintTicketRequired">
+      <MemberSignature Language="C#" Value="public event System.Windows.Xps.Serialization.XpsSerializationPrintTicketRequiredEventHandler XpsSerializationPrintTicketRequired;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Xps.Serialization.XpsSerializationPrintTicketRequiredEventHandler XpsSerializationPrintTicketRequired" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Xps.Serialization.XpsSerializationManager.XpsSerializationPrintTicketRequired" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.XpsSerializationPrintTicketRequiredEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]シリアライザー要求、<see cref="T:System.Printing.PrintTicket" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーの詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XpsSerializationProgressChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Xps.Serialization.XpsSerializationProgressChangedEventHandler XpsSerializationProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Xps.Serialization.XpsSerializationProgressChangedEventHandler XpsSerializationProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Xps.Serialization.XpsSerializationManager.XpsSerializationProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.XpsSerializationProgressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページまたはドキュメントにシリアル化が終了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーの詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

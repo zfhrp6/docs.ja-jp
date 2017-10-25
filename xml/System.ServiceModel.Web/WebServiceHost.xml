@@ -1,0 +1,166 @@
+<Type Name="WebServiceHost" FullName="System.ServiceModel.Web.WebServiceHost">
+  <TypeSignature Language="C#" Value="public class WebServiceHost : System.ServiceModel.ServiceHost" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebServiceHost extends System.ServiceModel.ServiceHost" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Web.WebServiceHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ServiceHost</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>A<see cref="T:System.ServiceModel.ServiceHost" />派生クラスでは、Windows Communication Foundation (WCF) の REST プログラミング モデルを補完します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebServiceHost> では、サービスの説明にエンドポイントが見つからない場合、HTTP および HTTPS ベース アドレスについて、サービスのベース アドレスに既定のエンドポイントを自動的に作成します。 ユーザーがエンドポイントを明示的にベース アドレスに構成している場合は、エンドポイントが自動的に作成されることはありません。 <xref:System.ServiceModel.Web.WebServiceHost> は、エンドポイントのバインディングを、安全な仮想ディレクトリで使用するときに、関連付けられたインターネット インフォメーション サービス (IIS) のセキュリティ設定と連携して動作するよう自動的に構成します。  
+  
+ 既定の HTTP エンドポイントを作成するときに、<xref:System.ServiceModel.Web.WebServiceHost> は、HTTP ヘルプ ページと Web サービス記述言語 (WSDL) GET 機能を無効にして、メタデータ エンドポイントが既定の HTTP エンドポイントに干渉しないようにします。  
+  
+ さらに、<xref:System.ServiceModel.Web.WebServiceHost> クラスは、その動作がまだ含まれていない、<xref:System.ServiceModel.Description.WebHttpBehavior> を含むすべてのエンドポイントに <xref:System.ServiceModel.Configuration.WebMessageEncodingElement> を追加します。 サービス上のすべての操作が空の HTTP 要求本体を持つか、HTTP 要求本体をストリームとして扱う場合は、<xref:System.ServiceModel.Web.WebServiceHost> がバインディングの適切なコンテンツ タイプ マッパーを自動的に構成します。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.Web.WebServiceHost> クラスを使用して [!INCLUDE[indigo2](~/includes/indigo2-md.md)] REST プログラミング モデルを利用するサービスをホストする方法を示します。  
+  
+ [!code-csharp[WebServiceHost#0](~/samples/snippets/csharp/VS_Snippets_CFX/webservicehost/cs/program.cs#0)]
+ [!code-vb[WebServiceHost#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/webservicehost/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebServiceHost ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebServiceHost.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Web.WebServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebServiceHost (object singletonInstance, params Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object singletonInstance, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebServiceHost.#ctor(System.Object,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="singletonInstance" Type="System.Object" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="singletonInstance">シングルトン インスタンスとして使用されるサービス インスタンス。</param>
+        <param name="baseAddresses">サービスのベース アドレス。</param>
+        <summary>指定されたシングルトン サーバー インスタンスとベース アドレスを持つ <see cref="T:System.ServiceModel.Web.WebServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `baseAddresses` パラメーターは、1 つ以上のベース アドレスを構成できます。  
+  
+   
+  
+## Examples  
+ 次の例は、このコンストラクターを呼び出す方法を示しています。  
+  
+ [!code-csharp[WebServiceHost#1](~/samples/snippets/csharp/VS_Snippets_CFX/webservicehost/cs/snippets.cs#1)]
+ [!code-vb[WebServiceHost#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/webservicehost/vb/snippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebServiceHost (Type serviceType, params Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebServiceHost.#ctor(System.Type,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="serviceType">サービスの型。</param>
+        <param name="baseAddresses">サービスのベース アドレス。</param>
+        <summary>指定されたサービスの種類とベース アドレスを持つ <see cref="T:System.ServiceModel.Web.WebServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `baseAddresses` パラメーターは、1 つ以上のベース アドレスを構成できます。  
+  
+   
+  
+## Examples  
+ 次の例は、このコンストラクターを呼び出す方法を示しています。  
+  
+ [!code-csharp[WebServiceHost#2](~/samples/snippets/csharp/VS_Snippets_CFX/webservicehost/cs/snippets.cs#2)]
+ [!code-vb[WebServiceHost#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/webservicehost/vb/snippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpening">
+      <MemberSignature Language="C#" Value="protected override void OnOpening ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpening() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebServiceHost.OnOpening" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Web.WebServiceHost" /> インスタンスが開かれるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、次の処理が行われます。  
+  
+1.  <xref:System.ServiceModel.Web.WebServiceHost> によってサービスの説明にエンドポイントが検出されない場合は、サービスのベース アドレスに既定のエンドポイントが作成されます。 <xref:System.ServiceModel.Web.WebServiceHost> は、HTTP ヘルプ ページと WSDL の GET 機能を自動的に無効にして、メタデータ エンドポイントが既定の HTTP エンドポイントに干渉しないようにします。  
+  
+2.  <xref:System.ServiceModel.Web.WebServiceHost> は、<xref:System.ServiceModel.WebHttpBinding> を使用するすべてのエンドポイントを確認し、必要な <xref:System.ServiceModel.Description.WebHttpBehavior>が存在するかどうかを調べます。 存在しない場合は、<xref:System.ServiceModel.Web.WebServiceHost> がエンドポイントに <xref:System.ServiceModel.Description.WebHttpBehavior> を追加します。  
+  
+3.  <xref:System.ServiceModel.Web.WebServiceHost> は、エンドポイントのバインディングを、安全な仮想ディレクトリで使用されるときに、関連した IIS セキュリティ設定と連携するように構成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

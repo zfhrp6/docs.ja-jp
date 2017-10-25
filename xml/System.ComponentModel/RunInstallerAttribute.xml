@@ -1,0 +1,306 @@
+<Type Name="RunInstallerAttribute" FullName="System.ComponentModel.RunInstallerAttribute">
+  <TypeSignature Language="C#" Value="public class RunInstallerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RunInstallerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.RunInstallerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定するかどうか、Visual Studio カスタム アクション インストーラーまたは[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)アセンブリがインストールされているときに呼び出される必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Configuration.Install.Installer>でマークされた、 <xref:System.ComponentModel.RunInstallerAttribute> 'éý' `true`、Visual Studio のカスタム アクションのインストーラー ファイルまたはアセンブリがインストールされているときに呼び出される、InstallUtil.exe はします。 マークされたメンバー、 <xref:System.ComponentModel.RunInstallerAttribute> 'éý'`false`インストーラーは呼び出されません。 既定値は、`true` です。  
+  
+> [!NOTE]
+>  持つプロパティを指定すると、 <xref:System.ComponentModel.RunInstallerAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.RunInstallerAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.RunInstallerAttribute>'éý' `false`、値が<xref:System.ComponentModel.RunInstallerAttribute.No>です。 そのため、コード内でこの属性の値を確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.RunInstallerAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.RunInstallerAttribute.No?displayProperty=nameWithType>です。  
+  
+ 詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、インストーラーを実行することを示す`MyProjectInstaller`です。  
+  
+ [!code-cpp[Classic RunInstallerAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RunInstallerAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RunInstallerAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RunInstallerAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic RunInstallerAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RunInstallerAttribute Example/VB/source.vb#1)]  
+  
+ 次の例のインスタンスを作成する`MyProjectInstaller`です。 クラス、抽出の属性を取得し、<xref:System.ComponentModel.RunInstallerAttribute>インストーラーを実行するかどうかを出力します。  
+  
+ [!code-cpp[Classic RunInstallerAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RunInstallerAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic RunInstallerAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RunInstallerAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic RunInstallerAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RunInstallerAttribute Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RunInstallerAttribute (bool runInstaller);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool runInstaller) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.RunInstallerAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="runInstaller" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="runInstaller">
+          <see langword="true" />アセンブリのインストール中に、インストーラーを起動する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.ComponentModel.RunInstallerAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.RunInstallerAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.RunInstallerAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.RunInstallerAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.RunInstallerAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、既定の可視性を示す<see cref="F:System.ComponentModel.RunInstallerAttribute.No" />です。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性が定数のメンバーに設定されている場合、この値を持つプロパティを設定すると、<xref:System.ComponentModel.RunInstallerAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.RunInstallerAttribute?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.RunInstallerAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>決定するかどうかの指定された値<see cref="T:System.ComponentModel.RunInstallerAttribute" />は現在と同じ<see cref="T:System.ComponentModel.RunInstallerAttribute" />です。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.ComponentModel.RunInstallerAttribute" /> と等しい場合は <see cref="T:System.ComponentModel.RunInstallerAttribute" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.RunInstallerAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ コードを生成<see cref="T:System.ComponentModel.RunInstallerAttribute" />です。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.RunInstallerAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.RunInstallerAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性が既定値であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性がこの属性クラスの既定値である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.RunInstallerAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.RunInstallerAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.RunInstallerAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.RunInstallerAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定する、Visual Studio カスタム アクション インストーラーまたは[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)アセンブリがインストールされているときに呼び出されません。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、この属性の既定の設定です。  
+  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.RunInstallerAttribute> 'éý' `false`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.RunInstallerAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.RunInstallerAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RunInstaller">
+      <MemberSignature Language="C#" Value="public bool RunInstaller { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RunInstaller" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.RunInstallerAttribute.RunInstaller" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのインストール中に、インストーラーを起動するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />アセンブリのインストール中に、インストーラーを起動する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.RunInstallerAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.RunInstallerAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.RunInstallerAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.RunInstallerAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定する、Visual Studio カスタム アクション インストーラーまたは[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)アセンブリがインストールされているときに呼び出される必要があります。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.RunInstallerAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.RunInstallerAttribute.Yes>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.RunInstallerAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

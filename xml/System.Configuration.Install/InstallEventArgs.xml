@@ -1,0 +1,127 @@
+<Type Name="InstallEventArgs" FullName="System.Configuration.Install.InstallEventArgs">
+  <TypeSignature Language="C#" Value="public class InstallEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InstallEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.InstallEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントのデータを提供します。 <see cref="E:System.Configuration.Install.Installer.BeforeInstall" />、 <see cref="E:System.Configuration.Install.Installer.AfterInstall" />、 <see cref="E:System.Configuration.Install.Installer.Committing" />、 <see cref="E:System.Configuration.Install.Installer.Committed" />、 <see cref="E:System.Configuration.Install.Installer.BeforeRollback" />、 <see cref="E:System.Configuration.Install.Installer.AfterRollback" />、 <see cref="E:System.Configuration.Install.Installer.BeforeUninstall" />、<see cref="E:System.Configuration.Install.Installer.AfterUninstall" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.InstallEventArgs>含まれています、<xref:System.Collections.IDictionary>インストールの現在の状態に関する情報を保持します。 <xref:System.Configuration.Install.Installer.BeforeInstall>、 <xref:System.Configuration.Install.Installer.AfterInstall>、 <xref:System.Configuration.Install.Installer.Committing>、 <xref:System.Configuration.Install.Installer.Committed>、 <xref:System.Configuration.Install.Installer.BeforeRollback>、 <xref:System.Configuration.Install.Installer.AfterRollback>、 <xref:System.Configuration.Install.Installer.BeforeUninstall>、および<xref:System.Configuration.Install.Installer.AfterUninstall>イベント ハンドラーは、この情報を使用します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallEventArgs.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.InstallEventArgs.SavedState%2A>のプロパティ、<xref:System.Configuration.Install.InstallEventArgs>クラスです。  
+  
+ 呼ばれる 2 つの新しいイベントが`BeforeCommit`と`AfterCommit`です。 これらのイベントのハンドラーがという名前の保護されたメソッドから呼び出される`OnBeforeCommit`と`OnAfterCommit`それぞれします。 これらのイベントが発生したときに、<xref:System.Configuration.Install.Installer.Commit%2A>メソッドが呼び出されます。  
+  
+ [!code-cpp[InstallEventArgs#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallEventArgs/CPP/installeventargs.cpp#1)]
+ [!code-csharp[InstallEventArgs#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallEventArgs/CS/installeventargs.cs#1)]
+ [!code-vb[InstallEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallEventArgs/VB/installeventargs.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.InstallEventArgs" />クラス、およびリーフ、<see cref="P:System.Configuration.Install.InstallEventArgs.SavedState" />プロパティが空です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallEventArgs.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.InstallEventArgs.SavedState%2A>のプロパティ、<xref:System.Configuration.Install.InstallEventArgs>クラスです。  
+  
+ 呼ばれる 2 つの新しいイベントが`BeforeCommit`と`AfterCommit`です。 これらのイベントのハンドラーがという名前の保護されたメソッドから呼び出される`OnBeforeCommit`と`OnAfterCommit`それぞれします。 これらのイベントが発生したときに、<xref:System.Configuration.Install.Installer.Commit%2A>メソッドが呼び出されます。  
+  
+ [!code-cpp[InstallEventArgs#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallEventArgs/CPP/installeventargs.cpp#1)]
+ [!code-csharp[InstallEventArgs#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallEventArgs/CS/installeventargs.cs#1)]
+ [!code-vb[InstallEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallEventArgs/VB/installeventargs.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallEventArgs (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallEventArgs.#ctor(System.Collections.IDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />インストールの現在の状態を表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.InstallEventArgs" />クラス、しの値を指定、<see cref="P:System.Configuration.Install.InstallEventArgs.SavedState" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallEventArgs.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.InstallEventArgs.SavedState%2A>のプロパティ、<xref:System.Configuration.Install.InstallEventArgs>クラスです。  
+  
+ 呼ばれる 2 つの新しいイベントが`BeforeCommit`と`AfterCommit`です。 これらのイベントのハンドラーがという名前の保護されたメソッドから呼び出される`OnBeforeCommit`と`OnAfterCommit`それぞれします。 これらのイベントが発生したときに、<xref:System.Configuration.Install.Installer.Commit%2A>メソッドが呼び出されます。  
+  
+ [!code-cpp[InstallEventArgs#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallEventArgs/CPP/installeventargs.cpp#1)]
+ [!code-csharp[InstallEventArgs#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallEventArgs/CS/installeventargs.cs#1)]
+ [!code-vb[InstallEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallEventArgs/VB/installeventargs.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SavedState">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary SavedState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary SavedState" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.InstallEventArgs.SavedState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IDictionary" />インストールの現在の状態を表すです。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />インストールの現在の状態を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallEventArgs.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.InstallEventArgs.SavedState%2A>のプロパティ、<xref:System.Configuration.Install.InstallEventArgs>クラスです。  
+  
+ 呼ばれる 2 つの新しいイベントが`BeforeCommit`と`AfterCommit`です。 これらのイベントのハンドラーがという名前の保護されたメソッドから呼び出される`OnBeforeCommit`と`OnAfterCommit`それぞれします。 これらのイベントが発生したときに、<xref:System.Configuration.Install.Installer.Commit%2A>メソッドが呼び出されます。  
+  
+ [!code-cpp[InstallEventArgs#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallEventArgs/CPP/installeventargs.cpp#1)]
+ [!code-csharp[InstallEventArgs#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallEventArgs/CS/installeventargs.cs#1)]
+ [!code-vb[InstallEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallEventArgs/VB/installeventargs.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

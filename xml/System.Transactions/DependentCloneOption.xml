@@ -1,0 +1,92 @@
+<Type Name="DependentCloneOption" FullName="System.Transactions.DependentCloneOption">
+  <TypeSignature Language="C#" Value="public enum DependentCloneOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DependentCloneOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.DependentCloneOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>作成する従属トランザクションの種類を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 依存するトランザクションを使用して取得できます、<xref:System.Transactions.Transaction.DependentClone%2A>メソッドで、<xref:System.Transactions.DependentCloneOption>作成に依存するトランザクションの種類を制御するパラメーターです。  この列挙体の使用方法の詳細については、次を参照してください。 [DependentTransaction で同時実行を管理する](http://msdn.microsoft.com/en-us/bdad8468-2a90-4b81-8375-278067120cab)です。  
+  
+   
+  
+## Examples  
+ 次の例では、依存するトランザクションを作成する方法を示します。  
+  
+ [!code-csharp[Tx_DependentTx#1](~/samples/snippets/csharp/VS_Snippets_CFX/tx_dependenttx/cs/dependenttx.cs#1)]
+ [!code-vb[Tx_DependentTx#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/tx_dependenttx/vb/dependenttx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BlockCommitUntilComplete">
+      <MemberSignature Language="C#" Value="BlockCommitUntilComplete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.DependentCloneOption BlockCommitUntilComplete = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.DependentCloneOption.BlockCommitUntilComplete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.DependentCloneOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存するトランザクションが、親のトランザクションがタイムアウトするまで、トランザクションのコミット処理をブロックまたは<see cref="M:System.Transactions.DependentTransaction.Complete" />と呼びます。 ここでは、トランザクションで追加の作業を行うことができ、新しい参加リストを作成することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RollbackIfNotComplete">
+      <MemberSignature Language="C#" Value="RollbackIfNotComplete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.DependentCloneOption RollbackIfNotComplete = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.DependentCloneOption.RollbackIfNotComplete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.DependentCloneOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存するトランザクションは、トランザクションを自動的に中止する前に、親のトランザクションで Commit が呼び出された場合<see cref="M:System.Transactions.DependentTransaction.Complete" />と呼びます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

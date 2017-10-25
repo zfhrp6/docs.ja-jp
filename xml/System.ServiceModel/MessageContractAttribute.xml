@@ -1,0 +1,245 @@
+<Type Name="MessageContractAttribute" FullName="System.ServiceModel.MessageContractAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MessageContractAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageContractAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageContractAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SOAP メッセージに対応する厳密に型指定されたクラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageContractAttribute> 属性を使用して、特定のメッセージの SOAP エンベロープの構成を指定します。 この後、サービスは、サービス操作でこのメッセージをパラメーターや戻り値の型として使用できます。 既定の SOAP エンベロープ自体を変更せずに SOAP 本体のコンテンツのシリアル化を制御する方法の詳細については、次を参照してください。 <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>、[サービス コントラクトのデータ転送を指定する](~/docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)、および[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+> [!NOTE]
+>  カスタム メッセージ型は、サービス操作内で通常のシリアル化可能パラメーターと共に使用することはできません。 カスタム メッセージ型または <xref:System.ServiceModel.Channels.Message> オブジェクト以外のシリアル化可能パラメーターのいずれかを使用します。 詳細についてを参照してください、[サービス コントラクトのデータ転送を指定する](~/docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)です。  
+  
+ 型のメッセージ コントラクトを実装するには、<xref:System.ServiceModel.MessageContractAttribute> を使用してメッセージ コントラクトに注釈を追加し、<xref:System.ServiceModel.MessageBodyMemberAttribute>、<xref:System.ServiceModel.MessageHeaderAttribute>、または <xref:System.ServiceModel.MessageHeaderArrayAttribute> を使用して、クラスの 1 つ以上のフィールドまたはプロパティに注釈を追加します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> はメッセージ コントラクトの属性ではないため、<xref:System.ServiceModel.MessageContractAttribute> と組み合わせて使用することはできません。  
+  
+ <xref:System.ServiceModel.OperationContractAttribute.Action%2A> プロパティと <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> プロパティを使用して、SOAP メッセージ内の `<Action>` 要素の値を指定します。  
+  
+-   <xref:System.ServiceModel.MessageContractAttribute.HasProtectionLevel%2A> プロパティと<xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A> プロパティを使用して、SOAP メッセージ型に保護レベルが設定されるかどうかを示し、設定される場合は、その内容を示します。  
+  
+-   <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> プロパティを使用して、メッセージ本文にラッパー要素があるかどうかを示します。ある場合は、<xref:System.ServiceModel.MessageContractAttribute.WrapperName%2A> プロパティと <xref:System.ServiceModel.MessageContractAttribute.WrapperNamespace%2A> プロパティを使用して、ラッパー要素の名前と名前空間をそれぞれ指定します。  
+  
+ 詳細については、次を参照してください。[メッセージ コントラクトを使用して](~/docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.MessageContractAttribute> を使用して要求メッセージおよび応答メッセージの両方の SOAP エンベロープ構造を制御し、応答メッセージの SOAP ヘッダーを作成するために <xref:System.ServiceModel.MessageHeaderAttribute> を使用し、要求メッセージおよび応答メッセージの両方の本文を指定するために <xref:System.ServiceModel.MessageBodyMemberAttribute> を使用しています。 このコード例には、送信時の各メッセージの例が含まれています。  
+  
+ [!code-csharp[MessageHeaderAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/messageheaderattribute/cs/services.cs#1)]
+ [!code-vb[MessageHeaderAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/messageheaderattribute/vb/services.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageContractAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageContractAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageContractAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractAttribute.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージに保護レベルが割り当てられているかどうかを示す値を取得します。</summary>
+        <value>
+          メッセージの暗号化、署名、または両方を行う必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定が `true` の場合、メッセージの保護レベルは <xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A> の値になります。 保護レベル、前提条件、およびスコープに関する詳細については、「[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWrapped">
+      <MemberSignature Language="C#" Value="public bool IsWrapped { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWrapped" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractAttribute.IsWrapped" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ本文にラッパー要素があるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          メッセージ本文にラッパー要素がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ本文がその中にシリアル化されるラッパー要素を抑制するには、<xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> の値を `false` に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractAttribute.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの暗号化、署名、または両方が必要かどうかを指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Net.Security.ProtectionLevel" /> 値のいずれか。 既定値は、<see cref="F:System.Net.Security.ProtectionLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 保護レベル、前提条件、およびスコープに関する詳細については、「[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定が <see cref="T:System.Net.Security.ProtectionLevel" /> 値のいずれでもない場合に、プロパティに渡される値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapperName">
+      <MemberSignature Language="C#" Value="public string WrapperName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WrapperName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractAttribute.WrapperName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ本文のラッパー要素の名前を取得または設定します。</summary>
+        <value>メッセージ本文のラッパー要素の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageContractAttribute.WrapperName%2A> プロパティを使用して、ラッパー要素の名前を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapperNamespace">
+      <MemberSignature Language="C#" Value="public string WrapperNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WrapperNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageContractAttribute.WrapperNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ本文のラッパー要素の名前空間を取得または設定します。</summary>
+        <value>ラッパー要素の名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageContractAttribute.WrapperNamespace%2A> プロパティを使用して、ラッパー要素の名前空間を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.MessageContractAttribute> を使用して要求メッセージおよび応答メッセージの両方の SOAP エンベロープ構造を制御し、応答メッセージの SOAP ヘッダーを作成するために <xref:System.ServiceModel.MessageHeaderAttribute> を使用し、要求メッセージおよび応答メッセージの両方の本文を指定するために <xref:System.ServiceModel.MessageBodyMemberAttribute> を使用しています。 このコード例には、送信時の各メッセージの例が含まれています。  
+  
+ [!code-csharp[MessageHeaderAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/messageheaderattribute/cs/services.cs#1)]
+ [!code-vb[MessageHeaderAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/messageheaderattribute/vb/services.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

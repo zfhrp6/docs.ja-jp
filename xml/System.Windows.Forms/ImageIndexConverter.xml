@@ -1,0 +1,250 @@
+<Type Name="ImageIndexConverter" FullName="System.Windows.Forms.ImageIndexConverter">
+  <TypeSignature Language="C#" Value="public class ImageIndexConverter : System.ComponentModel.Int32Converter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImageIndexConverter extends System.ComponentModel.Int32Converter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ImageIndexConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Int32Converter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列からイメージのインデックスのデータの変換を行う型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ImageIndexConverter>クラスを使用して変換のインデックス値、<xref:System.Windows.Forms.ImageList>他のデータ型と通常<xref:System.String>です。 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+> [!NOTE]
+>  通常を直接インスタンスを作成しないの<xref:System.Windows.Forms.ImageIndexConverter>です。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>します。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageIndexConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageIndexConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスと初期化、<see cref="T:System.Windows.Forms.ImageIndexConverter" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常を直接インスタンスを作成しないの<xref:System.Windows.Forms.ImageIndexConverter>です。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>します。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageIndexConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />ロケール情報を提供します。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値のオブジェクトを 32 ビット符号付き整数に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型コンバーターのみ変換できます、32 ビット符号付き整数オブジェクトから文字列。  
+  
+ `context`からこの型コンバーターが呼び出されている環境に関する追加情報を抽出するために使用できます。 可能性があります`null`ので、常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">変換を実行できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageIndexConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこの型コンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />ロケール情報を提供します。</param>
+        <param name="value">として表されるインデックスは、通常、変換対象のオブジェクト、<see cref="T:System.Int32" />です。</param>
+        <param name="destinationType">多くの場合、オブジェクトに変換する型、<see cref="T:System.String" />です。</param>
+        <summary>指定したオブジェクトを指定した型に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装では、として表されるインデックス値を変換できるのみ、<xref:System.Int32>を<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destinationType" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">指定した<paramref name="value" />変換できませんでしたを指定した<paramref name="destinationType" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換機能を提供するには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" />からこの型コンバーターが呼び出されている環境に関する追加情報を抽出するパラメーターを使用することができます。 可能性があります<see langword="null" />ので、常に、戻り値を確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageIndexConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこの型コンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>指定した書式指定コンテキストに関連付けられているイメージ リストの標準的なインデックス値を返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />有効なインデックス値の標準セットを保持します。 イメージ リストが見つからない場合、このコレクションには、値が -1 である単一オブジェクトが入ります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられているイメージ リストのインデックス値のコレクションを返します、<xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A?displayProperty=nameWithType>のプロパティ、`context`パラメーター。 場合、<xref:System.Windows.Forms.ImageList>が見つからない、このような一覧については、コンポーネントの親が検索されます。  
+  
+ 通常、<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValuesSupported%2A>メソッドが呼び出されて使用が試行する前に、<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValues%2A>と<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValuesExclusive%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageIndexConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">フォーマッタ コンテキスト。</param>
+        <summary>標準値のリストがから返されたかどうかを判断、<see cref="Overload:System.Windows.Forms.ImageIndexConverter.GetStandardValues" />メソッドは、排他的なリスト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="Overload:System.Windows.Forms.ImageIndexConverter.GetStandardValues" />メソッドは、有効な値の排他的なリストを返します。 それ以外の場合、<see langword="false" />です。 この実装は常に返します<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって一覧が返される場合、<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValues%2A>メソッドが排他的なし、その他の値も有効ではありません。 これは、列挙型の標準的なです。 リストが排他的なかどうかは、さらに、標準の一覧の値を他の有効な値がある<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValues%2A>を提供します。  
+  
+ このメソッドは常に返します、この型コンバーターに実装された`false`です。  
+  
+ 通常、<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValuesSupported%2A>メソッドが呼び出されて使用が試行する前に、<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValues%2A>と<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValuesExclusive%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageIndexConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこの型コンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>型コンバーターが、一覧から選択できる値の標準セットをサポートしているかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="Overload:System.Windows.Forms.ImageIndexConverter.GetStandardValues" />メソッドを返します、標準的な値の設定、それ以外の<see langword="false" />します。 常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに実装されている<xref:System.Windows.Forms.ImageIndexConverter.GetStandardValuesSupported%2A>は常に返します`true`このオブジェクトは、一覧から選択できるイメージのインデックス値の標準セットをサポートしています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeNoneAsStandardValue">
+      <MemberSignature Language="C#" Value="protected virtual bool IncludeNoneAsStandardValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeNoneAsStandardValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageIndexConverter.IncludeNoneAsStandardValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see langword="none" />または<see langword="null" />で値が正しく、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />コレクション。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="none" />または<see langword="null" />値は、それ以外の標準値コレクションで有効な<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、常に返しますに実装されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

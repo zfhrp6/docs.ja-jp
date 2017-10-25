@@ -1,0 +1,98 @@
+<Type Name="UIPermissionClipboard" FullName="System.Security.Permissions.UIPermissionClipboard">
+  <TypeSignature Language="C#" Value="public enum UIPermissionClipboard" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed UIPermissionClipboard extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.UIPermissionClipboard" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>呼び出し元のコードに許可されているクリップボードへのアクセスの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って<xref:System.Security.Permissions.UIPermission>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllClipboard">
+      <MemberSignature Language="C#" Value="AllClipboard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionClipboard AllClipboard = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionClipboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリップボードは、制限なく使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoClipboard">
+      <MemberSignature Language="C#" Value="NoClipboard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionClipboard NoClipboard = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionClipboard.NoClipboard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionClipboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリップボードを使用することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnClipboard">
+      <MemberSignature Language="C#" Value="OwnClipboard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionClipboard OwnClipboard = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionClipboard.OwnClipboard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionClipboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリップボードにデータを格納する機能 (<see langword="Copy" />、 <see langword="Cut" />) は制限されません。 組み込みコントロールを受け入れる<see langword="Paste" />、テキスト ボックスなど、クリップボード データを受け入れることができますが、ユーザー コントロール、クリップボードをプログラムによって読み込む必要があることはできません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

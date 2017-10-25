@@ -1,0 +1,46 @@
+<Type Name="NotifyInputEventHandler" FullName="System.Windows.Input.NotifyInputEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void NotifyInputEventHandler(object sender, NotifyInputEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NotifyInputEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.NotifyInputEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.NotifyInputEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す<see cref="E:System.Windows.Input.InputManager.PreNotifyInput" />と<see cref="E:System.Windows.Input.InputManager.PostNotifyInput" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力のステージング領域への入力を処理する[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]イベント。  
+  
+ <xref:System.Windows.Input.NotifyInputEventHandler>と共に使用される、<xref:System.Windows.Input.InputManager.PreNotifyInput>と<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

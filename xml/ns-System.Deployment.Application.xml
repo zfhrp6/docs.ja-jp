@@ -1,0 +1,15 @@
+<Namespace Name="System.Deployment.Application">
+  <Docs>
+    <summary><see cref="N:System.Deployment.Application" />名前空間を ClickOnce アプリケーションにカスタムのアップグレード動作をプログラムすることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この名前空間内のキー クラス<xref:System.Deployment.Application.ApplicationDeployment>です。 配置に使用して、使用可能な更新プログラムがあるかどうかをテストすることができます、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>または<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync%2A>メソッド; 後者の方法が発生し、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted>イベントが正常に完了したことです。 <xref:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate%2A>そのバージョン番号と現在のユーザーの必要な更新プログラムであるかどうかなど、更新プログラムに関する重要な情報を返します。 更新プログラムがある場合を使用してインストールできます<xref:System.Deployment.Application.ApplicationDeployment.Update%2A>または<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>; 後者のメソッド、<xref:System.Deployment.Application.ApplicationDeployment.UpdateCompleted>更新プログラムのインストールが完了した後にイベント。 大きな更新プログラムを介して進行状況の通知を受け取ることができます、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>と<xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>イベント内の情報を使用して<xref:System.ComponentModel.ProgressChangedEventArgs>ダウンロードの状態のユーザーに通知します。  
+  
+ 使用することも<xref:System.Deployment.Application.ApplicationDeployment>大規模なファイルおよび必要に応じてアセンブリをダウンロードします。 これらのファイルは、インストール時にダウンロードされないように、配置のアプリケーション マニフェスト内で"optional"としてマークする必要があります。 使用して、アプリケーションの期間内に任意の時点でファイルをダウンロードすることができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>または<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>メソッドです。 イベント ハンドラーを指定することによってメモリに読み込まれる前に、アセンブリをダウンロードすることができます、<xref:System.AppDomain.AssemblyResolve>でイベントを<xref:System.AppDomain>クラスです。 詳細については、「[チュートリアル : デザイナーを使用し、ClickOnce 配置 API で必要に応じてアセンブリをダウンロードする](http://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

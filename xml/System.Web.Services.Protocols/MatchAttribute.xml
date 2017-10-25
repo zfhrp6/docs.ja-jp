@@ -1,0 +1,229 @@
+<Type Name="MatchAttribute" FullName="System.Web.Services.Protocols.MatchAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MatchAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MatchAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.MatchAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テキストのパターン マッチにより一致した属性を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストのパターン マッチにより既存の HTML を活用する XML Web サービス コンテンツの正規表現を使用して解析します。 XML Web サービスは、一致する要素を使用してサービスの説明で解析するコンテンツを指定します。 一致要素のいくつかのアイテムを指定します。 ページかどうか、解析する必要があります、大文字と小文字、および正規表現に一致するコンテンツのインスタンスの数を返す必要が既存の HTML の内容を解析するための正規表現。 クライアントは、Wsdl.exe ツールを使用してプロキシ クラスを作成、ときに、プロキシ クラスのメソッドが含まれて、<xref:System.Web.Services.Protocols.MatchAttribute>サービスの説明で見つかった一致する要素を説明します。  
+  
+ テキストのパターン一致の詳細については、次を参照してください[&#91;\< 。topic://cpconcreatingclientsthatparsecontentofotherwebpages > & #93 です。](http://msdn.microsoft.com/en-us/7a3be8ac-c770-43fa-8525-e318a1c9f0bf).  
+  
+   
+  
+## Examples  
+ [!code-cpp[MatchAttribute#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#1)]
+ [!code-csharp[MatchAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#1)]
+ [!code-vb[MatchAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MatchAttribute (string pattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string pattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MatchAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pattern">照合するパターンを表す文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.MatchAttribute" />クラスの指定されたパターンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.Services.Protocols.MatchAttribute>クラス、指定されたパターンを使用します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.Services.Protocols.MatchAttribute>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|パターン|`pattern` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ [!code-cpp[MatchAttribute#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#2)]
+ [!code-csharp[MatchAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#2)]
+ [!code-vb[MatchAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public int Capture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Capture" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MatchAttribute.Capture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグループ内の一致のインデックスを表す値を設定します。</summary>
+        <value>グループ内の一致のインデックスを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MatchAttribute#5](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#5)]
+ [!code-csharp[MatchAttribute#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#5)]
+ [!code-vb[MatchAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public int Group { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Group" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MatchAttribute.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連する一致のグループ化を表す値を設定します。</summary>
+        <value>関連する一致のグループ化を表す値</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Services.Protocols.MatchAttribute.Group%2A>プロパティに一致するものが属するグループを指定します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MatchAttribute#6](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#6)]
+ [!code-csharp[MatchAttribute#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#6)]
+ [!code-vb[MatchAttribute#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="public bool IgnoreCase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreCase" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MatchAttribute.IgnoreCase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または照合するパターンが大文字小文字を区別するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />大文字と小文字が一致する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MatchAttribute#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#3)]
+ [!code-csharp[MatchAttribute#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#3)]
+ [!code-vb[MatchAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxRepeats">
+      <MemberSignature Language="C#" Value="public int MaxRepeats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxRepeats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MatchAttribute.MaxRepeats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、一致した値を返すの最大数を設定します。</summary>
+        <value>一致した値を返すの最大数。 既定値は-1 をすべての値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 を指定すると、最初の一致だけを返します。 -1 を指定すると、すべての一致を返します。 さらに、値-1 に相当する ' *'、正規表現でします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MatchAttribute#7](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#7)]
+ [!code-csharp[MatchAttribute#7](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#7)]
+ [!code-vb[MatchAttribute#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public string Pattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MatchAttribute.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に一致するパターンを表す正規表現。</summary>
+        <value>照合するパターンを表す正規表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Services.Protocols.MatchAttribute.Pattern%2A>プロパティに一致する値を表す正規表現を指定します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MatchAttribute#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MatchAttribute/CPP/SvcClient_MatchAttribute.cpp#4)]
+ [!code-csharp[MatchAttribute#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MatchAttribute/CS/SvcClient_MatchAttribute.cs#4)]
+ [!code-vb[MatchAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MatchAttribute/VB/SvcClient_MatchAttribute.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

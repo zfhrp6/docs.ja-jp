@@ -1,0 +1,282 @@
+<Type Name="IHelpService" FullName="System.ComponentModel.Design.IHelpService">
+  <TypeSignature Language="C#" Value="public interface IHelpService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHelpService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IHelpService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ヘルプ トピックを表示し、追加、およびデザイン時にヘルプ キーワードを削除するには、メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン時環境では、ユーザーが f1 キーを押したときに表示される関連するヘルプ トピックを検索しようとするヘルプ システムを提供します。 ヘルプ システムでは、ヘルプが要求された場合に、関連するトピックを識別するために使用される現在のコンテキスト キーワードのセットを保持します。 既定では、キーワードでは、選択したクラスのオブジェクトと、デザイン時環境でのオブジェクトのプロパティに関連付けられます。 コンポーネントやプロパティの既定のキーワードは、その完全修飾クラス名またはプロパティ名です。 特定のキーワードは、複数のオブジェクトが選択されている場合など、特定のモードに関連付けられてもします。 外部ヘルプ プロバイダー用に構成するでは、カスタム ヘルプ コレクションは、デザイン時環境と統合され、ドキュメント プロバイダーは、項目の完全修飾型またはメンバー名で構成されるキーワードを使用して特定のコンポーネントのクラスまたはプロパティに関するトピックを関連付けることができます。  
+  
+ <xref:System.ComponentModel.Design.IHelpService>指定されたキーワードを使用して、使用して、ヘルプ サービスを呼び出すために使用できる、<xref:System.ComponentModel.Design.IHelpService.ShowHelpFromKeyword%2A>メソッド、またはを使用して指定された URL からのヘルプ トピックを呼び出すため、<xref:System.ComponentModel.Design.IHelpService.ShowHelpFromUrl%2A>メソッドです。  
+  
+ <xref:System.ComponentModel.Design.IHelpService>こともできますを追加またはデザイン時にヘルプ キーワードを削除します。 コンポーネントまたはデザイン時の完全修飾型または、選択範囲のメンバー名で構成される既定のコンテキスト キーワードを設定し、以前選択されているいずれかのキーワードを削除し、不要になった選択したコンポーネントのプロパティまたはプロパティを選択します。  
+  
+ ヘルプ システムがカスタム ヘルプ キーワードを自動的に削除しないために、適用されなくなったときにカスタム キーワードを明示的に削除する必要があります。 によって定義されたイベントを監視することができます、<xref:System.ComponentModel.Design.ISelectionService>コンポーネントの選択が変更された時点を決定するインターフェイスです。 これらのイベントに基づきが選択されているときに、コンポーネントのヘルプ コンテキスト属性を追加および選択範囲には不要になったコンポーネントが含まれている場合、ヘルプ コンテキストの属性を削除します。  
+  
+   
+  
+## Examples  
+ 次の例を使用するデザイナー、<xref:System.ComponentModel.Design.IHelpService>を追加して、含まれているコントロールのヘルプ コンテキストの属性を削除します。 このサンプルを使用するクラス ライブラリをコンパイルし、コントロールのインスタンスを追加、<xref:System.Windows.Forms.Form>です。 [デザイン] ビュー コンポーネントを選択し、F1 キーを押すとは、関連するヘルプ トピックが最新のヘルプ コンテキスト キーワードまたはキーワードに基づいて検索を試みます。 コンポーネントを右クリックし、ショートカット メニューに表示されるコマンドは 2 つのカスタムを含む<xref:System.ComponentModel.Design.DesignerVerb>という名前のコマンド`Add IHelpService Help Keyword`と`Remove IHelpService Help Keyword`です。 追加または"IHelpService"は、生成しようとしています。 値のヘルプ コンテキスト キーワードを削除するこれらのコマンドを使用することができます、<xref:System.ComponentModel.Design.IHelpService>トピック f1 キーが押されるとします。  
+  
+ [!code-cpp[IHelpServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IHelpServiceExample/CPP/source.cpp#1)]
+ [!code-csharp[IHelpServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IHelpServiceExample/CS/source.cs#1)]
+ [!code-vb[IHelpServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IHelpServiceExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddContextAttribute">
+      <MemberSignature Language="C#" Value="public void AddContextAttribute (string name, string value, System.ComponentModel.Design.HelpKeywordType keywordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddContextAttribute(string name, string value, valuetype System.ComponentModel.Design.HelpKeywordType keywordType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.AddContextAttribute(System.String,System.String,System.ComponentModel.Design.HelpKeywordType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="keywordType" Type="System.ComponentModel.Design.HelpKeywordType" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加する属性の名前。</param>
+        <param name="value">属性の値。</param>
+        <param name="keywordType">列挙体からのキーワードの種類<see cref="T:System.ComponentModel.Design.HelpKeywordType" />です。</param>
+        <summary>コンテキストの属性をドキュメントに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーに状況依存のヘルプを提供するコンテキスト属性が使用されます。 デザイナーのホストは、特定のコンポーネントおよびプロパティの使用可能なヘルプ属性から自動的にコンテキストの属性を追加します。 このメソッドでは、さらに状況依存のヘルプをカスタマイズすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContextAttributes">
+      <MemberSignature Language="C#" Value="public void ClearContextAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ClearContextAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.ClearContextAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドキュメントからすべての既存のコンテキスト属性を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLocalContext">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IHelpService CreateLocalContext (System.ComponentModel.Design.HelpContextType contextType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.IHelpService CreateLocalContext(valuetype System.ComponentModel.Design.HelpContextType contextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.CreateLocalContext(System.ComponentModel.Design.HelpContextType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IHelpService</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.ComponentModel.Design.HelpContextType" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">追加するサブコンテキストの優先順位の種類。</param>
+        <summary>ローカルの作成<see cref="T:System.ComponentModel.Design.IHelpService" />サブコンテキストを管理します。</summary>
+        <returns>新しく作成された <see cref="T:System.ComponentModel.Design.IHelpService" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveContextAttribute">
+      <MemberSignature Language="C#" Value="public void RemoveContextAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveContextAttribute(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.RemoveContextAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除する属性の名前。</param>
+        <param name="value">削除する属性の値。</param>
+        <summary>以前に追加されたコンテキストの属性を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLocalContext">
+      <MemberSignature Language="C#" Value="public void RemoveLocalContext (System.ComponentModel.Design.IHelpService localContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveLocalContext(class System.ComponentModel.Design.IHelpService localContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.RemoveLocalContext(System.ComponentModel.Design.IHelpService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localContext" Type="System.ComponentModel.Design.IHelpService" />
+      </Parameters>
+      <Docs>
+        <param name="localContext">ローカル コンテキスト<see cref="T:System.ComponentModel.Design.IHelpService" />を削除します。</param>
+        <summary>作成されたコンテキストを削除<see cref="M:System.ComponentModel.Design.IHelpService.CreateLocalContext(System.ComponentModel.Design.HelpContextType)" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelpFromKeyword">
+      <MemberSignature Language="C#" Value="public void ShowHelpFromKeyword (string helpKeyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowHelpFromKeyword(string helpKeyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.ShowHelpFromKeyword(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="helpKeyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="helpKeyword">表示するヘルプ トピックのキーワードです。</param>
+        <summary>指定したキーワードに対応するヘルプ トピックを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Studio 統合開発環境のヘルプ システムには、トピックが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelpFromUrl">
+      <MemberSignature Language="C#" Value="public void ShowHelpFromUrl (string helpUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowHelpFromUrl(string helpUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IHelpService.ShowHelpFromUrl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="helpUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="helpUrl">表示するヘルプ トピックの URL です。</param>
+        <summary>指定した URL に対応するヘルプ トピックを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Studio 統合開発環境のヘルプ システムには、トピックが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

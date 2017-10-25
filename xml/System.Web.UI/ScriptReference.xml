@@ -1,0 +1,375 @@
+<Type Name="ScriptReference" FullName="System.Web.UI.ScriptReference">
+  <TypeSignature Language="C#" Value="public class ScriptReference : System.Web.UI.ScriptReferenceBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScriptReference extends System.Web.UI.ScriptReferenceBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ScriptReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ScriptReferenceBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Path")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET Web ページを使用するためのように ECMAScript (JavaScript) ファイルを登録します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録することによって、ASP.NET Web ページ上の JavaScript ファイルを含めることができます、<xref:System.Web.UI.ScriptReference>オブジェクト。 Web サイトの .js ファイル (静的なスクリプト ファイル) として配置されているスクリプト ファイルを登録することができます。 アセンブリ内のリソースとして埋め込まれているスクリプト ファイルを登録することもできます。 スクリプト ファイルを登録すると、Web ページ上のクライアント スクリプトでその機能を使用できます。  
+  
+ 静的なスクリプト ファイルを登録するには、次のように設定します。、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>のプロパティ、<xref:System.Web.UI.ScriptReference>ファイルの相対的な位置にオブジェクト。  
+  
+ アセンブリ内のリソースとして埋め込まれているスクリプト ファイルを登録するには、設定、<xref:System.Web.UI.ScriptReference.Assembly%2A>プロパティ ファイルが含まれているアセンブリの名前にします。 設定して、<xref:System.Web.UI.ScriptReference.Name%2A>プロパティをアセンブリに埋め込まれている .js ファイルの名前にします。 その場合は、スクリプト ファイル埋め込む必要がある、リンクされていません。  
+  
+ 設定する、<xref:System.Web.UI.ScriptReferenceBase.ScriptMode%2A>をデバッグまたはスクリプトのバージョンをリリースするかどうかを示すプロパティです。  
+  
+ <xref:System.Web.UI.ScriptMode.Auto>値には、スタンドアロンのスクリプト ファイルまたはリソースとしてアセンブリに埋め込まれているスクリプト ファイルを参照しているかどうかに応じて異なる結果が生成されます。 スタンドアロンのスクリプト ファイルが定義されて、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>プロパティです。 アセンブリ参照はからアクセスする必要があります、<xref:System.Web.UI.ScriptReference.Name%2A>と<xref:System.Web.UI.ScriptReference.Assembly%2A>プロパティです。 結果、<xref:System.Web.UI.ScriptMode.Auto>値が次に示します。  
+  
+-   スタンドアロンのスクリプト ファイルに適用される場所、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>プロパティが指定されて、<xref:System.Web.UI.ScriptMode.Auto>値と等価です<xref:System.Web.UI.ScriptMode.Release>です。  
+  
+-   アセンブリでは、スクリプト参照に適用されたときに<xref:System.Web.UI.ScriptMode.Auto>は等価<xref:System.Web.UI.ScriptMode.Inherit>です。 ときにのみ<xref:System.Web.UI.ScriptReference.Name%2A>を指定すると、スクリプトの参照に使用されます。 ときに<xref:System.Web.UI.ScriptReference.Name%2A>と<xref:System.Web.UI.ScriptReferenceBase.Path%2A>プロパティの両方を指定、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>の代わりにプロパティを使用して<xref:System.Web.UI.ScriptReference.Name%2A>、ですが、<xref:System.Web.UI.ScriptMode.Auto>値はまだと同等<xref:System.Web.UI.ScriptMode.Inherit>です。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム コントロールおよびコントロール アセンブリに埋め込まれている JavaScript ファイルを参照する方法を示します。 アセンブリは、Web サイトの Bin フォルダー内にあると見なされます。 カスタム コントロールをアニメーション化<xref:System.Web.UI.UpdatePanel>コントロール。 JavaScript ファイルは、SampleControl.UpdatePanelAnimation.js という埋め込みリソースとしてコンパイルされます。 使用して、埋め込みの JavaScript ファイルを登録する、<xref:System.Web.UI.ScriptReference.Assembly%2A>と<xref:System.Web.UI.ScriptReference.Name%2A>プロパティです。  
+  
+ この例を使用するには、カスタム コントロールの埋め込みリソースとしての例に示す JavaScript ファイルをコンパイルします。 結果として得られるアセンブリを Web サイトの Bin フォルダーに配置します。 JavaScript ファイルをアセンブリに埋め込む方法の例は、次を参照してください。[チュートリアル: リソースとしてアセンブリ内の JavaScript ファイルの埋め込み](http://msdn.microsoft.com/library/d8cb78cd-95a9-4dc6-92df-391866817e89)です。  
+  
+ 次の例では、カスタム コントロールを使用するページを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ScriptReference#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ScriptReference#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/Default.aspx#1)]  
+  
+ 次の例では、カスタム コントロールのクラス定義を示します。  
+  
+ [!code-csharp[System.Web.UI.ScriptReference#2](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/customcontrol.cs#2)]
+ [!code-vb[System.Web.UI.ScriptReference#2](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/customcontrol.vb#2)]  
+  
+ 次の例では、サポートの JavaScript ファイルを示します。  
+  
+ [!code-javascript[System.Web.UI.ScriptReference#3](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/UpdatePanelAnimation.js#3)]  
+  
+ 次の例は、コードをカスタム コントロールを含むプロジェクトの AssemblyInfo ファイルと JavaScript ファイルに追加する必要があります。  
+  
+ [!code-csharp[System.Web.UI.ScriptReference#4](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/AssemblyInfo.cs#4)]
+ [!code-vb[System.Web.UI.ScriptReference#4](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/AssemblyInfo.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ScriptReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptReference (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">Web ページから相対的クライアント スクリプト ファイルのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ScriptReference" />指定されたパスを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptReference (string name, string assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="assembly" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アセンブリに埋め込まれているスクリプト ファイルの名前。</param>
+        <param name="assembly">埋め込みリソースとしてクライアント スクリプト ファイルを含むアセンブリの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ScriptReference" />指定した名前とアセンブリを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public string Assembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReference.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または埋め込みリソースとして、クライアント スクリプト ファイルを含むアセンブリの名前を設定します。</summary>
+        <value>埋め込みリソースとしてのクライアント スクリプト ファイルを含むアセンブリの完全修飾または部分修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.UI.ScriptReference.Assembly%2A>プロパティ アセンブリ内の埋め込みリソースとして含まれているクライアント スクリプト ファイルを参照するときにします。 設定<xref:System.Web.UI.ScriptReference.Assembly%2A>完全修飾名または部分修飾アセンブリ名にします。 完全修飾アセンブリ名には、名前、カルチャ、公開キー、およびバージョン番号が含まれています。 部分修飾アセンブリ名には、名前のみが含まれています。  
+  
+ 値を指定すると<xref:System.Web.UI.ScriptReference.Assembly%2A>、内の埋め込みリソースの名前を指定する必要がありますも、<xref:System.Web.UI.ScriptReference.Name%2A>プロパティです。 それ以外の場合、<xref:System.InvalidOperationException>がスローされます。  
+  
+ 参照されるアセンブリは、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに配置する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム コントロールおよびコントロール アセンブリに埋め込まれている JavaScript ファイルを参照する方法を示します。 アセンブリは、Web サイトの Bin フォルダー内にあると見なされます。 カスタム コントロールをアニメーション化<xref:System.Web.UI.UpdatePanel>コントロール。 JavaScript ファイルは、SampleControl.UpdatePanelAnimation.js という埋め込みリソースとしてコンパイルされます。 使用して、埋め込みの JavaScript ファイルを登録する、<xref:System.Web.UI.ScriptReference.Assembly%2A>と<xref:System.Web.UI.ScriptReference.Name%2A>プロパティです。  
+  
+ この例を使用するには、カスタム コントロールの埋め込みリソースとしての例に示す JavaScript ファイルをコンパイルします。 結果として得られるアセンブリを Web サイトの Bin フォルダーに配置します。 JavaScript ファイルをアセンブリに埋め込む方法の例は、次を参照してください。[チュートリアル: リソースとしてアセンブリ内の JavaScript ファイルの埋め込み](http://msdn.microsoft.com/library/d8cb78cd-95a9-4dc6-92df-391866817e89)です。  
+  
+ 次の例では、カスタム コントロールを使用するページを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ScriptReference#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ScriptReference#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/Default.aspx#1)]  
+  
+ 次の例では、カスタム コントロールのクラス定義を示します。  
+  
+ [!code-csharp[System.Web.UI.ScriptReference#2](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/customcontrol.cs#2)]
+ [!code-vb[System.Web.UI.ScriptReference#2](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/customcontrol.vb#2)]  
+  
+ 次の例では、サポートの JavaScript ファイルを示します。  
+  
+ [!code-javascript[System.Web.UI.ScriptReference#3](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/UpdatePanelAnimation.js#3)]  
+  
+ 次の例は、コードをカスタム コントロールを含むプロジェクトの AssemblyInfo ファイルと JavaScript ファイルに追加する必要があります。  
+  
+ [!code-csharp[System.Web.UI.ScriptReference#4](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/AssemblyInfo.cs#4)]
+ [!code-vb[System.Web.UI.ScriptReference#4](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/AssemblyInfo.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrl">
+      <MemberSignature Language="C#" Value="protected override string GetUrl (System.Web.UI.ScriptManager scriptManager, bool zip);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance string GetUrl(class System.Web.UI.ScriptManager scriptManager, bool zip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.GetUrl(System.Web.UI.ScriptManager,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="zip" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see langword="ScriptManager" />対象 Web ページ上のコントロールです。</param>
+        <param name="zip">
+          <see langword="true" />場合は、スクリプトを圧縮する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>値として表示される URL を取得、<see langword="src" />の属性、<see langword="script" />要素。</summary>
+        <returns>値として表示される URL を含む文字列、<see langword="src" />の属性、<see langword="script" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreScriptPath">
+      <MemberSignature Language="C#" Value="public bool IgnoreScriptPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreScriptPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReference.IgnoreScriptPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property is obsolete. Instead of using ScriptManager.ScriptPath, set the Path property on each individual ScriptReference.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="P:System.Web.UI.ScriptManager.ScriptPath" />リソースからのクライアント スクリプト ファイルを登録するときに、URL にプロパティが含まれています。</summary>
+        <value>
+          <see langword="true" />クライアント スクリプトを登録するときに、スクリプトのパスを使用しない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する<xref:System.Web.UI.ScriptReference.IgnoreScriptPath%2A>に`true`を含めずに、クライアント スクリプト ファイルを登録する場合、<xref:System.Web.UI.ScriptManager.ScriptPath%2A>スクリプト ファイルの URL の値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAjaxFrameworkScript">
+      <MemberSignature Language="C#" Value="protected override bool IsAjaxFrameworkScript (System.Web.UI.ScriptManager scriptManager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool IsAjaxFrameworkScript(class System.Web.UI.ScriptManager scriptManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.IsAjaxFrameworkScript(System.Web.UI.ScriptManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see cref="T:System.Web.UI.ScriptManager" /> オブジェクト。</param>
+        <summary>スクリプト参照が AJAX スクリプトであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />スクリプト参照が場合、AJAX スクリプトです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFromSystemWebExtensions">
+      <MemberSignature Language="C#" Value="protected override bool IsFromSystemWebExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool IsFromSystemWebExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.IsFromSystemWebExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method is obsolete. Use IsAjaxFrameworkScript(ScriptManager) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複合スクリプトに ASP.NET AJAX framework スクリプトへの参照が含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />複合スクリプトには、ASP.NET AJAX framework スクリプト; への参照が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReference.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をクライアント スクリプト ファイルを含む埋め込みリソースの名前。</summary>
+        <value>リソースとしてアセンブリに埋め込まれているクライアント スクリプト ファイルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.UI.ScriptReference.Name%2A>プロパティをリソースとしてアセンブリに埋め込まれているクライアント スクリプト ファイルを参照します。  
+  
+ 両方の値を定義する場合、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>と<xref:System.Web.UI.ScriptReference.Name%2A>参照では、同じスクリプト、プロパティ、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム コントロールおよびコントロール アセンブリに埋め込まれている JavaScript ファイルを参照する方法を示します。 アセンブリは、Web サイトの Bin フォルダー内にあると見なされます。 カスタム コントロールをアニメーション化<xref:System.Web.UI.UpdatePanel>コントロール。 JavaScript ファイルは、SampleControl.UpdatePanelAnimation.js という埋め込みリソースとしてコンパイルされます。 使用して、埋め込みの JavaScript ファイルを登録する、<xref:System.Web.UI.ScriptReference.Assembly%2A>と<xref:System.Web.UI.ScriptReference.Name%2A>プロパティです。  
+  
+ この例を使用するには、カスタム コントロールの埋め込みリソースとしての例に示す JavaScript ファイルをコンパイルします。 結果として得られるアセンブリを Web サイトの Bin フォルダーに配置します。 JavaScript ファイルをアセンブリに埋め込む方法の例は、次を参照してください。[チュートリアル: リソースとしてアセンブリ内の JavaScript ファイルの埋め込み](http://msdn.microsoft.com/library/d8cb78cd-95a9-4dc6-92df-391866817e89)です。  
+  
+ 次の例では、カスタム コントロールを使用するページを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ScriptReference#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ScriptReference#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/Default.aspx#1)]  
+  
+ 次の例では、カスタム コントロールのクラス定義を示します。  
+  
+ [!code-csharp[System.Web.UI.ScriptReference#2](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/customcontrol.cs#2)]
+ [!code-vb[System.Web.UI.ScriptReference#2](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/customcontrol.vb#2)]  
+  
+ 次の例では、サポートの JavaScript ファイルを示します。  
+  
+ [!code-javascript[System.Web.UI.ScriptReference#3](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/UpdatePanelAnimation.js#3)]  
+  
+ 次の例は、コードをカスタム コントロールを含むプロジェクトの AssemblyInfo ファイルと JavaScript ファイルに追加する必要があります。  
+  
+ [!code-csharp[System.Web.UI.ScriptReference#4](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReference/CS/AssemblyInfo.cs#4)]
+ [!code-vb[System.Web.UI.ScriptReference#4](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReference/vb/AssemblyInfo.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReference.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値を表す文字列を返します、 <see cref="P:System.Web.UI.ScriptReference.Name" /> 、プロパティ、<see cref="P:System.Web.UI.ScriptReferenceBase.Path" />プロパティ、または型名。</summary>
+        <returns>値、<see cref="P:System.Web.UI.ScriptReference.Name" />プロパティが定義されている場合、またはの値、<see cref="P:System.Web.UI.ScriptReferenceBase.Path" />定義それ以外の場合は、プロパティ、値の<see cref="P:System.Reflection.MemberInfo.Name" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

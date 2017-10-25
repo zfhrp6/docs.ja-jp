@@ -1,0 +1,82 @@
+<Type Name="ServiceDomain" FullName="System.EnterpriseServices.ServiceDomain">
+  <TypeSignature Language="C#" Value="public sealed class ServiceDomain" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceDomain extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ServiceDomain" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、コード セグメントで識別される<see cref="M:System.EnterpriseServices.ServiceDomain.Enter(System.EnterpriseServices.ServiceConfig)" />と<see cref="M:System.EnterpriseServices.ServiceDomain.Leave" />をそれ自体のコンテキストで実行し、コンテキスト内で作成されたオブジェクトに対して呼び出されるメソッドの場合と同様に動作します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceDomain.Enter%2A>と<xref:System.EnterpriseServices.ServiceDomain.Leave%2A>メソッドが COM + サービスを使用し、コードを囲むようにペアで使用されます。 呼び出しの間で囲まれたコード<xref:System.EnterpriseServices.ServiceDomain.Enter%2A>と<xref:System.EnterpriseServices.ServiceDomain.Leave%2A>独自のコンテキストで実行され、コンテキスト内で作成されたオブジェクトに対して呼び出されるメソッドの場合と同様に動作します。 <xref:System.EnterpriseServices.ServiceDomain.Enter%2A>と<xref:System.EnterpriseServices.ServiceDomain.Leave%2A>ペアは入れ子にできます。 呼び出しのペアが分散されているかどうかを確認するには、ユーザーの責任であるようにすべての呼び出しに<xref:System.EnterpriseServices.ServiceDomain.Leave%2A>を前回呼び出したときに一致<xref:System.EnterpriseServices.ServiceDomain.Enter%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Enter">
+      <MemberSignature Language="C#" Value="public static void Enter (System.EnterpriseServices.ServiceConfig cfg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Enter(class System.EnterpriseServices.ServiceConfig cfg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServiceDomain.Enter(System.EnterpriseServices.ServiceConfig)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cfg" Type="System.EnterpriseServices.ServiceConfig" />
+      </Parameters>
+      <Docs>
+        <param name="cfg">A<see cref="T:System.EnterpriseServices.ServiceConfig" />囲まれたコード内で使用されるサービスの構成情報を格納します。</param>
+        <summary>指定されたコンテキストを作成、<see cref="T:System.EnterpriseServices.ServiceConfig" />オブジェクトし、現在のコンテキストにコンテキスト スタックにプッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceDomain.Enter%2A>最初の指定に従って構成されているコンテキストを作成、<xref:System.EnterpriseServices.ServiceConfig>オブジェクトとして渡される、`cfg`パラメーター。 クライアントとサーバーの両方の側でのポリシーは、メソッド呼び出しが行われたかのようにトリガーされます。 新しいコンテキストでは、コンテキスト スタックにプッシュし、され、現在のコンテキストになります。 効率的な設計のためスレッドにマーシャ リングは必要ありませんを使用しているため、<xref:System.EnterpriseServices.ServiceDomain.Enter%2A>と<xref:System.EnterpriseServices.ServiceDomain.Leave%2A>では、同等のメソッド呼び出しと比較してオーバーヘッドが大幅に削減します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.EnterpriseServices.ServiceConfig" />現在のプラットフォームでサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Leave">
+      <MemberSignature Language="C#" Value="public static System.EnterpriseServices.TransactionStatus Leave ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.EnterpriseServices.TransactionStatus Leave() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServiceDomain.Leave" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.TransactionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッド呼び出しが返された場合と、サーバーと、クライアント側のポリシーをトリガーします。 コンテキスト スタックとを実行しているときにコンテキストから、現在のコンテキストがポップされ、<see cref="M:System.EnterpriseServices.ServiceDomain.Enter(System.EnterpriseServices.ServiceConfig)" />が呼び出された現在のコンテキストになります。</summary>
+        <returns><see cref="T:System.EnterpriseServices.TransactionStatus" /> 値のいずれか。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.EnterpriseServices.ServiceConfig" />現在のプラットフォームでサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

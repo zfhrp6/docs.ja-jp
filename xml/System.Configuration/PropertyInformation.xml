@@ -1,0 +1,499 @@
+<Type Name="PropertyInformation" FullName="System.Configuration.PropertyInformation">
+  <TypeSignature Language="C#" Value="public sealed class PropertyInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.PropertyInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成内で個々 のプロパティのメタ情報が含まれています。 この型は継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.PropertyInformation>オブジェクトには、構成内で個々 のプロパティのメタ情報が含まれています。 このオブジェクトは、検証して、個々 の属性のプロパティを変更するときに使用できます。  
+  
+ <xref:System.Configuration.PropertyInformation>が派生したオブジェクトから、関連付けられている<xref:System.Configuration.PropertyInformationCollection>オブジェクト。 <xref:System.Configuration.PropertyInformationCollection>が派生したオブジェクトから、関連付けられている<xref:System.Configuration.ElementInformation>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation>型です。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#1)]
+ [!code-vb[System.Configuration.PropertyInformation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Converter">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.TypeConverter Converter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.TypeConverter Converter" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Converter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.TypeConverter" />構成属性に関連するオブジェクト。</summary>
+        <value><see cref="T:System.ComponentModel.TypeConverter" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeConverter>オブジェクトを使用して、属性の値を変更する方法について説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public object DefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の構成に関連する既定値を格納するオブジェクトを取得します。</summary>
+        <value>構成属性の既定値を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.DefaultValue%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#2)]
+ [!code-vb[System.Configuration.PropertyInformation#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成属性に対応するオブジェクトの説明を取得します。</summary>
+        <value>構成属性の説明です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKey">
+      <MemberSignature Language="C#" Value="public bool IsKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsKey" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.IsKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成属性がキーであるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />構成属性がキーである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.IsKey%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#3)]
+ [!code-vb[System.Configuration.PropertyInformation#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocked">
+      <MemberSignature Language="C#" Value="public bool IsLocked { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocked" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.IsLocked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成属性がロックされているかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.PropertyInformation" />オブジェクトがロックされている、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.PropertyInformation.IsLocked%2A>プロパティから返される`true`で関連する要素がロックされている場合、<xref:System.Configuration.ConfigurationElement.LockAttributes%2A>または<xref:System.Configuration.ConfigurationElement.LockAllAttributesExcept%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.IsLocked%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#4)]
+ [!code-vb[System.Configuration.PropertyInformation#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="public bool IsModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsModified" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.IsModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の構成が変更されたかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.PropertyInformation" />変更後、それ以外のオブジェクトが表示された<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.IsModified%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#5)]
+ [!code-vb[System.Configuration.PropertyInformation#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequired">
+      <MemberSignature Language="C#" Value="public bool IsRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.IsRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の構成が必要かどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.PropertyInformation" />オブジェクトは必須です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.IsRequired%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#6)]
+ [!code-vb[System.Configuration.PropertyInformation#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineNumber">
+      <MemberSignature Language="C#" Value="public int LineNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.LineNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の構成に関連する構成ファイル内の行番号を取得します。</summary>
+        <value>構成ファイルの行番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソースの構成ファイルに関連付けられている行番号。 ソースの構成ファイルが存在しない場合は、0 が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.LineNumber%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#7)]
+ [!code-vb[System.Configuration.PropertyInformation#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成属性に対応するオブジェクトの名前を取得します。</summary>
+        <value><see cref="T:System.Configuration.PropertyInformation" /> オブジェクトの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.LineNumber%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#8)]
+ [!code-vb[System.Configuration.PropertyInformation#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成属性に対応するソース ファイルを取得します。</summary>
+        <value>ソース ファイル、<see cref="T:System.Configuration.PropertyInformation" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.Source%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#9)]
+ [!code-vb[System.Configuration.PropertyInformation#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />の構成属性に対応するオブジェクト。</summary>
+        <value><see cref="T:System.Type" />の<see cref="T:System.Configuration.PropertyInformation" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.Type%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#10)]
+ [!code-vb[System.Configuration.PropertyInformation#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validator">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationValidatorBase Validator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationValidatorBase Validator" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Validator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationValidatorBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ConfigurationValidatorBase" />構成属性に関連するオブジェクト。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationValidatorBase" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、返された<xref:System.Configuration.ConfigurationValidatorBase>値構成属性を検証するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.Type%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#11)]
+ [!code-vb[System.Configuration.PropertyInformation#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の構成属性に関連する値を格納するオブジェクト。</summary>
+        <value>オブジェクトの値を含む、<see cref="T:System.Configuration.PropertyInformation" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.Value%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#12)]
+ [!code-vb[System.Configuration.PropertyInformation#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueOrigin">
+      <MemberSignature Language="C#" Value="public System.Configuration.PropertyValueOrigin ValueOrigin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.PropertyValueOrigin ValueOrigin" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.PropertyInformation.ValueOrigin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.PropertyValueOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.PropertyValueOrigin" />構成属性に関連するオブジェクト。</summary>
+        <value><see cref="T:System.Configuration.PropertyValueOrigin" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.PropertyValueOrigin>オブジェクトは、構成の属性の値の決定方法について説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PropertyInformation.ValueOrigin%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.PropertyInformation>クラスです。  
+  
+ [!code-csharp[System.Configuration.PropertyInformation#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PropertyInformation/CS/PropertyInformation.cs#13)]
+ [!code-vb[System.Configuration.PropertyInformation#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PropertyInformation/VB/PropertyInformation.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

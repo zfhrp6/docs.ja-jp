@@ -1,0 +1,1392 @@
+<Type Name="DeclarativeCatalogPart" FullName="System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart">
+  <TypeSignature Language="C#" Value="public sealed class DeclarativeCatalogPart : System.Web.UI.WebControls.WebParts.CatalogPart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DeclarativeCatalogPart extends System.Web.UI.WebControls.WebParts.CatalogPart" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.CatalogPart</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>開発者が、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> または他のサーバー コントロールのカタログを、宣言型のページ永続形式で Web ページに追加できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットにツール指向のゾーンがあると同様 (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラスの概要)、あるツール指向<xref:System.Web.UI.WebControls.WebParts.Part>コントロール、およびこれらの各コントロールは、特定の種類のツールのゾーン内に存在する必要があります。 Web パーツ コントロール セットの一部のツール指向コントロールでは、2 つの特徴があります。  
+  
+-   これらは、Web パーツ ページ上のコントロールをカスタマイズするエンドユーザーを有効にするヘルパー コントロールです。  
+  
+-   特定の表示モードでのみ表示されます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>内に存在する必要がある一部のコントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>など、ゾーンの種類、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>ゾーンの Web パーツ コントロール セットで提供します。 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールが表示される Web ページがカタログ表示モードが場合にのみです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールには、開発者、Web ページ上のカタログに宣言して、サーバー コントロールのセットを追加するための手段が用意されています。 Web パーツ コントロール セット内のカタログの一覧だけでは、<xref:System.Web.UI.WebControls.WebParts.WebPart>またはカタログ内のページがある場合に表示されている他のサーバー コントロールの表示モード。 ユーザーは、一覧からコントロールを選択し、コントロール、ページの機能のセットを変更できるユーザーを効果的に得られます Web ページに追加します。  
+  
+> [!NOTE]
+>  ユーザーは、Web ページに、カタログの同じコントロールの複数のインスタンスを追加できます。  
+  
+ 使用する利点、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>サーバー コントロールのカタログを作成するコントロールをすることは不要ですコーディングします。 ページの開発者は、コントロールを完全に、宣言型 (またはページの持続性) で作業ができ、そのため、コントロールの名前を書式設定します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールに有用な性質により、開発者は全体のサイト全体で使用できるコントロールのカタログを設定することがあります。 内の個々 のサーバー コントロールを宣言するのではなく、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール、開発者が設定できる、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティの値をカタログにする必要がありますサーバー コントロールのリストを含むユーザー コントロールのパスをします。 実行時に、ユーザー コントロールで参照されているサーバー コントロールは、カタログに読み込まれます。 これにより、複数のページまたはサイトは、カタログを作成する同じユーザー コントロールを参照でした。 サーバー コントロールのユーザー コントロールの一覧が更新されると、これは、ユーザー コントロールに基づくすべてのカタログに更新します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>クラスは継承されたプロパティをオーバーライドするパブリック プロパティの数。 コントロールのレンダリングの大半のプロパティが実際には使用されません。ようなデザイン ツールで非表示に特別なコード属性を設定できるようにするためだけに上書きされない[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]です。 レンダリングに影響がないので、これらの非表示プロパティを使用する必要があります。 ファクトの IntelliSense および Visual Studio でのプロパティ ウィンドウから非表示には、誤ってこれらを使用しない開発者が役立ちます。 これらすべての非表示プロパティは、それぞれのヘルプ トピックのような記載されています。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>クラスにいくつかの方法もあります。 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドの取得、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>ごとにオブジェクト<xref:System.Web.UI.WebControls.WebParts.WebPart>できるカタログ内のコントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>しなくても、そのインスタンスを作成する各サーバー コントロールに関する情報を表示するコントロール。 別の方法は、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart%2A>メソッドです。 このメソッドは、特定のインスタンスを取得<xref:System.Web.UI.WebControls.WebParts.WebPart>メソッドに渡された説明に基づくコントロールです。  
+  
+> [!NOTE]
+>  アクセシビリティを向上させるために、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>内でコントロールを表示、`<fieldset>`要素。 `<fieldset>`要素がコントロールでの編集に使用される一連の関連をグループ化、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>制御、およびそのビジュアル ユーザー エージェント (通常 Web ブラウザーなど) と音声指向のユーザー エージェント (画面読み取りソフトウェアなど) の両方のこれらのコントロール間のタブ付きのナビゲーションを容易にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Web ページで宣言によって制御されます。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザー コントロール、ページの表示モードを変更することができます。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 ページの上部には、2 つ`Register`ディレクティブ、ユーザー コントロールおよびコンパイル済みのコンポーネントを含む 2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 ページがへの参照を宣言型であることを確認、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール、このトピックの「解説」セクションで説明したように、宣言型の要素の適切な階層内入れ子にします。 `<asp:declarativecatalogpart>`要素が含まれています、`<webpartstemplate>`さらに標準の ASP.NET の参照が含まれる要素<xref:System.Web.UI.WebControls.Calendar>コントロールと 2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールです。 これらは、ユーザーがカタログから選択できるコントロールです。 ページが編集機能ににも含まれています、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>ページ コントロールを宣言します。 このコントロールにより、ユーザーがカスタムの特定のプロパティを編集<xref:System.Web.UI.WebControls.WebParts.WebPart>ページに追加した後、およびユーザーがページを編集モードに切り替えた後を制御します。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/CS/declarativeCatalogPartCS.aspx#1)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/VB/declarativeCatalogPartVB.aspx#1)]  
+  
+ コード例の 3 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 これらのコントロールにいくつかのプロパティが付いていることを確認、`WebBrowsable`属性。 これにより、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールを動的に、コントロールが編集モードにする場合は、これらのプロパティを編集するユーザーのユーザー インターフェイス (UI) を生成します。 プロパティが付いているも、`WebDisplayName`編集用の UI 内の各コントロールの横に表示されるラベルのテキストを指定するための属性です。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_DeclarativeCatalogPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_DeclarativeCatalogPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/VB/userinfowebpart.vb#6)]  
+  
+ ブラウザーでページを読み込む場合**カタログ モード**で、**表示モード**カタログ モードに切り替えるにはドロップダウン リスト コントロール。 カタログのモードでは、可能なコントロールをページに追加するを表示できます。 すべての 3 つのコントロールを追加し、使用、**表示モード**モードを参照するページを返すためのドロップダウン リスト。 3 つのコントロールがページに表示します。 使用する場合、**表示モード**ドロップダウン リスト、スイッチ、ページを編集モードのタイトル バーの [動詞] メニュー (下向きの矢印) をクリックし、**ユーザー情報 WebPart**制御、およびをクリックして**編集**コントロールを編集します。 編集用の UI が表示されたら、表示、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール。 プロパティの各コントロールを表示することを確認、`UserInfoWebPart`でマークされたクラス、`WebBrowsable`属性。 編集 UI にいくつかの変更を加えた場合、**適用**使用することができます ボタン、**表示モード**ブラウズ モードと編集の変更の効果を確認するページを返すためのドロップダウン リスト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DeclarativeCatalogPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.%23ctor%2A>コンス トラクターは、既定値以外のコンス トラクターが宣言されていなければ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>クラスとそのため、不要に特別なタスクが実行されます。 クラスの新しいインスタンスが作成されるときです。 .NET Framework は、クラスのインスタンスを作成するのに内部コンス トラクターを使用します。  
+  
+ 可能であれば、ほとんどの場合、使用する必要があります、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.%23ctor%2A>独自のコードでプログラムでコンス トラクターです。 コントロールの用途では、デザイン時に、ページに宣言によって追加、ページ開発者用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessKey">
+      <MemberSignature Language="C#" Value="public override string AccessKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AccessKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.AccessKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この継承されたプロパティは、設定を表示するとき、Web パーツ コントロールでは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールにクイック キーボード ナビゲーションに使用されるキーボードのキーを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.AccessKey%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.AccessKey%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.AccessKey%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />コントロールの背景色に使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BackColor%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BackColor%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.BackColor%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageUrl">
+      <MemberSignature Language="C#" Value="public override string BackImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BackImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この継承されたプロパティは、設定を表示するとき、Web パーツ コントロールでは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールの背景として使用するイメージの URL を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BackImageUrl%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BackImageUrl%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.BackImageUrl%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />コントロール周囲の境界線の色として使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderColor%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderColor%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.BorderStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.BorderStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.BorderStyle" />コントロールの境界線およびタイトルの表示の型を決定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderStyle%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderStyle%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit BorderWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />コントロール周囲の境界線の幅を決定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderWidth%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.BorderWidth%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CssClass">
+      <MemberSignature Language="C#" Value="public override string CssClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CssClass" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.CssClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.CssClassProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールにスタイルの特性を割り当てるために使用、カスケード スタイル シート (CSS) クラスの名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.CssClass%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.CssClass%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.CssClass%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultButton">
+      <MemberSignature Language="C#" Value="public override string DefaultButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.DefaultButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>ID を表す文字列、<see cref="T:System.Web.UI.WebControls.Button" />コントロールの既定のボタンとして機能するコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.DefaultButton%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.DefaultButton%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.DefaultButton%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.ContentDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ContentDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ContentDirection" />コントロール内でのコンテンツのフロー方向を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Direction%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Direction%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.Direction%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public override bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールが現在有効になっているか、無効になっているかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Enabled%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Enabled%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.Enabled%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールでテーマを使用できるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.EnableTheming%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.EnableTheming%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.EnableTheming%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">プロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.FontInfo Font { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.FontInfo Font" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.FontInfo" />コントロールのコンテンツに使用するフォントを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Font%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Font%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.Font%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />コントロールの前景の色を決定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ForeColor%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ForeColor%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAvailableWebPartDescriptions">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection GetAvailableWebPartDescriptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection GetAvailableWebPartDescriptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用可能な説明のコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />カタログ内のコントロールです。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />カタログの各コントロールに対してです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>で抽象基本メソッドが宣言されているために、メソッドは実装を提供、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドは、カタログの各コントロールの説明情報を返します。 A<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>がに関する重要な情報を含むオブジェクトでは、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、その ID では、コントロール、およびから継承されているいくつかの重要なプロパティの値へのオブジェクト参照を含む、<xref:System.Web.UI.WebControls.WebParts.Part>クラスなど<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>と<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドのパフォーマンスが向上します。 カタログが作成されると、一部の情報が含まれている、タイトル、説明、アイコン (が存在する場合)、および ID を含む各コントロールについて、必要があります。 この情報を取得するには、各コントロールのインスタンスを作成する必要はなく、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>呼び出しのカタログを作成するゾーン、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>カタログ、および呼び出しに含まれる各コントロールのメソッドは、コントロールの説明情報のみを返します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A> メソッドを使用するコード例を次に示します。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>いくつかのサーバー コントロールを参照するコントロール。 ページを呼び出すイベント処理コードも含まれています、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドです。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Get#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Get#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分が 2 つのカスタムのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_DeclarativeCatalogPart_Get#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_DeclarativeCatalogPart_Get#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/VB/userinfowebpart.vb#6)]  
+  
+ 例では、3 番目の部分は、Web ページを含む、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール。 注意して、`Button1_Click`メソッドの呼び出し、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッド取得の説明については、<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログに制御し、ラベルに詳細情報を書き込みます。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Get#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/CS/declarativeCatalogPart_GetCS.aspx#1)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/VB/declarativeCatalogPart_GetVB.aspx#1)]  
+  
+ ブラウザーでページを読み込む場合**カタログ モード**で、**表示モード**カタログ モードに切り替えるにはドロップダウン リスト コントロール。 カタログのモードでは、可能なコントロールをページに追加するを表示できます。 クリックすることができます、**表示の web パーツの説明**ラベルに、カタログ内のコントロールについて、詳細を記述するボタンをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebPart">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.WebPart GetWebPart (System.Web.UI.WebControls.WebParts.WebPartDescription description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.WebPart GetWebPart(class System.Web.UI.WebControls.WebParts.WebPartDescription description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart(System.Web.UI.WebControls.WebParts.WebPartDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.Web.UI.WebControls.WebParts.WebPartDescription" />
+      </Parameters>
+      <Docs>
+        <param name="description">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コントロールに関する詳細情報を格納しています。</param>
+        <summary>参照を返します、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが、メソッドに渡される説明の値に基づいています。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />の説明の値に一致するコントロール<paramref name="description" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart%2A>メソッドへの参照を返します、<xref:System.Web.UI.WebControls.WebParts.WebPart>詳細を説明の値に一致するコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>メソッドに渡されたオブジェクト。 通常、このメソッドはと共に使用、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドで、カタログ内のすべてのコントロールの説明を取得するために使用します。 各<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、取得または個別に渡すことによって、必要に応じて操作<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトを<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart%2A> メソッドを使用するコード例を次に示します。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>いくつかのサーバー コントロールを参照するコントロール。 ページを呼び出すイベント処理コードも含まれています、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart%2A>メソッドです。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Get#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Get#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分が 2 つのカスタムのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_DeclarativeCatalogPart_Get#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_DeclarativeCatalogPart_Get#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/VB/userinfowebpart.vb#6)]  
+  
+ 例では、3 番目の部分は、Web ページを含む、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール。 注意して、`Button2_Click`メソッド取得の説明については、<xref:System.Web.UI.WebControls.WebParts.WebPart>で呼び出しは、カタログ内のコントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetWebPart%2A>コレクション内の 3 つ目のコントロールの説明に一致するコントロールを追加したコントロールを取得する方法ページです。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Get#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/CS/declarativeCatalogPart_GetCS.aspx#1)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Get/VB/declarativeCatalogPart_GetVB.aspx#1)]  
+  
+ ブラウザーでページを読み込む場合**カタログ モード**で、**表示モード**カタログ モードに切り替えるにはドロップダウン リスト コントロール。 カタログのモードでは、可能なコントロールをページに追加するを表示できます。 クリックした場合、**追加 TextDisplayWebPart**ボタン コントロールは、通常のカタログのユーザー インターフェイス (UI) を追加する必要なく、ページに追加されます。 使用して、**表示モード**ドロップダウン リストに、ページを通常のブラウズ モードに戻ります; は、ページに表示を追加したコントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Description" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Description" />利用できません<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />インスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupingText">
+      <MemberSignature Language="C#" Value="public override string GroupingText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupingText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GroupingText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>セクションの先頭にテキストを含む文字列には、コントロール内の子コントロールがグループ化されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GroupingText%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GroupingText%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.GroupingText%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Height" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />コントロールの高さを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Height%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Height%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.Height%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlign">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.HorizontalAlign HorizontalAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HorizontalAlign HorizontalAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.HorizontalAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HorizontalAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.HorizontalAlign" />コントロールの表示で使用される水平方向の配置の種類を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.HorizontalAlign%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.HorizontalAlign%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.HorizontalAlign%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBars">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.ScrollBars ScrollBars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ScrollBars ScrollBars" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ScrollBars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ScrollBars" />コントロール内で必要な場合に使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ScrollBars%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ScrollBars%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkinID">
+      <MemberSignature Language="C#" Value="public override string SkinID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkinID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.SkinID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールのスキンの ID を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.SkinID%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.SkinID%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.SkinID%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">プロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndex">
+      <MemberSignature Language="C#" Value="public override short TabIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 TabIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.TabIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>タブ オーダー内には、このコントロールのインデックスとして機能する短い数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.TabIndex%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.TabIndex%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.TabIndex%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのタイトル バーに表示されるタイトルを設定します。</summary>
+        <value>コントロールのタイトルとして使用される文字列。 既定値は、Web パーツ コントロール セットによって提供される演算コントロール名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Title%2A>プロパティの値がのタイトル バーに表示される、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>ときに、コントロールは、カタログのモードで表示を制御します。 使用して、プロパティの値を設定するには、コントロールがページで宣言されている場合、`Title`属性。 タイトルの値を指定しない、このコントロールでユーザーが編集できるプロパティの種類を記述する、カルチャに固有の既定値が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言を使用して、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Title%2A>プロパティです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>クラスの概要です。  
+  
+ この例は、設定する方法を示します、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Title%2A>宣言型マークアップのコントロールのプロパティです。 プロパティが設定されていない場合、または空の文字列を割り当てる場合 ("")、既定のタイトルを指定します。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/CS/declarativeCatalogPartCS.aspx#2)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/VB/declarativeCatalogPartVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public override string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>ツールヒントのコンテンツを含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ToolTip%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.ToolTip%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールが表示されるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Visible%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Visible%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.Control.Visible%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartsListUserControlPath">
+      <MemberSignature Language="C#" Value="public string WebPartsListUserControlPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WebPartsListUserControlPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UserControlFileEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のパスの一覧を含むユーザー コントロール<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはカタログの他のサーバー コントロールです。</summary>
+        <value>文字列のセットを含むユーザー コントロールへのパスを<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはサーバー コントロールです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティのセットを含むユーザー コントロールへのパスを指定する開発者は<xref:System.Web.UI.WebControls.WebParts.WebPart>またはその他のサーバー コントロールに追加できる、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 ユーザー コントロールへの有効なパスがこのプロパティに割り当てられている場合、コントロールは、カタログにコンパイル時に自動的に追加されます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>パッケージ化し、多くのさまざまなページまたはサイト間で利用できるコントロールのセットを再利用する方法を提供するため、プロパティが役に立ちます。 カタログを提供したい各ページのカタログ内の各コントロールを手動で宣言するには、代わりに、開発者は、このプロパティを使用して、ユーザー コントロールのセット全体を参照する をポイント<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 また、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティと共に使用できます<xref:System.Web.UI.WebControls.WebParts.WebPart>内で明示的に宣言されているコントロール、`<asp:declarativecatalogpart>`の Web ページの要素。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティをプログラムで宣言します。 この例では、5 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   別のユーザー コントロールをカスタムへの参照を含む<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、およびによって参照される、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A> Web ページのプロパティです。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールをカスタム コントロールを含むユーザー コントロールを参照します。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_WebPartsList#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_WebPartsList#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分が 2 つのカスタムのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_DeclarativeCatalogPart_WebPartsList#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_DeclarativeCatalogPart_WebPartsList#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/VB/userinfowebpart.vb#6)]  
+  
+ コード例の 3 番目の部分は、ユーザー コントロールをカスタムを含む<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、およびによって参照される、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_WebPartsList#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/CS/WebUserControlCS.ascx#5)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_WebPartsList#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/VB/WebUserControlVB.ascx#5)]  
+  
+ 例の 4 番目の部分は、Web ページを含む、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール。 注意して、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティは、ページのマークアップで宣言によって設定以外のプロパティの値も設定できますプログラムで、ユーザーがカタログの表示モードでのページが表示されるボタンをクリックします。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_WebPartsList#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/CS/declarativeCatalogPart_UserControlListCS.aspx#1)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_WebPartsList#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_WebPartsList/VB/declarativeCatalogPart_UserControlListVB.aspx#1)]  
+  
+ ブラウザーでページを読み込む場合**カタログ モード**で、**表示モード**カタログ モードに切り替えるにはドロップダウン リスト コントロール。 カタログのモードでは、可能なコントロールをページに追加するを表示できます。 をクリックして、**更新 WebPartsListUserControlPath プロパティ**テキスト ボックスに値を入力することがなく、ボタンをクリックします。 空の文字列でことに注意して ("")、プロパティに割り当てると、カタログが更新され、カタログに ページで明示的に宣言されているコントロールだけが残ります。 含むユーザー コントロールの名前を入力するかどうか、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、テキスト ボックスに、**更新 WebPartsListUserControlPath プロパティ**を再度クリックして、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsListUserControlPath%2A>プロパティが、ユーザー コントロールを指すようになりましたもう一度、およびその他<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログ内のコントロールが再表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartsTemplate">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ITemplate WebPartsTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate WebPartsTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を含むテンプレートへの参照、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />カタログで宣言されたコントロール。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />カタログ内で宣言されているコントロールを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsTemplate%2A>プロパティは、カタログの一部として Web ページで宣言されているコントロールを格納しているテンプレートを参照します。 宣言内の要素の階層で、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>ゾーン、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsTemplate%2A>プロパティとして表されます、`<webpartstemplate>`子要素である要素の`<asp:declarativecatalogpart>`要素、カタログ内のすべての明示的に宣言されたサーバー コントロールが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言を使用して、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsTemplate%2A>プロパティです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>クラスの概要です。  
+  
+ このコードを挿入する方法を示しています、`<webpartstemplate>`内の要素、`<asp:declarativecatalogpart>`宣言型マークアップ内の要素。  
+  
+ [!code-aspx-csharp[WebParts_DeclarativeCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/CS/declarativeCatalogPartCS.aspx#2)]
+ [!code-aspx-vb[WebParts_DeclarativeCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_DeclarativeCatalogPart_Overview/VB/declarativeCatalogPartVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Width" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />コントロールの幅を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Width%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Width%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.WebControl.Width%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="public override bool Wrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Wrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Wrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこの継承されたプロパティは使用されません、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロール。 プロパティに表示されるを避けるためにのみオーバーライド[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]デザイナー ツールです。</summary>
+        <value>コントロールでの長い行を折り返すことができるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Wrap%2A>のメンバーとして、プロパティ、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールを Web パーツ コントロールのコントロールの表示のセット内で使用されていません。 このプロパティを使用するため、しないでください。これを設定しても、レンダリングに影響はありません。  
+  
+ 開発者がこのプロパティを使用することを防ぐためにコード属性は、Visual Studio で非表示にすることで設定されます。 使用するときに、 <xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart> Visual Studio で、コントロール、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.Wrap%2A>プロパティは、プロパティ ウィンドウまたは IntelliSense に表示されません。  
+  
+ このプロパティを使用する場合から継承するカスタム クラスを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 カスタム クラスを継承したか、使用<xref:System.Web.UI.WebControls.Panel.Wrap%2A>プロパティまたはメソッドをオーバーライドし、その動作を変更します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

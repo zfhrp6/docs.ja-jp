@@ -1,0 +1,86 @@
+<Type Name="TemplateModeChangedEventArgs" FullName="System.Web.UI.Design.TemplateModeChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class TemplateModeChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateModeChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.TemplateModeChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供する<see cref="E:System.Web.UI.Design.IControlDesignerView.ViewEvent" />デザイン サーフェイス上のコントロールのテンプレート モードが変更されたときに発生するイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>イベントは、デザイナー ホストによってなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、デザイン サーフェイス上のコントロールに特定のアクション。 たとえば、入力するか、コントロールのテンプレート編集モードを終了するときに、イベントが発生します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を処理するデリゲートを提供します。、<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>イベント。 終了または、テンプレート編集モードを入力すると、デザイナー ホストを初期化します、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクトに対して、<xref:System.Web.UI.Design.ViewEvent.TemplateModeChanged>イベントの種類とし、セット、<xref:System.Web.UI.Design.ViewEventArgs.EventArgs%2A>を持つプロパティ、<xref:System.Web.UI.Design.TemplateModeChangedEventArgs>オブジェクト。  
+  
+ ときに、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクトは、テンプレート モードが変更されたことで、既定のデリゲートを示します、<xref:System.Web.UI.Design.ControlDesigner>クラスの値を更新する、<xref:System.Web.UI.Design.ControlDesigner.InTemplateMode%2A>プロパティです。  
+  
+ 派生したカスタム デザイナー、<xref:System.Web.UI.Design.TemplatedControlDesigner>クラスをオーバーライドして、<xref:System.Web.UI.Design.TemplatedControlDesigner.OnTemplateModeChanged%2A>追加処理を実行時にテンプレートのデザイン サーフェイス上のコントロールにモードの変更を編集する方法です。  
+  
+ イベントとデリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateModeChangedEventArgs (System.Web.UI.Design.TemplateGroup newTemplateGroup);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.TemplateGroup newTemplateGroup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateModeChangedEventArgs.#ctor(System.Web.UI.Design.TemplateGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newTemplateGroup" Type="System.Web.UI.Design.TemplateGroup" />
+      </Parameters>
+      <Docs>
+        <param name="newTemplateGroup">新しいテンプレート グループの初期化に使用される、<see cref="P:System.Web.UI.Design.TemplateModeChangedEventArgs.NewTemplateGroup" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateModeChangedEventArgs" />指定したテンプレートのグループを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>デリゲート メソッドを使用、<xref:System.Web.UI.Design.TemplateModeChangedEventArgs.%23ctor%2A>を初期化するコンス トラクター、<xref:System.Web.UI.Design.TemplateModeChangedEventArgs>オブジェクトで使用するため、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクト。  
+  
+ 終了または、テンプレート編集モードを入力すると、デザイナー ホストを初期化します、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクトに対して、<xref:System.Web.UI.Design.ViewEvent.TemplateModeChanged>イベントの種類とし、セット、<xref:System.Web.UI.Design.ViewEventArgs.EventArgs%2A>を持つプロパティ、<xref:System.Web.UI.Design.TemplateModeChangedEventArgs>オブジェクト。 `newTemplateGroup`テンプレート編集モードを入力すると、パラメーターがテンプレートの新しいグループを指定します。 `newTemplateGroup`パラメーターは、通常`null`テンプレート編集モードを終了するためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewTemplateGroup">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.TemplateGroup NewTemplateGroup { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroup NewTemplateGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateModeChangedEventArgs.NewTemplateGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テンプレート編集モードに切り替えたときに作成したテンプレートのグループを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.Design.TemplateGroup" />テンプレート編集モードです。 新しいテンプレートを使用して入力した場合はそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.TemplateModeChangedEventArgs.NewTemplateGroup%2A>プロパティは、テンプレート編集モードを入力する場合に、新しいテンプレートのグループを指定します。 <xref:System.Web.UI.Design.TemplateModeChangedEventArgs.NewTemplateGroup%2A>`null`テンプレート編集モードを終了するときに発生するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

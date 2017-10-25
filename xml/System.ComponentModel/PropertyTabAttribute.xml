@@ -1,0 +1,486 @@
+<Type Name="PropertyTabAttribute" FullName="System.ComponentModel.PropertyTabAttribute">
+  <TypeSignature Language="C#" Value="public class PropertyTabAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyTabAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.PropertyTabAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>[プロパティ] タブの指定したクラスまたはクラスを表示するタブを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyTabAttribute>に新しいプロパティ ページを追加することができます、<xref:System.Windows.Forms.PropertyGrid>コントロール。 <xref:System.ComponentModel.PropertyTabAttribute>プロパティのコンポーネントの既定セット以外のプロパティ情報を公開する追加のプロパティ タブを追加することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.PropertyTabAttribute>プロパティ タブを指定します。このコード例では、型によって別の選択したコンポーネントのプロパティを公開するコンポーネントを定義します。  
+  
+ [!code-cpp[PropertyTabExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/PropertyTabExample/CPP/class1.cpp#1)]
+ [!code-csharp[PropertyTabExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/PropertyTabExample/CS/class1.cs#1)]
+ [!code-vb[PropertyTabExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PropertyTabExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyTabAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.PropertyTabAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、作成、初期化されていない既定のコンス トラクター<xref:System.ComponentModel.PropertyTabAttribute>です。 このコンス トラクターは、この属性から派生してを呼び出すことによって複数のタブの型を指定するために使用できます<xref:System.ComponentModel.PropertyTabAttribute.InitializeArrays%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyTabAttribute (string tabClassName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tabClassName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tabClassName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tabClassName">作成するタブの型のアセンブリ修飾名。 この形式の表記規則の例は、次を参照してください。<see cref="P:System.Type.AssemblyQualifiedName" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.PropertyTabAttribute" />クラスの指定したタブのクラス名を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyTabAttribute (Type tabClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type tabClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tabClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="tabClass">作成するタブの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.PropertyTabAttribute" />クラス タブの指定した型を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyTabAttribute (string tabClassName, System.ComponentModel.PropertyTabScope tabScope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tabClassName, valuetype System.ComponentModel.PropertyTabScope tabScope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.#ctor(System.String,System.ComponentModel.PropertyTabScope)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tabClassName" Type="System.String" />
+        <Parameter Name="tabScope" Type="System.ComponentModel.PropertyTabScope" />
+      </Parameters>
+      <Docs>
+        <param name="tabClassName">作成するタブの型のアセンブリ修飾名。 この形式の表記規則の例は、次を参照してください。<see cref="P:System.Type.AssemblyQualifiedName" />です。</param>
+        <param name="tabScope">A<see cref="T:System.ComponentModel.PropertyTabScope" />このタブのスコープを示すです。スコープが場合<see cref="F:System.ComponentModel.PropertyTabScope.Component" />と、対応するコンポーネントについてのみ表示される<see cref="T:System.ComponentModel.PropertyTabAttribute" />です。 場合は<see cref="F:System.ComponentModel.PropertyTabScope.Document" />、すべてのコンポーネントのドキュメントに表示されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.PropertyTabAttribute" />クラスのクラス名の指定したタブおよびタブのスコープを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="tabScope" /> が、<see cref="F:System.ComponentModel.PropertyTabScope.Document" /> でも <see cref="F:System.ComponentModel.PropertyTabScope.Component" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyTabAttribute (Type tabClass, System.ComponentModel.PropertyTabScope tabScope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type tabClass, valuetype System.ComponentModel.PropertyTabScope tabScope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.#ctor(System.Type,System.ComponentModel.PropertyTabScope)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tabClass" Type="System.Type" />
+        <Parameter Name="tabScope" Type="System.ComponentModel.PropertyTabScope" />
+      </Parameters>
+      <Docs>
+        <param name="tabClass">作成するタブの型。</param>
+        <param name="tabScope">A<see cref="T:System.ComponentModel.PropertyTabScope" />このタブのスコープを示すです。スコープが場合<see cref="F:System.ComponentModel.PropertyTabScope.Component" />と、対応するコンポーネントについてのみ表示される<see cref="T:System.ComponentModel.PropertyTabAttribute" />です。 場合は<see cref="F:System.ComponentModel.PropertyTabScope.Document" />、すべてのコンポーネントのドキュメントに表示されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.PropertyTabAttribute" />クラス タブおよびタブ スコープの指定した型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.PropertyTabAttribute>プロパティ タブを指定します。  
+  
+ [!code-cpp[PropertyTabExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/PropertyTabExample/CPP/class1.cpp#1)]
+ [!code-csharp[PropertyTabExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/PropertyTabExample/CS/class1.cs#1)]
+ [!code-vb[PropertyTabExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PropertyTabExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="tabScope" /> が、<see cref="F:System.ComponentModel.PropertyTabScope.Document" /> でも <see cref="F:System.ComponentModel.PropertyTabScope.Component" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.ComponentModel.PropertyTabAttribute other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.ComponentModel.PropertyTabAttribute other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.Equals(System.ComponentModel.PropertyTabAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.ComponentModel.PropertyTabAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="other">A<see cref="T:System.ComponentModel.PropertyTabAttribute" />このインスタンスと比較するか、<see langword="null" />です。</param>
+        <summary>このインスタンスが、指定した属性と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.PropertyTabAttribute" />インスタンスが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.TypeLoadException">によって指定された型、<see cref="P:System.ComponentModel.PropertyTabAttribute.TabClassNames" />のプロパティ、<paramref name="other" />パラメーターが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other">このインスタンスと比較するオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="other" />同じを指す<see cref="T:System.ComponentModel.PropertyTabAttribute" />インスタンス。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.TypeLoadException">によって指定された型、<see cref="P:System.ComponentModel.PropertyTabAttribute.TabClassNames" />のプロパティ、<paramref name="other" />パラメーターが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを取得します。</summary>
+        <returns>属性オブジェクトのハッシュ コードに属しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeArrays">
+      <MemberSignature Language="C#" Value="protected void InitializeArrays (string[] tabClassNames, System.ComponentModel.PropertyTabScope[] tabScopes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeArrays(string[] tabClassNames, valuetype System.ComponentModel.PropertyTabScope[] tabScopes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.InitializeArrays(System.String[],System.ComponentModel.PropertyTabScope[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tabClassNames" Type="System.String[]" />
+        <Parameter Name="tabScopes" Type="System.ComponentModel.PropertyTabScope[]" />
+      </Parameters>
+      <Docs>
+        <param name="tabClassNames">[プロパティ] ウィンドウのタブに対して作成する型の完全修飾型名の配列。</param>
+        <param name="tabScopes">各タブのスコープです。スコープが場合<see cref="F:System.ComponentModel.PropertyTabScope.Component" />と、対応するコンポーネントについてのみ表示される<see cref="T:System.ComponentModel.PropertyTabAttribute" />です。 場合は<see cref="F:System.ComponentModel.PropertyTabScope.Document" />、すべてのコンポーネントのドキュメントに表示されます。</param>
+        <summary>タブのクラスの指定した名前とタブのスコープの配列を使用して属性を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyTabAttribute.InitializeArrays%2A>クラスの種類 タブの設定に使用できるユーティリティ関数は、この<xref:System.ComponentModel.PropertyTabAttribute>を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の値の<paramref name="tabScopes" />は<see cref="F:System.ComponentModel.PropertyTabScope.Document" />または<see cref="F:System.ComponentModel.PropertyTabScope.Component" />です。  
+  
+ または  
+  
+ 長さ、<paramref name="tabClassNames" />と<paramref name="tabScopes" />配列が一致しません。  
+  
+ または  
+  
+ <paramref name="tabClassNames" /> または <paramref name="tabScopes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeArrays">
+      <MemberSignature Language="C#" Value="protected void InitializeArrays (Type[] tabClasses, System.ComponentModel.PropertyTabScope[] tabScopes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeArrays(class System.Type[] tabClasses, valuetype System.ComponentModel.PropertyTabScope[] tabScopes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyTabAttribute.InitializeArrays(System.Type[],System.ComponentModel.PropertyTabScope[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tabClasses" Type="System.Type[]" />
+        <Parameter Name="tabScopes" Type="System.ComponentModel.PropertyTabScope[]" />
+      </Parameters>
+      <Docs>
+        <param name="tabClasses">作成するタブの型。</param>
+        <param name="tabScopes">各タブのスコープです。スコープが場合<see cref="F:System.ComponentModel.PropertyTabScope.Component" />と、対応するコンポーネントについてのみ表示される<see cref="T:System.ComponentModel.PropertyTabAttribute" />です。 場合は<see cref="F:System.ComponentModel.PropertyTabScope.Document" />、すべてのコンポーネントのドキュメントに表示されます。</param>
+        <summary>タブのクラスの指定した名前とタブのスコープの配列を使用して属性を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyTabAttribute.InitializeArrays%2A>クラスの種類 タブの設定に使用できるユーティリティ関数は、この<xref:System.ComponentModel.PropertyTabAttribute>を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の値の<paramref name="tabScopes" />は<see cref="F:System.ComponentModel.PropertyTabScope.Document" />または<see cref="F:System.ComponentModel.PropertyTabScope.Component" />です。  
+  
+ または  
+  
+ 長さ、<paramref name="tabClassNames" />と<paramref name="tabScopes" />配列が一致しません。  
+  
+ または  
+  
+ <paramref name="tabClassNames" /> または <paramref name="tabScopes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TabClasses">
+      <MemberSignature Language="C#" Value="public Type[] TabClasses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] TabClasses" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyTabAttribute.TabClasses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性を使用してタブの型を取得します。</summary>
+        <value>この属性を使用しているタブの型を示す型の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたすべての種類に割り当てられることができる必要があります、<xref:System.Windows.Forms.Design.PropertyTab>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">によって指定された型、<see cref="P:System.ComponentModel.PropertyTabAttribute.TabClassNames" />プロパティが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TabClassNames">
+      <MemberSignature Language="C#" Value="protected string[] TabClassNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TabClassNames" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyTabAttribute.TabClassNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性を使用する タブのクラスの名前を取得します。</summary>
+        <value>この属性を使用してタブ クラスの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabScopes">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyTabScope[] TabScopes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.PropertyTabScope[] TabScopes" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyTabAttribute.TabScopes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyTabScope[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各タブのこのタブのスコープの配列を取得<see cref="T:System.ComponentModel.PropertyTabAttribute" />です。</summary>
+        <value>配列<see cref="T:System.ComponentModel.PropertyTabScope" />タブのスコープを示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,216 @@
+<Type Name="SinglePhaseEnlistment" FullName="System.Transactions.SinglePhaseEnlistment">
+  <TypeSignature Language="C#" Value="public class SinglePhaseEnlistment : System.Transactions.Enlistment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SinglePhaseEnlistment extends System.Transactions.Enlistment" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.SinglePhaseEnlistment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Transactions.Enlistment</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単一フェーズのコミットとトランザクション マネージャーの参加している参加者間の通信を容易にするためのコールバックのセットを提供時に、<see cref="M:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit(System.Transactions.SinglePhaseEnlistment)" />通知を受信します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときのリソース マネージャーの実装<xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A>が呼び出されると、し、この型のインスタンスで passsed は、参加者しに通知を使用して、トランザクション マネージャー、<xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>メソッドまたは<xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>トランザクションをコミットまたはロールバックするかどうかを示すためにメソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="Aborted">
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>トランザクション マネージャーにトランザクションをロールバックする必要があることを示すために使用されるコールバックを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションの参加要素では、このメソッドを使用して、トランザクションをロールバックする必要があるトランザクション マネージャーに通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Aborted">
+      <MemberSignature Language="C#" Value="public void Aborted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Aborted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.SinglePhaseEnlistment.Aborted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクション マネージャーにトランザクションをロールバックする必要があることを示すために使用されるコールバックを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション参加要素を実装する、<xref:System.Transactions.ISinglePhaseNotification>インターフェイスでは、このメソッドを使用して、トランザクション マネージャー、トランザクションをロールバックする必要があること、およびコミットできないことを通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Aborted">
+      <MemberSignature Language="C#" Value="public void Aborted (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Aborted(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.SinglePhaseEnlistment.Aborted(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e">ロールバックを実行する理由の説明。</param>
+        <summary>トランザクションがロールバックする必要があります、説明を提供するトランザクション マネージャーを示すために使用されるコールバックを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Committed">
+      <MemberSignature Language="C#" Value="public void Committed ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Committed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.SinglePhaseEnlistment.Committed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクション マネージャーに、単一フェーズのコミットが成功したことを示すために使用されるコールバックを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション参加要素を実装する、<xref:System.Transactions.ISinglePhaseNotification>インターフェイスでは、このメソッドを使用して、トランザクションをコミットすることをトランザクション マネージャーに通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InDoubt">
+      <MemberSignature Language="C#" Value="public void InDoubt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InDoubt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.SinglePhaseEnlistment.InDoubt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクション マネージャーに、トランザクションの状態が不明であるを示すために使用されるコールバックを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション参加要素を実装する、<xref:System.Transactions.ISinglePhaseNotification>インターフェイスでは、このメソッドを使用して、トランザクションが不明なトランザクション マネージャーに通知します。 ときに 1 つの不明なトランザクションは、または以上の参加しているリソース マネージャーに接続できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InDoubt">
+      <MemberSignature Language="C#" Value="public void InDoubt (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InDoubt(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.SinglePhaseEnlistment.InDoubt(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e">トランザクションが不明な理由の説明。</param>
+        <summary>トランザクションの状態が不明ながあり、説明を提供するトランザクション マネージャーに使用されるコールバックを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

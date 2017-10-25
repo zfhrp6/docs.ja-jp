@@ -1,0 +1,81 @@
+<Type Name="ObjectListViewMode" FullName="System.Web.UI.MobileControls.ObjectListViewMode">
+  <TypeSignature Language="C#" Value="public enum ObjectListViewMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ObjectListViewMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ObjectListViewMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの一覧の表示モードを指定します。 このクラスは継承できません。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示モードはを介して使用できる、<xref:System.Web.UI.MobileControls.ObjectList.ViewMode%2A>プロパティです。 この列挙体の現在の表示モードを設定するユーザーの許可、<xref:System.Web.UI.MobileControls.ObjectList>コントロール。 ある場合、<xref:System.Web.UI.MobileControls.ObjectList>と項目テンプレートでは、各項目にボタンを配置、ボタンをクリックしてイベントを処理して表示モードを設定、`Details`項目の詳細を表示するビュー。  
+  
+> [!NOTE]
+>  この列挙体を設定する前に項目を選択する必要がありますまず`Commands`または`Details`ビュー。 項目を選択する前に列挙型を設定しようとすると、例外をスローします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Commands">
+      <MemberSignature Language="C#" Value="Commands" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.MobileControls.ObjectListViewMode Commands = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.MobileControls.ObjectListViewMode.Commands" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MobileControls.ObjectListViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WML におけるコマンドのビューです。 これは、オブジェクトの一覧を含むページが最初に表示されるときに表示される既定のビューです。 ラベル フィールド、アイテムのまたは (テーブルが空でない) 場合はいずれかの項目に対応する行とテーブルのフィールドに対応する列を含むテーブル。 詳細については 『 がある場合、<see langword="Details" />各項目を表示するためのハイパーリンクを表示します。、<see langword="Details" />既定読み取ることによって、ビューが表示される<see langword="More" />です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Details">
+      <MemberSignature Language="C#" Value="Details" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.MobileControls.ObjectListViewMode Details = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.MobileControls.ObjectListViewMode.Details" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MobileControls.ObjectListViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>詳細を表示します。 WML デバイスに対してのみ、このビューは個別にレンダリングします。 表示するメニュー項目と共に、ObjectList のコマンドを含むメニューで構成されて、<see langword="Details" />ビュー。 HTML デバイスの場合は、このビューと組み合わせて、<see langword="Details" />ビューでコマンドが、詳細の下のハイパーリンクとして表示します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="List" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.MobileControls.ObjectListViewMode List = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.MobileControls.ObjectListViewMode.List" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MobileControls.ObjectListViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューを一覧表示します。 このビューには、タイトルと値を含む、アイテムの各フィールドが表示されます。 HTML では、このビューと組み合わせて、<see langword="Commands" />ビューでコマンドが、詳細の下のハイパーリンクとして表示します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

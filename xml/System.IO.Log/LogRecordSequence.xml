@@ -1,0 +1,2561 @@
+<Type Name="LogRecordSequence" FullName="System.IO.Log.LogRecordSequence">
+  <TypeSignature Language="C#" Value="public sealed class LogRecordSequence : IDisposable, System.IO.Log.IRecordSequence" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LogRecordSequence extends System.Object implements class System.IDisposable, class System.IO.Log.IRecordSequence" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.LogRecordSequence" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IO.Log.IRecordSequence</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.IO.Log.LogStore" /> に格納されているレコード シーケンスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogRecordSequence> クラスは、Common Log File System (CLFS) ログ上でレコード シーケンス インターフェイスの実装を提供します。 標準のレコード指向の機能に加えて、ログがいっぱいになる条件を回避し、同じ物理ファイル上でクライアントを多重化するためのポリシー モデルを提供します。 CLFS ログ ファイルを直接操作および管理するためのインターフェイスを提供する <xref:System.IO.Log.LogStore> クラスと共に動作します。 <xref:System.IO.Log.LogStore> クラスと <xref:System.IO.Log.LogRecordSequence> クラスの関係は、ディスク ファイルと <xref:System.IO.FileStream> オブジェクトの関係に似ています。 ディスク ファイルは具象的な記憶域を提供し長さや最終アクセス日時などの属性を持つのに対して、<xref:System.IO.FileStream> オブジェクトはファイルに対する読み書きで使用できるファイルに関するビューを提供します。 同様に、<xref:System.IO.Log.LogStore> クラスはポリシーやディスク エクステントのコレクションなどの属性を持つのに対して、<xref:System.IO.Log.LogRecordSequence> クラスはデータを読み書きするためのレコード指向の機構を提供します。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Log.LogRecordSequence> クラスを使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#0)]
+ [!code-vb[S_UELogRecordSequence#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (System.IO.Log.LogStore logStore);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Log.LogStore logStore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.IO.Log.LogStore)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="logStore" Type="System.IO.Log.LogStore" />
+      </Parameters>
+      <Docs>
+        <param name="logStore">このレコード シーケンスが使用する <see cref="T:System.IO.Log.LogStore" />。</param>
+        <summary>ログ ストアを指定して、<see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファー サイズは、追加または読み取ることができるレコードの最大サイズを決定します。 このコンストラクターには、既定値の 64 が設定されます。 必要なバッファー数は 10 に設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="logStore" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (string path, System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.String,System.IO.FileMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <summary>ログ ストアとアクセス モードのパスを指定して、<see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しい <xref:System.IO.Log.LogRecordSequence> オブジェクト上の新しい <xref:System.IO.Log.LogStore> を初期化し、指定のパスおよびモードで開きます。 ストアへの読み取り/書き込みアクセスが与えられ、ストアが開き、読み取りアクセスを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作はサポートされていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogRecordSequence" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、<see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (System.IO.Log.LogStore logStore, int bufferSize, int bufferCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Log.LogStore logStore, int32 bufferSize, int32 bufferCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.IO.Log.LogStore,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="logStore" Type="System.IO.Log.LogStore" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="bufferCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="logStore">このレコード シーケンスが使用する <see cref="T:System.IO.Log.LogStore" />。</param>
+        <param name="bufferSize">バイト単位のバッファー サイズ。 バッファー サイズは、追加または読み取ることができるレコードの最大サイズを決定します。</param>
+        <param name="bufferCount">目的のバッファー数。</param>
+        <summary>指定したログ ストア、各レコードのバッファー サイズ、バッファー番号を使用して、<see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `bufferSize` の既定値 (64) および `bufferCount` の既定値 (10) を使用しないで、`bufferSize` および `bufferCount` の値を指定する場合は、このコンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="logStore" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。  
+  
+ または  
+  
+ <paramref name="bufferCount" /> が負の値またはゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (string path, System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> によりこのファイルにアクセスできる方法を決定する <see cref="T:System.IO.Log.LogStore" /> 値の 1 つ。</param>
+        <summary>ログ ストア、アクセス モード、および共有モードのパスを指定して、<see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しい <xref:System.IO.Log.LogRecordSequence> オブジェクト上の新しい <xref:System.IO.Log.LogStore> を初期化し、指定のパス、モード、およびアクセスと共に開きます。 このストアが開き、読み取りアクセスを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作はサポートされていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogRecordSequence" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、<see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> によりこのファイルにアクセスできる方法を決定する <see cref="T:System.IO.Log.LogStore" /> 値の 1 つ。</param>
+        <param name="share">ログ ストアが処理中に共有される方法を指定する <see cref="T:System.IO.FileShare" /> 値の 1 つ。</param>
+        <summary>ログ ストアとアクセス モードのパスを指定して、<see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しい <xref:System.IO.Log.LogRecordSequence> オブジェクト上の新しい <xref:System.IO.Log.LogStore> を初期化し、指定のパス、モード、およびアクセスと共に開きます。 このストアが開き、指定のアクセスを共有します。  
+  
+   
+  
+## Examples  
+ この <xref:System.IO.Log.LogRecordSequence> コンストラクターを使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#1)]
+ [!code-vb[S_UELogRecordSequence#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作はサポートされていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogRecordSequence" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、<see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, int bufferCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, int32 bufferCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="bufferCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> によりこのファイルにアクセスできる方法を決定する <see cref="T:System.IO.Log.LogStore" /> 値の 1 つ。</param>
+        <param name="share">ログ ストアが処理中に共有される方法を指定する <see cref="T:System.IO.FileShare" /> 値の 1 つ。</param>
+        <param name="bufferSize">バイト単位のバッファー サイズ。 バッファー サイズは、追加または読み取ることができるレコードの最大サイズを決定します。</param>
+        <param name="bufferCount">目的のバッファー数。</param>
+        <summary>ログ ストア、ファイル アクセス許可、アクセス モード、共有モード、およびレコードのバッファー サイズとバッファー カウントのパスを指定して、<see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しい <xref:System.IO.Log.LogRecordSequence> オブジェクト上の新しい <xref:System.IO.Log.LogStore> を初期化し、指定のパス、モード、およびアクセスと共に開きます。 このストアが開き、指定のアクセスを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作はサポートされていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogRecordSequence" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、<see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogRecordSequence (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, int bufferCount, System.Security.AccessControl.FileSecurity fileSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, int32 bufferCount, class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Int32,System.Security.AccessControl.FileSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="bufferCount" Type="System.Int32" />
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開く方法または作成する方法を指定する <see cref="T:System.IO.FileMode" /> の有効な値。</param>
+        <param name="access">ログ ストアへのアクセス方法を指定する <see cref="T:System.IO.FileAccess" /> の有効な値。</param>
+        <param name="share">ログ ストアが処理中に共有される方法を指定する <see cref="T:System.IO.FileShare" /> の有効な値。</param>
+        <param name="bufferSize">バイト単位のバッファー サイズ。 バッファー サイズは、追加または読み取ることができるレコードの最大サイズを決定します。</param>
+        <param name="bufferCount">目的のバッファー数。</param>
+        <param name="fileSecurity">ストアを作成する必要がある場合に、新しく作成したストアに設定するセキュリティを指定する <see cref="T:System.Security.AccessControl.FileSecurity" /> の有効な値。</param>
+        <summary><see cref="T:System.IO.Log.LogRecordSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> によって指定されたファイルが有効ではありません。  
+  
+ または  
+  
+ 指定されたログ ストア ファイル名が有効ではありません。  
+  
+ または  
+  
+ <paramref name="mode" /> の値が <see cref="F:System.IO.FileMode.CreateNew" /> であるため、書き込みアクセスがなければ使用できません。  
+  
+ または  
+  
+ <paramref name="mode" /> の値が <see cref="F:System.IO.FileMode.OpenOrCreate" /> であるため、書き込みアクセスがなければ使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">1 つ以上の引数が範囲外です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="path" /> で指定したファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ <paramref name="path" /> で指定されたファイルは他のプロセスで使用中のため、アクセスできません。  
+  
+ または  
+  
+ ファイルまたはディレクトリが既に存在するため、<paramref name="path" /> で指定されたファイルを作成できません。  
+  
+ または  
+  
+ ログ ハンドルをスレッド プールにバインドできませんでした。  
+  
+ または  
+  
+ 指定されたログ ファイルの形式またはバージョンが無効です。</exception>
+        <exception cref="T:System.NotSupportedException">この操作はサポートされていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogRecordSequence" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、<see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AdvanceBaseSequenceNumber">
+      <MemberSignature Language="C#" Value="public void AdvanceBaseSequenceNumber (System.IO.Log.SequenceNumber newBaseSequenceNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AdvanceBaseSequenceNumber(valuetype System.IO.Log.SequenceNumber newBaseSequenceNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber(System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newBaseSequenceNumber" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="newBaseSequenceNumber">ログの新しい基本 <see cref="T:System.IO.Log.SequenceNumber" /> を指定します。 ログの現在のシーケンス番号と最後のシーケンス番号の間の範囲 (現在のシーケンス番号と最後のシーケンス番号を含む) で指定する必要があります。</param>
+        <summary>ログの基本シーケンス番号を前方移動します。 このメソッドは継承できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、多くの場合、レコードの領域を開放するために、<xref:System.IO.Log.LogRecordSequence.TailPinned> イベントと共に使用されます。 <xref:System.IO.Log.LogRecordSequence.TailPinned> イベントは、シーケンスの末尾 (つまり、基本シーケンス番号) が領域の解放のために前方に移動する必要があることを示します。 領域の解放は、<xref:System.IO.Log.LogRecordSequence.WriteRestartArea%2A> メソッドを使用して再開領域を書き込むか、または、ログを切り捨てて、<xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber%2A> メソッドを使用してログの基本シーケンス番号を `newBaseSequenceNumber` パラメーターで指定されたシーケンス番号に進めることにより行うことができます。 「例」のコード サンプルに 2 つ目の方法が示されています。  
+  
+ このメソッドの呼び出しは、再開レコードがログに書き込まれないという点を除けば、<xref:System.IO.Log.LogRecordSequence.WriteRestartArea%2A> を使用して新しい基本シーケンス番号を設定した場合と同じです。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber%2A> メソッドを <xref:System.IO.Log.LogRecordSequence.TailPinned> イベントと共に使用してログ シーケンスの領域を解放する方法を示します。  
+  
+```  
+recordSequence.RetryAppend = true;  
+recordSequence.TailPinned += new EventHandler<TailPinnedEventArgs>(HandleTailPinned);  
+  
+void HandleTailPinned(object sender, TailPinnedEventArgs tailPinnedEventArgs)  
+{  
+   // tailPinnedEventArgs.TargetSequenceNumber is the target   
+   // sequence number to free up space to.    
+   // However, this sequence number is not necessarily valid.  We have  
+   // to use this sequence number as a starting point for finding a  
+   // valid point within the log to advance toward. You need to  
+   // identify a record with a sequence number equal to, or greater  
+   // than TargetSequenceNumber; let's call this   
+   // realTargetSequenceNumber. Once found, move the base  
+  
+   recordSequence.AdvanceBaseSequenceNumber(realTargetSequenceNumber);  
+  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="newBaseSequenceNumber" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいアーカイブ末尾または既存のアーカイブ末尾、あるいはアーカイブ ログの基本が無効です。  
+  
+ または  
+  
+ <paramref name="newBaseSequenceNumber" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたログにエクステントがありません。 レコード シーケンスを使用する前に、1 つ以上のエクステントを作成する必要があります。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Append">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ログ レコードを <see cref="T:System.IO.Log.IRecordSequence" /> に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogRecordSequence.Append%2A> メンバーの使用方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#5)]
+ [!code-vb[S_UELogRecordSequence#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber Append (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber nextUndoRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber Append(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber nextUndoRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Append(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="nextUndoRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="nextUndoRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <summary>ログ レコードを <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込みます。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用してログ レコードをシーケンスに追加する方法を示しています。  
+  
+ [!code-csharp[S_UELogRecordSequence#13](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs#13)]
+ [!code-vb[S_UELogRecordSequence#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber Append (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber userRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber Append(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber userRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Append(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="userRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="userRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <summary><see cref="T:System.IO.Log.IRecordSequence" /> にログ レコードを追加します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber Append (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber nextUndoRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber Append(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber nextUndoRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Append(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="nextUndoRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservations" Type="System.IO.Log.ReservationCollection" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="nextUndoRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservations">このレコードで使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <summary>以前にシーケンスに予約された領域を使用して、<see cref="T:System.IO.Log.IRecordSequence" /> にログ レコードを追加します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 追加されたレコードは、`reservations` パラメーターにより指定された予約を使用して以前に予約された領域を消費します。 この追加処理が成功すると、データを格納できる最も小さな予約領域が消費され、その予約領域がコレクションから削除されます。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber Append (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber userRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber Append(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber userRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Append(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="userRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservations" Type="System.IO.Log.ReservationCollection" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="userRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservations">このレコードで使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <summary>以前にシーケンスに予約された領域を使用して、<see cref="T:System.IO.Log.IRecordSequence" /> にログ レコードを追加します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 追加されたレコードは、`reservations` パラメーターにより指定された予約を使用して以前に予約された領域を消費します。 この追加処理が成功すると、データを格納できる最も小さな予約領域が消費され、その予約領域がコレクションから削除されます。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.IRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber BaseSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber BaseSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.BaseSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.Log.LogRecordSequence" /> 内の最初の有効なレコードのシーケンス番号を取得します。</summary>
+        <value><see cref="T:System.IO.Log.LogRecordSequence" /> 内の有効なレコードに対応する下限のシーケンス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なシーケンス番号は、<xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber%2A> 以上、<xref:System.IO.Log.LogRecordSequence.LastSequenceNumber%2A> 未満です。  
+  
+ このプロパティの値は、<xref:System.IO.Log.LogRecordSequence.WriteRestartArea%2A> メソッドまたは <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber%2A> メソッドを呼び出すことにより変更できます。  
+  
+   
+  
+## Examples  
+ ループ内での <xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber%2A> メンバーの使用方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs#10)]
+ [!code-vb[S_UELogRecordSequence#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAppend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAppend (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber nextUndoRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAppend(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber nextUndoRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="nextUndoRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="nextUndoRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="callback">追加の完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期追加要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の追加操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の追加を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> メソッドに渡すことをお勧めします。 非同期追加中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="nextUndoRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="nextUndoRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAppend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAppend (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber userRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAppend(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber userRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="userRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="userRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="callback">追加の完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期追加要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の追加操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の追加を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> メソッドに渡すことをお勧めします。 非同期追加中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAppend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAppend (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber nextUndoRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservations, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAppend(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber nextUndoRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservations, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="nextUndoRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservations" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="nextUndoRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservations">このレコードで使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <param name="callback">追加の完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期追加要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の追加操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の追加を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> メソッドに渡すことをお勧めします。 非同期追加中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 追加されたレコードは、`reservations` パラメーターにより指定された予約を使用して以前に予約された領域を消費します。 この追加処理が成功すると、データを格納できる最も小さな予約領域が消費され、その予約領域がコレクションから削除されます。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAppend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAppend (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber userRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservations, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAppend(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber userRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservations, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="userRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservations" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="userRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservations">このレコードで使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <param name="callback">追加の完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期追加要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の追加操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の追加を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> メソッドに渡すことをお勧めします。 非同期追加中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 追加されたレコードは、`reservations` パラメーターにより指定された予約を使用して以前に予約された領域を消費します。 この追加処理が成功すると、データを格納できる最も小さな予約領域が消費され、その予約領域がコレクションから削除されます。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了します。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginFlush">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginFlush (System.IO.Log.SequenceNumber sequenceNumber, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginFlush(valuetype System.IO.Log.SequenceNumber sequenceNumber, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginFlush(System.IO.Log.SequenceNumber,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sequenceNumber" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sequenceNumber">書き込む必要のある最新レコードのシーケンス番号。 この <see cref="T:System.IO.Log.SequenceNumber" /> が無効な場合、すべてのレコードを書き込む必要があります。</param>
+        <param name="callback">フラッシュの完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期フラッシュ要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>以前にシーケンス内で予約された領域を使用して、非同期のフラッシュ操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期のフラッシュ操作を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndFlush%2A> メソッドに渡すことにより、フラッシュが完了し、リソースが適切に解放されたことを確認する必要があります。 非同期フラッシュ中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndFlush%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ このメソッドを呼び出すことにより、<xref:System.IO.Log.LogRecordSequence> に追加されたすべてのレコードが永続的に書き込まれたことを確認します。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期フラッシュ要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndFlush%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="sequenceNumber" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="sequenceNumber" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたログにエクステントがありません。 レコード シーケンスを使用する前に、1 つ以上のエクステントを作成する必要があります。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginReserveAndAppend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginReserveAndAppend (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber nextUndoRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservationCollection, long[] reservations, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginReserveAndAppend(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber nextUndoRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservationCollection, int64[] reservations, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginReserveAndAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.Int64[],System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="nextUndoRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="reservations" Type="System.Int64[]" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="nextUndoRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservationCollection">予約を作成する予約コレクション。</param>
+        <param name="reservations">作成する予約のバイト数。</param>
+        <param name="callback">追加の完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期追加要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の予約および追加操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の操作を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドに渡すことをお勧めします。 非同期追加中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 指定の予約情報は、レコード追加操作を含む分割不可能な操作内で、提供された予約コレクションに追加されます。 追加が失敗した場合、領域は予約されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了できます。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="userRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginReserveAndAppend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginReserveAndAppend (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber userRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservationCollection, long[] reservations, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginReserveAndAppend(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber userRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservationCollection, int64[] reservations, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginReserveAndAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.Int64[],System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="userRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="reservations" Type="System.Int64[]" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="userRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservationCollection">予約を作成する予約コレクション。</param>
+        <param name="reservations">作成する予約のバイト数。</param>
+        <param name="callback">追加の完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期追加要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の予約および追加操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の操作を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドに渡すことをお勧めします。 非同期追加中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 指定の予約情報は、レコード追加操作を含む分割不可能な操作内で、提供された予約コレクションに追加されます。 追加が失敗した場合、領域は予約されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了できます。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">レコードの追加時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しいレコードの格納または予約のための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWriteRestartArea">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginWriteRestartArea (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber newBaseSeqNum, System.IO.Log.ReservationCollection reservation, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginWriteRestartArea(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber newBaseSeqNum, class System.IO.Log.ReservationCollection reservation, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginWriteRestartArea(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="newBaseSeqNum" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="reservation" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメント。</param>
+        <param name="newBaseSeqNum">新しい基本シーケンス番号。 指定するシーケンス番号は、現在の基本シーケンス番号以上であることが必要です。</param>
+        <param name="reservation">この再開領域で使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <param name="callback">再開領域の書き込みの完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の再開領域非同期書き込み要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>以前にシーケンス内で予約された領域を使用して、非同期の再開領域の書き込み操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の再開領域の書き込み処理を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域の書き込み処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> メソッドに渡す必要があります。 非同期の再開領域の書き込み処理中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ この操作が正しく完了すると、基本シーケンス番号が更新されます。 新しい基本シーケンス番号未満の番号を持つすべてのログ レコードは、アクセスできません。  
+  
+ <xref:System.IO.Log.ReservationCollection> を指定すると、コレクションに格納されていた予約情報で以前に予約された領域が、書き込まれた再開領域により消費されます。 このメソッドが成功すると、データを格納できる最も小さな予約が消費され、その予約がコレクションから削除されます。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="newBaseSeqNum" /> が有効ではありません。  
+  
+ または  
+  
+ 指定されたログ列挙体の開始シーケンス番号が無効です。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservation" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいアーカイブ末尾または既存のアーカイブ末尾、あるいはアーカイブ ログの基本が無効です。  
+  
+ または  
+  
+ <paramref name="newBaseSeqNum" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWriteRestartArea">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginWriteRestartArea (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber newBaseSeqNum, System.IO.Log.ReservationCollection reservationCollection, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginWriteRestartArea(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber newBaseSeqNum, class System.IO.Log.ReservationCollection reservationCollection, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.BeginWriteRestartArea(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="newBaseSeqNum" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="newBaseSeqNum">新しい基本シーケンス番号。 指定するシーケンス番号は、現在の基本シーケンス番号以上であることが必要です。</param>
+        <param name="reservationCollection">この再開領域で使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <param name="callback">再開領域の書き込みの完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の再開領域非同期書き込み要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>以前にシーケンス内で予約された領域を使用して、非同期の再開領域の書き込み操作を開始します。 このメソッドは継承できません。</summary>
+        <returns>非同期の再開領域の書き込み処理を表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域の書き込み処理が完了しておりリソースを適切に解放できることを確認するために、このメソッドから返された <xref:System.IAsyncResult> を <xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> メソッドに渡す必要があります。 非同期の再開領域の書き込み処理中にエラーが発生した場合、このメソッドから返される <xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> を使用して <xref:System.IAsyncResult> メソッドを呼び出すまで、例外はスローされません。  
+  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ この操作が正しく完了すると、基本シーケンス番号が更新されます。 新しい基本シーケンス番号未満の番号を持つすべてのログ レコードは、アクセスできません。  
+  
+ <xref:System.IO.Log.ReservationCollection> を指定すると、コレクションに格納されていた予約情報で以前に予約された領域が、書き込まれた再開領域により消費されます。 このメソッドが成功すると、データを格納できる最も小さな予約が消費され、その予約がコレクションから削除されます。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="newBaseSeqNum" /> が有効ではありません。  
+  
+ または  
+  
+ 指定されたログ列挙体の開始シーケンス番号が無効です。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservationCollection" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいアーカイブ末尾または既存のアーカイブ末尾、あるいはアーカイブ ログの基本が無効です。  
+  
+ または  
+  
+ <paramref name="newBaseSeqNum" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateReservationCollection">
+      <MemberSignature Language="C#" Value="public System.IO.Log.ReservationCollection CreateReservationCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Log.ReservationCollection CreateReservationCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.CreateReservationCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.ReservationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.IO.Log.ReservationCollection" /> を作成します。 このメソッドは継承できません。</summary>
+        <returns>新しく作成された <see cref="T:System.IO.Log.ReservationCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に示すように、予約は 2 つの方法で実行できます。 信頼性の高い処理を行うサンプルでこの方法を採用できます。 このタスクは、CLFS ベースの <xref:System.IO.Log.LogRecordSequence> クラスを使用している場合のみ実行できることに注意してください。  
+  
+```  
+//Using the ReserveAndAppend Method  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+long[] lengthOfUndoRecords = new long[] { 1000 };  
+recordSequence.ReserveAndAppend(recordData,  
+                                                     userSqn,  
+                                                     previousSqn,  
+                                                     RecordSequenceAppendOptions.None,  
+                                                     reservations,  
+                                                     lengthOfUndoRecords);  
+recordSequence.Append(undoRecordData,    // If necessary …  
+                                    userSqn,  
+                                    previousSqn,  
+                                    RecordSequenceAppendOptions.ForceFlush,  
+                                    reservations);  
+  
+// Using the Manual Approach  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+reservations.Add(lengthOfUndoRecord);  
+try  
+{  
+   recordSequence.Append(recordData, userSqn, previousSqn, RecordAppendOptions.None);  
+}  
+catch (Exception)  
+{  
+   reservations.Remove(lengthOfUndoRecord);  
+   throw;  
+}  
+  
+recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.ForceFlush, reservations);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントによって使用されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例を使用する方法を示しています。<xref:System.IO.Log.LogRecordSequence.Dispose%2A>リソースを解放します。  
+  
+ [!code-csharp[S_UELogRecordSequence#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs#11)]
+ [!code-vb[S_UELogRecordSequence#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb#11)]  
+  
+ [!code-csharp[S_UELogRecordSequence#12](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs#12)] 
+ [!code-vb[S_UELogRecordSequence#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb#12)]   
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAppend">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber EndAppend (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber EndAppend(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.EndAppend(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">保留状態の非同期 I/O リクエストへの参照。</param>
+        <summary>非同期の追加操作を終了します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、I/O 操作が完了するまでブロックします。 <xref:System.IO.Log.LogRecordSequence.EndAppend%2A> の呼び出し時に、I/O 要求間のディスク障害など非同期書き込み要求中に発生したエラーが現れます。  
+  
+ このメソッドは、<xref:System.IAsyncResult> メソッドから返された各 <xref:System.IO.Log.LogRecordSequence.BeginAppend%2A> について正確に 1 回呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="result" /> が無効です。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see langword="End" /> は、この非同期操作のために既に呼び出されています。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndFlush">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber EndFlush (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber EndFlush(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.EndFlush(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">保留状態の非同期 I/O リクエストへの参照。</param>
+        <summary>非同期フラッシュ操作を終了します。 このメソッドは継承できません。</summary>
+        <returns>最後に書き込まれたレコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、I/O 操作が完了するまでブロックします。 <xref:System.IO.Log.LogRecordSequence.EndFlush%2A> の呼び出し時に、I/O 要求間のディスク障害など非同期フラッシュ要求中に発生したエラーが現れます。  
+  
+ このメソッドは、<xref:System.IAsyncResult> メソッドから返された各 <xref:System.IO.Log.LogRecordSequence.BeginFlush%2A> について正確に 1 回呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="result" /> が無効です。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see langword="End" /> は、この非同期操作のために既に呼び出されています。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndReserveAndAppend">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber EndReserveAndAppend (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber EndReserveAndAppend(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.EndReserveAndAppend(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">保留状態の非同期 I/O リクエストへの参照。</param>
+        <summary>非同期の予約および追加操作を終了します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、I/O 操作が完了するまでブロックします。 <xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> の呼び出し時に、I/O 要求間のディスク障害など非同期書き込み要求中に発生したエラーが現れます。  
+  
+ このメソッドは、<xref:System.IAsyncResult> メソッドから返された各 <xref:System.IO.Log.LogRecordSequence.BeginReserveAndAppend%2A> について正確に 1 回呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="result" /> が無効です。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see langword="End" /> は、この非同期操作のために既に呼び出されています。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber EndWriteRestartArea (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber EndWriteRestartArea(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.EndWriteRestartArea(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">保留状態の非同期 I/O リクエストへの参照。</param>
+        <summary>非同期の再開領域の書き込み操作を終了します。 このメソッドは継承できません。</summary>
+        <returns>書き込まれたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、I/O 操作が完了するまでブロックします。 <xref:System.IO.Log.LogRecordSequence.EndWriteRestartArea%2A> の呼び出し時に、I/O 要求間のディスク障害など非同期書き込み要求中に発生したエラーが現れます。  
+  
+ このメソッドは、<xref:System.IAsyncResult> メソッドから返された各 <xref:System.IO.Log.LogRecordSequence.BeginWriteRestartArea%2A> について正確に 1 回呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="result" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいアーカイブ末尾または既存のアーカイブ末尾、あるいはアーカイブ ログの基本が無効です。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see langword="End" /> は、この非同期操作のために既に呼び出されています。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加したすべてのレコードが書き込まれたことを確認します。 このメソッドは継承できません。</summary>
+        <returns>最後に書き込まれたレコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことにより、<xref:System.IO.Log.LogRecordSequence> に追加されたすべてのレコードが永続的に書き込まれたことを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">データのフラッシュ中に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作はサポートされていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しい再開領域を格納するための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたログにエクステントがありません。 レコード シーケンスを使用する前に、1 つ以上のエクステントを作成する必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber Flush (System.IO.Log.SequenceNumber sequenceNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber Flush(valuetype System.IO.Log.SequenceNumber sequenceNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.Flush(System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sequenceNumber" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="sequenceNumber">書き込む必要のある最新レコードのシーケンス番号。 この <see cref="T:System.IO.Log.SequenceNumber" /> が無効な場合、すべてのレコードを書き込む必要があります。</param>
+        <summary>指定のシーケンス番号以下のシーケンス番号を持つすべての追加されたレコードが永続的に書き込まれたことが確認されます。 このメソッドは継承できません。</summary>
+        <returns>最後に書き込まれたレコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、指定のシーケンス番号以下のシーケンス番号を持つすべてのレコードが永続的に書き込まれたことが確認されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="sequenceNumber" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="sequenceNumber" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたログにエクステントがありません。 レコード シーケンスを使用する前に、1 つ以上のエクステントを作成する必要があります。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber LastSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber LastSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.LastSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加された最後のレコードのシーケンス番号より大きいシーケンス番号を取得します。</summary>
+        <value>追加された最後のレコードのシーケンス番号より大きいシーケンス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、最後に追加されたレコードのシーケンス番号を超えることが保証されるシーケンス番号が格納されています。 有効なシーケンス番号は、<xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber%2A> 以上、<xref:System.IO.Log.LogRecordSequence.LastSequenceNumber%2A> 未満です。 その他のシーケンス番号はすべて無効です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LogStore">
+      <MemberSignature Language="C#" Value="public System.IO.Log.LogStore LogStore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Log.LogStore LogStore" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.LogStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.LogStore</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このレコード シーケンスのデータを含む <see cref="T:System.IO.Log.LogStore" /> を取得します。 このメソッドは継承できません。</summary>
+        <value>このレコード シーケンスのデータを含む <see cref="T:System.IO.Log.LogStore" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogRecordSequence.LogStore%2A> メンバーを使用してエクステントを追加する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs#11)]
+ [!code-vb[S_UELogRecordSequence#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRecordLength">
+      <MemberSignature Language="C#" Value="public long MaximumRecordLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumRecordLength" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.MaximumRecordLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このレコード シーケンスに追加可能なレコードの最大サイズを取得します。</summary>
+        <value>このレコード シーケンスに追加可能なレコードの最大サイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLogRecords">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.Log.LogRecord&gt; ReadLogRecords (System.IO.Log.SequenceNumber start, System.IO.Log.LogRecordEnumeratorType logRecordEnum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.Log.LogRecord&gt; ReadLogRecords(valuetype System.IO.Log.SequenceNumber start, valuetype System.IO.Log.LogRecordEnumeratorType logRecordEnum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.ReadLogRecords(System.IO.Log.SequenceNumber,System.IO.Log.LogRecordEnumeratorType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.Log.LogRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="logRecordEnum" Type="System.IO.Log.LogRecordEnumeratorType" />
+      </Parameters>
+      <Docs>
+        <param name="start">読み取りを開始する先頭レコードのシーケンス番号。</param>
+        <param name="logRecordEnum"><see cref="T:System.IO.Log.LogRecordEnumeratorType" /> からレコードを読み取る方法 (つまり、順方向または逆方向) を指定する有効な <see cref="T:System.IO.Log.LogRecordSequence" /> 値。</param>
+        <summary>シーケンス内のレコードの列挙可能なコレクションを返します。 このメソッドは継承できません。</summary>
+        <returns>シーケンス内のレコードの列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、シーケンス内のレコードの列挙可能なコレクション。 列挙されたレコードの順序は、`logRecordEnum` パラメーター値に依存します。  
+  
+   
+  
+## Examples  
+ ループ内で <xref:System.IO.Log.LogRecordSequence.ReadLogRecords%2A> を使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs#10)]
+ [!code-vb[S_UELogRecordSequence#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="start" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="logRecordEnum" /> が無効です。  
+  
+ または  
+  
+ 指定した要素がコレクション内で見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="start" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。  
+  
+ または  
+  
+ ログ レコードの書き込みに使用するバッファー サイズが読み取りに使用するバッファー サイズを超えています。  
+  
+ または  
+  
+ レコード シーケンスが破損しています。  
+  
+ または  
+  
+ 指定されたログ ファイルの形式またはバージョンが無効です。  
+  
+ または  
+  
+ レコードは、レコード シーケンスと互換性がないバージョンで書き込まれました。</exception>
+        <exception cref="T:System.InvalidOperationException">列挙体が開始していないため、操作が無効です。 <see cref="M:System.Collections.IEnumerator.MoveNext" /> を呼び出す必要があります。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadRestartAreas">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.Log.LogRecord&gt; ReadRestartAreas ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.Log.LogRecord&gt; ReadRestartAreas() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.ReadRestartAreas" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.Log.LogRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シーケンス内の再開領域の列挙可能なコレクションを返します。 このメソッドは継承できません。</summary>
+        <returns>シーケンス内の再開領域の列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域では、シーケンス番号の逆順で (大きなシーケンス番号から小さなシーケンス番号に向かって) 列挙されます。 最後のシーケンス番号と基本シーケンス番号の間のシーケンス番号を持つ再開領域のみが列挙されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="start" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。  
+  
+ または  
+  
+ ログ レコードの書き込みに使用するバッファー サイズが読み取りに使用するバッファー サイズを超えています。  
+  
+ または  
+  
+ レコード シーケンスが破損しています。  
+  
+ または  
+  
+ 指定されたログ ファイルの形式またはバージョンが無効です。  
+  
+ または  
+  
+ レコードは、レコード シーケンスと互換性がないバージョンで書き込まれました。</exception>
+        <exception cref="T:System.InvalidOperationException">列挙体が開始していないため、操作が無効です。 <see cref="M:System.Collections.IEnumerator.MoveNext" /> を呼び出す必要があります。  
+  
+ または  
+  
+ 列挙体が終了しています。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReserveAndAppend">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber ReserveAndAppend (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber nextUndoRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservationCollection, params long[] reservations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber ReserveAndAppend(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber nextUndoRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservationCollection, int64[] reservations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.ReserveAndAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.Int64[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="nextUndoRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="reservations" Type="System.Int64[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="nextUndoRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservationCollection">予約を作成するコレクションを格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <param name="reservations">作成する予約のバイト数。</param>
+        <summary>単一の予約を自動的に行って、シーケンスにレコードを追加します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 指定の予約情報は、レコード追加操作を含む分割不可能な操作内で、提供された予約コレクションに追加されます。 追加が失敗した場合、領域は予約されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了できます。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ このメソッドを使用して予約を作成する方法を次の例に示します。 このタスクは、CLFS ベースの <xref:System.IO.Log.LogRecordSequence> クラスを使用している場合のみ実行できることに注意してください。  
+  
+```  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+long[] lengthOfUndoRecords = new long[] { 1000 };  
+recordSequence.ReserveAndAppend(recordData,  
+                                                     userSqn,  
+                                                     previousSqn,  
+                                                     RecordSequenceAppendOptions.None,  
+                                                     reservations,  
+                                                     lengthOfUndoRecords);  
+recordSequence.Append(undoRecordData,    // If necessary …  
+                                    userSqn,  
+                                    previousSqn,  
+                                    RecordSequenceAppendOptions.ForceFlush,  
+                                    reservations);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="nextUndoRecord" /> または <paramref name="previousRecord" /> が有効ではありません。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservations" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="nextUndoRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReserveAndAppend">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber ReserveAndAppend (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber userRecord, System.IO.Log.SequenceNumber previousRecord, System.IO.Log.RecordAppendOptions recordAppendOptions, System.IO.Log.ReservationCollection reservationCollection, params long[] reservations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber ReserveAndAppend(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber userRecord, valuetype System.IO.Log.SequenceNumber previousRecord, valuetype System.IO.Log.RecordAppendOptions recordAppendOptions, class System.IO.Log.ReservationCollection reservationCollection, int64[] reservations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.ReserveAndAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.Int64[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="userRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="previousRecord" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="recordAppendOptions" Type="System.IO.Log.RecordAppendOptions" />
+        <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
+        <Parameter Name="reservations" Type="System.Int64[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="userRecord">ユーザー指定の順序で次のレコードのシーケンス番号。</param>
+        <param name="previousRecord">以前の順序で次のレコードのシーケンス番号。</param>
+        <param name="recordAppendOptions">データの書き込み方法を指定する <see cref="T:System.IO.Log.RecordAppendOptions" /> の有効な値。</param>
+        <param name="reservationCollection">予約を作成する予約コレクション。</param>
+        <param name="reservations">作成する予約のバイト数。</param>
+        <summary>単一の予約を自動的に行って、シーケンスにレコードを追加します。 このメソッドは継承できません。</summary>
+        <returns>追加されたログ レコードのシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data` パラメーターに格納されたデータは、レコードとして追加するために単一バイトの配列に連結されます。 ただし、レコードの読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 指定の予約情報は、レコード追加操作を含む分割不可能な操作内で、提供された予約コレクションに追加されます。 追加が失敗した場合、領域は予約されません。  
+  
+ このメソッドは通常、レコードの書き込みが終わる前に完了できます。 レコードが書き込まれたことを確認するために、<xref:System.IO.Log.RecordAppendOptions.ForceFlush> パラメーターを使用して `recordAppendOptions` フラグを指定するか、<xref:System.IO.Log.LogRecordSequence.Flush%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">レコードの追加時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しいレコードの格納または予約のための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="userRecord" /> または <paramref name="previousRecord" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.NotSupportedException">レコード シーケンスが読み取り専用アクセスで開かれているため、操作を実行できません。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.ReservationNotFoundException"><paramref name="data" /> に対応する十分なサイズの予約が <paramref name="reservations" /> に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReservedBytes">
+      <MemberSignature Language="C#" Value="public long ReservedBytes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReservedBytes" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.ReservedBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予約された合計バイト数を取得します。</summary>
+        <value>このレコード シーケンス内でなされたすべての予約の合計サイズ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RestartSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber RestartSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber RestartSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.RestartSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログの最後に最も近い再開領域のシーケンス番号を取得します。</summary>
+        <value>ログの最後に最も近い再開領域のシーケンス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ <xref:System.IO.Log.LogRecordSequence.SetLastRecord%2A> メソッドを使用して、直前に書き込まれた再開領域を削除できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RetryAppend">
+      <MemberSignature Language="C#" Value="public bool RetryAppend { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RetryAppend" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogRecordSequence.RetryAppend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログがいっぱいの場合に、追加を自動的に再試行するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ログがいっぱいの場合に追加の再試行を自動的に行う場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値が `true` である場合で、シーケンス内に十分な領域がないために <xref:System.IO.Log.LogRecordSequence.Append%2A> の呼び出しが失敗したときは、レコード シーケンスが領域の解放を試みた後、追加の再試行を行います。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Log.LogRecordSequence.RetryAppend%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#3)]
+ [!code-vb[S_UELogRecordSequence#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastRecord">
+      <MemberSignature Language="C#" Value="public void SetLastRecord (System.IO.Log.SequenceNumber sequenceNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLastRecord(valuetype System.IO.Log.SequenceNumber sequenceNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.SetLastRecord(System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sequenceNumber" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="sequenceNumber"><see cref="T:System.IO.Log.LogRecordSequence" /> の新しい最後のシーケンス番号。  
+  
+ 現在ログに存在する有効なレコードを参照する必要があります。</param>
+        <summary><see cref="T:System.IO.Log.LogRecordSequence" /> の最後の項目を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーケンス番号は、基本シーケンス番号より大きい値を指定する必要があります。  
+  
+ このメソッドが完了すると、指定されたシーケンス番号より大きいシーケンス番号で以前に追加されたすべてのレコードにアクセスできなくなります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="sequenceNumber" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいアーカイブ末尾または既存のアーカイブ末尾、あるいはアーカイブ ログの基本が無効です。  
+  
+ または  
+  
+ <paramref name="sequenceNumber" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ ログの末尾に到達しています。  
+  
+ または  
+  
+ 指定されたログ ファイルの形式またはバージョンが無効です。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TailPinned">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IO.Log.TailPinnedEventArgs&gt; TailPinned;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IO.Log.TailPinnedEventArgs&gt; TailPinned" />
+      <MemberSignature Language="DocId" Value="E:System.IO.Log.LogRecordSequence.TailPinned" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IO.Log.TailPinnedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シーケンスの末尾を移動する必要があることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、レコード シーケンスが領域を使い果たしたときに発行できます。 このイベントが発行されると、シーケンスの末尾 (つまり、基本シーケンス番号) が領域の解放のために前方に移動します。  
+  
+ イベントは、レコード シーケンスが何らかの理由で領域を解放する必要があると決定したとき、いつでも発生させることができます。 たとえば、CLFS ポリシー エンジンは、同じログ ファイルを共有する 2 つのログ クライアントの末尾が離れすぎていると判断したときにイベントを発生させます。 領域の解放は、再開領域を書き込むか、ログを切り捨てて <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber%2A> メソッドを使用して領域を消去することにより行うことができます。 「例」のコード サンプルに 2 つ目の方法が示されています。  
+  
+ <xref:System.IO.Log.FileRecordSequence.WriteRestartArea%2A> イベントの外部で <xref:System.IO.Log.LogRecordSequence.TailPinned> メソッドを呼び出して、領域を解放することもできます。 再開領域は、他のログ処理システムにおけるチェックポイントと同様です。 このメソッドの呼び出しは、再開領域が完成し、今後のレコード追加のために使用可能になる前に、アプリケーションが以前のすべてのレコードについて検討していることを示しています。 他のレコードと同様に、このメソッドによるレコード書き込みが機能するためには、ログ内に実際の空き領域が必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Log.LogRecordSequence.TailPinned> イベントを使用する方法を次の例に示します。  
+  
+```  
+recordSequence.RetryAppend = true;  
+recordSequence.TailPinned += new EventHandler<TailPinnedEventArgs>(HandleTailPinned);  
+  
+void HandleTailPinned(object sender, TailPinnedEventArgs tailPinnedEventArgs)  
+{  
+   // tailPinnedEventArgs.TargetSequenceNumber is the target   
+   // sequence number to free up space to.    
+   // However, this sequence number is not necessarily valid.  We have  
+   // to use this sequence number as a starting point for finding a  
+   // valid point within the log to advance toward. You need to  
+   // identify a record with a sequence number equal to, or greater  
+   // than TargetSequenceNumber; let's call this   
+   // realTargetSequenceNumber. Once found, move the base  
+  
+   recordSequence.AdvanceBaseSequenceNumber(realTargetSequenceNumber);  
+  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteRestartArea">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber WriteRestartArea (ArraySegment&lt;byte&gt; data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber WriteRestartArea(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.WriteRestartArea(System.ArraySegment{System.Byte})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加される配列セグメント。</param>
+        <summary>再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込みます。 このメソッドは継承できません。</summary>
+        <returns>書き込まれた再開領域のシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ バイト配列セグメント内のデータは、レコードとして追加するために単一のバイト配列に連結されます。 レコード領域の読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">再開領域の書き込み中に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しい再開領域を格納するための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber WriteRestartArea (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber WriteRestartArea(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.WriteRestartArea(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <summary>再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込みます。 このメソッドは継承できません。</summary>
+        <returns>書き込まれた再開領域のシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ バイト配列セグメント内のデータは、レコードとして追加するために単一のバイト配列に連結されます。 レコード領域の読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">再開領域の書き込み中に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しい再開領域を格納するための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber WriteRestartArea (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber newBaseSeqNum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber WriteRestartArea(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber newBaseSeqNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.WriteRestartArea(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="newBaseSeqNum" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="newBaseSeqNum">新しい基本シーケンス番号。 指定するシーケンス番号は、現在の基本シーケンス番号以上であることが必要です。</param>
+        <summary>再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込み、基本シーケンス番号を更新します。 このメソッドは継承できません。</summary>
+        <returns>書き込まれた再開領域のシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ 再開領域が書き込まれた場合、バイト配列セグメント内のデータはレコードとして追加するために単一のバイト配列に連結されます。 レコード領域の読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ このメソッドが正しく完了すると、基本シーケンス番号が更新されます。 新しい基本シーケンス番号未満の番号を持つすべてのログ レコードは、アクセスできません。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">再開領域の書き込み中に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しい再開領域を格納するための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber WriteRestartArea (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber newBaseSeqNum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber WriteRestartArea(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber newBaseSeqNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.WriteRestartArea(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="newBaseSeqNum" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="newBaseSeqNum">新しい基本シーケンス番号。 指定するシーケンス番号は、現在の基本シーケンス番号以上であることが必要です。</param>
+        <summary>再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込み、基本シーケンス番号を更新します。 このメソッドは継承できません。</summary>
+        <returns>書き込まれた再開領域のシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ 再開領域が書き込まれた場合、バイト配列セグメント内のデータはレコードとして追加するために単一のバイト配列に連結されます。 レコード領域の読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ このメソッドが正しく完了すると、基本シーケンス番号が更新されます。 新しい基本シーケンス番号未満の番号を持つすべてのログ レコードは、アクセスできません。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">再開領域の書き込み中に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しい再開領域を格納するための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber WriteRestartArea (ArraySegment&lt;byte&gt; data, System.IO.Log.SequenceNumber newBaseSeqNum, System.IO.Log.ReservationCollection reservations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber WriteRestartArea(valuetype System.ArraySegment`1&lt;unsigned int8&gt; data, valuetype System.IO.Log.SequenceNumber newBaseSeqNum, class System.IO.Log.ReservationCollection reservations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.WriteRestartArea(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.ReservationCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="newBaseSeqNum" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="reservations" Type="System.IO.Log.ReservationCollection" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="newBaseSeqNum">新しい基本シーケンス番号。 指定するシーケンス番号は、現在の基本シーケンス番号以上であることが必要です。</param>
+        <param name="reservations">この再開領域で使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <summary>予約を使用して再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込み、基本シーケンス番号を更新します。 このメソッドは継承できません。</summary>
+        <returns>書き込まれた再開領域のシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ 再開領域が書き込まれた場合、バイト配列セグメント内のデータはレコードとして追加するために単一のバイト配列に連結されます。 レコード領域の読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 予約を指定すると、コレクションに格納されていた予約情報で以前に予約された領域が書き込まれた再開領域により消費されます。 このメソッドが成功すると、データを格納できる最も小さな予約が消費され、その予約がコレクションから削除されます。  
+  
+ このメソッドが正しく完了すると、基本シーケンス番号が更新されます。 新しい基本シーケンス番号未満の番号を持つすべてのログ レコードは、アクセスできません。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.IO.IOException">再開領域の書き込み中に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスは、新しい再開領域を格納するための十分な空き領域を作成できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRestartArea">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber WriteRestartArea (System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; data, System.IO.Log.SequenceNumber newBaseSeqNum, System.IO.Log.ReservationCollection reservationCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.IO.Log.SequenceNumber WriteRestartArea(class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; data, valuetype System.IO.Log.SequenceNumber newBaseSeqNum, class System.IO.Log.ReservationCollection reservationCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogRecordSequence.WriteRestartArea(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.ReservationCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="newBaseSeqNum" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
+      </Parameters>
+      <Docs>
+        <param name="data">レコードとして連結および追加されるバイト配列セグメントのリスト。</param>
+        <param name="newBaseSeqNum">新しい基本シーケンス番号。 指定するシーケンス番号は、現在の基本シーケンス番号以上であることが必要です。</param>
+        <param name="reservationCollection">この再開領域で使用する予約情報を格納する <see cref="T:System.IO.Log.ReservationCollection" />。</param>
+        <summary>予約を使用して再開領域を <see cref="T:System.IO.Log.LogRecordSequence" /> に書き込み、基本シーケンス番号を更新します。 このメソッドは継承できません。</summary>
+        <returns>書き込まれた再開領域のシーケンス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開領域は、クライアントの最後のチェックポイント操作に関する情報を一時的に保存するために使用されます。 Common Log File System (CLFS) は、少なくとも 1 つの有効な領域が常に使用可能であることを保証するために 2 つの再開領域を維持します。 回復処理が必要な場合、CLFS は最後のチェックポイント操作から再開領域とすべてのデータを読み取ります。 このデータは、回復プロセスで使用できるようにトランザクション テーブルおよびダーティ ページ テーブルを初期化し、ファイル テーブルを開きます。  
+  
+ 再開領域は、<xref:System.IO.Log.LogRecordSequence.ReadRestartAreas%2A> メソッドを使用して読み取ることができます。  
+  
+ 再開領域が書き込まれた場合、バイト配列セグメント内のデータはレコードとして追加するために単一のバイト配列に連結されます。 レコード領域の読み取り時にデータを分割して配列セグメントに戻す準備は実施されません。  
+  
+ 予約を指定すると、コレクションに格納されていた予約情報で以前に予約された領域が書き込まれた再開領域により消費されます。 このメソッドが成功すると、データを格納できる最も小さな予約が消費され、その予約がコレクションから削除されます。  
+  
+ このメソッドが正しく完了すると、基本シーケンス番号が更新されます。 新しい基本シーケンス番号未満の番号を持つすべてのログ レコードは、アクセスできません。  
+  
+ レコード シーケンスが破棄されている場合、または無効な引数を渡した場合、この操作内で例外が直ちにスローされます。 I/O 要求時にディスク障害が発生した場合など、非同期追加要求中にエラーが発生した場合、<xref:System.IO.Log.LogRecordSequence.EndReserveAndAppend%2A> メソッドが呼び出されたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="newBaseSeqNum" /> が有効ではありません。  
+  
+ または  
+  
+ 指定されたログ列挙体の開始シーケンス番号が無効です。  
+  
+ または  
+  
+ <paramref name="data" /> が最大レコード サイズより大きいため、追加できません。  
+  
+ または  
+  
+ <paramref name="reservationCollection" /> が、このレコード シーケンスによって作成されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいアーカイブ末尾または既存のアーカイブ末尾、あるいはアーカイブ ログの基本が無効です。  
+  
+ または  
+  
+ <paramref name="newBaseSeqNum" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ I/O デバイス エラーのため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ シーケンスへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

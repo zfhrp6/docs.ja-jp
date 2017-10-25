@@ -1,0 +1,27 @@
+<Type Name="WindowMessage" FullName="System.Activities.Presentation.Hosting.WindowMessage">
+  <TypeSignature Language="C#" Value="public delegate void WindowMessage(int msgId, IntPtr parameter1, IntPtr parameter2);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WindowMessage extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Hosting.WindowMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="msgId" Type="System.Int32" />
+    <Parameter Name="parameter1" Type="System.IntPtr" />
+    <Parameter Name="parameter2" Type="System.IntPtr" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="msgId">メッセージ ID。</param>
+    <param name="parameter1">最初のメッセージ パラメーターへのポインター。 このパラメーターの値は、メッセージによって異なります。</param>
+    <param name="parameter2">2 つ目のメッセージ パラメーターへのポインター。 このパラメーターの値は、メッセージによって異なります。</param>
+    <summary>ウィンドウ メッセージを処理するメソッドを参照するために使用されるデリゲートを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

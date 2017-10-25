@@ -1,0 +1,124 @@
+<Type Name="BookmarkReachedEventArgs" FullName="System.Speech.Synthesis.BookmarkReachedEventArgs">
+  <TypeSignature Language="C#" Value="public class BookmarkReachedEventArgs : System.Speech.Synthesis.PromptEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BookmarkReachedEventArgs extends System.Speech.Synthesis.PromptEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.BookmarkReachedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Synthesis.PromptEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached" /> イベントからのデータを返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス<xref:System.Speech.Synthesis.BookmarkReachedEventArgs>場合は、作成、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクト、<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>イベント。 <xref:System.Speech.Synthesis.SpeechSynthesizer>を生成、<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>イベントのいずれかの処理中にブックマークに到達したときに、 <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 イベントをトリガーしたブックマークの場所と名前を取得するには、アクセス、<xref:System.Speech.Synthesis.BookmarkReachedEventArgs.Bookmark%2A>と<xref:System.Speech.Synthesis.BookmarkReachedEventArgs.AudioPosition%2A>イベントのハンドラーのプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのブックマークが含まれていて、WAV ファイル再生のために、出力を送信するメッセージを作成します。 ハンドラーを<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>イベントがコンソールにイベントが発生したときに、オーディオのストリーム内での位置およびブックマークの名前を書き込みます。  
+  
+```  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\test\weather.wav");  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =  
+          new System.Media.SoundPlayer(@"C:\test\weather.wav");  
+  
+        // Build a prompt and append bookmarks.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendText(  
+          "The weather forecast for today is partly cloudy with some sun breaks.");  
+        builder.AppendBookmark("Daytime forecast");  
+        builder.AppendText(  
+          "Tonight's weather will be cloudy with a 30% chance of showers.");  
+        builder.AppendBookmark("Nightime forecast");  
+  
+        // Add a handler for the BookmarkReached event.  
+        synth.BookmarkReached +=  
+          new EventHandler<BookmarkReachedEventArgs>(synth_BookmarkReached);  
+  
+        // Speak the prompt and play back the output file.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Write the name and position of the bookmark to the console.  
+    static void synth_BookmarkReached(object sender, BookmarkReachedEventArgs e)  
+    {  
+      Console.WriteLine("Bookmark ({0}) reached at: {1} ",  
+        e.Bookmark, e.AudioPosition);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan AudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.BookmarkReachedEventArgs.AudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オフセット、ブックマークが到達した時刻を取得します。</summary>
+        <value>イベントが発生したときに、合成エンジンのオーディオ入力ストリームの位置を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bookmark">
+      <MemberSignature Language="C#" Value="public string Bookmark { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Bookmark" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.BookmarkReachedEventArgs.Bookmark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>達した、ブックマークの名前を取得します。</summary>
+        <value>ブックマークの名前の値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,81 @@
+<Type Name="LogoutAction" FullName="System.Web.UI.WebControls.LogoutAction">
+  <TypeSignature Language="C#" Value="public enum LogoutAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LogoutAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LogoutAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ユーザーがリダイレクトされる宛先をそのユーザーは、Web サイトをログアウトするときにページを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LogoutAction>列挙型のメンバーは、ユーザーが Web サイトを使用して、ログアウトするときに実行されるアクションを示す、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.LoginStatus.LogoutAction%2A?displayProperty=nameWithType>プロパティを使用して、<xref:System.Web.UI.WebControls.LogoutAction>列挙します。  
+  
+ [!code-aspx-csharp[LoginStatusLogoutAction#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginStatusLogoutAction/CS/loginstatuslogoutactioncs.aspx#1)]
+ [!code-aspx-vb[LoginStatusLogoutAction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginStatusLogoutAction/VB/loginstatuslogoutactionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Redirect">
+      <MemberSignature Language="C#" Value="Redirect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.LogoutAction Redirect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.LogoutAction.Redirect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LogoutAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された URL へのユーザーをリダイレクトします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLoginPage">
+      <MemberSignature Language="C#" Value="RedirectToLoginPage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.LogoutAction RedirectToLoginPage = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.LogoutAction.RedirectToLoginPage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LogoutAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイトの構成ファイル (Machine.config と Web.config) で定義されているログイン ページに、ユーザーをリダイレクトします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="Refresh" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.LogoutAction Refresh = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.LogoutAction.Refresh" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LogoutAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログアウトしているユーザーを使用して、現在のページを再読み込みします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

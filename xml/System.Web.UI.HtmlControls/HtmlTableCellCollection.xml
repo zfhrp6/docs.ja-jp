@@ -1,0 +1,468 @@
+<Type Name="HtmlTableCellCollection" FullName="System.Web.UI.HtmlControls.HtmlTableCellCollection">
+  <TypeSignature Language="C#" Value="public sealed class HtmlTableCellCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlTableCellCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクション<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />の単一行のセルを表すオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>をプログラムでのコレクションを管理するクラス<xref:System.Web.UI.HtmlControls.HtmlTableCell>内の単一行のセルを表すオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 このクラスは追加、削除、または行内のセルの内容を変更する、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.HtmlControls.HtmlTable>コントロールに含まれる、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>プロパティのコレクションを含む<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクト。 各<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトがテーブル内の個々 の行を表します。 <xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトが含まれています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>プロパティのコレクションを表す<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクト。 これらのオブジェクトは、さらに、行の個々 のセルを表します。 個々 のセルを取得するには、まず、<xref:System.Web.UI.HtmlControls.HtmlTableRow>表内のセルを含む行を表すオブジェクト (から、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>のコレクション、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール)。 表示する、<xref:System.Web.UI.HtmlControls.HtmlTableCell>行のセルを表すオブジェクト (から、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>のコレクション、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクト)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の内容を動的に生成する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロールにセルを追加することによって、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 注意して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>によって表される、行のプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトは、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollection/CS/htmltablecellcollectioncs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollection/VB/htmltablecellcollectionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.HtmlControls.HtmlTableCell cell);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.HtmlControls.HtmlTableCell cell) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.Add(System.Web.UI.HtmlControls.HtmlTableCell)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.HtmlControls.HtmlTableCell" />
+      </Parameters>
+      <Docs>
+        <param name="cell">コレクションに追加する <see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />の末尾にオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、指定した追加<xref:System.Web.UI.HtmlControls.HtmlTableCell>の末尾にオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 挿入する場合、<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトを使用して、コレクション内の指定した場所に、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Add%2A>によって表される、表のセルを追加する方法、<xref:System.Web.UI.HtmlControls.HtmlTableCell>の末尾に、オブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 注意して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>によって表される行のプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトが、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollection/CS/htmltablecellcollectioncs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollection/VB/htmltablecellcollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />オブジェクトから、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、すべて削除<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクションとリセット、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Count%2A>プロパティを`0`です。  
+  
+> [!NOTE]
+>  このメソッドは、行からセルを削除しますが、テーブルから行は削除されません。 テーブルから行を削除する場合も削除することを確認して、<xref:System.Web.UI.HtmlControls.HtmlTableRow>から行を表すオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>のコレクション、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Clear%2A>からすべての項目を削除する方法、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 新しいエントリは、コレクションに追加しに表示される、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectioncClear#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectioncClear/CS/htmltablecellcollectionclearcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectioncClear#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectioncClear/VB/htmltablecellcollectionclearvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">指定した最初のインデックス<see cref="T:System.Array" />アイテムを受信します。</param>
+        <summary>項目をコピー、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />を指定したコレクション<see cref="T:System.Array" />で指定されたインデックスで始まる、<see cref="T:System.Array" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をコピーするには、このメソッドを使用して、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>に指定されたコレクション<xref:System.Array?displayProperty=nameWithType>配列の指定したインデックスから始まります。  
+  
+> [!NOTE]
+>  `array`パラメーターは、0 から始まるである必要があります<xref:System.Array?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.CopyTo%2A>と同じ内容を格納する配列を作成する方法、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 配列は反復の内容を表示する、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectionCopyTo/CS/htmltablecellcollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectionCopyTo/VB/htmltablecellcollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableCellCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <value>数<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />です。 既定値は <see langword="0" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Count%2A>に含まれるセルの数を決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 <xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Count%2A>プロパティは、バインドされている上限を決定するコレクションを反復処理する場合によく使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Count%2A>の行内のセルの数を決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 ループの上限としては、この値は、テーブルの行のセルの反復処理に使用されます。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectionCount#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectionCount/CS/htmltablecellcollectioncountcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectionCount#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectionCount/VB/htmltablecellcollectioncountvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、 <see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <returns>A <see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-内の各項目の内容を取得する反復できるオブジェクトを実装する、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>コレクションで示される現在の項目を取得するプロパティです。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子を初期位置に移動するメソッド。  
+  
+> [!NOTE]
+>  <xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>を作成した後、メソッドを呼び出す必要があります、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-オブジェクトを実装またはを使用した後、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動します。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.GetEnumerator%2A>メソッドを作成、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-オブジェクトを実装します。 オブジェクトは反復の内容を表示する、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectionienumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectionienumerator/CS/htmltablecellcollectionienumeratorcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectionienumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectionienumerator/VB/htmltablecellcollectionienumeratorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.HtmlControls.HtmlTableCell cell);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.HtmlControls.HtmlTableCell cell) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.Insert(System.Int32,System.Web.UI.HtmlControls.HtmlTableCell)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="cell" Type="System.Web.UI.HtmlControls.HtmlTableCell" />
+      </Parameters>
+      <Docs>
+        <param name="index">内の場所、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />を追加する位置を示す、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />です。</param>
+        <param name="cell"><see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" /> に追加する <see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />オブジェクトの指定したインデックス位置にある、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Insert%2A>メソッドに指定した<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトを<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション内の指定したインデックス位置。 単純に追加する場合、<xref:System.Web.UI.HtmlControls.HtmlTableCell>を使用して、コレクションの末尾にオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Insert%2A>を動的にによって表される、表のセルを挿入する方法、<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトで、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectionInsert#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectionInsert/CS/htmltablecellcollectioninsertcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectionInsert#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectionInsert/VB/htmltablecellcollectioninsertvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableCellCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" /> コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />すべてのケース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`ことを示す、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクションは常に書き込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableCellCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスをするかどうかを示す値を取得、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクションが同期されている (スレッド セーフである)。</summary>
+        <value>
+          <see langword="false" />すべてのケースを示しますへのアクセスが、 <see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" /> (いないスレッド セーフである) は同期されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生<xref:System.Collections.ICollection?displayProperty=nameWithType>常にオーバーライドと`false`へのアクセスを示すために、 <xref:System.Web.UI.HtmlControls.HtmlTableCellCollection> (いないスレッド セーフな) コレクションが同期されていません。  
+  
+ 詳細については、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.HtmlControls.HtmlTableCell this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.HtmlControls.HtmlTableCell Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableCellCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlControls.HtmlTableCell</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定する序数インデックス値、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />を返します。</param>
+        <summary>取得、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <value><see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />に含まれているセルを表す、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、取得、<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 アクセスすることができます、<xref:System.Web.UI.HtmlControls.HtmlTableCell>単純な配列表記を使用して指定したインデックスにあるオブジェクト。  
+  
+> [!NOTE]
+>  コレクションは、0 から始まります。したがって、コレクションの最初の要素には、インデックスの値が含まれます。`0`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、によって表される、表のセルを取得するインデクサーを使用して、<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 新しいコンテンツでは、セルは更新されます。 注意して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>によって表される行のプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトが、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollection/CS/htmltablecellcollectioncs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollection/VB/htmltablecellcollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.HtmlControls.HtmlTableCell cell);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.HtmlControls.HtmlTableCell cell) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.Remove(System.Web.UI.HtmlControls.HtmlTableCell)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.HtmlControls.HtmlTableCell" />
+      </Parameters>
+      <Docs>
+        <param name="cell"><see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" /> から削除する <see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />オブジェクトから、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、指定された削除<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。  
+  
+> [!NOTE]
+>  指定した場合、<xref:System.Web.UI.HtmlControls.HtmlTableCell>に存在しないオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション アイテムはありませんが、コレクションから削除します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.Remove%2A>によって表される、テーブルの指定されたセルを削除する方法、<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 この例の最初の列からのセルの削除、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectionRemove#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectionRemove/CS/htmltablecellcollectionremovecs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectionRemove#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectionRemove/VB/htmltablecellcollectionremovevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableCellCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />から削除する、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />です。</param>
+        <summary>削除、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、削除、<xref:System.Web.UI.HtmlControls.HtmlTableCell>から指定したインデックス位置にオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 インデックス番号は 0 から始まります。したがって、コレクションの最初の項目には、インデックス値`0`です。  
+  
+> [!NOTE]
+>  インデックス値の範囲外であるインデックスを指定すると、例外が発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.RemoveAt%2A>から指定されたインデックス位置にある項目を削除する方法、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>コレクション。 この例の最初の列からのセルの削除、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableCellCollectionRemoveAt#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCellCollectionRemoveAt/CS/htmltablecellcollectionremoveatcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCellCollectionRemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCellCollectionRemoveAt/VB/htmltablecellcollectionremoveatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、コレクション内のインデックス値の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableCellCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />コレクション。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトの現在のインスタンスは、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>クラスです。  
+  
+ 詳細については、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

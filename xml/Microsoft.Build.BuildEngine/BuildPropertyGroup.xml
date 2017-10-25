@@ -1,0 +1,477 @@
+<Type Name="BuildPropertyGroup" FullName="Microsoft.Build.BuildEngine.BuildPropertyGroup">
+  <TypeSignature Language="C#" Value="public class BuildPropertyGroup : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildPropertyGroup extends System.Object implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("BuildPropertyGroup (Count = { Count }, Condition = { Condition })")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+          <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>オブジェクトは、プロジェクト、またはグローバル プロパティや環境変数のプロパティなどのプロパティの仮想コレクション内の要素を表すことができます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildProperty>、 <xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewProperty#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewProperty/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewProperty/VB/Module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildPropertyGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildPropertyGroup (Microsoft.Build.BuildEngine.Project parentProject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.BuildEngine.Project parentProject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.#ctor(Microsoft.Build.BuildEngine.Project)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parentProject" Type="Microsoft.Build.BuildEngine.Project" />
+      </Parameters>
+      <Docs>
+        <param name="parentProject">新しい PropertyGroup に追加するためのプロジェクトの名前。</param>
+        <summary>指定したプロジェクト内の新しい PropertyGroup 要素を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[PropertyGroup 要素 (MSBuild)](http://msdn.microsoft.com/library/ff1e6c68-b9a1-4263-a1ce-dc3b829a64d4)プロパティ グループの詳細についてはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddNewProperty">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しく追加<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />を<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildProperty>、 <xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewProperty#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewProperty/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewProperty/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddNewProperty">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildProperty AddNewProperty (string propertyName, string propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildProperty AddNewProperty(string propertyName, string propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.AddNewProperty(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />です。</param>
+        <param name="propertyValue"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />です。</param>
+        <summary>新しく追加<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />と<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />を<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <returns>新しい <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildProperty>、 <xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewProperty#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewProperty/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewProperty/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNewProperty">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildProperty AddNewProperty (string propertyName, string propertyValue, bool treatPropertyValueAsLiteral);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildProperty AddNewProperty(string propertyName, string propertyValue, bool treatPropertyValueAsLiteral) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.AddNewProperty(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.String" />
+        <Parameter Name="treatPropertyValueAsLiteral" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />です。</param>
+        <param name="propertyValue"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />です。</param>
+        <param name="treatPropertyValueAsLiteral">
+          <see langword="true" />処理する、 <c>propertyValue</c>パラメーターとしてリテラル値です。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しく追加<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />と<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />を<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <returns>新しい <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、<see cref="P:Microsoft.Build.BuildEngine.BuildPropertyGroup.Condition" />プロパティの値とそのすべて<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />オブジェクトから、<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildPropertyGroup Clone (bool deepClone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildPropertyGroup Clone(bool deepClone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.Clone(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildPropertyGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deepClone" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deepClone">
+          <see langword="true" />ディープ コピーを作成する、 <see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />、それ以外の<see langword="false" />します。</param>
+        <summary>簡易コピーを作成、<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <returns><see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" /> のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 簡易コピーを<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>元と同じプロパティ グループを参照します。 変更の簡易コピーが両方のコピーに反映されます。  
+  
+ 詳細なコピー、<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>参照の両方をコピーできるようにする新しい XML 要素を作成、<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>は個別に変更できます。  
+  
+ 場合、<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>プロジェクト内の要素に直接対応しています (環境などの仮想プロパティのコレクションに対応するのではなく変数とグローバル プロパティ)、深層のみコピーが許可されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public string Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Condition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildPropertyGroup.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<c>条件</c>属性プロパティ グループ値を指定します。</summary>
+        <value><c>条件</c>属性プロパティ グループ値を指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildPropertyGroup.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を示す値を取得<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />内のオブジェクト、<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <value>数を表す整数値<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>オブジェクトは、プロジェクト、またはグローバル プロパティや環境変数のプロパティなどのプロパティの仮想コレクション内の要素を表すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" /> を反復処理する列挙子を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />全体の<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、呼び出し元を使用する、 `foreach` c# 言語のステートメント (`for each`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])、個人を反復処理する<xref:Microsoft.Build.BuildEngine.BuildProperty>内のオブジェクト、<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、 <xref:Microsoft.Build.BuildEngine.BuildItem>、 <xref:Microsoft.Build.BuildEngine.BuildProperty> <xref:Microsoft.Build.BuildEngine.BuildItemGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>クラスをすべてのアイテムと、プロジェクトのプロパティを一覧表示します。  
+  
+ [!code-csharp[msbuild_ListItemsAndProperties#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ListItemsAndProperties/CS/Program.cs#1)]
+ [!code-vb[msbuild_ListItemsAndProperties#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ListItemsAndProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImported">
+      <MemberSignature Language="C#" Value="public bool IsImported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImported" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildPropertyGroup.IsImported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティのグループがプロジェクトにインポートされたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、プロパティ グループは、プロジェクトにインポートされましたそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildProperty this[string propertyName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.BuildEngine.BuildProperty Item(string)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildPropertyGroup.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />の値、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />を取得または設定します。</param>
+        <summary>取得または設定、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />の<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />します。</summary>
+        <value>A<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />の<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="RemoveProperty">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" /> を <see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildProperty>、 <xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewProperty#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewProperty/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewProperty/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="RemoveProperty">
+      <MemberSignature Language="C#" Value="public void RemoveProperty (Microsoft.Build.BuildEngine.BuildProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveProperty(class Microsoft.Build.BuildEngine.BuildProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.RemoveProperty(Microsoft.Build.BuildEngine.BuildProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="Microsoft.Build.BuildEngine.BuildProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">削除する <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />。</param>
+        <summary>指定した <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" /> を <see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildProperty>、 <xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewProperty#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewProperty/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewProperty/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProperty">
+      <MemberSignature Language="C#" Value="public void RemoveProperty (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveProperty(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.RemoveProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />の値、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />を削除します。</param>
+        <summary>削除、 <see cref="T:Microsoft.Build.BuildEngine.BuildProperty" /> 、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />から、<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImportedPropertyGroupCondition">
+      <MemberSignature Language="C#" Value="public void SetImportedPropertyGroupCondition (string condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImportedPropertyGroupCondition(string condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.SetImportedPropertyGroupCondition(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">インポートされた PropertyGroup に追加する条件です。</param>
+        <summary>インポートされたプロパティ グループの条件を設定します。 変更は保持されません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public void SetProperty (string propertyName, string propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetProperty(string propertyName, string propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.SetProperty(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />のプロパティの値、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />を設定します。</param>
+        <param name="propertyValue"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />プロパティの値を割り当てる、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />です。</param>
+        <summary>セット、<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />の<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public void SetProperty (string propertyName, string propertyValue, bool treatPropertyValueAsLiteral);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetProperty(string propertyName, string propertyValue, bool treatPropertyValueAsLiteral) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildPropertyGroup.SetProperty(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.String" />
+        <Parameter Name="treatPropertyValueAsLiteral" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />のプロパティの値、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />を設定します。</param>
+        <param name="propertyValue"><see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />プロパティの値を割り当てる、<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />です。</param>
+        <param name="treatPropertyValueAsLiteral">
+          <see langword="true" />処理する、 <c>propertyValue</c>パラメーターとしてリテラル値です。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>セット、<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Value" />の<see cref="T:Microsoft.Build.BuildEngine.BuildProperty" />、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildProperty.Name" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

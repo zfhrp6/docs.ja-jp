@@ -1,0 +1,237 @@
+<Type Name="ICollection" FullName="System.Collections.ICollection">
+  <TypeSignature Language="C#" Value="public interface ICollection : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICollection implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.ICollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての非ジェネリック コレクションについて、サイズ、列挙子、および同期メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ICollection>インターフェイスはクラスの基本インターフェイス、<xref:System.Collections>名前空間。  
+  
+ <xref:System.Collections.ICollection>インターフェイスを拡張<xref:System.Collections.IEnumerable>です。<xref:System.Collections.IDictionary>と<xref:System.Collections.IList>を拡張する特別なインターフェイスは、<xref:System.Collections.ICollection>です。 <xref:System.Collections.IDictionary>実装と同様にキー/値ペアのコレクションでは、<xref:System.Collections.Hashtable>クラスです。 <xref:System.Collections.IList>実装は、値のコレクションとそのメンバーと同様に、インデックスを使用してアクセスできる、<xref:System.Collections.ArrayList>クラスです。  
+  
+ などの要素へのアクセスを制限するいくつかのコレクション、<xref:System.Collections.Queue>クラスおよび<xref:System.Collections.Stack>クラスを直接実装、<xref:System.Collections.ICollection>インターフェイスです。  
+  
+ どちらの場合、<xref:System.Collections.IDictionary>インターフェイスも<xref:System.Collections.IList>インターフェイスが必要なコレクションの要件を満たすから新しいコレクション クラスを派生させる、<xref:System.Collections.ICollection>インターフェイスの代わりに柔軟性が高まります。  
+  
+ このインターフェイスのジェネリック バージョンは、<xref:System.Collections.Generic.ICollection%601?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ICollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.ICollection" /> の要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ICollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> に格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> に格納されている要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ICollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ICollection.SyncRoot%2A> は、<xref:System.Collections.ICollection> へのアクセスを同期するために使用できるオブジェクトを返します。  
+  
+ 内のほとんどのコレクション クラス、<xref:System.Collections?displayProperty=nameWithType>名前空間も、基になるコレクションをラップする同期されたラッパーを提供する同期メソッドを実装します。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中にプロパティです。  
+  
+ [!code-cpp[System.Collections.ICollection#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.collections.icollection/cpp/remarks.cpp#1)]
+ [!code-csharp[System.Collections.ICollection#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.icollection/cs/remarks.cs#1)]
+ [!code-vb[System.Collections.ICollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.icollection/vb/remarks.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ICollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になっているストアがパブリックではないコレクションの場合、現在のインスタンスを返す実装が要求されます。 現在のインスタンスへのポインターできないことがあります。 その他のコレクションをラップするコレクションには十分に注意してください。基になるコレクションを返す必要があります、`SyncRoot`プロパティです。  
+  
+ <xref:System.Collections?displayProperty=nameWithType> 名前空間内のほとんどのコレクション クラスは、`Synchronized` メソッドも実装しています。このメソッドは、基になるコレクションをラップする同期されたラッパーを提供します。 ただし、派生クラスは <xref:System.Collections.ICollection.SyncRoot%2A> プロパティを使って、コレクションの同期されたバージョンを独自に提供できます。 同期されたコードでは、コレクションを直接操作するのではなく、コレクションの <xref:System.Collections.ICollection.SyncRoot%2A> プロパティに対して操作を実行します。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 特に、コレクション インスタンスを同時に変更する可能性がある別スレッドとの間で、正常な同期を維持します。  
+  
+ ない場合、`Synchronized`メソッドの使用状況、必要なコレクションを<xref:System.Collections.ICollection.SyncRoot%2A>ようになります。  
+  
+ [!code-cpp[System.Collections.ICollection#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.collections.icollection/cpp/remarks.cpp#2)]
+ [!code-csharp[System.Collections.ICollection#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.icollection/cs/remarks.cs#2)]
+ [!code-vb[System.Collections.ICollection#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.icollection/vb/remarks.vb#2)]  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中にプロパティです。  
+  
+ [!code-cpp[System.Collections.ICollection#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.collections.icollection/cpp/remarks.cpp#1)]
+ [!code-csharp[System.Collections.ICollection#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.icollection/cs/remarks.cs#1)]
+ [!code-vb[System.Collections.ICollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.icollection/vb/remarks.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

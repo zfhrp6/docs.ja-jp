@@ -1,0 +1,81 @@
+<Type Name="MachineKeyCompatibilityMode" FullName="System.Web.Configuration.MachineKeyCompatibilityMode">
+  <TypeSignature Language="C#" Value="public enum MachineKeyCompatibilityMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MachineKeyCompatibilityMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.MachineKeyCompatibilityMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>暗号化メソッドを使用できることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.Configuration.MachineKeyCompatibilityMode>値を設定すると、<xref:System.Web.Configuration.MachineKeySection.CompatibilityMode%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Framework20SP1">
+      <MemberSignature Language="C#" Value="Framework20SP1" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyCompatibilityMode Framework20SP1 = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyCompatibilityMode.Framework20SP1" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のバージョン 2.0、.NET Framework のバージョンで実装された暗号化方式を使用して Service Pack 2 です。 初期化ベクター (Iv) は、暗号化されたパスワードは、ASP.NET メンバーシップ データベースに格納を除くすべての暗号化操作に使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Framework20SP2">
+      <MemberSignature Language="C#" Value="Framework20SP2" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyCompatibilityMode Framework20SP2 = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyCompatibilityMode.Framework20SP2" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework version 2.0 SP2 およびそれ以降のバージョンで使用できる強力な暗号化方式を使用します。 初期化ベクター (Iv) は、すべての暗号化操作に使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Framework45">
+      <MemberSignature Language="C#" Value="Framework45" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyCompatibilityMode Framework45 = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyCompatibilityMode.Framework45" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework バージョン 4.5 以降で使用可能な暗号化方式を使用します。 使用される暗号化方法と比較して<see cref="F:System.Web.Configuration.MachineKeyCompatibilityMode.Framework20SP1" />と<see cref="F:System.Web.Configuration.MachineKeyCompatibilityMode.Framework20SP2" />既定の暗号化ルーチンによって生成される暗号化テキストが若干小さく、理論的な攻撃の特定のクラスに対して回復力があります。 統合も[!INCLUDE[win8](~/includes/win8-md.md)]必要な暗号化キーを取得するためにディレクトリのキー管理します。 派生するクラスを記述してカスタム暗号化ルーチンを指定することは、このオプションもできます<see cref="T:System.Security.Cryptography.DataProtector" />内のクラス名を指定して、<see cref="P:System.Web.Configuration.MachineKeySection.DataProtectorType" />プロパティです。  
+  
+ 次の構成要件は、このオプションに適用されます。  
+  
+ 1. 場合、<see cref="P:System.Web.Configuration.MachineKeySection.DataProtectorType" />プロパティ、値を持つ、<see cref="P:System.Web.Configuration.MachineKeySection.ApplicationName" />プロパティは、値にも必要です。  
+  
+ 2. <see cref="P:System.Web.Configuration.MachineKeySection.Validation" />属性から派生したクラスで、システム定義の検証アルゴリズム (MD5、SHA1、HMACSHA256、HMACSHA384、HMACSHA512 など) またはカスタムの検証アルゴリズムを指定する必要があります、<see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />クラスです。 AES および 3 des の値は、検証アルゴリズムではありません。  
+  
+ このオプションを指定するときにフォーム認証チケットが常に両方暗号化および署名、指定された値に関係なく、<see cref="P:System.Web.Configuration.FormsAuthenticationConfiguration.Protection" />プロパティです。 ビューの状態も両方暗号化および署名された場合、ページの<see cref="P:System.Web.UI.Page.EnableViewStateMac" />プロパティは<paramref name="true" />または<see cref="P:System.Web.UI.Page.ViewStateEncryptionMode" />プロパティは<see cref="F:System.Web.UI.ViewStateEncryptionMode.Always" />します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1288 @@
+<Type Name="ControlDesigner" FullName="System.Windows.Forms.Design.ControlDesigner">
+  <TypeSignature Language="C#" Value="public class ControlDesigner : System.ComponentModel.Design.ComponentDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlDesigner extends System.ComponentModel.Design.ComponentDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.ControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.ComponentDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.Control" /> のデザイン モードの動作を拡張します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.ControlDesigner>基本クラスから派生するコンポーネントのデザイナーを提供<xref:System.Windows.Forms.Control>です。 メソッドおよびから継承された機能に加えて、<xref:System.ComponentModel.Design.ComponentDesigner>クラス、<xref:System.Windows.Forms.Design.ControlDesigner>を拡張して、関連付けられた動作の変更をサポートするその他のメソッドを提供<xref:System.Windows.Forms.Control>デザイン時にします。  
+  
+ 使用して型をデザイナーを関連付けることができます、<xref:System.ComponentModel.DesignerAttribute>です。 デザイン時の動作のカスタマイズの概要については、次を参照してください。[デザイン時サポートを拡張する](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)です。  
+  
+   
+  
+## Examples  
+ 次の例<xref:System.Windows.Forms.Design.ControlDesigner>実装例が示す処理`MouseEnter`と`MouseLeave`イベント、デザイナーのコードからコントロールを描画しの一部を使用して、<xref:System.ComponentModel.Design.IDesignerFilter>デザイン時にコントロールのプロパティを追加するインターフェイス。 次のサンプル コードには、デザイナーと、デザイナーに関連付けられているサンプル ユーザー コントロールが含まれています。 このサンプルをビルドするには、サンプルをコンパイルしてクラス ライブラリ、Windows フォーム プロジェクトにライブラリへの参照を追加、コントロールをツールボックスに追加しをフォームにコントロールのインスタンスを追加します。 コントロールをポイントする、コントロールの境界の内側のアウトラインが強調表示されているアウトラインの描画に使用する色で強調表示する、`OutlineColor`コントロールのデザイナーがプロパティに追加するプロパティが一覧表示します。  
+  
+ コード例をコンパイルする System.Design アセンブリへの参照を追加します。  
+  
+ [!code-cpp[ControlDesignerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlDesignerExample/CPP/controldesignerexample.cpp#1)]
+ [!code-csharp[ControlDesignerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlDesignerExample/CS/controldesignerexample.cs#1)]
+ [!code-vb[ControlDesignerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlDesignerExample/VB/controldesignerexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.ControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="accessibilityObj">
+      <MemberSignature Language="C#" Value="protected System.Windows.Forms.AccessibleObject accessibilityObj;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Windows.Forms.AccessibleObject accessibilityObj" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.ControlDesigner.accessibilityObj" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのユーザー補助オブジェクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `null` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessibilityObject">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.AccessibleObject AccessibilityObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject AccessibilityObject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.AccessibilityObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに割り当てられた <see cref="T:System.Windows.Forms.AccessibleObject" /> を取得します。</summary>
+        <value>コントロールに割り当てられた <see cref="T:System.Windows.Forms.AccessibleObject" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー補助オブジェクトの詳細については、MSDN ライブラリの「Active Accessibility」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedComponents">
+      <MemberSignature Language="C#" Value="public override System.Collections.ICollection AssociatedComponents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection AssociatedComponents" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.AssociatedComponents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーによって管理されているコンポーネントに関連付けられているコンポーネントのコレクションを取得します。</summary>
+        <value>デザイナーによって管理されているコンポーネントに関連付けられているコンポーネント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、すべてのコンポーネントをコピーまたは移動、コピー中に、デザイナーによって管理されているコンポーネントと共にドラッグ、または移動操作を示します。  
+  
+ このコレクションに現在のデザイン モードのドキュメントの他のコンポーネントへの参照が含まれている場合、これらのコンポーネントがコピー操作中に、デザイナーによって管理されているコンポーネントと共にコピーされます。  
+  
+ デザイナーによって管理されているコンポーネントを選択すると、このコレクションには、入れ子になったコントロールが格納されます。 このコレクションでは、ツールバーのボタンなど、他のコンポーネントを含めることもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoResizeHandles">
+      <MemberSignature Language="C#" Value="public bool AutoResizeHandles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoResizeHandles" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.AutoResizeHandles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズを変更するかどうかを示す値を取得または設定の値には依存ハンドルの割り当て、<see cref="P:System.Windows.Forms.Control.AutoSize" />プロパティです。</summary>
+        <value>
+          <see langword="true" />場合のサイズを変更ハンドルの割り当ての値に依存、<see cref="P:System.Windows.Forms.Control.AutoSize" />と<see langword="AutoSizeMode" />プロパティ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseWndProc">
+      <MemberSignature Language="C#" Value="protected void BaseWndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void BaseWndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.BaseWndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Windows によって処理されるメッセージによって、コントロールはスキップされます。 これは、コントロールに渡るからメッセージをブロックするが、他のメッセージを生成することが原因になるために、Windows 自体を取得するをブロックしたくない場合に役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BehaviorService">
+      <MemberSignature Language="C#" Value="protected System.Windows.Forms.Design.Behavior.BehaviorService BehaviorService { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Design.Behavior.BehaviorService BehaviorService" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.BehaviorService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.Behavior.BehaviorService</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />デザイン環境からです。</summary>
+        <value><see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />、または<see langword="null" />サービスが利用できない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBeParentedTo">
+      <MemberSignature Language="C#" Value="public virtual bool CanBeParentedTo (System.ComponentModel.Design.IDesigner parentDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanBeParentedTo(class System.ComponentModel.Design.IDesigner parentDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.CanBeParentedTo(System.ComponentModel.Design.IDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentDesigner" Type="System.ComponentModel.Design.IDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="parentDesigner"><see cref="T:System.ComponentModel.Design.IDesigner" />チェックするコントロールを管理します。</param>
+        <summary>このデザイナーのコントロールは、指定したデザイナーのコントロールを親とすことができるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />コントロールが、指定したデザイナーによって管理されている場合は、このデザイナーによって管理されるコントロールを親ことができます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コントロールの親の親の特定の種類になれるかどうかをテストするために役立ちます。 たとえば、<xref:System.Windows.Forms.TabPage>コントロールのみの親になれる<xref:System.Windows.Forms.TabControl>コントロール。  
+  
+> [!NOTE]
+>  項目をドラッグすると、このメソッドは呼び出されませんが、**ツールボックス**デザイン サーフェイスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Control Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Control" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーがデザインするコントロールを取得します。</summary>
+        <value>デザイナーがデザインするコントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefWndProc">
+      <MemberSignature Language="C#" Value="protected void DefWndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void DefWndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.DefWndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>既定の Windows メッセージの処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デザイナーではなく、このコントロールによって処理されるメッセージをさせます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayError">
+      <MemberSignature Language="C#" Value="protected void DisplayError (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void DisplayError(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.DisplayError(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Exception" />を表示します。</param>
+        <summary>ユーザーに指定された例外に関する情報を表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.Design.ControlDesigner" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Windows.Forms.Design.ControlDesigner> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />を以前の呼び出しで既に破棄されているオブジェクトを参照しないように注意、<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDesignMode">
+      <MemberSignature Language="C#" Value="protected bool EnableDesignMode (System.Windows.Forms.Control child, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool EnableDesignMode(class System.Windows.Forms.Control child, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.EnableDesignMode(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.Forms.Control" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="child">子コントロール、デザイン モードを有効にします。</param>
+        <param name="name">名前<c>子</c>エンドユーザーに公開されているとします。</param>
+        <summary>有効では、子コントロールの時の機能を設計します。</summary>
+        <returns>
+          <see langword="true" />デザイン時に子コントロールを有効にすることが場合<see langword="false" />ホスティング インフラストラクチャはサポートされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した子コントロール`child`このコントロール デザイナーのコントロールの子です。 永続化ストアに直接参加していない子が、メインのコントロールのプロパティとして公開される場合、そのします。 ようにコントロールを検討してください、 <xref:System.Windows.Forms.SplitContainer>: 2 つのパネルが`Panel1`と`Panel2`です。 これらのパネルは読み取り専用を通じて公開される<xref:System.Windows.Forms.SplitContainer.Panel1%2A>と<xref:System.Windows.Forms.SplitContainer.Panel2%2A>プロパティを<xref:System.Windows.Forms.SplitContainer>コントロール。 <xref:System.Windows.Forms.SplitContainer>コントロールのデザイナー呼び出し<xref:System.Windows.Forms.Design.ControlDesigner.EnableDesignMode%2A>に削除するには、他のコンポーネントにより、各パネルのです。 いても、順序でのコンテンツの<xref:System.Windows.Forms.SplitContainer.Panel1%2A>と<xref:System.Windows.Forms.SplitContainer.Panel2%2A>を保存する、<xref:System.Windows.Forms.SplitContainer>コントロール自体は、パブリック プロパティとしてパネルを公開する必要があります。  
+  
+ コントロール名がコントロール デザイナー内で一意である必要がありますが、他のコントロール デザイナーの子に関して一意である必要はありません。  
+  
+ この機能をサポートするホスティング インフラストラクチャが公開する必要があります、<xref:System.ComponentModel.INestedContainer>サイト経由でサービスとしてのクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="child" /> または <paramref name="name" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDragDrop">
+      <MemberSignature Language="C#" Value="protected void EnableDragDrop (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void EnableDragDrop(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.EnableDragDrop(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see langword="true" />コントロールのドラッグ アンド ドロップのサポートを有効にするには<see langword="false" />場合は、コントロールがドラッグ アンド ドロップのサポートにはできません。 既定値は、<see langword="false" /> です。</param>
+        <summary>有効またはデザイン中のコントロールのドラッグ アンド ドロップのサポートを無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の`false`コントロールでドラッグして、デザイン時に子を持つことはできないことを指定します。 派生したデザイナーを使用に関連付けるためにデザイン時にその他のコントロールの親を<xref:System.Windows.Forms.Design.ParentControlDesigner>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDragRect">
+      <MemberSignature Language="C#" Value="protected virtual bool EnableDragRect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableDragRect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.EnableDragRect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグするかどうかを示す値を取得このデザイナー コンポーネントに四角形を描画することができます。</summary>
+        <value>
+          <see langword="true" />場合はドラッグ四角形を描画することができます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetControlGlyph">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Forms.Design.Behavior.ControlBodyGlyph GetControlGlyph (System.Windows.Forms.Design.Behavior.GlyphSelectionType selectionType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.Forms.Design.Behavior.ControlBodyGlyph GetControlGlyph(valuetype System.Windows.Forms.Design.Behavior.GlyphSelectionType selectionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.GetControlGlyph(System.Windows.Forms.Design.Behavior.GlyphSelectionType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.Behavior.ControlBodyGlyph</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectionType" Type="System.Windows.Forms.Design.Behavior.GlyphSelectionType" />
+      </Parameters>
+      <Docs>
+        <param name="selectionType">A<see cref="T:System.Windows.Forms.Design.Behavior.GlyphSelectionType" />選択状態を指定する値。</param>
+        <summary>返します、<see cref="T:System.Windows.Forms.Design.Behavior.ControlBodyGlyph" />このコントロールの境界を表すです。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Design.Behavior.ControlBodyGlyph" />このコントロールの境界を表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlyphs">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Design.Behavior.GlyphCollection GetGlyphs (System.Windows.Forms.Design.Behavior.GlyphSelectionType selectionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.Design.Behavior.GlyphCollection GetGlyphs(valuetype System.Windows.Forms.Design.Behavior.GlyphSelectionType selectionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.GetGlyphs(System.Windows.Forms.Design.Behavior.GlyphSelectionType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.Behavior.GlyphCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectionType" Type="System.Windows.Forms.Design.Behavior.GlyphSelectionType" />
+      </Parameters>
+      <Docs>
+        <param name="selectionType">A<see cref="T:System.Windows.Forms.Design.Behavior.GlyphSelectionType" />選択状態を指定する値。</param>
+        <summary>コレクションを取得<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />選択範囲の境界線と標準コントロールのグラブ ハンドルを表すオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基づく注`selectionType`、<xref:System.Windows.Forms.Design.Behavior.Glyph>返されるオブジェクトでは、これらの選択状態のいずれかを表します。  
+  
+-   グラブ ハンドルを完全にサイズ変更可能な選択範囲の境界線  
+  
+-   ロックされた選択範囲の境界線です。  
+  
+-   1 つの 'hidden' 選択<xref:System.Windows.Forms.Design.Behavior.Glyph>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHitTest">
+      <MemberSignature Language="C#" Value="protected virtual bool GetHitTest (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool GetHitTest(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.GetHitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.Point" />をマウスがクリックされた画面座標での位置を示すです。</param>
+        <summary>指定したポイントでのマウス クリックがコントロールによって処理かどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定した位置でのクリックがコントロールで処理されることがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.ControlDesigner.GetHitTest%2A>メソッドでは、指定した位置でのクリックをコントロールのデザイン モードのときに、コントロールに渡す必要があるかどうかを判断します。 オーバーライドして、デザイン時環境でのクリックを受信するコントロールを有効にするには、このメソッドを実装します。  
+  
+> [!NOTE]
+>  画面座標で、ポイントを渡すことができます、<xref:System.Windows.Forms.Control.PointToClient%2A>のメソッド、<xref:System.Windows.Forms.Control>コントロールの左上隅を基準とした点の座標を取得するクラス。  
+  
+ <xref:System.Windows.Forms.Design.ControlDesigner.GetHitTest%2A> WM_NCHITTEST メッセージへの応答でメソッドが呼び出される各マウスの移動で呼び出されるためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HookChildControls">
+      <MemberSignature Language="C#" Value="protected void HookChildControls (System.Windows.Forms.Control firstChild);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void HookChildControls(class System.Windows.Forms.Control firstChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.HookChildControls(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstChild" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="firstChild">最初の子<see cref="T:System.Windows.Forms.Control" />を処理します。 このメソッドが再帰的に呼び出し自体を子のコントロールのです。</param>
+        <summary>指定したコントロールの子コントロールからデザイナーへのメッセージをルーティングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritanceAttribute">
+      <MemberSignature Language="C#" Value="protected override System.ComponentModel.InheritanceAttribute InheritanceAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.InheritanceAttribute InheritanceAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.InheritanceAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.InheritanceAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.InheritanceAttribute" />デザイナーのです。</summary>
+        <value>
+          <see cref="F:System.ComponentModel.InheritanceAttribute.Inherited" />デザイナーがルート デザイナー以外の場合それ以外の場合、親デザイナーの値<see cref="P:System.ComponentModel.Design.ComponentDesigner.InheritanceAttribute" />プロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />でデザイナーを関連付けます。 このコンポーネントのインスタンスである常に、またはから派生する必要があります<see cref="T:System.Windows.Forms.Control" />です。</param>
+        <summary>指定されたコンポーネントと共に、デザイナーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デザイナーを初期化するために、デザイナー ホストによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeExistingComponent">
+      <MemberSignature Language="C#" Value="public override void InitializeExistingComponent (System.Collections.IDictionary defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeExistingComponent(class System.Collections.IDictionary defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.InitializeExistingComponent(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValues">プロパティに適用する既定値の名前/値のディクショナリ。 あります<see langword="null" />既定値が指定されていない場合。</param>
+        <summary>既存のコンポーネントを再初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.ControlDesigner>クラス後ドロップ ケースを処理するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeNewComponent">
+      <MemberSignature Language="C#" Value="public override void InitializeNewComponent (System.Collections.IDictionary defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeNewComponent(class System.Collections.IDictionary defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.InitializeNewComponent(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValues">プロパティに適用する既定値の名前/値のディクショナリ。 あります<see langword="null" />既定値が指定されていない場合。</param>
+        <summary>新たに作成されたコンポーネントを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.ControlDesigner>クラスは、このメソッドをオーバーライドします。 コントロールの既定のプロパティを見て、型の場合は、 `string`、このプロパティの値、コンポーネントの名前に設定されます。 これは、デザイナーは、オプションのサービスでこのオプションで構成されている場合。 このメソッドは、コントロールをその親に接続し、それを配置します。 このメソッドをオーバーライドする場合基本常に呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalControlDesigner">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Design.ControlDesigner InternalControlDesigner (int internalControlIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.Design.ControlDesigner InternalControlDesigner(int32 internalControlIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.InternalControlDesigner(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.ControlDesigner</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="internalControlIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="internalControlIndex">指定したインデックスを内部のコントロール デザイナーを選択します。 このインデックスは 0 です。</param>
+        <summary>指定したインデックスの内部のコントロール デザイナーが返されます、<see cref="T:System.Windows.Forms.Design.ControlDesigner" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Design.ControlDesigner" />指定したインデックス位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部のコントロールがコントロールに含まれていないを<xref:System.ComponentModel.IContainer.Components%2A>のコレクション、<xref:System.ComponentModel.Design.IDesignerHost.Container%2A>です。 <xref:System.Windows.Forms.SplitterPanel>このような 1 つのコントロールの例を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidPoint">
+      <MemberSignature Language="C#" Value="protected static readonly System.Drawing.Point InvalidPoint;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly valuetype System.Drawing.Point InvalidPoint" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.ControlDesigner.InvalidPoint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル定義<see cref="T:System.Drawing.Point" />の無効な値を表す<see cref="T:System.Drawing.Point" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.ControlDesigner.InvalidPoint><xref:System.Drawing.Point.X%2A>と<xref:System.Drawing.Point.Y%2A>プロパティが整数データ型の最小値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfInternalControlDesigners">
+      <MemberSignature Language="C#" Value="public virtual int NumberOfInternalControlDesigners ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 NumberOfInternalControlDesigners() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.NumberOfInternalControlDesigners" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部のコントロール デザイナー内の数を返します、<see cref="T:System.Windows.Forms.Design.ControlDesigner" />です。</summary>
+        <returns>内部のコントロール デザイナー内の数、<see cref="T:System.Windows.Forms.Design.ControlDesigner" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部のコントロールがコントロールに含まれていないを<xref:System.ComponentModel.IContainer.Components%2A>のコレクション、<xref:System.ComponentModel.Design.IDesignerHost.Container%2A>です。 <xref:System.Windows.Forms.SplitterPanel>このような 1 つのコントロールの例を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenu">
+      <MemberSignature Language="C#" Value="protected virtual void OnContextMenu (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContextMenu(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnContextMenu(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">コンテキスト メニューを表示する位置を示す x 座標。</param>
+        <param name="y">コンテキスト メニューを表示する位置の y 座標。</param>
+        <summary>コンテキスト メニューを表示し、コンテキスト メニューが表示されるときに、追加の処理を実行する機会を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateHandle">
+      <MemberSignature Language="C#" Value="protected virtual void OnCreateHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCreateHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnCreateHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール ハンドルが作成された直後に、追加の処理を実行する機会を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnDragComplete (System.Windows.Forms.DragEventArgs de);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDragComplete(class System.Windows.Forms.DragEventArgs de) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnDragComplete(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="de" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="de">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップ操作をクリーンアップする呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragDrop">
+      <MemberSignature Language="C#" Value="protected virtual void OnDragDrop (System.Windows.Forms.DragEventArgs de);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDragDrop(class System.Windows.Forms.DragEventArgs de) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnDragDrop(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="de" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="de">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>コントロールのデザイナー ビューにドラッグ アンド ドロップ オブジェクトが削除されるときに、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragEnter">
+      <MemberSignature Language="C#" Value="protected virtual void OnDragEnter (System.Windows.Forms.DragEventArgs de);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDragEnter(class System.Windows.Forms.DragEventArgs de) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnDragEnter(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="de" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="de">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップ操作がコントロールのデザイナー ビューが入ったときに、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragLeave">
+      <MemberSignature Language="C#" Value="protected virtual void OnDragLeave (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDragLeave(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnDragLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベントのデータを提供します。</param>
+        <summary>ドラッグ アンド ドロップ操作がコントロールのデザイナー ビューを離れるときに、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragOver">
+      <MemberSignature Language="C#" Value="protected virtual void OnDragOver (System.Windows.Forms.DragEventArgs de);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDragOver(class System.Windows.Forms.DragEventArgs de) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnDragOver(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="de" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="de">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップ オブジェクトがコントロールのデザイナー ビューにドラッグされたときに、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGiveFeedback">
+      <MemberSignature Language="C#" Value="protected virtual void OnGiveFeedback (System.Windows.Forms.GiveFeedbackEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnGiveFeedback(class System.Windows.Forms.GiveFeedbackEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnGiveFeedback(System.Windows.Forms.GiveFeedbackEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.GiveFeedbackEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.GiveFeedbackEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップ操作が進行中は、ドラッグ操作が進行中は、マウスの位置に基づいてビジュアル キューを提供するときに、呼び出しを受け取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストは、OLE ドラッグ イベントの発生時に、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDragBegin">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseDragBegin (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseDragBegin(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnMouseDragBegin(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">画面座標でマウスの x 位置。</param>
+        <param name="y">画面座標でマウスの y 位置。</param>
+        <summary>押され、コンポーネント上で保持されている、マウスの左ボタンをクリックに応答呼び出しを受け取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドラッグ アンド ドロップ操作の開始時に呼び出されます。  
+  
+> [!NOTE]
+>  画面座標で、ポイントを渡すことができます、<xref:System.Windows.Forms.Control.PointToClient%2A>のメソッド、<xref:System.Windows.Forms.Control>コントロールの左上隅を基準とした点の座標を取得するクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDragEnd">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseDragEnd (bool cancel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseDragEnd(bool cancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnMouseDragEnd(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cancel">
+          <see langword="true" />ドラッグをキャンセルするには<see langword="false" />にコミットします。</param>
+        <summary>ドラッグ アンド ドロップ操作を完了するか、操作をキャンセルの終了時に呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDragMove">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseDragMove (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseDragMove(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnMouseDragMove(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">画面座標でマウスの x 位置。</param>
+        <param name="y">画面座標でマウスの y 位置。</param>
+        <summary>ドラッグ アンド ドロップ操作中にマウスを移動するたびに呼び出しを受け取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  画面座標で、ポイントを渡すことができます、<xref:System.Windows.Forms.Control.PointToClient%2A>のメソッド、<xref:System.Windows.Forms.Control>コントロールの左上隅を基準とした点の座標を取得するクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseEnter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseEnter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnMouseEnter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスがコントロールを最初に入ったときに、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseHover">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseHover ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseHover() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnMouseHover" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスがコントロール上に置いた後は、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseLeave ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseLeave() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnMouseLeave" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスがコントロールを最初に入ったときに、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaintAdornments">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaintAdornments (System.Windows.Forms.PaintEventArgs pe);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPaintAdornments(class System.Windows.Forms.PaintEventArgs pe) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnPaintAdornments(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pe" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pe">A<see cref="T:System.Windows.Forms.PaintEventArgs" />デザイナーを使用して、コントロールに描画します。</param>
+        <summary>デザイナーが管理しているコントロールは、デザイナーがコントロール上に追加の表示要素を描画できるように、画面に描画した場合は、呼び出しを受け取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSetComponentDefaults">
+      <MemberSignature Language="C#" Value="public override void OnSetComponentDefaults ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnSetComponentDefaults() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnSetComponentDefaults" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method has been deprecated. Use InitializeNewComponent instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナーが初期化されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSetCursor">
+      <MemberSignature Language="C#" Value="protected virtual void OnSetCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSetCursor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.OnSetCursor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カーソルを設定する必要があるたびに呼び出しを受け取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、カーソルの設定のイベントのリダイレクトおよび処理を処理します。 ツールボックス サービスが選択されているツールを持っている場合、このメソッドはカーソルを設定するツールボックス サービスを許可します。 選択 UI サービス ロックの選択されている場合、またはコントロールの場所のプロパティが存在しない場合は、既定の矢印カーソルが設定されます。 ユーザーがコンポーネントをドラッグして、十字カーソルが設定されます。 それ以外の場合、4 方向の矢印カーソルは、コンポーネントのクリックし、移動したことを示すために設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentComponent">
+      <MemberSignature Language="C#" Value="protected override System.ComponentModel.IComponent ParentComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent ParentComponent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.ParentComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親コンポーネントの取得、<see cref="T:System.Windows.Forms.Design.ControlDesigner" />です。</summary>
+        <value>親コンポーネント、 <see cref="T:System.Windows.Forms.Design.ControlDesigner" />、それ以外の<see langword="null" />親コンポーネントが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装だけを確認設計中のコンポーネントが、コントロールし場合は、<xref:System.Windows.Forms.Design.ControlDesigner.ParentComponent%2A>親を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParticipatesWithSnapLines">
+      <MemberSignature Language="C#" Value="public virtual bool ParticipatesWithSnapLines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ParticipatesWithSnapLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.ParticipatesWithSnapLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.Design.ControlDesigner" />ドラッグ操作中にスナップ線配置できるようになります。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.Design.ControlDesigner" />プライマリ ドラッグ コントロールには、このは、デザイナー、それ以外の場合に、ドラッグ操作中にスナップ線の配置を許可するが<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>既定の実装を常に返します<see langword="true" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties"><see cref="T:System.Collections.IDictionary" />コンポーネントのクラスのプロパティを格納します。</param>
+        <summary>プロパティを介して公開するコンポーネントのセットを調整する<see cref="T:System.ComponentModel.TypeDescriptor" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.ComponentModel.Design.IDesignerFilter>インターフェイス メソッドのオーバーライドがこのデザイナーのコンポーネントをデザイン時に一連のプロパティを追加します。 このメソッドは、次の参照可能なプロパティを追加: `Visible`、 `Enabled`、 `ContextMenu`、 `AllowDrop`、 `Location`、 `Name`、 `Controls`、および`Locked`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionRules">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Design.SelectionRules SelectionRules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Design.SelectionRules SelectionRules" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.SelectionRules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントの移動機能を示す選択ルールを取得します。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Windows.Forms.Design.SelectionRules" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーには、コンポーネントのルールはありません、コンポーネントはすべての UI サービスを取得できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SnapLines">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IList SnapLines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList SnapLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.ControlDesigner.SnapLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />このコントロールの配置の重要なポイントを表すオブジェクト。</summary>
+        <value>一連の<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />このコントロールの配置の重要なポイントを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 提供されたを使用することができます<xref:System.Windows.Forms.Design.Behavior.SnapLine>デザイン画面で、コントロールの配置を支援するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhookChildControls">
+      <MemberSignature Language="C#" Value="protected void UnhookChildControls (System.Windows.Forms.Control firstChild);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void UnhookChildControls(class System.Windows.Forms.Control firstChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.UnhookChildControls(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstChild" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="firstChild">最初の子<see cref="T:System.Windows.Forms.Control" />を処理します。 このメソッドが再帰的に呼び出し自体を子のコントロールのです。</param>
+        <summary>親デザイナーではなく、各コントロールに指定されたコントロールの子のメッセージをルーティングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected virtual void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ControlDesigner.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理し、必要に応じてそれらをコントロールにルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コントロールが受け取る通常メッセージごとに呼び出されます。 これにより、必要に応じてそれらをコントロールにルーティングする前にメッセージを前処理するデザイナー。  
+  
+ コントロールのメッセージを送信する<xref:System.Windows.Forms.Control.WndProc%2A?displayProperty=nameWithType>メソッドを呼び出し<xref:System.Windows.Forms.Design.ControlDesigner.WndProc%2A>コントロールのデザイナーにします。  
+  
+> [!NOTE]
+>  デザイナーでは、いくつかのメッセージがコントロールに送信するために、メッセージがフィルター処理します。 たとえば、マウスのメッセージが、デザイナーによって受け取られます。 これは目的の動作ではない場合、呼び出す<xref:System.Windows.Forms.Design.ControlDesigner.DefWndProc%2A>代わりにします。  
+  
+ 渡す`m`をパラメーターとして。 必要に応じて、変更または新規作成<xref:System.Windows.Forms.Message?displayProperty=nameWithType>コントロールのメソッドに渡す。  
+  
+ 次の表は、メッセージの流れを示しています。  
+  
+|デザイナーを持たない|デザイナー|  
+|------------------------|---------------------|  
+|USER32<br /><br /> <xref:System.Windows.Forms.Control.WndProc%2A?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Forms.Control.DefWndProc%2A?displayProperty=nameWithType><br /><br /> USER32|USER32<br /><br /> `Control.Designer.` <xref:System.Windows.Forms.Design.ControlDesigner.WndProc%2A><br /><br /> <xref:System.Windows.Forms.Design.ControlDesigner.DefWndProc%2A><br /><br /> <xref:System.Windows.Forms.Control.WndProc%2A?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Forms.Control.DefWndProc%2A?displayProperty=nameWithType><br /><br /> USER32|  
+  
+ デザイナーに置き換えることでメッセージを途中受信、<xref:System.Windows.Forms.Control.WindowTarget%2A?displayProperty=nameWithType>コントロールのプロパティです。 通常、<xref:System.Windows.Forms.Control.WindowTarget%2A>を指す、<xref:System.Windows.Forms.NativeWindow>コントロール内に含まれます。 デザイン時に、デザイナーは、独自のウィンドウのターゲットではこれを置き換えてし、元の値をキャッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

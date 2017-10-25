@@ -1,0 +1,211 @@
+<Type Name="MouseButtonEventArgs" FullName="System.Windows.Input.MouseButtonEventArgs">
+  <TypeSignature Language="C#" Value="public class MouseButtonEventArgs : System.Windows.Input.MouseEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MouseButtonEventArgs extends System.Windows.Input.MouseEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseButtonEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.MouseEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マウス ボタン関連イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.MouseButtonEventArgs>次のイベントと共に使用: <xref:System.Windows.Input.Mouse.MouseDown>、 <xref:System.Windows.Input.Mouse.MouseUp>、 <xref:System.Windows.UIElement.MouseLeftButtonDown>、 <xref:System.Windows.UIElement.MouseLeftButtonUp>、 <xref:System.Windows.UIElement.MouseRightButtonDown>、<xref:System.Windows.UIElement.MouseRightButtonUp>と、対応するイベントをトンネリングします。  
+  
+ <xref:System.Windows.Input.Mouse>クラスには、追加のプロパティと、マウスの状態を判断するためのメソッドが用意されています。  
+  
+   
+  
+## Examples  
+ 次の例では、イベントを発生させたオブジェクトの色を変更する、マウス ボタンのイベント ハンドラーを作成します。  選択された色は、押されたマウス ボタンに依存します。  <xref:System.Windows.Input.MouseButtonEventArgs.ChangedButton%2A>押されたボタンを決定するプロパティをチェックします。  
+  
+ [!code-csharp[mousesnippetsample#MouseEventArgsChangedButton](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseSnippetSample/CSharp/Window1.xaml.cs#mouseeventargschangedbutton)]
+ [!code-vb[mousesnippetsample#MouseEventArgsChangedButton](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseSnippetSample/visualbasic/window1.xaml.vb#mouseeventargschangedbutton)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseButtonEventArgs (System.Windows.Input.MouseDevice mouse, int timestamp, System.Windows.Input.MouseButton button);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.MouseDevice mouse, int32 timestamp, valuetype System.Windows.Input.MouseButton button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseButtonEventArgs.#ctor(System.Windows.Input.MouseDevice,System.Int32,System.Windows.Input.MouseButton)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mouse" Type="System.Windows.Input.MouseDevice" />
+        <Parameter Name="timestamp" Type="System.Int32" />
+        <Parameter Name="button" Type="System.Windows.Input.MouseButton" />
+      </Parameters>
+      <Docs>
+        <param name="mouse">このイベントに関連付けられているマウスの論理デバイスです。</param>
+        <param name="timestamp">入力が発生した時刻。</param>
+        <param name="button">状態を説明しているマウス ボタンです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.MouseButtonEventArgs" />クラスを指定して<see cref="T:System.Windows.Input.MouseDevice" />、タイムスタンプ、および<see cref="T:System.Windows.Input.MouseButton" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseButtonEventArgs (System.Windows.Input.MouseDevice mouse, int timestamp, System.Windows.Input.MouseButton button, System.Windows.Input.StylusDevice stylusDevice);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.MouseDevice mouse, int32 timestamp, valuetype System.Windows.Input.MouseButton button, class System.Windows.Input.StylusDevice stylusDevice) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseButtonEventArgs.#ctor(System.Windows.Input.MouseDevice,System.Int32,System.Windows.Input.MouseButton,System.Windows.Input.StylusDevice)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mouse" Type="System.Windows.Input.MouseDevice" />
+        <Parameter Name="timestamp" Type="System.Int32" />
+        <Parameter Name="button" Type="System.Windows.Input.MouseButton" />
+        <Parameter Name="stylusDevice" Type="System.Windows.Input.StylusDevice" />
+      </Parameters>
+      <Docs>
+        <param name="mouse">このイベントに関連付けられている論理マウス デバイス。</param>
+        <param name="timestamp">イベントが発生した時刻。</param>
+        <param name="button">このイベントに関連付けられたボタンをクリックします。</param>
+        <param name="stylusDevice">このイベントに関連付けられているスタイラス デバイス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.MouseButtonEventArgs" />クラスを指定して<see cref="T:System.Windows.Input.MouseDevice" />、timestamp、 <see cref="T:System.Windows.Input.MouseButton" />、および<see cref="T:System.Windows.Input.StylusDevice" />です。  。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonState">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButtonState ButtonState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButtonState ButtonState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseButtonEventArgs.ButtonState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられているボタンの状態を取得します。</summary>
+        <value>ボタンの状態です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Mouse>クラスには、追加のプロパティと、マウスの状態を判断するためのメソッドが用意されています。  
+  
+   
+  
+## Examples  
+ 次の例では、イベントを処理するオブジェクトの色を変更する、マウス ボタンのイベント ハンドラーを作成します。  選択された色は、かどうか、マウス ボタンが押されたまたは離さによって異なります。  
+  
+ [!code-csharp[mousesnippetsample#MouseEventArgsButtonStatePressed](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseSnippetSample/CSharp/Window1.xaml.cs#mouseeventargsbuttonstatepressed)]
+ [!code-vb[mousesnippetsample#MouseEventArgsButtonStatePressed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseSnippetSample/visualbasic/window1.xaml.vb#mouseeventargsbuttonstatepressed)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangedButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButton ChangedButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButton ChangedButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseButtonEventArgs.ChangedButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButton</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられたボタンを取得します。</summary>
+        <value>押されたボタンをクリックします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Mouse>クラスには、追加のプロパティと、マウスの状態を判断するためのメソッドが用意されています。  
+  
+   
+  
+## Examples  
+ 次の例では、押されたマウス ボタンに依存するオブジェクトの色を変更する、マウス ボタンのイベント ハンドラーを作成します。  <xref:System.Windows.Input.MouseButtonEventArgs.ChangedButton%2A>押されたボタンを決定するプロパティをチェックします。  
+  
+ [!code-csharp[mousesnippetsample#MouseEventArgsChangedButton](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseSnippetSample/CSharp/Window1.xaml.cs#mouseeventargschangedbutton)]
+ [!code-vb[mousesnippetsample#MouseEventArgsChangedButton](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseSnippetSample/visualbasic/window1.xaml.vb#mouseeventargschangedbutton)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClickCount">
+      <MemberSignature Language="C#" Value="public int ClickCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ClickCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseButtonEventArgs.ClickCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタンがクリックしてされた回数を取得します。</summary>
+        <value>マウス ボタンがクリックされた回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 用途の 1 つ<xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>は二重のマウス クリックが発生したかどうかを決定します。  一部のクラスなど、ダブルクリック イベントを公開、<xref:System.Windows.Controls.Control.MouseDoubleClick>でイベントを<xref:System.Windows.Controls.Control>クラスです。 使用して、ダブルクリックを検出できるクラスには、二重の click イベントが公開されていない、ときに、<xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>イベント データのプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Input.MouseButtonEventHandler> 1 つ、double、または 3 倍のクリックが発生したかを決定します。  <xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>プロパティを使用して、数回のクリック数を決定します。  
+  
+ [!code-csharp[mousesnippetsample#MouseClickCountDoubleClick](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseSnippetSample/CSharp/Window1.xaml.cs#mouseclickcountdoubleclick)]
+ [!code-vb[mousesnippetsample#MouseClickCountDoubleClick](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseSnippetSample/visualbasic/window1.xaml.vb#mouseclickcountdoubleclick)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.Input.MouseEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

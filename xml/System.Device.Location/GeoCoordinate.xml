@@ -1,0 +1,618 @@
+<Type Name="GeoCoordinate" FullName="System.Device.Location.GeoCoordinate">
+  <TypeSignature Language="C#" Value="public class GeoCoordinate : IEquatable&lt;System.Device.Location.GeoCoordinate&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GeoCoordinate extends System.Object implements class System.IEquatable`1&lt;class System.Device.Location.GeoCoordinate&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Device.Location.GeoCoordinate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Device</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Device.Location.GeoCoordinate&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>緯度と経度によって決定される地理的な場所を表す座標。 またなどがありますの高度精度、速度、コース情報。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoCoordinate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Device.Location.GeoCoordinate" />データ フィールドが設定されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのデータ フィールドに設定する<xref:System.Double.NaN>です。  新しいインスタンス<xref:System.Device.Location.GeoCoordinate>は等価<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+ このコンス トラクターは、シリアル化に使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoCoordinate (double latitude, double longitude);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 latitude, float64 longitude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="latitude" Type="System.Double" />
+        <Parameter Name="longitude" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="latitude">場所の緯度です。 90.0 ~-90.0 から範囲可能性があります。</param>
+        <param name="longitude">場所の経度です。 範囲は-180.0 ~ 180.0 です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Device.Location.GeoCoordinate" />緯度と経度のデータからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 緯度と経度の値は、地球上の実際の場所に対応する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">緯度や経度は、範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoCoordinate (double latitude, double longitude, double altitude);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 latitude, float64 longitude, float64 altitude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.#ctor(System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="latitude" Type="System.Double" />
+        <Parameter Name="longitude" Type="System.Double" />
+        <Parameter Name="altitude" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="latitude">緯度です。 90.0 ~-90.0 から範囲可能性があります。</param>
+        <param name="longitude">経度です。 許容範囲は-180.0 180.0 ~</param>
+        <param name="altitude">メートル単位で高度です。 負の場合があります 0、正の値、または<see cref="F:System.Double.NaN" />不明の場合は、します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Device.Location.GeoCoordinate" />緯度、経度、および高度のデータからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 緯度と経度の値は、地球上の実際の場所に対応する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="latitude" />、 <paramref name="longitude" />、または<paramref name="altitude" />が範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoCoordinate (double latitude, double longitude, double altitude, double horizontalAccuracy, double verticalAccuracy, double speed, double course);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 latitude, float64 longitude, float64 altitude, float64 horizontalAccuracy, float64 verticalAccuracy, float64 speed, float64 course) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="latitude" Type="System.Double" />
+        <Parameter Name="longitude" Type="System.Double" />
+        <Parameter Name="altitude" Type="System.Double" />
+        <Parameter Name="horizontalAccuracy" Type="System.Double" />
+        <Parameter Name="verticalAccuracy" Type="System.Double" />
+        <Parameter Name="speed" Type="System.Double" />
+        <Parameter Name="course" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="latitude">場所の緯度です。 90.0 ~-90.0 から範囲可能性があります。</param>
+        <param name="longitude">場所の経度です。 範囲は-180.0 ~ 180.0 です。</param>
+        <param name="altitude">メートル単位で高度です。 負の場合があります 0、正の値、または<see cref="F:System.Double.NaN" />不明の場合は、します。</param>
+        <param name="horizontalAccuracy">メートル単位での緯度と経度座標の精度。 0 以上にする必要があります。 このコンス トラクターに指定値が 0 の場合は、<see cref="P:System.Device.Location.GeoCoordinate.HorizontalAccuracy" />プロパティ設定されます<see cref="F:System.Double.NaN" />です。</param>
+        <param name="verticalAccuracy">メートル単位での高度の精度。 0 以上にする必要があります。 このコンス トラクターに指定値が 0 の場合は、<see cref="P:System.Device.Location.GeoCoordinate.VerticalAccuracy" />プロパティ設定されます<see cref="F:System.Double.NaN" />です。</param>
+        <param name="speed">速度は、1 秒あたりメートル単位で測定されます。 負の場合があります 0、正の値、または<see cref="F:System.Double.NaN" />不明の場合は、します。  負の速度は、逆の順序で移動を指定できます。</param>
+        <param name="course">印刷の向きではなく、移動の方向です。 このパラメーターは、true 北相対度数で測定されます。 範囲は 0 ~ 360.0 かされる必要があります<see cref="F:System.Double.NaN" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Device.Location.GeoCoordinate" />緯度、経度、高度、精度の水平方向、垂直方向の精度、速度、およびコースからクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="latitude" />、 <paramref name="longitude" />、 <paramref name="horizontalAccuracy" />、<paramref name="verticalAccuracy," />または<paramref name="course" />が範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Altitude">
+      <MemberSignature Language="C#" Value="public double Altitude { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Altitude" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.Altitude" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高度を取得、 <see cref="T:System.Device.Location.GeoCoordinate" />、メートル単位で。</summary>
+        <value>高度、メートル単位で。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 高度が sea レベルに対する与えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Course">
+      <MemberSignature Language="C#" Value="public double Course { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Course" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.Course" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、見出し度、北米の場合は true です。</summary>
+        <value>北米の場合は true。 基準の角度での見出しです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な範囲は 0.0 ~ 360.0 の値を含むと`Double.NaN`見出しが定義されていない場合。  
+  
+   
+  
+## Examples  
+ 次の例の出力、<xref:System.Device.Location.GeoCoordinate.Course%2A>と<xref:System.Device.Location.GeoCoordinate.Speed%2A>の現在の場所のプロパティ<xref:System.Device.Location.GeoCoordinate>です。  
+  
+ [!code-csharp[System.Device.Location.CourseAndSpeed#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.courseandspeed/cs/courseandspeed.cs#2)]
+ [!code-vb[System.Device.Location.CourseAndSpeed#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.courseandspeed/vb/courseandspeed.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Device.Location.GeoCoordinate.Course" />有効範囲外に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Device.Location.GeoCoordinate other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Device.Location.GeoCoordinate other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.Equals(System.Device.Location.GeoCoordinate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Device.Location.GeoCoordinate" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Device.Location.GeoCoordinate" />呼び出し元のオブジェクトと比較するオブジェクト。</param>
+        <summary>かどうかを<see cref="T:System.Device.Location.GeoCoordinate" />オブジェクトは緯度と経度のみに基づいて、パラメーターに相当します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Device.Location.GeoCoordinate" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等価<xref:System.Device.Location.GeoCoordinate>オブジェクトが同じである<xref:System.Device.Location.GeoCoordinate.Latitude%2A>と<xref:System.Device.Location.GeoCoordinate.Longitude%2A>プロパティです。 <xref:System.Device.Location.GeoCoordinate.Altitude%2A>、 <xref:System.Device.Location.GeoCoordinate.HorizontalAccuracy%2A>、および<xref:System.Device.Location.GeoCoordinate.VerticalAccuracy%2A>に対して等価性を決定するプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較するオブジェクト、<see cref="T:System.Device.Location.GeoCoordinate" />にします。</param>
+        <summary>かどうかを指定した<see cref="T:System.Device.Location.GeoCoordinate" />が現在に等しい<see cref="T:System.Device.Location.GeoCoordinate" />のみに基づいて、緯度と経度です。</summary>
+        <returns>
+          <see langword="true" />、場合、<see cref="T:System.Device.Location.GeoCoordinate" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等価<xref:System.Device.Location.GeoCoordinate>オブジェクトが同じである<xref:System.Device.Location.GeoCoordinate.Latitude%2A>と<xref:System.Device.Location.GeoCoordinate.Longitude%2A>プロパティです。 <xref:System.Device.Location.GeoCoordinate.Altitude%2A>、 <xref:System.Device.Location.GeoCoordinate.HorizontalAccuracy%2A>、および<xref:System.Device.Location.GeoCoordinate.VerticalAccuracy%2A>に対して等価性を決定するプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDistanceTo">
+      <MemberSignature Language="C#" Value="public double GetDistanceTo (System.Device.Location.GeoCoordinate other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetDistanceTo(class System.Device.Location.GeoCoordinate other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.GetDistanceTo(System.Device.Location.GeoCoordinate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Device.Location.GeoCoordinate" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Device.Location.GeoCoordinate" />までの距離を計算する場所です。</param>
+        <summary>これで指定されている緯度と経度座標の間の距離を返します<see cref="T:System.Device.Location.GeoCoordinate" />と指定した別<see cref="T:System.Device.Location.GeoCoordinate" />です。</summary>
+        <returns>メートル単位で、2 つの座標間の距離。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 球面上の数式は距離の計算に使用されます。  球面上の数式は、地球の曲率のアカウントしますが、楕円体ではなく、球体地球を前提としています。 遠く離れた場所には、球面上の数式には、0.1% 未満のエラーが導入されています。  
+  
+ までの距離を計算する高度は使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.Device.Location.GeoCoordinate" />です。</summary>
+        <returns>現在の <see cref="T:System.Device.Location.GeoCoordinate" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Device.Location.GeoCoordinate>等価であるオブジェクトでは、同じハッシュ コードがあります。 等価<xref:System.Device.Location.GeoCoordinate>オブジェクトが同じである<xref:System.Device.Location.GeoCoordinate.Latitude%2A>と<xref:System.Device.Location.GeoCoordinate.Longitude%2A>プロパティです。 <xref:System.Device.Location.GeoCoordinate.Altitude%2A>、 <xref:System.Device.Location.GeoCoordinate.HorizontalAccuracy%2A>、および<xref:System.Device.Location.GeoCoordinate.VerticalAccuracy%2A>に対して等価性を決定するプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAccuracy">
+      <MemberSignature Language="C#" Value="public double HorizontalAccuracy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalAccuracy" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.HorizontalAccuracy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の緯度と経度で指定された精度、 <see cref="T:System.Device.Location.GeoCoordinate" />、メートル単位で。</summary>
+        <value>緯度と経度をメートル単位での精度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 精度は、緯度と経度のデータの確実性の半径を見なすことができます。  円形の領域として中心として radius 緯度と経度座標の精度で形成されるには、実際の場所が含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Device.Location.GeoCoordinate.HorizontalAccuracy" />有効範囲外に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnknown">
+      <MemberSignature Language="C#" Value="public bool IsUnknown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnknown" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.IsUnknown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Device.Location.GeoCoordinate" />緯度や経度のデータは含まれません。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Device.Location.GeoCoordinate" />緯度や経度のデータは含まれません。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Device.Location.GeoCoordinate>緯度を格納していないか、経度のデータと等しい<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認するかどうか、<xref:System.Device.Location.GeoCoordinate>場所に対応するは<xref:System.Device.Location.GeoCoordinate.Unknown>の緯度と経度を印刷する前にします。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataSyncHandleUnknown#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdatasynchandleunknown/cs/getlocationdatasynchandleunknown.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataSyncHandleUnknown#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdatasynchandleunknown/vb/GetLocationDataSyncHandleUnknown.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Latitude">
+      <MemberSignature Language="C#" Value="public double Latitude { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Latitude" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.Latitude" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の緯度、<see cref="T:System.Device.Location.GeoCoordinate" />です。</summary>
+        <value>場所の緯度です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 緯度の範囲は-90.0 90.0 ~ です。 北または南、赤道から緯度は度数で測定されます。 正の値は、赤道の北、負の値、赤道南します。  
+  
+   
+  
+## Examples  
+ 次の例の出力から取得される緯度と経度の値、<xref:System.Device.Location.GeoCoordinate>です。  
+  
+ [!code-csharp[System.Device.Location.LocationEvent1#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.locationevent1/cs/locationevent.cs#1)]
+ [!code-vb[System.Device.Location.LocationEvent1#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.locationevent1/vb/locationevent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Device.Location.GeoCoordinate.Latitude" />有効範囲外に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Longitude">
+      <MemberSignature Language="C#" Value="public double Longitude { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Longitude" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.Longitude" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の経度、<see cref="T:System.Device.Location.GeoCoordinate" />です。</summary>
+        <value>経度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 経度の範囲は-180.0 180.0 です。 子午線から東または経度は度数で測定されます。 負の値は、子午線、西、正の値の子午線です。  
+  
+   
+  
+## Examples  
+ 次の例の出力から取得される緯度と経度の値、<xref:System.Device.Location.GeoCoordinate>です。  
+  
+ [!code-csharp[System.Device.Location.LocationEvent1#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.locationevent1/cs/locationevent.cs#1)]
+ [!code-vb[System.Device.Location.LocationEvent1#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.locationevent1/vb/locationevent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Device.Location.GeoCoordinate.Longitude" />有効範囲外に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Device.Location.GeoCoordinate left, System.Device.Location.GeoCoordinate right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Device.Location.GeoCoordinate left, class System.Device.Location.GeoCoordinate right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.op_Equality(System.Device.Location.GeoCoordinate,System.Device.Location.GeoCoordinate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Device.Location.GeoCoordinate" />
+        <Parameter Name="right" Type="System.Device.Location.GeoCoordinate" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Device.Location.GeoCoordinate" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Device.Location.GeoCoordinate" />。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Device.Location.GeoCoordinate" />オブジェクトが同じ場所を参照してください。</summary>
+        <returns>
+          <see langword="true" />、場合、<see cref="T:System.Device.Location.GeoCoordinate" />に同等です。 それ以外の場合、あるオブジェクトと判断<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等価<xref:System.Device.Location.GeoCoordinate>オブジェクトが同じである<xref:System.Device.Location.GeoCoordinate.Latitude%2A>と<xref:System.Device.Location.GeoCoordinate.Longitude%2A>プロパティです。 <xref:System.Device.Location.GeoCoordinate.Altitude%2A>、 <xref:System.Device.Location.GeoCoordinate.HorizontalAccuracy%2A>、および<xref:System.Device.Location.GeoCoordinate.VerticalAccuracy%2A>に対して等価性を決定するプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Device.Location.GeoCoordinate left, System.Device.Location.GeoCoordinate right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Device.Location.GeoCoordinate left, class System.Device.Location.GeoCoordinate right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.op_Inequality(System.Device.Location.GeoCoordinate,System.Device.Location.GeoCoordinate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Device.Location.GeoCoordinate" />
+        <Parameter Name="right" Type="System.Device.Location.GeoCoordinate" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Device.Location.GeoCoordinate" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Device.Location.GeoCoordinate" />。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Device.Location.GeoCoordinate" />オブジェクトが別の場所に対応します。</summary>
+        <returns>
+          <see langword="true" />、場合、<see cref="T:System.Device.Location.GeoCoordinate" />オブジェクトを、それ以外のさまざまな判断される<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等価<xref:System.Device.Location.GeoCoordinate>オブジェクトが同じである<xref:System.Device.Location.GeoCoordinate.Latitude%2A>と<xref:System.Device.Location.GeoCoordinate.Longitude%2A>プロパティです。 <xref:System.Device.Location.GeoCoordinate.Altitude%2A>、 <xref:System.Device.Location.GeoCoordinate.HorizontalAccuracy%2A>、および<xref:System.Device.Location.GeoCoordinate.VerticalAccuracy%2A>に対して等価性を決定するプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Speed">
+      <MemberSignature Language="C#" Value="public double Speed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Speed" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.Speed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 秒あたりメートル単位で速度を設定します。</summary>
+        <value>1 秒あたりのメーターの速度です。 速度が、0 以上にする必要がありますまたは<see cref="F:System.Double.NaN" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の出力、<xref:System.Device.Location.GeoCoordinate.Course%2A>と<xref:System.Device.Location.GeoCoordinate.Speed%2A>の現在の場所のプロパティ<xref:System.Device.Location.GeoCoordinate>です。  
+  
+ [!code-csharp[System.Device.Location.CourseAndSpeed#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.courseandspeed/cs/courseandspeed.cs#2)]
+ [!code-vb[System.Device.Location.CourseAndSpeed#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.courseandspeed/vb/courseandspeed.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="System.ArgumentOutOfRangeException">
+          <see cref="P:System.Device.Location.GeoCoordinate.Speed" />有効範囲外に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinate.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>緯度と経度を表す文字列を返します。</summary>
+        <returns>緯度と経度、コンマで区切られたを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される文字列の形式はもののみデバッグでの使用です。 このメソッドは、任意のロケール固有の書式設定の緯度と経度は返されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="public static readonly System.Device.Location.GeoCoordinate Unknown;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Device.Location.GeoCoordinate Unknown" />
+      <MemberSignature Language="DocId" Value="F:System.Device.Location.GeoCoordinate.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoCoordinate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Device.Location.GeoCoordinate" />された不明なオブジェクト緯度と経度のフィールドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Device.Location.GeoCoordinate.IsUnknown%2A>プロパティは、ことを確認するために使用できるかどうか、<xref:System.Device.Location.GeoCoordinate>データが含まれていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認するかどうか、<xref:System.Device.Location.GeoCoordinate>場所に対応するは<xref:System.Device.Location.GeoCoordinate.Unknown>printingout する前に、緯度と経度です。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataSyncHandleUnknown#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdatasynchandleunknown/cs/getlocationdatasynchandleunknown.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataSyncHandleUnknown#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdatasynchandleunknown/vb/GetLocationDataSyncHandleUnknown.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalAccuracy">
+      <MemberSignature Language="C#" Value="public double VerticalAccuracy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalAccuracy" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinate.VerticalAccuracy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって指定された高度の精度、 <see cref="T:System.Device.Location.GeoCoordinate" />、メートル単位で。</summary>
+        <value>メートル単位での高度の精度。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Device.Location.GeoCoordinate.VerticalAccuracy" />有効範囲外に設定されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,274 @@
+<Type Name="EntityDescriptor" FullName="System.Data.Services.Client.EntityDescriptor">
+  <TypeSignature Language="C#" Value="public sealed class EntityDescriptor : System.Data.Services.Client.Descriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityDescriptor extends System.Data.Services.Client.Descriptor" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.EntityDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Services.Client.Descriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("State = {state}, Uri = {editLink}, Element = {entity.GetType().ToString()}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Services.Client.DataServiceResponse" /> で返される操作でエンティティに加えられた変更の説明です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドは、一連の <xref:System.Data.Services.Client.DataServiceResponse> オブジェクトが含まれている <xref:System.Data.Services.Client.OperationResponse> オブジェクトを返します。一連のオブジェクトそれぞれには、永続化された変更を表す <xref:System.Data.Services.Client.EntityDescriptor> または <xref:System.Data.Services.Client.LinkDescriptor> インスタンスのシーケンスが含まれます。  
+  
+ 操作を適切に実行するため、記述子の <xref:System.Data.Services.Client.Descriptor.State*> プロパティは Unchanged に設定され、挿入操作と更新操作の新しい値はマージ設定に従ってマージされます。  
+  
+ 操作でエラーが発生した場合、記述子の <xref:System.Data.Services.Client.Descriptor.State*> は、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> が呼び出される前と同じままになります。  
+  
+ 操作中にエラーが発生し、処理が停止すると、<xref:System.Data.Services.Client.Descriptor.State*> は変更されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EditLink">
+      <MemberSignature Language="C#" Value="public Uri EditLink { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri EditLink" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.EditLink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティを変更する URI を取得または設定します。</summary>
+        <value>エンティティ リソースの編集リンク URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditStreamUri">
+      <MemberSignature Language="C#" Value="public Uri EditStreamUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri EditStreamUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.EditStreamUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティのバイナリ プロパティ データを変更する URI を取得または設定します。</summary>
+        <value><see cref="P:System.Data.Services.Client.EntityDescriptor.EditStreamUri" /> プロパティには、メディア リンク エントリであるエンティティに関連付けられているメディア リソースの編集メディア リンク URI が含まれます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Entity">
+      <MemberSignature Language="C#" Value="public object Entity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Entity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.Entity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新データが含まれているエンティティを取得します。</summary>
+        <value>更新データが含まれているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ETag">
+      <MemberSignature Language="C#" Value="public string ETag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ETag" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.ETag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges" /> を最後に呼び出した後に更新の対象となるデータの状態を示す eTag 値を取得します。</summary>
+        <value>データの状態を示す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP の eTag 規則に従ってオプティミスティック同時実行チェックで使用するための元の値を表すエンティティに関連付けられている eTag が使用される[RFC 2616](http://go.microsoft.com/fwlink/?LinkID=114956)です。  
+  
+ この値は空または null になることがあります。 null は、現在エンティティに関連付けられている eTag がないことを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public string Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティの ID 値である URI を取得または設定します。</summary>
+        <value><see cref="P:System.Data.Services.Client.EntityDescriptor.Identity" />プロパティに対応して、<see langword="identity" />の要素、 <see langword="entry" /> Atom 応答内のエンティティを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentForInsert">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.EntityDescriptor ParentForInsert { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Client.EntityDescriptor ParentForInsert" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.ParentForInsert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.EntityDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティに関連する親エンティティを取得します。</summary>
+        <value>リレーションシップ リンクの親エンティティであるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentPropertyForInsert">
+      <MemberSignature Language="C#" Value="public string ParentPropertyForInsert { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParentPropertyForInsert" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.ParentPropertyForInsert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション プロパティであるエンティティのプロパティの名前を取得し、親エンティティにリンクします。</summary>
+        <value>親プロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadStreamUri">
+      <MemberSignature Language="C#" Value="public Uri ReadStreamUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ReadStreamUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.ReadStreamUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティのバイナリ プロパティ データにアクセスする URI を取得または設定します。</summary>
+        <value>バイナリ プロパティにストリームとしてアクセスする URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.EntityDescriptor.ReadStreamUri%2A> プロパティには、メディア リンク エントリであるエンティティに関連付けられているメディア リソースの URI が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelfLink">
+      <MemberSignature Language="C#" Value="public Uri SelfLink { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SelfLink" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.SelfLink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ リソースを返すために使用される URI を取得または設定します。</summary>
+        <value>エンティティを返す URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerTypeName">
+      <MemberSignature Language="C#" Value="public string ServerTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.ServerTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティのマップ先データ ソース内の型の名前を取得または設定します。</summary>
+        <value>データ型の名前を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StreamETag">
+      <MemberSignature Language="C#" Value="public string StreamETag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StreamETag" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityDescriptor.StreamETag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディア リンク エントリであるエンティティに関連付けられたメディア リソースの eTag を取得します。</summary>
+        <value>データの状態を示す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.EntityDescriptor.StreamETag%2A> プロパティは、エンティティがメディア リンク エントリである場合に、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> を最後に呼び出した後に更新の対象となるメディア リソースの状態を示す eTag 値を返します。  
+  
+ メディア リソースに関連付けられている eTag が HTTP の eTag 規則に従ってオプティミスティック同時実行チェックで使用するための元の値を表すために使用[RFC 2616](http://go.microsoft.com/fwlink/?LinkID=114956)です。  
+  
+ この値は空または null になることがあります。 null は、現在メディア リソースに関連付けられている eTag がないことを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

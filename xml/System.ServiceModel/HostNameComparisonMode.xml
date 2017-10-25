@@ -1,0 +1,107 @@
+<Type Name="HostNameComparisonMode" FullName="System.ServiceModel.HostNameComparisonMode">
+  <TypeSignature Language="C#" Value="public enum HostNameComparisonMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HostNameComparisonMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.HostNameComparisonMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>受信メッセージをサービスポイントにディスパッチするときに、URI 比較の中でホスト名をどのように使用するかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を使用して、受信メッセージをディスパッチするときに、HTTP、Net.Tcp、Net.Pipe などのトランスポートで使用される URI 照合ルールを指定します。 前述のトランスポートのいずれかを使用する標準バインド (たとえば <xref:System.ServiceModel.HostNameComparisonMode>) の <xref:System.ServiceModel.BasicHttpBinding> 値を、対応する <xref:System.ServiceModel.BasicHttpBinding.HostNameComparisonMode%2A> プロパティを使用して構成します。 前述のトランスポートのいずれかを使用するバインド要素 (たとえば <xref:System.ServiceModel.HostNameComparisonMode>) の <xref:System.ServiceModel.Channels.HttpTransportBindingElement> 値を、対応する <xref:System.ServiceModel.Channels.HttpTransportBindingElement.HostNameComparisonMode%2A> プロパティを使用して構成します。  
+  
+ <xref:System.ServiceModel.HostNameComparisonMode> の各値は、特定の種類の照合ルールに対応します。 試行される照合ルールの順序は、常に次のようになります。  
+  
+1.  StrongWildcard  
+  
+2.  Exact  
+  
+3.  WeakWildcard  
+  
+ StrongWildcard、最初の値が一致する場合に、ホスト名を無視し、3 つの異なる照合モードの最高の優先順位を取得します。 これは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] システム指定のバインドまたはバインド要素の既定値です。 これは、任意の有効なホスト名を使用してサービス エンドポイントに到達できることを示します。 たとえば、MyService が http://localhost/MyService を使用してホストされている場合は、http://www.adatum.com/MyService でも到達できます。これは、(有効と思われる) ホスト名である "adatum.com" が無視されるためです。 ここでは、ポートがワイルドカードであることにも注意してください。  
+  
+ 2 番目の値、Exact、厳密な一致が見つからない場合に、ホスト名を含む、指定した URI の完全一致が見つかったことが必要です。 このモードでは、たとえば短いホスト名と完全に修飾されたドメイン名は一致しません。 これにより、複数のホストに単一の IP アドレスが割り当てられ、別個のエンドポイントを持つ 1 台のマシン上で異なるサービスをホストできるシナリオの中で、ホスト名を照合条件として使用できます。 ここでは、ポートがワイルドカードであることにも注意してください。  
+  
+ 強力なまたは正確な一致が見つからなかった場合は、ホスト名を無視することで、WeakWildcard、3 番目の値に一致します。 照合順序以外は、動作は同じ StrongWildcard です: 厳密なと完全なバインドが試行された後に実行されます。  
+  
+> [!NOTE]
+>  これらの値は、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) ホスト環境の中で使用された場合は無効です。 そのような場合、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] では、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスをホストする IIS Web サイトに用意されたホスト名比較モードを使用します。  
+  
+   
+  
+## Examples  
+ サービス側の構成ファイルで StrongWildcard 値を設定する方法の例を次に示します。  
+  
+  
+  
+ 次に示すのは、上記の構成ファイルを使用する基本サービスとクライアントです。  
+  
+ [!code-csharp[S_UEHostnameComparisonMode#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uehostnamecomparisonmode/cs/service.cs#2)]  
+  
+ [!code-csharp[S_UEHostnameComparisonMode#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_uehostnamecomparisonmode/cs/snippets.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exact">
+      <MemberSignature Language="C#" Value="Exact" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.HostNameComparisonMode Exact = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.HostNameComparisonMode.Exact" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HostNameComparisonMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な一致が検出されなかった場合に、受信メッセージをこのエンドポイントにディスパッチするときにホスト名を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StrongWildcard">
+      <MemberSignature Language="C#" Value="StrongWildcard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.HostNameComparisonMode StrongWildcard = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.HostNameComparisonMode.StrongWildcard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HostNameComparisonMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信メッセージをこのエンドポイントにディスパッチするときに、ホスト名を無視します。 これが既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WeakWildcard">
+      <MemberSignature Language="C#" Value="WeakWildcard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.HostNameComparisonMode WeakWildcard = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.HostNameComparisonMode.WeakWildcard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HostNameComparisonMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な一致または完全な一致が検出されなかった場合に、照合するときにホスト名を無視します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

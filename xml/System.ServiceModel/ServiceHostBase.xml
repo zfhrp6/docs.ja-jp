@@ -1,0 +1,1034 @@
+<Type Name="ServiceHostBase" FullName="System.ServiceModel.ServiceHostBase">
+  <TypeSignature Language="C#" Value="public abstract class ServiceHostBase : System.ServiceModel.Channels.CommunicationObject, IDisposable, System.ServiceModel.IExtensibleObject&lt;System.ServiceModel.ServiceHostBase&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ServiceHostBase extends System.ServiceModel.Channels.CommunicationObject implements class System.IDisposable, class System.ServiceModel.IExtensibleObject`1&lt;class System.ServiceModel.ServiceHostBase&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceHostBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.CommunicationObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IExtensibleObject&lt;System.ServiceModel.ServiceHostBase&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.ServiceHostBase" /> クラスを拡張して、カスタム プログラミング モデルを公開するホストを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceHostBase> クラスを拡張して、カスタム プログラミング モデルを提供するホストを作成します。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス プログラミング モデルでは、<xref:System.ServiceModel.ServiceHost> クラスを使用します。  
+  
+ このクラスから派生するマネージ C++ ユーザーに対する特別な注意 :  
+  
+-   クリーンアップ コードは、デストラクターではなく (On)(Begin)Close (または OnAbort のどちらか一方または両方) に置いてください。  
+  
+-   デストラクターは使用しないでください。使用すると、コンパイラが <xref:System.IDisposable> を自動生成します。  
+  
+-   非参照メンバーを使用しないでください。使用すると、コンパイラが <xref:System.IDisposable> を自動生成します。  
+  
+-   ファイナライザーを使用しないでください。使用する場合は、ビルド警告を抑制し、<xref:System.GC.SuppressFinalize%28System.Object%29> を呼び出し、ファイナライザー自体を (On)(Begin)Close (または OnAbort のどちらか一方または両方) から呼び出して、自動生成される <xref:System.IDisposable> の動作をエミュレートする必要があります。  
+  
+   
+  
+## Examples  
+ このサンプルでは、<xref:System.ServiceModel.ServiceHost> から派生した <xref:System.ServiceModel.ServiceHostBase> クラスを使用します。  
+  
+ [!code-csharp[S_SelfHost#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#1)]
+ [!code-vb[S_SelfHost#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_selfhost/vb/wholeenchilada.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceHostBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceHostBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#30](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBaseAddress">
+      <MemberSignature Language="C#" Value="protected void AddBaseAddress (Uri baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddBaseAddress(class System.Uri baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddBaseAddress(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseAddress" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseAddress">現在のホストでホストされるサービスのベースアドレスを含む <see cref="T:System.Uri" />。</param>
+        <summary>サービス ホストにベース アドレスを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ホストの構築後に、ユーザーが <xref:System.ServiceModel.ServiceHostBase> を拡張してベース アドレスを提供できるようにします。 <xref:System.ServiceModel.ServiceHostBase.AddBaseAddress%28System.Uri%29> を使用して既存のホストにベース アドレスを追加できますが、記述が既に初期化されている場合は例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="baseAddress" /> を呼び出すことができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDefaultEndpoints">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; AddDefaultEndpoints ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; AddDefaultEndpoints() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のバインドを使用して、サービス ホストで検出された各コントラクト内のすべてのベース アドレスのサービス エンドポイントを追加します。</summary>
+        <returns>既定のエンドポイントの読み取り専用コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public virtual void AddServiceEndpoint (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddServiceEndpoint(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddServiceEndpoint(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">サービス エンドポイント。</param>
+        <summary>ホストされるサービスに指定されたサービス エンドポイントを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを使用する場合、サービス ホストはコントラクトの説明に"によって-構成-name"検証は。 つまり、ホストを検証する<xref:System.ServiceModel.Description.ContractDescription.ConfigurationName%2A>サービスによって実装されたサービス コントラクトの構成名の一覧に存在します。 かどうか、検証が成功で説明、<xref:System.ServiceModel.Description.ServiceEndpoint>これは、使用場合でも、<xref:System.ServiceModel.Description.ContractDescription>から反映された、サービスが異なる。  
+  
+ たとえば、ServiceEndpoint の説明と、サービスから反映されたコントラクトの説明がある名が同じで、さまざまな操作の動作と仮定します。 「構成の名前による」検証のみの影響は、検証の動作は同じと更新があるいずれか 1 つの説明を別の説明のためのことがないことです。  
+  
+ `address` が相対 URI の場合、(バインド プロトコルに応じて) <xref:System.ServiceModel.ServiceHost> のベース アドレスの 1 つがエンドポイントのベース アドレスとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Endpoint" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストが Created 状態でも Opening 状態でもないか、ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" /> がありません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Address" />、 <paramref name="Binding" />、または<paramref name="Contract" />プロパティは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (string implementedContract, System.ServiceModel.Channels.Binding binding, string address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(string implementedContract, class System.ServiceModel.Channels.Binding binding, string address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddServiceEndpoint(System.String,System.ServiceModel.Channels.Binding,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.String" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">エンドポイントにより実装されたコントラクト。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されるエンドポイントのアドレス。 これは、絶対 URI または相対 URI です。 相対 URI の場合、(バインディング プロトコルに応じて) <see cref="T:System.ServiceModel.ServiceHost" /> のベース アドレスの 1 つがエンドポイントのベース アドレスとして使用されます。</param>
+        <summary>指定されたコントラクト、バインディング、およびエンドポイント アドレスを持つホストされるサービスに、サービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#40](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または<paramref name="address" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態でも <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態でもありません。または、ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" /> がないので、エンドポイントを追加できません。あるいは、バンディングにバインディング スキームのトランスポートが不足しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (string implementedContract, System.ServiceModel.Channels.Binding binding, Uri address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(string implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddServiceEndpoint(System.String,System.ServiceModel.Channels.Binding,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.String" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">エンドポイントにより実装されたコントラクト。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されたエンドポイントのアドレスを格納する <see cref="T:System.Uri" />。 これは、絶対 URI または相対 URI です。 相対 URI の場合、(バインディング プロトコルに応じて) <see cref="T:System.ServiceModel.ServiceHost" /> のベース アドレスの 1 つがエンドポイントのベース アドレスとして使用されます。</param>
+        <summary>指定したコントラクト、バインド、およびエンドポイント アドレスを含む URI を使用して、ホストされるサービスにサービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または<paramref name="address" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態でも <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態でもありません。または、ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" /> がないので、エンドポイントを追加できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (string implementedContract, System.ServiceModel.Channels.Binding binding, string address, Uri listenUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(string implementedContract, class System.ServiceModel.Channels.Binding binding, string address, class System.Uri listenUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddServiceEndpoint(System.String,System.ServiceModel.Channels.Binding,System.String,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.String" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="listenUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">エンドポイントにより実装されたコントラクト。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されるエンドポイントのアドレス。 このアドレスは、絶対 URI でも相対 URI でもかまいません。 相対 URI の場合、(バインディング プロトコルに応じて) <see cref="T:System.ServiceModel.ServiceHost" /> のベース アドレスの 1 つがエンドポイントのベース アドレスとして使用されます。</param>
+        <param name="listenUri">エンドポイントが受信メッセージをリッスンするアドレスが含まれている <see cref="T:System.Uri" />。 この URI は相対 URI でも絶対 URI でもかまいません。</param>
+        <summary>コントラクト、バインド、エンドポイント アドレス、およびサービスがリッスンするアドレスを表す URI を指定して、ホストされるサービスにサービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `address` が相対 URI の場合、(バインド プロトコルに応じて) <xref:System.ServiceModel.ServiceHost> のベース アドレスの 1 つがエンドポイントのベース アドレスとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または<paramref name="address" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態でも <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態でもありません。または、ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" /> がないので、エンドポイントを追加できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (string implementedContract, System.ServiceModel.Channels.Binding binding, Uri address, Uri listenUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(string implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address, class System.Uri listenUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.AddServiceEndpoint(System.String,System.ServiceModel.Channels.Binding,System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.String" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="listenUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">エンドポイントにより実装されたコントラクト。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されたエンドポイントのアドレスを格納する <see cref="T:System.Uri" />。 相対 URI の場合、(バインディング プロトコルに応じて) <see cref="T:System.ServiceModel.ServiceHost" /> のベース アドレスの 1 つがエンドポイントのベース アドレスとして使用されます。</param>
+        <param name="listenUri">エンドポイントが受信メッセージをリッスンするアドレスを含む <see cref="T:System.Uri" />。</param>
+        <summary>コントラクト、バインド、およびエンドポイント アドレスとリッスン アドレスを含む URI を指定して、ホストされるサービスにサービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。 この URI は絶対 URI でも相対 URI でもかまいません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または<paramref name="address" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態でも <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態でもありません。または、ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" /> がないので、エンドポイントを追加できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyConfiguration">
+      <MemberSignature Language="C#" Value="protected virtual void ApplyConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ApplyConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.ApplyConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス記述情報を構成ファイルから読み込み、構築中のランタイムにその情報を適用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ホストされたサービスの記述が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Authentication">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceAuthenticationBehavior Authentication { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceAuthenticationBehavior Authentication" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.Authentication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceAuthenticationBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの認証動作を取得します。</summary>
+        <value>サービスの認証動作。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authorization">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceAuthorizationBehavior Authorization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceAuthorizationBehavior Authorization" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.Authorization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceAuthorizationBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスの承認動作を取得します。</summary>
+        <value>ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceAuthorizationBehavior" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#36](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#36)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseAddresses">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;Uri&gt; BaseAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Uri&gt; BaseAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.BaseAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスによって使用されるベース アドレスを取得します。</summary>
+        <value>ホストされるサービスのベース アドレスを格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.Uri" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelDispatchers">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ChannelDispatcherCollection ChannelDispatchers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ChannelDispatcherCollection ChannelDispatchers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.ChannelDispatchers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ChannelDispatcherCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストによって使用されるチャネル ディスパッチャーのコレクションを取得します。</summary>
+        <value>サービス ホストによって使用されるチャネル ディスパッチャーを含む <see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcherCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan CloseTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.CloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストを閉じておける期間を取得または設定します。</summary>
+        <value>サービス ホストを閉じておける期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#33](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">ミリ秒単位の値がゼロ未満であるか、または <see cref="F:System.Int32.MaxValue" /> (2,147,483,647 または 16 進表記で 0X7FFFFFFF) よりも大きくなっています。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストは <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態または <see cref="F:System.ServiceModel.CommunicationState.Closing" /> 状態にあり、変更できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ホストは既に <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあり、変更できません。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">ホストは <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあり、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDescription">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Description.ServiceDescription CreateDescription (out System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Description.ContractDescription&gt; implementedContracts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Description.ServiceDescription CreateDescription([out] class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Description.ContractDescription&gt;&amp; implementedContracts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.CreateDescription(System.Collections.Generic.IDictionary{System.String,System.ServiceModel.Description.ContractDescription}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContracts" Type="System.Collections.Generic.IDictionary&lt;System.String,System.ServiceModel.Description.ContractDescription&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContracts">サービスの <see cref="T:System.Collections.Generic.IDictionary`2" /> オブジェクトを格納している <see cref="T:System.ServiceModel.Description.ContractDescription" />。</param>
+        <summary>派生クラスで実装された場合は、ホストされるサービスの記述を作成します。</summary>
+        <returns>ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#41](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#41)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceCredentials Credentials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceCredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスの資格情報を取得します。</summary>
+        <value>ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceCredentials" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#37](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#37)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCloseTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultCloseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultCloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.DefaultCloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストを閉じておける既定の期間を取得します。</summary>
+        <value>サービス ホストを閉じておける既定の期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOpenTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultOpenTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultOpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.DefaultOpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストを開いておける既定の期間を取得します。</summary>
+        <value>サービス ホストを開いておける既定の期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#35](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#35)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceDescription Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceDescription Description" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスの記述を取得します。</summary>
+        <value>ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_SelfHost#38](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#38)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.IExtensionCollection&lt;System.ServiceModel.ServiceHostBase&gt; Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.IExtensionCollection`1&lt;class System.ServiceModel.ServiceHostBase&gt; Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.IExtensionCollection&lt;System.ServiceModel.ServiceHostBase&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の指定されたサービス ホストの拡張機能を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.IExtensionCollection`1" /> 型の <see cref="T:System.ServiceModel.ServiceHostBase" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImplementedContracts">
+      <MemberSignature Language="C#" Value="protected System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Description.ContractDescription&gt; ImplementedContracts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Description.ContractDescription&gt; ImplementedContracts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.ImplementedContracts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.ServiceModel.Description.ContractDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスによって実装されるコントラクトを取得します。</summary>
+        <value>サービスの <see cref="T:System.Collections.Generic.IDictionary`2" /> オブジェクトを格納している <see cref="T:System.ServiceModel.Description.ContractDescription" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementManualFlowControlLimit">
+      <MemberSignature Language="C#" Value="public int IncrementManualFlowControlLimit (int incrementBy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IncrementManualFlowControlLimit(int32 incrementBy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.IncrementManualFlowControlLimit(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="incrementBy" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="incrementBy">フロー制御制限を増やすために追加するメッセージの数。</param>
+        <summary>ホストされるサービスへのメッセージのフロー レートの制限を、指定した値で増分します。</summary>
+        <returns>増分値が追加された後の新しい制限。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この制限は、<xref:System.ServiceModel.ServiceHostBase.ManualFlowControlLimit%2A> プロパティを使用してアクセスできます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_SelfHost#42](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#42)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeDescription">
+      <MemberSignature Language="C#" Value="protected void InitializeDescription (System.ServiceModel.UriSchemeKeyedCollection baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeDescription(class System.ServiceModel.UriSchemeKeyedCollection baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.InitializeDescription(System.ServiceModel.UriSchemeKeyedCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseAddresses" Type="System.ServiceModel.UriSchemeKeyedCollection" />
+      </Parameters>
+      <Docs>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを含む <see cref="T:System.ServiceModel.UriSchemeKeyedCollection" />。</param>
+        <summary>コントラクトとサービスの記述を指定して、サービス ホストの作成と初期化を行います。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRuntime">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeRuntime ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeRuntime() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.InitializeRuntime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス ホストのランタイムを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ホストされたサービスの記述が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadConfigurationSection">
+      <MemberSignature Language="C#" Value="protected void LoadConfigurationSection (System.ServiceModel.Configuration.ServiceElement serviceSection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void LoadConfigurationSection(class System.ServiceModel.Configuration.ServiceElement serviceSection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.LoadConfigurationSection(System.ServiceModel.Configuration.ServiceElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceSection" Type="System.ServiceModel.Configuration.ServiceElement" />
+      </Parameters>
+      <Docs>
+        <param name="serviceSection">構成から読み込まれる <see cref="T:System.ServiceModel.Configuration.ServiceElement" />。</param>
+        <summary>ホストされるサービスの構成ファイルからサービス要素を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceSection" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストされたサービスの記述が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ManualFlowControlLimit">
+      <MemberSignature Language="C#" Value="public int ManualFlowControlLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ManualFlowControlLimit" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.ManualFlowControlLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスによって受信されるメッセージのフロー制御制限を取得または設定します。</summary>
+        <value>ホストされるサービスによって受信されるメッセージのフロー制御制限。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この制限は、<xref:System.ServiceModel.ServiceHostBase.IncrementManualFlowControlLimit%28System.Int32%29> メソッドを使用して増分できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_SelfHost#39](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#39)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAbort">
+      <MemberSignature Language="C#" Value="protected override void OnAbort ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAbort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnAbort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスを中止します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginClose">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginClose (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginClose(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">終了時の操作がタイム アウトまでに完了する必要がある時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期終了時操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期終了時操作に関連付けられている状態情報を保持するオブジェクト。アプリケーションで指定します。</param>
+        <summary>サービス ホストの終了時に呼び出される非同期操作を開始します。</summary>
+        <returns>非同期終了時操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOpen">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginOpen (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginOpen(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnBeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">開始時の操作がタイムアウトまでに完了する必要がある時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期開始操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期開始時操作に関連付けられた状態情報を格納するオブジェクト。アプリケーションによって指定されます。</param>
+        <summary>サービス ホストの開始時に呼び出される非同期操作を開始します。</summary>
+        <returns>非同期開始時操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClose">
+      <MemberSignature Language="C#" Value="protected override void OnClose (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClose(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnClose(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">終了時の操作がタイム アウトまでに完了する必要がある時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>ホストされるサービスを、チャネル ディスパッチャー、関連付けられたインスタンス コンテキスト、およびリスナーを含めて終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceHostBase.OnClose%28System.TimeSpan%29> を呼び出すと、以下の操作が行われます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> へのすべての入力を閉じます。それぞれに関連付けられた <xref:System.ServiceModel.Channels.IChannelListener> インスタンスも同時に閉じます。 この結果、すべての新しいチャネルの受け入れは停止されます。  
+  
+-   すべての <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.CloseInput%2A> オブジェクトに対して <xref:System.ServiceModel.InstanceContext> を呼び出します。これは、新しいメッセージの受け入れが停止されることを意味します。  
+  
+-   すべての <xref:System.ServiceModel.InstanceContext> オブジェクトが閉じるまで待機します。オブジェクトは、関連付けられたチャネルが保留中のすべてのメッセージの送信を終了したときに閉じます。  
+  
+-   ホストに関連付けられた <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトを閉じます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected override void OnClosed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnClosed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス ホストによって使用されているリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndClose">
+      <MemberSignature Language="C#" Value="protected override void OnEndClose (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndClose(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnEndClose(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.ServiceHostBase.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>サービス ホストの終了時に呼び出された非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOpen">
+      <MemberSignature Language="C#" Value="protected override void OnEndOpen (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndOpen(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnEndOpen(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.ServiceHostBase.OnBeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>サービス ホストの開始時に呼び出された非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpen">
+      <MemberSignature Language="C#" Value="protected override void OnOpen (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpen(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnOpen(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">開始時の操作がタイムアウトまでに完了する必要がある時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>チャネル ディスパッチャーを開きます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpened">
+      <MemberSignature Language="C#" Value="protected override void OnOpened ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpened() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.OnOpened" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホストされるサービスのサービス資格情報、サービス認証およびサービス承認動作を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらの動作は、サービスを開くときに初期化された後は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan OpenTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan OpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostBase.OpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストを開いておける期間を取得または設定します。</summary>
+        <value>サービス ホストを開いておける期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値がゼロ未満であるか、または <see cref="F:System.Int32.MaxValue" /> (2,147,483,647 または 16 進表記で 0X7FFFFFFF) よりも大きくなっています。</exception>
+        <exception cref="T:System.InvalidOperationException">ホストは <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態または <see cref="F:System.ServiceModel.CommunicationState.Closing" /> 状態にあり、変更できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ホストは既に <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあり、変更できません。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">ホストは <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあり、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleasePerformanceCounters">
+      <MemberSignature Language="C#" Value="protected void ReleasePerformanceCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ReleasePerformanceCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.ReleasePerformanceCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホストされるサービスの、サービスとチャネル ディスパッチャーのパフォーマンス カウンターを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されるのは、<xref:System.ServiceModel.ServiceHostBase.OnClose%28System.TimeSpan%29> および   
+  
+ <xref:System.ServiceModel.ServiceHostBase.OnEndClose%28System.IAsyncResult%29>。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEndpointAddress">
+      <MemberSignature Language="C#" Value="public void SetEndpointAddress (System.ServiceModel.Description.ServiceEndpoint endpoint, string relativeAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetEndpointAddress(class System.ServiceModel.Description.ServiceEndpoint endpoint, string relativeAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.SetEndpointAddress(System.ServiceModel.Description.ServiceEndpoint,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="relativeAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">サービス エンドポイント。</param>
+        <param name="relativeAddress">エンドポイント アドレス。</param>
+        <summary>指定されたエンドポイントのエンドポイント アドレスを指定されたアドレスに設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostBase.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス ホストを閉じます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownMessageReceived">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ServiceModel.UnknownMessageReceivedEventArgs&gt; UnknownMessageReceived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ServiceModel.UnknownMessageReceivedEventArgs&gt; UnknownMessageReceived" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.ServiceHostBase.UnknownMessageReceived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ServiceModel.UnknownMessageReceivedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明のメッセージが受信されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!WARNING]
+>  使用する場合<xref:System.ServiceModel.WorkflowServiceHost>、ホストのエンドポイントを公開して、<xref:System.ServiceModel.ServiceHostBase.UnknownMessageReceived>ホストは、イベント ハンドラーにメッセージを渡す、例外がスローされます。 このメッセージを読み取ろうとしましたが行われた場合、<xref:System.InvalidOperationException>がスローされます。 例外のという説明が「このメッセージ操作をサポートできません読み取られているためです」  WCF インフラストラクチャでは、メッセージのパラメーターを抽出中にメッセージを読み取ります。 このメッセージは、イベント ハンドラーに渡されを読み取るしようとすると例外が発生します。 メッセージ パラメーターにアクセスする必要がある場合、<xref:System.InvalidOperationException>ホスティングのエンドポイントからハンドラーは MessageContract を使用してホストのエンドポイントのコントラクトを定義して、メッセージ ヘッダーに必要なデータを配置します。 [!INCLUDE[crabout](~/includes/crabout-md.md)]ホストのエンドポイントを参照してください[ワークフロー サービス ホストの拡張機能](~/docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

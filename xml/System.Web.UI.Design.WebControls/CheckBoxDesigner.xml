@@ -1,0 +1,92 @@
+<Type Name="CheckBoxDesigner" FullName="System.Web.UI.Design.WebControls.CheckBoxDesigner">
+  <TypeSignature Language="C#" Value="public class CheckBoxDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CheckBoxDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.CheckBoxDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.Design.SupportsPreviewControl(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.CheckBox" /> Web サーバー コントロールのデザイン時の動作を拡張します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.CheckBoxDesigner>クラスのオーバーライド、<xref:System.Web.UI.Design.WebControls.CheckBoxDesigner.GetDesignTimeHtml%2A>のメソッド、<xref:System.Web.UI.Design.ControlDesigner>クラスをコントロールにデザイン時に意味のある表現が表示されることを確認してください。 場合、<xref:System.Web.UI.WebControls.CheckBox.Text%2A>プロパティは空では、<xref:System.Web.UI.Design.WebControls.CheckBoxDesigner.GetDesignTimeHtml%2A>このクラスのメソッドを設定、<xref:System.Web.UI.WebControls.CheckBox.Text%2A>するコントロールのプロパティ、<xref:System.Web.UI.Control.ID%2A?displayProperty=nameWithType>コントロールのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のカスタム デザイナー クラスを作成`SampleCheckBoxDesigner`から継承する、<xref:System.Web.UI.Design.WebControls.CheckBoxDesigner>クラスです。 も優先、<xref:System.Web.UI.Design.WebControls.CheckBoxDesigner.GetDesignTimeHtml%2A>メソッドです。 場合、<xref:System.Web.UI.WebControls.CheckBox.Text%2A?displayProperty=nameWithType>プロパティが設定されていない場合、このメソッドの呼び出しを文字列に設定し、デザイン画面でその文字列が表示されます。 場合、<xref:System.Web.UI.WebControls.CheckBox.Text%2A>プロパティが設定されていると、既存のプロパティ値が表示されます。  
+  
+ [!code-vb[System.Web.UI.Design.WebControls_CheckBoxDesignerSamples#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls_CheckBoxDesignerSamples/VB/customcheckbox.vb#1)]  
+  
+ 次のコード例は、という名前の単純なクラス`SampleCheckBox`から継承する、<xref:System.Web.UI.WebControls.CheckBox>クラスし、関連付けられている、`SampleCheckBoxDesigner`によってクラス、<xref:System.ComponentModel.DesignerAttribute>クラスです。  
+  
+ [!code-vb[System.Web.UI.Design.WebControls_CheckBoxDesignerSamples#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls_CheckBoxDesignerSamples/VB/customcheckbox.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CheckBoxDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.CheckBoxDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.CheckBoxDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.CheckBoxDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時にコントロールを表すために使用するマークアップを取得します。</summary>
+        <returns>デザイン時にコントロールを表すために使用するマークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.Button.Text%2A>プロパティが空または空白文字のみで構成されて、生成される HTML には、<xref:System.Web.UI.Control.ID%2A>のチェック ボックス コントロールです。 それ以外の場合、生成された HTML の内容を含むコントロールの<xref:System.Web.UI.WebControls.Button.Text%2A>プロパティです。  
+  
+ 生成された HTML を変更するには、このメソッドをオーバーライドします。  
+  
+   
+  
+## Examples  
+ 次のコード例の上書き、<xref:System.Web.UI.Design.WebControls.CheckBoxDesigner.GetDesignTimeHtml%2A>メソッドです。 場合、<xref:System.Web.UI.WebControls.CheckBox.Text%2A?displayProperty=nameWithType>プロパティが設定されていない場合、このメソッドの呼び出しを文字列に設定し、デザイン画面でその文字列が表示されます。 場合、<xref:System.Web.UI.WebControls.CheckBox.Text%2A>プロパティは既に設定されていると、既存のプロパティ値が表示されます。  
+  
+ [!code-vb[System.Web.UI.Design.WebControls_CheckBoxDesignerSamples#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls_CheckBoxDesignerSamples/VB/customcheckbox.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

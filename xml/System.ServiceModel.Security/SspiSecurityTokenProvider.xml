@@ -1,0 +1,116 @@
+<Type Name="SspiSecurityTokenProvider" FullName="System.ServiceModel.Security.SspiSecurityTokenProvider">
+  <TypeSignature Language="C#" Value="public class SspiSecurityTokenProvider : System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SspiSecurityTokenProvider extends System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.SspiSecurityTokenProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SSPI セキュリティ トークンを提供するセキュリティ トークン プロバイダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSPI セキュリティ トークンは暗号化操作の機能を持たず、Windows 認証に必要な設定のみを含みます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SspiSecurityTokenProvider (System.Net.NetworkCredential credential, bool extractGroupsForWindowsAccounts, bool allowUnauthenticatedCallers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.NetworkCredential credential, bool extractGroupsForWindowsAccounts, bool allowUnauthenticatedCallers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SspiSecurityTokenProvider.#ctor(System.Net.NetworkCredential,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="credential" Type="System.Net.NetworkCredential" />
+        <Parameter Name="extractGroupsForWindowsAccounts" Type="System.Boolean" />
+        <Parameter Name="allowUnauthenticatedCallers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="credential">サーバー ID を表す <see cref="T:System.Net.NetworkCredential" />。</param>
+        <param name="extractGroupsForWindowsAccounts">
+          <see langword="true" />Windows グループに含めるユーザーを展開するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="allowUnauthenticatedCallers">
+          <see langword="true" />認証されていない呼び出し元を許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.ServiceModel.Security.SspiSecurityTokenProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスは、サービスの SSPI トークンに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SspiSecurityTokenProvider (System.Net.NetworkCredential credential, bool allowNtlm, System.Security.Principal.TokenImpersonationLevel impersonationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.NetworkCredential credential, bool allowNtlm, valuetype System.Security.Principal.TokenImpersonationLevel impersonationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SspiSecurityTokenProvider.#ctor(System.Net.NetworkCredential,System.Boolean,System.Security.Principal.TokenImpersonationLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="credential" Type="System.Net.NetworkCredential" />
+        <Parameter Name="allowNtlm" Type="System.Boolean" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="credential">クライアント ID を表す <see cref="T:System.Net.NetworkCredential" />。</param>
+        <param name="allowNtlm">
+          <see langword="true" />NTLM 認証を許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="impersonationLevel"><see cref="T:System.Security.Principal.TokenImpersonationLevel" />サーバーに付与します。</param>
+        <summary><see cref="T:System.ServiceModel.Security.SspiSecurityTokenProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの新しいインスタンスは、クライアント上の SSPI トークンに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.IdentityModel.Tokens.SecurityToken GetTokenCore (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken GetTokenCore(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SspiSecurityTokenProvider.GetTokenCore(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">タイムアウト期間を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>セキュリティ トークンを取得します。</summary>
+        <returns>セキュリティ トークン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.Tokens.SspiSecurityToken> 型のセキュリティ トークン。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

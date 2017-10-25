@@ -1,0 +1,367 @@
+<Type Name="SortKey" FullName="System.Globalization.SortKey">
+  <TypeSignature Language="C#" Value="public class SortKey" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable beforefieldinit SortKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.SortKey" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字列とその並べ替えキーとの対応付けの結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの文字列のカルチャに依存した比較は、ここと発音の区別の重みをいくつかのカテゴリの並べ替えウェイト、スクリプト、アルファベットを持つ文字列内の各文字に依存します。 並べ替えキーは、特定の文字列をこれらの規則のリポジトリとして機能します。  
+  
+ <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType>メソッドのインスタンスを返します、<xref:System.Globalization.SortKey>指定した文字列の文字のカルチャに依存したマッピングを反映するクラス。 値、<xref:System.Globalization.SortKey>オブジェクトがキーのデータ、によって返される、<xref:System.Globalization.SortKey.KeyData%2A>プロパティです。 このキーのデータは、一連の文字列、カルチャに固有の並べ替え規則、およびユーザーが指定した比較オプションをエンコードするバイトで構成されます。 並べ替えキーを使用して、比較は、それぞれの並べ替えキーに対応するキーのデータのビットごとの比較で構成されます。  たとえば、呼び出すことにより、並べ替えキーを作成する場合、<xref:System.Globalization.CompareInfo.GetSortKey%28System.String%2CSystem.Globalization.CompareOptions%29>の値を持つメソッド<xref:System.Globalization.CompareOptions?displayProperty=nameWithType>、並べ替えキーを使用する文字列比較操作が区別されません。  
+  
+ 静的なを呼び出すことによって、並べ替えキーを比較する文字列の並べ替えキーを作成したら、<xref:System.Globalization.SortKey.Compare%2A?displayProperty=nameWithType>メソッドです。 このメソッドには、単純なバイトで比較が実行するよりもはるかに高速であるため、<xref:System.String.Compare%2A?displayProperty=nameWithType>または<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>メソッドです。  
+  
+## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項  
+ 文字列の比較を実行するときに、<xref:System.Globalization.SortKey.Compare%2A>と<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>メソッドによって、同じ結果が生成が、ターゲットとさまざまなシナリオです。  
+  
+ 大まかに言えば、<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>メソッド各文字列の並べ替えキーを生成、比較の実行し並べ替えキーを破棄し、比較の結果を返します。 ただし、<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>メソッドは実際には、比較を実行する全体の並べ替えキーを生成しません。 代わりに、メソッドは、それぞれの文字列 (つまり、基本文字、サロゲート ペア、または組み合わせ文字シーケンス) の各テキスト要素のキー データを生成します。 メソッドは、対応するテキスト要素のキー データを比較します。 操作は、比較の最終的な結果を特定するとすぐに終了します。 並べ替えキーの情報は計算が<xref:System.Globalization.SortKey>オブジェクトを作成します。 この戦略は両方の文字列が 1 回、比較する場合は、パフォーマンスの観点から経済的ですが、同じ文字列が複数回を比較する場合に負荷が高くなります。  
+  
+ <xref:System.Globalization.SortKey.Compare%2A>メソッドの生成が必要です、<xref:System.Globalization.SortKey>の比較を実行する前に各文字列オブジェクト。 この方法は、時間とメモリの投資を生成するため、最初に比較のパフォーマンスの観点から高価な<xref:System.Globalization.SortKey>オブジェクト。 ただし、同じ並べ替えキーが複数回を比較する場合、パフォーマンスが向上します。  
+  
+ たとえば、文字列ベースのインデックス列に指定した検索文字列が一致する行をデータベース テーブルを検索するアプリケーションを記述するとします。 テーブルには、数千行が含まれています。 し、時間がかかるは各の行にインデックスを検索文字列を比較します。 そのため、アプリケーションは、そのインデックス列と行を格納するときにも生成し、検索のパフォーマンスを向上させるために専用の列にインデックスの並べ替えキーを格納します。 アプリケーションは、対象の行を検索する場合は、文字列の並べ替えキー、インデックス、インデックス文字列に検索文字列を比較するのではなくする検索文字列の並べ替えキーを比較します。  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ <xref:System.Globalization.CompareInfo.GetSortKey%28System.String%2CSystem.Globalization.CompareOptions%29?displayProperty=nameWithType>メソッドを返します、<xref:System.Globalization.SortKey>指定した文字列に基づいて、値を持つオブジェクトおよび<xref:System.Globalization.CompareOptions>値、および基になるに関連付けられているカルチャ<xref:System.Globalization.CompareInfo>オブジェクト。 使用する必要があります、セキュリティ上の決定は、文字列の比較またはケース変更に依存する場合、<xref:System.Globalization.CompareInfo.GetSortKey%28System.String%2CSystem.Globalization.CompareOptions%29?displayProperty=nameWithType>操作の動作が、オペレーティング システムのカルチャ設定に関係なく、一貫性のあることを確認するインバリアント カルチャのメソッドです。  
+  
+ 並べ替えキーを入手するのにには、次の手順を使用します。  
+  
+1.  インバリアント カルチャを取得、<xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>プロパティです。  
+  
+2.  取得、<xref:System.Globalization.CompareInfo>からインバリアント カルチャ オブジェクト、<xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType>プロパティです。  
+  
+3.  <xref:System.Globalization.CompareInfo.GetSortKey%28System.String%2CSystem.Globalization.CompareOptions%29?displayProperty=nameWithType> メソッドを呼び出します。  
+  
+ 値の操作、<xref:System.Globalization.SortKey>オブジェクトは、Windows の呼び出しに相当`LCMapString`LCMAP_SORTKEY に指定された値を持つメソッドです。 ただしの場合は、<xref:System.Globalization.SortKey>オブジェクト、英語の文字の並べ替えキーには、韓国語の文字の並べ替えキーが前に指定します。  
+  
+ <xref:System.Globalization.SortKey>オブジェクトをシリアル化されたのみすることができますに交差していないように<xref:System.AppDomain>オブジェクト。 アプリケーションがシリアル化する場合、<xref:System.Globalization.SortKey>オブジェクト、.NET Framework の新しいバージョンがあるときに、アプリケーションがすべての並べ替えキーを再生成する必要があります。  
+  
+ 並べ替えキーの詳細についてで Unicode 技術標準 10、「Unicode 照合アルゴリズム」を参照して、 [Unicode コンソーシアムの web サイト](http://go.microsoft.com/fwlink/?linkid=37123)です。  
+  
+   
+  
+## Examples  
+ 次の例では、"EN-US"と"ES-ES"カルチャ"EN-US"と"ES-ES"従来のカルチャを使用して文字列「ラマ」を比較します。  
+  
+ [!code-cpp[System.Globalization.SortKey.Compare#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.SortKey.Compare/CPP/sortkey_compare.cpp#1)]
+ [!code-csharp[System.Globalization.SortKey.Compare#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.SortKey.Compare/CS/sortkey_compare.cs#1)]
+ [!code-vb[System.Globalization.SortKey.Compare#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.SortKey.Compare/VB/sortkey_compare.vb#1)]  
+  
+ 次の例を使用する方法を示しています、<xref:System.Globalization.SortKey>並べ替えとサイズの大きな配列を検索に広範囲に依存するアプリケーションのパフォーマンスを向上させるためにクラスです。 例では、順序付けられていない名の配列、ここでは 13 個の要素を作成します。 渡して、並列配列に各名前の並べ替えキーを格納し、<xref:System.Array.Sort%28System.Array%2CSystem.Array%29?displayProperty=nameWithType>メソッドです。 結果は、並べ替えられた配列です。 例では、3 つの文字列の配列が検索されます。 呼び出しの各検索文字列、<xref:System.Globalization.CompareInfo.GetSortKey%28System.String%2CSystem.Globalization.CompareOptions%29?displayProperty=nameWithType>文字列の並べ替えキーとし、呼び出しを取得する方法を<xref:System.Array.FindIndex%2A?displayProperty=nameWithType>を並べ替えキーの配列の並べ替えキーのインデックスを取得する方法です。 名と並べ替えキーの配列は並列であるため、返されるインデックスはまた、インデックス内の名前の`names`配列。  
+  
+ [!code-csharp[System.Globalization.SortKey.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.sortkey.class/cs/sortkey1.cs#1)]
+ [!code-vb[System.Globalization.SortKey.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.sortkey.class/vb/sortkey1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (System.Globalization.SortKey sortkey1, System.Globalization.SortKey sortkey2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(class System.Globalization.SortKey sortkey1, class System.Globalization.SortKey sortkey2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.SortKey.Compare(System.Globalization.SortKey,System.Globalization.SortKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sortkey1" Type="System.Globalization.SortKey" />
+        <Parameter Name="sortkey2" Type="System.Globalization.SortKey" />
+      </Parameters>
+      <Docs>
+        <param name="sortkey1">比較する最初の並べ替えキー。</param>
+        <param name="sortkey2">比較する 2 番目の並べ替えキー。</param>
+        <summary>2 つの並べ替えキーを比較します。</summary>
+        <returns>間のリレーションシップを示す符号付き整数<paramref name="sortkey1" />と<paramref name="sortkey2" />です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description><paramref name="sortkey1" /> は <paramref name="sortkey2" /> より小さい値です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description><paramref name="sortkey1" /> と <paramref name="sortkey2" /> が等価です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description><paramref name="sortkey1" /> が <paramref name="sortkey2" /> より大きくなっています。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.SortKey.Compare%2A>メソッドに比較して、<xref:System.Globalization.SortKey.KeyData%2A>のプロパティ、`sortkey1`と`sortkey2`パラメーター。 メソッドと同じ結果が得られます、<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 詳細については、<xref:System.Globalization.SortKey.Compare%2A>メソッドと、並べ替えキーの比較を参照してください、<xref:System.Globalization.SortKey>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して 2 つの文字列を比較し、<xref:System.Globalization.SortKey.Compare%2A>メソッドと、対応<xref:System.Globalization.CompareInfo.Compare%28System.String%2CSystem.String%2CSystem.Globalization.CompareOptions%29?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[sys.glob.sortkey.compare#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.sortkey.compare/cs/skcmp.cs#1)]
+ [!code-vb[sys.glob.sortkey.compare#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.sortkey.compare/vb/skcmp.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sortkey1" /> または <paramref name="sortkey2" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.SortKey.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の <see cref="T:System.Globalization.SortKey" /> オブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Globalization.SortKey" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="value" /> パラメーターが現在の <see cref="T:System.Globalization.SortKey" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Globalization.SortKey>場合、オブジェクトが等しいかどうかと見なされます、<xref:System.Globalization.SortKey.KeyData%2A>のプロパティは等価です。  
+  
+ このメソッドは<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、結果を示しています。<xref:System.Globalization.SortKey.Equals%2A>と比較すると異なる<xref:System.Globalization.SortKey>オブジェクト。  
+  
+ [!code-cpp[System.Globalization.SortKey.Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.SortKey.Equals/CPP/sortkey_equals.cpp#1)]
+ [!code-csharp[System.Globalization.SortKey.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.SortKey.Equals/CS/sortkey_equals.cs#1)]
+ [!code-vb[System.Globalization.SortKey.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.SortKey.Equals/VB/sortkey_equals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.SortKey.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ関数として機能<see cref="T:System.Globalization.SortKey" />ハッシュ アルゴリズムやデータの構造をハッシュ テーブルなどに適したオブジェクト。</summary>
+        <returns>現在の <see cref="T:System.Globalization.SortKey" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Globalization.SortKey.Equals%2A> メソッドによって等しいと評価された 2 つのオブジェクトに対して同じハッシュ コードを生成します。  
+  
+ このメソッドは<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyData">
+      <MemberSignature Language="C#" Value="public virtual byte[] KeyData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] KeyData" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.SortKey.KeyData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在を表すバイト配列を取得<see cref="T:System.Globalization.SortKey" />オブジェクト。</summary>
+        <value>現在を表すバイト配列<see cref="T:System.Globalization.SortKey" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるデータの使用に関する詳細について、 <xref:System.Globalization.SortKey.KeyData%2A> 、文字列を比較するプロパティを参照してください、<xref:System.Globalization.SortKey>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例では、元の文字列と等価の文字列と区別する並べ替えキーと大文字と小文字の並べ替えキーのキー データを表示します。  
+  
+ [!code-csharp[sys.glob.sortkey.tostring#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.sortkey.tostring/cs/ts.cs#1)]
+ [!code-vb[sys.glob.sortkey.tostring#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.sortkey.tostring/vb/ts.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalString">
+      <MemberSignature Language="C#" Value="public virtual string OriginalString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OriginalString" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.SortKey.OriginalString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の作成に使用する元の文字列を取得<see cref="T:System.Globalization.SortKey" />オブジェクト。</summary>
+        <value>現在の作成に使用する元の文字列<see cref="T:System.Globalization.SortKey" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、元の文字列と等価の文字列と区別する並べ替えキーと大文字と小文字の並べ替えキーのキー データを表示します。  
+  
+ [!code-csharp[sys.glob.sortkey.tostring#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.sortkey.tostring/cs/ts.cs#1)]
+ [!code-vb[sys.glob.sortkey.tostring#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.sortkey.tostring/vb/ts.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.SortKey.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.SortKey" /> オブジェクトを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Globalization.SortKey" /> オブジェクトを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は"SortKey -"、文字列の連結、カルチャ識別子と、現在の比較オプション<xref:System.Globalization.SortKey>オブジェクト、およびの値、<xref:System.Globalization.SortKey.OriginalString%2A>プロパティです。  
+  
+ このメソッドは<xref:System.Object.ToString%2A?displayProperty=nameWithType>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、元の文字列で得られる文字列を表示、<xref:System.Globalization.SortKey.ToString%2A>大文字と小文字を区別する並べ替えキー、および大文字と小文字を区別する並べ替えキーのキー データのメソッドです。  
+  
+ [!code-csharp[sys.glob.sortkey.tostring#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.sortkey.tostring/cs/ts.cs#1)]
+ [!code-vb[sys.glob.sortkey.tostring#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.sortkey.tostring/vb/ts.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

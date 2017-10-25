@@ -1,0 +1,230 @@
+<Type Name="IntegerValidatorAttribute" FullName="System.Configuration.IntegerValidatorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class IntegerValidatorAttribute : System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IntegerValidatorAttribute extends System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.IntegerValidatorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言によって構成プロパティの整数の検証を実行する .NET Framework に指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Configuration.IntegerValidatorAttribute> 、.NET Framework を使用してプロパティを検証するように指示する構成プロパティを取得するを装飾する属性、<xref:System.Configuration.IntegerValidator>オブジェクトし、の装飾のパラメーターの値を渡します。  
+  
+ 適用できる<xref:System.Configuration.IntegerValidatorAttribute>属性のプロパティの型のみです。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのプロパティを装飾する方法を示します<xref:System.Configuration.ConfigurationSection>オブジェクトを使用して、<xref:System.Configuration.IntegerValidatorAttribute>属性。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IntegerValidatorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IntegerValidatorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.IntegerValidatorAttribute" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連するプロパティに割り当てられた値が整数であるを確保するためには、属性付きのモデルでこのコンス トラクターを使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Configuration.IntegerValidatorAttribute.%23ctor%2A> コンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludeRange">
+      <MemberSignature Language="C#" Value="public bool ExcludeRange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExcludeRange" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IntegerValidatorAttribute.ExcludeRange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を含めるかによって定義された範囲の整数を除外するかどうかを示す値、<see cref="P:System.Configuration.IntegerValidatorAttribute.MinValue" />と<see cref="P:System.Configuration.IntegerValidatorAttribute.MaxValue" />プロパティの値。</summary>
+        <value>
+          <see langword="true" />場合は、値を除外する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 範囲が含まれますが、<xref:System.Configuration.IntegerValidatorAttribute.MinValue%2A>と<xref:System.Configuration.IntegerValidatorAttribute.MaxValue%2A>プロパティの値。 ときに、<xref:System.Configuration.IntegerValidatorAttribute.ExcludeRange%2A>プロパティの値が`true`、許可されている値は、範囲外です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.IntegerValidatorAttribute.ExcludeRange%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public int MaxValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IntegerValidatorAttribute.MaxValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティに許容される最大値を設定します。</summary>
+        <value>許可される最大値を示す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IntegerValidatorAttribute.MaxValue%2A>プロパティ値の許容範囲に含まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.IntegerValidatorAttribute.MaxValue%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値より小さい<see cref="P:System.Configuration.IntegerValidatorAttribute.MinValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public int MinValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IntegerValidatorAttribute.MinValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティに許容される最小値を設定します。</summary>
+        <value>指定できる最小値を示す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IntegerValidatorAttribute.MinValue%2A>プロパティ値の許容範囲に含まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.IntegerValidatorAttribute.MinValue%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値がより大きい<see cref="P:System.Configuration.IntegerValidatorAttribute.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorInstance">
+      <MemberSignature Language="C#" Value="public override System.Configuration.ConfigurationValidatorBase ValidatorInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationValidatorBase ValidatorInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IntegerValidatorAttribute.ValidatorInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationValidatorBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Configuration.IntegerValidator" />クラスです。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationValidatorBase" />バリデーターのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.IntegerValidatorAttribute.ValidatorInstance%2A>プロパティを呼び出すことによって文字列の検証を実行するその<xref:System.Configuration.IntegerValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.IntegerValidatorAttribute.ValidatorInstance%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#13)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1120 @@
+<Type Name="HttpListener" FullName="System.Net.HttpListener">
+  <TypeSignature Language="C#" Value="public sealed class HttpListener : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListener extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpListener" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>単純で、プログラムによって制御できる HTTP プロトコル リスナーを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.HttpListener>クラス、HTTP 要求に応答する単純な HTTP プロトコル リスナーを作成することができます。 有効期間は、リスナーはアクティブ、<xref:System.Net.HttpListener>オブジェクトとそのアクセス許可を使用してアプリケーション内で実行されます。  
+  
+> [!NOTE]
+>  このクラスは、Windows XP SP2 または Windows Server 2003 オペレーティング システムを実行しているコンピューターでのみ使用できます。 作成しようとすると、<xref:System.Net.HttpListener>コンス トラクターをスロー、以前のオペレーティング システムを実行しているコンピューター上のオブジェクト、<xref:System.PlatformNotSupportedException>例外。  
+  
+ 使用する<xref:System.Net.HttpListener>を使用して、クラスの新しいインスタンスを作成、<xref:System.Net.HttpListener>コンス トラクターと使用、<xref:System.Net.HttpListener.Prefixes%2A>プロパティ (Uniform Resource Identifier) プレフィックスを指定する文字列を保持するコレクションにアクセスするために、<xref:System.Net.HttpListener>処理する必要があります。  
+  
+ URI のプレフィックス文字列は、スキーム (http または https)、ホスト、任意のポート、および省略可能なパスで構成されます。 完全なプレフィックス文字列の例は、"`http://www.contoso.com:8080/customerData``/`"です。 プレフィックスは、スラッシュ (「/」) で終了する必要があります。 <xref:System.Net.HttpListener>要求 URI に最も一致するプレフィックスを持つオブジェクトが要求に応答します。 複数<xref:System.Net.HttpListener>オブジェクトが同一のプレフィックスを追加できません;<xref:System.ComponentModel.Win32Exception>例外がスローされます、<xref:System.Net.HttpListener>で使用されるプレフィックスは既にを追加します。  
+  
+ ホストの要素を置き換えることが、ポートを指定すると、"*"ことを示す、<xref:System.Net.HttpListener>要求された URI が他のプレフィックスと一致しない場合、ポートに送信された要求を受け入れます。 たとえば、すべての要求を受信するポート 8080 が要求された URI がいずれかで処理されないときに送信<xref:System.Net.HttpListener>、プレフィックスは"`http://*:8080``/`"です。 同様に、ことを指定する、 <xref:System.Net.HttpListener> 、ポートに送信されたすべての要求を受け付けるホスト要素を「+」文字に置き換える"`https://+:8080`"です。 "\*"と「+」文字のパスを含むプレフィックスに使用できます。  
+  
+ .NET 4.5.3 および Windows 10 以降で管理されている URI プレフィックスでサブドメインをワイルドカードはサポートされて、<xref:System.Net.HttpListener>オブジェクト。 ワイルドカードのサブドメインを指定する、"*"URI プレフィックスのホスト名の一部として文字: たとえば、 `http://*.foo.com/`、HttpListenerPrefixCollection.Add メソッドを引数として渡すとします。 これは .NET 4.5.3 および Windows 10 の機能します。以前のバージョンでこの生成は、<xref:System.Net.HttpListenerException>  
+  
+ クライアントからの要求のリッスンを開始するには、呼び出し、コレクションに URI プレフィックスを追加、<xref:System.Net.HttpListener.Start%2A>メソッドです。 <xref:System.Net.HttpListener>クライアント要求を処理するための同期および非同期の両方のモデルを提供します。 要求とその関連付けられた応答を使用してアクセス、<xref:System.Net.HttpListenerContext>によって返されるオブジェクト、<xref:System.Net.HttpListener.GetContext%2A>メソッドまたは対応する非同期、<xref:System.Net.HttpListener.BeginGetContext%2A>と<xref:System.Net.HttpListener.EndGetContext%2A>メソッドです。  
+  
+ 同期のモデルは、一度に 1 つの要求を処理する場合と、クライアントの要求の待機中に、アプリケーションをブロックする場合に適しています。 同期モデルを使用して、呼び出し、<xref:System.Net.HttpListener.GetContext%2A>メソッドで、クライアントが要求を送信するを待機します。 このメソッドを返します、<xref:System.Net.HttpListenerContext>が発生するときに 1 つを処理するオブジェクトします。  
+  
+ モデルより複雑な非同期、独自の実行スレッドで処理が要求や各要求の待機中に、アプリはブロックされません。 使用して、<xref:System.Net.HttpListener.BeginGetContext%2A>受信要求ごとに呼び出されるアプリケーション定義のメソッドを指定します。 そのメソッドの呼び出し、<xref:System.Net.HttpListener.EndGetContext%2A>要求を取得する、処理、および対応するメソッド。  
+  
+ どちらのモデルでは、受信要求を使用してアクセス、<xref:System.Net.HttpListenerContext.Request%2A?displayProperty=nameWithType>によって表されるプロパティであり、<xref:System.Net.HttpListenerRequest>オブジェクト。 同様に、応答を使用してアクセス、<xref:System.Net.HttpListenerContext.Response%2A?displayProperty=nameWithType>によって表されるプロパティであり、<xref:System.Net.HttpListenerResponse>オブジェクト。 これらのオブジェクトの一部の機能を共有する、<xref:System.Net.HttpWebRequest>と<xref:System.Net.HttpWebResponse>オブジェクトではなく、後者のオブジェクトを組み合わせて使用することはできません<xref:System.Net.HttpListener>クライアント、ありませんサーバー、動作を実装しているためです。  
+  
+ <xref:System.Net.HttpListener>クライアント認証を要求できます。 、認証を使用する特定の方式は、いずれかを指定するか、使用するスキームを決定するデリゲートを指定できます。 クライアントの id に関する情報を取得する認証の何らかの形式を要求する必要があります。 詳細については、次を参照してください。、 <xref:System.Net.HttpListenerContext.User%2A>、 <xref:System.Net.HttpListener.AuthenticationSchemes%2A>、および<xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A>プロパティです。  
+  
+> [!NOTE]
+>  作成する場合、 <xref:System.Net.HttpListener> https を使用する必要がありますサーバー証明書を選択そのリスナーです。 それ以外の場合、<xref:System.Net.HttpWebRequest>このクエリ<xref:System.Net.HttpListener>は接続の予期しない終了で失敗します。  
+  
+> [!NOTE]
+>  HttpCfg.exe を使用して、サーバー証明書とその他のリスナー オプションを構成できます。 参照してください[http://msdn.microsoft.com/library/default.asp?url=/library/en-us/http/http/httpcfg_exe.asp](http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp)詳細についてはします。 実行可能ファイルは Windows Server 2003 に付属してまたはプラットフォーム SDK の使用可能なソース コードから構築できます。  
+  
+> [!NOTE]
+>  複数の認証スキームを指定する場合、 <xref:System.Net.HttpListener>、リスナーは、次の順序でクライアントをチャレンジ: `Negotiate`、 `NTLM`、 `Digest`、し`Basic`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener>です。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.HttpListener" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって返されるインスタンスを使用する前に呼び出す必要があります、<xref:System.Net.HttpListener.Start%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener>を新規作成するコンス トラクター<xref:System.Net.HttpListener>オブジェクト。 完全な例については、<xref:System.Net.HttpListener>クラスに関するトピック。  
+  
+ [!code-csharp[Net_listener_Basic#9](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このクラスは、現在のオペレーティング システムでは使用できません。 このクラスのインスタンスを使用するには、Windows Server 2003 または Windows XP SP2 が必要です。</exception>
+        <block subset="none" type="usage">
+          <para>注: このメンバーは、アプリケーションでネットワーク トレースを有効にする場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すぐに <see cref="T:System.Net.HttpListener" /> オブジェクトをシャットダウンし、現在キューに置かれているすべての要求を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このリスナーで保持されているすべてのリソースを破棄します。 保留中の要求が完了することができます。  
+  
+ このメソッドを呼び出した後に表示されます、<xref:System.ObjectDisposedException>これを使用しようとすると<xref:System.Net.HttpListener>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#11](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationSchemes">
+      <MemberSignature Language="C#" Value="public System.Net.AuthenticationSchemes AuthenticationSchemes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.AuthenticationSchemes AuthenticationSchemes" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.AuthenticationSchemes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.AuthenticationSchemes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントの認証に使用する方式を取得または設定します。</summary>
+        <value>クライアントの認証方法を示す <see cref="T:System.Net.AuthenticationSchemes" /> 列挙値のビットごとの組み合わせ。 既定値は <see cref="F:System.Net.AuthenticationSchemes.Anonymous" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener>指定されたスキームを使用してすべての着信要求を認証します。 <xref:System.Net.HttpListener.GetContext%2A>と<xref:System.Net.HttpListener.EndGetContext%2A>場合にのみ、メソッドは、受信クライアント要求を返す、<xref:System.Net.HttpListener>が正常に要求を認証します。  
+  
+ 使用して正常に認証されたクライアントの id を問い合わせることができます、<xref:System.Net.HttpListenerContext.User%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 場合は、 <xref:System.Net.HttpListener> 、受け取った要求の特性に基づいて、異なる認証メカニズムを使用するオブジェクト (たとえば、要求の<xref:System.Net.HttpListenerRequest.Url%2A>または<xref:System.Net.HttpListenerRequest.UserHostName%2A>プロパティ)、認証スキームを選択するメソッドを実装する必要があります。 これを行う方法については、次を参照してください。、<xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A>プロパティの説明。  
+  
+> [!NOTE]
+>  ダイジェストを有効にするには、このプロパティを設定するには、NTLM、またはネゴシエートが必要です、 <xref:System.Security.Permissions.SecurityPermission>、<xref:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener.AuthenticationSchemes%2A>プロパティの認証方式を指定します。  
+  
+ [!code-csharp[Net_listener_Basic#14](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationSchemeSelectorDelegate">
+      <MemberSignature Language="C#" Value="public System.Net.AuthenticationSchemeSelector AuthenticationSchemeSelectorDelegate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.AuthenticationSchemeSelector AuthenticationSchemeSelectorDelegate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.AuthenticationSchemeSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントの認証に使用するプロトコルを確認するために呼び出されるデリゲートを取得または設定します。</summary>
+        <value>認証プロトコルの選択に使用されるメソッドを呼び出す <see cref="T:System.Net.AuthenticationSchemeSelector" /> デリゲート。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合は、同じ認証プロトコルの特定のインスタンスによって処理されるすべての要求に使用する<xref:System.Net.HttpListener>、このプロパティを設定する必要はありません。 すべてのクライアント要求に使用するプロトコルを指定するには、<xref:System.Net.HttpListener.AuthenticationSchemes%2A>プロパティです。  
+  
+ クライアントがそのヘッダー内に認証情報が指定されていない場合、<xref:System.Net.HttpListener>を決定する、存在する場合、プロトコル、クライアントの認証を使用して認証されていない受信要求ごとに指定されたデリゲートを呼び出します。 <xref:System.Net.HttpListener.GetContext%2A>と<xref:System.Net.HttpListener.EndGetContext%2A>メソッドが、着信要求場合にのみを返す、<xref:System.Net.HttpListener>要求を正常に認証します。 要求を認証できない場合、 <xref:System.Net.HttpListener> 401 応答を送信が自動的にバックアップします。 使用して正常に認証されたクライアントの id を取得することができます、<xref:System.Web.HttpRequest.LogonUserIdentity%2A?displayProperty=nameWithType>プロパティです。  
+  
+ アプリケーション固有のメソッドに認証プロトコルの選択を委任することのインスタンスを作成する場合に役立ちます。 <xref:System.Net.HttpListener> 、受け取った要求の特性に応じて、別の認証プロトコルを使用して (たとえば、要求の<xref:System.Net.HttpListenerRequest.Url%2A>または<xref:System.Net.HttpListenerRequest.UserHostAddress%2A>プロパティ)。  
+  
+> [!NOTE]
+>  ダイジェストを有効にするには、このプロパティを設定するには、NTLM、またはネゴシエートが必要です、 <xref:System.Security.Permissions.SecurityPermission>、<xref:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定します。  
+  
+ [!code-csharp[NclListener#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#2)]
+ [!code-vb[NclListener#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#2)]  
+  
+ 次のコード例は、によって呼び出されるメソッドの実装を提供する<xref:System.Net.AuthenticationSchemeSelector>を委任します。  
+  
+ [!code-csharp[NclListener#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#1)]
+ [!code-vb[NclListener#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetContext">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGetContext (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetContext(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.BeginGetContext(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">クライアント要求が使用可能なときに呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>コールバック</c>操作の完了時に委任します。</param>
+        <summary>受信要求の非同期の取得を開始します。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener.BeginGetContext%2A>メソッドは、受信クライアント要求を受信する非同期 (非ブロッキング) 呼び出しを開始します。 このメソッドを呼び出す前に呼び出す必要があります、<xref:System.Net.HttpListener.Start%2A>メソッドのために、URI 文字列を追加することでリッスンするには、少なくとも 1 つの (Uniform Resource Identifier) プレフィックスを追加し、<xref:System.Net.HttpListenerPrefixCollection>によって返される、<xref:System.Net.HttpListener.Prefixes%2A>プロパティです。  
+  
+ 呼び出して、非同期操作を完了する必要があります、<xref:System.Net.HttpListener.EndGetContext%2A>メソッドです。 通常、このメソッドはによって、`callback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでに、入力方向の要求とブロックを取得する、<xref:System.Net.HttpListener.GetContext%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener.BeginGetContext%2A>着信クライアント要求を処理するコールバック メソッドを指定します。  
+  
+ [!code-csharp[Net_Listener_Basic#12](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#12)]  
+  
+ 次のコード例では、コールバック メソッドを実装します。  
+  
+ [!code-csharp[Net_Listener_Basic#13](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.HttpListenerException">Win32 関数呼び出しに失敗しました。 例外の <see cref="P:System.Net.HttpListenerException.ErrorCode" /> プロパティを調べて、例外の原因を確認します。</exception>
+        <exception cref="T:System.InvalidOperationException">このオブジェクトは、開始されていないか、現在停止しています。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.HttpListener" /> をシャットダウンします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出した後、使用できなくなります、<xref:System.Net.HttpListener>オブジェクト。 一時的に停止する<xref:System.Net.HttpListener>オブジェクトを使用して、<xref:System.Net.HttpListener.Stop%2A>メソッドです。  
+  
+ このメソッドがシャット ダウン、<xref:System.Net.HttpListener>キューに置かれた要求を処理することがなくオブジェクト。 保留中の要求が完了することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultServiceNames">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ServiceNameCollection DefaultServiceNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ServiceNameCollection DefaultServiceNames" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.DefaultServiceNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ServiceNameCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録済みプレフィックスによって決定される既定のサービス プロバイダー名 (SPN: Service Provider Name) の一覧を取得します。</summary>
+        <value>SPN の一覧を格納している <see cref="T:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener.DefaultServiceNames%2A>プロパティは拡張保護を提供する統合 Windows 認証で使用します。 Spn のリストが初期化される、<xref:System.Net.HttpListener.Prefixes%2A>プロパティ アクセスし、する新しいプレフィックスが追加されると、クリア、<xref:System.Net.HttpListener.Prefixes%2A>プロパティです。  
+  
+ <xref:System.Net.HttpListener.DefaultServiceNames%2A>プロパティには、アプリケーションが設定されていない場合、使用、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomServiceNames%2A>拡張保護ポリシーのプロパティです。  
+  
+ <xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection>で取得した、<xref:System.Net.HttpListener.DefaultServiceNames%2A>からプロパティを構築、<xref:System.Net.HttpListener.Prefixes%2A>次の規則に従ってプロパティ。  
+  
+1.  場合は、ホスト名が「+」、"*"、または IPv4 または IPv6 リテラル (に相当"\*"特定のローカル インターフェイスには制限付き)、次の SPN が追加されます。  
+  
+ `"HTTP/"`さらに、コンピューターの完全修飾ドメイン名。  
+  
+1.  DNS を使用して、完全修飾ドメイン名を解決しようとは、ホスト名にドット (ドメインまたはサブドメイン) が含まれていない場合 (によって使用される動作は同じ<xref:System.Net.HttpWebRequest>)。 完全修飾ドメイン名を解決できる場合は、次のような Spn が追加されます。  
+  
+ `"HTTP/"`さらに、ホスト名 (短い名前)。  
+  
+ `"HTTP/"`さらに、ホスト名の完全修飾ドメイン名。  
+  
+1.  ホスト名には (ドメインまたはサブドメイン) をドットが含まれています、完全修飾ドメイン名を解決できない場合は、以下の SPN が追加されます。  
+  
+ `"HTTP/"`さらに、ホスト名。  
+  
+1.  ホスト名にドット (ドメインまたはサブドメイン) が含まれている場合は、以下の SPN が追加されます。  
+  
+ `"HTTP/"`さらに、ホスト名。  
+  
+ <xref:System.Net.HttpListener.DefaultServiceNames%2A>プロパティは、カスタム リストが指定されていない場合、認証に使用される既定の Spn の一覧を確認するアプリケーションで使用できます。 アプリケーションがのいずれかでを追加できる他の Spn が必要な場合は、<xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection.Merge%2A>メソッドです。  
+  
+ 拡張保護を使用してこれを偽装することができますので、要求された URL に基づくポリシー意思決定を行うときに、安全ではありません。 代わりに、アプリケーションが依存して、<xref:System.Net.HttpListenerRequest.LocalEndPoint%2A>または<xref:System.Net.HttpListenerRequest.RemoteEndPoint%2A>このようなポリシーを決定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetContext">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListenerContext EndGetContext (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.HttpListenerContext EndGetContext(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.EndGetContext(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListenerContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">非同期操作の開始時に取得した <see cref="T:System.IAsyncResult" /> オブジェクト。</param>
+        <summary>受信クライアント要求を取得する非同期操作を完了します。</summary>
+        <returns>クライアント要求を表す <see cref="T:System.Net.HttpListenerContext" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener.EndGetContext%2A>メソッドは、通常を取得する、デリゲートによって呼び出されてアプリケーション定義のコールバック メソッド内で、<xref:System.Net.HttpListenerContext>受信クライアント要求とその関連する応答を含むオブジェクト。 このメソッドは、以前の呼び出しによって開始された操作を完了すると、<xref:System.Net.HttpListener.BeginGetContext%2A>メソッドです。 操作が完了していない場合、このメソッドはそれまでブロックします。  
+  
+ 呼び出すため、<xref:System.Net.HttpListener.EndGetContext%2A>メソッドが必要な<xref:System.Net.HttpListener>オブジェクトをこのオブジェクトは、通常に渡されたでコールバック メソッドに渡される状態オブジェクトを使用して、<xref:System.Net.HttpListener.BeginGetContext%2A>メソッドです。 使用してこの状態オブジェクトを取得することができます、<xref:System.IAsyncResult.AsyncState%2A>のプロパティ、`asyncResult`オブジェクト。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+   
+  
+## Examples  
+ 次のコード例が呼び出すコールバック メソッドの実装を示しています、<xref:System.Net.HttpListener.EndGetContext%2A>メソッドです。  
+  
+ [!code-csharp[Net_Listener_Basic#13](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出して取得されませんでした、<see cref="M:System.Net.HttpListener.BeginGetContext(System.AsyncCallback,System.Object)" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpListener.EndGetContext(System.IAsyncResult)" />メソッドが呼び出された既に、指定された<paramref name="asyncResult" />オブジェクト。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProtectionPolicy">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.ExtendedProtectionPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("not used anywhere in the implementation")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションの拡張保護に使用する <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> を取得または設定します。</summary>
+        <value>拡張保護に使用するポリシーを指定する <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A>プロパティは拡張保護を提供する統合 Windows 認証で使用します。 <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A>プロパティでは、全体の拡張保護ポリシーの構成<xref:System.Net.HttpListener>セッションです。 <xref:System.Net.HttpListener.ExtendedProtectionSelectorDelegate%2A>プロパティが個々 の要求の拡張保護ポリシーの構成を使用します。  
+  
+ <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomChannelBinding%2A>プロパティである必要があります`null`です。 <xref:System.Net.HttpListener>インスタンスが 1 つを使用する必要がある場合に、独自の TLS セッションから直接、チャネル バインディング トークン (CBT) を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />プロパティが、<see cref="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomChannelBinding" />プロパティはありませんでした<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />プロパティを<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />後プロパティ、<see cref="M:System.Net.HttpListener.Start" />メソッドが既に呼び出されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <exception cref="T:System.PlatformNotSupportedException"><see cref="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement" />プロパティに設定された<see cref="F:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always" />拡張保護をサポートしていないプラットフォームでします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProtectionSelectorDelegate">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListener.ExtendedProtectionSelector ExtendedProtectionSelectorDelegate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListener/ExtendedProtectionSelector ExtendedProtectionSelectorDelegate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListener+ExtendedProtectionSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各要求に使用する <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> を決定するために呼び出すデリゲートを取得または設定します。</summary>
+        <value>拡張保護に使用するポリシーを指定する <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A>プロパティは拡張保護を提供する統合 Windows 認証で使用します。 <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A>プロパティでは、全体の拡張保護ポリシーの構成<xref:System.Net.HttpListener>セッションです。 <xref:System.Net.HttpListener.ExtendedProtectionSelectorDelegate%2A>プロパティが個々 の要求ごとに、拡張保護ポリシーの構成を使用します。  
+  
+ <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomChannelBinding%2A>プロパティである必要があります`null`です。 <xref:System.Net.HttpListener>インスタンスが 1 つを使用する必要がある場合に、独自の TLS セッションから直接、チャネル バインディング トークン (CBT) を取得します。  
+  
+ 要求ごとに、デリゲートを選択できます、設定を<xref:System.Net.HttpListener>インスタンスを使用して拡張保護を提供します。  
+  
+ デリゲートを返す場合`null`このプロパティは、これを表します、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>を<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A>プロパティに設定<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Never>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />プロパティですが、<see cref="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomChannelBinding" />プロパティである必要があります<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />プロパティを<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />後プロパティ、<see cref="M:System.Net.HttpListener.Start" />メソッドが既に呼び出されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">設定しようとしましたが、<see cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />拡張保護をサポートしていないプラットフォームでのプロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContext">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListenerContext GetContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.HttpListenerContext GetContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.GetContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListenerContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>受信要求を待機し、受信するとその要求を返します。</summary>
+        <returns>クライアント要求を表す <see cref="T:System.Net.HttpListenerContext" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に呼び出す必要があります、<xref:System.Net.HttpListener.Start%2A>メソッドのために、URI 文字列を追加することでリッスンするには、少なくとも 1 つの URI プレフィックスを追加し、<xref:System.Net.HttpListenerPrefixCollection>によって返される、<xref:System.Net.HttpListener.Prefixes%2A>プロパティです。 プレフィックスの詳細については、次を参照してください。、<xref:System.Net.HttpListener>クラスの概要です。  
+  
+ このメソッドは、受信要求の待機中にブロックしています。 アプリケーションがブロックされないように、非同期的に (別のスレッド) で処理される着信要求を実行する場合に、使用、<xref:System.Net.HttpListener.BeginGetContext%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.HttpListenerException">Win32 関数呼び出しに失敗しました。 例外の <see cref="P:System.Net.HttpListenerException.ErrorCode" /> プロパティを調べて、例外の原因を確認します。</exception>
+        <exception cref="T:System.InvalidOperationException">このオブジェクトは、開始されていないか、現在停止しています。  
+  
+ または  
+  
+ <see cref="T:System.Net.HttpListener" />に応答する (Uniform Resource Identifier) プレフィックスはありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContextAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.HttpListenerContext&gt; GetContextAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.HttpListenerContext&gt; GetContextAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.GetContextAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.HttpListenerContext&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作として受信要求を待ちます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 タスク オブジェクトの <see cref="P:System.Threading.Tasks.Task`1.Result" /> プロパティは、クライアント要求を表す <see cref="T:System.Net.HttpListenerContext" /> オブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、入力方向の要求を受け取ったときに完了します。  
+  
+ このメソッドを呼び出す前に呼び出す必要があります、<xref:System.Net.HttpListener.Start%2A>メソッドのために、URI 文字列を追加することでリッスンするには、少なくとも 1 つの URI プレフィックスを追加し、<xref:System.Net.HttpListenerPrefixCollection>によって返される、<xref:System.Net.HttpListener.Prefixes%2A>プロパティです。 プレフィックスの詳細については、次を参照してください。、<xref:System.Net.HttpListener>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreWriteExceptions">
+      <MemberSignature Language="C#" Value="public bool IgnoreWriteExceptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreWriteExceptions" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.IgnoreWriteExceptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.HttpListener" /> がクライアントに応答を送信したときに発生する例外をアプリケーションで受信するかどうかを指定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          この <see cref="T:System.Net.HttpListener" /> が、クライアントに応答を送信したときに発生する例外を返さない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`かどうか、アプリケーションに必要ありません、応答が各クライアントに正常に送信されることです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの設定を示しています。  
+  
+ [!code-csharp[Net_Listener_Basic#14](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsListening">
+      <MemberSignature Language="C#" Value="public bool IsListening { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsListening" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.IsListening" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.HttpListener" /> が開始されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Net.HttpListener" /> が開始されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開始する、<xref:System.Net.HttpListener>を呼び出し、<xref:System.Net.HttpListener.Start%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、インスタンスの待機状態を確認するを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.IsSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のオペレーティング システムで <see cref="T:System.Net.HttpListener" /> を使用できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Net.HttpListener" /> がサポートされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows XP SP2 または Windows Server 2003 オペレーティング システムを実行しているコンピューターでのみ使用できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Net.HttpListener.IsSupported%2A>プロパティを検出するかどうか、<xref:System.Net.HttpListener>オブジェクトは、現在のオペレーティング システムで使用できます。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefixes">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListenerPrefixCollection Prefixes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListenerPrefixCollection Prefixes" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.Prefixes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListenerPrefixCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.HttpListener" /> オブジェクトによって処理される URI (Uniform Resource Identifier) プレフィックスを取得します。</summary>
+        <value>この <see cref="T:System.Net.HttpListener" /> オブジェクトで処理するように構成されている URI プレフィックスが格納された <see cref="T:System.Net.HttpListenerPrefixCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プレフィックスは、正規の形式です。 プレフィックスの詳細については、次を参照してください。、<xref:System.Net.HttpListener>クラスの概要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener.Prefixes%2A>プロパティを取得し、処理される URI プレフィックスを印刷します。  
+  
+ [!code-csharp[Net_Listener_Basic#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Realm">
+      <MemberSignature Language="C#" Value="public string Realm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Realm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.Realm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.HttpListener" /> オブジェクトに関連付けられているレルム (リソース パーティション) を取得または設定します。</summary>
+        <value><see cref="T:System.String" /> オブジェクトに関連付けられているレルムの名前が格納された <see cref="T:System.Net.HttpListener" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーでは、レルムを使用して; の保護されたリソースをパーティション分割各パーティションには、独自の認証方式と承認データベースを持つことができます。 レルムは、基本認証およびダイジェスト認証だけに使用されます。 クライアントが正常に認証されると、その認証は特定のレルムのすべてのリソースに対して有効となります。 レルムの詳細についてでの RFC 2617 を参照してください。 [http://www.ietf.org](http://www.ietf.org)です。  
+  
+ インスタンス<xref:System.Net.HttpListener>が関連付けられている領域の 1 つだけです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Net.HttpListener.Realm%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#10](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスが受信要求を受信できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、このメソッドを呼び出す必要があります、<xref:System.Net.HttpListener.GetContext%2A>または<xref:System.Net.HttpListener.BeginGetContext%2A>メソッドです。  
+  
+ 起動した後、<xref:System.Net.HttpListener>オブジェクトを使用する、<xref:System.Net.HttpListener.Stop%2A>メソッドを停止します。  
+  
+> [!NOTE]
+>  このリスナー インスタンスは、https を使用する場合をインストールして、サーバー証明書を選択する必要があります。 それ以外の場合、<xref:System.Net.HttpWebRequest>このクエリ<xref:System.Net.HttpListener>は接続の予期しない終了で失敗します。 HttpCfg.exe を使用して、サーバー証明書とその他のリスナー オプションを構成できます。 参照してください[http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp](http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener.Start%2A>メソッドを受信した要求の処理を開始します。  
+  
+ [!code-csharp[Net_Listener_Basic#12](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.HttpListenerException">Win32 関数呼び出しに失敗しました。 例外の <see cref="P:System.Net.HttpListenerException.ErrorCode" /> プロパティを調べて、例外の原因を確認します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの受信要求の受信を停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインスタンスは既に停止されている場合は、このメソッドを呼び出しても効果はありません。  
+  
+ 停止した後、<xref:System.Net.HttpListener>オブジェクトを使用する、<xref:System.Net.HttpListener.Start%2A>再起動する方法です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListener.Stop%2A>メソッドの受信要求の処理を停止します。  
+  
+ [!code-csharp[Net_Listener_Basic#12](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Net.HttpListener" /> オブジェクトに保持されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用する必要があります、<xref:System.Net.HttpListener.Close%2A>代わりに、このメソッドを呼び出すメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeoutManager">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListenerTimeoutManager TimeoutManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListenerTimeoutManager TimeoutManager" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.TimeoutManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListenerTimeoutManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.HttpListener" /> インスタンスのタイムアウト マネージャーです。</summary>
+        <value><see cref="T:System.Net.HttpListenerTimeoutManager" /> を返します。  
+  
+ この <see cref="T:System.Net.HttpListener" /> インスタンスのタイムアウト マネージャーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウト マネージャーは、この接続のタイムアウト制限を定義<xref:System.Net.HttpListener>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeConnectionNtlmAuthentication">
+      <MemberSignature Language="C#" Value="public bool UnsafeConnectionNtlmAuthentication { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UnsafeConnectionNtlmAuthentication" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.UnsafeConnectionNtlmAuthentication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Support for NTLM needs some loving.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>NTLM が使用されているときに、同じ TCP (Transmission Control Protocol) 接続を使用した別の要求を認証する必要があるかどうかを制御する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          最初の要求の <see cref="T:System.Security.Principal.IIdentity" /> が同じ接続でなされる後続の要求に使用される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると`true`NTLM を使用して特定の TCP 接続での最初の要求が認証されると、認証情報を使用して同じ TCP 接続の後続の要求が処理されます (<xref:System.Security.Principal.IIdentity>) 最初の要求。  
+  
+ NTLM が認証プロトコルではない場合、このプロパティは無効です。 Negotiate 認証プロトコルとして指定すると、NTLM が認証に使用される実際のプロトコルである場合にのみ、このプロパティは、特殊効果を持ちます。  
+  
+> [!NOTE]
+>  このプロパティを設定中に`true`ためパフォーマンスが向上、<xref:System.Net.HttpListener>いない送信追加の NTLM 認証チャレンジには、認証情報を提供するすべての要求を必要としないでセキュリティ上のリスクがあります。 パフォーマンスの向上がリスクよりも重要であるかどうかを判断する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの設定を示しています。  
+  
+ [!code-csharp[Net_Listener_Basic#14](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

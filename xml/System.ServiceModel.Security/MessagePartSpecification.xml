@@ -1,0 +1,299 @@
+<Type Name="MessagePartSpecification" FullName="System.ServiceModel.Security.MessagePartSpecification">
+  <TypeSignature Language="C#" Value="public class MessagePartSpecification" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessagePartSpecification extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.MessagePartSpecification" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージに含める部分を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この指定は、どのメッセージ部分に署名および暗号化が必要かを示すために使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessagePartSpecification ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空の <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessagePartSpecification (bool isBodyIncluded);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isBodyIncluded) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isBodyIncluded" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isBodyIncluded">メッセージ本文が指定に含まれているかどうかを初期設定します。</param>
+        <summary>新しい <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> を初期化し、メッセージ本文が含まれるかどうかを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessagePartSpecification (params System.Xml.XmlQualifiedName[] headerTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName[] headerTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.#ctor(System.Xml.XmlQualifiedName[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="headerTypes" Type="System.Xml.XmlQualifiedName[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="headerTypes">使用するヘッダー タイプの配列。</param>
+        <summary>メッセージ ヘッダーの配列を使用して、新しい <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ヘッダーは、名前と名前空間を使用して指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessagePartSpecification (bool isBodyIncluded, params System.Xml.XmlQualifiedName[] headerTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isBodyIncluded, class System.Xml.XmlQualifiedName[] headerTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.#ctor(System.Boolean,System.Xml.XmlQualifiedName[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isBodyIncluded" Type="System.Boolean" />
+        <Parameter Name="headerTypes" Type="System.Xml.XmlQualifiedName[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="isBodyIncluded">メッセージ本文が指定に含まれているかどうかを初期設定します。</param>
+        <param name="headerTypes">使用するヘッダー タイプの配列。</param>
+        <summary>メッセージ ヘッダーの配列を使用して、新しい <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ヘッダーは、名前と名前空間を使用して指定します。 また、`isBodyIncluded` パラメーターはメッセージ本文を含めるかどうかを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この仕様のヘッダーの一覧を消去します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Xml.XmlQualifiedName&gt; HeaderTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Xml.XmlQualifiedName&gt; HeaderTypes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.MessagePartSpecification.HeaderTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Xml.XmlQualifiedName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この仕様のヘッダーの種類を取得します。</summary>
+        <value>このメッセージ仕様のヘッダーの種類を保持する <see cref="T:System.Collections.Generic.ICollection`1" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBodyIncluded">
+      <MemberSignature Language="C#" Value="public bool IsBodyIncluded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBodyIncluded" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.MessagePartSpecification.IsBodyIncluded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この仕様にメッセージ本文が含まれるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          この仕様にメッセージ本文が含まれる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.MessagePartSpecification.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仕様が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          仕様が読み取り専用の場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.MessagePartSpecification.MakeReadOnly%2A> を使用して、このプロパティを `true` に設定できます。 <xref:System.ServiceModel.Security.MessagePartSpecification.Clear%2A>プロパティを設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>仕様を読み取り専用に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.MessagePartSpecification.Clear%2A> は仕様からすべてのヘッダーを削除し、コレクションを読み書き可能にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoParts">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.MessagePartSpecification NoParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.MessagePartSpecification NoParts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.MessagePartSpecification.NoParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.MessagePartSpecification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスの空のインスタンスを取得します。</summary>
+        <value>このクラスの空のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが `null` の場合、このクラスの新しい空のインスタンスが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.ServiceModel.Security.MessagePartSpecification other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(class System.ServiceModel.Security.MessagePartSpecification other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.MessagePartSpecification.Union(System.ServiceModel.Security.MessagePartSpecification)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="specification" Type="System.ServiceModel.Security.MessagePartSpecification" />
+      </Parameters>
+      <Docs>
+        <param name="other">To be added.</param>
+        <summary>2 つのメッセージ部分仕様をマージします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.MessagePartSpecification.Union%2A> メソッドの呼び出し後、<xref:System.ServiceModel.Security.MessagePartSpecification> は両方の仕様のヘッダー情報を保持します。<xref:System.ServiceModel.Security.MessagePartSpecification.IsBodyIncluded%2A> プロパティは両方の仕様の論理 OR に設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">この <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

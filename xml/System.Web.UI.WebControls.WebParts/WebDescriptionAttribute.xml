@@ -1,0 +1,225 @@
+<Type Name="WebDescriptionAttribute" FullName="System.Web.UI.WebControls.WebParts.WebDescriptionAttribute">
+  <TypeSignature Language="C#" Value="public class WebDescriptionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebDescriptionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web パーツ コントロールのプロパティにツールヒントとして使用する文字列値を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールのカスタム プロパティを編集できるようにする汎用的なユーザー インターフェイス (UI) を提供する<xref:System.Web.UI.WebControls.WebParts.WebPart>サーバー コントロールに配置および<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 ソース コードでマークされているプロパティの編集用の UI が提供される、`WebBrowsable`属性 (から、<xref:System.Web.UI.WebControls.WebParts.WebBrowsableAttribute>クラス)。 プロパティがこの属性でマークされている場合、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールは、プロパティの型に基づく編集用の UI を作成し、使用して、<xref:System.ComponentModel.PropertyDescriptor>オブジェクトの各編集コントロールの値をプロパティの型に変換するために必要な場合です。  
+  
+ `WebDescription`属性 (から、<xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute>クラス)、コントロールの上にマウス ポインターが配置されている場合は、編集用の UI 内の各コントロールが表示されるツールヒントを指定することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute> Web パーツ コントロールのプロパティにツールヒントを割り当てる属性です。 カスタム`UserJobType`プロパティでは、ツール ヒント「をジョブに対応するカテゴリを選択します。」を付与します。 表示する、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール。 この例は例については、一部、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>クラスの概要です。  
+  
+ [!code-csharp[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/VB/userinfowebpart.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebDescriptionAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.%23ctor%2A>コンス トラクターのセット、<xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Description%2A>プロパティを空の文字列 ("") です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebDescriptionAttribute (string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">ツールヒントで使用する、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute" />クラスの指定された説明を入力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.%23ctor%2A>コンス トラクターのセット、<xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Description%2A>プロパティを`description`です。 `description`パラメーターは、値では、プロパティのツールヒントとして表示される、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute> Web パーツ コントロールのプロパティにツールヒントを割り当てる属性です。 カスタム`UserJobType`プロパティでは、ツール ヒント「をジョブに対応するカテゴリを選択します。」を付与します。 表示する、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロール。 ツールヒントはを通じて割り当てられます、<xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.%23ctor%2A>コンス トラクターです。 この例は例については、一部、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>クラスの概要です。  
+  
+ [!code-csharp[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_PropertyGridEditorPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_PropertyGridEditorPart_Overview/VB/userinfowebpart.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebDescriptionAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebDescriptionAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebDescriptionAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを表し、<see cref="T:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute" />クラス、<see cref="P:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Description" />プロパティが空の文字列に設定 ("") です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Default>フィールドを呼び出すことと同じ結果を返します、<xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.%23ctor>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示するプロパティにツールヒントを取得、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />コントロール。</summary>
+        <value>A<see cref="T:System.String" />に表示する値を含む、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescriptionValue">
+      <MemberSignature Language="C#" Value="protected string DescriptionValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DescriptionValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.DescriptionValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するツールヒント、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />コントロール。</summary>
+        <value>A<see cref="T:System.String" />に表示する値を含む、<see cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.DescriptionValue%2A>プロパティを取得またはを通じてにアクセスするものと同じ値を設定、<xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Description%2A>プロパティです。 <xref:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.DescriptionValue%2A>プロパティが保護され、したがってのみアクセスできるように、クラス内または派生クラスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />このインスタンスと比較するか、<see langword="null" />です。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示名の値のハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスが既定値に設定されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute" /> equals <see cref="F:System.Web.UI.WebControls.WebParts.WebDescriptionAttribute.Default" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,148 @@
+<Type Name="BerConverter" FullName="System.DirectoryServices.Protocols.BerConverter">
+  <TypeSignature Language="C#" Value="public sealed class BerConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BerConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.BerConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.BerConverter" />クラスがエンコードし、基本的なエンコード規則 (BER) を使用して構造化データをデコードします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Decode">
+      <MemberSignature Language="C#" Value="public static object[] Decode (string format, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object[] Decode(string format, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.BerConverter.Decode(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定文字列。</param>
+        <param name="value">BER データの配列。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.BerConverter.Decode(System.String,System.Byte[])" />メソッドは、構造化データを取得する BER を使用して、データのバイナリ表現をデコードします。</summary>
+        <returns>デコードされたデータ。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="format" />パラメーターに null 参照が含まれています (<see langword="Nothing" /> Visual Basic で)。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="format" />パラメーターには、未定義の文字が含まれています。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.BerConversionException">基になる、デコード失敗します。 デコードの規則を以下にします。  
+  
+ <list type="table"><listheader><term>コード  
+  
+ </term><description>対応する結果  
+  
+ </description></listheader><item><term>'{''}' '[' ']'' n ' 'x'  
+  
+ </term><description>対応する結果がありません。  
+  
+ </description></item><item><term>'i'"e"  
+  
+ </term><description>int  
+  
+ </description></item><item><term>' b'  
+  
+ </term><description>bool  
+  
+ </description></item><item><term>' a'  
+  
+ </term><description>文字列  
+  
+ </description></item><item><term>' O '  
+  
+ </term><description>byte[]  
+  
+ </description></item><item><term>' B'  
+  
+ </term><description>ビット文字列を含む byte[]  
+  
+ </description></item><item><term>"v"  
+  
+ </term><description>文字列  
+  
+ </description></item><item><term>"V"  
+  
+ </term><description>byte[]  
+  
+ </description></item></list></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="public static byte[] Encode (string format, params object[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] Encode(string format, object[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.BerConverter.Encode(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="value" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定文字列。</param>
+        <param name="value">書式付きデータの配列。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.BerConverter.Encode(System.String,System.Object[])" />メソッドは、データのバイナリ表現を取得する BER を使用して、構造化データをエンコードします。</summary>
+        <returns>BER でエンコードされたデータの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な形式の文字を次に示します。  
+  
+ ルールのエンコード。  
+  
+|コード|対応する引数|  
+|----------|----------------------------|  
+|'{''}' '[' ']'' n '|対応する引数がいません。|  
+|'t' 'i'"e"|int|  
+|' a'|オクテット文字列|  
+|' b'|bool|  
+|'|string|  
+|' o 'X' '|byte[]|  
+|"v"|文字列|  
+|"V"|byte[]|  
+  
+> [!NOTE]
+>  "v"および"V"で二重 {} が必要です。 たとえば、{{v}} を使用して、{{V}}。  
+  
+## <a name="exceptions"></a>例外  
+  
+|例外|条件|  
+|---------------|---------------|  
+|ArgumentNullException|`format` が null 参照 (Visual Basic の場合は `Nothing`) です。|  
+|ArgumentException|この例外は、次の条件のいずれかで発生します。<br /><br /> -引数が不足して、書式指定文字列にします。<br />-形式の文字列の引数が正しくありません。<br />書式指定文字列には、未定義の文字が含まれています。|  
+|BerConversionException|エラー処理の戻り値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

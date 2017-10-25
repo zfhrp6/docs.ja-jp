@@ -1,0 +1,566 @@
+<Type Name="ServiceDescriptionFormatExtensionCollection" FullName="System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection">
+  <TypeSignature Language="C#" Value="public sealed class ServiceDescriptionFormatExtensionCollection : System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceDescriptionFormatExtensionCollection extends System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionBaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービスで使用される機能拡張要素のコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションから派生するクラスのインスタンスを含めることができますか、 <xref:System.Web.Services.Description.ServiceDescriptionFormatExtension>、またはのインスタンスの<xref:System.Xml.XmlElement>クラスです。 派生クラスで<xref:System.Web.Services.Description.ServiceDescriptionFormatExtension>クラスによりユーザーは、Web サービス記述言語 (WSDL) 仕様で定義されているものだけでなく拡張要素を定義します。 これらを使用して、<xref:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection>ようにする機能拡張要素の型が事前にわかっている場合。 使用して、<xref:System.Xml.XmlElement>ときにわからない場合、要素の表示形式を事前にします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#1)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#1)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDescriptionFormatExtensionCollection (object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parent">このコレクションがメンバーであるオブジェクト。</param>
+        <summary><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さまざまなクラスでは、以降、<xref:System.Web.Services.Description>名前空間を公開、`Extensions`プロパティを表す、 <xref:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection>、コンス トラクターが、階層内のレベル、Web サービス記述言語 (WSDL) に対応する親オブジェクトを代入場所現在`ServiceDescriptionFormatExtensionCollection`は、入れ子にします。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#2](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#2)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#2)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(object extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="extension"><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />に追加する、参照によって渡される、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />です。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />の末尾に、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />です。</summary>
+        <returns>0 から始まるインデックス位置、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />が追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#3](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#3)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#3)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(object extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="extension"><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />コレクションのメンバーシップをチェックします。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />のメンバーである、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />コレクションのメンバーである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#10](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#10)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#10](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#10)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (object[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(object[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.CopyTo(System.Object[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Object[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />コピー操作のコピー先として機能します。</param>
+        <param name="index">コピーされたコレクションの配置を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>全体をコピー<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />型の 1 次元配列に<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />対象となる配列の指定した 0 から始まるインデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#9](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#9)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#9](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#9)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#9](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public object Find (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Find(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Find(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />コレクションを検索します。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />し、指定した派生の最初の要素を返します<see cref="T:System.Type" />です。</summary>
+        <returns>検索が成功した場合、指定したオブジェクト<see cref="T:System.Type" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、インデックスの順序でコレクションを検索し、番号の小さい方のインデックスと一致する要素だけを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Find (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement Find(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Find(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Xml.XmlElement" />発見可能にします。</param>
+        <param name="ns">XML 名前空間 URI の<see cref="T:System.Xml.XmlElement" />発見可能にします。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />指定した名前および名前空間 URI を持つメンバーにします。</summary>
+        <returns>検索が成功した場合、 <see cref="T:System.Xml.XmlElement" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、インデックスの順序でコレクションを検索し、最初を返します<xref:System.Xml.XmlElement>2 つのパラメーターの条件を満たしています。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#5](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#5)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#5](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#5)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public object[] FindAll (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object[] FindAll(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.FindAll(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />コレクションを検索します。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />の指定したすべての要素の配列を返しますと<see cref="T:System.Type" />です。</summary>
+        <returns>配列<see cref="T:System.Object" />指定した型のすべてのコレクション メンバーを表すインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  返される配列は、検索が成功した場合は、空です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#6](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#6)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#6](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#6)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement[] FindAll (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement[] FindAll(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.FindAll(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">XML 名属性、<see cref="T:System.Xml.XmlElement" />を検索するオブジェクト。</param>
+        <param name="ns">XML 名前空間 URI の属性、<see cref="T:System.Xml.XmlElement" />を検索するオブジェクト。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />し、指定した名前と名前空間 URI を持つすべてのメンバーの配列を返します。</summary>
+        <returns>配列<see cref="T:System.Xml.XmlElement" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  返される配列は、検索が成功した場合は、空です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (object extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(object extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="extension"><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />コレクション内で検索します。</param>
+        <summary>指定された検索<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />コレクションを使用して最初のインスタンスの 0 から始まるインデックスを返します。</summary>
+        <returns>指定した 0 から始まるインデックス<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />、またはコレクションに要素が見つからなかった場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#11](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#11)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#11](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#11)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#11](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, object extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, object extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="extension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、<c>拡張子</c>パラメーター。</param>
+        <param name="extension">コレクションに追加する <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />を<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />指定した 0 から始まるインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にコレクション内の項目の数が等しい場合、コレクションの容量は、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が倍になります。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.CollectionBase.Count%2A>、`extension`パラメーターがの末尾に追加された、<xref:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection>です。  
+  
+ 挿入位置より後に要素が新しい要素のために下に移動します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#13](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#13)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#13](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#13)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#13](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />パラメーターがより大きい<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHandled">
+      <MemberSignature Language="C#" Value="public bool IsHandled (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsHandled(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.IsHandled(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">型のいずれかのオブジェクト、<see cref="T:System.Xml.XmlElement" />または<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />インポート プロセスで使用するを確認します。</param>
+        <summary>機能拡張要素が XML Web サービスにインポートされるときに、指定したオブジェクトがインポート プロセスで使用されるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="item" />パラメーターが使用されます。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをチェックするかどうか、`item`パラメーターは、<xref:System.Xml.XmlElement>または<xref:System.Web.Services.Description.ServiceDescriptionFormatExtension>(または派生クラス)、XML Web サービスではサポートされているかどうかを決定する前にします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#7](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#7)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#7](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#7)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequired">
+      <MemberSignature Language="C#" Value="public bool IsRequired (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsRequired(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.IsRequired(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">オブジェクト、型のいずれかの<see cref="T:System.Xml.XmlElement" />または<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />、する必要があるかどうかを確認します。</param>
+        <summary>指定したオブジェクトが、XML Web サービスの操作に必要かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="item" />パラメーターは必須です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#8](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#8)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#8](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#8)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">値が変更または返されるメンバーの 0 から始まるインデックス。</param>
+        <summary>取得またはのメンバーの値の設定、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />です。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#4](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#4)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#4](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#4)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected override void OnValidate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(object extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="extension"><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" /> から削除する <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />。</param>
+        <summary>最初に出現する指定した削除<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtension" />から、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionFormatExtension_13#12](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CPP/servicedescriptionformatextension_13.cpp#12)]
+ [!code-csharp[ServiceDescriptionFormatExtension_13#12](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/CS/servicedescriptionformatextension_13.cs#12)]
+ [!code-vb[ServiceDescriptionFormatExtension_13#12](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension_13/VB/servicedescriptionformatextension_13.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="protected override void SetParent (object value, object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParent(object value, object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection.SetParent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="parent">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

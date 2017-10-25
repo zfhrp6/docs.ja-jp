@@ -1,0 +1,455 @@
+<Type Name="CodeCatchClauseCollection" FullName="System.CodeDom.CodeCatchClauseCollection">
+  <TypeSignature Language="C#" Value="public class CodeCatchClauseCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeCatchClauseCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeCatchClauseCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.CodeDom.CodeCatchClause" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeCatchClauseCollection> クラスには、一連の <xref:System.CodeDom.CodeCatchClause> オブジェクトの格納に使用できる単純なコレクション オブジェクトが用意されています。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.CodeDom.CodeCatchClauseCollection>クラスのメソッドです。 この例では、クラスの新しいインスタンスを作成し、メソッドを使用してステートメントをコレクションに追加し、インデックスを返し、追加、または特定のインデックス位置にある属性を削除します。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#1)]
+ [!code-csharp[CodeCatchClauseCollectionExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#1)]
+ [!code-vb[CodeCatchClauseCollectionExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeCatchClauseCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeCatchClauseCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeCatchClauseCollection (System.CodeDom.CodeCatchClause[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeCatchClause[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.#ctor(System.CodeDom.CodeCatchClause[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.CodeDom.CodeCatchClause" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeCatchClauseCollection" />クラスの指定した配列を含む<see cref="T:System.CodeDom.CodeCatchClause" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">配列内の 1 つまたは複数のオブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeCatchClauseCollection (System.CodeDom.CodeCatchClauseCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeCatchClauseCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.#ctor(System.CodeDom.CodeCatchClauseCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClauseCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeCatchClauseCollection" />コレクションを初期化するときに使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeCatchClauseCollection" />指定したソース コレクションの要素を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.CodeDom.CodeCatchClause value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.CodeDom.CodeCatchClause value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.Add(System.CodeDom.CodeCatchClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.CodeDom.CodeCatchClause" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeCatchClause" /> オブジェクトをコレクションに追加します。</summary>
+        <returns>新しい要素の挿入位置のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.CodeDom.CodeCatchClause>オブジェクトを<xref:System.CodeDom.CodeCatchClauseCollection>インスタンス。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#3)]
+ [!code-csharp[CodeCatchClauseCollectionExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#3)]
+ [!code-vb[CodeCatchClauseCollectionExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeCatchClause[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeCatchClause[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.AddRange(System.CodeDom.CodeCatchClause[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.CodeDom.CodeCatchClause" />コレクションに追加するオブジェクトを格納しています。</param>
+        <summary>指定した要素をコピー<see cref="T:System.CodeDom.CodeCatchClause" />コレクションの末尾までの配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeCatchClauseCollection.AddRange%28System.CodeDom.CodeCatchClause%5B%5D%29>の配列のメンバーを追加するメソッドのオーバー ロード<xref:System.CodeDom.CodeCatchClause>オブジェクトを<xref:System.CodeDom.CodeCatchClauseCollection>です。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeCatchClauseCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeCatchClauseCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeCatchClauseCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeCatchClauseCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.AddRange(System.CodeDom.CodeCatchClauseCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClauseCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeCatchClauseCollection" />コレクションに追加するオブジェクトを格納しています。</param>
+        <summary>別の内容をコピー<see cref="T:System.CodeDom.CodeCatchClauseCollection" />コレクションの末尾にオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeCatchClauseCollection.AddRange%28System.CodeDom.CodeCatchClauseCollection%29>メソッドのオーバー ロードのいずれかのメンバーを追加する<xref:System.CodeDom.CodeCatchClauseCollection>を別のオブジェクト<xref:System.CodeDom.CodeCatchClauseCollection>です。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeCatchClauseCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeCatchClauseCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.CodeDom.CodeCatchClause value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.CodeDom.CodeCatchClause value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.Contains(System.CodeDom.CodeCatchClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.CodeDom.CodeCatchClause" />コレクション内で検索するオブジェクト。</param>
+        <summary>コレクションを含む、指定したかどうかを示す値を取得<see cref="T:System.CodeDom.CodeCatchClause" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがコレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.CodeDom.CodeCatchClauseCollection.Contains%2A>メソッドが存在する特定の検索を<xref:System.CodeDom.CodeCatchClause>をインスタンス化し、見つかったものインデックス値を取得します。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeCatchClauseCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeCatchClauseCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.CodeDom.CodeCatchClause[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.CodeDom.CodeCatchClause[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.CopyTo(System.CodeDom.CodeCatchClause[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.CodeDom.CodeCatchClause[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />の値がコレクションからコピー先であること。</param>
+        <param name="index">挿入を開始する位置を示す配列のインデックス。</param>
+        <summary>オブジェクトをコレクションに、1 次元コピー<see cref="T:System.Array" />インスタンスの指定したインデックスを開始位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の内容をコピーする方法を示します、<xref:System.CodeDom.CodeCatchClauseCollection>を<xref:System.CodeDom.CodeCatchClause>を開始位置のインデックス値が 0 の配列。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#6)]
+ [!code-csharp[CodeCatchClauseCollectionExample#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#6)]
+ [!code-vb[CodeCatchClauseCollectionExample#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コピー先の配列が多次元です。  
+  
+ または  
+  
+ 内の要素の数、<see cref="T:System.CodeDom.CodeCatchClauseCollection" />がで指定されたターゲット配列のインデックスの間で使用可能な領域よりも大きい、<paramref name="index" />パラメーターと対象となる配列の末尾。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ターゲット配列の最小のインデックス値より小さくします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.CodeDom.CodeCatchClause value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.CodeDom.CodeCatchClause value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.IndexOf(System.CodeDom.CodeCatchClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.CodeDom.CodeCatchClause" />コレクション内で検索するオブジェクト。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.CodeDom.CodeCatchClause" />コレクション内に存在する場合、コレクション内のオブジェクトします。</summary>
+        <returns>指定したオブジェクトのインデックス場合コレクション; に存在します。それ以外の場合、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、特定の存在を検索<xref:System.CodeDom.CodeCatchClause>オブジェクトと使用、<xref:System.CodeDom.CodeCatchClauseCollection.IndexOf%2A>が検出されたインデックス値を取得します。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeCatchClauseCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeCatchClauseCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.CodeDom.CodeCatchClause value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.CodeDom.CodeCatchClause value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.Insert(System.Int32,System.CodeDom.CodeCatchClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定したオブジェクトを挿入する位置の 0 から始まるインデックス。</param>
+        <param name="value"><see cref="T:System.CodeDom.CodeCatchClause" />挿入するオブジェクト。</param>
+        <summary>指定した挿入<see cref="T:System.CodeDom.CodeCatchClause" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeCatchClauseCollection.Insert%2A>を追加するメソッド、<xref:System.CodeDom.CodeCatchClause>オブジェクトを<xref:System.CodeDom.CodeCatchClauseCollection>です。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#8)]
+ [!code-csharp[CodeCatchClauseCollectionExample#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#8)]
+ [!code-vb[CodeCatchClauseCollectionExample#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeCatchClause this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeCatchClause Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeCatchClauseCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCatchClause</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセスするコレクションのインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.CodeDom.CodeCatchClause" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeCatchClause" />有効な各インデックスにあるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクションへのアクセスに使用できるインデクサーです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> パラメーターが、コレクションのインデックスの有効範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.CodeDom.CodeCatchClause value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.CodeDom.CodeCatchClause value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeCatchClauseCollection.Remove(System.CodeDom.CodeCatchClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeCatchClause" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.CodeDom.CodeCatchClause" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeCatchClause" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeCatchClauseCollection.Remove%2A>を削除する方法、<xref:System.CodeDom.CodeCatchClause>オブジェクトから、<xref:System.CodeDom.CodeCatchClauseCollection>です。  
+  
+ [!code-cpp[CodeCatchClauseCollectionExample#9](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CPP/class1.cpp#9)]
+ [!code-csharp[CodeCatchClauseCollectionExample#9](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCatchClauseCollectionExample/CS/class1.cs#9)]
+ [!code-vb[CodeCatchClauseCollectionExample#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCatchClauseCollectionExample/VB/class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したオブジェクトがコレクション内に見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

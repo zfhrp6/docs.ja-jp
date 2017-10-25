@@ -1,0 +1,71 @@
+<Type Name="ArrayObject" FullName="Microsoft.JScript.ArrayObject">
+  <TypeSignature Language="C#" Value="public class ArrayObject : Microsoft.JScript.JSObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ArrayObject extends Microsoft.JScript.JSObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.ArrayObject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.JSObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>配列オブジェクトを表します。 このクラスは、組み込みのオブジェクト モデルのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="length">
+      <MemberSignature Language="C#" Value="public virtual object length { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object length" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ArrayObject.length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列の長さを取得または設定します。</summary>
+        <value>配列の長さ。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SpliceSlowly">
+      <MemberSignature Language="C#" Value="protected void SpliceSlowly (uint start, uint deleteCount, object[] args, Microsoft.JScript.ArrayObject outArray, uint oldLength, uint newLength);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SpliceSlowly(unsigned int32 start, unsigned int32 deleteCount, object[] args, class Microsoft.JScript.ArrayObject outArray, unsigned int32 oldLength, unsigned int32 newLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ArrayObject.SpliceSlowly(System.UInt32,System.UInt32,System.Object[],Microsoft.JScript.ArrayObject,System.UInt32,System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.UInt32" />
+        <Parameter Name="deleteCount" Type="System.UInt32" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="outArray" Type="Microsoft.JScript.ArrayObject" />
+        <Parameter Name="oldLength" Type="System.UInt32" />
+        <Parameter Name="newLength" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="start">追加の要素を削除するには、この配列内の位置。</param>
+        <param name="deleteCount">削除する場合は、任意の要素の数。</param>
+        <param name="args">存在する場合、追加する要素。</param>
+        <param name="outArray">いずれかが削除されている場合に、この配列から削除された要素を格納する配列。</param>
+        <param name="oldLength">この配列の以前の長さ。</param>
+        <param name="newLength">この配列の新しい長さ。</param>
+        <summary>要素を追加し、配列の指定した位置にある、配列から要素を削除します。 要素、削除、または両方を追加することができます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

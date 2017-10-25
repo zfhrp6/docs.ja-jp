@@ -1,0 +1,278 @@
+<Type Name="HostProtectionResource" FullName="System.Security.Permissions.HostProtectionResource">
+  <TypeSignature Language="C#" Value="public enum HostProtectionResource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed HostProtectionResource extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.HostProtectionResource" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドまたはクラスによって呼び出された場合、ホストに害を及ぼす可能性のある機能のカテゴリを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って、<xref:System.Security.Permissions.HostProtectionAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionResource>列挙が、<xref:System.Security.Permissions.HostProtectionAttribute>属性。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#2)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#2)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource All = int32(511)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストのすべてのリソースを公開します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalProcessMgmt">
+      <MemberSignature Language="C#" Value="ExternalProcessMgmt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource ExternalProcessMgmt = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成したり他のプロセスを破棄します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalThreading">
+      <MemberSignature Language="C#" Value="ExternalThreading" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource ExternalThreading = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.ExternalThreading" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成またはホストに害を及ぼす可能性のある、それ自体以外のスレッドを操作します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MayLeakOnAbort">
+      <MemberSignature Language="C#" Value="MayLeakOnAbort" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource MayLeakOnAbort = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セーフ ハンドルまたはリソースの解放を確保するその他の手段によって保護されていない場合、終了時にリソース リークの原因があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト リソースを公開されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityInfrastructure">
+      <MemberSignature Language="C#" Value="SecurityInfrastructure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource SecurityInfrastructure = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.SecurityInfrastructure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ インフラストラクチャを公開します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelfAffectingProcessMgmt">
+      <MemberSignature Language="C#" Value="SelfAffectingProcessMgmt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource SelfAffectingProcessMgmt = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.SelfAffectingProcessMgmt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスを終了し、サーバーを終了する可能性があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelfAffectingThreading">
+      <MemberSignature Language="C#" Value="SelfAffectingThreading" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource SelfAffectingThreading = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.SelfAffectingThreading" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー コードにのみ影響を与えるようにスレッドを操作します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SharedState">
+      <MemberSignature Language="C#" Value="SharedState" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource SharedState = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.SharedState" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッド間で共有される状態を公開します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronization">
+      <MemberSignature Language="C#" Value="Synchronization" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource Synchronization = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.Synchronization" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期を公開します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UI">
+      <MemberSignature Language="C#" Value="UI" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.HostProtectionResource UI = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.HostProtectionResource.UI" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー インターフェイスを公開します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

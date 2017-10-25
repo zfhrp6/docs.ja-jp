@@ -1,0 +1,75 @@
+<Type Name="UnicodeEncodingConformance" FullName="System.Net.Configuration.UnicodeEncodingConformance">
+  <TypeSignature Language="C#" Value="public enum UnicodeEncodingConformance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UnicodeEncodingConformance extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.UnicodeEncodingConformance" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Unicode 文字を出力する方法を制御、<see cref="Overload:System.Net.WebUtility.HtmlEncode" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Unicode 文字の本来の方法の詳細については HTML でエンコードするを参照してください[および CSS のマークアップでのエスケープ文字を使用して](http://go.microsoft.com/fwlink/?LinkId=256607)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeEncodingConformance Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeEncodingConformance.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeEncodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自動動作を使用します。 現在のアプリケーションのターゲット フレームワークでは、Unicode エンコーディング動作が決まります。 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]後で、Unicode エンコーディングの動作が厳密すぎるとします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Compat">
+      <MemberSignature Language="C#" Value="Compat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeEncodingConformance Compat = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeEncodingConformance.Compat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeEncodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>互換性のある動作を使用します。 個々 の utf-16 のサロゲート コード ポイントとして出力されたことを指定の場合は、いずれかの<see cref="Overload:System.Net.WebUtility.HtmlEncode" />メソッドが呼び出されます。 たとえば、指定された、文字列"\uD84C\uDFB4"(または"\U000233B4") の出力<see cref="Overload:System.Net.WebUtility.HtmlEncode" />は"\uD84C\uDFB4"(入力はエンコードされません)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Strict">
+      <MemberSignature Language="C#" Value="Strict" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeEncodingConformance Strict = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeEncodingConformance.Strict" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeEncodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な動作を使用します。 ときに 1 つは、1 つのコード ポイントに個々 の utf-16 のサロゲート コード ポイントを組み合わせることを指定の<see cref="Overload:System.Net.WebUtility.HtmlEncode" />メソッドが呼び出されます。 たとえば、指定された入力文字列"\uD84C\uDFB4"(または"\U000233B4") の出力、<see cref="Overload:System.Net.WebUtility.HtmlEncode" />メソッドは、"&amp;#144308;"です。  
+  
+ 入力が (が含まれている対になっていないサロゲートは、たとえば) 形式が正しくない utf-16 文字列の場合は、不適切なコード ポイントは HTML エンコードされる前に U+FFFD (Unicode の置換文字) で置き換えられます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

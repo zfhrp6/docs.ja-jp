@@ -1,0 +1,231 @@
+<Type Name="WebPartsSection" FullName="System.Web.Configuration.WebPartsSection">
+  <TypeSignature Language="C#" Value="public sealed class WebPartsSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartsSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.WebPartsSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プログラムからアクセスする、<see langword="webParts" />構成ファイルのセクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `webParts`構成ファイルのセクションでは、Web パーツのパーソナル化プロバイダーを指定し、パーソナル化の承認を設定しを拡張するカスタム クラスを追加することができます、 <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> Web パーツの接続で使用するためのクラスです。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`webParts`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.WebPartsSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`webParts`セクションです。  
+  
+```  
+<system.web>  
+  <webParts>  
+    <personalization  
+      defaultProvider=" AspNetSqlPersonalizationProvider ">  
+        <!—- Providers may only be defined at the   
+            application level -->  
+      <providers>  
+        <add name="AspNetSqlPersonalizationProvider"  
+type="System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider"  
+        connectionStringName="LocalSqlServer"  
+        applicationName="/" />        
+      </providers>  
+      <authorization>  
+        <deny users="*" verbs="enterSharedScope" />  
+        <allow users="Admin" verbs="modifyState" />  
+      </authorization>  
+    </personalization>  
+    <transformers>  
+      <add name="RowToFieldTransformer"  
+        type="System.Web.UI.WebControls.WebParts.RowToFieldTransformer" />  
+      <add name="RowToFilterTransformer"  
+        type="System.Web.UI.WebControls.WebParts.RowToFilterTransformer" />  
+      <add name="RowToParametersTransformer"  
+type="System.Web.UI.WebControls.WebParts.RowToParametersTransformer" />  
+    </transformers>  
+  </webParts>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.WebPartsSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.WebPartsSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebPartsSection/CS/usingwebpartssection.cs#1)]
+ [!code-vb[System.Web.Configuration.WebPartsSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebPartsSection/VB/usingwebpartssection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartsSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebPartsSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.WebPartsSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.WebPartsSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.WebPartsSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ このコンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。  
+  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|設定|既定値|  
+|-------------|-------------------|  
+|<xref:System.Web.Configuration.WebPartsSection.Personalization%2A>|空の <xref:System.Web.Configuration.WebPartsPersonalization> オブジェクト。|  
+|<xref:System.Web.Configuration.WebPartsSection.Transformers%2A>|A <xref:System.Web.Configuration.TransformerInfoCollection> 、既定値を含むコレクション<xref:System.Web.Configuration.TransformerInfo>オブジェクト。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableExport">
+      <MemberSignature Language="C#" Value="public bool EnableExport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableExport" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebPartsSection.EnableExport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableExport", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML の記述ファイルをコントロール データのエクスポートを有効にするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールのデータ、XML の記述ファイルをエクスポートを有効にするにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeObject">
+      <MemberSignature Language="C#" Value="protected override object GetRuntimeObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetRuntimeObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebPartsSection.GetRuntimeObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Personalization">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.WebPartsPersonalization Personalization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.WebPartsPersonalization Personalization" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebPartsSection.Personalization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("personalization")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.WebPartsPersonalization</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Web.Configuration.WebPartsPersonalization" /> Web パーツのパーソナル化プロバイダーを指定し、Web パーツのパーソナル化の承認を設定できるようにするオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Configuration.WebPartsPersonalization" />パーソナル化プロバイダーを指定し、パーソナル化承認を設定できるようにするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.WebPartsSection.Personalization%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.WebPartsSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebPartsSection/CS/usingwebpartssection.cs#3)]
+ [!code-vb[System.Web.Configuration.WebPartsSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebPartsSection/VB/usingwebpartssection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebPartsSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transformers">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.TransformerInfoCollection Transformers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.TransformerInfoCollection Transformers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebPartsSection.Transformers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("transformers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TransformerInfoCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.TransformerInfo" /> オブジェクトのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Configuration.TransformerInfoCollection" />のコレクション<see cref="T:System.Web.Configuration.TransformerInfo" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TransformerInfo>オブジェクトを拡張するカスタム クラスを指定して、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>構成ファイルによって影響を受ける ASP.NET アプリケーションの Web パーツの接続で使用するためのクラスです。 これらの transformer クラスは、互換性のない接続ポイントを持つ Web パーツの間でデータを変換する接続の Web パーツ間のブリッジとして機能します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.WebPartsSection.Transformers%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.WebPartsSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebPartsSection/CS/usingwebpartssection.cs#2)]
+ [!code-vb[System.Web.Configuration.WebPartsSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebPartsSection/VB/usingwebpartssection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

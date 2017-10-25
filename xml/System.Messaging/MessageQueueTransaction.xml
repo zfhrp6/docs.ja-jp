@@ -1,0 +1,272 @@
+<Type Name="MessageQueueTransaction" FullName="System.Messaging.MessageQueueTransaction">
+  <TypeSignature Language="C#" Value="public class MessageQueueTransaction : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageQueueTransaction extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueTransaction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メッセージ キューの内部トランザクションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションの一部としてメッセージを送受信する際、<xref:System.Messaging.MessageQueueTransaction>クラスをトランザクションを作成およびのオーバー ロードに渡す、<xref:System.Messaging.MessageQueue.Send%2A?displayProperty=nameWithType>メソッドまたは<xref:System.Messaging.MessageQueue.Receive%2A?displayProperty=nameWithType>を受け取るメソッド、`transaction`パラメーター。 トランザクションの一部として送信されたメッセージは、トランザクション キューに送信する必要があります。 指定したトランザクションを使用して、トランザクション キューから受信したメッセージを受信する必要があります。  
+  
+ 加え、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドを指定した識別子または指定された関連付け識別子を持つメッセージを受信できます。 参照してください、<xref:System.Messaging.MessageQueue.ReceiveById%2A>と<xref:System.Messaging.MessageQueue.ReceiveByCorrelationId%2A>方法の詳細については、選択的にトランザクション キューからメッセージを受信します。  
+  
+ トランザクションがコミットされた場合、トランザクション キューに送信されるメッセージは削除されます。 同様に、トランザクションがロールバックされた場合、トランザクション キューから受信したメッセージはキューに返されます。  
+  
+ インスタンス化する場合、<xref:System.Messaging.MessageQueueTransaction>の該当するオーバー ロードに渡すと、<xref:System.Messaging.MessageQueue.Send%2A>メソッドまたは<xref:System.Messaging.MessageQueue.Receive%2A>非トランザクション キューにメッセージを送信またはメソッドの非トランザクション キューからメッセージを受信するメソッドを「間違ったトランザクションの使用率」を示す例外をスロー  
+  
+ <xref:System.Messaging.MessageQueueTransaction>スレッドのアパートメントに対応する、ので、アパートメント状態が`STA`、複数のスレッドで、トランザクションを使用することはできません。 Visual Basic にメイン スレッドの状態を設定する`STA`適用する必要がありますので、<xref:System.MTAThreadAttribute>で、`Main`サブルーチンです。 適用しない場合、別のスレッドを使用してトランザクション メッセージを送信すると、<xref:System.Messaging.MessageQueueException> 例外がスローされます。 適用する、<xref:System.MTAThreadAttribute>次のフラグメントを使用しています。  
+  
+```vb  
+<System.MTAThreadAttribute>  
+ public sub Main()  
+```  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueueTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.MessageQueueTransaction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Messaging.MessageQueueTransaction.Status%2A>プロパティを`Initialized`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中の内部トランザクションをロールバックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueTransaction.Abort%2A>呼び出しで開始されたプロセスが正常に完了のマークを付けます<xref:System.Messaging.MessageQueueTransaction.Begin%2A>です。  
+  
+ 通常への呼び出し<xref:System.Messaging.MessageQueueTransaction.Begin%2A>内で、`Try...Catch`への呼び出しを配置する例外処理ブロック<xref:System.Messaging.MessageQueueTransaction.Commit%2A>で、`Try`を呼び出すと、句<xref:System.Messaging.MessageQueueTransaction.Abort%2A>で、`Catch`句。  
+  
+ <xref:System.Messaging.MessageQueueTransaction.Abort%2A>トランザクション全体をロールバックします。 これにより、送信または受信呼び出しの後のすべてのメッセージが含まれます。<xref:System.Messaging.MessageQueueTransaction.Begin%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ロールバックしようとして内部トランザクションが開始されていません。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">メッセージ キューの内部エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.Begin" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいメッセージがキューの内部トランザクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueTransaction.Begin%2A>コミットまたはロールバックされたトランザクションの成否に応じてされる処理の開始をマークします。 処理中に例外が発生した、トランザクション全体がロールバックされます。 これにより、送信または受信呼び出しの後のすべてのメッセージが含まれます。<xref:System.Messaging.MessageQueueTransaction.Begin%2A>です。  
+  
+ 通常への呼び出し<xref:System.Messaging.MessageQueueTransaction.Begin%2A>内で、`Try...Catch`への呼び出しを配置する例外処理ブロック<xref:System.Messaging.MessageQueueTransaction.Commit%2A>で、`Try`を呼び出すと、句<xref:System.Messaging.MessageQueueTransaction.Abort%2A>で、`Catch`句。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既に開始されています。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">メッセージ キューの内部エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中の内部トランザクションをコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueTransaction.Commit%2A>呼び出しで開始された処理が正常に完了のマークを付けます<xref:System.Messaging.MessageQueueTransaction.Begin%2A>です。 呼び出しの間、例外が発生した場合、<xref:System.Messaging.MessageQueueTransaction.Begin%2A>への呼び出し<xref:System.Messaging.MessageQueueTransaction.Commit%2A>、トランザクション全体がロールバックされます。 これにより、送信または受信呼び出しの後のすべてのメッセージが含まれます。<xref:System.Messaging.MessageQueueTransaction.Begin%2A>です。  
+  
+ 通常への呼び出し<xref:System.Messaging.MessageQueueTransaction.Begin%2A>内で、`Try...Catch`への呼び出しを配置する例外処理ブロック<xref:System.Messaging.MessageQueueTransaction.Commit%2A>で、`Try`を呼び出すと、句<xref:System.Messaging.MessageQueueTransaction.Abort%2A>で、`Catch`句。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コミットしようとしているトランザクションが開始されていません。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">メッセージ キューの内部エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Messaging.MessageQueueTransaction" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Messaging.MessageQueueTransaction.Dispose%2A>によりによって使用されるリソース、<xref:System.Messaging.MessageQueueTransaction>を他の目的に再割り当てされます。 詳細については`Dispose`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ 保留中の内部トランザクションによってロールバックされて<xref:System.Messaging.MessageQueueTransaction.Dispose%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Messaging.MessageQueueTransaction" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.Messaging.MessageQueueTransaction.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Messaging.MessageQueueTransaction> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see langword="Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~MessageQueueTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueTransaction.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスに保持されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Finalize%2A?displayProperty=nameWithType>します。 アプリケーション コードではこのメソッドを呼び出す必要がありますいません。オブジェクトの<xref:System.Messaging.MessageQueueTransaction.Finalize%2A>への呼び出しによって、ガベージ コレクターによって終了処理が無効になっていない限り、ガベージ コレクション中にメソッドが自動的に起動、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueueTransactionStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessageQueueTransactionStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueTransaction.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueTransactionStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションの状態を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Messaging.MessageQueueTransactionStatus" />トランザクションがコミット済み、中止、初期化、かが保留されているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Messaging.MessageQueueTransaction>クラスが作成された、<xref:System.Messaging.MessageQueueTransaction.Status%2A>にコンス トラクターによって設定されている`Initialized`です。 呼び出しの後に<xref:System.Messaging.MessageQueueTransaction.Begin%2A>への呼び出しの前に<xref:System.Messaging.MessageQueueTransaction.Commit%2A>または<xref:System.Messaging.MessageQueueTransaction.Abort%2A>、<xref:System.Messaging.MessageQueueTransaction.Status%2A>は`Pending`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

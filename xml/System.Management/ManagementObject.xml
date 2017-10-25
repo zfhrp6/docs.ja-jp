@@ -1,0 +1,1790 @@
+<Type Name="ManagementObject" FullName="System.Management.ManagementObject">
+  <TypeSignature Language="C#" Value="public class ManagementObject : System.Management.ManagementBaseObject, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ManagementObject extends System.Management.ManagementBaseObject implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementBaseObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>WMI インスタンスを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementObject" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>既定のコンス トラクターを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObject#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject/cs/ManagementObject.cs#1)]
+ [!code-vb[wminet_ManagementObject#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject/vb/ManagementObject.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject (System.Management.ManagementPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.Management.ManagementPath)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+      </Parameters>
+      <Docs>
+        <param name="path">A <see cref="T:System.Management.ManagementPath" /> WMI オブジェクトへのパスを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />指定した WMI オブジェクト パスのクラスです。 パスは、<see cref="T:System.Management.ManagementPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、 <xref:System.Management.ManagementObject> WMI オブジェクト パスを指定してクラスです。  
+  
+ [!code-csharp[wminet_ManagementObject-M#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject-M/cs/ManagementObject-M.cs#1)]
+ [!code-vb[wminet_ManagementObject-M#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject-M/vb/ManagementObject-M.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">WMI のパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />指定した WMI オブジェクト パスのクラスです。 パスは、文字列として提供されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたパスが相対パスだけの場合 (サーバーまたは名前空間が指定されていない)、既定のパスは、ローカルのコンピューターで、既定の名前空間、 <xref:System.Management.ManagementPath.DefaultPath%2A> (既定では、root \cimv2) のパス。 ユーザーは、完全なパスを指定する場合、既定の設定は上書きされます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>クラスです。  
+  
+ [!code-csharp[wminet_ManagementObject-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject-S/cs/ManagementObject-S.cs#1)]
+ [!code-vb[wminet_ManagementObject-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject-S/vb/ManagementObject-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject (System.Management.ManagementPath path, System.Management.ObjectGetOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementPath path, class System.Management.ObjectGetOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.Management.ManagementPath,System.Management.ObjectGetOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+        <Parameter Name="options" Type="System.Management.ObjectGetOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">A <see cref="T:System.Management.ManagementPath" /> WMI パスを含むです。</param>
+        <param name="options"><see cref="T:System.Management.ObjectGetOptions" /> WMI オブジェクトにバインドするための追加のオプションを格納します。 このパラメーターは、null の場合、既定のオプションを使用する可能性があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />クラスは、指定した追加のオプションを含む、指定した WMI パスにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>が特定の WMI パスにバインドされるクラスです。  
+  
+ [!code-csharp[wminet_ManagementObject-M_O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject-M_O/cs/ManagementObject-M_O.cs#1)]
+ [!code-vb[wminet_ManagementObject-M_O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject-M_O/vb/ManagementObject-M_O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ManagementObject (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />はシリアル化するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject (string path, System.Management.ObjectGetOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Management.ObjectGetOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.String,System.Management.ObjectGetOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.ObjectGetOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">WMI オブジェクト パス。</param>
+        <param name="options"><see cref="T:System.Management.ObjectGetOptions" />を表すオプションを指定した WMI オブジェクトを取得します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />クラスは、指定した追加のオプションを含む、指定した WMI パスにバインドします。 このバリアントでは、パスを文字列として指定できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>クラスです。  
+  
+ [!code-csharp[wminet_ManagementObject-S_O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject-S_O/cs/ManagementObject-S_O.cs#1)]
+ [!code-vb[wminet_ManagementObject-S_O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject-S_O/vb/ManagementObject-S_O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject (System.Management.ManagementScope scope, System.Management.ManagementPath path, System.Management.ObjectGetOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementScope scope, class System.Management.ManagementPath path, class System.Management.ObjectGetOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.Management.ManagementScope,System.Management.ManagementPath,System.Management.ObjectGetOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Management.ManagementScope" />
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+        <Parameter Name="options" Type="System.Management.ObjectGetOptions" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A <see cref="T:System.Management.ManagementScope" /> WMI オブジェクトが存在するスコープを表すです。 このバージョンは、スコープは WMI 名前空間のみを指定できます。</param>
+        <param name="path">A<see cref="T:System.Management.ManagementPath" />管理可能なオブジェクトへの WMI のパスを表すです。</param>
+        <param name="options"><see cref="T:System.Management.ObjectGetOptions" />オブジェクトを取得するための追加オプションを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />クラスが指定されたオプションを含む指定した WMI パスにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI のパス指定できますが、相対パスまたは完全ためスコープと指定されたパスの間で競合が発生します。 ただし、スコープを指定し、WMI の相対パスを指定した場合は競合します。 一部の競合を次に示します。  
+  
+ スコープが指定されていない場合、WMI の相対パスを指定しが既定のスコープをローカル マシンの<xref:System.Management.ManagementPath.DefaultPath%2A>します。  
+  
+ スコープが指定されていないフル WMI パスを指定する場合は、スコープは、完全なパスのスコープの部分から推論されます。 たとえば、WMI のフルパス: `\\MyMachine\root\MyNamespace:MyClass.Name='abc'` 'MyClass.Name='abc' WMI オブジェクトを表す"スコープ内で '\\\MyMachine\root\MyNamespace' です。  
+  
+ スコープが指定されている完全 WMI パスを指定する場合は、スコープは、完全なパスのスコープの部分を上書きします。 たとえば、次のスコープが指定されました: \\\MyMachine\root\MyScope、および次の完全パスが指定されました: \\\MyMachine\root\MyNamespace:MyClass.Name='abc'、次に、次を探します`object: \\MyMachine\root\MyScope:MyClass.Name= 'abc'`(完全なパスのスコープの一部が無視されます)。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>が特定の WMI パスにバインドされるクラスです。  
+  
+ [!code-csharp[wminet_ManagementObject-M_M_O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject-M_M_O/cs/ManagementObject-M_M_O.cs#1)]
+ [!code-vb[wminet_ManagementObject-M_M_O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject-M_M_O/vb/ManagementObject-M_M_O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObject (string scopeString, string pathString, System.Management.ObjectGetOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scopeString, string pathString, class System.Management.ObjectGetOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.#ctor(System.String,System.String,System.Management.ObjectGetOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scopeString" Type="System.String" />
+        <Parameter Name="pathString" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.ObjectGetOptions" />
+      </Parameters>
+      <Docs>
+        <param name="scopeString">WMI オブジェクトのスコープです。</param>
+        <param name="pathString">WMI オブジェクト パス。</param>
+        <param name="options"><see cref="T:System.Management.ObjectGetOptions" /> WMI オブジェクトを取得するための追加のオプションを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObject" />クラスが、指定した WMI パスにバインドされていると、指定したオプションが含まれています。 スコープと、パスは、文字列として指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、同等のオーバー ロードを参照してください。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>特定の WMI パスとオプションを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObject-S_S_O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject-S_S_O/cs/ManagementObject-S_S_O.cs#1)]
+ [!code-vb[wminet_ManagementObject-S_S_O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject-S_S_O/vb/ManagementObject-S_S_O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassPath">
+      <MemberSignature Language="C#" Value="public override System.Management.ManagementPath ClassPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementPath ClassPath" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObject.ClassPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのクラスへのパスを設定します。</summary>
+        <value>A<see cref="T:System.Management.ManagementPath" />オブジェクトのクラスへのパスを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>クラスし、のクラス パスを取得し、<xref:System.Management.ManagementObject>です。  
+  
+ [!code-csharp[wminet_ManagementObject_Path#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_Path/cs/ManagementObject_Path.cs#1)]
+ [!code-vb[wminet_ManagementObject_Path#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_Path/vb/ManagementObject_Path.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを作成します。</summary>
+        <returns>コピーされるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath CopyTo (System.Management.ManagementPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath CopyTo(class System.Management.ManagementPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.Management.ManagementPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Management.ManagementPath" />オブジェクトをコピーする必要があります。</param>
+        <summary>オブジェクトを別の場所にコピーします。</summary>
+        <returns>コピーされるオブジェクトの新しいパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath CopyTo (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath CopyTo(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">オブジェクトのコピー先となるパス。</param>
+        <summary>オブジェクトを別の場所にコピーします。</summary>
+        <returns>コピーされるオブジェクトの新しいパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Management.ManagementOperationObserver watcher, System.Management.ManagementPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Management.ManagementOperationObserver watcher, class System.Management.ManagementPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.Management.ManagementOperationObserver,System.Management.ManagementPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <param name="path">A<see cref="T:System.Management.ManagementPath" />オブジェクトのコピー先となるパスを指定します。</param>
+        <summary>別の場所に、オブジェクトを非同期的にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Management.ManagementOperationObserver watcher, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Management.ManagementOperationObserver watcher, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.Management.ManagementOperationObserver,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <param name="path">オブジェクトのコピー先となるパス。</param>
+        <summary>別の場所に、オブジェクトを非同期的にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath CopyTo (System.Management.ManagementPath path, System.Management.PutOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath CopyTo(class System.Management.ManagementPath path, class System.Management.PutOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.Management.ManagementPath,System.Management.PutOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+        <Parameter Name="options" Type="System.Management.PutOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Management.ManagementPath" />オブジェクトをコピーする必要があります。</param>
+        <param name="options">オブジェクトの配置方法のオプションです。</param>
+        <summary>オブジェクトを別の場所にコピーします。</summary>
+        <returns>コピーされるオブジェクトの新しいパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath CopyTo (string path, System.Management.PutOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath CopyTo(string path, class System.Management.PutOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.String,System.Management.PutOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.PutOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">オブジェクトのコピー先となるパス。</param>
+        <param name="options">オブジェクトの配置方法のオプションです。</param>
+        <summary>オブジェクトを別の場所にコピーします。</summary>
+        <returns>コピーされるオブジェクトの新しいパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Management.ManagementOperationObserver watcher, System.Management.ManagementPath path, System.Management.PutOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Management.ManagementOperationObserver watcher, class System.Management.ManagementPath path, class System.Management.PutOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.Management.ManagementOperationObserver,System.Management.ManagementPath,System.Management.PutOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+        <Parameter Name="options" Type="System.Management.PutOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <param name="path">オブジェクトのコピー先となるパス。</param>
+        <param name="options">オブジェクトの配置方法のオプションです。</param>
+        <summary>別の場所に、オブジェクトを非同期的にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Management.ManagementOperationObserver watcher, string path, System.Management.PutOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Management.ManagementOperationObserver watcher, string path, class System.Management.PutOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.CopyTo(System.Management.ManagementOperationObserver,System.String,System.Management.PutOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.PutOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <param name="path">オブジェクトのコピー先となるパス。</param>
+        <param name="options">オブジェクトの配置方法のオプションです。</param>
+        <summary>別の場所に、オブジェクトを非同期的にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete (System.Management.DeleteOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete(class System.Management.DeleteOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Delete(System.Management.DeleteOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Management.DeleteOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">オブジェクトを削除する方法のオプションです。</param>
+        <summary>オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete (System.Management.ManagementOperationObserver watcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete(class System.Management.ManagementOperationObserver watcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Delete(System.Management.ManagementOperationObserver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <summary>オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete (System.Management.ManagementOperationObserver watcher, System.Management.DeleteOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete(class System.Management.ManagementOperationObserver watcher, class System.Management.DeleteOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Delete(System.Management.ManagementOperationObserver,System.Management.DeleteOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="options" Type="System.Management.DeleteOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <param name="options">オブジェクトを削除する方法のオプションです。</param>
+        <summary>オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Get">
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>管理オブジェクトにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public void Get ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Get() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Get" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>WMI クラス情報を管理オブジェクトにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、取得または WMI オブジェクトへの情報を設定する最初の試行で暗黙的に呼び出されます。 明示的に呼び出すこともできます、ユーザーの裁量によりより詳細に制御するタイミングと方法を取得できるようにします。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementObject.Get%2A>のインスタンスを取得するメソッド、<xref:System.Management.ManagementObject>クラスです。  
+  
+ [!code-csharp[wminet_ManagementObject_GetMethod#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_GetMethod/cs/ManagementObject_GetMethod.cs#1)]
+ [!code-vb[wminet_ManagementObject_GetMethod#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_GetMethod/vb/ManagementObject_GetMethod.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public void Get (System.Management.ManagementOperationObserver watcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Get(class System.Management.ManagementOperationObserver watcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Get(System.Management.ManagementOperationObserver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">イベントと操作の結果を受け取るオブジェクト。</param>
+        <summary>管理オブジェクトを非同期的にバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、オブジェクトを取得する要求を発行し、し、すぐに戻ります。 操作の結果は、指定された監視オブジェクトで発生するイベントによって配信されます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementObject.Get%2A>のインスタンスを非同期的に取得するメソッド、<xref:System.Management.ManagementObject>クラスです。  
+  
+ [!code-csharp[wminet_ManagementObject_GetMethod-M#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_GetMethod-M/cs/ManagementObject_GetMethod-M.cs#1)]
+ [!code-vb[wminet_ManagementObject_GetMethod-M#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_GetMethod-M/vb/ManagementObject_GetMethod-M.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodParameters">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject GetMethodParameters (string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementBaseObject GetMethodParameters(string methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetMethodParameters(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">メソッドの名前。</param>
+        <summary>返します、<see cref="T:System.Management.ManagementBaseObject" />メソッドの入力パラメーターのリストを表しています。</summary>
+        <returns>A<see cref="T:System.Management.ManagementBaseObject" />メソッドへの入力パラメーターを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドへの入力パラメーターを含むオブジェクトを取得し、値を設定しとにオブジェクトを渡します、<xref:System.Management.ManagementObject.InvokeMethod%2A>呼び出します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報が設定されるオブジェクト。</param>
+        <param name="context">シリアル化されたデータを格納および取得する場所です。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />このインスタンスによって表されるフィールドを逆シリアル化に必要なデータです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelated">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection GetRelated ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection GetRelated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクト (関連子) に関連するオブジェクトのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />関連オブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作は、*関連子の*where クエリ ResultClass relatedClass を = です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementObject.GetRelated%2A>のインスタンスに関連するオブジェクトのコレクションを取得するメソッド、<xref:System.Management.ManagementObject>クラスです。  
+  
+ [!code-csharp[wminet_ManagementObject_GetRelated#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_GetRelated/cs/ManagementObject_GetRelated.cs#1)]
+ [!code-vb[wminet_ManagementObject_GetRelated#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_GetRelated/vb/ManagementObject_GetRelated.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelated">
+      <MemberSignature Language="C#" Value="public void GetRelated (System.Management.ManagementOperationObserver watcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetRelated(class System.Management.ManagementOperationObserver watcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelated(System.Management.ManagementOperationObserver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">結果を返すために使用するオブジェクト。</param>
+        <summary>非同期的に (関連子) のオブジェクトに関連するオブジェクトのコレクションを取得します。 この呼び出しが直ちに返され、結果が利用可能な場合に、デリゲートが呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelated">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection GetRelated (string relatedClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection GetRelated(string relatedClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelated(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relatedClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relatedClass">関連するオブジェクトのクラスです。</param>
+        <summary>オブジェクト (関連子) に関連するオブジェクトのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />関連オブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementObject.GetRelated%2A>のインスタンスに関連するオブジェクトのコレクションを取得するメソッド、<xref:System.Management.ManagementObject>クラスです。  
+  
+ [!code-csharp[wminet_ManagementObject_GetRelated-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_GetRelated-S/cs/ManagementObject_GetRelated-S.cs#1)]
+ [!code-vb[wminet_ManagementObject_GetRelated-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_GetRelated-S/vb/ManagementObject_GetRelated-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelated">
+      <MemberSignature Language="C#" Value="public void GetRelated (System.Management.ManagementOperationObserver watcher, string relatedClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetRelated(class System.Management.ManagementOperationObserver watcher, string relatedClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelated(System.Management.ManagementOperationObserver,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="relatedClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">結果を返すために使用するオブジェクト。</param>
+        <param name="relatedClass">関連するオブジェクトのクラスです。</param>
+        <summary>オブジェクト (関連子) に関連するオブジェクトのコレクションを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*関連子の*where クエリ ResultClass relatedClass を = です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelated">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection GetRelated (string relatedClass, string relationshipClass, string relationshipQualifier, string relatedQualifier, string relatedRole, string thisRole, bool classDefinitionsOnly, System.Management.EnumerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection GetRelated(string relatedClass, string relationshipClass, string relationshipQualifier, string relatedQualifier, string relatedRole, string thisRole, bool classDefinitionsOnly, class System.Management.EnumerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelated(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Management.EnumerationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relatedClass" Type="System.String" />
+        <Parameter Name="relationshipClass" Type="System.String" />
+        <Parameter Name="relationshipQualifier" Type="System.String" />
+        <Parameter Name="relatedQualifier" Type="System.String" />
+        <Parameter Name="relatedRole" Type="System.String" />
+        <Parameter Name="thisRole" Type="System.String" />
+        <Parameter Name="classDefinitionsOnly" Type="System.Boolean" />
+        <Parameter Name="options" Type="System.Management.EnumerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="relatedClass">関連オブジェクトのクラスです。</param>
+        <param name="relationshipClass">関心のあるリレーションシップ クラスです。</param>
+        <param name="relationshipQualifier">リレーションシップ クラスに存在している必須修飾子です。</param>
+        <param name="relatedQualifier">関連するクラスに存在している必須修飾子です。</param>
+        <param name="relatedRole">リレーションシップに関連するクラスを再生しているロールです。</param>
+        <param name="thisRole">このクラスは、リレーションシップで再生しているロールです。</param>
+        <param name="classDefinitionsOnly">このメソッドが戻るとき、クエリに一致するインスタンスのクラス定義のみが含まれています。</param>
+        <param name="options">クエリを実行する方法の拡張オプションです。</param>
+        <summary>オブジェクト (関連子) に関連するオブジェクトのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />関連オブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*関連子の*where クエリ ResultClass relatedClass を = です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelated">
+      <MemberSignature Language="C#" Value="public void GetRelated (System.Management.ManagementOperationObserver watcher, string relatedClass, string relationshipClass, string relationshipQualifier, string relatedQualifier, string relatedRole, string thisRole, bool classDefinitionsOnly, System.Management.EnumerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetRelated(class System.Management.ManagementOperationObserver watcher, string relatedClass, string relationshipClass, string relationshipQualifier, string relatedQualifier, string relatedRole, string thisRole, bool classDefinitionsOnly, class System.Management.EnumerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelated(System.Management.ManagementOperationObserver,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Management.EnumerationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="relatedClass" Type="System.String" />
+        <Parameter Name="relationshipClass" Type="System.String" />
+        <Parameter Name="relationshipQualifier" Type="System.String" />
+        <Parameter Name="relatedQualifier" Type="System.String" />
+        <Parameter Name="relatedRole" Type="System.String" />
+        <Parameter Name="thisRole" Type="System.String" />
+        <Parameter Name="classDefinitionsOnly" Type="System.Boolean" />
+        <Parameter Name="options" Type="System.Management.EnumerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">結果を返すために使用するオブジェクト。</param>
+        <param name="relatedClass">関連オブジェクトのクラスです。</param>
+        <param name="relationshipClass">関心のあるリレーションシップ クラスです。</param>
+        <param name="relationshipQualifier">リレーションシップ クラスに存在している必須修飾子です。</param>
+        <param name="relatedQualifier">関連するクラスに存在している必須修飾子です。</param>
+        <param name="relatedRole">リレーションシップに関連するクラスを再生しているロールです。</param>
+        <param name="thisRole">このクラスは、リレーションシップで再生しているロールです。</param>
+        <param name="classDefinitionsOnly">クエリに一致するインスタンスのクラス定義のみを返します。</param>
+        <param name="options">クエリを実行する方法の拡張オプションです。</param>
+        <summary>オブジェクト (関連子) に関連するオブジェクトのコレクションを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*関連子の*where クエリ ResultClass relatedClass を = です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection GetRelationships ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection GetRelationships() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelationships" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトへの関連付けのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />関連オブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作は、*参照の*クエリ。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public void GetRelationships (System.Management.ManagementOperationObserver watcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetRelationships(class System.Management.ManagementOperationObserver watcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelationships(System.Management.ManagementOperationObserver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">結果を返すために使用するオブジェクト。</param>
+        <summary>オブジェクトへの関連付けのコレクションを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*参照の*クエリ。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection GetRelationships (string relationshipClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection GetRelationships(string relationshipClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelationships(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationshipClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipClass">含める関連します。</param>
+        <summary>オブジェクトへの関連付けのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />関連オブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*参照の*where をクエリの関連クラス relationshipClass を = です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public void GetRelationships (System.Management.ManagementOperationObserver watcher, string relationshipClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetRelationships(class System.Management.ManagementOperationObserver watcher, string relationshipClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelationships(System.Management.ManagementOperationObserver,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="relationshipClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">結果を返すために使用するオブジェクト。</param>
+        <param name="relationshipClass">含める関連します。</param>
+        <summary>オブジェクトへの関連付けのコレクションを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*参照の*where をクエリの関連クラス relationshipClass を = です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection GetRelationships (string relationshipClass, string relationshipQualifier, string thisRole, bool classDefinitionsOnly, System.Management.EnumerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection GetRelationships(string relationshipClass, string relationshipQualifier, string thisRole, bool classDefinitionsOnly, class System.Management.EnumerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelationships(System.String,System.String,System.String,System.Boolean,System.Management.EnumerationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationshipClass" Type="System.String" />
+        <Parameter Name="relationshipQualifier" Type="System.String" />
+        <Parameter Name="thisRole" Type="System.String" />
+        <Parameter Name="classDefinitionsOnly" Type="System.Boolean" />
+        <Parameter Name="options" Type="System.Management.EnumerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipClass">目的のリレーションシップの種類。</param>
+        <param name="relationshipQualifier">リレーションシップに存在する修飾子です。</param>
+        <param name="thisRole">このリレーションシップのオブジェクトのロール。</param>
+        <param name="classDefinitionsOnly">このメソッドが戻るとき、結果セットのクラス定義のみが含まれています。</param>
+        <param name="options">クエリの実行の拡張オプションです。</param>
+        <summary>オブジェクトへの関連付けのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />関連オブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*参照の*可能性のあるすべての拡張子を持つクエリ。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public void GetRelationships (System.Management.ManagementOperationObserver watcher, string relationshipClass, string relationshipQualifier, string thisRole, bool classDefinitionsOnly, System.Management.EnumerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetRelationships(class System.Management.ManagementOperationObserver watcher, string relationshipClass, string relationshipQualifier, string thisRole, bool classDefinitionsOnly, class System.Management.EnumerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.GetRelationships(System.Management.ManagementOperationObserver,System.String,System.String,System.String,System.Boolean,System.Management.EnumerationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="relationshipClass" Type="System.String" />
+        <Parameter Name="relationshipQualifier" Type="System.String" />
+        <Parameter Name="thisRole" Type="System.String" />
+        <Parameter Name="classDefinitionsOnly" Type="System.Boolean" />
+        <Parameter Name="options" Type="System.Management.EnumerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">結果を返すために使用するオブジェクト。</param>
+        <param name="relationshipClass">目的のリレーションシップの種類。</param>
+        <param name="relationshipQualifier">リレーションシップに存在する修飾子です。</param>
+        <param name="thisRole">このリレーションシップのオブジェクトのロール。</param>
+        <param name="classDefinitionsOnly">このメソッドが戻るとき、結果セットのクラス定義のみが含まれています。</param>
+        <param name="options">クエリの実行の拡張オプションです。</param>
+        <summary>オブジェクトへの関連付けのコレクションを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、*参照の*可能性のあるすべての拡張子を持つクエリ。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMethod">
+      <MemberSignature Language="C#" Value="public object InvokeMethod (string methodName, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object InvokeMethod(string methodName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.InvokeMethod(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">実行するメソッドの名前。</param>
+        <param name="args">パラメーターの値を格納する配列。</param>
+        <summary>オブジェクトのメソッドを呼び出します。</summary>
+        <returns>メソッドによって返されるオブジェクトの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが静的な場合は、実行はまだ成功する必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で呼び出して、 **Win32_Process::Create** Notepad.exe の新しいプロセスを開始するメソッド。  
+  
+ [!code-csharp[wminet_ManagementObject_InvokeMethod-S_O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_InvokeMethod-S_O/cs/ManagementObject_InvokeMethod-S_O.cs#1)]
+ [!code-vb[wminet_ManagementObject_InvokeMethod-S_O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_InvokeMethod-S_O/vb/ManagementObject_InvokeMethod-S_O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMethod">
+      <MemberSignature Language="C#" Value="public void InvokeMethod (System.Management.ManagementOperationObserver watcher, string methodName, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeMethod(class System.Management.ManagementOperationObserver watcher, string methodName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.InvokeMethod(System.Management.ManagementOperationObserver,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作の結果を受け取るオブジェクト。</param>
+        <param name="methodName">実行するメソッドの名前。</param>
+        <param name="args">パラメーターの値を格納する配列。</param>
+        <summary>オブジェクトのメソッドを非同期的に呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが静的な場合は、実行はまだ成功する必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMethod">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject InvokeMethod (string methodName, System.Management.ManagementBaseObject inParameters, System.Management.InvokeMethodOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementBaseObject InvokeMethod(string methodName, class System.Management.ManagementBaseObject inParameters, class System.Management.InvokeMethodOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.InvokeMethod(System.String,System.Management.ManagementBaseObject,System.Management.InvokeMethodOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="inParameters" Type="System.Management.ManagementBaseObject" />
+        <Parameter Name="options" Type="System.Management.InvokeMethodOptions" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">実行するメソッドの名前。</param>
+        <param name="inParameters">A<see cref="T:System.Management.ManagementBaseObject" />メソッドへの入力パラメーターを保持します。</param>
+        <param name="options"><see cref="T:System.Management.InvokeMethodOptions" />メソッドの実行のための追加のオプションを格納します。</param>
+        <summary>WMI オブジェクトのメソッドを呼び出します。 入力呼び出し力パラメーターとして表されます<see cref="T:System.Management.ManagementBaseObject" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Management.ManagementBaseObject" />出力パラメーターと実行されたメソッドの戻り値を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で呼び出して、 **Win32_Process::Create** Calc.exe の新しいプロセスを開始するメソッド。  
+  
+ [!code-csharp[wminet_ManagementObject_InvokeMethod-S_M_I#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_InvokeMethod-S_M_I/cs/ManagementObject_InvokeMethod-S_M_I.cs#1)]
+ [!code-vb[wminet_ManagementObject_InvokeMethod-S_M_I#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_InvokeMethod-S_M_I/vb/ManagementObject_InvokeMethod-S_M_I.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMethod">
+      <MemberSignature Language="C#" Value="public void InvokeMethod (System.Management.ManagementOperationObserver watcher, string methodName, System.Management.ManagementBaseObject inParameters, System.Management.InvokeMethodOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeMethod(class System.Management.ManagementOperationObserver watcher, string methodName, class System.Management.ManagementBaseObject inParameters, class System.Management.InvokeMethodOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.InvokeMethod(System.Management.ManagementOperationObserver,System.String,System.Management.ManagementBaseObject,System.Management.InvokeMethodOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="inParameters" Type="System.Management.ManagementBaseObject" />
+        <Parameter Name="options" Type="System.Management.InvokeMethodOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">A<see cref="T:System.Management.ManagementOperationObserver" />非同期実行の進行状況と結果を処理するために使用します。</param>
+        <param name="methodName">実行するメソッドの名前。</param>
+        <param name="inParameters">A<see cref="T:System.Management.ManagementBaseObject" />メソッドの入力パラメーターを含むです。</param>
+        <param name="options"><see cref="T:System.Management.InvokeMethodOptions" />メソッドの実行に使用される追加のオプションを格納します。</param>
+        <summary>オブジェクトのメソッドを非同期的に呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、指定したメソッドの実行を起動し、返します。 進行状況と結果が報告されるイベントを介して、<xref:System.Management.ManagementOperationObserver>です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Management.ObjectGetOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ObjectGetOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObject.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ObjectGetOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトを取得するときに使用する追加の情報を設定します。</summary>
+        <value><see cref="T:System.Management.ObjectGetOptions" />オブジェクトを取得するときに使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理オブジェクトが、WMI オブジェクトにバインドされた後、プロパティが変更されるは、管理オブジェクトが、元の WMI オブジェクトと、新しいオプションを使用して後での再バインドから切断されます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>クラスし、の既定のオプションを変更、<xref:System.Management.ManagementObject>です。  
+  
+ [!code-csharp[wminet_ManagementObject_Options#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_Options/cs/ManagementObject_Options.cs#1)]
+ [!code-vb[wminet_ManagementObject_Options#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_Options/vb/ManagementObject_Options.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public virtual System.Management.ManagementPath Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementPath Path" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObject.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトの WMI のパスを設定します。</summary>
+        <value>A<see cref="T:System.Management.ManagementPath" />オブジェクトのパスを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理オブジェクトが元の WMI オブジェクトを解放するときに特定の名前空間で WMI オブジェクトにバインドされた後は、プロパティを変更します。 これにより、管理オブジェクトは、新しいパスのプロパティおよびスコープの値を指定して、新しいオブジェクトに再バインドされます。  
+  
+ 再バインドは、「レイジー」手法では、場合にのみ実行要求された値には、WMI オブジェクトにバインドされている管理オブジェクトが必要です。 変更できるようプロパティでは単に (たとえば、スコープとパスのプロパティを同時に変更するなど) を再バインドする前にします。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>既定の名前空間を持つクラスの WMI のパスを変更し、<xref:System.Management.ManagementObject>です。  
+  
+ [!code-csharp[wminet_ManagementObject_Path#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_Path/cs/ManagementObject_Path.cs#1)]
+ [!code-vb[wminet_ManagementObject_Path#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_Path/vb/ManagementObject_Path.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Put">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath Put ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath Put() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Put" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトへの変更をコミットします。</summary>
+        <returns>A<see cref="T:System.Management.ManagementPath" />コミット済みのオブジェクトへのパスを含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Put">
+      <MemberSignature Language="C#" Value="public void Put (System.Management.ManagementOperationObserver watcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Put(class System.Management.ManagementOperationObserver watcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Put(System.Management.ManagementOperationObserver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">A<see cref="T:System.Management.ManagementOperationObserver" />進行状況と、非同期操作の結果を処理するために使用します。</param>
+        <summary>非同期的に、オブジェクトへの変更をコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Put">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath Put (System.Management.PutOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath Put(class System.Management.PutOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Put(System.Management.PutOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Management.PutOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">変更をコミットする方法のオプションです。</param>
+        <summary>オブジェクトへの変更をコミットします。</summary>
+        <returns>A<see cref="T:System.Management.ManagementPath" />コミット済みのオブジェクトへのパスを含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Put">
+      <MemberSignature Language="C#" Value="public void Put (System.Management.ManagementOperationObserver watcher, System.Management.PutOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Put(class System.Management.ManagementOperationObserver watcher, class System.Management.PutOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.Put(System.Management.ManagementOperationObserver,System.Management.PutOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+        <Parameter Name="options" Type="System.Management.PutOptions" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">A<see cref="T:System.Management.ManagementOperationObserver" />進行状況と、非同期操作の結果を処理するために使用します。</param>
+        <param name="options">A<see cref="T:System.Management.PutOptions" />コミット操作のための追加のオプションを指定するために使用します。</param>
+        <summary>非同期的に、オブジェクトへの変更をコミットし、指定のオプションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObject.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのオブジェクトが存在するスコープを設定します。</summary>
+        <value>このオブジェクトが存在するスコープです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理オブジェクトが元の WMI オブジェクトを解放するときに特定の名前空間で WMI オブジェクトにバインドされた後は、このプロパティを変更します。 これにより、管理オブジェクトは、新しいパスのプロパティおよびスコープの値を指定して、新しいオブジェクトに再バインドされます。  
+  
+ 再バインドは、「レイジー」手法では、場合にのみ実行要求された値には、WMI オブジェクトにバインドされている管理オブジェクトが必要です。 変更できるようこのプロパティでは単に (たとえば、スコープとパスのプロパティを同時に変更するなど) を再バインドする前にします。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObject>既定の名前空間を持つクラスのスコープを変更し、<xref:System.Management.ManagementObject>です。  
+  
+ [!code-csharp[wminet_ManagementObject_Scope#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObject_Scope/cs/ManagementObject_Scope.cs#1)]
+ [!code-vb[wminet_ManagementObject_Scope#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObject_Scope/vb/ManagementObject_Scope.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObject.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの完全なパスを返します。 これは、既定のオブジェクトの実装のオーバーライドです。</summary>
+        <returns>オブジェクトの完全パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

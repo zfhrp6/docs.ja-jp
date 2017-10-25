@@ -1,0 +1,697 @@
+<Type Name="IsolatedStorage" FullName="System.IO.IsolatedStorage.IsolatedStorage">
+  <TypeSignature Language="C#" Value="public abstract class IsolatedStorage : MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IsolatedStorage extends System.MarshalByRefObject" />
+  <TypeSignature Language="DocId" Value="T:System.IO.IsolatedStorage.IsolatedStorage" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての分離ストレージの実装の派生元となる抽象基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 分離ストレージのファイル ベースの概要については、次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クラスです。  
+  
+> [!IMPORTANT]
+>  分離ストレージは [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリでは使用できません。 代わりに、`Windows.Storage` API に含まれる [!INCLUDE[wrt](~/includes/wrt-md.md)] 名前空間内のアプリケーション データ クラスを使用して、ローカル データとローカル ファイルを格納します。 詳細については、Windows デベロッパー センターの [アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175) に関する説明を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected IsolatedStorage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorage" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationIdentity">
+      <MemberSignature Language="C#" Value="public object ApplicationIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ApplicationIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.ApplicationIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージのスコープをそのアプリケーションの id を取得します。</summary>
+        <value><see cref="T:System.Object" />を表す、<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Application" />の id。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションの定義には、アプリケーションに関連付けられているすべてのアセンブリが含まれているために、アプリケーションに関連付けられているアセンブリだけが分離ストレージにアクセスできるようにするのにこの種類の id を使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コードが、必要ない<see cref="T:System.Security.Permissions.SecurityPermission" />このオブジェクトにアクセスします。 セキュリティ ポリシーに基づいて、ランタイムによって、これらのアクセス許可が付与されます。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />オブジェクトは、アプリケーション別に分離されたいない<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠にアクセスする権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyIdentity">
+      <MemberSignature Language="C#" Value="public object AssemblyIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AssemblyIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.AssemblyIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージのスコープに使用するアセンブリ id を取得します。</summary>
+        <value><see cref="T:System.Object" />を表す、<see cref="T:System.Reflection.Assembly" />の id。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">コードが、必要ない<see cref="T:System.Security.Permissions.SecurityPermission" />このオブジェクトにアクセスします。</exception>
+        <exception cref="T:System.InvalidOperationException">アセンブリが定義されていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠にアクセスする権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AvailableFreeSpace">
+      <MemberSignature Language="C#" Value="public virtual long AvailableFreeSpace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AvailableFreeSpace" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、分離ストレージに使用可能な空き領域 (バイト単位) を取得します。</summary>
+        <value>分離ストレージに使用可能な空き領域 (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.AvailableFreeSpace%2A?displayProperty=nameWithType>プロパティは、このプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace" /> へのアクセスを必要とする操作が実行されましたが、そのプロパティはこのストア用に定義されていません。 部分的な証拠を使用してストアを開いたため、列挙体を使用して取得したストアに、適切に定義された <see cref="P:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace" /> プロパティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentSize">
+      <MemberSignature Language="C#" Value="public virtual ulong CurrentSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 CurrentSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.CurrentSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの現在のサイズを表す値を取得します。</summary>
+        <value>分離ストレージのスコープ内で使用される現在の記憶域ユニットの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、分離ストレージのスコープ内のすべての記憶域リソースの使用率の合計を表します。 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CurrentSize%2A?displayProperty=nameWithType>このプロパティを実装します。 場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトをこの値は、(バイト単位)。 場合は、データベースなど他の記憶域オブジェクトの実装は、この値は記憶域の他の単位でする可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">分離ストアの現在のサイズが定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainIdentity">
+      <MemberSignature Language="C#" Value="public object DomainIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DomainIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.DomainIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージのスコープをそのドメインの id を取得します。</summary>
+        <value><see cref="T:System.Object" />を表す、<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Domain" />の id。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">コードが、必要ない<see cref="T:System.Security.Permissions.SecurityPermission" />このオブジェクトにアクセスします。 セキュリティ ポリシーに基づいて、ランタイムによって、これらのアクセス許可が付与されます。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />ドメイン別にオブジェクトが分離されたいない<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠にアクセスする権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPermission">
+      <MemberSignature Language="C#" Value="protected abstract System.Security.Permissions.IsolatedStoragePermission GetPermission (System.Security.PermissionSet ps);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Permissions.IsolatedStoragePermission GetPermission(class System.Security.PermissionSet ps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorage.GetPermission(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStoragePermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ps" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="ps"><see cref="T:System.Security.PermissionSet" />分離ストレージを使用しようとしています。 コードに付与された権限のセットを含むオブジェクト。</param>
+        <summary>派生クラスで実装された場合、権限からアクセス許可セット内での分離ストレージへのアクセスを表すを返します。</summary>
+        <returns><see cref="T:System.Security.Permissions.IsolatedStoragePermission" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスをどのようなアクセス許可の種類を制御の使用を特定し、与えられている型のアクセス許可を返すには、このメソッドを呼び出します。 この情報を使用して、許可されているクォータとその他の派生クラスに固有の分離ストレージの設定を確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseQuotaTo">
+      <MemberSignature Language="C#" Value="public virtual bool IncreaseQuotaTo (long newQuotaSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IncreaseQuotaTo(int64 newQuotaSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorage.IncreaseQuotaTo(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newQuotaSize" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="newQuotaSize">要求された新しいクォータ サイズ (バイト単位) を承認するユーザー。</param>
+        <summary>派生クラスでオーバーライドされると、分離ストレージのバイト単位より大きなクォータ サイズを承認するユーザーに要求します。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.IncreaseQuotaTo%2A?displayProperty=nameWithType>メソッドは、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitStore">
+      <MemberSignature Language="C#" Value="protected void InitStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, Type appEvidenceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, class System.Type appEvidenceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorage.InitStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="appEvidenceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="scope"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" /> 値のビットごとの組み合わせ。</param>
+        <param name="appEvidenceType">型<see cref="T:System.Security.Policy.Evidence" />の一覧から選択できる<see cref="T:System.Security.Policy.Evidence" />呼び出し元のアプリケーションにします。 <see langword="null" />により、<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />オブジェクトは、証拠を選択します。</param>
+        <summary>新しい <see cref="T:System.IO.IsolatedStorage.IsolatedStorage" /> オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このメソッドを使用して、新しいオブジェクトを初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">指定されたアセンブリでは、分離ストアを作成する十分なアクセス許可を持ちます。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser" />  
+  
+ または  
+  
+ <see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" />  
+  
+ または  
+  
+ <see cref="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser" />  
+  
+ または  
+  
+ <see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InitStore">
+      <MemberSignature Language="C#" Value="protected void InitStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, Type domainEvidenceType, Type assemblyEvidenceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, class System.Type domainEvidenceType, class System.Type assemblyEvidenceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorage.InitStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="domainEvidenceType" Type="System.Type" />
+        <Parameter Name="assemblyEvidenceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="scope"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" /> 値のビットごとの組み合わせ。</param>
+        <param name="domainEvidenceType">型<see cref="T:System.Security.Policy.Evidence" />の一覧から選択できる<see cref="T:System.Security.Policy.Evidence" />の呼び出し元のアプリケーション ドメイン内に存在します。 <see langword="null" />により、<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />オブジェクトは、証拠を選択します。</param>
+        <param name="assemblyEvidenceType">型<see cref="T:System.Security.Policy.Evidence" />の一覧から選択できる<see cref="T:System.Security.Policy.Evidence" />呼び出し元のアプリケーションのアセンブリ内に存在します。 <see langword="null" />により、<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />オブジェクトは、証拠を選択します。</param>
+        <summary>新しい <see cref="T:System.IO.IsolatedStorage.IsolatedStorage" /> オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このメソッドを使用して、新しいオブジェクトを初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">指定されたアセンブリでは、分離ストアを作成する十分なアクセス許可を持ちます。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser" />  
+  
+ または  
+  
+ <see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" />  
+  
+ または  
+  
+ <see cref="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser" />  
+  
+ または  
+  
+ <see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSize">
+      <MemberSignature Language="C#" Value="public virtual ulong MaximumSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 MaximumSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.MaximumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの使用可能な領域の最大量を表す値を取得します。 派生クラスでオーバーライドされると、この値は、さまざまな測定単位を実行できます。</summary>
+        <value>分離ストレージの領域 (バイト単位) の最大量。 派生クラスでは、さまざまな単位で値を返すことができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.IO.IsolatedStorage.IsolatedStorage.MaximumSize%2A>プロパティの値を返します<xref:System.Security.Permissions.IsolatedStoragePermission.UserQuota%2A?displayProperty=nameWithType>、これはバイトで表現されます。 派生クラスでは、他のメジャーの単位の値を表すことができます。 このような実装の潜在的な例は、分離ストレージ データベースです。  
+  
+ 設定することはできません<xref:System.IO.IsolatedStorage.IsolatedStorage.MaximumSize%2A>クォータは、セキュリティ ポリシーで構成され、設定することができますが、します。 異なる証拠を使用して実行される場合に、同じコードが異なるクォータを受信できるように、コードは、証拠に基づいて領域のクォータを受け取る (たとえば、ローカルと共有からイントラネット上で実行する同じアプリケーションできます受信の異なるクォータ)。 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.MaximumSize%2A?displayProperty=nameWithType>このプロパティを実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">クォータが定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Quota">
+      <MemberSignature Language="C#" Value="public virtual long Quota { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Quota" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.Quota" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、分離ストレージの使用可能な領域の最大量を表す値を取得します。</summary>
+        <value>(バイト単位) の分離ストレージ領域の制限。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Quota%2A?displayProperty=nameWithType>プロパティは、このプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IO.IsolatedStorage.IsolatedStorage.Quota" /> へのアクセスを必要とする操作が実行されましたが、そのプロパティはこのストア用に定義されていません。 部分的な証拠を使用してストアを開いたため、列挙体を使用して取得したストアに、適切に定義された <see cref="P:System.IO.IsolatedStorage.IsolatedStorage.Quota" /> プロパティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public abstract void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorage.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、個々 の分離ストアとに含まれるすべてのデータを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType>このメソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.IO.IsolatedStorage.IsolatedStorageScope Scope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.IsolatedStorage.IsolatedStorageScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />ストアを分離するために使用するスコープを指定する列挙値。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />ストアを分離するために使用するスコープを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストアは、要因 (ユーザー、アセンブリ、ドメイン、およびなど) の組み合わせによって分離されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorExternal">
+      <MemberSignature Language="C#" Value="protected virtual char SeparatorExternal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char SeparatorExternal" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.SeparatorExternal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリの文字列で使用できるバック スラッシュ文字を取得します。 派生クラスでオーバーライドされると、別の文字が返される可能性があります。</summary>
+        <value>既定の実装を返します、'\\' (バック スラッシュ) 文字です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、ディレクトリの文字列で使用されている文字を取得できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />、オーバーライドすることができます<see cref="P:System.IO.IsolatedStorage.IsolatedStorage.SeparatorExternal" />以外の文字を返すと、'\\'、ストアの名前付け構文を制御します。 Windows<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />この区切り記号は、'\\' です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorInternal">
+      <MemberSignature Language="C#" Value="protected virtual char SeparatorInternal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char SeparatorInternal" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.SeparatorInternal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリの文字列で使用できるピリオド文字を取得します。 派生クラスでオーバーライドされると、別の文字が返される可能性があります。</summary>
+        <value>既定の実装を返します、'.'(ピリオド) 文字です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、ディレクトリの文字列で使用されている文字を取得できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />、オーバーライドすることができます<see cref="P:System.IO.IsolatedStorage.IsolatedStorage.SeparatorInternal" />以外の文字を返すと、'.'、ストアの名前付け構文を制御します。 Windows<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />この区切り記号は、'.' です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UsedSize">
+      <MemberSignature Language="C#" Value="public virtual long UsedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 UsedSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorage.UsedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、分離ストレージに使用される領域の量を表す値を取得します。</summary>
+        <value>(バイト単位) の分離ストレージ領域の使用量。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.UsedSize%2A?displayProperty=nameWithType>プロパティは、このプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IO.IsolatedStorage.IsolatedStorage.UsedSize" /> へのアクセスを必要とする操作が実行されましたが、そのプロパティはこのストア用に定義されていません。 部分的な証拠を使用してストアを開いたため、列挙体を使用して取得したストアに、適切に定義された <see cref="P:System.IO.IsolatedStorage.IsolatedStorage.UsedSize" /> プロパティがありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,756 @@
+<Type Name="AddInToken" FullName="System.AddIn.Hosting.AddInToken">
+  <TypeSignature Language="C#" Value="public sealed class AddInToken : System.Collections.Generic.IEnumerable&lt;System.AddIn.Hosting.QualificationDataItem&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit AddInToken extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;valuetype System.AddIn.Hosting.QualificationDataItem&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.AddInToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.AddIn.Hosting.QualificationDataItem&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>アクティブ化可能なアドインを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Hosting.AddInToken>オブジェクト アドイン、およびアクティブ化可能な関連付けられているパイプライン セグメントを表します。 トークンには、名前、アセンブリ名、説明、パブリッシャー、およびそれが表すアドインのバージョンが含まれています。  
+  
+ 使用して、<xref:System.AddIn.Hosting.AddInStore.FindAddIns%2A?displayProperty=nameWithType>メソッドを指定したホスト ビューに一致がパイプラインのアドインを表すトークンのコレクションを取得します。 使用して、<xref:System.AddIn.Hosting.AddInStore.FindAddIn%2A?displayProperty=nameWithType>メソッドを指定したホスト ビューに一致する指定されたアドインのすべてのパイプラインを表すトークンのコレクションを取得します。  
+  
+ アドインをアクティブ化に必要なアドインを表すトークンを渡す、<xref:System.AddIn.Hosting.AddInToken.Activate%2A>メソッドです。 このメソッドは、アドインのホスト ビューを表す型のインスタンスを返します。  
+  
+ <xref:System.AddIn.Hosting.AddInToken.Activate%2A>メソッドいくつかのオーバー ロードがあります。 そのパラメーターの 1 つとして、アプリケーション ドメインの名前を必要としないオーバー ロードを使用すると、アドインの新しいアプリケーション ドメインが自動的に作成します。  
+  
+ クエリを実行する統合言語クエリ (LINQ) の拡張メソッドを使用することができます、<xref:System.AddIn.Hosting.AddInToken>のコレクションとしてトークンを扱う<xref:System.AddIn.Hosting.QualificationDataItem>構造体。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つの例が含まれています。 最初の例を使用して、選択されたアドインをアクティブに、`ChooseAddIn`メソッド、および、2 番目の例に示す、`ChooseAddIn`メソッドです。  
+  
+ **例 1**  
+  
+ 次の例では、トークンを使用してアドインをアクティブ化する方法を示します。  
+  
+ [!code-csharp[AddInP3Host#5](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#5)]
+ [!code-vb[AddInP3Host#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#5)]  
+  
+ **例 2**  
+  
+ 次の例は、カスタム`ChooseAddIn`を列挙するメソッド、<xref:System.AddIn.Hosting.AddInToken>コレクション。 ユーザーは、対応するアドインをアクティブ化するには、このコレクションからトークンを選択します。  
+  
+ [!code-csharp[AddInP3Host#13](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#13)]
+ [!code-vb[AddInP3Host#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (System.AddIn.Hosting.AddInEnvironment environment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(class System.AddIn.Hosting.AddInEnvironment environment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.AddIn.Hosting.AddInEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="environment" Type="System.AddIn.Hosting.AddInEnvironment" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="environment">アプリケーション ドメインとプロセスを元のアドインが含まれています。</param>
+        <summary>別のアドインでの環境でアドインをアクティブにします。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードは、元のアドインとしてアドインで、同じアプリケーション ドメインとプロセスがアクティブになります`environment`取得されました。  
+  
+   
+  
+## Examples  
+ 次の例は、アドインを 1 つで、指定されたセキュリティ レベルに自動的に生成されたアプリケーション ドメインでアクティブにします。 アプリケーション ドメインと同じおよびプロセスの最初でアドインを使用して、最初の 2 つ目のアドインをアクティブにし、<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクト。  
+  
+ [!code-csharp[AddInP3Host#8](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#8)]
+ [!code-vb[AddInP3Host#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (System.AddIn.Hosting.AddInSecurityLevel trustLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(valuetype System.AddIn.Hosting.AddInSecurityLevel trustLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.AddIn.Hosting.AddInSecurityLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="trustLevel" Type="System.AddIn.Hosting.AddInSecurityLevel" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="trustLevel">信頼レベルを指定する列挙値の 1 つ。</param>
+        <summary>新しいアプリケーション ドメインで指定された信頼レベルのアドインをアクティブにします。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードは、自動的に生成されたアプリケーション ドメインにアドインを読み込みます。 新しいアプリケーション ドメインの名前を指定する場合は、使用、<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInSecurityLevel%2CSystem.String%29>オーバー ロードします。  
+  
+ このメソッドは、アドイン アセンブリの場所のために、アプリケーション ドメインに対するベース ディレクトリを設定します。 場合と、構成ファイルの [addinassemblyname].dll.config に対しても検索見つかった、新しいアプリケーション ドメインの構成ファイルに設定します。  
+  
+   
+  
+## Examples  
+ 次の例は、アドインをアクティブ化する方法を示しています。 指定されたセキュリティ レベルが自動的に生成されたアプリケーション ドメインで、選択したトークンによって識別されます。  
+  
+ [!code-csharp[AddInP3Host#5](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#5)]
+ [!code-vb[AddInP3Host#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (AppDomain target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(class System.AppDomain target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.AppDomain)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="target" Type="System.AppDomain" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="target">アドインをアクティブにするアプリケーション ドメイン。</param>
+        <summary>既存のアプリケーション ドメインでアドインをアクティブにします。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ を自動的に生成されたアプリケーション ドメイン内でアクティブ化を使用して、 <xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInSecurityLevel%29> 、新しいアプリケーション ドメインで、指定されたセキュリティ レベルを生成するオーバー ロードまたは<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInSecurityLevel%2CSystem.String%29>オーバー ロードに、アプリケーション ドメインのフレンドリ名を含めます。  
+  
+   
+  
+## Examples  
+ 次の例は、別のアドインで使用されているアプリケーション ドメインでアドインをアクティブにします。 最初のアドインのコードで提供して、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#9](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#9)]
+ [!code-vb[AddInP3Host#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">完全信頼のアクセス許可を要求します。 呼び出しチェーン内の呼び出し元には、十分なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (System.Security.PermissionSet permissions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(class System.Security.PermissionSet permissions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="permissions" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="permissions">アクセス許可に追加します。</param>
+        <summary>新しいアプリケーション ドメイン内の設定の指定した権限では、アドインをアクティブになります。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードは、自動的に生成されたアプリケーション ドメインにアドインを読み込みます。 アドイン アセンブリの場所のために、アプリケーション ドメインに対するベース ディレクトリを設定します。 構成ファイルも検索`[addinassemblyname].dll.config`し、見つかった場合は、セットに新しいアプリケーション ドメインの構成ファイル。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="permissions" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (System.AddIn.Hosting.AddInProcess process, System.AddIn.Hosting.AddInSecurityLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(class System.AddIn.Hosting.AddInProcess process, valuetype System.AddIn.Hosting.AddInSecurityLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.AddIn.Hosting.AddInProcess,System.AddIn.Hosting.AddInSecurityLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="process" Type="System.AddIn.Hosting.AddInProcess" />
+        <Parameter Name="level" Type="System.AddIn.Hosting.AddInSecurityLevel" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="process">アドインをアクティブ化するための外部プロセス。</param>
+        <param name="level">信頼レベルを指定する列挙値の 1 つ。</param>
+        <summary>指定された信頼レベルで、新しいアプリケーション ドメイン内の外部プロセスでアドインをアクティブにします。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アドイン アセンブリの場所のために、アプリケーション ドメインに対するベース ディレクトリを設定します。 構成ファイルも検索`[addinassemblyname].dll.config`し、見つかった場合は、セットに新しいアプリケーション ドメインの構成ファイル。  
+  
+   
+  
+## Examples  
+ 次の例では、新しいプロセスを作成し、そのプロセスで、完全な信頼のセキュリティ レベルのアドインをアクティブにします。  
+  
+ [!code-csharp[AddInP3Host#10](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#10)]
+ [!code-vb[AddInP3Host#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (System.AddIn.Hosting.AddInProcess process, System.Security.PermissionSet permissionSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(class System.AddIn.Hosting.AddInProcess process, class System.Security.PermissionSet permissionSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.AddIn.Hosting.AddInProcess,System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="process" Type="System.AddIn.Hosting.AddInProcess" />
+        <Parameter Name="permissionSet" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="process">アドインをアクティブ化するための外部プロセス。</param>
+        <param name="permissionSet">必要なアクセス許可は、追加の許可セット。</param>
+        <summary>指定した権限セットで、新しいアプリケーション ドメイン内の外部プロセスでアドインをアクティブにします。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アドイン アセンブリの場所のために、アプリケーション ドメインに対するベース ディレクトリを設定します。 構成ファイルも検索`[addinassemblyname].dll.config`し、見つかった場合は、セットに新しいアプリケーション ドメインの構成ファイル。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Activate&lt;T&gt; (System.AddIn.Hosting.AddInSecurityLevel trustLevel, string appDomainName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Activate&lt;T&gt;(valuetype System.AddIn.Hosting.AddInSecurityLevel trustLevel, string appDomainName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Activate``1(System.AddIn.Hosting.AddInSecurityLevel,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="trustLevel" Type="System.AddIn.Hosting.AddInSecurityLevel" />
+        <Parameter Name="appDomainName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">インターフェイスまたはアドインのホスト ビューを表す抽象基本型です。</typeparam>
+        <param name="trustLevel">信頼レベルを指定する列挙値の 1 つ。</param>
+        <param name="appDomainName">新しいアプリケーション ドメインに代入するフレンドリ名。</param>
+        <summary>名と信頼レベルを指定して、新しいアプリケーション ドメインでアドインをアクティブにします。</summary>
+        <returns>アドインのホスト ビュー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション ドメインの名前を指定する必要がない場合を使用して、<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInSecurityLevel%29>オーバー ロードします。  
+  
+ このメソッドは、アドイン アセンブリの場所のために、アプリケーション ドメインに対するベース ディレクトリを設定します。 構成ファイルも検索`[addinassemblyname].dll.config`し、見つかった場合は、セットに新しいアプリケーション ドメインの構成ファイル。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddInFullName">
+      <MemberSignature Language="C#" Value="public string AddInFullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AddInFullName" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.AddInFullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前空間と、アドインの種類を取得します。</summary>
+        <value>アドインをその名前空間で完全に修飾の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される、アドインの完全な名前を取得、<xref:System.Type.FullName%2A?displayProperty=nameWithType>プロパティです。 インスタンスでこの値は常に、<xref:System.AddIn.Hosting.AddInToken>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、 <xref:System.AddIn.Hosting.AddInToken.Name%2A>、 <xref:System.AddIn.Hosting.AddInToken.AddInFullName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Description%2A>、 <xref:System.AddIn.Hosting.AddInToken.AssemblyName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Publisher%2A>、および<xref:System.AddIn.Hosting.AddInToken.Version%2A>プロパティをコンソールです。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#7](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#7)]
+ [!code-vb[AddInP3Host#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public System.Reflection.AssemblyName AssemblyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.AssemblyName AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.AssemblyName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインを含むアセンブリの名前を取得します。</summary>
+        <value>アセンブリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されることをアドインを含むアセンブリの表示名を取得、<xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>プロパティです。 インスタンスでこの値は常に、<xref:System.AddIn.Hosting.AddInToken>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、 <xref:System.AddIn.Hosting.AddInToken.Name%2A>、 <xref:System.AddIn.Hosting.AddInToken.AddInFullName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Description%2A>、 <xref:System.AddIn.Hosting.AddInToken.AssemblyName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Publisher%2A>、および<xref:System.AddIn.Hosting.AddInToken.Version%2A>プロパティをコンソールです。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#7](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#7)]
+ [!code-vb[AddInP3Host#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインの説明を取得します。</summary>
+        <value>アドインの説明または<see langword="null" />の説明が指定されていない場合、<see cref="T:System.AddIn.AddInAttribute" />属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定されているアドインの説明を取得する、<xref:System.AddIn.AddInAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、 <xref:System.AddIn.Hosting.AddInToken.Name%2A>、 <xref:System.AddIn.Hosting.AddInToken.AddInFullName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Description%2A>、 <xref:System.AddIn.Hosting.AddInToken.AssemblyName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Publisher%2A>、および<xref:System.AddIn.Hosting.AddInToken.Version%2A>プロパティをコンソールです。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#7](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#7)]
+ [!code-vb[AddInP3Host#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDirectConnect">
+      <MemberSignature Language="C#" Value="public static bool EnableDirectConnect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnableDirectConnect" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.EnableDirectConnect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、かどうかのアドインに直接接続するホスト条件を示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、アドインを直接ホストに接続する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接接続を行うため、次の条件が存在する必要があります。  
+  
+-   このプロパティに設定する必要があります`true`です。  
+  
+-   アドインでは、ホストと同じアプリケーション ドメインでなければなりません。  
+  
+-   追加のビューと、アドインのホスト ビューには、同じ型がある場合があります。  
+  
+-   パイプラインのすべてのセグメントができる必要があります。  
+  
+ 直接接続が確立されると、アドイン側アダプターとホスト側のアダプターはインスタンス化できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在のインスタンスと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトと現在のインスタンスが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.AddIn.Hosting.QualificationDataItem&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;valuetype System.AddIn.Hosting.QualificationDataItem&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.AddIn.Hosting.QualificationDataItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このトークンに関連付けられているパイプライン セグメントの修飾データの列挙子を返します。</summary>
+        <returns>現在のトークンに関連付けられているパイプライン セグメントの修飾データの反復処理に使用できる列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、トークンを扱う場合と同様の例では、認定データ項目のコレクションで、`foreach`ステートメント (`For Each` Visual basic で`for each`Visual C で)。  
+  
+ 現在のトークンに関連付けられているパイプライン セグメントの修飾データ項目を反復処理するには、このメソッドによって返された列挙子を使用します。 修飾データの各項目は、<xref:System.AddIn.Hosting.QualificationDataItem>パイプライン セグメントを識別しから名前/値ペアを含む構造体、<xref:System.AddIn.Pipeline.QualificationDataAttribute>そのセグメントに適用される属性です。  
+  
+> [!NOTE]
+>  アドイン モデルでは、アドインのホスト ビューに適用される修飾データは使用しません。 その結果は見つかりません修飾データを列挙するときにいずれかの項目が<xref:System.AddIn.Hosting.QualificationDataItem.Segment%2A>プロパティは<xref:System.AddIn.Hosting.AddInSegmentType?displayProperty=nameWithType>します。  
+  
+ また、使用することができます、<xref:System.AddIn.Hosting.AddInToken.QualificationData%2A>プロパティを入れ子になったパイプライン セグメントの修飾データを含んでいるディクショナリを取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、それぞれに関連付けられているパイプライン セグメントの修飾データを表示<xref:System.AddIn.Hosting.AddInToken>トークンのコレクション。  
+  
+ [!code-csharp[AddInP3Host#12](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#12)]
+ [!code-vb[AddInP3Host#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トークンのハッシュ関数として機能します。</summary>
+        <returns>現在のトークンのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインの名前を取得します。</summary>
+        <value>アドインの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定されているアドインの名前を取得する、<xref:System.AddIn.AddInAttribute>属性。 インスタンスでこの値は常に、<xref:System.AddIn.Hosting.AddInToken>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、 <xref:System.AddIn.Hosting.AddInToken.Name%2A>、 <xref:System.AddIn.Hosting.AddInToken.AddInFullName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Description%2A>、 <xref:System.AddIn.Hosting.AddInToken.AssemblyName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Publisher%2A>、および<xref:System.AddIn.Hosting.AddInToken.Version%2A>プロパティをコンソールです。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#7](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#7)]
+ [!code-vb[AddInP3Host#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Publisher">
+      <MemberSignature Language="C#" Value="public string Publisher { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Publisher" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.Publisher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインの発行元を取得します。</summary>
+        <value>アドインの発行元または<see langword="null" />でパブリッシャーを指定しない場合、<see cref="T:System.AddIn.AddInAttribute" />属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定されているアドインの発行元を取得する、<xref:System.AddIn.AddInAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、 <xref:System.AddIn.Hosting.AddInToken.Name%2A>、 <xref:System.AddIn.Hosting.AddInToken.AddInFullName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Description%2A>、 <xref:System.AddIn.Hosting.AddInToken.AssemblyName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Publisher%2A>、および<xref:System.AddIn.Hosting.AddInToken.Version%2A>プロパティをコンソールです。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#7](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#7)]
+ [!code-vb[AddInP3Host#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QualificationData">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.AddIn.Hosting.AddInSegmentType,System.Collections.Generic.IDictionary&lt;string,string&gt;&gt; QualificationData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;valuetype System.AddIn.Hosting.AddInSegmentType, class System.Collections.Generic.IDictionary`2&lt;string, string&gt;&gt; QualificationData" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.QualificationData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.AddIn.Hosting.AddInSegmentType,System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のトークンに関連付けられているパイプライン内のセグメントに関するデータのディクショナリを取得します。</summary>
+        <value>各セグメントの修飾データを表すペアでありパイプライン セグメントの値と名前/値のディクショナリのキーを持つディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、パイプラインでのセグメントに適用されているデータを取得する、<xref:System.AddIn.Pipeline.QualificationDataAttribute>属性。 このデータを使用して、識別し、パイプラインを構成する型を扱うことができます。  
+  
+ このプロパティは、辞書のディクショナリを返します。 先頭のディクショナリは、常に 6 個のキーを持ちます。 各キーが、<xref:System.AddIn.Hosting.AddInSegmentType>パイプライン内のセグメントの値。 各値は、ジェネリック<xref:System.Collections.Generic.IDictionary%602>のセグメントの認定のデータを含む文字列のキーを含む文字列。  
+  
+ キーとこれらの内部ディクショナリの値は名前と値で指定、<xref:System.AddIn.Pipeline.QualificationDataAttribute>セグメントの属性です。 セグメントには、修飾データが適用されていない、その辞書が空です。  
+  
+> [!NOTE]
+>  アドイン モデルでは、アドインのホスト ビューに適用される修飾データは使用しません。 その結果のディクショナリ<xref:System.AddIn.Hosting.AddInSegmentType?displayProperty=nameWithType>は常に空です。  
+  
+ 代わりに、列挙することによって修飾データを取得できます、<xref:System.AddIn.Hosting.AddInToken>のコレクションの場合と同様<xref:System.AddIn.Hosting.QualificationDataItem>構造体を使用して、`foreach`ステートメント (`For Each` Visual basic で`for each`Visual C で)。 提示された例を参照してください、<xref:System.AddIn.Hosting.QualificationDataItem>構造体。  
+  
+   
+  
+## Examples  
+ 次の例では、アドインの認定データを確認する方法を示します。  
+  
+ [!code-csharp[AddInP3Host#11](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#11)]
+ [!code-vb[AddInP3Host#11](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このトークンに関連付けられているパイプライン セグメントの修飾データの列挙子を返します。</summary>
+        <returns>現在のトークンに関連付けられているパイプライン セグメントの修飾データの反復処理に使用できる列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法では、トークンでたとえば修飾データ項目のコレクションと同様に処理される、`foreach`ステートメント (`For Each` Visual basic で`for each`Visual C で)。  
+  
+ 現在のトークンに関連付けられているパイプライン セグメントの修飾データ項目を反復処理するには、このメソッドによって返された列挙子を使用します。 修飾データの各項目は、<xref:System.AddIn.Hosting.QualificationDataItem>パイプライン セグメントを識別しから名前/値ペアを含む構造体、<xref:System.AddIn.Pipeline.QualificationDataAttribute>そのセグメントに適用される属性です。  
+  
+> [!NOTE]
+>  アドイン モデルでは、アドインのホスト ビューに適用される修飾データは使用しません。 その結果は見つかりません修飾データを列挙するときにいずれかの項目が<xref:System.AddIn.Hosting.QualificationDataItem.Segment%2A>プロパティは<xref:System.AddIn.Hosting.AddInSegmentType?displayProperty=nameWithType>します。  
+  
+ また、使用することができます、<xref:System.AddIn.Hosting.AddInToken.QualificationData%2A>プロパティを入れ子になったパイプライン セグメントの認定データを含むディクショナリを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInToken.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トークンを表す文字列を返します。</summary>
+        <returns>トークンを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInToken.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されている、アドインのバージョンを取得、<see cref="T:System.AddIn.AddInAttribute" />属性。</summary>
+        <value>アドインのバージョンまたは<see langword="null" />でバージョン番号が指定されていない場合、<see cref="T:System.AddIn.AddInAttribute" />属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン番号は、自由形式文字列です。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、 <xref:System.AddIn.Hosting.AddInToken.Name%2A>、 <xref:System.AddIn.Hosting.AddInToken.AddInFullName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Description%2A>、 <xref:System.AddIn.Hosting.AddInToken.AssemblyName%2A>、 <xref:System.AddIn.Hosting.AddInToken.Publisher%2A>、および<xref:System.AddIn.Hosting.AddInToken.Version%2A>プロパティをコンソールです。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ [!code-csharp[AddInP3Host#7](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#7)]
+ [!code-vb[AddInP3Host#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

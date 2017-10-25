@@ -1,0 +1,1289 @@
+<Type Name="WSTrustChannel" FullName="System.ServiceModel.Security.WSTrustChannel">
+  <TypeSignature Language="C#" Value="public class WSTrustChannel : System.ServiceModel.Channels.IChannel, System.ServiceModel.Security.IWSTrustChannelContract" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSTrustChannel extends System.Object implements class System.ServiceModel.Channels.IChannel, class System.ServiceModel.ICommunicationObject, class System.ServiceModel.Security.IWSTrustChannelContract, class System.ServiceModel.Security.IWSTrustContract" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.WSTrustChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Security.IWSTrustChannelContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Ws-trust メッセージをセキュリティ トークン サービス (STS) に送信するために使用するチャネルを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannel (System.ServiceModel.Security.WSTrustChannelFactory factory, System.ServiceModel.Security.IWSTrustChannelContract inner, System.ServiceModel.Security.TrustVersion trustVersion, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context, System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer requestSerializer, System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer responseSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Security.WSTrustChannelFactory factory, class System.ServiceModel.Security.IWSTrustChannelContract inner, class System.ServiceModel.Security.TrustVersion trustVersion, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context, class System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer requestSerializer, class System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer responseSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.#ctor(System.ServiceModel.Security.WSTrustChannelFactory,System.ServiceModel.Security.IWSTrustChannelContract,System.ServiceModel.Security.TrustVersion,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext,System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer,System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="factory" Type="System.ServiceModel.Security.WSTrustChannelFactory" />
+        <Parameter Name="inner" Type="System.ServiceModel.Security.IWSTrustChannelContract" />
+        <Parameter Name="trustVersion" Type="System.ServiceModel.Security.TrustVersion" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+        <Parameter Name="requestSerializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" />
+        <Parameter Name="responseSerializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="factory"><see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" />チャネルを作成することができます。</param>
+        <param name="inner"><see cref="T:System.ServiceModel.Security.IWSTrustChannelContract" />チャネルは送信および受信を使用して<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</param>
+        <param name="trustVersion">シリアル化するため、チャネルが使用して、Ws-trust のバージョン<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</param>
+        <param name="context"><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> Ws-trust メッセージをシリアル化するため、チャネルが使用されます。</param>
+        <param name="requestSerializer"><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" /> Ws-trust 要求メッセージをシリアル化するため、チャネルが使用されます。</param>
+        <param name="responseSerializer"><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" /> Ws-trust 応答メッセージをシリアル化するため、チャネルが使用されます。</param>
+        <summary><see cref="T:System.ServiceModel.Security.WSTrustChannel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通信オブジェクトを、現在の状態から Closed 状態に直ちに遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCancel">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginCancel (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCancel(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginCancel(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />非同期の取り消し操作の完了の通知を受信するデリゲート。</param>
+        <param name="state">非同期の取り消し操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust Cancel メッセージを送信する非同期操作を開始<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns>非同期の取り消し操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCancel">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginCancel (System.ServiceModel.Channels.Message message, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCancel(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginCancel(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />非同期の取り消し操作の完了の通知を受信するデリゲート。</param>
+        <param name="asyncState">非同期の取り消し操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust Cancel メッセージを送信する非同期操作を開始<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns>非同期の取り消し操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginClose">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginClose (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginClose(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginClose(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">非同期のクローズ操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期のクローズ操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>通信オブジェクトをクローズするための非同期操作を開始します。</summary>
+        <returns>非同期の close 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginClose">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginClose (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginClose(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">クローズ操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期のクローズ操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期のクローズ操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>タイムアウトを指定して、通信オブジェクトをクローズするための非同期操作を開始します。</summary>
+        <returns>非同期の close 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginIssue">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginIssue (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginIssue(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginIssue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />問題の非同期操作の完了の通知を受信するデリゲート。</param>
+        <param name="asyncState">問題の非同期操作に関連付けられている状態情報を格納する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust Issue メッセージを送信する非同期操作を開始<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns><see cref="T:System.IAsyncResult" />問題の非同期操作を参照します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginIssue">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginIssue (System.ServiceModel.Channels.Message message, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginIssue(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginIssue(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />問題の非同期操作の完了の通知を受信するデリゲート。</param>
+        <param name="asyncState">問題の非同期操作に関連付けられている状態情報を格納する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust Issue メッセージを送信する非同期操作を開始<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.IAsyncResult" />問題の非同期操作を参照します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginOpen">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginOpen (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginOpen(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginOpen(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">非同期のクローズ操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期のクローズ操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>通信オブジェクトを開くための非同期操作を開始します。</summary>
+        <returns>非同期の open 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginOpen">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginOpen (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginOpen(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">オープン操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期のクローズ操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期のクローズ操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>指定した時間内で通信オブジェクトを開くための非同期操作を開始します。</summary>
+        <returns>非同期の open 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRenew">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginRenew (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginRenew(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginRenew(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />非同期の完了の通知を受信するデリゲートが操作を更新します。</param>
+        <param name="state">非同期に関連付けられている状態情報を格納する、アプリケーションで指定されたオブジェクトは、操作を更新します。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust 更新メッセージを送信する非同期操作を開始<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期の参照が操作を更新します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRenew">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginRenew (System.ServiceModel.Channels.Message message, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginRenew(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginRenew(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />非同期の完了の通知を受信するデリゲートが操作を更新します。</param>
+        <param name="asyncState">非同期に関連付けられている状態情報を格納する、アプリケーションで指定されたオブジェクトは、操作を更新します。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust 更新メッセージを送信する非同期操作を開始<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期の参照が操作を更新します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginValidate">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginValidate (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginValidate(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginValidate(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />非同期の完了の通知を受信するデリゲートが操作を検証します。</param>
+        <param name="state">非同期に関連付けられている状態情報を格納する、アプリケーションで指定されたオブジェクトは、操作を検証します。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust 検証メッセージを送信する非同期操作を開始<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期の参照が、操作を検証します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginValidate">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginValidate (System.ServiceModel.Channels.Message message, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginValidate(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.BeginValidate(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />非同期の完了の通知を受信するデリゲートが操作を検証します。</param>
+        <param name="asyncState">非同期に関連付けられている状態情報を格納する、アプリケーションで指定されたオブジェクトは、操作を検証します。</param>
+        <summary>使用して、指定されたエンドポイントに Ws-trust 検証メッセージを送信する非同期操作を開始<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期の参照が、操作を検証します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Cancel (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Cancel(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Cancel(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <summary>指定されたを使用するエンドポイントに Ws-trust Cancel メッセージを送信<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Cancel (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Cancel(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Cancel(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <summary>指定されたを使用するエンドポイントに Ws-trust Cancel メッセージを送信<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Channel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IChannel Channel { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.IChannel Channel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.Channel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの送受信に使用されるチャネル オブジェクトを設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Channels.IChannel" />送受信するために使用されるオブジェクト<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelFactory">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.WSTrustChannelFactory ChannelFactory { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.WSTrustChannelFactory ChannelFactory" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.ChannelFactory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.WSTrustChannelFactory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチャネルを作成するファクトリを設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" />チャネル オブジェクトを作成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通信オブジェクトを、現在の状態から Closed 状態に遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Close(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">オープン操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>指定した時間内で、通信オブジェクトを現在の状態から Closed 状態に遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Closed">
+      <MemberSignature Language="C#" Value="public event EventHandler Closed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Closed" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Security.WSTrustChannel.Closed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが、Closing 状態から Closed 状態への通信状態の遷移を完了したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Closing">
+      <MemberSignature Language="C#" Value="public event EventHandler Closing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Closing" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Security.WSTrustChannel.Closing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが初めて Closing 状態に遷移するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contract">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.IWSTrustChannelContract Contract { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.IWSTrustChannelContract Contract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.Contract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.IWSTrustChannelContract</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージを送受信するため、チャネルを使用してチャネル コントラクトを設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.IWSTrustChannelContract" />チャネル コントラクトを定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRequest">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.Channels.Message CreateRequest (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, string requestType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.Message CreateRequest(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, string requestType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.CreateRequest(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="requestType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="request"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />をメッセージにシリアル化します。</param>
+        <param name="requestType">シリアル化する Ws-trust 要求の種類。 このパラメーターは文字列定数のいずれかにする必要があります<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestTypes" />です。</param>
+        <summary>作成、 <see cref="T:System.ServiceModel.Channels.Message" /> Ws-trust RST メッセージを表すオブジェクト。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> Ws-trust メッセージを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCancel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndCancel (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message EndCancel(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndCancel(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />未処理の非同期送信要求への参照。</param>
+        <summary>によって開始された Ws-trust Cancel メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginCancel(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCancel">
+      <MemberSignature Language="C#" Value="public void EndCancel (IAsyncResult result, out System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse rstr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndCancel(class System.IAsyncResult result, [out] class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp; rstr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndCancel(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="rstr" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" />未処理の非同期送信要求への参照。</param>
+        <param name="rstr"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</param>
+        <summary>によって開始された Ws-trust Cancel メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginCancel(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndClose">
+      <MemberSignature Language="C#" Value="public void EndClose (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndClose(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndClose(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドへの呼び出しで返された <see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginClose(System.AsyncCallback,System.Object)" />。</param>
+        <summary>通信オブジェクトをクローズするための非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndIssue">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndIssue (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message EndIssue(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndIssue(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />未処理の非同期送信要求への参照。</param>
+        <summary>によって開始された Ws-trust Issue メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginIssue(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndIssue">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken EndIssue (IAsyncResult result, out System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse rstr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken EndIssue(class System.IAsyncResult result, [out] class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp; rstr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndIssue(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="rstr" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">未処理の非同期送信要求への参照。</param>
+        <param name="rstr"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</param>
+        <summary>によって開始された Ws-trust Issue メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginIssue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <returns>A <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> STS により発行されたトークンを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndOpen">
+      <MemberSignature Language="C#" Value="public void EndOpen (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndOpen(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndOpen(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドへの呼び出しで返された <see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginOpen(System.AsyncCallback,System.Object)" />。</param>
+        <summary>通信オブジェクトをオープンするための非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRenew">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndRenew (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message EndRenew(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndRenew(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />未処理の非同期送信要求への参照。</param>
+        <summary>によって開始された Ws-trust 更新メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginRenew(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRenew">
+      <MemberSignature Language="C#" Value="public void EndRenew (IAsyncResult result, out System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse rstr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndRenew(class System.IAsyncResult result, [out] class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp; rstr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndRenew(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="rstr" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">未処理の非同期送信要求への参照。</param>
+        <param name="rstr"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</param>
+        <summary>によって開始された Ws-trust 更新メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginRenew(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndValidate">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndValidate (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message EndValidate(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndValidate(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />未処理の非同期送信要求への参照。</param>
+        <summary>によって開始される Ws-trust の検証メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginValidate(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndValidate">
+      <MemberSignature Language="C#" Value="public void EndValidate (IAsyncResult result, out System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse rstr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndValidate(class System.IAsyncResult result, [out] class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp; rstr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.EndValidate(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="rstr" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">未処理の非同期送信要求への参照。</param>
+        <param name="rstr"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</param>
+        <summary>によって開始される Ws-trust の検証メッセージを送信する非同期操作を完了、<see cref="M:System.ServiceModel.Security.WSTrustChannel.BeginValidate(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Faulted">
+      <MemberSignature Language="C#" Value="public event EventHandler Faulted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Faulted" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Security.WSTrustChannel.Faulted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが初めて Faulted 状態に遷移するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetProperty&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T GetProperty&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.GetProperty``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">メソッドが照会している、型指定されたオブジェクト。</typeparam>
+        <summary>チャネル スタックの適切な層から、要求のあった型指定されたオブジェクト (ある場合) を返します。</summary>
+        <returns>型指定されたオブジェクトの要求があるかどうかまたは<see langword="null" />されていない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequestAction">
+      <MemberSignature Language="C#" Value="protected static string GetRequestAction (string requestType, System.ServiceModel.Security.TrustVersion trustVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string GetRequestAction(string requestType, class System.ServiceModel.Security.TrustVersion trustVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.GetRequestAction(System.String,System.ServiceModel.Security.TrustVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestType" Type="System.String" />
+        <Parameter Name="trustVersion" Type="System.ServiceModel.Security.TrustVersion" />
+      </Parameters>
+      <Docs>
+        <param name="requestType">Ws-trust 要求の種類。 このパラメーターは文字列定数のいずれかにする必要があります、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestTypes" />クラスです。</param>
+        <param name="trustVersion"><see cref="P:System.ServiceModel.Security.WSTrustChannel.TrustVersion" />要求のです。</param>
+        <summary>指定された要求の種類および Ws-trust のバージョンに対応する SOAP の Ws-addressing アクションを取得します。</summary>
+        <returns>Ws-addressing アクションを表す URI を含む文字列です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFromResponse">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken GetTokenFromResponse (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken GetTokenFromResponse(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.GetTokenFromResponse(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="response" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />
+      </Parameters>
+      <Docs>
+        <param name="request">A<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を表すセキュリティ トークンを要求に使用される要求。</param>
+        <param name="response">A<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />セキュリティ トークンを含む応答を表すです。</param>
+        <summary>RSTR からセキュリティ トークンを取得します。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />解析済みセキュリティ トークンを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="response" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Issue">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken Issue (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken Issue(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Issue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <summary>エンドポイントの指定を使用して STS に Ws-trust Issue メッセージを送信<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns>A <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> STS により発行されたトークンを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issue">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Issue (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Issue(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Issue(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <summary>エンドポイントの指定を使用して STS に Ws-trust Issue メッセージを送信<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issue">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken Issue (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, out System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse rstr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken Issue(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst, [out] class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp; rstr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Issue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="rstr" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <param name="rstr"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS からの応答を表すです。</param>
+        <summary>エンドポイントの指定を使用して STS に Ws-trust Issue メッセージを送信<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />と<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns>A <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> STS により発行されたトークンを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通信オブジェクトを、Created 状態から Opened 状態に遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public void Open (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Open(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Open(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">オープン操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>指定した時間内で、通信オブジェクトを Created 状態から Opened 状態に遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opened">
+      <MemberSignature Language="C#" Value="public event EventHandler Opened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Opened" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Security.WSTrustChannel.Opened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが、Opening 状態から Opened 状態への通信状態の遷移を完了したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opening">
+      <MemberSignature Language="C#" Value="public event EventHandler Opening;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Opening" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Security.WSTrustChannel.Opening" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが初めて Opening 状態に遷移するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadResponse">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse ReadResponse (System.ServiceModel.Channels.Message response);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse ReadResponse(class System.ServiceModel.Channels.Message response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.ReadResponse(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="response"><see cref="T:System.ServiceModel.Channels.Message" /> Ws-trust エンドポイントから受信します。</param>
+        <summary>逆シリアル化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />から、 <see cref="T:System.ServiceModel.Channels.Message" /> Ws-trust エンドポイントから受信します。</summary>
+        <returns><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />応答から逆シリアル化します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Renew">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Renew (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Renew(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Renew(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <summary>指定されたを使用するエンドポイントに Ws-trust 更新メッセージを送信<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Renew">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Renew (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Renew(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Renew(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <summary>指定されたを使用するエンドポイントに Ws-trust 更新メッセージを送信<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.CommunicationState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.CommunicationState State" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信指向オブジェクトの現在の状態を取得します。</summary>
+        <value>A<see cref="T:System.ServiceModel.CommunicationState" />チャネルの現在の状態を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.TrustVersion TrustVersion { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.TrustVersion TrustVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.TrustVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.TrustVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化するためこのチャネルを使用して Ws-trust のバージョン取得または設定<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <value><see cref="T:System.ServiceModel.Security.TrustVersion" /> (URI) が、チャネルで使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Validate (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Validate(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken rst) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Validate(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rst" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="rst"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を STS に要求を表すです。</param>
+        <summary>指定されたを使用するエンドポイントに Ws-trust 検証メッセージを送信<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</summary>
+        <returns><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" /> STS 応答を表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Validate (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Validate(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannel.Validate(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> STS への要求の指示を含むです。</param>
+        <summary>指定されたを使用するエンドポイントに Ws-trust 検証メッセージを送信<see cref="T:System.ServiceModel.Channels.Message" />オブジェクト。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> STS からが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustRequestSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer WSTrustRequestSerializer { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer WSTrustRequestSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.WSTrustRequestSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" /> Ws-trust 要求メッセージをシリアル化するため、チャネルを使用しています。</summary>
+        <value><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" />チャネルによって使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustResponseSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer WSTrustResponseSerializer { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer WSTrustResponseSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.WSTrustResponseSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" /> Ws-trust 応答メッセージをシリアル化するため、チャネルを使用しています。</summary>
+        <value><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" />チャネルによって使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustSerializationContext">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext WSTrustSerializationContext { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext WSTrustSerializationContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannel.WSTrustSerializationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> Ws-trust メッセージをシリアル化するため、チャネルを使用しています。</summary>
+        <value><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />チャネルによって使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーが保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

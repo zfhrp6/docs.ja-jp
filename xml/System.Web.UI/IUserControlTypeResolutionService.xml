@@ -1,0 +1,54 @@
+<Type Name="IUserControlTypeResolutionService" FullName="System.Web.UI.IUserControlTypeResolutionService">
+  <TypeSignature Language="C#" Value="public interface IUserControlTypeResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUserControlTypeResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IUserControlTypeResolutionService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>クラスを実装する必要があります指定されたタグ プレフィックスとタグの名前をコントロールの型を取得するメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページの開発者およびコントロールの作成者は使用しないでください、<xref:System.Web.UI.IUserControlTypeResolutionService>インターフェイスです。 <xref:System.Web.UI.IUserControlTypeResolutionService>返すツール開発者は、インターフェイスが実装されている、<xref:System.Type>タグ プレフィックスとタグ名で識別されるコントロールのです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string tagPrefix, string tagName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string tagPrefix, string tagName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IUserControlTypeResolutionService.GetType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tagPrefix" Type="System.String" />
+        <Parameter Name="tagName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tagPrefix">ASP.NET タグの解析済みのプレフィックス。</param>
+        <param name="tagName">解析対象の ASP.NET タグの名前。</param>
+        <summary>解析された ASP.NET タグ プレフィックスとタグの名前に基づいて型を取得します。</summary>
+        <returns>A<see cref="T:System.Type" />コントロール、プレフィックスとタグを特定の型を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー環境では、デザイン時にユーザー コントロールの種類を解決するのには ASP.NET パーサーとデザイナーのための手段を提供するには、このメソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

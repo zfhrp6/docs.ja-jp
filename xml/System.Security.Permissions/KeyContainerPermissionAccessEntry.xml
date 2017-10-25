@@ -1,0 +1,463 @@
+<Type Name="KeyContainerPermissionAccessEntry" FullName="System.Security.Permissions.KeyContainerPermissionAccessEntry">
+  <TypeSignature Language="C#" Value="public sealed class KeyContainerPermissionAccessEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit KeyContainerPermissionAccessEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のキー コンテナーのアクセス権を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアクセス許可は、キーの数が少ないが関係しているか、アクセスは、いくつかのキーのみを許可する場合に、キー コンテナーを簡単に管理できるようにするものです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyContainerPermissionAccessEntry (System.Security.Cryptography.CspParameters parameters, System.Security.Permissions.KeyContainerPermissionFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.CspParameters parameters, valuetype System.Security.Permissions.KeyContainerPermissionFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.KeyContainerPermissionAccessEntry.#ctor(System.Security.Cryptography.CspParameters,System.Security.Permissions.KeyContainerPermissionFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Security.Cryptography.CspParameters" />
+        <Parameter Name="flags" Type="System.Security.Permissions.KeyContainerPermissionFlags" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">A<see cref="T:System.Security.Cryptography.CspParameters" />暗号化サービス プロバイダー (CSP) パラメーターを含むオブジェクトです。</param>
+        <param name="flags"><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" />クラス、アクセス許可と指定した暗号化サービス プロバイダー (CSP) パラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで識別される特定のキー コンテナーが割り当てられるへのアクセス権を許可する、<xref:System.Security.Cryptography.CspParameters>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.KeyContainerPermissionAccessEntry.%23ctor%28System.Security.Cryptography.CspParameters%2CSystem.Security.Permissions.KeyContainerPermissionFlags%29>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.KeyContainerPermission#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/CPP/keycontainerpermission.cpp#3)]
+ [!code-csharp[System.Security.Permissions.KeyContainerPermission#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/CS/keycontainerpermission.cs#3)]
+ [!code-vb[System.Security.Permissions.KeyContainerPermission#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyContainerPermissionAccessEntry (string keyContainerName, System.Security.Permissions.KeyContainerPermissionFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string keyContainerName, valuetype System.Security.Permissions.KeyContainerPermissionFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.KeyContainerPermissionAccessEntry.#ctor(System.String,System.Security.Permissions.KeyContainerPermissionFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyContainerName" Type="System.String" />
+        <Parameter Name="flags" Type="System.Security.Permissions.KeyContainerPermissionFlags" />
+      </Parameters>
+      <Docs>
+        <param name="keyContainerName">キー コンテナーの名前。</param>
+        <param name="flags"><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" />クラス、指定したキー コンテナー名およびアクセス許可を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、名前によって識別される特定のキー コンテナーのアクセス権を指定できます。アスタリスクを使用して ("*") をすべてのキー コンテナーを表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.KeyContainerPermissionAccessEntry.%23ctor%28System.String%2CSystem.Security.Permissions.KeyContainerPermissionFlags%29>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.KeyContainerPermission#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/CPP/keycontainerpermission.cpp#2)]
+ [!code-csharp[System.Security.Permissions.KeyContainerPermission#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/CS/keycontainerpermission.cs#2)]
+ [!code-vb[System.Security.Permissions.KeyContainerPermission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyContainerPermissionAccessEntry (string keyStore, string providerName, int providerType, string keyContainerName, int keySpec, System.Security.Permissions.KeyContainerPermissionFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string keyStore, string providerName, int32 providerType, string keyContainerName, int32 keySpec, valuetype System.Security.Permissions.KeyContainerPermissionFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.KeyContainerPermissionAccessEntry.#ctor(System.String,System.String,System.Int32,System.String,System.Int32,System.Security.Permissions.KeyContainerPermissionFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyStore" Type="System.String" />
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="providerType" Type="System.Int32" />
+        <Parameter Name="keyContainerName" Type="System.String" />
+        <Parameter Name="keySpec" Type="System.Int32" />
+        <Parameter Name="flags" Type="System.Security.Permissions.KeyContainerPermissionFlags" />
+      </Parameters>
+      <Docs>
+        <param name="keyStore">キー ストアの名前です。</param>
+        <param name="providerName">プロバイダーの名前。</param>
+        <param name="providerType">プロバイダーの種類のコードです。 参照してください、<see cref="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.ProviderType" />プロパティの値。</param>
+        <param name="keyContainerName">キー コンテナーの名前。</param>
+        <param name="keySpec">キーの仕様。 参照してください、<see cref="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.KeySpec" />プロパティの値。</param>
+        <param name="flags"><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" />指定したプロパティ値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、特定のキー コンテナーが割り当てられるへのアクセス権を許可します。 A`keySpec`または`providerType`値 – 1 は、すべてのキーの仕様またはプロバイダーの種類を表します。 A `keyStore`、 `providerName`、または`keyContainerName`の"*"すべてのキー ストア、プロバイダ、またはキー コンテナーを表します。 A`providerName`または`keyContainerName`つまり`null`すべてのプロバイダーまたはキー コンテナーを表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.KeyContainerPermissionAccessEntry.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Security.Permissions.KeyContainerPermissionFlags%29>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.KeyContainerPermission#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/CPP/keycontainerpermission.cpp#4)]
+ [!code-csharp[System.Security.Permissions.KeyContainerPermission#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/CS/keycontainerpermission.cs#4)]
+ [!code-vb[System.Security.Permissions.KeyContainerPermission#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.KeyContainerPermission/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.KeyContainerPermissionAccessEntry.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> Currentinstance と比較するオブジェクト。</param>
+        <summary>指定するかどうか、指定した<see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" />オブジェクトが現在のインスタンスと等しい。</summary>
+        <returns>
+          指定した <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> が現在の <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.KeyContainerPermissionAccessEntry.Equals%2A>メソッドは、2 つのプロパティを比較して<xref:System.Security.Permissions.KeyContainerPermissionAccessEntry>それらが等しいかを決定するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.KeyContainerPermissionFlags Flags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.KeyContainerPermissionFlags Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.KeyContainerPermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー コンテナーのアクセス許可を設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 値のビットごとの組み合わせ。 既定値は、<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.NoFlags" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  これらのフラグの多くは強力であり、信頼性の高いコードにのみ付与する必要がありますのキー コンテナーへのアクセスを許可します。  
+  
+ 最も強力なフラグは<xref:System.Security.Permissions.KeyContainerPermissionFlags.Create>、 <xref:System.Security.Permissions.KeyContainerPermissionFlags.Delete>、 <xref:System.Security.Permissions.KeyContainerPermissionFlags.Import>、 <xref:System.Security.Permissions.KeyContainerPermissionFlags.Export>、 <xref:System.Security.Permissions.KeyContainerPermissionFlags.Sign>、 <xref:System.Security.Permissions.KeyContainerPermissionFlags.Decrypt>、および<xref:System.Security.Permissions.KeyContainerPermissionFlags.AllFlags>です。 これらのフラグの使用によって生じる特定の脅威は、個々 のフラグの説明を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.KeyContainerPermissionAccessEntry.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ アルゴリズムやハッシュ テーブルなどのデータ構造で使用するために適切な現在のインスタンスのハッシュ コードを取得します。</summary>
+        <returns>現在の <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ関数として機能、<xref:System.Security.Permissions.KeyContainerPermissionAccessEntry>ハッシュ ハッシュ テーブルなどのアルゴリズムとデータ構造での使用に適しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyContainerName">
+      <MemberSignature Language="C#" Value="public string KeyContainerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.KeyContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー コンテナー名を設定します。</summary>
+        <value>キー コンテナーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を使用して"*"に指定されたプロバイダー名およびプロバイダーの種類内ですべてのキー コンテナー アクセス エントリを適用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySpec">
+      <MemberSignature Language="C#" Value="public int KeySpec { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySpec" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.KeySpec" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキーの仕様を設定します。</summary>
+        <value>Wincrypt.h ヘッダー ファイルで定義されている AT_ 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの有効な値は、AT_KEYEXCHANGE (1) AT_SIGNATURE (2)。 既定値は、すべての可能な値を表す、– 1 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyStore">
+      <MemberSignature Language="C#" Value="public string KeyStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyStore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.KeyStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー ストアの名前を設定します。</summary>
+        <value>キー ストアの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な値は"User"、「コンピューター」または"*"です。 場合`null`が指定値を設定"\*"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロバイダー名を設定します。</summary>
+        <value>プロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダー名の例は、"Microsoft Enhanced Cryptographic Provider"です。 場合`null`を指定すると、強化された暗号化サービス プロバイダーの名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderType">
+      <MemberSignature Language="C#" Value="public int ProviderType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProviderType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.KeyContainerPermissionAccessEntry.ProviderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロバイダーの種類を設定します。</summary>
+        <value>Wincrypt.h ヘッダー ファイルで定義されている PROV_ 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、すべての可能な値を表す、– 1 です。  
+  
+ Wincrypt.h ヘッダー ファイルでは、次の値を定義します。  
+  
+-   \#PROV_RSA_FULL 1 を定義します。  
+  
+-   \#PROV_RSA_SIG 2 を定義します。  
+  
+-   \#PROV_DSS 3 を定義します。  
+  
+-   \#PROV_FORTEZZA 4 を定義します。  
+  
+-   \#PROV_MS_EXCHANGE 5 を定義します。  
+  
+-   \#PROV_SSL 6 を定義します。  
+  
+-   \#PROV_RSA_SCHANNEL 12 を定義します。  
+  
+-   \#PROV_DSS_DH 13 を定義します。  
+  
+-   \#PROV_EC_ECDSA_SIG 14 を定義します。  
+  
+-   \#PROV_EC_ECNRA_SIG 15 を定義します。  
+  
+-   \#PROV_EC_ECDSA_FULL 16 を定義します。  
+  
+-   \#PROV_EC_ECNRA_FULL 17 を定義します。  
+  
+-   \#PROV_DH_SCHANNEL 18 を定義します。  
+  
+-   \#PROV_SPYRUS_LYNKS 20 を定義します。  
+  
+-   \#PROV_RNG 21 を定義します。  
+  
+-   \#PROV_INTEL_SEC 22 を定義します。  
+  
+-   \#PROV_REPLACE_OWF 23 を定義します。  
+  
+-   \#PROV_RSA_AES 24 を定義します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果のエントリは無制限にアクセスします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

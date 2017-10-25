@@ -1,0 +1,40 @@
+<Type Name="WebBrowserNavigatingEventHandler" FullName="System.Windows.Forms.WebBrowserNavigatingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WebBrowserNavigatingEventHandler(object sender, WebBrowserNavigatingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebBrowserNavigatingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.WebBrowserNavigatingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.WebBrowserNavigatingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.WebBrowserNavigatingEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Forms.WebBrowser.Navigating" />のイベント、<see cref="T:System.Windows.Forms.WebBrowser" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ハンドラーを使用して、 <xref:System.Windows.Forms.WebBrowser.Navigating?displayProperty=nameWithType> Web ページのフォームが入力されていない場合は、ナビゲーションをキャンセルするイベントです。 <xref:System.Windows.Forms.WebBrowser.Document%2A?displayProperty=nameWithType>フォーム入力フィールドが値を格納するかどうかを決定するプロパティを使用します。 この例では、フォームが含まれている必要があります、<xref:System.Windows.Forms.WebBrowser>と呼ばれるコントロール`webBrowser1`です。  
+  
+ [!code-csharp[WebBrowserMisc#30](~/samples/snippets/csharp/VS_Snippets_Winforms/WebBrowserMisc/CS/WebBrowserMisc.cs#30)]
+ [!code-vb[WebBrowserMisc#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WebBrowserMisc/vb/WebBrowserMisc.vb#30)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

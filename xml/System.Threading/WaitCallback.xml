@@ -1,0 +1,77 @@
+<Type Name="WaitCallback" FullName="System.Threading.WaitCallback">
+  <TypeSignature Language="C#" Value="public delegate void WaitCallback(object state);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WaitCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.WaitCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="state" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="state">コールバック メソッドが使用する情報を格納したオブジェクト。</param>
+    <summary>スレッド プール スレッドが実行するコールバック メソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.WaitCallback>上で実行するコールバック メソッドを表す、<xref:System.Threading.ThreadPool>スレッドです。 コールバック メソッドを渡すことによって、デリゲートを作成、<xref:System.Threading.WaitCallback>コンス トラクターです。 メソッドには、次に示す署名が必要です。  
+  
+ キューに渡すことによって、タスクの実行、<xref:System.Threading.WaitCallback>に委任<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType>です。 スレッド プールのスレッドが利用可能になったら、コールバック メソッドを実行します。  
+  
+> [!NOTE]
+>  Visual Basic の場合は省略できます、<xref:System.Threading.WaitCallback>コンス トラクター、および使用するだけで、`AddressOf`演算子にコールバック メソッドを渡すときに<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>です。 Visual Basic では、適切なデリゲート コンス トラクターは、自動的に呼び出します。  
+  
+ コールバック メソッドに情報を渡す場合は、必要な情報を格納しているオブジェクトを作成しに渡すこと<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>ときにキューにタスクを実行します。 コールバック メソッドが実行されるたびに、`state`パラメーターには、このオブジェクトが含まれています。  
+  
+ 詳細については、スレッド プールのスレッドを同期するためにコールバックを使用して、次を参照してください。 [、マネージ スレッド プール](~/docs/standard/threading/the-managed-thread-pool.md)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つの例が含まれています。 最初の例では、単純なタスクの実行、スレッド プールのキュー方法を示します。  
+  
+ 2 番目の例では、キュー、タスクおよび情報を渡したりする方法を示します。  
+  
+ **例 1**  
+  
+ この例を使用する方法を示しています、<xref:System.Threading.WaitCallback>のためのキュー、タスク、スレッド プールで実行するデリゲート。 コード例では、<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType>メソッドのオーバー ロードによって表されるキューのタスクを<xref:System.Threading.WaitCallback>をラップする、`ThreadProc`メソッドは、スレッドが使用可能なになったときに実行します。 このオーバー ロードでタスク情報は提供されません。 そのための情報に提供される、`ThreadProc`メソッドは、メソッドが属するオブジェクトに制限されます。  
+  
+ [!code-cpp[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/VB/source.vb#1)]  
+  
+ **例 2**  
+  
+ この例では、タスクの情報を格納しているオブジェクトを作成する方法を示します。 実行のキューにタスクをスレッド プール内にそのオブジェクトを渡す方法も示します。  
+  
+ [!code-cpp[System.Threading.ThreadPool QueueUserWorkItem1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem1/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool QueueUserWorkItem1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem1/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool QueueUserWorkItem1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem1/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

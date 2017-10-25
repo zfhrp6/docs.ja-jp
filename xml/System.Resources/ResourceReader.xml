@@ -1,0 +1,652 @@
+<Type Name="ResourceReader" FullName="System.Resources.ResourceReader">
+  <TypeSignature Language="C#" Value="public sealed class ResourceReader : System.Resources.IResourceReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ResourceReader extends System.Object implements class System.Collections.IEnumerable, class System.IDisposable, class System.Resources.IResourceReader" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.ResourceReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.Reader</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Resources.IResourceReader</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>順次リソースの名前と値のペアを読み取って、バイナリ リソース (.resources) ファイル内のリソースを列挙します。  
+  
+ **セキュリティに関する注意**: セキュリティ上のリスクは、信頼できないデータをこのクラスのメソッドを呼び出すことです。 信頼されたデータだけクラスでメソッドを呼び出します。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](https://docs.com/rick-anderson-1/8710/untrusted-data-security-risks)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceReader>クラスの標準的な実装を提供、<xref:System.Resources.IResourceReader>インターフェイスです。 A<xref:System.Resources.ResourceReader>インスタンスは、スタンドアロンの .resources ファイルまたはアセンブリに埋め込まれている .resources ファイルを表します。 .Resources ファイル内のリソースを列挙し、名前/値ペアを取得するために使用します。 異なり、<xref:System.Resources.ResourceManager>クラスは、アセンブリに埋め込まれている .resources ファイルから指定した名前付きリソースを取得するために使用します。 <xref:System.Resources.ResourceManager>一方の名前を持つが、事前に認識されているリソースを取得するクラスが使用される、<xref:System.Resources.ResourceReader>クラスはコンパイル時に、数または正確な名前を持つは認識されていないリソースを取得するために便利です。 たとえば、アプリケーションでは、セクションおよびセクションまたはセクション内の項目の数が事前にわかっていない場所セクション内の項目に構成されている構成情報を格納するのにリソース ファイルを使用することがあります。 リソースを一般的に付けることができますし (など`Section1`、 `Section1Item1`、`Section1Item2`など) を使用して取得し、<xref:System.Resources.ResourceReader>オブジェクト。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 使用しての詳細については、<xref:System.Resources.ResourceReader>クラスの次のセクションを参照してください。  
+  
+-   [ResourceReader オブジェクトをインスタンス化します。](#instantiate)  
+  
+-   [ResourceReader オブジェクトのリソースを列挙します。](#enumerate)  
+  
+    -   [IDictionaryEnumerator プロパティを使用してリソースを取得します。](#idictionaryenumerator)  
+  
+    -   [GetResourceData 使用して名前のリソースの取得](#getresourcedata)  
+  
+<a name="instantiate"></a>   
+## <a name="instantiating-a-resourcereader-object"></a>ResourceReader オブジェクトをインスタンス化します。  
+ .Resources ファイルは、テキスト ファイルまたはによって XML .resx ファイルからコンパイルされたバイナリ ファイル[Resgen.exe (リソース ファイル ジェネレーター)](~/docs/framework/tools/resgen-exe-resource-file-generator.md)です。 A<xref:System.Resources.ResourceReader>オブジェクトは、スタンドアロンの .resources ファイルまたはアセンブリに埋め込まれた .resources ファイルのいずれかを表すことができます。  
+  
+ インスタンスを作成、<xref:System.Resources.ResourceReader>オブジェクトをスタンドアロンの .resources ファイルからの読み取りに使用、<xref:System.Resources.ResourceReader>クラス コンス トラクターを入力ストリームまたは .resources ファイル名を含む文字列。 次の例では、両方の方法を示します。 最初のインスタンスを作成、<xref:System.Resources.ResourceReader>という名前の .resources ファイルを表すオブジェクト`Resources1.resources`ファイル名を使用しています。 2 番目のインスタンスを作成、<xref:System.Resources.ResourceReader>という名前の .resources ファイルを表すオブジェクト`Resources2.resources`ファイルから作成されたストリームを使用しています。  
+  
+ [!code-csharp[System.Resources.ResourceReader.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/ctor1.cs#2)]
+ [!code-vb[System.Resources.ResourceReader.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/ctor1.vb#2)]  
+  
+ 作成する、 <xref:System.Resources.ResourceReader> 、埋め込みの .resources ファイルを表すオブジェクトをインスタンス化、 <xref:System.Reflection.Assembly> .resources ファイルが埋め込まれたアセンブリからのオブジェクト。 その<xref:System.Reflection.Assembly.GetManifestResourceStream%2A?displayProperty=nameWithType>メソッドを返します、<xref:System.IO.Stream>に渡すことができるオブジェクト、<xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29>コンス トラクターです。 次の例のインスタンスを作成、<xref:System.Resources.ResourceReader>埋め込みの .resources ファイルを表すオブジェクト。  
+  
+ [!code-csharp[System.Resources.ResourceReader.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/ctor1.cs#3)]
+ [!code-vb[System.Resources.ResourceReader.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/ctor1.vb#3)]  
+  
+<a name="enumerate"></a>   
+## <a name="enumerating-a-resourcereader-objects-resources"></a>ResourceReader オブジェクトのリソースを列挙します。  
+ .Resources ファイル内のリソースを列挙するを呼び出す、<xref:System.Resources.ResourceReader.GetEnumerator%2A>を返すメソッド、<xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType>オブジェクト。 呼び出す、`IDictionaryEnumerator.MoveNext`メソッドを 1 つのリソースから、次に移動します。 このメソッドを返します`false`.resources ファイル内のすべてのリソースが列挙されたときにします。  
+  
+> [!NOTE]
+>  <xref:System.Resources.ResourceReader>クラスが実装する、<xref:System.Collections.IEnumerable>インターフェイスおよび<xref:System.Collections.IEnumerable.GetEnumerator%2A?displayProperty=nameWithType>、メソッド、<xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=nameWithType>メソッドは提供しません、<xref:System.Collections.IEnumerable.GetEnumerator%2A?displayProperty=nameWithType>実装します。 代わりに、<xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=nameWithType>メソッドを返します、<xref:System.Collections.IDictionaryEnumerator>各リソースの名前/値ペアにアクセスを提供するインターフェイスのオブジェクト。  
+  
+ 2 つの方法でコレクション内の個々 のリソースを取得することができます。  
+  
+-   内の各リソースを反復処理することができます、<xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType>収集と使用<xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType>リソース名と値を取得するプロパティです。 この手法は、すべてのリソースが同じ型、または各リソースのデータ型を認識する場合にお勧めします。  
+  
+-   反復処理する場合は、各リソースの名前を取得することができます、<xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType>コレクションと呼び出し、<xref:System.Resources.ResourceReader.GetResourceData%2A>リソースのデータを取得します。 この方法は、各リソースのデータ型が認識していない場合、または前のアプローチが例外をスローした場合お勧めします。  
+  
+<a name="idictionaryenumerator"></a>   
+### <a name="retrieving-resources-by-using-idictionaryenumerator-properties"></a>IDictionaryEnumerator プロパティを使用してリソースを取得します。  
+ .Resources ファイル内のリソースの列挙の最初のメソッドには、各リソースの名前/値ペアを直接取得するが含まれます。 呼び出した後、`IDictionaryEnumerator.MoveNext`から名前のリソースを取得することができますが、コレクション内の各リソースに移動する方法、<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>プロパティとリソースのデータを<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次の例を使用して、名と .resources ファイル内の各リソースの値を取得する方法を示しています、<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>と<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティです。 例を実行するには、という名前の文字列リソースを定義する ApplicationResources.txt 次のテキスト ファイルを作成します。  
+  
+```  
+Title="Contact Information"  
+Label1="First Name:"  
+Label2="Middle Name:"  
+Label3="Last Name:"  
+Label4="SSN:"  
+Label5="Street Address:"  
+Label6="City:"  
+Label7="State:"  
+Label8="Zip Code:"  
+Label9="Home Phone:"  
+Label10="Business Phone:"  
+Label11="Mobile Phone:"  
+Label12="Other Phone:"  
+Label13="Fax:"  
+Label14="Email Address:"  
+Label15="Alternate Email Address:"  
+```  
+  
+ テキストのリソース ファイルは、次のコマンドを使用して ApplicationResources.resources をという名前のバイナリ ファイルに変換できます。  
+  
+ **resgen ApplicationResources.txt**  
+  
+ 次の例を使用し、<xref:System.Resources.ResourceReader>スタンドアロンの .resources バイナリ ファイル内の各リソースを列挙して、キー名と対応する値を表示するクラス。  
+  
+ [!code-csharp[System.Resources.ResourceReader.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/class1.cs#1)]
+ [!code-vb[System.Resources.ResourceReader.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/class1.vb#1)]  
+  
+ リソース データの取得を試み、<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティは、次の例外をスローできます。  
+  
+-   A<xref:System.FormatException>データが予期された形式でない場合。  
+  
+-   A<xref:System.IO.FileNotFoundException>データが所属する型を含むアセンブリが見つからない場合。  
+  
+-   A<xref:System.TypeLoadException>で見つからない場合、データが属する型にすることはできません。  
+  
+ 通常、.resources ファイルが変更された場合、手動で型が定義されているアセンブリがアプリケーションに追加されていないか、または、誤って削除されている場合、これらの例外がスローされたまたは型を日付より前、アセンブリが、以前のバージョンである場合。 これらの例外がスローされた場合は、各リソースを列挙して呼び出すことでリソースを取得できます、<xref:System.Resources.ResourceReader.GetResourceData%2A>メソッドは、次のセクションで示すようにします。 この方法により、データに関する情報を入力する、<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティを返そうとしました。  
+  
+<a name="getresourcedata"></a>   
+### <a name="retrieving-resources-by-name-with-getresourcedata"></a>GetResourceData 使用して名前のリソースの取得  
+ .Resources ファイル内のリソースを列挙するのには、2 番目の方法でも呼び出すことによって、ファイル内のリソースを移動するは、`IDictionaryEnumerator.MoveNext`メソッドです。 リソースの名前を取得するリソースごとに、<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>に渡され、プロパティ、<xref:System.Resources.ResourceReader.GetResourceData%28System.String%2CSystem.String%40%2CSystem.Byte%5B%5D%40%29>リソースのデータを取得します。 これは、バイト配列として返される、`resourceData`引数。  
+  
+ この方法は、リソースの名前と値を取得するよりもにくい、<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>と<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティ、リソースの値を形成する実際のバイト数を返すためです。 ただし、リソースを取得しようとすると、例外をスローした場合、<xref:System.Resources.ResourceReader.GetResourceData%2A>メソッドは、リソースのデータ型に関する情報を指定することによって例外の原因を特定できます。 詳細については、リソースのデータ型を示す文字列を次を参照してください。<xref:System.Resources.ResourceReader.GetResourceData%2A>です。  
+  
+ 次の例は、このアプローチを使用してリソースを取得してスローされる例外を処理する方法を示しています。 4 つの文字列、ブール値を 1 つ、1 つの整数、1 つのビットマップ、および 1 つのカスタムを含むバイナリ .resources ファイルをプログラムで作成`DateTimeTZI`オブジェクト。 例を実行するには、次の操作を行います。  
+  
+1.  含む Library.dll をという名前のアセンブリを作成、`DateTimeTZI`構造体。 アセンブリのソース コードを次に示します。  
+  
+     [!code-csharp[System.Resources.ResourceReader.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/library.cs#4)]
+     [!code-vb[System.Resources.ResourceReader.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/library.vb#4)]  
+  
+     次のコマンドを使用して、C# の場合、ソース コードをコンパイルします。  
+  
+    ```  
+    csc /t:library library.cs  
+    ```  
+  
+     または、次のコマンドを使用して、Visual Basic でコンパイルできます。  
+  
+    ```  
+    vbc library.vb /t:library  
+    ```  
+  
+2.  コンパイルおよび ContactResources.resources をという名前の .resources ファイルを作成する次のソース コードを実行します。  
+  
+     [!code-csharp[System.Resources.ResourceReader.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/createresourceex1.cs#5)]
+     [!code-vb[System.Resources.ResourceReader.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/createresourceex1.vb#5)]  
+  
+     ソース コード ファイルには、CreateResources.cs がという名前です。 C# の場合に次のコマンドを使用してコンパイルすることができます。  
+  
+    ```  
+    csc CreateResources.cs /r:library.dll  
+    ```  
+  
+     または、次のコマンドを使用して、Visual Basic でコンパイルできます。  
+  
+    ```  
+    vbc CreateResources.vb /r:library.dll  
+    ```  
+  
+3.  コンパイルおよび ContactResources.resources ファイル内のリソースを列挙する次のコードを実行します。  
+  
+     [!code-csharp[System.Resources.ResourceReader.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/readresourceex1.cs#6)]
+     [!code-vb[System.Resources.ResourceReader.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/readresourceex1.vb#6)]  
+  
+     ソース コードを変更した後 (などによって、意図的にスローされること、<xref:System.FormatException>の最後に、`try`ブロック) または Library.dll アセンブリの名前を変更して、実行時に使用できるように、表示する例を実行することができる方法への呼び出し<xref:System.Resources.ResourceReader.GetResourceData%2A>を使用すると、一部のリソース情報を再作成または取得します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Reader</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Resources.ResourceReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  セキュリティ上のリスクは、信頼できないデータをこのオブジェクトのインスタンスを使用します。 このオブジェクトを使用して、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceReader (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Reader</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">リソースを読み取る入力ストリーム。</param>
+        <summary>指定したストリーム用の <see cref="T:System.Resources.ResourceReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29>コンス トラクターをインスタンス化、<xref:System.Resources.ResourceReader>アセンブリに埋め込まれたリソースまたはスタンドアロンの .resources ファイル .resources からファイルを取得するオブジェクト。 スタンドアロンの .resources ファイルから読み取れませんをインスタンス化、<xref:System.IO.Stream>オブジェクトに渡すと、<xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29>コンス トラクターです。 埋め込みの .resources ファイルから読み取りを呼び出して、 <xref:System.Reflection.Assembly.GetManifestResourceStream%2A?displayProperty=nameWithType> .resources ファイルと、返されたパスの名前を持つメソッド<xref:System.IO.Stream>オブジェクトを<xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29>コンス トラクターです。  
+  
+> [!IMPORTANT]
+>  セキュリティ上のリスクは、信頼できないデータをこのオブジェクトのインスタンスを使用します。 このオブジェクトを使用して、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+   
+  
+## Examples  
+ このセクションの例では名前付き次の .txt ファイル`PatientForm.txt`をアプリケーションで使用したリソースを定義します。  
+  
+```  
+  
+Title="Top Pet Animal Clinic"  
+Label1="Patient Number:"  
+Label2="Pet Name:"  
+Label3="Species:"  
+Label4="Breed:"  
+Label5="Date of Birth:"  
+Label6="Age:"  
+Label7="Owner:"  
+Label8="Address:"  
+Label9="Home Phone:"  
+Label10="Work Phone:"  
+Label11="Mobile Phone:"  
+  
+```  
+  
+ .Resources ファイルに .txt ファイルをコンパイルするには、次のコマンドを実行します。  
+  
+ **resgen PatientForm.txt**  
+  
+ 次の例では、リソース ファイルは、アプリケーションの実行可能コードを含むアセンブリに埋め込まれていると仮定します。 という名前のリソース ファイルを取得`PatientForm.resources`現在実行中のアセンブリから名前とそのリソースのそれぞれの値が表示されます。  
+  
+ [!code-csharp[System.Resources.ResourceReader.Ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.ctor/cs/stream1.cs#1)]
+ [!code-vb[System.Resources.ResourceReader.Ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.ctor/vb/stream1.vb#1)]  
+  
+ C# の例の名前が場合`Example.cs`、次のコマンドを使用してコンパイルすることができます。  
+  
+ **csc Example.cs/res:PatientForm.resources**  
+  
+ Visual Basic の例の名前が場合`Example.vb`、次のコマンドを使用してコンパイルすることができます。  
+  
+ **vbc Example.vb/res:PatientForm.resources**  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stream" />パラメーターは読み取り可能ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">アクセス中に I/O エラーが発生しました<paramref name="stream" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceReader (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">読み取るリソース ファイルのパスと名前。 <c>filename</c>小文字は区別されません。</param>
+        <summary>リソース ファイルを指定して <see cref="T:System.Resources.ResourceReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceReader.%23ctor%28System.String%29>コンス トラクターをインスタンス化、<xref:System.Resources.ResourceReader>スタンドアロンの .resources ファイルからリソースを取得するオブジェクト。 リソースを取得する埋め込みの .resources ファイルを使用して、<xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29>コンス トラクターです。  
+  
+> [!IMPORTANT]
+>  セキュリティ上のリスクは、信頼できないデータをこのオブジェクトのインスタンスを使用します。 このオブジェクトを使用して、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+   
+  
+## Examples  
+ このセクションの例では名前付き次の .txt ファイル`PatientForm.txt`をアプリケーションで使用したリソースを定義します。  
+  
+```  
+  
+Title="Top Pet Animal Clinic"  
+Label1="Patient Number:"  
+Label2="Pet Name:"  
+Label3="Species:"  
+Label4="Breed:"  
+Label5="Date of Birth:"  
+Label6="Age:"  
+Label7="Owner:"  
+Label8="Address:"  
+Label9="Home Phone:"  
+Label10="Work Phone:"  
+Label11="Mobile Phone:"  
+  
+```  
+  
+ .Resources ファイルに .txt ファイルをコンパイルするには、次のコマンドを発行します。  
+  
+ **resgen PatientForm.txt**  
+  
+ 次の例は、内のリソースを列挙`PatientForm.resources`名とそれぞれの値が表示されます。  
+  
+ [!code-csharp[System.Resources.ResourceReader.Ctor#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.ctor/cs/stream2.cs#2)]
+ [!code-vb[System.Resources.ResourceReader.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.ctor/vb/stream2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="fileName" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.BadImageFormatException">リソース ファイルには、無効な形式があります。 たとえば、ファイルの長さを 0 にすることがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Resources.ResourceReader" /> オブジェクトに関連付けられたすべてのオペレーティング システム リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceReader.Close%2A>安全に複数回呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルのリソースを移動し、見つかったすべてのキー/値ペアを表示します。 コードを使用し、<xref:System.Resources.ResourceReader.Close%2A>をシャット ダウンする方法、<xref:System.Resources.ResourceReader>によって使用されているすべてのリソースを解放するとします。  
+  
+ [!code-cpp[System.Resources.ResourceReader.GetEnumerator Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceReader.GetEnumerator Example/CPP/getenumerator.cpp#1)]
+ [!code-csharp[System.Resources.ResourceReader.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceReader.GetEnumerator Example/CS/getenumerator.cs#1)]
+ [!code-vb[System.Resources.ResourceReader.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceReader.GetEnumerator Example/VB/getenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Reader</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Resources.ResourceReader" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインスタンスの使用が終了したときに<xref:System.Resources.ResourceReader>、呼び出す<xref:System.Resources.ResourceReader.Dispose%2A>をこのインスタンスによって使用されているすべてのリソースを解放します。 これをさらに参照を削除する必要があります<xref:System.Resources.ResourceReader>インスタンスのガベージ コレクターが終了処理の履歴に保持することではなく、インスタンスのメモリを再利用できるようにします。  
+  
+ <xref:System.Resources.ResourceReader.Dispose%2A>マネージ コードとアンマネージ リソースを解放するコードを含むプライベート dispose (boolean) メソッドを呼び出します。 詳細については、次を参照してください。 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Reader</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Resources.ResourceReader" /> オブジェクトの列挙子を返します。</summary>
+        <returns>この <see cref="T:System.Resources.ResourceReader" /> オブジェクトの列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出してリソースを列挙する通常、<xref:System.Resources.ResourceReader.GetEnumerator%2A>メソッドを繰り返し呼び出す、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドで返された<xref:System.Collections.IDictionaryEnumerator>オブジェクトのメソッドが戻るまで`false`です。 リソース名がから利用可能な<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>プロパティ以外からその値の場合は、<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティです。 この方法でリソースを列挙する方法を示します。  
+  
+ 実装、<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>によってプロパティ、<xref:System.Resources.ResourceReader>クラスは、次の例外をスローできます。  
+  
+-   <xref:System.IO.FileNotFoundException>  
+  
+     データが所属する型を含むアセンブリが見つかりません。  
+  
+-   <xref:System.FormatException>  
+  
+     データは、予期された形式ではないです。  
+  
+-   <xref:System.TypeLoadException>  
+  
+     データが属する型が見つかりません。  
+  
+ 呼び出して、例外を処理することができます、<xref:System.Resources.ResourceReader.GetResourceData%2A>については、データ型と名前付きリソースに割り当てられているバイト配列を取得します。 詳細についてを参照してください"を取得するリソースによって名前と GetResourceData"、<xref:System.Resources.ResourceReader>クラスに関するトピック。  
+  
+> [!IMPORTANT]
+>  <xref:System.Resources.ResourceReader>クラスには、列挙子を返す 2 つのメソッドが含まれています。 <xref:System.Resources.ResourceReader.GetEnumerator%2A>メソッドを返します、<xref:System.Collections.IDictionaryEnumerator>インターフェイス オブジェクトとメソッドを呼び出すことをお勧めの方法がリソースを列挙します。  
+  
+   
+  
+## Examples  
+ このセクションの例では名前付き次の .txt ファイル`PatientForm.txt`をアプリケーションで使用したリソースを定義します。  
+  
+```  
+  
+Title="Top Pet Animal Clinic"  
+Label1="Patient Number:"  
+Label2="Pet Name:"  
+Label3="Species:"  
+Label4="Breed:"  
+Label5="Date of Birth:"  
+Label6="Age:"  
+Label7="Owner:"  
+Label8="Address:"  
+Label9="Home Phone:"  
+Label10="Work Phone:"  
+Label11="Mobile Phone:"  
+  
+```  
+  
+ .Resources ファイルに .txt ファイルをコンパイルするには、次のコマンドを実行します。  
+  
+ **resgen PatientForm.txt**  
+  
+ 次の例は、内のリソースを列挙`PatientForm.resources`名とそれぞれの値が表示されます。  
+  
+ [!code-csharp[System.Resources.ResourceReader.Ctor#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.ctor/cs/stream2.cs#2)]
+ [!code-vb[System.Resources.ResourceReader.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.ctor/vb/stream2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">リーダーが閉じられたか、破棄されたため、アクセスできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceData">
+      <MemberSignature Language="C#" Value="public void GetResourceData (string resourceName, out string resourceType, out byte[] resourceData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetResourceData(string resourceName, [out] string&amp; resourceType, [out] unsigned int8[]&amp; resourceData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.GetResourceData(System.String,System.String@,System.Byte[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="resourceType" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="resourceData" Type="System.Byte[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="resourceName">リソースの名前。</param>
+        <param name="resourceType">このメソッドが戻るとき、取得したリソースの種類名を表す文字列を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="resourceData">このメソッドから制御が戻った時点で、取得した型のバイナリ表現であるバイト配列が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>オープン リソース ファイルまたはストリームから名前付きリソースの型名とデータを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceReader.GetResourceData%2A>メソッドは、バイト配列として名前付きリソースの値を取得します。 通常際に使用される、<xref:System.Collections.IDictionaryEnumerator.Value%2A>プロパティは、そのリソースの値を取得しようとするときに例外をスローします。  
+  
+ `resourceType`リソースのデータ型を表す文字列です。 次の値のいずれかを指定できます。  
+  
+-   文字列形式を`ResourceTypeCode`リソースのデータ型を示す列挙メンバー。 `ResourceTypeCode`順にで使用されるプライベート列挙体は、19 の一般的なデータ型のいずれかの格納に特殊なバイナリ形式を使用することを示すためです。 .NET Framework のプリミティブ データ型が含まれます (<xref:System.Boolean>、 <xref:System.Byte>、 <xref:System.Char>、 <xref:System.Decimal>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.Single>、 <xref:System.SByte>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>)、だけでなく<xref:System.String>、 <xref:System.DateTime>、および<xref:System.TimeSpan>、さらに、`ResourceTypeCode`列挙には、次の表に示すように値が含まれています。  
+  
+    |ResourceTypeCode 値|説明|  
+    |----------------------------|-----------------|  
+    |`ResourceTypeCode.ByteArray`|データは、バイト配列です。 このデータ型への呼び出しの結果では通常、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Byte%5B%5D%29?displayProperty=nameWithType>メソッドです。|  
+    |`ResourceTypeCode.Null`|データは、null 参照です。 このデータ型への呼び出しの結果では通常、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Object%29?displayProperty=nameWithType>メソッド、オブジェクトの値がある`null`です。|  
+    |`ResourceTypeCode.Stream`|データは、ストリームに格納されます。 このデータ型への呼び出しの結果では通常、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%29?displayProperty=nameWithType>または<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%2CSystem.Boolean%29?displayProperty=nameWithType>メソッドです。|  
+  
+     想定される`resourceData`されていません。 破損した場合、通常変換するバイト配列から、元の値に呼び出すことによって、<xref:System.BitConverter>または<xref:System.IO.BinaryReader>メソッドです。  
+  
+-   シリアル化されたデータを含むが割り当てられている型の完全修飾名を含む文字列、`resourceData`引数 (たとえば、 `System.String`)。 さらに、.NET Framework クラス ライブラリの一部ではない型、文字列が含まれます名前、バージョン、カルチャ、および種類を含むアセンブリの公開キー。 たとえば、次の文字列を示します、シリアル化データがのインスタンスを表すこと、`Person`に入力、`Extensions`ない公開キーとなしの指定されたカルチャを持つユーティリティをという名前のアセンブリのバージョン 1.0 である名前空間。  
+  
+     `Extensions.Person, Utility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`  
+  
+     想定される`resourceData`壊れていないことと、ソースの種類が使用可能な`resourceData`変換できるバイト配列から元の値に戻す、バイト配列に変換することで、<xref:System.IO.Stream>オブジェクトと、そのストリームを渡すこと、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   データ型の記述に使用する文字列、<xref:System.Resources.ResourceWriter.AddResourceData%2A?displayProperty=nameWithType>メソッドの呼び出しです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> は存在しません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="resourceName" />無効な型があります。</exception>
+        <exception cref="T:System.FormatException">取得したリソースのデータが壊れています。</exception>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Resources.ResourceReader" />オブジェクトが初期化されていない可能性がありますが閉じているためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Resources.ResourceReader" /> オブジェクトの列挙子を返します。</summary>
+        <returns>この <see cref="T:System.Resources.ResourceReader" /> オブジェクトの列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceReader.System%23Collections%23IEnumerable%23GetEnumerator%2A?displayProperty=nameWithType>明示的なインターフェイス実装です。 これは、<xref:System.Resources.ResourceReader> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。 .Resources ファイル内のリソースを列挙するための推奨アプローチが呼び出されて、<xref:System.Collections.IEnumerator.MoveNext%2A>のメソッド、<xref:System.Collections.IDictionaryEnumerator>によって返されるオブジェクト、<xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">リーダーが既に閉じられておよびにアクセスできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

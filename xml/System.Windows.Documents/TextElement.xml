@@ -1,0 +1,1154 @@
+<Type Name="TextElement" FullName="System.Windows.Documents.TextElement">
+  <TypeSignature Language="C#" Value="public abstract class TextElement : System.Windows.FrameworkContentElement, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract TextElement extends System.Windows.FrameworkContentElement implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.TextElement" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkContentElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>抽象基本クラスとして使用される抽象クラス<see cref="T:System.Windows.Documents.Block" />と<see cref="T:System.Windows.Documents.Inline" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Background" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />コンテンツ エリアの背景の塗りつぶしに使用します。</summary>
+        <value>コンテンツ エリアの背景の塗りつぶしに使用するブラシまたは<see langword="null" />背景ブラシを使用しないようにします。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な定義済みのブラシの色の表は、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+<a name="dependencyPropertyInfo_Background"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.BackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Background%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_BackgroundXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_backgroundxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: 緑の前景背景ビスク](~/add/media/textelement-foreback.png "スクリーン ショット: 緑の前景背景ビスク")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Background%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_Background](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_background)]
+ [!code-vb[TextElementSnippets#_TextElement_Background](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_background)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.BackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.Background" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEnd">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ContentEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ContentEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.ContentEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />要素のコンテンツの末尾を表すです。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの末尾を表す、<see cref="T:System.Windows.Documents.TextElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.ContentEnd%2A>の末尾にコンテンツを追加するプロパティが使用される多くの場合、<xref:System.Windows.Documents.TextElement>です。  
+  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>'éý'<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStart">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ContentStart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ContentStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.ContentStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />要素のコンテンツの開始を表すです。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointerContext" />内のコンテンツの開始を表す、<see cref="T:System.Windows.Documents.TextElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.ContentStart%2A>の先頭にコンテンツを挿入するプロパティが使用される多くの場合、<xref:System.Windows.Documents.TextElement>です。  
+  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>'éý'<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementEnd">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ElementEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ElementEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.ElementEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />要素の末尾の直後に位置を表すです。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />の末尾の直後に位置を表す、<see cref="T:System.Windows.Documents.TextElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>'éý'<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementStart">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ElementStart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ElementStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.ElementStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />要素の直前に、開始位置を表すです。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointerContext" />直前の開始位置を表す、<see cref="T:System.Windows.Documents.TextElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>'éý'<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily FontFamily { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily FontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.FontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Font, Modifiability=System.Windows.Modifiability.Unmodifiable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテンツに対して、優先される最上位レベルのフォント ファミリを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Media.FontFamily" />優先フォント ファミリ、または優先されるプライマリ フォント ファミリと 1 つ以上の代替フォント ファミリを指定するオブジェクト。 既定値はによって決まるフォント、<see cref="P:System.Windows.SystemFonts.MessageFontFamily" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のファミリを指定すると、2 回目以降のフォント ファミリは、プライマリ フォント ファミリを使用または適用できない場合に使用されるフォールバック ファミリとして機能します。  
+  
+ このプロパティは、優先度だけを指定します。  指定したフォント ファミリが使用できない場合、<xref:System.Windows.Documents.FlowDocument>サイレントによって決まるフォントにフォールバック、<xref:System.Windows.SystemFonts.MessageFontFamily%2A>値。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.TextElement.FontFamily%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*XAML 値で説明したようには文字列形式の値のいずれか。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.TextElement.GetFontFamily%2A>と<xref:System.Windows.Documents.TextElement.SetFontFamily%2A>メソッドです。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Documents.TextElement>非添付と似ています、サポート`FontFamily`プロパティで、表示するためのコンテンツのホストを使用します。  
+  
+<a name="xamlAttributeUsage_FontFamily"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontFamily="fontFamilyName"/>  
+- or -  
+<object FontFamily="fontFamilyNamesList"/>  
+- or -  
+<object FontFamily="fontFamilyFolderReference"/>  
+- or -  
+<object FontFamily="fontFamilyUriReference"/>  
+```  
+  
+<a name="xamlValues_FontFamily"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontFamilyName*  
+ フォント ファミリ名を指定する文字列。  たとえば、`"Arial"` または `"Century Gothic"` のようにします。  
+  
+ *fontFamilyNamesList*  
+ (コンマの後の空白は無視されます)、コンマで区切って複数のフォント ファミリ名を指定する文字列、します。  指定した最初のフォント ファミリを果たすプライマリ フォント ファミリ。以降のフォント ファミリは、プライマリ フォント ファミリが使用または適用できない場合に使用するフォールバック ファミリとして機能します。  たとえば、`"Arial, Century Gothic"`世紀ゴートとして代替フォント ファミリと、プライマリ フォント ファミリと Arial を指定します。  
+  
+ *fontFamilyFolderReference*  
+ フォント ファミリ名と共に、フォントを含むフォルダーを指定する文字列。  フォント ファミリ名とフォルダーは、# 文字で区切られます。  フォルダーの参照は、絶対または相対パスにあります。  たとえば、`"Custom Fonts\#My Custom Font"` のようにします。  
+  
+ *fontFamilyUriReference*  
+ 指定する文字列、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のフォント、フォント ファミリ名とします。  [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]し、フォント ファミリ名は、# 文字で区切られます。  たとえば、`"http://MyFontServer/Fonts/#My Custom Font"` のようにします。  
+  
+<a name="dependencyPropertyInfo_FontFamily"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.FontFamilyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontFamily%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_FontPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_fontpropsxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: テキスト プロパティが設定されたテキスト](~/add/media/textelement-fontprops.png "スクリーン ショット: テキスト プロパティが設定されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontFamily%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_fontprops)]
+ [!code-vb[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_fontprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamilyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontFamilyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontFamilyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.FontFamilyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.FontFamily" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSize">
+      <MemberSignature Language="C#" Value="public double FontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.FontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FontSizeConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテンツのフォント サイズを取得または設定します。</summary>
+        <value>デバイスに依存しないピクセルでの使用フォントサイズ (0.001 より大きく、35791 以下)。  既定値は、現在のシステム設定に依存していて、によって異なります、<see cref="P:System.Windows.SystemFonts.MessageFontSize" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.TextElement.FontSize%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Documents.TextElement>、および*値*XAML 値で説明したようには文字列形式の値のいずれか。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.TextElement.GetFontSize%2A>と<xref:System.Windows.Documents.TextElement.SetFontSize%2A>メソッドです。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Documents.TextElement>非添付と似ています、サポート`FontSize`プロパティで、表示するためのコンテンツのホストを使用します。  
+  
+<a name="xamlAttributeUsage_FontSize"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontSize="double"/>  
+- or -  
+<object FontSize="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_FontSize"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_FontSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.FontSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontSize%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_FontPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_fontpropsxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: テキスト プロパティが設定されたテキスト](~/add/media/textelement-fontprops.png "スクリーン ショット: テキスト プロパティが設定されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontSize%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_fontprops)]
+ [!code-vb[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_fontprops)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Documents.TextElement.FontSize" />35791 より大きい値に設定は、0.001 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.FontSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.FontSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch FontStretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch FontStretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.FontStretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテンツのフォントの伸縮特性を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.FontStretch" />を使用する目的のフォント伸縮特性を指定します。 既定値は、<see cref="P:System.Windows.FontStretches.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.TextElement.FontStretch%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Documents.TextElement>、および*値*のプロパティ名の文字列形式のいずれかが、<xref:System.Windows.FontStretch>クラスです。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.TextElement.GetFontStretch%2A>と<xref:System.Windows.Documents.TextElement.SetFontStretch%2A>メソッドです。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Documents.TextElement>非添付と似ています、サポート`FontStretch`プロパティで、表示するためのコンテンツのホストを使用します。  
+  
+<a name="dependencyPropertyInfo_FontStretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.FontStretchProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontStretch%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_FontPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_fontpropsxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: テキスト プロパティが設定されたテキスト](~/add/media/textelement-fontprops.png "スクリーン ショット: テキスト プロパティが設定されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontStretch%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_fontprops)]
+ [!code-vb[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_fontprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.FontStretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.FontStretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle FontStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle FontStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.FontStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテンツのフォント スタイルを取得または設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontStyles" />目的のフォント スタイルを指定するクラス。 既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontStyle" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.TextElement.FontStyle%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Documents.TextElement>、および*値*は文字列形式の 1 つのプロパティ名、<xref:System.Windows.FontStyles>クラスです。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.TextElement.GetFontStyle%2A>と<xref:System.Windows.Documents.TextElement.SetFontStyle%2A>メソッドです。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Documents.TextElement>非添付と似ています、サポート`FontStyle`プロパティで、表示するためのコンテンツのホストを使用します。  
+  
+<a name="dependencyPropertyInfo_FontStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.FontStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontStyle%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_FontPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_fontpropsxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: テキスト プロパティが設定されたテキスト](~/add/media/textelement-fontprops.png "スクリーン ショット: テキスト プロパティが設定されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontStyle%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_fontprops)]
+ [!code-vb[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_fontprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.FontStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.FontStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight FontWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight FontWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.FontWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテンツの、最上位レベルのフォントの太さを取得または設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontWeights" />フォントの太さを指定するクラス。 既定値は、によって決まりますが、<see cref="P:System.Windows.SystemFonts.MessageFontWeight" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.TextElement.FontWeight%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Documents.TextElement>、および*値*の文字列形式の値の 1 つ、<xref:System.Windows.FontWeight>列挙します。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.TextElement.GetFontWeight%2A>と<xref:System.Windows.Documents.TextElement.SetFontWeight%2A>メソッドです。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Documents.TextElement>非添付と似ています、サポート`FontWeight`プロパティで、表示するためのコンテンツのホストを使用します。  
+  
+<a name="dependencyPropertyInfo_FontWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.FontWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontWeight%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_FontPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_fontpropsxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: テキスト プロパティが設定されたテキスト](~/add/media/textelement-fontprops.png "スクリーン ショット: テキスト プロパティが設定されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.FontWeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_fontprops)]
+ [!code-vb[TextElementSnippets#_TextElement_FontProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_fontprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.FontWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.FontWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Foreground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Foreground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Foreground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.Foreground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />要素のコンテンツに適用します。</summary>
+        <value>テキスト コンテンツに適用するために使用するブラシ。 既定値は、<see cref="P:System.Windows.Media.Brushes.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な定義済みのブラシの色を示す色見本のテーブル、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.TextElement.Foreground%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Documents.TextElement>、および*値*に解決される文字列は、<xref:System.Windows.Media.Brush>実装値。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.TextElement.GetForeground%2A>と<xref:System.Windows.Documents.TextElement.SetForeground%2A>メソッドです。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Documents.TextElement>非添付と似ています、サポート`Foreground`プロパティで、表示するためのコンテンツのホストを使用します。  
+  
+<a name="dependencyPropertyInfo_Foreground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.ForegroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>、<xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Foreground%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_BackgroundXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_backgroundxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: 緑の前景背景ビスク](~/add/media/textelement-foreback.png "スクリーン ショット: 緑の前景背景ビスク")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Foreground%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_Background](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_background)]
+ [!code-vb[TextElementSnippets#_TextElement_Background](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_background)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForegroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForegroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.ForegroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.Foreground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontFamily">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.FontFamily GetFontFamily (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.FontFamily GetFontFamily(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.GetFontFamily(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontFamily" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.TextElement.FontFamily" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.TextElement.FontFamily" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontSize">
+      <MemberSignature Language="C#" Value="public static double GetFontSize (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetFontSize(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.GetFontSize(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FontSizeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontSize" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.TextElement.FontSize" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.TextElement.FontSize" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontStretch">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStretch GetFontStretch (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.FontStretch GetFontStretch(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.GetFontStretch(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontStretch" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.TextElement.FontStretch" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.TextElement.FontStretch" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontStyle">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStyle GetFontStyle (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.FontStyle GetFontStyle(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.GetFontStyle(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontStyle" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.TextElement.FontStyle" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.TextElement.FontStyle" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontWeight">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight GetFontWeight (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.FontWeight GetFontWeight(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.GetFontWeight(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontWeight" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.TextElement.FontWeight" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.TextElement.FontWeight" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetForeground">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Brush GetForeground (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Brush GetForeground(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.GetForeground(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.Foreground" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.TextElement.Foreground" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.TextElement.Foreground" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の論理子を反復処理できる列挙子を取得します。</summary>
+        <value>論理上の子の列挙子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">プロパティの値に関連付けられている引数を変更します。  <see cref="P:System.Windows.DependencyPropertyChangedEventArgs.Property" />プロパティを指定するプロパティが変更されている、<see cref="P:System.Windows.DependencyPropertyChangedEventArgs.OldValue" />プロパティは、前のプロパティ値を指定し、<see cref="P:System.Windows.DependencyPropertyChangedEventArgs.NewValue" />プロパティがプロパティの新しい値を指定します。</param>
+        <summary>ある要素に存在する依存関係プロパティの 1 つ以上お持ちの有効な値が変更された通知を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.FrameworkContentElement.OnPropertyChanged%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontFamily">
+      <MemberSignature Language="C#" Value="public static void SetFontFamily (System.Windows.DependencyObject element, System.Windows.Media.FontFamily value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontFamily(class System.Windows.DependencyObject element, class System.Windows.Media.FontFamily value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.SetFontFamily(System.Windows.DependencyObject,System.Windows.Media.FontFamily)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Media.FontFamily" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontFamily" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.TextElement.FontFamily" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontSize">
+      <MemberSignature Language="C#" Value="public static void SetFontSize (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontSize(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.SetFontSize(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontSize" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.TextElement.FontSize" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStretch">
+      <MemberSignature Language="C#" Value="public static void SetFontStretch (System.Windows.DependencyObject element, System.Windows.FontStretch value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontStretch(class System.Windows.DependencyObject element, valuetype System.Windows.FontStretch value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.SetFontStretch(System.Windows.DependencyObject,System.Windows.FontStretch)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.FontStretch" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontStretch" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.TextElement.FontStretch" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStyle">
+      <MemberSignature Language="C#" Value="public static void SetFontStyle (System.Windows.DependencyObject element, System.Windows.FontStyle value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontStyle(class System.Windows.DependencyObject element, valuetype System.Windows.FontStyle value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.SetFontStyle(System.Windows.DependencyObject,System.Windows.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontStyle" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.TextElement.FontStyle" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontWeight">
+      <MemberSignature Language="C#" Value="public static void SetFontWeight (System.Windows.DependencyObject element, System.Windows.FontWeight value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontWeight(class System.Windows.DependencyObject element, valuetype System.Windows.FontWeight value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.SetFontWeight(System.Windows.DependencyObject,System.Windows.FontWeight)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.FontWeight" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.FontWeight" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.TextElement.FontWeight" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetForeground">
+      <MemberSignature Language="C#" Value="public static void SetForeground (System.Windows.DependencyObject element, System.Windows.Media.Brush value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetForeground(class System.Windows.DependencyObject element, class System.Windows.Media.Brush value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.SetForeground(System.Windows.DependencyObject,System.Windows.Media.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.TextElement.Foreground" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.TextElement.Foreground" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElement.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffects">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TextEffectCollection TextEffects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TextEffectCollection TextEffects" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.TextEffects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextEffectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素のコンテンツに適用するテキスト効果のコレクションを設定します。</summary>
+        <value>A <see cref="T:System.Windows.Media.TextEffectCollection" /> 1 つ以上含む<see cref="T:System.Windows.Media.TextEffect" />この要素のコンテンツに適用する効果を定義するオブジェクト。 既定値は<see langword="null" />(いない空のコレクション)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このプロパティに設定`null`持たない<xref:System.Windows.Media.TextEffectCollection>関連付けられています。  文字列の効果を追加する前に、新しい作成<xref:System.Windows.Media.TextEffectCollection>し、このプロパティに割り当てます。  
+  
+<a name="dependencyPropertyInfo_TextEffects"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.TextElement.TextEffectsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、単純なテキスト効果を作成し、テキストに適用する方法を示しています。<xref:System.Windows.Documents.Run>を通じて、<xref:System.Windows.Documents.TextElement.TextEffects%2A>プロパティです。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_TextEffects](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_texteffects)]
+ [!code-vb[TextElementSnippets#_TextElement_TextEffects](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_texteffects)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffectsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextEffectsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextEffectsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.TextElement.TextEffectsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.TextElement.TextEffects" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Typography">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Typography Typography { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Typography Typography" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElement.Typography" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Typography</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテンツに対して現在有効な文字体裁のバリエーションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Documents.Typography" />現在有効な文字体裁のバリエーションを指定するオブジェクト。 既定の文字体裁の値の一覧は、次を参照してください。<see cref="T:System.Windows.Documents.Typography" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.Typography%2A>プロパティにのみ適用されます[!INCLUDE[TLA#tla_opentype](~/includes/tlasharptla-opentype-md.md)]フォントです。 文字体裁のバリエーションには影響しません、バリアント型をサポートしないフォントです。  このトピックの詳細については、次を参照してください。 [WPF のタイポグラフィ](~/docs/framework/wpf/advanced/typography-in-wpf.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Typography%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_TypogXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_typogxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: 変更されたタイポグラフィを含むテキスト](~/add/media/textelement-typog.png "スクリーン ショット: 変更されたタイポグラフィを含むテキスト")  
+  
+ これに対し、既定の文字体裁プロパティを設定した同様の例がどのように表示されるかを次の図に示します。  
+  
+ ![スクリーン ショット: 変更されたタイポグラフィを含むテキスト](~/add/media/textelement-typog-default.png "スクリーン ショット: 変更されたタイポグラフィを含むテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Typography%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_Typog](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_typog)]
+ [!code-vb[TextElementSnippets#_TextElement_Typog](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_typog)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

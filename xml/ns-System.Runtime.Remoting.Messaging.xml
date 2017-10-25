@@ -1,0 +1,17 @@
+<Namespace Name="System.Runtime.Remoting.Messaging">
+  <Docs>
+    <summary><see cref="N:System.Runtime.Remoting.Messaging" />名前空間には作成およびメッセージの送信に使用するクラスが含まれています。 リモート処理インフラストラクチャは、リモート オブジェクトと通信するためにメッセージを使用します。 メッセージは、リモート オブジェクトは、アクティブ化して、情報を伝達するリモート メソッド呼び出しの送信に使用されます。 メッセージ オブジェクトには、一連アクション識別子、envoy 情報、およびパラメーターを含む、名前付きのプロパティにはが含まれています。 いくつかの最も重要なクラスの<see cref="N:System.Runtime.Remoting.Messaging" />名前空間は、<see cref="T:System.Runtime.Remoting.Messaging.AsyncResult" />クラス、<see cref="T:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector" />クラス、および<see cref="T:System.Runtime.Remoting.Messaging.ReturnMessage" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.AsyncResult>クラスを格納し、非同期メソッド呼び出しの結果を返します。 <xref:System.Runtime.Remoting.Messaging.AsyncResult>インスタンスが含まれる、`return`値、通話のステータス、呼び出しと非同期メソッドの呼び出しに関するその他の情報に使用されるデリゲート。  
+  
+ <xref:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector>クラスを使用してを拡張したオブジェクトのシリアル化を制御できます<xref:System.MarshalByRefObject>です。 A<xref:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector>シリアル化し、このようなオブジェクトの逆シリアル化で使用されるサロゲートを選択します。 サロゲートは、シリアル化またはオブジェクトの逆シリアル化を制御するオブジェクトです。  
+  
+ <xref:System.Runtime.Remoting.Messaging.ReturnMessage>クラス リモート メソッド呼び出しの後に返される情報を保持します。 A<xref:System.Runtime.Remoting.Messaging.ReturnMessage>を保持、`return`値や、`out`または`ref`リモート メソッド呼び出しから生成されるパラメーター。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

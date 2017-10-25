@@ -1,0 +1,139 @@
+<Type Name="UnicodeRange" FullName="System.Text.Unicode.UnicodeRange">
+  <TypeSignature Language="C#" Value="public sealed class UnicodeRange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UnicodeRange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Text.Unicode.UnicodeRange" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>連続した範囲の Unicode コード ポイントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+## Remarks  
+
+静的なを使用する<xref:System.Text.Unicode.UnicodeRange.Create%2A>メソッドまたは<xref:System.Text.Unicode.UnicodeRange.%23ctor%2A>コンス トラクターを作成する、任意の範囲の Unicode コード ポイント。 静的プロパティを使用する、<xref:System.Text.Unicode.UnicodeRanges>取得するクラス、<xref:System.Text.Unicode.UnicodeRange>に、Unicode コード ポイントを格納しているインスタンスの名前付き範囲です。
+
+現時点では、<xref:System.Text.Unicode.UnicodeRange>クラスにのみ、平面 (bmp: Basic Multilingual)、u+0000 から U+FFFF までこれがサポートしています。 
+
+  ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnicodeRange (int firstCodePoint, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 firstCodePoint, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Unicode.UnicodeRange.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="firstCodePoint" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="firstCodePoint">範囲の最初のコード ポイント。</param>
+        <param name="length">範囲内のコード ポイントの数。</param>
+        <summary>新たに作成<see cref="System.Text.Unicode.UnicodeRange" />指定の Unicode コード ポイントで始まる文字の指定した数が含まれています。</summary>
+        <remarks>
+        <format type="text/markdown"><![CDATA[  
+## Remarks  
+
+間で定義されていないコードが指す`firstCodePoint`と`firstCodePoint`  +  `length` -1 に含まれる、<xref:System.Text.Unicode.UnicodeRange>このコンス トラクターを呼び出すことによって作成されたインスタンスです。
+
+        ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"> 
+
+           <paramref name="firstCodePoint" />0 か 0 xffff より大きい値未満です。 
+
+または           
+
+<paramref name="length" /> が 0 未満です。
+
+または
+
+<paramref name="firstCodePoint" />plus<paramref name="length" />が 0 xffff より大きい。
+        </exception>    
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Create (char firstCharacter, char lastCharacter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Text.Unicode.UnicodeRange Create(char firstCharacter, char lastCharacter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Unicode.UnicodeRange.Create(System.Char,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstCharacter" Type="System.Char" />
+        <Parameter Name="lastCharacter" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="firstCharacter">範囲の最初の文字。</param>
+        <param name="lastCharacter">範囲の最後の文字。</param>
+        <summary>新たに作成<see cref="System.Text.Unicode.UnicodeRange" />文字の範囲からのインスタンス。</summary>
+        <returns>間のすべての文字を含む範囲<paramref name="firstCharacter"/>と<paramref name="lastCharacter"/>です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="System.ArgumentOutOfRangeException"><paramref name="lastCharacter"/>前に<paramref name="firstCharacter" />です。
+        </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstCodePoint">
+      <MemberSignature Language="C#" Value="public int FirstCodePoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FirstCodePoint" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRange.FirstCodePoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表される範囲内の最初のコード ポイントを取得<see cref="System.Text.Unicode.UnicodeRange"/>インスタンス。</summary>
+        <value>範囲の最初のコード ポイント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRange.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表される範囲内のコード ポイントの数を取得<see cref="System.Text.Unicode.UnicodeRange"/>インスタンス。</summary>
+        <value>範囲内のコード ポイントの数。 </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,395 @@
+<Type Name="XamlTypeInvoker" FullName="System.Xaml.Schema.XamlTypeInvoker">
+  <TypeSignature Language="C#" Value="public class XamlTypeInvoker" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlTypeInvoker extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.Schema.XamlTypeInvoker" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リフレクションとコンス トラクター以外の方法で XAML 型のインスタンスを構築できる拡張ポイントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目的は、<xref:System.Xaml.Schema.XamlTypeInvoker>拡張の XAML 型システム、スキーマ、および、動作中の CLR 属性を使用してリフレクション情報などの CLR 機能に完全に依存せずに実行を有効にするのには、<xref:System.Type>と<xref:System.Reflection.MemberInfo>のようにします。 サブクラス<xref:System.Xaml.Schema.XamlTypeInvoker>などの XAML スキーマのクラスの別のコンス トラクターの入力パラメーターとして使用されます<xref:System.Xaml.XamlType>です。 サブクラス<xref:System.Xaml.XamlType>を渡すと、<xref:System.Xaml.Schema.XamlTypeInvoker>を通じて、基底コンス トラクターにします。 定義すると共に、 <xref:System.Xaml.Schema.XamlTypeInvoker> 、コンス トラクターも指定してください用の上書きには、少なくともいくつかの`Lookup`のメソッド<xref:System.Xaml.XamlType>です。  
+  
+ <xref:System.Xaml.Schema.XamlTypeInvoker>既定の実装があります。 既定の実装では、類似のモデルを XAML スキーマの種類の既定の実装に依存<xref:System.Xaml.XamlType>と<xref:System.Xaml.XamlMember>: インスタンス化、値、および CLR 属性の使用を含む、参照の CLR 型システムが使用される<xref:System.Type>と<xref:System.Reflection.MemberInfo>のようにします。  
+  
+ <xref:System.Xaml.Schema.XamlTypeInvoker>基本的なインスタンス化するメソッドを提供 (<xref:System.Xaml.Schema.XamlTypeInvoker.CreateInstance%2A>) とメソッドの種類に関連する場所、<xref:System.Xaml.XamlType>コレクション、ディクショナリまたは配列を表します (<xref:System.Xaml.Schema.XamlTypeInvoker.AddToCollection%2A>です。<xref:System.Xaml.Schema.XamlTypeInvoker.AddToDictionary%2A>;<xref:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod%2A>;<xref:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod%2A>;<xref:System.Xaml.Schema.XamlTypeInvoker.GetItems%2A>).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XamlTypeInvoker ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、空です。  
+  
+ 値を指定するこのコンス トラクターが内部的に呼び出される<xref:System.Xaml.Schema.XamlTypeInvoker.UnknownInvoker%2A>です。 <xref:System.Xaml.Schema.XamlTypeInvoker>サブクラスは、いずれかを使用することを想定して、<xref:System.Xaml.Schema.XamlTypeInvoker.%23ctor%28System.Xaml.XamlType%29>を作成するための署名を呼び出すオーバーライドを提供または<xref:System.Xaml.Schema.XamlTypeInvoker.%23ctor%28System.Xaml.XamlType%29>基本です。 提供する、<xref:System.Xaml.XamlType>既定の実装パターン where<xref:System.Xaml.Schema.XamlTypeInvoker>は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeInvoker (System.Xaml.XamlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.#ctor(System.Xaml.XamlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Xaml.XamlType" />これに関連する特定の XAML 型の値<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />に基づいて、指定されたクラス<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部でに基づいてと呼ばれる、<xref:System.Xaml.XamlType>場所、<xref:System.Xaml.Schema.XamlTypeInvoker>構築に使用します。 `type`の他のすべてのメソッドの呼び出しに関連するここでは<xref:System.Xaml.Schema.XamlTypeInvoker>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToCollection">
+      <MemberSignature Language="C#" Value="public virtual void AddToCollection (object instance, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddToCollection(object instance, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.AddToCollection(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> を構築するために使用した <see cref="T:System.Xaml.XamlType" /> によって指定された型のインスタンス。</param>
+        <param name="item">追加する項目。</param>
+        <summary>指定した項目を、この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> に関連する型のインスタンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみこのメソッドを呼び出す必要があります、<xref:System.Xaml.XamlType>を表すコレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">不明な <see cref="T:System.Xaml.XamlType" /> に基づく <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> で、このメソッドを呼び出しました。  
+  
+ **- または -**  
+  
+ 関連する型がコレクションではない <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> で、このメソッドを呼び出しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xaml.XamlSchemaException">
+          この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> の <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> は、<see langword="null" /> を返します。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装には、内部ヘルパーの呼び出しが含まれています。 <c>ThrowIfUnknown</c>です。 このヘルパーは常に場合にスロー場所、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlType" />であるケースが含まれている、<see cref="P:System.Xaml.XamlType.UnderlyingType" />の<see cref="T:System.Xaml.XamlType" />は<see langword="null" />します。  
+  
+ 基底の実装の呼び出しでは内部的には、 <see cref="P:System.Xaml.XamlType.IsCollection" />、し、結果は場合スロー<see langword="false" />です。  
+  
+ 基底の実装は必ずしも使用独自<see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" />実装します。 最初の cast<paramref name="instance" />に<see cref="T:System.Collections.IList" />しようとするとします。 これが成功するへの呼び出し<see cref="M:System.Collections.IList.Add(System.Object)" />が行われますが返されます。 基底の実装が CLR を使用する場合は、<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />を呼び出す、基になる<see langword="Add" />メソッドへの呼び出しから取得した<see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" />この<paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。  
+  
+ 基本の実装で例外は発生しない場合、このレベルで<paramref name="item" />は<see langword="null" />します。 可能性がありますする、基になる<see langword="Add" />メソッドが呼び出されたときに例外を発生させます。 他の実行時例外が考えられる場合<see cref="P:System.Xaml.XamlType.ItemType" />は有効な結果を返しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToDictionary">
+      <MemberSignature Language="C#" Value="public virtual void AddToDictionary (object instance, object key, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddToDictionary(object instance, object key, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.AddToDictionary(System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> を構築するために使用した <see cref="T:System.Xaml.XamlType" /> によって指定された型のインスタンス。</param>
+        <param name="key">追加するアイテムのディクショナリ キーです。</param>
+        <param name="item">追加する項目の値。</param>
+        <summary>指定したキーと項目の値を、この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> に関連する型のインスタンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみこのメソッドを呼び出す必要があります、<xref:System.Xaml.XamlType>を表すディクショナリ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">不明な <see cref="T:System.Xaml.XamlType" /> に基づく <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> で、このメソッドを呼び出しました。  
+  
+ **- または -**  
+  
+ 関連する型がディクショナリではない <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> で、このメソッドを呼び出しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xaml.XamlSchemaException">
+          この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> の <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> は、<see langword="null" /> を返します。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装には、内部ヘルパーの呼び出しが含まれています。 <c>ThrowIfUnknown</c>です。 このヘルパーは常に場合にスロー場所、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlType" />であるケースが含まれている、<see cref="P:System.Xaml.XamlType.UnderlyingType" />の<see cref="T:System.Xaml.XamlType" />は<see langword="null" />します。  
+  
+ 基底の実装の呼び出しでは内部的には、 <see cref="P:System.Xaml.XamlType.IsDictionary" />、し、結果は場合スロー<see langword="false" />です。  
+  
+ 基底の実装は必ずしも使用独自<see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" />実装します。 最初の cast<paramref name="instance" />に<see cref="T:System.Collections.IDictionary" />しようとするとします。 これが成功するへの呼び出し<see cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" />が行われますが返されます。 基底の実装が CLR を使用する場合は、<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />を呼び出す、基になる<see langword="Add" />メソッドへの呼び出しから取得した<see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" />この<paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。  
+  
+ 基本の実装で例外は発生しない場合、このレベルで<paramref name="item" />または<paramref name="key" />は<see langword="null" />します。 可能性がありますする、基になる<see langword="Add" />メソッドが呼び出されたときに例外を発生させます。 他の実行時例外が考えられる場合<see cref="P:System.Xaml.XamlType.ItemType" />は有効な結果を返しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public virtual object CreateInstance (object[] arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateInstance(object[] arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.CreateInstance(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">提供するオブジェクトの配列、<see langword="x:ConstructorArgs" />インスタンス。 あります<see langword="null" />の使用または必要としない種類<see langword="x:ConstructorArgs" />です。</param>
+        <summary>構築によるに基づいてオブジェクト インスタンスが作成<see cref="T:System.Xaml.XamlType" />この<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。</summary>
+        <returns>作成されたインスタンスが構築によるに基づいて<see cref="T:System.Xaml.XamlType" />この<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.MissingMethodException">コンス トラクターを解決できませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装には、内部ヘルパーの呼び出しが含まれています。 <c>ThrowIfUnknown</c>です。 このヘルパーは常に場合にスロー場所、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlType" />であるケースが含まれている、<see cref="P:System.Xaml.XamlType.UnderlyingType" />の<see cref="T:System.Xaml.XamlType" />は<see langword="null" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAddMethod">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo GetAddMethod (System.Xaml.XamlType contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetAddMethod(class System.Xaml.XamlType contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">
+          <see cref="T:System.Xaml.XamlType" />項目の種類によって使用される、<see langword="Add" />メソッドです。</param>
+        <summary>関連する返します<see langword="Add" />のメソッド、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />コレクションまたは辞書に関係のあります。</summary>
+        <returns>CLR<see cref="T:System.Reflection.MethodInfo" />の情報を<see langword="Add" />メソッド、または null。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが返す`null`のケースの場所、<xref:System.Xaml.XamlType>この<xref:System.Xaml.Schema.XamlTypeInvoker>書き込み可能なコレクションまたはディクショナリではありません。 具体的には、返す必要があります`null`のケースの<xref:System.Xaml.XamlType.LookupCollectionKind%2A?displayProperty=nameWithType>返します`None`です。  
+  
+> [!IMPORTANT]
+>  このメソッドにレポート false する可能性がある場合は、完全に信頼された XAML 型システムにアクセスしている場合、<xref:System.Reflection.MethodInfo>呼び出し元情報です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contentType" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装を返します<see langword="null" />のケースの場所、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlType" />であるケースが含まれている、<see cref="P:System.Xaml.XamlType.UnderlyingType" />の<see cref="T:System.Xaml.XamlType" />は<see langword="null" />します。 返します<see langword="null" />場合<see cref="P:System.Xaml.XamlType.ItemType" />は<see langword="null" />します。  
+  
+ XAML のコレクションに可能性がある 1 つ以上<see langword="Add" />メソッド、XAML コレクションが 1 つ以上のコンテンツ タイプをサポートできる可能性がありますので (を参照してください<see cref="P:System.Xaml.XamlType.AllowedContentTypes" />、または参照してください<see cref="T:System.Windows.Markup.ContentWrapperAttribute" />WPF でのこの概念の 1 つの実装方法について)。 既定の実装では、内部ロジックを使用して、署名と指定された型に基づいて最適な一致を返す<paramref name="contentType" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumeratorMethod">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo GetEnumeratorMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetEnumeratorMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アイテムの列挙可能なメソッドを表すオブジェクトを返します。</summary>
+        <returns>
+          <see cref="T:System.Reflection.MethodInfo" />列挙子メソッド、または<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返す必要があります`null`のケースの<xref:System.Xaml.XamlType.LookupCollectionKind%2A?displayProperty=nameWithType>返します`None`です。  
+  
+> [!IMPORTANT]
+>  このメソッドにレポート false する可能性がある場合は、完全に信頼された XAML 型システムにアクセスしている場合、<xref:System.Reflection.MethodInfo>呼び出し元情報です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>基底の実装では、内部のヘルパー メソッドを呼び出します。 そのヘルパーを返します<see langword="null" />のケースの場所、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlType" />であるケースが含まれている、<see cref="P:System.Xaml.XamlType.UnderlyingType" />の<see cref="T:System.Xaml.XamlType" />は<see langword="null" />します。 返します<see langword="null" />のケースの<see cref="M:System.Xaml.XamlType.LookupCollectionKind" />返します<see langword="None" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItems">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetItems (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetItems(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.GetItems(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">この <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> を構築するために使用した <see cref="T:System.Xaml.XamlType" /> によって指定された型のインスタンス。</param>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />項目のセットを表すオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />オブジェクト、または<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">不明な <see cref="T:System.Xaml.XamlType" /> に基づく <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> で、このメソッドを呼び出しました。  
+  
+ **- または -**  
+  
+ このメソッドを呼び出す、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />関連する型が行われていないコレクションまたはディクショナリ。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装には、内部ヘルパーの呼び出しが含まれています。 <c>ThrowIfUnknown</c>です。 このヘルパーは常に場合にスロー場所、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlType" />であるケースが含まれている、<see cref="P:System.Xaml.XamlType.UnderlyingType" />の<see cref="T:System.Xaml.XamlType" />は<see langword="null" />します。  
+  
+ 基底の実装は必ずしも使用独自<see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" />実装します。 最初の cast<paramref name="instance" />に<see cref="T:System.Collections.IEnumerable" />しようとするとします。 これが成功するへの呼び出し<see cref="M:System.Collections.IEnumerable.GetEnumerator" />が行われますと値を返すメソッドを返します。 基底の実装が CLR を使用する場合は、<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />を呼び出す、基になる<see langword="GetEnumerator" />メソッドへの呼び出しから取得した<see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" />この<paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMarkupExtensionHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt; SetMarkupExtensionHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt; SetMarkupExtensionHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeInvoker.SetMarkupExtensionHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ときに使用するハンドラーを取得、 <see cref="T:System.Xaml.XamlObjectWriter" /> 、実装を呼び出す<see cref="T:System.Windows.Markup.MarkupExtension" />です。</summary>
+        <value>このケースを処理するハンドラーの実装です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーがに基づいて<xref:System.EventHandler%601>で制約<xref:System.Windows.Markup.XamlSetMarkupExtensionEventArgs>イベント データ。  
+  
+ 返される値を呼び出す、<xref:System.Xaml.XamlType.LookupSetMarkupExtensionHandler%2A>の動作、<xref:System.Xaml.XamlType>を<xref:System.Xaml.Schema.XamlTypeInvoker>に基づきます。  
+  
+ 戻り値は`null`の<xref:System.Xaml.Schema.XamlTypeInvoker>不明に基づく<xref:System.Xaml.XamlType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTypeConverterHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Windows.Markup.XamlSetTypeConverterEventArgs&gt; SetTypeConverterHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetTypeConverterEventArgs&gt; SetTypeConverterHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeInvoker.SetTypeConverterHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Markup.XamlSetTypeConverterEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ときに使用するハンドラーを取得、 <see cref="T:System.Xaml.XamlObjectWriter" /> CLR 実装への呼び出し<see cref="T:System.ComponentModel.TypeConverter" />です。</summary>
+        <value>このケースを処理するハンドラーの実装です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーがに基づいて<xref:System.EventHandler%601>で制約<xref:System.Windows.Markup.XamlSetMarkupExtensionEventArgs>イベント データ。  
+  
+ 返される値を呼び出す、<xref:System.Xaml.XamlType.LookupSetTypeConverterHandler%2A>の動作、<xref:System.Xaml.XamlType>を<xref:System.Xaml.Schema.XamlTypeInvoker>に基づきます。  
+  
+ 戻り値は`null`の<xref:System.Xaml.Schema.XamlTypeInvoker>不明に基づく<xref:System.Xaml.XamlType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownInvoker">
+      <MemberSignature Language="C#" Value="public static System.Xaml.Schema.XamlTypeInvoker UnknownInvoker { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.Schema.XamlTypeInvoker UnknownInvoker" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeInvoker.UnknownInvoker" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlTypeInvoker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全に実装されている、不明なを表す静的な値を提供<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。</summary>
+        <value>静的な値を完全に実装されている、不明なを表す<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を指定する、 <xref:System.Xaml.Schema.XamlTypeInvoker> System.Xaml のパラメーターには、API が定義されている例外をスローすると呼ばれるコードを通常発生することです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

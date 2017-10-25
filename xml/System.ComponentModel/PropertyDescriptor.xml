@@ -1,0 +1,1264 @@
+<Type Name="PropertyDescriptor" FullName="System.ComponentModel.PropertyDescriptor">
+  <TypeSignature Language="C#" Value="public abstract class PropertyDescriptor : System.ComponentModel.MemberDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PropertyDescriptor extends System.ComponentModel.MemberDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.PropertyDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.MemberDescriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスのプロパティの抽象化を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの説明は、名前、その属性、プロパティが関連付けられているコンポーネントのクラスおよびプロパティの型で構成されます。  
+  
+ <xref:System.ComponentModel.PropertyDescriptor>次のプロパティとメソッドを提供します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.Converter%2A>含まれています、<xref:System.ComponentModel.TypeConverter>このプロパティにします。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.IsLocalizable%2A>このプロパティをローカライズする必要があるかどうかを示します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.GetEditor%2A>指定した型のエディターを返します。  
+  
+ <xref:System.ComponentModel.PropertyDescriptor>また、次を提供`abstract`プロパティとメソッド。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.ComponentType%2A>このプロパティにバインドされているコンポーネントの型が含まれています。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.IsReadOnly%2A>このプロパティは読み取り専用であるかどうかを示します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.PropertyType%2A>プロパティの型を取得します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.CanResetValue%2A>コンポーネントをリセットすると、コンポーネントの値で変更するかどうかを示します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.GetValue%2A>コンポーネントのプロパティの現在の値を返します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.ResetValue%2A>このコンポーネントのプロパティの値にリセットします。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.SetValue%2A>別の値をコンポーネントの値を設定します。  
+  
+-   <xref:System.ComponentModel.PropertyDescriptor.ShouldSerializeValue%2A>このプロパティの値が永続化する必要があるかどうかを示します。  
+  
+ 通常、`abstract`メンバーは、リフレクションを介して実装されます。 リフレクションに関する詳細については、トピックを参照してください。[リフレクション](~/docs/framework/reflection-and-codedom/reflection.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例が例では、に基づいて構築されており、<xref:System.ComponentModel.PropertyDescriptorCollection>クラスです。 テキスト ボックスにボタンのテキストの情報 (カテゴリ、説明、表示名) を出力します。 いるものと`button1`と`textbox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[PropertyDescriptor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/PropertyDescriptor/CPP/propertydescriptor.cpp#1)]
+ [!code-csharp[PropertyDescriptor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/PropertyDescriptor/CS/propertydescriptor.cs#1)]
+ [!code-vb[PropertyDescriptor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PropertyDescriptor/VB/propertydescriptor.vb#1)]  
+  
+ 次のコード例では、プロパティをラップする読み取り専用のラッパーを提供するカスタム プロパティ記述子を実装する方法を示します。 `SerializeReadOnlyPropertyDescriptor`カスタム デザイナーでのコントロールの読み取り専用のプロパティ記述子を提供するために使用<xref:System.Windows.Forms.Control.Size%2A>プロパティです。  
+  
+ [!code-csharp[System.ComponentModel.PropertyDescriptor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.PropertyDescriptor/CS/SerializeReadOnlyPropertyDescriptor.cs#1)]
+ [!code-vb[System.ComponentModel.PropertyDescriptor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.PropertyDescriptor/VB/SerializeReadOnlyPropertyDescriptor.vb#1)]  
+  
+ 次のコード例を使用する方法を示して、`SerializeReadOnlyPropertyDescriptor`カスタム デザイナーです。  
+  
+ [!code-csharp[System.ComponentModel.PropertyDescriptor#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.PropertyDescriptor/CS/DemoControlDesigner.cs#10)]
+ [!code-vb[System.ComponentModel.PropertyDescriptor#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.PropertyDescriptor/VB/DemoControlDesigner.vb#10)]  
+[!code-csharp[System.ComponentModel.PropertyDescriptor#100](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.PropertyDescriptor/CS/DemoControl.cs#100)]
+[!code-vb[System.ComponentModel.PropertyDescriptor#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.PropertyDescriptor/VB/DemoControl.vb#100)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PropertyDescriptor (System.ComponentModel.MemberDescriptor descr);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.MemberDescriptor descr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.#ctor(System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="descr" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="descr">A<see cref="T:System.ComponentModel.MemberDescriptor" />プロパティとその属性の名前を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.PropertyDescriptor" />名前と、指定した属性を持つクラス<see cref="T:System.ComponentModel.MemberDescriptor" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PropertyDescriptor (System.ComponentModel.MemberDescriptor descr, Attribute[] attrs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.MemberDescriptor descr, class System.Attribute[] attrs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.#ctor(System.ComponentModel.MemberDescriptor,System.Attribute[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="descr" Type="System.ComponentModel.MemberDescriptor" />
+        <Parameter Name="attrs" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="descr">A<see cref="T:System.ComponentModel.MemberDescriptor" />メンバーとその属性の名前を含むです。</param>
+        <param name="attrs"><see cref="T:System.Attribute" />プロパティと関連付ける属性を含む配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.ComponentModel.PropertyDescriptor" /> 、指定した名前のクラス<see cref="T:System.ComponentModel.MemberDescriptor" />と両方の属性、<see cref="T:System.ComponentModel.MemberDescriptor" />と<see cref="T:System.Attribute" />配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター内の属性を追加する、<xref:System.Attribute>配列内の属性を<xref:System.ComponentModel.MemberDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PropertyDescriptor (string name, Attribute[] attrs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string name, class System.Attribute[] attrs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.#ctor(System.String,System.Attribute[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attrs" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロパティの名前。</param>
+        <param name="attrs">型の配列<see cref="T:System.Attribute" />プロパティの属性を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.PropertyDescriptor" />指定した名前および属性を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValueChanged">
+      <MemberSignature Language="C#" Value="public virtual void AddValueChanged (object component, EventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddValueChanged(object component, class System.EventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.AddValueChanged(System.Object,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="handler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="component">ハンドラーを追加するコンポーネントです。</param>
+        <param name="handler">リスナーとして追加するデリゲート。</param>
+        <summary>このプロパティが変更されたときに通知するには、その他のオブジェクトを有効にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanResetValue">
+      <MemberSignature Language="C#" Value="public abstract bool CanResetValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanResetValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.CanResetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">テストするためのコンポーネントは、機能をリセットします。</param>
+        <summary>派生クラスでオーバーライドされると、その値を変更オブジェクトをリセットするかどうかを返します。</summary>
+        <returns>
+          <see langword="true" />コンポーネントをリセットする場合です。 値を変化します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドはリフレクションを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでオーバーライドされると、このメソッドを検索、<see cref="T:System.ComponentModel.DefaultValueAttribute" />です。 1 つが見つかると、プロパティの現在の値の属性の値を比較します。 返します<see langword="true" />既定値では、プロパティの現在の値に一致しない場合。 このメソッドを見つけられない場合、 <see cref="T:System.ComponentModel.DefaultValueAttribute" />、自分で実装する必要のある"ShouldPersistMyProperty"メソッドを検索します。 これが見つかった場合、 <see cref="M:System.ComponentModel.PropertyDescriptor.CanResetValue(System.Object)" /> "ShouldPersistMyProperty"が返されますを返します。 それ以外の場合、自分で実装する必要のある"ResetMyProperty"メソッドを検索します。 これが見つかった場合、<see cref="M:System.ComponentModel.PropertyDescriptor.CanResetValue(System.Object)" />返します<see langword="true" />です。 見つからない場合、 <see cref="T:System.ComponentModel.DefaultValueAttribute" />、その"ShouldPersistMyProperty"メソッドの場合、または"ResetMyProperty"メソッドを返します<see langword="false" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentType">
+      <MemberSignature Language="C#" Value="public abstract Type ComponentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ComponentType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.ComponentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このプロパティにバインドされているコンポーネントの種類を取得します。</summary>
+        <value>A<see cref="T:System.Type" />にこのプロパティがバインドされているコンポーネントの型を表すです。 ときに、<see cref="M:System.ComponentModel.PropertyDescriptor.GetValue(System.Object)" />または<see cref="M:System.ComponentModel.PropertyDescriptor.SetValue(System.Object,System.Object)" />メソッドが呼び出され、指定されたオブジェクトはこの型のインスタンスである可能性があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このプロパティは、リフレクションを介して実装されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Converter">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.TypeConverter Converter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.TypeConverter Converter" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.Converter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの型コンバーターを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.TypeConverter" />変換に使用される、<see cref="T:System.Type" />このプロパティのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="protected object CreateInstance (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object CreateInstance(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.CreateInstance(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />を作成する型を表すです。</param>
+        <summary>指定した型のインスタンスを作成します。</summary>
+        <returns>型の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyDescriptor.CreateInstance%2A>指定された型を受け取るコンス トラクターを検索します。 コンス トラクターが見つかると、プロパティの型に渡されます。  
+  
+ コンバーターとエディターは、このメソッドを使用して、コンポーネントのバージョンを作成します。 このメソッドは、1 つのコンポーネントを 1 つ以上の型の再利用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">プライベート クラス メンバーは、メタデータにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">これと比較するオブジェクト<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</param>
+        <summary>別のオブジェクトが等しいかどうかに表示するには、これを比較します。</summary>
+        <returns>
+          <see langword="true" />値が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillAttributes">
+      <MemberSignature Language="C#" Value="protected override void FillAttributes (System.Collections.IList attributeList);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void FillAttributes(class System.Collections.IList attributeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.FillAttributes(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeList" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="attributeList"><see cref="T:System.Collections.IList" />親クラスで属性を一覧表示します。 最初に、これが空です。</param>
+        <summary>属性を追加、<see cref="T:System.ComponentModel.PropertyDescriptor" />を指定した属性の一覧で、親クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 重複する属性を一覧に追加された最後の 1 つは保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetChildProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.PropertyDescriptorCollection GetChildProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetChildProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定値を返します<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />です。</summary>
+        <returns>プロパティ記述子のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは成功`null`両方に対して、`instance`パラメーターおよび`filter`パラメーター。  
+  
+ プロパティ、`instance`パラメーターとは異なる、クラスのプロパティ、コンテナーは追加したり、場合に、プロパティを削除するため、`instance`パラメーターが配置されています。  
+  
+ `filter`パラメーターを混在させること<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A<xref:System.Type>オブジェクトが、ワイルドカードとして扱われます。 があるプロパティと一致する、<xref:System.Type>属性のセットにします。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティは含まれません、返された配列。  
+  
+-   属性がのインスタンスの場合<xref:System.Attribute>プロパティは、返された配列に含まれると、完全に一致する必要があります。  
+  
+-   指定した場合、<xref:System.Attribute>と既定のプロパティに含められます、返された配列のインスタンスがない場合でも<xref:System.Attribute>プロパティにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetChildProperties (Attribute[] filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.PropertyDescriptorCollection GetChildProperties(class System.Attribute[] filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetChildProperties(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="filter">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />フィルターとして指定した属性配列を使用します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定の属性と一致するプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは渡します`null`の`instance`パラメーター。  
+  
+ プロパティを`instance`パラメーターが、サイトは追加したり、場合に、プロパティを削除するため、クラスのプロパティと異なる場合が、`instance`パラメーターが配置されています。  
+  
+ `filter`パラメーターを混在させること<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A<xref:System.Type>オブジェクトが、ワイルドカードとして扱われます。 があるプロパティと一致する、<xref:System.Type>属性のセットにします。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティは含まれません、返された配列。  
+  
+-   属性がのインスタンスの場合<xref:System.Attribute>プロパティは、返された配列に含まれると、完全に一致する必要があります。  
+  
+-   指定した場合、<xref:System.Attribute>インスタンスと、既定のプロパティはのインスタンスがない場合でもには、返される配列に含められますが、<xref:System.Attribute>プロパティにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetChildProperties (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.PropertyDescriptorCollection GetChildProperties(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetChildProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">プロパティを取得する対象のコンポーネント。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />から特定のオブジェクト。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントのプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは渡します`null`の`filter`パラメーター。  
+  
+ プロパティを`instance`パラメーターが、サイトは追加したり、場合に、プロパティを削除するため、クラスのプロパティと異なる場合が、`instance`パラメーターが配置されています。  
+  
+ `filter`パラメーターを混在させること<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A<xref:System.Type>オブジェクトが、ワイルドカードとして扱われます。 があるプロパティと一致する、<xref:System.Type>属性のセットにします。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティは含まれません、返された配列。  
+  
+-   属性がのインスタンスの場合<xref:System.Attribute>プロパティは、返された配列に含まれると、完全に一致する必要があります。  
+  
+-   指定した場合、<xref:System.Attribute>インスタンスと、既定のプロパティはのインスタンスがない場合でもには、返される配列に含められますが、<xref:System.Attribute>プロパティにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildProperties">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptorCollection GetChildProperties (object instance, Attribute[] filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetChildProperties(object instance, class System.Attribute[] filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetChildProperties(System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="filter" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="instance">プロパティを取得する対象のコンポーネント。</param>
+        <param name="filter">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />から特定のオブジェクトをフィルターとして指定した属性配列を使用します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントの指定した属性と一致するプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを`instance`パラメーターが、サイトは追加したり、場合に、プロパティを削除するため、クラスのプロパティと異なる場合が、`instance`パラメーターが配置されています。  
+  
+ `filter`パラメーターを混在させること<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A<xref:System.Type>オブジェクトが、ワイルドカードとして扱われます。 があるプロパティと一致する、<xref:System.Type>属性のセットにします。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティは含まれません、返された配列。  
+  
+-   属性がのインスタンスの場合<xref:System.Attribute>プロパティは、返された配列に含まれると、完全に一致する必要があります。  
+  
+-   指定した場合、<xref:System.Attribute>インスタンスと、既定のプロパティはのインスタンスがない場合でもには、返される配列に含められますが、<xref:System.Attribute>プロパティにします。  
+  
+ 子のプロパティを実装することによって返される一般的に、<xref:System.ComponentModel.TypeConverter.GetProperties%2A>のメンバー、<xref:System.ComponentModel.TypeConverter>このプロパティからが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditor">
+      <MemberSignature Language="C#" Value="public virtual object GetEditor (Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetEditor(class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetEditor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">複数のエディターに対応するプロパティを区別するために使用されるエディターの基本データ型。</param>
+        <summary>指定した型のエディターを取得します。</summary>
+        <returns>要求されたエディターの種類のインスタンスまたは<see langword="null" />エディターが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを返します。</summary>
+        <returns>このオブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInvocationTarget">
+      <MemberSignature Language="C#" Value="protected override object GetInvocationTarget (Type type, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetInvocationTarget(class System.Type type, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetInvocationTarget(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />呼び出し対象です。</param>
+        <param name="instance">潜在的な呼び出し対象です。</param>
+        <summary>このメソッドは、メンバーの呼び出し中に使用されるオブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" />メンバーの呼び出し中を使用する必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、戻り値は、同じにする、`instance`で渡されます。 別のオブジェクトをこのインスタンスに関連付けられた他のユーザー インスタンスが、カスタム型記述子である場合や、<xref:System.ComponentModel.PropertyDescriptor.GetInvocationTarget%2A>メソッドは、別の値を返す可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeFromName">
+      <MemberSignature Language="C#" Value="protected Type GetTypeFromName (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Type GetTypeFromName(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetTypeFromName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">取得する型のアセンブリ修飾名。</param>
+        <summary>その名前を使用して型を返します。</summary>
+        <returns>A<see cref="T:System.Type" />指定された型名と一致するか、<see langword="null" />一致が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切な型を検索するには、このメソッドはまず、アセンブリ、型のこの<xref:System.ComponentModel.PropertyDescriptor>参照します。 呼び出しが見つからない場合、型アセンブリ内、<xref:System.Type.GetType%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public abstract object GetValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">値を取得する対象のプロパティを持つコンポーネント。</param>
+        <summary>派生クラスでオーバーライドされると、コンポーネントのプロパティの現在の値を取得します。</summary>
+        <returns>指定されたコンポーネントのプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドはリフレクションを使用します。  
+  
+ このメソッドに自動的には、前の変更、 <xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanging%2A>、変更適用後のメソッド、および<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanged%2A>の<xref:System.ComponentModel.Design.IComponentChangeService>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合は、実装する必要があります"GetMyProperty"メソッドを呼び出すことによって、プロパティの現在の値を取得します。 そのメソッドで例外が通過する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueChangedHandler">
+      <MemberSignature Language="C#" Value="protected EventHandler GetValueChangedHandler (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.EventHandler GetValueChangedHandler(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.GetValueChangedHandler(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベント ハンドラーを取得する対象のコンポーネントです。</param>
+        <summary>現在のセットを取得<c>ValueChanged</c>特定のコンポーネントのイベント ハンドラー</summary>
+        <returns>A がマルチキャスト イベント ハンドラーを結合または<see langword="null" />イベント ハンドラーは、現在割り当てられていない場合に<paramref name="component" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocalizable">
+      <MemberSignature Language="C#" Value="public virtual bool IsLocalizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocalizable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.IsLocalizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをローカライズする必要があるかどうかを示す値を取得するように指定した、<see cref="T:System.ComponentModel.LocalizableAttribute" />です。</summary>
+        <value>
+          <see langword="true" />メンバーが付いている場合、 <see cref="T:System.ComponentModel.LocalizableAttribute" /> 'éý' <see langword="true" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティにマークされている場合、 <xref:System.ComponentModel.LocalizableAttribute> 'éý'`true`とその値は、ビジュアル デザイナーで使用されているリソース ファイルに保存されます。 属性でプロパティをマークし、コードでプロパティを設定すると、リソース ファイルは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public abstract bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このプロパティは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValueChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnValueChanged (object component, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValueChanged(object component, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.OnValueChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントを発生させるオブジェクトです。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、 <c>ValueChanged</c>実装するイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、プロパティの値が変更されたときに、プロパティ記述子の実装によって呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public abstract Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、プロパティの型を取得します。</summary>
+        <value>A<see cref="T:System.Type" />プロパティの型を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このプロパティは、リフレクションを介して実装されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveValueChanged">
+      <MemberSignature Language="C#" Value="public virtual void RemoveValueChanged (object component, EventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveValueChanged(object component, class System.EventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.RemoveValueChanged(System.Object,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="handler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="component">ハンドラーを削除するコンポーネント。</param>
+        <param name="handler">リスナーとして削除するデリゲート。</param>
+        <summary>このプロパティが変更されたときに通知するには、その他のオブジェクトを有効にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetValue">
+      <MemberSignature Language="C#" Value="public abstract void ResetValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.ResetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">既定値にリセットするのには、プロパティの値を持つコンポーネント。</param>
+        <summary>派生クラスでオーバーライドされると、コンポーネントのこのプロパティの値を既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドはリフレクションを使用します。  
+  
+ このメソッドは、次の優先順位にするプロパティをリセットする値を決定します。  
+  
+1.  このプロパティの影付きのプロパティがあります。  
+  
+2.  <xref:System.ComponentModel.DefaultValueAttribute>このプロパティにします。  
+  
+3.  渡すプロパティの名前を"MyProperty"がここでは、実装している"ResetMyProperty"メソッドがあります。  
+  
+ このメソッドを作成、<xref:System.ComponentModel.Design.DesignerTransaction>次の順序で自動的に。  
+  
+1.  メソッドの呼び出し、<xref:System.ComponentModel.Design.IDesignerHost.CreateTransaction%2A?displayProperty=nameWithType>メソッドを作成、新しい<xref:System.ComponentModel.Design.DesignerTransaction>を変更を表します。  
+  
+2.  このメソッドの呼び出し、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanging%2A?displayProperty=nameWithType>メソッドをトランザクションが開始され、変更が発生することを示します。  
+  
+3.  メソッドは、このメソッドのチェックの順序によって決定される値にプロパティをリセットします。  
+  
+4.  このメソッドの呼び出し、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanged%2A?displayProperty=nameWithType>メソッドを変更が発生したことを示します。  
+  
+5.  このメソッドの呼び出し<xref:System.ComponentModel.Design.DesignerTransaction.Commit%2A?displayProperty=nameWithType>をトランザクションが完了したことを示します。  
+  
+ トランザクションの目的は、サポートする`Undo`と`Redo`機能します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでオーバーライドされると、このメソッドを検索、<see cref="T:System.ComponentModel.DefaultValueAttribute" />です。 プロパティの値が設定、見つかった場合、<see cref="T:System.ComponentModel.DefaultValueAttribute" />見つかったことです。 このメソッドを見つけられない場合、 <see cref="T:System.ComponentModel.DefaultValueAttribute" />、"ResetMyProperty"メソッドを実装する必要がありますを検索します。 これが見つかった場合、<see cref="M:System.ComponentModel.PropertyDescriptor.ResetValue(System.Object)" />これメソッドを呼び出します。 場合<see cref="M:System.ComponentModel.PropertyDescriptor.ResetValue(System.Object)" />見つけることができません、<see cref="T:System.ComponentModel.DefaultValueAttribute" />または"ResetMyProperty"メソッドを実装している操作は実行されません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializationVisibility">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.DesignerSerializationVisibility SerializationVisibility { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.DesignerSerializationVisibility SerializationVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.SerializationVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DesignerSerializationVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティはシリアル化する必要があるかどうかを示す値を取得するように指定した、<see cref="T:System.ComponentModel.DesignerSerializationVisibilityAttribute" />です。</summary>
+        <value>1 つ、<see cref="T:System.ComponentModel.DesignerSerializationVisibility" />このプロパティをシリアル化するかどうかを指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public abstract void SetValue (object component, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object component, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">設定するプロパティの値を持つコンポーネント。</param>
+        <param name="value">新しい値。</param>
+        <summary>派生クラスでオーバーライドされると、別の値に、コンポーネントの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドはリフレクションを使用します。  
+  
+ このメソッドを作成、<xref:System.ComponentModel.Design.DesignerTransaction>次の順序で自動的に。  
+  
+1.  メソッドの呼び出し、<xref:System.ComponentModel.Design.IDesignerHost.CreateTransaction%2A?displayProperty=nameWithType>メソッドを作成、新しい<xref:System.ComponentModel.Design.DesignerTransaction>を変更を表します。  
+  
+2.  このメソッドの呼び出し、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanging%2A?displayProperty=nameWithType>メソッドをトランザクションが開始され、変更が発生することを示します。  
+  
+3.  メソッドは、このメソッドのチェックの順序によって決定される値にプロパティをリセットします。  
+  
+4.  このメソッドの呼び出し、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanged%2A?displayProperty=nameWithType>メソッドを変更が発生したことを示します。  
+  
+5.  このメソッドの呼び出し<xref:System.ComponentModel.Design.DesignerTransaction.Commit%2A?displayProperty=nameWithType>をトランザクションが完了したことを示します。  
+  
+ トランザクションの目的は、サポートする`Undo`と`Redo`機能します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合を実装する必要があります。 適切な"SetMyProperty"メソッドを呼び出すことによって、プロパティの値を設定にする必要があります。 指定された値が有効でない場合、コンポーネントを渡すことが例外をスローする必要があります。 (次のように実装して) いる"SetMyProperty"メソッド"GetMyProperty"メソッド"SetMyProperty"メソッドが例外をスローしていないときに渡された値が返しますされるように、プロパティをデザインする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeValue">
+      <MemberSignature Language="C#" Value="public abstract bool ShouldSerializeValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShouldSerializeValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyDescriptor.ShouldSerializeValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">永続化のため調査するプロパティを持つコンポーネント。</param>
+        <summary>派生クラスでオーバーライドされると、このプロパティの値が永続化する必要があるかどうかを示す値を決定します。</summary>
+        <returns>
+          <see langword="true" />場合は、プロパティを永続化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドはリフレクションを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでオーバーライドされると、このメソッドが戻る<see langword="true" />プロパティの現在の値が既定値と異なる場合。 既定値の場合、まずは検索、<see cref="T:System.ComponentModel.DefaultValueAttribute" />です。 メソッドには、この属性が検出されると、プロパティの現在の値の属性の値を比較します。 このメソッドを見つけられない場合、 <see cref="T:System.ComponentModel.DefaultValueAttribute" />、"ShouldSerializeMyProperty"メソッドを実装する必要がありますを検索します。 見つかった場合は、<see cref="M:System.ComponentModel.PropertyDescriptor.ShouldSerializeValue(System.Object)" />これを呼び出します。 このメソッドを見つけられない場合、<see cref="T:System.ComponentModel.DefaultValueAttribute" />や"ShouldSerializeMyProperty"メソッドの最適化を作成できないことを返します<see langword="true" />です。
+ <block subset="none" type="note"><para>  
+ <see cref="T:System.ComponentModel.Design.ComponentDesigner" />クラスは継承されたコンポーネントの特別なシリアル化ロジックを実装します。 詳細については、「<see cref="T:System.ComponentModel.Design.ComponentDesigner" />」を参照してください。  
+</para></block></para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsChangeEvents">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsChangeEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsChangeEvents" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyDescriptor.SupportsChangeEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの値の変更通知がプロパティ記述子の外部由来しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティ記述子です。 外部から発生値を変更する場合の通知それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyDescriptor.SupportsChangeEvents%2A>プロパティは、このプロパティの値の変更通知可能性があります以外から発生させてプロパティ記述子など、コンポーネント自体、またはに加えられたかどうか通知は、直接の呼び出しから発信されますのみかどうかを示します、<xref:System.ComponentModel.PropertyDescriptor.SetValue%2A>メソッドです。 たとえば、コンポーネントが実装することが、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイス、または明示的な場合があります`name.Changed`このプロパティのイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

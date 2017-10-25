@@ -1,0 +1,239 @@
+<Type Name="Saml2NameIdentifier" FullName="System.IdentityModel.Tokens.Saml2NameIdentifier">
+  <TypeSignature Language="C#" Value="public class Saml2NameIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2NameIdentifier extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>[Saml2Core、2.2.3] で指定されている NameID 要素または [Saml2Core、2.2.4] で指定されている EncryptedID 要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す要素の詳細については、SAML V2.0 のコア仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2NameIdentifier (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2NameIdentifier.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前の識別子。</param>
+        <summary>指定した名前を使用して、<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2NameIdentifier.Value%2A>で指定された識別子を持つプロパティは初期化`name`です。 <xref:System.IdentityModel.Tokens.Saml2NameIdentifier.Format%2A> プロパティは `null` に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2NameIdentifier (string name, Uri format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Uri format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2NameIdentifier.#ctor(System.String,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="format" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前の識別子。</param>
+        <param name="format">A<see cref="T:System.Uri" />識別子の形式を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />クラスの指定した名前と URI の書式を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2NameIdentifier.Value%2A>で指定された識別子を持つプロパティは初期化`name`です。 <xref:System.IdentityModel.Tokens.Saml2NameIdentifier.Format%2A>プロパティは指定された URI に初期化`format`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">設定しようとすると、<paramref name="format" />ではない値に<see langword="null" />がない場合は絶対 URI の発生とします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptingCredentials">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.EncryptingCredentials EncryptingCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.EncryptingCredentials EncryptingCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.EncryptingCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.EncryptingCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Get または EncryptedID 要素で名前の識別子を暗号化するために使用される資格情報を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.EncryptingCredentials" />名前識別子の暗号化に使用する資格情報を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalEncryptedKeys">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.EncryptedKeyIdentifierClause&gt; ExternalEncryptedKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.EncryptedKeyIdentifierClause&gt; ExternalEncryptedKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.ExternalEncryptedKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.EncryptedKeyIdentifierClause&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>EncryptedID 要素の子要素として、外部 xenc:EncryptedData 要素に指定されている追加の暗号化キーを格納するコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Collections.ObjectModel.Collection`1" />キーを格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public Uri Format { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Format" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または識別子の文字列ベースの情報の分類を表す URI 参照を設定します。 [Saml2Core、2.2.2]</summary>
+        <value><see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式の属性です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">はない値を設定しようとすると、<see langword="null" />がない場合は絶対 URI の発生とします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NameQualifier">
+      <MemberSignature Language="C#" Value="public string NameQualifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NameQualifier" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.NameQualifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前を修飾するドメインの管理、セキュリティを設定します。 [Saml2Core、2.2.2]</summary>
+        <value>名前修飾子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NameQualifier 属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SPNameQualifier">
+      <MemberSignature Language="C#" Value="public string SPNameQualifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SPNameQualifier" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.SPNameQualifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス プロバイダーの名前または名前 [Saml2Core、2.2.2] をさらに修飾するために使用されるプロバイダーの所属名を設定します。</summary>
+        <value>サービス プロバイダーの名前修飾子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SPNameQualifier 属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SPProvidedId">
+      <MemberSignature Language="C#" Value="public string SPProvidedId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SPProvidedId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.SPProvidedId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、プライマリ名前識別子と異なる場合に、サービス プロバイダーまたはエンティティのプロバイダーの所属で確立された名前識別子を設定します。 [Saml2Core、2.2.2]</summary>
+        <value>名前の識別子を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SPProviderId 属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2NameIdentifier.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前の識別子の値を設定します。</summary>
+        <value>名前識別子の値を含む文字列です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">ある値を設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,217 @@
+<Type Name="ICodeCompiler" FullName="System.CodeDom.Compiler.ICodeCompiler">
+  <TypeSignature Language="C#" Value="public interface ICodeCompiler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICodeCompiler" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.ICodeCompiler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ソース コードまたは特定のコンパイラを使用して、CodeDOM ツリーのコンパイルを起動するためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、コード プロバイダーの構成の実装の<xref:System.CodeDom.Compiler.CodeDomProvider>、 <xref:System.CodeDom.Compiler.ICodeGenerator>、 <xref:System.CodeDom.Compiler.ICodeParser>、および<xref:System.CodeDom.Compiler.ICodeCompiler>です。 [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>、 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateParser%2A>、および<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>メソッドは廃止されましたが、および方法<xref:System.CodeDom.Compiler.ICodeGenerator>と<xref:System.CodeDom.Compiler.ICodeCompiler>で直接利用、<xref:System.CodeDom.Compiler.CodeDomProvider>クラスです。 コード プロバイダーの実装でこれらのメソッドをオーバーライドして、基本メソッドを呼び出さないでください。  
+  
+ <xref:System.CodeDom.Compiler.ICodeCompiler>開発者がプログラムによって Code Document Object Model (CodeDOM) コンパイル ユニットでは、ソース コードを含む文字列からアセンブリをコンパイルするか、ソース コード ファイルに特定のコンパイラには、インターフェイスを実装することができます。  
+  
+ <xref:System.CodeDom.Compiler.ICodeCompiler>インターフェイスには、ランタイムとアクセスに関連する情報コンパイル コンパイルが発生した後、結果コードとエラーまたは警告が返されますなどで指定されたパラメーターを使用したコンパイルを起動する機能が用意されています。 それぞれのコンパイル方法を受け入れる、<xref:System.CodeDom.Compiler.CompilerParameters>オブジェクトをコンパイラの設定を示すを返す、<xref:System.CodeDom.Compiler.CompilerResults>コンパイルの結果を示すオブジェクト。  
+  
+ コンパイラの開発者は、動的なコンパイルをサポートするには、このインターフェイスの実装を提供する必要があります。 <xref:System.CodeDom.Compiler.CodeDomProvider>実装時は CodeDom サポートが提供されている言語のプログラムによるコンパイルの機能を提供するには、このインターフェイスを実装することも考慮にします。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このインターフェイスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのインターフェイスを実装するクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="CompileAssemblyFromDom">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit compilationUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit compilationUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDom(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="compilationUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイルの設定を示すオブジェクト。</param>
+        <param name="compilationUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />を示すコードをコンパイルします。</param>
+        <summary>アセンブリをコンパイル、<see cref="N:System.CodeDom" />含まれる指定されたツリー <see cref="T:System.CodeDom.CodeCompileUnit" />、指定したコンパイラの設定を使用します。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromDomBatch">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDomBatch (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit[] compilationUnits);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDomBatch(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit[] compilationUnits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDomBatch(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="compilationUnits" Type="System.CodeDom.CodeCompileUnit[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイルの設定を示すオブジェクト。</param>
+        <param name="compilationUnits">型の配列<see cref="T:System.CodeDom.CodeCompileUnit" />を示すコードをコンパイルします。</param>
+        <summary>に基づいてアセンブリをコンパイル、<see cref="N:System.CodeDom" />の指定した配列に含まれているツリー<see cref="T:System.CodeDom.CodeCompileUnit" />オブジェクトを指定したコンパイラの設定を使用します。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromFile">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile (System.CodeDom.Compiler.CompilerParameters options, string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile(class System.CodeDom.Compiler.CompilerParameters options, string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFile(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイルの設定を示すオブジェクト。</param>
+        <param name="fileName">コンパイルするソース コードを格納しているファイルのファイル名。</param>
+        <summary>指定したコンパイラ設定を使用して、指定されたファイル内に含まれるソース コードからアセンブリをコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromFileBatch">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFileBatch (System.CodeDom.Compiler.CompilerParameters options, string[] fileNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFileBatch(class System.CodeDom.Compiler.CompilerParameters options, string[] fileNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイルの設定を示すオブジェクト。</param>
+        <param name="fileNames">コンパイルするファイルのファイル名。</param>
+        <summary>指定したコンパイラ設定を使用して、指定したファイル内に含まれるソース コードからアセンブリをコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromSource">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource (System.CodeDom.Compiler.CompilerParameters options, string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource(class System.CodeDom.Compiler.CompilerParameters options, string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSource(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイルの設定を示すオブジェクト。</param>
+        <param name="source">コンパイルするソース コードです。</param>
+        <summary>ソース コードを含む、指定したコンパイラ設定を使用して、指定した文字列からアセンブリをコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromSourceBatch">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSourceBatch (System.CodeDom.Compiler.CompilerParameters options, string[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSourceBatch(class System.CodeDom.Compiler.CompilerParameters options, string[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSourceBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="sources" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイルの設定を示すオブジェクト。</param>
+        <param name="sources">コンパイルするソース コードの文字列。</param>
+        <summary>指定されたソース コードを含む、指定したコンパイラ設定を使用して文字列の配列からアセンブリをコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,162 @@
+<Type Name="Link&lt;T&gt;" FullName="System.Data.Linq.Link&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public struct Link&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Link`1&lt;T&gt; extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Link`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">遅延のソース内の要素の型。</typeparam>
+    <summary>個々 のプロパティの遅延読み込みを有効にするために使用 (に似て<see cref="T:System.Data.Linq.EntityRef`1" />)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 遅延のソースを割り当てる場合 (<xref:System.Collections.Generic.IEnumerable%601>) に<xref:System.Data.Linq.Link%601>、 <xref:System.Data.Linq.Link%601> 、元の最初の時刻を列挙することで、値を読み込む、<xref:System.Data.Linq.Link%601.Value%2A>プロパティにアクセスします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link (System.Collections.Generic.IEnumerable&lt;T&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Link`1.#ctor(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース コレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.Link`1" />ソースを参照することで構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して初期化するために、<xref:System.Data.Linq.Link%601>遅延値ローダーを使用して (実装<xref:System.Collections.Generic.IEnumerable%601>)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link (System.Data.Linq.Link&lt;T&gt; link);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Data.Linq.Link`1&lt;!T&gt; link) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Link`1.#ctor(System.Data.Linq.Link{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="link" Type="System.Data.Linq.Link&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="link"><see cref="T:System.Data.Linq.Link`1" />コピー元のインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.Link`1" />構造体から別の内部状態のコピーを<see cref="T:System.Data.Linq.Link`1" />インスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Link`1.#ctor(`0)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">プロパティの値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.Link`1" />構造、プロパティの値を参照しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値が既にわかっている場合は、このコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasLoadedOrAssignedValue">
+      <MemberSignature Language="C#" Value="public bool HasLoadedOrAssignedValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasLoadedOrAssignedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Link`1.HasLoadedOrAssignedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定するかどうか、<see cref="T:System.Data.Linq.Link`1" />が読み込まれたまたはの値を代入します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.Linq.Link`1" />がまたはロードのいずれかの値を代入以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「の読み込み」の具体化中または遅延読み込みの際に、データが読み込まれたことを意味します。 「割り当て」は、データに値が手動で設定されたことを意味します。  
+  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]このプロパティを使用することを確認して、<xref:System.Data.Linq.Link%601>はトリガーされないアクセス遅延読み込みされるように値を持ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasValue">
+      <MemberSignature Language="C#" Value="public bool HasValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasValue" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Link`1.HasValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移行元の値にするかどうかを指定する値を取得します。</summary>
+        <value>返します<see langword="true" />ソースに割り当てられているか読み込まれている値の (null を含む) がある場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public T Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Link`1.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値に割り当てられているまたはによって読み込まれる、<see cref="T:System.Data.Linq.Link`1" />です。</summary>
+        <value>この遅延のプロパティの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

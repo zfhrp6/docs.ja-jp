@@ -1,0 +1,779 @@
+<Type Name="XpsDocument" FullName="System.Windows.Xps.Packaging.XpsDocument">
+  <TypeSignature Language="C#" Value="public class XpsDocument : System.Windows.Xps.Packaging.XpsPartBase, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsDocument extends System.Windows.Xps.Packaging.XpsPartBase implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.XpsDocument" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Xps.Packaging.XpsPartBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>提供、 <see cref="T:System.IO.Packaging.Package" /> XPS ドキュメントの内容を保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>が含まれています、 <xref:System.Windows.Documents.FixedDocumentSequence> 1 つまたは複数構成されています<xref:System.Windows.Documents.FixedDocument>要素。  
+  
+ <xref:System.Windows.Xps.Packaging.XpsDocument.%23ctor%2A>コンス トラクターがへの参照を渡し、<xref:System.IO.Packaging.Package>書き込み、保存、およびドキュメントのコンテンツの要素を読み取るのためです。  
+  
+ 新しい空[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]<xref:System.IO.Packaging.Package>を使用して作成された、<xref:System.IO.Packaging.Package.%23ctor%2A>コンス トラクターです。  
+  
+ 既存の[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]<xref:System.IO.Packaging.Package>によってが開かれ、<xref:System.IO.Packaging.Package.Open%2A?displayProperty=nameWithType>メソッドです。  
+  
+ A<xref:System.Windows.Documents.FixedDocumentSequence>ルートは、空に追加[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]<xref:System.IO.Packaging.Package>を呼び出して、<xref:System.Windows.Xps.Packaging.XpsDocument.AddFixedDocumentSequence%2A>メソッドです。  
+  
+ <xref:System.Printing.PrintTicket>プリンター情報と制御要素も関連付けできる、 <xref:System.Windows.Documents.FixedDocumentSequence>、または個別の<xref:System.Windows.Documents.FixedDocument>と<xref:System.Windows.Documents.FixedPage>要素に格納されている、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ 詳細については[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]、XPS XML Paper Specification () からダウンロードを参照してください[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成し、閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例では、作成、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsDocument (System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.#ctor(System.IO.Packaging.Package)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="package">ターゲット[!INCLUDE[TLA2#tla_metro](~/includes/tla2sharptla-metro-md.md)]にパッケージ化、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> 、指定されたアクセス権を持つクラス[!INCLUDE[TLA#tla_metro](~/includes/tlasharptla-metro-md.md)]<see cref="T:System.IO.Packaging.Package" />と既定のインターリーブ、リソース、および圧縮のオプションです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成し、閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例では、作成、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsDocument (System.IO.Packaging.Package package, System.IO.Packaging.CompressionOption compressionOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.Package package, valuetype System.IO.Packaging.CompressionOption compressionOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.#ctor(System.IO.Packaging.Package,System.IO.Packaging.CompressionOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="compressionOption" Type="System.IO.Packaging.CompressionOption" />
+      </Parameters>
+      <Docs>
+        <param name="package">対象のパッケージを<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <param name="compressionOption">パッケージの圧縮オプションです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />クラスは、指定したに含まれている<see cref="T:System.IO.Packaging.Package" />with には、既定のインターリーブ、リソース、および圧縮のオプションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成し、閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例では、作成、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsDocument (string path, System.IO.FileAccess packageAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileAccess packageAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.#ctor(System.String,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="packageAccess" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">ターゲットのパスとファイル名<see cref="T:System.IO.Packaging.Package" />の<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <param name="packageAccess">ファイル I/O モードを開くとき、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />クラスは、指定したに含まれている<see cref="T:System.IO.Packaging.Package" />インターリーブ、リソース、および圧縮のオプションを既定値を持つファイルです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成し、閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例では、作成、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsDocument (System.IO.Packaging.Package package, System.IO.Packaging.CompressionOption compressionOption, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.Package package, valuetype System.IO.Packaging.CompressionOption compressionOption, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.#ctor(System.IO.Packaging.Package,System.IO.Packaging.CompressionOption,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="compressionOption" Type="System.IO.Packaging.CompressionOption" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="package">対象のパッケージを<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <param name="compressionOption">パッケージの圧縮オプションです。</param>
+        <param name="path">[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]を文字列としてドキュメントにします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />クラスは、指定したに含まれている<see cref="T:System.IO.Packaging.Package" />指定された既定のインターリーブ、リソース、および圧縮オプションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成し、閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例では、作成、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsDocument (string path, System.IO.FileAccess packageAccess, System.IO.Packaging.CompressionOption compressionOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileAccess packageAccess, valuetype System.IO.Packaging.CompressionOption compressionOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.#ctor(System.String,System.IO.FileAccess,System.IO.Packaging.CompressionOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="packageAccess" Type="System.IO.FileAccess" />
+        <Parameter Name="compressionOption" Type="System.IO.Packaging.CompressionOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">ターゲットのパスとファイル名<see cref="T:System.IO.Packaging.Package" />の<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <param name="packageAccess">ファイル I/O モードを開くとき、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <param name="compressionOption">パッケージの圧縮オプションです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />クラスは、指定したに含まれている<see cref="T:System.IO.Packaging.Package" />インターリーブ、リソース、および圧縮のオプションを既定値を持つファイルです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成し、閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例では、作成、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFixedDocumentSequence">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceWriter AddFixedDocumentSequence ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceWriter AddFixedDocumentSequence() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.AddFixedDocumentSequence" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ルート<see cref="T:System.Windows.Documents.FixedDocumentSequence" />パッケージにし、ライターを返します。</summary>
+        <returns>[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]この固定ドキュメント シーケンス ライター<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは単数形の名前を使用しますが、 <xref:System.Windows.Xps.Packaging.XpsDocument> 1 つのセット (シーケンス) を指定できます<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument.AddFixedDocumentSequence%2A>にコンテンツを挿入するメソッド、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPkgContent](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpkgcontent)]
+ [!code-csharp[XpsCreate#XpsCreateAddPkgContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpkgcontent)]
+ [!code-vb[XpsCreate#XpsCreateAddPkgContent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpkgcontent)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnail">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsThumbnail AddThumbnail (System.Windows.Xps.Packaging.XpsImageType imageType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Xps.Packaging.XpsThumbnail AddThumbnail(valuetype System.Windows.Xps.Packaging.XpsImageType imageType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.AddThumbnail(System.Windows.Xps.Packaging.XpsImageType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsThumbnail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageType" Type="System.Windows.Xps.Packaging.XpsImageType" />
+      </Parameters>
+      <Docs>
+        <param name="imageType">イメージの形式です。</param>
+        <summary>パッケージには、サムネイル画像を追加します。</summary>
+        <returns>新しく追加された<see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XPS ドキュメント <see cref="T:System.IO.Packaging.Package" /> を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Xps.Packaging.XpsDocument>に対する書き込みアクセス、バッファーは、ストアと、物理的なドキュメントに書き込まれたデータを開きました<xref:System.IO.Packaging.Package>が閉じられます。  
+  
+ 後に<xref:System.Windows.Xps.Packaging.XpsDocument.Close%2A>が呼び出されると、ドキュメントの部分にはアクセスできませんこの<xref:System.Windows.Xps.Packaging.XpsDocument>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例は、コンテンツを挿入開閉する方法を示します、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreatepackageopen)]
+ [!code-csharp[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreatepackageopen)]
+ [!code-vb[XpsCreate#XpsCreatePackageOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreatepackageopen)]  
+  
+ 次の例を開き、書き込み、および閉じる方法も示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CoreDocumentProperties">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageProperties CoreDocumentProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.PackageProperties CoreDocumentProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.CoreDocumentProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コアを取得します<see cref="T:System.IO.Packaging.PackageProperties" />の[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。</summary>
+        <value>主要プロパティ、 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /><see cref="T:System.IO.Packaging.Package" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateXpsDocumentWriter">
+      <MemberSignature Language="C#" Value="public static System.Windows.Xps.XpsDocumentWriter CreateXpsDocumentWriter (System.Windows.Xps.Packaging.XpsDocument xpsDocument);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Xps.XpsDocumentWriter CreateXpsDocumentWriter(class System.Windows.Xps.Packaging.XpsDocument xpsDocument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.CreateXpsDocumentWriter(System.Windows.Xps.Packaging.XpsDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.XpsDocumentWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xpsDocument" Type="System.Windows.Xps.Packaging.XpsDocument" />
+      </Parameters>
+      <Docs>
+        <param name="xpsDocument">[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]書き込むドキュメント。</param>
+        <summary>作成、<see cref="T:System.Windows.Xps.XpsDocumentWriter" />書き込みのため、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</summary>
+        <returns><see cref="T:System.Windows.Xps.XpsDocumentWriter" />書き込みに使用する、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument.CreateXpsDocumentWriter%2A>メソッドを記述するために、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeLinked](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializelinked)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>によって使用されているアンマネージ リソースを解放、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />し、必要に応じて、マネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Windows.Xps.Packaging.XpsDocument>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>その他のオブジェクトを呼び出すことができます<see langword="Dispose" />複数回です。 オーバーライドする場合<see langword="Dispose(Boolean)" />で事前に呼び出したが破棄されたオブジェクトを参照しないように注意、<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FixedDocumentSequenceReader">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader FixedDocumentSequenceReader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader FixedDocumentSequenceReader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.FixedDocumentSequenceReader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />ドキュメントを読み取るためです。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />ドキュメントを読み取るためです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは単数形の名前を使用しますが、 <xref:System.Windows.Xps.Packaging.XpsDocument> 1 つのセット (シーケンス) を指定できます<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントです。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Xps.Packaging.XpsDocument.FixedDocumentSequenceReader%2A>にアクセスするために<xref:System.Windows.Documents.FixedDocument>でパーツ、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Window1.xaml.cs#docstrucfixeddoc)]
+ [!code-vb[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/window1.xaml.vb#docstrucfixeddoc)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFixedDocumentSequence">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.FixedDocumentSequence GetFixedDocumentSequence ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.FixedDocumentSequence GetFixedDocumentSequence() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.GetFixedDocumentSequence" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.FixedDocumentSequence</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パッケージのルートにある固定ドキュメント シーケンスを返します。</summary>
+        <returns><see cref="T:System.Windows.Documents.FixedDocumentSequence" />パッケージです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは単数形の名前を使用しますが、 <xref:System.Windows.Xps.Packaging.XpsDocument> 1 つのセット (シーケンス) を指定できます<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReader">
+      <MemberSignature Language="C#" Value="public bool IsReader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.IsReader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パッケージが読み取り可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />パッケージが読み取り可能な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSignable">
+      <MemberSignature Language="C#" Value="public bool IsSignable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSignable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.IsSignable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パッケージがデジタル署名するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、パッケージを署名することができます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWriter">
+      <MemberSignature Language="C#" Value="public bool IsWriter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.IsWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パッケージが書き込み可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />パッケージが書き込み可能な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSignature">
+      <MemberSignature Language="C#" Value="public void RemoveSignature (System.Windows.Xps.Packaging.XpsDigitalSignature signature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveSignature(class System.Windows.Xps.Packaging.XpsDigitalSignature signature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.RemoveSignature(System.Windows.Xps.Packaging.XpsDigitalSignature)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signature" Type="System.Windows.Xps.Packaging.XpsDigitalSignature" />
+      </Parameters>
+      <Docs>
+        <param name="signature">削除される署名します。</param>
+        <summary>パッケージから署名を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Signatures">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Xps.Packaging.XpsDigitalSignature&gt; Signatures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Xps.Packaging.XpsDigitalSignature&gt; Signatures" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.Signatures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Xps.Packaging.XpsDigitalSignature&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得[!INCLUDE[TLA#tla_metro](~/includes/tlasharptla-metro-md.md)]パッケージに関連付けられている署名します。</summary>
+        <value>A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />の<see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />をパッケージに関連付けられている署名を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument.Signatures%2A>一覧は、どのような部分は署名され、署名が有効かどうかを識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SignDigitally">
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された X.509 証明書を使って、パッケージ パーツのコレクションに署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDefinitionsAndSigning.cs#signxpsdocument)]
+ [!code-vb[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedefinitionsandsigning.vb#signxpsdocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SignDigitally">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsDigitalSignature SignDigitally (System.Security.Cryptography.X509Certificates.X509Certificate certificate, bool embedCertificate, System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions restrictions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Xps.Packaging.XpsDigitalSignature SignDigitally(class System.Security.Cryptography.X509Certificates.X509Certificate certificate, bool embedCertificate, valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions restrictions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.SignDigitally(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigitalSignature</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="embedCertificate" Type="System.Boolean" />
+        <Parameter Name="restrictions" Type="System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">各部分の署名に使用する X.509 証明書または<see langword="null" />にインストールされている証明書を選択するように求めます。</param>
+        <param name="embedCertificate">
+          <see langword="true" />パッケージに証明書を格納するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="restrictions">署名から除外する必要がある依存パーツを示すフラグ。</param>
+        <summary>指定した X.509 証明書を使って、パッケージ パーツのコレクションに署名します。</summary>
+        <returns><see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />署名に関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`certificate`は`null`ユーザーがスマート カード リーダーからインストールされているな X.509 証明書を選択できるように、ダイアログ ボックスが表示されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDefinitionsAndSigning.cs#signxpsdocument)]
+ [!code-vb[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedefinitionsandsigning.vb#signxpsdocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignDigitally">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsDigitalSignature SignDigitally (System.Security.Cryptography.X509Certificates.X509Certificate certificate, bool embedCertificate, System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions restrictions, Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Xps.Packaging.XpsDigitalSignature SignDigitally(class System.Security.Cryptography.X509Certificates.X509Certificate certificate, bool embedCertificate, valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions restrictions, valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.SignDigitally(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigitalSignature</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="embedCertificate" Type="System.Boolean" />
+        <Parameter Name="restrictions" Type="System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions" />
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">各部分の署名に使用する X.509 証明書または<see langword="null" />にインストールされている証明書を選択するように求めます。</param>
+        <param name="embedCertificate">
+          <see langword="true" />パッケージに証明書を格納するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="restrictions">署名から除外する依存パーツを示すフラグ。</param>
+        <param name="id">[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]署名に割り当てる。</param>
+        <summary>指定された X.509 証明書を使って、パッケージ パーツのコレクションに署名します。</summary>
+        <returns><see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />署名に関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`certificate`は`null`ユーザーがスマート カード リーダーからインストールされているな X.509 証明書を選択できるように、ダイアログ ボックスが表示されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDefinitionsAndSigning.cs#signxpsdocument)]
+ [!code-vb[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedefinitionsandsigning.vb#signxpsdocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignDigitally">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsDigitalSignature SignDigitally (System.Security.Cryptography.X509Certificates.X509Certificate certificate, bool embedCertificate, System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions restrictions, Guid id, bool testIsSignable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Xps.Packaging.XpsDigitalSignature SignDigitally(class System.Security.Cryptography.X509Certificates.X509Certificate certificate, bool embedCertificate, valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions restrictions, valuetype System.Guid id, bool testIsSignable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.SignDigitally(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions,System.Guid,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigitalSignature</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="embedCertificate" Type="System.Boolean" />
+        <Parameter Name="restrictions" Type="System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions" />
+        <Parameter Name="id" Type="System.Guid" />
+        <Parameter Name="testIsSignable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">各部分の署名に使用する X.509 証明書または<see langword="null" />にインストールされている証明書を選択するように求めます。</param>
+        <param name="embedCertificate">
+          <see langword="true" />パッケージに証明書を格納するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="restrictions">署名から除外する必要がある依存パーツを示すフラグ。</param>
+        <param name="id">[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]署名に割り当てる。</param>
+        <param name="testIsSignable">
+          <see langword="true" />確認する<see cref="P:System.Windows.Xps.Packaging.XpsDocument.IsSignable" />は<see langword="true" />から署名します。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した X.509 証明書を使って、パッケージ パーツのコレクションに署名します。</summary>
+        <returns><see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />署名に関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`certificate`は`null`ユーザーがスマート カード リーダーからインストールされているな X.509 証明書を選択できるダイアログ ボックスが表示されます。  
+  
+ <xref:System.Security.Cryptography.CryptographicException>場合にスローされる`certificate`は`null`証明書がインストールされていません。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDefinitionsAndSigning.cs#signxpsdocument)]
+ [!code-vb[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedefinitionsandsigning.vb#signxpsdocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDocument.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 代わりに、タイプ セーフ <see cref="M:System.Windows.Xps.Packaging.XpsDocument.Dispose(System.Boolean)" /> メソッドを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsThumbnail Thumbnail { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.XpsThumbnail Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDocument.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsThumbnail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメントに関連付けられているサムネイル イメージ。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />ドキュメントに関連付けられているサムネイル イメージを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

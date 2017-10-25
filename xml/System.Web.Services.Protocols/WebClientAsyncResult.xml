@@ -1,0 +1,153 @@
+<Type Name="WebClientAsyncResult" FullName="System.Web.Services.Protocols.WebClientAsyncResult">
+  <TypeSignature Language="C#" Value="public class WebClientAsyncResult : IAsyncResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebClientAsyncResult extends System.Object implements class System.IAsyncResult" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.WebClientAsyncResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IAsyncResult</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>実装を提供<see cref="T:System.IAsyncResult" />非同期メソッドの標準パターンを実装する XML Web サービス プロキシで使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、`BeginMyMethodName`メソッド、場所`MyMethodName`XML Web サービス プロキシ クラスのインスタンスで、メソッドの同期バージョンは、<xref:System.Web.Services.Protocols.WebClientAsyncResult>が返されます。 インスタンスが、標準的な非同期デザイン パターンに従う<xref:System.Web.Services.Protocols.WebClientAsyncResult>に渡すことが後で`EndMyMethodName`を非同期メソッドの呼び出しを完了します。  
+  
+ XML Web サービスの非同期呼び出しの詳細については、「 [&#91;\<topic://cpconInvokingWebServicesAsynchronously > & #93 です。](http://msdn.microsoft.com/en-us/f9e26a43-063a-440a-8c73-a02f2ccf3ea0).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.WebClientAsyncResult.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期の XML Web サービス要求を取り消します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ XML Web サービス要求が取り消されるは、基になるトランスポートをサポートしている場合、<xref:System.Net.WebRequest.Abort%2A?displayProperty=nameWithType>メソッドです。 場合、対応する`End`後にメソッドが呼び出された後で、 <xref:System.Web.Services.Protocols.WebClientAsyncResult.Abort%2A> 、メソッド、<xref:System.Net.WebException>スローされると、設定、<xref:System.Net.WebException.Status%2A>プロパティを<xref:System.Net.WebExceptionStatus.RequestCanceled>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncState">
+      <MemberSignature Language="C#" Value="public object AsyncState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AsyncState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.WebClientAsyncResult.AsyncState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のパラメーターで指定されたオブジェクトを取得、<see langword="Begin" />メソッドの非同期呼び出しです。</summary>
+        <value><see cref="T:System.Object" />最後のパラメーターで提供される、<see langword="Begin" />メソッドの呼び出しです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncWaitHandle">
+      <MemberSignature Language="C#" Value="public System.Threading.WaitHandle AsyncWaitHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.WaitHandle AsyncWaitHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.WebClientAsyncResult.AsyncWaitHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</summary>
+        <value>A<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.WaitHandle>実行に使用できる、 <xref:System.Threading.WaitHandle.WaitOne%2A>、 <xref:System.Threading.WaitHandle.WaitAny%2A>、または<xref:System.Threading.WaitHandle.WaitAll%2A>非同期呼び出しが完了するまで待機します。  
+  
+ 詳細については、「<xref:System.IAsyncResult.AsyncWaitHandle%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedSynchronously">
+      <MemberSignature Language="C#" Value="public bool CompletedSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CompletedSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.WebClientAsyncResult.CompletedSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Begin 呼び出しが同期的に完了したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />Begin 呼び出しが同期的に完了した場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Services.Protocols.WebClientAsyncResult.CompletedSynchronously%2A>に設定されている`true`内で、 <xref:System.AsyncCallback> 、デリゲートは、スレッドをという名前の可能性の高い<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A>は、現在のスレッド。 ここでは、別の非同期 Begin コールバック メソッドからを呼び出す、ため、スタックを無制限に拡張を引き起こす可能性がバインドされている場合、呼び出しが同期をとって実行を続行する方法について注意する必要があります。 代わりに、コールバック メソッドの外側、元の呼び出しサイトでは、呼び出しを完了する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.WebClientAsyncResult.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期の XML Web サービス要求が完了したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />非同期の XML Web サービス要求が完了している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

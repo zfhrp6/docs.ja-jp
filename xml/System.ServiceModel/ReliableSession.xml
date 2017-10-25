@@ -1,0 +1,159 @@
+<Type Name="ReliableSession" FullName="System.ServiceModel.ReliableSession">
+  <TypeSignature Language="C#" Value="public class ReliableSession" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReliableSession extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ReliableSession" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>システム指定のバインドのいずれかを使用したときに使用できる、信頼できるセッションのバインド要素のプロパティにアクセスする便利な方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ReliableSession> クラスに含まれるプロパティは、定義済みのバインドからアクセスできる <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> に含まれるプロパティのサブセットです。 このサブセットは、<xref:System.ServiceModel.ReliableSession.InactivityTimeout%2A> プロパティと <xref:System.ServiceModel.ReliableSession.Ordered%2A> プロパティで構成されます。 <xref:System.ServiceModel.ReliableSession> クラスは、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement> と同じオブジェクトを参照するので、一方の値を変更すると、他方の値も変更されます。 このクラスは、この 2 つのプロパティと信頼できるセッションのバインディング要素を一緒にして、発見性を高めています。  
+  
+   
+  
+## Examples  
+ 信頼できるセッションを新たに作成する方法およびそのセッションのプロパティ値にアクセスして変更する方法を次の例に示します。 <xref:System.ServiceModel.ReliableSession> クラスを使用して、以下を書き込むことができます。  
+  
+ [!code-csharp[UEReliableSession#1](~/samples/snippets/csharp/VS_Snippets_CFX/uereliablesession/cs/program.cs#1)]
+ [!code-vb[UEReliableSession#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uereliablesession/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReliableSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ReliableSession.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ReliableSession" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReliableSession (System.ServiceModel.Channels.ReliableSessionBindingElement binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.ReliableSessionBindingElement binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ReliableSession.#ctor(System.ServiceModel.Channels.ReliableSessionBindingElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reliableSessionBindingElement" Type="System.ServiceModel.Channels.ReliableSessionBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="binding">To be added.</param>
+        <summary>信頼できるセッション バインド要素から、<see cref="T:System.ServiceModel.ReliableSession" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UEReliableSession#1](~/samples/snippets/csharp/VS_Snippets_CFX/uereliablesession/cs/program.cs#1)]
+ [!code-vb[UEReliableSession#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uereliablesession/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InactivityTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan InactivityTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan InactivityTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ReliableSession.InactivityTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが非アクティブになってから終了するまでの時間を取得または設定します。</summary>
+        <value>サービスが非アクティブになってから終了するまでの時間を指定する <see cref="T:System.TimeSpan" />。 既定値は、10 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.InactivityTimeout%2A> プロパティの値を取得および設定します。  
+  
+ チャネルでのアクティビティは、アプリケーションまたはインフラストラクチャのメッセージを受信するように定義されています。 非アクティブ タイムアウト プロパティは、アクティブでないセッションを維持する最長期間を制御します。 反応のない時間が <xref:System.ServiceModel.ReliableSession.InactivityTimeout%2A> より長くなると、インフラストラクチャによってセッションは中止され、チャネルはエラーとなります。 信頼できるセッションは、強制的に終了されます。  
+  
+ 送信元アプリケーションに送信するメッセージがない場合は、通常、無反応のために信頼できるセッションがエラーになることはありません。代わりに、keep-alive 機構が無期限にセッションをアクティブ状態で維持します。 アプリケーション メッセージが送信または受信されない場合、これとは関係なく、ディスパッチャーが信頼できるセッションを終了させる場合があることに注意してください。 したがって、どのような種類のメッセージも受信されないようなネットワーク状態の場合、または送信側でエラーが発生した場合には、通常、非アクティブ タイムアウトになります。  
+  
+ このタイムアウトを設定すると、クライアントがセキュリティ セッションを閉じない場合にサーバーがそのセッションを保持することを回避できます。 セキュリティ セッションが、非アクティブ時間の間にメッセージを受信しなかった場合、そのセッションは、サーバーによって閉じられます。 これにより、潜在的なサービス拒否攻撃が軽減されます。  
+  
+ 信頼できるセッションを使用しているとき、接続を維持するために適用する必要がある非アクティブ タイマーが 2 つあります。 これらの非アクティブ タイマーのいずれかがオフになると、接続が切断されます。  
+  
+-   非アクティブ タイマーの 1 つは、信頼できるセッションに対して適用され、<xref:System.ServiceModel.ReliableSession.InactivityTimeout%2A> と呼ばれます。 タイムアウト時間内にアプリケーション メッセージまたはインフラストラクチャ メッセージが受信されない場合、この非アクティブ タイマーが発生します。 インフラストラクチャ メッセージは、アプリケーション データを含んでいるのではなく、接続維持や受信確認など、チャネル スタック内でプロトコルの 1 つのために生成されるメッセージです。  
+  
+-   もう 1 つの非アクティブ タイマーはサービスに対して適用され、バインドの <xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A> 設定を使用します。 タイムアウト時間内にアプリケーション メッセージが受信されない場合、この非アクティブ タイマーが発生します。  
+  
+ いずれかの非アクティブ タイマーが発生した場合は接続が切断されるので、<xref:System.ServiceModel.ReliableSession.InactivityTimeout%2A> が <xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A> を超えてからその値を大きくしても、影響はありません。 これらのタイムアウトの既定は両方とも 10 分です。したがって、信頼できるセッションを使用しているときに設定を変えるには、これらの両方の値を大きくする必要があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEReliableSession#2](~/samples/snippets/csharp/VS_Snippets_CFX/uereliablesession/cs/program.cs#2)]
+ [!code-vb[UEReliableSession#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uereliablesession/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 以下の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordered">
+      <MemberSignature Language="C#" Value="public bool Ordered { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Ordered" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ReliableSession.Ordered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信された順序をメッセージ配信で維持する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          メッセージを、送信された順に配信する必要がある場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.Ordered%2A> プロパティの値を取得および設定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEReliableSession#2](~/samples/snippets/csharp/VS_Snippets_CFX/uereliablesession/cs/program.cs#2)]
+ [!code-vb[UEReliableSession#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uereliablesession/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,426 @@
+<Type Name="UserTrackingLocation" FullName="System.Workflow.Runtime.Tracking.UserTrackingLocation">
+  <TypeSignature Language="C#" Value="public sealed class UserTrackingLocation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UserTrackingLocation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート ワークフロー インスタンスの実行パス内でユーザー イベントに対応するアクティビティで修飾された場所を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ アクティビティ デザイナーまたはワークフロー デザイナーは、ワークフローを使ってデータをユーザー イベントとしてランタイム追跡インフラストラクチャに送出するために、オーバーロードされた任意の <xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=nameWithType> メソッドおよび <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%2A?displayProperty=nameWithType> メソッドを使用する場合があります。 送出されたデータはユーザー データとして参照されます。 アクティビティ ステータス イベントやワークフロー ステータス イベントは、アクティビティやワークフローのステータスが変わった場合にのみ発生しますが、ユーザー イベントはワークフロー内のどの場所でも発生する可能性があります。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> は、そのような場所の照合パラメーターを定義します。これらのパラメーターを定義するには、ユーザー データの型、データの送出元アクティビティ タイプ、このアクティビティのインスタンスをより厳密に限定できる条件のコレクション、ユーザー データが関連付けられている必要があるオプションのキー名、ユーザー データの派生型を照合するかどうか、および指定したアクティビティ タイプから派生したアクティビティによって送出されたユーザー データを照合するかどうかを指定します。  
+  
+> [!NOTE]
+>  1 つの <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> がワークフロー インスタンスの実行パスにおける実際の場所を複数参照する場合があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> 内の <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A?displayProperty=nameWithType> の照合パラメーターを定義するには、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A?displayProperty=nameWithType> を <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> または <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に追加します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> がランタイム追跡インフラストラクチャによって照合されるためには、次の 3 つの一般的条件がこの順序で満たされなければなりません。まず第一に、ユーザー イベントを出したアクティビティが、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A>、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A>、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions%2A>、および <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedActivityTypes%2A> によって指定されたアクティビティのセットと一致する必要があります。第二に、ユーザー データに関連付けられたキーが存在する場合、そのキーは <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> と一致する必要があります。第三に、ユーザー イベントによって送出されるユーザー データの種類が、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A>、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A>、および <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedArgumentTypes%2A> によって指定されたユーザー データ型と一致する必要があります。 これら 3 つの条件がすべて満たされる場合に限り、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> が一致すると見なします。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を構成するには、照合対象のユーザー データの種類を指定するために <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A> を設定する必要があります。さらに、照合対象のユーザー データの送出元となるアクティビティの種類を指定するために、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> を設定する必要があります。 ユーザー データの送出元のアクティビティをより厳密に限定するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> オブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions%2A> に追加します。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedArgumentTypes%2A> を設定すれば、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A> で指定されたユーザー データ型から派生したユーザー データが照合対象であることを指定できます。また、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedActivityTypes%2A> を設定すれば、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> で指定されたアクティビティ タイプから派生したアクティビティによって送出されたユーザー データが照合対象であることを指定できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> を設定すれば、この <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> に関して、指定したキー名に関連付けられたユーザー データだけが照合対象であることを指定できます。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> が null 参照 (Visual Basic では `Nothing`) である場合、ランタイム追跡インフラストラクチャは、ユーザー データに関連付けられたキーを照合しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは空の <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 照合するユーザー データの種類、および照合対象のユーザー データの送出元となるアクティビティの種類を、どちらも指定する必要があります。 したがって、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を構成するには、照合対象のユーザー データの送出元となるアクティビティの種類を指定するために <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> を明示的に設定する必要があります。さらに、照合対象のユーザー データの種類を指定するために <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A> を明示的に設定する必要もあります。 その他のプロパティを設定することにより、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに構成することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation (string argumentTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argumentTypeName">照合するユーザー データの CLR 型の非修飾名。</param>
+        <summary>ユーザー データの共通言語ランタイム (CLR) 型の非修飾名を使用して、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ワークフローから送出された、指定した型のユーザー データを照合する <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 <xref:System.Type> に関して照合されるユーザー データの `argumentTypeName` の非修飾名を指定する必要があります。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> を正しく構成するには、コードで <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を明示的に設定する必要があります。 その他のプロパティを設定して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに限定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation (Type argumentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="argumentType">照合するユーザー データの <see cref="T:System.Type" />。</param>
+        <summary>ユーザー データの共通言語ランタイム (CLR) 型を使用して、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ワークフローから送出された、指定した型のユーザー データを照合する <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> を正しく構成するには、コードで <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を明示的に設定する必要があります。 その他のプロパティを設定して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに限定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation (string argumentTypeName, string activityTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentTypeName, string activityTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentTypeName" Type="System.String" />
+        <Parameter Name="activityTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argumentTypeName">照合するユーザー データの CLR 型の非修飾名。</param>
+        <param name="activityTypeName">ユーザー データの送出元アクティビティの CLR 型の非修飾名。</param>
+        <summary>ユーザー データの共通言語ランタイム (CLR) 型の非修飾名、およびユーザー データの送出元となるアクティビティの CLR 型の非修飾名を使用して、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、アクティビティから送出された、指定した型のすべてのユーザー データを照合する <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 アクティビティとユーザー データの <xref:System.Type> の非修飾名を指定する必要があります。 たとえば、<xref:System.Type> アクティビティの <xref:System.Workflow.Activities.CodeActivity> の非修飾名は "Code" です。 その他のプロパティを設定して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに限定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation (string argumentTypeName, Type activityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentTypeName, class System.Type activityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentTypeName" Type="System.String" />
+        <Parameter Name="activityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="argumentTypeName">照合するユーザー データの CLR 型の非修飾名。</param>
+        <param name="activityType">ユーザー データの送出元アクティビティの <see cref="T:System.Type" />。</param>
+        <summary>ユーザー データの共通言語ランタイム (CLR) 型の非修飾名、およびユーザー データの送出元となるアクティビティの CLR 型を使用して、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、アクティビティから送出された、指定した型のすべてのユーザー データを照合する <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 ユーザー データの <xref:System.Type> の非修飾名を指定する必要があります。 その他のプロパティを設定して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに限定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation (Type argumentType, string activityTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType, string activityTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentType" Type="System.Type" />
+        <Parameter Name="activityTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argumentType">照合するユーザー データの <see cref="T:System.Type" />。</param>
+        <param name="activityTypeName">ユーザー データの送出元アクティビティの CLR 型の非修飾名。</param>
+        <summary>ユーザー データの共通言語ランタイム (CLR) 型、およびユーザー データの送出元となるアクティビティの CLR 型の非修飾名を使用して、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、アクティビティから送出された、指定した型のすべてのユーザー データを照合する <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 アクティビティの <xref:System.Type> の非修飾名を指定する必要があります。 たとえば、<xref:System.Type> アクティビティの <xref:System.Workflow.Activities.CodeActivity> の非修飾名は "Code" です。 その他のプロパティを設定して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに限定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackingLocation (Type argumentType, Type activityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType, class System.Type activityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentType" Type="System.Type" />
+        <Parameter Name="activityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="argumentType">照合するユーザー データの <see cref="T:System.Type" />。</param>
+        <param name="activityType">ユーザー データの送出元アクティビティの <see cref="T:System.Type" />。</param>
+        <summary>ユーザー データの共通言語ランタイム (CLR) 型、およびユーザー データの送出元となるアクティビティの CLR 型を使用して、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、アクティビティから送出された、指定した型のすべてのユーザー データを照合する <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を初期化します。 その他のプロパティを設定して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> をさらに限定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityType">
+      <MemberSignature Language="C#" Value="public Type ActivityType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ActivityType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡対象のユーザー データの送出元となるアクティビティの共通言語ランタイム (CLR) 型を取得または設定します。</summary>
+        <value>データの送出元アクティビティの <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンに依存しない方法でアクティビティ タイプを指定する場合は、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> を使用します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> を正しく構成するには、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> のいずれかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityTypeName">
+      <MemberSignature Language="C#" Value="public string ActivityTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActivityTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡対象のユーザー データの送出元となるアクティビティの共通言語ランタイム (CLR) 型の非修飾名を取得または設定します。</summary>
+        <value>データの送出元アクティビティの <see cref="T:System.Type" /> の非修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ タイプの非修飾名を指定する必要があります。 たとえば、<xref:System.Workflow.Activities.CodeActivity> アクティビティの非修飾名を指定するには、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> を "Code" に設定します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> を使用すると、プロファイルを XML で直接作成するときに、ユーザー データを送出するアクティビティ タイプを簡単に指定できます。 また、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> では、バージョンに依存しない方法でアクティビティ タイプを参照することもできます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> を正しく構成するには、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> のいずれかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArgumentType">
+      <MemberSignature Language="C#" Value="public Type ArgumentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ArgumentType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡対象のユーザー データの共通言語ランタイム (CLR) 型を取得または設定します。</summary>
+        <value>追跡するユーザー データの <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンに依存しない方法でユーザー データ型を指定する場合は、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> を使用します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A> を正しく構成するには、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> のいずれかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArgumentTypeName">
+      <MemberSignature Language="C#" Value="public string ArgumentTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ArgumentTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡対象のユーザー データの共通言語ランタイム (CLR) 型の非修飾名を取得または設定します。</summary>
+        <value>ユーザー データの <see cref="T:System.Type" /> の非修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> を使用すると、プロファイルを XML で直接作成するときに、ユーザー データ型を簡単に指定できます。 また、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> では、バージョンに依存しない方法でユーザー データ型を参照することもできます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A> を正しく構成するには、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> のいずれかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conditions">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingConditionCollection Conditions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingConditionCollection Conditions" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingConditionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡対象のユーザー データの送出元となるアクティビティを限定するために使われる条件のコレクションを取得します。</summary>
+        <value>ユーザー データの送出元アクティビティを限定するために使用する <see cref="T:System.Workflow.Runtime.Tracking.TrackingConditionCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions%2A> を使用すれば、追跡場所を照合するためのユーザー イベントの送出元となる <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A> によって指定されたアクティビティ タイプのインスタンスをより厳密に定義することができます。 たとえば、<xref:System.Workflow.Activities.CodeActivity> が "MyCode" である <xref:System.Workflow.ComponentModel.Activity.Name%2A> アクティビティのみ照合するには、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A> を "Code" に設定し、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> を <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions%2A> に追加して、アクティビティ インスタンスの ID プロパティを "MyCode" に指定します。  
+  
+ アクティビティを照合するには、<xref:System.Workflow.Runtime.Tracking.TrackingCondition> のすべての <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions%2A> が true でなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyName">
+      <MemberSignature Language="C#" Value="public string KeyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> を照合するために、ユーザー データに関連付けられている必要のある名前を取得または設定します。</summary>
+        <value><see langword="string" /> を照合するために、ユーザー データに関連付けられている必要のある <see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> キー、または null 参照 (Visual Basic では <see langword="Nothing" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ デザイナーまたはワークフロー デザイナーは、ユーザー イベントで送出されるユーザー データに文字列キーを関連付けるために <xref:System.Workflow.ComponentModel.Activity.TrackData%28System.String%2CSystem.Object%29?displayProperty=nameWithType> または <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%28System.String%2CSystem.Object%29?displayProperty=nameWithType> を使用できます。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> が null 参照 (`Nothing`) ではない場合、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> が照合されるためには、ユーザー データに関連したキーが <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> の値に一致する必要があります。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> が null 参照 (`Nothing`) である場合、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> の照合を判別するときにキーの照合を検査しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchDerivedActivityTypes">
+      <MemberSignature Language="C#" Value="public bool MatchDerivedActivityTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MatchDerivedActivityTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedActivityTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType" /> または <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName" /> で指定されたアクティビティ タイプから派生したアクティビティによって送出されたユーザー データを追跡するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> または <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType" /> で指定された型から派生したアクティビティによって送出されたユーザー データを追跡する場合は <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchDerivedArgumentTypes">
+      <MemberSignature Language="C#" Value="public bool MatchDerivedArgumentTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MatchDerivedArgumentTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedArgumentTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー場所追跡は、ユーザーの追跡データをフィルター処理する 1 つの方法です。 ユーザーは <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" /> または <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" /> を指定することにより、ユーザー追跡データの種類によってフィルター処理することができます。 <see langword="MatchDerrivedArgumentTypes" /><see langword="Boolean" /> 値を <see langword="true" /> に設定した場合、ユーザー追跡データが ArgumentType/ArgumentTypeName 型、または ArgumentType/ArgumentTypeName から派生した型であることを指定します。</summary>
+        <value>
+          <see langword="true" /> または <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" /> で指定されたユーザー データ型から派生したユーザー データを追跡する場合は <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

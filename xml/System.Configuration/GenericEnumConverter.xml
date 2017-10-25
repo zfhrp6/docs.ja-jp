@@ -1,0 +1,184 @@
+<Type Name="GenericEnumConverter" FullName="System.Configuration.GenericEnumConverter">
+  <TypeSignature Language="C#" Value="public sealed class GenericEnumConverter : System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GenericEnumConverter extends System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.GenericEnumConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationConverterBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列と列挙型に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ など、他の構成を実行するコンバーターの種類すべて、この型では、関連する厳密に型指定されたプロパティとの間の構成ファイル内で見つかった文字列に変換します。  
+  
+ 具体的には、<xref:System.Configuration.GenericEnumConverter>オブジェクトの変換、<xref:System.String>の構成プロパティに割り当てられた値、<xref:System.Enum>値およびその逆です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム セクション プロパティにアクセスする方法を示しています、<xref:System.Configuration.GenericEnumConverter>型です。  
+  
+ [!code-csharp[System.Configuration.GenericEnumConverter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.GenericEnumConverter/CS/GenericEnumConverter.cs#1)]
+ [!code-vb[System.Configuration.GenericEnumConverter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.GenericEnumConverter/VB/GenericEnumConverter.vb#1)]  
+  
+ 次のコード例では、前の例でアクセスするカスタム列挙子プロパティを定義する方法を示します。 指定する必要がないことに注意してください、<xref:System.Configuration.GenericEnumConverter>入力; は、システムによって暗黙的に呼び出されます。  
+  
+ [!code-csharp[System.Configuration.ConfigurationConvertersCustomSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationConvertersCustomSection/CS/ConfigurationConvertersCustomSection.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationConvertersCustomSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationConvertersCustomSection/VB/ConfigurationConvertersCustomSection.vb#5)]  
+  
+ 次の例は、前の例で使用される構成の抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  
+  <configSections>  
+    <section name="CustomSection"   
+      type="Samples.AspNet.CustomSection,   
+      ConfigurationConverters,   
+      Version=1.0.0.0, Culture=neutral,   
+      PublicKeyToken=null"   
+      allowDefinition="Everywhere"   
+      allowExeDefinition="MachineToApplication"   
+      restartOnExternalChanges="true" />  
+  </configSections>  
+  
+  <CustomSection fileName="default.txt" maxIdleTime="90" timeDelay="infinite" cdStr="str0, str1" permission="Read" maxUsers="Infinite"/>  
+  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GenericEnumConverter (Type typeEnum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type typeEnum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.GenericEnumConverter.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeEnum" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeEnum">変換する列挙型。</param>
+        <summary><see cref="T:System.Configuration.GenericEnumConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、システムによって提供されるコンバーターの種類を使用します。 使用する必要があるときだけ、<xref:System.Configuration.GenericEnumConverter.%23ctor%2A>コンス トラクターは、独自の変換の種類を作成するときにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeEnum" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.GenericEnumConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="data">変換対象の <see cref="T:System.String" /> オブジェクト。</param>
+        <summary>変換、<see cref="T:System.String" />を<see cref="T:System.Enum" />型です。</summary>
+        <returns><see cref="T:System.Enum" />を表す型、<paramref name="data" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.GenericEnumConverter.ConvertFrom%2A>メソッドに変換する構成ファイルから読み取る際に、<xref:System.String>値を<xref:System.Enum>型です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="data" />null または空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="data" />数値の文字から始まります。  
+  
+ \- または  
+  
+ <paramref name="data" />空白文字が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object value, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object value, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.GenericEnumConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="value">変換する値。</param>
+        <param name="type">変換後の型。</param>
+        <summary>変換、<see cref="T:System.Enum" />型を<see cref="T:System.String" />値。</summary>
+        <returns><see cref="T:System.String" />を表す、<paramref name="value" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.GenericEnumConverter.ConvertTo%2A>メソッドに変換する構成ファイルに書き込まれると、<xref:System.Enum>型を<xref:System.String>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

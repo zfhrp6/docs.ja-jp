@@ -1,0 +1,259 @@
+<Type Name="DataPagerDesigner" FullName="System.Web.UI.Design.WebControls.DataPagerDesigner">
+  <TypeSignature Language="C#" Value="public class DataPagerDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPagerDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.DataPagerDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataPager" /> コントロールを、ビジュアル デザイナーで、デザイン時に使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ビューに切り替えると、ビジュアル デザイナーで (など`Design`で表示[!INCLUDE[vs_current_short](~/includes/vs-current-short-md.md)])、について説明するマークアップを<xref:System.Web.UI.WebControls.DataPager>コントロールを解析します。 コントロールのデザイン時バージョンは、デザイン画面で作成されます。 ソース ビューに切り替えると、デザイン時のコントロールは、Web ページのマークアップとして永続化されます。  
+  
+ プロパティ、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner>クラスは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.ActionLists%2A>プロパティは、スマート タグ パネルの作成に使用されるアイテムの一覧を返します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.PagedControlID%2A>プロパティは、デザイナー (シャドウされた) のバージョンとの使用、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.TemplateGroups%2A>プロパティが関連付けられているページャー フィールドについて、テンプレート グループのコレクションを返します<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.UsePreviewControl%2A>プロパティは常に返します`true`、デザイナーに関連付けられている一時的なコピーが作成されることを示します<xref:System.Web.UI.WebControls.DataPager>デザイン時のマークアップを生成するために管理します。  
+  
+ メソッド、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner>クラスは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetDesignTimeHtml%2A>と<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetEmptyDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用される HTML マークアップを返します<xref:System.Web.UI.WebControls.DataPager>デザイン時にします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties%2A>メソッドを追加または削除のプロパティのプロパティ グリッドを使用、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPagerDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataPagerDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DataPagerDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]の新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.DataPager>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataPagerDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているスマート タグ パネルの作成に使用されるアイテムの一覧を取得<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <value>関連付けられているスマート タグ パネルの作成に使用されるアイテムの一覧<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataPagerDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられている表示するために使用される HTML マークアップを生成<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時です。</summary>
+        <returns>関連付けられている表示するために使用される HTML マークアップを<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.DataPager.Fields%2A?displayProperty=nameWithType>コレクションは空でなく、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetDesignTimeHtml>メソッドの更新、<xref:System.ComponentModel.TypeDescriptor>を強制するオブジェクト、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties%2A>メソッドが呼び出されるし、その基本実装を呼び出します。 場合、<xref:System.Web.UI.WebControls.DataPager.Fields%2A?displayProperty=nameWithType>コレクションは空では、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetDesignTimeHtml>メソッドを呼び出して、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetEmptyDesignTimeHtml%2A>マークアップを生成するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataPagerDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す HTML マークアップを生成、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時を実行時に視覚的表現を持たない。</summary>
+        <returns>空白を表す HTML マークアップ<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetEmptyDesignTimeHtml%2A>メソッドを表示するために、デザイナーによって使用、<xref:System.Web.UI.WebControls.DataPager>場合は、デザイン時に制御、<xref:System.Web.UI.WebControls.DataPager.Fields%2A?displayProperty=nameWithType>コレクションが空です。 <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.GetEmptyDesignTimeHtml%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml%28System.String%29>メソッドを型との管理、およびその他については、ユーザーの ID を表示するプレース ホルダーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataPagerDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">デザイン中のコントロールです。</param>
+        <summary>コントロール デザイナーを初期化し、指定したコントロールを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.DataPager>コントロール。 <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.Initialize%2A>メソッドとその基本メソッドのプロパティを構成し、デザイナーに必要なイベントに接続します。  
+  
+ `component`パラメーターは、<xref:System.Web.UI.WebControls.DataPager>デザイナー、またはのコピーに関連付けられているコントロール、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PagedControlID">
+      <MemberSignature Language="C#" Value="public string PagedControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PagedControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataPagerDesigner.PagedControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のデザイナー バージョンの値、<see cref="P:System.Web.UI.WebControls.DataPager.PagedControlID" />プロパティです。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.DataPager.PagedControlID" /> プロパティの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">プロパティ グリッドで公開されているプロパティを格納するコレクション、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時です。</param>
+        <summary>追加または削除のプロパティ、プロパティ グリッド、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties%2A>メソッドでは、新しいプロパティを追加のプロパティ グリッドに、<xref:System.Web.UI.WebControls.DataPager>に対応するコントロール、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.Web.UI.Design.ControlDesigner.InTemplateMode%2A>プロパティに設定されている`true`、<xref:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties%2A>メソッドも設定、<xref:System.ComponentModel.BrowsableAttribute>の属性、<xref:System.Web.UI.WebControls.DataPager.Fields%2A?displayProperty=nameWithType>プロパティを`BrowsableAttribute.No`です。 これは、ページャー フィールドが削除されないようにを使用して、`Fields`ダイアログ ボックスのページャー フィールドが、テンプレート モードとします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 基本クラスを呼び出すことを確認してください<see cref="M:System.Web.UI.Design.WebControls.DataPagerDesigner.PreFilterProperties(System.Collections.IDictionary)" />メソッドの他の処理を実行する前にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataPagerDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたのページャー フィールドについて、テンプレート グループのコレクションを取得<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <value>ページャー フィールドについて、関連する、テンプレート グループのコレクション<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataPagerDesigner.TemplateGroups%2A>プロパティのコレクションを作成する<xref:System.Web.UI.Design.TemplateGroup>テンプレートの要素を表すオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロールをデザイン時です。 コレクションごとに 1 つの要素を追加<xref:System.Web.UI.WebControls.TemplatePagerField>内のオブジェクト、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>関連付けられているコレクション<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataPagerDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一時的なコピーをデザイナーではなく、実際に使用するかどうかを示す値を取得<see cref="T:System.Web.UI.WebControls.DataPager" />デザイン時のマークアップを生成するために、デザイナーに関連付けられているコントロール。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

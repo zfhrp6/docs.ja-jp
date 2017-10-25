@@ -1,0 +1,96 @@
+<Type Name="RangeType" FullName="System.Web.UI.WebControls.Expressions.RangeType">
+  <TypeSignature Language="C#" Value="public enum RangeType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RangeType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.RangeType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>インスタンスで使用する数値の比較の種類を指定、<see cref="T:System.Web.UI.WebControls.Expressions.RangeExpression" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.RangeExpression>列挙体は値が 2 つの指定した値があるかどうかを示すために使用します。 列挙体で使用、<xref:System.Web.UI.WebControls.Expressions.RangeExpression.MinType%2A>または<xref:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType%2A>のプロパティ、<xref:System.Web.UI.WebControls.Expressions.RangeExpression>クラスです。  
+  
+ 最小値と最大値を指定するとします。 使用して指定した値を含めたり除外したりすることができます、<xref:System.Web.UI.WebControls.Expressions.RangeType>クラスです。  
+  
+ 次の表では、列挙値について説明します。  
+  
+|列挙|説明|  
+|-----------------|-----------------|  
+|なし|検索に境界がないことを指定します。|  
+|包括的|大きい-よりも-または - 比較を実行します。 対応する、> = または\<操作を = です。|  
+|排他的|大きい-よりも-または - 比較を実行します。 対応する、> または < 操作します。|  
+  
+   
+  
+## Examples  
+ 次の例で指定された範囲内で、表示価格を持つ製品を AdventureWorks データベースの Products テーブルで、ListPrice 列を検索する方法を示しています、`FromTextBox`と`ToTextBox`テキスト ボックス。 フィルターは、包括的なプロパティを使用して検索結果に指定した最小値が含まれていますが、指定した最大値を除きます。 このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:RangeExpression DataField="ListPrice"    
+    MinType="Inclusive" MaxType="Exclusive">  
+  <asp:ControlParameter ControlID="FromTextBox" />  
+  <asp:ControlParameter ControlID="ToTextBox" />  
+</asp:RangeExpression>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exclusive">
+      <MemberSignature Language="C#" Value="Exclusive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.Expressions.RangeType Exclusive = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Expressions.RangeType.Exclusive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.RangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大きい-よりも-または - 比較を指定します。 対応する、<see langword="&gt;" />または<see langword="&lt;" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inclusive">
+      <MemberSignature Language="C#" Value="Inclusive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.Expressions.RangeType Inclusive = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Expressions.RangeType.Inclusive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.RangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>等しいかどうか-に-または-大なり比較や、等しいかどうかにする-または - 比較を指定します。 対応する、<see langword="&gt;=" />または<see langword="&lt;=" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.Expressions.RangeType None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Expressions.RangeType.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.RangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索に境界がないことを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

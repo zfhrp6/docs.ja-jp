@@ -1,0 +1,135 @@
+<Type Name="ComparisonSettings" FullName="System.Management.ComparisonSettings">
+  <TypeSignature Language="C#" Value="public enum ComparisonSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ComparisonSettings extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ComparisonSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用できるオブジェクトの比較モードについて説明します<see cref="M:System.Management.ManagementBaseObject.CompareTo(System.Management.ManagementBaseObject,System.Management.ComparisonSettings)" />です。 これらの値を組み合わせることができますに注意してください。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="IgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IgnoreCase = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字小文字の文字列値を比較するモード。 これには、文字列と修飾子の値が適用されます。 プロパティと修飾子の名前は、か、このフラグが指定されているかどうかに常に大文字と小文字で比較されます。 値: 16。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreClass">
+      <MemberSignature Language="C#" Value="IgnoreClass" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IgnoreClass = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IgnoreClass" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較対象となるオブジェクトが、同じクラスのインスタンスであると仮定するモード。 そのため、この値を使用すると、インスタンスに関連する情報のみを比較します。 パフォーマンスを最適化するのにには、このフラグを使用します。 同じクラスのオブジェクトは場合、結果は定義されていません。 値: 8。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreDefaultValues">
+      <MemberSignature Language="C#" Value="IgnoreDefaultValues" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IgnoreDefaultValues = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IgnoreDefaultValues" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの既定値を無視するモード。 クラスを比較するときに、この値は意味のあるのみです。 値: 4 です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreFlavor">
+      <MemberSignature Language="C#" Value="IgnoreFlavor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IgnoreFlavor = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IgnoreFlavor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子を無視するモード*フレーバー*です。 このフラグ修飾子の値を考慮に入れたが伝達規則などのフレーバーの区別を無視して制限を上書きします。 値: 32 です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreObjectSource">
+      <MemberSignature Language="C#" Value="IgnoreObjectSource" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IgnoreObjectSource = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IgnoreObjectSource" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト、つまり、サーバーと、名前空間、その他のオブジェクトとの比較で、出所のソースを無視するモード。 値: 2。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreQualifiers">
+      <MemberSignature Language="C#" Value="IgnoreQualifiers" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IgnoreQualifiers = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IgnoreQualifiers" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無視してオブジェクトを比較するモード*修飾子*です。 値: 1。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeAll">
+      <MemberSignature Language="C#" Value="IncludeAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.ComparisonSettings IncludeAll = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ComparisonSettings.IncludeAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ComparisonSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較されるオブジェクトのすべての要素を比較するモード。 値: 0。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

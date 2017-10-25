@@ -1,0 +1,159 @@
+<Type Name="HttpCacheVaryByParams" FullName="System.Web.HttpCacheVaryByParams">
+  <TypeSignature Language="C#" Value="public sealed class HttpCacheVaryByParams" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpCacheVaryByParams extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpCacheVaryByParams" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="P:System.Web.HttpCachePolicy.VaryByParams" /> プロパティを設定するタイプ セーフな方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.VaryByParams%2A>プロパティを識別する HTTP`Get`または`Post`ASP.NET を使用して、リソースの複数のキャッシュされた応答がある場合に、応答のバリエーションを一意に識別するパラメーターです。 これは、一連のヘッダーやパラメーターなどのクライアントの入力に応答が依存する場合に便利です。  
+  
+ <xref:System.Web.HttpCacheVaryByParams> HTTP キャッシュ制御ヘッダーに直接関連しないが、により、クライアントまたはプロキシが指定されたパラメーターによって異なります。 詳細については`VaryByParams`、RFC 2616 を参照してください: Hypertext Transfer Protocol--http/1.1 で使用できる、 [World Wide Web コンソーシアム (W3C) の Web](http://go.microsoft.com/fwlink/?linkid=37125)サイトです。 詳細については「14、「Header Field Definitions」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します、<xref:System.Web.HttpCacheVaryByParams>オブジェクトからアクセス、<xref:System.Web.HttpCachePolicy>オブジェクトに関連付けられている、<xref:System.Web.HttpResponse>です。  
+  
+ [!code-csharp[Classic HttpResponse.Cache Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.Cache Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.Cache Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.Cache Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCacheVaryByParams ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCacheVaryByParams.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpCacheVaryByParams" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParams">
+      <MemberSignature Language="C#" Value="public string[] GetParams ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetParams() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCacheVaryByParams.GetParams" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュを変更するために使用する HTTP <see langword="GET" /> パラメーターまたは HTTP <see langword="POST" /> パラメーターを指定する値の配列を取得します。</summary>
+        <returns>キャッシュを変更するための HTTP <see langword="GET" /> パラメーターまたは HTTP <see langword="POST" /> パラメーターを含む値の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreParams">
+      <MemberSignature Language="C#" Value="public bool IgnoreParams { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreParams" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCacheVaryByParams.IgnoreParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 応答によってかどうかを示す値を取得または<see langword="Get" />または<see langword="Post" />パラメーター。</summary>
+        <value>
+          <see langword="true" />場合は HTTP 要求のパラメーターは無視されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.HttpCacheVaryByParams.IgnoreParams%2A>プロパティを`true`等しい設定は、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブ`VaryByParams`を"none"リソースの属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public bool this[string header] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCacheVaryByParams.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="header" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="header">カスタム パラメーターの名前。</param>
+        <summary>取得または指定された HTTP 要求パラメーターに従ってキャッシュを識別するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、キャッシュは、指定されたパラメーターの値によって異なります必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセサー (get アクセス操作子) として使用する場合、<xref:System.Web.HttpCacheVaryByParams.Item%2A>インデクサーを返します`true`が変わるように、コレクションが設定されている場合、現在のパラメーター コレクションに指定されたパラメーターの値が見つかった場合または * (アスタリスク)、すべてのパラメーターを示します。  
+  
+ ミューテーター (set アクセス操作子) として使用する場合、<xref:System.Web.HttpCacheVaryByParams.Item%2A>インデクサーでは、対応するパラメーターのコレクションで、パラメーターの値を設定に指定したヘッダーを`true`です。 値 * 指定できますが、すべてのパラメーターを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.HttpCacheVaryByParams.Item%2A>からインデクサーにアクセス、<xref:System.Web.HttpCachePolicy>オブジェクトに関連付けられている、<xref:System.Web.HttpResponse>です。  
+  
+ [!code-csharp[Classic HttpResponse.Cache Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpResponse.Cache Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpResponse.Cache Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpResponse.Cache Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="header" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParams">
+      <MemberSignature Language="C#" Value="public void SetParams (string[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParams(string[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCacheVaryByParams.SetParams(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">キャッシュを変更するための HTTP <see langword="GET" /> パラメーターまたは HTTP <see langword="POST" /> パラメーターを含む値の配列。</param>
+        <summary>キャッシュを変更するために使用する HTTP <see langword="GET" /> パラメーターまたは HTTP <see langword="POST" /> パラメーターを指定する値の配列を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

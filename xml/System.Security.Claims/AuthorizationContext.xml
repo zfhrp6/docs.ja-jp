@@ -1,0 +1,209 @@
+<Type Name="AuthorizationContext" FullName="System.Security.Claims.AuthorizationContext">
+  <TypeSignature Language="C#" Value="public class AuthorizationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthorizationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Claims.AuthorizationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>承認イベントのコンテキスト情報を提供します。 これには、呼び出し元は、要求されているリソースおよび実行されるアクションを表すプリンシパルが含まれます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.AuthorizationContext>クラスは、要求の承認マネージャーの実装によって使用されるコンテキストを表します、<xref:System.Security.Claims.ClaimsAuthorizationManager>クラスを指定されたリソースで、指定したアクションを実行するプリンシパル (サブジェクト) を承認する必要があるかどうかを判断します。 要求承認マネージャーでは、承認コンテキストの評価、<xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A>メソッドとするか拒否するか、プリンシパルによって提示されるクレームに基づくアクセス権を付与します。  
+  
+ <xref:System.Security.Claims.AuthorizationContext.Principal%2A>プロパティには、対象の承認を要求されている、プリンシパルが含まれています、<xref:System.Security.Claims.AuthorizationContext.Resource%2A>プロパティには、プリンシパルが承認されるか、リソースが含まれています、<xref:System.Security.Claims.AuthorizationContext.Action%2A>プロパティには、プリンシパルが、リソースに対して実行する予定のアクションが含まれています。 リソースとアクションの両方が; のクレームのコレクションとして表されますただし、ほとんどの場合、各コレクションには、1 つのクレームが含まれています。  
+  
+   
+  
+## Examples  
+ コード例で使用されている、<xref:System.Security.Claims.AuthorizationContext>トピックがから取得した、`Claims Based Authorization`サンプルです。 このサンプルでは、構成で指定されているポリシーに基づく対象者を承認できるカスタム クレーム承認マネージャーを提供します。 このカスタム マネージャーは、3 つの基本的なコンポーネントで構成されています: から派生したクラス<xref:System.Security.Claims.ClaimsAuthorizationManager>、マネージャーを実装する、`ResourceAction`リソースと、アクションで構成されたペア クラスと、ポリシーのリーダーを読み取りで指定されているポリシーをコンパイルします構成ファイルです。 これは、ポリシーをコンパイルし、要求の承認マネージャーでリソースへのアクセスを許可するために、プリンシパルの評価に使用します。 ここでは簡略化のため、すべての要素が表示されます。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ 次のコードは、<xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A>カスタム クレーム承認マネージャーのメソッドです。 プリンシパルを評価する関数が、リソースとで指定された操作に基づいて、<xref:System.Security.Claims.AuthorizationContext>が呼び出されます。 この関数では、どちらかを返します`true`または`false`、アクセスを許可するとき、またはプリンシパルにアクセスを拒否します。  
+  
+ [!code-csharp[WifClaimsBasedAuthorization#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifclaimsbasedauthorization/cs/claimsauthorizationlibrary/myclaimsauthorizationmanager.cs#3)]  
+[!code-csharp[WifClaimsBasedAuthorization#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifclaimsbasedauthorization/cs/claimsauthorizationlibrary/myclaimsauthorizationmanager.cs#5)]  
+  
+ 次の XML では、構成で指定された承認ポリシーの例を示します。 最初のポリシーで、プリンシパルは、指定されたリソースに対して、指定されたアクションを実行するために指定したクレームのいずれかを持つ必要があります。 2 番目のポリシーで、プリンシパルは、いずれのクレームに、指定されたリソースに対して、指定されたアクションを実行できるを持つ必要があります。 他のユーザー プリンシパルが所有、クレームに関係なくアクセス自動的に付与します。  
+  
+```xml  
+<system.identityModel>  
+  <identityConfiguration>  
+    <claimsAuthorizationManager type="ClaimsAuthorizationLibrary.MyClaimsAuthorizationManager, ClaimsAuthorizationLibrary">  
+      <policy resource="http://localhost:28491/Developers.aspx" action="GET">  
+        <or>  
+          <claim claimType="http://schemas.microsoft.com/ws/2008/06/identity/claims/role" claimValue="developer" />  
+          <claim claimType="http://schemas.xmlsoap.org/claims/Group" claimValue="Administrator" />  
+        </or>  
+      </policy>  
+      <policy resource="http://localhost:28491/Administrators.aspx" action="GET">  
+        <and>  
+          <claim claimType="http://schemas.xmlsoap.org/claims/Group" claimValue="Administrator" />  
+          <claim claimType="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country" claimValue="USA" />  
+        </and>  
+      </policy>  
+      <policy resource="http://localhost:28491/Default.aspx" action="GET">  
+      </policy>  
+      <policy resource="http://localhost:28491/" action="GET">  
+      </policy>  
+      <policy resource="http://localhost:28491/Claims.aspx" action="GET">  
+      </policy>  
+    </claimsAuthorizationManager>  
+  
+    ...  
+  
+  </identityConfiguration>  
+</system.identityModel>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthorizationContext (System.Security.Claims.ClaimsPrincipal principal, System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt; resource, System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt; action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal principal, class System.Collections.ObjectModel.Collection`1&lt;class System.Security.Claims.Claim&gt; resource, class System.Collections.ObjectModel.Collection`1&lt;class System.Security.Claims.Claim&gt; action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.AuthorizationContext.#ctor(System.Security.Claims.ClaimsPrincipal,System.Collections.ObjectModel.Collection{System.Security.Claims.Claim},System.Collections.ObjectModel.Collection{System.Security.Claims.Claim})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="resource" Type="System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt;" />
+        <Parameter Name="action" Type="System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="principal">承認チェックする対象となるプリンシパル。</param>
+        <param name="resource">プリンシパルが承認されるようには、リソースを表すクレームのコレクションです。 通常、コレクションには、1 つの要素が含まれています。</param>
+        <param name="action">リソースに対して実行するアクションを表すクレームのコレクション。 通常、コレクションには、1 つの要素が含まれています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.AuthorizationContext" />クラスを指定したプリンシパル、リソース要求およびアクションの要求を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="resource" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="action" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthorizationContext (System.Security.Claims.ClaimsPrincipal principal, string resource, string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal principal, string resource, string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.AuthorizationContext.#ctor(System.Security.Claims.ClaimsPrincipal,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="resource" Type="System.String" />
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="principal">承認チェックする対象となるプリンシパル。</param>
+        <param name="resource">プリンシパルが承認を受けるのリソースです。 リソースは、名前要求の値として指定されます。</param>
+        <param name="action">リソースに対して実行するアクション。 アクションは、名前要求の値として指定されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.AuthorizationContext" />指定したプリンシパル、リソース名、およびアクション名を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.AuthorizationContext.Action%2A>名クレームを格納するプロパティが初期化 (<xref:System.Security.Claims.ClaimTypes.Name?displayProperty=nameWithType>) で指定された値を持つ、`action`パラメーター。 <xref:System.Security.Claims.AuthorizationContext.Resource%2A>名前を持つ要求で指定された値を格納するプロパティが初期化されて、`resource`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="resource" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="action" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt; Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Security.Claims.Claim&gt; Action" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.AuthorizationContext.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンシパルが承認されるようには、アクションを取得します。</summary>
+        <value>要求に関連するアクションを表すクレームのコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、コレクションには、1 つの要素が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Principal">
+      <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsPrincipal Principal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsPrincipal Principal" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.AuthorizationContext.Principal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>承認が要求されているプリンシパル (サブジェクト) を取得します。</summary>
+        <value>承認の要求対象となるプリンシパル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt; Resource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Security.Claims.Claim&gt; Resource" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.AuthorizationContext.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンシパルが承認されるリソースを取得します。</summary>
+        <value>リソースを表すクレームのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、コレクションには、1 つの要素が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

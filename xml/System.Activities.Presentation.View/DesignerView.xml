@@ -1,0 +1,1563 @@
+<Type Name="DesignerView" FullName="System.Activities.Presentation.View.DesignerView">
+  <TypeSignature Language="C#" Value="public class DesignerView : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector, System.Windows.Markup.IStyleConnector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerView extends System.Windows.Controls.UserControl implements class System.Windows.Markup.IComponentConnector, class System.Windows.Markup.IStyleConnector" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.View.DesignerView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IComponentConnector</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IStyleConnector</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ワークフロー キャンバスを表すデザイナー ビューの Windows Presentation Foundation (WPF) コントロールを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.IComponentConnector> インターフェイスおよび <xref:System.Windows.Markup.IStyleConnector> インターフェイスを実装して、名前付き XAML 要素およびその要素へのイベント ハンドラーのアタッチをサポートします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivitySchema">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.Model.ModelItem ActivitySchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem ActivitySchema" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.ActivitySchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ スキーマを取得します。</summary>
+        <value>アクティビティ スキーマ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivitySchemaProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ActivitySchemaProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ActivitySchemaProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ActivitySchemaProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.DesignerView.ActivitySchema" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAnnotationCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand AddAnnotationCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand AddAnnotationCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.AddAnnotationCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈を追加するために使用するコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollapseAllCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CollapseAllCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CollapseAllCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CollapseAllCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要素のすべてのユーザー インターフェイスを折りたたむために使用されるコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollapseCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CollapseCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CollapseCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CollapseCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要素のユーザー インターフェイスを折りたたむために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandMenuModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandMenuModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandMenuModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CommandMenuModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Activities.Design.View.CommandMenuMode" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[avalon1](~/includes/avalon1-md.md)] 入力システムをサポートする型を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CommitCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CommitCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CommitCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Data.BindingExpression" /> のソース値を更新するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.EditingContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.EditingContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.EditingContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーに含まれているすべての要素で共有される、サービスのコレクションを取得または設定します。</summary>
+        <value>コンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストを通して、サービスを発行および要求できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyAsImageCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CopyAsImageCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CopyAsImageCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CopyAsImageCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のワークフロー デザイン画面をスクリーンショットとしてコピーし、それをクリップボードに配置するために使用される <see cref="T:System.Windows.Input.RoutedCommand" /> です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[avalon1](~/includes/avalon1-md.md)] 入力システムをサポートする型を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CopyCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CopyCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CopyCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピーするために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateArgumentCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CreateArgumentCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CreateArgumentCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CreateArgumentCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい引数を作成するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateVariableCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CreateVariableCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CreateVariableCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CreateVariableCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されているアクティビティの新しい変数を作成するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkflowElementCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CreateWorkflowElementCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CreateWorkflowElementCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CreateWorkflowElementCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー項目をツールボックスからデザイナー画面にドラッグしたときに現在の<see cref="T:System.Activities.Design.WorkflowViewElement" />画面に新しい [!INCLUDE[wfd1](~/includes/wfd1-md.md)] を作成するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomMenuItemsSeparatorCommand">
+      <MemberSignature Language="C#" Value="public const string CustomMenuItemsSeparatorCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string CustomMenuItemsSeparatorCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CustomMenuItemsSeparatorCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム メニュー項目の区分線の GUID を含む文字列定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CutCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CutCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CutCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CutCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>切り取るために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CycleThroughDesignerCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CycleThroughDesignerCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CycleThroughDesignerCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.CycleThroughDesignerCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の[!INCLUDE[wfd1](~/includes/wfd1-md.md)]画面のさまざまな UI 要素を順番に移動するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAllAnnotationCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand DeleteAllAnnotationCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand DeleteAllAnnotationCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.DeleteAllAnnotationCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての注釈を削除するために使用するコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAnnotationCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand DeleteAnnotationCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand DeleteAnnotationCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.DeleteAnnotationCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した注釈を削除するために使用するコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteBreakpointCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand DeleteBreakpointCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand DeleteBreakpointCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.DeleteBreakpointCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアクティビティに設定されたブレークポイントを削除するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableBreakpointCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand DisableBreakpointCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand DisableBreakpointCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.DisableBreakpointCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアクティビティに設定されたブレークポイントを無効化するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditAnnotationCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand EditAnnotationCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand EditAnnotationCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.EditAnnotationCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈を編集するために使用するコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableBreakpointCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand EnableBreakpointCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand EnableBreakpointCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.EnableBreakpointCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアクティビティでブレークポイントを有効化するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandAllCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ExpandAllCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ExpandAllCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ExpandAllCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要素のリストを展開するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ExpandCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ExpandCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ExpandCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合アクティビティの選択された子に移動し、その子アクティビティを展開して[!INCLUDE[wfd1](~/includes/wfd1-md.md)]画面全体に表示されるようにするために使用されるコマンドです。 このアクションは <paramref name="View full screen" /> コンテキスト メニュー コマンドによって開始されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandInPlaceCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ExpandInPlaceCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ExpandInPlaceCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ExpandInPlaceCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要素のリストを現在の表示内で展開するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FitToScreenCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand FitToScreenCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand FitToScreenCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.FitToScreenCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要素を画面に合わせるために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushState">
+      <MemberSignature Language="C#" Value="public void FlushState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FlushState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.FlushState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデザイナー ビューに関連付けられた状態を保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedViewElement">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.WorkflowViewElement FocusedViewElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.WorkflowViewElement FocusedViewElement" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.FocusedViewElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.WorkflowViewElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>どのビュー要素にフォーカスがあるかを示す値を取得します。</summary>
+        <value>フォーカスがあるビュー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedViewElementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FocusedViewElementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FocusedViewElementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.FocusedViewElementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.DesignerView.FocusedViewElement" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCommandMenuMode">
+      <MemberSignature Language="C#" Value="public static System.Activities.Presentation.View.CommandMenuMode GetCommandMenuMode (System.Windows.DependencyObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Presentation.View.CommandMenuMode GetCommandMenuMode(class System.Windows.DependencyObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.GetCommandMenuMode(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.CommandMenuMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">コマンド メニュー モードを取得するオブジェクト。</param>
+        <summary>指定したオブジェクトのコマンド メニュー モードを取得します。</summary>
+        <returns><paramref name="obj" /> のコマンド メニュー モード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GoToParentCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand GoToParentCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand GoToParentCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.GoToParentCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択された子アクティビティの親アクティビティに移動し、その親アクティビティを展開して[!INCLUDE[wfd1](~/includes/wfd1-md.md)]画面全体に表示されるようにするために使用されるコマンドです。 このアクションは <paramref name="View parent" /> コンテキスト メニュー コマンドによって開始されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideAllAnnotationCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand HideAllAnnotationCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand HideAllAnnotationCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.HideAllAnnotationCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての注釈を非表示にするために使用するコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeComponent">
+      <MemberSignature Language="C#" Value="public void InitializeComponent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeComponent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.InitializeComponent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InPanModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty InPanModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty InPanModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.InPanModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InPanMode プロパティ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertBreakpointCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand InsertBreakpointCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand InsertBreakpointCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.InsertBreakpointCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアクティビティにブレークポイントを設定するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMultipleSelectionMode">
+      <MemberSignature Language="C#" Value="public bool IsMultipleSelectionMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMultipleSelectionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.IsMultipleSelectionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素が複数選択モードであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Activities.Presentation.View.DesignerView" /> 要素が複数選択モードである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ctrl キーまたは SHIFT キーを押しながら複数の要素を選択すると、`true`です。  これは、1 つの要素が選択されている場合のみ`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.View.DesignerView" /> が読み取り専用であるかどうかを判断します。</summary>
+        <value>
+          <see cref="T:System.Activities.Presentation.View.DesignerView" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnlyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsReadOnlyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsReadOnlyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.IsReadOnlyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.DesignerView.IsReadOnly" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeRootDesigner">
+      <MemberSignature Language="C#" Value="public void MakeRootDesigner (System.Activities.Presentation.Model.ModelItem modelItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeRootDesigner(class System.Activities.Presentation.Model.ModelItem modelItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.MakeRootDesigner(System.Activities.Presentation.Model.ModelItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">ルート デザイナーになる <see cref="T:System.Activities.Presentation.Model.ModelItem)" />。</param>
+        <summary>指定したモデル アイテムを、デザイナー階層のルート (最上位) に配置します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuItemStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style MenuItemStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style MenuItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.MenuItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目スタイルを取得または設定します。</summary>
+        <value>メニュー項目スタイル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuItemStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MenuItemStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MenuItemStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.MenuItemStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.DesignerView.MenuItemStyle" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuSeparatorStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style MenuSeparatorStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style MenuSeparatorStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.MenuSeparatorStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニューの区分線のスタイルを取得または設定します。</summary>
+        <value>メニュー区分線スタイル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuSeparatorStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MenuSeparatorStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MenuSeparatorStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.MenuSeparatorStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.DesignerView.MenuSeparatorStyle" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand MoveFocusCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand MoveFocusCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.MoveFocusCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーカスを移動するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenuOpening">
+      <MemberSignature Language="C#" Value="protected override void OnContextMenuOpening (System.Windows.Controls.ContextMenuEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContextMenuOpening(class System.Windows.Controls.ContextMenuEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnContextMenuOpening(System.Windows.Controls.ContextMenuEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ContextMenuEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>ContextMenuOpening イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialized">
+      <MemberSignature Language="C#" Value="protected override void OnInitialized (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInitialized(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnInitialized(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.FrameworkElement.Initialized" /> イベントを処理します。具体的には、<see cref="T:System.Windows.Controls.UserControl" /> 基本クラスの実装を呼び出し、<see cref="E:System.Windows.UIElement.GotKeyboardFocus" /> 経由のイベントに対してイベント ハンドラーを追加して、デザイナー ビューの前景色を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータ。</param>
+        <summary>OnKeyDown イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewDragOver">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewDragOver (System.Windows.DragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewDragOver(class System.Windows.DragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnPreviewDragOver(System.Windows.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>アタッチされた未処理の <see cref="E:System.Windows.DragDrop.PreviewDragOver" /> イベントが、そのルート上で、このクラスから派生した要素に到達すると呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnPreviewMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>PreviewMouseLeftButtonDown イベントが発生すると呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseWheel">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseWheel (System.Windows.Input.MouseWheelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseWheel(class System.Windows.Input.MouseWheelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseWheelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Input.MouseWheelEventArgs" />。</param>
+        <summary>PreviewMouseWheel イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、アタッチされた未処理の <xref:System.Windows.Input.Mouse.PreviewMouseWheel> イベントが、そのルート上で、このクラスから派生した要素に到達すると呼び出されます。 このイベントに対するクラス処理を追加するには、このメソッドをオーバーライドします。 このイベントの処理時に Ctrl キーが押されている場合は、マウス ホイールの動きに応じて、ビューがズームインまたはズームアウトされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnReferenceUpdated">
+      <MemberSignature Language="C#" Value="public void OnReferenceUpdated (System.Reflection.AssemblyName updatedReference, bool isAdded);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnReferenceUpdated(class System.Reflection.AssemblyName updatedReference, bool isAdded) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.OnReferenceUpdated(System.Reflection.AssemblyName,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="updatedReference" Type="System.Reflection.AssemblyName" />
+        <Parameter Name="isAdded" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="updatedReference">追加または削除される参照アセンブリ。</param>
+        <param name="isAdded">
+          アセンブリ参照が追加される場合は <see langword="true" />、アセンブリ参照が削除される場合は <see langword="false" />。</param>
+        <summary>指定した参照アセンブリが追加されるか、または削除されるかに応じて、インポートされた名前空間のリストを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照アセンブリが追加される場合は、アセンブリ内にある型の名前空間が、インポートされた名前空間のリストに追加されます。 参照アセンブリが削除される場合は、アセンブリ内にある型の名前空間が、インポートされた名前空間のリストから削除されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand PasteCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand PasteCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.PasteCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>貼り付けるために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedoCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand RedoCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand RedoCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.RedoCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作をやり直すために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterViewElement">
+      <MemberSignature Language="C#" Value="public void RegisterViewElement (System.Activities.Presentation.WorkflowViewElement viewElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterViewElement(class System.Activities.Presentation.WorkflowViewElement viewElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.RegisterViewElement(System.Activities.Presentation.WorkflowViewElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewElement" Type="System.Activities.Presentation.WorkflowViewElement" />
+      </Parameters>
+      <Docs>
+        <param name="viewElement">ワークフロー ビュー要素。</param>
+        <summary>ビュー要素を登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetZoomCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ResetZoomCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ResetZoomCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ResetZoomCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ズームをリセットするために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand RestoreCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand RestoreCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.RestoreCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>復元するために使用されるコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDesigner">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement RootDesigner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement RootDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.RootDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のモデル ツリーのルートを表す UI である <see cref="T:System.Windows.UIElement" /> を取得または設定します。</summary>
+        <value>ルート要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.View.DesignerView.MakeRootDesigner%2A> メソッドを呼び出して、<xref:System.Activities.Presentation.WorkflowViewElement> の <xref:System.Activities.Presentation.Model.ModelItem> 表現にこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDesignerProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RootDesignerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RootDesignerProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.RootDesignerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.DesignerView.RootDesigner" /> プロパティを表す依存プロパティを含みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAsImageCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand SaveAsImageCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand SaveAsImageCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.SaveAsImageCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のワークフロー デザイン画面をイメージとして保存するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAllCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand SelectAllCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand SelectAllCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.SelectAllCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビュー内のすべてのオブジェクトを選択するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCommandMenuMode">
+      <MemberSignature Language="C#" Value="public static void SetCommandMenuMode (System.Windows.DependencyObject obj, System.Activities.Presentation.View.CommandMenuMode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCommandMenuMode(class System.Windows.DependencyObject obj, class System.Activities.Presentation.View.CommandMenuMode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.SetCommandMenuMode(System.Windows.DependencyObject,System.Activities.Presentation.View.CommandMenuMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Activities.Presentation.View.CommandMenuMode" />
+      </Parameters>
+      <Docs>
+        <param name="obj">コマンド メニュー モードを設定する依存オブジェクト。</param>
+        <param name="value">設定するコマンド メニュー モードの値。</param>
+        <summary>指定した従属オブジェクトに対して、コマンド メニュー モードを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldCollapseAll">
+      <MemberSignature Language="C#" Value="public bool ShouldCollapseAll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldCollapseAll" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.ShouldCollapseAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン ビューのすべての子要素の表示を折りたたむかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用である場合は <see cref="T:System.Activities.Presentation.View.DesignerView" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldExpandAll">
+      <MemberSignature Language="C#" Value="public bool ShouldExpandAll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldExpandAll" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.ShouldExpandAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のリスト全体を展開するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Activities.Presentation.View.DesignerView" /> 要素のリスト全体を展開する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowAllAnnotationCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ShowAllAnnotationCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ShowAllAnnotationCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ShowAllAnnotationCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての注釈を表示するために使用するコマンド。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IComponentConnector.Connect">
+      <MemberSignature Language="C#" Value="void IComponentConnector.Connect (int connectionId, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IComponentConnector.Connect(int32 connectionId, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.System#Windows#Markup#IComponentConnector#Connect(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionId" Type="System.Int32" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="connectionId">接続 ID。</param>
+        <param name="target">ターゲット。</param>
+        <summary>イベントと名前をコンパイルされたコンテンツにアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、マークアップ コンパイラでのみ使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IStyleConnector.Connect">
+      <MemberSignature Language="C#" Value="void IStyleConnector.Connect (int connectionId, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IStyleConnector.Connect(int32 connectionId, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.System#Windows#Markup#IStyleConnector#Connect(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionId" Type="System.Int32" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="connectionId">接続 ID。</param>
+        <param name="target">ターゲット。</param>
+        <summary>コンパイルされたコンテンツで EventSetters および Templates にイベントをアタッチするために StyleBamlReader を呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マークアップ コンパイラでのみ使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleArgumentDesignerCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ToggleArgumentDesignerCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ToggleArgumentDesignerCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ToggleArgumentDesignerCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>引数デザイナーの表示と非表示を切り替えるために使用されるコマンドです。 <paramref name="Arguments" /> 画面で [[!INCLUDE[wfd1](~/includes/wfd1-md.md)]] ボタンをクリックすると、このアクションが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このプロパティをボタンにバインドする方法を次のコード例に示します。  
+  
+```xaml  
+<Button xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" Command="sapv:DesignerView.ToggleArgumentDesignerCommand">Show/Hide Arguments</Button>  
+```  
+  
+ このプロパティを C# で呼び出す方法を次のコード例に示します。  
+  
+```csharp  
+DesignerView dView = des.Context.Services.GetService<DesignerView>();  
+((RoutedCommand)DesignerView.ToggleArgumentDesignerCommand).Execute(null, dView);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleImportsDesignerCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ToggleImportsDesignerCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ToggleImportsDesignerCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ToggleImportsDesignerCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポート デザイナーを切り替えるために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleMiniMapCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ToggleMiniMapCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ToggleMiniMapCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ToggleMiniMapCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[wfd1](~/includes/wfd1-md.md)]画面で MiniMap コントロールの表示と非表示を切り替えるために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleSelectionCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ToggleSelectionCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ToggleSelectionCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ToggleSelectionCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択を切り替えるために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleVariableDesignerCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ToggleVariableDesignerCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ToggleVariableDesignerCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ToggleVariableDesignerCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変数デザイナーの表示と非表示を切り替えるために使用されるコマンドです。 <paramref name="Variables" /> 画面で [[!INCLUDE[wfd1](~/includes/wfd1-md.md)]] ボタンをクリックすると、このアクションが開始されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand UndoCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand UndoCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.UndoCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッファー内の最後の操作を元に戻すために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterViewElement">
+      <MemberSignature Language="C#" Value="public void UnregisterViewElement (System.Activities.Presentation.WorkflowViewElement viewElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnregisterViewElement(class System.Activities.Presentation.WorkflowViewElement viewElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.DesignerView.UnregisterViewElement(System.Activities.Presentation.WorkflowViewElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewElement" Type="System.Activities.Presentation.WorkflowViewElement" />
+      </Parameters>
+      <Docs>
+        <param name="viewElement">ワークフロー ビュー要素。</param>
+        <summary>ビュー要素の登録を解除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowShellBarItemVisibility">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.ShellBarItemVisibility WorkflowShellBarItemVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Activities.Presentation.View.ShellBarItemVisibility WorkflowShellBarItemVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.WorkflowShellBarItemVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.ShellBarItemVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー シェル バーの表示設定の種類を示す値を取得または設定します。</summary>
+        <value>ワークフロー シェル バーの表示設定の種類を示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowShellHeaderItemsVisibility">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.ShellHeaderItemsVisibility WorkflowShellHeaderItemsVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Activities.Presentation.View.ShellHeaderItemsVisibility WorkflowShellHeaderItemsVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.ShellHeaderItemsVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー シェル ヘッダーの表示設定の種類を示す値を取得または設定します。</summary>
+        <value>ワークフロー シェル ヘッダーの表示設定の種類を示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomFactor">
+      <MemberSignature Language="C#" Value="public double ZoomFactor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ZoomFactor" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.DesignerView.ZoomFactor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティの現在のズーム レベルを取得します。</summary>
+        <value>アクティビティの現在のズーム レベル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomInCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ZoomInCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ZoomInCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ZoomInCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の[!INCLUDE[wfd1](~/includes/wfd1-md.md)]画面でズームインを行うために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomOutCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ZoomOutCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ZoomOutCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.DesignerView.ZoomOutCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Windows ワークフロー デザイナー画面でズームアウトを実行するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

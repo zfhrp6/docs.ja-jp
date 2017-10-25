@@ -1,0 +1,480 @@
+<Type Name="IDataServiceHost" FullName="System.Data.Services.IDataServiceHost">
+  <TypeSignature Language="C#" Value="public interface IDataServiceHost" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataServiceHost" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.IDataServiceHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>WCF Data Services とそのホスティング環境間の相互作用を指定するインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストする各コンポーネント[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]など Windows Communication Foundation (WCF) は、このインターフェイスを実装する必要があります。 <xref:System.Data.Services.IDataServiceHost>間のコントラクトは、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]とそのホスティング環境。 特定のホスティング環境に依存しないという [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] ランタイムの特徴は、この抽象化によって実現されています。 [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] は、このインターフェイスを介して受信 HTTP 要求にアクセスします。 このインターフェイスを実装する新しいオブジェクトは、HTTP 要求ごとにインスタンス化され、HTTP 要求のプロパティを検査し、HTTP 応答の構成を使用しています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbsoluteRequestUri">
+      <MemberSignature Language="C#" Value="public Uri AbsoluteRequestUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri AbsoluteRequestUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.AbsoluteRequestUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントによって送信された URI を表す絶対 URI を取得します。</summary>
+        <value>要求の絶対 URI を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.IDataServiceHost.AbsoluteRequestUri%2A> プロパティは常に、クライアントの HTTP 要求から絶対 URI を返します。 これによって、URI がホストによって書き換えられた場合でも、要求 URI に一貫してアクセスすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AbsoluteServiceUri">
+      <MemberSignature Language="C#" Value="public Uri AbsoluteServiceUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri AbsoluteServiceUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.AbsoluteServiceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスのルート URI を表す絶対 URI を取得します。</summary>
+        <value>データ サービスの絶対ルート URI を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.IDataServiceHost.AbsoluteServiceUri%2A> プロパティは常に、サービス要求の絶対ルート URI を返します。 これによって、URI がホストによって書き換えられた場合でも、ルート データ サービス URI に一貫してアクセスすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryStringItem">
+      <MemberSignature Language="C#" Value="public string GetQueryStringItem (string item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetQueryStringItem(string item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IDataServiceHost.GetQueryStringItem(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="item">要求する項目の ID キーを表す文字列値。</param>
+        <summary>メソッドのパラメーターに格納されている ID キーによって識別されたデータ項目を取得します。</summary>
+        <returns>クエリによって要求された、文字列としてシリアル化されたデータ項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] の URI のクエリ文字列部分は、キー/値のペアで構成されます。キーと値は、"=" 文字で区切られます。 `GetQueryStringItem`メソッドのパラメーターで指定された id キーのデータ項目を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessException">
+      <MemberSignature Language="C#" Value="public void ProcessException (System.Data.Services.HandleExceptionArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessException(class System.Data.Services.HandleExceptionArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IDataServiceHost.ProcessException(System.Data.Services.HandleExceptionArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Data.Services.HandleExceptionArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">
+          <see cref="T:System.Data.Services.HandleExceptionArgs" />例外オブジェクトの情報を格納します。</param>
+        <summary>データ サービスの例外を <paramref name="args" /> パラメーター内の情報を使用して処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestAccept">
+      <MemberSignature Language="C#" Value="public string RequestAccept { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestAccept" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestAccept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の Accept ヘッダーで指定されたトランスポート プロトコル。</summary>
+        <value>要求が必要としているトランスポート プロトコルを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在 [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] では、JSON や AtomPub などのプロトコルがサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestAcceptCharSet">
+      <MemberSignature Language="C#" Value="public string RequestAcceptCharSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestAcceptCharSet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestAcceptCharSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を表す文字列を取得、 <c>Accept-charset</c> HTTP ヘッダー。</summary>
+        <value>値を表す文字列、 <c>Accept-charset</c> HTTP ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Accept-Charset` ヘッダーが要求に存在する場合、null を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestContentType">
+      <MemberSignature Language="C#" Value="public string RequestContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツ タイプ ヘッダーによって指定されたトランスポート プロトコルを取得します。</summary>
+        <value>コンテンツ タイプを示す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在 [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] では、JSON や AtomPub などのプロトコルがサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestHttpMethod">
+      <MemberSignature Language="C#" Value="public string RequestHttpMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestHttpMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestHttpMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GET、PUT、POST、DELETE のいずれかの要求メソッドを取得します。</summary>
+        <value>要求メソッドを示す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされるプロパティの詳細については<xref:System.Data.Services.IDataServiceHost>とその使用を参照してください[WCF Data Services クライアント ライブラリ](~/docs/framework/data/wcf/wcf-data-services-client-library.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestIfMatch">
+      <MemberSignature Language="C#" Value="public string RequestIfMatch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestIfMatch" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestIfMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求の If-Match ヘッダーの値を取得します。</summary>
+        <value>現在の要求の If-Match ヘッダーの文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestIfNoneMatch">
+      <MemberSignature Language="C#" Value="public string RequestIfNoneMatch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestIfNoneMatch" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestIfNoneMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求の If-None-Match ヘッダーの値を取得します。</summary>
+        <value>現在の要求の If-None-Match ヘッダーの文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestMaxVersion">
+      <MemberSignature Language="C#" Value="public string RequestMaxVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestMaxVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestMaxVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求のクライアントが処理できる最大バージョンを示す値を取得します。</summary>
+        <value>要求のクライアントが処理できる最大バージョンを表す文字列 (null の場合もあります)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream RequestStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream RequestStream" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 要求本文を含んでいるストリームを取得します。</summary>
+        <value>
+          <see cref="T:System.IO.Stream" /> 要求本文を含んでいるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestVersion">
+      <MemberSignature Language="C#" Value="public string RequestVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.RequestVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントによって送信された要求のバージョンを示す値を取得します (null の場合もあります)。</summary>
+        <value>クライアントによって送信された要求のバージョンを示す文字列 (null の場合もあります)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値が null の場合、バージョンは 1.0 と想定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseCacheControl">
+      <MemberSignature Language="C#" Value="public string ResponseCacheControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseCacheControl" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseCacheControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ制御情報を表す文字列値を取得します。</summary>
+        <value>キャッシュ制御情報を表す文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseContentType">
+      <MemberSignature Language="C#" Value="public string ResponseContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のトランスポート プロトコルを取得します。</summary>
+        <value>コンテンツ タイプを表す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ サポートされるプロパティの詳細については<xref:System.Data.Services.IDataServiceHost>とその使用を参照してください[WCF Data Services クライアント ライブラリ](~/docs/framework/data/wcf/wcf-data-services-client-library.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseETag">
+      <MemberSignature Language="C#" Value="public string ResponseETag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseETag" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseETag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答に含まれているデータの状態を表す eTag 値を取得します。</summary>
+        <value>eTag 状態値を表す文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseLocation">
+      <MemberSignature Language="C#" Value="public string ResponseLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの場所を取得または設定します。</summary>
+        <value>サービスの場所を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティから null や `string.Empty` が返されることはありません。  
+  
+   
+  
+## Examples  
+ 次の URI は、`http://myhost/myservice.svc` の部分がサービスの場所を表します。  
+  
+```  
+http://myhost/myservice.svc/Customers, the response location would be http://myhost/myservice.svc  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseStatusCode">
+      <MemberSignature Language="C#" Value="public int ResponseStatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ResponseStatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseStatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリの結果を示す応答コードを取得または設定します。</summary>
+        <value>応答コードを表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream ResponseStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream ResponseStream" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 応答本文の書き込み先となる応答ストリームを取得します。</summary>
+        <value>
+          応答本文の書き込み先となる <see cref="T:System.IO.Stream" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null ストリームが返されない場合や、ストリームに書き込むときに例外が発生した[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]は要求を中止します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseVersion">
+      <MemberSignature Language="C#" Value="public string ResponseVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IDataServiceHost.ResponseVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストで使用されているバージョンを応答から取得します。</summary>
+        <value>ホストのバージョンを表す文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

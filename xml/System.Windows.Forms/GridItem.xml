@@ -1,0 +1,279 @@
+<Type Name="GridItem" FullName="System.Windows.Forms.GridItem">
+  <TypeSignature Language="C#" Value="public abstract class GridItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit GridItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.GridItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つの行を実装して、<see cref="T:System.Windows.Forms.PropertyGrid" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グリッド項目へのビューの階層を表す、<xref:System.Windows.Forms.PropertyGrid>です。 使用することができます、<xref:System.Windows.Forms.GridItem>グリッドの状態と内容に関する情報を取得します。  
+  
+ <xref:System.Windows.Forms.GridItem>状態のスナップショットを表すために、オブジェクトはキャッシュされませんが、<xref:System.Windows.Forms.PropertyGrid>時にアクセスすると、およびグリッドのアクティビティが dispose 可能性があります。 <xref:System.Windows.Forms.PropertyGrid>多くの場合、再作成<xref:System.Windows.Forms.GridItem>オブジェクトをユーザーにビューを変更することがなく内部的にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected GridItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.GridItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expandable">
+      <MemberSignature Language="C#" Value="public virtual bool Expandable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expandable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.Expandable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、指定したプロパティが入れ子になったプロパティを表示する展開可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、指定されたプロパティを展開することができます。それ以外の場合、<see langword="false" />です。 既定値は false です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティが、展開可能な場合は、正符号 (+) 記号を表示するプロパティ名を<xref:System.Windows.Forms.PropertyGrid>です。 場合は、プラス記号をクリックして、入れ子になったプロパティはありません、プラス記号を削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expanded">
+      <MemberSignature Language="C#" Value="public virtual bool Expanded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expanded" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.Expanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得かを示す値を設定するかどうか、<see cref="T:System.Windows.Forms.GridItem" />展開された状態では、します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Windows.Forms.GridItem.Expanded" />プロパティに設定された<see langword="true" />が、<see cref="T:System.Windows.Forms.GridItem" />は展開不可能です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GridItems">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Forms.GridItemCollection GridItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.GridItemCollection GridItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.GridItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GridItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるのコレクションを取得<see cref="T:System.Windows.Forms.GridItem" />オブジェクト、存在する場合、関連付けられているこれの子として<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.GridItem" /> オブジェクトのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridItemType">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Forms.GridItemType GridItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.GridItemType GridItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.GridItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GridItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、この型を取得<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.GridItemType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.GridItem>型の<xref:System.Windows.Forms.GridItemType?displayProperty=nameWithType>、ことを確認する必要があります、<xref:System.Windows.Forms.GridItem.PropertyDescriptor%2A>が有効な値です。 <xref:System.Windows.Forms.GridItem>型の<xref:System.Windows.Forms.GridItemType?displayProperty=nameWithType>、<xref:System.Windows.Forms.GridItem.Parent%2A>プロパティである必要があります`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public abstract string Label { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このテキストを取得<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value>A<see cref="T:System.String" />これに関連付けられているテキストを表す<see cref="T:System.Windows.Forms.GridItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、グリッドの左の列に表示されるテキストを取得します。 これによって表されるプロパティの実際のプロパティ名と異なる場合が取得した文字列に<xref:System.Windows.Forms.GridItem>です。 名前を取得することができます、<xref:System.Windows.Forms.GridItem>型の<xref:System.Windows.Forms.GridItemType?displayProperty=nameWithType>取得することによって、<xref:System.Windows.Forms.GridItem.PropertyDescriptor%2A>チェックとその<xref:System.ComponentModel.MemberDescriptor.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Forms.GridItem Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.GridItem Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GridItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、親を取得します<see cref="T:System.Windows.Forms.GridItem" />この<see cref="T:System.Windows.Forms.GridItem" />存在する場合、します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.GridItem" />の親を表す、<see cref="T:System.Windows.Forms.GridItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.GridItem.GridItemType%2A>の<xref:System.Windows.Forms.GridItem>は<xref:System.Windows.Forms.GridItemType?displayProperty=nameWithType>、この値はある`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyDescriptor">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.PropertyDescriptor PropertyDescriptor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor PropertyDescriptor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.PropertyDescriptor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.ComponentModel.PropertyDescriptor" />これに関連付けられている<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value>この <see cref="T:System.ComponentModel.PropertyDescriptor" /> に関連付けられている <see cref="T:System.Windows.Forms.GridItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはに対してのみ有効な<xref:System.Windows.Forms.GridItem>型の<xref:System.Windows.Forms.GridItemType?displayProperty=nameWithType>します。  
+  
+ このプロパティを使用すると、グリッド項目、グリッド項目のグリッド項目、または型コンバーターの名前のプロパティの型などの情報を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public abstract bool Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridItem.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、これを選択<see cref="T:System.Windows.Forms.GridItem" />で、<see cref="T:System.Windows.Forms.PropertyGrid" />です。</summary>
+        <returns>
+          <see langword="true" />選択範囲が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー定義のデータのセットについて、<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.GridItem" /> に関するデータを格納している <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridItem.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、値を取得、現在この<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value>この現在の値<see cref="T:System.Windows.Forms.GridItem" />です。 これは、<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,914 @@
+<Type Name="BitmapMetadata" FullName="System.Windows.Media.Imaging.BitmapMetadata">
+  <TypeSignature Language="C#" Value="public class BitmapMetadata : System.Windows.Media.ImageMetadata, System.Collections.Generic.IEnumerable&lt;string&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BitmapMetadata extends System.Windows.Media.ImageMetadata implements class System.Collections.Generic.IEnumerable`1&lt;string&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.ImageMetadata</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.String&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ビットマップ イメージに対するメタデータの読み込みと書き込みのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージに関連付けられているメタデータは、データ イメージをについて説明しますが、イメージを表示する必要はありませんです。 ビットマップ イメージの形式のハンドルのメタデータを異なる方法で、サポート対象ごと、メタデータの読み取りと書き込みの機能は同じです。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]次のイメージのメタデータのスキーマをサポートしています: [!INCLUDE[TLA#tla_exif](~/includes/tlasharptla-exif-md.md)]、テキスト ([!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]テキスト形式のデータ)、 [!INCLUDE[TLA#tla_ifd](~/includes/tlasharptla-ifd-md.md)]、 [!INCLUDE[TLA#tla_iptc](~/includes/tlasharptla-iptc-md.md)]、および[!INCLUDE[TLA#tla_xmp](~/includes/tlasharptla-xmp-md.md)]です。  
+  
+ 場合、<xref:System.Windows.Media.Imaging.BitmapMetadata>によって公開される、<xref:System.Windows.Media.Imaging.BitmapFrame>を使用して取得した、<xref:System.Windows.Media.Imaging.BitmapDecoder>既定では読み取り専用であるし、変更可能な操作は例外をスローします。 によって公開された場合でも、<xref:System.Windows.Media.Imaging.BitmapFrame>別をラップする<xref:System.Windows.Media.Imaging.BitmapSource>、コンス トラクターで変更します。  
+  
+ <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A>と<xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>を構築し、メタデータ クエリを読み込むメソッドを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、メタデータを記述する方法、 [!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)] IFD を使用して、イメージと[!INCLUDE[TLA2#tla_exif](~/includes/tla2sharptla-exif-md.md)]スキーマです。  
+  
+ [!code-csharp[BitmapFrameExample#7](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#7)]
+ [!code-vb[BitmapFrameExample#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapMetadata (string containerFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string containerFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="containerFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="containerFormat">"Gif"、"jpg"、"png"または"tiff"として指定されている、ビットマップ イメージの形式。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />指定したイメージ形式を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、メタデータを記述する方法、 [!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)] IFD を使用して、イメージと[!INCLUDE[TLA2#tla_exif](~/includes/tla2sharptla-exif-md.md)]スキーマです。  
+  
+ [!code-csharp[BitmapFrameExample#7](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#7)]
+ [!code-vb[BitmapFrameExample#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containerFormat" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ ファイルの構築または変更に使用されたアプリケーションの名前を識別する値を取得または設定します。</summary>
+        <value>イメージ ファイルの構築または変更に使用されたアプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Author">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; Author { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; Author" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Author" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージの作成者を表す値を取得または設定します。</summary>
+        <value>イメージの作成者。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CameraManufacturer">
+      <MemberSignature Language="C#" Value="public string CameraManufacturer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CameraManufacturer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.CameraManufacturer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画像に関連付けられているカメラの製造元を識別する値を取得または設定します。</summary>
+        <value>画像に関連付けられているカメラの製造元。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CameraModel">
+      <MemberSignature Language="C#" Value="public string CameraModel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CameraModel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.CameraModel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージをキャプチャするために使用されたカメラ モデルを識別する値を取得または設定します。</summary>
+        <value>イメージのキャプチャに使用されたカメラ モデル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.BitmapMetadata Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Imaging.BitmapMetadata Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />。</param>
+        <summary>このインスタンスを指定された <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" /> の詳細なコピーにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.Clone%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.Clone%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />。</param>
+        <summary>現在のプロパティ値を使用して、このインスタンスを、指定した <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" /> の変更可能な詳細コピーにします。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.CloneCurrentValue%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValueCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Comment">
+      <MemberSignature Language="C#" Value="public string Comment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Comment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ ファイルに関連付けられているコメントを表す値を取得または設定します。</summary>
+        <value>イメージ ファイルに関連付けられているコメント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsQuery">
+      <MemberSignature Language="C#" Value="public bool ContainsQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ContainsQuery(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.ContainsQuery(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">現在の <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" /> オブジェクトでクエリが実行される文字列を識別します。</param>
+        <summary>指定されたクエリ文字列が <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" /> オブジェクト内に存在するかどうかを判別します。</summary>
+        <returns>
+          メタデータ ストア内にクエリ文字列が見つかった場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージに関連付けられているメタデータは、データ イメージを説明するが、そのイメージを表示するため必要はありません。 ビットマップ イメージの形式のハンドルのメタデータを異なる方法で、サポート対象ごと、メタデータの読み取りと書き込みの機能は同じです。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]次のイメージのメタデータのスキーマをサポートしています: [!INCLUDE[TLA#tla_exif](~/includes/tlasharptla-exif-md.md)]、テキスト ([!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]テキスト形式のデータ)、 [!INCLUDE[TLA#tla_ifd](~/includes/tlasharptla-ifd-md.md)]、 [!INCLUDE[TLA#tla_iptc](~/includes/tlasharptla-iptc-md.md)]、および[!INCLUDE[TLA#tla_xmp](~/includes/tlasharptla-xmp-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="query" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copyright">
+      <MemberSignature Language="C#" Value="public string Copyright { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Copyright" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Copyright" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ ファイルに関連付けられている著作権情報を示す値を取得または設定します。</summary>
+        <value>イメージ ファイルに関連付けられている著作権情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装<see cref="M:System.Windows.Freezable.CreateInstance" />です。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTaken">
+      <MemberSignature Language="C#" Value="public string DateTaken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DateTaken" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.DateTaken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージが作成された日付を示す値を取得または設定します。</summary>
+        <value>イメージが作成された日付。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public string Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Format" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージの形式を識別する値を取得します。</summary>
+        <value>ビットマップ イメージの形式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、さまざまなプロパティを読み取り、<xref:System.Windows.Media.Imaging.BitmapMetadata>オブジェクトし、それらの値を送信、<xref:System.Windows.MessageBox>文字列として。  
+  
+ [!code-csharp[BitmapFrameExample#9](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#9)]
+ [!code-vb[BitmapFrameExample#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable"><see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />複製し、凍結するオブジェクト。</param>
+        <summary>このインスタンスの指定した<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。 これらのプロパティには、データ バインディングまたはリソースの参照が含まれている場合ことに注意して<xref:System.Windows.Freezable.GetAsFrozen%2A>に失敗する、オブジェクトを圧縮しようとしているとスローされます、<xref:System.InvalidOperationException>です。  
+  
+ このメソッドは、<xref:System.Windows.Freezable.GetAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーし、固定する <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />。</param>
+        <summary>このインスタンスの指定された固定された複製<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />です。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetCurrentValueAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQuery">
+      <MemberSignature Language="C#" Value="public object GetQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetQuery(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.GetQuery(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">現在の <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" /> オブジェクトでクエリが実行される文字列を識別します。</param>
+        <summary>ビットマップ イメージ ファイルからメタデータを抽出できるメタデータ クエリ リーダーにアクセスを提供します。</summary>
+        <returns>指定したクエリの場所にあるメタデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージに関連付けられているメタデータは、データ イメージを説明するが、そのイメージを表示するため必要はありません。 ビットマップ イメージの形式のハンドルのメタデータを異なる方法で、サポート対象ごと、メタデータの読み取りと書き込みの機能は同じです。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]次のイメージのメタデータのスキーマをサポートしています: [!INCLUDE[TLA#tla_exif](~/includes/tlasharptla-exif-md.md)]、テキスト ([!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]テキスト形式のデータ)、 [!INCLUDE[TLA#tla_ifd](~/includes/tlasharptla-ifd-md.md)]、 [!INCLUDE[TLA#tla_iptc](~/includes/tlasharptla-iptc-md.md)]、および[!INCLUDE[TLA#tla_xmp](~/includes/tlasharptla-xmp-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A>にメタデータを記述する方法、[!INCLUDE[TLA#tla_png](~/includes/tlasharptla-png-md.md)]ファイル。  
+  
+ [!code-cpp[bitmapmetadata#SetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
+ [!code-csharp[bitmapmetadata#SetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
+ [!code-vb[bitmapmetadata#SetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#setquery)]  
+  
+ メタデータの作成後、<xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>メソッドは、そのデータを読み取り、文字列として出力を使用します。  
+  
+ [!code-cpp[bitmapmetadata#GetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#getquery)]
+ [!code-csharp[bitmapmetadata#GetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#getquery)]
+ [!code-vb[bitmapmetadata#GetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#getquery)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="query" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうか、<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />オブジェクトが固定サイズです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />が固定サイズです。 それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、さまざまなプロパティを読み取り、<xref:System.Windows.Media.Imaging.BitmapMetadata>オブジェクトし、それらの値を送信、<xref:System.Windows.MessageBox>文字列として。  
+  
+ [!code-csharp[BitmapFrameExample#9](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#9)]
+ [!code-vb[BitmapFrameExample#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージに関連付けられているメタデータは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メタデータは読み取り専用です。 場合、それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、さまざまなプロパティを読み取り、<xref:System.Windows.Media.Imaging.BitmapMetadata>オブジェクトし、それらの値を送信、<xref:System.Windows.MessageBox>文字列として。  
+  
+ [!code-csharp[BitmapFrameExample#9](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#9)]
+ [!code-vb[BitmapFrameExample#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keywords">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; Keywords { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; Keywords" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Keywords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ イメージを説明するキーワードのコレクションを取得または設定します。</summary>
+        <value>文字列の読み取り専用コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public string Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージに関連付けられているメタデータの基本場所を識別する値を取得します。</summary>
+        <value>イメージのメタデータの基本場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、さまざまなプロパティを読み取り、<xref:System.Windows.Media.Imaging.BitmapMetadata>オブジェクトし、それらの値を送信、<xref:System.Windows.MessageBox>文字列として。  
+  
+ [!code-csharp[BitmapFrameExample#9](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#9)]
+ [!code-vb[BitmapFrameExample#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rating">
+      <MemberSignature Language="C#" Value="public int Rating { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rating" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Rating" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージの評価を識別する値を設定します。</summary>
+        <value>0 ~ 5 の間の評価値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveQuery">
+      <MemberSignature Language="C#" Value="public void RemoveQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveQuery(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.RemoveQuery(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">削除するメタデータ クエリ。</param>
+        <summary>インスタンスからメタデータ クエリを削除<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージに関連付けられているメタデータは、データ イメージを説明するが、そのイメージを表示するため必要はありません。 ビットマップ イメージの形式のハンドルのメタデータを異なる方法で、サポート対象ごと、メタデータの読み取りと書き込みの機能は同じです。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]次のイメージのメタデータのスキーマをサポートしています: [!INCLUDE[TLA#tla_exif](~/includes/tlasharptla-exif-md.md)]、テキスト ([!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]テキスト形式のデータ)、 [!INCLUDE[TLA#tla_ifd](~/includes/tlasharptla-ifd-md.md)]、 [!INCLUDE[TLA#tla_iptc](~/includes/tlasharptla-iptc-md.md)]、および[!INCLUDE[TLA#tla_xmp](~/includes/tlasharptla-xmp-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="query" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">イメージ メタデータが読み取り専用の場合に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetQuery">
+      <MemberSignature Language="C#" Value="public void SetQuery (string query, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetQuery(string query, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.SetQuery(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="query">書き込むメタデータの場所を識別します。</param>
+        <param name="value">書き込むメタデータの値。</param>
+        <summary>ビットマップ イメージ ファイルにメタデータを書き込めるメタデータ クエリ ライターへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージに関連付けられているメタデータは、データ イメージを説明するが、そのイメージを表示するため必要はありません。 ビットマップ イメージの形式のハンドルのメタデータを異なる方法で、サポート対象ごと、メタデータの読み取りと書き込みの機能は同じです。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]次のイメージのメタデータのスキーマをサポートしています: [!INCLUDE[TLA#tla_exif](~/includes/tlasharptla-exif-md.md)]、テキスト ([!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]テキスト形式のデータ)、 [!INCLUDE[TLA#tla_ifd](~/includes/tlasharptla-ifd-md.md)]、 [!INCLUDE[TLA#tla_iptc](~/includes/tlasharptla-iptc-md.md)]、および[!INCLUDE[TLA#tla_xmp](~/includes/tlasharptla-xmp-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A>にメタデータを記述する方法、[!INCLUDE[TLA#tla_png](~/includes/tlasharptla-png-md.md)]ファイル。  
+  
+ [!code-cpp[bitmapmetadata#SetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
+ [!code-csharp[bitmapmetadata#SetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
+ [!code-vb[bitmapmetadata#SetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#setquery)]  
+  
+ メタデータの作成後、<xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>メソッドは、そのデータを読み取り、文字列として出力を使用します。  
+  
+ [!code-cpp[bitmapmetadata#GetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#getquery)]
+ [!code-csharp[bitmapmetadata#GetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#getquery)]
+ [!code-vb[bitmapmetadata#GetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#getquery)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public string Subject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ イメージの主題を示す値を取得または設定します。</summary>
+        <value>ビットマップ イメージの主題です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.String&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;string&gt; IEnumerable&lt;string&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;string&gt; System.Collections.Generic.IEnumerable&lt;System.String&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.System#Collections#Generic#IEnumerable&lt;System#String&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.Generic.IEnumerable`1.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.Generic.IEnumerator`1" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Media.Imaging.BitmapMetadata> のインスタンスが <xref:System.Collections.Generic.IEnumerable%601> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadata.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Media.Imaging.BitmapMetadata> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapMetadata.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ ファイルのタイトルを識別する値を取得または設定します。</summary>
+        <value>イメージ ファイルのタイトル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ビットマップ イメージの表示プロパティを使用してメタデータを記述する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapMetadata>クラスです。  
+  
+ [!code-csharp[BitmapFrameExample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#8)]
+ [!code-vb[BitmapFrameExample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

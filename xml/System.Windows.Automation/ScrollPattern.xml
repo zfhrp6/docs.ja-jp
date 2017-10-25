@@ -1,0 +1,494 @@
+<Type Name="ScrollPattern" FullName="System.Windows.Automation.ScrollPattern">
+  <TypeSignature Language="C#" Value="public class ScrollPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScrollPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ScrollPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>子要素のコレクションのスクロール可能なコンテナーとして機能するコントロール表します。 この要素のサポートの子<see cref="T:System.Windows.Automation.ScrollItemPattern" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[UI オートメーション クライアントのコントロール パターン マッピング](~/docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)このコントロール パターンを実装するコントロールの例についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ScrollPattern.ScrollPatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ScrollPattern/ScrollPatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ScrollPattern+ScrollPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.ScrollPattern" /> のキャッシュされた [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を取得します。</summary>
+        <value>コントロール パターンのキャッシュされた [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 使用して<xref:System.Windows.Automation.ScrollPattern.Current%2A>プロパティの現在の値を取得します。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ScrollPattern.ScrollPatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ScrollPattern/ScrollPatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ScrollPattern+ScrollPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.ScrollPattern" /> の現在の [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を取得します。</summary>
+        <value>コントロール パターンの現在の [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.ScrollPattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontallyScrollableProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty HorizontallyScrollableProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty HorizontallyScrollableProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.HorizontallyScrollableProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontallyScrollable" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素がのコレクションを返す関数に渡される[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ルートの子孫であり、一連のプロパティの条件を満たす要素。  
+  
+ [!code-csharp[UIAScrollPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#100)]
+ [!code-vb[UIAScrollPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollPercentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty HorizontalScrollPercentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty HorizontalScrollPercentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontalScrollPercent" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素がコンテンツ領域内で表示可能領域の現在の水平方向および垂直のスクロールのパーセンテージを返す関数に渡されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#104)]
+ [!code-vb[UIAScrollPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalViewSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty HorizontalViewSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty HorizontalViewSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.HorizontalViewSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontalViewSize" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素はコンテンツ エリア全体のパーセンテージとして表示可能領域の現在の垂直および水平方向のサイズを返す関数に渡されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#105)]
+ [!code-vb[UIAScrollPattern_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoScroll">
+      <MemberSignature Language="C#" Value="public const double NoScroll = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 NoScroll = (-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.NoScroll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>スクロールを実行しないことを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+ 値を-1 に置き換えられることができます、<xref:System.Windows.Automation.ScrollPattern.NoScroll>フィールドです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>後、コンテンツ領域の上部に表示可能領域のスクロールに使用されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#103)]
+ [!code-vb[UIAScrollPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.ScrollPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scroll">
+      <MemberSignature Language="C#" Value="public void Scroll (System.Windows.Automation.ScrollAmount horizontalAmount, System.Windows.Automation.ScrollAmount verticalAmount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Scroll(valuetype System.Windows.Automation.ScrollAmount horizontalAmount, valuetype System.Windows.Automation.ScrollAmount verticalAmount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ScrollPattern.Scroll(System.Windows.Automation.ScrollAmount,System.Windows.Automation.ScrollAmount)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="horizontalAmount" Type="System.Windows.Automation.ScrollAmount" />
+        <Parameter Name="verticalAmount" Type="System.Windows.Automation.ScrollAmount" />
+      </Parameters>
+      <Docs>
+        <param name="horizontalAmount">コントロール固有の水平方向インクリメント。 <see cref="F:System.Windows.Automation.ScrollPattern.NoScroll" />を渡されます場合は、コントロールをこの方向にスクロールすることはできません。</param>
+        <param name="verticalAmount">コントロール固有の垂直方向インクリメント。 <see cref="F:System.Windows.Automation.ScrollPattern.NoScroll" />を渡されます場合は、コントロールをこの方向にスクロールすることはできません。</param>
+        <summary>コンテンツ エリアの可視領域を水平方向および垂直方向にスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>要素、要求された時間を水平方向または垂直方向にスクロールに使用されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+[!code-csharp[UIAScrollPattern_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#106)]
+[!code-vb[UIAScrollPattern_snip#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コントロールをサポートしている<see cref="F:System.Windows.Automation.ScrollAmount.SmallIncrement" />水平または垂直のスクロールのためだけの値が、<see cref="F:System.Windows.Automation.ScrollAmount.LargeIncrement" />値に渡されます。</exception>
+        <exception cref="T:System.InvalidOperationException">サポートされていない方向にスクロールしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollHorizontal">
+      <MemberSignature Language="C#" Value="public void ScrollHorizontal (System.Windows.Automation.ScrollAmount amount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollHorizontal(valuetype System.Windows.Automation.ScrollAmount amount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ScrollPattern.ScrollHorizontal(System.Windows.Automation.ScrollAmount)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="amount" Type="System.Windows.Automation.ScrollAmount" />
+      </Parameters>
+      <Docs>
+        <param name="amount">水平<see cref="T:System.Windows.Automation.ScrollAmount" />コントロールに固有のインクリメントします。</param>
+        <summary>コンテンツの領域の現在の可視領域を水平方向にスクロール、指定した<see cref="T:System.Windows.Automation.ScrollAmount" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>要求量の要素を水平方向にスクロールを使用して、します。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+[!code-csharp[UIAScrollPattern_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#107)]
+[!code-vb[UIAScrollPattern_snip#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コントロールがサポートする場合は<see cref="F:System.Windows.Automation.ScrollAmount.SmallIncrement" />水平または垂直のスクロールのためだけの値が、<see cref="F:System.Windows.Automation.ScrollAmount.LargeIncrement" />値に渡されます。</exception>
+        <exception cref="T:System.InvalidOperationException">サポートされていない方向にスクロールしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollVertical">
+      <MemberSignature Language="C#" Value="public void ScrollVertical (System.Windows.Automation.ScrollAmount amount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollVertical(valuetype System.Windows.Automation.ScrollAmount amount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ScrollPattern.ScrollVertical(System.Windows.Automation.ScrollAmount)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="amount" Type="System.Windows.Automation.ScrollAmount" />
+      </Parameters>
+      <Docs>
+        <param name="amount">垂直<see cref="T:System.Windows.Automation.ScrollAmount" />コントロールに固有のインクリメントします。</param>
+        <summary>コンテンツの領域の現在の可視領域を垂直方向にスクロール、指定した<see cref="T:System.Windows.Automation.ScrollAmount" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>要素、要求された時間を垂直方向にスクロールを使用して、します。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+[!code-csharp[UIAScrollPattern_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#108)]
+[!code-vb[UIAScrollPattern_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コントロールがサポートする場合は<see cref="F:System.Windows.Automation.ScrollAmount.SmallIncrement" />水平または垂直のスクロールのためだけの値が、<see cref="F:System.Windows.Automation.ScrollAmount.LargeIncrement" />値に渡されます。</exception>
+        <exception cref="T:System.InvalidOperationException">サポートされていない方向にスクロールしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetScrollPercent">
+      <MemberSignature Language="C#" Value="public void SetScrollPercent (double horizontalPercent, double verticalPercent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetScrollPercent(float64 horizontalPercent, float64 verticalPercent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ScrollPattern.SetScrollPercent(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="horizontalPercent" Type="System.Double" />
+        <Parameter Name="verticalPercent" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="horizontalPercent">コンテンツ領域の水平方向の全域に対する割合。 <see cref="F:System.Windows.Automation.ScrollPattern.NoScroll" />を渡されます場合は、コントロールをこの方向にスクロールすることはできません。</param>
+        <param name="verticalPercent">コンテンツ領域の垂直方向の全域に対する割合。 <see cref="F:System.Windows.Automation.ScrollPattern.NoScroll" />を渡されます場合は、コントロールをこの方向にスクロールすることはできません。</param>
+        <summary>内のコンテンツ エリア全体の割合を水平/垂直方向のスクロール位置を設定、<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コントロールのコンテンツ領域が表示されている領域よりも大きい場合にのみ使用します。  
+  
+ 値を渡して<xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>がないこと、指定した方向にスクロールすることを示します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>後、コンテンツ領域の上端左 'ホーム' の位置に表示可能領域のスクロールに使用されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+[!code-csharp[UIAScrollPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#102)]
+[!code-vb[UIAScrollPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">倍精度浮動小数点型に変換できない値が渡されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">100 より大きいまたは 0 未満の値に渡されます (これと同じ-1 を除く<see cref="F:System.Windows.Automation.ScrollPattern.NoScroll" />)。 <see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontalScrollPercent" />と<see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticalScrollPercent" />値は 0% または 100% のいずれかに正規化します。</exception>
+        <exception cref="T:System.InvalidOperationException">サポートされていない方向にスクロールしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticallyScrollableProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty VerticallyScrollableProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty VerticallyScrollableProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.VerticallyScrollableProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticallyScrollable" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素がのコレクションを返す関数に渡される<xref:System.Windows.Automation.AutomationElement>ルートの子孫であり、一連のプロパティの条件を満たしています。  
+  
+ [!code-csharp[UIAScrollPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#100)]
+ [!code-vb[UIAScrollPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollPercentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty VerticalScrollPercentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty VerticalScrollPercentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticalScrollPercent" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素がコンテンツ領域内で表示可能領域の現在のスクロールのパーセンテージを返す関数に渡されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#104)]
+ [!code-vb[UIAScrollPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalViewSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty VerticalViewSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty VerticalViewSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollPattern.VerticalViewSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticalViewSize" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素はコンテンツ エリア全体のパーセンテージとして表示可能領域の現在の垂直および水平方向のサイズを返す関数に渡されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#105)]
+ [!code-vb[UIAScrollPattern_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

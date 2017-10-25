@@ -1,0 +1,425 @@
+<Type Name="IncomingWebRequestContext" FullName="System.ServiceModel.Web.IncomingWebRequestContext">
+  <TypeSignature Language="C#" Value="public class IncomingWebRequestContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IncomingWebRequestContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Web.IncomingWebRequestContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>受信 Web 要求のコンテキストに、プログラムでアクセスできるようにします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="public string Accept { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Accept" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.Accept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求から <see langword="Accept" /> ヘッダー値を取得します。</summary>
+        <value>受信 Web 要求の <see langword="Accept" /> ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalRetrieve">
+      <MemberSignature Language="C#" Value="public void CheckConditionalRetrieve (DateTime lastModified);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalRetrieve(valuetype System.DateTime lastModified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lastModified" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="lastModified">リソースの最終更新日時。</param>
+        <summary>リソースに対して条件付き受信要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalRetrieve">
+      <MemberSignature Language="C#" Value="public void CheckConditionalRetrieve (Guid entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalRetrieve(valuetype System.Guid entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き受信要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalRetrieve">
+      <MemberSignature Language="C#" Value="public void CheckConditionalRetrieve (int entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalRetrieve(int32 entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き受信要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalRetrieve">
+      <MemberSignature Language="C#" Value="public void CheckConditionalRetrieve (long entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalRetrieve(int64 entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き受信要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalRetrieve">
+      <MemberSignature Language="C#" Value="public void CheckConditionalRetrieve (string entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalRetrieve(string entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き受信要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalUpdate">
+      <MemberSignature Language="C#" Value="public void CheckConditionalUpdate (Guid entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalUpdate(valuetype System.Guid entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き受信要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalUpdate">
+      <MemberSignature Language="C#" Value="public void CheckConditionalUpdate (int entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalUpdate(int32 entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き更新要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalUpdate">
+      <MemberSignature Language="C#" Value="public void CheckConditionalUpdate (long entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalUpdate(int64 entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き更新要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConditionalUpdate">
+      <MemberSignature Language="C#" Value="public void CheckConditionalUpdate (string entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckConditionalUpdate(string entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">エンティティ タグ。</param>
+        <summary>リソースに対して条件付き更新要求が行われた場合に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public long ContentLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求の <see langword="ContentLength" /> ヘッダー値を取得します。</summary>
+        <value>受信 Web 要求の <see langword="ContentLength" /> ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求から <see langword="ContentType" /> ヘッダー値を取得します。</summary>
+        <value>受信 Web 要求の <see langword="ContentType" /> ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAcceptHeaderElements">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Net.Mime.ContentType&gt; GetAcceptHeaderElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Net.Mime.ContentType&gt; GetAcceptHeaderElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.IncomingWebRequestContext.GetAcceptHeaderElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Net.Mime.ContentType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを取得、<see langword="Accept" />ヘッダー要素。</summary>
+        <returns>コレクション、<see langword="Accept" />ヘッダー要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Net.WebHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求のヘッダーを取得します。</summary>
+        <value>受信 Web 要求のヘッダーを含む <see cref="T:System.Net.WebHeaderCollection" /> インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IfMatch">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; IfMatch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; IfMatch" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.IfMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に含まれるアイテムのコレクションを取得<see langword="If-Match" />ヘッダー。</summary>
+        <value>要求に含まれるアイテムのコレクション<see langword="If-Match" />ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IfModifiedSince">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; IfModifiedSince { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; IfModifiedSince" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.IfModifiedSince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の値を取得<see langword="If-Modified-Since" />ヘッダー。</summary>
+        <value>要求の<see langword="If-Modified-Since" />ヘッダーの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IfNoneMatch">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; IfNoneMatch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; IfNoneMatch" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.IfNoneMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に含まれる値を取得<see langword="If-None-Match" />ヘッダー。</summary>
+        <value>要求に含まれる値<see langword="If-None-Match" />ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IfUnmodifiedSince">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; IfUnmodifiedSince { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; IfUnmodifiedSince" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.IfUnmodifiedSince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の値を取得<see langword="If-Unmatched-Since" />ヘッダー。</summary>
+        <value>要求の<see langword="If-Unmatched-Since" />ヘッダー.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public string Method { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Method" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求の HTTP メソッドを取得します。</summary>
+        <value>受信 Web 要求の HTTP メソッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UriTemplateMatch">
+      <MemberSignature Language="C#" Value="public UriTemplateMatch UriTemplateMatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.UriTemplateMatch UriTemplateMatch" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.UriTemplateMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriTemplateMatch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求のディスパッチの間に作成された <see cref="T:System.UriTemplateMatch" /> インスタンスを取得および設定します。</summary>
+        <value><see cref="T:System.UriTemplateMatch" /> のインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.IncomingWebRequestContext.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 Web 要求から <see langword="UserAgent" /> ヘッダー値を取得します。</summary>
+        <value>受信 Web 要求の <see langword="UserAgent" /> ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

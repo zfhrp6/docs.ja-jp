@@ -1,0 +1,431 @@
+<Type Name="ParseChildrenAttribute" FullName="System.Web.UI.ParseChildrenAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ParseChildrenAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ParseChildrenAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ParseChildrenAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET サーバー コントロールを開発するときに使用できるメタデータ属性を定義します。 使用して、<see cref="T:System.Web.UI.ParseChildrenAttribute" />ページ パーサーがコンテンツを処理する方法を示すためにクラスがページで宣言されているサーバー コントロール タグ内に入れ子にします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ParseChildrenAttribute>クラスでは、使用して、サーバー コントロールをマークすることによってカスタム サーバー コントロールの解析ロジックを指定することができます、<xref:System.Web.UI.ParseChildrenAttribute>メタデータの属性です。  
+  
+ メタデータ属性を持つサーバー コントロールをマークする`ParseChildren(true)`プロパティとして、サーバー コントロールのタグ内に含まれる要素を解釈するためにパーサーに指示します。 このシナリオでは、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティは`true`します。  
+  
+ メタデータ属性を持つサーバー コントロールをマークする`ParseChildren(true,"<Default Property>")`設定、<xref:System.Web.UI.ParseChildrenAttribute.DefaultProperty%2A>プロパティは、属性に渡されるプロパティの名前にします。  
+  
+ メタデータ属性を持つサーバー コントロールをマークする`ParseChildren(false)`、既定値は解析される内容として、サーバー コントロールのタグ内に含まれる要素を解釈するためにパーサーに指示が関連付け<xref:System.Web.UI.ControlBuilder>は、コントロールとします。 このシナリオでは、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティは`false`します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ このセクションのコード例には、2 つの部分が含まれています。 最初のコード例は、プロパティを設定する方法を示します、<xref:System.Web.UI.ParseChildrenAttribute>クラスです。 2 番目のコード例では、ASP.NET ページ内のクラスを使用する方法を示します。  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.ParseChildrenAttribute>という名前のカスタム サーバー コントロールのオブジェクト`CollectionPropertyControl`です。 <xref:System.Web.UI.ParseChildrenAttribute>設定、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティを`true`と<xref:System.Web.UI.ParseChildrenAttribute.DefaultProperty%2A>プロパティを`Employee`クラスです。  
+  
+ [!code-csharp[ParseChildrenAttribute_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.cs#1)]
+ [!code-vb[ParseChildrenAttribute_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、`CollectionPropertyControl`と`Employee`ASP.NET ページ内のクラスです。 インスタンス、`Employee`クラスを宣言によって追加されます。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParseChildrenAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ParseChildrenAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンス、<xref:System.Web.UI.ParseChildrenAttribute>でクラスを作成、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParseChildrenAttribute (bool childrenAsProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool childrenAsProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childrenAsProperties" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="childrenAsProperties">
+          <see langword="true" />サーバー コントロールのプロパティとして、要素を解析するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ParseChildrenAttribute" />クラスを使用して、<see cref="P:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties" />サーバー コントロール内に含まれる要素が、サーバー コントロールのプロパティとして解析されたかどうかを決定するプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`childrenAsProperties`は`false`、サーバー コントロール内に含まれる要素は、コントロールとして解析されます。 `false`既定値は、<xref:System.Web.UI.ParseChildrenAttribute>です。  
+  
+   
+  
+## Examples  
+ このセクションのコード例には、2 つの部分が含まれています。 最初のコード例は、プロパティを設定する方法を示します、<xref:System.Web.UI.ParseChildrenAttribute>クラスです。 2 番目のコード例では、ASP.NET ページ内のクラスを使用する方法を示します。  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.ParseChildrenAttribute>という名前のカスタム サーバー コントロールのオブジェクト`CollectionPropertyControl`です。 ときに、<xref:System.Web.UI.ParseChildrenAttribute>クラスを定義する前に宣言された`CollectionPropertyControl`、<xref:System.Web.UI.ParseChildrenAttribute>設定、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティを`true`です。  
+  
+ [!code-csharp[ParseChildrenAttribute_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_2/CS/parsechildren.cs#1)]
+ [!code-vb[ParseChildrenAttribute_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_2/VB/parsechildren.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、`CollectionPropertyControl`と`Employee`ASP.NET ページ内のクラスです。 1 つのインスタンス、`Employee`クラスを宣言によって追加され、別がプログラムで追加します。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_2/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_2/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParseChildrenAttribute (Type childControlType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type childControlType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childControlType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="childControlType">コントロールの種類をプロパティとして解析します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ParseChildrenAttribute" />クラスを使用して、<see cref="P:System.Web.UI.ParseChildrenAttribute.ChildControlType" />プロパティをコントロールとして、サーバー コントロール内に含まれる要素が解析されるを確認します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="childControlType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParseChildrenAttribute (bool childrenAsProperties, string defaultProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool childrenAsProperties, string defaultProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.#ctor(System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childrenAsProperties" Type="System.Boolean" />
+        <Parameter Name="defaultProperty" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="childrenAsProperties">
+          <see langword="true" />サーバー コントロールのプロパティとして、要素を解析するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="defaultProperty">既定では入れ子になったコンテンツは解析先のサーバー コントロールのコレクション プロパティを定義する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ParseChildrenAttribute" />クラスを使用して、<paramref name="childrenAsProperties" />と<paramref name="defaultProperty" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`childrenAsProperties`は`false`要素は、コントロールとして解析されます。  
+  
+   
+  
+## Examples  
+ このセクションのコード例には、2 つの部分が含まれています。 最初のコード例は、プロパティを設定する方法を示します、<xref:System.Web.UI.ParseChildrenAttribute>クラスです。 2 番目のコード例では、ASP.NET ページ内のクラスを使用する方法を示します。  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.ParseChildrenAttribute>という名前のカスタム サーバー コントロールのオブジェクト`CollectionPropertyControl`です。 <xref:System.Web.UI.ParseChildrenAttribute>設定、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティを`true`と<xref:System.Web.UI.ParseChildrenAttribute.DefaultProperty%2A>プロパティを`Employee`クラスです。  
+  
+ [!code-csharp[ParseChildrenAttribute_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.cs#2)]
+ [!code-vb[ParseChildrenAttribute_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.vb#2)]  
+  
+ 次のコード例を使用する方法を示しています、`CollectionPropertyControl`と`Employee`ASP.NET ページ内のクラスです。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildControlType">
+      <MemberSignature Language="C#" Value="public Type ChildControlType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ChildControlType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ParseChildrenAttribute.ChildControlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの許可されている型を示す値を取得します。</summary>
+        <value>コントロール型。 既定値は、<see cref="T:System.Web.UI.Control" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可されているコントロール型は、場合`null`、意味が指定されていないこと、既定の型は、<xref:System.Web.UI.Control?displayProperty=nameWithType>制御が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリ、<xref:System.Web.UI.ParseChildrenAttribute.ChildControlType%2A>プロパティです。 定義については、`CollectionPropertyControl`と`Employee`このコード例で使用されるクラスを参照してください<xref:System.Web.UI.ParseChildrenAttribute.%23ctor%2A>です。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_2/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_2/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildrenAsProperties">
+      <MemberSignature Language="C#" Value="public bool ChildrenAsProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ChildrenAsProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティとして、サーバー コントロール内に含まれる要素を解析するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティとして、要素を解析するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティに設定されている`false`、サーバー コントロール内に含まれる要素は、コントロールとして解析されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリ、<xref:System.Web.UI.ParseChildrenAttribute.ChildrenAsProperties%2A>プロパティです。 定義については、`CollectionPropertyControl`と`Employee`このコード例で使用されるクラスを参照してください<xref:System.Web.UI.ParseChildrenAttribute>です。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">現在<see cref="T:System.Web.UI.ParseChildrenAttribute" />はで呼び出されました<paramref name="childrenAsProperties" />'éý'<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ParseChildrenAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ParseChildrenAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ParseChildrenAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ParseChildrenAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を定義、<see cref="T:System.Web.UI.ParseChildrenAttribute" />クラスです。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.UI.ParseChildrenAttribute.Default>フィールドは`false`要素が、サーバー コントロールのプロパティとして解析されないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultProperty">
+      <MemberSignature Language="C#" Value="public string DefaultProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ParseChildrenAttribute.DefaultProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素の解析先のサーバー コントロールの既定のプロパティを設定します。</summary>
+        <value>要素の解析先のサーバー コントロールの既定のコレクション プロパティの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ParseChildrenAttribute.DefaultProperty%2A>プロパティには、文字列が渡された場合にのみ、使用、<xref:System.Web.UI.ParseChildrenAttribute>コンス トラクターです。 ときに、<xref:System.Web.UI.ParseChildrenAttribute>クラスが作成される、<xref:System.Web.UI.ParseChildrenAttribute.DefaultProperty%2A>プロパティが解析されたサーバー コントロールの既定のプロパティを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリ、<xref:System.Web.UI.ParseChildrenAttribute.DefaultProperty%2A>プロパティです。 定義については、`CollectionPropertyControl`と`Employee`このコード例で使用されるクラスを参照してください<xref:System.Web.UI.ParseChildrenAttribute>です。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">現在<see cref="T:System.Web.UI.ParseChildrenAttribute" />はで呼び出されました<paramref name="childrenAsProperties" />'éý'<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が現在のオブジェクトに等しい場合は <paramref name="obj" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.Web.UI.ParseChildrenAttribute" />オブジェクト。</summary>
+        <returns>現在の <see cref="T:System.Web.UI.ParseChildrenAttribute" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ParseChildrenAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかの現在のインスタンスの値、<see cref="T:System.Web.UI.ParseChildrenAttribute" />クラスは、派生クラスの既定値です。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.Web.UI.ParseChildrenAttribute" />値は、既定のインスタンスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.UI.ParseChildrenAttribute>クラスは、<xref:System.Web.UI.ParseChildrenAttribute.ParseAsChildren>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリ、<xref:System.Web.UI.ParseChildrenAttribute.IsDefaultAttribute%2A>プロパティです。 定義については、`CollectionPropertyControl`と`Employee`このコード例で使用されるクラスを参照してください<xref:System.Web.UI.ParseChildrenAttribute>です。  
+  
+ [!code-aspx-csharp[ParseChildrenAttribute_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ParseChildrenAttribute_1/CS/parsechildren.aspx#3)]
+ [!code-aspx-vb[ParseChildrenAttribute_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ParseChildrenAttribute_1/VB/parsechildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseAsChildren">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ParseChildrenAttribute ParseAsChildren;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ParseChildrenAttribute ParseAsChildren" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ParseChildrenAttribute.ParseAsChildren" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ParseChildrenAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールと、サーバー コントロールに含まれる入れ子になったコンテンツが解析されたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.ParseChildrenAttribute.ParseAsChildren>フィールドが呼び出されると、サーバー コントロール内に含まれる入れ子になったコンテンツはプロパティとして解析できません。 コントロールとしての解析ではなく、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseAsProperties">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ParseChildrenAttribute ParseAsProperties;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ParseChildrenAttribute ParseAsProperties" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ParseChildrenAttribute.ParseAsProperties" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ParseChildrenAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー コントロールに含まれる入れ子になったコンテンツが、コントロールのプロパティとして解析されたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.ParseChildrenAttribute.ParseAsProperties>フィールドが呼び出されると、サーバー コントロールに含まれる入れ子になったコンテンツはプロパティとして解析します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

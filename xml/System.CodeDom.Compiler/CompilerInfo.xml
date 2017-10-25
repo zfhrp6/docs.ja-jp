@@ -1,0 +1,423 @@
+<Type Name="CompilerInfo" FullName="System.CodeDom.Compiler.CompilerInfo">
+  <TypeSignature Language="C#" Value="public sealed class CompilerInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CompilerInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CompilerInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>言語プロバイダーの構成設定を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.CodeDom.Compiler.CompilerInfo>決めるクラスをかどうか、<xref:System.CodeDom.Compiler.CodeDomProvider>実装が構成されているコンピューター、または特定の言語プロバイダーの構成およびコンパイラ設定を確認します。  
+  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)マシン構成ファイルに言語プロバイダーとコンパイラ構成設定が含まれています。 各言語が構成されているプロバイダーでは、対応するコンパイラ構成要素があります。 各要素を定義、<xref:System.CodeDom.Compiler.CodeDomProvider>実装の種類、サポートされている言語の名前、サポートされているファイル名拡張子、およびコンパイラのパラメーターです。  
+  
+ .NET Framework は、マシン構成ファイル内の最初のコンパイラ設定を定義します。 開発者やコンパイラ ベンダーは、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> の実装のために構成設定を追加することができます。  
+  
+ <xref:System.CodeDom.Compiler.CompilerInfo>クラスは、マシン構成ファイルでこれらの設定に読み取り専用アクセスを提供します。 使用して、 <xref:System.CodeDom.Compiler.CompilerInfo.GetLanguages%2A>、 <xref:System.CodeDom.Compiler.CompilerInfo.GetExtensions%2A>、および<xref:System.CodeDom.Compiler.CompilerInfo.CodeDomProviderType%2A>言語プロバイダーの対応する構成属性を検査するメンバー。 使用して、<xref:System.CodeDom.Compiler.CompilerInfo.CreateDefaultCompilerParameters%2A>言語プロバイダーのコンパイラ オプションと警告のレベルの属性値を取得します。  
+  
+ 構成ファイルの言語プロバイダー設定の詳細については、次を参照してください。[コンパイラおよび言語プロバイダー設定のスキーマ](http://msdn.microsoft.com/library/c020b139-8699-4f0d-9ac9-70d0c5b2a8c8)です。  
+  
+> [!NOTE]
+>  このクラスには、クラス レベルのすべてのメンバーに適用されるリンク確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元に完全信頼アクセス許可があるない場合にスローされます。 詳細については、リンク確認要求は、次を参照してください。[リンク確認要求](~/docs/framework/misc/link-demands.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、言語プロバイダーの構成設定を表示します。 コマンドライン引数を使用して、言語、ファイル名拡張子、またはプロバイダーの種類を指定します。 指定された入力に対するは、この例は、対応する言語プロバイダーを決定し、構成された言語のコンパイラ設定が表示されます。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#1)]
+ [!code-csharp[CodeDom_CompilerInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#1)]
+ [!code-vb[CodeDom_CompilerInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="CodeDomProviderType">
+      <MemberSignature Language="C#" Value="public Type CodeDomProviderType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CodeDomProviderType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerInfo.CodeDomProviderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成済みの型を取得<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />実装します。</summary>
+        <value>読み取り専用<see cref="T:System.Type" />構成された言語プロバイダーの種類を表すインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マシン構成ファイルには、それぞれの完全修飾型名が含まれています。<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 <xref:System.CodeDom.Compiler.CompilerInfo.CodeDomProviderType%2A>プロパティの値が、<xref:System.Type>に構成されている言語プロバイダーの実装を表すインスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、入力言語が、構成されているかどうかを判断<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 指定した言語の構成プロバイダーがある場合は、言語プロバイダーの構成設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#7](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#7)]
+ [!code-csharp[CodeDom_CompilerInfo#7](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#7)]
+ [!code-vb[CodeDom_CompilerInfo#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">言語プロバイダーは、このコンピューターに構成されていません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">なっているために、型を見つけることができません、<see langword="null" />または空の文字列。  
+  
+ または  
+  
+ 型を特定できないの名前、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />構成ファイルに見つかりません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultCompilerParameters">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerParameters CreateDefaultCompilerParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.Compiler.CompilerParameters CreateDefaultCompilerParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.CreateDefaultCompilerParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerParameters</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>言語プロバイダーの実装の構成済みのコンパイラ設定を取得します。</summary>
+        <returns>読み取り専用<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションおよび言語プロバイダー用に構成設定を格納しているインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.CodeDom.Compiler.CompilerInfo.CreateDefaultCompilerParameters%2A>のコンパイラ設定を確認する方法、<xref:System.CodeDom.Compiler.CompilerInfo>によって返されるインスタンス、<xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType>と<xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)マシンの構成のファイル、言語プロバイダーとコンパイラ構成設定を含む各<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 各言語プロバイダー構成要素をオプションに含めることができます`compilerOptions`と`warningLevel`属性。 これらの属性の既定値を定義する、<xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A?displayProperty=nameWithType>と<xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 言語プロバイダー構成要素が定義されていない場合、 `compilerOptions` 、属性、<xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A?displayProperty=nameWithType>プロパティの値は空の文字列 ("") です。 言語プロバイダー構成要素が定義されていない場合、 `warningLevel` 、属性、<xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A?displayProperty=nameWithType>プロパティの値は-1。  
+  
+   
+  
+## Examples  
+ 次のコード例では、入力言語が、構成されているかどうかを判断<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 指定した言語の構成プロバイダーがある場合は、言語プロバイダーの構成設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#7](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#7)]
+ [!code-csharp[CodeDom_CompilerInfo#7](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#7)]
+ [!code-vb[CodeDom_CompilerInfo#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProvider">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CodeDomProvider CreateProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.Compiler.CodeDomProvider CreateProvider() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.CreateProvider" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />現在の言語プロバイダー設定のインスタンス。</summary>
+        <returns>言語プロバイダーの構成に関連付けられている CodeDOM プロバイダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CompilerInfo.CreateProvider%2A>メソッドを返します、<xref:System.CodeDom.Compiler.CodeDomProvider>現在の言語プロバイダー設定のインスタンス。  
+  
+ 使用して、<xref:System.CodeDom.Compiler.CompilerInfo.CreateProvider%2A>取得するメソッド、<xref:System.CodeDom.Compiler.CodeDomProvider>の実装、<xref:System.CodeDom.Compiler.CompilerInfo>によって返されるインスタンス、<xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType>または<xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コンピューターの言語プロバイダーを列挙し、各言語プロバイダーの構成およびコンパイラ設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#8)]
+ [!code-csharp[CodeDom_CompilerInfo#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#8)]
+ [!code-vb[CodeDom_CompilerInfo#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProvider">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CodeDomProvider CreateProvider (System.Collections.Generic.IDictionary&lt;string,string&gt; providerOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.Compiler.CodeDomProvider CreateProvider(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; providerOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.CreateProvider(System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerOptions" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="providerOptions">構成ファイルからプロバイダー オプションのコレクション。</param>
+        <summary>返します、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />インスタンスの現在の言語プロバイダー設定とオプションを指定します。</summary>
+        <returns>CodeDOM プロバイダーでは、言語プロバイダーの構成に関連付けられているし、オプションを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CompilerInfo.CreateProvider%28System.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%29>メソッドを返します、<xref:System.CodeDom.Compiler.CodeDomProvider>現在の言語プロバイダー設定と指定したプロバイダー オプションのインスタンス。 サポートされているプロバイダー オプションについては、特定の CodeDOM プロバイダーのマニュアルを参照してください。  
+  
+ 使用して、<xref:System.CodeDom.Compiler.CompilerInfo.CreateProvider%28System.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%29>取得するメソッド、<xref:System.CodeDom.Compiler.CodeDomProvider>の実装、<xref:System.CodeDom.Compiler.CompilerInfo>によって返されるインスタンス、<xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType>または<xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerOptions" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">プロバイダーは、オプションをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在の <see cref="T:System.CodeDom.Compiler.CompilerInfo" /> と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在のと同じ言語プロバイダーおよびコンパイラ設定を表すかどうかを判断<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.CodeDom.Compiler.CompilerInfo" />オブジェクトとその値は、このインスタンスと同じです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッドです。  
+  
+ 2 つのインスタンスは、次のプロパティの値が等しい場合、等しいと見なされます。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerInfo.CodeDomProviderType%2A> プロパティ。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A>、 <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A>、および<xref:System.CodeDom.Compiler.CompilerParameters.IncludeDebugInformation%2A>のプロパティ、<xref:System.CodeDom.Compiler.CompilerParameters>によって返されるインスタンス、<xref:System.CodeDom.Compiler.CompilerInfo.CreateDefaultCompilerParameters%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtensions">
+      <MemberSignature Language="C#" Value="public string[] GetExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.GetExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルの言語プロバイダーでサポートされている拡張子を返します。</summary>
+        <returns>言語プロバイダーでサポートされているファイル名拡張子の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)マシンの構成のファイル、言語プロバイダーとコンパイラ構成設定を含む各<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 各構成された言語プロバイダーは、1 つまたは複数のファイル名拡張子をサポートします。 たとえば、<xref:Microsoft.CSharp.CSharpCodeProvider?displayProperty=nameWithType>ファイル名拡張子".cs"と「.c #」をサポートする場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コンピューターの言語プロバイダーを列挙し、各言語プロバイダーの構成およびコンパイラ設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#8)]
+ [!code-csharp[CodeDom_CompilerInfo#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#8)]
+ [!code-vb[CodeDom_CompilerInfo#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の 32 ビット符号付き整数ハッシュ コード<see cref="T:System.CodeDom.Compiler.CompilerInfo" />インスタンスのハッシュ アルゴリズムやデータの構造をハッシュ テーブルなどの使用に適しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドは、<xref:System.CodeDom.Compiler.CompilerInfo.Equals%2A> メソッドによって等しいと評価された 2 つのオブジェクトに対して同じハッシュ コードを生成します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:Microsoft.VisualBasic.VBCodeProvider?displayProperty=nameWithType>クラスです。 この例では、プロバイダー名、ハッシュ コードおよびプロバイダーの新しいインスタンスを既定のファイル名拡張子を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#3)]
+ [!code-csharp[CodeDom_CompilerInfo#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#3)]
+ [!code-vb[CodeDom_CompilerInfo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLanguages">
+      <MemberSignature Language="C#" Value="public string[] GetLanguages ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetLanguages() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerInfo.GetLanguages" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>言語プロバイダーでサポートされている言語の名前を取得します。</summary>
+        <returns>言語プロバイダーによってサポートされる言語名の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)マシンの構成のファイル、言語プロバイダーとコンパイラ構成設定を含む各<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 各構成された言語プロバイダーは、1 つまたは複数の言語名をサポートします。 たとえば、<xref:System.CodeDom.Compiler.CompilerInfo>オブジェクトに対して、<xref:Microsoft.CSharp.CSharpCodeProvider?displayProperty=nameWithType>言語名"c#"、"cs"および"csharp"を含む配列を返す場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コンピューターの言語プロバイダーを列挙し、各言語プロバイダーの構成およびコンパイラ設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#8)]
+ [!code-csharp[CodeDom_CompilerInfo#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#8)]
+ [!code-vb[CodeDom_CompilerInfo#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCodeDomProviderTypeValid">
+      <MemberSignature Language="C#" Value="public bool IsCodeDomProviderTypeValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCodeDomProviderTypeValid" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerInfo.IsCodeDomProviderTypeValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターの言語プロバイダー実装が構成されているかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />言語プロバイダー実装の種類が、コンピューターに構成されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.CodeDom.Compiler.CompilerInfo.IsCodeDomProviderTypeValid%2A>プロパティを確認する、<xref:System.CodeDom.Compiler.CodeDomProvider>プロバイダーのプロパティまたはメソッドにアクセスする前に実装します。 たとえば、後にする言語プロバイダー設定を取得、<xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>メソッドを使用して、<xref:System.CodeDom.Compiler.CompilerInfo.IsCodeDomProviderTypeValid%2A>プロパティを呼び出す前にプロバイダー型の実装を確認してください、<xref:System.CodeDom.Compiler.CompilerInfo.CreateProvider%2A>メソッドまたはを使用して、<xref:System.CodeDom.Compiler.CompilerInfo.CodeDomProviderType%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、入力言語が、構成されているかどうかを判断<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 指定した言語の構成プロバイダーがある場合は、言語プロバイダーの構成設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#7](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#7)]
+ [!code-csharp[CodeDom_CompilerInfo#7](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#7)]
+ [!code-vb[CodeDom_CompilerInfo#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">メンバーを呼び出す<see cref="T:System.CodeDom.Compiler.CompilerInfo" />です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連付けられている<see cref="T:System.Security.Permissions.PermissionState" />列挙値:<see langword="Unrestricted" />です。[NIB: 名前付き権限セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3):<see langword="FullTrust" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

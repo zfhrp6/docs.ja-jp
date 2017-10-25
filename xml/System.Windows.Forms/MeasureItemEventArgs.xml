@@ -1,0 +1,203 @@
+<Type Name="MeasureItemEventArgs" FullName="System.Windows.Forms.MeasureItemEventArgs">
+  <TypeSignature Language="C#" Value="public class MeasureItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MeasureItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MeasureItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see langword="MeasureItem" />のイベント、 <see cref="T:System.Windows.Forms.ListBox" />、 <see cref="T:System.Windows.Forms.ComboBox" />、 <see cref="T:System.Windows.Forms.CheckedListBox" />、および<see cref="T:System.Windows.Forms.MenuItem" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが送信されるときに、`OwnerDraw`プロパティの<xref:System.Windows.Forms.ListBox>、 <xref:System.Windows.Forms.ComboBox>、 <xref:System.Windows.Forms.CheckedListBox>、または<xref:System.Windows.Forms.MenuItem>に設定されている`true`です。 アイテムのサイズを変更する方法を通知するには、描画の関数に使用されます。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Graphics>プロパティ内のアイテムのカスタム描画を実行する、<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!code-cpp[MeasureItemEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MeasureItemEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[MeasureItemEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MeasureItemEventArgs/CS/form1.cs#1)]
+ [!code-vb[MeasureItemEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MeasureItemEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MeasureItemEventArgs (System.Drawing.Graphics graphics, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MeasureItemEventArgs.#ctor(System.Drawing.Graphics,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に書き込まれているオブジェクトします。</param>
+        <param name="index">該当する項目の高さまたは幅のインデックス。</param>
+        <summary><see cref="T:System.Windows.Forms.MeasureItemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MeasureItemEventArgs (System.Drawing.Graphics graphics, int index, int itemHeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, int32 index, int32 itemHeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MeasureItemEventArgs.#ctor(System.Drawing.Graphics,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="itemHeight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に書き込まれているオブジェクトします。</param>
+        <param name="index">該当する項目の高さまたは幅のインデックス。</param>
+        <param name="itemHeight">基準に測定するアイテムの高さ、<c>グラフィックス</c>オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.MeasureItemEventArgs" />項目の高さのパラメーターを提供するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MeasureItemEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Graphics" />に対して測定するオブジェクト。</summary>
+        <value><see cref="T:System.Drawing.Graphics" />を使用して描画するアイテムのスケールを決定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Drawing.Graphics>設定時に使用する小数点以下桁数を決定する、<xref:System.Windows.Forms.MeasureItemEventArgs.ItemHeight%2A>と<xref:System.Windows.Forms.MeasureItemEventArgs.ItemWidth%2A>です。 異なる種類のグラフィックス オブジェクトは、モニター画面およびプリンターの違いを測定スケールなどのさまざまな規模を持つことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Graphics>プロパティ内のアイテムのカスタム描画を実行する、<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!code-cpp[MeasureItemEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MeasureItemEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[MeasureItemEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MeasureItemEventArgs/CS/form1.cs#1)]
+ [!code-vb[MeasureItemEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MeasureItemEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MeasureItemEventArgs.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高さと幅が必要な項目のインデックスを取得します。</summary>
+        <value>計測される項目のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MeasureItemEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MeasureItemEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[MeasureItemEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MeasureItemEventArgs/CS/form1.cs#1)]
+ [!code-vb[MeasureItemEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MeasureItemEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemHeight">
+      <MemberSignature Language="C#" Value="public int ItemHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MeasureItemEventArgs.ItemHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で指定した項目の高さ、<see cref="P:System.Windows.Forms.MeasureItemEventArgs.Index" />です。</summary>
+        <value>計測された項目の高さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Graphics>プロパティ内のアイテムのカスタム描画を実行する、<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!code-cpp[MeasureItemEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MeasureItemEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[MeasureItemEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MeasureItemEventArgs/CS/form1.cs#1)]
+ [!code-vb[MeasureItemEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MeasureItemEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemWidth">
+      <MemberSignature Language="C#" Value="public int ItemWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MeasureItemEventArgs.ItemWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で指定した項目の幅、<see cref="P:System.Windows.Forms.MeasureItemEventArgs.Index" />です。</summary>
+        <value>計測された項目の幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーでのみ使用<xref:System.Windows.Forms.MenuItem>です。 このプロパティを使用して、メニューはメニュー リストに最も幅の広いメニュー項目には、少なくともの幅を確認してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Graphics>プロパティ内のアイテムのカスタム描画を実行する、<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!code-cpp[MeasureItemEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MeasureItemEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[MeasureItemEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MeasureItemEventArgs/CS/form1.cs#1)]
+ [!code-vb[MeasureItemEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MeasureItemEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

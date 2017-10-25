@@ -1,0 +1,220 @@
+<Type Name="TrackingProfile" FullName="System.Workflow.Runtime.Tracking.TrackingProfile">
+  <TypeSignature Language="C#" Value="public class TrackingProfile" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TrackingProfile extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingProfile" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート ワークフロー インスタンスの実行パスにおける、追跡サービスへの通知対象となるポイントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー インスタンスは実行時に、追跡イベントをランタイム追跡インフラストラクチャに送出します。 ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を使ってこれらの追跡イベントをフィルター処理し、そのフィルター処理に基づいて追跡レコードを追跡サービスに返します。 フィルター対象となる追跡イベントには、アクティビティ ステータス イベント、ワークフロー ステータス イベント、およびユーザー イベントの 3 種類があります。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> オブジェクトを <xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A> プロパティに追加すると、特定のアクティビティ ステータス イベントを照合できます。<xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> オブジェクトを <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティに追加すると、特定のワークフロー ステータス イベントを照合できます。<xref:System.Workflow.Runtime.Tracking.UserTrackPoint> オブジェクトを <xref:System.Workflow.Runtime.Tracking.TrackingProfile.UserTrackPoints%2A> プロパティに追加すると、特定のユーザー イベントを照合できます。 追跡ポイントの照合時に、ランタイム追跡インフラストラクチャは追跡サービスに関連した <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を介して、追跡イベントに関連したデータを追跡サービスに返します。 データは、照合された追跡ポイントの種類に応じて <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord>、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord>、または <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> で返されます。  
+  
+ 追跡サービスは、抽象 <xref:System.Workflow.Runtime.Tracking.TrackingService> クラスのメソッドを実装することにより、サービスに関連付けられた <xref:System.Workflow.Runtime.Tracking.TrackingChannel>、および特定のワークフロー インスタンス (または特定のワークフロー型) に関連付けられた <xref:System.Workflow.Runtime.Tracking.TrackingProfile> をランタイム追跡インフラストラクチャが要求するための機能を提供します。 さらに、追跡サービスは抽象 <xref:System.Workflow.Runtime.Tracking.TrackingChannel> クラスを実装することにより、ランタイム追跡インフラストラクチャが追跡レコードを送る際のチャネルを提供する必要もあります。  
+  
+ 追跡サービスが追跡プロファイル オブジェクトをランタイムに返すと、ワークフローは実行を開始し、追跡プロファイルはシリアル化されます。 追跡プロファイルのシリアル化が失敗した場合、例外がワークフロー インスタンスに出されます。 例外が処理されない場合、ワークフロー インスタンスは終了します。 追跡プロファイルがランタイムに渡される前に、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema%2A> プロパティを使って追跡プロファイルを検証することができます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に従って XML を書式設定する <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> を使用すれば、<xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer.Schema%2A> を XML にシリアル化できます。 こうすれば、便利な形式でプロファイルを保存し、非プログラミング的な方法でプロファイルを作成することができます。 たとえば、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> クラスに基づいて作成されたすべての追跡サービスと同様に、SQL 追跡サービスはシリアル化されたバージョンの追跡プロファイルを保存します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfile.%23ctor%2A> を作成し、オブジェクトのプロパティを使用してワークフローの実行を追跡する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A>、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A>、および <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティを使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrackingProfile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingProfile.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターは空の <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を初期化します。 追跡ポイントを <xref:System.Workflow.Runtime.Tracking.TrackingProfile.UserTrackPoints%2A>、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A>、および <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> に追加することにより、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> を構成できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfile.%23ctor%2A> を作成し、オブジェクトのプロパティを使用してワークフローの実行を追跡する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A>、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A>、および <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティを使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityTrackPoints">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.ActivityTrackPointCollection ActivityTrackPoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.ActivityTrackPointCollection ActivityTrackPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.ActivityTrackPointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ ステータス イベントをフィルター処理するためにランタイム追跡インフラストラクチャによって使われるアクティビティ追跡ポイントのコレクションを取得します。</summary>
+        <value>ランタイム追跡インフラストラクチャが <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection" /> を追跡サービスに送る対象となる、ワークフロー インスタンス内のポイントを指定する <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ インスタンスの <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> が変化するたびに、ワークフロー インスタンスはアクティビティ ステータス イベントをランタイム追跡インフラストラクチャに送出します。 ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A> プロパティを使ってこれらのアクティビティ ステータス イベントをフィルター処理することにより、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> を追跡サービスにいつ送るかを判別します。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> を <xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A> プロパティに追加することにより、ランタイム インフラストラクチャが <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> を送る対象となる、ワークフロー インスタンスの実行パス内の追跡ポイントを指定できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> はワークフロー インスタンス内の物理的ポイントを実際に定義するのではなく、照合パラメーターのセットを定義します。このセットは、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> を送る対象のアクティビティ ステータス イベントを照合するためにランタイム追跡インフラストラクチャによって使われます。 そのため、ワークフロー インスタンスの実行中に同じ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> を何度も照合できます。 また、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> は、ワークフロー インスタンスから抽出されて <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> で返されるデータを指定することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfile.%23ctor%2A> を作成し、オブジェクトのプロパティを使用してワークフローの実行を追跡する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A>、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A>、および <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティを使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserTrackPoints">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.UserTrackPointCollection UserTrackPoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.UserTrackPointCollection UserTrackPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingProfile.UserTrackPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.UserTrackPointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー イベントをフィルター処理するためにランタイム追跡インフラストラクチャによって使われるユーザー追跡ポイントのコレクションを取得します。</summary>
+        <value>ワークフロー インスタンスの追跡ポイントを指定する <see cref="T:System.Workflow.Runtime.Tracking.UserTrackPointCollection" />。ランタイム追跡インフラストラクチャは、<see cref="T:System.Workflow.Runtime.Tracking.UserTrackingRecord" /> を追跡サービスに送信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー デザイナーまたはアクティビティ デザイナーは、<xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=nameWithType>、<xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=nameWithType>、<xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%2A?displayProperty=nameWithType>、または <xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=nameWithType> を使用することにより、ワークフロー実行時の特定のポイントでワークフローまたはアクティビティがランタイム追跡インフラストラクチャにデータを送出するよう設定できます。 これをユーザー イベントといい、送出されるデータをユーザー データといいます。 ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingProfile.UserTrackPoints%2A> プロパティを使ってユーザー イベントをフィルター処理することにより、<xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> を追跡サービスにいつ送るかを判別します。 <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> を <xref:System.Workflow.Runtime.Tracking.TrackingProfile.UserTrackPoints%2A> プロパティに追加して、ワークフロー インスタンスの実行パスにおける追跡ポイントを指定し、その <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> を送信できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> はワークフロー インスタンス内の物理的ポイントを実際に定義するのではなく、ユーザー イベント照合のためにランタイム追跡インフラストラクチャによって使われる照合パラメーターのセットを定義します。 そのため、ワークフロー インスタンスの実行中に同じ <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> を何度も照合できます。 ランタイム追跡インフラストラクチャは照合された <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> に関連するユーザー データを常に <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> で返しますが、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint> は、ワークフロー インスタンスから抽出されて追跡レコードで返されるデータを指定することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public Version Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingProfile.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡プロファイルのバージョンを取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> の <see cref="T:System.Version" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジン内のプロファイル キャッシュのセマンティクスのために、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> の内容を変更した場合には <xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A> を更新する必要があります。 そうしない場合、更新された <xref:System.Workflow.Runtime.Tracking.TrackingProfile> がワークフロー ランタイム エンジンによって読み込まれない可能性があります。これは、たとえ <xref:System.Workflow.Runtime.Tracking.TrackingService.TryReloadProfile%2A?displayProperty=nameWithType> 呼び出しによって返された場合、または <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs> イベントに関連した <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> で送られた場合でも同様です。 したがって、更新された <xref:System.Workflow.Runtime.Tracking.TrackingProfile> がワークフロー ランタイム エンジンによって確実に読み込まれるようにするには、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A> の <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を変更する必要があります。 その後、任意の適切なワークフロー インスタンスに対して <xref:System.Workflow.Runtime.WorkflowInstance.ReloadTrackingProfiles%2A?displayProperty=nameWithType> を明示的に呼び出すことができます。あるいは、実装によっては、追跡サービスがワークフロー ランタイム エンジンに変更を通知します。 詳細については、「<xref:System.Workflow.Runtime.Tracking.TrackingService>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfile.%23ctor%2A> を作成し、オブジェクトのプロパティを使用してワークフローの実行を追跡する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A>、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A>、および <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティを使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowTrackPoints">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.WorkflowTrackPointCollection WorkflowTrackPoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.WorkflowTrackPointCollection WorkflowTrackPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.WorkflowTrackPointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー ステータス イベントをフィルター処理するためにランタイム追跡インフラストラクチャによって使われるワークフロー追跡ポイントのコレクションを取得します。</summary>
+        <value>ワークフロー インスタンスの追跡ポイントを指定する <see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackPointCollection" />。ランタイム追跡インフラストラクチャは、<see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord" /> を追跡サービスに送信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスのステータスが変化したことを示す <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> が発生するたびに、ワークフロー インスタンスはワークフロー ステータス イベントをランタイム追跡インフラストラクチャに送出します。 ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティを使ってこれらのワークフロー ステータス イベントをフィルター処理することにより、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> を追跡サービスにいつ送るかを判別します。 <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> を <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティに追加して、ワークフロー インスタンスの実行パスにおける追跡ポイントを指定し、その <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> を送信できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> はワークフロー インスタンス内の物理的ポイントを実際に定義するのではなく、ワークフロー ステータス イベント照合のためにランタイム追跡インフラストラクチャによって使われる 1 つ以上の <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> 値を定義します。 そのため、ワークフロー インスタンスの実行中に同じ <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> を何度も照合できます。 また、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> は、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> で返される任意の注釈を指定することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> コンストラクターを使用して <xref:System.Workflow.Runtime.Tracking.TrackingProfile.%23ctor%2A> を作成し、オブジェクトのプロパティを使用してワークフローの実行を追跡する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A>、<xref:System.Workflow.Runtime.Tracking.TrackingProfile.Version%2A>、および <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A> プロパティを使用しています。  
+  
+ このコード例は、Program.cs ファイルに含まれている、SQLTrackingService を使用したクエリを示す SDK サンプルの一部です。 詳細については、次を参照してください。[クエリを使用して SQLTrackingService](http://msdn.microsoft.com/en-us/a81e48bb-12f4-4e2b-9176-ea4e6b6e3d21)です。  
+  
+ [!code-csharp[WF_Samples#291](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#291)]
+ [!code-vb[WF_Samples#291](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#291)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

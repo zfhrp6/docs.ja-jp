@@ -1,0 +1,44 @@
+<Type Name="IMetadataAware" FullName="System.Web.ModelBinding.IMetadataAware">
+  <TypeSignature Language="C#" Value="public interface IMetadataAware" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMetadataAware" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.IMetadataAware" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メタデータに対応するクラスで実装する必要がありますのあるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスには、カスタム メタデータ プロバイダーを必要とせずにモデル メタデータを作成するプロセスに影響を与える属性が有効です。 によって使用されている、<xref:System.Web.ModelBinding.AssociatedMetadataProvider>クラスのため、この動作は自動的にから派生するすべてのクラスによって継承、<xref:System.Web.ModelBinding.AssociatedMetadataProvider>クラス (特に、<xref:System.Web.ModelBinding.DataAnnotationsModelMetadataProvider>クラス)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnMetadataCreated">
+      <MemberSignature Language="C#" Value="public void OnMetadataCreated (System.Web.ModelBinding.ModelMetadata metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnMetadataCreated(class System.Web.ModelBinding.ModelMetadata metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.IMetadataAware.OnMetadataCreated(System.Web.ModelBinding.ModelMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Web.ModelBinding.ModelMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">メタデータ。</param>
+        <summary>メタデータを作成した後、メタデータの必要な処理を実行するメタデータに対応する属性を有効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

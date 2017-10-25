@@ -1,0 +1,141 @@
+<Type Name="VBFixedArrayAttribute" FullName="Microsoft.VisualBasic.VBFixedArrayAttribute">
+  <TypeSignature Language="C#" Value="public sealed class VBFixedArrayAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VBFixedArrayAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.VBFixedArrayAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>構造体または非ローカル変数の配列を固定長の配列として扱うことを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic の配列では、既定では可変長です。 この属性は、Visual Basic ファイルを使用して、入力し、出力関数をなどに役立ちます`FileGet`と`FilePut`、および固定長配列を必要とする API 呼び出し。  
+  
+   
+  
+## Examples  
+ [!code-vb[VbCnAttributes#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbCnAttributes/VB/Class2.vb#22)]  
+  
+> [!NOTE]
+>  `VBFixedArrayAttribute`情報は、任意の記憶域を割り当てられません。 この属性の目的は、メソッドまたは認識される API 呼び出しで構造体と非ローカル変数の配列を使用する方法を変更する、`VBFixedArrayAttribute`です。 この属性は可変長配列を固定配列に変換されませんし、必要がある割り当てることの配列の記憶域を使用してに注意してください`Dim`または`ReDim`ステートメントです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VBFixedArrayAttribute (int UpperBound1);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(int32 UpperBound1) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBFixedArrayAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="UpperBound1" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="UpperBound1">配列の最初の次元のサイズを表す、上部のフィールドの値を初期化します。</param>
+        <summary>値を初期化、<see langword="Bounds" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、実行時に、`VBFixedArrayAttribute`属性は、配列に適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VBFixedArrayAttribute (int UpperBound1, int UpperBound2);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(int32 UpperBound1, int32 UpperBound2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBFixedArrayAttribute.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="UpperBound1" Type="System.Int32" />
+        <Parameter Name="UpperBound2" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="UpperBound1">配列の最初の次元のサイズを表す、上部のフィールドの値を初期化します。</param>
+        <param name="UpperBound2">配列の 2 番目の次元のサイズを表す、上部のフィールドの値を初期化します。</param>
+        <summary>値を初期化、<see langword="Bounds" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、実行時に、`VBFixedArrayAttribute`属性は、配列に適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public int[] Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] Bounds" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.VBFixedArrayAttribute.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列の境界を返します。</summary>
+        <value>配列の境界を表す整数の配列が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、このプロパティを設定するときに、`VBFixedArrayAttribute`配列に適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.VBFixedArrayAttribute.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列のサイズを返します。</summary>
+        <value>配列内の要素の数を表す整数が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、このプロパティを設定するときに、`VBFixedArrayAttribute`配列に適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

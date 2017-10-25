@@ -1,0 +1,72 @@
+<Type Name="IContractBehaviorAttribute" FullName="System.ServiceModel.Description.IContractBehaviorAttribute">
+  <TypeSignature Language="C#" Value="public interface IContractBehaviorAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContractBehaviorAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.IContractBehaviorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.Description.IContractBehavior" /> インターフェイスを実装する属性をアクティブにする対象のコントラクトを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IContractBehaviorAttribute> オブジェクトである属性に <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> インターフェイスを実装して、サービス型でそのコントラクトの動作属性を使用できるようにします。ただし、コントラクトの動作属性が適用される対象は、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> プロパティで指定されたコントラクトに制限されます。  
+  
+ カスタム コントラクトの動作属性に <xref:System.ServiceModel.Description.IContractBehaviorAttribute> を実装する必要はありません。属性がコントラクト インターフェイスまたは双方向コールバック クラスに適用される場合、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> プロパティは無視されます。  
+  
+ 詳細については、「<xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムの <xref:System.ServiceModel.Dispatcher.IInstanceProvider?displayProperty=nameWithType> 実装が "シングルトン" 動作を提供する `ObjectProviderBehavior` を呼び出したことを前提としています。これは、常に同じサービス インスタンスを返し、リサイクルはしません。  
+  
+ インスタンス プロバイダーのカスタマイズを挿入するために、例では、`SingletonBehaviorAttribute` を実装するカスタム属性 (<xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>) を実装してカスタム サービス インスタンス プロバイダーを挿入する方法を示しています。 また、<xref:System.ServiceModel.Description.IContractBehaviorAttribute> も実装します。これは、そのアプリケーションを `ISampleService` コントラクトにバインドします。  
+  
+ [!code-csharp[IContractBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#2)]
+ [!code-vb[IContractBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TargetContract">
+      <MemberSignature Language="C#" Value="public Type TargetContract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetContract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトの動作を適用できるコントラクトの型を取得します。</summary>
+        <value>コントラクトの動作を適用できるコントラクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> 属性がサービス クラスに適用されるときにコントラクトの動作の適用対象となるコントラクトを指定する <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> プロパティを実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムの <xref:System.ServiceModel.Dispatcher.IInstanceProvider?displayProperty=nameWithType> 実装が "シングルトン" 動作を提供する `ObjectProviderBehavior` を呼び出したことを前提としています。これは、常に同じサービス インスタンスを返し、リサイクルはしません。  
+  
+ インスタンス プロバイダーのカスタマイズを挿入するために、例では、`SingletonBehaviorAttribute` を実装するカスタム属性 (<xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>) を実装してカスタム サービス インスタンス プロバイダーを挿入する方法を示しています。 また、<xref:System.ServiceModel.Description.IContractBehaviorAttribute> も実装します。これは、そのアプリケーションを `ISampleService` コントラクトにバインドします。  
+  
+ [!code-csharp[IContractBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#2)]
+ [!code-vb[IContractBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

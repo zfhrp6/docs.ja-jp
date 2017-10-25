@@ -1,0 +1,161 @@
+<Type Name="PackageRelationshipSelector" FullName="System.IO.Packaging.PackageRelationshipSelector">
+  <TypeSignature Language="C#" Value="public sealed class PackageRelationshipSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PackageRelationshipSelector extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackageRelationshipSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Packaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定義<see cref="T:System.IO.Packaging.PackageRelationship" />条件部分レベルまたはパッケージ レベルのリレーションシップを選択します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageRelationshipSelector>によって使用される、<xref:System.IO.Packaging.PackageDigitalSignatureManager.Sign%2A>のメソッド、<xref:System.IO.Packaging.PackageDigitalSignatureManager>クラスの一覧を指定する<xref:System.IO.Packaging.PackageRelationship>パーツに署名します。  
+  
+ <xref:System.IO.Packaging.PackageRelationshipSelector>によって使用される、<xref:System.IO.Packaging.PackageDigitalSignature.SignedRelationshipSelectors%2A>のプロパティ、<xref:System.IO.Packaging.PackageDigitalSignature>クラスの一覧を取得する<xref:System.IO.Packaging.PackageRelationship>特定のデジタル署名で署名されている部分です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PackageRelationshipSelector (Uri sourceUri, System.IO.Packaging.PackageRelationshipSelectorType selectorType, string selectionCriteria);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri sourceUri, valuetype System.IO.Packaging.PackageRelationshipSelectorType selectorType, string selectionCriteria) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceUri" Type="System.Uri" />
+        <Parameter Name="selectorType" Type="System.IO.Packaging.PackageRelationshipSelectorType" />
+        <Parameter Name="selectionCriteria" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceUri">[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]の<see cref="T:System.IO.Packaging.PackagePart" />または<see cref="T:System.IO.Packaging.Package" />(<c>SourceUri</c>=「/」) の関係を所有しています。</param>
+        <param name="selectorType">型、 <c>selectionCriteria</c>、いずれかのリレーションシップによって<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" />またはリレーションシップ<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Type" />です。</param>
+        <param name="selectionCriteria">リレーションシップの選択に使用される修飾文字列に基づいて、 <c>selectorType</c>です。</param>
+        <summary><see cref="T:System.IO.Packaging.PackageRelationshipSelector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceUri" /> または <paramref name="selectionCriteria" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="selectorType" />パラメーターが無効です。</exception>
+        <exception cref="T:System.Xml.XmlException"><paramref name="selectorType" />パラメーターは<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" />が<paramref name="selectionCriteria" />が無効です[!INCLUDE[TLA#tla_xsd](~/includes/tlasharptla-xsd-md.md)][!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="sourceUri" />されませんが、<see cref="T:System.IO.Packaging.Package" />ルート (「/」) となっても、有効な<see cref="T:System.IO.Packaging.PackagePart" />[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;System.IO.Packaging.PackageRelationship&gt; Select (System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.List`1&lt;class System.IO.Packaging.PackageRelationship&gt; Select(class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageRelationshipSelector.Select(System.IO.Packaging.Package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.IO.Packaging.PackageRelationship&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="package">パッケージの選択条件に基づくリレーションシップを選択します。</param>
+        <summary>一覧を返します<see cref="T:System.IO.Packaging.PackageRelationship" />、定義に一致するオブジェクト<see cref="P:System.IO.Packaging.PackageRelationshipSelector.SourceUri" />、 <see cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" />、および<see cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectionCriteria" />です。</summary>
+        <returns>指定された選択パラメーターに一致するリレーションシップの一覧、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />コンス トラクターです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionCriteria">
+      <MemberSignature Language="C#" Value="public string SelectionCriteria { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectionCriteria" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationshipSelector.SelectionCriteria" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した選択基準を取得、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />コンス トラクターです。</summary>
+        <value>選択条件に基づいて、<see cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" />の<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" />または<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Type" />に指定された、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />コンス トラクターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectorType">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageRelationshipSelectorType SelectorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.PackageRelationshipSelectorType SelectorType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageRelationshipSelectorType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Packaging.PackageRelationshipSelectorType" />に指定された、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />コンス トラクターです。</summary>
+        <value>セレクター型<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" />または<see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Type" />に指定された、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />コンス トラクターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceUri">
+      <MemberSignature Language="C#" Value="public Uri SourceUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SourceUri" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageRelationshipSelector.SourceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート (「/」) の URI をパッケージ化または一部を取得<see cref="P:System.IO.Packaging.PackagePart.Uri" />に指定された、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />リレーションシップの所有者としてコンス トラクターです。</summary>
+        <value>ルート パッケージ URI (「/」) またはパーツ<see cref="P:System.IO.Packaging.PackagePart.Uri" />に指定された、<see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />リレーションシップの所有者としてコンス トラクターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,55 @@
+<Type Name="ScriptServiceAttribute" FullName="System.Web.Script.Services.ScriptServiceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ScriptServiceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScriptServiceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Services.ScriptServiceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スクリプトから Web サービスを起動できることを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ECMAScript (JavaScript) から Web サービス メソッドを呼び出すに適用する必要があります、<xref:System.Web.Script.Services.ScriptServiceAttribute>に関連する Web サービス クラスの属性です。 適用するときに<xref:System.Web.Script.Services.ScriptServiceAttribute>で 1 つまたは複数のメソッドを含む Web サービスのクラス定義に<xref:System.Web.Services.WebMethodAttribute>適用すると、プロキシ生成スクリプトは、Web サービス クラスに対応するプロキシ オブジェクトを作成します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、適用<xref:System.Web.Script.Services.ScriptServiceAttribute>を Web サービスのクラス定義のメソッドは、クライアント スクリプトから呼び出すことができるようにします。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptServiceAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Services.ScriptServiceAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Script.Services.ScriptServiceAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

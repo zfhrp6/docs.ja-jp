@@ -1,0 +1,170 @@
+<Type Name="HttpMethodConstraint" FullName="System.Web.Routing.HttpMethodConstraint">
+  <TypeSignature Language="C#" Value="public class HttpMethodConstraint : System.Web.Routing.IRouteConstraint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpMethodConstraint extends System.Object implements class System.Web.Routing.IRouteConstraint" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.HttpMethodConstraint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Routing.IRouteConstraint</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Routing, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET ルーティングが URL とルートの一致を判定するときに使用できる HTTP 動詞を定義できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.HttpMethodConstraint>クラスでは、特定の HTTP 動詞に一致するルートを制限することができます。 ルートと見なされること、URL と一致する場合にのみ、要求の HTTP 動詞を指定するたとえば、`POST`です。  
+  
+ ルートが一致する制約を設定するに設定する、<xref:System.Web.Routing.Route.Constraints%2A>のプロパティ、<xref:System.Web.Routing.Route>クラスのインスタンスを<xref:System.Web.Routing.RouteValueDictionary>クラスです。 1 つのディクショナリの要素の値を設定する HTTP 動詞制約を設定する、<xref:System.Web.Routing.HttpMethodConstraint>オブジェクトと任意の名前にキー。  
+  
+ <xref:System.Web.Routing.HttpMethodConstraint.%23ctor%2A>メソッド、ASP.NET ルーティングの URL に一致するかどうかを決定する場合に、ルートに許可されているすべての HTTP 動詞を含めます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Web.Routing.Route>オブジェクト<xref:System.Web.Routing.Route.Constraints%2A>プロパティには、という名前のキーを持つ項目が含まれています。`httpMethod`のインスタンスは、値が含まれていると、<xref:System.Web.Routing.HttpMethodConstraint>クラスです。  
+  
+ [!code-csharp[System.Web.Routing.Route.Constraints#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.Constraints/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.Constraints#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.Constraints/vb/Global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpMethodConstraint (params string[] allowedMethods);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] allowedMethods) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.HttpMethodConstraint.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allowedMethods" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="allowedMethods">ルートとして有効な HTTP 動詞。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.HttpMethodConstraint" />ルートで許可される HTTP 動詞を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.Web.Routing.Route>オブジェクト<xref:System.Web.Routing.Route.Constraints%2A>プロパティには、という名前のキーを持つ項目が含まれています。`httpMethod`のインスタンスは、値が含まれていると、<xref:System.Web.Routing.HttpMethodConstraint>クラスです。  
+  
+ [!code-csharp[System.Web.Routing.Route.Constraints#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.Constraints/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.Constraints#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.Constraints/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="allowedMethods" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedMethods">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;string&gt; AllowedMethods { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;string&gt; AllowedMethods" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.HttpMethodConstraint.AllowedMethods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートに使用できる HTTP 動詞のコレクションを取得します。</summary>
+        <value>ルートに使用できる HTTP 動詞のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="protected virtual bool Match (System.Web.HttpContextBase httpContext, System.Web.Routing.Route route, string parameterName, System.Web.Routing.RouteValueDictionary values, System.Web.Routing.RouteDirection routeDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool Match(class System.Web.HttpContextBase httpContext, class System.Web.Routing.Route route, string parameterName, class System.Web.Routing.RouteValueDictionary values, valuetype System.Web.Routing.RouteDirection routeDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.HttpMethodConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+        <Parameter Name="route" Type="System.Web.Routing.Route" />
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="routeDirection" Type="System.Web.Routing.RouteDirection" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">HTTP 要求に関する情報をカプセル化するオブジェクト。</param>
+        <param name="route">URL が一致するかどうかを確認するためにチェックされるオブジェクト。</param>
+        <param name="parameterName">チェックされるパラメーターの名前。</param>
+        <param name="values">ルートのパラメーターを格納しているオブジェクト。</param>
+        <param name="routeDirection">受信要求の処理時、または URL の生成時に、制約チェックが実行されるかどうかを示すオブジェクト。</param>
+        <summary>ルートに許可されている動詞のいずれかである HTTP 動詞を使って要求が行われたかどうかを判断します。</summary>
+        <returns>ASP.NET ルーティングが、要求を処理時に<see langword="true" />要求が許可されている HTTP 動詞を使用して行われた、それ以外の場合は<see langword="false" />します。 ASP.NET ルーティングは、URL の構築時に<see langword="true" />、指定した値が使用できる HTTP 動詞; のいずれかに一致する HTTP 動詞を含む場合は、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">次のパラメーターの 1 つ以上が<see langword="null" />: <paramref name="httpContext" />、 <paramref name="route" />、 <paramref name="parameterName" />、または<paramref name="values" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.Routing.IRouteConstraint.Match">
+      <MemberSignature Language="C#" Value="bool IRouteConstraint.Match (System.Web.HttpContextBase httpContext, System.Web.Routing.Route route, string parameterName, System.Web.Routing.RouteValueDictionary values, System.Web.Routing.RouteDirection routeDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Web.Routing.IRouteConstraint.Match(class System.Web.HttpContextBase httpContext, class System.Web.Routing.Route route, string parameterName, class System.Web.Routing.RouteValueDictionary values, valuetype System.Web.Routing.RouteDirection routeDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.HttpMethodConstraint.System#Web#Routing#IRouteConstraint#Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+        <Parameter Name="route" Type="System.Web.Routing.Route" />
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="routeDirection" Type="System.Web.Routing.RouteDirection" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">HTTP 要求に関する情報をカプセル化するオブジェクト。</param>
+        <param name="route">URL が一致するかどうかを確認するためにチェックされるオブジェクト。</param>
+        <param name="parameterName">チェックされるパラメーターの名前。</param>
+        <param name="values">ルートのパラメーターを格納しているオブジェクト。</param>
+        <param name="routeDirection">受信要求の処理時、または URL の生成時に、制約チェックが実行されるかどうかを示すオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.Routing.IRouteConstraint.Match(System.Web.HttpContextBase,System.Web.Routing.Route,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />許可されている HTTP 動詞を使用して、要求が行われた場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Routing.HttpMethodConstraint> のインスタンスが <xref:System.Web.Routing.IRouteConstraint> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">次のパラメーターの 1 つ以上が<see langword="null" />: <paramref name="httpContext" />、 <paramref name="route" />、 <paramref name="parameterName" />、または<paramref name="values" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

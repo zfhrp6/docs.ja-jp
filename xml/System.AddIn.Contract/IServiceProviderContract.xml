@@ -1,0 +1,58 @@
+<Type Name="IServiceProviderContract" FullName="System.AddIn.Contract.IServiceProviderContract">
+  <TypeSignature Language="C#" Value="public interface IServiceProviderContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServiceProviderContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.IServiceProviderContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンポーネントからサービス コントラクトを取得するためのメカニズムを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.IServiceProviderContract>インターフェイスは別のコンポーネントで定義されているカスタム サービスを取得する対象のコンポーネントをできるようにするコントラクトを定義します。 実装するコンポーネント<xref:System.AddIn.Contract.IServiceProviderContract>はサービス プロバイダーと呼ばれます。 サービス プロバイダーを実装して、<xref:System.AddIn.Contract.IServiceProviderContract.QueryService%2A>を返すメソッドを<xref:System.AddIn.Contract.IContract>サービスを実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="QueryService">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.IContract QueryService (string serviceIdentifier, string serviceContractIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.IContract QueryService(string serviceIdentifier, string serviceContractIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IServiceProviderContract.QueryService(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.IContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceIdentifier" Type="System.String" />
+        <Parameter Name="serviceContractIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serviceIdentifier">要求されているサービスの名前。</param>
+        <param name="serviceContractIdentifier">要求されているサービス コントラクト。</param>
+        <summary>これによって実装されるサービス コントラクトを返します<see cref="T:System.AddIn.Contract.IServiceProviderContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.IContract" />からクライアントが要求しているサービス コントラクトを表す、<see cref="T:System.AddIn.Contract.IServiceProviderContract" />です。<see langword="null" />場合、<see cref="T:System.AddIn.Contract.IServiceProviderContract" />は要求されたコントラクトを実装していません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスを識別し、サービス コントラクトを文字列の形式が定義されている、<xref:System.AddIn.Contract.IServiceProviderContract>実装します。 推奨<xref:System.AddIn.Contract.IServiceProviderContract>実装によって、サービス コントラクトを識別する、<xref:System.Type.AssemblyQualifiedName%2A>サービス コントラクトを実装する型のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

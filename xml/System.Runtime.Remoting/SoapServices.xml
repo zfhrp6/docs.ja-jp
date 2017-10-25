@@ -1,0 +1,1007 @@
+<Type Name="SoapServices" FullName="System.Runtime.Remoting.SoapServices">
+  <TypeSignature Language="C#" Value="public class SoapServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.SoapServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用して、SOAP 形式でのリモート オブジェクトのパブリッシュをいくつかのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、リンク確認要求を使用します。 直前の呼び出し元がインフラストラクチャのアクセス許可を持たない場合は、セキュリティ例外がスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のメンバーを使用する方法を示しています、<xref:System.Runtime.Remoting.SoapServices>クラス間で変換を<xref:System.Type>オブジェクトと XML を入力します。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#100](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#100)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#100](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#100)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="CodeXmlNamespaceForClrTypeNamespace">
+      <MemberSignature Language="C#" Value="public static string CodeXmlNamespaceForClrTypeNamespace (string typeNamespace, string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string CodeXmlNamespaceForClrTypeNamespace(string typeNamespace, string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.CodeXmlNamespaceForClrTypeNamespace(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeNamespace" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeNamespace">コード化する名前空間です。</param>
+        <param name="assemblyName">コード化するアセンブリの名前。</param>
+        <summary>指定された名前空間とアセンブリ名から共通言語ランタイム型の名前空間名を返します。</summary>
+        <returns>共通言語ランタイム型の名前空間名指定された名前空間とアセンブリの名前から。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドは、共通言語ランタイム オブジェクトの種類の XML 名前空間名を作成する .NET Framework および SoapSuds ツールによって使用されます。  
+  
+ SoapSuds の詳細については、次を参照してください。 [Soapsuds ツール (Soapsuds.exe)](http://msdn.microsoft.com/en-us/40f6f8c8-b80c-4e9f-a920-31bcd0cf45c5)です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#101](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#101)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#101](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#101)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assemblyName" />と<paramref name="typeNamespace" />パラメーターが両方ともか<see langword="null" />または空です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DecodeXmlNamespaceForClrTypeNamespace">
+      <MemberSignature Language="C#" Value="public static bool DecodeXmlNamespaceForClrTypeNamespace (string inNamespace, out string typeNamespace, out string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DecodeXmlNamespaceForClrTypeNamespace(string inNamespace, [out] string&amp; typeNamespace, [out] string&amp; assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.DecodeXmlNamespaceForClrTypeNamespace(System.String,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inNamespace" Type="System.String" />
+        <Parameter Name="typeNamespace" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="assemblyName" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="inNamespace">共通言語ランタイム名前空間。</param>
+        <param name="typeNamespace">このメソッドが戻るとき、<see cref="T:System.String" />デコードされた名前空間の名前を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="assemblyName">このメソッドが戻るとき、<see cref="T:System.String" />デコードされたアセンブリ名を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された共通言語ランタイム名前空間から XML 名前空間とアセンブリの名前をデコードします。</summary>
+        <returns>
+          <see langword="true" />場合は、名前空間とアセンブリの名前が正常にデコードします。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、XML ストリームの解析時に共通言語ランタイム型へのストリームから読み取った XML を変換する方法を理解する必要があります。 については、.NET Framework がどのように生成するかを指定して、XML ストリームに配置されているカスタム属性に格納されている解析、<xref:System.Runtime.Remoting.Metadata>名前空間。 構成ファイルでこの情報を指定する 2 つの方法があります。 マッピングを明示的に指定するか、プリロードするオブジェクトの型を指定しています。 現在のメソッドは、このようなマッピングの取得をサポートします。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#102](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#102)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#102](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#102)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inNamespace" /> パラメーターは <see langword="null" /> または空です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInteropFieldTypeAndNameFromXmlAttribute">
+      <MemberSignature Language="C#" Value="public static void GetInteropFieldTypeAndNameFromXmlAttribute (Type containingType, string xmlAttribute, string xmlNamespace, out Type type, out string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetInteropFieldTypeAndNameFromXmlAttribute(class System.Type containingType, string xmlAttribute, string xmlNamespace, [out] class System.Type&amp; type, [out] string&amp; name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetInteropFieldTypeAndNameFromXmlAttribute(System.Type,System.String,System.String,System.Type@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingType" Type="System.Type" />
+        <Parameter Name="xmlAttribute" Type="System.String" />
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="name" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="containingType"><see cref="T:System.Type" />のフィールドを格納するオブジェクト。</param>
+        <param name="xmlAttribute">フィールドの種類の XML 属性の名前。</param>
+        <param name="xmlNamespace">フィールドの種類の XML 名前空間。</param>
+        <param name="type">このメソッドが戻るとき、<see cref="T:System.Type" />フィールドのです。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="name">このメソッドが戻るとき、<see cref="T:System.String" />フィールドの名前を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>XML 属性の名前、名前空間からのフィールドの種類を取得し、<see cref="T:System.Type" />親オブジェクトの。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親オブジェクトおよび XML 属性と、.NET Framework での読み取りが XML 名前空間の種類を指定するには、現在のメソッドでは、実際の共通言語ランタイムのフィールド名とフィールドの型を返します。 .NET Framework は、この情報を使用して XML ストリームから読み取ったデータ フィールドを設定します。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#150](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#150)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#150](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#150)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInteropFieldTypeAndNameFromXmlElement">
+      <MemberSignature Language="C#" Value="public static void GetInteropFieldTypeAndNameFromXmlElement (Type containingType, string xmlElement, string xmlNamespace, out Type type, out string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetInteropFieldTypeAndNameFromXmlElement(class System.Type containingType, string xmlElement, string xmlNamespace, [out] class System.Type&amp; type, [out] string&amp; name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetInteropFieldTypeAndNameFromXmlElement(System.Type,System.String,System.String,System.Type@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingType" Type="System.Type" />
+        <Parameter Name="xmlElement" Type="System.String" />
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="name" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="containingType"><see cref="T:System.Type" />のフィールドを格納するオブジェクト。</param>
+        <param name="xmlElement">フィールドの XML 要素の名前。</param>
+        <param name="xmlNamespace">フィールドの種類の XML 名前空間。</param>
+        <param name="type">このメソッドが戻るとき、<see cref="T:System.Type" />フィールドのです。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="name">このメソッドが戻るとき、<see cref="T:System.String" />フィールドの名前を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>取得、<see cref="T:System.Type" />しから、指定された XML 要素名、名前空間、および含まれているフィールドの名前を入力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親オブジェクトと、XML 要素と、.NET Framework での読み取りが XML 名前空間の種類を指定するには、このメソッドは、実際の共通言語ランタイムのフィールド名とフィールドの型を返します。 .NET Framework は、この情報を使用して XML ストリームから読み取ったデータ フィールドを設定します。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#150](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#150)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#150](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#150)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInteropTypeFromXmlElement">
+      <MemberSignature Language="C#" Value="public static Type GetInteropTypeFromXmlElement (string xmlElement, string xmlNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetInteropTypeFromXmlElement(string xmlElement, string xmlNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetInteropTypeFromXmlElement(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlElement" Type="System.String" />
+        <Parameter Name="xmlNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlElement">不明なオブジェクトの種類の XML 要素名。</param>
+        <param name="xmlNamespace">不明なオブジェクトの種類の XML 名前空間。</param>
+        <summary>取得、<see cref="T:System.Type" />を使用して、特定の XML 要素名と名前空間を持つ不明なオブジェクト型のシリアル化解除する必要があります。</summary>
+        <returns><see cref="T:System.Type" />の指定された XML 要素名と名前空間に関連付けられているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドを使用して設定値を返します<xref:System.Runtime.Remoting.SoapServices.RegisterInteropXmlElement%2A>と<xref:System.Runtime.Remoting.SoapServices.PreLoad%2A>です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#160](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#160)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#160](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#160)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInteropTypeFromXmlType">
+      <MemberSignature Language="C#" Value="public static Type GetInteropTypeFromXmlType (string xmlType, string xmlTypeNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetInteropTypeFromXmlType(string xmlType, string xmlTypeNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetInteropTypeFromXmlType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlType" Type="System.String" />
+        <Parameter Name="xmlTypeNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlType">不明なオブジェクトの種類の XML 型です。</param>
+        <param name="xmlTypeNamespace">不明なオブジェクトの種類の XML 型名前空間。</param>
+        <summary>オブジェクトを取得します<see cref="T:System.Type" />を使用して、特定の XML 型名と名前空間を持つ不明なオブジェクト型のシリアル化解除する必要があります。</summary>
+        <returns><see cref="T:System.Type" />指定された XML に関連付けられているオブジェクトの名前と名前空間を入力します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドを使用して設定値を返します<xref:System.Runtime.Remoting.SoapServices.RegisterInteropXmlType%2A>と<xref:System.Runtime.Remoting.SoapServices.PreLoad%2A>です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#160](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#160)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#160](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#160)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSoapActionFromMethodBase">
+      <MemberSignature Language="C#" Value="public static string GetSoapActionFromMethodBase (System.Reflection.MethodBase mb);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetSoapActionFromMethodBase(class System.Reflection.MethodBase mb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetSoapActionFromMethodBase(System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mb" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="mb"><see cref="T:System.Reflection.MethodBase" /> SOAPAction を要求する対象のメソッドを格納しています。</param>
+        <summary>指定されたメソッドに関連付けられている SOAPAction の値を返します、指定された<see cref="T:System.Reflection.MethodBase" />です。</summary>
+        <returns>SOAPAction 値で指定されたメソッドに関連付けられている、指定された<see cref="T:System.Reflection.MethodBase" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定された<xref:System.Reflection.MethodBase>任意 SOAPAction の値に、登録されていない、<xref:System.Runtime.Remoting.SoapServices.GetSoapActionFromMethodBase%2A>と共に自動的にキャッシュされる SOAPAction を返します、<xref:System.Reflection.MethodBase>です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#140](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#140)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#140](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#140)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeAndMethodNameFromSoapAction">
+      <MemberSignature Language="C#" Value="public static bool GetTypeAndMethodNameFromSoapAction (string soapAction, out string typeName, out string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetTypeAndMethodNameFromSoapAction(string soapAction, [out] string&amp; typeName, [out] string&amp; methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetTypeAndMethodNameFromSoapAction(System.String,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="soapAction" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="methodName" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="soapAction">要求された型およびメソッドの名前に対応するメソッドの SOAPAction します。</param>
+        <param name="typeName">このメソッドが戻るとき、<see cref="T:System.String" />を保持しているメソッドの型名に該当します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="methodName">このメソッドが戻るとき、<see cref="T:System.String" />を保持しているメソッドのメソッド名に該当します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した SOAPAction 値に関連付けられているメソッドの型とメソッドの名前を決定します。</summary>
+        <returns>
+          <see langword="true" />型とメソッドの名前が正常に回復された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `true`型とメソッド名参照が成功した場合それ以外の場合、`false`です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#140](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#140)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#140](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#140)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">SOAPAction 値はありません起動し、末尾に引用符を使用します。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlElementForInteropType">
+      <MemberSignature Language="C#" Value="public static bool GetXmlElementForInteropType (Type type, out string xmlElement, out string xmlNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetXmlElementForInteropType(class System.Type type, [out] string&amp; xmlElement, [out] string&amp; xmlNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetXmlElementForInteropType(System.Type,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="xmlElement" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="xmlNamespace" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクト<see cref="T:System.Type" />XML 要素と名前空間名が要求されました。</param>
+        <param name="xmlElement">このメソッドが戻るとき、<see cref="T:System.String" />指定したオブジェクトの種類の XML 要素名を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="xmlNamespace">このメソッドが戻るとき、<see cref="T:System.String" />指定したオブジェクトの種類の XML 名前空間の名前を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された型をシリアル化するときに使用する XML 要素の情報を返します。</summary>
+        <returns>
+          <see langword="true" />要求された値が設定されてとフラグが設定された場合<see cref="T:System.Runtime.Remoting.Metadata.SoapTypeAttribute" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#103](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#103)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#103](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#103)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlNamespaceForMethodCall">
+      <MemberSignature Language="C#" Value="public static string GetXmlNamespaceForMethodCall (System.Reflection.MethodBase mb);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetXmlNamespaceForMethodCall(class System.Reflection.MethodBase mb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetXmlNamespaceForMethodCall(System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mb" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="mb"><see cref="T:System.Reflection.MethodBase" /> XML 名前空間の要求対象となるメソッドの。</param>
+        <summary>リモートの呼び出しで指定されたメソッドの中に使用される XML 名前空間を取得、指定された<see cref="T:System.Reflection.MethodBase" />です。</summary>
+        <returns>指定したメソッドのリモートの呼び出し中に使用される XML 名前空間。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#105](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#105)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#105](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#105)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlNamespaceForMethodResponse">
+      <MemberSignature Language="C#" Value="public static string GetXmlNamespaceForMethodResponse (System.Reflection.MethodBase mb);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetXmlNamespaceForMethodResponse(class System.Reflection.MethodBase mb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetXmlNamespaceForMethodResponse(System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mb" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="mb"><see cref="T:System.Reflection.MethodBase" /> XML 名前空間の要求対象となるメソッドの。</param>
+        <summary>指定されたメソッドへのリモート呼び出しへの応答の生成中に使用される XML 名前空間を取得、指定された<see cref="T:System.Reflection.MethodBase" />です。</summary>
+        <returns>リモート メソッド呼び出しへの応答の生成中に使用される XML 名前空間。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#105](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#105)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#105](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#105)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlTypeForInteropType">
+      <MemberSignature Language="C#" Value="public static bool GetXmlTypeForInteropType (Type type, out string xmlType, out string xmlTypeNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetXmlTypeForInteropType(class System.Type type, [out] string&amp; xmlType, [out] string&amp; xmlTypeNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.GetXmlTypeForInteropType(System.Type,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="xmlType" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="xmlTypeNamespace" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクト<see cref="T:System.Type" />XML 要素と名前空間名が要求されました。</param>
+        <param name="xmlType">指定したオブジェクトの XML 型<see cref="T:System.Type" />です。</param>
+        <param name="xmlTypeNamespace">指定したオブジェクトの XML 型の名前空間<see cref="T:System.Type" />です。</param>
+        <summary>シリアル化するときに使用する XML 型の情報を返します、指定された<see cref="T:System.Type" />です。</summary>
+        <returns>
+          <see langword="true" />要求された値が設定されてとフラグが設定された場合<see cref="T:System.Runtime.Remoting.Metadata.SoapTypeAttribute" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#104](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#104)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#104](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#104)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClrTypeNamespace">
+      <MemberSignature Language="C#" Value="public static bool IsClrTypeNamespace (string namespaceString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsClrTypeNamespace(string namespaceString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.IsClrTypeNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceString">共通言語ランタイムで確認する名前空間。</param>
+        <summary>指定した名前空間が、共通言語ランタイムにネイティブかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />指定した名前空間が、共通言語ランタイムをネイティブの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SoapSuds ツールは現在のメソッドを使用して、XML 名前空間が非共通言語ランタイムのシステムから、共通言語ランタイム型または型を表すかどうかを確認します。  
+  
+ SoapSuds の詳細については、次を参照してください。 [Soapsuds ツール (Soapsuds.exe)](http://msdn.microsoft.com/en-us/40f6f8c8-b80c-4e9f-a920-31bcd0cf45c5)です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#106](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#106)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#106](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#106)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSoapActionValidForMethodBase">
+      <MemberSignature Language="C#" Value="public static bool IsSoapActionValidForMethodBase (string soapAction, System.Reflection.MethodBase mb);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSoapActionValidForMethodBase(string soapAction, class System.Reflection.MethodBase mb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.IsSoapActionValidForMethodBase(System.String,System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="soapAction" Type="System.String" />
+        <Parameter Name="mb" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="soapAction">照合する SOAPAction、指定された<see cref="T:System.Reflection.MethodBase" />です。</param>
+        <param name="mb"><see cref="T:System.Reflection.MethodBase" />指定 SOAPAction と照合されます。</param>
+        <summary>指定した SOAPAction に許容されるかどうかを指定された<see cref="T:System.Reflection.MethodBase" />です。</summary>
+        <returns>
+          <see langword="true" />指定した SOAPAction が使用できる場合の指定された<see cref="T:System.Reflection.MethodBase" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#140](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#140)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#140](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#140)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PreLoad">
+      <MemberSignature Language="C#" Value="public static void PreLoad (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PreLoad(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.PreLoad(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly"><see cref="T:System.Reflection.Assembly" />を呼び出すの種類ごとに<see cref="M:System.Runtime.Remoting.SoapServices.PreLoad(System.Type)" />です。</param>
+        <summary>プリロードすべて<see cref="T:System.Type" />については、指定した<see cref="T:System.Reflection.Assembly" />で見つかった情報から、<see cref="T:System.Runtime.Remoting.Metadata.SoapTypeAttribute" />種類ごとに関連付けられています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、XML ストリームの解析時に共通言語ランタイム型へのストリームから読み取った XML を変換する方法を理解する必要があります。 については、.NET Framework がどのように生成するかを指定して、XML ストリームに配置されているカスタム属性に格納されている解析、<xref:System.Runtime.Remoting.Metadata>名前空間。 構成ファイルでこの情報を指定する 2 つの方法があります。 マッピングを明示的に指定するか、プリロードするオブジェクトの型を指定しています。 カスタム属性が事前読み込みプロセス中に読み取られ、それらの情報は、SOAP パーサーに利用できます。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#120](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#120)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#120](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#120)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PreLoad">
+      <MemberSignature Language="C#" Value="public static void PreLoad (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PreLoad(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.PreLoad(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />を事前にします。</param>
+        <summary>プリロード、指定された<see cref="T:System.Type" />で設定された値に基づいて、<see cref="T:System.Runtime.Remoting.Metadata.SoapTypeAttribute" />型にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、XML ストリームの解析時に共通言語ランタイム型へのストリームから読み取った XML を変換する方法を理解する必要があります。 については、.NET Framework がどのように生成するかを指定して、XML ストリームに配置されているカスタム属性に格納されている解析、<xref:System.Runtime.Remoting.Metadata>名前空間。 構成ファイルでこの情報を指定する 2 つの方法があります。 マッピングを明示的に指定するか、プリロードするオブジェクトの型を指定しています。 カスタム属性が事前読み込みプロセス中に読み取られ、それらの情報は、SOAP パーサーに利用できます。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#121](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#121)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#121](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#121)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterInteropXmlElement">
+      <MemberSignature Language="C#" Value="public static void RegisterInteropXmlElement (string xmlElement, string xmlNamespace, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterInteropXmlElement(string xmlElement, string xmlNamespace, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.RegisterInteropXmlElement(System.String,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlElement" Type="System.String" />
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="xmlElement">逆シリアル化で使用する XML 要素名。</param>
+        <param name="xmlNamespace">逆シリアル化で使用する XML 名前空間。</param>
+        <param name="type">実行時<see cref="T:System.Type" />を逆シリアル化で使用します。</param>
+        <summary>特定の XML 要素名と名前空間を逆シリアル化に使用する実行時の型に関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#180](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#180)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#180](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#180)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterInteropXmlType">
+      <MemberSignature Language="C#" Value="public static void RegisterInteropXmlType (string xmlType, string xmlTypeNamespace, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterInteropXmlType(string xmlType, string xmlTypeNamespace, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.RegisterInteropXmlType(System.String,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlType" Type="System.String" />
+        <Parameter Name="xmlTypeNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="xmlType">逆シリアル化で使用する XML の種類。</param>
+        <param name="xmlTypeNamespace">逆シリアル化で使用する XML 名前空間。</param>
+        <param name="type">実行時<see cref="T:System.Type" />を逆シリアル化で使用します。</param>
+        <summary>指定された XML 型の名前と名前空間を逆シリアル化に使用する実行時の型に関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#190](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#190)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#190](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#190)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterSoapActionForMethodBase">
+      <MemberSignature Language="C#" Value="public static void RegisterSoapActionForMethodBase (System.Reflection.MethodBase mb);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterSoapActionForMethodBase(class System.Reflection.MethodBase mb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.RegisterSoapActionForMethodBase(System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mb" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="mb"><see cref="T:System.Reflection.MethodBase" />に関連付けることでキャッシュ SOAPAction メソッドの。</param>
+        <summary>指定したに関連付けます<see cref="T:System.Reflection.MethodBase" />してキャッシュ SOAPAction でします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたメソッドの SOAPAction が含まれている、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute.SoapAction%2A?displayProperty=nameWithType>プロパティ、またはネットワークから読み取られるとします。 現在のメソッドを含む SOAPAction を関連付ける、<xref:System.Reflection.MethodBase>チャネル シンクで使用するためです。  
+  
+ SOAPAction HTTP 要求ヘッダー フィールドでは、SOAP HTTP 要求の目的を示します。 値は、その目的を識別する URI です。 SOAP 形式または URI の制限配置なしまたは解決可能であること。 HTTP クライアントでは、SOAP HTTP 要求を発行する際に、このヘッダー フィールドを使用する必要があります。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#170](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#170)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#170](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#170)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterSoapActionForMethodBase">
+      <MemberSignature Language="C#" Value="public static void RegisterSoapActionForMethodBase (System.Reflection.MethodBase mb, string soapAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterSoapActionForMethodBase(class System.Reflection.MethodBase mb, string soapAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.SoapServices.RegisterSoapActionForMethodBase(System.Reflection.MethodBase,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mb" Type="System.Reflection.MethodBase" />
+        <Parameter Name="soapAction" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mb"><see cref="T:System.Reflection.MethodBase" />に指定された SOAPAction 関連付けます。</param>
+        <param name="soapAction">関連付ける SOAPAction 値、指定された<see cref="T:System.Reflection.MethodBase" />です。</param>
+        <summary>指定された SOAPAction 値を関連付ける、指定された<see cref="T:System.Reflection.MethodBase" />チャネル シンクで使用するためです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAPAction HTTP 要求ヘッダー フィールドでは、SOAP HTTP 要求の目的を示します。 値は、その目的を識別する URI です。 SOAP 形式または URI の制限配置なしまたは解決可能であること。 HTTP クライアントでは、SOAP HTTP 要求を発行する際に、このヘッダー フィールドを使用する必要があります。  
+  
+   
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#170](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#170)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#170](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#170)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNsForClrType">
+      <MemberSignature Language="C#" Value="public static string XmlNsForClrType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string XmlNsForClrType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.SoapServices.XmlNsForClrType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共通言語ランタイム型の XML 名前空間プレフィックスを取得します。</summary>
+        <value>共通言語ランタイム型の XML 名前空間プレフィックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WSDL および SOAP プロトコルは、共通言語ランタイム クラスを XML 名前空間にエンコードします。 現在のプロパティは、XML 名前空間の形式を指定します。 共通言語ランタイム クラスのすべての XML 名前空間で始まる、<xref:System.String>を現在のプロパティを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#130](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#130)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#130](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#130)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNsForClrTypeWithAssembly">
+      <MemberSignature Language="C#" Value="public static string XmlNsForClrTypeWithAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string XmlNsForClrTypeWithAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.SoapServices.XmlNsForClrTypeWithAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリを持つ共通言語ランタイム クラスのエンコード、ネイティブ XML を使用する既定の XML 名前空間プレフィックスを取得名前空間。</summary>
+        <value>XML を使用する既定の XML 名前空間プレフィックスをアセンブリがないネイティブの名前空間を持つ共通言語ランタイム クラスのエンコードします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WSDL および SOAP プロトコルは、共通言語ランタイム クラスを XML 名前空間にエンコードします。 現在のプロパティは、XML 名前空間の形式を指定します。 共通言語ランタイム クラスにアセンブリが、名前空間がない場合は、現在のプロパティは使用される既定の XML 名前空間を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#131](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#131)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#131](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#131)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNsForClrTypeWithNs">
+      <MemberSignature Language="C#" Value="public static string XmlNsForClrTypeWithNs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string XmlNsForClrTypeWithNs" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.SoapServices.XmlNsForClrTypeWithNs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML を使用する XML 名前空間プレフィックスを取得、mscorlib.dll ファイルの一部である共通言語ランタイム クラスのエンコードします。</summary>
+        <value>XML を使用する XML 名前空間プレフィックスは、mscorlib.dll ファイルの一部である共通言語ランタイム クラスのエンコードします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WSDL および SOAP プロトコルは、共通言語ランタイム クラスを XML 名前空間にエンコードします。 現在のプロパティは、XML 名前空間の形式を指定します。 共通言語ランタイム クラスは、mscorlib アセンブリの一部は、現在のプロパティによって返される XML 名前空間が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#132](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#132)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#132](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#132)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNsForClrTypeWithNsAndAssembly">
+      <MemberSignature Language="C#" Value="public static string XmlNsForClrTypeWithNsAndAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string XmlNsForClrTypeWithNsAndAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.SoapServices.XmlNsForClrTypeWithNsAndAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML を使用する既定の XML 名前空間プレフィックスを取得する共通言語ランタイム名前空間とアセンブリの両方を持つ共通言語ランタイム クラスのエンコードします。</summary>
+        <value>XML を使用する既定の XML 名前空間プレフィックスを共通言語ランタイム名前空間とアセンブリの両方を持つ共通言語ランタイム クラスのエンコードします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WSDL および SOAP プロトコルは、共通言語ランタイム クラスを XML 名前空間にエンコードします。 現在のプロパティは、XML 名前空間の形式を指定します。 共通言語ランタイム クラスは、アセンブリと共通言語ランタイム名前空間を持っている場合、現在のプロパティは、使用される既定の XML 名前空間を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.SoapServices>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.SoapServices#133](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CPP/demo.cpp#133)]
+ [!code-csharp[System.Runtime.Remoting.SoapServices#133](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.SoapServices/CS/demo.cs#133)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

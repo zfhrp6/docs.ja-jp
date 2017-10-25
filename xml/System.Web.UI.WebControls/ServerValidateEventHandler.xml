@@ -1,0 +1,47 @@
+<Type Name="ServerValidateEventHandler" FullName="System.Web.UI.WebControls.ServerValidateEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ServerValidateEventHandler(object source, ServerValidateEventArgs args);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServerValidateEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ServerValidateEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="source" Type="System.Object" />
+    <Parameter Name="args" Type="System.Web.UI.WebControls.ServerValidateEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="source">イベントのソース。</param>
+    <param name="args">イベント データを格納している <see cref="T:System.Web.UI.WebControls.ServerValidateEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.CustomValidator.ServerValidate" />のイベント、<see cref="T:System.Web.UI.WebControls.CustomValidator" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートを使用すると、サーバーで検証を実行するカスタム コードを提供します。 コードを検証する必要があります、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A>のプロパティ、`args`パラメーターに、デリゲートに渡されます。 内での検証の結果を格納、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid%2A>のプロパティ、`args`パラメーター。  
+  
+ <xref:System.Web.UI.WebControls.ServerValidateEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例を指定およびサーバー側のハンドラーをコーディングする方法を示します<xref:System.Web.UI.WebControls.CustomValidator>です。 テキスト ボックスに入力された数値が奇数偶数かどうかが表示されます。  
+  
+ [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
+ [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CustomValidatorServerValidate2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate2/CS/customvalidatorservervalidate2cs.aspx#1)]
+ [!code-aspx-vb[CustomValidatorServerValidate2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate2/VB/customvalidatorservervalidate2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

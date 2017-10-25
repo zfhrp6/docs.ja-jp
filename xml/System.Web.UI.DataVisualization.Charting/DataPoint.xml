@@ -1,0 +1,488 @@
+<Type Name="DataPoint" FullName="System.Web.UI.DataVisualization.Charting.DataPoint">
+  <TypeSignature Language="C#" Value="public class DataPoint : System.Web.UI.DataVisualization.Charting.DataPointCustomProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPoint extends System.Web.UI.DataVisualization.Charting.DataPointCustomProperties" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.DataPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.DataPointCustomProperties</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("YValues")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataVisualization.Charting.DataPointConverter, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>格納されているデータ ポイントを表す、<see cref="T:System.Web.UI.DataVisualization.Charting.DataPointCollection" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.DataPoint>クラスのストアのプロパティに関連付けられているデータだけでなく、データ ポイント値。 たとえば、データ ポイントには、値がプロパティの色、背景イメージのプロパティ、背景グラデーションのプロパティなどもが。 ポイントのプロパティでデータの詳細についてを参照してください、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties>クラスの概要に関するトピック。  
+  
+ 各データ ポイントは、X 値と 1 つまたは複数の Y 値で構成されます。 X 値は 0 を指定できますか、これを明示的に設定することができます。  
+  
+ ポイントごとに 1 つだけの Y 値は、バブル チャート、ローソク足、およびストックのグラフを除くすべてのグラフの種類に必要です。 これらのグラフの種類では、複数の値の 1 つのデータ ポイントを構成するために複数の Y 値が必要です。 たとえば、株価チャートの 1 つの列をプロットする 4 つの値が必要: 高、低、始値と終値。  
+  
+ データをデザイン時または実行時間です。実行時にデータ バインディングを使用することもできます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.DataPoint>クラスです。  
+  
+ ただし、代わりに実行時のデータ ポイントを追加することを強くお勧めします。 時間を使用して、<xref:System.Web.UI.DataVisualization.Charting.Series.Points%2A>コレクション プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPoint (System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.#ctor(System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />データ ポイントに属しているオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />クラス、およびセット、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />データ ポイントに属していること。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.DataPoint>クラスです。  
+  
+ ただし、代わりに実行時のデータ ポイントを追加することを強くお勧めします。 時間を使用して、<xref:System.Web.UI.DataVisualization.Charting.Series.Points%2A>コレクション プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPoint (double xValue, double yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 xValue, float64 yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Double" />
+        <Parameter Name="yValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値。</param>
+        <param name="yValue">データ ポイントの Y 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />クラスに、指定した X と Y の値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.DataPoint>クラスです。  
+  
+ ただし、代わりに実行時のデータ ポイントを追加することを強くお勧めします。 時間を使用して、<xref:System.Web.UI.DataVisualization.Charting.Series.Points%2A>コレクション プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPoint (double xValue, double[] yValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 xValue, float64[] yValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.#ctor(System.Double,System.Double[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Double" />
+        <Parameter Name="yValues" Type="System.Double[]" />
+      </Parameters>
+      <Docs>
+        <param name="xValue">X 値。</param>
+        <param name="yValues">Y 値の配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" /> X 値と Y 値の配列に指定したクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.DataPoint>クラスです。  
+  
+ ただし、代わりに実行時のデータ ポイントを追加することを強くお勧めします。 時間を使用して、<xref:System.Web.UI.DataVisualization.Charting.Series.Points%2A>コレクション プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPoint (double xValue, string yValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 xValue, string yValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.#ctor(System.Double,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Double" />
+        <Parameter Name="yValues" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値。</param>
+        <param name="yValues">A <see langword="string" /> Y の値をコンマで区切っています。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" /> X 値と Y 値に指定したクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.DataPoint>クラスです。  
+  
+ ただし、代わりに実行時のデータ ポイントを追加することを強くお勧めします。 時間を使用して、<xref:System.Web.UI.DataVisualization.Charting.Series.Points%2A>コレクション プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.DataPoint Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.DataPoint Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ポイントの正確なコピーを返します。</summary>
+        <returns>複製された<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.DataPoint.Clone%2A>データ ポイントの正確なコピーを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueByName">
+      <MemberSignature Language="C#" Value="public double GetValueByName (string valueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetValueByName(string valueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.GetValueByName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="valueName">値の名前をポイントします。 X, Y, Y2 しています.</param>
+        <summary>その名前で指定されているデータ ポイントを返します。 これは、ヘルパー関数です。</summary>
+        <returns>A<see langword="string" />データ ポイントを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.DataPoint.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ポイントが空としてマークするかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="true" />ポイントが空のポイントとしてマークされている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`を空のポイントとしてのデータ ポイントをマークします。  
+  
+ いずれかの別の方法として、`InsertEmptyPoints`内のメソッド、<xref:System.Web.UI.DataVisualization.Charting.DataManipulator>クラスは、空のポイントとしてデータの欠落を示すために使用できます。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.EmptyPointStyle%2A>プロパティを決定する方法の空のポイントが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.DataPoint.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ポイントの名前を設定します。</summary>
+        <value>A<see langword="string" />をデータ ポイントの名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValueXY">
+      <MemberSignature Language="C#" Value="public void SetValueXY (object xValue, params object[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValueXY(object xValue, object[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.SetValueXY(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Object" />
+        <Parameter Name="yValue" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値。</param>
+        <param name="yValue">データ ポイントの Y 値の一覧。</param>
+        <summary>X 値とデータ ポイントの 1 つまたは複数 Y 値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.DataPoint.SetValueXY%2A>実行時にデータ ポイントの値を設定します。  
+  
+ X 値を 0 (ゼロ) 以外の値に設定した場合、散布図が生成されることに注意してください。 詳細については、の「解説」セクションを参照してください、<xref:System.Web.UI.DataVisualization.Charting.DataPoint.XValue%2A>プロパティです。  
+  
+ オブジェクトの型パラメーターに対して使用できる有効な .NET Framework の型の完全な一覧については、次の表を参照してください。  
+  
+||||  
+|-|-|-|  
+|String|DateTime|倍精度浮動小数点型|  
+|Decimal (10 進数型)|Single|Int32|  
+|UInt32|Int64|UInt64|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValueY">
+      <MemberSignature Language="C#" Value="public void SetValueY (params object[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValueY(object[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPoint.SetValueY(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="yValue" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="yValue">Y-の値、<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />コレクション内のオブジェクト。 コンマで区切られた 1 つまたは複数の値として書式設定します。</param>
+        <summary>Y の設定の 1 つのデータ ポイントの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.DataPoint.SetValueY%2A>プロパティが、Y の設定に使用される-のデータ ポイント値実行時にします。  
+  
+ ポイントごとに 1 つだけの Y 値は、バブル、ローソク足、株価チャートを除くすべてのグラフの種類に必要です。 これらのグラフの種類では、複数の値の 1 つのデータ ポイントを構成するために複数の Y 値が必要です。 たとえば、株価チャートの 1 つの列をプロットする 4 つの値が必要: 高、低、始値と終値。  
+  
+ このプロパティの配列を返します`double`を複数の Y 値を取得する場合の値します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.DataVisualization.Charting.Series.YValuesPerPoint%2A>プロパティのすべてのデータ ポイントの Y 値の最大数を決定する<xref:System.Web.UI.DataVisualization.Charting.Series>持つことができます。 複数の Y 値の許容数を指定する場合、例外が発生します。  
+>   
+>  オブジェクトの型パラメーターに対して使用できる有効な .NET Framework の型の完全な一覧については、次の表を参照してください。  
+  
+||||  
+|-|-|-|  
+|String|DateTime|倍精度浮動小数点型|  
+|Decimal (10 進数型)|Single|Int32|  
+|UInt32|Int64|UInt64|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XValue">
+      <MemberSignature Language="C#" Value="public double XValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 XValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.DataPoint.XValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Double), "0.0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.DataPointValueConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ポイントの X 値を設定します。</summary>
+        <value>A<see langword="double" />データ ポイントの X 値を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての種類のグラフ表示できますかれてしまう散布図、または非散布としてため、X 値と Y 値の両方を設定することができます。 X 値の設定と、散布図では、このプロパティを設定しない一方 — これは 0 に設定すると同じ-非散布図になります。 たとえば、ポイント グラフの種類を描画するには、0 の X 値を持つデータ ポイントを追加します。 従来の散布図を表示するには、0 以外の X 値を持つデータ ポイントを追加します。  
+  
+ データ ポイントの X 値は、設定する必要はありません。 設定されていない場合描画されるデータ ポイント順に、そのインデックス値を使用して、<xref:System.Web.UI.DataVisualization.Charting.DataPointCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YValues">
+      <MemberSignature Language="C#" Value="public double[] YValues { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64[] YValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.DataPoint.YValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Drawing.Design.UITypeEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.DoubleArrayConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Y のデータ ポイントの値。</summary>
+        <value>配列<see langword="double" />Y を表す値のデータ ポイントの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.DataPoint.YValues%2A>データ ポイントの Y 値を設定するプロパティを使用します。  
+  
+ ポイントごとに 1 つだけの Y 値は、バブル チャート、ローソク足、およびストックのグラフを除くすべてのグラフの種類に必要です。 これらのグラフの種類では、複数の値の 1 つのデータ ポイントを構成するために複数の Y 値が必要です。 たとえば、株価チャートの 1 つの列をプロットする 4 つの値が必要: 高、低、始値と終値。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.DataPoint.YValues%2A>プロパティの配列を返します`double`値と Y 値を取得するために使用します。  
+  
+ **重要な**、<xref:System.Web.UI.DataVisualization.Charting.Series.YValuesPerPoint%2A>プロパティのすべてのデータ ポイントの Y 値の最大数を決定する<xref:System.Web.UI.DataVisualization.Charting.Series>持つことができます。 複数の Y 値の許容数を指定する場合、例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

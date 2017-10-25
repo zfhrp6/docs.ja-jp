@@ -1,0 +1,226 @@
+<Type Name="XamlReaderSettings" FullName="System.Xaml.XamlReaderSettings">
+  <TypeSignature Language="C#" Value="public class XamlReaderSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlReaderSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlReaderSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>規則の処理またはのオプション設定を指定します、<see cref="T:System.Xaml.XamlReader" />実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、初期化された<xref:System.Xaml.XamlReaderSettings>オブジェクトのプロパティに対応する必要があるの既定値などの値を使用して`false`のブール型プロパティまたは参照型のプロパティの null 値です。 既定の初期化は、次の値が得られます。  
+  
+-   <xref:System.Xaml.XamlReaderSettings.BaseUri%2A>と<xref:System.Xaml.XamlReaderSettings.LocalAssembly%2A>プロパティは、`null`です。  
+  
+-   <xref:System.Xaml.XamlReaderSettings.IgnoreUidsOnPropertyElements%2A> プロパティが `false` です。  
+  
+-   <xref:System.Xaml.XamlReaderSettings.ProvideLineInfo%2A>プロパティは`false`オブジェクト モデルです。 ただし、そのことができますをに設定する`true`読み込まれた実行可能ファイルとそのデバッグ設定、または XAML スキーマ コンテキストに基づいて実行時にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlReaderSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReaderSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlReaderSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化の詳細については、<xref:System.Xaml.XamlReaderSettings>既定のインスタンスを参照してください<xref:System.Xaml.XamlReaderSettings>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlReaderSettings (System.Xaml.XamlReaderSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlReaderSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReaderSettings.#ctor(System.Xaml.XamlReaderSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Xaml.XamlReaderSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">既存の <see cref="T:System.Xaml.XamlReaderSettings" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlReaderSettings" />クラスが別の値に基づいた<see cref="T:System.Xaml.XamlReaderSettings" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ここで追加の設定もリーダー処理で他の参加者からの XAML リーダーの設定の結合をサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowProtectedMembersOnRoot">
+      <MemberSignature Language="C#" Value="public bool AllowProtectedMembersOnRoot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowProtectedMembersOnRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReaderSettings.AllowProtectedMembersOnRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルート オブジェクトが、XAML 型の表現を報告したときに、保護されているコード アクセス モデルを持つメンバーを含めることがあるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ルート オブジェクトには、保護されているコード アクセス モデル; を持つメンバーが含まれますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、ルート オブジェクトが常に実用的なオブジェクト インスタンスがパターンの種類ではないときに、パターンの種類からインスタンスを生成するための「ファクトリ」では多くの場合、WPF などの一部の XAML 実装。 ルートなど`UserControl`WPF と Silverlight アプリケーション モデルでは、特定の意味を持つと`UserControl`プロパティが保護されている可能性があります (`UserControl.Content`) パーサーがへのアクセスを必要があること。 ツールおよびデザイン サーフェイスは、このようなプロパティへのアクセスも必要です。 このような場合必要があります一般として報告される XAML 型システムに書き込み可能なプロパティのバッキング型システムでアクセスが保護されている場合でも。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReaderSettings.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または相対パスを解決するために使用されるベース URI を設定します。</summary>
+        <value>使用するベース URI。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework XAML サービス API の一部の URI に関連するプロパティは、XAML 名前空間の Uri を文字列として扱うただし、このプロパティは、true を使用<xref:System.Uri>型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreUidsOnPropertyElements">
+      <MemberSignature Language="C#" Value="public bool IgnoreUidsOnPropertyElements { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreUidsOnPropertyElements" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReaderSettings.IgnoreUidsOnPropertyElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML リーダーの値を無視するかどうかを指定する値の設定を取得または<see langword="x:Uid" />プロパティ要素に存在する属性。</summary>
+        <value>
+          <see langword="true" />リーダーの値を無視する場合<see langword="x:Uid" />プロパティ要素の属性です。 <see langword="false" />リーダーが処理する場合は<see langword="x:Uid" />プロパティ要素の属性です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカリゼーション、中に、`x:Uid`ローカリゼーション ツールは、ローカリゼーション用の個別のエンティティとして XAML 要素を処理できるように、マークアップ内の要素を識別する属性を使用します。 属性は、通常は xaml プロパティ要素の表示されません。 ただし、`x:Uid`が例外いくつかの使用法配置プロパティ要素のローカライズされたテキスト コンテンツとしての代わりに受け取ることのできる個別のオブジェクトとして独自`x:Uid`です。 設定、<xref:System.Xaml.XamlReaderSettings.IgnoreUidsOnPropertyElements%2A>値を`true`より厳密なモードを有効にします。 既定値の`false`プロパティ要素の処理を継続する`x:Uid`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LocalAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly LocalAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReaderSettings.LocalAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を処理するため、現在のローカル アセンブリを表すオブジェクト。 このアセンブリ情報がなどのヘルパー Api への呼び出しに使用が<see cref="M:System.Xaml.XamlType.GetAllMembers" />です。</summary>
+        <value>CLR リフレクション<see cref="T:System.Reflection.Assembly" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideLineInfo">
+      <MemberSignature Language="C#" Value="public bool ProvideLineInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProvideLineInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReaderSettings.ProvideLineInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行番号と位置にリーダーを提供できるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />リーダーは、行番号および位置情報を提供できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlReaderSettings.ProvideLineInfo%2A>`false`オブジェクト モデルです。 ただし、そのことができますをに設定する`true`読み込まれた実行可能ファイルとそのデバッグ設定に基づいて実行時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValuesMustBeString">
+      <MemberSignature Language="C#" Value="public bool ValuesMustBeString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValuesMustBeString" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReaderSettings.ValuesMustBeString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーを強制するかどうかを指定する値の設定を取得またはすべて<see langword="Value" />としてのノードが処理される、<see langword="String" />型です。</summary>
+        <value>
+          <see langword="true" />場合は、リーダーを強制のみ<see langword="String" />に含まれる<see langword="Value" />ノード以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 加え<xref:System.String>、ことがある`Value`一部の XAML 実装の下にあるコンテンツが<xref:System.Windows.Markup.XData>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

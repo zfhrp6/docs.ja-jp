@@ -1,0 +1,59 @@
+<Type Name="AuthenticationMode" FullName="Microsoft.VisualBasic.ApplicationServices.AuthenticationMode">
+  <TypeSignature Language="C#" Value="public enum AuthenticationMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuthenticationMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Visual Basic アプリケーションでのユーザーを認証する方法を示す、<see langword="My.User" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体の値のいずれかを渡すことによって、アプリケーションの認証モードを設定することができます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.%23ctor%2A>コンス トラクターです。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの拡張](~/docs/visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)です。  
+  
+ Visual Basic アプリケーション モデルを使用する Visual Basic アプリケーションでは、Windows 認証またはカスタム認証を使用するかどうかを指定できます。 Visual Studio 統合開発環境で、認証モードを構成することもできます。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationDefined">
+      <MemberSignature Language="C#" Value="ApplicationDefined" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.ApplicationServices.AuthenticationMode ApplicationDefined = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.ApplicationDefined" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.#ctor(Microsoft.VisualBasic.ApplicationServices.AuthenticationMode)" />コンス トラクターは、アプリケーションのメイン スレッドのプリンシパルを初期化できません。 アプリケーションは、アプリケーションのメイン スレッドのプリンシパルを初期化する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Windows">
+      <MemberSignature Language="C#" Value="Windows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.ApplicationServices.AuthenticationMode Windows = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.#ctor(Microsoft.VisualBasic.ApplicationServices.AuthenticationMode)" />コンス トラクターは、現在のユーザーの Windows ユーザーの情報を使って、アプリケーションのメイン スレッドのプリンシパルを初期化します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,164 @@
+<Type Name="ScaffoldColumnAttribute" FullName="System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute">
+  <TypeSignature Language="C#" Value="public class ScaffoldColumnAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScaffoldColumnAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスまたはデータ列がスキャフォールディングを使用するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキャフォールディングは、データベース スキーマに基づいて web ページのテンプレートを生成するためのメカニズムです。 ASP.NET 動的データでは、スキャフォールディングを使用して、表示およびデータベースを更新するユーザーに許可する Web ベースの UI を生成します。 このクラスを使用して、<xref:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute.Scaffold%2A>プロパティを動的データ Web サイトでのスキャフォールディングを有効にします。  
+  
+ スキャフォールディングでは、物理ページの必要なしに、データ モデルに基づいてページを動的に表示する ASP.NET ページ フレームワークを強化します。  
+  
+ スキャフォールディングでは、次の機能を提供します。  
+  
+-   最小またはコードなしでデータ ドリブン Web アプリケーションを作成します。  
+  
+-   迅速な開発時間です。  
+  
+-   完全に機能し、表示、挿入、編集、削除、並べ替え、およびページング機能が含まれているページです。  
+  
+-   データベース スキーマに基づいている組み込みのデータ検証します。  
+  
+-   外部キーまたはブール値フィールドごとに作成されるフィルターです。  
+  
+ 有効にするか、適切なデータ フィールド内のオブジェクトのテーブルを表すクラスにこの属性を適用することで、データ モデル内のデータ列のスキャフォールディングを無効にするのには、このクラスを使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、製品部分クラスに ProductID オブジェクトに scaffold プロパティを適用しを設定することで、AdventureWorksLT データベースの Products テーブルの ProductID 列を公開`true.`を非表示にしますThumbnailPhotoFileName オブジェクトに scaffold プロパティを適用してを設定することによって ThumbnailPhotoFileName 列`false`です。  
+
+```csharp  
+[MetadataType(typeof(ProductMetadata))]  
+public partial class Product  
+{  
+  
+}  
+  
+public class ProductMetadata  
+{  
+    [ScaffoldColumn(true)]  
+    public object ProductID;  
+  
+    [ScaffoldColumn(false)]  
+    public object ThumbnailPhotoFileName;  
+  
+}  
+```    
+  
+```vb  
+<MetadataType(GetType(ProductMetadata))>  
+Public Partial Class Product   
+  
+End Class   
+  
+Public Class ProductMetadata   
+    <ScaffoldColumn(True)>  
+    Public ProductID As Object   
+  
+    <ScaffoldColumn(False)>   
+    Public ThumbnailPhotoFileName As Object  
+  
+End Class  
+  
+```  
+  
+ コード例をコンパイルするには、次のものが必要。  
+  
+-   Visual Studio 2008 Service Pack 1 または Visual Developer 2008 Express Edition Service Pack 1。  
+  
+-   AdventureWorksLT サンプル データベース。 ダウンロードして、SQL Server サンプル データベースをインストールする方法については、次を参照してください。 [Microsoft SQL Server Product Samples: Database](http://go.microsoft.com/fwlink/?LinkId=117483) CodePlex サイトにします。 (SQL Server 2005 または SQL Server 2008) を実行して SQL Server のバージョンについては、サンプル データベースの正しいバージョンをインストールすることを確認します。  
+  
+-   動的データ Web サイトです。 これにより、データベースとをカスタマイズするデータ フィールドを含むクラスとメソッドをオーバーライドするためのデータ コンテキストを作成できます。 さらに、前に説明したページを使用するための環境を作成します。 詳細については、次を参照してください。[チュートリアル: 作成、新しい動的データ Web サイトを使用してスキャフォールディング](http://msdn.microsoft.com/library/1564aef2-9103-436a-9806-c8ad7abd616a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScaffoldColumnAttribute (bool scaffold);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool scaffold) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scaffold" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="scaffold">スキャフォールディングが有効になっているかどうかを示す値。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute" />を使用して、<see cref="P:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute.Scaffold" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます`scaffold`に`true`を設定して、データベースでの CRUD (作成、読み取り、更新、削除) 操作のすべてのデータ列を公開するすべてのデータ モデルの`scaffold`に`true`、Global.asax でファイルや設定で CRUD 操作をデータ テーブル内の個々 のデータ列を公開`scaffold`に`true`部分クラスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scaffold">
+      <MemberSignature Language="C#" Value="public bool Scaffold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Scaffold" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute.Scaffold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキャフォールディングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、スキャフォールディングが有効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、データ モデル内の個々 のデータ列でスキャフォールディングを有効にすることができます。 このプロパティを設定する場合`true`global.asax ファイルでデータ モデル全体が、データベースでの CRUD (作成、読み取り、更新、削除) 操作のすべてのデータ列を公開します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

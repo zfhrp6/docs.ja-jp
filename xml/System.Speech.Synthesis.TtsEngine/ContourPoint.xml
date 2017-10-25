@@ -1,0 +1,265 @@
+<Type Name="ContourPoint" FullName="System.Speech.Synthesis.TtsEngine.ContourPoint">
+  <TypeSignature Language="C#" Value="public struct ContourPoint : IEquatable&lt;System.Speech.Synthesis.TtsEngine.ContourPoint&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ContourPoint extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Speech.Synthesis.TtsEngine.ContourPoint&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Speech.Synthesis.TtsEngine.ContourPoint&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ImmutableObject(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテンツの音声のピッチの変更を表す、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピッチ輪郭は音声出力で指定した時間の位置にあるターゲットの配列として定義されます。 各ターゲットは、3 つのパラメーターによって定義されます。 最初の値が含まれているテキスト (「%」を続けて数) の期間の比率です。 2 番目の値は、ピッチを上げたり下げたりする量を指定します。 3 番目の値が 2 番目の値で指定した数値を使用する単位を指定します。割合またはヘルツ (Hz) のいずれか。  
+  
+ <xref:System.Speech.Synthesis.TtsEngine.ContourPoint>オブジェクトを取得、<xref:System.Speech.Synthesis.TtsEngine.Prosody.GetContourPoints%2A>メソッドのピッチの配分を設定するために使用するか、<xref:System.Speech.Synthesis.TtsEngine.TextFragment>によって、<xref:System.Speech.Synthesis.TtsEngine.Prosody.SetContourPoints%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContourPoint (float start, float change, System.Speech.Synthesis.TtsEngine.ContourPointChangeType changeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32 start, float32 change, valuetype System.Speech.Synthesis.TtsEngine.ContourPointChangeType changeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ContourPoint.#ctor(System.Single,System.Single,System.Speech.Synthesis.TtsEngine.ContourPointChangeType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="start" Type="System.Single" />
+        <Parameter Name="change" Type="System.Single" />
+        <Parameter Name="changeType" Type="System.Speech.Synthesis.TtsEngine.ContourPointChangeType" />
+      </Parameters>
+      <Docs>
+        <param name="start">A<see cref="T:System.Single" />声の高さの変更を適用するポイントを指定する、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />です。 これの実行時間の経過時間の割合で示されますが、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />点に注意します。</param>
+        <param name="change">A<see cref="T:System.Single" />ピッチを上げたり下げたりする量を指定します。</param>
+        <param name="changeType">メンバー <see cref="P:System.Speech.Synthesis.TtsEngine.ContourPoint.ChangeType" /> 、使用する単位で指定した数値を指定する、<c>変更</c>パラメーター。</param>
+        <summary><see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Change">
+      <MemberSignature Language="C#" Value="public float Change { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Change" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ContourPoint.Change" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ある時点におけるピッチを上げたり下げたりする金額を表す値を取得、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />です。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を値と組み合わせてから、<xref:System.Speech.Synthesis.TtsEngine.ContourPoint.ChangeType%2A>ピッチを上げたり下げたりする量を定義するプロパティです。  
+  
+ 0% または 100% の声の高さの値が定義されていない場合は、最も近いピッチ ターゲットがコピーされます。 ピッチのすべての相対値は、含まれているテキストの直前にピッチ値に対して相対的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.TtsEngine.ContourPointChangeType ChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Synthesis.TtsEngine.ContourPointChangeType ChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ContourPoint.ChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ContourPointChangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーを取得<see cref="P:System.Speech.Synthesis.TtsEngine.ContourPoint.ChangeType" />、使用する単位で指定した数値を指定する、<paramref name="change" />のパラメーター、<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />オブジェクト。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙の値を値と組み合わせてから、<xref:System.Speech.Synthesis.TtsEngine.ContourPoint.Change%2A>ピッチを上げたり下げたりする量を定義するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ContourPoint.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> のインスタンスにキャスト可能なオブジェクト。</param>
+        <summary>指定されたオブジェクトが <see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> のインスタンスで、現在の <see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> のインスタンスと等しいかどうかを判定します。</summary>
+        <returns>現在の <see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> のインスタンスと <paramref name="obj" /> の引数から取得したものが等しい場合に <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、false を返します、<xref:System.Object>によって提供される、`obj`に引数をキャストできません<xref:System.Speech.Synthesis.TtsEngine.ContourPoint>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Speech.Synthesis.TtsEngine.ContourPoint other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Speech.Synthesis.TtsEngine.ContourPoint other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ContourPoint.Equals(System.Speech.Synthesis.TtsEngine.ContourPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Speech.Synthesis.TtsEngine.ContourPoint" />
+      </Parameters>
+      <Docs>
+        <param name="other">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />は、現在のインスタンスを比較します。</param>
+        <summary>指定した <see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> のインスタンスが、現在の <see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" /> インスタンスと等しいかどうかを判定します。</summary>
+        <returns>返します<see langword="true" />場合両方の現在のインスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />を通じて指定されると、<paramref name="other" />引数が等しい場合、それ以外の場合を返します<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ContourPoint.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Speech.Synthesis.TtsEngine.ContourPoint>オブジェクトは、別の時間値である場合でも、同じハッシュ コードが持ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Speech.Synthesis.TtsEngine.ContourPoint point1, System.Speech.Synthesis.TtsEngine.ContourPoint point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Speech.Synthesis.TtsEngine.ContourPoint point1, valuetype System.Speech.Synthesis.TtsEngine.ContourPoint point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ContourPoint.op_Equality(System.Speech.Synthesis.TtsEngine.ContourPoint,System.Speech.Synthesis.TtsEngine.ContourPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Speech.Synthesis.TtsEngine.ContourPoint" />
+        <Parameter Name="point2" Type="System.Speech.Synthesis.TtsEngine.ContourPoint" />
+      </Parameters>
+      <Docs>
+        <param name="point1">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />のインスタンスと比較する<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />によって提供される、 <c>point2</c>引数。</param>
+        <param name="point2">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />のインスタンスと比較する<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />によって提供される、 <c>point1</c>引数。</param>
+        <summary>2 つのインスタンスが決定の<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />が等しい。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />インスタンスによって参照される<paramref name="point1" />と<paramref name="point2" />が等しい場合、それ以外の場合を返します<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Speech.Synthesis.TtsEngine.ContourPoint.Equals%28System.Speech.Synthesis.TtsEngine.ContourPoint%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Speech.Synthesis.TtsEngine.ContourPoint point1, System.Speech.Synthesis.TtsEngine.ContourPoint point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Speech.Synthesis.TtsEngine.ContourPoint point1, valuetype System.Speech.Synthesis.TtsEngine.ContourPoint point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ContourPoint.op_Inequality(System.Speech.Synthesis.TtsEngine.ContourPoint,System.Speech.Synthesis.TtsEngine.ContourPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Speech.Synthesis.TtsEngine.ContourPoint" />
+        <Parameter Name="point2" Type="System.Speech.Synthesis.TtsEngine.ContourPoint" />
+      </Parameters>
+      <Docs>
+        <param name="point1">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />のインスタンスと比較する<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />によって提供される、 <c>point2</c>引数。</param>
+        <param name="point2">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />のインスタンスと比較する<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />によって提供される、 <c>point1</c>引数。</param>
+        <summary>2 つのインスタンスが決定の<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />が等しくないです。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Speech.Synthesis.TtsEngine.ContourPoint" />インスタンスによって参照される<paramref name="point1" />と<paramref name="point2" />が等しいかどうか、それ以外の場合を返します<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Speech.Synthesis.TtsEngine.ContourPoint.Equals%28System.Speech.Synthesis.TtsEngine.ContourPoint%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public float Start { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Start" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ContourPoint.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Single" />声の高さの変更を適用するポイントを指定する、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />です。 これの実行時間の経過時間の割合で示されますが、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />点に注意します。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間位置より小さい 0% か 100% は無視されますよりも大きい値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

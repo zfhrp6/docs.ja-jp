@@ -1,0 +1,633 @@
+<Type Name="FormsAuthenticationConfiguration" FullName="System.Web.Configuration.FormsAuthenticationConfiguration">
+  <TypeSignature Language="C#" Value="public sealed class FormsAuthenticationConfiguration : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormsAuthenticationConfiguration extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.FormsAuthenticationConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションを使用する構成、<see cref="T:System.Web.Configuration.AuthenticationMode" />モダリティを形成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスをプログラムでアクセスおよび変更する方法を提供する、`forms`構成の要素`authentication`セクションです。  
+  
+ この型が所属するグループの一部、 <xref:System.Web.Configuration.FormsAuthenticationCredentials>、 <xref:System.Web.Configuration.FormsAuthenticationUserCollection>、および<xref:System.Web.Configuration.FormsAuthenticationUser>型です。 コレクション型以外の型は、基になる構成タグに直接影響を与えます。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.FormsAuthenticationConfiguration>セクション プロパティによって定義された制限に従って、構成ファイルの関連するセクションに情報を書き込むことが<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.MachineToApplication>です。 階層では許可されませんレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 ただし、このクラスを使用すると、階層内の任意のレベルで構成情報を読み取る。 安全性とスケーラビリティは、データベースなど、外部のリポジトリを使用して、ユーザーの資格情報を保持することをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>既存の Web アプリケーションの構成ファイルからのオブジェクト。 このオブジェクトを使用して、そのメンバーにアクセスすることができます。 構成ファイルは、次のようにセットアップが含まれます。  
+  
+ **注**を使用する場合、`credentials`セクションに説明されているガイドラインに従うことを確認する[ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。 スケーラビリティとセキュリティを高めるには、外部データベースを使用するユーザーの資格情報を保管することをお勧めします。 アプリケーション セキュリティで保護された ASP.NET の構築の詳細については、Microsoft MSDN Web サイト (msdn.microsoft.com) を「ASP.NET アプリケーションをセキュリティで保護するの」検索し、"ビルドのセキュリティで保護された ASP.NET アプリケーション: 認証、承認、およびセキュリティ保護通信します。"  
+  
+```  
+<authentication mode="Forms">  
+  <forms name="MyAppCookie" loginUrl="login.aspx"  
+    defaultUrl="default.aspx"  
+    protection="Encryption" timeout="5" path="aspnetTest"  
+    slidingExpiration="false"  
+    cookieless="UseCookies" domain="domainName">  
+    <credentials passwordFormat="SHA1">  
+      <user name="aspnetuser1"  
+        password="5BAA61E4C9B93F3F0682250B6CF8331B7EE68FD8"/>  
+       <user name="aspnetuser2"  
+         password="E38AD214943DAAD1D64C102FAEC29DE4AFE9DA3D"/>  
+    </credentials>            
+  </forms>  
+</authentication>   
+```  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#1)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.FormsAuthenticationConfiguration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#2)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookieless">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookieMode Cookieless { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.HttpCookieMode Cookieless" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Cookieless" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieless", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォーム ベースの認証に cookie を使用するかどうかを示す値を設定します。</summary>
+        <value><see cref="T:System.Web.HttpCookieMode" /> 値のいずれか。 既定値は <see cref="F:System.Web.HttpCookieMode.UseDeviceProfile" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Cookieless%2A>プロパティは、フォーム ベースの認証がユーザー情報を交換する cookie を使用するかどうかを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.Cookieless%2A>プロパティです。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#5)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsAuthenticationCredentials Credentials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.FormsAuthenticationCredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("credentials")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsAuthenticationCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.FormsAuthenticationCredentials" />ユーザー名とパスワードのコレクション。</summary>
+        <value>A<see cref="T:System.Web.Configuration.FormsAuthenticationCredentials" />ユーザー名とパスワードを格納しているコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Credentials%2A>プロパティは、ユーザー名とフォーム ベースの認証時に使用するパスワードを取得します。  
+  
+> [!NOTE]
+>  セキュリティが必要な場合は、別のユーザー名とパスワードを格納する方法を使用してください。たとえば、データベースで次のように格納します。 このコレクションを使用する場合は、提供される暗号化機能を使用する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Credentials%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#14)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultUrl">
+      <MemberSignature Language="C#" Value="public string DefaultUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.DefaultUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultUrl", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の URL を設定します。</summary>
+        <value>認証後に、要求をリダイレクトする URL です。 既定値は、default.aspx です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.DefaultUrl%2A>ユーザー ログイン ページに直接アクセスする場合、または、リターン URL が指定されていない場合に使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例にアクセスする方法を示しています、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.DefaultUrl%2A>です。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#4)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("domain", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォーム認証 cookie で送信されるドメイン名を設定します。</summary>
+        <value>送信のドメインの名前はフォーム認証 cookie です。 既定値は、空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Domain%2A>認証クッキーを使用します。  
+  
+ このプロパティの値に対応<xref:System.Web.HttpCookie.Domain%2A?displayProperty=nameWithType>です。  
+  
+ この設定はよりも優先、`domain`フォーム認証 cookie のセクションの属性です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Domain%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#6)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCrossAppRedirects">
+      <MemberSignature Language="C#" Value="public bool EnableCrossAppRedirects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableCrossAppRedirects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.EnableCrossAppRedirects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableCrossAppRedirects", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証されたユーザーを他のアプリケーションの URL にリダイレクトできるかどうかを示す値を設定します。</summary>
+        <value>認証されたユーザーは、他のアプリケーションの Url にリダイレクトできる場合は true。それ以外の場合は false。 既定値は false です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.EnableCrossAppRedirects%2A>プロパティの値を設定できる、`forms`認証 セクションの構成セクション。  
+  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.EnableCrossAppRedirects%2A>によってプロパティがチェックされて、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.EnableCrossAppRedirects%2A>メソッドとき、現在のアプリケーションに含まれていない URL にリダイレクトします。 場合<xref:System.Web.Configuration.FormsAuthenticationConfiguration.EnableCrossAppRedirects%2A>が true の場合、リダイレクトは場合に実行で定義されているページにブラウザーをリダイレクトするそれ以外の場合、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  リダイレクトを実行するアプリケーション間で、ときに必ず必要がありますをいくつかの属性の`form`構成セクションが、認証済みのアプリケーション間で重複しています。 例および詳細については、次を参照してください。[アプリケーション間でのフォーム認証](http://msdn.microsoft.com/library/99e2f9e8-5b97-4a4d-a4ed-5f93276053b7)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.EnableCrossAppRedirects%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#8)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginUrl">
+      <MemberSignature Language="C#" Value="public string LoginUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoginUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.LoginUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("loginUrl", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求のリダイレクト URL を設定します。</summary>
+        <value>URL 要求が、ユーザーが認証されていないときにリダイレクトします。 既定値は login.aspx です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.LoginUrl%2A>プロパティは、ユーザーが認証されていない場合、またはない有効な認証 cookie が存在要求のリダイレクト URL を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例にアクセスする方法を示しています、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.LoginUrl%2A>です。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#3)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie の名前を設定します。</summary>
+        <value>要求の認証に使用する HTTP cookie の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例にアクセスする方法を示しています、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.Name%2A>プロパティのコード例を参照、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#21](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.aspx.cs#21)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.aspx.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("path", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie のパスを設定します。</summary>
+        <value>認証に使用する HTTP クッキーのパス。 既定値は、スラッシュ (/)、Web アプリケーションのルートを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Path%2A>プロパティは、認証 cookie が存在し、認証 cookie 自体と共に送信されることを示します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Path%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#9)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Protection">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsProtectionEnum Protection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.FormsProtectionEnum Protection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Protection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("protection", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsProtectionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie の暗号化に使用される暗号化の種類を設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.FormsProtectionEnum" /> 列挙値のいずれか。 既定値は <see langword="All" /> です。  
+  
+ **注**データ検証と cookie を保護するために暗号化の両方の場合、このプロパティの既定値を使用してください。 このオプションは、に基づいて設定されているデータ検証アルゴリズムを使用して、<see langword="machineKey" />です。 TRIPLE-DES (3 des) が使用の暗号化、使用可能な場合、キーが十分に長い (48 バイト以上)。  
+  
+ Cookie の保護を向上させることがありますも設定する、<see cref="P:System.Web.Configuration.FormsAuthenticationConfiguration.RequireSSL" />に<see langword="true" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Protection%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#11)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireSSL">
+      <MemberSignature Language="C#" Value="public bool RequireSSL { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireSSL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.RequireSSL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requireSSL", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証情報を送信するときに Secure Sockets Layer (SSL) 接続が必要かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SSL 接続が必要な場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.FormsAuthenticationConfiguration.RequireSSL%2A>は`true`、Web アプリケーションは、SSL 接続は使用しないすべてのフォーム認証要求を拒否します。  
+  
+   
+  
+## Examples  
+ 次のコード例にアクセスする方法を示しています、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.RequireSSL%2A>プロパティのコード例を参照、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#2)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlidingExpiration">
+      <MemberSignature Language="C#" Value="public bool SlidingExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SlidingExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.SlidingExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("slidingExpiration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証スライディング期限を設定します。</summary>
+        <value>
+          <see langword="true" />スライド式有効期限が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Configuration.FormsAuthenticationConfiguration.SlidingExpiration%2A>に設定されている`true`、認証 cookie が有効である期間が期限切れにリセット時<xref:System.Web.Configuration.FormsAuthenticationConfiguration.Timeout%2A>プロパティの値。 これは、タイムアウト時間の半分が経過した後、ユーザーが参照する場合に発生します。 たとえば、スライド式有効期限を使用して、20 分間の有効期限を設定した場合は、ユーザーが 2時 00分 PM に、サイトを参照してくださいし、午後 2 時 20 分に期限切れに設定されている cookie を受信することができます。 有効期限は、ユーザー 2時 10分 PM の後に、サイトにアクセスする場合にのみ更新されます。 2時 09分 PM に、サイトにアクセスするユーザー、有効期限の時間の半分が渡されていないため、cookie は更新されません。 待機して 12 分、午後 2時 21分サイトにアクセスする、cookie が有効期限が切れてされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.SlidingExpiration%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#7)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TicketCompatibilityMode">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.TicketCompatibilityMode TicketCompatibilityMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.TicketCompatibilityMode TicketCompatibilityMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.TicketCompatibilityMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("ticketCompatibilityMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TicketCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチケットの有効期限の日付を世界協定時刻 (UTC) または現地時刻を使用するかどうかを示す値を設定します。</summary>
+        <value>チケットの有効期限日互換モードです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、既定値は現地時刻、<xref:System.Web.Configuration.TicketCompatibilityMode.Framework20>列挙値。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.TicketCompatibilityMode>  
+  
+ [フォーム要素の認証 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/8163b8b5-ea6c-46c8-b5a9-c4c3de31c0b3)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public TimeSpan Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationConfiguration.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanMinutesConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("timeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:01:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証のタイムアウトを設定します。</summary>
+        <value>時間 (分)、認証の有効期限が切れるまでの量。 既定値は 30 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationConfiguration.Timeout%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#10)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

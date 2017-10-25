@@ -1,0 +1,158 @@
+<Type Name="ContentLocatorPart" FullName="System.Windows.Annotations.ContentLocatorPart">
+  <TypeSignature Language="C#" Value="public sealed class ContentLocatorPart : System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContentLocatorPart extends System.Object implements class System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.ContentLocatorPart" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンテンツの項目を識別する名前と値のペアのセットを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentLocatorPart (System.Xml.XmlQualifiedName partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorPart.#ctor(System.Xml.XmlQualifiedName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="partType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="partType">型名と名前空間を<see cref="T:System.Windows.Annotations.ContentLocatorPart" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.ContentLocatorPart" />指定された型名と名前空間を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="partType" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">文字列<paramref name="partType" />です。<see cref="P:System.Xml.XmlQualifiedName.Name" /> または<paramref name="partType" />です。<see cref="P:System.Xml.XmlQualifiedName.Namespace" /> (または両方) は<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorPart.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Annotations.ContentLocatorPart" /> の変更可能な詳細コピーの複製を作成します。</summary>
+        <returns>この <see cref="T:System.Windows.Annotations.ContentLocatorPart" /> の変更可能な詳細コピーの複製。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Annotations.ContentLocatorPart.Clone%2A>メソッドの変更可能なコピーを作成する固定<xref:System.Windows.Freezable>オブジェクト。  便宜上、この<xref:System.Windows.Annotations.ContentLocatorPart.Clone%2A>メソッド厳密に型指定された実装が継承されたバージョンをシャドウします。  詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ 複製された<xref:System.Windows.Annotations.ContentLocatorPart>の<xref:System.Windows.Freezable.IsFrozen%2A>プロパティ`false`場合でもこのソース<xref:System.Windows.Annotations.ContentLocatorPart>の<xref:System.Windows.Freezable.IsFrozen%2A>プロパティは、`true.`  
+  
+ 依存関係プロパティをコピーするときに<xref:System.Windows.Annotations.ContentLocatorPart.Clone%2A>(ただし、それらが解決されない場合があります) にリソース参照とデータ バインディングをコピーできませんアニメーションまたはアニメーションの現在の値はコピーされませんが、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorPart.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">等しいかどうかを比較する部分。</param>
+        <summary>示す値を返すかどうか、指定された<see cref="T:System.Windows.Annotations.ContentLocatorPart" />はこれと同じ<see cref="T:System.Windows.Annotations.ContentLocatorPart" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Annotations.ContentLocatorPart.NameValuePairs" />両方のパーツ内で同じである、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorPart.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この部分のハッシュ コードを返します。</summary>
+        <returns>この部分のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameValuePairs">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; NameValuePairs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; NameValuePairs" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.ContentLocatorPart.NameValuePairs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この部分を定義する名前/値ペアのコレクションを取得します。</summary>
+        <value>これを定義する名前/値ペアのコレクション<see cref="T:System.Windows.Annotations.ContentLocatorPart" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartType">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName PartType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName PartType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.ContentLocatorPart.PartType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パートの名前空間と型の名前を取得します。</summary>
+        <value>型の名前と、一部の名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される型名と名前空間は、最初に定義されたパラメーターを<xref:System.Windows.Annotations.ContentLocatorPart.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

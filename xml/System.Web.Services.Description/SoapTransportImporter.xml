@@ -1,0 +1,116 @@
+<Type Name="SoapTransportImporter" FullName="System.Web.Services.Description.SoapTransportImporter">
+  <TypeSignature Language="C#" Value="public abstract class SoapTransportImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapTransportImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.SoapTransportImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービスに SOAP 伝送プロトコルをインポートする派生クラスの基本クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このクラスがユーザー定義のクラスの基底クラスとして機能するように設計されていますが、XML Web サービスの現在の実装は、このようなユーザー定義のクラスをサポートしていません。  
+  
+ XML Web サービス用のプロトコルを指定する方法の詳細については、次を参照してください[&#91;\< 。topic://cpconbuildingaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c). Web サービス記述言語 (WSDL) に関する詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.Services.Description.SoapTransportImporter" /> から継承する場合は、<see cref="M:System.Web.Services.Description.SoapTransportImporter.IsSupportedTransport(System.String)" /> メンバーと <see cref="M:System.Web.Services.Description.SoapTransportImporter.ImportClass" /> メンバーをオーバーライドする必要があります。  
+  
+ これらのメンバーの既定の実装には、アクションは実行しません。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapTransportImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapTransportImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.SoapTransportImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportClass">
+      <MemberSignature Language="C#" Value="public abstract void ImportClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportClass() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapTransportImporter.ImportClass" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドに含まれている情報を使用して派生クラスでオーバーライドされると、<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクト モデル (を介して使用できる、<see cref="P:System.Web.Services.Description.SoapTransportImporter.ImportContext" />プロパティ) をトランスポートに固有のコードが生成されるクラスに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportContext">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapProtocolImporter ImportContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.SoapProtocolImporter ImportContext" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapTransportImporter.ImportContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapProtocolImporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />インポート操作を実行します。</summary>
+        <value>参照、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />インポート操作を実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、このプロパティを使用してなど、現在のインポート コンテキストに関する詳細情報を取得することができます、<xref:System.Web.Services.Description.ServiceDescription>オブジェクト モデル、現在のクラス名、または現在のメソッド名。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedTransport">
+      <MemberSignature Language="C#" Value="public abstract bool IsSupportedTransport (string transport);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSupportedTransport(string transport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapTransportImporter.IsSupportedTransport(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transport" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="transport">チェックするトランスポート プロトコルを表す URI。</param>
+        <summary>派生クラスでオーバーライドされると、このメソッドは、XML Web サービスによって、指定されたトランスポート プロトコルがサポートされているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、トランスポート プロトコルがサポートされています。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

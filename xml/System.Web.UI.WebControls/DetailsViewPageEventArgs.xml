@@ -1,0 +1,110 @@
+<Type Name="DetailsViewPageEventArgs" FullName="System.Web.UI.WebControls.DetailsViewPageEventArgs">
+  <TypeSignature Language="C#" Value="public class DetailsViewPageEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewPageEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewPageEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.DetailsView.PageIndexChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView>昇給を制御、 <xref:System.Web.UI.WebControls.DetailsView.PageIndexChanging> 、ページャー ボタンをクリックしたときにイベント (ボタンがその`CommandName`プロパティを「ページ」に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、ページング操作を処理します。 これにより、このイベントが発生するたびに、ページング操作の取り消しなどのカスタムのルーチンを実行するイベント ハンドラーを提供できます。  
+  
+> [!NOTE]
+>  ページャー ボタンに通常のページャー行にある、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ A<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs>により、ユーザーが選択したページのインデックスを確認して、ページング操作を取り消す必要があるかどうかを示すために、イベント ハンドラーにオブジェクトが渡されます。 ユーザーが選択したページのインデックスを確認するには<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs.NewPageIndex%2A>プロパティです。 ページング操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs>オブジェクトを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewPageEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs>オブジェクトのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.DetailsView.PageIndexChanging>ページング操作を取り消す、ユーザーがいるときに別のページに移動しようとしたときにイベントを<xref:System.Web.UI.WebControls.DetailsView>コントロールが編集モードにします。  
+  
+ [!code-aspx-csharp[DetailsViewPageEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewPageEventArgs/CS/detailsviewpageeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewPageEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewPageEventArgs/VB/detailsviewpageeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewPageEventArgs (int newPageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 newPageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewPageEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newPageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="newPageIndex">表示する新しいページのインデックス。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DetailsViewPageEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs.NewPageIndex%2A>|`newPageIndex` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewPageIndex">
+      <MemberSignature Language="C#" Value="public int NewPageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewPageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewPageEventArgs.NewPageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示する新しいページのインデックス、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</summary>
+        <value>表示する新しいページのインデックス、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView.PageIndexChanging>イベントが発生する前に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、ページング操作を実行、<xref:System.Web.UI.WebControls.DetailsView.PageIndex%2A>コントロールのプロパティが、以前に表示されるページのインデックスが含まれ、ユーザーが選択したページのインデックスを決定するのには使用できません。 使用して、<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs.NewPageIndex%2A>プロパティ ページのインデックスを確認します。 このプロパティを使用して、プログラムで別の値に設定することによって、ユーザーが選択したページのインデックスをオーバーライドすることができますも。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewPageEventArgs.NewPageIndex%2A>プロパティをユーザーが選択したページのインデックスを確認します。  
+  
+ [!code-aspx-csharp[DetailsViewPageEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewPageEventArgs/CS/detailsviewpageeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewPageEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewPageEventArgs/VB/detailsviewpageeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

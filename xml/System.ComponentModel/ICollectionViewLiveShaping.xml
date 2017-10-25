@@ -1,0 +1,250 @@
+<Type Name="ICollectionViewLiveShaping" FullName="System.ComponentModel.ICollectionViewLiveShaping">
+  <TypeSignature Language="C#" Value="public interface ICollectionViewLiveShaping" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICollectionViewLiveShaping" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ICollectionViewLiveShaping" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>並べ替え、グループ化、およびフィルター処理を有効にするプロパティを定義、<see cref="T:System.Windows.Data.CollectionView" />リアルタイムでします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに live 並べ替え、グループ化、またはフィルターを有効にすると、<xref:System.Windows.Data.CollectionView>内のデータの位置を並べ替え、<xref:System.Windows.Data.CollectionView>データが変更された日時。  たとえば、アプリケーションが <xref:System.Windows.Controls.DataGrid> を使用して株式市場の株式を一覧表示し、株式が株価によって並べ替えられるとします。  株式の <xref:System.Windows.Data.CollectionView> でライブ並べ替えが有効な場合、株式が別の株式の価格を上回るか下回ると、<xref:System.Windows.Controls.DataGrid> における株式の位置が移動します。  
+  
+ <xref:System.Windows.Data.ListCollectionView>、 <xref:System.Windows.Data.BindingListCollectionView>、および<xref:System.Windows.Controls.ItemCollection>クラスで実装、<xref:System.ComponentModel.ICollectionViewLiveShaping>インターフェイスです。 <xref:System.Windows.Data.CollectionViewSource>クラスによって定義されたプロパティを実装も<xref:System.ComponentModel.ICollectionViewLiveShaping>XAML でのプロパティの設定を有効にします。  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ このインターフェイスを実装して、カスタムの<xref:System.Windows.Data.CollectionView>並べ替え、グループ化、およびリアルタイムでデータをフィルター処理をサポートするためにします。 <xref:System.Windows.Data.CollectionView>並べ替えを実装することができます、グループ化、およびフィルター処理するか、それ自体を委任できますを基になるコレクションなどの別のオブジェクトのうちの 1 つ以上です。 整形の操作を委任する場合、<xref:System.Windows.Data.CollectionView>ライブ形成が有効になっているかどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 このケースでは、適切な設定**に従って*** プロパティ`false`です。  場合、 <xref:System.Windows.Data.CollectionView> 、適切な設定できますが、デリゲート オブジェクトは、ライブ形成をサポートするかどうかを知っている`IsLive`* 既知の値をプロパティです。  それ以外の場合、<xref:System.Windows.Data.CollectionView>設定する必要があります、 `IsLive`* プロパティ`null`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanChangeLiveFiltering">
+      <MemberSignature Language="C#" Value="public bool CanChangeLiveFiltering { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanChangeLiveFiltering" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.CanChangeLiveFiltering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューがデータのリアルタイム フィルター処理のオン/オフ切り替えをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          コレクション ビューがライブ フィルター処理のオン/オフ切り替えをサポートしている場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ <xref:System.Windows.Data.CollectionView>実装ライブできます自体をフィルター処理または基になるコレクションなどの別のオブジェクトにライブ フィルター処理を委任することができます。 ライブのフィルター処理を委任する場合、<xref:System.Windows.Data.CollectionView>が有効かどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 この場合、設定、<xref:System.ComponentModel.ICollectionViewLiveShaping.CanChangeLiveFiltering%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanChangeLiveGrouping">
+      <MemberSignature Language="C#" Value="public bool CanChangeLiveGrouping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanChangeLiveGrouping" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.CanChangeLiveGrouping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューが、オンまたはオフに、オンにするリアルタイムでデータのグループ化をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクション ビューは、オンまたはオフ; オンにするライブのグループ化をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ <xref:System.Windows.Data.CollectionView>実装ライブできます自体をグループ化または基になるコレクションなどの別のオブジェクトへのライブのグループ化を委任することができます。 ライブのグループ化を委任する場合、<xref:System.Windows.Data.CollectionView>が有効かどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 この場合、設定、<xref:System.ComponentModel.ICollectionViewLiveShaping.CanChangeLiveGrouping%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanChangeLiveSorting">
+      <MemberSignature Language="C#" Value="public bool CanChangeLiveSorting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanChangeLiveSorting" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.CanChangeLiveSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューが同時にリアルタイムでデータの並べ替えを有効または無効をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクション ビューは、オンまたはオフ; 上のライブの並べ替えをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ <xref:System.Windows.Data.CollectionView>実装ライブできます自体の並べ替えまたは基になるコレクションなどの別のオブジェクトにライブ並べ替えを委任することができます。 ライブ並べ替えを委任する場合、<xref:System.Windows.Data.CollectionView>が有効かどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 この場合、設定、<xref:System.ComponentModel.ICollectionViewLiveShaping.CanChangeLiveSorting%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiveFiltering">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLiveFiltering { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLiveFiltering" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.IsLiveFiltering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リアルタイムでデータをフィルター処理が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リアルタイムでデータをフィルター処理が有効である場合<see langword="false" />ライブ フィルター処理が有効でない場合です。<see langword="null" />コレクション ビューがライブ フィルター処理を実装するかどうかを確認できない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ <xref:System.Windows.Data.CollectionView>実装ライブできます自体をフィルター処理または基になるコレクションなどの別のオブジェクトにライブ フィルター処理を委任することができます。 ライブのフィルター処理を委任する場合、<xref:System.Windows.Data.CollectionView>が有効かどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 場合、<xref:System.Windows.Data.CollectionView>サポート ライブ フィルター処理、デリゲート オブジェクトを設定するかどうかを知っている、<xref:System.ComponentModel.ICollectionViewLiveShaping.IsLiveFiltering%2A>プロパティを既知の値にします。  それ以外の場合、設定<xref:System.ComponentModel.ICollectionViewLiveShaping.IsLiveFiltering%2A>に`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiveGrouping">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLiveGrouping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLiveGrouping" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.IsLiveGrouping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リアルタイムでデータをグループ化が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リアルタイムでデータをグループ化が有効にします。<see langword="false" />ライブのグループ化が有効でない場合<see langword="null" />コレクション ビューがライブのグループ化を実装するかどうかを確認できない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ <xref:System.Windows.Data.CollectionView>実装ライブできます自体をグループ化または基になるコレクションなどの別のオブジェクトへのライブのグループ化を委任することができます。 ライブのグループ化を委任する場合、<xref:System.Windows.Data.CollectionView>が有効かどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 場合、<xref:System.Windows.Data.CollectionView>サポート live グループ化、デリゲート オブジェクトを設定するかどうかを知っている、<xref:System.ComponentModel.ICollectionViewLiveShaping.IsLiveGrouping%2A>プロパティを既知の値にします。  それ以外の場合、設定<xref:System.ComponentModel.ICollectionViewLiveShaping.IsLiveGrouping%2A>に`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiveSorting">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLiveSorting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLiveSorting" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.IsLiveSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リアルタイムで並べ替えが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リアルタイムでデータを並べ替える場合は有効です。<see langword="false" />ライブ並べ替えが有効でない場合です。<see langword="null" />コレクション ビューがライブ並べ替えを実装するかどうかを確認できない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ <xref:System.Windows.Data.CollectionView>実装ライブできます自体の並べ替えまたは基になるコレクションなどの別のオブジェクトにライブ並べ替えを委任することができます。 ライブ並べ替えを委任する場合、<xref:System.Windows.Data.CollectionView>が有効かどうかを制御がない可能性があります。 <xref:System.Windows.Data.CollectionView>代行させるオブジェクトの動作を受け入れる必要があります。 場合、<xref:System.Windows.Data.CollectionView>サポート ライブ並べ替え、デリゲート オブジェクトを設定するかどうかを知っている、<xref:System.ComponentModel.ICollectionViewLiveShaping.IsLiveSorting%2A>プロパティを既知の値にします。  それ以外の場合、設定<xref:System.ComponentModel.ICollectionViewLiveShaping.IsLiveSorting%2A>に`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveFilteringProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;string&gt; LiveFilteringProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;string&gt; LiveFilteringProperties" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.LiveFilteringProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リアルタイムでデータをフィルター処理に参加しているプロパティを指定する文字列のコレクションを取得します。</summary>
+        <value>リアルタイムでデータをフィルター処理に参加しているプロパティを指定する文字列のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveGroupingProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;string&gt; LiveGroupingProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;string&gt; LiveGroupingProperties" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.LiveGroupingProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リアルタイムでデータをグループ化に参加しているプロパティを指定する文字列のコレクションを取得します。</summary>
+        <value>リアルタイムでデータをグループ化に参加しているプロパティを指定する文字列のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveSortingProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;string&gt; LiveSortingProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;string&gt; LiveSortingProperties" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ICollectionViewLiveShaping.LiveSortingProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リアルタイムでデータの並べ替えに参加しているプロパティを指定する文字列のコレクションを取得します。</summary>
+        <value>リアルタイムでデータの並べ替えに参加しているプロパティを指定する文字列のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

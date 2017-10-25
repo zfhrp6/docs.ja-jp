@@ -1,0 +1,148 @@
+<Type Name="IApplicationSettingsProvider" FullName="System.Configuration.IApplicationSettingsProvider">
+  <TypeSignature Language="C#" Value="public interface IApplicationSettingsProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IApplicationSettingsProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.IApplicationSettingsProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>クライアント ベースのアプリケーションの設定プロバイダーの拡張機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション設定アーキテクチャから派生したクラスであるカスタム設定プロバイダーを作成することでアプリケーションの設定用にカスタム ストレージ機構を提供することができます<xref:System.Configuration.SettingsProvider>です。 このようなクラスには、格納およびプロパティを取得するための基本的な機能が含まれています。 ただし、実装することによって追加の標準化された機能を追加することができます、<xref:System.Configuration.IApplicationSettingsProvider>カスタム設定プロバイダーのインターフェイスです。 このインターフェイスには、主に設定プロバイダーをより的確にアプリケーションのバージョン変更処理を有効にする 3 つのメソッドが含まれています。 通常、設定プロバイダーは、次の状況を予測するとは別に、アプリケーションの異なるバージョンのアプリケーション設定が格納されます。  
+  
+-   アプリケーションの異なるバージョンのサイド バイ サイド実行します。  
+  
+-   アプリケーションをアップグレードする場合は、アプリケーションの設定を保持します。  
+  
+-   現在使用されているバージョンの既定値にアプリケーションの設定をリセットしています。  
+  
+ <xref:System.Configuration.LocalFileSettingsProvider> クラスは、<xref:System.Configuration.IApplicationSettingsProvider> インターフェイスを実装します。 同じメソッドのセットに含まれる<xref:System.Configuration.IApplicationSettingsProvider>にも存在、<xref:System.Configuration.ApplicationSettingsBase>にアプリケーション設定のラッパーとその設定プロバイダー間の定義済みの通信チャネルを確立するクラス。  
+  
+> [!NOTE]
+>  このインターフェイスはオプションです。 プロバイダーがこのインターフェイスを実装していない場合は、このインターフェイスによって定義されたメソッドのいずれかにアクセスを試みる場合通知することがなく設定インフラストラクチャが失敗します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetPreviousVersion">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsPropertyValue GetPreviousVersion (System.Configuration.SettingsContext context, System.Configuration.SettingsProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.SettingsPropertyValue GetPreviousVersion(class System.Configuration.SettingsContext context, class System.Configuration.SettingsProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IApplicationSettingsProvider.GetPreviousVersion(System.Configuration.SettingsContext,System.Configuration.SettingsProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="property" Type="System.Configuration.SettingsProperty" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <param name="property"><see cref="T:System.Configuration.SettingsProperty" />値が返されます。</param>
+        <summary>同じアプリケーションの以前のバージョンの指定した設定のプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Configuration.SettingsPropertyValue" />最後に、アプリケーションの以前のバージョンに設定された、指定したプロパティの設定の値を含むまたは<see langword="null" />設定が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Configuration.IApplicationSettingsProvider.GetPreviousVersion%2A>メソッドと組み合わせて、<xref:System.Configuration.IApplicationSettingsProvider.Upgrade%2A>中または新しいバージョンのアプリケーションのインストール後に、アプリケーションの設定を移行する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityException"><see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />権限です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset (System.Configuration.SettingsContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset(class System.Configuration.SettingsContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IApplicationSettingsProvider.Reset(System.Configuration.SettingsContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <summary>既定値に指定されたアプリケーションに関連付けられているアプリケーションの設定をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IApplicationSettingsProvider.Reset%2A>メソッドが、指定したアプリケーションの設定グループの格納された値を再初期化します。 これに対し、<xref:System.Configuration.DefaultSettingValueAttribute>格納されている値が存在しない場合、プロパティの初期化中に 1 つの設定のプロパティの既定値を提供します。  
+  
+ 設定プロバイダーは、適切な既定値が、アプリケーションの設定の指定したグループを決定します。 たとえば、実装では、<xref:System.Configuration.LocalFileSettingsProvider>で共有値にユーザー スコープ設定をリセット、`application.exe.config`ファイルです。 これに対し、アプリケーション スコープ設定を変更せずに任せます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityException"><see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />権限です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Upgrade">
+      <MemberSignature Language="C#" Value="public void Upgrade (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyCollection properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Upgrade(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyCollection properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IApplicationSettingsProvider.Upgrade(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="properties" Type="System.Configuration.SettingsPropertyCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <param name="properties">A<see cref="T:System.Configuration.SettingsPropertyCollection" />取得するのには、値が設定プロパティのグループを含むです。</param>
+        <summary>プロバイダーにアプリケーションをアップグレードすることを示します。 これは、プロバイダーに、必要に応じて、保存された設定をアップグレードする機会を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、同じアプリケーションの異なるバージョンのサイド バイ サイド インストールと実行に使用できます。 アプリケーションの設定プロバイダーでは、分離するとは別にアプリケーションの各バージョンのアプリケーション設定を格納します。 ただし、現在のバージョンにアプリケーションの以前のバージョンからの設定を移行することがあります。 この移行機能を提供するには、<xref:System.Configuration.IApplicationSettingsProvider.Upgrade%2A>から派生したクラスで実装されているメソッド<xref:System.Configuration.SettingsProvider>です。  
+  
+ 使用することができます、<xref:System.Configuration.IApplicationSettingsProvider.Upgrade%2A>メソッドと組み合わせて、<xref:System.Configuration.IApplicationSettingsProvider.GetPreviousVersion%2A>中または新しいバージョンのアプリケーションのインストール後に、アプリケーションの設定を移行する方法です。  
+  
+ すべてのアプリケーションを設定するには、このメソッドを抑制する必要があります、<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>が適用される、または設定による全体のラッパー クラスから派生する<xref:System.Configuration.ApplicationSettingsBase>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityException"><see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />権限です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

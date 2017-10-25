@@ -1,0 +1,237 @@
+<Type Name="ObjectAce" FullName="System.Security.AccessControl.ObjectAce">
+  <TypeSignature Language="C#" Value="public sealed class ObjectAce : System.Security.AccessControl.QualifiedAce" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectAce extends System.Security.AccessControl.QualifiedAce" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.ObjectAce" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.QualifiedAce</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ディレクトリ サービス オブジェクトへのアクセスを制御します。 このクラスは、ディレクトリ オブジェクトに関連付けられているアクセス制御エントリ (ACE) を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectAce (System.Security.AccessControl.AceFlags aceFlags, System.Security.AccessControl.AceQualifier qualifier, int accessMask, System.Security.Principal.SecurityIdentifier sid, System.Security.AccessControl.ObjectAceFlags flags, Guid type, Guid inheritedType, bool isCallback, byte[] opaque);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.AccessControl.AceFlags aceFlags, valuetype System.Security.AccessControl.AceQualifier qualifier, int32 accessMask, class System.Security.Principal.SecurityIdentifier sid, valuetype System.Security.AccessControl.ObjectAceFlags flags, valuetype System.Guid type, valuetype System.Guid inheritedType, bool isCallback, unsigned int8[] opaque) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.ObjectAce.#ctor(System.Security.AccessControl.AceFlags,System.Security.AccessControl.AceQualifier,System.Int32,System.Security.Principal.SecurityIdentifier,System.Security.AccessControl.ObjectAceFlags,System.Guid,System.Guid,System.Boolean,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="aceFlags" Type="System.Security.AccessControl.AceFlags" />
+        <Parameter Name="qualifier" Type="System.Security.AccessControl.AceQualifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.ObjectAceFlags" />
+        <Parameter Name="type" Type="System.Guid" />
+        <Parameter Name="inheritedType" Type="System.Guid" />
+        <Parameter Name="isCallback" Type="System.Boolean" />
+        <Parameter Name="opaque" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="aceFlags">新しいアクセス制御エントリ (ACE: Access Control Entry) の継承、継承の反映、および監査の各条件。</param>
+        <param name="qualifier">新しい ACE の用途。</param>
+        <param name="accessMask">ACE のアクセス マスク。</param>
+        <param name="sid">新しい ACE に関連付けられている <see cref="T:System.Security.Principal.SecurityIdentifier" />。</param>
+        <param name="flags">かどうか、<c>型</c>と<c>inheritedType</c>パラメーターが有効なオブジェクトの Guid を格納します。</param>
+        <param name="type">新しい ACE を適用するオブジェクトの種類を識別する GUID。</param>
+        <param name="inheritedType">新しい ACE を継承できるオブジェクトの種類を識別する GUID。</param>
+        <param name="isCallback">
+          新しい ACE がコールバック型の ACE である場合は <see langword="true" />。</param>
+        <param name="opaque">新しい ACE に関連付けられている不透明なデータ。 これは、コールバック ACE 型だけに使用できます。 この配列の長さは <see cref="M:System.Security.AccessControl.ObjectAce.MaxOpaqueLength(System.Boolean)" /> メソッドの戻り値以下である必要があります。</param>
+        <summary>
+          <see cref="T:System.Security.AccessControl.ObjectAce" /> クラスの新しいインスタンスを開始します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">修飾子パラメーターに、無効な値が含まれているか、または不透明なパラメーターの値の長さが <see cref="M:System.Security.AccessControl.ObjectAce.MaxOpaqueLength(System.Boolean)" /> メソッドの戻り値を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryLength">
+      <MemberSignature Language="C#" Value="public override int BinaryLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BinaryLength" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.ObjectAce.BinaryLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトのバイナリ表現の長さ (バイト単位) を取得します。 <see cref="M:System.Security.AccessControl.ObjectAce.GetBinaryForm(System.Byte[],System.Int32)" /> メソッドを使用して ACL をバイナリ配列にマーシャリングする前に、この長さを使用する必要があります。</summary>
+        <value>現在の <see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトのバイナリ表現の長さ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinaryForm">
+      <MemberSignature Language="C#" Value="public override void GetBinaryForm (byte[] binaryForm, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetBinaryForm(unsigned int8[] binaryForm, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.ObjectAce.GetBinaryForm(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm"><see cref="T:System.Security.AccessControl.ObjectAce" /> のコンテンツのマーシャリング先のバイト配列。</param>
+        <param name="offset">マーシャリングの開始位置を表すオフセット。</param>
+        <summary><see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトのコンテンツを、指定したオフセットを開始位置として、指定したバイト配列にマーシャリングします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> は負の値であるか、または <see cref="T:System.Security.AccessControl.ObjectAce" /> 全体を <paramref name="array" /> にコピーするには大きすぎる値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritedObjectAceType">
+      <MemberSignature Language="C#" Value="public Guid InheritedObjectAceType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InheritedObjectAceType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.ObjectAce.InheritedObjectAceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトが表すアクセス制御エントリ (ACE) を継承できるオブジェクト型の GUID を取得または設定します。</summary>
+        <value>この <see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトが表すアクセス制御エントリ (ACE) を継承できるオブジェクト型の GUID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Security.AccessControl.ObjectAce.ObjectAceFlags%2A>パラメーターに値が含まれていない<xref:System.Security.AccessControl.ObjectAceFlags.InheritedObjectAceTypePresent>、このプロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxOpaqueLength">
+      <MemberSignature Language="C#" Value="public static int MaxOpaqueLength (bool isCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 MaxOpaqueLength(bool isCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.ObjectAce.MaxOpaqueLength(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isCallback" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isCallback"><see cref="T:System.Security.AccessControl.ObjectAce" /> がコールバック ACE 型の場合 true。</param>
+        <summary>コールバック アクセス制御エントリ (ACE) の非透過データ BLOB の許容最大長 (バイト単位) を返します。</summary>
+        <returns>コールバック アクセス制御エントリ (ACE) の非透過データ BLOB の許容最大長 (バイト単位)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectAceFlags">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.ObjectAceFlags ObjectAceFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.ObjectAceFlags ObjectAceFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.ObjectAce.ObjectAceFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.ObjectAceFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.AccessControl.ObjectAce.ObjectAceType" /> および <see cref="P:System.Security.AccessControl.ObjectAce.InheritedObjectAceType" /> プロパティが正しいオブジェクトの種類を特定する値を含んでいるかどうかを示すフラグを取得または設定します。</summary>
+        <value>論理 OR 演算と組み合わされる <see cref="T:System.Security.AccessControl.ObjectAceFlags" /> 列挙型の 1 つ以上のメンバー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectAceType">
+      <MemberSignature Language="C#" Value="public Guid ObjectAceType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ObjectAceType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.ObjectAce.ObjectAceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトに関連付けられているオブジェクト型の GUID を取得または設定します。</summary>
+        <value>この <see cref="T:System.Security.AccessControl.ObjectAce" /> オブジェクトに関連付けられているオブジェクト型の GUID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Security.AccessControl.ObjectAce.ObjectAceFlags%2A>パラメーターに値が含まれていない<xref:System.Security.AccessControl.ObjectAceFlags.ObjectAceTypePresent>、このプロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

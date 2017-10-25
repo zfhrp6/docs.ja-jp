@@ -1,0 +1,1333 @@
+<Type Name="Timeline" FullName="System.Windows.Media.Animation.Timeline">
+  <TypeSignature Language="C#" Value="public abstract class Timeline : System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Timeline extends System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.Timeline" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.RuntimeNameProperty("Name")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>時間のセグメントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムラインは、時間のセグメントを表します。  用意されているプロパティを使用して、そのセグメントの長さ、開始時間、繰り返し回数、時間の進行の速度などを指定できます。  
+  
+ Timeline クラスを継承するクラスには、アニメーションやメディアの再生などの追加機能が用意されています。 使用可能な特殊なタイムラインのさまざまな種類のいくつかの例を次に示します。  
+  
+-   **アニメーション**:<xref:System.Windows.Media.Animation.AnimationTimeline>出力値を生成するタイムラインの型です。 アニメーションをプロパティに関連付けるときに、アニメーションは、再生、それによって「してアニメーション化」プロパティの値を更新します。 アニメーションの概要については、次を参照してください。[アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/animation-overview.md)です。 アニメーションを適用するさまざまな方法については、次を参照してください。、[プロパティ アニメーションの技術概要](~/docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)です。  
+  
+-   **MediaTimelines**: A<xref:System.Windows.Media.MediaTimeline>メディア ファイルの再生を制御するタイムラインの型です。  
+  
+-   **Paralleltimeline**: A<xref:System.Windows.Media.Animation.ParallelTimeline>他のタイムラインをグループ化するタイムラインの型です。  
+  
+-   **ストーリー ボード**: A<xref:System.Windows.Media.Animation.Storyboard>は特殊な種類の<xref:System.Windows.Media.Animation.ParallelTimeline>オブジェクトとが含まれているタイムラインの情報を対象とするプロパティを提供します。 詳細については<xref:System.Windows.Media.Animation.Storyboard>、オブジェクトを参照してください、[ストーリー ボードの概要](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
+  
+ タイムラインの使用方法の詳細については、次を参照してください。、[アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/animation-overview.md)です。 タイムラインのタイミング機能の紹介を参照してください、[タイミング動作の概要](~/docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)です。  
+  
+## <a name="data-binding-and-animating-timelines"></a>データ バインディングとタイムラインがアニメーション化  
+ ほとんどのタイムラインのプロパティは、データ バインドまたはアニメーション化します。ただし、タイミング システムが動作するしくみ、により、他のデータと同様に動作しない場合はバインドされている、またはアニメーションのタイムライン データはバインドされているか、オブジェクトをアニメーション化します。 その動作を理解するのには、タイムラインのアクティブ化意味を理解するのに役立ちます。  
+  
+ タイムラインを適用すると、タイムラインとその子タイムラインのコピーが作成されます。 これらのコピーが固定されている (読み取り専用に変更) と<xref:System.Windows.Media.Animation.Clock>そこからオブジェクトが作成されます。 これらのクロックを対象のプロパティをアニメーション化する実際の作業を実行することをお勧めします。 タイムラインがあった場合は、データ バインドされているか、アニメーション化されている現在の値のスナップショットが行われた、クロックの作成時にします。 元のタイムライン可能性があります、継続的に変更する場合でもそのクロックされていません。  
+  
+ データ バインディングまたはアニメーションの変更を反映するためにタイムラインは、その時計を再生成する必要があります。 クロックは、自動的には再生成されません。 タイムラインの変更を適用するいくつかの方法を次に示します。  
+  
+-   タイムラインがまたはに属している場合、 <xref:System.Windows.Media.Animation.Storyboard>、ストーリー ボードを使用して、再適用して変更を反映してこれを行うことができます、<xref:System.Windows.Media.Animation.BeginStoryboard>または<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドです。 これには、アニメーションが再起動されるという副作用があります。 コードでは、使用することができます、<xref:System.Windows.Media.Animation.Storyboard.Seek%2A>ストーリー ボードを進める方法は、前の位置にバックアップします。  
+  
+-   プロパティを使用して、直接には、アニメーションを適用したかどうか、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを呼び出し、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを再度が変更されたアニメーションを渡します。  
+  
+-   クロック レベルで直接操作している場合は、新しいクロック セットを作成して適用し、それらを使って、生成されたクロックの以前のセットを置換します。  
+  
+ データの例には、アニメーションがバインドされているを参照してください、[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+## <a name="using-a-timeline-as-a-timer"></a>タイムラインをタイマーとして使用します。  
+ タイムラインのクロックは、関連付けられているイベント ハンドラーがある場合にのみ実行または (の場合、<xref:System.Windows.Media.Animation.AnimationClock>オブジェクト) のプロパティに関連付けられています。 この理由 (など)、これはお勧めしませんを使用すること、<xref:System.Windows.Media.Animation.Timeline>をタイマーとして。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Timeline ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.Timeline" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Timeline (Nullable&lt;TimeSpan&gt; beginTime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; beginTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.#ctor(System.Nullable{System.TimeSpan})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beginTime" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="beginTime">この時刻<see cref="T:System.Windows.Media.Animation.Timeline" />作業を開始する必要があります。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> プロパティに関するトピックを参照してください。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.Animation.Timeline" /> を使用して、<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Timeline (Nullable&lt;TimeSpan&gt; beginTime, System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; beginTime, valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.#ctor(System.Nullable{System.TimeSpan},System.Windows.Duration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beginTime" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="beginTime">この時刻<see cref="T:System.Windows.Media.Animation.Timeline" />作業を開始する必要があります。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> プロパティに関するトピックを参照してください。</param>
+        <param name="duration">繰り返しをカウントせずに、このタイムラインの再生時間の長さ。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> プロパティに関するトピックを参照してください。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.Animation.Timeline" /> と <see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> を使用して、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>  
+  
+ <xref:System.Windows.Media.Animation.Timeline.Duration%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Timeline (Nullable&lt;TimeSpan&gt; beginTime, System.Windows.Duration duration, System.Windows.Media.Animation.RepeatBehavior repeatBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; beginTime, valuetype System.Windows.Duration duration, valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.#ctor(System.Nullable{System.TimeSpan},System.Windows.Duration,System.Windows.Media.Animation.RepeatBehavior)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beginTime" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+        <Parameter Name="repeatBehavior" Type="System.Windows.Media.Animation.RepeatBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="beginTime">この時刻<see cref="T:System.Windows.Media.Animation.Timeline" />作業を開始する必要があります。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> プロパティに関するトピックを参照してください。</param>
+        <param name="duration">繰り返しをカウントせずに、このタイムラインの再生時間の長さ。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> プロパティに関するトピックを参照してください。</param>
+        <param name="repeatBehavior">このタイムラインは、いずれかのイテレーションとしての繰り返し動作<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />または繰り返し<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Duration" />です。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.RepeatBehavior" /> プロパティに関するトピックを参照してください。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.Animation.Timeline" /> 、指定したクラス<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" />、 <see cref="P:System.Windows.Media.Animation.Timeline.Duration" />、および<see cref="P:System.Windows.Media.Animation.Timeline.RepeatBehavior" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>  
+  
+ <xref:System.Windows.Media.Animation.Timeline.Duration%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccelerationRatio">
+      <MemberSignature Language="C#" Value="public double AccelerationRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 AccelerationRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムラインの割合を指定する値の設定を取得または<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />費やされた時間の経過を 0 から最大速度に加速します。</summary>
+        <value>0 ~ ~ 1 の間のタイムラインの割合を指定する値<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />費やされた時間の経過を 0 から最大速度に加速します。 タイムラインの <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> プロパティも設定されている場合、<see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> と <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> の合計は 1 以下である必要があります。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>プロパティを緩やかに変化を起動し、時間の経過と共にを高速化するアニメーションを作成します。 <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>プロパティは簡単操作の効果を作成するかより自然に見える移動を行うに役立ちます。 使用して、<xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>と<xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>の起動が遅い、アニメーションを作成するには、一緒にプロパティを高速化し、し、終了する前にもう一度速度が低下します。  
+  
+<a name="dependencyPropertyInfo_AccelerationRatio"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.AccelerationRatioProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> が 0 より小さいか、または 1 を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> と <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> の合計が 1 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccelerationRatioProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AccelerationRatioProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AccelerationRatioProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.AccelerationRatioProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllocateClock">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Media.Animation.Clock AllocateClock ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Windows.Media.Animation.Clock AllocateClock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.AllocateClock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Clock</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Windows.Media.Animation.Clock" />この<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <returns>このクロック<see cref="T:System.Windows.Media.Animation.Timeline" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Media.Animation.Timeline.CreateClock%2A>メソッドと、コードから直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装側<see cref="T:System.Windows.Media.Animation.Timeline" />クラス使用する必要がある対応するカスタム クロックにある場合に、このメソッドをオーバーライドする必要があります。 オーバーライドされたメソッドを作成し、継承されたクラスの新しいインスタンスを返す<see cref="T:System.Windows.Media.Animation.Clock" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoReverse">
+      <MemberSignature Language="C#" Value="public bool AutoReverse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoReverse" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.AutoReverse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>順方向の反復の完了後に、タイムラインを逆方向に再生するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />タイムラインは、各反復処理の最後に逆方向に再生する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>プロパティに設定されている`true`、タイムラインがで指定した時間の長さの 2 倍の再生、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>プロパティです。  
+  
+### <a name="autoreverse-and-repetitions"></a>AutoReverse と繰り返し  
+ ときにタイムラインの<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>プロパティに設定されている`true`とその<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>プロパティにより繰り返しますが、順方向の各反復の下位のイテレーションが続きます。 これにより、1 回の繰り返しです。 備えたタイムラインなど、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>の値`true`イテレーションに<xref:System.Windows.Media.Animation.RepeatBehavior.Count%2A>2 がプレイ転送 1 回、その逆の順序で、転送、し、再度後方です。  
+  
+<a name="dependencyPropertyInfo_AutoReverse"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.AutoReverseProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoReverseProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AutoReverseProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AutoReverseProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.AutoReverseProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.AutoReverse" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;TimeSpan&gt; BeginTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; BeginTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.BeginTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この設定を取得または<see cref="T:System.Windows.Media.Animation.Timeline" />作業を開始する必要があります。</summary>
+        <value>この時刻<see cref="T:System.Windows.Media.Animation.Timeline" />は、まず、その親の<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" />します。 このタイムラインがルート タイムラインの場合は、対話による開始時間 (タイムラインがトリガーされた時間) に対する相対的な時間になります。 この値は正の値、負の値、または<see langword="null" />;<see langword="null" />値決してタイムライン再生します。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>プロパティは、シーケンス内の再生のタイムラインを作成するために役立ちます。 を増やすことで、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>同じ親を共有する一連のタイムラインの、再生時間の時差を設定することができます。  
+  
+## <a name="negative-values"></a>負の値  
+ 負<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>値の原因、<xref:System.Windows.Media.Animation.Timeline>を過去の時間に開始できるように動作します。 たとえば、<xref:System.Windows.Media.Animation.Timeline>で、 <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> 2.5 負の値の秒と<xref:System.Windows.Media.Animation.Timeline.Duration%2A>5 秒間の中間に表示されます開始と終了します。  
+  
+## <a name="begintime-and-speedratio"></a>BeginTime と SpeedRatio  
+ 指定された期間、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>プロパティは、タイムラインの親の時間で測定されます。 備えたタイムラインなど、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>親が 5、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 2 の実際には、開始 2.5 秒後にします。  
+  
+ タイムライン独自の<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>設定は影響しません、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>です。 備えたタイムラインなど、 <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> 5 (秒単位) の<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>2、および親タイムラインでの<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>1 のない 2.5、5 秒後に起動します。  
+  
+<a name="dependencyPropertyInfo_BeginTime"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.BeginTimeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_BeginTime"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*object* <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>="[-][*days*.]*hours*:*minutes*:*seconds*[.*fractionalSeconds*]"/>  
+  
+ \- または  
+  
+ \<*object* <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>="[-][*days*.]*hours*:*minutes*"/>  
+  
+ \- または  
+  
+ \<*object* <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>="[-]*days*"/>  
+  
+ \- または  
+  
+ \<*オブジェクト* <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>="{[X:null マークアップ拡張機能](~/docs/framework/xaml-services/x-null-markup-extension.md)}"/>  
+  
+<a name="xamlValues_BeginTime"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ 角かっこ内の項目 (`[`と`]`) は省略可能です。  
+  
+ *日数*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ この日数の数を示す 0 以上の値は、時間を開始します。  
+  
+ *時間*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ これにより展開される時間数を表す 0 ~ 23 の範囲値は、時間を開始します。  
+  
+ *(分)*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ これにより展開される分単位の時間を表す 0 ~ 59 の範囲値は、時間を開始します。  
+  
+ *(秒)*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ これにより展開される秒数を表す 0 ~ 59 の範囲値は、時間を開始します。  
+  
+ *fractionalSeconds*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 秒の小数部を表す 1 ~ 7 桁の数字で構成される値。  
+  
+ 完全な<xref:System.TimeSpan>構文の「解説」セクションを参照してください、<xref:System.TimeSpan.Parse%2A>ページ。  
+  
+   
+  
+## Examples  
+ タイムラインの<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>プロパティは、タイムラインのアクティブな期間の開始を決定します。 タイムラインに、親タイムライン、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>プロパティは、その親の開始後に起動するタイムラインに要する時間を決定します。 タイムラインがルート タイムラインの場合 (、<xref:System.Windows.Media.Animation.Storyboard>など) では、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>プロパティは、タイムラインで再生がトリガーされた後の開始にかかる時間を決定します。  
+  
+ 次の例では、異なる複数の異なるタイムライン<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>設定します。  
+  
+ [!code-xaml[timingbehaviors_snip#_graphicsmm_BeginTimeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/BeginTimeExample.xaml#_graphicsmm_begintimeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTimeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BeginTimeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BeginTimeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.BeginTimeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Timeline Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.Timeline Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Timeline</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.Timeline" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Timeline CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.Timeline CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Timeline</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.Timeline" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="false" />場合でも、ソースの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="public event EventHandler Completed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Completed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Timeline.Completed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタイムラインの再生が完全に終了するときに発生します。 アクティブな期間にできなくなります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このタイムラインがタイムライン ツリーのルート タイムラインの場合は、アクティブな期間 (を繰り返しを含む) の末尾に達するし、そのすべての子は、アクティブな期間の終わりに達しました後、再生は完了します。 このタイムラインが子タイムラインの場合を所属先に達すると、タイムライン ツリーのルート タイムライン アクティブな期間とそのすべての子タイムラインの末尾が終了したら再生すると再生が完了したと見なされます。  
+  
+ タイムラインを停止すると、その完了イベントがトリガーされませんが、その保留期間をスキップします。  
+  
+ <xref:System.Object>のパラメーター、<xref:System.EventHandler>イベント ハンドラーは、タイムラインの<xref:System.Windows.Media.Animation.Clock>します。  
+  
+ このイベント ハンドラーは、タイムラインに関連付けられるように見えますが、実際に登録すると、<xref:System.Windows.Media.Animation.Clock>このタイムラインのスペースを作成します。  詳細については、次を参照してください。、[タイミング イベントの概要](~/docs/framework/wpf/graphics-multimedia/timing-events-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つ<xref:System.Windows.Media.Animation.Storyboard>オブジェクトが、アニメーションの切り替えを使用して格納されている 2 つのイメージの作成に使用する<xref:System.Windows.Media.ImageSource>オブジェクトし、を使用して表示、<xref:System.Windows.Controls.Image>コントロール。 見えなくなるまで、1 つのストーリー ボードは、イメージ コントロールを縮小します。 これが完了したら、古い<xref:System.Windows.Media.ImageSource>が、他のスワップされる<xref:System.Windows.Media.ImageSource>、およびイメージを展開する 2 番目のストーリー ボードが再びになるまで、フル サイズを制御します。  
+  
+ [!code-xaml[timingbehaviors_snip#TimelineCompletedExampleMarkupUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/TimelineCompletedExample.xaml#timelinecompletedexamplemarkupusingwholepage)]  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClock">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Clock CreateClock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.Clock CreateClock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.CreateClock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Clock</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成、制御可能な<see cref="T:System.Windows.Media.Animation.Clock" />これから<see cref="T:System.Windows.Media.Animation.Timeline" />です。 この場合<see cref="T:System.Windows.Media.Animation.Timeline" />に子がこのクロックのツリーが作成された<see cref="T:System.Windows.Media.Animation.Timeline" />ルートとして。</summary>
+        <returns>新しい制御可能な<see cref="T:System.Windows.Media.Animation.Clock" />これから構築された<see cref="T:System.Windows.Media.Animation.Timeline" />です。 この場合<see cref="T:System.Windows.Media.Animation.Timeline" />は、<see cref="T:System.Windows.Media.Animation.TimelineGroup" />子タイムラインのツリーを格納している<see cref="T:System.Windows.Media.Animation.Clock" />制御可能なオブジェクトが作成された<see cref="T:System.Windows.Media.Animation.Clock" />これから作成された<see cref="T:System.Windows.Media.Animation.Timeline" />ルートとして。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この<xref:System.Windows.Media.Animation.Timeline>1 つまたは複数の子になる可能性があります<xref:System.Windows.Media.Animation.TimelineGroup>オブジェクトをこの情報は無視されます: このメソッドは、現在をどのように処理<xref:System.Windows.Media.Animation.Timeline>ルートとして<xref:System.Windows.Media.Animation.Timeline>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClock">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Clock CreateClock (bool hasControllableRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.Clock CreateClock(bool hasControllableRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.CreateClock(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Clock</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hasControllableRoot" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="hasControllableRoot">
+          <see langword="true" />場合、ルート<see cref="T:System.Windows.Media.Animation.Clock" />返される返す必要があります、<see cref="T:System.Windows.Media.Animation.ClockController" />からその<see cref="P:System.Windows.Media.Animation.Clock.Controller" />プロパティできるように、<see cref="T:System.Windows.Media.Animation.Clock" />ツリーには、対話形式で、それ以外のコントロールを指定できます<see langword="false" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Animation.Clock" />これから<see cref="T:System.Windows.Media.Animation.Timeline" />し、指定するかどうか新しい<see cref="T:System.Windows.Media.Animation.Clock" />制御できます。 この場合<see cref="T:System.Windows.Media.Animation.Timeline" />に子がこのクロックのツリーが作成された<see cref="T:System.Windows.Media.Animation.Timeline" />ルートとして。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Animation.Clock" />これから構築された<see cref="T:System.Windows.Media.Animation.Timeline" />です。 この場合<see cref="T:System.Windows.Media.Animation.Timeline" />は、<see cref="T:System.Windows.Media.Animation.TimelineGroup" />子タイムラインのツリーを格納している<see cref="T:System.Windows.Media.Animation.Clock" />制御可能なオブジェクトが作成された<see cref="T:System.Windows.Media.Animation.Clock" />これから作成された<see cref="T:System.Windows.Media.Animation.Timeline" />ルートとして。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この<xref:System.Windows.Media.Animation.Timeline>1 つまたは複数の子になる可能性があります<xref:System.Windows.Media.Animation.TimelineGroup>オブジェクトをこの情報は無視されます: このメソッドは、現在をどのように処理<xref:System.Windows.Media.Animation.Timeline>ルートとして<xref:System.Windows.Media.Animation.Timeline>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentGlobalSpeedInvalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentGlobalSpeedInvalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentGlobalSpeedInvalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムラインのクロックの変更時に速度が進行状況と発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のような状況でタイムラインのクロックの変更の現在のグローバル速度:  
+  
+-   クロックが、タイムラインのための方向を変更<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>設定します。  
+  
+-   クロック加速したり減速したりするために、タイムラインの<xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>または<xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>プロパティの設定。  
+  
+-   クロックが一時停止または再開します。  
+  
+-   クロックが非アクティブになったまたは再アクティブ化します。  
+  
+-   <xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed%2A>の時計の親の変更のいずれか。  
+  
+ <xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>ストーリー ボードを使用してイベントがイベント ハンドラーでです。 タイムラインの時計が一時停止しているを追跡するために役立ちます。<xref:System.Windows.Media.Animation.Storyboard.GetCurrentGlobalSpeed%2A>メソッドまたは時計をチェック<xref:System.Windows.Media.Animation.Clock.IsPaused%2A>そのクロックが一時停止するかどうかを確認するに変更されているかどうかを決定するキャッシュされた値と比較します。  
+  
+ <xref:System.Object>のパラメーター、<xref:System.EventHandler>イベント ハンドラーは、タイムラインの<xref:System.Windows.Media.Animation.Clock>します。  
+  
+ このイベント ハンドラーは、タイムラインに関連付けられるように見えますが、実際に登録すると、<xref:System.Windows.Media.Animation.Clock>このタイムラインのスペースを作成します。  詳細については、次を参照してください。、[タイミング イベントの概要](~/docs/framework/wpf/graphics-multimedia/timing-events-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を登録する方法を示しています、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ [!code-csharp[timingbehaviors_procedural_snip#TimelineCurrentGlobalSpeedInvalidatedExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/TimelineCurrentGlobalSpeedInvalidatedExample.cs#timelinecurrentglobalspeedinvalidatedexamplewholepage)]
+ [!code-vb[timingbehaviors_procedural_snip#TimelineCurrentGlobalSpeedInvalidatedExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/timelinecurrentglobalspeedinvalidatedexample.vb#timelinecurrentglobalspeedinvalidatedexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStateInvalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentStateInvalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentStateInvalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムラインの <see cref="T:System.Windows.Media.Animation.Clock" /> の <see cref="P:System.Windows.Media.Animation.Clock.CurrentState" /> プロパティが更新されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>タイムラインのときに通知するときにイベント<xref:System.Windows.Media.Animation.Clock>を開始、停止、または入力します。  
+  
+ 一時停止、<xref:System.Windows.Media.Animation.Clock>変わらないので、<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>です。 クロックが一時停止しているときに通知するを使用して、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ このイベントが発生しますが、ときに、<xref:System.Windows.Media.Animation.ClockState>いって、必ずしもを無効になります、<xref:System.Windows.Media.Animation.ClockState>変更:<xref:System.Windows.Media.Animation.Clock>からに切り替えること<xref:System.Windows.Media.Animation.ClockState.Active>に<xref:System.Windows.Media.Animation.ClockState.Filling>に戻ると<xref:System.Windows.Media.Animation.ClockState.Active>同じティックの場合は、このイベントを起動がその<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>プロパティが実際に変更されません。  
+  
+ <xref:System.Object>のパラメーター、<xref:System.EventHandler>イベント ハンドラーは、<xref:System.Windows.Media.Animation.Clock>このタイムラインのスペースを作成します。  
+  
+ このイベント ハンドラーは、タイムラインに関連付けられるように見えますが、実際に登録すると、<xref:System.Windows.Media.Animation.Clock>このタイムラインのスペースを作成します。  詳細については、次を参照してください。、[タイミング イベントの概要](~/docs/framework/wpf/graphics-multimedia/timing-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentTimeInvalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentTimeInvalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentTimeInvalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Timeline.CurrentTimeInvalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムラインの <see cref="T:System.Windows.Media.Animation.Clock" /> の <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> プロパティが更新されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>にするときにイベントときの通知、<xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>タイムラインの<xref:System.Windows.Media.Animation.Clock>を更新します。  
+  
+ <xref:System.Object>のパラメーター、<xref:System.EventHandler>イベント ハンドラーは、タイムラインの<xref:System.Windows.Media.Animation.Clock>します。  
+  
+ このイベント ハンドラーは、タイムラインに関連付けられるように見えますが、実際に登録すると、<xref:System.Windows.Media.Animation.Clock>このタイムラインのスペースを作成します。  詳細については、次を参照してください。、[タイミング イベントの概要](~/docs/framework/wpf/graphics-multimedia/timing-events-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を登録する方法を示しています、<xref:System.Windows.Media.Animation.Timeline.CurrentTimeInvalidated>イベント。  
+  
+ [!code-csharp[timingbehaviors_procedural_snip#TimelineCurrentTimeInvalidatedExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/TimelineCurrentTimeInvalidatedExample.cs#timelinecurrenttimeinvalidatedexamplewholepage)]
+ [!code-vb[timingbehaviors_procedural_snip#TimelineCurrentTimeInvalidatedExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/timelinecurrenttimeinvalidatedexample.vb#timelinecurrenttimeinvalidatedexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecelerationRatio">
+      <MemberSignature Language="C#" Value="public double DecelerationRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DecelerationRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間の経過を最大速度から 0 に減速する場合に、費やされるタイムラインの <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> の比率を指定する値を取得または設定します。</summary>
+        <value>時間の経過を最大速度から 0 に減速する場合に、費やされるタイムラインの <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> の比率を指定する 0 ～ 1 (両端を含む) の値。 タイムラインの <see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> プロパティも設定されている場合、<see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> と <see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> の合計は 1 以下である必要があります。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>その遅いダウン停止する前にアニメーションを作成するプロパティです。 <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>プロパティは簡単操作の効果を作成するかより自然に見える移動を行うに役立ちます。 使用して、<xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>と<xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>の起動が遅い、アニメーションを作成するには、一緒にプロパティを高速化し、し、終了する前にもう一度速度が低下します。  
+  
+<a name="dependencyPropertyInfo_DecelerationRatio"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.DecelerationRatioProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> が 0 より小さいか、または 1 を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> と <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> の合計が 1 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecelerationRatioProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DecelerationRatioProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DecelerationRatioProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.DecelerationRatioProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" />依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredFrameRateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DesiredFrameRateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DesiredFrameRateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.DesiredFrameRateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.DesiredFrameRate" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public System.Windows.Duration Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Duration Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または繰り返しをカウントせずに、このタイムラインの再生時間の長さを設定します。</summary>
+        <value>タイムラインの単純な継続: このタイムラインが 1 つの前方反復処理を完了にかかる時間です。 既定値は <see cref="P:System.Windows.Duration.Automatic" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムラインの単純な期間は、繰り返しが含まれる合計再生時間に取得するには、に対して 1 回の前方反復の時間を構成します。  
+  
+## <a name="default-duration-behavior"></a>既定の期間の動作  
+ 動作、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>の値を持つ<xref:System.Windows.Duration.Automatic%2A>タイムラインの種類によって異なります。  
+  
+|**タイムライン**|**動作**|  
+|-|-|  
+|<xref:System.Windows.Media.Animation.Timeline>|不定 (<xref:System.Windows.Media.Animation.Timeline>が抽象型)|  
+|<xref:System.Windows.Media.Animation.ParallelTimeline>、<br /><br /> <xref:System.Windows.Media.Animation.Storyboard>、<br /><br /> <xref:System.Windows.Media.Animation.TimelineGroup>|子タイムラインを合わせて拡張されます。|  
+|\<*型*> アニメーション (、"から/に/"または"basic"アニメーションと呼ばれます)|1 秒|  
+|\<*型*> AnimationUsingKeyFrames (キー フレーム アニメーションと呼ばれます)|すべてのキー フレームの合計<xref:System.Windows.Media.Animation.KeyTime>値|  
+  
+<a name="dependencyPropertyInfo_Duration"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.DurationProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Media.Animation.ParallelTimeline>および<xref:System.Windows.Media.Animation.Storyboard>種類<xref:System.Windows.Media.Animation.TimelineGroup>オブジェクト。 期間、<xref:System.Windows.Media.Animation.TimelineGroup>はその子タイムラインの期間によって決まります。 たとえば、<xref:System.Windows.Media.Animation.Storyboard>以下は 6 秒 (6 秒の期間) のため実行できる状態にある最後の子タイムライン (<xref:System.Windows.Media.Animation.DoubleAnimation>) を終了します。  
+  
+> [!NOTE]
+>  注: コードは、だけに用意されている次の例についてから省略されています。  
+  
+ [xaml]  
+  
+```  
+...  
+  <Storyboard>  
+    <DoubleAnimation Duration="0:0:2" …/>  
+    <DoubleAnimation Duration="0:0:4" BeginTime="0:0:2" …/>  
+  </Storyboard>   
+...  
+```  
+  
+ 例として\<*型*> アニメーションとは、 <xref:System.Windows.Media.Animation.DoubleAnimation>、 <xref:System.Windows.Media.Animation.PointAnimation>、 <xref:System.Windows.Media.Animation.ColorAnimation>, などです。ない場合は<xref:System.Windows.Media.Animation.Timeline.Duration%2A>が指定されて、アニメーションのこれらの型の 1 秒間実行されます。  
+  
+ [xaml]  
+  
+```  
+...  
+  <!-- With no Duration specified, this animation will run for   
+       one second -->  
+  <DoubleAnimation .../>  
+...  
+```  
+  
+ 例として\<*型*> AnimationUsingKeyFrames 含める<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>、 <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>, などです。ない場合は<xref:System.Windows.Media.Animation.Timeline.Duration%2A>アニメーションのすべてのキー フレームが終了するまで、これらは実行のこれらの型が指定されています。  
+  
+ [xaml]  
+  
+```  
+...  
+  <Storyboard>  
+  
+    <!-- This key frame animation will end at 4.5 seconds  
+         Because that is when its last KeyFrame KeyTime ends. -->  
+    <DoubleAnimationUsingKeyFrames ...>  
+      <LinearDoubleKeyFrame ... KeyTime="0:0:3" />  
+      <DiscreteDoubleKeyFrame ... KeyTime="0:0:3.5" />  
+      <DiscreteDoubleKeyFrame ... KeyTime="0:0:4" />  
+      <DiscreteDoubleKeyFrame ... KeyTime="0:0:4.5" />  
+    </DoubleAnimationUsingKeyFrames>  
+  </Storyboard>   
+...  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DurationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DurationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DurationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.DurationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.FillBehavior FillBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.FillBehavior FillBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.FillBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.FillBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値が、どのように<see cref="T:System.Windows.Media.Animation.Timeline" />アクティブな期間の末尾に到達した後の動作です。</summary>
+        <value>アクティブ期間の終わりに達した後 (ただし親はアクティブ期間内または保留期間内にある) のタイムラインの動作を指定する値。 既定値は <see cref="F:System.Windows.Media.Animation.FillBehavior.HoldEnd" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、アニメーション<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>プロパティを<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>アクティブな期間の最後に達すると、その値を保持するために、アニメーションする場合します。 アクティブな期間の末尾に到達するアニメーションが、<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>設定<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>保留期間内にあるといいます。 アクティブな期間の最後に達すると、アニメーションの値を保持する必要がある場合は、設定、  
+  
+ <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>プロパティを<xref:System.Windows.Media.Animation.FillBehavior.Stop>です。  
+  
+ 塗りつぶし期間でのアニメーションは、そのターゲット プロパティの値をオーバーライドし続ける、ためには、効果がないように見える可能性がありますを他の手段でターゲット プロパティの値を設定しようとしています。 アニメーション化された後に、プロパティ値を設定する方法を示す例は、次を参照してください。[する方法: 設定、プロパティ後アニメーションにストーリー ボード](~/docs/framework/wpf/graphics-multimedia/how-to-set-a-property-after-animating-it-with-a-storyboard.md)です。  
+  
+ 子タイムラインは停止の再生と保留がその親タイムラインが中止されます。子タイムラインに入力する場合は、その親タイムラインが確認、<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>の<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>します。  
+  
+<a name="dependencyPropertyInfo_FillBehavior"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.FillBehaviorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillBehaviorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FillBehaviorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FillBehaviorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.FillBehaviorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.FillBehavior" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreezeCore">
+      <MemberSignature Language="C#" Value="protected override bool FreezeCore (bool isChecking);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool FreezeCore(bool isChecking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.FreezeCore(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isChecking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isChecking">
+          <see langword="true" />このインスタンスを固定できるかどうかを確認するには<see langword="false" />このインスタンスを固定します。</param>
+        <summary>この<see cref="T:System.Windows.Media.Animation.Timeline" />変更不可能になっているかどうか、変更不可能にできるか。</summary>
+        <returns>場合<paramref name="isChecking" />が true の場合、このメソッドが戻る<see langword="true" />読み取り専用に、このインスタンスにできる場合、または<see langword="false" />読み取り専用にできない場合。  
+  
+ 場合<paramref name="isChecking" />が false の場合、このメソッドが戻る<see langword="true" />このインスタンスは読み取り専用では今すぐ場合、または<see langword="false" />かどうかにできない読み取り専用で、このオブジェクトの固定された状態を変更する始めたことの副作用です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接 (呼び出す場合を除きますベースの実装で) このメソッドを呼び出さないでください。 このメソッドは内部で<xref:System.Windows.Freezable.Freeze%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="T:System.Windows.Media.Animation.Timeline" />実装時は、クラスには、依存関係プロパティを使用して保存されていないデータが含まれている場合、このメソッドをオーバーライドする必要があります。  
+  
+ 一般的な実装し、呼び出し、呼び出す静的<see cref="M:System.Windows.Freezable.Freeze" />すべてメソッド<see cref="T:System.Windows.Freezable" />型指定されたプロパティを返すクラスに含まれている<see langword="true" />または場合にのみプロパティをすべて保持されていた (でした固定されている、渡す場合を介して、<see langword="false" />値<paramref name="isChecking" />)。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable"><see cref="T:System.Windows.Media.Animation.Timeline" />インスタンスを複製します。</param>
+        <summary>このインスタンスの指定した<see cref="T:System.Windows.Media.Animation.Timeline" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。 これらのプロパティには、データ バインディングまたはリソースの参照が含まれている場合ことに注意して<xref:System.Windows.Freezable.GetAsFrozen%2A>に失敗する、オブジェクトを圧縮しようとしているとスローされます、<xref:System.InvalidOperationException>です。  
+  
+ このメソッドは、<xref:System.Windows.Freezable.GetAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーし、固定する <see cref="T:System.Windows.Media.Animation.Timeline" />。</param>
+        <summary>このインスタンスの指定された固定された複製<see cref="T:System.Windows.Media.Animation.Timeline" />です。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetCurrentValueAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesiredFrameRate">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; GetDesiredFrameRate (System.Windows.Media.Animation.Timeline timeline);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; GetDesiredFrameRate(class System.Windows.Media.Animation.Timeline timeline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.GetDesiredFrameRate(System.Windows.Media.Animation.Timeline)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeline" Type="System.Windows.Media.Animation.Timeline" />
+      </Parameters>
+      <Docs>
+        <param name="timeline">目的のフレーム レートを取得する対象のタイムラインになります。</param>
+        <summary>指定した目的のフレーム レートを取得<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <returns>このタイムラインの目的のフレーム レートです。 既定値は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドへの読み取りアクセスを提供する、<xref:System.Windows.Media.Animation.Timeline.DesiredFrameRate%2A>添付プロパティ。 詳細については、次を参照してください。、<xref:System.Windows.Media.Animation.Timeline.DesiredFrameRate%2A>ページ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNaturalDuration">
+      <MemberSignature Language="C#" Value="protected System.Windows.Duration GetNaturalDuration (System.Windows.Media.Animation.Clock clock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance valuetype System.Windows.Duration GetNaturalDuration(class System.Windows.Media.Animation.Clock clock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.GetNaturalDuration(System.Windows.Media.Animation.Clock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.Clock" />
+      </Parameters>
+      <Docs>
+        <param name="clock"><see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Timeline" />です。</param>
+        <summary>この単一のイテレーションの長さを返します<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <returns>この 1 つのイテレーションの長さ<see cref="T:System.Windows.Media.Animation.Timeline" />、または<see cref="P:System.Windows.Duration.Automatic" />自然な期間が不明の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは場合にのみ呼び出す、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>プロパティに設定されている<xref:System.Windows.Duration.Automatic%2A>です。 場合<xref:System.Windows.Media.Animation.Timeline.Duration%2A>は<xref:System.Windows.Duration.Automatic%2A>、自然な時間はの特定のクラスの実装によって決まります<xref:System.Windows.Media.Animation.Timeline.GetNaturalDurationCore%2A>です。  
+  
+ 場合<xref:System.Windows.Media.Animation.Timeline.GetNaturalDuration%2A>返します<xref:System.Windows.Duration.Automatic%2A>、自然な期間が、不明の自然な期間を意味する<xref:System.Windows.Duration.Forever%2A>です。 ストリーミングを行う場合などがこれです。  
+  
+ このメソッドが作成されたもの以外、このタイムライン用の時計を渡すことは可能ですが、信頼できない結果に注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNaturalDurationCore">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Duration GetNaturalDurationCore (System.Windows.Media.Animation.Clock clock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Windows.Duration GetNaturalDurationCore(class System.Windows.Media.Animation.Clock clock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.GetNaturalDurationCore(System.Windows.Media.Animation.Clock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.Clock" />
+      </Parameters>
+      <Docs>
+        <param name="clock"><see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Timeline" />です。</param>
+        <summary>この単一のイテレーションの長さを返します<see cref="T:System.Windows.Media.Animation.Timeline" />です。 このメソッドの実装を提供する<see cref="M:System.Windows.Media.Animation.Timeline.GetNaturalDuration(System.Windows.Media.Animation.Clock)" />です。</summary>
+        <returns>この 1 つのイテレーションの長さ<see cref="T:System.Windows.Media.Animation.Timeline" />、または<see cref="P:System.Windows.Duration.Automatic" />自然な期間が不明の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装を提供する<xref:System.Windows.Media.Animation.Timeline.GetNaturalDuration%2A>し、コードから直接呼び出すことはできません。 代わりに、<xref:System.Windows.Media.Animation.Timeline.GetNaturalDuration%2A> を使用してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、カスタムの自然を提供する必要があるタイムライン クラスで実装する必要があります<see cref="T:System.Windows.Duration" />ときに、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />プロパティに設定されている<see cref="P:System.Windows.Duration.Automatic" />です。 かどうか、作成者は、自然な期間を特定できません、このメソッドが返す<see cref="P:System.Windows.Duration.Automatic" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの名前を取得または<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <value>このタイムラインの名前。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty NameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty NameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.NameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.Name" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRequested">
+      <MemberSignature Language="C#" Value="public event EventHandler RemoveRequested;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RemoveRequested" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Timeline.RemoveRequested" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クロックは、このタイムラインの作成や、親タイムラインの 1 つが削除されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用することでこのイベントは、<xref:System.Windows.Media.Animation.RemoveStoryboard>アクション、ストーリー ボードを使用して、ストーリー ボードを<xref:System.Windows.Media.Animation.Storyboard.Remove%2A>メソッド (クロックを直接操作する) 場合、またはを呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このイベント ハンドラーは、タイムラインに関連付けられるように見えますが、実際に登録すると、<xref:System.Windows.Media.Animation.Clock>このタイムラインのスペースを作成します。  詳細については、次を参照してください。、[タイミング イベントの概要](~/docs/framework/wpf/graphics-multimedia/timing-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.RepeatBehavior RepeatBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.RepeatBehavior RepeatBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.RepeatBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.RepeatBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタイムラインの繰り返し動作を取得または設定します。</summary>
+        <value>イテレーション<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />タイムラインを再生する回数を指定する、<see cref="T:System.TimeSpan" />このタイムラインのアクティブな期間の長さの合計を指定する値または特別な値<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Forever" />タイムラインが無期限に繰り返す必要がありますを指定します。 既定値は、<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />で、<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />の<c>1</c>タイムラインを 1 回再生することを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、イテレーション<xref:System.Windows.Media.Animation.RepeatBehavior.Count%2A>が指定されていると、タイムラインの<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>プロパティに設定されている`true`、順方向の 1 つの反復と旧バージョンとイテレーションは 1 つの 1 つの繰り返しで構成されます。 タイムライン、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>プロパティ イテレーションを true に設定<xref:System.Windows.Media.Animation.RepeatBehavior.Count%2A>2 は再生転送、逆の順序で、転送、し、再度後方です。  
+  
+ タイムラインの再生回数を指定するには、代わりに、タイムラインを再生する時間の合計の長さも指定できます。 繰り返し表示する、このタイムラインの<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A?displayProperty=nameWithType>値は、タイムラインのより大きい必要があります<xref:System.Windows.Media.Animation.Timeline.Duration%2A>です。 備えたタイムラインなど、 <xref:System.Windows.Media.Animation.Timeline.Duration%2A> 2 秒と<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A?displayProperty=nameWithType>4 秒には 2 回に再生されます。 場合、<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A?displayProperty=nameWithType>がタイムラインのより小さい<xref:System.Windows.Media.Animation.Timeline.Duration%2A>タイムラインのアクティブな期間を短縮します。  
+  
+ 詳細については、タイムラインの繰り返し、次を参照してください。[アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/animation-overview.md)です。  
+  
+<a name="dependencyPropertyInfo_RepeatBehavior"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.RepeatBehaviorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatBehaviorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RepeatBehaviorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RepeatBehaviorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.RepeatBehaviorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Timeline.RepeatBehavior" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDesiredFrameRate">
+      <MemberSignature Language="C#" Value="public static void SetDesiredFrameRate (System.Windows.Media.Animation.Timeline timeline, Nullable&lt;int&gt; desiredFrameRate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDesiredFrameRate(class System.Windows.Media.Animation.Timeline timeline, valuetype System.Nullable`1&lt;int32&gt; desiredFrameRate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Timeline.SetDesiredFrameRate(System.Windows.Media.Animation.Timeline,System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeline" Type="System.Windows.Media.Animation.Timeline" />
+        <Parameter Name="desiredFrameRate" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeline"><see cref="T:System.Windows.Media.Animation.Timeline" />する<c>desiredFrameRate</c>が割り当てられます。</param>
+        <param name="desiredFrameRate">このタイムラインは、1 秒間を生成するフレームの最大数または<see langword="null" />場合は、システムは、フレームの数を制御する必要があります。</param>
+        <summary>指定した目的のフレーム レートを設定<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Windows.Media.Animation.Timeline.DesiredFrameRate%2A>添付プロパティ。 詳細については、次を参照してください。、<xref:System.Windows.Media.Animation.Timeline.DesiredFrameRate%2A>ページ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedRatio">
+      <MemberSignature Language="C#" Value="public double SpeedRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SpeedRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この時間の進行の割合をその親の設定を取得または<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <value>タイムラインの親の速度を基準とした、このタイムラインの時間の進行速度を示す 0 より大きい有限値場合、または、これがルート タイムラインには、既定のタイムライン速度。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムラインの<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>設定の効果を持たないその<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>以外の場合はその時間は、タイムラインの親を基準とした場合、または、タイムラインがルート タイムラインには、タイムラインの時計が開始された時点です。  
+  
+ 場合<xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>または<xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>指定すると、この<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>平均の比率がタイムラインの自然な長さを超えています。  
+  
+<a name="dependencyPropertyInfo_SpeedRatio"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.Timeline.SpeedRatioProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ タイムラインの<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>プロパティはその親の進行速度を制御します。 タイムラインがルートの場合、<xref:System.Windows.Media.MediaPlayer.SpeedRatio%2A>既定のタイムライン速度に対する相対パスです。 次の例では、異なるいくつかのタイムライン<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>設定します。  
+  
+ [!code-xaml[timingbehaviors_snip#_graphicsmm_SpeedExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/SpeedExample.xaml#_graphicsmm_speedexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />0 より小さいか、有限値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedRatioProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SpeedRatioProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SpeedRatioProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Timeline.SpeedRatioProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

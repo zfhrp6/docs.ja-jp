@@ -1,0 +1,436 @@
+<Type Name="WebInvokeAttribute" FullName="System.ServiceModel.Web.WebInvokeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebInvokeAttribute : Attribute, System.ServiceModel.Description.IOperationBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebInvokeAttribute extends System.Attribute implements class System.ServiceModel.Description.IOperationBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Web.WebInvokeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IOperationBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WCF REST プログラミング モデルによって呼び出すことができることと、サービス操作は、論理的に呼び出し操作を示す属性を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性は、<xref:System.ServiceModel.OperationContractAttribute> に加えてサービス操作に適用され、呼び出しを表す、基になるトランスポートの動詞 (HTTP POST、PUT、DELETE など) と同様に、その操作を `UriTemplate` と関連付けます。 <xref:System.ServiceModel.Web.WebInvokeAttribute>属性は、*パッシブ*操作の動作 (、<xref:System.ServiceModel.Description.IOperationBehavior>メソッドは、何もしない) にメタデータ操作の説明を追加します。 このメタデータを操作の説明で検索する動作 (<xref:System.ServiceModel.Web.WebInvokeAttribute> など) がサービスの動作コレクションに追加されていない場合は、<xref:System.ServiceModel.Description.WebHttpBehavior> 属性をサービス操作に適用しても機能しません。 <xref:System.ServiceModel.Web.WebInvokeAttribute> は、サービス操作が応答する HTTP メソッドを定義します。 既定では、<xref:System.ServiceModel.Web.WebInvokeAttribute> が適用されたすべてのメソッドは、POST 要求に応答します。 <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> プロパティでは、異なる HTTP メソッドを指定できます。 GET に応答するサービス操作が必要な場合は、代わりに <xref:System.ServiceModel.Web.WebGetAttribute> を使用します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性を使用する方法を次のコード例に示します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> プロパティは次のコードで指定されていないので、すべてのサービス操作は HTTP POST メソッドにマップされます。  
+  
+ [!code-csharp[WebAttribute#5](~/samples/snippets/csharp/VS_Snippets_CFX/webattribute/cs/program.cs#5)]
+ [!code-vb[WebAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/webattribute/vb/program.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebInvokeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebInvokeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Web.WebGetAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyStyle">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Web.WebMessageBodyStyle BodyStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Web.WebMessageBodyStyle BodyStyle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.BodyStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Web.WebMessageBodyStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作との間で送受信されるメッセージの本文のスタイルを取得して設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Web.WebMessageBodyStyle" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare>に設定する場合、サービス操作の結果は応答メッセージの本文に直接書き込まれます。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Channels.Message> を取得して void を返す操作は、フォーマッタによって特別に処理されます。 フォーマッタは、<xref:System.ServiceModel.Web.WebInvokeAttribute.BodyStyle%2A> が <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> に設定されていても、ラッパー名を出力しません。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute.BodyStyle%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[WebAttribute#6](~/samples/snippets/csharp/VS_Snippets_CFX/webattribute/cs/program.cs#6)]
+ [!code-vb[WebAttribute#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/webattribute/vb/program.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBodyStyleSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsBodyStyleSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBodyStyleSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly" /> プロパティを取得します。</summary>
+        <value><see cref="P:System.ServiceModel.Web.WebGetAttribute.BodyStyle" /> プロパティが明示的に設定されていたかどうかを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャによって使用されるように設計されており、ユーザー コードからは設定できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequestFormatSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsRequestFormatSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequestFormatSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly" /> プロパティを取得します。</summary>
+        <value><see cref="P:System.ServiceModel.Web.WebGetAttribute.RequestFormat" /> プロパティが設定されていたかどうかを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャによって使用されるように設計されており、ユーザー コードからは設定できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsResponseFormatSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsResponseFormatSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsResponseFormatSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly" /> プロパティを取得します。</summary>
+        <value><see cref="P:System.ServiceModel.Web.WebGetAttribute.ResponseFormat" /> プロパティが設定されていたかどうかを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャによって使用されるように設計されており、ユーザー コードからは設定できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public string Method { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Method" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作が応答する HTTP などのプロトコルのメソッドを取得して設定します。</summary>
+        <value>操作に関連付けられているプロトコル メソッド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> の既定値は POST です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[WebAttribute#7](~/samples/snippets/csharp/VS_Snippets_CFX/webattribute/cs/program.cs#7)]
+ [!code-vb[WebAttribute#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/webattribute/vb/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestFormat">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Web.WebMessageFormat RequestFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Web.WebMessageFormat RequestFormat" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.RequestFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Web.WebMessageFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Web.WebInvokeAttribute.RequestFormat" /> プロパティを取得および設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Web.WebMessageFormat" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、サービス操作に対する要求の形式を決定します。 使用可能な値は `Xml` および `Json` です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute.RequestFormat%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[WebAttribute#8](~/samples/snippets/csharp/VS_Snippets_CFX/webattribute/cs/program.cs#8)]
+ [!code-vb[WebAttribute#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/webattribute/vb/program.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseFormat">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Web.WebMessageFormat ResponseFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Web.WebMessageFormat ResponseFormat" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Web.WebMessageFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat" /> プロパティを取得および設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Web.WebMessageFormat" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、サービス操作から送信される応答の形式を決定します。 使用可能な値は `Xml` および `Json` です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[WebAttribute#8](~/samples/snippets/csharp/VS_Snippets_CFX/webattribute/cs/program.cs#8)]
+ [!code-vb[WebAttribute#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/webattribute/vb/program.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.AddBindingParameters (System.ServiceModel.Description.OperationDescription operation, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.AddBindingParameters(class System.ServiceModel.Description.OperationDescription operation, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebInvokeAttribute.System#ServiceModel#Description#IOperationBehavior#AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="bindingParameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="operation">To be added.</param>
+        <param name="parameters">To be added.</param>
+        <summary><see cref="M:System.ServiceModel.Description.IOperationBehavior.AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)" /> メソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性は受信操作の動作なので、このメソッドは何も実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.ApplyClientBehavior (System.ServiceModel.Description.OperationDescription operation, System.ServiceModel.Dispatcher.ClientOperation client);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior(class System.ServiceModel.Description.OperationDescription operation, class System.ServiceModel.Dispatcher.ClientOperation client) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebInvokeAttribute.System#ServiceModel#Description#IOperationBehavior#ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="clientOperation" Type="System.ServiceModel.Dispatcher.ClientOperation" />
+      </Parameters>
+      <Docs>
+        <param name="operation">To be added.</param>
+        <param name="client">To be added.</param>
+        <summary><see cref="M:System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)" /> メソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性は受信操作の動作なので、このメソッドは何も実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.OperationDescription operation, System.ServiceModel.Dispatcher.DispatchOperation service);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.OperationDescription operation, class System.ServiceModel.Dispatcher.DispatchOperation service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebInvokeAttribute.System#ServiceModel#Description#IOperationBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="dispatchOperation" Type="System.ServiceModel.Dispatcher.DispatchOperation" />
+      </Parameters>
+      <Docs>
+        <param name="operation">To be added.</param>
+        <param name="service">To be added.</param>
+        <summary><see cref="M:System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)" /> メソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性は受信操作の動作なので、このメソッドは何も実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.Validate (System.ServiceModel.Description.OperationDescription operation);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.Validate(class System.ServiceModel.Description.OperationDescription operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebInvokeAttribute.System#ServiceModel#Description#IOperationBehavior#Validate(System.ServiceModel.Description.OperationDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+      </Parameters>
+      <Docs>
+        <param name="operation">To be added.</param>
+        <summary><see cref="M:System.ServiceModel.Description.IOperationBehavior.Validate(System.ServiceModel.Description.OperationDescription)" /> メソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性は受信操作の動作なので、このメソッドは何も実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UriTemplate">
+      <MemberSignature Language="C#" Value="public string UriTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UriTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebInvokeAttribute.UriTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作の URI (Uniform Resource Identifier) テンプレート。</summary>
+        <value>サービス操作の URI テンプレート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URI テンプレートは、どの要求がどのサービス操作にディスパッチされるかを決定するために使用されます。 URI テンプレートを使用することで、単一または一連の URI をサービス操作にマップできます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]URI テンプレートを参照してください[UriTemplate と UriTemplateTable](~/docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute.UriTemplate%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[WebAttribute#9](~/samples/snippets/csharp/VS_Snippets_CFX/webattribute/cs/program.cs#9)]
+ [!code-vb[WebAttribute#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/webattribute/vb/program.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

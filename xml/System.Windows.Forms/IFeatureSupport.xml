@@ -1,0 +1,142 @@
+<Type Name="IFeatureSupport" FullName="System.Windows.Forms.IFeatureSupport">
+  <TypeSignature Language="C#" Value="public interface IFeatureSupport" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFeatureSupport" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IFeatureSupport" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>現在のシステムからの機能の情報を取得するための標準のインターフェイスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスで実装された場合<xref:System.Windows.Forms.IFeatureSupport>機能がシステムに現在インストールされているかどうかを判断し、機能のバージョン番号を取得に使用できるメソッドを提供します。 呼び出す<xref:System.Windows.Forms.IFeatureSupport.IsPresent%2A>の機能や、機能の特定のバージョンがインストール済み現在かどうかを判別します。 呼び出す<xref:System.Windows.Forms.IFeatureSupport.GetVersionPresent%2A>をインストールする機能のバージョン番号を決定します。  
+  
+ 参照してください、<xref:System.Windows.Forms.FeatureSupport>と<xref:System.Windows.Forms.OSFeature>このインターフェイスの実装のためのクラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.IFeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetVersionPresent">
+      <MemberSignature Language="C#" Value="public Version GetVersionPresent (object feature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Version GetVersionPresent(object feature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IFeatureSupport.GetVersionPresent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="feature">バージョンが要求された機能です。</param>
+        <summary>指定した機能のバージョンを取得します。</summary>
+        <returns>A<see cref="T:System.Version" />指定した機能のバージョン番号を表すまたは<see langword="null" />機能がインストールされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.OSFeature.GetVersionPresent%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.IFeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public bool IsPresent (object feature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsPresent(object feature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IFeatureSupport.IsPresent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="feature">検索する機能。</param>
+        <summary>指定した機能のすべてのバージョンが現在、システムで使用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />この機能が存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.IFeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public bool IsPresent (object feature, Version minimumVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsPresent(object feature, class System.Version minimumVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IFeatureSupport.IsPresent(System.Object,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+        <Parameter Name="minimumVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="feature">検索する機能。</param>
+        <param name="minimumVersion">A<see cref="T:System.Version" />検索する機能の最低限のバージョン番号を表すです。</param>
+        <summary>指定した機能の指定またはそれ以降のバージョンが現在、システムで使用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />要求されたバージョンの機能が存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.IFeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

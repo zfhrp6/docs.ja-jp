@@ -1,0 +1,170 @@
+<Type Name="ActivityDesignerVerb" FullName="System.Workflow.ComponentModel.Design.ActivityDesignerVerb">
+  <TypeSignature Language="C#" Value="public class ActivityDesignerVerb : System.ComponentModel.Design.DesignerVerb" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityDesignerVerb extends System.ComponentModel.Design.DesignerVerb" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.DesignerVerb</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイナーで使用される新しい動詞を、関連する動詞グループ、テキスト、およびイベント ハンドラーを使用して作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerVerb> は、ワークフロー コンポーネントに対して起こすアクションを表します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerVerb> のオプションは、デザイン時にはメニュー バーと右クリック コンテキスト メニューに表示されます。  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerVerb> は同じ <xref:System.Workflow.ComponentModel.Design.DesignerVerbGroup> に関連付けられた他の動詞と同じグループになり、デザイン時には、対応するサブメニューに表示されます。  
+  
+ 新しい動詞の作成時に渡されるイベント ハンドラーは、その動詞がメニューから選択されると呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityDesignerVerb (System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, System.Workflow.ComponentModel.Design.DesignerVerbGroup verbGroup, string text, EventHandler invokeHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, valuetype System.Workflow.ComponentModel.Design.DesignerVerbGroup verbGroup, string text, class System.EventHandler invokeHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerVerb.#ctor(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Workflow.ComponentModel.Design.DesignerVerbGroup,System.String,System.EventHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="verbGroup" Type="System.Workflow.ComponentModel.Design.DesignerVerbGroup" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="invokeHandler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="activityDesigner">新しい動詞に関連付ける <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="verbGroup">新しい動詞が属する <see cref="T:System.Workflow.ComponentModel.Design.DesignerVerbGroup" />。</param>
+        <param name="text">メニューに表示する動詞の説明。</param>
+        <param name="invokeHandler">メニュー選択イベントを処理する <see cref="T:System.EventHandler" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" />、<see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> 値、動詞の説明、および <see cref="T:System.Workflow.ComponentModel.Design.DesignerVerbGroup" /> を使用して、<see cref="T:System.EventHandler" /> のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> が空または null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="invokeHandler" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityDesignerVerb (System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, System.Workflow.ComponentModel.Design.DesignerVerbGroup verbGroup, string text, EventHandler invokeHandler, EventHandler statusHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, valuetype System.Workflow.ComponentModel.Design.DesignerVerbGroup verbGroup, string text, class System.EventHandler invokeHandler, class System.EventHandler statusHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerVerb.#ctor(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Workflow.ComponentModel.Design.DesignerVerbGroup,System.String,System.EventHandler,System.EventHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="verbGroup" Type="System.Workflow.ComponentModel.Design.DesignerVerbGroup" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="invokeHandler" Type="System.EventHandler" />
+        <Parameter Name="statusHandler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="activityDesigner"><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> に関連付ける <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" />。</param>
+        <param name="verbGroup">この <see cref="T:System.Workflow.ComponentModel.Design.DesignerVerbGroup" /> が属する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" />。</param>
+        <param name="text">メニューに表示する動詞の説明。</param>
+        <param name="invokeHandler">メニュー選択イベントを処理するイベント ハンドラー。</param>
+        <param name="statusHandler">ステータス更新を処理するイベント ハンドラー。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" />、<see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> 値、動詞の説明、および 2 つの <see cref="T:System.Workflow.ComponentModel.Design.DesignerVerbGroup" /> オブジェクト (1 つはメニュー選択イベントを処理、もう 1 つはステータス更新を処理) を使用して、<see cref="T:System.EventHandler" /> のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandID">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.CommandID CommandID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.CommandID CommandID" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerVerb.CommandID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.CommandID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.CommandID" /> の新しい <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" /> を取得します。</summary>
+        <value>新しい <see cref="P:System.Workflow.ComponentModel.Design.ActivityDesignerVerb.CommandID" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.CommandID> は、項目をメニュー バーやコンテキスト メニューに配置するのに便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.DesignerVerbGroup Group { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.DesignerVerbGroup Group" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerVerb.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerVerbGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerVerbGroup" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerVerbGroup" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動詞をグループとして関連付けてメニュー バーやコンテキスト メニューに表示するには、<xref:System.Workflow.ComponentModel.Design.DesignerVerbGroup> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OleStatus">
+      <MemberSignature Language="C#" Value="public override int OleStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OleStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerVerb.OleStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" /> のステータスを示す整数を取得します。</summary>
+        <value><see langword="int" /> の <see langword="OleStatus" /> を示す <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerb" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `OleStatus` には、メニュー項目の状態を反映する複数のフラグの組み合わせが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

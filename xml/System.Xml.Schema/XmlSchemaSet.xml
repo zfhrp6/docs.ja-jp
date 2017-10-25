@@ -1,0 +1,1370 @@
+<Type Name="XmlSchemaSet" FullName="System.Xml.Schema.XmlSchemaSet">
+  <TypeSignature Language="C#" Value="public class XmlSchemaSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSchemaSet extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマのキャッシュを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  -   場所や不明または信頼できないソースからスキーマを使用しないでください。 これは、コードのセキュリティが低下します。  
+> -   XML スキーマ (インライン スキーマを含む) を受けます本質的にサービス拒否攻撃です。信頼されていないシナリオでに同意されません。  
+> -   スキーマ検証エラー メッセージと例外には、コンテンツ モデルや、スキーマ ファイルの URI パスに関する機密情報が公開します。 信頼されていない呼び出し元にこの情報を公開しないように注意します。  
+> -   「セキュリティの考慮事項」セクションでは、追加セキュリティに関する考慮事項について説明します。  
+  
+ <xref:System.Xml.Schema.XmlSchemaSet>キャッシュまたはライブラリの XML スキーマ定義言語 (XSD) スキーマを格納することができます。 <xref:System.Xml.Schema.XmlSchemaSet> は、ファイルまたは URL のスキーマにアクセスするのではなく、スキーマをメモリにキャッシュして、パフォーマンスを向上させます。 各スキーマは名前空間 URI によって識別され、された場所は、スキーマ セットに追加されたを指定します。 使用する、<xref:System.Xml.XmlReaderSettings.Schemas%2A?displayProperty=nameWithType>割り当てるプロパティを<xref:System.Xml.Schema.XmlSchemaSet>オブジェクトの XML リーダーがデータ検証に使用する必要があります。  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+  
+-   不明または信頼できないソースからスキーマを使用しないでください。 これは、コードのセキュリティが低下します。 外部名前空間または場所で参照されているインクルード、インポート、およびスキーマの再定義要素は解決に関してインクルードまたはインポートするスキーマのベース URI。 たとえば、インクルードまたはインポートしてスキーマのベース URI が空の場合または`null`、外部の場所は、現在のディレクトリに対して解決されます。 <xref:System.Xml.XmlUrlResolver>クラスは、外部スキーマを解決するのには既定で使用します。 インクルード、インポートの解像度を無効にして、スキーマの要素を再定義、設定、<xref:System.Xml.Schema.XmlSchemaSet.XmlResolver%2A?displayProperty=nameWithType>プロパティを`null`です。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaSet>クラスの使用、<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>クラスを解析および XML スキーマでの正規表現と一致します。 XML スキーマでの正規表現でパターン ファセットの検証は、CPU 使用率の向上を伴う場合があり、高可用性のシナリオでは避ける必要があります。  
+  
+-   使用した結果として発生した例外、<xref:System.Xml.Schema.XmlSchemaSet>クラスなど、<xref:System.Xml.Schema.XmlSchemaException>クラスは、信頼されていないシナリオで公開するべきではない機密情報を含めることがあります。 たとえば、<xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaException>例外が発生したスキーマ ファイル パスが URI パスを返します。 <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>信頼されていないシナリオ プロパティを公開するべきはありません。 例外は、信頼されていないシナリオでは、この機密情報は公開されていないように正しく処理する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Xml.Schema.XmlSchemaSet> に格納されているスキーマを使用して XML ファイルを検証する例を次に示します。 XML ファイル内の名前空間 `urn:bookstore-schema` は、検証に使用する <xref:System.Xml.Schema.XmlSchemaSet> 内のスキーマを特定します。  
+  
+ [!code-cpp[XmlReader_Validate_SchemaSet#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReader_Validate_SchemaSet/CPP/XmlReader_Validate_SchemaSet.cpp#1)]
+ [!code-csharp[XmlReader_Validate_SchemaSet#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader_Validate_SchemaSet/CS/validschemaset.cs#1)]
+ [!code-vb[XmlReader_Validate_SchemaSet#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader_Validate_SchemaSet/VB/validschemaset.vb#1)]  
+  
+## <a name="input"></a>入力  
+ このサンプルは、次の 2 つの入力ファイルを使用します。  
+  
+ **booksSchemaFail.xml:**  
+  
+ [!code-xml[XmlReader_Validate_SchemaSet#2](~/samples/snippets/xml/VS_Snippets_Data/XmlReader_Validate_SchemaSet/XML/booksschemafail.xml#2)]  
+  
+ **books.xsd:**  
+  
+ [!code-xml[XmlReader_Validate_SchemaSet#3](~/samples/snippets/xml/VS_Snippets_Data/XmlReader_Validate_SchemaSet/XML/books.xsd#3)]  
+  
+## <a name="output"></a>出力  
+ 検証エラー : 名前空間 'urn:bookstore-schema' 内の要素 'book' に、名前空間 'urn:bookstore-schema' 内で無効な子要素 'author' があります。 名前空間 'urn:bookstore-schema' の 'title' が期待されています。  
+  
+ 検証エラー : 名前空間 'urn:bookstore-schema' 内の要素 'author' に、名前空間 'urn:bookstore-schema' 内で無効な子要素 'name' があります。 名前空間 'urn:bookstore-schema' の 'first-name' が期待されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaSet (System.Xml.XmlNameTable nameTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nameTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.#ctor(System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nameTable" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="nameTable">使用する <see cref="T:System.Xml.XmlNameTable" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Xml.Schema.XmlSchemaSet" /> を使用して、<see cref="T:System.Xml.XmlNameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlNameTable" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Add(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema"><see cref="T:System.Xml.Schema.XmlSchema" />に追加するオブジェクト、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</param>
+        <summary>追加、指定された<see cref="T:System.Xml.Schema.XmlSchema" />を<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトのスキーマが無効です。 スキーマが有効でない場合、<see cref="T:System.Xml.Schema.ValidationEventHandler" />が指定すると、<see langword="null" />が返され、適切な検証イベントが発生します。 それ以外の場合、<see cref="T:System.Xml.Schema.XmlSchemaException" />がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xml.Schema.XmlSchema>オブジェクトは既に、 <xref:System.Xml.Schema.XmlSchemaSet>、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドは、何も行われません。  
+  
+ このメソッドの機能はのものと同じ、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">スキーマが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.Schema.XmlSchema" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Xml.Schema.XmlSchemaSet schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Add(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchemaSet" /> オブジェクト。</param>
+        <summary>追加のすべての XML スキーマ定義言語 (XSD) スキーマで、指定された<see cref="T:System.Xml.Schema.XmlSchemaSet" />を<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマを追加することができます、 <xref:System.Xml.Schema.XmlSchemaSet>、正常に前処理される必要があります。 前処理は、次の基本的なタスクを実行します。  
+  
+1.  W3C XML スキーマの規則に従って構造の有効性がチェック、スキーマがスキーマには完全には検証されません。  
+  
+2.  内部および外部のスキーマ コンポーネントへの参照は解決されます。 正常に取得される任意のインポートまたはインクルード対象スキーマに追加されます、<xref:System.Xml.Schema.XmlSchemaSet>です。 インポートされたスキーマは、独立したとして追加<xref:System.Xml.Schema.XmlSchema>オブジェクト、および含まれるスキーマの一部となる<xref:System.Xml.Schema.XmlSchema>です。  
+  
+ 場合、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaSet>を追加するは`true`、すべてのスキーマ、<xref:System.Xml.Schema.XmlSchemaSet>を追加するに追加されます、<xref:System.Xml.Schema.XmlSchemaSet>です。 場合、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaSet>を追加するは`false`、追加される前に追加された各スキーマを前処理します。 新しく追加したスキーマのいずれかの<xref:System.Xml.Schema.XmlSchemaSet>前処理されるが失敗したスキーマは追加されません。 代わりに、、<xref:System.Xml.Schema.XmlSchemaException>がスローされます。 その結果、次の 2 つのコード例は同じではありません。  
+  
+```vb  
+' First example  
+schemaSet.Add(schemaSet1)  
+  
+' Second example  
+Dim schema As XmlSchema  
+  
+For Each schema in schemaSet.Schemas()  
+  
+    schemaSet.Add(schema)  
+  
+Next  
+```  
+  
+```csharp  
+// First example  
+schemaSet.Add(schemaSet1);  
+  
+// Second example  
+foreach(XmlSchema schema in schemaSet.Schemas())  
+{  
+    schemaSet.Add(schema);  
+}  
+```  
+  
+ 前の 2 つのコード例は同じではありません。 無効なスキーマが存在する場合、最初の例では`schemaSet1`とその<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティに設定されている`false`にスキーマが追加されて`schemaSet`です。 2 番目の例では、いくつかのスキーマを追加できる`schemaSet`前に、無効なスキーマが検出され、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を追加するスキーマを示しています、 <xref:System.Xml.Schema.XmlSchemaSet>、追加し、<xref:System.Xml.Schema.XmlSchemaSet>を新しい<xref:System.Xml.Schema.XmlSchemaSet>を使用して、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。  
+  
+```vb  
+Dim schemaSet1 As XmlSchemaSet = New XmlSchemaSet  
+schemaSet1.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd")  
+schemaSet1.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+schemaSet1.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd")  
+  
+Dim schemaSet2 As XmlSchemaSet = New XmlSchemaSet  
+schemaSet2.Add(schemaSet1)  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet1 = new XmlSchemaSet();  
+schemaSet1.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd");  
+schemaSet1.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+schemaSet1.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd");  
+  
+XmlSchemaSet schemaSet2 = new XmlSchemaSet();  
+schemaSet2.Add(schemaSet1);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">内のスキーマ、<see cref="T:System.Xml.Schema.XmlSchemaSet" />が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.Schema.XmlSchemaSet" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (string targetNamespace, string schemaUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(string targetNamespace, string schemaUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetNamespace" Type="System.String" />
+        <Parameter Name="schemaUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetNamespace">スキーマ<c>targetNamespace</c>プロパティ、または<see langword="null" />を使用する、 <c>targetNamespace</c>スキーマで指定します。</param>
+        <param name="schemaUri">読み込むスキーマを指定する URL。</param>
+        <summary>指定した URL に XML スキーマ定義言語 (XSD) スキーマを追加、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトのスキーマが無効です。 スキーマが有効でない場合、<see cref="T:System.Xml.Schema.ValidationEventHandler" />が指定すると、<see langword="null" />が返され、適切な検証イベントが発生します。 それ以外の場合、<see cref="T:System.Xml.Schema.XmlSchemaException" />がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマを追加することができます、 <xref:System.Xml.Schema.XmlSchemaSet>、正常に前処理される必要があります。 前処理は、次の基本的なタスクを実行します。  
+  
+1.  W3C XML スキーマの規則に従って構造の有効性がチェック、スキーマがスキーマには完全には検証されません。  
+  
+2.  内部および外部のスキーマ コンポーネントへの参照は解決されます。 正常に取得される任意のインポートまたはインクルード対象スキーマに追加されます、<xref:System.Xml.Schema.XmlSchemaSet>です。 インポートされたスキーマは、独立したとして追加<xref:System.Xml.Schema.XmlSchema>オブジェクト、および含まれるスキーマの一部となる<xref:System.Xml.Schema.XmlSchema>です。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。  
+  
+-   スキーマの追加、<xref:System.Xml.Schema.XmlSchemaSet>同じターゲット名前空間とスキーマの場所の URL 内に既に含まれているスキーマとして、<xref:System.Xml.Schema.XmlSchemaSet>は元のスキーマ オブジェクトを返します。  
+  
+-   ときに新しいスキーマが正常に追加する、 <xref:System.Xml.Schema.XmlSchemaSet>、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaSet>に設定されている`false`です。  
+  
+-   XML スキーマ内でインクルードまたはインポートの要素が解決されたときに、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドが呼び出されます。 エラーを解決するのには含めるし、インポート要素にスキーマ検証警告が表示されない場合、<xref:System.Xml.Schema.XmlSchemaSet.ValidationEventHandler>が指定されて、<xref:System.Xml.Schema.XmlSchemaSet>オブジェクトは、この警告は報告されません。  
+  
+-   既に存在するスキーマと同じ名前空間とスキーマの場合は、<xref:System.Xml.Schema.XmlSchemaSet>に追加、 <xref:System.Xml.Schema.XmlSchemaSet>、両方のスキーマが追加されます。  
+  
+    > [!NOTE]
+    >  この動作は廃止された<xref:System.Xml.Schema.XmlSchemaCollection>オブジェクト。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>のメソッド、<xref:System.Xml.Schema.XmlSchemaSet>をパラメーターとして指定するターゲットの名前空間を必要とするのではなく、スキーマで定義されているターゲットの名前空間を使用することのできるときに、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドが呼び出されます。 指定する`null`で、`targetNamespace`のパラメーター、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドに指示、<xref:System.Xml.Schema.XmlSchemaSet>次のコード例に示すように、スキーマで定義されているターゲットの名前空間を使用します。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add(Nothing, "books.xsd")  
+  
+Dim schema As XmlSchema  
+For Each schema In schemaSet.Schemas("http://www.contoso.com/books")  
+    schema.Write(Console.Out)  
+Next  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add(null, "books.xsd");  
+  
+foreach(XmlSchema schema in schemaSet.Schemas("http://www.contoso.com/books"))  
+{  
+    schema.Write(Console.Out);  
+}  
+```  
+  
+ 上記のコード例で`null`として指定されて、`targetNamespace`パラメーターを<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。 その結果、`targetNamespace`定義で、books.xml ファイルを使用します。 この場合、呼び出しの結果、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドは http://www.contoso.com/books として指定した場合と同じになります、`targetNamespace`パラメーター。  
+  
+-   W3C XML スキーマでは、ターゲット名前空間が定義されているスキーマに含まれるターゲット名前空間のないスキーマを許可します。 ここでは、インクルードするスキーマのターゲットの名前空間に定義されているターゲット名前空間のないスキーマが強制変換されます。 インクルードされるスキーマは、その対象名前空間が定義されているがあったとして扱われます。 同様に、ターゲット名前空間のないスキーマを追加できる、<xref:System.Xml.Schema.XmlSchemaSet>とで指定されたターゲットの名前空間に資格情報を持つ、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドを次の例に示すようにします。  
+  
+```  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">  
+    <xs:element name="A" type="xs:string" />  
+</xs:schema>  
+```  
+  
+ 上記のスキーマに追加する場合、 <xref:System.Xml.Schema.XmlSchemaSet> (示すように次のコードに) ターゲット名前空間 http://www.contoso.com/new/targetnamespace、扱われます場合と、ターゲットの名前空間がスキーマで宣言された`http://www.contoso.com/new/targetnamespace`です。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add("http://www.contoso.com/new/targetnamespace", "http://www.contoso.com/targetnamespace.xsd")  
+  
+Dim schema As XmlSchema  
+  
+For Each schema in schemaSet.Schemas()  
+  
+    Console.WriteLine(schema.TargetNamespace)     
+  
+Next  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/new/targetnamespace", "http://www.contoso.com/targetnamespace.xsd");  
+foreach(XmlSchema schema in schemaSet.Schemas())  
+{  
+    Console.WriteLine(schema.TargetNamespace);  
+}  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例に http://www.contoso.com/books のターゲット名前空間を持つ http://www.contoso.com/books.xsd スキーマを追加、<xref:System.Xml.Schema.XmlSchemaSet>です。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+```  
+  
+ この例は、`books.xsd` ファイルを入力として使用します。  
+  
+ [!code-xml[XmlSchemaSetOverall Example#3](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaSetOverall Example/XML/books.xsd#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">スキーマが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">パラメーターとして渡された URL は<see langword="null" />または<see cref="F:System.String.Empty" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (string targetNamespace, System.Xml.XmlReader schemaDocument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(string targetNamespace, class System.Xml.XmlReader schemaDocument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Add(System.String,System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetNamespace" Type="System.String" />
+        <Parameter Name="schemaDocument" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="targetNamespace">スキーマ<c>targetNamespace</c>プロパティ、または<see langword="null" />を使用する、 <c>targetNamespace</c>スキーマで指定します。</param>
+        <param name="schemaDocument"><see cref="T:System.Xml.XmlReader" /> オブジェクト。</param>
+        <summary>含まれている XML スキーマ定義言語 (XSD) スキーマを追加、<see cref="T:System.Xml.XmlReader" />を<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトのスキーマが無効です。 スキーマが有効でない場合、<see cref="T:System.Xml.Schema.ValidationEventHandler" />が指定すると、<see langword="null" />が返され、適切な検証イベントが発生します。 それ以外の場合、<see cref="T:System.Xml.Schema.XmlSchemaException" />がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマを追加することができます、 <xref:System.Xml.Schema.XmlSchemaSet>、正常に前処理される必要があります。 前処理は、次の基本的なタスクを実行します。  
+  
+1.  W3C XML スキーマの規則に従って構造の有効性がチェック、スキーマがスキーマには完全には検証されません。  
+  
+2.  内部および外部のスキーマ コンポーネントへの参照は解決されます。 正常に取得される任意のインポートまたはインクルード対象スキーマに追加されます、<xref:System.Xml.Schema.XmlSchemaSet>です。 インポートされたスキーマは、独立したとして追加<xref:System.Xml.Schema.XmlSchema>オブジェクト、および含まれるスキーマの一部となる<xref:System.Xml.Schema.XmlSchema>です。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。  
+  
+-   正常にインポートまたはに含まれているスキーマに含まれるスキーマを取得、<xref:System.Xml.XmlReader>にも追加されて、<xref:System.Xml.Schema.XmlSchemaSet>です。  
+  
+-   場合、<xref:System.Xml.XmlReader>ルート要素に配置されていません、<xref:System.Xml.Schema.XmlSchemaException>現在のアイテムが要素でない限りがスローされます。 現在の項目がある場合、`xs:schema`要素、そのスキーマ ドキュメントが読み取りに、 <xref:System.Xml.Schema.XmlSchemaSet>、それ以外の<xref:System.Xml.Schema.XmlSchemaException>スキーマが無効であるためにスローされます。  
+  
+-   場合、<xref:System.Xml.XmlReader>が配置されている XML ノードのシーケンスのシーケンスの最初のノードのみを追加します。  
+  
+-   スキーマが作成された場合、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>メソッドを呼び出すの値、 <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> W3C XML スキーマ ドキュメントのインライン スキーマの処理が適用されないため、プロパティは無視されます。  
+  
+-   <xref:System.Xml.XmlResolver>のプロパティ、<xref:System.Xml.XmlReader>で名前空間またはスキーマの場所への参照を含めるし、要素をインポートするを解決するのには使用されません。 代わりに、<xref:System.Xml.XmlResolver>のプロパティ、<xref:System.Xml.Schema.XmlSchemaSet>を使用します。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>のメソッド、<xref:System.Xml.Schema.XmlSchemaSet>をパラメーターとして指定するターゲットの名前空間を必要とするのではなく、スキーマで定義されているターゲットの名前空間を使用することのできるときに、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドが呼び出されます。 指定する`null`または<xref:System.String.Empty?displayProperty=nameWithType>を<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドに指示、<xref:System.Xml.Schema.XmlSchemaSet>スキーマで定義されているターゲットの名前空間を使用します。 この動作の例は、次を参照してください。、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。  
+  
+ このメソッドの他の機能はのものと同じ、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に含まれている books.xsd スキーマを追加、<xref:System.Xml.XmlTextReader>に http://www.contoso.com/books のターゲット名前空間を持つ、<xref:System.Xml.Schema.XmlSchemaSet>です。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add("http://www.contoso.com/books", New XmlTextReader("books.xsd")  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/books", new XmlTextReader("books.xsd");  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">スキーマが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompilationSettings">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaCompilationSettings CompilationSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaCompilationSettings CompilationSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.CompilationSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaCompilationSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaCompilationSettings" /> の <see cref="T:System.Xml.Schema.XmlSchemaSet" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaCompilationSettings" /> の <see cref="T:System.Xml.Schema.XmlSchemaSet" />。 既定値は、<see cref="T:System.Xml.Schema.XmlSchemaCompilationSettings" />インスタンス、<see cref="P:System.Xml.Schema.XmlSchemaCompilationSettings.EnableUpaCheck" />プロパティに設定<see langword="true" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaCompilationSettings>クラス用の一意のパーティクル属性 (UPA) 検証オプションの指定、<xref:System.Xml.Schema.XmlSchemaSet>です。 UPA 検証チェックを有効にする方法の詳細については、次を参照してください。、<xref:System.Xml.Schema.XmlSchemaCompilationSettings.EnableUpaCheck%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public void Compile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Compile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Compile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加される XML スキーマ定義言語 (XSD) スキーマのコンパイル、<see cref="T:System.Xml.Schema.XmlSchemaSet" />を 1 つの論理スキーマにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証が必要なときに、このメソッドが自動的に呼び出されますと<xref:System.Xml.Schema.XmlSchemaSet>以前コンパイルされていない — たとえばときに、<xref:System.Xml.Schema.XmlSchemaSet>を作成する入力として使用、<xref:System.Xml.XmlReader>内のオブジェクト、<xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>のプロパティ、<xref:System.Xml.XmlReaderSettings>オブジェクト。 場合、<xref:System.Xml.Schema.XmlSchemaSet>が既にコンパイル済みの状態でこのメソッドは再コンパイルされないスキーマです。 このメソッドが正常に実行された場合、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティに設定されている`true`です。  
+  
+ 以前コンパイルされているスキーマ、<xref:System.Xml.Schema.XmlSchemaSet>は再コンパイルされません。 ただし、スキーマを使用してコンパイルした、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>のメソッド、<xref:System.Xml.Schema.XmlSchema>再コンパイルされます。  
+  
+> [!NOTE]
+>  呼び出す必要があります、<xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドに追加した後、スキーマ (またはそのが含まれています/インポートのいずれか) を変更した場合、<xref:System.Xml.Schema.XmlSchemaSet>です。 <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドは W3C XML スキーマの規則に従って構造の有効性のスキーマを確認します。 ただし、完全な検証チェックは実行しません。 内部および外部のスキーマ コンポーネントへの参照も解決されます。 正常に取得される任意のインポートまたはインクルード対象スキーマに追加されます、<xref:System.Xml.Schema.XmlSchemaSet>です。 インポートされたスキーマは、独立したとして追加<xref:System.Xml.Schema.XmlSchema>オブジェクト含まれているときなどの一部となるスキーマ<xref:System.Xml.Schema.XmlSchema>です。 再処理への呼び出しが成功した場合、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティが false に設定します。  
+  
+   
+  
+## Examples  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+schemaSet.Compile()  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+schemaSet.Compile();  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">検証および内のスキーマをコンパイルするときにエラーが発生しました、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string targetNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string targetNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetNamespace">スキーマ<c>targetNamespace</c>プロパティです。</param>
+        <summary>指定されたターゲット名前空間 URI を持つ XML スキーマ定義言語 (XSD) スキーマがかどうかを示す、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns>
+          <see langword="true" />かどうかに、指定されたターゲット名前空間 URI を持つスキーマが、 <see cref="T:System.Xml.Schema.XmlSchemaSet" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接追加は、スキーマ、<xref:System.Xml.Schema.XmlSchemaSet>によって検出された、<xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>メソッドです。 たとえば、インポートされたスキーマです。 その結果、http://www.contoso.com/retail 名前空間のスキーマの場合は、http://www.contoso.com/books 名前空間のスキーマをインポートするに追加、 <xref:System.Xml.Schema.XmlSchemaSet>、呼び出し元<xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>で`http://www.contoso.com/books`を返します、パラメーターとして`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Contains(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema"><see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクト。</param>
+        <summary>示すかどうか、指定した XML スキーマ定義言語 (XSD)<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトは、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトは、 <see cref="T:System.Xml.Schema.XmlSchemaSet" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.Schema.XmlSchemaSet" />パラメーターとして渡された<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Xml.Schema.XmlSchema[] schemas, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Xml.Schema.XmlSchema[] schemas, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.CopyTo(System.Xml.Schema.XmlSchema[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchema[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">オブジェクトのコピー先の配列。</param>
+        <param name="index">配列内のコピー開始位置を示すインデックス。</param>
+        <summary>すべてをコピー、<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトから、<see cref="T:System.Xml.Schema.XmlSchemaSet" />指定したインデックスから始まる、指定した配列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、すべてをコピー、<xref:System.Xml.Schema.XmlSchema>内のオブジェクト、<xref:System.Xml.Schema.XmlSchemaSet>の配列を<xref:System.Xml.Schema.XmlSchema>オブジェクト。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet  
+schemaSet.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd")  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+schemaSet.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd")  
+  
+Dim schemas(schemaSet.Count) As XmlSchema  
+schemaSet.CopyTo(schemas, 0)  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd");  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+schemaSet.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd");  
+  
+XmlSchema[] schemas = new XmlSchema[schemaSet.Count];  
+schemaSet.CopyTo(schemas, 0);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得します論理の XML スキーマ定義言語 (XSD) スキーマ、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <value>論理スキーマの数、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間の 2 つのスキーマがある場合`http://www.contoso.com`で、 <xref:System.Xml.Schema.XmlSchemaSet>、<xref:System.Xml.Schema.XmlSchemaSet.Count%2A>プロパティ 1 を返します、スキーマが検証の目的で 1 つの論理スキーマとして扱われるためです。 ただし、名前空間のスキーマの場合は`http://www.contoso.com/retail`のスキーマをインポートした、`http://www.contoso.com/books`名前空間の値、<xref:System.Xml.Schema.XmlSchemaSet.Count%2A>プロパティが 2 になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalAttributes">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaObjectTable GlobalAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaObjectTable GlobalAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.GlobalAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaObjectTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のすべてにグローバルな属性のすべての XML スキーマ定義言語 (XSD) スキーマを取得、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <value>グローバル属性のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalElements">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaObjectTable GlobalElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaObjectTable GlobalElements" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.GlobalElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaObjectTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のすべての XML スキーマ定義内のすべてのグローバル要素の言語 (XSD) スキーマを取得、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <value>グローバル要素のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalTypes">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaObjectTable GlobalTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaObjectTable GlobalTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.GlobalTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaObjectTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてを取得、グローバル単純型と複合型のすべての XML スキーマ定義言語 (XSD) スキーマで、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <value>グローバル単純型とグローバル複合型のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaSet.GlobalTypes%2A>を表す型を常に返します、`xs:anyType`複合型。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompiled">
+      <MemberSignature Language="C#" Value="public bool IsCompiled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompiled" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.IsCompiled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、XML スキーマ定義言語 (XSD) スキーマで、<see cref="T:System.Xml.Schema.XmlSchemaSet" />がコンパイルされました。</summary>
+        <value>
+          <see langword="true" />場合内のスキーマ、<see cref="T:System.Xml.Schema.XmlSchemaSet" />最後に、スキーマが追加または削除からコンパイルされている、 <see cref="T:System.Xml.Schema.XmlSchemaSet" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> プロパティは、スキーマが <xref:System.Xml.Schema.XmlSchemaSet> 内にあるときに編集されても、影響を受けません。 <xref:System.Xml.Schema.XmlSchemaSet> 内の個別のスキーマの更新は追跡されません。 その結果、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> プロパティは、`true` のスキーマが追加または削除されない限り、<xref:System.Xml.Schema.XmlSchemaSet> に含まれるスキーマの 1 つが変更されていても、<xref:System.Xml.Schema.XmlSchemaSet> になる可能性があります。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティを参照してください、<xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNameTable NameTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を取得<see cref="T:System.Xml.XmlNameTable" />によって使用される、<see cref="T:System.Xml.Schema.XmlSchemaSet" />新しい XML スキーマ定義言語 (XSD) スキーマを読み込むときにします。</summary>
+        <value>最小単位に分割された文字列オブジェクトのテーブル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Remove (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Remove(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Remove(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema"><see cref="T:System.Xml.Schema.XmlSchema" />から削除するオブジェクト、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</param>
+        <summary>指定した XML スキーマ定義言語 (XSD) スキーマを削除、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />から削除されたオブジェクト、<see cref="T:System.Xml.Schema.XmlSchemaSet" />または<see langword="null" />にスキーマが見つからなかった場合、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマを削除する、<xref:System.Xml.Schema.XmlSchemaSet>設定、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次の例を複数のスキーマを追加する、<xref:System.Xml.Schema.XmlSchemaSet>を使用してスキーマの 1 つを削除してから、<xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>メソッドです。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd")  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+schemaSet.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd")  
+  
+Dim schema As XmlSchema  
+  
+For Each schema In schemaSet.Schemas()  
+  
+    If schema.TargetNamespace = "http://www.contoso.com/music" Then  
+        schemaSet.Remove(schema)  
+    End If  
+  
+Next  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd");  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+schemaSet.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd");  
+  
+foreach (XmlSchema schema in schemaSet.Schemas())  
+{  
+    if (schema.TargetNamespace == "http://www.contoso.com/music")  
+    {  
+        schemaSet.Remove(schema);  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">スキーマは、有効なスキーマではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.Schema.XmlSchema" />パラメーターとして渡された<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRecursive">
+      <MemberSignature Language="C#" Value="public bool RemoveRecursive (System.Xml.Schema.XmlSchema schemaToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveRecursive(class System.Xml.Schema.XmlSchema schemaToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.RemoveRecursive(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemaToRemove" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schemaToRemove"><see cref="T:System.Xml.Schema.XmlSchema" />から削除するオブジェクト、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</param>
+        <summary>指定した XML スキーマ定義言語 (XSD) スキーマとそれがインポートされたすべてのスキーマを削除、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトとそのすべてのインポートが正常に削除された、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>メソッドは、指定したスキーマとそれがインポートされたすべてのスキーマを削除、<xref:System.Xml.Schema.XmlSchemaSet>スキーマや、インポートされたスキーマに依存関係がない限り、します。 スキーマで、インポートされたスキーマに依存関係があるかどうか、 <xref:System.Xml.Schema.XmlSchemaSet>、何も行われませんが削除されると<xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>を返します`false`です。 場合`false`が返されますと<xref:System.Xml.Schema.XmlSchemaSet.ValidationEventHandler>が定義されている場合、警告が依存関係を記述するイベント ハンドラーに送信します。  
+  
+ 指定されたスキーマは、その他のスキーマをインポートし、指定したスキーマ以前削除しましたが、場合、<xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>メソッド、<xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>メソッドを選択し、インポートされたスキーマは削除されませんが返されます`false`です。 たとえば場合、`parentSchema`インポート`childSchema1`と`childSchema2`次のコードはのみを削除`parentSchema`がインポートされていない、`childSchema1`と`childSchema2`スキーマ。  
+  
+```  
+XmlSchemaSet ss = new XmlSchemaSet();  
+XmlSchema xs = XmlSchema.Read(XmlReader.Create("parentSchema.xsd"), null);  
+ss.Add(xs);  
+ss.Compile();  
+ss.Remove(xs);  
+ss.Compile();  
+ss.RemoveRecursive(xs);  
+ss.Compile();  
+```  
+  
+ 次のコードが削除されます、`parentSchema`とインポートされたスキーマ。  
+  
+```  
+XmlSchemaSet ss = new XmlSchemaSet();  
+XmlSchema xs = XmlSchema.Read(XmlReader.Create("parentSchema.xsd"), null);  
+ss.Add(xs);  
+ss.Compile();  
+ss.RemoveRecursive(xs);  
+ss.Compile();  
+```  
+  
+ <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>メソッドも何も起こりませんの状態で、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を複数のスキーマを追加することを示しています、 <xref:System.Xml.Schema.XmlSchemaSet>、スキーマのいずれかと、インポートを使用してすべてのスキーマを削除してから、<xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>メソッドです。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+schemaSet.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd")  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+schemaSet.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd")  
+  
+Dim schema As XmlSchema  
+  
+For Each schema In schemaSet.Schemas()  
+  
+    If schema.TargetNamespace = "http://www.contoso.com/music" Then  
+        schemaSet.RemoveRecursive(schema)  
+    End If  
+  
+Next  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/retail", "http://www.contoso.com/retail.xsd");  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+schemaSet.Add("http://www.contoso.com/music", "http://www.contoso.com/music.xsd");  
+  
+foreach (XmlSchema schema in schemaSet.Schemas())  
+{  
+    if (schema.TargetNamespace == "http://www.contoso.com/music")  
+    {  
+        schemaSet.RemoveRecursive(schema);  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.Schema.XmlSchema" />パラメーターとして渡された<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reprocess">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Reprocess (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Reprocess(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Reprocess(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema">再処理するスキーマ。</param>
+        <summary>既に存在する XML スキーマ定義言語 (XSD) スキーマを再処理、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />オブジェクトのかどうか、スキーマは、有効なスキーマです。 スキーマが有効でない場合、<see cref="T:System.Xml.Schema.ValidationEventHandler" />が指定されている<see langword="null" />が返され、適切な検証イベントが発生します。 それ以外の場合、<see cref="T:System.Xml.Schema.XmlSchemaException" />がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマの前処理、スキーマに対して実行されたすべての前処理手順を実行時に、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドが呼び出されます。 場合への呼び出し<xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>が完了すると、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティに設定されている`false`です。  
+  
+ 内のスキーマの後に再処理メソッドを使用する必要があります、<xref:System.Xml.Schema.XmlSchemaSet>が変更された後、<xref:System.Xml.Schema.XmlSchemaSet>コンパイルを実行します。  
+  
+> [!NOTE]
+>  呼び出す必要があります、<xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドに追加した後、スキーマ (またはそのが含まれています/インポートのいずれか) を変更した場合、<xref:System.Xml.Schema.XmlSchemaSet>です。 <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドは W3C XML スキーマの規則に従って構造の有効性のスキーマを確認します。 ただし、完全な検証チェックは実行しません。 内部および外部のスキーマ コンポーネントへの参照も解決されます。 正常に取得される任意のインポートまたはインクルード対象スキーマに追加されます、<xref:System.Xml.Schema.XmlSchemaSet>です。 インポートされたスキーマは、独立したとして追加<xref:System.Xml.Schema.XmlSchema>オブジェクト含まれているときなどの一部となるスキーマ<xref:System.Xml.Schema.XmlSchema>です。 再処理への呼び出しが成功した場合、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティが false に設定します。  
+  
+   
+  
+## Examples  
+ 次の例に追加のスキーマの前処理、<xref:System.Xml.Schema.XmlSchemaSet>です。 後に、<xref:System.Xml.Schema.XmlSchemaSet>を使用してコンパイル、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>メソッド、およびに追加されたスキーマ、<xref:System.Xml.Schema.XmlSchemaSet>を変更すると、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティ設定されます`true`でスキーマ場合でも、<xref:System.Xml.Schema.XmlSchemaSet>が変更されました。 呼び出す、<xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドでは、すべての前処理が実行を実行、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>メソッドとセット、<xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A>プロパティを`false`です。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
+Dim schema As XmlSchema = schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+schemaSet.Compile()  
+  
+Dim element As XmlSchemaElement = New XmlSchemaElement()  
+schema.Items.Add(element)  
+element.Name = "book"  
+element.SchemaTypeName = New XmlQualifiedName("string", "http://www.w3.org/2001/XMLSchema")  
+  
+schemaSet.Reprocess(schema)  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+XmlSchema schema = schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+schemaSet.Compile();  
+  
+XmlSchemaElement element = new XmlSchemaElement();  
+schema.Items.Add(element);  
+element.Name = "book";  
+element.SchemaTypeName = new XmlQualifiedName("string", "http://www.w3.org/2001/XMLSchema");  
+  
+schemaSet.Reprocess(schema);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">スキーマが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.Schema.XmlSchema" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.Schema.XmlSchema" />でパラメーターが既に存在しないために、オブジェクトが渡される、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemas">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Schemas ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ICollection Schemas() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Schemas" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての XML スキーマ定義のコレクション内の言語 (XSD) スキーマを返します、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />オブジェクトに追加されているすべてのスキーマを含む、<see cref="T:System.Xml.Schema.XmlSchemaSet" />です。 スキーマが追加されていない場合、 <see cref="T:System.Xml.Schema.XmlSchemaSet" />、空<see cref="T:System.Collections.ICollection" />オブジェクトが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを間接的に追加されたスキーマを返します、<xref:System.Xml.Schema.XmlSchemaSet>インポートされたためです。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>メソッドは、それと同等の<xref:System.Xml.Schema.XmlSchemaCollection.GetEnumerator%2A>メソッドの廃止された<xref:System.Xml.Schema.XmlSchemaCollection>です。  
+  
+   
+  
+## Examples  
+ 次の例は、すべてのスキーマを反復処理する方法を示しています、<xref:System.Xml.Schema.XmlSchemaSet>です。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+  
+Dim schema As XmlSchema  
+  
+For Each schema In schemaSet.Schemas()  
+  
+    schema.Write(Console.Out)  
+  
+Next  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+  
+foreach (XmlSchema schema in schemaSet.Schemas())  
+{  
+    schema.Write(Console.Out);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemas">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Schemas (string targetNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ICollection Schemas(string targetNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSet.Schemas(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetNamespace">スキーマ<c>targetNamespace</c>プロパティです。</param>
+        <summary>すべての XML スキーマ定義のコレクション内の言語 (XSD) スキーマを返します、<see cref="T:System.Xml.Schema.XmlSchemaSet" />指定した名前空間に属しています。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />オブジェクトに追加されているすべてのスキーマを含む、<see cref="T:System.Xml.Schema.XmlSchemaSet" />指定した名前空間に属しています。 スキーマが追加されていない場合、 <see cref="T:System.Xml.Schema.XmlSchemaSet" />、空<see cref="T:System.Collections.ICollection" />オブジェクトが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`targetNamespace`パラメーターは`null`または<xref:System.String.Empty>、名前空間のないすべてのスキーマが返されます。  
+  
+ このメソッドを間接的に追加されたスキーマを返します、<xref:System.Xml.Schema.XmlSchemaSet>インポートされたためです。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>メソッドは、それと同等の<xref:System.Xml.Schema.XmlSchemaCollection.Item%2A>メソッドの廃止された<xref:System.Xml.Schema.XmlSchemaCollection>です。  
+  
+   
+  
+## Examples  
+ 次の例は、http://www.contoso.com/books 名前空間内にあるすべてのスキーマを反復処理する方法を示しています、<xref:System.Xml.Schema.XmlSchemaSet>です。  
+  
+```vb  
+Dim schemaSet As XmlSchemaSet = New XmlSchemaSet  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd")  
+  
+Dim schema As XmlSchema  
+  
+For Each schema In schemaSet.Schemas("http://www.contoso.com/books")  
+  
+    schema.Write(Console.Out)  
+  
+Next  
+```  
+  
+```csharp  
+XmlSchemaSet schemaSet = new XmlSchemaSet();  
+schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd");  
+  
+foreach (XmlSchema schema in schemaSet.Schemas("http://www.contoso.com/books"))  
+{  
+    schema.Write(Console.Out);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationEventHandler">
+      <MemberSignature Language="C#" Value="public event System.Xml.Schema.ValidationEventHandler ValidationEventHandler;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Schema.ValidationEventHandler ValidationEventHandler" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Schema.XmlSchemaSet.ValidationEventHandler" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.ValidationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML スキーマ定義言語 (XSD) スキーマ検証エラーに関する情報を受信するためのイベント ハンドラーを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマ検証エラーに関する情報を受信するため、イベント ハンドラーを設定するときに、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>または<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>のメソッド、<xref:System.Xml.Schema.XmlSchemaSet>と呼ばれます。  
+  
+ イベント ハンドラーが定義されていない場合、<xref:System.Xml.Schema.XmlSchemaException>検証エラー上でスローされる場所、<xref:System.Xml.Schema.XmlSeverityType>は<xref:System.Xml.Schema.XmlSeverityType.Error>です。 検証エラーの例外がスローしません、<xref:System.Xml.Schema.XmlSeverityType>の<xref:System.Xml.Schema.XmlSeverityType.Warning>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加することを示しています、<xref:System.Xml.Schema.XmlSchemaSet.ValidationEventHandler>をスキーマに対して XML ドキュメントを検証するときに、エラーと警告をキャプチャします。  
+  
+ [!code-cpp[XmlSchemaSetOverall Example#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaSetOverall Example/CPP/xmlschemasetexample.cpp#1)]
+ [!code-csharp[XmlSchemaSetOverall Example#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaSetOverall Example/CS/xmlschemasetexample.cs#1)]
+ [!code-vb[XmlSchemaSetOverall Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaSetOverall Example/VB/xmlschemasetexample.vb#1)]  
+  
+ 例では、入力値として books.xml ファイルを使用します。  
+  
+ [!code-xml[XmlSchemaSetOverall Example#2](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaSetOverall Example/XML/books.xml#2)]  
+  
+ 例では、入力値として books.xsd ファイルを使用します。  
+  
+ [!code-xml[XmlSchemaSetOverall Example#3](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaSetOverall Example/XML/books.xsd#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlResolver">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlResolver XmlResolver { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlResolver XmlResolver" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSet.XmlResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セット、<see cref="T:System.Xml.XmlResolver" />解決するには名前空間またはで参照されている場所を含めるし、スキーマの要素をインポートするために使用します。</summary>
+        <value><see cref="T:System.Xml.XmlResolver" />解決するには名前空間またはで参照されている場所を含めるし、スキーマの要素をインポートするために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlResolver>の<xref:System.Xml.Schema.XmlSchemaSet>解決するには名前空間またはで参照されている場所を含めるし、スキーマの要素をインポートするには、いつでもを使用してスキーマを追加するために使用、<xref:System.Xml.Schema.XmlSchemaSet.Add%2A>または<xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  外部名前空間または場所で参照されているインクルード、インポート、およびスキーマの再定義要素は解決に関してインクルードまたはインポートするスキーマのベース URI。 たとえば、インクルードまたはインポートしてスキーマのベース URI が空の場合または`null`、外部の場所は、現在のディレクトリに対して解決されます。 <xref:System.Xml.XmlUrlResolver>クラスは、外部スキーマを解決するのには既定で使用します。 インクルード、インポートの解像度を無効にして、スキーマの要素を再定義、設定、<xref:System.Xml.Schema.XmlSchemaSet.XmlResolver%2A>プロパティを`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,254 @@
+<Type Name="ProfilePropertyMetadata" FullName="System.Web.ApplicationServices.ProfilePropertyMetadata">
+  <TypeSignature Language="C#" Value="public class ProfilePropertyMetadata : System.Runtime.Serialization.IExtensibleDataObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProfilePropertyMetadata extends System.Object implements class System.Runtime.Serialization.IExtensibleDataObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.ProfilePropertyMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IExtensibleDataObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロファイル プロパティを記述する値のコレクションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata>を介して、プロファイルにアクセスすると、プロファイルのプロパティに関する情報を取得するクラス、<xref:System.Web.ApplicationServices.ProfileService>クラスです。 読み取り専用かは、認証されていないユーザーと既定値でアクセスできるかどうか、プロパティの型と名前を取得できます。 アプリケーションでは、読み取り専用プロパティを設定しようとしていないなど、これらの値に基づく適切なアクションを実行できます。  
+  
+ アクセスする、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata>オブジェクトで、Windows Communication Framework (WCF)、使用して互換性のあるアプリケーションから、<xref:System.Web.ApplicationServices.ProfileService.GetPropertiesMetadata%2A>のメソッド、<xref:System.Web.ApplicationServices.ProfileService>クラスです。 ユーザーがログオンする必要を取得する必要はありません、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata>オブジェクトのプロファイルのプロパティのメタデータは、ユーザーのプロファイル プロパティの値に固有ではないためです。  
+  
+ 内の値、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata>プロパティが定義されている場合、Web.config ファイルでセクションの要素にクラスを設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfilePropertyMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ProfilePropertyMetadata.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ApplicationServices.ProfilePropertyMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowAnonymousAccess">
+      <MemberSignature Language="C#" Value="public bool AllowAnonymousAccess { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowAnonymousAccess" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.AllowAnonymousAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティが認証されていないユーザーが使用できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティが認証されていないユーザーに利用可能な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 匿名の id で、要素の設定を有効にすると、どのプロファイルのプロパティは匿名ユーザーに利用可能なを設定できます。 設定する、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.AllowAnonymousAccess%2A>プロパティが定義されている場合、Web.config ファイルのセクションの要素内のプロパティです。 クライアント アプリケーションから使用して、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.AllowAnonymousAccess%2A>匿名ユーザーのプロファイル プロパティを設定できるかどうかを決定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public string DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティの既定値を設定します。</summary>
+        <value>既定値は、Web.config ファイルで定義されている場合は、プロパティの既定値のシリアル化された表現それ以外の場合、文字列"(null)"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化された形式、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.DefaultValue%2A>プロパティはによって決定されます、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.SerializeAs%2A>のプロパティ、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionData">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ExtensionDataObject ExtensionData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ExtensionDataObject ExtensionData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.ExtensionData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ExtensionDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Runtime.Serialization.ExtensionDataObject" />インスタンス。</summary>
+        <value>逆シリアル化操作中に、拡張データを格納するオブジェクトへの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイルのプロパティは読み取り専用であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロファイル プロパティが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.IsReadOnly%2A>プロパティが定義されている場合、Web.config ファイルのセクションの要素内のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイルのプロパティの名前を設定します。</summary>
+        <value>Web.config ファイルで定義されているプロファイル プロパティの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.PropertyName%2A>プロパティが定義されている場合、Web.config ファイルのセクションの要素内のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAs">
+      <MemberSignature Language="C#" Value="public int SerializeAs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SerializeAs" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.SerializeAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティの値をシリアル化する方法を示す値を設定します。</summary>
+        <value>列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.SerializeAs%2A>プロパティが定義されている場合、Web.config ファイルのセクションの要素内のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ProfilePropertyMetadata.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイル プロパティの型のアセンブリ修飾名を設定します。</summary>
+        <value>プロファイル プロパティの型のアセンブリ修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.ApplicationServices.ProfilePropertyMetadata.TypeName%2A>プロパティが定義されている場合、Web.config ファイルのセクションの要素内のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

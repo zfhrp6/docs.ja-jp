@@ -1,0 +1,62 @@
+<Type Name="ITypeLibExporterNameProvider" FullName="System.Runtime.InteropServices.ITypeLibExporterNameProvider">
+  <TypeSignature Language="C#" Value="public interface ITypeLibExporterNameProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeLibExporterNameProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ITypeLibExporterNameProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("fa1f3615-acb9-486d-9eac-1bef87e36b09")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タイプ ライブラリにエクスポートするときに名前の大文字と小文字の制御を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイプ ライブラリへのエクスポート時に型の名前付け方法を制御するために、オブジェクトがこのインターフェイスを実装する必要がありますだけでなく<xref:System.Runtime.InteropServices.ITypeLibExporterNotifySink>です。 最後のパラメーターとして、このオブジェクトを渡す<xref:System.Runtime.InteropServices.TypeLibConverter.ConvertAssemblyToTypeLib%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetNames">
+      <MemberSignature Language="C#" Value="public string[] GetNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ITypeLibExporterNameProvider.GetNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>大文字と小文字を区別する名前の一覧を返します。</summary>
+        <returns>各要素がの大文字小文字の区別コントロールの種類の名前を含む文字列の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから返された配列の名前は一意である必要があります。 別の大文字と小文字を使用しても、名前の配列に 2 回名前が表示された場合は、最初に登場する位置が優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

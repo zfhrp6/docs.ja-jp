@@ -1,0 +1,261 @@
+<Type Name="ContractBasedImportDefinition" FullName="System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition">
+  <TypeSignature Language="C#" Value="public class ContractBasedImportDefinition : System.ComponentModel.Composition.Primitives.ImportDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContractBasedImportDefinition extends System.ComponentModel.Composition.Primitives.ImportDefinition" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Composition.Primitives.ImportDefinition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>必要なインポートを表す、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />オブジェクトとは、コントラクト名とメタデータの両方を指定できます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ContractBasedImportDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContractBasedImportDefinition (string contractName, string requiredTypeIdentity, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,Type&gt;&gt; requiredMetadata, System.ComponentModel.Composition.Primitives.ImportCardinality cardinality, bool isRecomposable, bool isPrerequisite, System.ComponentModel.Composition.CreationPolicy requiredCreationPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName, string requiredTypeIdentity, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, class System.Type&gt;&gt; requiredMetadata, valuetype System.ComponentModel.Composition.Primitives.ImportCardinality cardinality, bool isRecomposable, bool isPrerequisite, valuetype System.ComponentModel.Composition.CreationPolicy requiredCreationPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.#ctor(System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Type}},System.ComponentModel.Composition.Primitives.ImportCardinality,System.Boolean,System.Boolean,System.ComponentModel.Composition.CreationPolicy)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="requiredTypeIdentity" Type="System.String" />
+        <Parameter Name="requiredMetadata" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Type&gt;&gt;" />
+        <Parameter Name="cardinality" Type="System.ComponentModel.Composition.Primitives.ImportCardinality" />
+        <Parameter Name="isRecomposable" Type="System.Boolean" />
+        <Parameter Name="isPrerequisite" Type="System.Boolean" />
+        <Parameter Name="requiredCreationPolicy" Type="System.ComponentModel.Composition.CreationPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">コントラクト名、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />定義のインポートに必要なオブジェクトです。</param>
+        <param name="requiredTypeIdentity">エクスポートの型の型の id。 使用して、<see cref="M:System.ComponentModel.Composition.AttributedModelServices.GetTypeIdentity(System.Type)" />指定された型の型 id を生成する方法です。 特定の種類が不要な場合を使用して<see langword="null" />です。</param>
+        <param name="requiredMetadata">メタデータの名前と定義のインポート; で必要な型を格納するキー/値ペアのコレクションまたは<see langword="null" />を設定する、<see cref="P:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.RequiredMetadata" />プロパティを空に<see cref="T:System.Collections.Generic.IEnumerable`1" />コレクション。</param>
+        <param name="cardinality">基数を示す列挙値のいずれか、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />定義のインポートに必要なオブジェクトです。</param>
+        <param name="isRecomposable">
+          <see langword="true" />有効期間全体で複数回定義のインポートを満たすことができることを指定する、 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />、それ以外の<see langword="false" />します。</param>
+        <param name="isPrerequisite">
+          <see langword="true" />前に条件が満たされるインポート定義が必要なことを指定する、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />エクスポート オブジェクトの開始を生成したことができます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="requiredCreationPolicy">このインポートを満たすために使用されるエクスポートの特定の作成ポリシーがインポーターにする必要があるかを示す値。 特定の作成ポリシーが必要ではない場合、既定値は<see cref="F:System.ComponentModel.Composition.CreationPolicy.Any" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" />クラスの指定したコントラクト名、必要な型 id、必要なメタデータ、基数、および作成ポリシーを使用して、定義のインポートが再合成可能かどうかの前提条件を示します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contractName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contractName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="requiredMetadata" />ある要素を含む<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="cardinality" /> は <see cref="T:System.ComponentModel.Composition.Primitives.ImportCardinality" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContractBasedImportDefinition (string contractName, string requiredTypeIdentity, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,Type&gt;&gt; requiredMetadata, System.ComponentModel.Composition.Primitives.ImportCardinality cardinality, bool isRecomposable, bool isPrerequisite, System.ComponentModel.Composition.CreationPolicy requiredCreationPolicy, System.Collections.Generic.IDictionary&lt;string,object&gt; metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName, string requiredTypeIdentity, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, class System.Type&gt;&gt; requiredMetadata, valuetype System.ComponentModel.Composition.Primitives.ImportCardinality cardinality, bool isRecomposable, bool isPrerequisite, valuetype System.ComponentModel.Composition.CreationPolicy requiredCreationPolicy, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.#ctor(System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Type}},System.ComponentModel.Composition.Primitives.ImportCardinality,System.Boolean,System.Boolean,System.ComponentModel.Composition.CreationPolicy,System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="requiredTypeIdentity" Type="System.String" />
+        <Parameter Name="requiredMetadata" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Type&gt;&gt;" />
+        <Parameter Name="cardinality" Type="System.ComponentModel.Composition.Primitives.ImportCardinality" />
+        <Parameter Name="isRecomposable" Type="System.Boolean" />
+        <Parameter Name="isPrerequisite" Type="System.Boolean" />
+        <Parameter Name="requiredCreationPolicy" Type="System.ComponentModel.Composition.CreationPolicy" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">コントラクト名、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />定義のインポートに必要なオブジェクトです。</param>
+        <param name="requiredTypeIdentity">エクスポートの型の型の id。 使用して、<see cref="M:System.ComponentModel.Composition.AttributedModelServices.GetTypeIdentity(System.Type)" />指定された型の型 id を生成する方法です。 特定の種類が不要な場合を使用して<see langword="null" />です。</param>
+        <param name="requiredMetadata">メタデータの名前と定義のインポート; で必要な型を格納するキー/値ペアのコレクションまたは<see langword="null" />を設定する、<see cref="P:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.RequiredMetadata" />プロパティを空に<see cref="T:System.Collections.Generic.IEnumerable`1" />コレクション。</param>
+        <param name="cardinality">基数を示す列挙値のいずれか、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />定義のインポートに必要なオブジェクトです。</param>
+        <param name="isRecomposable">
+          <see langword="true" />有効期間全体で複数回定義のインポートを満たすことができることを指定する、 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />、それ以外の<see langword="false" />します。</param>
+        <param name="isPrerequisite">
+          <see langword="true" />前に条件が満たされるインポート定義が必要なことを指定する、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />エクスポート オブジェクトの開始を生成したことができます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="requiredCreationPolicy">このインポートを満たすために使用されるエクスポートの特定の作成ポリシーがインポーターにする必要があるかを示す値。 特定の作成ポリシーが必要ではない場合、既定値は<see cref="F:System.ComponentModel.Composition.CreationPolicy.Any" />します。</param>
+        <param name="metadata">このインポートに関連付けられたメタデータ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" />クラスの指定したコントラクト名、必要な型 id、必須および省略可能なメタデータ、基数、および作成ポリシーを使用して、定義のインポートが再合成可能かどうかの前提条件を示します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contractName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contractName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="requiredMetadata" />ある要素を含む<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="cardinality" /> は <see cref="T:System.ComponentModel.Composition.Primitives.ImportCardinality" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Constraint">
+      <MemberSignature Language="C#" Value="public override System.Linq.Expressions.Expression&lt;Func&lt;System.ComponentModel.Composition.Primitives.ExportDefinition,bool&gt;&gt; Constraint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;class System.ComponentModel.Composition.Primitives.ExportDefinition, bool&gt;&gt; Constraint" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.Constraint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression&lt;System.Func&lt;System.ComponentModel.Composition.Primitives.ExportDefinition,System.Boolean&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインポート定義で説明されているインポートを満たすために一致する必要がある条件を定義する式を取得します。</summary>
+        <value>含む式を<see cref="T:System.Func`2" />の一致する必要がある条件を定義するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />によって満たされると、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConstraintSatisfiedBy">
+      <MemberSignature Language="C#" Value="public override bool IsConstraintSatisfiedBy (System.ComponentModel.Composition.Primitives.ExportDefinition exportDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsConstraintSatisfiedBy(class System.ComponentModel.Composition.Primitives.ExportDefinition exportDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.IsConstraintSatisfiedBy(System.ComponentModel.Composition.Primitives.ExportDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exportDefinition" Type="System.ComponentModel.Composition.Primitives.ExportDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="exportDefinition">テストするエクスポート定義します。</param>
+        <summary>指定したエクスポート定義で表されるエクスポートによってこのオブジェクトによって表される制約を満たしているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />制約を満たしている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredCreationPolicy">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Composition.CreationPolicy RequiredCreationPolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Composition.CreationPolicy RequiredCreationPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.RequiredCreationPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.CreationPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポーターが特定する必要があるかを示す値を取得または<see cref="T:System.ComponentModel.Composition.CreationPolicy" />このインポートを満たすために使用するエクスポートします。</summary>
+        <value>次のいずれかの値です。  
+  
+ <see cref="F:System.ComponentModel.Composition.CreationPolicy.Any" />、インポーターは、固有の仕様を必要としない場合<see cref="T:System.ComponentModel.Composition.CreationPolicy" />です。  
+  
+ <see cref="F:System.ComponentModel.Composition.CreationPolicy.Shared" />コンテナー内のすべてのインポーターでは、すべてエクスポートに使用されることを要求するを共有する必要があります。  
+  
+ <see cref="F:System.ComponentModel.Composition.CreationPolicy.NonShared" />非共有コンテナーに使用されるすべてのエクスポートがであることが必要です。 この場合、各インポーターは、別のインスタンスを受け取ります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredMetadata">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,Type&gt;&gt; RequiredMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, class System.Type&gt;&gt; RequiredMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.RequiredMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Type&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義のインポートに必要なエクスポートのメタデータの名前を取得します。</summary>
+        <value>コレクション<see cref="T:System.String" />のメタデータの名前を格納するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />に必要なオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" />です。 既定値は、空<see cref="T:System.Collections.Generic.IEnumerable`1" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライドが返りません`null`または戻り値の<xref:System.Collections.Generic.IEnumerable%601>にある要素を格納しているコレクション`null`です。 定義に必要なメタデータが含まれていない場合は、空を返す<xref:System.Collections.Generic.IEnumerable%601>コレクション代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredTypeIdentity">
+      <MemberSignature Language="C#" Value="public virtual string RequiredTypeIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequiredTypeIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.RequiredTypeIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに一致するエクスポートの予期される型を取得<see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" />です。</summary>
+        <value>呼び出すことによって生成される文字列、<see cref="M:System.ComponentModel.Composition.AttributedModelServices.GetTypeIdentity(System.Type)" />このインポートが必要ですが、型にメソッドです。 値が場合<see langword="null" />、このインポートは、特定の型を想定していません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>この <see cref="T:System.ComponentModel.Composition.Primitives.ContractBasedImportDefinition" /> オブジェクトの文字列表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,379 @@
+<Type Name="DataServiceQuery&lt;TElement&gt;" FullName="System.Data.Services.Client.DataServiceQuery&lt;TElement&gt;">
+  <TypeSignature Language="C#" Value="public class DataServiceQuery&lt;TElement&gt; : System.Data.Services.Client.DataServiceQuery, System.Collections.Generic.IEnumerable&lt;TElement&gt;, System.Linq.IQueryable&lt;TElement&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceQuery`1&lt;TElement&gt; extends System.Data.Services.Client.DataServiceQuery implements class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt;, class System.Collections.IEnumerable, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!TElement&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceQuery`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TElement" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.Services.Client.DataServiceQuery</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;TElement&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryable&lt;TElement&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TElement">クエリによって返される結果の型。</typeparam>
+    <summary>データ サービスに対する単一のクエリ要求を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、パブリック コンストラクターが定義されていません。 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> クラスの <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> または <xref:System.Data.Services.Client.DataServiceContext> を使用して、オブジェクト インスタンスが作成されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddQueryOption">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQuery&lt;TElement&gt; AddQueryOption (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQuery`1&lt;!TElement&gt; AddQueryOption(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.AddQueryOption(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQuery&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するクエリ文字列オプションの名前を含む文字列値。</param>
+        <param name="value">クエリ文字列オプションの値を格納するオブジェクト。</param>
+        <summary>返されたクエリによって生成される URI でクエリ オプションを設定して、新しい <see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> を作成します。</summary>
+        <returns>指定されたクエリの URI に追加された、要求されたクエリ オプションを含む新しいクエリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果の URI に追加のクエリ オプションを使用して`?name=value&name2=value2`しています. 名前に直接マップ構文、`name`パラメーターおよび`value`で ToString を呼び出すことで取得した、`value`パラメーター。 `name` は `$` で始まります。  
+  
+ 非 [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] 構文の先頭は `$` ではありません。 このメソッドを使用して、非 [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] クエリ オプションを追加することができます。 オプションが [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] クエリ オプションでない場合、同じクエリ オプションを 2 回追加することができます。 基になる URI に既に存在するクエリ オプションを追加した場合、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、運賃が $30 以上の注文だけを返し、結果を降順の日付で並べ替えるシーケンシャルな <xref:System.Data.Services.Client.DataServiceQuery%601> メソッド呼び出しと一緒に使用する <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> を示します。  
+  
+ [!code-csharp[Astoria Northwind Client#AddQueryOptions](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptions)]
+ [!code-vb[Astoria Northwind Client#AddQueryOptions](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptions)]  
+  
+ 次の例は、LINQ クエリを作成する方法を示します。このクエリは、<xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> を使用する前のクエリと同等です。  
+  
+ [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinq](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptionslinq)]
+ [!code-vb[Astoria Northwind Client#AddQueryOptionsLinq](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptionslinq)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginExecute">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginExecute (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginExecute(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.BeginExecute(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作の完了時に呼び出されるデリゲート。</param>
+        <param name="state">ユーザー定義の操作の開始とによって定義されたコールバックの間で状態を転送するために使用するオブジェクト<c>コールバック</c>です。</param>
+        <summary>このオブジェクト インスタンスで表されるクエリを実行する非同期のネットワーク操作を開始します。</summary>
+        <returns>非同期操作の状態を表す <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementType">
+      <MemberSignature Language="C#" Value="public override Type ElementType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ElementType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceQuery`1.ElementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> インスタンスを作成するためにテンプレートで使用されたオブジェクトの型を返します。</summary>
+        <value>クエリを作成するときにテンプレートで使用される型を表す <see cref="T:System.Type" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネリック メソッド (<xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> または <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A>) の T によって表される型を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndExecute">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TElement&gt; EndExecute (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt; EndExecute(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.EndExecute(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留中の非同期クエリ要求。</param>
+        <summary>データ サービスに対する非同期クエリ要求を終了します。</summary>
+        <returns>返します、<see cref="T:System.Collections.Generic.IEnumerable`1" />クエリ操作の結果を格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">データ サービスが HTTP 404 (リソースが見つからないエラー) を返す場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TElement&gt; Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt; Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、結果を実装するコレクションとして返します<see langword="IEnumerable" />です。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" /> がクエリ結果の型を表す <paramref name="T" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスに逆シリアル化できない入力ストリームにオブジェクトが発生した場合、返されるコレクションを反復処理するときに`T`、<xref:System.NotSupportedException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">データ サービスが HTTP 404 (リソースが見つからないエラー) を返す場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expand">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQuery&lt;TElement&gt; Expand (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQuery`1&lt;!TElement&gt; Expand(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.Expand(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQuery&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">要求 URI を格納する文字列値。</param>
+        <summary>新たに作成<see cref="T:System.Data.Services.Client.DataServiceQuery`1" />展開オプションが返されたクエリによって生成された URI に設定しています。</summary>
+        <returns>要求されたを含む新しいクエリ<see langword="$expand" />クエリ オプションが指定されたクエリの URI に追加されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public override System.Linq.Expressions.Expression Expression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.Expression Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceQuery`1.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスに対するクエリを含む式を表します。</summary>
+        <value>クエリを表す <see cref="T:System.Linq.Expressions.Expression" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;TElement&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!TElement&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、結果をコレクションとして返します。</summary>
+        <returns><paramref name="TEntity" /> がクエリ結果の型を表す結果に対する型指定された列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceQuery%601.GetEnumerator%2A> メソッドを呼び出すときに、サービスに対して <xref:System.Data.Services.Client.DataServiceQuery%601> が実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeTotalCount">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQuery&lt;TElement&gt; IncludeTotalCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQuery`1&lt;!TElement&gt; IncludeTotalCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.IncludeTotalCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQuery&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンティティ セット内のすべてのエンティティの数がクエリ結果と共にインラインで返されるように要求します。</summary>
+        <returns>インライン カウント オプションが設定された新しい <see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A>メソッドは、インクルード、`$inlinecount`クエリ URI のオプションのクエリを実行します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> メソッドを呼び出した後でクエリを実行します。 <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> プロパティは、クエリで返されたエンティティの数を確認するために使用されます。  
+  
+ [!code-csharp[Astoria Northwind Client#CountAllCustomers](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#countallcustomers)]
+ [!code-vb[Astoria Northwind Client#CountAllCustomers](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#countallcustomers)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.IQueryProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceQuery`1.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ プロバイダー インスタンスを表します。</summary>
+        <value>データ ソース プロバイダーを表す <see cref="T:System.Linq.IQueryProvider" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUri">
+      <MemberSignature Language="C#" Value="public override Uri RequestUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri RequestUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceQuery`1.RequestUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリの URI を取得します。</summary>
+        <value>要求の URI です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、結果をコレクションとして返します。</summary>
+        <returns>クエリ結果に対する列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceQuery%601.System%23Collections%23IEnumerable%23GetEnumerator%2A> メソッドを呼び出すときに、サービスに対して <xref:System.Data.Services.Client.DataServiceQuery%601> が実行されます。  
+  
+ <xref:System.Data.Services.Client.DataServiceQuery%601.GetEnumerator%2A> は、初めて呼び出されたときに列挙型を返します。 以降の呼び出しでは、null を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery`1.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ サービスに対するクエリの URI を表します。</summary>
+        <returns>この <see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> インスタンスのデータ サービスに対するクエリを表す URI (文字列)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

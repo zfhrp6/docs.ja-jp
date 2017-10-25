@@ -1,0 +1,94 @@
+<Type Name="ControlEventArgs" FullName="System.Windows.Forms.ControlEventArgs">
+  <TypeSignature Language="C#" Value="public class ControlEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ControlEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+          <see cref="E:System.Windows.Forms.Control.ControlAdded" /> イベントおよび <see cref="E:System.Windows.Forms.Control.ControlRemoved" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.Control.ControlAdded>と<xref:System.Windows.Forms.Control.ControlRemoved>イベント。 例では、その 2 つが必要です<xref:System.Windows.Forms.Button>コントロールがフォームに追加しに接続されている、`addControl_Click`と`removeControl_Click`メソッドを処理するイベントです。  
+  
+ [!code-cpp[Control.ControlRemoved#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.ControlRemoved/CPP/form1.cpp#1)]
+ [!code-csharp[Control.ControlRemoved#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.ControlRemoved/CS/form1.cs#1)]
+ [!code-vb[Control.ControlRemoved#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.ControlRemoved/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlEventArgs (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlEventArgs.#ctor(System.Windows.Forms.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Windows.Forms.Control" />にこのイベントを保存します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ControlEventArgs" />指定したコントロールのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.Control.ControlAdded>と<xref:System.Windows.Forms.Control.ControlRemoved>イベント。 例では、その 2 つが必要です<xref:System.Windows.Forms.Button>コントロールがフォームに追加しに接続されている、`addControl_Click`と`removeControl_Click`メソッドを処理するイベントです。  
+  
+ [!code-cpp[Control.ControlRemoved#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.ControlRemoved/CPP/form1.cpp#1)]
+ [!code-csharp[Control.ControlRemoved#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.ControlRemoved/CS/form1.cs#1)]
+ [!code-vb[Control.ControlRemoved#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.ControlRemoved/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Control" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ControlEventArgs.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントで使用されるコントロール オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />このイベントで使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.Control.ControlAdded>と<xref:System.Windows.Forms.Control.ControlRemoved>イベント。 例では、その 2 つが必要です<xref:System.Windows.Forms.Button>コントロールがフォームに追加しに接続されている、`addControl_Click`と`removeControl_Click`メソッドを処理するイベントです。  
+  
+ [!code-cpp[Control.ControlRemoved#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.ControlRemoved/CPP/form1.cpp#1)]
+ [!code-csharp[Control.ControlRemoved#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.ControlRemoved/CS/form1.cs#1)]
+ [!code-vb[Control.ControlRemoved#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.ControlRemoved/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

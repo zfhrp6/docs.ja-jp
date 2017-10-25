@@ -1,0 +1,258 @@
+<Type Name="NonVisualControlAttribute" FullName="System.Web.UI.NonVisualControlAttribute">
+  <TypeSignature Language="C#" Value="public sealed class NonVisualControlAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NonVisualControlAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.NonVisualControlAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時に、視覚的または非ビジュアル コントロールとして、コントロールを扱うかどうかを示す属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.NonVisualControlAttribute>属性はデータ ソース コントロールなどのクライアントにはレンダリングされませんコントロールに適用され、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 設計時に、ページの開発者はすべての非ビジュアル コントロールを非表示にすることがあります。 デザイナーはマークを付けますで非表示コントロールのコントロール、<xref:System.Web.UI.NonVisualControlAttribute>属性に設定`true`です。  
+  
+ 利用しているコントロールの例として、<xref:System.Web.UI.NonVisualControlAttribute>属性は<xref:System.Web.UI.DataSourceControl>、 <xref:System.Web.UI.HierarchicalDataSourceControl>、 <xref:System.Web.UI.WebControls.HiddenField>、および<xref:System.Web.UI.WebControls.WebParts.WebPartManager>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.Web.UI.NonVisualControlAttribute>属性をクラスです。 この例では、既定値で<xref:System.Web.UI.NonVisualControlAttribute>属性はデータ ソース コントロールに適用します。 これは、<xref:System.Web.UI.NonVisualControlAttribute.NonVisual>フィールドです。  
+  
+ [!code-csharp[System.Web.UI.NonVisualControlAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.NonVisualControlAttribute/CS/nonvisualcontrolattribute1.cs#1)]
+ [!code-vb[System.Web.UI.NonVisualControlAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.NonVisualControlAttribute/VB/nonvisualcontrolattribute1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NonVisualControlAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.NonVisualControlAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.NonVisualControlAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインスタンス、<xref:System.Web.UI.NonVisualControlAttribute>クラスは、<xref:System.Web.UI.NonVisualControlAttribute.NonVisual>フィールド、または渡す`true`を<xref:System.Web.UI.NonVisualControlAttribute.%23ctor%28System.Boolean%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.Web.UI.NonVisualControlAttribute>属性をクラスです。 この例では、既定値で<xref:System.Web.UI.NonVisualControlAttribute>属性はデータ ソース コントロールに適用します。 これは、<xref:System.Web.UI.NonVisualControlAttribute.NonVisual>フィールドです。  
+  
+ [!code-csharp[System.Web.UI.NonVisualControlAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.NonVisualControlAttribute/CS/nonvisualcontrolattribute1.cs#1)]
+ [!code-vb[System.Web.UI.NonVisualControlAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.NonVisualControlAttribute/VB/nonvisualcontrolattribute1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NonVisualControlAttribute (bool nonVisual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool nonVisual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.NonVisualControlAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nonVisual" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="nonVisual">
+          <see langword="true" />初期化するために、<see cref="T:System.Web.UI.NonVisualControlAttribute" />はレンダリングされませんのクライアントに実行時間、それ以外の Web コントロールを表す<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.NonVisualControlAttribute" />クラス、属性が、視覚的または非ビジュアル コントロールを表すかどうかを確認する指定したブール値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す`true`このコンス トラクターを使用すると、<xref:System.Web.UI.NonVisualControlAttribute.NonVisual>フィールド、および受け渡し`false`を使用すると、<xref:System.Web.UI.NonVisualControlAttribute.Visual>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.Web.UI.NonVisualControlAttribute>属性をクラスです。 この例では、データ ソース コントロールが指定されて非ビジュアル コントロールとして渡すことによって`true`属性にします。  
+  
+ [!code-csharp[System.Web.UI.NonVisualControlAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.NonVisualControlAttribute/CS/nonvisualcontrolattribute2.cs#2)]
+ [!code-vb[System.Web.UI.NonVisualControlAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.NonVisualControlAttribute/VB/nonvisualcontrolattribute2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.NonVisualControlAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.NonVisualControlAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.NonVisualControlAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.NonVisualControlAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:System.Web.UI.NonVisualControlAttribute" />属性の既定のアプリケーションで定義された値を表すインスタンス。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインスタンス、<xref:System.Web.UI.NonVisualControlAttribute>クラスは、<xref:System.Web.UI.NonVisualControlAttribute.Visual>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.NonVisualControlAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスまたは null 参照と比較する <see cref="T:System.Object" /> (Visual Basic では <see langword="Nothing" />)。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.NonVisualControlAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.NonVisualControlAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスがの既定のインスタンスと等しいかどうかを示す値を返します、<see cref="T:System.Web.UI.NonVisualControlAttribute" />クラスです。</summary>
+        <returns>
+          <see langword="true" />現在のインスタンスと等しい場合、<see cref="F:System.Web.UI.NonVisualControlAttribute.Default" />クラスのインスタンスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNonVisual">
+      <MemberSignature Language="C#" Value="public bool IsNonVisual { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNonVisual" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.NonVisualControlAttribute.IsNonVisual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが非表示かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールに非ビジュアルとして; が指定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NonVisual">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.NonVisualControlAttribute NonVisual;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.NonVisualControlAttribute NonVisual" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.NonVisualControlAttribute.NonVisual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.NonVisualControlAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:System.Web.UI.NonVisualControlAttribute" />をデザイン時に非ビジュアル コントロールとして扱う場合に、Web コントロールに適用されているインスタンス。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.NonVisualControlAttribute.NonVisual>属性を使用して、インスタンスを作成する対応フィールドを<xref:System.Web.UI.NonVisualControlAttribute.%23ctor%28System.Boolean%29?displayProperty=nameWithType>コンス トラクターを渡して`true`パラメーター値として。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visual">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.NonVisualControlAttribute Visual;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.NonVisualControlAttribute Visual" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.NonVisualControlAttribute.Visual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.NonVisualControlAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.NonVisualControlAttribute" />をデザイン時にビジュアル コントロールとして扱う場合に、Web コントロールに適用されているインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.NonVisualControlAttribute.Visual>に既定値を使用して属性のインスタンスを作成する対応フィールドを<xref:System.Web.UI.NonVisualControlAttribute.%23ctor?displayProperty=nameWithType>コンス トラクター、または属性を使用して、インスタンスを作成する、<xref:System.Web.UI.NonVisualControlAttribute.%23ctor%28System.Boolean%29?displayProperty=nameWithType>コンス トラクターを渡して`false`パラメーター値として。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,285 @@
+<Type Name="TypeConverterAttribute" FullName="System.ComponentModel.TypeConverterAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TypeConverterAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeConverterAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.TypeConverterAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この属性が関連付けられているオブジェクトのコンバーターとして使用する型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換に使用するクラスを継承する必要があります<xref:System.ComponentModel.TypeConverter>です。 使用して、<xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A>にオブジェクトのデータ変換のこの属性を提供するクラスの名前を取得するプロパティをバインドします。  
+  
+ 属性の詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+ 適用する XAML の型変換動作を提供するカスタム クラスの型コンバーターを確立するために、<xref:System.ComponentModel.TypeConverterAttribute>属性を型にします。 属性の引数は、型コンバーターの実装を参照します。 型コンバーターを属性または XAML マークアップの初期化のテキストに使用される文字列から値を受け入れることができるし、その文字列を目的の型に変換します。 詳細については、次を参照してください。[TypeConverters と XAML](~/docs/framework/wpf/advanced/typeconverters-and-xaml.md)です。  
+  
+ 型のすべての値に適用するではなくに、特定のプロパティで XAML の型コンバーターの動作を確立することもできます。 この場合は、適用<xref:System.ComponentModel.TypeConverterAttribute>プロパティ定義 (外側の定義、固有ではない`get`と`set`定義) です。  
+  
+ 型コンバーターの XAML 使用量は、カスタムのアタッチ可能なメンバーの動作を適用することで割り当てることができる<xref:System.ComponentModel.TypeConverterAttribute>を`get`XAML の使用方法をサポートするメソッドのアクセサー。 詳細については、「[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。  
+  
+ 型コンバーターと属性だけでなく、値シリアライザーを定義することをオブジェクトのランタイムから追加の状態を必要とする複雑な XAML シリアル化のケースのカスタム型またはカスタム メンバーのクラスをサポートします。 詳細については、「<xref:System.Windows.Markup.ValueSerializer>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例で`MyClass`と呼ばれる型コンバーターを使用する`MyClassConverter`です。 この例では、`MyClassConverter`別の場所に実装されています。 コンバーターを実装するクラス (`MyClassConverter`) から継承する必要があります、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ [!code-cpp[Classic TypeConverterAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverterAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TypeConverterAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverterAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic TypeConverterAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverterAttribute Example/VB/source.vb#1)]  
+  
+ 次の例のインスタンスを作成する`MyClass`です。 使用する型コンバーターの名前を出力し、クラスの属性を取得し、`MyClass`です。  
+  
+ [!code-cpp[Classic TypeConverterAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverterAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic TypeConverterAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverterAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic TypeConverterAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverterAttribute Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeConverterAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverterAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.TypeConverterAttribute" />空の文字列は、既定の型コンバーター クラス ("") です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ変換を提供するクラスを継承する必要があります<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeConverterAttribute (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverterAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">この属性がバインドされているオブジェクトのデータ変換を使用するクラスの完全修飾名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.TypeConverterAttribute" />クラス、データ コンバーターとしてにこの属性が関連付けられているオブジェクトの指定された型名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ変換を提供するクラスを継承する必要があります<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeConverterAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />にこの属性が関連付けられているオブジェクトのデータ変換を使用するコンバーター クラスの型を表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.TypeConverterAttribute" />クラス、データ コンバーターとしてにこの属性が関連付けられているオブジェクトの指定した型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ変換を提供するクラスを継承する必要があります<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConverterTypeName">
+      <MemberSignature Language="C#" Value="public string ConverterTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConverterTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.TypeConverterAttribute.ConverterTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全修飾型名を取得、<see cref="T:System.Type" />にこの属性が関連付けられているオブジェクトのコンバーターとして使用します。</summary>
+        <value>完全修飾型名、<see cref="T:System.Type" />に、この属性が関連付けられているオブジェクトまたは空の文字列のコンバーターとして使用する ("") が存在しない場合。 既定値は、空の文字列 ("") です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.TypeConverterAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.TypeConverterAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.TypeConverterAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverterAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性にバインドされたオブジェクトのコンバーターとして使用する型を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverterAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">値の等価性をテストするオブジェクト。</param>
+        <summary>指定したオブジェクトの値が、現在と等しいかどうかを返します<see cref="T:System.ComponentModel.TypeConverterAttribute" />です。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトの値が現在のと等しいかどうか<see cref="T:System.ComponentModel.TypeConverterAttribute" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverterAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.TypeConverterAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,266 @@
+<Type Name="ComponentResourceKey" FullName="System.Windows.ComponentResourceKey">
+  <TypeSignature Language="C#" Value="public class ComponentResourceKey : System.Windows.ResourceKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComponentResourceKey extends System.Windows.ResourceKey" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ComponentResourceKey" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.ResourceKey</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.ComponentResourceKeyConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>その他の識別子と同様に、外部アセンブリ内のクラス名に基づくリソース キーを参照または定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)します。  
+  
+ このクラスは、アセンブリと識別子の型に基づいたキーを作成するために便利ですが、オブジェクトの種類を実装します。 定義または型を参照しているため、特定の要求する必要はありません<xref:System.Windows.ResourceDictionary>、リソースの 1 つ以上のセットがそれぞれの型によって差別化されたアセンブリであり、<xref:System.Windows.ComponentResourceKey>です。  
+  
+ 2 つの方法を定義する、<xref:System.Windows.ComponentResourceKey>です。  
+  
+ 返す、コントロール クラス コードに静的なプロパティを定義するには、簡単にアクセスできるキーにする場合は、<xref:System.Windows.ComponentResourceKey>で構築された、<xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A>外部リソース アセンブリに存在して、<xref:System.Windows.ComponentResourceKey.ResourceId%2A>です。 アセンブリでは、カスタムの元の外部リソース アセンブリをスワップしてコントロールの代替の既定のスタイルを定義するため、キーを使用できます。 大きなコントロール スタイルまたはテンプレートのカスタマイズのエントリ ポイントを公開する内で名前付きリソースの一部を定義することもできます。 これは、コントロールのテーマのリソース ディクショナリを定義している場合に特に便利です。  
+  
+ 使用することも、 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] [ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)キーの厳密でないインスタンスを作成するには、直接冗語構文にします。 これは、カスタマイズに見つけにくい、他のアセンブリのプライベート リソースを宣言する場合に便利です。  
+  
+<a name="xamlTextUsage_ComponentResourceKey"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentResourceKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ComponentResourceKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.ComponentResourceKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターを一般的に使用しないため、<xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A>値および<xref:System.Windows.ComponentResourceKey.ResourceId%2A>値が必要なの適切な初期化します。 サポートするには、主に既定のコンス トラクターが存在する[ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)名前付きパラメーターの形式で XAML を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentResourceKey (Type typeInTargetAssembly, object resourceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type typeInTargetAssembly, object resourceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ComponentResourceKey.#ctor(System.Type,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeInTargetAssembly" Type="System.Type" />
+        <Parameter Name="resourceId" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeInTargetAssembly">リソース キーを定義する型。</param>
+        <param name="resourceId">これを区別するために、一意識別子<see cref="T:System.Windows.ComponentResourceKey" />に関連付けられている他のユーザーから、 <c>typeInTargetAssembly</c>型です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.ComponentResourceKey" />を指定して、<see cref="T:System.Type" />キー、およびその他のリソース識別子として使用するオブジェクトを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、最初の中で最も重要なシナリオで、2 つのシナリオに対して存在します。  
+  
+-   作成をサポートしている、<xref:System.Windows.ComponentResourceKey>し、カスタム コントロール クラスにパブリックな静的フィールドとして公開されます。 これが簡略化から、テンプレートで定義されているリソースへのアクセス制御の`{x:Static}`テンプレート プロパティの値の使用法。  
+  
+-   サポート[ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)コンポーネント リソースを参照するサード パーティの使用可能な 1 つの方法は、位置指定パラメーター形式で XAML を使用します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.ComponentResourceKey>スタイルのカスタマイズのエントリ ポイントを提供する、コントロール クラスの静的なキーとして、公開されています。  
+  
+ [!code-csharp[CorePseudocode#CRKCode](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/corepseudocode.cs#crkcode)]
+ [!code-vb[CorePseudocode#CRKCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CorePseudocode/visualbasic/corepseudocode.vb#crkcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public override System.Reflection.Assembly Assembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ComponentResourceKey.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキーに関連付けられている値を検索するアセンブリのディクショナリを示すアセンブリ オブジェクトを取得します。</summary>
+        <value>リフレクション クラスとして取得したアセンブリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ComponentResourceKey.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在と比較するオブジェクト<see cref="T:System.Windows.ComponentResourceKey" />です。</param>
+        <summary>指定されたオブジェクトが現在と等しいかどうかを判断<see cref="T:System.Windows.ComponentResourceKey" />です。</summary>
+        <returns>
+          オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのキーは、同じ値をすべてイミディ エイト設定可能なプロパティがある場合、等しい (<xref:System.Windows.ComponentResourceKey.ResourceId%2A>、 <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ComponentResourceKey.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Windows.ComponentResourceKey" />です。</summary>
+        <returns>符号付き 32 ビット整数値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceId">
+      <MemberSignature Language="C#" Value="public object ResourceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ResourceId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ComponentResourceKey.ResourceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの型に関連付けられている他のユーザーからこのキーを区別するために一意の識別子を設定します。</summary>
+        <value>一意の識別子。 通常これは文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)します。  
+  
+ 使用する文字列、通常、<xref:System.Windows.ComponentResourceKey.ResourceId%2A>に準拠している値、 [XamlName の文法](~/docs/framework/xaml-services/xamlname-grammar.md)です。  
+  
+<a name="xamlTextUsage_2"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.ComponentResourceKey.ResourceId%2A>この型に関連付けられている他のユーザーからこのキーを区別するためにします。  
+  
+ [!code-xaml[ColorPicker_snip#SliderStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ColorPicker_snip/CSharp/ColorPickerLib/Themes/generic.xaml#sliderstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ComponentResourceKey.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を取得、<see cref="T:System.Windows.ComponentResourceKey" />です。</summary>
+        <returns>文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeInTargetAssembly">
+      <MemberSignature Language="C#" Value="public Type TypeInTargetAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TypeInTargetAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ComponentResourceKey.TypeInTargetAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Type" />リソース キーを定義します。</summary>
+        <value>リソース キーを定義する型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)します。  
+  
+ <xref:System.Windows.ComponentResourceKey>外部アセンブリ、型を含むアセンブリをターゲット設定に基づくからアクセスされるリソースのキーを定義するカスタム コンポーネントで使用される要素。 カスタム コンポーネントは、多くの場合、リソースがあるアセンブリに含める必要がありますのある新しい型を定義します。 通常、これらの型が他の実装を持っていないのルックアップの要件を満たすために、型にのみ存在、<xref:System.Windows.ComponentResourceKey>です。  
+  
+<a name="xamlTextUsage_3"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示します、<xref:System.Windows.ComponentResourceKey>など<xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A>と<xref:System.Windows.ComponentResourceKey.ResourceId%2A>を使用して、 [ComponentResourceKey マークアップ拡張機能](~/docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)します。 このリソース、外部アセンブリに配置し、アクセスできるにも同様に使用して、リソースを要求するキーを使用して<xref:System.Windows.ComponentResourceKey>要求にします。  
+  
+ [!code-xaml[ColorPicker_snip#SliderStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ColorPicker_snip/CSharp/ColorPickerLib/Themes/generic.xaml#sliderstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

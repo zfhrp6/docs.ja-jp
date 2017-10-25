@@ -1,0 +1,75 @@
+<Type Name="HostedTransportConfiguration" FullName="System.ServiceModel.Activation.HostedTransportConfiguration">
+  <TypeSignature Language="C#" Value="public abstract class HostedTransportConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HostedTransportConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.HostedTransportConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows プロセス アクティブ化サービス (WAS) でホストされるトランスポートを実装するためのトランスポート固有の構成を用意します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows プロセス アクティブ化サービス (WAS) を使用するプロセス アクティブ化をサポートするトランスポートでは、WAS サイト バインドを使用して、このトランスポートがリッスンするネットワーク アドレスについての情報を記憶します。 トランスポートの実装では、この情報を ApplicationHost.config ファイルから読み取って、<xref:System.ServiceModel.ServiceHostBase> のコンストラクターに渡すことができるベース アドレス URI のセットを構築します。 これらのベース アドレスを構築するプロセスは、トンラスポート プロトコル固有のプロセスです。 WAS アクティブ化をサポートするトランスポートの実装では、このロジックをカプセル化するための <xref:System.ServiceModel.Activation.HostedTransportConfiguration> から派生する実装を提供する必要があります。 このクラスの使用に関する詳細については、次を参照してください。、 [UDP アクティベーション](~/docs/framework/wcf/samples/udp-activation.md)サンプルについては、WAS によってアクティブ化するカスタム ユーザー データグラム プロトコル (UDP) を作成する方法を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HostedTransportConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.HostedTransportConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activation.HostedTransportConfiguration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBaseAddresses">
+      <MemberSignature Language="C#" Value="public abstract Uri[] GetBaseAddresses (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Uri[] GetBaseAddresses(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.HostedTransportConfiguration.GetBaseAddresses(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">サービスへの仮想パス。</param>
+        <summary>派生クラスでオーバーライドされた場合は、ホストのベース アドレスを取得します。</summary>
+        <returns>ホストのベース アドレスを格納する <see cref="T:System.Uri" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの使用に関する詳細については、次を参照してください。、 [UDP アクティベーション](~/docs/framework/wcf/samples/udp-activation.md)サンプルについては、WAS によってアクティブ化するカスタム ユーザー データグラム プロトコル (UDP) を作成する方法を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

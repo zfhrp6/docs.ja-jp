@@ -1,0 +1,650 @@
+<Type Name="SimpleWorkerRequest" FullName="System.Web.Hosting.SimpleWorkerRequest">
+  <TypeSignature Language="C#" Value="public class SimpleWorkerRequest : System.Web.HttpWorkerRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SimpleWorkerRequest extends System.Web.HttpWorkerRequest" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.SimpleWorkerRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.HttpWorkerRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>単純な実装を提供、<see cref="T:System.Web.HttpWorkerRequest" />インターネット インフォメーション サービス (IIS) アプリケーションの外部の ASP.NET アプリケーションをホストするために使用できるクラスを抽象化します。 使用できる<see langword="SimpleWorkerRequest" />直接拡張したりします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この単純な実装の`HttpWorkerRequest`要求の URL とクエリ文字列を提供し、本文に出力をキャプチャ、<xref:System.IO.TextWriter>です。 ポストされたコンテンツとヘッダーを提供し、応答ヘッダーまたはバイナリ データとして応答本文のキャプチャなどの豊富な機能を実現するために拡張する必要がある`SimpleWorkerRequest`し、適切な上書き`HttpWorkerRequest`メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SimpleWorkerRequest (string page, string query, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string page, string query, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.#ctor(System.String,System.String,System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="page" Type="System.String" />
+        <Parameter Name="query" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="page">要求されるページ (または仮想 ページで、アプリケーションのディレクトリに対する相対パス)。</param>
+        <param name="query">クエリ文字列のテキスト。</param>
+        <param name="output">A<see cref="T:System.IO.TextWriter" />応答からの出力をキャプチャします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Hosting.SimpleWorkerRequest" />クラスを使用して対象のアプリケーション ドメインが作成された場合、<see cref="M:System.Web.Hosting.ApplicationHost.CreateApplicationHost(System.Type,System.String,System.String)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SimpleWorkerRequest (string appVirtualDir, string appPhysicalDir, string page, string query, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appVirtualDir, string appPhysicalDir, string page, string query, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.#ctor(System.String,System.String,System.String,System.String,System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appVirtualDir" Type="System.String" />
+        <Parameter Name="appPhysicalDir" Type="System.String" />
+        <Parameter Name="page" Type="System.String" />
+        <Parameter Name="query" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="appVirtualDir">仮想ディレクトリへのパス、アプリケーションです。たとえば、"/アプリ"です。</param>
+        <param name="appPhysicalDir">アプリケーション ディレクトリへの物理パスたとえば、"c:\app"です。</param>
+        <param name="page">(アプリケーションのディレクトリ) への相対要求の仮想パス。</param>
+        <param name="query">クエリ文字列のテキスト。</param>
+        <param name="output">A<see cref="T:System.IO.TextWriter" />応答からの出力をキャプチャします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Hosting.SimpleWorkerRequest" />任意のアプリケーション ドメイン、ユーザー コードを作成するときに使用されるクラス、 <see cref="T:System.Web.HttpContext" /> (渡す、<see langword="SimpleWorkerRequest" />への引数として、<see langword="HttpContext" />コンス トラクター)。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException"><paramref name="appVirtualDir" />パラメーターは、このコンテキスト内でオーバーライドすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndOfRequest">
+      <MemberSignature Language="C#" Value="public override void EndOfRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndOfRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.EndOfRequest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通知、<see cref="T:System.Web.HttpWorkerRequest" />その要求の処理、現在の要求が完了しました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushResponse">
+      <MemberSignature Language="C#" Value="public override void FlushResponse (bool finalFlush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FlushResponse(bool finalFlush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.FlushResponse(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="finalFlush" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="finalFlush">
+          <see langword="true" />この場合は、前回の応答データがフラッシュされます。それ以外の場合、<see langword="false" />です。</param>
+        <summary>すべての保留中の応答データをクライアントに送信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppPath">
+      <MemberSignature Language="C#" Value="public override string GetAppPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAppPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetAppPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在実行中のサーバー アプリケーションへの仮想パスを返します。</summary>
+        <returns>現在のアプリケーションの仮想パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppPathTranslated">
+      <MemberSignature Language="C#" Value="public override string GetAppPathTranslated ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAppPathTranslated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetAppPathTranslated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在実行中のサーバー アプリケーションへの UNC 変換のパスを返します。</summary>
+        <returns>現在のアプリケーションの物理パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilePath">
+      <MemberSignature Language="C#" Value="public override string GetFilePath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetFilePath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetFilePath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求された URI への物理パスを返します。</summary>
+        <returns>要求された URI への物理パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilePathTranslated">
+      <MemberSignature Language="C#" Value="public override string GetFilePathTranslated ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetFilePathTranslated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetFilePathTranslated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求された URI への物理ファイル パスを返します (し、物理パスへの仮想パスから変換: たとえば、"/proj1/page.aspx""c:\dir\page.aspx"を)</summary>
+        <returns>要求された URI に変換された物理ファイル パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHttpVerbName">
+      <MemberSignature Language="C#" Value="public override string GetHttpVerbName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetHttpVerbName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetHttpVerbName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求の HTTP 動詞を返します。</summary>
+        <returns>この要求の HTTP 動詞。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHttpVersion">
+      <MemberSignature Language="C#" Value="public override string GetHttpVersion ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetHttpVersion() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetHttpVersion" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求 (たとえば、"http/1.1") の HTTP バージョン文字列を返します。</summary>
+        <returns>要求ヘッダーで返される HTTP バージョン文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalAddress">
+      <MemberSignature Language="C#" Value="public override string GetLocalAddress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetLocalAddress() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetLocalAddress" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求を受信したインターフェイスのサーバーの IP アドレスを返します。</summary>
+        <returns>要求を受信したインターフェイスのサーバーの IP アドレス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalPort">
+      <MemberSignature Language="C#" Value="public override int GetLocalPort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetLocalPort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetLocalPort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求を受信したポート番号を返します。</summary>
+        <returns>サーバーのポート番号は、要求を受け取りました。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathInfo">
+      <MemberSignature Language="C#" Value="public override string GetPathInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetPathInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetPathInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>URL 拡張子付きリソースの追加パス情報を返します。 つまり、パス/virdir/page.html/tail の戻り値は/tail です。</summary>
+        <returns>リソースの追加パス情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryString">
+      <MemberSignature Language="C#" Value="public override string GetQueryString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetQueryString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetQueryString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求 URL で指定されたクエリ文字列を返します。</summary>
+        <returns>要求クエリ文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRawUrl">
+      <MemberSignature Language="C#" Value="public override string GetRawUrl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetRawUrl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetRawUrl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリ文字列が追加されたヘッダーに含まれている URL パスを返します。</summary>
+        <returns>要求ヘッダーの生の URL パス。  
+  
+ <block subset="none" type="note"><para>  
+ 返された URL は正規化されません。 アクセス制御、またはセキュリティ上重要な意思決定の URL を使用して正規化セキュリティの脆弱性にアプリケーションを公開できます。  
+  
+</para></block></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemoteAddress">
+      <MemberSignature Language="C#" Value="public override string GetRemoteAddress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetRemoteAddress() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetRemoteAddress" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントの IP アドレスを返します。</summary>
+        <returns>クライアントの IP アドレスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemotePort">
+      <MemberSignature Language="C#" Value="public override int GetRemotePort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetRemotePort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetRemotePort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントのポート番号を返します。</summary>
+        <returns>クライアントのポート番号です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServerVariable">
+      <MemberSignature Language="C#" Value="public override string GetServerVariable (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetServerVariable(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetServerVariable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたサーバー変数の名前。</param>
+        <summary>要求に関連付けられたサーバー変数のディクショナリから単一のサーバー変数を返します。</summary>
+        <returns>要求されたサーバー変数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUriPath">
+      <MemberSignature Language="C#" Value="public override string GetUriPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetUriPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetUriPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求された URI への仮想パスを返します。</summary>
+        <returns>要求された URI へのパス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserToken">
+      <MemberSignature Language="C#" Value="public override IntPtr GetUserToken ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance native int GetUserToken() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.GetUserToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントの偽装トークンを返します。</summary>
+        <returns>クライアントの偽装トークンを表す値です。 既定値は、<see cref="F:System.IntPtr.Zero" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineConfigPath">
+      <MemberSignature Language="C#" Value="public override string MachineConfigPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineConfigPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.SimpleWorkerRequest.MachineConfigPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Machine.config ファイルの完全な物理パスを取得します。</summary>
+        <value>Machine.config ファイルへの物理パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineInstallDirectory">
+      <MemberSignature Language="C#" Value="public override string MachineInstallDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineInstallDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.SimpleWorkerRequest.MachineInstallDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET バイナリがインストールされているディレクトリへの物理パスを取得します。</summary>
+        <value>ASP.NET バイナリ ファイルへの物理パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPath">
+      <MemberSignature Language="C#" Value="public override string MapPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string MapPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.MapPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">仮想パス。</param>
+        <summary>指定した仮想パスに対応する物理パスを返します。</summary>
+        <returns>指定された仮想パスに対応する物理パス、<paramref name="path" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootWebConfigPath">
+      <MemberSignature Language="C#" Value="public override string RootWebConfigPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RootWebConfigPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.SimpleWorkerRequest.RootWebConfigPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートの Web.config ファイルの完全な物理パスを取得します。</summary>
+        <value>ルートの Web.config ファイルへの物理パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendKnownResponseHeader">
+      <MemberSignature Language="C#" Value="public override void SendKnownResponseHeader (int index, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SendKnownResponseHeader(int32 index, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.SendKnownResponseHeader(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">ヘッダーのインデックス。 たとえば、<see cref="F:System.Web.HttpWorkerRequest.HeaderContentLength" /> のようにします。</param>
+        <param name="value">ヘッダーの値。</param>
+        <summary>標準 HTTP ヘッダーを応答に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResponseFromFile">
+      <MemberSignature Language="C#" Value="public override void SendResponseFromFile (IntPtr handle, long offset, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SendResponseFromFile(native int handle, int64 offset, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.SendResponseFromFile(System.IntPtr,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="handle">送信するファイルのハンドル。</param>
+        <param name="offset">ファイル内の開始位置。</param>
+        <param name="length">送信するバイト数。</param>
+        <summary>指定したハンドルにファイルの内容を応答に追加し、ファイルおよび送信するバイト数内の開始位置を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResponseFromFile">
+      <MemberSignature Language="C#" Value="public override void SendResponseFromFile (string filename, long offset, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SendResponseFromFile(string filename, int64 offset, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.SendResponseFromFile(System.String,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="filename">送信するファイルの名前。</param>
+        <param name="offset">ファイル内の開始位置。</param>
+        <param name="length">送信するバイト数。</param>
+        <summary>指定した名前のファイルの内容を応答に追加し、ファイルおよび送信するバイト数内の開始位置を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResponseFromMemory">
+      <MemberSignature Language="C#" Value="public override void SendResponseFromMemory (byte[] data, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SendResponseFromMemory(unsigned int8[] data, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.SendResponseFromMemory(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="data">送信するバイト配列。</param>
+        <param name="length">送信するバイト数。</param>
+        <summary>バイト配列の内容を応答に追加し、送信するバイト数を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendStatus">
+      <MemberSignature Language="C#" Value="public override void SendStatus (int statusCode, string statusDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SendStatus(int32 statusCode, string statusDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.SendStatus(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="statusCode" Type="System.Int32" />
+        <Parameter Name="statusDescription" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="statusCode">送信するステータス コード</param>
+        <param name="statusDescription">送信にステータスの説明。</param>
+        <summary>応答の HTTP ステータス コードとステータス説明を指定しますたとえば、SendStatus (200,"Ok") です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendUnknownResponseHeader">
+      <MemberSignature Language="C#" Value="public override void SendUnknownResponseHeader (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SendUnknownResponseHeader(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.SimpleWorkerRequest.SendUnknownResponseHeader(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">送信するヘッダーの名前。</param>
+        <param name="value">ヘッダーの値です。</param>
+        <summary>非標準 HTTP ヘッダーを応答に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

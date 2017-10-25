@@ -1,0 +1,228 @@
+<Type Name="EncoderFallback" FullName="System.Text.EncoderFallback">
+  <TypeSignature Language="C#" Value="public abstract class EncoderFallback" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit EncoderFallback extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Text.EncoderFallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encoding</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力文字をエンコード済み出力バイト シーケンスに変換できないため、フォールバックと呼ばれるエラー処理機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコーディングを Unicode 文字をエンコード済みバイト シーケンスにマップします。 派生した型で表される、特定のエンコーディング、<xref:System.Text.Encoding>クラスです。 具体的には、文字がエンコードされたバイト シーケンスにエンコードの種類を呼び出すことによって<xref:System.Text.Encoding.GetBytes%2A?displayProperty=nameWithType>を呼び出して、メソッド、および、バイト シーケンスを文字配列または文字列にデコードされたが、<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>または<xref:System.Text.Encoding.GetString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ エンコード操作は、エンコーディングでは、入力文字を表現できない場合に失敗することができます。 たとえば、<xref:System.Text.ASCIIEncoding>オブジェクトは Unicode コード ポイント値が範囲外 u+0000 U +0 007F ~ 文字をエンコードできません。  
+  
+ エンコーディングの変換を実行できないときに、.NET Framework は、フォールバックと呼ばれるエラー処理メカニズムを提供します。 アプリケーションで使用できる定義済みの .NET Framework エンコーダー フォールバックまたはから派生したカスタムのエンコーダー フォールバックを作成できる、<xref:System.Text.EncoderFallback>と<xref:System.Text.EncoderFallbackBuffer>クラスです。  
+  
+ <xref:System.Text.EncoderFallback>および<xref:System.Text.EncoderFallbackBuffer>すべてに対する基底クラスは、.NET Framework でのフォールバック ハンドラーをエンコードします。 次の 3 種類フォールバック処理機構のサポートします。  
+  
+-   最適フォールバック、ほぼ同等のものをエンコードできない有効な Unicode 文字にマップします。 たとえば、最適フォールバックのハンドラーを<xref:System.Text.ASCIIEncoding>クラスは AE (u+0041 + u+0045) に Æ (U + 00 C 6) をマップする可能性があります。 最適フォールバック ハンドラーがありますもを実装する transliterate キリル文字) などの 1 つのアルファベット別 (ラテン、ローマなど)。 .NET Framework では、任意のパブリック最適フォールバック実装は提供されません。  
+  
+-   どの置換は各文字を置換フォールバックは、定義済みの文字列でエンコードされることはできません。 .NET Framework では、定義済みの置換フォールバック ハンドラーを提供します。 <xref:System.Text.EncoderReplacementFallback>クラスは、疑問符 (?) 文字で各デコードできないバイト シーケンスを置き換えます ("?"、または U +0 003F) または REPLACEMENT CHARACTER (U+FFFD)。 呼び出しで代替を指定して置換文字列をカスタマイズすることができます、<xref:System.Text.EncoderReplacementFallback.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクターです。 代替文字列が出力されると、残りの入力を変換するエンコーディングの処理が続行されます。  
+  
+-   例外フォールバック文字をエンコードできないときに例外をスローします。 .NET Framework では、定義済み例外フォールバック ハンドラーを提供します。 <xref:System.Text.EncoderExceptionFallback>クラスがスローされます、<xref:System.Text.EncoderFallbackException>に無効な文字が発生したし、エンコードの操作を終了します。  
+  
+ カスタム ソリューションを実装することを選択する場合は、次の抽象メンバーをオーバーライドする必要があります、<xref:System.Text.EncoderFallback>クラス。  
+  
+-   <xref:System.Text.EncoderFallback.CreateFallbackBuffer%2A>から派生したクラスのインスタンスを返すメソッド<xref:System.Text.EncoderFallbackBuffer>です。 開発すると、フォールバック ハンドラーの種類に応じて、<xref:System.Text.EncoderFallbackBuffer>実装はマッピングか、交換を実行するためや、例外をスローします。  
+  
+-   <xref:System.Text.EncoderFallback.MaxCharCount%2A>プロパティで、フォールバックの実装を返すことができる文字の最大数を返します。 例外フォールバック ハンドラーでその値を 0 にする必要があります。  
+  
+ エンコード、デコード、およびフォールバック方法の詳細については、次を参照してください。 [.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EncoderFallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderFallback.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Text.EncoderFallback" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFallbackBuffer">
+      <MemberSignature Language="C#" Value="public abstract System.Text.EncoderFallbackBuffer CreateFallbackBuffer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Text.EncoderFallbackBuffer CreateFallbackBuffer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderFallback.CreateFallbackBuffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.EncoderFallbackBuffer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるの新しいインスタンスを初期化します。、<see cref="T:System.Text.EncoderFallbackBuffer" />クラスです。</summary>
+        <returns>エンコーダーをフォールバック バッファーを提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから派生したオブジェクトを返します<xref:System.Text.EncoderFallbackBuffer>がフォールバック操作を実行します。 例については、定義済み<xref:System.Text.EncoderFallback>、.NET Framework での実装、<xref:System.Text.EncoderReplacementFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType>メソッドを返します、<xref:System.Text.EncoderReplacementFallbackBuffer>オブジェクト、および<xref:System.Text.EncoderExceptionFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType>メソッドを返します。、<xref:System.Text.EncoderExceptionFallbackBuffer>オブジェクト。  
+  
+ <xref:System.Text.EncoderFallback.CreateFallbackBuffer%2A>はエンコードできない最初の文字を検出すると、メソッドがエンコーダーによって呼び出されます。 <xref:System.Text.EncoderFallbackBuffer>このメソッドによって返されるオブジェクトがフォールバックの実装を提供し、文字またはエンコードできない文字に置換するバイト配列を返すことを担当します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionFallback">
+      <MemberSignature Language="C#" Value="public static System.Text.EncoderFallback ExceptionFallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.EncoderFallback ExceptionFallback" />
+      <MemberSignature Language="DocId" Value="P:System.Text.EncoderFallback.ExceptionFallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.EncoderFallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力文字をエンコードできないときに例外をスローするオブジェクトを取得します。</summary>
+        <value>派生した型、<see cref="T:System.Text.EncoderFallback" />クラスです。 既定値は、<see cref="T:System.Text.EncoderExceptionFallback" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCharCount">
+      <MemberSignature Language="C#" Value="public abstract int MaxCharCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxCharCount" />
+      <MemberSignature Language="DocId" Value="P:System.Text.EncoderFallback.MaxCharCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ときに、最大文字数を取得、現在<see cref="T:System.Text.EncoderFallback" />オブジェクトを返すことができます。</summary>
+        <value>現在の文字の最大数<see cref="T:System.Text.EncoderFallback" />オブジェクトを返すことができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外フォールバック ハンドラーでこのプロパティは 0 を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplacementFallback">
+      <MemberSignature Language="C#" Value="public static System.Text.EncoderFallback ReplacementFallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.EncoderFallback ReplacementFallback" />
+      <MemberSignature Language="DocId" Value="P:System.Text.EncoderFallback.ReplacementFallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.EncoderFallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンコードできない入力文字の代わりに代替文字列を出力するオブジェクトを取得します。</summary>
+        <value>派生した型、<see cref="T:System.Text.EncoderFallback" />クラスです。 既定値は、<see cref="T:System.Text.EncoderReplacementFallback" />不明な入力文字を疑問符 (?) 文字に置き換えオブジェクト ("?"、U +0 003F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

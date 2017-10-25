@@ -1,0 +1,392 @@
+<Type Name="ServicedComponent" FullName="System.EnterpriseServices.ServicedComponent">
+  <TypeSignature Language="C#" Value="public abstract class ServicedComponent : ContextBoundObject, IDisposable, System.EnterpriseServices.IRemoteDispatch, System.EnterpriseServices.IServicedComponentInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable ServicedComponent extends System.ContextBoundObject implements class System.EnterpriseServices.IRemoteDispatch, class System.EnterpriseServices.IServicedComponentInfo, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ServicedComponent" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ContextBoundObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.EnterpriseServices.IRemoteDispatch</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.EnterpriseServices.IServicedComponentInfo</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>COM + サービスを使用してすべてのクラスの基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラスの特定の条件下で<xref:System.EnterpriseServices.ServicedComponent>いる COM + アプリケーションの実行が応答を停止します。 この問題は、アクティビティのデッドロックが原因です。 アクティビティは、コンポーネント参照の非同期のクリーンアップのためマルチ スレッド アプリケーションでデッドロックことができます。 この問題を回避する、<xref:System.EnterpriseServices.ServicedComponent.Dispose%2A>から派生したオブジェクトを操作を完了したときにメソッド<xref:System.EnterpriseServices.ServicedComponent>です。 詳細については、次を参照してください。 [http://support.microsoft.com/default.aspx?scid=kb;en-us;327443](http://support.microsoft.com/default.aspx?scid=kb;en-us;327443)です。  
+  
+> [!NOTE]
+>  クライアント コードを呼び出す必要があります`Dispose`でを適切に操作を確認するにはコンポーネント サービスを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、構成済みの COM コンポーネントとしてクラスを公開する方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Basic#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Basic/CPP/calculator.cpp#1)]
+ [!code-csharp[EnterpriseServices_Basic#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Basic/CS/calculator.cs#1)]  
+  
+ このクラスは、構成済みの COM コンポーネントとしてを展開するには、強力なキーを生成、ライブラリとしてクラスをコンパイルしてライブラリを登録します。 これら 3 つの手順は、次の 3 つのコマンドによって実現されます。  
+  
+```  
+sn -k Calculator.snk  
+csc /t:library Calculator.cs  
+regsvcs Calculator.dll  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServicedComponent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.ServicedComponent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="protected virtual void Activate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Activate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.Activate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが作成またはプールから割り当てられたときに、インフラストラクチャによって呼び出されます。 オブジェクトにカスタムの初期化コードを追加するには、このメソッドをオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#3)]
+ [!code-csharp[EnterpriseServices_Pooling#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#3)]
+ [!code-vb[EnterpriseServices_Pooling#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBePooled">
+      <MemberSignature Language="C#" Value="protected virtual bool CanBePooled ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool CanBePooled() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.CanBePooled" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトは、プールに戻される前に、このメソッドが、インフラストラクチャによって呼び出されます。 かどうか、オブジェクトがプールに戻さ、について投票するには、このメソッドをオーバーライドします。</summary>
+        <returns>
+          <see langword="true" />サービス コンポーネントをプールすることができます。 場合、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#5](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#5)]
+ [!code-csharp[EnterpriseServices_Pooling#5](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#5)]
+ [!code-vb[EnterpriseServices_Pooling#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Construct">
+      <MemberSignature Language="C#" Value="protected virtual void Construct (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Construct(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.Construct(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">構築文字列。</param>
+        <summary>コンス トラクターが呼び出されたコンス トラクター文字列に渡す直後後に、インフラストラクチャによって呼び出されます。 作成するには、このメソッドをオーバーライド構築文字列の値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deactivate">
+      <MemberSignature Language="C#" Value="protected virtual void Deactivate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Deactivate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.Deactivate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの非アクティブになるときに、インフラストラクチャによって呼び出されます。 ・ イン タイム (JIT) コンパイル コードまたはオブジェクト プールが使用されるときに、オブジェクトにカスタムの終了コードを追加するには、このメソッドをオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#4](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#4)]
+ [!code-csharp[EnterpriseServices_Pooling#4](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#4)]
+ [!code-vb[EnterpriseServices_Pooling#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.ServicedComponent" /> で使用したリソースを解放します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.EnterpriseServices.ServicedComponent" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを終了し、関連付けられている COM + コンテキストを削除します。  
+  
+ ガベージ コレクターがオブジェクトを解放する前に明示的に COM + オブジェクトおよび外部リソースを解放することをお勧めします。 外部のリソースが不足しているか高コストの場合は、不要になったときに、COM + リソースを明示的に解放することによってパフォーマンスが向上を実現できます。 明示的な制御がによって提供される、<xref:System.EnterpriseServices.ServicedComponent.Dispose%2A>メソッドです。  
+  
+ 呼び出す<xref:System.EnterpriseServices.ServicedComponent.Dispose%2A>によりによって使用されるリソース、<xref:System.EnterpriseServices.ServicedComponent>を他の目的に再割り当てされます。 詳細については<xref:System.EnterpriseServices.ServicedComponent.Dispose%2A>を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.EnterpriseServices.ServicedComponent.Dispose(System.Boolean)" />このクラスで dispose ロジックをカスタマイズする方法です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />マネージ コードとアンマネージ リソースを解放するにはそれ以外の場合、<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary><see cref="T:System.EnterpriseServices.ServicedComponent" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.EnterpriseServices.ServicedComponent> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeObject">
+      <MemberSignature Language="C#" Value="public static void DisposeObject (System.EnterpriseServices.ServicedComponent sc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisposeObject(class System.EnterpriseServices.ServicedComponent sc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.DisposeObject(System.EnterpriseServices.ServicedComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sc" Type="System.EnterpriseServices.ServicedComponent" />
+      </Parameters>
+      <Docs>
+        <param name="sc">破棄するオブジェクト。</param>
+        <summary>オブジェクトを終了し、関連付けられている COM + の参照を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することをお勧め、`Dispose`デザイン パターンではなくより<xref:System.EnterpriseServices.ServicedComponent.DisposeObject%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone">
+      <MemberSignature Language="C#" Value="string IRemoteDispatch.RemoteDispatchAutoDone (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.System#EnterpriseServices#IRemoteDispatch#RemoteDispatchAutoDone(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.EnterpriseServices.AutoComplete(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">To be added.</param>
+        <summary>確実に、COM + コンテキストで、<see cref="T:System.EnterpriseServices.ServicedComponent" />クラス オブジェクトの<see langword="done" />に設定されているビット<see langword="true" />リモート メソッド呼び出しの後にします。</summary>
+        <returns>実装する応答オブジェクトから変換された文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone%2A>の公開されたインターフェイスにメソッドが属していない、<xref:System.EnterpriseServices.ServicedComponent>クラスし、他の場所で実装する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.EnterpriseServices.IRemoteDispatch.RemoteDispatchNotAutoDone">
+      <MemberSignature Language="C#" Value="string IRemoteDispatch.RemoteDispatchNotAutoDone (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.EnterpriseServices.IRemoteDispatch.RemoteDispatchNotAutoDone(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.System#EnterpriseServices#IRemoteDispatch#RemoteDispatchNotAutoDone(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.EnterpriseServices.AutoComplete(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">実装する要求オブジェクトに変換する文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMessage" />インターフェイスです。</param>
+        <summary>限りませんが、COM + のコンテキストで、<see cref="T:System.EnterpriseServices.ServicedComponent" />クラス オブジェクトの<see langword="done" />に設定されているビット<see langword="true" />リモート メソッド呼び出しの後にします。</summary>
+        <returns>実装する応答オブジェクトから変換された文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchNotAutoDone%2A>の公開されたインターフェイスにメソッドが属していない、<xref:System.EnterpriseServices.ServicedComponent>クラスし、他の場所で実装する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo">
+      <MemberSignature Language="C#" Value="void IServicedComponentInfo.GetComponentInfo (ref int infoMask, out string[] infoArray);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo(int32&amp; infoMask, [out] string[]&amp; infoArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServicedComponent.System#EnterpriseServices#IServicedComponentInfo#GetComponentInfo(System.Int32@,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="infoMask" Type="System.Int32&amp;" RefType="ref" />
+        <Parameter Name="infoArray" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="infoMask">ビットマスクが 0x00000001 サービス コンポーネントのプロセス ID のキー、0x00000002 はアプリケーション ドメイン ID のキーであり 0x00000004 がサービス コンポーネントのリモートの URI のキー。</param>
+        <param name="infoArray">文字列配列の順序で、次の一部または全部を含む可能性があります: サービス コンポーネントの ID、アプリケーション ドメインの ID、およびサービスのコンポーネントのリモートの URI を処理します。</param>
+        <summary>に関する特定の情報を取得、<see cref="T:System.EnterpriseServices.ServicedComponent" />クラスのインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo%2A>の公開されたインターフェイスにメソッドが属していない、<xref:System.EnterpriseServices.ServicedComponent>クラスし、他の場所で実装する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

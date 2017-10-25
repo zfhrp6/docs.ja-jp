@@ -1,0 +1,414 @@
+<Type Name="DataRowExtensions" FullName="System.Data.DataRowExtensions">
+  <TypeSignature Language="C#" Value="public static class DataRowExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DataRowExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRowExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張メソッドを定義、<see cref="T:System.Data.DataRow" />クラスです。 これは、静的クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet> API は、新しい 2 つの方法で拡張されています、<xref:System.Data.DataRow>クラス、<xref:System.Data.DataRowExtensions.Field%2A>と<xref:System.Data.DataRowExtensions.SetField%2A>です。 フォームを使用できます。[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]式およびメソッドのクエリに対して<xref:System.Data.DataTable>オブジェクト。 内の列値にアクセスするのに使用することをお勧めの方法は[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]式およびメソッドのクエリ。 詳細については、次を参照してください。[メソッド ジェネリック Field および SetField](~/docs/framework/data/adonet/generic-field-and-setfield-methods-linq-to-dataset.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Field&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Field&lt;T&gt; (this System.Data.DataRow row, System.Data.DataColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Field&lt;T&gt;(class System.Data.DataRow row, class System.Data.DataColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Data.DataColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の戻り値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="column">入力<see cref="T:System.Data.DataColumn" />の値を取得する列を指定するオブジェクト。</param>
+        <summary>指定した行の列の値のそれぞれに厳密に型指定されたアクセスを提供します。 <see cref="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Data.DataColumn)" />メソッドには、null 許容型もサポートしています。</summary>
+        <returns>型の値、<paramref name="T" />の<see cref="T:System.Data.DataColumn" />によって指定された<paramref name="column" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>クラスを表します**null**の値を使った、<xref:System.DBNull.Value>のインスタンス、<xref:System.DBNull>クラスです。  A[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]を持つ列にアクセスする式、 **null**値を生成、<xref:System.InvalidCastException>実行時にします。 さらに、<xref:System.Data.DataSet>は null 許容型をサポートしていません。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドが null 許容型として列にアクセスするためのサポートを提供します。  値、基になる場合は、<xref:System.Data.DataSet>は<xref:System.DBNull.Value>の値が返される null 許容型になります**null**です。  
+  
+ 場合の指定した値<xref:System.Data.DataColumn>は<xref:System.DBNull.Value>と`T`が参照型または null 許容型は、戻り値の型になります**null**です。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドは返されません<xref:System.DBNull.Value>です。  
+  
+ <xref:System.Data.DataRowExtensions.Field%2A>メソッドには、型の変換は行いません。 使用して、列の値を取得する必要がありますまず型変換が必要な場合、<xref:System.Data.DataRowExtensions.Field%2A>メソッドです。 列の値は、別の型に変換する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">指定された列<paramref name="column" />では行われません、<see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataRow" />の一部です。</exception>
+        <exception cref="T:System.NullReferenceException">A **null** null 非許容の型に代入された値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Field&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Field&lt;T&gt; (this System.Data.DataRow row, int columnIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Field&lt;T&gt;(class System.Data.DataRow row, int32 columnIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の戻り値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="columnIndex">列インデックス。</param>
+        <summary>指定した行の列の値のそれぞれに厳密に型指定されたアクセスを提供します。 <see cref="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Int32)" />メソッドには、null 許容型もサポートしています。</summary>
+        <returns>型の値、<paramref name="T" />の<see cref="T:System.Data.DataColumn" />によって指定された<paramref name="columnIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>クラスを表します**null**の値を使った、<xref:System.DBNull.Value>のインスタンス、<xref:System.DBNull>クラスです。  A[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]を持つ列にアクセスする式、 **null**値を生成、<xref:System.InvalidCastException>実行時にします。 さらに、 <xref:System.Data.DataSet> null 許容型をサポートしていません。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドが null 許容型として列にアクセスするためのサポートを提供します。  値、基になる場合は、<xref:System.Data.DataSet>は<xref:System.DBNull.Value>の値が返される null 許容型になります**null**です。  
+  
+ 場合の指定した値<xref:System.Data.DataColumn>は**null**と`T`が参照型または null 許容型は、戻り値の型になります**null**です。  <xref:System.Data.DataRowExtensions.Field%2A>メソッドは返されません<xref:System.DBNull.Value>です。  
+  
+ <xref:System.Data.DataRowExtensions.Field%2A>メソッドには、型の変換は行いません。 使用して、列の値を取得する必要がありますまず型変換が必要な場合、<xref:System.Data.DataRowExtensions.Field%2A>メソッドです。 列の値は、別の型に変換する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">指定された列<paramref name="ordinal" />に存在しません、<see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataRow" />の一部です。</exception>
+        <exception cref="T:System.NullReferenceException">A **null** null 非許容の型に代入された値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Field&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Field&lt;T&gt; (this System.Data.DataRow row, string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Field&lt;T&gt;(class System.Data.DataRow row, string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の戻り値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="columnName">値を取得する列の名前。</param>
+        <summary>指定した行の列の値のそれぞれに厳密に型指定されたアクセスを提供します。 <see cref="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.String)" />メソッドには、null 許容型もサポートしています。</summary>
+        <returns>型の値、<paramref name="T" />の<see cref="T:System.Data.DataColumn" />によって指定された<paramref name="columnName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>クラスを表します**null**の値を使った、<xref:System.DBNull.Value>のインスタンス、<xref:System.DBNull>クラスです。 A[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]を持つ列にアクセスする式、 **null**値を生成、<xref:System.InvalidCastException>実行時にします。 さらに、<xref:System.Data.DataSet>は null 許容型をサポートしていません。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドが null 許容型として列にアクセスするためのサポートを提供します。 値、基になる場合は、<xref:System.Data.DataSet>は<xref:System.DBNull.Value>の値が返される null 許容型になります**null**です。  
+  
+ 場合の指定した値<xref:System.Data.DataColumn>は**null**と`T`が参照型または null 許容型は、戻り値の型になります**null**です。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドは返されません<xref:System.DBNull.Value>です。  
+  
+ <xref:System.Data.DataRowExtensions.Field%2A>メソッドには、型の変換は行いません。 使用して、列の値を取得する必要がありますまず型変換が必要な場合、<xref:System.Data.DataRowExtensions.Field%2A>メソッドです。 列の値は、別の型に変換する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">指定された列<paramref name="columnName" />では行われません、<see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataRow" />の一部です。</exception>
+        <exception cref="T:System.NullReferenceException">A <see langword="null" /> null 非許容の型に代入された値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Field&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Field&lt;T&gt; (this System.Data.DataRow row, System.Data.DataColumn column, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Field&lt;T&gt;(class System.Data.DataRow row, class System.Data.DataColumn column, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Data.DataColumn,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の戻り値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="column">入力<see cref="T:System.Data.DataColumn" />の値を取得する列を指定するオブジェクト。</param>
+        <param name="version">A<see cref="T:System.Data.DataRowVersion" />列の値を返すなどのバージョンを指定する列挙体<see langword="Current" />または<see langword="Original" />バージョン。</param>
+        <summary>指定した行の列の値のそれぞれに厳密に型指定されたアクセスを提供します。 <see cref="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Data.DataColumn,System.Data.DataRowVersion)" />メソッドには、null 許容型もサポートしています。</summary>
+        <returns>型の値、<paramref name="T" />の<see cref="T:System.Data.DataColumn" />によって指定された<paramref name="column" />と<paramref name="version" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>クラスを表します**null**の値を使った、<xref:System.DBNull.Value>のインスタンス、<xref:System.DBNull>クラスです。  A[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]を持つ列にアクセスする式、 **null**値を生成、<xref:System.InvalidCastException>実行時にします。 さらに、 <xref:System.Data.DataSet> null 許容型をサポートしていません。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドが null 許容型として列にアクセスするためのサポートを提供します。  値、基になる場合は、<xref:System.Data.DataSet>は<xref:System.DBNull.Value>の値が返される null 許容型になります**null**です。  
+  
+ 場合の指定した値<xref:System.Data.DataColumn>が null と`T`が参照型または null 許容型は、戻り値の型になります**null**です。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドは返されません<xref:System.DBNull.Value>です。  
+  
+ <xref:System.Data.DataRowExtensions.Field%2A>メソッドには、型の変換は行いません。 使用して、列の値を取得する必要がありますまず型変換が必要な場合、<xref:System.Data.DataRowExtensions.Field%2A>メソッドです。 列の値は、別の型に変換する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">指定された列<paramref name="column" />に存在しません、<see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataRow" />の一部です。</exception>
+        <exception cref="T:System.NullReferenceException">A **null** null 非許容の型に代入された値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Field&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Field&lt;T&gt; (this System.Data.DataRow row, int columnIndex, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Field&lt;T&gt;(class System.Data.DataRow row, int32 columnIndex, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Int32,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の戻り値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="columnIndex">値を取得する列の 0 から始まる序数です。</param>
+        <param name="version">A<see cref="T:System.Data.DataRowVersion" />列の値を返すなどのバージョンを指定する列挙体<see langword="Current" />または<see langword="Original" />バージョン。</param>
+        <summary>指定した行の列の値のそれぞれに厳密に型指定されたアクセスを提供します。 <see cref="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.Int32,System.Data.DataRowVersion)" />メソッドには、null 許容型もサポートしています。</summary>
+        <returns>型の値、<paramref name="T" />の<see cref="T:System.Data.DataColumn" />によって指定された<paramref name="ordinal" />と<paramref name="version" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>クラスを表します**null**の値を使った、<xref:System.DBNull.Value>のインスタンス、<xref:System.DBNull>クラスです。  A[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]を持つ列にアクセスする式、 **null**値を生成、<xref:System.InvalidCastException>実行時にします。 さらに、 <xref:System.Data.DataSet> null 許容型をサポートしていません。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドが null 許容型として列にアクセスするためのサポートを提供します。  値、基になる場合は、<xref:System.Data.DataSet>は<xref:System.DBNull.Value>の値が返される null 許容型になります**null**です。  
+  
+ 場合の指定した値<xref:System.Data.DataColumn>が null と`T`が参照型または null 許容型は、戻り値の型になります**null**です。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドは返されません<xref:System.DBNull.Value>です。  
+  
+ <xref:System.Data.DataRowExtensions.Field%2A>メソッドには、型の変換は行いません。 使用して、列の値を取得する必要がありますまず型変換が必要な場合、<xref:System.Data.DataRowExtensions.Field%2A>メソッドです。 列の値は、別の型に変換する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">指定された列<paramref name="ordinal" />に存在しません、<see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataRow" />の一部です。</exception>
+        <exception cref="T:System.NullReferenceException">A **null** null 非許容の型に代入された値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Field&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Field&lt;T&gt; (this System.Data.DataRow row, string columnName, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Field&lt;T&gt;(class System.Data.DataRow row, string columnName, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.String,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の戻り値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="columnName">値を取得する列の名前。</param>
+        <param name="version">A<see cref="T:System.Data.DataRowVersion" />列の値を返すなどのバージョンを指定する列挙体<see langword="Current" />または<see langword="Original" />バージョン。</param>
+        <summary>指定した行の列の値のそれぞれに厳密に型指定されたアクセスを提供します。 <see cref="M:System.Data.DataRowExtensions.Field``1(System.Data.DataRow,System.String,System.Data.DataRowVersion)" />メソッドには、null 許容型もサポートしています。</summary>
+        <returns>型の値、<paramref name="T" />の<see cref="T:System.Data.DataColumn" />によって指定された<paramref name="columnName" />と<paramref name="version" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>クラスを表します**null**の値を使った、<xref:System.DBNull.Value>のインスタンス、<xref:System.DBNull>クラスです。  A[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]を持つ列にアクセスする式、 **null**値を生成、<xref:System.InvalidCastException>実行時にします。 さらに、 <xref:System.Data.DataSet> null 許容型をサポートしていません。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドが null 許容型として列にアクセスするためのサポートを提供します。  値、基になる場合は、<xref:System.Data.DataSet>は<xref:System.DBNull.Value>の値が返される null 許容型になります**null**です。  
+  
+ 場合の指定した値<xref:System.Data.DataColumn>が null と`T`が参照型または null 許容型は、戻り値の型になります**null**です。 <xref:System.Data.DataRowExtensions.Field%2A>メソッドは返されません<xref:System.DBNull.Value>です。  
+  
+ <xref:System.Data.DataRowExtensions.Field%2A>メソッドには、型の変換は行いません。 使用して、列の値を取得する必要がありますまず型変換が必要な場合、<xref:System.Data.DataRowExtensions.Field%2A>メソッドです。 列の値は、別の型に変換する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">指定された列<paramref name="columnName" />に存在しません、<see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataRow" />の一部です。</exception>
+        <exception cref="T:System.NullReferenceException">A **null** null 非許容の型に代入された値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetField&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void SetField&lt;T&gt; (this System.Data.DataRow row, System.Data.DataColumn column, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetField&lt;T&gt;(class System.Data.DataRow row, class System.Data.DataColumn column, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.SetField``1(System.Data.DataRow,System.Data.DataColumn,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="column">入力<see cref="T:System.Data.DataColumn" />を取得するには、どの行値を指定します。</param>
+        <param name="value">型の指定された列の新しい行の値<c>T</c>です。</param>
+        <summary>指定された列の新しい値を設定、<see cref="T:System.Data.DataRow" />です。 <see cref="M:System.Data.DataRowExtensions.SetField``1(System.Data.DataRow,System.Data.DataColumn,``0)" />メソッドには、null 許容型もサポートしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`value`は**null**、<xref:System.Data.DataRowExtensions.SetField%2A>メソッドに変換、 **null**値を<xref:System.DBNull.Value>、基になる<xref:System.Data.DataColumn>です。  
+  
+ <xref:System.Data.DataRowExtensions.SetField%2A>メソッドには、すべての型変換は行いません。 ただし、型変換がまったく発生しないということではありません。 <xref:System.Data.DataRowExtensions.SetField%2A>メソッドの公開、[!INCLUDE[ado_whidbey_long](~/includes/ado-whidbey-long-md.md)]の動作、<xref:System.Data.DataRow>クラスです。 型変換を実行して、<xref:System.Data.DataRow>オブジェクトと変換後の値に保存する行。  
+  
+ 例外を通じて渡されることができます、<xref:System.Data.DataRowExtensions.SetField%2A>メソッドから、基になる<xref:System.Data.DataRow>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された列<paramref name="column" />が見つかりません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="column" />は**null**です。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとするときに発生します。</exception>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetField&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void SetField&lt;T&gt; (this System.Data.DataRow row, int columnIndex, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetField&lt;T&gt;(class System.Data.DataRow row, int32 columnIndex, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.SetField``1(System.Data.DataRow,System.Int32,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="columnIndex">値を設定する列の 0 から始まる序数です。</param>
+        <param name="value">型の指定された列の新しい行の値<c>T</c>です。</param>
+        <summary>指定された列の新しい値を設定、<see cref="T:System.Data.DataRow" />でメソッドが呼び出されます。 <see cref="M:System.Data.DataRowExtensions.SetField``1(System.Data.DataRow,System.Int32,``0)" />メソッドには、null 許容型もサポートしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`value`は**null**、<xref:System.Data.DataRowExtensions.SetField%2A>メソッドに変換、 **null**値を<xref:System.DBNull.Value>、基になる<xref:System.Data.DataColumn>です。  
+  
+ <xref:System.Data.DataRowExtensions.SetField%2A>メソッドには、すべての型変換は行いません。 ただし、型変換がまったく発生しないということではありません。 <xref:System.Data.DataRowExtensions.SetField%2A>メソッドの公開、[!INCLUDE[ado_whidbey_long](~/includes/ado-whidbey-long-md.md)]の動作、<xref:System.Data.DataRow>クラスです。 型変換を実行して、<xref:System.Data.DataRow>オブジェクトと変換後の値に保存する行。  
+  
+ 例外を通じて渡されることができます、<xref:System.Data.DataRowExtensions.SetField%2A>メソッドから、基になる<xref:System.Data.DataRow>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとするときに発生します。</exception>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="ordinal" />引数が範囲外です。</exception>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型は、ジェネリック パラメーターで指定された型にないキャストでした<paramref name="T" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetField&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void SetField&lt;T&gt; (this System.Data.DataRow row, string columnName, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetField&lt;T&gt;(class System.Data.DataRow row, string columnName, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowExtensions.SetField``1(System.Data.DataRow,System.String,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" RefType="this" />
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ジェネリック パラメーターには、列の値の型を指定します。</typeparam>
+        <param name="row">入力<see cref="T:System.Data.DataRow" />、として機能する、<see langword="this" />拡張メソッドのインスタンス。</param>
+        <param name="columnName">値を設定する列の名前。</param>
+        <param name="value">型の指定された列の新しい行の値<c>T</c>です。</param>
+        <summary>指定された列の新しい値を設定、<see cref="T:System.Data.DataRow" />です。 <see cref="M:System.Data.DataRowExtensions.SetField``1(System.Data.DataRow,System.String,``0)" />メソッドには、null 許容型もサポートしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`value`は**null**、<xref:System.Data.DataRowExtensions.SetField%2A>メソッドに変換、 **null**値を<xref:System.DBNull.Value>、基になる<xref:System.Data.DataColumn>です。  
+  
+ <xref:System.Data.DataRowExtensions.SetField%2A>メソッドには、すべての型変換は行いません。 ただし、型変換がまったく発生しないということではありません。 <xref:System.Data.DataRowExtensions.SetField%2A>メソッドの公開、[!INCLUDE[ado_whidbey_long](~/includes/ado-whidbey-long-md.md)]の動作、<xref:System.Data.DataRow>クラスです。 型変換を実行して、<xref:System.Data.DataRow>オブジェクトと変換後の値に保存する行。  
+  
+ 例外を通じて渡されることができます、<xref:System.Data.DataRowExtensions.SetField%2A>メソッドから、基になる<xref:System.Data.DataRow>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された列<paramref name="columnName" />が見つかりません。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとするときに発生します。</exception>
+        <exception cref="T:System.InvalidCastException">基になる列の値の型をジェネリック パラメーターで指定された型にキャストできませんでした<paramref name="T" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,260 @@
+<Type Name="WebControlAdapter" FullName="System.Web.UI.WebControls.Adapters.WebControlAdapter">
+  <TypeSignature Language="C#" Value="public class WebControlAdapter : System.Web.UI.Adapters.ControlAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebControlAdapter extends System.Web.UI.Adapters.ControlAdapter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Adapters.ControlAdapter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロール アダプターをアタッチする、既定のマークアップまたは特定のブラウザーの動作を変更する Web コントロールの表示をカスタマイズします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebControl>クラスは、Web コントロールの継承元となる基本クラスです。 すべての Web コントロールに共通する多くのプロパティを定義します。 詳細については、「<xref:System.Web.UI.WebControls.WebControl>」を参照してください。  
+  
+ A<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter>オブジェクトは、コンポーネントを置き換える特定<xref:System.Web.UI.WebControls.WebControl>クラスまたは継承されたメソッドとイベントの実行のライフ サイクル ブラウザーまたはマークアップに固有の処理を許可します。 .NET Framework が派生する、アダプターを 1 つのコントロールをマップ<xref:System.Web.UI.WebControls.WebControl>クライアント要求ごとのオブジェクト。  
+  
+ アダプターは、特定のブラウザーまたはブラウザーのクラスのコントロール動作を変更したり、一部の機能に対しては任意のフィルターとして機能します。 派生する特殊なクラスにカプセル化できますレンダリング動作に適応性の多く、<xref:System.Web.UI.HtmlTextWriter>クラスです。 したがって、さまざまなブラウザー クラスの動作、またはその信頼に適応性の 1 つのアダプターを使用できること可能性がありますが、<xref:System.Web.UI.HtmlTextWriter>クラスを不要なコントロール アダプターの使用して使用する可能性があります。  
+  
+ コントロール自体では、アダプターは必ずしも必要はありません。 コントロールは、コンポジションを介して拡張は場合、通常、子コントロールのアダプターで十分です。  
+  
+ 各コントロールには、.browser 定義ファイルからアダプターへの明示的なマッピングがあります。 このため、いずれかへのアクセスを<xref:System.Web.UI.Control.Adapter%2A>プロパティ<xref:System.Web.UI.WebControls.WebControl>を使用して、<xref:System.Web.HttpBrowserCapabilities>コントロール アダプターのマッピングの参照を実行する .browser 定義ファイルから抽出されたオブジェクト。  
+  
+ 処理中には、.NET Framework は、ターゲット固有の可能性があるコントロールのオーバーライド可能なメソッドの呼び出しを受け取ります。 コントロール アダプターが接続されている場合、.NET Framework は、関連付けられているアダプターのメソッドを呼び出します。 詳細については、「<xref:System.Web.UI.Adapters.ControlAdapter>」を参照してください。  
+  
+ 描画、<xref:System.Web.UI.WebControls.WebControl>通常の開始と終了タグ、および開始時刻と終了タグの間で内部マークアップで構成されます。 タグが定義されているときに、<xref:System.Web.UI.WebControls.WebControl>を作成します。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.%23ctor%2A>」を参照してください。  
+  
+ タグがによって生成される、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag%2A>と<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag%2A>メソッド、それぞれします。 内側のマークアップがによって生成された、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>メソッドは、次の順序でメソッドを呼び出すことによって、すべてのマークアップを生成します。  
+  
+1.  <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag%2A>。  
+  
+2.  <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>。  
+  
+3.  <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag%2A>。  
+  
+ <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.IsEnabled%2A>プロパティから返される`true`場合にのみ、<xref:System.Web.UI.WebControls.WebControl>され、すべての親コントロールが有効にします。 <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Control%2A>プロパティを厳密に型指定された参照を返します、<xref:System.Web.UI.WebControls.WebControl>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebControlAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Adapters.WebControlAdapter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter>クラスの対応する、作成時に<xref:System.Web.UI.WebControls.WebControl>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebControl Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebControl Control" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Adapters.WebControlAdapter.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロール アダプターが接続されている Web コントロールへの参照を取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebControl" /> の割り当て先である <see cref="T:System.Web.UI.WebControls.Adapters.WebControlAdapter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter>オブジェクトにアタッチされて、<xref:System.Web.UI.WebControls.WebControl>オブジェクト、コントロール メソッドではなくアダプター ライフ サイクル メソッド .NET Framework を呼び出します。 詳細については、「<xref:System.Web.UI.Adapters.ControlAdapter>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.WebControls.Adapters.WebControlAdapter" />クラスを実装する必要がありますには、少なくとも、<see langword="Control" />コントロールの厳密に型指定されたインスタンスを返すプロパティ。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="protected bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Adapters.WebControlAdapter.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web コントロールとそのすべての親コントロールが有効かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Web.UI.WebControls.WebControl" />され有効になっている、それ以外のすべての親コントロール<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.IsEnabled%2A>プロパティ、アダプターとその派生クラスのいずれかのアクセスを提供する、<xref:System.Web.UI.WebControls.WebControl.IsEnabled%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Web.UI.WebControls.WebControl.IsEnabled%2A?displayProperty=nameWithType>親コントロールの階層をスキャンし、返します`true`Web コントロールとそのすべての親が有効になっている場合にのみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <summary>コントロール アダプターがアタッチされるコントロール用にターゲット固有のマークアップを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>メソッドは、クライアント ブラウザーに送信するターゲット固有マークアップを生成します。 <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>代わりに呼び出されますが、<xref:System.Web.UI.WebControls.WebControl.Render%2A?displayProperty=nameWithType>メソッド場合、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter>オブジェクトにアタッチされて、<xref:System.Web.UI.WebControls.WebControl>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />メソッドの呼び出しを基本<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />、し<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents(System.Web.UI.HtmlTextWriter)" />、し<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag(System.Web.UI.HtmlTextWriter)" />です。 オーバーライドする場合は<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />基本メソッドを呼び出さないと、この機能を提供することを確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginTag">
+      <MemberSignature Language="C#" Value="protected virtual void RenderBeginTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderBeginTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <summary>対象のブラウザーに送信されるマークアップに、Web コントロールの開始タグを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag%2A>マークアップ タグを記述またはの開始タグに属性を追加する方法、<xref:System.Web.UI.WebControls.WebControl>オブジェクト。 使用して<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag%2A>と組み合わせて、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag%2A>開始と終了タグの整合性を確保するためのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />基本メソッドの呼び出し、<see cref="M:System.Web.UI.WebControls.WebControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />メソッドです。 さらに、<see cref="M:System.Web.UI.WebControls.WebControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />基本メソッドの呼び出し、適切な<see cref="M:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.Web.UI.HtmlTextWriterTag)" />オーバー ロードを使用するタグの種類によって決定されます、<see cref="T:System.Web.UI.WebControls.WebControl" />オブジェクトが作成されました。 上書きを回避できます<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />から派生することによって、<see cref="T:System.Web.UI.HtmlTextWriter" />クラスとオーバーライド<see cref="M:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.Web.UI.HtmlTextWriterTag)" />とも場合によっては<see cref="M:System.Web.UI.HtmlTextWriter.RenderEndTag" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected virtual void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <summary>コントロール アダプターが接続されている Web コントロールのターゲット固有の内部マークアップを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>メソッドの最初と最後のコントロールのタグの間、内側のマークアップを生成します。 通常、マークアップがによって生成された<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>、次の順序でメソッドを呼び出しています。  
+  
+1.  <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag%2A>。  
+  
+2.  <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>。  
+  
+3.  <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag%2A>。  
+  
+ オーバーライド<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>クライアントのブラウザーに送信するターゲット固有の内部マークアップを生成します。  
+  
+ <xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>メソッドの呼び出しを基本<xref:System.Web.UI.WebControls.WebControl.RenderContents%2A?displayProperty=nameWithType>です。 <xref:System.Web.UI.WebControls.WebControl.RenderContents%2A?displayProperty=nameWithType>メソッドの呼び出しを基本<xref:System.Web.UI.Control.Render%2A?displayProperty=nameWithType>、さらに呼び出す<xref:System.Web.UI.Control.RenderChildren%2A?displayProperty=nameWithType>です。 このため、オーバーライド<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>呼び出す必要があります、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>の代わりではなく、ほかに、その処理が場合にのみ、メソッドを基本<xref:System.Web.UI.Control.Render%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>複合コントロールの子コントロールが表示されることを確認する必要があります。 オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents(System.Web.UI.HtmlTextWriter)" />メソッドとその基本メソッドを呼び出す必要はありません、する可能性があります、子コントロールを呼び出すことによってレンダリングされる<see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" />、オーバーライドされなかった場合、呼び出す<see cref="M:System.Web.UI.Control.RenderChildren(System.Web.UI.HtmlTextWriter)" />から、<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents(System.Web.UI.HtmlTextWriter)" />をオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndTag">
+      <MemberSignature Language="C#" Value="protected virtual void RenderEndTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderEndTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <summary>対象のブラウザーに送信されるマークアップに、Web コントロールの終了タグを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag%2A>マークアップ タグを記述またはの終了タグに属性を追加する方法、<xref:System.Web.UI.WebControls.WebControl>オブジェクト。 使用して<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag%2A>と組み合わせて、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag%2A>開始と終了タグの整合性を確保するためのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderEndTag(System.Web.UI.HtmlTextWriter)" />基本メソッドの呼び出し、<see cref="M:System.Web.UI.WebControls.WebControl.RenderEndTag(System.Web.UI.HtmlTextWriter)" />メソッドです。 さらに、<see cref="M:System.Web.UI.WebControls.WebControl.RenderEndTag(System.Web.UI.HtmlTextWriter)" />基本メソッドの呼び出し、<see cref="M:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.Web.UI.HtmlTextWriterTag)" />メソッドです。 上書きを回避できます<see cref="M:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />から派生することによって、<see cref="T:System.Web.UI.HtmlTextWriter" />クラスとオーバーライド<see cref="M:System.Web.UI.HtmlTextWriter.RenderEndTag" />とも場合によっては<see cref="M:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.Web.UI.HtmlTextWriterTag)" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

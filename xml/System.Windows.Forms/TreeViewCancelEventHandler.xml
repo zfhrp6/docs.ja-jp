@@ -1,0 +1,43 @@
+<Type Name="TreeViewCancelEventHandler" FullName="System.Windows.Forms.TreeViewCancelEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void TreeViewCancelEventHandler(object sender, TreeViewCancelEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TreeViewCancelEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeViewCancelEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.TreeViewCancelEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.TreeViewCancelEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.Windows.Forms.TreeView.BeforeCheck" />、 <see cref="E:System.Windows.Forms.TreeView.BeforeCollapse" />、 <see cref="E:System.Windows.Forms.TreeView.BeforeExpand" />、または<see cref="E:System.Windows.Forms.TreeView.BeforeSelect" />のイベント、<see cref="T:System.Windows.Forms.TreeView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeViewCancelEventArgs> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例の折りたたみの状態を変更する方法を示します、<xref:System.Windows.Forms.TreeView>チェックされたすべてのノードが表示されるようにします。 最初に、すべてのノードが折りたたまれているし、ハンドラーが追加されて、<xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント。 次に、すべてのノードが展開します。 <xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント ハンドラーは、特定のノードがオンになっている子ノードを持つかどうかを決定します。 ノードがチェックされている子を持たない場合は、そのノードの展開が取り消されました。 ノードの横にあるプラス記号をクリックすると、通常のノードの展開を許可するために、<xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント ハンドラーを削除します。  
+  
+ 処理することによりこの動作を実装することも、<xref:System.Windows.Forms.TreeView.BeforeCollapse?displayProperty=nameWithType>イベント、そのトピックの例に示すようにします。  
+  
+ [!code-cpp[TreeViewShowCheckedNodes1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/CPP/treeviewshowcheckednodes1.cpp#1)]
+ [!code-csharp[TreeViewShowCheckedNodes1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/CS/treeviewshowcheckednodes1.cs#1)]
+ [!code-vb[TreeViewShowCheckedNodes1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/VB/treeviewshowcheckednodes1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

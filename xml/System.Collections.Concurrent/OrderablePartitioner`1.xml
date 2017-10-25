@@ -1,0 +1,379 @@
+<Type Name="OrderablePartitioner&lt;TSource&gt;" FullName="System.Collections.Concurrent.OrderablePartitioner&lt;TSource&gt;">
+  <TypeSignature Language="C#" Value="public abstract class OrderablePartitioner&lt;TSource&gt; : System.Collections.Concurrent.Partitioner&lt;TSource&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit OrderablePartitioner`1&lt;TSource&gt; extends System.Collections.Concurrent.Partitioner`1&lt;!TSource&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Concurrent.OrderablePartitioner`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Concurrent</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.14.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TSource" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Collections.Concurrent.Partitioner&lt;TSource&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TSource">TSource</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TSource">コレクション内の要素の型。</typeparam>
+    <summary>並べ替え可能なデータ ソースを複数のパーティションに分割する特定の方法を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスの実装は適切な方法でキーと値のペアに要素を順序付けします。 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、一度に 1 つの要素を返す並べ替え可能なパーティショナーを実装する方法を示します。  
+  
+ [!code-csharp[System.Collections.Concurrent.OrderablePartitioner#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.concurrent.orderablepartitioner/cs/orderablepartitioner.cs#1)]
+ [!code-vb[System.Collections.Concurrent.OrderablePartitioner#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.concurrent.orderablepartitioner/vb/orderablepartitioner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリック メンバー<see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />はスレッド セーフであると同時に複数のスレッドから呼び出される場合があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OrderablePartitioner (bool keysOrderedInEachPartition, bool keysOrderedAcrossPartitions, bool keysNormalized);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool keysOrderedInEachPartition, bool keysOrderedAcrossPartitions, bool keysNormalized) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.OrderablePartitioner`1.#ctor(System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keysOrderedInEachPartition" Type="System.Boolean" />
+        <Parameter Name="keysOrderedAcrossPartitions" Type="System.Boolean" />
+        <Parameter Name="keysNormalized" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="keysOrderedInEachPartition">各パーティション内の要素のキーが昇順になるかどうかを示します。</param>
+        <param name="keysOrderedAcrossPartitions">以前のパーティション内の要素が常に後のパーティション内の要素の前にかどうかを示します。 True の場合、0 のパーティション内の各要素が、パーティション 1 のいずれかの要素より小さい順序キー、パーティション 1 内の各要素は、パーティション 2 では、どの要素よりも小さい順序キーを持ちます。</param>
+        <param name="keysNormalized">キーを正規化するかどうかを示します。 True の場合、注文のすべてのキーは範囲 [0.. の個別の整数 numberOfElements-1] です。 場合は false、注文キーがまだ必要があります、一意であるが、相対的な順序のみ考慮されます、absolute 値。</param>
+        <summary>初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />インデックスのキーに指定された制約を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDynamicPartitions">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;TSource&gt; GetDynamicPartitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;!TSource&gt; GetDynamicPartitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.OrderablePartitioner`1.GetDynamicPartitions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TSource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>可変個のパーティションに基になるコレクションを分割できるオブジェクトを作成します。</summary>
+        <returns>基になるデータ ソースに対してパーティションを作成するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトを実装して、<xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>インターフェイスです。 呼び出す<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>オブジェクトのシーケンスを別のパーティションを作成します。  
+  
+ 既定の実装と同様の動作を提供する<xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A>ことを除き、返された一連のパーティションは、要素のキーを提供していません。  
+  
+ <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetDynamicPartitions%2A>場合にのみ、メソッドがサポート、<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>プロパティが true を返します。  
+  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">基本クラスによっては、動的なパーティション分割はサポートされていません。 派生クラスで実装する必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrderableDynamicPartitions">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;long,TSource&gt;&gt; GetOrderableDynamicPartitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;int64, !TSource&gt;&gt; GetOrderableDynamicPartitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.OrderablePartitioner`1.GetOrderableDynamicPartitions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.Int64,TSource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>可変個のパーティションに基になるコレクションを分割できるオブジェクトを作成します。</summary>
+        <returns>基になるデータ ソースに対してパーティションを作成するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトを実装して、<xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>インターフェイスです。 呼び出す<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>オブジェクトのシーケンスを別のパーティションを作成します。  
+  
+ 各パーティションは、キーと値のペアを列挙子として表されます。 ペア内の値が要素自体で、キーが他の要素に対するこの要素の相対順序を決定する整数です。  
+  
+ <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A>場合にのみ、メソッドがサポート、<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>プロパティが true を返します。  
+  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このパーティショナーでは、動的なパーティション分割はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrderablePartitions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;long,TSource&gt;&gt;&gt; GetOrderablePartitions (int partitionCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Collections.Generic.IEnumerator`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;int64, !TSource&gt;&gt;&gt; GetOrderablePartitions(int32 partitionCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.OrderablePartitioner`1.GetOrderablePartitions(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;System.Int64,TSource&gt;&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="partitionCount">作成するパーティションの数。</param>
+        <summary>基になるコレクションを指定した数の並べ替え可能なパーティションをパーティション分割します。</summary>
+        <returns>含むリスト<paramref name="partitionCount" />列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各パーティションは、キーと値のペアを列挙子として表されます。  
+  
+ 値のペアは、要素自体、およびキーは、データ ソースの他の要素に対しては、この要素の相対順序を決定する整数。  
+  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPartitions">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;System.Collections.Generic.IEnumerator&lt;TSource&gt;&gt; GetPartitions (int partitionCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;class System.Collections.Generic.IEnumerator`1&lt;!TSource&gt;&gt; GetPartitions(int32 partitionCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.OrderablePartitioner`1.GetPartitions(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Collections.Generic.IEnumerator&lt;TSource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="partitionCount">作成するパーティションの数。</param>
+        <summary>指定された順序付けられたパーティション数を基になるコレクションをパーティション分割します。</summary>
+        <returns>含むリスト<paramref name="partitionCount" />列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装と同様の動作を提供する<xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A>ことを除き、返された一連のパーティションは、要素のキーを提供していません。  
+  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeysNormalized">
+      <MemberSignature Language="C#" Value="public bool KeysNormalized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeysNormalized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>順序キーを正規化するかどうかを取得します。</summary>
+        <value>true の場合は、キーが正規化されます。それ以外の場合は false。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysNormalized%2A>注文のすべてのキー範囲 [0.. の個別の整数は、true を返します。 numberOfElements-1] です。 プロパティが false の場合、順序キーである必要がありますが、一意であるによって返されるが、相対的な順序と見なされます、absolute 値のみです。  
+  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeysOrderedAcrossPartitions">
+      <MemberSignature Language="C#" Value="public bool KeysOrderedAcrossPartitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeysOrderedAcrossPartitions" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedAcrossPartitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前のパーティション内の要素が常には後でパーティション内の要素の前にするかどうかを取得します。</summary>
+        <value>以前のパーティション内の要素が後にあるパーティション内の要素の前に常に場合は true。それ以外の場合は false。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedAcrossPartitions%2A>0 のパーティション内の各要素はパーティション 1、パーティション 1 内の各要素の任意の要素があるパーティション 2 では、どの要素よりも小さい順序キーよりも小さい順序キーに true を返します。  
+  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeysOrderedInEachPartition">
+      <MemberSignature Language="C#" Value="public bool KeysOrderedInEachPartition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeysOrderedInEachPartition" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysOrderedInEachPartition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各パーティション内の要素のキーが昇順になるかどうかを取得します。</summary>
+        <value>各パーティション内の要素はキーが昇順になる場合は true。それ以外の場合は false。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

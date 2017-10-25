@@ -1,0 +1,154 @@
+<Type Name="VisualStyleElement" FullName="System.Windows.Forms.VisualStyles.VisualStyleElement">
+  <TypeSignature Language="C#" Value="public class VisualStyleElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualStyleElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>visual スタイルで描画するコントロール要素またはユーザー インターフェイス (UI) 要素を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.VisualStyles.VisualStyleElement>クラスは、Windows コントロールまたはユーザー インターフェイス (UI) 要素は、オペレーティング システムの現在の visual スタイルによって定義を識別します。 観点で visual スタイル要素が定義されている*クラス*、*一部*、および*状態*:  
+  
+-   *クラス*通常は一緒に描画される、関連する visual スタイル要素のグループを識別します。 クラスが指定された、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName%2A>プロパティです。  
+  
+-   *一部*クラスの個々 のメンバーを定義します。 一部が指定された、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Part%2A>プロパティです。  
+  
+-   *状態*クラスと部分で定義された要素の現在の表示状態を説明します。 状態がで指定された、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.State%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType>名前空間公開何百もの<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>インターフェイス visual スタイルによって定義できる要素のコントロールおよびユーザーを表すオブジェクト。 これらのオブジェクトとして公開されます`static`の入れ子になったクラスのプロパティ<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>です。 各プロパティの所有するクラスの修飾名を表すクラスと、描画する要素の一部とプロパティ名は、要素の状態を表します。 たとえば、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Button.PushButton.Pressed%2A?displayProperty=nameWithType>プロパティから返される、 <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> visual スタイルでの押された状態でボタンの描画に使用できます。 `Pressed`プロパティ名、状態に対応する`PushButton`、部分に対応して`Button`visual スタイル要素のクラスを識別します。  
+  
+ Visual スタイル要素を描画するには、作成、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>には、設定、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>を描くには、したい、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A>メソッドです。 現在の visual スタイルが特定の要素の定義を提供するかどうかを判断するのには、呼び出し、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A>メソッドの引数としての要素を使用します。  
+  
+ <xref:System.Windows.Forms.VisualStyles.VisualStyleElement>および<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>Windows プラットフォーム SDK の Windows シェルの部分からの visual スタイル API の機能をラップします。 Visual スタイルの詳細については、MSDN ライブラリでのプラットフォーム SDK の部分に「を使用して Windows XP の視覚スタイル」を参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、完全なアプリケーションを参照し、すべての描画の UI を提供する、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>によって公開されているオブジェクト、<xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType>名前空間。 表示するには、要素を使用して、<xref:System.Windows.Forms.ListView>を描くには、ノードをクリックする要素の状態を表すノードに移動するウィンドウの左側にあるコントロールです。 現在の visual スタイルによって、要素が定義されている場合にのみ、このサンプルは、選択した要素を描画します。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleElement#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleElement/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleElement#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleElement/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleElement#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleElement/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" /> が表す visual スタイル要素のクラス名を取得します。</summary>
+        <value>visual スタイル要素のクラス名を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラス名は、通常は一緒に描画される、関連する visual スタイル要素のグループを指します。 クラス名が"SCROLLBAR"と"TRACKBAR"などのコントロールに対応できますが、クラス名が"EXPLORERBAR"や"STARTPANEL"など、特定のコントロールに対応していない要素のグループを指すこともできます。  
+  
+ Visual スタイル クラス、部品、および状態の詳細については、Windows シェルのドキュメント「パーツと状態」を参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateElement">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.VisualStyles.VisualStyleElement CreateElement (string className, int part, int state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.VisualStyles.VisualStyleElement CreateElement(string className, int32 part, int32 state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleElement.CreateElement(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VisualStyles.VisualStyleElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="part" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="className">作成する visual スタイル要素のクラス名を表す文字列。</param>
+        <param name="part">作成する visual スタイル要素の部品を表す値。</param>
+        <param name="state">作成する visual スタイル要素の状態を表す値。</param>
+        <summary>指定されたクラス、部品、および状態の各値から新しい visual スタイル要素を作成します。</summary>
+        <returns><see cref="P:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName" />、<see cref="P:System.Windows.Forms.VisualStyles.VisualStyleElement.Part" />、および <see cref="P:System.Windows.Forms.VisualStyles.VisualStyleElement.State" /> の各パラメーターの値に初期化された <paramref name="className" />、<paramref name="part" />、および <paramref name="state" /> の各プロパティを持つ <see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Part">
+      <MemberSignature Language="C#" Value="public int Part { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Part" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleElement.Part" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" /> が表す visual スタイル要素の部品を示す値を取得します。</summary>
+        <value>visual スタイル要素の部品を表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パートは、visual スタイル要素のクラスの個々 のメンバーです。 たとえば、チェック ボックス、ラジオ ボタン、およびプッシュ ボタンを表す visual スタイル要素は、"BUTTON"クラスのすべての対象となる部分です。  
+  
+ 一部の値は、特定のクラスに対して定義されている部分の数を範囲は 1 から整数です。 Visual スタイル クラス、部品、および状態の詳細については、Windows シェルのドキュメント「パーツと状態」を参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public int State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleElement.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" /> が表す visual スタイル要素の状態を示す値を取得します。</summary>
+        <value>visual スタイル要素の状態を表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイル パーツは、1 つまたは複数の表示状態を持つことができます。 たとえば、ラジオ ボタンを表す visual スタイル要素は、無効になっている、または選択解除状態であることができます。  
+  
+ 状態の値は、特定の部分に定義されている状態の数を範囲は 1 から整数です。 Visual スタイル クラス、部品、および状態の詳細については、「パーツと状態」Windows シェルのドキュメント内にあるを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

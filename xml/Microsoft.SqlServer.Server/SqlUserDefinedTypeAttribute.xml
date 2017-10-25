@@ -1,0 +1,257 @@
+<Type Name="SqlUserDefinedTypeAttribute" FullName="Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SqlUserDefinedTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlUserDefinedTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SQL Server のユーザー定義型 (UDT) としてアセンブリの型定義を示すために使用します。 属性のプロパティは、種類が SQL Server に登録されているときに使用する物理的な特性を反映します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SQL Server のある型定義にバインドされているユーザー定義型を作成する、<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute>カスタム属性です。 すべての UDT は、この属性で注釈する必要があります。 参照してください[clr ユーザー定義型](http://go.microsoft.com/fwlink/?LinkId=128028)Udt に関する詳細については、UDT の例を含むです。  
+  
+   
+  
+## Examples  
+ 次の例は、 `UserDefinedType` Point UDT の属性です。  UDT は、バイト順「ポイント」をという名前、"ValidatePoint"をという名前の検証メソッドを使用するネイティブ シリアル化の形式です。  
+  
+ [!code-csharp[DataWorks SqlUserDefinedTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlUserDefinedTypeAttribute Example/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlUserDefinedTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlUserDefinedTypeAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlUserDefinedTypeAttribute (Microsoft.SqlServer.Server.Format format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.SqlServer.Server.Format format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.#ctor(Microsoft.SqlServer.Server.Format)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="format" Type="Microsoft.SqlServer.Server.Format" />
+      </Parameters>
+      <Docs>
+        <param name="format">1 つ、<see cref="T:Microsoft.SqlServer.Server.Format" />型のシリアル化形式を表す値です。</param>
+        <summary>必須の属性でユーザー定義型 (UDT)、指定された型が UDT であることを確認し、UDT のストレージ形式を指定するために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例を指定する、`Format`が、ユーザー定義型の`SerializedDataWithMetadata`と`MaxByteSize`は 8,000 バイトです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Type1.cs#12)]
+ [!code-vb[VbRaddataSQLObjects#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Type1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public Microsoft.SqlServer.Server.Format Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.SqlServer.Server.Format Format" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.Format</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化の形式として、<see cref="T:Microsoft.SqlServer.Server.Format" />です。</summary>
+        <value>A<see cref="T:Microsoft.SqlServer.Server.Format" />シリアル化形式を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsByteOrdered">
+      <MemberSignature Language="C#" Value="public bool IsByteOrdered { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsByteOrdered" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型が順序付けバイトであるかを示します。</summary>
+        <value>
+          <see langword="true" />ユーザー定義型が順序付け; バイトの場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると`true`、<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>プロパティが有効でセマンティックの順序付け情報のシリアル化されたバイナリ データを使用できることを保証します。 したがって、バイト順の UDT オブジェクトの各インスタンスは 1 つのシリアル化された表現を持つことができますのみです。 シリアル化されたバイトは、SQL Server の比較演算が実行されると、その結果は同じ比較演算をマネージ コードで実行した場合と同じをする必要があります.  
+  
+ 次の機能がサポートされているときに<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>に設定されている`true`:  
+  
+-   この型の列にインデックスを作成する権限です。  
+  
+-   この型の列に制約チェックと UNIQUE 制約と主キーと外部キーを作成する機能。  
+  
+-   TRANSACT-SQL ORDER BY、GROUP BY、および PARTITION BY 句を使用する機能。 このような場合は、型のバイナリ表現を使用して、順序を決定します。  
+  
+-   TRANSACT-SQL ステートメントで比較演算子を使用する権限です。  
+  
+-   この型の計算列を保存する権限です。  
+  
+ なお両方、`Native`と`UserDefined`シリアル化形式は次の比較演算子をサポートと<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>に設定されている`true`:  
+  
+-   等しい (=)  
+  
+-   等しくない (!=)  
+  
+-   大なり (>)  
+  
+-   小さい (\<)  
+  
+-   以上 (>=)  
+  
+-   以下 (<=)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedLength">
+      <MemberSignature Language="C#" Value="public bool IsFixedLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedLength" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsFixedLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このユーザー定義型のすべてのインスタンスを同じ長さにするかどうかを示します。</summary>
+        <value>
+          <see langword="true" />この種類のすべてのインスタンスが同じ長さである場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合設定`true`、この共通言語ランタイム (CLR) 型に対応する Udt のすべてのインスタンス、しなければなりません (バイト) に正確に一致<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>です。 この属性にのみ関連による Udt`UserDefined`シリアル化<xref:Microsoft.SqlServer.Server.Format>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxByteSize">
+      <MemberSignature Language="C#" Value="public int MaxByteSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxByteSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(バイト単位) のインスタンスの最大サイズ。</summary>
+        <value><see cref="T:System.Int32" />インスタンスの最大サイズを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する必要があります、<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>を持つプロパティ、`UserDefined`シリアル化<xref:Microsoft.SqlServer.Server.Format>です。  
+  
+ SQL Server 2005 または以前に接続するときに<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>1 ~ 8000 にする必要があります。  
+  
+ 接続時に SQL Server 2008 以降、設定<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>1 ~ 8000、型のインスタンスは、常に 8,000 バイト以下でします。 8,000 より大きいインスタンスを持つことができる型の場合は-1 を指定します。  
+  
+ Udt に指定すると、ユーザー定義シリアル<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>ユーザーによって定義されているシリアル化された形式で UDT の合計サイズを参照します。 10 文字の文字列のプロパティを使用して UDT を検討してください (<xref:System.Char>)。 使用して、UDT がシリアル化する際、<xref:System.IO.BinaryWriter>シリアル化された文字列の合計サイズは 22 バイト 2 バイト Unicode utf-16 の文字、文字の最大数を掛けたごと、および制御バイト 2 バイトのオーバーヘッドで発生するバイナリ ストリームのシリアル化します。 値を決定するため<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>、シリアル化される UDT の合計サイズを考慮する必要があります。 バイナリ形式でシリアル化データと、シリアル化によるオーバーヘッドのサイズ。  
+  
+ このプロパティでは使用できません`Native`シリアル化<xref:Microsoft.SqlServer.Server.Format>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型の SQL Server の名前。</summary>
+        <value>A<see cref="T:System.String" />ユーザー定義型の SQL Server 名を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.Name%2A>プロパティは SQL Server 内では使用されませんが、によって、Microsoft Visual Studio .NET 統合開発環境 (IDE) を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationMethodName">
+      <MemberSignature Language="C#" Value="public string ValidationMethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationMethodName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.ValidationMethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型のインスタンスの検証に使用するメソッドの名前。</summary>
+        <value>A<see cref="T:System.String" />ユーザー定義型のインスタンスの検証に使用するメソッドの名前を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性によって指定されたメソッドは、信頼されていないバイナリ値から UDT が逆シリアル化されたときに、UDT のインスタンスを検証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

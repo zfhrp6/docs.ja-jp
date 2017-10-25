@@ -1,0 +1,464 @@
+<Type Name="VerificationAttribute" FullName="System.Web.UI.VerificationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class VerificationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit VerificationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.VerificationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web コンテンツへのアクセス ルールのメタデータ属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.VerificationAttribute>クラスは、検証可能な Web コンテンツへのアクセス規則を定義します。 Web コンテンツのユーザー補助機能に関するガイドラインの詳細については、次を参照してください。、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ インスタンスを定義するために必要な情報量が最小限に抑える、<xref:System.Web.UI.VerificationAttribute>が含まれています。  
+  
+-   検証規則を表すガイドライン。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.Guideline%2A>プロパティです。  
+  
+-   ガイドラインのチェックポイントです。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.Checkpoint%2A>プロパティです。  
+  
+-   チェックポイントの優先度です。  コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.Priority%2A>プロパティです。  
+  
+-   A<xref:System.Web.UI.VerificationReportLevel>に属しているルールをする必要のあるレポートのレベルを表す列挙値。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.VerificationReportLevel%2A>プロパティです。  
+  
+-   検証規則が true の場合に報告されるメッセージです。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.Message%2A>プロパティです。  
+  
+ インスタンスを作成するときに指定できる検証規則の省略可能なプロパティ:  
+  
+-   A<xref:System.Web.UI.VerificationRule>検証規則を解釈する方法を表す列挙値。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.VerificationRule%2A>プロパティです。  
+  
+-   A<xref:System.Web.UI.VerificationConditionalOperator>検証規則をテストするために使用する条件式の演算子を表す列挙値。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.VerificationConditionalOperator%2A>プロパティです。  
+  
+-   ユーザー補助機能の参照ガイドラインの URL。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.GuidelineUrl%2A>プロパティです。  
+  
+-   条件式の右辺を表す条件付きの値。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>プロパティです。  
+  
+-   条件式の左辺を表す、条件付きプロパティです。 コンス トラクターのセットで指定された値、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>プロパティです。  
+  
+ <xref:System.Web.UI.VerificationAttribute>メタデータとして使用できるは、クラス、プロパティ、およびインデクサーの宣言を定義します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.VerificationAttribute>クラスです。 検証メタデータ定義に使用のガイドラインは、"WCAG、"Web コンテンツのアクセシビリティ ガイドライン、および"ADA、"アメリカの障害のある Act ガイドラインです。 詳細については、次を参照してください。、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ 使用するチェックポイントは「1.1」と 1194.22"WCAG および ADA、それぞれ、対応するテキストがテキスト以外の要素が存在することを確認するチェックポイントです。 <xref:System.Web.UI.VerificationAttribute>に適用される、`ImageText`を別のプロパティに相当するテキストを表すプロパティと呼ばれる`ImageProperty`です。 場合、`ImageText`プロパティが設定されていない、アクセシビリティの確認メッセージが返されます、"、イメージが不足して対応するテキストです"。  
+  
+ [!code-csharp[System.Web.UI.VerificationAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.VerificationAttribute/cs/VerificationAttributeExample.cs#1)]
+ [!code-vb[System.Web.UI.VerificationAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.VerificationAttribute/vb/VerificationAttributeExample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VerificationAttribute (string guideline, string checkpoint, System.Web.UI.VerificationReportLevel reportLevel, int priority, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string guideline, string checkpoint, valuetype System.Web.UI.VerificationReportLevel reportLevel, int32 priority, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.VerificationAttribute.#ctor(System.String,System.String,System.Web.UI.VerificationReportLevel,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="guideline" Type="System.String" />
+        <Parameter Name="checkpoint" Type="System.String" />
+        <Parameter Name="reportLevel" Type="System.Web.UI.VerificationReportLevel" />
+        <Parameter Name="priority" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="guideline">ユーザー補助ガイドライン検証規則について説明します。</param>
+        <param name="checkpoint">ガイドライン内のチェックポイントです。</param>
+        <param name="reportLevel"><see cref="T:System.Web.UI.VerificationReportLevel" /> 値のいずれか。</param>
+        <param name="priority">チェックポイントの優先度です。</param>
+        <param name="message">検証規則が true の場合に表示されるメッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.VerificationAttribute" />アクセシビリティ ガイドライン、チェックポイント、レポート作成レベル、チェックポイントの優先度、およびエラー メッセージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.%23ctor%2A>のコンス トラクター、<xref:System.Web.UI.VerificationAttribute>クラスは、最小限の検証ルールを定義するために必要な情報を指定します。 次の既定値、<xref:System.Web.UI.VerificationAttribute>インスタンスがあると仮定します。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.VerificationRule%2A>プロパティとして設定されて<xref:System.Web.UI.VerificationRule.Required>です。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.VerificationConditionalOperator%2A>プロパティとして設定されて<xref:System.Web.UI.VerificationConditionalOperator.Equals>です。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.GuidelineUrl%2A>プロパティが空の文字列 ("") です。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>プロパティが空の文字列 ("") です。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>プロパティが空の文字列 ("") です。  
+  
+-   既定値を超える前の一覧に、プロパティの値を指定するには、使用、<xref:System.Web.UI.VerificationAttribute.%23ctor%2A>または<xref:System.Web.UI.VerificationAttribute.%23ctor%2A>コンス トラクター オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VerificationAttribute (string guideline, string checkpoint, System.Web.UI.VerificationReportLevel reportLevel, int priority, string message, System.Web.UI.VerificationRule rule, string conditionalProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string guideline, string checkpoint, valuetype System.Web.UI.VerificationReportLevel reportLevel, int32 priority, string message, valuetype System.Web.UI.VerificationRule rule, string conditionalProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.VerificationAttribute.#ctor(System.String,System.String,System.Web.UI.VerificationReportLevel,System.Int32,System.String,System.Web.UI.VerificationRule,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="guideline" Type="System.String" />
+        <Parameter Name="checkpoint" Type="System.String" />
+        <Parameter Name="reportLevel" Type="System.Web.UI.VerificationReportLevel" />
+        <Parameter Name="priority" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="rule" Type="System.Web.UI.VerificationRule" />
+        <Parameter Name="conditionalProperty" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="guideline">ユーザー補助ガイドライン検証規則について説明します。</param>
+        <param name="checkpoint">ガイドライン内のチェックポイントです。</param>
+        <param name="reportLevel"><see cref="T:System.Web.UI.VerificationReportLevel" /> 値のいずれか。</param>
+        <param name="priority">チェックポイントの優先度です。</param>
+        <param name="message">検証規則が true の場合に表示されるメッセージ。</param>
+        <param name="rule">1 つ、 <see cref="T:System.Web.UI.VerificationRule" />.values です。</param>
+        <param name="conditionalProperty">アクセシビリティ規則を検証するために使用する条件式の左側にあります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.VerificationAttribute" />アクセシビリティ ガイドライン、チェックポイント、レポートのレベル、チェックポイントの優先度、エラー メッセージを持つクラス<see cref="T:System.Web.UI.VerificationRule" />.value、および関連する条件付きのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `conditionalProperty`パラメーターは、検証規則を評価する条件式の一部として使用されている別のプロパティです。 たとえば、次の規則のパラメーターは<xref:System.Web.UI.VerificationRule.NotEmptyString>し、関連するプロパティで指定された`conditionalProperty`空の文字列をすることはできません ("") です。  
+  
+ 次の既定値、<xref:System.Web.UI.VerificationAttribute>インスタンスがあると仮定します。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.VerificationConditionalOperator%2A>プロパティとして設定されて<xref:System.Web.UI.VerificationConditionalOperator.Equals>です。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.GuidelineUrl%2A>プロパティが空の文字列 ("") です。  
+  
+-   <xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>プロパティが空の文字列 ("") です。  
+  
+ 既定値を超える前の一覧に、プロパティの値を指定するには、使用、<xref:System.Web.UI.VerificationAttribute.%23ctor%2A>コンス トラクター オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VerificationAttribute (string guideline, string checkpoint, System.Web.UI.VerificationReportLevel reportLevel, int priority, string message, System.Web.UI.VerificationRule rule, string conditionalProperty, System.Web.UI.VerificationConditionalOperator conditionalOperator, string conditionalValue, string guidelineUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string guideline, string checkpoint, valuetype System.Web.UI.VerificationReportLevel reportLevel, int32 priority, string message, valuetype System.Web.UI.VerificationRule rule, string conditionalProperty, valuetype System.Web.UI.VerificationConditionalOperator conditionalOperator, string conditionalValue, string guidelineUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.VerificationAttribute.#ctor(System.String,System.String,System.Web.UI.VerificationReportLevel,System.Int32,System.String,System.Web.UI.VerificationRule,System.String,System.Web.UI.VerificationConditionalOperator,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="guideline" Type="System.String" />
+        <Parameter Name="checkpoint" Type="System.String" />
+        <Parameter Name="reportLevel" Type="System.Web.UI.VerificationReportLevel" />
+        <Parameter Name="priority" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="rule" Type="System.Web.UI.VerificationRule" />
+        <Parameter Name="conditionalProperty" Type="System.String" />
+        <Parameter Name="conditionalOperator" Type="System.Web.UI.VerificationConditionalOperator" />
+        <Parameter Name="conditionalValue" Type="System.String" />
+        <Parameter Name="guidelineUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="guideline">ユーザー補助ガイドライン検証規則について説明します。</param>
+        <param name="checkpoint">ガイドライン内のチェックポイントです。</param>
+        <param name="reportLevel"><see cref="T:System.Web.UI.VerificationReportLevel" /> 値のいずれか。</param>
+        <param name="priority">チェックポイントの優先度です。</param>
+        <param name="message">検証規則が true の場合に表示されるメッセージ。</param>
+        <param name="rule">1 つ、 <see cref="T:System.Web.UI.VerificationRule" />.values です。</param>
+        <param name="conditionalProperty">アクセシビリティ規則を検証するために使用する条件式の左側にあります。</param>
+        <param name="conditionalOperator"><see cref="T:System.Web.UI.VerificationConditionalOperator" /> 値のいずれか。</param>
+        <param name="conditionalValue">アクセシビリティ規則を検証するために使用する条件式の右側にあります。</param>
+        <param name="guidelineUrl">参照 URL<c>ガイドライン</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.VerificationAttribute" />アクセシビリティ ガイドライン、チェックポイント、レポートのレベル、チェックポイントの優先度、エラー メッセージを持つクラス<see cref="T:System.Web.UI.VerificationRule" />.value、条件付きに関連するプロパティ、条件に関連するプロパティ値、および参照ガイドラインの URL。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Web.UI.VerificationAttribute.%23ctor%2A>のインスタンスを作成することができます、<xref:System.Web.UI.VerificationAttribute>クラス、すべての可能なプロパティを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Checkpoint">
+      <MemberSignature Language="C#" Value="public string Checkpoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Checkpoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.Checkpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたアクセシビリティ チェックポイントの参照を取得<see cref="P:System.Web.UI.VerificationAttribute.Guideline" />プロパティです。</summary>
+        <value>チェックポイントの参照を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.Checkpoint%2A>場合、プロパティが設定、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されが必要です。  
+  
+ 定義された Web コンテンツのユーザー補助ガイドラインについて、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)、<xref:System.Web.UI.VerificationAttribute.Checkpoint%2A>続けてチェックポイント番号ピリオド (.) が続くガイドライン数値としてプロパティを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalProperty">
+      <MemberSignature Language="C#" Value="public string ConditionalProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConditionalProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.ConditionalProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助のチェックポイントの検証の一部として使用する条件式の左側にあるを取得します。</summary>
+        <value>条件式の左側にあります。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>ときにプロパティを設定することができます、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されるは省略可能です。 受け取らないコンス トラクターを使用する場合、`conditionalProperty`パラメーターでは、既定値は空の文字列 ("") を使用します。  
+  
+ <xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>プロパティが右側にある、またはユーザー補助のチェックポイントの検証で使用される条件式の値。 条件式の左側にあるを指定した、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalValue">
+      <MemberSignature Language="C#" Value="public string ConditionalValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConditionalValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.ConditionalValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助のチェックポイントの検証の一部として使用する条件式の右側にあるを取得します。</summary>
+        <value>条件式の右側にあります。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>ときにプロパティを設定することができます、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されるは省略可能です。 受け取らないコンス トラクターを使用する場合、`conditionalValue`パラメーターでは、既定値は空の文字列 ("") を使用します。  
+  
+ <xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>プロパティが右側にある、またはユーザー補助のチェックポイントの検証で使用される条件式の値。 条件式の左側にあるを指定した、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Guideline">
+      <MemberSignature Language="C#" Value="public string Guideline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Guideline" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.Guideline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセシビリティの確認のために使用するガイドラインを取得します。</summary>
+        <value>ガイドラインを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.Guideline%2A>場合、プロパティが設定、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されが必要です。  
+  
+ ガイドラインには、"WCAG 1.1"と"ADA508"などがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GuidelineUrl">
+      <MemberSignature Language="C#" Value="public string GuidelineUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GuidelineUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.GuidelineUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL を取得しますで指定されたユーザー補助ガイドラインの詳細を取得するために使用する、<see cref="P:System.Web.UI.VerificationAttribute.Guideline" />プロパティです。</summary>
+        <value>既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.GuidelineUrl%2A>ときにプロパティを設定することができます、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されるは省略可能です。 受け取らないコンス トラクターを使用する場合、`guidelineUrl`パラメーターでは、既定値は空の文字列 ("") を使用します。  
+  
+ 入力した文字列、<xref:System.Web.UI.VerificationAttribute.GuidelineUrl%2A>プロパティは、正しいかどうかはチェックされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助のチェックポイントの検証規則が true の場合は、メッセージ文字列を取得します。</summary>
+        <value>エラーの文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.Message%2A>場合、プロパティが設定、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public int Priority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセシビリティのチェックポイントの優先度を取得します。</summary>
+        <value>優先順位を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.Priority%2A>プロパティを定義、<xref:System.Web.UI.VerificationAttribute.Checkpoint%2A>プロパティのアクセシビリティへの影響。 両方の<xref:System.Web.UI.VerificationAttribute.Checkpoint%2A>と<xref:System.Web.UI.VerificationAttribute.Priority%2A>ときにプロパティが設定されます、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerificationConditionalOperator">
+      <MemberSignature Language="C#" Value="public System.Web.UI.VerificationConditionalOperator VerificationConditionalOperator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.VerificationConditionalOperator VerificationConditionalOperator" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.VerificationConditionalOperator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationConditionalOperator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.VerificationConditionalOperator" />アクセシビリティのチェックポイントの検証方法列挙型値を示す値。</summary>
+        <value><see cref="T:System.Web.UI.VerificationConditionalOperator" /> 列挙値のいずれか。 既定値は <see cref="F:System.Web.UI.VerificationConditionalOperator.Equals" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.VerificationConditionalOperator%2A>ときにプロパティを設定することができます、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されるは省略可能です。 受け取らないコンス トラクターを使用する場合、`conditionalOperator`パラメーターでは、既定値の<xref:System.Web.UI.VerificationConditionalOperator.Equals>を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerificationReportLevel">
+      <MemberSignature Language="C#" Value="public System.Web.UI.VerificationReportLevel VerificationReportLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.VerificationReportLevel VerificationReportLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.VerificationReportLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationReportLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.VerificationReportLevel" />アクセシビリティのチェックポイントの使用方法を示す列挙値。</summary>
+        <value><see cref="T:System.Web.UI.VerificationReportLevel" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.VerificationReportLevel%2A>場合、プロパティが設定、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerificationRule">
+      <MemberSignature Language="C#" Value="public System.Web.UI.VerificationRule VerificationRule { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.VerificationRule VerificationRule" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.VerificationAttribute.VerificationRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.VerificationRule" />アクセシビリティのチェックポイントの使用方法を示す列挙値。</summary>
+        <value><see cref="T:System.Web.UI.VerificationRule" /> 列挙値のいずれか。 既定値は <see cref="F:System.Web.UI.VerificationRule.Required" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.VerificationAttribute.VerificationRule%2A>ときにプロパティを設定することができます、<xref:System.Web.UI.VerificationAttribute>インスタンスが作成されるは省略可能です。 受け取らないコンス トラクターを使用する場合、`rule`パラメーターでは、既定値の<xref:System.Web.UI.VerificationRule.Required>を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

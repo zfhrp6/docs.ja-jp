@@ -1,0 +1,131 @@
+<Type Name="MarkupExtension" FullName="System.Windows.Markup.MarkupExtension">
+  <TypeSignature Language="C#" Value="public abstract class MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MarkupExtension extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.MarkupExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>.NET Framework XAML サービスおよびその他の XAML リーダーと XAML ライターによってサポートされる XAML マークアップ拡張機能の実装のための基底クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マークアップ拡張機能は、入力の文字列属性値または XAML でのマークアップ要素に基づいて、呼び出し元にオブジェクトを返します。 マークアップ拡張機能は、型コンバーターのみを行うよりもより高度な方法でオブジェクトを返します。 XAML オブジェクト ライターでは、型またはメンバーに関連付けられている型コンバーターの実装があるために、型コンバーターが呼び出されます。 CLR の基準枠、つまり、型またはメンバーが<xref:System.ComponentModel.TypeConverterAttribute>に起因します。 XAML 型システムの観点から、つまり、XAML 型または XAML メンバーが値をその`TypeConverter`プロパティです。 型コンバーターの呼び出しでは、型またはプロパティの定義に関連付けられていますおよび、このような場合の XAML 処理では、常に呼び出されます。 これに対し、マークアップ拡張機能ユーザー コードとユーザー生成のマークアップの制御下にある詳細は、アプリケーション シナリオが要求するたびに適用することができます。 マークアップ拡張機能では、呼び出すことができ、マークアップ拡張機能の戻り値の型はその値を割り当てることができる限り、さまざまな型メンバーの値を設定するため使用されることができます。  
+  
+ カスタム マークアップ拡張機能を作成する方法については、次を参照してください。<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>です。 一般にマークアップ拡張機能の詳細については、次を参照してください。 [XAML の概要のマークアップ拡張機能](~/docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)します。 WPF とを使用して、または XAML のマークアップ拡張機能の作成を構築する、他の関連情報がトピックに記載されて[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
+  
+ <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>それぞれマークアップ拡張機能の実装の方法を使用することができます、<xref:System.IServiceProvider>実行時コンテキストを提供できます。 これは、<xref:System.IServiceProvider>などの情報を渡す特定のサービスを照会し、<xref:System.Windows.Markup.IProvideValueTarget>または<xref:System.Windows.Markup.IXamlTypeResolver>です。 マークアップ拡張機能のサービス コンテキストの詳細については、次を参照してください。[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+ 派生クラスの属性を使用する必要があります<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>からマークアップ拡張機能の使用可能な最も固有の戻り値の型のコンシューマーに通知する<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MarkupExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.MarkupExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生したクラスの新しいインスタンスを初期化<see cref="T:System.Windows.Markup.MarkupExtension" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.MarkupExtension>抽象クラスが初期化を必要とする任意のプライベート値を保持しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>機能のマークアップ拡張機能は、独自のパブリックな既定コンス トラクターを定義します。 さらに、マークアップ拡張機能では、拡張機能の目的の機能およびマークアップの使用に適したコンス トラクターを実装する必要があります。 詳細については、次を参照してください。 [XAML の概要のマークアップ拡張機能](~/docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public abstract object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.MarkupExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるサービス プロバイダーのヘルパー。</param>
+        <summary>派生クラスで実装された場合、このマークアップ拡張機能のターゲット プロパティの値として提供されるオブジェクトを返します。</summary>
+        <returns>拡張機能が適用されたプロパティで設定するオブジェクト値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、XAML プロセッサは、マークアップ拡張機能は、型のノードとメンバー値を処理するとき、<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>そのマークアップ拡張機能のメソッド、オブジェクト グラフやシリアル化ストリームに結果を書き込みます。 XAML オブジェクト ライターがによるそのような実装を各にサービス コンテキストを渡す、`serviceProvider`パラメーター。  
+  
+ 実装する方法についての詳細を参照してください「ノート実行者」セクション<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>カスタム マークアップ拡張機能です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+  
+> [!IMPORTANT]
+>  マークアップのセットの操作で特定の相互作用の WPF クラスに依存しないように<xref:System.Windows.Markup.IReceiveMarkupExtension>の[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]実装します。 使用して<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>-属性付きコールバックを代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>通常使用できるカスタム、または既存する既定のサービス プロバイダーによって返される一般的なサービス<see cref="T:System.Windows.Markup.MarkupExtension" />実装には、次のプライマリ サービスが含まれます。  
+  
+-   <see cref="T:System.Windows.Markup.IProvideValueTarget" />オブジェクト参照が、マークアップ拡張機能が使用されているコンテキストからプロパティの識別子を報告します。  
+  
+-   <see cref="T:System.Windows.Markup.IXamlTypeResolver" />匹敵全般の XAML オブジェクトの提供できる動作を記述するサービスを公開、 <see cref="T:System.Type" /> XAML 型名を基にします。 名前は、マップされている XAML 名前空間のプレフィックスを含めることができます必要に応じて。  
+  
+-   <see cref="T:System.Xaml.IXamlSchemaContextProvider" />アクティブな XAML スキーマ コンテキストを直接公開します。 報告された<see cref="T:System.Xaml.XamlSchemaContext" />、XAML スキーマ コンテキスト情報の種類のサポート、アセンブリ内の適切なプレフィックスのアセンブリがマップされている方法の一覧などのそれぞれを取得する<see cref="T:System.Xaml.XamlType" />アセンブリ、およびようにします。  
+  
+-   特殊なマークアップ拡張機能のシナリオに使用できるその他のサービスは次のとおりです。  
+  
+    -   <see cref="T:System.Windows.Markup.IUriContext" />  
+  
+    -   <see cref="T:System.Xaml.IAmbientProvider" />  
+  
+    -   <see cref="T:System.Xaml.IDestinationTypeProvider" />  
+  
+    -   <see cref="T:System.Xaml.IRootObjectProvider" />  
+  
+    -   <see cref="T:System.Xaml.IXamlNameResolver" />  
+  
+    -   <see cref="T:System.Xaml.IXamlNamespaceResolver" />  
+  
+ 実装では、可能性のある<see cref="M:System.Windows.Markup.MarkupExtension.ProvideValue(System.IServiceProvider)" />無視することができます、<paramref name="serviceProvider" />パラメーター。 これは、コンテキストまったくが存在しない値を返すために必要ないくつかの基本的なシナリオの実行可能です。  
+  
+ 一般的な使用法]、[.NET Framework XAML サービス、および実装した XAML オブジェクト ライターが XAML の中に呼び出されるすべての値コンバーターのメソッドに、サービス プロバイダーを提供する処理します。 ただし、堅牢性、サービス プロバイダー自体と、要求されたサービスの両方にコード パスを null 値に提供する必要があります。 Null 値が発生する状況でマークアップ拡張機能が適用される場合 XAML プロセッサ インフラストラクチャによって提供される一般的なサービス サポートは使用できません。  
+  
+ 使用可能なサービスから XAML サービス プロバイダー コンテキストとその使用方法の詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)します。  
+  
+ 特定のサービスを便利な生成するために使用できるを使用して実装する<see cref="M:System.Windows.Markup.MarkupExtension.ProvideValue(System.IServiceProvider)" />そのサービスが利用できない場合に例外をスローする予測結果。 推奨される例外をスローするは<see cref="T:System.InvalidOperationException" />します。  
+  
+ カスタム マークアップ拡張機能は、値は null を提供するために必要な引数の 1 つはそのデータ型に対して無効またはマークアップ拡張機能が処理できる値が含まれていない場合、実装は例外をスローできます。 推奨される例外をスローするは<see cref="T:System.InvalidOperationException" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

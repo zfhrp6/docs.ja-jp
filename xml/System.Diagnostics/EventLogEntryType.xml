@@ -1,0 +1,140 @@
+<Type Name="EventLogEntryType" FullName="System.Diagnostics.EventLogEntryType">
+  <TypeSignature Language="C#" Value="public enum EventLogEntryType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EventLogEntryType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogEntryType" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Internals</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>イベント ログ エントリのイベントの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ログ エントリの種類は、エントリの追加情報を提供します。  アプリケーションは、イベント ログにエントリを記述するときに、エントリの種類を設定します。  
+  
+ 各イベントは、1 つの型でなければなりませんエントリは、イベントの種類を組み合わせることはできません。  イベント ビューアーは、この型を使用して、ログのリスト ビューに表示するアイコンを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Diagnostics.EventLogEntryType>に関する情報を追加するクラスがログ ファイルにイベントをトリガーします。 この例では、`switch`イベントの種類を決定するステートメントを使用します。 各`case`ステートメントは、<xref:System.Diagnostics.EventLogEntryType>イベントの種類を指定するメッセージと ID を取得し、ログに情報を書き込みます。  
+  
+ [!code-cpp[EventLogEntryType_6#2](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntryType_6/CPP/eventlogentrytype_6.cpp#2)]
+ [!code-csharp[EventLogEntryType_6#2](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntryType_6/CS/eventlogentrytype_6.cs#2)]
+ [!code-vb[EventLogEntryType_6#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntryType_6/VB/eventlogentrytype_6.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="Error" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.EventLogEntryType Error = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.EventLogEntryType.Error" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Internals</AssemblyName>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー イベントです。 これについては、ユーザーが知っておく重要な問題を示します通常の機能またはデータの消失。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FailureAudit">
+      <MemberSignature Language="C#" Value="FailureAudit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.EventLogEntryType FailureAudit = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.EventLogEntryType.FailureAudit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Internals</AssemblyName>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>失敗の監査イベント。 これは、監査アクセス試行が失敗します。 ときに発生する、セキュリティ イベントを示しますたとえば、ファイルを開くに失敗します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Information">
+      <MemberSignature Language="C#" Value="Information" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.EventLogEntryType Information = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.EventLogEntryType.Information" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Internals</AssemblyName>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>情報イベントです。 これは、有効で成功した操作を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SuccessAudit">
+      <MemberSignature Language="C#" Value="SuccessAudit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.EventLogEntryType SuccessAudit = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.EventLogEntryType.SuccessAudit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Internals</AssemblyName>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>成功の監査イベント。 これは、監査アクセス試行が成功したときに発生する、セキュリティ イベントを示しますたとえば、ログオンに成功します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Warning">
+      <MemberSignature Language="C#" Value="Warning" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.EventLogEntryType Warning = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.EventLogEntryType.Warning" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Internals</AssemblyName>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>警告イベントです。 これは、すぐに重要ではないが、うる将来の問題の原因となる問題を示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

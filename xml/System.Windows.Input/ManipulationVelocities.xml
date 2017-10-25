@@ -1,0 +1,95 @@
+<Type Name="ManipulationVelocities" FullName="System.Windows.Input.ManipulationVelocities">
+  <TypeSignature Language="C#" Value="public class ManipulationVelocities" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManipulationVelocities extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ManipulationVelocities" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>速度をについて説明します。 操作が発生します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationVelocities (System.Windows.Vector linearVelocity, double angularVelocity, System.Windows.Vector expansionVelocity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Vector linearVelocity, float64 angularVelocity, valuetype System.Windows.Vector expansionVelocity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationVelocities.#ctor(System.Windows.Vector,System.Double,System.Windows.Vector)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="linearVelocity" Type="System.Windows.Vector" />
+        <Parameter Name="angularVelocity" Type="System.Double" />
+        <Parameter Name="expansionVelocity" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="linearVelocity">直線運動の速度[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]1 ミリ秒あたりです。</param>
+        <param name="angularVelocity">1 ミリ秒あたり回転速度です。</param>
+        <param name="expansionVelocity">サイズは、操作の変更率[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]1 ミリ秒あたりです。</param>
+        <summary><see cref="T:System.Windows.Input.ManipulationVelocities" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AngularVelocity">
+      <MemberSignature Language="C#" Value="public double AngularVelocity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 AngularVelocity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationVelocities.AngularVelocity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはの回転速度を設定します。</summary>
+        <value>1 ミリ秒あたり回転速度です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpansionVelocity">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector ExpansionVelocity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Vector ExpansionVelocity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationVelocities.ExpansionVelocity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作のサイズ変更される頻度を設定します。</summary>
+        <value>サイズは、操作の変更率[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]1 ミリ秒あたりです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinearVelocity">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector LinearVelocity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Vector LinearVelocity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationVelocities.LinearVelocity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または線形のアニメーションの速度を設定します。</summary>
+        <value>直線運動の速度[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]1 ミリ秒あたりです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

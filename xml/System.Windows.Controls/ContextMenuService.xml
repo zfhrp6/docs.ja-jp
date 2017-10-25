@@ -1,0 +1,786 @@
+<Type Name="ContextMenuService" FullName="System.Windows.Controls.ContextMenuService">
+  <TypeSignature Language="C#" Value="public static class ContextMenuService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed ContextMenuService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ContextMenuService" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表示するためのシステムの実装を提供する<see cref="T:System.Windows.Controls.ContextMenu" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContextMenuService>クラスには、コンテキスト メニューの位置と外観を指定するために使用する接続のプロパティが用意されています。 プロパティの多くは、<xref:System.Windows.Controls.ContextMenuService>によってクラスが定義されても、<xref:System.Windows.Controls.ContextMenu>です。  使用して、プロパティを設定する方が便利場合があります、<xref:System.Windows.Controls.ContextMenuService>よりクラスのプロパティを設定して、<xref:System.Windows.Controls.ContextMenu>です。 たとえば、作成することができます、<xref:System.Windows.Controls.ContextMenu>が共有するのには複数の要素を使用して、<xref:System.Windows.Controls.ContextMenuService>クラスの別の位置を指定する、<xref:System.Windows.Controls.ContextMenu>要素ごとにします。 次のプロパティが定義されている、<xref:System.Windows.Controls.ContextMenu>と<xref:System.Windows.Controls.ContextMenuService>クラスです。  これらのプロパティのいずれかの両方で設定されている場合<xref:System.Windows.Controls.ContextMenu>と<xref:System.Windows.Controls.ContextMenuService>、プロパティ値を<xref:System.Windows.Controls.ContextMenuService>を使用します。  
+  
+-   <xref:System.Windows.Controls.ContextMenuService.Placement%2A>  
+  
+-   <xref:System.Windows.Controls.ContextMenuService.PlacementRectangle%2A>  
+  
+-   <xref:System.Windows.Controls.ContextMenuService.PlacementTargetProperty>  
+  
+-   <xref:System.Windows.Controls.ContextMenuService.HorizontalOffset%2A>  
+  
+-   <xref:System.Windows.Controls.ContextMenuService.VerticalOffsetProperty>  
+  
+-   <xref:System.Windows.Controls.ContextMenuService.HasDropShadow%2A>  
+  
+ 使用することも、<xref:System.Windows.Controls.ContextMenuService>を無効になっているアイテムにメニューを表示します。  
+  
+   
+  
+## Examples  
+ 次の例を割り当てて、同じ<xref:System.Windows.Controls.ContextMenu>2 つのボタンとセットを<xref:System.Windows.Controls.ContextMenuService.HasDropShadow%2A>、 <xref:System.Windows.Controls.ContextMenuService.Placement%2A>、 <xref:System.Windows.Controls.ContextMenuService.PlacementRectangle%2A>、 <xref:System.Windows.Controls.ContextMenuService.HorizontalOffset%2A>、および<xref:System.Windows.Controls.ContextMenu.VerticalOffset%2A>プロパティを設定、<xref:System.Windows.Controls.ContextMenu>ボタンごとに別の位置にします。  
+  
+ [!code-xaml[ContextMenuService_snip#SharedContextMenu](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuService_snip/CSharp/Pane1.xaml#sharedcontextmenu)]  
+  
+ 次の例は、サービスを使用して表示する方法を示しています、<xref:System.Windows.Controls.ContextMenu>で無効にされたボタンです。 設定することを確認、<xref:System.Windows.Controls.ContextMenuService.ShowOnDisabled%2A>プロパティをコンテキスト メニューの親であるボタンをクリックします。  
+  
+ [!code-xaml[ContextMenu#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddContextMenuClosingHandler">
+      <MemberSignature Language="C#" Value="public static void AddContextMenuClosingHandler (System.Windows.DependencyObject element, System.Windows.Controls.ContextMenuEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddContextMenuClosingHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ContextMenuEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.AddContextMenuClosingHandler(System.Windows.DependencyObject,System.Windows.Controls.ContextMenuEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ContextMenuEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Controls.ContextMenuService.ContextMenuClosing" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddContextMenuOpeningHandler">
+      <MemberSignature Language="C#" Value="public static void AddContextMenuOpeningHandler (System.Windows.DependencyObject element, System.Windows.Controls.ContextMenuEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddContextMenuOpeningHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ContextMenuEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.AddContextMenuOpeningHandler(System.Windows.DependencyObject,System.Windows.Controls.ContextMenuEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ContextMenuEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Controls.ContextMenuService.ContextMenuOpening" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuClosingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ContextMenuClosingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ContextMenuClosingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.ContextMenuClosingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.ContextMenuService.ContextMenuClosing" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuOpeningEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ContextMenuOpeningEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ContextMenuOpeningEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.ContextMenuOpeningEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Controls.ContextMenuService.ContextMenuOpening" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContextMenuProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContextMenuProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.ContextMenuProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.ContextMenu" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContextMenu">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.ContextMenu GetContextMenu (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Controls.ContextMenu GetContextMenu(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetContextMenu(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.FrameworkElement.ContextMenu" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.ContextMenu" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.ContextMenu" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHasDropShadow">
+      <MemberSignature Language="C#" Value="public static bool GetHasDropShadow (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetHasDropShadow(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetHasDropShadow(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">影があるかどうかについて照会するオブジェクトです。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.ContextMenu" />ドロップ シャドウがします。</summary>
+        <returns>ブール値、 **true**場合、<see cref="T:System.Windows.Controls.ContextMenu" />ドロップ シャドウです。**false**それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHorizontalOffset">
+      <MemberSignature Language="C#" Value="public static double GetHorizontalOffset (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetHorizontalOffset(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetHorizontalOffset(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.HorizontalOffset" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.HorizontalOffset" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.HorizontalOffset" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsEnabled">
+      <MemberSignature Language="C#" Value="public static bool GetIsEnabled (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsEnabled(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetIsEnabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.IsEnabled" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.IsEnabled" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.IsEnabled" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlacement">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.Primitives.PlacementMode GetPlacement (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.Primitives.PlacementMode GetPlacement(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetPlacement(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.PlacementMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.Placement" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.Placement" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.Placement" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlacementRectangle">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect GetPlacementRectangle (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect GetPlacementRectangle(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetPlacementRectangle(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementRectangle" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementRectangle" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementRectangle" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlacementTarget">
+      <MemberSignature Language="C#" Value="public static System.Windows.UIElement GetPlacementTarget (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.UIElement GetPlacementTarget(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetPlacementTarget(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementTarget" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementTarget" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementTarget" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetShowOnDisabled">
+      <MemberSignature Language="C#" Value="public static bool GetShowOnDisabled (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetShowOnDisabled(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetShowOnDisabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.ShowOnDisabled" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.ShowOnDisabled" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.ShowOnDisabled" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVerticalOffset">
+      <MemberSignature Language="C#" Value="public static double GetVerticalOffset (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetVerticalOffset(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.GetVerticalOffset(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">クエリに関連するオブジェクト、<see cref="P:System.Windows.Controls.ContextMenuService.VerticalOffset" />プロパティです。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ContextMenuService.VerticalOffset" />指定したオブジェクトのプロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ContextMenuService.VerticalOffset" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropShadowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasDropShadowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasDropShadowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.HasDropShadowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.HasDropShadow" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.HorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.HorizontalOffset" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.IsEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.IsEnabled" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.PlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.Placement" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementRectangleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementRectangleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementRectangleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.PlacementRectangleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.PlacementRectangle" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.PlacementTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.PlacementTarget" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveContextMenuClosingHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveContextMenuClosingHandler (System.Windows.DependencyObject element, System.Windows.Controls.ContextMenuEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveContextMenuClosingHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ContextMenuEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.RemoveContextMenuClosingHandler(System.Windows.DependencyObject,System.Windows.Controls.ContextMenuEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ContextMenuEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Controls.ContextMenuService.ContextMenuClosing" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveContextMenuOpeningHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveContextMenuOpeningHandler (System.Windows.DependencyObject element, System.Windows.Controls.ContextMenuEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveContextMenuOpeningHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ContextMenuEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.RemoveContextMenuOpeningHandler(System.Windows.DependencyObject,System.Windows.Controls.ContextMenuEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ContextMenuEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Controls.ContextMenuService.ContextMenuOpening" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContextMenu">
+      <MemberSignature Language="C#" Value="public static void SetContextMenu (System.Windows.DependencyObject element, System.Windows.Controls.ContextMenu value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetContextMenu(class System.Windows.DependencyObject element, class System.Windows.Controls.ContextMenu value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetContextMenu(System.Windows.DependencyObject,System.Windows.Controls.ContextMenu)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Controls.ContextMenu" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティを設定するオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.ContextMenu" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHasDropShadow">
+      <MemberSignature Language="C#" Value="public static void SetHasDropShadow (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHasDropShadow(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetHasDropShadow(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティを設定するオブジェクト。</param>
+        <param name="value">ブール値を設定する<see langword="true" />場合、<see cref="T:System.Windows.Controls.ContextMenu" />ドロップ シャドウです。<see langword="false" />それ以外の場合。</param>
+        <summary>示す値を設定するかどうか、<see cref="T:System.Windows.Controls.ContextMenu" />ドロップ シャドウがします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHorizontalOffset">
+      <MemberSignature Language="C#" Value="public static void SetHorizontalOffset (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHorizontalOffset(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetHorizontalOffset(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">値に設定するオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.HorizontalOffset" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsEnabled">
+      <MemberSignature Language="C#" Value="public static void SetIsEnabled (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsEnabled(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetIsEnabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">オブジェクトの値の設定をします。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.IsEnabled" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlacement">
+      <MemberSignature Language="C#" Value="public static void SetPlacement (System.Windows.DependencyObject element, System.Windows.Controls.Primitives.PlacementMode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPlacement(class System.Windows.DependencyObject element, valuetype System.Windows.Controls.Primitives.PlacementMode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetPlacement(System.Windows.DependencyObject,System.Windows.Controls.Primitives.PlacementMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Controls.Primitives.PlacementMode" />
+      </Parameters>
+      <Docs>
+        <param name="element">値に設定するオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.Placement" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlacementRectangle">
+      <MemberSignature Language="C#" Value="public static void SetPlacementRectangle (System.Windows.DependencyObject element, System.Windows.Rect value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPlacementRectangle(class System.Windows.DependencyObject element, valuetype System.Windows.Rect value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetPlacementRectangle(System.Windows.DependencyObject,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="element">値に設定するオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementRectangle" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlacementTarget">
+      <MemberSignature Language="C#" Value="public static void SetPlacementTarget (System.Windows.DependencyObject element, System.Windows.UIElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPlacementTarget(class System.Windows.DependencyObject element, class System.Windows.UIElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetPlacementTarget(System.Windows.DependencyObject,System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">オブジェクトの値の設定をします。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.PlacementTarget" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetShowOnDisabled">
+      <MemberSignature Language="C#" Value="public static void SetShowOnDisabled (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetShowOnDisabled(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetShowOnDisabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">オブジェクトの値の設定をします。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.ShowOnDisabled" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVerticalOffset">
+      <MemberSignature Language="C#" Value="public static void SetVerticalOffset (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetVerticalOffset(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenuService.SetVerticalOffset(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">オブジェクトの値の設定をします。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ContextMenuService.VerticalOffset" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowOnDisabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowOnDisabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowOnDisabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.ShowOnDisabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.ShowOnDisabled" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenuService.VerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenuService.VerticalOffset" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

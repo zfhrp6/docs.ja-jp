@@ -1,0 +1,126 @@
+<Type Name="StopBits" FullName="System.IO.Ports.StopBits">
+  <TypeSignature Language="C#" Value="public enum StopBits" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StopBits extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Ports.StopBits" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Ports</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.IO.Ports.SerialPort" /> オブジェクトで使用するストップ ビットの数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を設定するときに、この列挙体を使用する、<xref:System.IO.Ports.SerialPort.StopBits%2A>プロパティを<xref:System.IO.Ports.SerialPort>クラスです。 ストップ ビットは、非同期シリアル接続のデータの各単位を区切ります。 伝送できるデータがない場合に継続的にも送信されます。  
+  
+ <xref:System.IO.Ports.SerialPort>クラスがスローされます、<xref:System.ArgumentOutOfRangeException>例外を設定すると、<xref:System.IO.Ports.SerialPort.StopBits%2A>プロパティを None です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.IO.Ports.SerialPort.StopBits%2A>プロパティを`One`です。  
+  
+ [!code-cpp[System.IO.Ports.SerialPort#20](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cpp/datareceived.cpp#20)]
+ [!code-csharp[System.IO.Ports.SerialPort#20](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cs/datareceived.cs#20)]
+ [!code-vb[System.IO.Ports.SerialPort#20](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/vb/datareceived.vb#20)]  
+  
+ 次のコード例で使用できる値の表示、<xref:System.IO.Ports.StopBits>列挙型をコンソールには、ユーザーを 1 つを選択し、メッセージが表示されます。 このコード例に示されている例のコードの一部である、<xref:System.IO.Ports.SerialPort>クラスです。  
+  
+ [!code-cpp[System.IO.Ports.SerialPort#04](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cpp/serialport.cpp#04)]
+ [!code-csharp[System.IO.Ports.SerialPort#04](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cs/SerialPort.cs#04)]
+ [!code-vb[System.IO.Ports.SerialPort#04](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/vb/SerialPort.vb#04)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.StopBits None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.StopBits.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.StopBits</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストップ ビットは使用されません。 この値でサポートされていない、<see cref="P:System.IO.Ports.SerialPort.StopBits" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="One">
+      <MemberSignature Language="C#" Value="One" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.StopBits One = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.StopBits.One" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.StopBits</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのストップ ビットが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OnePointFive">
+      <MemberSignature Language="C#" Value="OnePointFive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.StopBits OnePointFive = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.StopBits.OnePointFive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.StopBits</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1.5 ストップ ビットが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Two">
+      <MemberSignature Language="C#" Value="Two" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.StopBits Two = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.StopBits.Two" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.StopBits</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのストップ ビットを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

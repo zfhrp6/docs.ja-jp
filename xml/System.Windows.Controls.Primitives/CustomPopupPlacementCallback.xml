@@ -1,0 +1,35 @@
+<Type Name="CustomPopupPlacementCallback" FullName="System.Windows.Controls.Primitives.CustomPopupPlacementCallback">
+  <TypeSignature Language="C#" Value="public delegate System.Windows.Controls.Primitives.CustomPopupPlacement[] CustomPopupPlacementCallback(Size popupSize, Size targetSize, Point offset);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CustomPopupPlacementCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.CustomPopupPlacementCallback" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="popupSize" Type="System.Windows.Size" />
+    <Parameter Name="targetSize" Type="System.Windows.Size" />
+    <Parameter Name="offset" Type="System.Windows.Point" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Windows.Controls.Primitives.CustomPopupPlacement[]</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="popupSize"><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールの <see cref="T:System.Windows.Size" />。</param>
+    <param name="targetSize"><see cref="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" /> の <see cref="T:System.Windows.Size" />。</param>
+    <param name="offset"><see cref="P:System.Windows.Controls.Primitives.Popup.HorizontalOffset" /> プロパティ値と <see cref="P:System.Windows.Controls.Primitives.Popup.VerticalOffset" /> プロパティ値から計算された <see cref="T:System.Windows.Point" />。</param>
+    <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールのカスタム位置を提供するメソッドを表します。</summary>
+    <returns><see cref="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" /> に対して相対的な <see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールの可能な <see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" /> 位置の配列。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量を最大限に高めるポイントを選択するポップアップが表示される場合、<xref:System.Windows.Controls.ToolTip>表示されているウィンドウ。 <xref:System.Windows.Controls.ContextMenu>、<xref:System.Windows.Controls.Primitives.Popup>と<xref:System.Windows.Controls.ToolTip>型のプロパティを定義するクラスにはそれぞれ<xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

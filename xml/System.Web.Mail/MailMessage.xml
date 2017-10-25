@@ -1,0 +1,421 @@
+<Type Name="MailMessage" FullName="System.Web.Mail.MailMessage">
+  <TypeSignature Language="C#" Value="public class MailMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailMessage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Mail.MailMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The recommended alternative is System.Net.Mail.MailMessage. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティと、電子メール メッセージを構築するためのメソッドを提供します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Mail.MailMessage> クラスを使用する方法を示す例を次に示します。  
+  
+> [!IMPORTANT]
+>  このコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Mail.MailMessage#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage/CS/mailformcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Mail.MailMessage#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage/VB/mailformvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mail.MailMessage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Mail.MailMessage" /> クラスの新しいインスタンスを初期化します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attachments">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Attachments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Attachments" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Attachments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージで送信される添付ファイルのコレクションを指定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value><see cref="T:System.Collections.IList" /> オブジェクトの <see cref="T:System.Web.Mail.MailAttachment" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい添付ファイルへの呼び出しでメール メッセージに追加できる`Message.Attachments.Add(MyMailMessage)`です。 参照してください<xref:System.Web.Mail.SmtpMail.Send%2A>の例については<xref:System.Web.Mail.SmtpMail>使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.Attachments#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Attachments/CS/attachmentsample.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.Attachments#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Attachments/VB/attachmentsample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bcc">
+      <MemberSignature Language="C#" Value="public string Bcc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Bcc" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Bcc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージのブラインド カーボン コピー (BCC) を受信する電子メール アドレスのセミコロン区切りのリストを設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>電子メール メッセージのブラインド カーボン コピー (BCC) を受信する電子メール アドレスのセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セミコロンで区切られたリスト内の受信者は、電子メール アドレスまたはアドレス帳の表示名を指定できます。  
+  
+ プライマリ サーバーとカーボン コピー (<xref:System.Web.Mail.MailMessage.Cc%2A>) 受信者のアドレスが表示されない、`Bcc`フィールドです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.Bcc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Bcc/CS/systemwebmailmailmessagebcc.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.Bcc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Bcc/VB/systemwebmailmailmessagebcc.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public string Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Body" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの本文を設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>電子メール メッセージの本文。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding BodyEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding BodyEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.BodyEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの本文のエンコードの種類を設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>1 つ、<see cref="T:System.Text.Encoding" />を電子メール メッセージの本文のエンコードの種類を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.BodyEncoding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.BodyEncoding/CS/systemwebmailmailmessagebodyencoding.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.BodyEncoding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.BodyEncoding/VB/systemwebmailmailmessagebodyencoding.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyFormat">
+      <MemberSignature Language="C#" Value="public System.Web.Mail.MailFormat BodyFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Mail.MailFormat BodyFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.BodyFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Mail.MailFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの本文のコンテンツの種類を設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value><see cref="T:System.Web.Mail.MailFormat" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.BodyFormat#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.BodyFormat/CS/systemwebmailmailmessagebodyformat.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.BodyFormat#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.BodyFormat/VB/systemwebmailmailmessagebodyformat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cc">
+      <MemberSignature Language="C#" Value="public string Cc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Cc" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Cc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージのカーボン コピー (CC) を受信する電子メール アドレスのセミコロン区切りのリストを設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>電子メール メッセージのカーボン コピー (CC) を受信する電子メール アドレスのセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セミコロンで区切られたリスト内の受信者は、電子メール アドレスまたはアドレス帳の表示名を指定できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.Cc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Cc/CS/systemwebmailmailmessagecc.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.Cc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Cc/VB/systemwebmailmailmessagecc.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fields">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Fields { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Fields" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Fields" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft Collaboration Data Objects (CDO) フィールドにマップされるオブジェクトのコレクションを取得します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value><see cref="T:System.Collections.IDictionary" /> Collaboration Data Objects (CDO) フィールドにマップされるオブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Mail.MailMessage.Fields%2A> Collaboration Data Objects (CDO) の拡張プロパティを設定するプロパティを使用します。 CDO の詳細については、「Collaboration データ オブジェクト」と MSDN ライブラリ http://msdn.microsoft.com/library で「CoClass の構成」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.Mail.MailMessage.Fields%2A>認証用の簡易メール転送プロトコル (SMTP) サーバーにユーザー名とパスワードを送信するプロパティです。  
+  
+ [!code-csharp[System.Web.Mail.MailMessage.Fields#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Fields/CS/MailMessageFieldscs.aspx#1)]
+ [!code-vb[System.Web.Mail.MailMessage.Fields#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Fields/VB/MailMessageFieldsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public string From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string From" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信者の電子メール アドレスを設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>送信者の電子メール アドレスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[SystemWebMailMailMessageFrom#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebMailMailMessageFrom/CS/systemwebmailmailmessagefrom.cs#1)]
+ [!code-vb[SystemWebMailMailMessageFrom#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebMailMailMessageFrom/VB/systemwebmailmailmessagefrom.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>電子メール メッセージと共に送信される、カスタム ヘッダーを指定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />カスタム ヘッダーのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Web.Mail.MailPriority Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Mail.MailPriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Mail.MailPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの優先順位を設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value><see cref="T:System.Web.Mail.MailPriority" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.Priority#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Priority/CS/systemwebmailmailmessagepriority.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.Priority#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.Priority/VB/systemwebmailmailmessagepriority.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public string Subject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの件名を設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>電子メール メッセージの件名行。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="To">
+      <MemberSignature Language="C#" Value="public string To { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string To" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.To" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または受信者の電子メール アドレスのセミコロン区切りのリストを設定します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>電子メール アドレスのセミコロンで区切られた一覧です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セミコロンで区切られたリスト内の受信者は、電子メール アドレスまたはアドレス帳の表示名を指定できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[SystemWebMailMailMessageTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebMailMailMessageTo/CS/systemwebmailmailmessageto.cs#1)]
+ [!code-vb[SystemWebMailMailMessageTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebMailMailMessageTo/VB/systemwebmailmailmessageto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlContentBase">
+      <MemberSignature Language="C#" Value="public string UrlContentBase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UrlContentBase" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.UrlContentBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="Content-Base" /> HTTP ヘッダー、HTML でエンコードされた電子メール メッセージの本文内で使用されるすべての相対 Url の URL のベース。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>URL のベース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.MailMessage.UrlContentBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage.UrlContentBase/CS/systemwebmailmailmessageurlcontentbase.cs#1)]
+ [!code-vb[System.Web.Mail.MailMessage.UrlContentBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage.UrlContentBase/VB/systemwebmailmailmessageurlcontentbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlContentLocation">
+      <MemberSignature Language="C#" Value="public string UrlContentLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UrlContentLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.MailMessage.UrlContentLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="Content-Location" />電子メール メッセージの HTTP ヘッダー。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value><see langword="content-base" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-aspx-csharp[System.Web.Mail.MailMessage#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.MailMessage/CS/mailformcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Mail.MailMessage#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.MailMessage/VB/mailformvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,245 @@
+<Type Name="HttpParseException" FullName="System.Web.HttpParseException">
+  <TypeSignature Language="C#" Value="public sealed class HttpParseException : System.Web.HttpException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit HttpParseException extends System.Web.HttpException" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpParseException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.HttpException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解析エラーが発生したときにスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpParseException>クラスは、HTTP 固有の例外クラスをパーサー例外情報を出力する ASP.NET を有効にします。 スローして、例外の処理の詳細については、次を参照してください。[例外](http://msdn.microsoft.com/library/f99a1d29-a2a8-47af-9707-9909f9010735)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.HttpParseException>をページの解析中に生成されたエラーをカスタマイズします。 この例で、カスタマイズされた<xref:System.Web.UI.HtmlControls.HtmlSelect>コントロールが定義されています。 カスタム コントロールの子要素は、指定した型のないかどうか、<xref:System.Web.HttpParseException>がスローされます、オーバーライドされたで<xref:System.Web.UI.HtmlControls.HtmlSelectBuilder.GetChildControlType%2A>カスタム メソッド<xref:System.Web.UI.HtmlControls.HtmlSelectBuilder>です。 解析の例外を生成するリテラルの子要素を変更する`MyCustomOption`他の任意の文字列にします。  
+  
+ [!code-aspx-csharp[HttpParseException#1](~/samples/snippets/csharp/VS_Snippets_CLR/HttpParseException/cs/source.aspx#1)]
+ [!code-aspx-vb[HttpParseException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/HttpParseException/vb/source.aspx#1)]  
+  
+ [!code-csharp[HttpParseException#2](~/samples/snippets/csharp/VS_Snippets_CLR/HttpParseException/cs/source.cs#2)]
+ [!code-vb[HttpParseException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/HttpParseException/vb/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpParseException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpParseException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpParseException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpParseException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpParseException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーの発生時に指定する例外メッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.Web.HttpParseException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Web.HttpException.%23ctor%2A>コンス トラクターです。  完了したら、作業中のコード例は、次を参照してください。、<xref:System.Web.HttpParseException>概要トピックです。  
+  
+ [!code-csharp[HttpParseException#3](~/samples/snippets/csharp/VS_Snippets_CLR/HttpParseException/cs/source.cs#3)]
+ [!code-vb[HttpParseException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/HttpParseException/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpParseException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpParseException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーの発生時に指定する例外メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.HttpParseException" />指定したエラー メッセージと内部への参照を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpParseException (string message, Exception innerException, string virtualPath, string sourceCode, int line);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException, string virtualPath, string sourceCode, int32 line) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpParseException.#ctor(System.String,System.Exception,System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="sourceCode" Type="System.String" />
+        <Parameter Name="line" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーの発生時に指定する例外メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合<c>innerException</c>は<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <param name="virtualPath">例外の仮想パス。</param>
+        <param name="sourceCode">例外の発生時にコンパイルされているソース コード。</param>
+        <param name="line">例外が発生した行番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.HttpParseException" />例外が発生したコンパイルされるソース コードに関する特定の情報を持つクラス、行の番号します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpParseException.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの発生時に解析されているファイルの名前を取得します。</summary>
+        <value>エラーが発生したときに解析されたソース ファイルへの物理パスそれ以外の場合、<see langword="null" />物理パスがある場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpParseException.FileName%2A>プロパティは、物理パスがない限り、エラーのあるソース ファイルを物理パスを返します`null`、後者を返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpParseException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>派生クラスでオーバーライドされた場合は、その例外に関する情報を使用して <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpParseException.GetObjectData%2A>メソッドのセット、<xref:System.Runtime.Serialization.SerializationInfo>シリアル化の対象となるすべての例外オブジェクト データを持つオブジェクト。 逆シリアル化中には、ストリームで送信された SerializationInfo から例外が再構成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生を定義する方法を示しています。 シリアル化可能な<xref:System.Exception>を実装するクラス、<xref:System.Web.HttpParseException.GetObjectData%2A>メソッドでは、2 つのプロパティに軽微な変更を行い、シリアル化を実行する基本クラスを呼び出します。 例では、強制的に 0 による除算のエラー、および派生クラスのインスタンスを作成し<xref:System.Exception>です。 コードをファイルにインスタンスをシリアル化する、新しいファイルに逆シリアル化<xref:System.Exception>がスローおよびキャッチし、例外のデータが表示されます。  
+  
+ [!code-cpp[System.Exception.GetObjectData#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Exception.GetObjectData/CPP/getobjdata.cpp#1)]
+ [!code-csharp[System.Exception.GetObjectData#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Exception.GetObjectData/CS/getobjdata.cs#1)]
+ [!code-vb[System.Exception.GetObjectData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Exception.GetObjectData/VB/getobjdata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Line">
+      <MemberSignature Language="C#" Value="public int Line { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Line" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpParseException.Line" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの発生時に解析されていた行の数を取得します。</summary>
+        <value>エラーの発生時に解析されていた行の数。 値は、0 からではなく、1 から始まります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParserErrors">
+      <MemberSignature Language="C#" Value="public System.Web.ParserErrorCollection ParserErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ParserErrorCollection ParserErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpParseException.ParserErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ParserErrorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の例外のパーサー エラーを取得します。</summary>
+        <value>現在の例外のパーサー エラーのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="public string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpParseException.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを生成したソース ファイルへの仮想パスを取得します。</summary>
+        <value>エラーを生成したソース ファイルへの仮想パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

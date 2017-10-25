@@ -1,0 +1,127 @@
+<Type Name="ApplicationChangedEventArgs" FullName="System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class ApplicationChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>該当する情報をコールバック メソッドを提供時に、<see cref="E:System.Net.PeerToPeer.Collaboration.PeerApplication.ApplicationChanged" />イベントが発生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.PeerToPeer.Collaboration.ContactManager.ApplicationChanged>イベントが発生した場合。  
+  
+-   ピアは、コラボレーション内でアプリケーションを起動します。  
+  
+-   ピアは、コラボレーション内でアプリケーションを終了します。  
+  
+-   <xref:System.Net.PeerToPeer.Collaboration.PeerContact>ピア共同作業を表すオブジェクトが、関連付けられているニックネームなど、そのプロパティの変更  
+  
+-   ピアの連絡先のコンピューターで、アプリケーションのスコープが変更されました。  
+  
+-   ピア別の IP アドレスをネットワークに移動します。  
+  
+-  
+  
+ 使用してすべてのクラス、<xref:System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs>クラス必要があります、<xref:System.Security.Permissions.PermissionState>制限しません。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration>オブジェクトを構築します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PeerApplication">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerApplication PeerApplication { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerApplication PeerApplication" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs.PeerApplication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerApplication</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />を取得します。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />が更新されたインスタンスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerChangeType">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerChangeType PeerChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.PeerToPeer.Collaboration.PeerChangeType PeerChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs.PeerChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerChangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更の種類を取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />が発生しました。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerChangeType" />に対して実行された変更の種類を指定する列挙値、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerContact">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContact PeerContact { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerContact PeerContact" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs.PeerContact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> に関連付けられている <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> を取得します。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerEndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerEndPoint PeerEndPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerEndPoint PeerEndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs.PeerEndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のエンドポイントを取得<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />情報が変更されています。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />情報が変更すると、アプリケーションのエンドポイントを格納しています。 すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />ゼロ (0) のプロパティの型の参照型で<see langword="int" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,80 @@
+<Type Name="MetadataStore" FullName="System.Activities.Presentation.Metadata.MetadataStore">
+  <TypeSignature Language="C#" Value="public static class MetadataStore" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed MetadataStore extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Metadata.MetadataStore" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Type" /> による迅速なデザイナー要素検索が可能な、メモリ内のハッシュ テーブルのコレクションです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータ ストアには、デザイナーと型の間の関連付けなどの、カスタム属性メタデータが含まれています。 カスタム属性は、<xref:System.Activities.Presentation.Metadata.AttributeTable> で定義して、メタデータ ストアに追加できます。 属性を追加すると、それらの属性は <xref:System.ComponentModel.TypeDescriptor> に対する呼び出しで使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`AcitivityDesigner1` カスタム アクティビティ デザイナーをカスタム アクティビティと関連付ける方法を示しています。 [!INCLUDE[crabout](~/includes/crabout-md.md)]カスタム アクティビティ デザイナーを作成する方法[する方法: カスタム アクティビティ デザイナーを作成する](~/docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)です。  
+  
+```csharp  
+internal class Metadata : IRegisterMetadata  
+{  
+    private AttributeTable attributes;  
+  
+    // Called by the designer to register any design-time metadata.  
+    public void Register()  
+    {  
+        AttributeTableBuilder builder = new AttributeTableBuilder();  
+  
+        // Add the custom attributes to associate the ActivityDesigner1 custom designer  
+        // with the custom activity MyActivity.  
+        builder.AddCustomAttributes(  
+            typeof(MyActivity),  
+            new DesignerAttribute(typeof(ActivityDesigner1)));  
+        MetadataStore.AddAttributeTable(builder.CreateTable());  
+  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddAttributeTable">
+      <MemberSignature Language="C#" Value="public static void AddAttributeTable (System.Activities.Presentation.Metadata.AttributeTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddAttributeTable(class System.Activities.Presentation.Metadata.AttributeTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.MetadataStore.AddAttributeTable(System.Activities.Presentation.Metadata.AttributeTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Activities.Presentation.Metadata.AttributeTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">追加するテーブル。</param>
+        <summary>指定したテーブルを現在の <see cref="T:System.AppDomain" /> オブジェクトの属性ストアに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルを追加すると、<xref:System.ComponentModel.TypeDescriptor> への呼び出しで、新たに追加されたテーブルに定義された属性が使用されます。 属性ストアには、複数のテーブルを追加できます。 競合が発生した場合は、最後に追加されたテーブルの属性が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

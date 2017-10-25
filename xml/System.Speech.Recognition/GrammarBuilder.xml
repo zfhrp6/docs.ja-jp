@@ -1,0 +1,2617 @@
+<Type Name="GrammarBuilder" FullName="System.Speech.Recognition.GrammarBuilder">
+  <TypeSignature Language="C#" Value="public class GrammarBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GrammarBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.GrammarBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebugSummary}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>音声認識の文法の制約をプログラムで構築するためのメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声認識の文法がによって定義された XML 形式で作成されたよく、[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201761)です。 使用することができますを SRGS 文法をプログラムで生成するとしている場合、<xref:System.Speech.Recognition.SrgsGrammar>名前空間のメンバーは、要素と SRGS によって定義された属性に密接に対応します。 SRGS に習熟していないか、または場合を効率的に行う多くの一般的なシナリオです。 文法を作成する、軽量のプログラムによるアプローチ使用することができます、<xref:System.Speech.Recognition.GrammarBuilder>と<xref:System.Speech.Recognition.Choices>クラスです。  
+  
+ 使用して<xref:System.Speech.Recognition.GrammarBuilder>階層ツリーを構築するオブジェクトから成る<xref:System.Speech.Recognition.Choices>代替語句、プリアンブルおよび各ノードで後 amble 語句が混在しておよび意味を伝えるセマンティックの値を持つシード処理が含まれているオブジェクトが、アプリケーションをバックアップします。  
+  
+ 使用する、<xref:System.Speech.Recognition.GrammarBuilder>を作成する、<xref:System.Speech.Recognition.Grammar>オブジェクトを次の手順を使用します。  
+  
+1.  <xref:System.Speech.Recognition.GrammarBuilder> オブジェクトを作成します。  
+  
+2.  制約を追加、<xref:System.Speech.Recognition.GrammarBuilder>など<xref:System.String>オブジェクト、 <xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultKey>、 <xref:System.Speech.Recognition.SemanticResultValue>、 <xref:System.Speech.Recognition.DictationGrammar>、およびその他の<xref:System.Speech.Recognition.GrammarBuilder>文法の制約を定義するオブジェクト。  
+  
+3.  いずれかを使用して、<xref:System.Speech.Recognition.Grammar.%23ctor%2A>コンス トラクターを作成、<xref:System.Speech.Recognition.Grammar>オブジェクトから完成した<xref:System.Speech.Recognition.GrammarBuilder>文法します。  
+  
+ オーサリングで<xref:System.Speech.Recognition.GrammarBuilder>リスト、またはリストの一覧などを含む 1 つの規則が作成された文法に最適です。 プログラムによって、複数のルールがあるか内部ルール参照を作成する必要があるの文法をビルドするには、クラスを使用して、<xref:System.Speech.Recognition.SrgsGrammar>名前空間。  
+  
+ インスタンス<xref:System.Speech.Recognition.GrammarBuilder>取得することもその他のクラスから暗黙的な変換によって、または結合することで、<xref:System.Speech.Recognition.GrammarBuilder>文法の制約を含む 2 番目のオブジェクトと. 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子および<xref:System.Speech.Recognition.GrammarBuilder.Add%2A>メソッドです。  
+  
+ 既存の規則を追加する<xref:System.Speech.Recognition.GrammarBuilder>を使用して、 <xref:System.Speech.Recognition.GrammarBuilder.Add%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.Append%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.AppendDictation%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.AppendRuleReference%2A>、および<xref:System.Speech.Recognition.GrammarBuilder.AppendWildcard%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  音声認識エンジンは、同じキー名と重複するセマンティック要素、または同じ意味を持つ要素の値を変更することが繰り返しを複数のセマンティック要素を含む音声認識文法を使用するときに例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ デバッグに役立てるために、<xref:System.Speech.Recognition.GrammarBuilder.DebugShowPhrases%2A>プロパティの現在の状態が返されます、<xref:System.Speech.Recognition.GrammarBuilder>を文字列として。  
+  
+ ビルドと音声認識の文法の使用の詳細については、次を参照してください。[音声認識](http://msdn.microsoft.com/en-us/6a7dc524-07fc-4862-8d48-8c10dc64b919)と[作成 GrammarBuilder 文法](http://msdn.microsoft.com/en-us/7e2cc577-cb05-4318-9da3-7c8675d3d9ae)です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Speech.Recognition.GrammarBuilder>と<xref:System.Speech.Recognition.Choices>の 2 つのフレーズのいずれかを認識できる文法を構築するためにオブジェクト"背景*colorChoice*"または"に背景を設定*colorChoice*".  
+  
+ この例では、<xref:System.Speech.Recognition.Choices>で許容される値の一覧を作成するオブジェクト*colorChoice*の配列から<xref:System.String>オブジェクト。 A<xref:System.Speech.Recognition.Choices>オブジェクトに似ており、 `one-of` SRGS 仕様内の要素のうち任意の音声ときに認識できる、別のフレーズのセットが含まれています。 また、例では、 <xref:System.Speech.Recognition.Choices> 2 つの配列をグループ化するオブジェクト<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトの結果の文法が認識できる別のフレーズのペアにします。 代替の語または句は、ほとんどの文法のコンポーネントと<xref:System.Speech.Recognition.Choices>文法の構築時のオブジェクトがこの機能を提供<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ 例では、最後に作成、<xref:System.Speech.Recognition.Grammar>オブジェクトから、<xref:System.Speech.Recognition.GrammarBuilder>から構築された、<xref:System.Speech.Recognition.Choices>オブジェクト。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  GrammarBuilder colorElement = new GrammarBuilder(colorChoice);  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase = new GrammarBuilder("Make background");  
+  makePhrase.Append(colorElement);  
+  GrammarBuilder setPhrase = new GrammarBuilder("Set background to");  
+  setPhrase.Append(colorElement);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  Grammar grammar = new Grammar((GrammarBuilder)bothChoices);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.GrammarBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その他のクラスから暗黙的な変換によって、または結合することで、このクラスのインスタンスを取得することも、<xref:System.Speech.Recognition.GrammarBuilder>新しいから 2 番目のオブジェクトを持つオブジェクト<xref:System.Speech.Recognition.GrammarBuilder>です。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>メソッドです。  
+  
+ 既存の制約を追加する<xref:System.Speech.Recognition.GrammarBuilder>を使用して、 <xref:System.Speech.Recognition.GrammarBuilder.Add%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.Append%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.AppendDictation%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.AppendRuleReference%2A>、および<xref:System.Speech.Recognition.GrammarBuilder.AppendWildcard%2A>メソッド、および<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+> [!IMPORTANT]
+>  音声認識エンジンは、同じキー名と重複するセマンティック要素、または同じ意味を持つ要素の値を変更することが繰り返しを複数のセマンティック要素を含む音声認識文法を使用するときに例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ ビルドと音声認識の文法の使用の詳細については、次を参照してください。[音声認識](http://msdn.microsoft.com/en-us/6a7dc524-07fc-4862-8d48-8c10dc64b919)と[作成 GrammarBuilder 文法](http://msdn.microsoft.com/en-us/7e2cc577-cb05-4318-9da3-7c8675d3d9ae)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の規則を追加する<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトを使用して、 <xref:System.Speech.Recognition.GrammarBuilder.Add%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.Append%2A>、 <xref:System.Speech.Recognition.GrammarBuilder.AppendDictation%2A>、<xref:System.Speech.Recognition.GrammarBuilder.AppendRuleReference%2A>と<xref:System.Speech.Recognition.GrammarBuilder.AppendWildcard%2A>メソッド、および<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+> [!IMPORTANT]
+>  音声認識エンジンは、同じキー名と重複するセマンティック要素、または同じ意味を持つ要素の値を変更することが繰り返しを複数のセマンティック要素を含む音声認識文法を使用するときに例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Speech.Recognition.GrammarBuilder>と<xref:System.Speech.Recognition.Choices>の 2 つのフレーズのいずれかを認識できる文法を構築するためにオブジェクト"背景*colorChoice*"または"に背景を設定*colorChoice*".  
+  
+ この例では、<xref:System.Speech.Recognition.Choices>で許容される値の一覧を作成するオブジェクト*colorChoice*の配列から<xref:System.String>オブジェクト。 A<xref:System.Speech.Recognition.Choices>オブジェクトと似ています、 `one-of` SRGS 仕様内の要素の音声ときにいずれかを認識することができます、別のフレーズのセットが含まれています。 また、例では、 <xref:System.Speech.Recognition.Choices> 2 つの配列をグループ化するオブジェクト<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトの結果の文法が認識できる別のフレーズのペアにします。 代替の語または句は、ほとんどの文法のコンポーネントと<xref:System.Speech.Recognition.Choices>文法の構築時のオブジェクトがこの機能を提供<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ 例では、最後に作成、<xref:System.Speech.Recognition.Grammar>オブジェクトから、<xref:System.Speech.Recognition.GrammarBuilder>から構築された、<xref:System.Speech.Recognition.Choices>オブジェクト。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  GrammarBuilder colorElement = new GrammarBuilder(colorChoice);  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase = new GrammarBuilder("Make background");  
+  makePhrase.Append(colorElement);  
+  GrammarBuilder setPhrase = new GrammarBuilder("Set background to");  
+  setPhrase.Append(colorElement);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the Grammar object from the result.  
+  GrammarBuilder bothPhrases = new GrammarBuilder();  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  bothPhrases.Append(bothChoices);  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (System.Speech.Recognition.Choices alternateChoices);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.Choices alternateChoices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.Speech.Recognition.Choices)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="alternateChoices" Type="System.Speech.Recognition.Choices" />
+      </Parameters>
+      <Docs>
+        <param name="alternateChoices">代替のセット。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />代替のセットからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 代替手段を含む、音声認識文法の構築に関する詳細については、次を参照してください。 [GrammarBuilder 文法を作成するのを使用する選択肢](http://msdn.microsoft.com/en-us/5b18db18-a5f6-46a3-aa77-6d3141544efd)です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Speech.Recognition.GrammarBuilder>と<xref:System.Speech.Recognition.Choices>の 2 つのフレーズのいずれかを認識できる文法を構築するためにオブジェクト"背景*colorChoice*"または"に背景を設定*colorChoice*".  
+  
+ この例では、<xref:System.Speech.Recognition.Choices>で許容される値の一覧を作成するオブジェクト*colorChoice*の配列から<xref:System.String>オブジェクト。 A<xref:System.Speech.Recognition.Choices>オブジェクトに似ており、 `one-of` SRGS 仕様内の要素のうち任意の音声ときに認識できる、別のフレーズのセットが含まれています。 また、例では、 <xref:System.Speech.Recognition.Choices> 2 つの配列をグループ化するオブジェクト<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトの結果の文法が認識できる別のフレーズのペアにします。 代替の語または句は、ほとんどの文法のコンポーネントと<xref:System.Speech.Recognition.Choices>文法の構築時のオブジェクトがこの機能を提供<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ 例では、最後に作成、<xref:System.Speech.Recognition.Grammar>オブジェクトから、<xref:System.Speech.Recognition.GrammarBuilder>から構築された、<xref:System.Speech.Recognition.Choices>オブジェクト。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  GrammarBuilder colorElement = new GrammarBuilder(colorChoice);  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase = new GrammarBuilder("Make background");  
+  makePhrase.Append(colorElement);  
+  GrammarBuilder setPhrase = new GrammarBuilder("Set background to");  
+  setPhrase.Append(colorElement);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  Grammar grammar = new Grammar((GrammarBuilder)bothChoices);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (System.Speech.Recognition.SemanticResultKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SemanticResultKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.Speech.Recognition.SemanticResultKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Speech.Recognition.SemanticResultKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">セマンティック キー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />セマンティック キーからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Speech.Recognition.GrammarBuilder>インスタンスから、<xref:System.Speech.Recognition.SemanticResultValue>オブジェクト、セマンティック情報を認識結果で返される文法に追加します。 認識の結果を使用して、セマンティック情報にアクセスすることができます、<xref:System.Speech.Recognition.RecognizedPhrase.Semantics%2A>プロパティ<xref:System.Speech.Recognition.RecognizedPhrase>のハンドラーに用意されている、`SpeechRecognized`イベント。 場合、<xref:System.Speech.Recognition.GrammarBuilder>定義、 <xref:System.Speech.Recognition.SemanticResultKey>、これは、認識結果がキーに関連付けられているセマンティクス情報の取得に使用することができます。 例を参照して<xref:System.Speech.Recognition.GrammarBuilder.Append%28System.Speech.Recognition.SemanticResultKey%29>を参照してください<xref:System.Speech.Recognition.SemanticResultValue>と<xref:System.Speech.Recognition.SemanticResultKey>です。  
+  
+> [!IMPORTANT]
+>  構築する際に<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンス、ように繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認して、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*colorChoice*"と"に背景を設定*colorChoice*"ここで、 *colorChoice*は一連の色から選択します。 文法では、話すいくつかの色の名前のいずれかをユーザーに許可し、アプリケーションに認識されている色の名前のセマンティクス情報を返します。  
+  
+ 例では、1 つを使用して<xref:System.Speech.Recognition.SemanticResultKey>で取得できます、<xref:System.Speech.Recognition.SemanticValue>ユーザーが読み上げる色で関連付けられています。 たとえば、入力には、語句が含まれている場合"セット"バック グラウンド赤に、認識の結果、セマンティックの値を含む"#ff0000"のハンドラーを使用して取得できます、`SpeechRecognized`イベント。  
+  
+ この例では<xref:System.String>、 <xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultKey>、 <xref:System.Speech.Recognition.SemanticResultValue>、および<xref:System.Speech.Recognition.GrammarBuilder>、最後に含まれるすべての制約を作成するオブジェクト<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、`bothPhrases`です。 最後に、例では、構築、<xref:System.Speech.Recognition.Grammar>オブジェクトから完成した<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  // Include semantic information about each of the colors.  
+  Choices colorChoice = new Choices();  
+  
+  GrammarBuilder colorBuilder = new GrammarBuilder("red");  
+  SemanticResultValue colorValue =  
+    new SemanticResultValue(colorBuilder, "#FF0000");  
+  colorChoice.Add(new GrammarBuilder(colorValue));  
+  
+  colorBuilder = new GrammarBuilder("green");  
+  colorValue = new SemanticResultValue(colorBuilder, "#00FF00");  
+  colorChoice.Add(new GrammarBuilder(colorValue));  
+  
+  colorBuilder = new GrammarBuilder("blue");  
+  colorValue = new SemanticResultValue(colorBuilder, "#0000FF");  
+  colorChoice.Add(new GrammarBuilder(colorValue));  
+  
+  GrammarBuilder colorElement = new GrammarBuilder(colorChoice);  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase = new GrammarBuilder("Make background");  
+  makePhrase.Append(colorElement);  
+  GrammarBuilder setPhrase = new GrammarBuilder("Set background to");  
+  setPhrase.Append(colorElement);  
+  
+  // Create a Choices object for the two alternative phrases.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  // Create the semantic key for referencing the color information.  
+  SemanticResultKey colorKey =  
+    new SemanticResultKey("ColorCode", bothPhrases);  
+  bothPhrases = new GrammarBuilder(colorKey);  
+  
+  // Construct the Grammar object from the GrammarBuilder.  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (System.Speech.Recognition.SemanticResultValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SemanticResultValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.Speech.Recognition.SemanticResultValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Speech.Recognition.SemanticResultValue" />
+      </Parameters>
+      <Docs>
+        <param name="value">セマンティック値または名前/値ペア。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />セマンティック値からのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Speech.Recognition.GrammarBuilder>インスタンスから、<xref:System.Speech.Recognition.SemanticResultValue>オブジェクト、セマンティック情報を認識結果で返される文法に追加します。 認識の結果を使用して、セマンティック情報にアクセスすることができます、<xref:System.Speech.Recognition.RecognizedPhrase.Semantics%2A>プロパティ<xref:System.Speech.Recognition.RecognizedPhrase>のハンドラーに用意されている、`SpeechRecognized`イベント。 場合、<xref:System.Speech.Recognition.GrammarBuilder>定義、 <xref:System.Speech.Recognition.SemanticResultKey>、これは、認識結果がキーに関連付けられているセマンティクス情報の取得に使用することができます。 例を参照して<xref:System.Speech.Recognition.GrammarBuilder.Append%28System.Speech.Recognition.SemanticResultKey%29>を参照してください<xref:System.Speech.Recognition.SemanticResultValue>と<xref:System.Speech.Recognition.SemanticResultKey>です。  
+  
+> [!IMPORTANT]
+>  構築する際に<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンス、ように繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認して、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*colorChoice*"と"に背景を設定*colorChoice*"ここで、 *colorChoice*は一連の色から選択します。 文法では、話すいくつかの色の名前のいずれかをユーザーに許可し、アプリケーションに認識されている色の名前のセマンティクス情報を返します。  
+  
+ 例では、1 つを使用して<xref:System.Speech.Recognition.SemanticResultKey>で取得できます、<xref:System.Speech.Recognition.SemanticValue>ユーザーが読み上げる色で関連付けられています。 たとえば、入力には、語句が含まれている場合"セット"バック グラウンド赤に、認識の結果、セマンティックの値を含む"#ff0000"のハンドラーを使用して取得できます、`SpeechRecognized`イベント。  
+  
+ この例では<xref:System.String>、 <xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultKey>、 <xref:System.Speech.Recognition.SemanticResultValue>、および<xref:System.Speech.Recognition.GrammarBuilder>、最後に含まれるすべての制約を作成するオブジェクト<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、`bothPhrases`です。 最後に、例では、構築、<xref:System.Speech.Recognition.Grammar>オブジェクトから完成した<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  // Include semantic information about each of the colors.  
+  Choices colorChoice = new Choices();  
+  
+  GrammarBuilder colorBuilder = new GrammarBuilder("red");  
+  SemanticResultValue colorValue =  
+    new SemanticResultValue(colorBuilder, "#FF0000");  
+  colorChoice.Add(new GrammarBuilder(colorValue));  
+  
+  colorBuilder = new GrammarBuilder("green");  
+  colorValue = new SemanticResultValue(colorBuilder, "#00FF00");  
+  colorChoice.Add(new GrammarBuilder(colorValue));  
+  
+  colorBuilder = new GrammarBuilder("blue");  
+  colorValue = new SemanticResultValue(colorBuilder, "#0000FF");  
+  colorChoice.Add(new GrammarBuilder(colorValue));  
+  
+  GrammarBuilder colorElement = new GrammarBuilder(colorChoice);  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase = new GrammarBuilder("Make background");  
+  makePhrase.Append(colorElement);  
+  GrammarBuilder setPhrase = new GrammarBuilder("Set background to");  
+  setPhrase.Append(colorElement);  
+  
+  // Create a Choices for the two alternative phrases.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  // Create the semantic key for referencing the color information.  
+  SemanticResultKey colorKey =  
+    new SemanticResultKey("ColorCode", bothPhrases);  
+  bothPhrases = new GrammarBuilder(colorKey);  
+  
+  // Construct the grammar from the grammar builder.  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (string phrase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string phrase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">単語のシーケンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />単語のシーケンスからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 語句では、音声認識の文法が認識できる完全な音声句を表します。 文字列を含む、音声認識文法の構築に関する詳細については、次を参照してください。 [GrammarBuilder 文法を作成するには、文字列の使い方](http://msdn.microsoft.com/en-us/0d87b445-a342-4369-9b3f-91d07fd7e114)です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Speech.Recognition.GrammarBuilder>と<xref:System.Speech.Recognition.Choices>の 2 つのフレーズのいずれかを認識できる文法を構築するためにオブジェクト"背景*colorChoice*"または"に背景を設定*colorChoice*".  
+  
+ 許容される値の一覧を作成した後*colorChoice*を使用して、<xref:System.Speech.Recognition.Choices>オブジェクトの例では、2 つを初期化します<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、`makePhrase`と`setPhrase`、引数として文字列を使用します。  
+  
+ 例では、最後に作成、<xref:System.Speech.Recognition.Grammar>オブジェクトから、<xref:System.Speech.Recognition.Choices>オブジェクトにキャスト、<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  GrammarBuilder colorElement = new GrammarBuilder(colorChoice);  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase = new GrammarBuilder("Make background");  
+  makePhrase.Append(colorElement);  
+  GrammarBuilder setPhrase = new GrammarBuilder("Set background to");  
+  setPhrase.Append(colorElement);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the Grammar object from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  Grammar grammar = new Grammar((GrammarBuilder)bothChoices);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (string phrase, System.Speech.Recognition.SubsetMatchingMode subsetMatchingCriteria);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string phrase, valuetype System.Speech.Recognition.SubsetMatchingMode subsetMatchingCriteria) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.String,System.Speech.Recognition.SubsetMatchingMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+        <Parameter Name="subsetMatchingCriteria" Type="System.Speech.Recognition.SubsetMatchingMode" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">単語のシーケンス。</param>
+        <param name="subsetMatchingCriteria">一致するモード、音声認識の文法は、語句を認識するように使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />語の並びのサブセットのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `phrase`パラメーターは、音声認識の文法が認識できる語句を表します。 `subsetMatchingMode`語句全体が成功した認識を実現するために読み上げることができます、語句のサブセットを指定します。 これを使用して、長い名前を持つ、ユーザーが項目に一致する名前全体を読み上げるためにもエントリの一覧で、文法を作成することができます。  
+  
+ 一致するモードの詳細については、次を参照してください。<xref:System.Speech.Recognition.SubsetMatchingMode>です。 文字列を含む、音声認識文法の構築に関する詳細については、次を参照してください。 [GrammarBuilder 文法を作成するには、文字列の使い方](http://msdn.microsoft.com/en-us/0d87b445-a342-4369-9b3f-91d07fd7e114)です。  
+  
+   
+  
+## Examples  
+ 次の例は、各音声認識の文法を作成<xref:System.Speech.Recognition.SubsetMatchingMode>値と一致するモード文法の使い分けの文法します。 場合の値`phrase`は"1 つ 2 つ 3 つ 4 つ 5 6 7"、サブシーケンス文法は、入力を認識し、"2 つ 3 つ 4 つ"、入力ではありませんが、"1 つ 3 つ 5"です。 ただし、順序付けのサブセットの文法は、これらの入力の両方を認識します。  
+  
+```csharp  
+  
+private static IEnumerable<Grammar>  
+  CreateMatchingModeGrammars(string phrase)  
+{  
+  List<Grammar> grammars = new List<Grammar>(5);  
+  
+  Choices modeChoice = new Choices();  
+  Type enumType = typeof(SubsetMatchingMode);  
+  foreach (SubsetMatchingMode mode in Enum.GetValues(enumType))  
+  {  
+    string modeName = Enum.GetName(enumType, mode);  
+    modeName = BreakAtCaps(modeName);  
+  
+    GrammarBuilder builder = new GrammarBuilder(phrase, mode);  
+    Grammar modeGrammar = new Grammar(builder);  
+    modeGrammar.Name = modeName;  
+    modeGrammar.Enabled = false;  
+    grammars.Add(modeGrammar);  
+  
+    modeChoice.Add(modeName);  
+  }  
+  
+  Grammar choiceGrammar = new Grammar(modeChoice);  
+  choiceGrammar.Name = "choice";  
+  grammars.Add(choiceGrammar);  
+  
+  return grammars;  
+}  
+  
+// Insert spaces preceding each uppercase letter in a string.   
+private static string BreakAtCaps(string item)  
+{  
+  if (item == null || item.Length == 0)  
+  {  
+    return item;  
+  }  
+  
+  StringBuilder sb = new StringBuilder(item[0].ToString());  
+  for (int i = 1; i < item.Length; i++)  
+  {  
+    char c = item[i];  
+    if (char.IsUpper(c))  
+    {  
+      sb.Append(" ");  
+    }  
+    sb.Append(c);  
+  }  
+  
+  return sb.ToString();  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (System.Speech.Recognition.GrammarBuilder builder, int minRepeat, int maxRepeat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.GrammarBuilder builder, int32 minRepeat, int32 maxRepeat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.Speech.Recognition.GrammarBuilder,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="minRepeat" Type="System.Int32" />
+        <Parameter Name="maxRepeat" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="builder">繰り返される要素です。</param>
+        <param name="minRepeat">入力で定義された要素に一致する最小回数<c>ビルダー</c>一致するものを構成するために実行する必要があります。</param>
+        <param name="maxRepeat">入力で定義された要素に一致する最大回数<c>ビルダー</c>一致する順序を発生することができます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />繰り返される要素のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値`minRepeat`が 0 の場合、新しい<xref:System.Speech.Recognition.GrammarBuilder>省略可能な要素を表します。  
+  
+ 値`minRepeat`0 以上にする必要がありますの値以下`maxRepeat`です。  
+  
+> [!IMPORTANT]
+>  繰り返しを指定すると<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンス、ように繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認して、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ピザの注文の音声認識の文法を作成します。 1 ~ 4 個のトッピング続く省略可能な場合、開いての語句で始まるし、単語「ピザ」で終了します。  
+  
+```csharp  
+  
+private static Grammar CreatePizzaGrammar()  
+{  
+  
+  // Create a Choices object from a string array of alternative toppings.  
+  Choices toppings = new Choices(new string[] {  
+    "cheese", "mushroom", "tomato", "onion",  
+    "anchovy", "chicken", "pepperoni"});  
+  
+  // Create a GrammarBuilder and append the Choices object.  
+  GrammarBuilder andToppings = new GrammarBuilder("and", 0, 1);  
+  andToppings.Append(toppings);  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder("I would like a", 0, 1);  
+  gb.Append(toppings);  
+  gb.Append(new GrammarBuilder(andToppings, 0, 3));  
+  gb.Append("pizza");  
+  
+  // Create the Grammar from the GrammarBuilder.  
+  Grammar grammar = new Grammar(gb);  
+  grammar.Name = "Pizza Order";  
+  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GrammarBuilder (string phrase, int minRepeat, int maxRepeat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string phrase, int32 minRepeat, int32 maxRepeat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+        <Parameter Name="minRepeat" Type="System.Int32" />
+        <Parameter Name="maxRepeat" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">単語の繰り返されるシーケンス。</param>
+        <param name="minRepeat">一致する語句を入力する時間の最小数は、一致する順序を行う必要があります。</param>
+        <param name="maxRepeat">一致する語句を入力する時間の最大数に一致する順序を発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.GrammarBuilder" />内の単語のシーケンスからのクラス、<see cref="T:System.String" />回数を指定し、<see cref="T:System.String" />繰り返すことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値`minRepeat`が 0 の場合、新しい<xref:System.Speech.Recognition.GrammarBuilder>省略可能な要素を表します。  
+  
+ 値`minRepeat`0 以上にする必要がありますの値以下`maxRepeat`です。 文字列を含む、音声認識文法の構築に関する詳細については、次を参照してください。 [GrammarBuilder 文法を作成するには、文字列の使い方](http://msdn.microsoft.com/en-us/0d87b445-a342-4369-9b3f-91d07fd7e114)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ピザの注文の音声認識の文法を作成します。 1 ~ 4 個のトッピング続く省略可能な場合、開いての語句で始まるし、単語「ピザ」で終了します。  
+  
+```csharp  
+  
+private static Grammar CreatePizzaGrammar()  
+{  
+  
+  // Create a Choices object with alternatives for toppings.  
+  Choices toppings = new Choices(new string[] {  
+    "cheese", "mushroom", "tomato", "onion",  
+    "anchovy", "chicken", "pepperoni"});  
+  
+  // Create a GrammarBuilder and append the Choices object.  
+  GrammarBuilder andToppings = new GrammarBuilder("and", 0, 1);  
+  andToppings.Append(toppings);  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder("I would like a", 0, 1);  
+  gb.Append(toppings);  
+  gb.Append(new GrammarBuilder(andToppings, 0, 3));  
+  gb.Append("pizza");  
+  
+  // Create the Grammar from the GrammarBuilder.  
+  Grammar grammar = new Grammar(gb);  
+  grammar.Name = "Pizza Order";  
+  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />を含む 2 つの文法要素のシーケンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.Speech.Recognition.GrammarBuilder.Add%2A>メソッドでは、多様性を作成するさまざまな種類を組み合わせることができでの文法で柔軟性がビルドされた他のメカニズムを提供<xref:System.Speech.Recognition.GrammarBuilder>です。 これらのメソッドは、静的な対応<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>でも定義されているメソッド、<xref:System.Speech.Recognition.GrammarBuilder>クラスです。 パラメーターの順序は、新しい要素の順序を決定<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ A<xref:System.Speech.Recognition.GrammarBuilder>から取得することもできます<xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultKey>、 <xref:System.Speech.Recognition.SemanticResultValue>、および[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)オブジェクト。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+> [!IMPORTANT]
+>  音声認識エンジンは、同じキー名と重複するセマンティック要素、または同じ意味を持つ要素の値を変更することが繰り返しを複数のセマンティック要素を含む音声認識文法を使用するときに例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ ビルドと音声認識の文法の使用の詳細については、次を参照してください。[音声認識](http://msdn.microsoft.com/en-us/6a7dc524-07fc-4862-8d48-8c10dc64b919)と[作成 GrammarBuilder 文法](http://msdn.microsoft.com/en-us/7e2cc577-cb05-4318-9da3-7c8675d3d9ae)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder Add (System.Speech.Recognition.Choices choices, System.Speech.Recognition.GrammarBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Speech.Recognition.GrammarBuilder Add(class System.Speech.Recognition.Choices choices, class System.Speech.Recognition.GrammarBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Add(System.Speech.Recognition.Choices,System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="choices" Type="System.Speech.Recognition.Choices" />
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="choices">代替候補セットを表す、最初の grammer 要素。</param>
+        <param name="builder">2 番目の grammer 要素。</param>
+        <summary><see cref="T:System.Speech.Recognition.GrammarBuilder" /> オブジェクトが後続している <see cref="T:System.Speech.Recognition.Choices" /> オブジェクトを含んでいる、新しい <see cref="T:System.Speech.Recognition.GrammarBuilder" /> を作成します。</summary>
+        <returns><paramref name="builder" /> 要素が後続している <paramref name="choices" /> 要素のシーケンスの<see cref="T:System.Speech.Recognition.GrammarBuilder" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスから暗黙的な変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。  
+  
+ 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+> [!IMPORTANT]
+>  結合すると<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスが繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認してください、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [GrammarBuilder 文法に追加のセマンティクス](https://msdn.microsoft.com/library/hh361581.aspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder Add (System.Speech.Recognition.GrammarBuilder builder, System.Speech.Recognition.Choices choices);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Speech.Recognition.GrammarBuilder Add(class System.Speech.Recognition.GrammarBuilder builder, class System.Speech.Recognition.Choices choices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Add(System.Speech.Recognition.GrammarBuilder,System.Speech.Recognition.Choices)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="choices" Type="System.Speech.Recognition.Choices" />
+      </Parameters>
+      <Docs>
+        <param name="builder">最初の文法要素。</param>
+        <param name="choices">2 番目の文法要素で代替のセットを表します。</param>
+        <summary><see cref="T:System.Speech.Recognition.Choices" /> オブジェクトが後続している <see cref="T:System.Speech.Recognition.GrammarBuilder" /> オブジェクトを含んでいる、新しい <see cref="T:System.Speech.Recognition.GrammarBuilder" /> を作成します。</summary>
+        <returns><paramref name="choices" /> 要素が後続している <paramref name="builder" /> 要素のシーケンスの<see cref="T:System.Speech.Recognition.GrammarBuilder" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスから暗黙的な変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。  
+  
+ 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+> [!IMPORTANT]
+>  結合すると<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>、他の文法要素を持つインスタンスが同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするを確認してください、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*色*"と"に背景を設定*色*"ここで、*色*色のセットから選択されます。 さまざまな種類が、最終的な文法をなど、構築に使用される[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)、 <xref:System.Speech.Recognition.Choices>、および<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。 呼び出しで明示的なキャスト演算子、<xref:System.Speech.Recognition.GrammarBuilder.Add%2A>メソッドは省略可能です。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase =  
+    GrammarBuilder.Add((GrammarBuilder)"Make background", colorChoice);  
+  GrammarBuilder setPhrase =  
+    GrammarBuilder.Add("Set background to", (GrammarBuilder)colorChoice);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder Add (System.Speech.Recognition.GrammarBuilder builder1, System.Speech.Recognition.GrammarBuilder builder2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Speech.Recognition.GrammarBuilder Add(class System.Speech.Recognition.GrammarBuilder builder1, class System.Speech.Recognition.GrammarBuilder builder2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Add(System.Speech.Recognition.GrammarBuilder,System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder1" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="builder2" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="builder1">最初の文法要素。</param>
+        <param name="builder2">2 番目の grammer 要素。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />2 つのシーケンスを格納している<see cref="T:System.Speech.Recognition.GrammarBuilder" />オブジェクト。</summary>
+        <returns><paramref name="builder2" /> 要素が後続している <paramref name="builder1" /> 要素のシーケンスの<see cref="T:System.Speech.Recognition.GrammarBuilder" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスから暗黙的な変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder1`または`builder2`パラメーター。  
+  
+ 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+> [!IMPORTANT]
+>  結合すると<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>、他の文法要素を持つインスタンスが同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするを確認してください、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*色*"と"に背景を設定*色*"ここで、*色*色のセットから選択されます。 さまざまな種類が、最終的な文法をなど、構築に使用される[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)、 <xref:System.Speech.Recognition.Choices>、および<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。 呼び出しで明示的なキャスト演算子、<xref:System.Speech.Recognition.GrammarBuilder.Add%2A>メソッドは省略可能です。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase =  
+    GrammarBuilder.Add((GrammarBuilder)"Make background", colorChoice);  
+  GrammarBuilder setPhrase =  
+    GrammarBuilder.Add("Set background to", (GrammarBuilder)colorChoice);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder Add (System.Speech.Recognition.GrammarBuilder builder, string phrase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Speech.Recognition.GrammarBuilder Add(class System.Speech.Recognition.GrammarBuilder builder, string phrase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Add(System.Speech.Recognition.GrammarBuilder,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="phrase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="builder">最初の文法要素。</param>
+        <param name="phrase">2 番目の文法要素、語の並びを表します。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />を格納している、<see cref="T:System.Speech.Recognition.GrammarBuilder" />句の前にオブジェクト。</summary>
+        <returns><paramref name="phrase" /> 要素が後続している <paramref name="builder" /> 要素のシーケンスの<see cref="T:System.Speech.Recognition.GrammarBuilder" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスから暗黙的な変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。  
+  
+ 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*色*"と"に背景を設定*色*"ここで、*色*色のセットから選択されます。 さまざまな種類が、最終的な文法をなど、構築に使用される[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)、 <xref:System.Speech.Recognition.Choices>、および<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。 呼び出しで明示的なキャスト演算子、<xref:System.Speech.Recognition.GrammarBuilder.Add%2A>メソッドは省略可能です。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase =  
+    GrammarBuilder.Add((GrammarBuilder)"Make background", colorChoice);  
+  GrammarBuilder setPhrase =  
+    GrammarBuilder.Add("Set background to", (GrammarBuilder)colorChoice);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder Add (string phrase, System.Speech.Recognition.GrammarBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Speech.Recognition.GrammarBuilder Add(string phrase, class System.Speech.Recognition.GrammarBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Add(System.String,System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">最初の文法要素語の並びを表します。</param>
+        <param name="builder">2 番目の grammer 要素。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />続くフレーズを含む、<see cref="T:System.Speech.Recognition.GrammarBuilder" />オブジェクト。</summary>
+        <returns><paramref name="builder" /> 要素が後続している <paramref name="phrase" /> 要素のシーケンスの<see cref="T:System.Speech.Recognition.GrammarBuilder" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスから暗黙的な変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。  
+  
+ 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>と<xref:System.Speech.Recognition.GrammarBuilder.op_Addition%2A>演算子。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*色*"と"に背景を設定*色*"ここで、*色*色のセットから選択されます。 さまざまな種類が、最終的な文法をなど、構築に使用される[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)、 <xref:System.Speech.Recognition.Choices>、および<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。 呼び出しで明示的なキャスト演算子、<xref:System.Speech.Recognition.GrammarBuilder.Add%2A>メソッドは省略可能です。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase =  
+    GrammarBuilder.Add((GrammarBuilder)"Make background", colorChoice);  
+  GrammarBuilder setPhrase =  
+    GrammarBuilder.Add("Set background to", (GrammarBuilder)colorChoice);  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] {makePhrase, setPhrase});  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Append">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>文法要素の現在のシーケンスに文法要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドを使用すると、既存の文法要素を追加する<xref:System.Speech.Recognition.GrammarBuilder>です。 文法要素を作成するには、徐々 に音声認識の文法の制約を開発する既存のビルダーに追加できます。 各要素は、要素の現在のシーケンスの末尾に追加されます。  
+  
+ このメソッドは、追加するためのオーバー ロード<xref:System.Speech.Recognition.GrammarBuilder>、 <xref:System.String>、 <xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultKey>、および<xref:System.Speech.Recognition.SemanticResultValue>オブジェクト。  
+  
+> [!IMPORTANT]
+>  音声認識エンジンは、同じキー名と重複するセマンティック要素、または同じ意味を持つ要素の値を変更することが繰り返しを複数のセマンティック要素を含む音声認識文法を使用するときに例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ ビルドと音声認識の文法の使用の詳細については、次を参照してください。[音声認識](http://msdn.microsoft.com/en-us/6a7dc524-07fc-4862-8d48-8c10dc64b919)と[作成 GrammarBuilder 文法](http://msdn.microsoft.com/en-us/7e2cc577-cb05-4318-9da3-7c8675d3d9ae)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (System.Speech.Recognition.Choices alternateChoices);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(class System.Speech.Recognition.Choices alternateChoices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.Speech.Recognition.Choices)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="alternateChoices" Type="System.Speech.Recognition.Choices" />
+      </Parameters>
+      <Docs>
+        <param name="alternateChoices">追加する代替のセット。</param>
+        <summary>文法要素の現在のシーケンスに代替のセットを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `alternateChoices`要素の現在のシーケンスの末尾に追加されます。  
+  
+> [!IMPORTANT]
+>  追加すると<xref:System.Speech.Recognition.Choices>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスを<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするかどうかを確認、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、「電話」という単語は省略可能、音声認識の文法"職場呼び出し James"や"、携帯電話の通話 Anne"などの語句を作成します。 この例の使用を強調表示、<xref:System.Speech.Recognition.GrammarBuilder.Append%2A>メソッドです。  
+  
+```csharp  
+  
+public static Grammar CreatePhonePhrase()  
+{  
+  // Create alternatives for person names, locations, devices, and pronouns.  
+  Choices personChoice = new Choices(new string[] {"Anne", "James", "Mary", "Sam"});  
+  Choices locationChoice = new Choices(new string[] {"home", "work"});  
+  Choices deviceChoice = new Choices(new string[] {"home", "work", "cell"});  
+  Choices pronounChoice = new Choices(new string[] {"his", "her"});  
+  
+  // Create a phrase for the receiving device, which optionally contains the word "phone".  
+  GrammarBuilder devicePhrase = new GrammarBuilder(pronounChoice);  
+  devicePhrase.Append(deviceChoice);  
+  devicePhrase.Append("phone", 0, 1);  
+  
+  // Create alternatives for phrases specifying a device or a location.  
+  GrammarBuilder atLocation = new GrammarBuilder("at");  
+  atLocation.Append(locationChoice);  
+  
+  GrammarBuilder onDevice = new GrammarBuilder("on");  
+  onDevice.Append(devicePhrase);  
+  
+  Choices howChoice = new Choices(new GrammarBuilder[] {atLocation, onDevice});  
+  
+  // Build the final phrase.  
+  GrammarBuilder callWho = new GrammarBuilder("Call");  
+  callWho.Append(personChoice);  
+  callWho.Append(howChoice);  
+  
+  // Create the Grammar object.  
+  Grammar callGrammar = new Grammar(callWho);  
+  callGrammar.Name = "Call Grammar";  
+  
+  return callGrammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (System.Speech.Recognition.GrammarBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(class System.Speech.Recognition.GrammarBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="builder">追加する文法要素。</param>
+        <summary>文法要素の現在のシーケンスに文法要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `builder`文法要素の現在のシーケンスの末尾に追加されます。  
+  
+> [!NOTE]
+>  追加すると<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスを<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするかどうかを確認、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、「電話」という単語は省略可能、音声認識の文法"職場呼び出し James"や"、携帯電話の通話 Anne"などの語句を作成します。 <xref:System.Speech.Recognition.GrammarBuilder>および<xref:System.Speech.Recognition.Choices>オブジェクトは、文法を構築するために使用します。 この例の使用を強調表示、<xref:System.Speech.Recognition.GrammarBuilder.Append%2A>メソッドです。  
+  
+```csharp  
+  
+public static Grammar CreatePhonePhrase()  
+{  
+  // Create alternatives for person names, locations, devices, and pronouns.  
+  Choices personChoice = new Choices(new string[] {"Anne", "James", "Mary", "Sam"});  
+  Choices locationChoice = new Choices(new string[] {"home", "work"});  
+  Choices deviceChoice = new Choices(new string[] {"home", "work", "cell"});  
+  Choices pronounChoice = new Choices(new string[] {"his", "her"});  
+  
+  // Create a phrase for the receiving device, which optionally contains the word "phone".  
+  GrammarBuilder devicePhrase = new GrammarBuilder(pronounChoice);  
+  devicePhrase.Append(deviceChoice);  
+  devicePhrase.Append("phone", 0, 1);  
+  
+  // Create alternatives for phrases specifying a device or a location.  
+  GrammarBuilder atLocation = new GrammarBuilder("at");  
+  atLocation.Append(locationChoice);  
+  
+  GrammarBuilder onDevice = new GrammarBuilder("on");  
+  onDevice.Append(devicePhrase);  
+  
+  Choices howChoice = new Choices(new GrammarBuilder[] {atLocation, onDevice});  
+  
+  // Build the final phrase.  
+  GrammarBuilder callWho = new GrammarBuilder("Call");  
+  callWho.Append(personChoice);  
+  callWho.Append(howChoice);  
+  
+  // Create the Grammar object.  
+  Grammar callGrammar = new Grammar(callWho);  
+  callGrammar.Name = "Call Grammar";  
+  
+  return callGrammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (System.Speech.Recognition.SemanticResultKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(class System.Speech.Recognition.SemanticResultKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.Speech.Recognition.SemanticResultKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Speech.Recognition.SemanticResultKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加するセマンティック キー。</param>
+        <summary>セマンティック キーを文法要素の現在のシーケンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `key`要素の現在のシーケンスの末尾に追加されます。  
+  
+> [!IMPORTANT]
+>  追加すると<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスを<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするかどうかを確認、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例は、フライトの送信元と送信先の都市を選択するためのコンソール アプリケーションの一部です。 アプリケーションが語句を認識する Miami からシカゴにスライドします"など ハンドラーを<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>イベントを使用して、<xref:System.Speech.Recognition.SemanticResultKey>で指定された空港コードを抽出する、<xref:System.Speech.Recognition.SemanticResultValue>送信元と送信先の都市。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize an in-process speech recognition engine.  
+    {  
+      using (SpeechRecognitionEngine recognizer =  
+         new SpeechRecognitionEngine())  
+      {  
+  
+        // Create a Choices object and add  cities and airport codes  
+        // using SemanticResultValue objects.  
+        Choices cities = new Choices();  
+        cities.Add(new SemanticResultValue("Chicago", "ORD"));  
+        cities.Add(new SemanticResultValue("Boston", "BOS"));  
+        cities.Add(new SemanticResultValue("Miami", "MIA"));  
+        cities.Add(new SemanticResultValue("Dallas", "DFW"));  
+  
+        // Build the phrase and add SemanticResultKeys.  
+        GrammarBuilder chooseCities = new GrammarBuilder();  
+        chooseCities.Append("I want to fly from");  
+        chooseCities.Append(new SemanticResultKey("origin", cities));  
+        chooseCities.Append("to");  
+        chooseCities.Append(new SemanticResultKey("destination", cities));  
+  
+        // Build a Grammar object from the GrammarBuilder.  
+        Grammar bookFlight = new Grammar(chooseCities);  
+        bookFlight.Name = "Book Flight";  
+  
+        // Add a handler for the LoadGrammarCompleted event.  
+        recognizer.LoadGrammarCompleted +=   
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+  
+        // Add a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=   
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Configure the input to the recognizer.  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Load the grammar object and start recognition.  
+        recognizer.LoadGrammarAsync(bookFlight);  
+        recognizer.RecognizeAsync();  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+      Console.WriteLine();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized:  " + e.Result.Text);  
+      Console.WriteLine();  
+      Console.WriteLine("Semantic results:");  
+      Console.WriteLine("  The flight origin is " + e.Result.Semantics["origin"].Value);  
+      Console.WriteLine("  The flight destination is " + e.Result.Semantics["destination"].Value);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (System.Speech.Recognition.SemanticResultValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(class System.Speech.Recognition.SemanticResultValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.Speech.Recognition.SemanticResultValue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Speech.Recognition.SemanticResultValue" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加するセマンティック値。</param>
+        <summary>文法要素の現在のシーケンスをセマンティックの値を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`要素の現在のシーケンスの末尾に追加されます。  
+  
+> [!IMPORTANT]
+>  追加すると<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスを<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするかどうかを確認、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例は、フライトの送信元と送信先の都市を選択するためのコンソール アプリケーションの一部です。 アプリケーションが語句を認識する Miami からシカゴにスライドします"など ハンドラーを<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>イベントを使用して、<xref:System.Speech.Recognition.SemanticResultKey>で指定された空港コードを抽出する、<xref:System.Speech.Recognition.SemanticResultValue>送信元と送信先の都市。  
+  
+```csharp  
+  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize an in-process speech recognition engine.  
+    {  
+      using (SpeechRecognitionEngine recognizer =  
+         new SpeechRecognitionEngine())  
+      {  
+  
+        // Create GrammarBuilder objects and append SemanticResultValue objects   
+        // that contain cities and airport codes.  
+  
+        GrammarBuilder chicago = new GrammarBuilder();  
+        chicago.Append(new SemanticResultValue("Chicago", "ORD"));  
+  
+        GrammarBuilder boston = new GrammarBuilder();  
+        boston.Append(new SemanticResultValue("Boston", "BOS"));  
+  
+        GrammarBuilder miami = new GrammarBuilder();  
+        miami.Append(new SemanticResultValue("Miami", "MIA"));  
+  
+        GrammarBuilder dallas = new GrammarBuilder();  
+        dallas.Append(new SemanticResultValue("Dallas", "DFW"));  
+  
+        // Create a Choices object and add the cities using implicit conversion from   
+        // SemanticResultValue to GrammarBuilder.  
+        Choices cities = new Choices();  
+        cities.Add(new Choices(new GrammarBuilder[] { chicago, boston, miami, dallas }));  
+  
+        // Build the phrase and add SemanticResultKeys.  
+        GrammarBuilder chooseCities = new GrammarBuilder();  
+        chooseCities.Append("I want to fly from");  
+        chooseCities.Append(new SemanticResultKey("origin", cities));  
+        chooseCities.Append("to");  
+        chooseCities.Append(new SemanticResultKey("destination", cities));  
+  
+        // Build a Grammar object from the GrammarBuilder.  
+        Grammar bookFlight = new Grammar(chooseCities);  
+        bookFlight.Name = "Book Flight";  
+  
+        // Add a handler for the LoadGrammarCompleted event.  
+        recognizer.LoadGrammarCompleted +=   
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+  
+        // Add a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=   
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Configure the input to the recognizer.  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Load the grammar object and start recognition.  
+        recognizer.LoadGrammarAsync(bookFlight);  
+        recognizer.RecognizeAsync();  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+    // Handle the LoadGrammarCompleted event.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+      Console.WriteLine();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized:  " + e.Result.Text);  
+      Console.WriteLine();  
+      Console.WriteLine("Semantic results:");  
+      Console.WriteLine("  The flight origin is " + e.Result.Semantics["origin"].Value);  
+      Console.WriteLine("  The flight destination is " + e.Result.Semantics["destination"].Value);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (string phrase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(string phrase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">追加する単語のシーケンス。</param>
+        <summary>文法要素の現在のシーケンスに句を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `phrase`要素の現在のシーケンスの末尾に追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (string phrase, System.Speech.Recognition.SubsetMatchingMode subsetMatchingCriteria);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(string phrase, valuetype System.Speech.Recognition.SubsetMatchingMode subsetMatchingCriteria) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.String,System.Speech.Recognition.SubsetMatchingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+        <Parameter Name="subsetMatchingCriteria" Type="System.Speech.Recognition.SubsetMatchingMode" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">追加する単語のシーケンス。</param>
+        <param name="subsetMatchingCriteria">一致するモード文法は、語句を認識するように使用します。</param>
+        <summary>文法要素の現在のシーケンスには、語句のサブセットの要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブセット要素は、要素の現在のシーケンスの末尾に追加されます。 文字列を使用する音声認識の文法の構築に関する詳細については、次を参照してください。 [GrammarBuilder 文法を作成するには、文字列の使い方](http://msdn.microsoft.com/en-us/0d87b445-a342-4369-9b3f-91d07fd7e114)です。  
+  
+ 一致のモードのサブセットの使用に関する詳細については、次を参照してください。<xref:System.Speech.Recognition.SubsetMatchingMode?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例は、各音声認識の文法を作成<xref:System.Speech.Recognition.SubsetMatchingMode>値。 生成された文法は、たとえば、`OrderedSubset`のフレーズを認識"3 つ 4 つ 5"と"1 つ 3 つ 5"、および文法`Subsequence`という語句を認識"3 つ 4 つ 5"、という句がありませんが、"1 つ 3 つ 5"です。  
+  
+```csharp  
+  
+private Grammar[] CreateSubsetMatchTest()  
+{  
+  List<Grammar> grammars = new List<Grammar>(4);  
+  
+  string phrase = "one two three four five six";  
+  foreach (SubsetMatchingMode mode in  
+    Enum.GetValues(typeof(SubsetMatchingMode)))  
+  {  
+    GrammarBuilder gb = new GrammarBuilder();  
+    gb.Append(phrase, mode);  
+  
+    Grammar grammar = new Grammar(gb);  
+    grammar.Name = mode.ToString();  
+    grammars.Add(grammar);  
+  }  
+  
+  return grammars.ToArray();  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (System.Speech.Recognition.GrammarBuilder builder, int minRepeat, int maxRepeat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(class System.Speech.Recognition.GrammarBuilder builder, int32 minRepeat, int32 maxRepeat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.Speech.Recognition.GrammarBuilder,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="minRepeat" Type="System.Int32" />
+        <Parameter Name="maxRepeat" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="builder">追加する繰り返しの文法要素。</param>
+        <param name="minRepeat">入力で定義された要素に一致する最小回数<c>ビルダー</c>一致するものを構成するために実行する必要があります。</param>
+        <param name="maxRepeat">入力で定義された要素に一致する最大回数<c>ビルダー</c>一致する順序を発生することができます。</param>
+        <summary>文法要素の現在のシーケンスを何度も文法要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`minRepeat`0 以上にする必要がありますの値以下`maxRepeat`です。  
+  
+> [!IMPORTANT]
+>  追加すると<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスを<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト、同じキー名または繰り返しを変更する可能性を複数のセマンティック要素で重複するセマンティック要素を作成しないようにするかどうかを確認、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、「電話」という単語は省略可能、音声認識の文法"職場呼び出し James"や"、携帯電話の通話 Anne"などの語句を作成します。 <xref:System.Speech.Recognition.GrammarBuilder>および<xref:System.Speech.Recognition.Choices>オブジェクトは、文法を構築するために使用します。 この例の使用を強調表示、<xref:System.Speech.Recognition.GrammarBuilder.Append%2A>メソッドです。  
+  
+```csharp  
+  
+public static Grammar CreatePhonePhrase()  
+{  
+  // Create alternatives for person names, locations, devices, and pronouns.  
+  Choices personChoice = new Choices(new string[] {"Anne", "James", "Mary", "Sam"});  
+  Choices locationChoice = new Choices(new string[] {"home", "work"});  
+  Choices deviceChoice = new Choices(new string[] {"home", "work", "cell"});  
+  Choices pronounChoice = new Choices(new string[] {"his", "her"});  
+  
+  // Create a phrase for the receiving device, which optionally contains the word "phone".  
+  GrammarBuilder devicePhrase = new GrammarBuilder(pronounChoice);  
+  devicePhrase.Append(deviceChoice);  
+  devicePhrase.Append("phone", 0, 1);  
+  
+  // Create alternatives for phrases specifying a device or a location.  
+  GrammarBuilder atLocation = new GrammarBuilder("at");  
+  atLocation.Append(locationChoice);  
+  
+  GrammarBuilder onDevice = new GrammarBuilder("on");  
+  onDevice.Append(devicePhrase);  
+  
+  Choices howChoice = new Choices(new GrammarBuilder[] {atLocation, onDevice});  
+  
+  // Build the final phrase.  
+  GrammarBuilder callWho = new GrammarBuilder("Call");  
+  callWho.Append(personChoice);  
+  callWho.Append(howChoice);  
+  
+  // Create the Grammar object.  
+  Grammar callGrammar = new Grammar(callWho);  
+  callGrammar.Name = "Call Grammar";  
+  
+  return callGrammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (string phrase, int minRepeat, int maxRepeat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(string phrase, int32 minRepeat, int32 maxRepeat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.Append(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+        <Parameter Name="minRepeat" Type="System.Int32" />
+        <Parameter Name="maxRepeat" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">追加する単語の繰り返されるシーケンス。</param>
+        <param name="minRepeat">入力に一致する最小回数<c>語句</c>一致するものを構成するために実行する必要があります。</param>
+        <param name="maxRepeat">入力に一致する最大回数<c>語句</c>一致する順序を発生することができます。</param>
+        <summary>文法要素の現在のシーケンスに繰り返される語句を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`minRepeat`0 以上にする必要がありますの値以下`maxRepeat`です。  
+  
+   
+  
+## Examples  
+ 次の例では、「電話」という単語は省略可能、音声認識の文法"職場呼び出し James"や"、携帯電話の通話 Anne"などの語句を作成します。 <xref:System.Speech.Recognition.GrammarBuilder>および<xref:System.Speech.Recognition.Choices>オブジェクトは、文法を構築するために使用します。 この例の使用を強調表示、<xref:System.Speech.Recognition.GrammarBuilder.Append%2A>メソッドです。  
+  
+```csharp  
+  
+public static Grammar CreatePhonePhrase()  
+{  
+  // Create alternatives for person names, locations, devices, and pronouns.  
+  Choices personChoice = new Choices(new string[] {"Anne", "James", "Mary", "Sam"});  
+  Choices locationChoice = new Choices(new string[] {"home", "work"});  
+  Choices deviceChoice = new Choices(new string[] {"home", "work", "cell"});  
+  Choices pronounChoice = new Choices(new string[] {"his", "her"});  
+  
+  // Create a phrase for the receiving device, which optionally contains the word "phone".  
+  GrammarBuilder devicePhrase = new GrammarBuilder(pronounChoice);  
+  devicePhrase.Append(deviceChoice);  
+  devicePhrase.Append("phone", 0, 1);  
+  
+  // Create alternatives for phrases specifying a device or a location.  
+  GrammarBuilder atLocation = new GrammarBuilder("at");  
+  atLocation.Append(locationChoice);  
+  
+  GrammarBuilder onDevice = new GrammarBuilder("on");  
+  onDevice.Append(devicePhrase);  
+  
+  Choices howChoice = new Choices(new GrammarBuilder[] {atLocation, onDevice});  
+  
+  // Build the final phrase.  
+  GrammarBuilder callWho = new GrammarBuilder("Call");  
+  callWho.Append(personChoice);  
+  callWho.Append(howChoice);  
+  
+  // Create the Grammar object.  
+  Grammar callGrammar = new Grammar(callWho);  
+  callGrammar.Name = "Call Grammar";  
+  
+  return callGrammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AppendDictation">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ディクテーション文法を文法要素の現在のシーケンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder.AppendDictation%2A>メソッドを使用するルールとして、ディクテーション文法に追加すること、<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ ディクテーションの文法の詳細については、次を参照してください。<xref:System.Speech.Recognition.DictationGrammar>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AppendDictation">
+      <MemberSignature Language="C#" Value="public void AppendDictation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendDictation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.AppendDictation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文法要素の現在のシーケンスを既定ディクテーション文法を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクテーションの文法の詳細については、次を参照してください。<xref:System.Speech.Recognition.DictationGrammar>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ディクテーションが組み込まれた音声認識文法を作成します。  
+  
+```csharp  
+  
+GrammarBuilder builder = new GrammarBuilder();  
+builder.Append("begin");  
+builder.AppendDictation();  
+builder.Append("end");  
+Grammar grammarWithDictation = new Grammar(builder);  
+grammarWithDictation.Name = "Grammar with Dictation";  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendDictation">
+      <MemberSignature Language="C#" Value="public void AppendDictation (string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendDictation(string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.AppendDictation(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="category">追加するディクテーション文法のカテゴリ。</param>
+        <summary>指定したディクテーション文法を文法要素の現在のシーケンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文章ディクテーション モードを使用する設定`category`に`spelling`です。  
+  
+ ディクテーションの文法の詳細については、次を参照してください。<xref:System.Speech.Recognition.DictationGrammar>です。  
+  
+   
+  
+## Examples  
+ 次の例では、スペル チェック ディクテーションの文法規則が組み込まれた音声認識文法を作成します。  
+  
+```csharp  
+  
+GrammarBuilder builder = new GrammarBuilder();  
+builder.Append("begin");  
+builder.AppendDictation("spelling");  
+builder.Append("end");  
+Grammar grammarWithDictation = new Grammar(builder);  
+grammarWithDictation.Name = "Grammar with Dictation";  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AppendRuleReference">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>文法ファイルまたは文法ルールを文法要素の現在のシーケンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder.AppendRuleReference%2A>メソッドは、文法ファイルまたはファイルから文法ルールを追加できます。 これらのメソッドを許可するようアプリケーションの展開済みまたは公開の文法規則を使用します。 アプリケーションによっては、指定された文法ファイルの場所に読み取りアクセス権が必要です。  
+  
+ これらのメソッドは、次の形式から音声認識の文法を読み取ることができます。  
+  
+-   W3C に準拠する XML フォーマット ファイル[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201761)  
+  
+-   Microsoft 音声認識の文法バイナリ形式 (ファイル拡張子を .cfg) に準拠するバイナリ ファイル  
+  
+ XML 形式 SRGS をコンパイルする文法ファイルを .cfg 拡張子を持つバイナリ文法ファイル時間を短縮できますから一致を検索によって消費されている文法には、単語や語句の数が多いの認識が必要な場合に特にです。 SRGS 文法 CFG のバイナリ形式にコンパイルする方法については、次を参照してください。<xref:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AppendRuleReference">
+      <MemberSignature Language="C#" Value="public void AppendRuleReference (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendRuleReference(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.AppendRuleReference(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">パスまたはサポートされている形式で、音声認識の文法を説明するファイルのユニバーサル リソース識別子 (URI)。</param>
+        <summary>文法要素の現在のシーケンスに文法定義ファイルを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供される URI、`path`ローカルまたはリモートを引数として使用することがあります。 アプリケーションによっては、指定された文法ファイルの場所に読み取りアクセス権が必要です。  
+  
+ W3C 音声認識の文法の仕様 (SRGS) 形式では、ルート ルールを定義できます。 このメソッドは、文章では、以降の文法要素の現在のシーケンスをルート ルールを追加します。 特定の文法ルールを追加するを使用して、<xref:System.Speech.Recognition.GrammarBuilder.AppendRuleReference%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の c# の例の作成という名前のルールを使用する音声認識文法`Cities`SRGS ローカルファイルで cities.grxml です。 Cities.grxml ファイルの内容は、次の c# コード例が表示されます。  
+  
+```csharp  
+  
+private static Grammar CreateCitiesGrammar1()  
+{  
+  GrammarBuilder builder = new GrammarBuilder();  
+  builder.AppendRuleReference("file://c:/temp/cities.grxml");  
+  
+  Grammar citiesGrammar = new Grammar(builder);  
+  citiesGrammar.Name = "Cities Grammar 1";  
+  return citiesGrammar;  
+}  
+```  
+  
+```xml  
+  
+<?xml version="1.0" encoding="UTF-16" ?>  
+<grammar version="1.0" xml:lang="en-US"  
+         xmlns="http://www.w3.org/2001/06/grammar"  
+         tag-format="semantics/1.0" root="Main">  
+  
+  <!-- cities.grxml:   
+    Defines an SRGS grammar for requesting a flight. This grammar includes  
+    a Cities rule that lists the cities that can be used for departures  
+    and destinations. -->  
+  
+  <rule id="Main">  
+    <item>  
+      I would like to fly from <ruleref uri="#Cities"/>  
+      to <ruleref uri="#Cities"/>  
+    </item>  
+  </rule>  
+  
+  <rule id="Cities" scope="public">  
+    <one-of>  
+      <item> Seattle </item>  
+      <item> Los Angeles </item>  
+      <item> New York </item>  
+      <item> Miami </item>  
+    </one-of>  
+  </rule>  
+</grammar>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendRuleReference">
+      <MemberSignature Language="C#" Value="public void AppendRuleReference (string path, string rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendRuleReference(string path, string rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.AppendRuleReference(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="rule" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイル パスまたはサポートされている形式で、音声認識の文法を説明するファイルのユニバーサル リソース識別子 (URI)。</param>
+        <param name="rule">追加するルールの識別子または<see langword="null" />文法ファイルの既定のルート ルールを追加します。</param>
+        <summary>文法要素の現在のシーケンスに文法定義ファイルの指定されたルールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供される URI、`path`ローカルまたはリモートを引数として使用することがあります。 アプリケーションによっては、指定された文法ファイルの場所に読み取りアクセス権が必要です。  
+  
+ 使用して、<xref:System.Speech.Recognition.GrammarBuilder.AppendRuleReference%2A>そのルートの規則に文法ファイルの先頭に追加するメソッド。  
+  
+   
+  
+## Examples  
+ 次の c# の例の作成という名前のルールを使用する音声認識文法`Cities`SRGS ローカルファイルで cities.grxml です。 Cities.grxml ファイルの内容は、次の c# コード例が表示されます。  
+  
+```csharp  
+  
+private static Grammar CreateCitiesGrammar2()  
+{  
+  GrammarBuilder builder = new GrammarBuilder();  
+  builder.Append("Does");  
+  builder.AppendRuleReference(@"c:\temp\cities.grxml", "Cities");  
+  builder.Append("have a shuttle");  
+  
+  Grammar citiesGrammar = new Grammar(builder);  
+  citiesGrammar.Name = "Cities Grammar 2";  
+  return citiesGrammar;  
+}  
+```  
+  
+```xml  
+  
+<?xml version="1.0" encoding="UTF-8" ?>  
+<grammar version="1.0" xml:lang="en-US"  
+         xmlns="http://www.w3.org/2001/06/grammar"  
+         tag-format="semantics/1.0" root="Main">  
+  
+  <!-- cities.grxml:   
+    Defines an SRGS grammar for requesting a flight. This grammar includes  
+    a Cities rule that lists the cities that can be used for departures  
+    and destinations. -->  
+  
+  <rule id="Main">  
+    <item>  
+      I would like to fly from <ruleref uri="#Cities"/>  
+      to <ruleref uri="#Cities"/>  
+    </item>  
+  </rule>  
+  
+  <rule id="Cities" scope="public">  
+    <one-of>  
+      <item> Seattle </item>  
+      <item> Los Angeles </item>  
+      <item> New York </item>  
+      <item> Miami </item>  
+    </one-of>  
+  </rule>  
+</grammar>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendWildcard">
+      <MemberSignature Language="C#" Value="public void AppendWildcard ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendWildcard() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.AppendWildcard" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文法要素の現在のシーケンスを任意の入力に一致する認識文法要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワイルドカード要素は、要素の現在のシーケンスの末尾に追加されます。  
+  
+ ワイルドカード要素では、話された単語と一致します。 バック グラウンド ノイズまたはサイレント状態は一致しません。  
+  
+   
+  
+## Examples  
+ 次の例では、ワイルドカードとしてパスワードの入力を受け付ける文法を作成します。 例では、アタッチ、<xref:System.Speech.Recognition.Grammar.SpeechRecognized?displayProperty=nameWithType>パスワードの入力を検証する文法にイベント ハンドラー。  
+  
+```csharp  
+private Grammar CreatePasswordGrammar()  
+{  
+  GrammarBuilder wildcardBuilder = new GrammarBuilder();  
+  wildcardBuilder.AppendWildcard();  
+  SemanticResultKey passwordKey =  
+    new SemanticResultKey("Password", wildcardBuilder);  
+  
+  GrammarBuilder passwordBuilder =  
+    new GrammarBuilder("My Password is");  
+  passwordBuilder.Append(passwordKey);  
+  
+  Grammar passwordGrammar = new Grammar(passwordBuilder);  
+  passwordGrammar.Name = "Password input";  
+  
+  passwordGrammar.SpeechRecognized +=  
+    new EventHandler<SpeechRecognizedEventArgs>(  
+      PasswordInputHandler);  
+  
+  return passwordGrammar;  
+}  
+  
+// Handle the SpeechRecognized event for the password grammar.  
+private void PasswordInputHandler(object sender, SpeechRecognizedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  RecognitionResult result = e.Result;  
+  SemanticValue semantics = e.Result.Semantics;  
+  
+  if (semantics.ContainsKey("Password"))  
+  {  
+    RecognizedAudio passwordAudio =  
+      result.GetAudioForWordRange(  
+        result.Words[3], result.Words[result.Words.Count - 1]);  
+  
+    if (IsValidPassword(passwordAudio))  
+    {  
+      Console.WriteLine("Password accepted.");  
+  
+      // Add code to handle a valid password here.  
+    }  
+    else  
+    {  
+      Console.WriteLine("Invalid password.");  
+  
+      // Add code to handle an invalid password here.  
+    }  
+  }  
+}  
+  
+// Validate the password input.   
+private bool IsValidPassword(RecognizedAudio passwordAudio)  
+{  
+  Console.WriteLine("Validating password.");  
+  
+  // Add password validation code here.  
+  
+  return false;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.GrammarBuilder.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または音声認識の文法のカルチャを設定します。</summary>
+        <value>カルチャ、<see cref="T:System.Speech.Recognition.GrammarBuilder" />です。 既定値は、実行中のスレッドの<see cref="P:System.Threading.Thread.CurrentUICulture" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.Grammar.%23ctor%2A>コンス トラクターを作成、<xref:System.Speech.Recognition.Grammar>の対応するカルチャの音声認識エンジンで使用できるオブジェクト。 のみ、<xref:System.Speech.Recognition.GrammarBuilder.Culture%2A>のプロパティ、<xref:System.Speech.Recognition.GrammarBuilder>文法コンス トラクターにパラメーターが結果として得られる音声認識の文法のカルチャを設定するためには、提供されます。  
+  
+ Microsoft Windows および System.Speech API は、すべての有効な言語-国コードを受け取ります。 指定された言語を使用する音声認識を実行する、`Culture`プロパティ、言語、国コードをインストールする必要があるをサポートする音声認識エンジンです。 Microsoft Windows 7 に同梱されている音声認識エンジンは、次の言語、国コードで動作します。  
+  
+-   en GB です。 英語 (英国)  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   de DE です。 ドイツ語 (ドイツ)  
+  
+-   ES-ES です。 スペイン語 (スペイン)  
+  
+-   fr-fr などです。 フランス語 (フランス)  
+  
+-   JA-JP です。 日本語 (日本)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"、"fr"などの 2 文字の言語コードまたは"es"も許可されています。  
+  
+   
+  
+## Examples  
+ 次の例では、最大 4 つのトッピングのピザを順序付け、音声認識の文法を作成します。 具体的には設定、<xref:System.Speech.Recognition.GrammarBuilder>英語 (米国) にオブジェクトのカルチャ。  
+  
+```csharp  
+  
+private static Grammar CreatePizzaGrammar()  
+{  
+  
+  // Create a Choices object with alternatives for toppings.  
+  Choices toppings = new Choices(new string[] {  
+    "cheese", "mushroom", "tomato", "onion",  
+    "anchovy", "chicken", "pepperoni"});  
+  
+  // Create a GrammarBuilder and append the Choices object.  
+  GrammarBuilder andToppings = new GrammarBuilder("and", 0, 1);  
+  andToppings.Append(toppings);  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder("I would like a", 0, 1);  
+  gb.Append(toppings);  
+  gb.Append(new GrammarBuilder(andToppings, 0, 3));  
+  gb.Append("pizza");  
+  
+  // Create the Grammar from the GrammarBuilder.  
+  Grammar grammar = new Grammar(gb);  
+  grammar.Name = "Pizza Order";  
+  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugShowPhrases">
+      <MemberSignature Language="C#" Value="public string DebugShowPhrases { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DebugShowPhrases" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.GrammarBuilder.DebugShowPhrases" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツと構造の文法に含まれるを示す文字列を取得、<see cref="T:System.Speech.Recognition.GrammarBuilder" />です。</summary>
+        <value>現在のコンテンツとの構造、<see cref="T:System.Speech.Recognition.GrammarBuilder" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、最大 4 つのトッピングのピザを順序付け、音声認識の文法を作成します。 ステータスを書き込みます、<xref:System.Speech.Recognition.GrammarBuilder>文法を作成する前に、コンソールにします。 このメソッドでは、次の出力が生成されます。  
+  
+-   `GrammarBuilder status: I would like a [cheese,mushroom,tomato,onion,anchovy,chic ken,pepperoni] and [cheese,mushroom,tomato,onion,anchovy,chicken,pepperoni] pizza`  
+  
+```csharp  
+  
+private static Grammar CreatePizzaGrammar()  
+{  
+  
+  // Create a Choices object with alternatives for toppings.  
+  Choices toppings = new Choices(new string[] {  
+    "cheese", "mushroom", "tomato", "onion",  
+    "anchovy", "chicken", "pepperoni"});  
+  
+  // Create a GrammarBuilder and append the Choices object.  
+  GrammarBuilder andToppings = new GrammarBuilder("and", 0, 1);  
+  andToppings.Append(toppings);  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder("I would like a", 0, 1);  
+  gb.Append(toppings);  
+  gb.Append(new GrammarBuilder(andToppings, 0, 3));  
+  gb.Append("pizza");  
+  
+  // Write the contents and structure of the GrammarBuilder to the console.  
+  Console.WriteLine("Grammar content and structure: {0}", gb.DebugShowPhrases);  
+  
+  // Create the Grammar from the GrammarBuilder.  
+  Grammar grammar = new Grammar(gb);  
+  grammar.Name = "Pizza Order";  
+  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="op_Addition">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />2 つの文法要素のシーケンスに対応します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペランドの順序は、新しい要素の順序を決定<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+> [!IMPORTANT]
+>  結合するときに注意をお勧め<xref:System.Speech.Recognition.Choices>または<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>と他の文法要素のインスタンス。 音声認識エンジンは、同じキー名と重複するセマンティック要素、または同じ意味を持つ要素の値を変更することが繰り返しを複数のセマンティック要素を含む音声認識文法を使用するときに例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。[を使用して SemanticResultKey と SemanticResultValue オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ ビルドと音声認識の文法の使用の詳細については、次を参照してください。[音声認識](http://msdn.microsoft.com/en-us/6a7dc524-07fc-4862-8d48-8c10dc64b919)と[作成 GrammarBuilder 文法](http://msdn.microsoft.com/en-us/7e2cc577-cb05-4318-9da3-7c8675d3d9ae)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder operator + (System.Speech.Recognition.Choices choices, System.Speech.Recognition.GrammarBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Addition(class System.Speech.Recognition.Choices choices, class System.Speech.Recognition.GrammarBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Addition(System.Speech.Recognition.Choices,System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="choices" Type="System.Speech.Recognition.Choices" />
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="choices">代替候補セットを表す、最初の grammer 要素。</param>
+        <param name="builder">2 番目の grammer 要素。</param>
+        <summary><see cref="T:System.Speech.Recognition.GrammarBuilder" /> オブジェクトが後続している <see cref="T:System.Speech.Recognition.Choices" /> オブジェクトを含んでいる、新しい <see cref="T:System.Speech.Recognition.GrammarBuilder" /> を作成します。</summary>
+        <returns>返します、<see cref="T:System.Speech.Recognition.GrammarBuilder" />のシーケンスを<paramref name="choices" />パラメーターの後に、<paramref name="builder" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスからの変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>演算子。  
+  
+> [!IMPORTANT]
+>  結合すると<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスが繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認してください、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Speech.Recognition.GrammarBuilder.Add%28System.Speech.Recognition.Choices%2CSystem.Speech.Recognition.GrammarBuilder%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder operator + (System.Speech.Recognition.GrammarBuilder builder, System.Speech.Recognition.Choices choices);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Addition(class System.Speech.Recognition.GrammarBuilder builder, class System.Speech.Recognition.Choices choices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Addition(System.Speech.Recognition.GrammarBuilder,System.Speech.Recognition.Choices)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="choices" Type="System.Speech.Recognition.Choices" />
+      </Parameters>
+      <Docs>
+        <param name="builder">最初の文法要素。</param>
+        <param name="choices">2 番目の文法要素、別の要素のセットを表します。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />を格納している、<see cref="T:System.Speech.Recognition.GrammarBuilder" />続けて、<see cref="T:System.Speech.Recognition.Choices" />です。</summary>
+        <returns>返します、<see cref="T:System.Speech.Recognition.GrammarBuilder" />のシーケンスを<paramref name="builder" />パラメーターの後に、<paramref name="choices" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスからの変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>演算子。  
+  
+> [!IMPORTANT]
+>  結合すると<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンスが繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認してください、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Speech.Recognition.GrammarBuilder.Add%28System.Speech.Recognition.GrammarBuilder%2CSystem.Speech.Recognition.Choices%29?displayProperty=nameWithType>  
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*色*"と"に背景を設定*色*"ここで、*色*色のセットから選択されます。 さまざまな種類が、最終的な文法をなど、構築に使用される[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)、 <xref:System.Speech.Recognition.Choices>、および<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] { "red", "green", "blue" });  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase =  
+    (GrammarBuilder)"Make background" + colorChoice;  
+  GrammarBuilder setPhrase =  
+    "Set background to" + (GrammarBuilder)colorChoice;  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the grammar from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] { makePhrase, setPhrase });  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder operator + (System.Speech.Recognition.GrammarBuilder builder1, System.Speech.Recognition.GrammarBuilder builder2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Addition(class System.Speech.Recognition.GrammarBuilder builder1, class System.Speech.Recognition.GrammarBuilder builder2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Addition(System.Speech.Recognition.GrammarBuilder,System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder1" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="builder2" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="builder1">最初の文法要素。</param>
+        <param name="builder2">2 番目の grammer 要素。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />2 つのシーケンスを格納している<see cref="T:System.Speech.Recognition.GrammarBuilder" />オブジェクト。</summary>
+        <returns>返します、<see cref="T:System.Speech.Recognition.GrammarBuilder" />のシーケンスを<paramref name="builder1" />パラメーターの後に、<paramref name="builder2" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスからの変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder1`と`builder2`パラメーター。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>演算子。  
+  
+> [!IMPORTANT]
+>  結合すると<xref:System.Speech.Recognition.GrammarBuilder>を含むオブジェクト<xref:System.Speech.Recognition.SemanticResultValue>または<xref:System.Speech.Recognition.SemanticResultKey>インスタンス、ように繰り返しを変更する可能性を複数のセマンティック要素か、同じキー名と重複するセマンティック要素を作成しないようにすることを確認して、<xref:System.Speech.Recognition.SemanticValue.Value%2A>のプロパティ、<xref:System.Speech.Recognition.SemanticValue>オブジェクト。 音声認識エンジンは、このような状況が発生した場合、例外をスローできます。 セマンティック情報を格納する音声認識の文法の構築に関する詳細については、次を参照してください。 [Understanding SemanticResultValue と SemanticResultKey オブジェクト](http://msdn.microsoft.com/en-us/0fea1236-5261-4608-89b3-9ce9ffc22a1c)です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Speech.Recognition.GrammarBuilder.Add%28System.Speech.Recognition.GrammarBuilder%2CSystem.Speech.Recognition.GrammarBuilder%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder operator + (System.Speech.Recognition.GrammarBuilder builder, string phrase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Addition(class System.Speech.Recognition.GrammarBuilder builder, string phrase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Addition(System.Speech.Recognition.GrammarBuilder,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+        <Parameter Name="phrase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="builder">最初の文法要素。</param>
+        <param name="phrase">2 番目の文法要素、語の並びを表します。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />を格納している、<see cref="T:System.Speech.Recognition.GrammarBuilder" />語句続きます。</summary>
+        <returns>返します、<see cref="T:System.Speech.Recognition.GrammarBuilder" />のシーケンスを<paramref name="builder" />パラメーターの後に、<paramref name="phrase" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスからの変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>演算子。  
+  
+ この演算子を同等の方法は、します。<xref:System.Speech.Recognition.GrammarBuilder.Add%28System.Speech.Recognition.GrammarBuilder%2CSystem.String%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Speech.Recognition.GrammarBuilder operator + (string phrase, System.Speech.Recognition.GrammarBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Addition(string phrase, class System.Speech.Recognition.GrammarBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Addition(System.String,System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">最初の文法要素語の並びを表します。</param>
+        <param name="builder">2 番目の grammer 要素。</param>
+        <summary>新たに作成<see cref="T:System.Speech.Recognition.GrammarBuilder" />続くフレーズを含む、<see cref="T:System.Speech.Recognition.GrammarBuilder" />です。</summary>
+        <returns>返します、<see cref="T:System.Speech.Recognition.GrammarBuilder" />のシーケンスを<paramref name="phrase" />パラメーターの後に、<paramref name="builder" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>次のクラスからの変換をサポートしています。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ このメソッドの上に示したオブジェクトを受け入れる、`builder`パラメーター。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.GrammarBuilder.op_Implicit%2A>演算子。  
+  
+ この演算子を同等の方法は、します。<xref:System.Speech.Recognition.GrammarBuilder.Add%28System.String%2CSystem.Speech.Recognition.GrammarBuilder%29?displayProperty=nameWithType>  
+  
+## Examples  
+ 次の例では、2 つの語句を認識できる音声認識文法"背景*色*"と"に背景を設定*色*"ここで、*色*色のセットから選択されます。 さまざまな種類が、最終的な文法をなど、構築に使用される[文字列](http://go.microsoft.com/fwlink/?LinkId=159733)、 <xref:System.Speech.Recognition.Choices>、および<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a set of color choices.  
+  Choices colorChoice = new Choices(new string[] { "red", "green", "blue" });  
+  
+  // Create grammar builders for the two versions of the phrase.  
+  GrammarBuilder makePhrase =  
+    (GrammarBuilder)"Make background" + colorChoice;  
+  GrammarBuilder setPhrase =  
+    "Set background to" + (GrammarBuilder)colorChoice;  
+  
+  // Create a Choices for the two alternative phrases, convert the Choices  
+  // to a GrammarBuilder, and construct the Grammar object from the result.  
+  Choices bothChoices = new Choices(new GrammarBuilder[] { makePhrase, setPhrase });  
+  GrammarBuilder bothPhrases = new GrammarBuilder(bothChoices);  
+  
+  Grammar grammar = new Grammar(bothPhrases);  
+  grammar.Name = "backgroundColor";  
+  return grammar;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="op_Implicit">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>別の型に変換する<see cref="T:System.Speech.Recognition.GrammarBuilder" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗黙的な変換の新しいインスタンスを作成する<xref:System.Speech.Recognition.GrammarBuilder>です。 次のクラスのそれぞれをキャストすることができます、<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+-   <xref:System.Speech.Recognition.Choices>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultKey>  
+  
+-   <xref:System.Speech.Recognition.SemanticResultValue>  
+  
+-   <xref:System.String>  
+  
+ 暗黙のキャストの各機能は、コンス トラクターの呼び出しに相当します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Speech.Recognition.GrammarBuilder (System.Speech.Recognition.Choices choices);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Implicit(class System.Speech.Recognition.Choices choices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Implicit(System.Speech.Recognition.Choices)~System.Speech.Recognition.GrammarBuilder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="choices" Type="System.Speech.Recognition.Choices" />
+      </Parameters>
+      <Docs>
+        <param name="choices">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Speech.Recognition.GrammarBuilder (System.Speech.Recognition.SemanticResultKey semanticKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Implicit(class System.Speech.Recognition.SemanticResultKey semanticKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Implicit(System.Speech.Recognition.SemanticResultKey)~System.Speech.Recognition.GrammarBuilder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="semanticKey" Type="System.Speech.Recognition.SemanticResultKey" />
+      </Parameters>
+      <Docs>
+        <param name="semanticKey">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Speech.Recognition.GrammarBuilder (System.Speech.Recognition.SemanticResultValue semanticValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Implicit(class System.Speech.Recognition.SemanticResultValue semanticValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Implicit(System.Speech.Recognition.SemanticResultValue)~System.Speech.Recognition.GrammarBuilder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="semanticValue" Type="System.Speech.Recognition.SemanticResultValue" />
+      </Parameters>
+      <Docs>
+        <param name="semanticValue">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Speech.Recognition.GrammarBuilder (string phrase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Speech.Recognition.GrammarBuilder op_Implicit(string phrase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.GrammarBuilder.op_Implicit(System.String)~System.Speech.Recognition.GrammarBuilder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="phrase">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

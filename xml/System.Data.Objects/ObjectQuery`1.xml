@@ -1,0 +1,947 @@
+<Type Name="ObjectQuery&lt;T&gt;" FullName="System.Data.Objects.ObjectQuery&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class ObjectQuery&lt;T&gt; : System.Data.Objects.ObjectQuery, System.Collections.Generic.IEnumerable&lt;T&gt;, System.ComponentModel.IListSource, System.Linq.IOrderedQueryable&lt;T&gt;, System.Linq.IQueryable&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectQuery`1&lt;T&gt; extends System.Data.Objects.ObjectQuery implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable, class System.ComponentModel.IListSource, class System.Linq.IOrderedQueryable, class System.Linq.IOrderedQueryable`1&lt;!T&gt;, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectQuery`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.Objects.ObjectQuery</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IListSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IOrderedQueryable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryable&lt;T&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">クエリのエンティティ型。</typeparam>
+    <summary>指定されたオブジェクト コンテキスト内の概念モデルに対する型指定されたクエリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスは、特定の型のオブジェクトを 0 個以上含んだコレクションを返すクエリを表します。 オブジェクト クエリを実行するには、事前に <xref:System.Data.Objects.ObjectContext> を定義する必要があります。 このコンテキストにより、クエリの作成と実行に必要な接続情報とメタデータ情報が取得されます。 オブジェクト クエリは次のシナリオで実行されます。  
+  
+-   `foreach` (C#) や `For Each` (Visual Basic) 列挙などの操作を実行するとき。  
+  
+-   <xref:System.Collections.Generic.List%601> コレクションにデータを設定するためにクエリが割り当てられているとき。  
+  
+-   <xref:System.Data.Objects.ObjectQuery%601.Execute%2A> メソッドが明示的に呼び出されたとき。  
+  
+ クエリは、[!INCLUDE[esql](~/includes/esql-md.md)] ステートメントまたは LINQ クエリを使用して作成するか、またはクラスに含まれているクエリ ビルダー メソッドを使用して段階的に構築できます。 いずれの場合も、結果は新しい <xref:System.Data.Objects.ObjectQuery%601> インスタンスであり、これが明示的に実行されるか列挙されることで、クエリがデータ ソースに送信されて実行され、結果が返されます。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601> で多いのはエンティティ型ですが、<xref:System.Data.Common.DbDataRecord> 型 (匿名型に投影する場合) またはプリミティブ型 (整数や文字列など) にすることもできます。 詳細については、次を参照してください。[オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)です。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ この例では、<xref:System.Data.Objects.ObjectQuery%601> クラスのインスタンスを作成する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.ObjectQuery`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601> は、スカラー結果のコレクションではなく単一のスカラー結果を表すように初期化できます。 一部の拡張メソッドは、入力としてコレクション結果を必要とします。 その場合は、該当するメソッドのいずれかが呼び出されたときに、<xref:System.ArgumentException> がスローされます。 詳細については、次を参照してください。[オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)です。  
+  
+ アプリケーションでは、実行時に Entity SQL クエリを生成するときに、データ ソースのコマンドの長さの制限の注意してください。 Entity SQL では、クエリ コマンド テキストの長さに制限が適用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectQuery (string commandText, System.Data.Objects.ObjectContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandText, class System.Data.Objects.ObjectContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.#ctor(System.String,System.Data.Objects.ObjectContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="context" Type="System.Data.Objects.ObjectContext" />
+      </Parameters>
+      <Docs>
+        <param name="commandText">[!INCLUDE[esql](~/includes/esql-md.md)] クエリ。</param>
+        <param name="context">クエリが実行される <see cref="T:System.Data.Objects.ObjectContext" />。</param>
+        <summary>指定された <see cref="T:System.Data.Objects.ObjectQuery`1" /> コマンドを最初のクエリとして使用して、新しい [!INCLUDE[esql](~/includes/esql-md.md)] インスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、実行時に Entity SQL クエリを生成するときに、データ ソースのコマンドの長さの制限の注意してください。 Entity SQL では、クエリ コマンド テキストの長さに制限が適用されません。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectQuery%601> クラスのインスタンスを作成する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectQuery (string commandText, System.Data.Objects.ObjectContext context, System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandText, class System.Data.Objects.ObjectContext context, valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.#ctor(System.String,System.Data.Objects.ObjectContext,System.Data.Objects.MergeOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="context" Type="System.Data.Objects.ObjectContext" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <param name="commandText">[!INCLUDE[esql](~/includes/esql-md.md)] クエリ。</param>
+        <param name="context">クエリが実行される <see cref="T:System.Data.Objects.ObjectContext" />。</param>
+        <param name="mergeOption">このクエリによって取得されるエンティティを、同じ <see cref="T:System.Data.Objects.ObjectContext" /> に対する以前のクエリから返されたエンティティとどのようにマージするかを指定します。</param>
+        <summary>指定された <see cref="T:System.Data.Objects.ObjectQuery`1" /> コマンドを最初のクエリとして使用し、さらに指定されたマージ オプションを使用して、新しい [!INCLUDE[esql](~/includes/esql-md.md)] インスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、実行時に Entity SQL クエリを生成するときに、データ ソースのコマンドの長さの制限の注意してください。 Entity SQL では、クエリ コマンド テキストの長さに制限が適用されません。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 <xref:System.Data.Objects.ObjectQuery%601> は、指定されたクエリ、<xref:System.Data.Objects.ObjectContext>、および <xref:System.Data.Objects.MergeOption> で初期化されます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Select](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_select)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Select](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_select)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Distinct">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Distinct ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Distinct() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Distinct" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>結果が一意となるようにクエリを制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[SELECT DISTINCT](~/docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクエリ ビルダー メソッドが戻る、<xref:System.Data.Objects.ObjectQuery%601>は元のクエリに相当するインスタンス[SELECT DISTINCT](~/docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)適用します。  
+  
+ `DISTINCT`演算子は、データ ソース (ntext) などの比較不能列へのマッピングを含んでいるオブジェクトに適用することはできません。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectQuery%601.UnionAll%2A> メソッドを使用して、新しい <xref:System.Data.Objects.ObjectQuery%601> オブジェクトを作成します。 次に、新しい <xref:System.Data.Objects.ObjectQuery%601.Distinct%2A> オブジェクトで <xref:System.Data.Objects.ObjectQuery%601> を呼び出して、このクエリの一意の結果を取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Distinct_UnionAll](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_distinct_unionall)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Distinct_UnionAll](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_distinct_unionall)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Except">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Except (System.Data.Objects.ObjectQuery&lt;T&gt; query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Except(class System.Data.Objects.ObjectQuery`1&lt;!T&gt; query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Except(System.Data.Objects.ObjectQuery{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Data.Objects.ObjectQuery&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="query">クエリから除外する結果を表す <see cref="T:System.Data.Objects.ObjectQuery`1" />。</param>
+        <summary>別のオブジェクト クエリの結果を基に一部の結果を除外することで、クエリの結果を制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[EXCEPT](~/docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)指定に基づいて適用<paramref name="query" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された`query`を除外する必要がありますに結果を定義する、同じ種類のかと互換性のある型である、<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ 定義されているパラメーターで指定された`query`で定義されているパラメーターと共にマージされます、<xref:System.Data.Objects.ObjectQuery%601>インスタンス。 パラメーターは、結合された <xref:System.Data.Objects.ObjectParameterCollection> 内で一意である必要があります。 結合されたコレクション内に同じ名前のパラメーターが 2 つ存在することはできません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ 結果のクエリは、<xref:System.Data.Objects.ObjectQuery%601> が呼び出された <xref:System.Data.Objects.ObjectQuery%601.Except%2A> インスタンスから接続を継承します。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectQuery%601.Except%2A> メソッドを使用して新しい <xref:System.Data.Objects.ObjectQuery%601> オブジェクトを作成し、新しいクエリの結果を反復処理します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Except](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_except)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Except](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_except)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="query" /> パラメーターが <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;T&gt; Execute (System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!T&gt; Execute(valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Execute(System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <param name="mergeOption">クエリの実行時に使用する <see cref="T:System.Data.Objects.MergeOption" />。 既定値は、<see cref="F:System.Data.Objects.MergeOption.AppendOnly" /> です。</param>
+        <summary>指定されたマージ オプションを使用してオブジェクト クエリを実行します。</summary>
+        <returns>クエリによって返されるエンティティ オブジェクトのコレクションを含む <see cref="T:System.Data.Objects.ObjectResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト クエリの既定のマージ オプションは <xref:System.Data.Objects.MergeOption.AppendOnly> です。 詳細については、次を参照してください。 [Id 解決、状態管理、および変更の追跡](http://msdn.microsoft.com/en-us/3bd49311-0e72-4ea4-8355-38fe57036ba0)です。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectResult%601> メソッドから <xref:System.Data.Objects.ObjectQuery.Execute%2A> を返します。 次に、列挙子を取得し、クエリ結果を反復処理します。 最後に、列挙子と <xref:System.Data.Objects.ObjectResult%601> オブジェクトを解放します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#QueryResult](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#queryresult)]
+ [!code-vb[DP ObjectServices Concepts#QueryResult](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#queryresult)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupBy">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;System.Data.Common.DbDataRecord&gt; GroupBy (string keys, string projection, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;class System.Data.Common.DbDataRecord&gt; GroupBy(string keys, string projection, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.GroupBy(System.String,System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;System.Data.Common.DbDataRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String" />
+        <Parameter Name="projection" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="keys">結果のグループ化に使用するキー列。</param>
+        <param name="projection">投影を定義する、選択したプロパティの一覧。</param>
+        <param name="parameters">このメソッドで使用される 0 個以上のパラメーター。</param>
+        <summary>指定された条件でクエリの結果をグループ化します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />型のインスタンス<see cref="T:System.Data.Common.DbDataRecord" />元のインスタンスに相当する機能は[GROUP BY](~/docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.GroupBy%2A>によって指定されたプロジェクションを適用、`projection`パラメーター。 つまり、<xref:System.Data.Objects.ObjectQuery%601> メソッドから返される <xref:System.Data.Objects.ObjectQuery%601.GroupBy%2A> の型は、常に <xref:System.Data.Common.DbDataRecord> です。 詳細については、次を参照してください。[オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)です。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ この例では、製品名でグループ化された既存のクエリの結果を含む <xref:System.Data.Objects.ObjectQuery%601> オブジェクトを新たに作成します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_GroupBy](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_groupby)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_GroupBy](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_groupby)]  
+  
+ この例を含む入れ子になったデータ レコードのセットを返します、`Contact.LastName`列でグループ化されの最初の文字にアルファベット順に並べ替えて`Contact.LastName`です。  
+  
+ [!code-csharp[DP ObjectServices Concepts#Projection_GroupBy](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#projection_groupby)]
+ [!code-vb[DP ObjectServices Concepts#Projection_GroupBy](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#projection_groupby)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="query" /> パラメーターが <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <paramref name="projection" /> パラメーターが <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Include">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Include (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Include(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Include(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">クエリの結果で返す関連オブジェクトをドットで区切った一覧。</param>
+        <summary>クエリ結果に含める関連オブジェクトを指定します。</summary>
+        <returns>定義されたクエリ パスを使用する新しい <see cref="T:System.Data.Objects.ObjectQuery`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ パスは、Entity SQL および LINQ クエリで使用できます。  
+  
+ パスは包括的です。 たとえば、include 呼び出しを示します`Include("Orders.OrderLines")`、だけでなく、`OrderLines`もが含まれる`Orders`です。 詳細については、次を参照してください。[関連オブジェクトの読み込み](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1)です。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601.Include%2A> メソッドを呼び出した場合、クエリ パスは <xref:System.Data.Objects.ObjectQuery%601> の返されたインスタンスでのみ有効です。 <xref:System.Data.Objects.ObjectQuery%601> の他のインスタンスとオブジェクト コンテキスト自体は影響を受けません。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601.Include%2A> メソッドはクエリ オブジェクトを返すので、このメソッドを <xref:System.Data.Objects.ObjectQuery%601> で複数回呼び出すことで、次の例のようにクエリに複数のパスを指定できます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#SpanOnlyWithMultiplePaths](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#spanonlywithmultiplepaths)]
+ [!code-vb[DP ObjectServices Concepts#SpanOnlyWithMultiplePaths](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#spanonlywithmultiplepaths)]  
+  
+   
+  
+## Examples  
+ [!code-csharp[DP ObjectServices Concepts#QueryWithSpan](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#querywithspan)]
+ [!code-vb[DP ObjectServices Concepts#QueryWithSpan](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#querywithspan)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は <see langword="empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Intersect (System.Data.Objects.ObjectQuery&lt;T&gt; query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Intersect(class System.Data.Objects.ObjectQuery`1&lt;!T&gt; query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Intersect(System.Data.Objects.ObjectQuery{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Data.Objects.ObjectQuery&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="query">クエリに含める結果を表す <see cref="T:System.Data.Objects.ObjectQuery`1" />。</param>
+        <summary>別のオブジェクト クエリに存在する結果のみを含めることで、クエリの結果を制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[INTERSECT](~/docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)指定に基づいて適用<paramref name="query" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された`query`結果に含める必要がありますを定義する、同じ種類のかと互換性のある型である、<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ 定義されているパラメーターで指定された`query`で定義されているパラメーターと共にマージされます、<xref:System.Data.Objects.ObjectQuery%601>インスタンス。 パラメーターは、結合された <xref:System.Data.Objects.ObjectParameterCollection> 内で一意である必要があります。 結合されたコレクション内に同じ名前のパラメーターが 2 つ存在することはできません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ 結果のクエリは、<xref:System.Data.Objects.ObjectQuery%601> メソッドが呼び出された <xref:System.Data.Objects.ObjectQuery%601.Intersect%2A> インスタンスから接続を継承します。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、他の 2 つのクエリの結果を含む <xref:System.Data.Objects.ObjectQuery%601> オブジェクトを新たに作成します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Intersect](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_intersect)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Intersect](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_intersect)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="query" /> パラメーターが <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectQuery`1.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクト クエリの名前を取得または設定します。</summary>
+        <value>A<see langword="string" />これの名前を指定する値<see cref="T:System.Data.Objects.ObjectQuery`1" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト クエリの名前は、クエリ ビルダー メソッドの作成時に、シーケンス内の現在のオブジェクト クエリを名前で識別するために使用されます。 クエリ名は、既定では、`it`です。 これを利用する内部結合では、現在のシーケンスを参照するときに、< xref:System.Data.Objects.ObjectQuery`1.Where*> method or in the <xref:System.Data.Objects.ObjectQuery`1.SelectValue''1* > メソッドです。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601.Name%2A> の <xref:System.Data.Objects.ObjectQuery%601> プロパティを設定すると、その値が後続のメソッドで別名として使用されます。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601.Name%2A> プロパティの値は、先頭を英字にする必要があり、英字、数字、およびアンダースコアを含めることができます。  
+  
+   
+  
+## Examples  
+ この例では、最初の <xref:System.Data.Objects.ObjectQuery%601> の名前を "product" に設定し、この別名を後続の <xref:System.Data.Objects.ObjectQuery%601.OrderBy%2A> メソッドで使用します。 このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ [!code-csharp[DP ObjectServices Concepts#QueryWithAliasNamed](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#querywithaliasnamed)]
+ [!code-vb[DP ObjectServices Concepts#QueryWithAliasNamed](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#querywithaliasnamed)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定時に指定された値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OfType&lt;TResultType&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;TResultType&gt; OfType&lt;TResultType&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!!TResultType&gt; OfType&lt;TResultType&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.OfType``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;TResultType&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResultType" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TResultType">フィルターを適用してクエリを実行したときに返された <see cref="T:System.Data.Objects.ObjectResult`1" /> の型。</typeparam>
+        <summary>特定の型のみが結果となるようにクエリを制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[OFTYPE](~/docs/framework/data/adonet/ef/language-reference/oftype-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery`1.OfType``1*> は、クエリの結果を特定のエンティティ型または複合型でフィルター処理するために使用されます。 これには、概念モデル オブジェクトの継承をサポートしています。 詳細については、次を参照してください。[エンティティ データ モデルの継承 (アプリケーション シナリオ)](http://msdn.microsoft.com/en-us/5de40bf8-527f-4f2e-96e3-61164f429caa)です。 次に、  
+  
+ <xref:System.Data.Objects.ObjectQuery`1.OfType``1*> メソッドは、EDM に定義されているエンティティ型または複合型の <xref:System.Data.Objects.ObjectQuery%601> にのみ適用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.EntitySqlException">指定された型が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OrderBy">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; OrderBy (string keys, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; OrderBy(string keys, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.OrderBy(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="keys">結果の並べ替えに使用するキー列。</param>
+        <param name="parameters">このメソッドで使用される 0 個以上のパラメーター。</param>
+        <summary>指定された条件でクエリの結果を並べ替えます。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[ORDER BY](~/docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入れ子になったクエリでの結果の並べ替えは保証されません。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601.OrderBy%2A> は、常にシーケンスにおける最後のクエリ ビルダー メソッドである必要があります。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 例では、作成、新しい<xref:System.Data.Objects.ObjectQuery%601>によって既存のクエリの順序の結果を格納しているオブジェクト`ProductID`です。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_OrderBy](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_orderby)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_OrderBy](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_orderby)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="keys" /> パラメーターまたは <paramref name="parameters" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="key" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;System.Data.Common.DbDataRecord&gt; Select (string projection, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;class System.Data.Common.DbDataRecord&gt; Select(string projection, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Select(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;System.Data.Common.DbDataRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projection" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="projection">投影を定義する、選択したプロパティの一覧。</param>
+        <param name="parameters">このメソッドで使用される 0 個以上のパラメーター。</param>
+        <summary>クエリの結果を、指定された投影で定義されているプロパティのみに制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />型のインスタンス<see cref="T:System.Data.Common.DbDataRecord" />元のインスタンスに相当する機能は[選択](~/docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.Select%2A>によって指定されたプロジェクションを適用、`projection`パラメーター。 <xref:System.Data.Objects.ObjectQuery%601> メソッドで返される <xref:System.Data.Objects.ObjectQuery%601.Select%2A> は、常に <xref:System.Data.Common.DbDataRecord> の行型です。 単純型、エンティティ型、または複合型の値を返すには、<xref:System.Data.Objects.ObjectQuery`1.SelectValue``1*> メソッドを使用します。 詳細については、次を参照してください。 [LINQ to Entities](~/docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)です。  
+  
+ 投影にナビゲーション プロパティが含まれている場合は、入れ子になった <xref:System.Data.Common.DbDataRecord> オブジェクトのコレクションがクエリの結果に含まれます。 詳細については、次を参照してください。[する方法: ナビゲーション プロパティを使用してリレーションシップを移動](http://msdn.microsoft.com/en-us/b1d71c7d-16a7-4b46-96ac-690176bd5057)です。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 例では、作成、新しい<xref:System.Data.Objects.ObjectQuery%601>が含まれるデータ レコードは結果が、`ProductID`このクエリの結果のフィールドです。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Select](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_select)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Select](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_select)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="projection" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="parameters" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="projection" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectValue&lt;TResultType&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;TResultType&gt; SelectValue&lt;TResultType&gt; (string projection, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!!TResultType&gt; SelectValue&lt;TResultType&gt;(string projection, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.SelectValue``1(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;TResultType&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResultType" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="projection" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TResultType"><see cref="T:System.Data.Objects.ObjectQuery`1" /> メソッドによって返された <see cref="M:System.Data.Objects.ObjectQuery`1.SelectValue``1(System.String,System.Data.Objects.ObjectParameter[])" /> の型。</typeparam>
+        <param name="projection">投影の一覧。</param>
+        <param name="parameters">解析時にスコープに含める必要があるオプションのクエリ パラメーターのセット。</param>
+        <summary>クエリの結果を、投影で指定されたプロパティのみに制限します。</summary>
+        <returns>特定の投影と互換性がある型の新しい <see cref="T:System.Data.Objects.ObjectQuery`1" /> インスタンス。 返された<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当[SELECT VALUE](~/docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery`1.SelectValue``1*> は、単純型、エンティティ型、または複合型の値を返す場合に使用されます。 値型ではなく行型を必要とする投影には、<xref:System.Data.Objects.ObjectQuery%601.Select%2A> メソッドを使用します。 詳細については、次を参照してください。[オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)です。  
+  
+ < Xref:System.Data.Objects.ObjectQuery`1.SelectValue``1*> method applies the projection specified by the `プロジェクション` parameter. The <xref:System.Data.Objects.ObjectQuery%601> returned by the <xref:System.Data.Objects.ObjectQuery`1. SelectValue``1*> method must be of a value type that is compatible with the projection and must be the same type as the type of <xref:System.Data.Objects.ObjectQuery`1.SelectValue``1 * >。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 例では、新たに作成<xref:System.Data.Objects.ObjectQuery%601>のシーケンスは、結果を含む`ProductID`値が、既存のクエリの結果を射影します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_SelectValue](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_selectvalue)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_SelectValue](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_selectvalue)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="projection" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="parameters" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="projection" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Skip">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Skip (string keys, string count, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Skip(string keys, string count, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Skip(System.String,System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String" />
+        <Parameter Name="count" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="keys">結果の並べ替えに使用するキー列。</param>
+        <param name="count">スキップする結果の数。 定数またはパラメーター参照を指定する必要があります。</param>
+        <param name="parameters">解析時にスコープに含める必要があるオプションのクエリ パラメーターのセット。</param>
+        <summary>指定された条件でクエリの結果を並べ替え、指定された数の結果をスキップします。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />はどちらも元のインスタンスに相当するインスタンス[ORDER BY](~/docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)と[SKIP](~/docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.Skip%2A> メソッドを <xref:System.Data.Objects.ObjectQuery%601.Top%2A> メソッドの後に使用することはできません。 使用すると<xref:System.Data.Objects.ObjectQuery%601.Top%2A>後<xref:System.Data.Objects.ObjectQuery%601.Skip%2A>と同様に機能、[制限](~/docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)句のステートメント。  
+  
+   
+  
+## Examples  
+ この例では、5 つを取得`Product`順に並べ替えて、クエリ結果内の最初の 3 つをスキップしたらオブジェクト`Product.ListPrice`です。  
+  
+ [!code-csharp[DP ObjectServices Concepts#Projection_SkipLimit](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#projection_skiplimit)]
+ [!code-vb[DP ObjectServices Concepts#Projection_SkipLimit](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#projection_skiplimit)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">任意の引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keys" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="count" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;T&gt; IEnumerable&lt;T&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!T&gt; System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.System#Collections#Generic#IEnumerable&lt;T&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリの結果を反復処理する列挙子を返します。</summary>
+        <returns>結果の反復処理に使用できる <see cref="T:System.Collections.Generic.IEnumerator`1" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.System%23Collections%23Generic%23IEnumerable%7BT%7D%23GetEnumerator%2A> を呼び出すとクエリが実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Top (string count, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Top(string count, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Top(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="count">結果に文字列として返されるアイテムの数。</param>
+        <param name="parameters">解析時にスコープに含める必要があるオプションのクエリ パラメーターのセット。</param>
+        <summary>クエリの結果を、指定されたアイテム数に制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[上部](~/docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.Top%2A> は、クエリが並べ替えられていない限り、非決定的です。  
+  
+ 使用する場合、<xref:System.Data.Objects.ObjectQuery%601.Top%2A>メソッドした後に、<xref:System.Data.Objects.ObjectQuery%601.Skip%2A>と同様に機能、メソッド、[制限](~/docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)のステートメント、 [ORDER BY](~/docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)句。  
+  
+   
+  
+## Examples  
+ これらの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ この例では、既存のクエリの最初の 2 つの結果を含む <xref:System.Data.Objects.ObjectQuery%601> を新たに作成します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Top](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_top)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Top](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_top)]  
+  
+ この例では、5 つを取得`Product`順に並べ替えて、クエリ結果内の最初の 3 つをスキップしたらオブジェクト`Product.ListPrice`です。 <xref:System.Data.Objects.ObjectQuery%601.Top%2A>代わりに使用される[制限](~/docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)ページングにします。  
+  
+ [!code-csharp[DP ObjectServices Concepts#Projection_SkipLimit](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#projection_skiplimit)]
+ [!code-vb[DP ObjectServices Concepts#Projection_SkipLimit](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#projection_skiplimit)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="count" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="count" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Union (System.Data.Objects.ObjectQuery&lt;T&gt; query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Union(class System.Data.Objects.ObjectQuery`1&lt;!T&gt; query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Union(System.Data.Objects.ObjectQuery{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Data.Objects.ObjectQuery&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="query">追加する結果を表す <see cref="T:System.Data.Objects.ObjectQuery`1" />。</param>
+        <summary>クエリの結果を、別のオブジェクト クエリの結果と重複しないように結合します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[共用体](~/docs/framework/data/adonet/ef/language-reference/union-entity-sql.md)の指定された結果を追加する適用<paramref name="query" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.Union%2A>指定された結果`query`重複しないようにします。  
+  
+ 指定された`query`必要がありますを追加する結果を定義する、同じ種類のかこの型に昇格できる型である<xref:System.Data.Objects.ObjectQuery%601>です。 たとえば、次は有効なため`DiscontinuedProducts`に昇格できる`Products`:  
+  
+```  
+ObjectQuery<Product>.Union(ObjectQuery<DiscontinuedProduct>)  
+```  
+  
+ 次は例外をスローため`Products`に昇格できません`DiscontinuedProducts`です。  
+  
+```  
+ObjectQuery <DiscontinuedProduct>.Union(ObjectQuery<Product>)   
+```  
+  
+ <xref:System.Data.Objects.ObjectQuery%601>型の<xref:System.Data.Common.DbDataRecord>、両方のクエリ内のレコードでは、列に同じ数の列、および種類があります、 <xref:System.Data.Common.DbDataRecord> 、渡されたの`query`内の列の型に上位互換できる必要があります、<xref:System.Data.Common.DbDataRecord>の<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ 定義されているパラメーターで指定された`query`で定義されているパラメーターと共にマージされます、<xref:System.Data.Objects.ObjectQuery%601>インスタンス。 パラメーターは、結合された <xref:System.Data.Objects.ObjectParameterCollection> 内で一意である必要があります。 結合されたコレクション内に同じ名前のパラメーターが 2 つ存在することはできません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ 結果のクエリは、<xref:System.Data.Objects.ObjectQuery%601> が呼び出された <xref:System.Data.Objects.ObjectQuery%601.Union%2A> インスタンスから接続を継承します。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectQuery%601.Union%2A> メソッドを使用して、新しい <xref:System.Data.Objects.ObjectQuery%601> オブジェクトを作成します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Distinct_Union](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_distinct_union)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Distinct_Union](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_distinct_union)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="query" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnionAll">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; UnionAll (System.Data.Objects.ObjectQuery&lt;T&gt; query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; UnionAll(class System.Data.Objects.ObjectQuery`1&lt;!T&gt; query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.UnionAll(System.Data.Objects.ObjectQuery{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Data.Objects.ObjectQuery&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="query">追加する結果を表す <see cref="T:System.Data.Objects.ObjectQuery`1" />。</param>
+        <summary>クエリの結果を、別のオブジェクト クエリの結果と、重複をすべて含めて結合します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[UNION ALL](~/docs/framework/data/adonet/ef/language-reference/union-entity-sql.md)の指定された結果を追加する適用<paramref name="query" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601.UnionAll%2A>指定された結果`query`重複をすべて含めてです。  
+  
+ 指定された`query`必要がありますを追加する結果を定義する、同じ種類のかこの型に昇格できる型である<xref:System.Data.Objects.ObjectQuery%601>です。 たとえば、次は有効なため`DiscontinuedProducts`に昇格できる`Products`:  
+  
+```  
+ObjectQuery<Product>.Union(ObjectQuery<DiscontinuedProduct>)  
+```  
+  
+ 次は例外をスローため`Products`に昇格できません`DiscontinuedProducts`です。  
+  
+```  
+ObjectQuery <DiscontinuedProduct>.Union(ObjectQuery<Product>)   
+```  
+  
+ <xref:System.Data.Objects.ObjectQuery%601>型の<xref:System.Data.Common.DbDataRecord>、両方のクエリ内のレコードでは、列に同じ数の列、および種類があります、 <xref:System.Data.Common.DbDataRecord> 、渡されたの`query`内の列の型に上位互換できる必要があります、<xref:System.Data.Common.DbDataRecord>の<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ 定義されているパラメーターで指定された`query`で定義されているパラメーターと共にマージされます、<xref:System.Data.Objects.ObjectQuery%601>インスタンス。 パラメーターは、結合された <xref:System.Data.Objects.ObjectParameterCollection> 内で一意である必要があります。 結合されたコレクション内に同じ名前のパラメーターが 2 つ存在することはできません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ 結果のクエリは、<xref:System.Data.Objects.ObjectQuery%601> が呼び出された <xref:System.Data.Objects.ObjectQuery%601.UnionAll%2A> インスタンスから接続を継承します。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectQuery%601.UnionAll%2A> メソッドを使用して、新しい <xref:System.Data.Objects.ObjectQuery%601> オブジェクトを作成します。 次に、新しい <xref:System.Data.Objects.ObjectQuery%601.Distinct%2A> オブジェクトで <xref:System.Data.Objects.ObjectQuery%601> メソッドを呼び出して、このクエリの一意の結果を取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Distinct_UnionAll](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_distinct_unionall)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Distinct_UnionAll](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_distinct_unionall)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="query" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Where">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; Where (string predicate, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!T&gt; Where(string predicate, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectQuery`1.Where(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="predicate" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="predicate">フィルター述語。</param>
+        <param name="parameters">このメソッドで使用される 0 個以上のパラメーター。</param>
+        <summary>指定されたフィルター条件と一致する結果となるようにクエリを制限します。</summary>
+        <returns>新しい<see cref="T:System.Data.Objects.ObjectQuery`1" />は元のインスタンスに相当するインスタンス[場所](~/docs/framework/data/adonet/ef/language-reference/where-entity-sql.md)適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectQuery%601> という条件でフィルターされた既存のクエリの結果を含む `"it.ProductID = 900"` を新たに作成します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Where](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_where)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Where](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_where)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="predicate" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="parameters" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="predicate" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

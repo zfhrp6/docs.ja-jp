@@ -1,0 +1,427 @@
+<Type Name="ListViewItem+ListViewSubItem" FullName="System.Windows.Forms.ListViewItem+ListViewSubItem">
+  <TypeSignature Language="C#" Value="public class ListViewItem.ListViewSubItem" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi serializable beforefieldinit ListViewItem/ListViewSubItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ListViewSubItemConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サブ項目を表す、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.ListView>コントロールによって定義されている項目の一覧を表示、<xref:System.Windows.Forms.ListViewItem>クラスです。 各<xref:System.Windows.Forms.ListViewItem>によって定義されているサブアイテム オブジェクトを格納できる、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>クラスです。 サブ項目が表示されるときに、<xref:System.Windows.Forms.ListView.View%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロールに設定されている<xref:System.Windows.Forms.View.Details>です。 通常、サブ項目には、親項目に関連する情報が含まれて。 たとえば場合、<xref:System.Windows.Forms.ListView>コントロールは、注文を表す項目を表示、各項目は、注文番号を表示でした。 注文された製品などの情報を表示するには、各項目、注文、品目の数量と注文品目の合計金額には、サブ項目を追加できませんでした。 異なり<xref:System.Windows.Forms.ListViewItem>オブジェクト、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトは、ユーザーが直接編集することはできません (ユーザーが編集できる<xref:System.Windows.Forms.ListViewItem>オブジェクトの場合、<xref:System.Windows.Forms.ListView.LabelEdit%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロールに設定されている`true`)。  
+  
+ プロパティにサブ項目のテキストのスタイルで表示される場合の影響を与えるものに限られますサブ項目が、ユーザーが直接編集できません、イメージを表示できないため、<xref:System.Windows.Forms.ListView>コントロール。 場合、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>のプロパティ、<xref:System.Windows.Forms.ListView>サブ項目を格納しているに設定されている`false`、使用することができます、 <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Font%2A>、 <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor%2A>、および<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>テキストの表示に適用されるスタイルを変更するプロパティです。 通常、項目とサブ項目のスタイルは、同じである、 <xref:System.Windows.Forms.ListView> 、特定のスタイルを変更する場合は、コントロール<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>強調表示にするには、異なる形で表示する項目のこれらのプロパティを行うこともできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.ListView>を 3 つのコントロール<xref:System.Windows.Forms.ListViewItem>指定されたオブジェクトと 3 つ<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトの各項目に指定します。 例でも作成<xref:System.Windows.Forms.ColumnHeader>詳細ビューで、サブ項目を表示するオブジェクト。 2 つ<xref:System.Windows.Forms.ImageList>オブジェクトは用のイメージを提供するコード例では作成も、<xref:System.Windows.Forms.ListViewItem>オブジェクト。 これら<xref:System.Windows.Forms.ImageList>オブジェクトに追加されます、<xref:System.Windows.Forms.ListView.LargeImageList%2A>と<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 例では、作成するのには、次のプロパティを使用して、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+-   <xref:System.Windows.Forms.ListView.View%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.LabelEdit%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.CheckBoxes%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.FullRowSelect%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.GridLines%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.Sorting%2A>  
+  
+ コードを追加する必要があります、<xref:System.Windows.Forms.Form>コンス トラクターまたは、フォーム上の別の方法の例で作成したメソッドを呼び出します。 例では、イメージがという名前の必要があります`MySmallImage1`、 `MySmallImage2`、 `MyLargeImage1`、および`MyLargeImage2`は C ドライブのルート ディレクトリにあります  
+  
+ [!code-cpp[ListViewExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListViewExample/CPP/form1.cpp#1)]
+ [!code-csharp[ListViewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewExample/CS/form1.cs#1)]
+ [!code-vb[ListViewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewSubItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.ListViewSubItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewSubItem (System.Windows.Forms.ListViewItem owner, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem owner, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.ListViewSubItem.#ctor(System.Windows.Forms.ListViewItem,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ListViewItem" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Forms.ListViewItem" />サブアイテムを所有している項目を表すです。</param>
+        <param name="text">サブアイテムを表示するテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />クラスを指定したオーナーとテキストを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewSubItem (System.Windows.Forms.ListViewItem owner, string text, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem owner, string text, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.ListViewSubItem.#ctor(System.Windows.Forms.ListViewItem,System.String,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ListViewItem" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Forms.ListViewItem" />サブアイテムを所有している項目を表すです。</param>
+        <param name="text">サブアイテムを表示するテキスト。</param>
+        <param name="foreColor">A<see cref="T:System.Drawing.Color" />サブ項目の前景色を表すです。</param>
+        <param name="backColor">A<see cref="T:System.Drawing.Color" />サブ項目の背景色を表すです。</param>
+        <param name="font">A<see cref="T:System.Drawing.Font" />サブ項目のテキストを表示するフォントを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />指定の所有者、テキスト、前景の色、背景色、およびフォントの値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブ項目のテキストの背景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />サブ項目のテキストの背景色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor%2A>サブ項目のテキストの背後に表示される色を変更するプロパティです。 このプロパティは、別の前景色および背景色の組み合わせを使用する場合に使用できます (を使用して、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>前景色を設定するプロパティ) を 1 つのサブアイテムを区別するためです。 たとえば、設定する、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor%2A>プロパティを<xref:System.Drawing.Color.Red%2A>を負の値を表示するサブ項目を識別します。  
+  
+ 場合、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>のプロパティ、<xref:System.Windows.Forms.ListViewItem>に設定されているサブアイテムを所有している`true`、このプロパティを設定しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外接する四角形を取得、<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />です。</summary>
+        <value>境界<see cref="T:System.Drawing.Rectangle" />の<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>に追加されていない、<xref:System.Windows.Forms.ListViewItem>所有または<xref:System.Windows.Forms.ListViewItem>に追加されていない、 <xref:System.Windows.Forms.ListView>、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Bounds%2A>プロパティが空白を返します<xref:System.Drawing.Rectangle>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブ項目によって表示されるテキストのフォントを設定します。</summary>
+        <value>コントロールによって表示されるテキストに適用される <see cref="T:System.Drawing.Font" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブアイテムのテキストに適用されるフォント スタイルを変更するのには、このプロパティを使用することができます。 場合、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>のプロパティ、<xref:System.Windows.Forms.ListViewItem>に設定されている`true`、このプロパティを変更する影響はありません。 <xref:System.Drawing.Font>は変更できません (つまり、そのプロパティのいずれかを調整できません)、割り当てることができますのみ、 <xref:System.Windows.Forms.Control.Font%2A> 、新しいプロパティ<xref:System.Drawing.Font>です。 ただし、既存のフォントで新しいフォントを基準とすることができます。  
+  
+ 太字にする既存のフォントを調整する方法の例を次に示します。  
+  
+```csharp  
+listViewItem1.SubItems[1].Font = new Font(listViewItem1.SubItems[1].Font,   
+       listViewItem1.SubItems[1].Font.Style | FontStyle.Bold);  
+```  
+  
+```vb  
+ListViewItem1.SubItems[1].Font = New Font(ListViewItem1.SubItems[1].Font, _   
+       ListViewItem1.SubItems[1].Font.Style Or FontStyle.Bold)  
+```  
+  
+ 場合、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>のプロパティ、<xref:System.Windows.Forms.ListViewItem>に設定されているサブアイテムを所有している`true`、このプロパティを設定しても効果はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>プロパティを`false`のカスタム スタイルを定義する<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクト。 設定する方法の例、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>と<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Font%2A>プロパティです。 例を実行するには、フォーム、および呼び出しに、次のコードを貼り付けます、`InitializeListView`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブ項目のテキストの前景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />サブ項目のテキストの前景色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>サブ項目のテキストの色を変更するプロパティです。 このプロパティは、別の前景色および背景色の組み合わせを使用する場合に使用できます (を使用して、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor%2A>背景色を設定するプロパティ) を 1 つの項目を区別するためです。 たとえば、設定する、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>プロパティを<xref:System.Drawing.Color.Red%2A>それらに関連付けられている負の数を持つ項目を識別します。  
+  
+ 場合、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>のプロパティ、<xref:System.Windows.Forms.ListViewItem>に設定されているサブアイテムを所有している`true`、このプロパティを設定しても効果はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>プロパティを`false`のカスタム スタイルを定義する<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクト。 設定する方法の例、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>と<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Font%2A>プロパティです。 例を実行するには、フォーム、および呼び出しに、次のコードを貼り付けます、`InitializeListView`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" /> の名前を取得または設定します。</summary>
+        <value>名前、 <see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />、または空の文字列 ("")、名前が設定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>で、<xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetStyle">
+      <MemberSignature Language="C#" Value="public void ResetStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.ListViewSubItem.ResetStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のフォントおよび色にサブ項目に適用されるスタイルをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、フォント、背景色、およびサブ項目に適用される前景色色の設定をリセットすることができます。 スタイルがリセットされる、既定のフォント、背景色、前景の色の設定を使用して、サブ項目が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のサブ項目のスタイルをリセットする方法を示します、<xref:System.Windows.Forms.ListViewItem>を使用すると、<xref:System.Windows.Forms.ListView.TopItem%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ResetStyle%2A>メソッドです。 例を実行するには、という名前のボタンを含むフォームに次のコードを貼り付けます`Button1`を呼び出すと、`InitializeListView`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewItemStyle#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ListViewItemStyle#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ListViewItemStyle#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関するデータを格納するオブジェクト、<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" /> に関するデータを格納している <see cref="T:System.Object" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Tag%2A>プロパティを使用する追加情報を格納する、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListViewSubItem.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブ項目のテキストを設定します。</summary>
+        <value>サブアイテムを表示するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Text%2A>プロパティでは、サブ項目に表示されるテキストを決定することができます。 使用することができます、 <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor%2A>、 <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>、および<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Font%2A>プロパティをテキストを表示する方法を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.ListViewSubItem.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

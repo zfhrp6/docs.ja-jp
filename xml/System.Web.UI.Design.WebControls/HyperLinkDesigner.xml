@@ -1,0 +1,140 @@
+<Type Name="HyperLinkDesigner" FullName="System.Web.UI.Design.WebControls.HyperLinkDesigner">
+  <TypeSignature Language="C#" Value="public class HyperLinkDesigner : System.Web.UI.Design.TextControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HyperLinkDesigner extends System.Web.UI.Design.TextControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.HyperLinkDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.TextControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.Design.SupportsPreviewControl(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.HyperLink" /> Web サーバー コントロールに、ビジュアル デザイナーでのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLink>コントロールが別の Web ページに移動するよう、クライアント ブラウザーへのリンクを作成します。  
+  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.HyperLink>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner>クラスは、デザイン時サポートを提供、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+ <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.HyperLink>コントロールをデザイン時です。 <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.OnComponentChanged%2A>関連付けられているコントロールへの変更がある場合に、メソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例からクラスを派生する方法を示して、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner>クラス、メソッドをオーバーライドし、プロパティ値を指定します。 2 番目の例からコントロールを派生させる方法を示して、<xref:System.Web.UI.WebControls.HyperLink>を制御し、派生したコントロールに属性を適用します。  
+  
+ 次のコード例を派生させる方法を示しています、`CustomHyperLinkDesigner`クラス、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner>クラスです。 も優先、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.GetDesignTimeHtml%2A>の既定値を指定するメソッド、 <xref:System.Web.UI.WebControls.HyperLink.Text%2A> 、元の値の場合は、プロパティ、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>空の文字列 ("") です。 これにより、デザイン時に関連付けられているコントロールを表示するには、します。  
+  
+ [!code-csharp[HyperLinkDesigner_Resubmit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/CS/CustomHyperLinkDesigner.cs#1)]
+ [!code-vb[HyperLinkDesigner_Resubmit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/VB/customhyperlinkdesigner.vb#1)]  
+  
+ 次のコード例を派生させる方法を示しています、`CustomHyperLink`から制御、<xref:System.Web.UI.WebControls.HyperLink>を制御し、適用、<xref:System.ComponentModel.DesignerAttribute>属性を`CustomHyperLink`コントロールに関連付けること、`CustomHyperLinkDesigner`です。  
+  
+ [!code-csharp[HyperLinkDesigner_Resubmit#3](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/CS/CustomHyperLink.cs#3)]
+ [!code-vb[HyperLinkDesigner_Resubmit#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/VB/customhyperlink.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HyperLinkDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HyperLinkDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.HyperLinkDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.HyperLink>コントロールまたはのコピー、<xref:System.Web.UI.WebControls.HyperLink>デザイン サーフェイス上のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HyperLinkDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>デザイン時に関連付けられているハイパーリンク コントロールを表示するために使用するマークアップを含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.GetDesignTimeHtml%2A>メソッド、デザイン時のマークアップを生成、関連付けられている<xref:System.Web.UI.WebControls.HyperLink>コントロール。 メソッドは、最初のローカル コピーを保存、 <xref:System.Web.UI.WebControls.HyperLink.Text%2A>、 <xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>、および<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティだけでなく<xref:System.Web.UI.Control.Controls%2A>子コレクション。 元の値がある場合、これらのプロパティの既定値を提供`null`または空白にします。 <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.GetDesignTimeHtml%2A>メソッドを呼び出します、<xref:System.Web.UI.Design.TextControlDesigner.GetDesignTimeHtml%2A>マークアップを生成するメソッドの基本プロパティおよび子コントロールのコレクションが必要な場合、元の値に復元しています。  
+  
+   
+  
+## Examples  
+ 次のコード例を派生させる方法を示しています、`CustomHyperLinkDesigner`クラス、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner>クラスです。 も優先、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.GetDesignTimeHtml%2A>の既定値を指定するメソッド、 <xref:System.Web.UI.WebControls.HyperLink.Text%2A> 、元の値の場合は、プロパティ<xref:System.Web.UI.WebControls.HyperLink.Text%2A>空の文字列 ("") です。 これにより、デザイン時に関連付けられているコントロールを表示するには、します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.HyperLinkDesigner>クラスです。  
+  
+ [!code-csharp[HyperLinkDesigner_Resubmit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/CS/CustomHyperLinkDesigner.cs#1)]
+ [!code-vb[HyperLinkDesigner_Resubmit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/VB/customhyperlinkdesigner.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentChanged">
+      <MemberSignature Language="C#" Value="public override void OnComponentChanged (object sender, System.ComponentModel.Design.ComponentChangedEventArgs ce);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnComponentChanged(object sender, class System.ComponentModel.Design.ComponentChangedEventArgs ce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HyperLinkDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="ce" Type="System.ComponentModel.Design.ComponentChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソースであるオブジェクト。</param>
+        <param name="ce">イベント データを含んでいる <see cref="T:System.ComponentModel.Design.ComponentChangedEventArgs" /> オブジェクト。</param>
+        <summary>関連付けられたコントロールに変更があるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.OnComponentChanged%2A>メソッドが呼び出されます、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged> 、関連するイベント<xref:System.Web.UI.WebControls.HyperLink>コントロールが発生します。 コントロールのプロパティの変更に応答通常、これは (たとえば、**プロパティ**グリッドの変更)。  
+  
+ <xref:System.Web.UI.Design.WebControls.HyperLinkDesigner.OnComponentChanged%2A>を作成、<xref:System.ComponentModel.Design.ComponentChangedEventArgs>オブジェクトを呼び出し、続いて、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>メソッドの基本します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

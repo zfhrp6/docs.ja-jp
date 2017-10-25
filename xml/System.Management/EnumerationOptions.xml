@@ -1,0 +1,414 @@
+<Type Name="EnumerationOptions" FullName="System.Management.EnumerationOptions">
+  <TypeSignature Language="C#" Value="public class EnumerationOptions : System.Management.ManagementOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EnumerationOptions extends System.Management.ManagementOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Management.EnumerationOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クエリおよびオプションの列挙に関連するオブジェクトの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例、<xref:System.Management.EnumerationOptions>の変数、<xref:System.Management.EnumerationOptions>コンス トラクターとし、WMI クラスとそのサブクラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_EnumerationOptions#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EnumerationOptions/cs/EnumerationOptions.cs#1)]
+ [!code-vb[wminet_EnumerationOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EnumerationOptions/vb/EnumerationOptions.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnumerationOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EnumerationOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Management.EnumerationOptions" /> (既定値は、新機能の個々 のプロパティの説明を参照してください)、既定値を持つクラス。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Management.EnumerationOptions>の変数、<xref:System.Management.EnumerationOptions>コンス トラクターとし、WMI クラスとそのサブクラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_EnumerationOptions#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EnumerationOptions/cs/EnumerationOptions.cs#1)]
+ [!code-vb[wminet_EnumerationOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EnumerationOptions/vb/EnumerationOptions.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnumerationOptions (System.Management.ManagementNamedValueCollection context, TimeSpan timeout, int blockSize, bool rewindable, bool returnImmediatley, bool useAmendedQualifiers, bool ensureLocatable, bool prototypeOnly, bool directRead, bool enumerateDeep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementNamedValueCollection context, valuetype System.TimeSpan timeout, int32 blockSize, bool rewindable, bool returnImmediatley, bool useAmendedQualifiers, bool ensureLocatable, bool prototypeOnly, bool directRead, bool enumerateDeep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EnumerationOptions.#ctor(System.Management.ManagementNamedValueCollection,System.TimeSpan,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Management.ManagementNamedValueCollection" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="blockSize" Type="System.Int32" />
+        <Parameter Name="rewindable" Type="System.Boolean" />
+        <Parameter Name="returnImmediatley" Type="System.Boolean" />
+        <Parameter Name="useAmendedQualifiers" Type="System.Boolean" />
+        <Parameter Name="ensureLocatable" Type="System.Boolean" />
+        <Parameter Name="prototypeOnly" Type="System.Boolean" />
+        <Parameter Name="directRead" Type="System.Boolean" />
+        <Parameter Name="enumerateDeep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">プロバイダーに渡されることがプロバイダーに固有の情報を含むオプションのコンテキスト オブジェクト。</param>
+        <param name="timeout">結果の列挙処理のタイムアウト値。</param>
+        <param name="blockSize">WMI から一度に取得する項目の数。</param>
+        <param name="rewindable">
+          <see langword="true" />結果セットが巻き戻し可能なことを示します (走査できるように複数) です。それ以外の場合、<see langword="false" />です。</param>
+        <param name="returnImmediatley">
+          <see langword="true" />操作がすぐに返すかを表示する (セミコロン sync) またはすべての結果があるまでブロックします。それ以外の場合、<see langword="false" />です。</param>
+        <param name="useAmendedQualifiers">
+          <see langword="true" />返されたオブジェクトが修正済みの (ロケールに対応) 修飾子; を含める必要がありますを表示するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="ensureLocatable">
+          <see langword="true" />返されたすべてのオブジェクトが有効なパスを確認それ以外の場合、<see langword="false" />です。</param>
+        <param name="prototypeOnly">
+          <see langword="true" />結果の実際の結果ではなくセットのプロトタイプを返すそれ以外の場合、<see langword="false" />です。</param>
+        <param name="directRead">
+          <see langword="true" />派生クラスからも; または指定したクラスのみのオブジェクトを取得するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="enumerateDeep">
+          <see langword="true" />サブクラスで再帰的な列挙を使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.EnumerationOptions" />クエリまたは列挙型、ユーザーがさまざまなオプションの値を指定できるようにするために使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Management.EnumerationOptions>の変数、<xref:System.Management.EnumerationOptions>コンス トラクターとし、WMI クラスとそのサブクラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_EnumerationOptions-10#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EnumerationOptions-10/cs/EnumerationOptions-10.cs#1)]
+ [!code-vb[wminet_EnumerationOptions-10#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EnumerationOptions-10/vb/EnumerationOptions-10.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlockSize">
+      <MemberSignature Language="C#" Value="public int BlockSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BlockSize" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.BlockSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはブロック操作のブロック サイズを設定します。 コレクションの列挙、ときに、WMI が指定されたサイズのグループ内の結果を返します。</summary>
+        <value>返します、<see cref="T:System.Int32" />ブロック操作でブロック サイズで使用される値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 既定値は 1 です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Management.EnumerationOptions>の変数、<xref:System.Management.EnumerationOptions>コンス トラクターとし、WMI クラスとそのサブクラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_EnumerationOptions_BlockSize#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EnumerationOptions_BlockSize/cs/EnumerationOptions_BlockSize.cs#1)]
+ [!code-vb[wminet_EnumerationOptions_BlockSize#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EnumerationOptions_BlockSize/vb/EnumerationOptions_BlockSize.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EnumerationOptions.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectRead">
+      <MemberSignature Language="C#" Value="public bool DirectRead { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DirectRead" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.DirectRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか*の直接アクセス*スーパー クラスまたは派生クラスに関係なく、指定したクラスの wmi プロバイダーが要求されました。</summary>
+        <value>返します、<see cref="T:System.Boolean" />を示す値かどうか*の直接アクセス*wmi プロバイダーは、指定したクラスの要求。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`派生または継承; に関係なく、指定したクラスのオブジェクトを受信する必要がありますだけの場合それ以外の場合、`false`です。 既定値は `false` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Management.EnumerationOptions>の変数、<xref:System.Management.EnumerationOptions>コンス トラクターとし、WMI クラスとそのサブクラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_EnumerationOptions_DirectRead#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EnumerationOptions_DirectRead/cs/EnumerationOptions_DirectRead.cs#1)]
+ [!code-vb[wminet_EnumerationOptions_DirectRead#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EnumerationOptions_DirectRead/vb/EnumerationOptions_DirectRead.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureLocatable">
+      <MemberSignature Language="C#" Value="public bool EnsureLocatable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnsureLocatable" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.EnsureLocatable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか返されるオブジェクトに特定できる情報を示す値。 これにより、システムのプロパティなど**_ _path**、 **_relpath**、および**__SERVER**、null 以外です。 このフラグは、クエリでのみ使用できます、列挙型では無視されます。</summary>
+        <value>返します、<see cref="T:System.Boolean" />にオブジェクトが返されるかどうかを示す値に特定できる情報が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`WMI は必要がありますすべて返されるオブジェクトがある有効なパスを確認してください。 場合それ以外の場合、`false`です。 既定値は `false` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDeep">
+      <MemberSignature Language="C#" Value="public bool EnumerateDeep { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnumerateDeep" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.EnumerateDeep" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したスーパークラスから派生したすべてのクラスに再帰的な列挙が要求されたかどうかを示す値を設定します。 場合<see langword="false" />、のみ、即時の派生クラスのメンバーが返されます。</summary>
+        <value>返します、<see cref="T:System.Boolean" />指定スーパークラスから派生したすべてのクラスに再帰的な列挙を要求するかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`指定したスーパークラスから派生したすべてのクラスに再帰的な列挙が要求されている場合それ以外の場合、`false`です。 既定値は `false` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Management.EnumerationOptions>の変数、<xref:System.Management.EnumerationOptions>コンス トラクターとし、WMI クラスとそのサブクラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_EnumerationOptions_EnumerateDeep#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EnumerationOptions_EnumerateDeep/cs/EnumerationOptions_EnumerateDeep.cs#1)]
+ [!code-vb[wminet_EnumerationOptions_EnumerateDeep#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EnumerationOptions_EnumerateDeep/vb/EnumerationOptions_EnumerateDeep.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrototypeOnly">
+      <MemberSignature Language="C#" Value="public bool PrototypeOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrototypeOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.PrototypeOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリが結果の実際の結果ではなくセットのプロトタイプを返すかどうかを示す値を設定します。 このフラグは、プロトタイプの作成に使用されます。</summary>
+        <value>返します、<see cref="T:System.Boolean" />クエリが結果の実際の結果ではなくセットのプロトタイプを返すかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`クエリが結果の実際の結果ではなくセットのプロトタイプを返す場合それ以外の場合、`false`です。 既定値は `false` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnImmediately">
+      <MemberSignature Language="C#" Value="public bool ReturnImmediately { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReturnImmediately" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.ReturnImmediately" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同期または半同期的に呼び出された操作を実行するかどうかを示す値を設定します。 このプロパティ設定されている場合<see langword="true" />列挙が呼び出され、呼び出しが直ちに返されます。 結果の実際の取得が、結果のコレクションを走査するときに発生します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />同期または半同期的に呼び出された操作を実行するかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合は、同期または半形式で呼び出された操作を実行する必要があります。それ以外の場合、`false`です。 既定値は `true` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rewindable">
+      <MemberSignature Language="C#" Value="public bool Rewindable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Rewindable" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.Rewindable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コレクションが巻き戻し可能と見なされるかどうかを示す値を設定します。 場合<see langword="true" />コレクション内のオブジェクトは、複数の列挙型の使用可能な保持されます。 場合<see langword="false" />コレクションは列挙型の 1 回にのみできます。</summary>
+        <value>返します、<see cref="T:System.Boolean" />コレクションが巻き戻し可能と見なされるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合は、コレクションは巻き戻し可能と見なされますそれ以外の場合、`false`です。 既定値は `true` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAmendedQualifiers">
+      <MemberSignature Language="C#" Value="public bool UseAmendedQualifiers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAmendedQualifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EnumerationOptions.UseAmendedQualifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または WMI から返されるオブジェクトが変更された情報を含めるかどうかを示す値を設定します。 通常、変更された情報は、オブジェクトやプロパティの説明など、WMI オブジェクトにアタッチされたローカライズ可能な情報です。</summary>
+        <value>返します、 <see cref="T:System.Boolean" /> WMI からのオブジェクトが返されるかどうかを示す値が変更された情報を含める必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 説明と他の修正済みの情報が関心のあるにない場合は、このプロパティ値を設定`false`方が効率的です。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`WMI が修正済みの情報を含める必要がありますから返されるオブジェクトの場合それ以外の場合、`false`です。 既定値は `false` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,732 @@
+<Type Name="ManagementBaseObject" FullName="System.Management.ManagementBaseObject">
+  <TypeSignature Language="C#" Value="public class ManagementBaseObject : System.ComponentModel.Component, ICloneable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ManagementBaseObject extends System.ComponentModel.Component implements class System.ICloneable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementBaseObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>管理オブジェクトの基本要素が含まれています。 これは、特定の管理オブジェクト クラスを基本クラスとして機能します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ManagementBaseObject (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">宛先 (を参照してください<see cref="T:System.Runtime.Serialization.StreamingContext" />) このシリアル化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementBaseObject" />はシリアル化するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassPath">
+      <MemberSignature Language="C#" Value="public virtual System.Management.ManagementPath ClassPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementPath ClassPath" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementBaseObject.ClassPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理オブジェクトのクラスへのパスを取得します。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementPath" />管理オブジェクトのクラスへのクラス パスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.ManagementPath>管理オブジェクトのクラスへのパスを表すです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、root \cimv2 名前空間内にクラス パスを持つすべてのクラスを一覧表示します。  
+  
+ \\\MyBox\root\cimv2:Win32_LogicalDisk=「c:」オブジェクト、クラスのパスは、 \\\MyBox\root\cimv2:Win32_LogicalDisk です。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_ClassPath#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_ClassPath/cs/ManagementBaseObject_ClassPath.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_ClassPath#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_ClassPath/vb/ManagementBaseObject_ClassPath.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>新しい複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public bool CompareTo (System.Management.ManagementBaseObject otherObject, System.Management.ComparisonSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CompareTo(class System.Management.ManagementBaseObject otherObject, valuetype System.Management.ComparisonSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.CompareTo(System.Management.ManagementBaseObject,System.Management.ComparisonSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherObject" Type="System.Management.ManagementBaseObject" />
+        <Parameter Name="settings" Type="System.Management.ComparisonSettings" />
+      </Parameters>
+      <Docs>
+        <param name="otherObject">このオブジェクトと比較するオブジェクト。</param>
+        <param name="settings">オブジェクトを比較する方法のオプションです。</param>
+        <summary>指定したオプションに基づいて、別に、このオブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />比較するオブジェクトが指定したオプションに従って等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ManagementBaseObject によって使用されているアンマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>2 つの管理オブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />インスタンスの場合<see cref="T:System.Management.ManagementBaseObject" />; このインスタンスと同じオブジェクトを表す、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能し、ハッシュ アルゴリズムやハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">宛先 (を参照してください<see cref="T:System.Runtime.Serialization.StreamingContext" />) このシリアル化します。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />このインスタンスによって表されるフィールドを逆シリアル化に必要なデータです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyQualifierValue">
+      <MemberSignature Language="C#" Value="public object GetPropertyQualifierValue (string propertyName, string qualifierName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetPropertyQualifierValue(string propertyName, string qualifierName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.GetPropertyQualifierValue(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="qualifierName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">修飾子が属しているプロパティの名前。</param>
+        <param name="qualifierName">関心のあるプロパティ修飾子の名前。</param>
+        <summary>指定したプロパティの修飾子の値を返します。</summary>
+        <returns>指定した修飾子の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementBaseObject.GetPropertyQualifierValue%2A>の値を表示する方法、**説明**で指定したプロパティの各修飾子、 **Win32_Process**クラスです。  詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_GetPropertyQualifierValue#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetPropertyQualifierValue/cs/ManagementBaseObject_GetPropertyQualifierValue.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_GetPropertyQualifierValue#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetPropertyQualifierValue/vb/ManagementBaseObject_GetPropertyQualifierValue.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetPropertyValue (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetPropertyValue(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.GetPropertyValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">目的のプロパティの名前。</param>
+        <summary>プロパティの値を等価のアクセサーを取得します。</summary>
+        <returns>指定したプロパティの値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、すべてのローカル コンピューターで実行中のプロセスの名前が一覧表示します。 コードを使用して、<xref:System.Management.ManagementBaseObject.GetPropertyValue%2A>プロセス名を取得します。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_GetPropertyValue#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetPropertyValue/cs/ManagementBaseObject_GetPropertyValue.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_GetPropertyValue#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetPropertyValue/vb/ManagementBaseObject_GetPropertyValue.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQualifierValue">
+      <MemberSignature Language="C#" Value="public object GetQualifierValue (string qualifierName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetQualifierValue(string qualifierName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.GetQualifierValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="qualifierName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="qualifierName">目的の修飾子の名前。</param>
+        <summary>指定された修飾子の値を取得します。</summary>
+        <returns>指定した修飾子の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を表示、 **Win32_Process**クラスの記述を使用して、<xref:System.Management.ManagementBaseObject.GetQualifierValue%2A>メソッドです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_GetQualifierValue#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetQualifierValue/cs/ManagementBaseObject_GetQualifierValue.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_GetQualifierValue#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetQualifierValue/vb/ManagementBaseObject_GetQualifierValue.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public string GetText (System.Management.TextFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetText(valuetype System.Management.TextFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.GetText(System.Management.TextFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Management.TextFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">要求されたテキスト形式です。</param>
+        <summary>指定された形式でオブジェクトのテキスト表現を返します。</summary>
+        <returns>指定された形式でオブジェクトのテキスト表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI をサポートする唯一の形式は、現在のところ、*マネージ オブジェクト形式*(MOF)。 今後、他の形式はサポートを拡張マークアップ言語 (XML) など。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の MOF コードの表示、 **Win32_Process**クラスを使用して、<xref:System.Management.ManagementBaseObject.GetText%2A>メソッドです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_GetText#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetText/cs/ManagementBaseObject_GetText.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_GetText#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_GetText/vb/ManagementBaseObject_GetText.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string propertyName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementBaseObject.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">目的のプロパティの名前。</param>
+        <summary>表記を使用してプロパティ値へのアクセスを取得します。 このプロパティは、のインデクサー、<see cref="T:System.Management.ManagementBaseObject" />クラスです。 型によって定義された既定のインデックス付きプロパティを使用することができますが、明示的に独自を定義できません。 ただしを指定する、 **expando**クラスの属性が自動的に、既定値のインデックス付きプロパティの型がオブジェクトと、インデックスの型は文字列を提供します。</summary>
+        <value>返します、<see cref="T:System.Object" />特定のクラス プロパティの管理オブジェクトを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 要求されたプロパティの値を含むオブジェクトのインスタンス。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、初期化する方法を示します、<xref:System.Management.ManagementClass>の変数、<xref:System.Management.ManagementClass>コンス トラクターと WMI クラスのすべてのインスタンスを取得します。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_Item#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_Item/cs/ManagementBaseObject_Item.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_Item#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_Item/vb/ManagementBaseObject_Item.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator IntPtr (System.Management.ManagementBaseObject managementObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname native int op_Explicit(class System.Management.ManagementBaseObject managementObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.op_Explicit(System.Management.ManagementBaseObject)~System.IntPtr" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="managementObject" Type="System.Management.ManagementBaseObject" />
+      </Parameters>
+      <Docs>
+        <param name="managementObject">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public virtual System.Management.PropertyDataCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.PropertyDataCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementBaseObject.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.PropertyDataCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Management.PropertyData" />管理オブジェクトのプロパティを記述するオブジェクト。</summary>
+        <value>返します、<see cref="T:System.Management.PropertyDataCollection" />管理オブジェクトのプロパティを保持します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.PropertyDataCollection>管理オブジェクトのプロパティを表すです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementBaseObject.Properties%2A>プロパティの値を表示する、**説明**で指定したプロパティの各修飾子、 **Win32_Process**クラスです。  詳細については、 **Win32_Process**クラス、MSDN ライブラリで Windows Management Instrumentation のマニュアルを参照してください[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_Properties#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_Properties/cs/ManagementBaseObject_Properties.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_Properties/vb/ManagementBaseObject_Properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Qualifiers">
+      <MemberSignature Language="C#" Value="public virtual System.Management.QualifierDataCollection Qualifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.QualifierDataCollection Qualifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementBaseObject.Qualifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.QualifierDataCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Management.QualifierData" />管理オブジェクトで定義されているオブジェクト。 など、コレクション内の各要素に情報が保持している、*修飾子*名前、値、および*フレーバー*です。</summary>
+        <value>返します、<see cref="T:System.Management.QualifierDataCollection" />修飾子を指定した管理オブジェクトを保持します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.QualifierDataCollection>管理オブジェクトで定義された修飾子を表すです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementBaseObject.Qualifiers%2A>プロパティの値を表示する、**説明**で指定したプロパティの各修飾子、 **Win32_Process**クラスです。  詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_Qualifiers#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_Qualifiers/cs/ManagementBaseObject_Qualifiers.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_Qualifiers#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_Qualifiers/vb/ManagementBaseObject_Qualifiers.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyQualifierValue">
+      <MemberSignature Language="C#" Value="public void SetPropertyQualifierValue (string propertyName, string qualifierName, object qualifierValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPropertyQualifierValue(string propertyName, string qualifierName, object qualifierValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.SetPropertyQualifierValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="qualifierName" Type="System.String" />
+        <Parameter Name="qualifierValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">修飾子が属しているプロパティの名前。</param>
+        <param name="qualifierName">関心のあるプロパティ修飾子の名前。</param>
+        <param name="qualifierValue">修飾子の新しい値。</param>
+        <summary>指定したプロパティ修飾子の値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyValue">
+      <MemberSignature Language="C#" Value="public void SetPropertyValue (string propertyName, object propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPropertyValue(string propertyName, object propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.SetPropertyValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">変更するプロパティの名前。</param>
+        <param name="propertyValue">このプロパティの新しい値。</param>
+        <summary>名前付きのプロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetQualifierValue">
+      <MemberSignature Language="C#" Value="public void SetQualifierValue (string qualifierName, object qualifierValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetQualifierValue(string qualifierName, object qualifierValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.SetQualifierValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="qualifierName" Type="System.String" />
+        <Parameter Name="qualifierValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="qualifierName">設定される修飾子の名前。 このパラメーターを null にすることはできません。</param>
+        <param name="qualifierValue">設定する値。</param>
+        <summary>名前付きの修飾子の値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementBaseObject.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> のシリアル化に必要な情報を含む <see cref="T:System.Management.ManagementBaseObject" />。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ソースと関連付けられているシリアル化されたストリームの先を含む、<see cref="T:System.Management.ManagementBaseObject" />です。</param>
+        <summary>実装して、<see cref="T:System.Runtime.Serialization.ISerializable" />インターフェイスし、シリアル化に必要なデータを返します、<see cref="T:System.Management.ManagementBaseObject" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemProperties">
+      <MemberSignature Language="C#" Value="public virtual System.Management.PropertyDataCollection SystemProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.PropertyDataCollection SystemProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementBaseObject.SystemProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.PropertyDataCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理オブジェクト (たとえば、クラス名、サーバー、および名前空間) の WMI システム プロパティのコレクションを取得します。 WMI のシステム プロパティの名前「_ _」で始まります。</summary>
+        <value>返します、<see cref="T:System.Management.PropertyDataCollection" />管理オブジェクトのシステム プロパティを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.PropertyDataCollection>管理オブジェクトのシステム プロパティを表すです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Management.ManagementBaseObject.SystemProperties%2A>のシステム プロパティの値と名前を表示するプロパティを**Win32_Process**クラスです。 詳細については、 **Win32_Process**クラス、http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_ManagementBaseObject_SystemProperties#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_SystemProperties/cs/ManagementBaseObject_SystemProperties.cs#1)]
+ [!code-vb[wminet_ManagementBaseObject_SystemProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementBaseObject_SystemProperties/vb/ManagementBaseObject_SystemProperties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2136 @@
+<Type Name="Conversion" FullName="Microsoft.VisualBasic.Conversion">
+  <TypeSignature Language="C#" Value="public sealed class Conversion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Conversion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Conversion" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Conversion" />モジュールには、さまざまな変換操作を実行する手順が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語のキーワードとランタイム ライブラリ メンバーを 10 進数に変換するサポートを別の数値の文字列、数値、文字列および 1 つのデータを入力します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CTypeDynamic">
+      <MemberSignature Language="C#" Value="public static object CTypeDynamic (object Expression, Type TargetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CTypeDynamic(object Expression, class System.Type TargetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.CTypeDynamic(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="TargetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">変換対象のオブジェクト。</param>
+        <param name="TargetType">型、オブジェクトに変換します。</param>
+        <summary>オブジェクトを指定した型に変換します。</summary>
+        <returns>オブジェクトが実行時に、要求されたターゲットの種類。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CTypeDynamic`メソッドとして渡されたオブジェクトの変換、`Expression`パラメーターで指定された型を`TargetType`パラメーター。 オブジェクトがオブジェクトを動的オブジェクトである場合、`CTypeDynamic`メソッドには、使用できる動的な変換が適用されます。  
+  
+ `CTypeDynamic`メソッドには、オブジェクト自体で定義された変換セマンティクスに従っての動的変換が適用されます。 動的オブジェクトから継承している場合<xref:System.Dynamic.DynamicObject>、`CTypeDynamic`メソッドが最初に、ユーザー定義の静的な変換を使用して、変換を実行しようとします。 ユーザー定義の静的な変換に失敗した場合、`CTypeDynamic`メソッドは動的な変換を使用して変換を実行しようとしています。 動的オブジェクトを実装する場合<xref:System.Dynamic.IDynamicMetaObjectProvider>、`CTypeDynamic`メソッドでは、ユーザー定義の静的な変換での動的変換を優先順位が得られます。  
+  
+   
+  
+## Examples  
+ 次の例では、`CTypeDynamic`動的オブジェクトによって定義された変換を使用して動的オブジェクトを文字列に変換します。  
+  
+```vb  
+Imports System.Dynamic  
+  
+Module Module1  
+    Sub Main()  
+        Dim dyn As Object = New SampleDynamicObject  
+        Dim sampleString = CTypeDynamic(dyn, GetType(String))  
+        Console.WriteLine(sampleString)  
+    End Sub  
+End Module  
+  
+Class SampleDynamicObject  
+    Inherits DynamicObject  
+  
+    Public Overrides Function TryConvert(ByVal binder As ConvertBinder,  
+                                         ByRef result As Object) As Boolean  
+  
+        If binder.Type = GetType(String) Then  
+            result = "Sample String"  
+            Return True  
+        End If  
+  
+        Return False  
+    End Function  
+End Class  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CTypeDynamic&lt;TargetType&gt;">
+      <MemberSignature Language="C#" Value="public static TargetType CTypeDynamic&lt;TargetType&gt; (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static !!TargetType CTypeDynamic&lt;TargetType&gt;(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.CTypeDynamic``1(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TargetType</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TargetType" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TargetType">型、オブジェクトに変換します。</typeparam>
+        <param name="Expression">変換対象のオブジェクト。</param>
+        <summary>オブジェクトを指定したジェネリック型に変換します。</summary>
+        <returns>要求されたジェネリック型と静的に型指定されたオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CTypeDynamic`メソッドとして渡されたオブジェクトの変換、`Expression`ジェネリック パラメーターの型によって指定された型のパラメーターです。 オブジェクトがオブジェクトを動的オブジェクトである場合、`CTypeDynamic`メソッドには、使用できる動的な変換が適用されます。  
+  
+ `CTypeDynamic`メソッドには、オブジェクト自体で定義された変換セマンティクスに従っての動的変換が適用されます。 動的オブジェクトから継承している場合<xref:System.Dynamic.DynamicObject>、`CTypeDynamic`メソッドが最初に、ユーザー定義の静的な変換を使用して、変換を実行しようとします。 ユーザー定義の静的な変換に失敗した場合、`CTypeDynamic`メソッドは動的な変換を使用して変換を実行しようとしています。 動的オブジェクトを実装する場合<xref:System.Dynamic.IDynamicMetaObjectProvider>、`CTypeDynamic`メソッドでは、ユーザー定義の静的な変換での動的変換を優先順位が得られます。  
+  
+   
+  
+## Examples  
+ 次の例では、`CTypeDynamic`動的オブジェクトによって定義された変換を使用して動的オブジェクトを文字列に変換します。  
+  
+```vb  
+Imports System.Dynamic  
+  
+Module Module1  
+    Sub Main()  
+        Dim dyn As Object = New SampleDynamicObject  
+        Dim str = CTypeDynamic(Of String)(dyn)  
+        Console.WriteLine(str)  
+    End Sub  
+End Module  
+  
+Class SampleDynamicObject  
+    Inherits DynamicObject  
+  
+    Public Overrides Function TryConvert(ByVal binder As ConvertBinder,  
+                                         ByRef result As Object) As Boolean  
+  
+        If binder.Type = GetType(String) Then  
+            result = "Sample String"  
+            Return True  
+        End If  
+  
+        Return False  
+    End Function  
+End Class  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorToString">
+      <MemberSignature Language="C#" Value="public static string ErrorToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static string ErrorToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.ErrorToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定のエラー番号に対応するエラー メッセージを返します。</summary>
+        <returns>最新の実行時エラーに対応するエラー メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ErrorToString`関数のプロパティの設定を調べ、`Err`を最新の実行時エラーを識別するオブジェクト。 戻り値、`ErrorToString`に対応する関数、`Description`のプロパティ、`Err`オブジェクト。 実行時エラーが発生していない場合`ErrorToString`長さ 0 の文字列を返します ("") です。  
+  
+ Visual basic 6.0 とそれ以前のバージョンではこの機能によって提供された、`Error`関数。  
+  
+   
+  
+## Examples  
+ 次のコードでは、`ErrorToString`関数を指定したエラーの番号に対応するエラー メッセージを表示します。  
+  
+ [!code-vb[VbVbalrCatRef#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ErrorNumber" /> が範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorToString">
+      <MemberSignature Language="C#" Value="public static string ErrorToString (int ErrorNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string ErrorToString(int32 ErrorNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.ErrorToString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ErrorNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ErrorNumber">省略可能です。 任意の有効なエラー番号。</param>
+        <summary>特定のエラー番号に対応するエラー メッセージを返します。</summary>
+        <returns>特定のエラー番号に対応するエラー メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ErrorToString`関数のプロパティの設定を調べ、`Err`を最新の実行時エラーを識別するオブジェクト。 戻り値、`ErrorToString`に対応する関数、`Description`のプロパティ、`Err`オブジェクト。 場合`ErrorNumber`有効なエラー番号が定義されていないが`ErrorToString`文字列を返します`"Application-defined or object-defined error."`場合`ErrorNumber`が有効でないエラーが発生します。 場合`ErrorNumber`を省略すると、メッセージ、一番最近に対応する実行時エラーが返されます。 実行時エラーが発生していない場合または`ErrorNumber`0 の場合は、`ErrorToString`長さ 0 の文字列を返します ("") です。  
+  
+ Visual basic 6.0 とそれ以前のバージョンではこの機能によって提供された、`Error`関数。  
+  
+   
+  
+## Examples  
+ 次のコードでは、`ErrorToString`関数を指定したエラーの番号に対応するエラー メッセージを表示します。  
+  
+ [!code-vb[VbVbalrCatRef#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ErrorNumber" /> が範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static decimal Fix (decimal Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.Decimal Fix(valuetype System.Decimal Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static double Fix (double Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 Fix(float64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static short Fix (short Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int16 Fix(int16 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static int Fix (int Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Fix(int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static long Fix (long Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int64 Fix(int64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static object Fix (object Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object Fix(object Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fix">
+      <MemberSignature Language="C#" Value="public static float Fix (float Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float32 Fix(float32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Fix(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (byte Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(unsigned int8 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (short Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(int16 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (int Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (long Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(int64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (object Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(object Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (sbyte Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(int8 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Byte)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (ushort Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(unsigned int16 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Int16)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (uint Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(unsigned int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Int32)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hex">
+      <MemberSignature Language="C#" Value="public static string Hex (ulong Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Hex(unsigned int64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Hex(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 16 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 16 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|場合`Number`は|16 進数を返します|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|任意の数値|最大 16 個の 16 進文字|  
+  
+ 適切な範囲の数値の前に直接 16 進数を表すことができる`&H`です。 たとえば、 `&H10` 16 進表記で 16 進数を表します。  
+  
+   
+  
+## Examples  
+ この例では、`Hex`数の 16 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Int64)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static decimal Int (decimal Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.Decimal Int(valuetype System.Decimal Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static double Int (double Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 Int(float64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static short Int (short Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int16 Int(int16 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static int Int (int Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Int(int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static long Int (long Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int64 Int(int64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static object Int (object Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object Int(object Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="public static float Int (float Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float32 Int(float32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Int(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 型の数値の<see langword="Double" />または有効な数値式です。 場合<c>数</c>含む<see langword="Nothing" />、<see langword="Nothing" />が返されます。</param>
+        <summary>数値の整数部分を返します。</summary>
+        <returns>数値の整数部分を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`Int`と`Fix`関数の小数部を削除する`Number`し、結果の整数値を返します。  
+  
+ 間の違い`Int`と`Fix`関数がいる場合`Number`が負の値、`Int`以下に負の整数を返します`Number`であるのに対し`Fix`より大きいか等しいに負の整数を返します`Number`です。 たとえば、 `Int` -8.4-9 を指定して`Fix`-8.4-8 を指定します。  
+  
+ `Fix(number)`等価します。`Sign(number) * Int(Abs(number)).`  
+  
+   
+  
+## Examples  
+ この例では、どのように`Int`と`Fix`関数は数値の整数部分を返します。 負の数の引数の場合、`Int`関数負の整数を返します数です。 小さい、`Fix`関数は、数以上に負の整数を返します。 次の例では、指定する必要があります`Option Strict Off`暗黙の型から変換のため`Double`を入力する`Integer`では許可されていない`Option Strict On`:  
+  
+ [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
+  
+ 使用することができます、`CInt`型に他のデータ型を明示的に変換する関数`Integer`で`Option Strict Off`です。 ただし、`CInt`数値の小数部の切り捨てではなく、最も近い整数に丸めます。 例:  
+  
+ [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
+  
+ 使用することができます、`CInt`関数への呼び出しの結果に`Fix`または`Int`丸め処理を行わずに整数に明示的な変換を実行します。 例:  
+  
+ [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
+  
+ 詳細については`CInt`を参照してください[型変換関数](~/docs/visual-basic/language-reference/functions/type-conversion-functions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">数が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">番号は、数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (byte Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(unsigned int8 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (short Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(int16 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (int Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (long Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(int64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (object Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(object Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (sbyte Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(int8 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Byte)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (ushort Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(unsigned int16 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Int16)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (uint Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(unsigned int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Int32)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oct">
+      <MemberSignature Language="C#" Value="public static string Oct (ulong Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Oct(unsigned int64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Oct(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 有効な数値式または<see langword="String" />式。</param>
+        <summary>数値の 8 進数の値を表す文字列を返します。</summary>
+        <returns>数値の 8 進数の値を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Number`整数を指定されていない評価される前に、最も近い整数に丸められます。  
+  
+|数値がの場合|年 10 月を返します。|  
+|-|-|  
+|Empty|ゼロ (0)|  
+|その他の任意の数|最大 22 8 進数の文字|  
+  
+ 適切な範囲の数値の前に直接 8 進数を表すことができる`&O`です。 たとえば、 `&O10` 10 進数 8 進表記です。  
+  
+   
+  
+## Examples  
+ この例では、`Oct`数値の 8 進数の値を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Int64)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Str">
+      <MemberSignature Language="C#" Value="public static string Str (object Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Str(object Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Str(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 <see langword="Object" />を含む任意の有効な数値式です。</param>
+        <summary>返します、<see langword="String" />数値の形式です。</summary>
+        <returns>返します、<see langword="String" />数値の形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 符号の先頭にスペースが予約されています常に数値が文字列に変換されると、`Number`です。 場合`Number`が正の値、返される文字列には、先頭にスペースが含まれているし、プラス記号を暗黙的に指定します。 マイナス記号 (-) と主要な領域がない、負の値が含まれます。  
+  
+ 使用して、`Format`数値を日付、時刻、または通貨として、または他のユーザー定義形式に変換する関数。 異なり、 `Str` 、関数、`Format`関数がの符号の先頭にスペースを含まない`Number`です。  
+  
+> [!NOTE]
+>  `Str`関数は、ピリオドだけを認識 (`.`) は有効な小数点区切り文字として。 (たとえば、国際対応のアプリケーションで別の桁区切り記号を使用している場合を使用して、`CStr`または`Format`数値を文字列に変換する関数。 特定のカルチャの数値の文字列形式を取得するには、数値を使用`ToString(IFormatProvider)`メソッドです。 たとえば、使用して<xref:System.Double.ToString%2A>型の値を変換するときに`Double`を文字列にします。  
+  
+   
+  
+## Examples  
+ この例では、`Str`を返す関数を`String`数値の形式です。 正の数値を文字列に変換するときに、先頭を空白は、符号を常に予約されています。  
+  
+ [!code-vb[VbVbalrStrings#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Number" />指定されていません。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="Number" />数値型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Val">
+      <MemberSignature Language="C#" Value="public static int Val (char Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Val(char Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Val(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 任意の有効な <see langword="String" /> 式、<see langword="Object" /> 変数、または <see langword="Char" /> 値。 場合<c>式</c>の種類は<see langword="Object" />、その値に変換できなければなりません<see langword="String" />または<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>適切な型の数値として文字列に含まれる数を返します。</summary>
+        <returns>適切な型の数値として文字列に含まれる数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Val`関数では、数値の一部として認識できない最初の文字で文字列の読み取りを停止します。 シンボルとドル記号やコンマなどの数値の一部と見なされる文字は認識されません。 ただし、関数は、基数のプレフィックスを認識しません。 `&O` (の 8 進数) と`&H`(の 16 進数)。 空白、タブ、および改行文字は、引数から削除されます。  
+  
+ 次の呼び出しでは、1615198 という値を返します。  
+  
+```  
+  
+Val(" 1615 198th Street N.E.")   
+```  
+  
+ 次の呼び出しでは、10 進値-1 を返します。  
+  
+```  
+  
+Val("&HFFFF")   
+```  
+  
+> [!NOTE]
+>  `Val`関数は、ピリオドだけを認識 (`.`) は有効な小数点区切り文字として。 国際対応のアプリケーションと同様に、別の桁区切り記号が使用すると使用`CDbl`または`CInt`代わりに、文字列を数値に変換するためです。 特定のカルチャの数値の文字列形式を数値に変換する数値型を使用して`Parse(String, IFormatProvider)`メソッドです。 たとえば、使用して<xref:System.Double.Parse%2A?displayProperty=nameWithType>を文字列に変換するときに、`Double`です。  
+  
+> [!NOTE]
+>  <xref:System.InvalidCastException>特定一般的でない数値の形式への応答での例外が発生する可能性があります。 たとえば、次のコードでは、この例外を発生させます。  
+>   
+>  `' These examples cause run-time errors.`  
+>   
+>  `'Console.WriteLine(Val("1.34%"))`  
+>   
+>  `'Console.WriteLine(Val("1.34&"))`  
+>   
+>  として書式設定された数の間での競合、`Double`と`Integer`と`Long`型文字は、文字列に含まれていない場合、コンパイラによってキャッチとします。  
+>   
+>  `' These examples cause compiler errors.`  
+>   
+>  `'Dim m = 1.34%`  
+>   
+>  `'Dim n = 1.34&`  
+  
+   
+  
+## Examples  
+ 次の例では、`Val`各文字列に含まれている数値を返す関数。 `Val`数値、数値の修飾子、数値区切り記号、または空白文字として解釈できない場合、最初の文字に変換するを停止します。  
+  
+ [!code-vb[VbVbalrFunctions#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#54)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OverflowException">
+          <paramref name="InputStr" /> が大きすぎます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Expression" /> は <see langword="String" /> に変換できない <see langword="Object" /> 型の式です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Val">
+      <MemberSignature Language="C#" Value="public static double Val (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 Val(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Val(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 任意の有効な <see langword="String" /> 式、<see langword="Object" /> 変数、または <see langword="Char" /> 値。 場合<c>式</c>の種類は<see langword="Object" />、その値に変換できなければなりません<see langword="String" />または<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>適切な型の数値として文字列に含まれる数を返します。</summary>
+        <returns>適切な型の数値として文字列に含まれる数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Val`関数では、数値の一部として認識できない最初の文字で文字列の読み取りを停止します。 シンボルとドル記号やコンマなどの数値の一部と見なされる文字は認識されません。 ただし、関数は、基数のプレフィックスを認識しません。 `&O` (の 8 進数) と`&H`(の 16 進数)。 空白、タブ、および改行文字は、引数から削除されます。  
+  
+ 次の呼び出しでは、値 1234123 を返しますを返します。  
+  
+```  
+  
+Val(" 1234 123th Street N.E.")   
+```  
+  
+ 次の呼び出しでは、10 進値-1 を返します。  
+  
+```  
+  
+Val("&HFFFF")   
+```  
+  
+> [!NOTE]
+>  `Val`関数は、ピリオドだけを認識 (`.`) は有効な小数点区切り文字として。 国際対応のアプリケーションと同様に、その他の 10 進区切り記号が使用すると使用`CDbl`または`CInt`代わりに、文字列を数値に変換するためです。 特定のカルチャの数値の文字列形式を数値に変換する数値型を使用して`Parse(String, IFormatProvider)`メソッドです。 たとえば、使用して<xref:System.Double.Parse%2A?displayProperty=nameWithType>を文字列に変換するときに、`Double`です。  
+  
+> [!NOTE]
+>  <xref:System.InvalidCastException>特定一般的でない数値の形式への応答での例外が発生する可能性があります。 たとえば、次のコードでは、この例外を発生させます。  
+>   
+>  `' These examples cause run-time errors.`  
+>   
+>  `'Console.WriteLine(Val("1.34%"))`  
+>   
+>  `'Console.WriteLine(Val("1.34&"))`  
+>   
+>  として書式設定された数の間での競合、`Double`と`Integer`と`Long`型文字は、競合は、文字列に含まれていなかった場合、コンパイラによってキャッチはします。  
+>   
+>  `' These examples cause compiler errors.`  
+>   
+>  `'Dim m = 1.34%`  
+>   
+>  `'Dim n = 1.34&`  
+  
+   
+  
+## Examples  
+ 次の例では、`Val`各文字列に含まれている数値を返す関数。 `Val`数値、数値の修飾子、数値区切り記号、または空白文字として解釈できない場合、最初の文字に変換するを停止します。  
+  
+ [!code-vb[VbVbalrFunctions#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#54)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OverflowException">
+          <paramref name="InputStr" /> が大きすぎます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Expression" /> は <see langword="String" /> に変換できない <see langword="Object" /> 型の式です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Val">
+      <MemberSignature Language="C#" Value="public static double Val (string InputStr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 Val(string InputStr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Conversion.Val(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="InputStr" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="InputStr">必須です。 任意の有効な <see langword="String" /> 式、<see langword="Object" /> 変数、または <see langword="Char" /> 値。 場合<c>式</c>の種類は<see langword="Object" />、その値に変換できなければなりません<see langword="String" />または<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>適切な型の数値として文字列に含まれる数を返します。</summary>
+        <returns>適切な型の数値として文字列に含まれる数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Val`関数では、数値の一部として認識できない最初の文字で文字列の読み取りを停止します。 シンボルとドル記号やコンマなどの数値の一部と見なされる文字は認識されません。 ただし、関数は、基数のプレフィックスを認識しません。 `&O` (の 8 進数) と`&H`(の 16 進数)。 空白、タブ、および改行文字は、引数から削除されます。  
+  
+ 次の呼び出しでは、値 1234123 を返しますを返します。  
+  
+```  
+  
+Val(" 1234 123th Street N.E.")   
+```  
+  
+ 次の呼び出しでは、10 進値-1 を返します。  
+  
+```  
+  
+Val("&HFFFF")   
+```  
+  
+> [!NOTE]
+>  `Val`関数は、ピリオドだけを認識 (`.`) は有効な小数点区切り文字として。 国際対応のアプリケーションと同様に、その他の 10 進区切り記号が使用すると使用`CDbl`または`CInt`代わりに、文字列を数値に変換するためです。 特定のカルチャの数値の文字列形式を数値に変換する数値型を使用して`Parse(String, IFormatProvider)`メソッドです。 たとえば、使用して<xref:System.Double.Parse%2A?displayProperty=nameWithType>を文字列に変換するときに、`Double`です。  
+  
+> [!NOTE]
+>  <xref:System.InvalidCastException>特定一般的でない数値の形式への応答での例外が発生する可能性があります。 たとえば、次のコードでは、この例外を発生させます。  
+>   
+>  `' These examples cause run-time errors.`  
+>   
+>  `'Console.WriteLine(Val("1.34%"))`  
+>   
+>  `'Console.WriteLine(Val("1.34&"))`  
+>   
+>  として書式設定された数の間での競合、`Double`と`Integer`と`Long`型文字は、競合は、文字列に含まれていなかった場合、コンパイラによってキャッチはします。  
+>   
+>  `' These examples cause compiler errors.`  
+>   
+>  `'Dim m = 1.34%`  
+>   
+>  `'Dim n = 1.34&`  
+  
+   
+  
+## Examples  
+ 次の例では、`Val`各文字列に含まれている数値を返す関数。 `Val`数値、数値の修飾子、数値区切り記号、または空白文字として解釈できない場合、最初の文字に変換するを停止します。  
+  
+ [!code-vb[VbVbalrFunctions#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#54)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OverflowException">
+          <paramref name="InputStr" /> が大きすぎます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Expression" /> は <see langword="String" /> に変換できない <see langword="Object" /> 型の式です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

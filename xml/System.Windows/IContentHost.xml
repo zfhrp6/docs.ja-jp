@@ -1,0 +1,103 @@
+<Type Name="IContentHost" FullName="System.Windows.IContentHost">
+  <TypeSignature Language="C#" Value="public interface IContentHost" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContentHost" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.IContentHost" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>このインターフェイスをホストしているレイアウト<see cref="T:System.Windows.ContentElement" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetRectangles">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Rect&gt; GetRectangles (System.Windows.ContentElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Windows.Rect&gt; GetRectangles(class System.Windows.ContentElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IContentHost.GetRectangles(System.Windows.ContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Rect&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.ContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">外接する四角形が返されます、子要素です。</param>
+        <summary>外接する四角形の子要素のコレクションを返します。</summary>
+        <returns>外接する四角形の子要素のコレクション。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">場合*子*が null です。</exception>
+        <exception cref="T:System.ArgumentException">場合は、要素は、直接の子孫ではありません (要素などの子である必要があります、<see cref="T:System.Windows.IContentHost" />または<see cref="T:System.Windows.ContentElement" />の直接の子孫である、 <see cref="T:System.Windows.IContentHost" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HostedElements">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.Windows.IInputElement&gt; HostedElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.IInputElement&gt; HostedElements" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IContentHost.HostedElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.IInputElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含む列挙のすべての子孫を取得<see cref="T:System.Windows.ContentElement" />-派生したクラスだけでなくすべて<see cref="T:System.Windows.UIElement" />-派生クラスの直接の子孫である、<see cref="T:System.Windows.IContentHost" />またはその子孫のいずれか<see cref="T:System.Windows.ContentElement" />クラスです。</summary>
+        <value>すべての子孫を含む列挙<see cref="T:System.Windows.ContentElement" />-派生したクラスだけでなくすべて<see cref="T:System.Windows.UIElement" />-の直接の子孫であるクラスの派生、<see cref="T:System.Windows.IContentHost" />またはその子孫のいずれかの<see cref="T:System.Windows.ContentElement" />クラスです。 対象の要素、つまり、<see cref="T:System.Windows.IContentHost" />を示すビジュアル表現を作成 (<see cref="T:System.Windows.ContentElement" />-派生クラス) はレイアウトを持つ、実行、または、 <see cref="T:System.Windows.IContentHost" /> (第 1 レベルの子孫<see cref="T:System.Windows.UIElement" />-派生クラス)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputHitTest">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement InputHitTest (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.IInputElement InputHitTest(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IContentHost.InputHitTest(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ContentHost 相対マウス座標です。</param>
+        <summary>子要素のヒット テストを実行します。</summary>
+        <returns>子孫<see cref="T:System.Windows.IInputElement" />、または**NULL**このような要素が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChildDesiredSizeChanged">
+      <MemberSignature Language="C#" Value="public void OnChildDesiredSizeChanged (System.Windows.UIElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnChildDesiredSizeChanged(class System.Windows.UIElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IContentHost.OnChildDesiredSizeChanged(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">子要素が<see cref="P:System.Windows.UIElement.DesiredSize" />が変更されました</param>
+        <summary>ときに呼び出されます、 <see cref="T:System.Windows.UIElement" />-派生クラスによってホストされている、<see cref="T:System.Windows.IContentHost" />変更その<see cref="P:System.Windows.UIElement.DesiredSize" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">場合*子*が null です。</exception>
+        <exception cref="T:System.ArgumentException">場合*子*は直接の子孫ではありません (つまり*子*の子である必要があります、<see cref="T:System.Windows.IContentHost" />または<see cref="T:System.Windows.ContentElement" />の直接の子孫である、 <see cref="T:System.Windows.IContentHost" />)。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

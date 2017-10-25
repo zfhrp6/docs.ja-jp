@@ -1,0 +1,192 @@
+<Type Name="SmtpSection" FullName="System.Net.Configuration.SmtpSection">
+  <TypeSignature Language="C#" Value="public sealed class SmtpSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SmtpSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.SmtpSection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SMTP」セクションを表す、<see langword="System.Net" />構成ファイル。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスで SMTP をサポートするクラスによって使用される構成ファイルに格納できる情報にプログラムでアクセスを提供する、<xref:System.Net.Mail>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SmtpSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.SmtpSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.SmtpSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliveryFormat">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.SmtpDeliveryFormat DeliveryFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mail.SmtpDeliveryFormat DeliveryFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SmtpSection.DeliveryFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("deliveryFormat", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpDeliveryFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または簡易メール転送プロトコル (SMTP) を使用して出力方向の電子メールを送信するのに使用する配信形式を設定します。</summary>
+        <value><see cref="T:System.Net.Mail.SmtpDeliveryFormat" /> を返します。  
+  
+ 出力方向の送信に使用する配信形式 SMTP を使用して電子メールで送信します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliveryMethod">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.SmtpDeliveryMethod DeliveryMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mail.SmtpDeliveryMethod DeliveryMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SmtpSection.DeliveryMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("deliveryMethod", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpDeliveryMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または簡易メール転送プロトコル (SMTP) の配信方法を設定します。 既定の配信方法は<see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" />します。</summary>
+        <value>SMTP 配信方法を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの有効な値は<xref:System.Net.Mail.SmtpDeliveryMethod.Network>、 <xref:System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis>、および<xref:System.Net.Mail.SmtpDeliveryMethod.SpecifiedPickupDirectory>です。 これらの値は、構成可能なサブ項目があるしに対応するセクションがある、`System.Net`構成ファイル。 すべてのセクションは、camel 形式の対応するセクション名と配信方法と一致するようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public string From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string From" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SmtpSection.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("from")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの送信者を示す既定値を設定します。</summary>
+        <value>メール メッセージの送信者を示す既定値を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Network">
+      <MemberSignature Language="C#" Value="public System.Net.Configuration.SmtpNetworkElement Network { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Configuration.SmtpNetworkElement Network" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SmtpSection.Network" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("network")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.SmtpNetworkElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンプル メール トランスポート プロトコル (SMTP) を使用するネットワーク設定を制御する構成要素を取得します。 ファイルです。<see cref="T:System.Net.Configuration.SmtpNetworkElement" />.</summary>
+        <value><see cref="T:System.Net.Configuration.SmtpNetworkElement" /> オブジェクト。  
+  
+ SMTP によって使用されるネットワーク設定を制御する構成要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SmtpSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecifiedPickupDirectory">
+      <MemberSignature Language="C#" Value="public System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement SpecifiedPickupDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement SpecifiedPickupDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SmtpSection.SpecifiedPickupDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("specifiedPickupDirectory")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMPT クライアントによって使用されるピックアップ ディレクトリを取得します。</summary>
+        <value>A<see cref="T:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement" />ピックアップ ディレクトリ フォルダーを指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたディレクトリを示す<xref:System.Net.Mail.SmtpClient.PickupDirectoryLocation%2A>SMTP ピックアップ ディレクトリとして使用されます。 クライアントは、ピックアップ ディレクトリの場所に書き込むことがない場合、I/O 例外をスロー<xref:System.Net.Mail.SmtpClient.Send%2A>です。 存在しない場合、ディレクトリは作成されません。 現在実行中のスレッドまたはプロセスの資格情報は、ディレクトリへのアクセスに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

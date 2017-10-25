@@ -1,0 +1,159 @@
+<Type Name="FrameworkTextComposition" FullName="System.Windows.Documents.FrameworkTextComposition">
+  <TypeSignature Language="C#" Value="public class FrameworkTextComposition : System.Windows.Input.TextComposition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameworkTextComposition extends System.Windows.Input.TextComposition" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.FrameworkTextComposition" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.TextComposition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>テキストの入力イベントの中にコンポジションを表す、<see cref="T:System.Windows.Controls.TextBox" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.TextCompositionEventArgs.TextComposition%2A?displayProperty=nameWithType>プロパティは、<xref:System.Windows.Documents.FrameworkTextComposition>に文字列を入力すると、<xref:System.Windows.Controls.TextBox>を使用して、[!INCLUDE[TLA#tla_ime](~/includes/tlasharptla-ime-md.md)]と<xref:System.Windows.Input.TextCompositionManager.TextInput>、 <xref:System.Windows.Input.TextCompositionManager.TextInputUpdate>、または<xref:System.Windows.Input.TextCompositionManager.TextInputStart>イベントが発生します。  
+  
+ <xref:System.Windows.Documents.FrameworkTextComposition>基本クラスは、<xref:System.Windows.Documents.FrameworkRichTextComposition>です。 <xref:System.Windows.Documents.FrameworkRichTextComposition>クラス定義を返すプロパティ<xref:System.Windows.Documents.TextPointer>テキスト構成の位置を示すオブジェクト。  文字列を入力すると、 <xref:System.Windows.Controls.RichTextBox>、<xref:System.Windows.Input.TextCompositionEventArgs.TextComposition%2A?displayProperty=nameWithType>は、<xref:System.Windows.Documents.FrameworkRichTextComposition>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public override void Complete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Complete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FrameworkTextComposition.Complete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポジションを完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompositionLength">
+      <MemberSignature Language="C#" Value="public int CompositionLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CompositionLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FrameworkTextComposition.CompositionLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unicode のシンボルで現在のコンポジションの長さを取得します。</summary>
+        <value>シンボルを Unicode では、現在のコンポジションの長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FrameworkTextComposition.CompositionLength%2A>プロパティは、最後に入力された文字数を示します<xref:System.Windows.Input.TextCompositionManager.TextInput>イベント。 このプロパティは意味のあるときに、<xref:System.Windows.Input.TextCompositionManager.TextInputStart>または<xref:System.Windows.Input.TextCompositionManager.TextInputUpdate>イベントが発生します。  ときに、<xref:System.Windows.Input.TextCompositionManager.TextInput>イベントが発生する<xref:System.Windows.Documents.FrameworkTextComposition.CompositionLength%2A>-1 で、および<xref:System.Windows.Documents.FrameworkTextComposition.ResultLength%2A>プロパティは、合成の長さを示します。  
+  
+ <xref:System.Windows.Documents.FrameworkTextComposition.CompositionLength%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompositionOffset">
+      <MemberSignature Language="C#" Value="public int CompositionOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CompositionOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FrameworkTextComposition.CompositionOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポジション テキストで発生する位置を取得、<see cref="T:System.Windows.Controls.TextBox" />です。</summary>
+        <value>コンポジション テキストで発生する位置の<see cref="T:System.Windows.Controls.TextBox" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは意味のあるときに、<xref:System.Windows.Input.TextCompositionManager.TextInputStart>または<xref:System.Windows.Input.TextCompositionManager.TextInputUpdate>イベントが発生します。  ときに、<xref:System.Windows.Input.TextCompositionManager.TextInput>イベントが発生する<xref:System.Windows.Documents.FrameworkTextComposition.CompositionLength%2A>-1 で、および<xref:System.Windows.Documents.FrameworkTextComposition.ResultOffset%2A>プロパティは、構成テキストの位置を示します。  
+  
+ <xref:System.Windows.Documents.FrameworkTextComposition.CompositionOffset%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultLength">
+      <MemberSignature Language="C#" Value="public int ResultLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ResultLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FrameworkTextComposition.ResultLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得で Unicode で完成したテキストの長さシンボルの場合に、<see cref="E:System.Windows.Input.TextCompositionManager.TextInput" />イベントが発生します。</summary>
+        <value>シンボルのときに Unicode で完成したテキストの長さ、<see cref="E:System.Windows.Input.TextCompositionManager.TextInput" />イベントが発生します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Input.TextCompositionManager.TextInputStart>または<xref:System.Windows.Input.TextCompositionManager.TextInputUpdate>イベントが発生する<xref:System.Windows.Documents.FrameworkTextComposition.ResultLength%2A>-1 です。  
+  
+ <xref:System.Windows.Documents.FrameworkTextComposition.ResultLength%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultOffset">
+      <MemberSignature Language="C#" Value="public int ResultOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ResultOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FrameworkTextComposition.ResultOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完成したテキストのオフセットを取得時に、<see cref="E:System.Windows.Input.TextCompositionManager.TextInput" />イベントが発生します。</summary>
+        <value>完成したテキストのオフセットと、<see cref="E:System.Windows.Input.TextCompositionManager.TextInput" />イベントが発生します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Input.TextCompositionManager.TextInputStart>または<xref:System.Windows.Input.TextCompositionManager.TextInputUpdate>イベントが発生する<xref:System.Windows.Documents.FrameworkTextComposition.ResultLength%2A>-1 です。  
+  
+ <xref:System.Windows.Documents.FrameworkTextComposition.ResultOffset%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

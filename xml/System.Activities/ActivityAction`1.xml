@@ -1,0 +1,70 @@
+<Type Name="ActivityAction&lt;T&gt;" FullName="System.Activities.ActivityAction&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class ActivityAction&lt;T&gt; : System.Activities.ActivityDelegate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivityAction`1&lt;T&gt; extends System.Activities.ActivityDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.ActivityAction`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Activities.ActivityDelegate</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">アクティビティ デリゲートの in 引数の型。</typeparam>
+    <summary>1 個の in 引数を持ち、値を返さないアクティビティ デリゲートを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ デリゲートを使用すると、開発者はサード パーティによって指定されるアクティビティに必要な署名を定義できます。  
+  
+ この型にはジェネリック バージョンが複数あり、呼び出されるアクティビティ用の引数を 1 ～ 16 個受け取ります。  **ActivityFunc**値を返すアクティビティ デリゲートの型。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ActivityAction`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.ActivityAction`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Argument">
+      <MemberSignature Language="C#" Value="public System.Activities.DelegateInArgument&lt;T&gt; Argument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.DelegateInArgument`1&lt;!T&gt; Argument" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.ActivityAction`1.Argument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.DelegateInArgument&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デリゲートの in 引数を取得または設定します。</summary>
+        <value>アクティビティ デリゲートに渡す引数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

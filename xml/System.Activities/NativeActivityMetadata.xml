@@ -1,0 +1,1036 @@
+<Type Name="NativeActivityMetadata" FullName="System.Activities.NativeActivityMetadata">
+  <TypeSignature Language="C#" Value="public struct NativeActivityMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit NativeActivityMetadata extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.NativeActivityMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成された <see cref="T:System.Activities.NativeActivity" /> が実行環境に導入する引数、子アクティビティ、変数、およびデリゲートのセットを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddArgument">
+      <MemberSignature Language="C#" Value="public void AddArgument (System.Activities.RuntimeArgument argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArgument(class System.Activities.RuntimeArgument argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddArgument(System.Activities.RuntimeArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.Activities.RuntimeArgument" />
+      </Parameters>
+      <Docs>
+        <param name="argument">コレクションに追加する引数。</param>
+        <summary>アクティビティの引数のコレクションに引数を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (System.Activities.Activity child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddChild(class System.Activities.Activity child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddChild(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="child">追加するアクティビティ。</param>
+        <summary>指定されたアクティビティをメタデータの子アクティビティの一覧に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.NativeActivityMetadata.AddChild%2A> を使用して追加されたアクティビティは、親アクティビティが直接スケジュールできる子アクティビティです。 これらのアクティビティは、アクティビティのコンシューマーによって提供されることになっています。 この例として、<xref:System.Activities.Statements.Sequence.Activities%2A> アクティビティの <xref:System.Activities.Statements.Sequence> コレクションがあります。 これらのアクティビティ (およびそれらが <xref:System.Activities.NativeActivityMetadata.AddChild%2A> または <xref:System.Activities.NativeActivityMetadata.AddImportedChild%2A> を使用して追加するアクティビティ) は、<xref:System.Activities.NativeActivityMetadata.AddVariable%2A> を通じて追加された変数を使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (System.Activities.Activity child, object origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddChild(class System.Activities.Activity child, object origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddChild(System.Activities.Activity,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Activities.Activity" />
+        <Parameter Name="origin" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="child">追加するアクティビティ。</param>
+        <param name="origin">アクティビティの原点です。</param>
+        <summary>指定されたアクティビティをメタデータの子アクティビティの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDefaultExtensionProvider&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void AddDefaultExtensionProvider&lt;T&gt; (Func&lt;T&gt; extensionProvider) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDefaultExtensionProvider&lt;class T&gt;(class System.Func`1&lt;!!T&gt; extensionProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddDefaultExtensionProvider``1(System.Func{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="extensionProvider" Type="System.Func&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">拡張プロバイダーの型。</typeparam>
+        <param name="extensionProvider">拡張機能を返す関数。</param>
+        <summary>指定された拡張プロバイダーをアクティビティで使用できる既定の拡張プロバイダーのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストが型 `T` の拡張機能を提供しない場合、この拡張プロバイダーは拡張機能を提供するように評価されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDelegate">
+      <MemberSignature Language="C#" Value="public void AddDelegate (System.Activities.ActivityDelegate activityDelegate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDelegate(class System.Activities.ActivityDelegate activityDelegate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddDelegate(System.Activities.ActivityDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityDelegate" Type="System.Activities.ActivityDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="activityDelegate">追加するデリゲート。</param>
+        <summary>指定されたデリゲートをメタデータのデリゲートの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDelegate">
+      <MemberSignature Language="C#" Value="public void AddDelegate (System.Activities.ActivityDelegate activityDelegate, object origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDelegate(class System.Activities.ActivityDelegate activityDelegate, object origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddDelegate(System.Activities.ActivityDelegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityDelegate" Type="System.Activities.ActivityDelegate" />
+        <Parameter Name="origin" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="activityDelegate">追加するデリゲート。</param>
+        <param name="origin">デリゲートの原点です。</param>
+        <summary>指定されたデリゲートをメタデータのデリゲートの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImplementationChild">
+      <MemberSignature Language="C#" Value="public void AddImplementationChild (System.Activities.Activity implementationChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImplementationChild(class System.Activities.Activity implementationChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImplementationChild(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementationChild" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="implementationChild">追加するアクティビティ。</param>
+        <summary>指定されたアクティビティをメタデータの実装アクティビティの一覧に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.NativeActivityMetadata.AddImplementationChild%2A> を使用して追加されたアクティビティは、親アクティビティが直接スケジュールできる子アクティビティです。  これらのアクティビティは、アクティビティの実装の詳細です。 これらのアクティビティ (およびそれらが <xref:System.Activities.NativeActivityMetadata.AddChild%2A> または <xref:System.Activities.NativeActivityMetadata.AddImportedChild%2A> を使用して追加するアクティビティ) は、このアクティビティの引数および<xref:System.Activities.NativeActivityMetadata.AddImplementationVariable%2A> を通じて追加された変数を使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImplementationDelegate">
+      <MemberSignature Language="C#" Value="public void AddImplementationDelegate (System.Activities.ActivityDelegate implementationDelegate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImplementationDelegate(class System.Activities.ActivityDelegate implementationDelegate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImplementationDelegate(System.Activities.ActivityDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementationDelegate" Type="System.Activities.ActivityDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="implementationDelegate">追加するデリゲート。</param>
+        <summary>指定されたデリゲートをメタデータの実装デリゲートの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImplementationVariable">
+      <MemberSignature Language="C#" Value="public void AddImplementationVariable (System.Activities.Variable implementationVariable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImplementationVariable(class System.Activities.Variable implementationVariable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImplementationVariable(System.Activities.Variable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementationVariable" Type="System.Activities.Variable" />
+      </Parameters>
+      <Docs>
+        <param name="implementationVariable">追加する変数。</param>
+        <summary>指定された変数をメタデータの実装変数のコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImportedChild">
+      <MemberSignature Language="C#" Value="public void AddImportedChild (System.Activities.Activity importedChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImportedChild(class System.Activities.Activity importedChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImportedChild(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importedChild" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="importedChild">追加するアクティビティ。</param>
+        <summary>指定されたアクティビティをメタデータのインポート済み子アクティビティの一覧に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インポート済み子アクティビティは、親アクティビティが直接スケジュールしない子アクティビティです。 代わりに、親はこのアクティビティを使用して他の子アクティビティを構成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImportedChild">
+      <MemberSignature Language="C#" Value="public void AddImportedChild (System.Activities.Activity importedChild, object origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImportedChild(class System.Activities.Activity importedChild, object origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImportedChild(System.Activities.Activity,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importedChild" Type="System.Activities.Activity" />
+        <Parameter Name="origin" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="importedChild">追加するアクティビティ。</param>
+        <param name="origin">アクティビティの原点です。</param>
+        <summary>指定されたアクティビティをメタデータのインポート済み子アクティビティの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImportedDelegate">
+      <MemberSignature Language="C#" Value="public void AddImportedDelegate (System.Activities.ActivityDelegate importedDelegate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImportedDelegate(class System.Activities.ActivityDelegate importedDelegate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImportedDelegate(System.Activities.ActivityDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importedDelegate" Type="System.Activities.ActivityDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="importedDelegate">追加するデリゲート。</param>
+        <summary>指定されたデリゲートをメタデータのインポート済みデリゲートの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImportedDelegate">
+      <MemberSignature Language="C#" Value="public void AddImportedDelegate (System.Activities.ActivityDelegate importedDelegate, object origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddImportedDelegate(class System.Activities.ActivityDelegate importedDelegate, object origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddImportedDelegate(System.Activities.ActivityDelegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importedDelegate" Type="System.Activities.ActivityDelegate" />
+        <Parameter Name="origin" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="importedDelegate">追加するデリゲート。</param>
+        <param name="origin">デリゲートの原点です。</param>
+        <summary>指定されたデリゲートをメタデータのインポート済みデリゲートの一覧に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddValidationError">
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>検証エラーをメタデータの検証エラーのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][命令型コードに基づく検証](~/docs/framework/windows-workflow-foundation/imperative-code-based-validation.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddValidationError">
+      <MemberSignature Language="C#" Value="public void AddValidationError (System.Activities.Validation.ValidationError validationError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValidationError(class System.Activities.Validation.ValidationError validationError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddValidationError(System.Activities.Validation.ValidationError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validationError" Type="System.Activities.Validation.ValidationError" />
+      </Parameters>
+      <Docs>
+        <param name="validationError">追加する検証エラー。</param>
+        <summary>指定された検証エラーをメタデータの検証エラーのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][命令型コードに基づく検証](~/docs/framework/windows-workflow-foundation/imperative-code-based-validation.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddValidationError">
+      <MemberSignature Language="C#" Value="public void AddValidationError (string validationErrorMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValidationError(string validationErrorMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddValidationError(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validationErrorMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="validationErrorMessage">検証エラーを説明するメッセージ。</param>
+        <summary>指定された説明を使用して、検証エラーをメタデータの検証エラーのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][命令型コードに基づく検証](~/docs/framework/windows-workflow-foundation/imperative-code-based-validation.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddVariable">
+      <MemberSignature Language="C#" Value="public void AddVariable (System.Activities.Variable variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddVariable(class System.Activities.Variable variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddVariable(System.Activities.Variable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable" />
+      </Parameters>
+      <Docs>
+        <param name="variable">追加する変数。</param>
+        <summary>指定された変数をメタデータの変数のコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して追加された変数は、アクティビティの公に構成可能なサーフェイスの一部と見なされます。つまり、変数はアクティビティのコンシューマーによって提供されることになります。 アクティビティの実装は、このメソッドを使用して追加された変数にアクセスできません。 <xref:System.Activities.NativeActivityMetadata.AddImportedChild%2A> または <xref:System.Activities.NativeActivityMetadata.AddChild%2A> を通じて追加されるアクティビティ (およびそれらの非実装子アクティビティ) は、このメソッドを使用して追加された変数にアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddVariable">
+      <MemberSignature Language="C#" Value="public void AddVariable (System.Activities.Variable variable, object origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddVariable(class System.Activities.Variable variable, object origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.AddVariable(System.Activities.Variable,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable" />
+        <Parameter Name="origin" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="variable">追加する変数。</param>
+        <param name="origin">変数の原点です。</param>
+        <summary>指定された変数をメタデータの変数のコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bind">
+      <MemberSignature Language="C#" Value="public void Bind (System.Activities.Argument binding, System.Activities.RuntimeArgument argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Bind(class System.Activities.Argument binding, class System.Activities.RuntimeArgument argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.Bind(System.Activities.Argument,System.Activities.RuntimeArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Activities.Argument" />
+        <Parameter Name="argument" Type="System.Activities.RuntimeArgument" />
+      </Parameters>
+      <Docs>
+        <param name="binding">バインドする <see cref="T:System.Activities.Argument" />。</param>
+        <param name="argument">バインドする <see cref="T:System.Activities.RuntimeArgument" />。</param>
+        <summary>指定された <see cref="T:System.Activities.Argument" /> を指定された <see cref="T:System.Activities.RuntimeArgument" /> にバインドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Environment">
+      <MemberSignature Language="C#" Value="public System.Activities.LocationReferenceEnvironment Environment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.LocationReferenceEnvironment Environment" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.NativeActivityMetadata.Environment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.LocationReferenceEnvironment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>引数、変数、デリゲート引数、または <see cref="T:System.Activities.LocationReferenceEnvironment" /> によって導入されるシンボルについて、アクティビティの <see cref="T:System.Activities.Hosting.SymbolResolver" /> を取得します。</summary>
+        <value>引数、変数、デリゲート引数、または <see cref="T:System.Activities.Hosting.SymbolResolver" /> によって導入されるシンボルのアクティビティの場所参照環境。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>指定されたオブジェクトが、このメタデータ インスタンスと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがこのメタデータ インスタンスと等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArgumentsWithReflection">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Activities.RuntimeArgument&gt; GetArgumentsWithReflection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.RuntimeArgument&gt; GetArgumentsWithReflection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.GetArgumentsWithReflection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Activities.RuntimeArgument&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リフレクションを使用して取得された引数のコレクションを返します。</summary>
+        <returns>引数のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、アクティビティの <xref:System.ComponentModel.TypeDescriptor> を使用して型 <xref:System.Activities.Argument> のパブリック プロパティをすべて検証します。そして、パブリック プロパティをコレクションの形式で返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenWithReflection">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt; GetChildrenWithReflection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Activity&gt; GetChildrenWithReflection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.GetChildrenWithReflection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リフレクションを使用して子アクティビティのコレクションを返します。</summary>
+        <returns>子アクティビティのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アクティビティの<xref:System.ComponentModel.TypeDescriptor>型のすべてのパブリック プロパティを点検する<xref:System.Activities.Activity>、または`IList<T>`または`ICollection<T>`場所`T`から派生した<xref:System.Activities.Activity>、し、コレクションの形式で返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDelegatesWithReflection">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt; GetDelegatesWithReflection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.ActivityDelegate&gt; GetDelegatesWithReflection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.GetDelegatesWithReflection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リフレクションを使用してデリゲートのコレクションを返します。</summary>
+        <returns>デリゲートのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アクティビティの<xref:System.ComponentModel.TypeDescriptor>型のすべてのパブリック プロパティを点検する<xref:System.Activities.ActivityDelegate>、または`IList<T>`または`ICollection<T>`場所`T`から派生した<xref:System.Activities.ActivityDelegate>、し、コレクションの形式で返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメタデータ インスタンスの一意の識別子を返します。</summary>
+        <returns>このメタデータ インスタンスを一意に識別する整数です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVariablesWithReflection">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt; GetVariablesWithReflection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Variable&gt; GetVariablesWithReflection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.GetVariablesWithReflection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リフレクションを使用して変数のコレクションを返します。</summary>
+        <returns>変数のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アクティビティの<xref:System.ComponentModel.TypeDescriptor>型のすべてのパブリック プロパティを点検する<xref:System.Activities.Variable>、または`IList<T>`または`ICollection<T>`場所`T`から派生した<xref:System.Activities.Variable>、し、コレクションの形式で返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasViolations">
+      <MemberSignature Language="C#" Value="public bool HasViolations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasViolations" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.NativeActivityMetadata.HasViolations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータに検証エラーがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />検証エラーが存在する場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Activities.NativeActivityMetadata left, System.Activities.NativeActivityMetadata right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Activities.NativeActivityMetadata left, valuetype System.Activities.NativeActivityMetadata right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.op_Equality(System.Activities.NativeActivityMetadata,System.Activities.NativeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Activities.NativeActivityMetadata" />
+        <Parameter Name="right" Type="System.Activities.NativeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の項目です。</param>
+        <param name="right">比較する 2 番目の項目です。</param>
+        <summary>2 つの指定されたメタデータ インスタンスが等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />2 つの項目が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Activities.NativeActivityMetadata left, System.Activities.NativeActivityMetadata right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Activities.NativeActivityMetadata left, valuetype System.Activities.NativeActivityMetadata right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.op_Inequality(System.Activities.NativeActivityMetadata,System.Activities.NativeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Activities.NativeActivityMetadata" />
+        <Parameter Name="right" Type="System.Activities.NativeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の項目です。</param>
+        <param name="right">比較する 2 番目の項目です。</param>
+        <summary>2 つの指定されたメタデータ インスタンスが等しくないかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />2 つの項目が等しくない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireExtension">
+      <MemberSignature Language="C#" Value="public void RequireExtension (Type extensionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RequireExtension(class System.Type extensionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.RequireExtension(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extensionType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="extensionType">拡張機能の型。</param>
+        <summary>アクティビティが実行時に指定された型の拡張機能を必要とすることを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された型の拡張機能をホストが提供できない場合、検証に失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireExtension&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void RequireExtension&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RequireExtension&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.RequireExtension``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">拡張機能の型。</typeparam>
+        <summary>アクティビティが実行時に指定されたジェネリック型の拡張機能を必要とすることを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された型の拡張機能をホストが提供できない場合、検証に失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetArgumentsCollection">
+      <MemberSignature Language="C#" Value="public void SetArgumentsCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.RuntimeArgument&gt; arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetArgumentsCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.RuntimeArgument&gt; arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetArgumentsCollection(System.Collections.ObjectModel.Collection{System.Activities.RuntimeArgument})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.RuntimeArgument&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">追加する引数。</param>
+        <summary>指定された引数のコレクションをアクティビティの引数に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetChildrenCollection">
+      <MemberSignature Language="C#" Value="public void SetChildrenCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt; children);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetChildrenCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Activity&gt; children) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetChildrenCollection(System.Collections.ObjectModel.Collection{System.Activities.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="children" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="children">追加するアクティビティ。</param>
+        <summary>指定されたコレクションをアクティビティの子アクティビティとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddChild%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDelegatesCollection">
+      <MemberSignature Language="C#" Value="public void SetDelegatesCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt; delegates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDelegatesCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.ActivityDelegate&gt; delegates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetDelegatesCollection(System.Collections.ObjectModel.Collection{System.Activities.ActivityDelegate})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delegates" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="delegates">追加するデリゲート。</param>
+        <summary>指定されたコレクションをアクティビティのデリゲートとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddDelegate%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImplementationChildrenCollection">
+      <MemberSignature Language="C#" Value="public void SetImplementationChildrenCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt; implementationChildren);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImplementationChildrenCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Activity&gt; implementationChildren) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetImplementationChildrenCollection(System.Collections.ObjectModel.Collection{System.Activities.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementationChildren" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="implementationChildren">追加するアクティビティ。</param>
+        <summary>指定されたコレクションをアクティビティの実装子アクティビティとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddImplementationChild%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImplementationDelegatesCollection">
+      <MemberSignature Language="C#" Value="public void SetImplementationDelegatesCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt; implementationDelegates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImplementationDelegatesCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.ActivityDelegate&gt; implementationDelegates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetImplementationDelegatesCollection(System.Collections.ObjectModel.Collection{System.Activities.ActivityDelegate})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementationDelegates" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="implementationDelegates">追加するデリゲート。</param>
+        <summary>指定されたコレクションをアクティビティの実装デリゲートとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddImplementationDelegate%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImplementationVariablesCollection">
+      <MemberSignature Language="C#" Value="public void SetImplementationVariablesCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt; implementationVariables);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImplementationVariablesCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Variable&gt; implementationVariables) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetImplementationVariablesCollection(System.Collections.ObjectModel.Collection{System.Activities.Variable})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementationVariables" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="implementationVariables">追加するデリゲート。</param>
+        <summary>指定されたコレクションをアクティビティの実装変数として追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddImplementationVariable%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImportedChildrenCollection">
+      <MemberSignature Language="C#" Value="public void SetImportedChildrenCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt; importedChildren);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImportedChildrenCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Activity&gt; importedChildren) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetImportedChildrenCollection(System.Collections.ObjectModel.Collection{System.Activities.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importedChildren" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="importedChildren">追加するアクティビティ。</param>
+        <summary>指定されたコレクションをアクティビティのインポート済み子アクティビティとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddImportedChild%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImportedDelegatesCollection">
+      <MemberSignature Language="C#" Value="public void SetImportedDelegatesCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt; importedDelegates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetImportedDelegatesCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.ActivityDelegate&gt; importedDelegates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetImportedDelegatesCollection(System.Collections.ObjectModel.Collection{System.Activities.ActivityDelegate})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importedDelegates" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.ActivityDelegate&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="importedDelegates">追加するデリゲート。</param>
+        <summary>指定されたコレクションをアクティビティのインポート済みデリゲートとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクション内の各項目について <xref:System.Activities.NativeActivityMetadata.AddImportedDelegate%2A> を呼び出すことと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValidationErrorsCollection">
+      <MemberSignature Language="C#" Value="public void SetValidationErrorsCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.Validation.ValidationError&gt; validationErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValidationErrorsCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Validation.ValidationError&gt; validationErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetValidationErrorsCollection(System.Collections.ObjectModel.Collection{System.Activities.Validation.ValidationError})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validationErrors" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.Validation.ValidationError&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="validationErrors">追加する検証エラー。</param>
+        <summary>指定された検証エラーのコレクションをメタデータの検証エラーのコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVariablesCollection">
+      <MemberSignature Language="C#" Value="public void SetVariablesCollection (System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt; variables);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetVariablesCollection(class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Variable&gt; variables) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.NativeActivityMetadata.SetVariablesCollection(System.Collections.ObjectModel.Collection{System.Activities.Variable})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variables" Type="System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="variables">追加する変数。</param>
+        <summary>指定された変数のコレクションをアクティビティの変数に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,63 @@
+<Type Name="IExpandedResult" FullName="System.Data.Services.IExpandedResult">
+  <TypeSignature Language="C#" Value="public interface IExpandedResult" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExpandedResult" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.IExpandedResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メンバーが結果の列挙子をサポートするために必要なおよび WCF Data Services 上のセグメントに関連付けられている宣言<c>$展開</c>クエリ オプション。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装する列挙体を生成することによって、展開プロバイダーは、展開されたプロパティを再形成することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExpandedElement">
+      <MemberSignature Language="C#" Value="public object ExpandedElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExpandedElement" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.IExpandedResult.ExpandedElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>展開されたプロパティを持つ要素を取得します。</summary>
+        <value><see cref="T:System.Data.Services.IExpandedResult" /> によって展開されたプロパティ内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpandedPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetExpandedPropertyValue (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetExpandedPropertyValue(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IExpandedResult.GetExpandedPropertyValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列挙可能な結果を取得するプロパティの名前。</param>
+        <summary>指定されたプロパティの値を結果から取得します。</summary>
+        <returns>プロパティの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

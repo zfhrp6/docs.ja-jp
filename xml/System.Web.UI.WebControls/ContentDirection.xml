@@ -1,0 +1,82 @@
+<Type Name="ContentDirection" FullName="System.Web.UI.WebControls.ContentDirection">
+  <TypeSignature Language="C#" Value="public enum ContentDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ContentDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ContentDirection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>テキストを含むコンテナー コントロールでコントロールを表示する方向を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ContentDirection>列挙体は、テキストを含むコンテナー コントロールでコントロールを表示する方向を表します。 などのコントロール、<xref:System.Web.UI.WebControls.Panel>と<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールを使用するプロパティがあります、<xref:System.Web.UI.WebControls.ContentDirection>を表示する子コントロールの方向を指定する列挙値のテキストを記載します。  
+  
+ LeftToRight 値を指定する場合、テキストが含まれる子コントロールは左から右、およびコンテナー コントロールの左側にあるテキストを整列させるのにテキストを表示します。 RightToLeft 値を指定すると、テキストが含まれる子コントロールが右から左へテキストを表示し、コンテナー コントロールの右側にあるテキストを正当化します。 RightToLeft 値を使用すると、右から左、アラビア語やヘブライ語などに記述されている言語のテキストを表示できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ContentDirection.LeftToRight>列挙型を設定する、<xref:System.Web.UI.WebControls.Panel.Direction%2A>プロパティです。 A<xref:System.Web.UI.WebControls.ListBox>コントロールの設定が、<xref:System.Web.UI.WebControls.ContentDirection>列挙値。 ユーザーがリスト ボックスから選択した値に基づくパネル内のラベルおよびラジオ ボタンの表示方向。 右側にあるテキストの位置揃え RightToLeft 値を選択すると、この例は、英語のテキストを使用するため、<xref:System.Web.UI.WebControls.Panel.Direction%2A>コントロールですが、英語テキストの左から右への順序は維持されます。 実際のアプリケーションではない設定、<xref:System.Web.UI.WebControls.Panel.Direction%2A>プロパティを左から右の順序を使用する言語のテキストを表示していた場合、RightToLeft 値にします。  
+  
+ [!code-aspx-vb[Panel.Direction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Panel.Direction/VB/panel.directionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LeftToRight">
+      <MemberSignature Language="C#" Value="LeftToRight" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ContentDirection LeftToRight = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ContentDirection.LeftToRight" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>左右からです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSet">
+      <MemberSignature Language="C#" Value="NotSet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ContentDirection NotSet = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ContentDirection.NotSet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未設定。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="RightToLeft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ContentDirection RightToLeft = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ContentDirection.RightToLeft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>右から左。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

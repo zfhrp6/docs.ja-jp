@@ -1,0 +1,238 @@
+<Type Name="IAuthenticationModule" FullName="System.Net.IAuthenticationModule">
+  <TypeSignature Language="C#" Value="public interface IAuthenticationModule" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAuthenticationModule" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IAuthenticationModule" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Web クライアント認証モジュールを基本認証インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IAuthenticationModule>インターフェイスは、プロパティとカスタム認証モジュールを使用する必要があるメソッドを定義します。  
+  
+ 認証モジュールは、適切な認証チャレンジに応答して、サーバー全体の認証プロセスを実施します。 このプロセスは、リソース サーバーに正しく URI に対して要求を認証するために必要なその他の活動から別の認証サーバーに要求ので構成されます。  
+  
+ カスタム認証モジュールを実装する必要があります、<xref:System.Net.IAuthenticationModule>インターフェイスし、登録、<xref:System.Net.AuthenticationManager.Register%2A?displayProperty=nameWithType>メソッドです。 認証モジュールは、構成ファイルを読み取ることによってプログラムの初期化にも登録されます。  
+  
+   
+  
+## Examples  
+ 次の例を実装してカスタムの認証クラスを作成、<xref:System.Net.IAuthenticationModule>インターフェイスです。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#6](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#6)]
+ [!code-csharp[System.Net.Authentication#6](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#6)]
+ [!code-vb[System.Net.Authentication#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Authenticate">
+      <MemberSignature Language="C#" Value="public System.Net.Authorization Authenticate (string challenge, System.Net.WebRequest request, System.Net.ICredentials credentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.Authorization Authenticate(string challenge, class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IAuthenticationModule.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Authorization</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="challenge" Type="System.String" />
+        <Parameter Name="request" Type="System.Net.WebRequest" />
+        <Parameter Name="credentials" Type="System.Net.ICredentials" />
+      </Parameters>
+      <Docs>
+        <param name="challenge">サーバーによって送信された認証チャレンジ。</param>
+        <param name="request"><see cref="T:System.Net.WebRequest" />チャレンジに関連付けられているインスタンス。</param>
+        <param name="credentials">チャレンジに関連付けられている資格情報。</param>
+        <summary>インスタンスを返します、<see cref="T:System.Net.Authorization" />サーバーからの認証チャレンジに対する respose 内のクラスです。</summary>
+        <returns><see cref="T:System.Net.Authorization" /> 、要求の承認メッセージを含むインスタンスまたは<see langword="null" />場合は、チャレンジを処理することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IAuthenticationModule.Authenticate%2A>メソッドは、サーバーと、認証プロセスを実施し、返します、<xref:System.Net.Authorization>インスタンスを<xref:System.Net.AuthenticationManager>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Net.IAuthenticationModule.Authenticate%2A> メソッドを使用する方法の例を次に示します。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#3)]
+ [!code-csharp[System.Net.Authentication#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#3)]
+ [!code-vb[System.Net.Authentication#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="T:System.Net.AuthenticationManager" />呼び出し、<see cref="M:System.Net.IAuthenticationModule.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />どのモジュールがチャレンジを処理を決定する登録済みの認証モジュールのメソッドです。 認証モジュールは、チャレンジを処理できない場合、<see cref="M:System.Net.IAuthenticationModule.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />メソッドが返す必要があります<see langword="null" />です。 認証モジュールには、認証プロセスの実施中にエラーが発生した場合<see cref="M:System.Net.IAuthenticationModule.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />例外をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IAuthenticationModule.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この認証モジュールによって提供される認証の種類を取得します。</summary>
+        <value>この認証モジュールによって提供される認証の種類を示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IAuthenticationModule.AuthenticationType%2A>プロパティがこの認証モジュールによって実装される認証の種類を識別します。 <xref:System.Net.IAuthenticationModule.AuthenticationType%2A>プロパティを使用、<xref:System.Net.AuthenticationManager.Register%2A?displayProperty=nameWithType>認証モジュールが登録されている場合を判別する方法、<xref:System.Net.AuthenticationManager.Unregister%2A?displayProperty=nameWithType>登録済みの認証モジュールを削除する方法です。  
+  
+   
+  
+## Examples  
+ <xref:System.Net.IAuthenticationModule.AuthenticationType%2A> プロパティを使用する方法を次の例に示します。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#7](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#7)]
+ [!code-csharp[System.Net.Authentication#7](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#7)]
+ [!code-vb[System.Net.Authentication#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanPreAuthenticate">
+      <MemberSignature Language="C#" Value="public bool CanPreAuthenticate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanPreAuthenticate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IAuthenticationModule.CanPreAuthenticate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証モジュールは事前認証をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />承認モジュールが事前認証がサポートする場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IAuthenticationModule.CanPreAuthenticate%2A>プロパティに設定されている`true`、有効な認証モジュールが応答できることを示すために<xref:System.Net.Authorization>インスタンスの場合、<xref:System.Net.IAuthenticationModule.PreAuthenticate%2A>メソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Net.IAuthenticationModule.CanPreAuthenticate%2A> プロパティを使用する方法を次の例に示します。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#7](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#7)]
+ [!code-csharp[System.Net.Authentication#7](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#7)]
+ [!code-vb[System.Net.Authentication#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>これは、通常は固定です。認証モジュールを事前認証をか、そのことはできません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreAuthenticate">
+      <MemberSignature Language="C#" Value="public System.Net.Authorization PreAuthenticate (System.Net.WebRequest request, System.Net.ICredentials credentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.Authorization PreAuthenticate(class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IAuthenticationModule.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Authorization</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Net.WebRequest" />
+        <Parameter Name="credentials" Type="System.Net.ICredentials" />
+      </Parameters>
+      <Docs>
+        <param name="request"><see cref="T:System.Net.WebRequest" />認証要求に関連付けられているインスタンス。</param>
+        <param name="credentials">認証要求に関連付けられている資格情報。</param>
+        <summary>インスタンスを返します、<see cref="T:System.Net.Authorization" />サーバーへの認証要求のクラスです。</summary>
+        <returns><see cref="T:System.Net.Authorization" />要求の承認メッセージを含むインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Net.IAuthenticationModule.CanPreAuthenticate%2A>プロパティは`true`、<xref:System.Net.IAuthenticationModule.PreAuthenticate%2A>メソッドがのインスタンスを返す、<xref:System.Net.Authorization>認証メッセージを表すクラス。  
+  
+   
+  
+## Examples  
+ <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> メソッドを使用する方法の例を次に示します。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#4)]
+ [!code-csharp[System.Net.Authentication#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#4)]
+ [!code-vb[System.Net.Authentication#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

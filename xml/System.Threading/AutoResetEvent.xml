@@ -1,0 +1,124 @@
+<Type Name="AutoResetEvent" FullName="System.Threading.AutoResetEvent">
+  <TypeSignature Language="C#" Value="public sealed class AutoResetEvent : System.Threading.EventWaitHandle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AutoResetEvent extends System.Threading.EventWaitHandle" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.AutoResetEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Threading.EventWaitHandle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントが発生したことを待機中のスレッドに通知します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `AutoResetEvent`通知することによって互いに通信するためにスレッドを使用できます。 通常、スレッドがリソースへの排他アクセスを必要がある場合、このクラスを使用します。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 呼び出して、シグナル スレッドが待機<xref:System.Threading.WaitHandle.WaitOne%2A>上、`AutoResetEvent`です。 場合、`AutoResetEvent`スレッドは現在呼び出すことによって、リソースが使用できることを通知するリソースを制御の待機中のスレッドがブロックを非シグナル状態では、<xref:System.Threading.EventWaitHandle.Set%2A>です。  
+  
+ 呼び出す`Set`信号`AutoResetEvent`を待機中のスレッドを解放します。 `AutoResetEvent`1 つの待機中のスレッドが解放され、自動的に非シグナル状態に戻るまで、ままが通知されます。 無期限に待機しているスレッドがない場合に状態はシグナルです。  
+  
+ スレッドが呼び出す場合<xref:System.Threading.WaitHandle.WaitOne%2A>中に、<xref:System.Threading.AutoResetEvent>はシグナルの状態のスレッドをブロックしません。 <xref:System.Threading.AutoResetEvent>すぐに、スレッドを解放し、非シグナル状態に戻ります。  
+  
+> [!IMPORTANT]
+>  保証がないをすべての呼び出しに、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドは、スレッドを解放します。 2 つの呼び出しが近すぎる、スレッドが解放される前に 2 番目の呼び出しが行われるように、1 つのスレッドが解放されます。 2 番目の呼び出しが発生しなかったかのようをお勧めします。 また場合、<xref:System.Threading.EventWaitHandle.Set%2A>待機しているスレッドが存在しないときに呼び出されると、<xref:System.Threading.AutoResetEvent>が既にシグナル、呼び出しが影響を与えません。  
+  
+ 初期状態を制御することができます、`AutoResetEvent`コンス トラクターにブール値を渡すことによって:`true`初期状態が通知される場合と`false`それ以外の場合。  
+  
+ `AutoResetEvent`使用することもできます、 `static` <xref:System.Threading.WaitHandle.WaitAll%2A>と<xref:System.Threading.WaitHandle.WaitAny%2A>メソッドです。  
+  
+ スレッド同期機構の詳細については、次を参照してください。 [AutoResetEvent](~/docs/standard/threading/autoresetevent.md)概念説明のドキュメントです。  
+  
+ 以降では .NET Framework version 2.0、<xref:System.Threading.AutoResetEvent>から新しい派生<xref:System.Threading.EventWaitHandle>クラスです。 <xref:System.Threading.AutoResetEvent>は機能的に等価、<xref:System.Threading.EventWaitHandle>で作成された<xref:System.Threading.EventResetMode?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  異なり、<xref:System.Threading.AutoResetEvent>クラス、<xref:System.Threading.EventWaitHandle>クラスは、名前付きシステム同期イベントへのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Threading.AutoResetEvent>を呼び出すことによって、一度に 1 つのスレッドを解放する、<xref:System.Threading.EventWaitHandle.Set%2A>メソッド (基本クラス) の各ユーザーがの時間、 **Enter**キー。 この例の先頭を待つの 3 つのスレッド、<xref:System.Threading.AutoResetEvent>シグナル状態で作成しました。 最初のスレッドが解放、すぐに、<xref:System.Threading.AutoResetEvent>が既にシグナル状態にします。 これにより、リセット、<xref:System.Threading.AutoResetEvent>非シグナル状態に、後続のスレッドをブロックするようです。 ブロックされたスレッドは解放するまで、ユーザーに 1 つはリリースされないキーを押して時に、 **Enter**キー。  
+  
+ スレッドは最初のリリース後に<xref:System.Threading.AutoResetEvent>、別を待機して<xref:System.Threading.AutoResetEvent>非シグナル状態で作成しました。 次の 3 つのすべてのスレッドをブロック、そのため、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドは、それらすべてを解放する 3 回呼び出す必要があります。  
+  
+ [!code-cpp[System.Threading.AutoResetEvent#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/CPP/simplerisbetter.cpp#3)]
+ [!code-csharp[System.Threading.AutoResetEvent#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/CS/simplerisbetter.cs#3)]
+ [!code-vb[System.Threading.AutoResetEvent#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/VB/simplerisbetter.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>このクラスは、スレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AutoResetEvent (bool initialState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AutoResetEvent.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialState" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="initialState">
+          <see langword="true" />シグナルに初期状態を設定します。<see langword="false" />を非シグナル状態初期状態を設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.AutoResetEvent" />初期状態をシグナル状態に設定するかどうかを示すブール値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、 <xref:System.Threading.AutoResetEvent> 2 つのスレッドの活動を同期するためにします。 アプリケーションのスレッドである、最初のスレッドが実行される`Main`です。 保護されたリソースに値を書き込みます、 `static` (`Shared` Visual Basic で) という名前のフィールド`number`です。 2 番目のスレッド、静的な`ThreadProc`によって書き込まれた値を読み取るメソッド`Main`です。  
+  
+ `ThreadProc`メソッドの待機、<xref:System.Threading.AutoResetEvent>です。 ときに`Main`呼び出し、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドを<xref:System.Threading.AutoResetEvent>、`ThreadProc`メソッドは 1 つの値を読み取ります。 <xref:System.Threading.AutoResetEvent>直後にリセットされ、そのため、`ThreadProc`メソッドをもう一度待機します。  
+  
+ プログラム ロジックを設定する、`ThreadProc`メソッドは、同じ値の 2 倍を読み込みは行われません。 いるとは限りません、`ThreadProc`メソッドはによって書き込まれたすべての値を読み取る`Main`です。 その保証は、1 秒あたり<xref:System.Threading.AutoResetEvent>ロックします。  
+  
+ 個々 の書き込み操作の後に`Main`呼び出すことによって生成、<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>メソッド、2 番目のスレッドを実行します。 それ以外の場合、シングル プロセッサ コンピューターで`Main`読み取り操作を 2 つのいずれかの間の多くの値を書き込むはします。  
+  
+ [!code-cpp[System.Threading.AutoResetEvent#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.AutoResetEvent#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/CS/class1.cs#1)]
+ [!code-vb[System.Threading.AutoResetEvent#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,66 @@
+<Type Name="X509SelectionFlag" FullName="System.Security.Cryptography.X509Certificates.X509SelectionFlag">
+  <TypeSignature Language="C#" Value="public enum X509SelectionFlag" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed X509SelectionFlag extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.X509Certificates.X509SelectionFlag" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>選択範囲を使用して要求の種類を指定します、<see cref="Overload:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグを表す、1 つまたは複数の証明書の選択を使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を含む選択フラグを使用する方法を示しています、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection%2A?displayProperty=nameWithType>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスです。 大きな例では、現在のユーザーの個人証明書ストアを開き、証明書を選択することができ、証明書と証明書チェーンの情報をコンソールに出力します。 出力は、ユーザーが選択した証明書に依存します。  
+  
+ [!code-cpp[x509chaintest#2](~/samples/snippets/cpp/VS_Snippets_CLR/x509chaintest/CPP/x509chaintest.cpp#2)]
+ [!code-csharp[x509chaintest#2](~/samples/snippets/csharp/VS_Snippets_CLR/x509chaintest/CS/x509chaintest.cs#2)]
+ [!code-vb[x509chaintest#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509chaintest/vb/x509chaintest.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MultiSelection">
+      <MemberSignature Language="C#" Value="MultiSelection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.X509Certificates.X509SelectionFlag MultiSelection = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.X509Certificates.X509SelectionFlag.MultiSelection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509SelectionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数選択します。 ユーザーでは、SHIFT キーまたは CRTL キーを使用して、1 つ以上の X.509 証明書を選択します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleSelection">
+      <MemberSignature Language="C#" Value="SingleSelection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.X509Certificates.X509SelectionFlag SingleSelection = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509SelectionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つ選択します。 UI は、1 つの X.509 証明書を選択できます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

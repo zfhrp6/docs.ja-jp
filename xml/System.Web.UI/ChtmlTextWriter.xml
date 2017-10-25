@@ -1,0 +1,485 @@
+<Type Name="ChtmlTextWriter" FullName="System.Web.UI.ChtmlTextWriter">
+  <TypeSignature Language="C#" Value="public class ChtmlTextWriter : System.Web.UI.Html32TextWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChtmlTextWriter extends System.Web.UI.Html32TextWriter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ChtmlTextWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Html32TextWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET サーバー コントロールの出力ストリームに、一連の cHTML 固有の文字とテキストを書き込みます。 <see cref="T:System.Web.UI.ChtmlTextWriter" />クラスには、ASP.NET サーバー コントロールが cHTML コンテンツをクライアントに表示したときに使用する書式設定機能が用意されています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパクトな HTML、または cHTML、HTML 2.0、HTML 3.2、および HTML 4.0 のサブセットであるはメモリの制限を持つデバイスに表示するために設計されていますおよび書式設定機能、および限定された数の入力オプション (携帯電話のタッチ パッド) など、小さな画面と共に、CPU パワーが制限されます。 そのため、cHTML いない以下をサポートしません。  
+  
+-   JPEG イメージ。  
+  
+-   テーブル。  
+  
+-   イメージ マップします。  
+  
+-   複数の文字のフォントとスタイル。  
+  
+-   背景色と背景イメージ。  
+  
+-   フレームです。  
+  
+-   スタイル シートです。  
+  
+ <xref:System.Web.UI.ChtmlTextWriter>クラスから派生、<xref:System.Web.UI.Html32TextWriter>クラスとその機能の大部分がによって提供される、<xref:System.Web.UI.Html32TextWriter>はすべてのマークアップ テキスト ライターの基本クラスと、<xref:System.Web.UI.HtmlTextWriter>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のクラスを作成する方法を示します`CustomChtmlTextWriter`から派生する、<xref:System.Web.UI.ChtmlTextWriter>クラスです。 2 つのコンス トラクターを作成して、上書き、<xref:System.Web.UI.ChtmlTextWriter.OnAttributeRender%2A>しないようにする方法、`bgcolor`スタイル属性の出力ストリームに書き込まれてから、<xref:System.Web.UI.ChtmlTextWriter>オブジェクト。 という名前のクラスも作成`ChtmlCustomPageAdapter`1 つのメソッドを定義する`CreateCustomChtmlTextWriter`、これを作成しのインスタンスを返します、`CustomChtmlTextWriter`クラスです。 `CustomChtmlTextWriter` CHTML マークアップを使用しているブラウザーとデバイスにページの cHTML コンテンツをレンダリングします。  
+  
+ [!code-csharp[System.Web.UI.ChtmlTextWriter_Sample4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/cs/chtmltextwriter.cs#1)]
+ [!code-vb[System.Web.UI.ChtmlTextWriter_Sample4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/vb/chtmltextwriter.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChtmlTextWriter (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.#ctor(System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />マークアップの内容を表示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ChtmlTextWriter" />を使用してクラス、<see cref="F:System.Web.UI.HtmlTextWriter.DefaultTabString" />行をインデントする定数。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ChtmlTextWriter>クラスは、これは、すべてのクラスから直接または間接的に派生される標準を 2 つのコンス トラクターには、<xref:System.Web.UI.HtmlTextWriter>クラスです。  
+  
+ <xref:System.Web.UI.ChtmlTextWriter.%23ctor%2A>コンス トラクターは、のインスタンスを受け取り、<xref:System.IO.TextWriter>クラスをパラメーターとして、2 番目のコンス トラクターを呼び出し、2 つのパラメーター値を渡します。  
+  
+-   <xref:System.IO.TextWriter>。  
+  
+-   指定されている文字列値、<xref:System.Web.UI.HtmlTextWriter.DefaultTabString>フィールドには、XHTML テキスト ライターによって使用されるタブのスペースを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のクラスを作成する方法を示します`ChtmlCustomPageAdapter`し、1 つのメソッドを定義`CreateCustomChtmlTextWriter`、これを作成しのインスタンスを返します、`CustomChtmlTextWriter`クラスです。 `CustomChtmlTextWriter` CHTML マークアップを使用しているブラウザーとデバイスにページのコンテンツを cHTML をレンダリングします。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.ChtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.ChtmlTextWriter_Sample4#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/cs/chtmltextwriter.cs#3)]
+ [!code-vb[System.Web.UI.ChtmlTextWriter_Sample4#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/vb/chtmltextwriter.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChtmlTextWriter (System.IO.TextWriter writer, string tabString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer, string tabString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.#ctor(System.IO.TextWriter,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="tabString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />マークアップの内容を表示します。</param>
+        <param name="tabString">定義された空白の数、<see cref="P:System.Web.UI.HtmlTextWriter.Indent" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ChtmlTextWriter" />指定された行のインデントを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ChtmlTextWriter.%23ctor%2A>コンス トラクターは、両方のインスタンスを受け取り、<xref:System.IO.TextWriter>クラスと文字列を呼び出し、パラメーターとして、<xref:System.Web.UI.Html32TextWriter>のインスタンスを作成するときに、同じパラメーターを受け取るコンス トラクター、<xref:System.Web.UI.ChtmlTextWriter>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のカスタム クラスを作成する方法を示します`CustomChtmlTextWriter`から派生する、<xref:System.Web.UI.ChtmlTextWriter>クラスです。 同じパターンに直接派生するすべてのクラスとして、または間接的にからカスタム クラスのインスタンスを作成に使用できる 2 つのコンス トラクターを作成、<xref:System.Web.UI.HtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.ChtmlTextWriter_Sample4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/cs/chtmltextwriter.cs#1)]
+ [!code-vb[System.Web.UI.ChtmlTextWriter_Sample4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/vb/chtmltextwriter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRecognizedAttribute">
+      <MemberSignature Language="C#" Value="public virtual void AddRecognizedAttribute (string elementName, string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRecognizedAttribute(string elementName, string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.AddRecognizedAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">属性を追加する cHTML 要素。</param>
+        <param name="attributeName">追加する属性<c>elementName</c>です。</param>
+        <summary>CHTML 要素に属性を追加、<see cref="T:System.Web.UI.ChtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ChtmlTextWriter.AddRecognizedAttribute%2A>メソッドが cHTML 要素に属性を追加します。 認識できる属性が認識されている属性に格納されている<xref:System.Collections.Hashtable>のコレクション、<xref:System.Web.UI.ChtmlTextWriter>によって参照されるオブジェクト、<xref:System.Web.UI.ChtmlTextWriter.RecognizedAttributes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalSuppressedAttributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable GlobalSuppressedAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable GlobalSuppressedAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ChtmlTextWriter.GlobalSuppressedAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Collections.Hashtable" /> cHTML 要素上に描画することはできません、グローバルに抑制されている属性のオブジェクト。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />グローバルに抑制された cHTML 属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の一覧との新しいインスタンスに設定されているグローバルに抑制されている属性を示しています、<xref:System.Web.UI.ChtmlTextWriter>クラスを作成します。  
+  
+|||  
+|-|-|  
+|`onclick`|`onmousemove`|  
+|`ondblclick`|`onmouseout`|  
+|`onmousedown`|`onkeypress`|  
+|`onmouseup`|`onkeydown`|  
+|`onmouseover`|`onkeyup`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAttributeRender">
+      <MemberSignature Language="C#" Value="protected override bool OnAttributeRender (string name, string value, System.Web.UI.HtmlTextWriterAttribute key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnAttributeRender(string name, string value, valuetype System.Web.UI.HtmlTextWriterAttribute key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.OnAttributeRender(System.String,System.String,System.Web.UI.HtmlTextWriterAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="name">表示するために cHTML 属性です。</param>
+        <param name="value">割り当てられた値<c>名前</c>です。</param>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterAttribute" />に関連付けられている<c>名前</c>です。</param>
+        <summary>要求元のページに指定した cHTML 属性とその値が表示されるかどうかを判断します。 オーバーライドすることができます、<see cref="M:System.Web.UI.ChtmlTextWriter.OnAttributeRender(System.String,System.String,System.Web.UI.HtmlTextWriterAttribute)" />から派生したクラスのメソッド、<see cref="T:System.Web.UI.ChtmlTextWriter" />をそのサポート cHTML デバイスで表示したくない属性をフィルター処理するクラス。</summary>
+        <returns>
+          <see langword="true" />属性とその値を書き込む、<see cref="T:System.Web.UI.ChtmlTextWriter" />出力ストリームです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.ChtmlTextWriter.OnAttributeRender%2A>メソッドが記載されている属性をグローバルに抑制を防止、<xref:System.Web.UI.ChtmlTextWriter.GlobalSuppressedAttributes%2A>プロパティおよびに記載されている、要素に固有の非表示になる属性、<xref:System.Web.UI.ChtmlTextWriter.SuppressedAttributes%2A>プロパティを出力ストリームに書き込まれているからです。 動作をオーバーライドすることができます、<xref:System.Web.UI.ChtmlTextWriter.OnAttributeRender%2A>から派生したクラスのメソッド、<xref:System.Web.UI.ChtmlTextWriter>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドするカスタム クラスを使用する方法を示します、<xref:System.Web.UI.ChtmlTextWriter.OnAttributeRender%2A>しないようにする方法、 `bgcolor` cHTML 出力ストリームに書き込まれてからの属性です。 ベースによって提供される機能を呼び出して<xref:System.Web.UI.ChtmlTextWriter.OnAttributeRender%2A>メソッドから、<xref:System.Web.UI.ChtmlTextWriter>クラスを既定の動作が使用されるように、すぎます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.ChtmlTextWriter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.ChtmlTextWriter_Sample4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/cs/chtmltextwriter.cs#2)]
+ [!code-vb[System.Web.UI.ChtmlTextWriter_Sample4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample4/vb/chtmltextwriter.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStyleAttributeRender">
+      <MemberSignature Language="C#" Value="protected override bool OnStyleAttributeRender (string name, string value, System.Web.UI.HtmlTextWriterStyle key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnStyleAttributeRender(string name, string value, valuetype System.Web.UI.HtmlTextWriterStyle key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.OnStyleAttributeRender(System.String,System.String,System.Web.UI.HtmlTextWriterStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterStyle" />
+      </Parameters>
+      <Docs>
+        <param name="name">表示するためにスタイル属性の名前を含む文字列。</param>
+        <param name="value">割り当てられている値を含む文字列<c>名前</c>です。</param>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterStyle" />に関連付けられている<c>名前</c>です。</param>
+        <summary>指定した cHTML マークアップ スタイル属性とその値を現在のマークアップ要素を表示できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />スタイルをレンダリングする場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ChtmlTextWriter.OnStyleAttributeRender%2A>メソッドを返します。`false`とき`key`がと等しい、<xref:System.Web.UI.HtmlTextWriterStyle.TextDecoration>フィールドと、値は`"line-through"`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTagRender">
+      <MemberSignature Language="C#" Value="protected override bool OnTagRender (string name, System.Web.UI.HtmlTextWriterTag key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnTagRender(string name, valuetype System.Web.UI.HtmlTextWriterTag key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.OnTagRender(System.String,System.Web.UI.HtmlTextWriterTag)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterTag" />
+      </Parameters>
+      <Docs>
+        <param name="name">表示するために cHTML 要素の名前を含む文字列。</param>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterTag" />に関連付けられている<c>名前</c>です。</param>
+        <summary>指定した cHTML マークアップ要素が要求元のページにレンダリングされるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した cHTML マークアップ要素をレンダリングする場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CHTML 要素がある場合、`span`要素、<xref:System.Web.UI.ChtmlTextWriter.OnTagRender%2A>メソッドを返します。`false`です。 その他のすべてのタグを返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizedAttributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable RecognizedAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable RecognizedAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ChtmlTextWriter.RecognizedAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Collections.Hashtable" /> cHTML 要素に表示することが認識されている属性のオブジェクト。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />認識 cHTML 属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ChtmlTextWriter.AddRecognizedAttribute%2A>認識を追加するメソッドの属性は認識されている属性コレクションにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRecognizedAttribute">
+      <MemberSignature Language="C#" Value="public virtual void RemoveRecognizedAttribute (string elementName, string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveRecognizedAttribute(string elementName, string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.RemoveRecognizedAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">CHTML 要素から属性を削除します。</param>
+        <param name="attributeName">削除する属性<c>elementName</c>です。</param>
+        <summary>CHTML 要素の属性を削除、<see cref="T:System.Web.UI.ChtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ChtmlTextWriter.RemoveRecognizedAttribute%2A>メソッド cHTML 要素から属性を削除します。 認識された属性が認識されている属性から削除<xref:System.Collections.Hashtable>のコレクション、<xref:System.Web.UI.ChtmlTextWriter>によって参照されるオブジェクト、<xref:System.Web.UI.ChtmlTextWriter.RecognizedAttributes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressedAttributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable SuppressedAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable SuppressedAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ChtmlTextWriter.SuppressedAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.Hashtable" />ユーザー指定のオブジェクトが cHTML 要素ではレンダリングされません属性を抑制します。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />抑制 cHTML 属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ChtmlTextWriter.RemoveRecognizedAttribute%2A>抑制されている属性コレクションに属性を追加するメソッド。  
+  
+ 次の一覧に設定されている抑制の既定の属性を示しています、`div`要素の新しいインスタンスをときに、<xref:System.Web.UI.ChtmlTextWriter>クラスを作成します。  
+  
+|||  
+|-|-|  
+|`accesskey`|`gridlines`|  
+|`cellspacing`|`rules`|  
+|`cellpadding`||  
+  
+ 次の一覧に設定されている抑制の既定の属性を示しています、`span`要素の新しいインスタンスをときに、<xref:System.Web.UI.ChtmlTextWriter>クラスを作成します。  
+  
+|||  
+|-|-|  
+|`cellspacing`|`gridlines`|  
+|`cellpadding`|`rules`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteBreak">
+      <MemberSignature Language="C#" Value="public override void WriteBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteBreak() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.WriteBreak" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込みます、<see langword="br" />要素、cHTML を出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.ChtmlTextWriter.WriteBreak%2A> cHMTL のストリームに行を挿入するメソッドを分割します。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例では、cHTML クラスおよびカスタム プロパティを作成する方法を示します。 2 つ目のコード例では、Web ページで、カスタム クラスを使用する方法を示します。  
+  
+ ユーザー設定を使用する`ChtmlSimplelabelAdapter`アダプターでは、次のいずれかに、適切なコンピューター全体のサブディレクトリ内のファイルの .NET Framework 構成ディレクトリまたは Web App_Browsers ディレクトリ内のカスタム ブラウザー ファイルをブラウザーのコードを追加アプリケーションのルートです。  
+  
+```  
+<controlAdapters>  
+   <adapter controlType="AspNet.Samples.SimpleLabel"  
+   adapterType="AspNet.Samples.ChtmlSimpleLabelAdapter" />  
+</controlAdapters>  
+```  
+  
+ 次のコード例は、名前付き cHTML アダプター クラスを作成する方法を示します`ChtmlSimpleLabelAdapter`という名前のクラスの`SimpleLabel`します。 カスタムを作成`Control`により、プロパティ、`ChtmlSimpleLabelAdapter`のメンバーにアクセスするクラス、`SimpleLabel`クラス、および、上書き、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>メソッドです。 オーバーライドで、次の処理が行われます。  
+  
+-   参照を作成、<xref:System.Web.UI.ChtmlTextWriter>という名前のオブジェクト`w`から派生した、<xref:System.Web.UI.HtmlTextWriter>オブジェクトとして渡される、`writer`のパラメーター、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>メソッドです。  
+  
+-   同じに設定し、文字列を作成、`SimpleLabel.Text`値。  
+  
+-   呼び出す、<xref:System.Web.UI.HtmlTextWriter.EnterStyle%2A>によって定義されているスタイルを適用する方法、 <xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A> cHTML するラベルのプロパティは、ストリームを出力します。  
+  
+-   書き込む、`Text`プロパティの値をストリームと呼び出すことにより、スタイル ブロックが閉じ、<xref:System.Web.UI.HtmlTextWriter.ExitStyle%2A>メソッドです。  
+  
+-   呼び出す、<xref:System.Web.UI.ChtmlTextWriter.WriteBreak%2A>メソッドを表示するために、`br`テキストとスタイルのレンダリング後の出力ストリームに要素。  
+  
+ [!code-csharp[System.Web.UI.ChtmlTextWriter_Sample1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample1/cs/chtmltestlabel.cs#2)]
+ [!code-vb[System.Web.UI.ChtmlTextWriter_Sample1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample1/VB/chtmltestlabel.vb#2)]  
+  
+ 次の例で使用する方法、 `SimpleLabel` Web ページ内のクラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ChtmlTextWriter_Sample1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample1/cs/chtmltestlabel.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.ChtmlTextWriter_Sample1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ChtmlTextWriter_Sample1/VB/chtmltestlabel.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEncodedText">
+      <MemberSignature Language="C#" Value="public override void WriteEncodedText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteEncodedText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ChtmlTextWriter.WriteEncodedText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">エンコードして出力ストリームに書き込む文字列。</param>
+        <summary>要求元のデバイスで指定したテキストをエンコードし、それを出力ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト パラメーターに渡す場合、<xref:System.Web.UI.ChtmlTextWriter.WriteEncodedText%2A>メソッドは`null`または長さ 0 の場合の何も書き込まれません。  
+  
+ 使用して、<xref:System.Web.UI.ChtmlTextWriter.WriteEncodedText%2A>メソッド (string) には、山かっこが含まれている場合 (\<または >) または、アンパサンド (&) の要求元のデバイスが正しくレンダリングされることを確認するとします。  
+  
+ <xref:System.Web.UI.ChtmlTextWriter.WriteEncodedText%2A>メソッドの使用、基本クラスの<xref:System.Web.UI.HtmlTextWriter.WriteEncodedText%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

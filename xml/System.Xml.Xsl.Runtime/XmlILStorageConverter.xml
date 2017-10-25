@@ -1,0 +1,424 @@
+<Type Name="XmlILStorageConverter" FullName="System.Xml.Xsl.Runtime.XmlILStorageConverter">
+  <TypeSignature Language="C#" Value="public static class XmlILStorageConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit XmlILStorageConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.Runtime.XmlILStorageConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlXml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値コンバーターを取得する静的ヘルパー メソッドを提供する内部クラスを表す<see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" />にいくつか物理共通言語ランタイム (CLR) の表現の同じ論理 XML 型間で変換します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="BooleanToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue BooleanToAtomicValue (bool value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue BooleanToAtomicValue(bool value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.BooleanToAtomicValue(System.Boolean,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する <see langword="Boolean" /> 値。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>ブール値を変換、<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Boolean" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="BytesToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue BytesToAtomicValue (byte[] value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue BytesToAtomicValue(unsigned int8[] value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.BytesToAtomicValue(System.Byte[],System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see langword="Byte" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>バイト配列に変換する<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Byte" />配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DateTimeToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue DateTimeToAtomicValue (DateTime value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue DateTimeToAtomicValue(valuetype System.DateTime value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.DateTimeToAtomicValue(System.DateTime,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.DateTime" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="DateTime" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see langword="DateTime" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="DateTime" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DecimalToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue DecimalToAtomicValue (decimal value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue DecimalToAtomicValue(valuetype System.Decimal value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.DecimalToAtomicValue(System.Decimal,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Decimal" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="Decimal" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>10 進数の値を変換、<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Decimal" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue DoubleToAtomicValue (double value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue DoubleToAtomicValue(float64 value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.DoubleToAtomicValue(System.Double,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="Double" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see langword="Double" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Double" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Int32ToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue Int32ToAtomicValue (int value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue Int32ToAtomicValue(int32 value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.Int32ToAtomicValue(System.Int32,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="Int32" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see langword="Int32" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Int32" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Int64ToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue Int64ToAtomicValue (long value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue Int64ToAtomicValue(int64 value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.Int64ToAtomicValue(System.Int64,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="Int64" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see langword="Int64" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Int64" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsToNavigators">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt; ItemsToNavigators (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; listItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathNavigator&gt; ItemsToNavigators(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; listItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.ItemsToNavigators(System.Collections.Generic.IList{System.Xml.XPath.XPathItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listItems" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="listItems">一連の<see cref="T:System.Xml.XPath.XPathItem" />インスタンス。</param>
+        <summary>リストまたはのシーケンスに変換<see cref="T:System.Xml.XPath.XPathItem" />オブジェクトのシーケンスを<see cref="T:System.Xml.XPath.XPathNavigator" />オブジェクトまたは値。</summary>
+        <returns>型のジェネリック リスト<see cref="T:System.Xml.XPath.XPathNavigator" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NavigatorsToItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; NavigatorsToItems (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt; listNavigators);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; NavigatorsToItems(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathNavigator&gt; listNavigators) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.NavigatorsToItems(System.Collections.Generic.IList{System.Xml.XPath.XPathNavigator})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listNavigators" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="listNavigators">一連の<see cref="T:System.Xml.XPath.XPathNavigator" />インスタンス。</param>
+        <summary>シーケンスに変換<see cref="T:System.Xml.XPath.XPathNavigator" />オブジェクトまたは値のシーケンスの一覧を<see cref="T:System.Xml.XPath.XPathItem" />オブジェクト。</summary>
+        <returns>型のジェネリック リスト<see cref="T:System.Xml.XPath.XPathItem" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SingleToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue SingleToAtomicValue (float value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue SingleToAtomicValue(float32 value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.SingleToAtomicValue(System.Single,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="Single" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see langword="Single" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="Single" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StringToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue StringToAtomicValue (string value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue StringToAtomicValue(string value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.StringToAtomicValue(System.String,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see langword="String" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>文字列値を変換、<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="String" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpanToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue TimeSpanToAtomicValue (TimeSpan value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue TimeSpanToAtomicValue(valuetype System.TimeSpan value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.TimeSpanToAtomicValue(System.TimeSpan,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.TimeSpan" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の値<see cref="T:System.TimeSpan" />に変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see cref="T:System.TimeSpan" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="TimeSpan" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="XmlQualifiedNameToAtomicValue">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlAtomicValue XmlQualifiedNameToAtomicValue (System.Xml.XmlQualifiedName value, int index, System.Xml.Xsl.Runtime.XmlQueryRuntime runtime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlAtomicValue XmlQualifiedNameToAtomicValue(class System.Xml.XmlQualifiedName value, int32 index, class System.Xml.Xsl.Runtime.XmlQueryRuntime runtime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlILStorageConverter.XmlQualifiedNameToAtomicValue(System.Xml.XmlQualifiedName,System.Int32,System.Xml.Xsl.Runtime.XmlQueryRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlAtomicValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="runtime" Type="System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="value">インスタンス、<see cref="T:System.Xml.XmlQualifiedName" />クラスに変換します。</param>
+        <param name="index">型の値<see langword="Int32" />に変換する項目のインデックスを提供します。</param>
+        <param name="runtime"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" /> クラスのインスタンス。</param>
+        <summary>変換、<see cref="T:System.Xml.XmlQualifiedName" />値を<see cref="T:System.Xml.Schema.XmlAtomicValue" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlAtomicValue" />オブジェクトに対して、<see langword="XmlQualifiedName" />値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

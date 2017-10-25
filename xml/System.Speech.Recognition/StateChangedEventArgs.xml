@@ -1,0 +1,161 @@
+<Type Name="StateChangedEventArgs" FullName="System.Speech.Recognition.StateChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class StateChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StateChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.StateChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Speech.Recognition.SpeechRecognizer.StateChanged" /> イベントからのデータを返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>によってイベントが発生した、<xref:System.Speech.Recognition.SpeechRecognizer>クラスです。 <xref:System.Speech.Recognition.StateChangedEventArgs>派生した<xref:System.EventArgs>のハンドラーに渡されると<xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>イベント。  
+  
+ <xref:System.Speech.Recognition.SpeechRecognizer.State%2A>読み取り専用プロパティです。 共有音声認識エンジンの状態は、プログラムで変更できません。 ユーザーが音声認識のユーザー インターフェイス (UI) を使用して共有音声認識エンジンの状態を変更または、**音声認識**、Windows のメンバー**コントロール パネルの **です。  
+  
+ 両方、**で**と**スリープ**、音声認識 ui 設定に対応して、`Listening`状態です。 **オフ**、音声認識 ui 設定に対応して<xref:System.Speech.Recognition.RecognizerState.Stopped>です。  
+  
+   
+  
+## Examples  
+ 次の例では、共有音声認識を作成し、特定の単語を認識するため、空きディクテーションを受け入れるための文法の 2 種類が作成されます。 例は、認識エンジンに作成されたすべての文法を非同期的に読み込みます。  ハンドラーを<xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>イベントを使用して、 <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A> 「リッスン」モードに Windows 認識するメソッド。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize a shared speech recognition engine.  
+      recognizer = new SpeechRecognizer();  
+  
+      // Add a handler for the LoadGrammarCompleted event.  
+      recognizer.LoadGrammarCompleted += new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+  
+      // Add a handler for the SpeechRecognized event.  
+      recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+      // Add a handler for the StateChanged event.  
+      recognizer.StateChanged += new EventHandler<StateChangedEventArgs>(recognizer_StateChanged);  
+  
+      // Create "yesno" grammar.  
+      Choices yesChoices = new Choices(new string[] { "yes", "yup", "yah}" });  
+      SemanticResultValue yesValue =  
+          new SemanticResultValue(yesChoices, (bool)true);  
+      Choices noChoices = new Choices(new string[] { "no", "nope", "nah" });  
+      SemanticResultValue noValue = new SemanticResultValue(noChoices, (bool)false);  
+      SemanticResultKey yesNoKey =  
+          new SemanticResultKey("yesno", new Choices(new GrammarBuilder[] { yesValue, noValue }));  
+      Grammar yesnoGrammar = new Grammar(yesNoKey);  
+      yesnoGrammar.Name = "yesNo";  
+  
+      // Create "done" grammar.  
+      Grammar doneGrammar =  
+        new Grammar(new Choices(new string[] { "done", "exit", "quit", "stop" }));  
+      doneGrammar.Name = "Done";  
+  
+      // Create dictation grammar.  
+      Grammar dictation = new DictationGrammar();  
+      dictation.Name = "Dictation";  
+  
+      // Load grammars to the recognizer.  
+      recognizer.LoadGrammarAsync(yesnoGrammar);  
+      recognizer.LoadGrammarAsync(doneGrammar);  
+      recognizer.LoadGrammarAsync(dictation);  
+  
+      // Keep the console window open.  
+      Console.ReadLine();  
+    }  
+  
+    // Put the shared speech recognizer into "listening" mode.  
+    static void  recognizer_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+     if (e.RecognizerState != RecognizerState.Stopped)  
+      {  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+    }  
+  
+    // Write the grammar name and the text of the recognized phrase to the console.  
+    static void  recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+     Console.WriteLine("Grammar({0}): {1}", e.Result.Grammar.Name, e.Result.Text);  
+  
+      // Add event handler code here.  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void  recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+     string grammarName = e.Grammar.Name;  
+      bool grammarLoaded = e.Grammar.Loaded;  
+      if (e.Error != null)  
+      {  
+        Console.WriteLine("LoadGrammar for {0} failed with a {1}.",  
+        grammarName, e.Error.GetType().Name);  
+      }  
+  
+      // Add exception handling code here.  
+      Console.WriteLine("Grammar {0} {1} loaded.",  
+      grammarName, (grammarLoaded) ? "is" : "is not");  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RecognizerState">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognizerState RecognizerState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.RecognizerState RecognizerState" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.StateChangedEventArgs.RecognizerState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognizerState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows の共有音声認識エンジンの現在の状態を取得します。</summary>
+        <value>共有の音声認識エンジンの状態が <see langword="Listening" /> か <see langword="Stopped" /> かを示す <see cref="T:System.Speech.Recognition.RecognizerState" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で提供される状態情報に基づいて表示を更新する、<xref:System.Speech.Recognition.RecognizerState>インスタンスから取得される、<xref:System.Speech.Recognition.StateChangedEventArgs.RecognizerState%2A>のプロパティ、<xref:System.Speech.Recognition.StateChangedEventArgs>のハンドラーに渡されるインスタンス、<xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>イベント。  
+  
+```  
+  
+// Make sure that _recognizer and recognition start buttons are disabled if state is stopped.  
+// Re-enable the start button to allow manual re-enable if the speech recognizer is listening.  
+_recognizer.StateChanged +=  
+  delegate(object sender, StateChangedEventArgs eventArgs)   
+{  
+  _recognizerStateLabel.Text = "Speech Recognizer State: " + eventArgs.RecognizerState.ToString();  
+};  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

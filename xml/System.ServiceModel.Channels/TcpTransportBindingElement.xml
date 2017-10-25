@@ -1,0 +1,559 @@
+<Type Name="TcpTransportBindingElement" FullName="System.ServiceModel.Channels.TcpTransportBindingElement">
+  <TypeSignature Language="C#" Value="public class TcpTransportBindingElement : System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TcpTransportBindingElement extends System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.TcpTransportBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>TCP トランスポートのバインド要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトランスポートは、フォームの Uri を使用"`net.tcp`://`hostname`:`port`/`path`"です。 他の URI コンポーネントは省略可能です。  
+  
+ <xref:System.ServiceModel.Channels.TcpTransportBindingElement> クラスを基にして、TCP トランスポート プロトコルを実装するカスタム バインディングを作成します。 このトランスポートは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] と [!INCLUDE[indigo2](~/includes/indigo2-md.md)] の間の通信用に最適化されています。  
+  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービス モデルは、このクラスを使用して、<xref:System.ServiceModel.Channels.IChannelFactory> インターフェイスおよび <xref:System.ServiceModel.Channels.IChannelListener> インターフェイスを実装するファクトリ オブジェクトを作成します。 これらのファクトリ オブジェクトは、TCP プロトコルを使用して SOAP メッセージを送信するチャネルを作成して受け入れます。  
+  
+ このクラスが作成するファクトリを構成するには、<xref:System.ServiceModel.Channels.TcpTransportBindingElement.PortSharingEnabled%2A> や <xref:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout%2A> などのプロパティを設定します。  
+  
+ また、基本クラス <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement> では、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize%2A>、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode%2A>、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize%2A> などのプロパティも設定できます。 プロパティの全一覧については、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement> を参照してください。  
+  
+ 最後に、基本クラス <xref:System.ServiceModel.Channels.TransportBindingElement> では、<xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> や <xref:System.ServiceModel.Channels.TransportBindingElement.MaxBufferPoolSize%2A> などのプロパティを設定できます。 プロパティの全一覧については、<xref:System.ServiceModel.Channels.TransportBindingElement> を参照してください。  
+  
+   
+  
+## Examples  
+ このクラスを使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpTransportBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Channels.TcpTransportBindingElement> クラスの新しいインスタンスを作成する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TcpTransportBindingElement (System.ServiceModel.Channels.TcpTransportBindingElement elementToBeCloned);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.TcpTransportBindingElement elementToBeCloned) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementToBeCloned" Type="System.ServiceModel.Channels.TcpTransportBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="elementToBeCloned"><see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> クラスのインスタンス。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バインド要素の複製に使用されるコピー コンストラクターであり、派生クラスが <xref:System.ServiceModel.Channels.TcpTransportBindingElement.Clone%2A> を実装できるように公開されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+        <param name="context">
+          バインディング、動作、コントラクト、およびチャネル ファクトリの作成に必要なその他の情報を記述する <see cref="T:System.ServiceModel.Channels.BindingContext" /> メンバー。</param>
+        <summary>チャネルを作成するために使用できるチャネル ファクトリを作成します。</summary>
+        <returns>指定した種類のチャネル ファクトリを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、TCP バインド要素の構成に基づいてメッセージを送信するためのチャネル ファクトリを作成できます。  
+  
+   
+  
+## Examples  
+ 次の例では、チャネルを作成するために使用できるチャネル ファクトリを作成する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> として <see langword="null" /> を使用することはできません。</exception>
+        <exception cref="T:System.ArgumentException">無効な引数が渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーの種類。</typeparam>
+        <param name="context">
+          バインディング、動作、コントラクト、およびチャネル ファクトリの作成に必要なその他の情報を記述する <see cref="T:System.ServiceModel.Channels.BindingContext" /> メンバー。</param>
+        <summary>指定した種類のチャネル リスナーを作成します。</summary>
+        <returns>指定した種類のチャネル リスナーを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、TCP バインド要素の構成に基づいてメッセージを受信するためのチャネル リスナーを作成できます。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した種類のチャネル リスナーを返す方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> として <see langword="null" /> を使用することはできません。</exception>
+        <exception cref="T:System.ArgumentException">無効な引数が渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のバインド要素のコピーを作成します。</summary>
+        <returns>現在のバインド要素のコピーを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、現在のバインド要素のコピーを作成する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionPoolSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.TcpConnectionPoolSettings ConnectionPoolSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.TcpConnectionPoolSettings ConnectionPoolSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TcpConnectionPoolSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続プール設定のコレクションを取得します。</summary>
+        <value>接続プールに関連するさまざまなプロパティを格納する <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、接続プール設定のコレクションを取得する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProtectionPolicy">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の拡張保護ポリシーを取得または設定します。</summary>
+        <value>拡張保護ポリシー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張保護ポリシーは、受信クライアント接続を検証するためにサーバーによって使用されるオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">取得するオブジェクト。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.BindingContext" /> から指定したオブジェクトを取得します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.BindingContext" /> から取得した指定オブジェクト。オブジェクトが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本クラスまたはそのクラスの先祖から、指定したオブジェクトを取得します。 返されるオブジェクトは、通常、プロパティのコレクションです。たとえば、<xref:System.ServiceModel.Channels.ISecurityCapabilities> を実装するオブジェクトなどです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Channels.BindingContext> から指定したオブジェクトを取得する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListenBacklog">
+      <MemberSignature Language="C#" Value="public int ListenBacklog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ListenBacklog" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TcpTransportBindingElement.ListenBacklog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保留可能なキュー内の接続要求の最大数を取得または設定します。</summary>
+        <value>保留可能なキュー内の接続要求の最大数を返します。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.TcpTransportBindingElement.ListenBacklog%2A> は、キューに置かれた "受入保留" 要求の数を記述するソケット レベルのプロパティです。 基になるソケット キューで同時接続の最大数を超えないことを確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、ListenBacklog の値を取得する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は 1 未満には設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PortSharingEnabled">
+      <MemberSignature Language="C#" Value="public bool PortSharingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PortSharingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TcpTransportBindingElement.PortSharingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TCP ポート共有をこの接続で有効にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          TCP ポート共有が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定を使用するには、[スタートアップの種類] を [手動] または [自動] に変更して、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] TCP ポート共有サービスを有効にする必要があります。  
+  
+ TCP リスナーとその起動方法については、次を参照してください。 [Net.TCP ポート共有](~/docs/framework/wcf/feature-details/net-tcp-port-sharing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、TCP ポート共有が有効かどうかを示す値を取得する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポートの URI スキームを返します。</summary>
+        <value>"net.tcp" であるトランスポートの URI スキームを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ベース アドレスに対するバインドを検証するために提供されます。  
+  
+   
+  
+## Examples  
+ 次の例では、トランスポートの URI スキームを取得する方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeExtendedProtectionPolicy">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeExtendedProtectionPolicy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeExtendedProtectionPolicy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.ShouldSerializeExtendedProtectionPolicy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>拡張保護ポリシーを XAML シリアル化できないことを示す値を返します。</summary>
+        <returns><see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張保護ポリシーは、受信クライアント接続を検証するためにサーバーによって使用されるオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeListenBacklog">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeListenBacklog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeListenBacklog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TcpTransportBindingElement.ShouldSerializeListenBacklog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>TCP トランスポート バインド要素をリッスン バックログ シリアル化するかどうかを示します。</summary>
+        <returns>
+          <see langword="True" />リッスン バックログ; の場合は、TCP トランスポート バインド要素をシリアル化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TeredoEnabled">
+      <MemberSignature Language="C#" Value="public bool TeredoEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TeredoEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TcpTransportBindingElement.TeredoEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Teredo (ファイアウォールの内側にあるクライアントをアドレス指定するためのテクノロジ) が有効であるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          Teredo が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、基になる TCP ソケットで Tredo を有効にします。 詳細については、次を参照してください。 [Teredo の概要](http://go.microsoft.com/fwlink/?LinkId=96649)です。  
+  
+ このプロパティは [!INCLUDE[wxpsp2](~/includes/wxpsp2-md.md)] および [!INCLUDE[ws2003](~/includes/ws2003-md.md)] にのみ適用できます。 [!INCLUDE[wv](~/includes/wv-md.md)] には、Teredo 用のコンピューター全体の構成オプションがあるので、[!INCLUDE[wv](~/includes/wv-md.md)] を実行する場合は、このプロパティは無視されます。 Teredo の場合、クライアント コンピューターおよびサービス コンピューターの両方に Microsoft IPv6 スタックをインストールし、Teredo 用に正しく設定する必要があります。 Teredo の構成の詳細については、次を参照してください。 [Teredo の概要](http://go.microsoft.com/fwlink/?LinkId=96649)です。 Microsoft IPv6 スタックのインストールの詳細については、次を参照してください。 [Windows Server 2003 Technology Centers](http://go.microsoft.com/fwlink/?LinkId=96650)です。  
+  
+   
+  
+## Examples  
+ 次の例では、基になる TCP ソケットで Teredo を有効にする方法を示します。  
+  
+ [!code-csharp[S_UETcpTransportBindingElement#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_uetcptransportbindingelement/cs/program.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

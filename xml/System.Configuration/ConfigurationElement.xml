@@ -1,0 +1,1330 @@
+<Type Name="ConfigurationElement" FullName="System.Configuration.ConfigurationElement">
+  <TypeSignature Language="C#" Value="public abstract class ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConfigurationElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内の構成要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement> (Web.config) などの構成ファイル内の XML 要素を表すために使用される抽象クラスです。 構成ファイル内の要素には、0、1、または複数の子要素を含めることができます。  
+  
+ <xref:System.Configuration.ConfigurationElement>クラスが abstract として定義されている、そのインスタンスを作成することはできません。 クラスは、そこからのみ派生できます。 .NET Framework にはから派生するクラスが含まれています、<xref:System.Configuration.ConfigurationElement>など、標準の XML 構成要素を表すためにクラス<xref:System.Configuration.ConfigurationSection>です。 拡張することも、<xref:System.Configuration.ConfigurationElement>カスタム構成要素とセクションにアクセスするクラス。 このトピックの後半に含まれている例から派生するカスタム クラスを使用してカスタム構成要素とセクションにアクセスする方法を示します<xref:System.Configuration.ConfigurationElement>です。  
+  
+ など、標準的な構成の種類を拡張することもできます。 <xref:System.Configuration.ConfigurationElement>、 <xref:System.Configuration.ConfigurationElementCollection>、 <xref:System.Configuration.ConfigurationProperty>、および<xref:System.Configuration.ConfigurationSection>です。 詳細については、これらのクラスのドキュメントを参照してください。  
+  
+ 構成ファイル内の情報にアクセスする方法の詳細については、次を参照してください。、<xref:System.Configuration.ConfigurationManager>クラスおよび<xref:System.Web.Configuration.WebConfigurationManager>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムの実装方法を示しています。<xref:System.Configuration.ConfigurationElement>カスタム セクション内の個々 の要素、およびカスタム セクション内の要素のコレクションとして。 例は、次のファイルで構成されます。  
+  
+-   カスタム セクションという名前を含む app.config ファイル`MyUrls`です。 このセクションには、(その他の要素を含まない) 単純な要素と要素のコレクションが含まれています。 単純な要素の名前は`simple`でコレクションの名前が`urls`です。  
+  
+-   コンソール アプリケーションです。 アプリケーションでは、app.config ファイルの内容を読み取り、コンソールに、情報を書き込みます。 派生するクラスを使用して<xref:System.Configuration.ConfigurationElement>、 <xref:System.Configuration.ConfigurationElementCollection>、および<xref:System.Configuration.ConfigurationSection>です。  
+  
+-   という名前のクラス`UrlsSection`から派生した、<xref:System.Configuration.ConfigurationSection>クラスです。 このクラスは、使用にアクセスする、`MyUrls`構成ファイル内のセクションです。  
+  
+-   という名前のクラス`UrlsCollection`から派生した、<xref:System.Configuration.ConfigurationElementCollection>クラスです。 このクラスは、使用にアクセスする、`urls`構成ファイル内のコレクション。  
+  
+-   という名前のクラス`UrlConfigElement`から派生した、<xref:System.Configuration.ConfigurationElement>クラスです。 このクラスは、使用にアクセスする、`simple`要素とのメンバー、`urls`構成ファイル内のコレクション。  
+  
+ この例を実行するには、次の手順を実行します。  
+  
+1.  コンソール アプリケーション プロジェクトとというクラス ライブラリ プロジェクトを持つソリューションを作成する`ConfigurationElement`です。  
+  
+2.  クラス ライブラリ プロジェクトに 3 つのクラス ファイルを配置し、コンソールのライブラリ プロジェクトで他のファイルを格納します。  
+  
+3.  両方のプロジェクトでの参照を設定`System.Configuration`です。  
+  
+4.  コンソールでは、アプリケーション プロジェクトは、クラス ライブラリ プロジェクトへのプロジェクト参照を設定します。  
+  
+  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#151](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#151)]
+ [!code-vb[System.Configuration.ConfigurationElement#151](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#151)]  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#71](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomSection.cs#71)]
+ [!code-vb[System.Configuration.ConfigurationElement#71](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomSection.vb#71)]  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#51](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomElementCollection.cs#51)]
+ [!code-vb[System.Configuration.ConfigurationElement#51](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomElementCollection.vb#51)]  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#31](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomElement.cs#31)]
+ [!code-vb[System.Configuration.ConfigurationElement#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomElement.vb#31)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>各<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトを作成、内部<see cref="T:System.Configuration.ConfigurationPropertyCollection" />のコレクション<see cref="T:System.Configuration.ConfigurationProperty" />要素の属性または子要素のコレクションを表すオブジェクト。  
+  
+ カスタマイズが不可能な情報と機能に含まれる、<see cref="T:System.Configuration.ElementInformation" />オブジェクトによって提供される、<see cref="P:System.Configuration.ConfigurationElement.ElementInformation" />プロパティです。  
+  
+ プログラムまたは宣言 (属性付き) のコーディング モデルのいずれかを使用するには、カスタム構成要素を作成します。  
+  
+-   プログラムによるモデルでは、各要素の属性を取得またはその値を設定し、基になる内部プロパティ バッグに追加のプロパティを作成する必要があります<see cref="T:System.Configuration.ConfigurationElement" />基本クラスです。 このモデルを使用する方法の例は、次を参照してください。、<see cref="T:System.Configuration.ConfigurationSection" />クラスです。  
+  
+-   単純な宣言型モデル、プロパティを使用して要素の属性を定義し、属性で装飾することができます、属性付きのモデルとも呼ばれます。 これらの属性は、プロパティの型とその既定値は、ASP.NET 構成システムを指示します。 リフレクションでは、取得した、この情報では、ASP.NET 構成システムは、要素にするためのプロパティ オブジェクトを作成し、必要な初期化を実行します。 このトピックの後半に示す例では、このモデルを使用する方法を示します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConfigurationElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成する、<xref:System.Configuration.ConfigurationElement>クラス、たとえば、アプリケーションが、関連する新しい要素を追加する必要があるたびに<xref:System.Configuration.ConfigurationElementCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタマイズされたコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#32](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomElement.cs#32)]
+ [!code-vb[System.Configuration.ConfigurationElement#32](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomElement.vb#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConfiguration">
+      <MemberSignature Language="C#" Value="public System.Configuration.Configuration CurrentConfiguration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.Configuration CurrentConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.CurrentConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最上位レベルへの参照を取得<see cref="T:System.Configuration.Configuration" />構成階層を表すインスタンスを現在<see cref="T:System.Configuration.ConfigurationElement" />インスタンスが属しています。</summary>
+        <value>最上位レベル<see cref="T:System.Configuration.Configuration" />インスタンスが現在<see cref="T:System.Configuration.ConfigurationElement" />インスタンスが属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.CurrentConfiguration%2A>プロパティによりのバージョンを特定しやすく、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を対象とします。 <xref:System.Configuration.Configuration.TargetFramework%2A>最上位レベルのプロパティ<xref:System.Configuration.Configuration>インスタンスが対象とする framework のバージョンを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeElement">
+      <MemberSignature Language="C#" Value="protected virtual void DeserializeElement (System.Xml.XmlReader reader, bool serializeCollectionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void DeserializeElement(class System.Xml.XmlReader reader, bool serializeCollectionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.DeserializeElement(System.Xml.XmlReader,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="serializeCollectionKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="reader">構成ファイルから読み取る <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="serializeCollectionKey">
+          コレクションのキー プロパティだけをシリアル化する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>構成ファイルから XML を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を拡張する方法を示しています、<xref:System.Configuration.ConfigurationElement.DeserializeElement%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#33](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomElement.cs#33)]
+ [!code-vb[System.Configuration.ConfigurationElement#33](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomElement.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">読み取り対象の要素がロックされています。  
+  
+ \- または  
+  
+ 現在のノードの属性は認識されません。  
+  
+ \- または  
+  
+ 現在のノードのロックの状態を特定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementInformation">
+      <MemberSignature Language="C#" Value="public System.Configuration.ElementInformation ElementInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ElementInformation ElementInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.ElementInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ElementInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ElementInformation" />カスタマイズ不可の情報との機能を含むオブジェクト、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.ElementInformation" />カスタマイズ不可の情報との機能を含む、<see cref="T:System.Configuration.ConfigurationElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationElement.ElementInformation%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#80](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ElementInformation.cs#80)]
+ [!code-vb[System.Configuration.ConfigurationElement#80](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ElementInformation.vb#80)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected virtual System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ConfigurationElementProperty" />を表すオブジェクト、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクト自体です。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationElementProperty" />を表す、<see cref="T:System.Configuration.ConfigurationElement" />自体です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object compareTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object compareTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareTo" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="compareTo">比較するオブジェクト。</param>
+        <summary>現在の比較<see cref="T:System.Configuration.ConfigurationElement" />指定したオブジェクトのインスタンス。</summary>
+        <returns>
+          <see langword="true" />比較するオブジェクトが現在と等しいかどうか<see cref="T:System.Configuration.ConfigurationElement" />インスタンス。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluationContext">
+      <MemberSignature Language="C#" Value="protected System.Configuration.ContextInformation EvaluationContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ContextInformation EvaluationContext" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.EvaluationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ContextInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ContextInformation" /> オブジェクトの <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトを取得します。</summary>
+        <value>
+          <see cref="T:System.Configuration.ContextInformation" /> の <see cref="T:System.Configuration.ConfigurationElement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Configuration.ContextInformation>オブジェクトに必要なコンテキストを提供する、<xref:System.Configuration.ConfigurationElement>意思決定を行うオブジェクトが評価されている場所に基づいて。  
+  
+ <xref:System.Configuration.ContextInformation>オブジェクトは、構成の要素に関連する環境の詳細を提供します。 たとえば、使用することができます、<xref:System.Configuration.ContextInformation.IsMachineLevel%2A>プロパティを決定するかどうか、 <xref:System.Configuration.ConfigurationElement> Machine.config で設定されたか、どの階層を指定できます、<xref:System.Configuration.ConfigurationElement>を使用して要素が属する、<xref:System.Configuration.ContextInformation.HostingContext%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">現在の要素がコンテキストに関連付けられていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在を表す一意な値を取得<see cref="T:System.Configuration.ConfigurationElement" />インスタンス。</summary>
+        <returns>一意の値を表す現在<see cref="T:System.Configuration.ConfigurationElement" />インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransformedAssemblyString">
+      <MemberSignature Language="C#" Value="protected virtual string GetTransformedAssemblyString (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetTransformedAssemblyString(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.GetTransformedAssemblyString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">アセンブリの名前。</param>
+        <summary>指定したアセンブリ名の変換後のバージョンを返します。</summary>
+        <returns>アセンブリ名の変換後のバージョン。 トランスフォーマーが使用できない場合、<paramref name="assemblyName" />パラメーターの値がそのまま返されます。 <see cref="P:System.Configuration.Configuration.TypeStringTransformer" />プロパティは<see langword="null" />トランスフォーマーが使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.SerializeElement%2A>メソッドおよび<xref:System.Configuration.ConfigurationElement.SerializeToXmlElement%2A>メソッドでは、このメソッドを呼び出すときに以前のバージョンのアセンブリ名を変換するために、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を対象とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransformedTypeString">
+      <MemberSignature Language="C#" Value="protected virtual string GetTransformedTypeString (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetTransformedTypeString(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.GetTransformedTypeString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">型の名前。</param>
+        <summary>指定された型名の変換後のバージョンを返します。</summary>
+        <returns>指定された型名の変換後のバージョン。 トランスフォーマーが使用できない場合、<paramref name="typeName" />パラメーターの値がそのまま返されます。 <see cref="P:System.Configuration.Configuration.TypeStringTransformer" />プロパティは<see langword="null" />トランスフォーマーが使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.SerializeElement%2A>メソッドおよび<xref:System.Configuration.ConfigurationElement.SerializeToXmlElement%2A>メソッドでは、このメソッドを呼び出すときに以前のバージョンの型名を変換するために、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を対象とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasContext">
+      <MemberSignature Language="C#" Value="protected bool HasContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasContext" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.HasContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Configuration.ConfigurationElement.CurrentConfiguration" />プロパティは<see langword="null" />します。</summary>
+        <value>false の場合、<see cref="P:System.Configuration.ConfigurationElement.CurrentConfiguration" />プロパティは<see langword="null" />、それ以外の<see langword="true" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="protected virtual void Init ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Init() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.Init" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see cref="T:System.Configuration.ConfigurationElement" />を初期状態のオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeDefault">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeDefault ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializeDefault() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.InitializeDefault" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値の既定のセットを初期化するために使用される、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの内部状態を適切な既定値に設定すると呼ばれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="protected virtual bool IsModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool IsModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.IsModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスに実装された場合、この構成要素が最後の保存または読み込み以降に変更されたかどうかを示します。</summary>
+        <returns>
+          要素が変更された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.IsModified%2A>メソッドを判断するかどうかこの<xref:System.Configuration.ConfigurationElement>オブジェクトは、構成に書き込まれますファイル、<xref:System.Configuration.Configuration.Save%2A>メソッドが呼び出されます。 戻り値が `false` の場合、構成ファイルが要素の現在の状態を表していると見なされます。  
+  
+ 既定では、<xref:System.Configuration.ConfigurationElement.IsModified%2A>返します`true`後、プロパティ、インデクサーによってこの<xref:System.Configuration.ConfigurationElement>オブジェクト。  
+  
+ 上書き、<xref:System.Configuration.ConfigurationElement.IsModified%2A>の状態のユーザー設定を示す値を指定するメソッドを<xref:System.Configuration.ConfigurationElement>要素。  
+  
+   
+  
+## Examples  
+ 次の例は、拡張する方法を示します<xref:System.Configuration.ConfigurationElement.IsModified%2A>です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#35](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomElement.cs#35)]
+ [!code-vb[System.Configuration.ConfigurationElement#35](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomElement.vb#35)]  
+  
+ 前の例で示したメソッドは、次の例のように、構成要素が変更されたときに呼び出されます。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationElement#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.IsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトは読み取り専用です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトは読み取り専用です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムでは、変更できない構成要素を定義します。  
+  
+ どの要素を変更することを確認するには<xref:System.Configuration.ConfigurationElement.IsReadOnly%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationElement.IsReadOnly%2A> メソッドを使用する方法の例を次に示します。 これは、カスタムのセクションで使用され、返されます`false`です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationElement#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>この <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトのプロパティ、属性、または子要素を取得または設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを取得または設定の値を使用して、<xref:System.Configuration.ConfigurationProperty>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="protected object this[System.Configuration.ConfigurationProperty property] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(class System.Configuration.ConfigurationProperty)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.Item(System.Configuration.ConfigurationProperty)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Configuration.ConfigurationProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">To be added.</param>
+        <summary>取得またはプロパティまたはこの構成要素の属性を設定します。</summary>
+        <value>指定したプロパティ、属性、または子要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationElement.Item%2A>プロパティの値を取得または設定、<xref:System.Configuration.ConfigurationProperty>オブジェクト。  
+  
+ C# では、このプロパティは <xref:System.Configuration.ConfigurationSectionCollection> クラスのインデクサーです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">
+          <paramref name="property" /><see langword="null" />要素内に存在しないかです。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="property" />またはロックだけが読み取られます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="protected object this[string property_name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="property_name">To be added.</param>
+        <summary>この構成要素のプロパティ、属性、または子要素を取得または設定します。</summary>
+        <value>指定されたプロパティ、属性、または子要素</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationElement.Item%2A>プロパティの値を取得または設定、<xref:System.Configuration.ConfigurationProperty>オブジェクト。  
+  
+ C# では、このプロパティは <xref:System.Configuration.ConfigurationSectionCollection> クラスのインデクサーです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="prop" />読み取り専用またはロックです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ListErrors">
+      <MemberSignature Language="C#" Value="protected virtual void ListErrors (System.Collections.IList list);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ListErrors(class System.Collections.IList list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.ListErrors(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="errorList" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="list">To be added.</param>
+        <summary>このプロパティに無効なエラーを追加<see cref="T:System.Configuration.ConfigurationElement" />オブジェクト、および渡されたリストに、すべてのサブ要素です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockAllAttributesExcept">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLockCollection LockAllAttributesExcept { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLockCollection LockAllAttributesExcept" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.LockAllAttributesExcept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationLockCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロックされている属性のコレクションを取得します。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationLockCollection" />要素の属性 (プロパティ) ロックされているのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.LockAllAttributesExcept%2A>プロパティでは、一度にすべての属性をロックすることができます、を除き、1 つを指定します。 使用する手順を実行する、<xref:System.Configuration.ConfigurationLockCollection.Contains%2A>メソッドの使用例」セクションで説明します。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.ConfigurationElement.LockAllAttributesExcept%2A>プロパティが変更されるルールを適用する要素の構成要素を使用する子を防ぐためにします。 使用して、<xref:System.Configuration.ConfigurationElement.LockItem%2A>自体とその子要素の親要素で、一般的なを配置する場合は、プロパティをロックします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationElement.LockAllAttributesExcept%2A>です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#9)]
+ [!code-vb[System.Configuration.ConfigurationElement#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用する場合、<see cref="P:System.Configuration.ConfigurationElement.LockAllAttributesExcept" />と<see cref="P:System.Configuration.ConfigurationElement.LockAttributes" />同時プロパティは、最も制限の厳しい規則が適用されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="LockAllElementsExcept">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLockCollection LockAllElementsExcept { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLockCollection LockAllElementsExcept" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.LockAllElementsExcept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationLockCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロックされている要素のコレクションを取得します。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationLockCollection" />ロックされている要素のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.LockAllElementsExcept%2A>プロパティでは、一度にすべての要素をロックできます。 は、1 つを除くを指定します。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.ConfigurationElement.LockAllElementsExcept%2A>プロパティが変更されるルールを適用する要素の構成要素を使用する子を防ぐためにします。 使用して、<xref:System.Configuration.ConfigurationElement.LockItem%2A>自体とその子要素、要素で、一般的なを配置する場合は、プロパティをロックします。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationElement.LockAllElementsExcept%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationElement#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockAttributes">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLockCollection LockAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLockCollection LockAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.LockAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationLockCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロックされている属性のコレクションを取得します。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationLockCollection" />要素の属性 (プロパティ) ロックされているのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.LockAttributes%2A>プロパティでは、指定したすべての属性をロックすることができます。  
+  
+ 使用することを行うには、<xref:System.Configuration.ConfigurationLockCollection.Contains%2A>メソッドの使用例」セクションで説明します。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.ConfigurationElement.LockAttributes%2A>プロパティが変更されるルールを適用する要素の構成要素を使用する子を防ぐためにします。 使用して<xref:System.Configuration.ConfigurationElement.LockItem%2A>要素自体とその子要素、一般的なロックを配置するかどうか。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationElement.LockAttributes%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationElement#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用する場合、<see cref="P:System.Configuration.ConfigurationElement.LockAllAttributesExcept" />と<see cref="P:System.Configuration.ConfigurationElement.LockAttributes" />同時プロパティは、最も制限の厳しい規則が適用されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="LockElements">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLockCollection LockElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLockCollection LockElements" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.LockElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationLockCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロックされている要素のコレクションを取得します。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationLockCollection" />ロックされている要素のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.LockElements%2A>プロパティでは、指定したすべての要素をロックすることができます。  
+  
+ 使用する手順を実行する、<xref:System.Configuration.ConfigurationLockCollection.Contains%2A>メソッドを次の例で説明します。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.ConfigurationElement.LockElements%2A>プロパティが変更されるルールを適用する要素の構成要素を使用する子を防ぐためにします。 使用して<xref:System.Configuration.ConfigurationElement.LockItem%2A>要素自体とその子要素、一般的なロックを配置するかどうか。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationElement.LockElements%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationElement#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockItem">
+      <MemberSignature Language="C#" Value="public bool LockItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LockItem" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.LockItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素がロックされているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、要素がロックされています。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationElement.LockItem%2A>自体とその子要素、要素で、一般的なを配置する場合は、プロパティをロックします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationElement.LockItem%2A>です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationElement#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">要素より高い構成レベルで既にロックされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserializeUnrecognizedAttribute">
+      <MemberSignature Language="C#" Value="protected virtual bool OnDeserializeUnrecognizedAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnDeserializeUnrecognizedAttribute(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.OnDeserializeUnrecognizedAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">認識されない属性の名前。</param>
+        <param name="value">認識されない属性の値。</param>
+        <summary>逆シリアル化中に不明な属性が発生するかどうかを示す値を取得します。</summary>
+        <returns>
+          逆シリアル化中に不明な属性が発生した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.OnDeserializeUnrecognizedAttribute%2A>を逆シリアル化中に不明な属性が発生したときに呼び出される、<xref:System.Configuration.ConfigurationElement>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserializeUnrecognizedElement">
+      <MemberSignature Language="C#" Value="protected virtual bool OnDeserializeUnrecognizedElement (string element, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnDeserializeUnrecognizedElement(string element, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <param name="reader">逆シリアル化に使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>逆シリアル化中に不明な要素が発生するかどうかを示す値を取得します。</summary>
+        <returns>
+          逆シリアル化中に不明な要素が発生した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.OnDeserializeUnrecognizedElement%2A>を逆シリアル化中に不明な属性が発生したときに呼び出される、<xref:System.Configuration.ConfigurationElement>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">によって識別される要素の<paramref name="elementName" />はロックされています。  
+  
+ \- または  
+  
+ 1 つ以上の要素の属性がロックされています。  
+  
+ \- または  
+  
+ <paramref name="elementName" />認識できないか、または要素が認識されない属性。  
+  
+ \- または  
+  
+ 要素には、値が無効なブール属性があります。  
+  
+ \- または  
+  
+ 2 回以上のプロパティを逆シリアル化しようとしました。  
+  
+ \- または  
+  
+ 要素の有効なメンバーではないプロパティを逆シリアル化しようとしました。  
+  
+ \- または  
+  
+ 要素は、CDATA またはテキスト要素を含めることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRequiredPropertyNotFound">
+      <MemberSignature Language="C#" Value="protected virtual object OnRequiredPropertyNotFound (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object OnRequiredPropertyNotFound(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.OnRequiredPropertyNotFound(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">見つかりませんでした必要な属性の名前。</param>
+        <summary>必要なプロパティが見つからない場合に、例外をスローします。</summary>
+        <returns>なし。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.OnDeserializeUnrecognizedElement%2A>を逆シリアル化中に不明な属性が発生したときに呼び出される、<xref:System.Configuration.ConfigurationElement>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PostDeserialize">
+      <MemberSignature Language="C#" Value="protected virtual void PostDeserialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void PostDeserialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.PostDeserialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>逆シリアル化後に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreSerialize">
+      <MemberSignature Language="C#" Value="protected virtual void PreSerialize (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void PreSerialize(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.PreSerialize(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />のシリアル化に使用される、<see cref="T:System.Configuration.ConfigurationElement" />です。</param>
+        <summary>シリアル化する前に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected virtual System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティのコレクションを取得します。</summary>
+        <value>要素のプロパティの <see cref="T:System.Configuration.ConfigurationPropertyCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.Properties%2A>プロパティ、プロパティ バッグとも呼ばれます。 すべてのプロパティ (属性) の要素に適用されるが含まれています。  
+  
+   
+  
+## Examples  
+ 使用する方法を示す例については、<xref:System.Configuration.ConfigurationElement.Properties%2A>プロパティを参照してください、<xref:System.Configuration.ConfigurationProperty>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="protected virtual void Reset (System.Configuration.ConfigurationElement parentElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Reset(class System.Configuration.ConfigurationElement parentElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.Reset(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="parentElement">構成要素の親ノードです。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトの内部状態 (ロックやプロパティ コレクションなど) をリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetModified">
+      <MemberSignature Language="C#" Value="protected virtual void ResetModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ResetModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.ResetModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Configuration.ConfigurationElement.IsModified" /> メソッドの値が派生クラスに実装されたときに、<see langword="false" /> にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.ResetModified%2A>メソッドはこれを変更後に自動的に呼び出されます<xref:System.Configuration.ConfigurationElement>構成ファイルに書き込まれたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeElement">
+      <MemberSignature Language="C#" Value="protected virtual bool SerializeElement (System.Xml.XmlWriter writer, bool serializeCollectionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool SerializeElement(class System.Xml.XmlWriter writer, bool serializeCollectionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.SerializeElement(System.Xml.XmlWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="serializeCollectionKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />構成ファイルに書き込まれる。</param>
+        <param name="serializeCollectionKey">
+          コレクションのキー プロパティだけをシリアル化する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>この構成要素の内容を派生クラスで実装された場合、構成ファイルに書き込みます。</summary>
+        <returns>
+          データが実際にシリアル化された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を拡張する方法を示しています、<xref:System.Configuration.ConfigurationElement.SerializeElement%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#34](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/CustomElement.cs#34)]
+ [!code-vb[System.Configuration.ConfigurationElement#34](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/CustomElement.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">現在の属性より高い構成レベルでロックされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeToXmlElement">
+      <MemberSignature Language="C#" Value="protected virtual bool SerializeToXmlElement (System.Xml.XmlWriter writer, string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool SerializeToXmlElement(class System.Xml.XmlWriter writer, string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.SerializeToXmlElement(System.Xml.XmlWriter,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />構成ファイルに書き込まれる。</param>
+        <param name="elementName">書き込まれる <see cref="T:System.Configuration.ConfigurationElement" /> の名前。</param>
+        <summary>派生クラスで実装された場合、構成ファイルをこの構成要素の外側のタグを書き込みます。</summary>
+        <returns>
+          <see langword="true" />書き込みが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElement.SerializeToXmlElement%2A>呼び出しの後にメソッドが呼び出された、<xref:System.Configuration.ConfigurationElement.Unmerge%2A>シリアル化中にメソッドです。 <xref:System.Configuration.ConfigurationElement.SerializeToXmlElement%2A>メソッドは、最初と最後の要素のタグの間の構成要素の内容を書き込みます。 オーバーライド<xref:System.Configuration.ConfigurationElement.SerializeToXmlElement%2A>カスタム シリアル化メソッドを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">要素には、複数の子要素があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyValue">
+      <MemberSignature Language="C#" Value="protected void SetPropertyValue (System.Configuration.ConfigurationProperty prop, object value, bool ignoreLocks);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetPropertyValue(class System.Configuration.ConfigurationProperty prop, object value, bool ignoreLocks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.SetPropertyValue(System.Configuration.ConfigurationProperty,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Configuration.ConfigurationProperty" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="ignoreLocks" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="prop">要素のプロパティを設定します。</param>
+        <param name="value">プロパティに割り当てる値。</param>
+        <param name="ignoreLocks">
+          <see langword="true" />場合は、プロパティのロックを無視する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した値をプロパティを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">要素が読み取り専用である場合に発生または<paramref name="ignoreLocks" />は<see langword="true" />がロックを無視することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="protected virtual void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see cref="M:System.Configuration.ConfigurationElement.IsReadOnly" />プロパティを<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトとすべてのサブ要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、変更できないシステム構成要素を確保する内部使用されます。  
+  
+ どの要素を変更することを確認するには<xref:System.Configuration.ConfigurationElement.IsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmerge">
+      <MemberSignature Language="C#" Value="protected virtual void Unmerge (System.Configuration.ConfigurationElement source, System.Configuration.ConfigurationElement parent, System.Configuration.ConfigurationSaveMode updateMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Unmerge(class System.Configuration.ConfigurationElement source, class System.Configuration.ConfigurationElement parent, valuetype System.Configuration.ConfigurationSaveMode updateMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElement.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="source">To be added.</param>
+        <param name="parent">To be added.</param>
+        <param name="updateMode">To be added.</param>
+        <summary>変更、<see cref="T:System.Configuration.ConfigurationElement" />保存しないすべての値を削除するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、前に呼び出されます、<xref:System.Configuration.ConfigurationElement>によってオブジェクトが保存、<xref:System.Configuration.Configuration>すべてを削除するためにプロパティが不要なオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

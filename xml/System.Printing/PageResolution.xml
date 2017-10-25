@@ -1,0 +1,200 @@
+<Type Name="PageResolution" FullName="System.Printing.PageResolution">
+  <TypeSignature Language="C#" Value="public sealed class PageResolution" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageResolution extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PageResolution" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定性的アプローチのいずれかの値、またはドット/インチ、またはその両方としては、印刷出力のページの解像度を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageResolution (System.Printing.PageQualitativeResolution qualitative);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.PageQualitativeResolution qualitative) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageResolution.#ctor(System.Printing.PageQualitativeResolution)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="qualitative" Type="System.Printing.PageQualitativeResolution" />
+      </Parameters>
+      <Docs>
+        <param name="qualitative">解像度を表す値です。</param>
+        <summary>新しいインスタンスを開始、<see cref="T:System.Printing.PageResolution" />を持つ、指定されたクラス<see cref="T:System.Printing.PageQualitativeResolution" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageResolution (int resolutionX, int resolutionY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 resolutionX, int32 resolutionY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageResolution.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resolutionX" Type="System.Int32" />
+        <Parameter Name="resolutionY" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="resolutionX">ドット/インチで水平方向の解像度。</param>
+        <param name="resolutionY">ドット/インチ垂直方向の解像度です。</param>
+        <summary>新しいインスタンスを開始、<see cref="T:System.Printing.PageResolution" />を指定した垂直および水平方向インチあたりのドットを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのプリンター `resolutionX` 、プリンターに紙の移動の方向に垂直な用紙の寸法と`resolutionY`紙の移動の方向に平行する用紙の寸法は、します。 2 つの値は、通常は同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageResolution (int resolutionX, int resolutionY, System.Printing.PageQualitativeResolution qualitative);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 resolutionX, int32 resolutionY, valuetype System.Printing.PageQualitativeResolution qualitative) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageResolution.#ctor(System.Int32,System.Int32,System.Printing.PageQualitativeResolution)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resolutionX" Type="System.Int32" />
+        <Parameter Name="resolutionY" Type="System.Int32" />
+        <Parameter Name="qualitative" Type="System.Printing.PageQualitativeResolution" />
+      </Parameters>
+      <Docs>
+        <param name="resolutionX">ドット/インチで水平方向の解像度。</param>
+        <param name="resolutionY">ドット/インチ垂直方向の解像度です。</param>
+        <param name="qualitative">解像度を表す値です。</param>
+        <summary>新しいインスタンスを開始、<see cref="T:System.Printing.PageResolution" />を持つ、指定されたクラス<see cref="T:System.Printing.PageQualitativeResolution" />と指定した垂直および水平方向のドット/インチです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのプリンター `resolutionX` 、プリンターに紙の移動の方向に垂直な用紙の寸法と`resolutionY`紙の移動の方向に平行する用紙の寸法は、します。 2 つの値は、通常は同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QualitativeResolution">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Printing.PageQualitativeResolution&gt; QualitativeResolution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Printing.PageQualitativeResolution&gt; QualitativeResolution" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageResolution.QualitativeResolution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Printing.PageQualitativeResolution&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれか、ページの解像度の場合は、定性的の式を取得します。</summary>
+        <value>A<see cref="T:System.Printing.PageQualitativeResolution" />ページ解像度のレベルを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageResolution.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページの解像度を返します、<see cref="T:System.String" />です。</summary>
+        <returns>A<see cref="T:System.String" />のプロパティ値を含む、<see cref="T:System.Printing.PageResolution" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の形式は次のとおりです。  
+  
+ <xref:System.Printing.PageResolution.X%2A>x <xref:System.Printing.PageResolution.Y%2A> (定性的解像度: <xref:System.Printing.PageQualitativeResolution>)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; X { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; X" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageResolution.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの水平方向の解像度のインチあたりのドット メジャーを取得します。</summary>
+        <value><see cref="T:System.Int32" />を水平方向のページの解像度を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのプリンターでは、この値は、プリンターに紙の移動の方向に垂直な用紙の寸法と<xref:System.Printing.PageResolution.Y%2A>紙の移動の方向に平行する用紙ディメンションです。 2 つの値は、通常は同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; Y { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; Y" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageResolution.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページが垂直方向の解像度のインチあたりのドット メジャーを取得します。</summary>
+        <value>Null 許容型<see cref="T:System.Int32" />ページが垂直方向の解像度を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのプリンターでは、この値は、プリンターに紙の移動の方向に平行する用紙の寸法と<xref:System.Printing.PageResolution.X%2A>紙の移動の方向に垂直な用紙の寸法がします。 2 つの値は、通常は同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

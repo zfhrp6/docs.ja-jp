@@ -1,0 +1,130 @@
+<Type Name="SortRequestControl" FullName="System.DirectoryServices.Protocols.SortRequestControl">
+  <TypeSignature Language="C#" Value="public class SortRequestControl : System.DirectoryServices.Protocols.DirectoryControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SortRequestControl extends System.DirectoryServices.Protocols.DirectoryControl" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.SortRequestControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.SortRequestControl" />クラスが使用されて<see cref="T:System.DirectoryServices.Protocols.SearchRequest" />に、クライアント アプリケーションに返す前に、検索結果の並べ替えにサーバーを指示します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortRequestControl (params System.DirectoryServices.Protocols.SortKey[] sortKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.Protocols.SortKey[] sortKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SortRequestControl.#ctor(System.DirectoryServices.Protocols.SortKey[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sortKeys" Type="System.DirectoryServices.Protocols.SortKey[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="sortKeys">配列<see cref="T:System.DirectoryServices.Protocols.SortKey" />サーバーによってクライアントに返す前に、検索結果の並べ替えに使用されるオブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SortRequestControl.#ctor(System.DirectoryServices.Protocols.SortKey[])" />コンス トラクターを作成しの新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.Protocols.SortRequestControl" />クラスの指定された並べ替えキーを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortRequestControl (string attributeName, bool reverseOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string attributeName, bool reverseOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SortRequestControl.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="reverseOrder" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">クエリの基になる属性の名前。</param>
+        <param name="reverseOrder">
+          <see langword="true" />結果は逆の順序で返される必要がある場合または<see langword="false" />それ以外の場合。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SortRequestControl.#ctor(System.String,System.Boolean)" />コンス トラクターは、の新しいインスタンスを作成、<see cref="T:System.DirectoryServices.Protocols.SortRequestControl" />クラスの指定した属性名と並べ替え順序を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortRequestControl (string attributeName, string matchingRule, bool reverseOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string attributeName, string matchingRule, bool reverseOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SortRequestControl.#ctor(System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="matchingRule" Type="System.String" />
+        <Parameter Name="reverseOrder" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">クエリの基になる属性の名前。</param>
+        <param name="matchingRule">並べ替えの照合ルールのオブジェクト識別子 (OID) を指定します。</param>
+        <param name="reverseOrder">
+          <see langword="true" />順序で並べ替える最低から最高場合または<see langword="false" />順序で並べ替えるを高いものから最も低い場合。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SortRequestControl.#ctor(System.String,System.String,System.Boolean)" />コンス トラクターは、の新しいインスタンスを作成、<see cref="T:System.DirectoryServices.Protocols.SortRequestControl" />照合ルールを指定した属性名を使用してクラスし、並べ替え順です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override byte[] GetValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] GetValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SortRequestControl.GetValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SortRequestControl.GetValue" />メソッド並べ替えキーと一致するこの制御のルールを指定します。</summary>
+        <returns>並べ替えキーと一致するこの制御のルールをします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortKeys">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.SortKey[] SortKeys { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.SortKey[] SortKeys" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SortRequestControl.SortKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.SortKey[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SortRequestControl.SortKeys" />プロパティには配列が含まれています<see cref="T:System.DirectoryServices.Protocols.SortKey" />サーバーによってクライアントに返す前に、検索結果の並べ替えに使用されるオブジェクト。</summary>
+        <value>配列<see cref="T:System.DirectoryServices.Protocols.SortKey" />サーバーによってクライアントに返す前に、検索結果の並べ替えに使用されるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

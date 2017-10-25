@@ -1,0 +1,260 @@
+<Type Name="PrintQueueCollection" FullName="System.Printing.PrintQueueCollection">
+  <TypeSignature Language="C#" Value="public class PrintQueueCollection : System.Printing.PrintSystemObjects, IDisposable, System.Collections.Generic.IEnumerable&lt;System.Printing.PrintQueue&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi PrintQueueCollection extends System.Printing.PrintSystemObjects implements class System.Collections.Generic.IEnumerable`1&lt;class System.Printing.PrintQueue&gt;, class System.Collections.IEnumerable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintQueueCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Printing.PrintSystemObjects</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Printing.PrintQueue&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Printing.PrintQueue" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次の例では、このコレクションを使用して、プリンターの機能をテストし、それらを活用するために印刷ジョブを構成する方法を示します。  
+  
+ [!code-cpp[XpsCreate#PrinterCapabilities](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#printercapabilities)]
+ [!code-csharp[XpsCreate#PrinterCapabilities](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#printercapabilities)]
+ [!code-vb[XpsCreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintQueueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueCollection (System.Printing.PrintServer printServer, string[] propertyFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Printing.PrintServer printServer, string[] propertyFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.#ctor(System.Printing.PrintServer,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="printServer" Type="System.Printing.PrintServer" />
+        <Parameter Name="propertyFilter" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="printServer">コレクションをホストするプリント サーバー。</param>
+        <param name="propertyFilter">初期化されるコレクションのメンバーのプロパティです。</param>
+        <summary>指定した <see cref="T:System.Printing.PrintServer" /> の <see cref="T:System.Printing.PrintQueueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の配列に記載されているプロパティのみが初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueCollection (System.Printing.PrintServer printServer, string[] propertyFilter, System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Printing.PrintServer printServer, string[] propertyFilter, valuetype System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.#ctor(System.Printing.PrintServer,System.String[],System.Printing.EnumeratedPrintQueueTypes[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="printServer" Type="System.Printing.PrintServer" />
+        <Parameter Name="propertyFilter" Type="System.String[]" />
+        <Parameter Name="enumerationFlag" Type="System.Printing.EnumeratedPrintQueueTypes[]" />
+      </Parameters>
+      <Docs>
+        <param name="printServer">コレクションをホストするプリント サーバー。</param>
+        <param name="propertyFilter">初期化されるコレクションのメンバーのプロパティです。</param>
+        <param name="enumerationFlag">コレクションに含まれている印刷キューの種類を指定する配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Printing.PrintQueueCollection" /> 、指定されたクラス<see cref="T:System.Printing.PrintServer" />、指定されたプリント サーバーのキューのみを含む<see cref="T:System.Printing.EnumeratedPrintQueueTypes" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の配列に記載されているプロパティのみが初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Printing.PrintQueue printObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Printing.PrintQueue printObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.Add(System.Printing.PrintQueue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printObject" Type="System.Printing.PrintQueue" />
+      </Parameters>
+      <Docs>
+        <param name="printObject">追加される印刷キューです。</param>
+        <summary><see cref="T:System.Printing.PrintQueue" /> をコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool A_0);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool A_0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="A_0" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="A_0">To be added.</param>
+        <summary>によって使用されているアンマネージ リソースを解放、 <see cref="T:System.Printing.PrintQueueCollection" />、使用されているマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`に設定された名前のないブール値パラメーターを持つメソッド`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`パラメーターを設定して`false`です。  
+  
+ ブール型のパラメーターがの場合`true`、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Printing.PrintQueueCollection>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerator&lt;System.Printing.PrintQueue&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Printing.PrintQueue&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Printing.PrintQueue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ジェネリックを実装するオブジェクトを返します<see cref="T:System.Collections.IEnumerator" />で閉じられたインターフェイス<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <returns>ジェネリックを実装するオブジェクト<see cref="T:System.Collections.IEnumerator" />を反復処理して、<see cref="T:System.Printing.PrintQueue" />オブジェクトを<see cref="T:System.Printing.PrintQueueCollection" />が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することをお勧め、`foreach`コレクションのすべてのメンバーを反復処理するステートメント。 使用して<xref:System.Printing.PrintQueueCollection.GetEnumerator%2A>など他のすべてのメンバーをスキップして、イテレーションをカスタマイズする必要がある場合のみです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、プリンターの機能をテストし、それらを活用するために印刷ジョブを構成する方法を示します。  
+  
+ [!code-cpp[XpsCreate#PrinterCapabilities](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#printercapabilities)]
+ [!code-csharp[XpsCreate#PrinterCapabilities](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#printercapabilities)]
+ [!code-vb[XpsCreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNonGenericEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetNonGenericEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetNonGenericEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueCollection.GetNonGenericEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非ジェネリックを実装するオブジェクトを取得<see cref="T:System.Collections.IEnumerator" />インターフェイスです。</summary>
+        <returns>非ジェネリックを実装するオブジェクト<see cref="T:System.Collections.IEnumerator" />を反復処理して、<see cref="T:System.Printing.PrintQueue" />オブジェクトを<see cref="T:System.Printing.PrintQueueCollection" />が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することをお勧め、`foreach`コレクションのすべてのメンバーを反復処理するステートメント。 など他のすべてのメンバーをスキップして、イテレーションをカスタマイズする必要がある場合にのみ、列挙子オブジェクトを使用します。  
+  
+ ジェネリック、タイプ セーフな関数を使用することをお勧め、独自の列挙子を必要がある場合<xref:System.Printing.PrintQueueCollection.GetEnumerator%2A>の代わりに<xref:System.Printing.PrintQueueCollection.GetNonGenericEnumerator%2A>です。 <xref:System.Printing.PrintQueueCollection.GetNonGenericEnumerator%2A>がパブリックの要件を満たすためにのみ、<xref:System.Collections.IEnumerable>このコレクションによって実装されるインターフェイス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public static object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintQueueCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintQueueCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

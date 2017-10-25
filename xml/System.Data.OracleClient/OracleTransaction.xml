@@ -1,0 +1,198 @@
+<Type Name="OracleTransaction" FullName="System.Data.OracleClient.OracleTransaction">
+  <TypeSignature Language="C#" Value="public sealed class OracleTransaction : System.Data.Common.DbTransaction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleTransaction extends System.Data.Common.DbTransaction" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleTransaction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbTransaction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データベースで行われるトランザクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを作成、<xref:System.Data.OracleClient.OracleTransaction>を呼び出してオブジェクト<xref:System.Data.OracleClient.OracleConnection.BeginTransaction%2A>上、<xref:System.Data.OracleClient.OracleConnection>オブジェクト。 (コミットまたはトランザクションを中止するなど) のトランザクションに関連付けられているすべての後続操作に対して実行され、<xref:System.Data.OracleClient.OracleTransaction>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleConnection>と<xref:System.Data.OracleClient.OracleTransaction>です。 使用する方法も示します、 <xref:System.Data.OracleClient.OracleConnection.BeginTransaction%2A>、 <xref:System.Data.OracleClient.OracleTransaction.Commit%2A>、および<xref:System.Data.OracleClient.OracleTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OracleConnection.BeginTransaction#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleConnection.BeginTransaction/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleConnection.BeginTransaction#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleConnection.BeginTransaction/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTransaction.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SQL データベースのトランザクションをコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleConnection>と<xref:System.Data.OracleClient.OracleTransaction>です。 使用する方法も示します、 <xref:System.Data.OracleClient.OracleConnection.BeginTransaction%2A>、 <xref:System.Data.OracleClient.OracleTransaction.Commit%2A>、および<xref:System.Data.OracleClient.OracleTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OracleConnection.BeginTransaction1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleConnection.BeginTransaction1/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleConnection.BeginTransaction1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleConnection.BeginTransaction1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">トランザクションをコミットしようとしてエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既にコミットまたはロールバックされています。  
+  
+ または  
+  
+ 接続が切れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTransaction.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、<see cref="T:System.Data.OracleClient.OracleConnection" />トランザクションに関連付けられているオブジェクト。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleConnection" />トランザクションに関連付けられているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのアプリケーションでは、複数のデータ ソース接続は、それぞれ 0 個以上のトランザクションがあります。 このプロパティでは、特定のトランザクションに関連付けられている接続オブジェクトを確認することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbConnection">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbConnection DbConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection DbConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTransaction.DbConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTransaction.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsolationLevel">
+      <MemberSignature Language="C#" Value="public override System.Data.IsolationLevel IsolationLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.IsolationLevel IsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTransaction.IsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトランザクションの <see cref="T:System.Data.IsolationLevel" /> を指定します。</summary>
+        <value>このトランザクションの <see cref="T:System.Data.IsolationLevel" />。 既定値は、<see langword="ReadCommitted" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework Data Provider for Oracle はのみがサポート`ReadCommitted`と`Serializable`分離レベル。 これらの分離レベルの動作は、SQL Server の the.NET データ プロバイダーと共に使用時の動作方法には対応していません。 Oracle で分離レベルを使用する方法に関する詳細については、Oracle のマニュアルを参照してください。  
+  
+ 並列トランザクションはサポートされていません。 したがって、<xref:System.Data.IsolationLevel>トランザクション全体に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public override void Rollback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTransaction.Rollback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションを保留状態からロールバックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションは保留中の状態からのみロールバックできます (後<xref:System.Data.OracleClient.OracleConnection.BeginTransaction%2A>が呼び出されると、その前に<xref:System.Data.OracleClient.OracleTransaction.Commit%2A>と呼びます)。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleConnection>と<xref:System.Data.OracleClient.OracleTransaction>です。 使用する方法も示します、 <xref:System.Data.OracleClient.OracleConnection.BeginTransaction%2A>、 <xref:System.Data.OracleClient.OracleTransaction.Commit%2A>、および<xref:System.Data.OracleClient.OracleTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OracleConnection.BeginTransaction1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleConnection.BeginTransaction1/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleConnection.BeginTransaction1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleConnection.BeginTransaction1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">トランザクションをコミットしようとしてエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既にコミットまたはロールバックされています。  
+  
+ または  
+  
+ 接続が切れています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

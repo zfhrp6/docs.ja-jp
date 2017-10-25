@@ -1,0 +1,125 @@
+<Type Name="DateRangeEventArgs" FullName="System.Windows.Forms.DateRangeEventArgs">
+  <TypeSignature Language="C#" Value="public class DateRangeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DateRangeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DateRangeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.MonthCalendar.DateChanged" />または<see cref="E:System.Windows.Forms.MonthCalendar.DateSelected" />のイベント、<see cref="T:System.Windows.Forms.MonthCalendar" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MonthCalendar.DateChanged>イベントは、現在選択されている日付または範囲の日付を変更すると、。 たとえば、ときにユーザーに明示的に変更は現在の月または選択範囲が翌/先月ナビゲーションへの応答で暗黙的に変更されたときに選択します。 <xref:System.Windows.Forms.MonthCalendar.DateSelected>イベント、ユーザーが明示的に選択範囲を変更するときに発生します。 <xref:System.Windows.Forms.DateRangeEventArgs.%23ctor%2A>コンス トラクターは、始点と終点が選択されている新しい日付の範囲を指定します。  
+  
+> [!NOTE]
+>  1 つの日付が選択されている場合、<xref:System.Windows.Forms.DateRangeEventArgs.Start%2A>と<xref:System.Windows.Forms.DateRangeEventArgs.End%2A>プロパティの値に等しくなります。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例を含むフォームを表示、<xref:System.Windows.Forms.MonthCalendar>を 1 つのカレンダー年を表示するコントロール。 例のようなプロパティの設定<xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.ForeColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A>、および<xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>予定表コントロールの外観をカスタマイズします。 その他のプロパティと同様に<xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>、<xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>と<xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A>日付のどれが太字になっているをカスタマイズする設定。 また、予定表形式を変更するプロパティに設定を含む<xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A>、 <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A>、 <xref:System.Windows.Forms.MonthCalendar.MinDate%2A>、および<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>です。 <xref:System.Windows.Forms.MonthCalendar.DateSelected>と<xref:System.Windows.Forms.MonthCalendar.DateChanged>イベントも処理され、フォームにそれらの状態を表示します。  
+  
+ [!code-cpp[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/CPP/monthcalendar.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/CS/monthcalendar.cs#1)]
+ [!code-vb[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/VB/monthcalendar.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DateRangeEventArgs (DateTime start, DateTime end);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime start, valuetype System.DateTime end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateRangeEventArgs.#ctor(System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="start" Type="System.DateTime" />
+        <Parameter Name="end" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="start">ユーザーが選択した範囲内の最初の日付/時刻値。</param>
+        <param name="end">ユーザーが選択した範囲内の最後の日付/時刻値。</param>
+        <summary><see cref="T:System.Windows.Forms.DateRangeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateRangeEventArgs.Start%2A>と<xref:System.Windows.Forms.DateRangeEventArgs.End%2A>プロパティ値が設定、`start`と`end`このコンス トラクターのパラメーター値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public DateTime End { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime End" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateRangeEventArgs.End" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが選択した範囲内の最後の日付/時刻値を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />ユーザーが選択した日付範囲の最後の日付を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を含むフォームを表示、<xref:System.Windows.Forms.MonthCalendar>を 1 つのカレンダー年を表示するコントロール。 例のようなプロパティの設定<xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.ForeColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A>、および<xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>予定表コントロールの外観をカスタマイズします。 その他のプロパティと同様に<xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>、<xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>と<xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A>日付のどれが太字になっているをカスタマイズする設定。 また、予定表形式を変更するプロパティに設定を含む<xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A>、 <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A>、 <xref:System.Windows.Forms.MonthCalendar.MinDate%2A>、および<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>です。 <xref:System.Windows.Forms.MonthCalendar.DateSelected>と<xref:System.Windows.Forms.MonthCalendar.DateChanged>イベントも処理され、フォームにそれらの状態を表示します。  
+  
+ [!code-cpp[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/CPP/monthcalendar.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/CS/monthcalendar.cs#1)]
+ [!code-vb[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/VB/monthcalendar.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public DateTime Start { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Start" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateRangeEventArgs.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが選択した範囲内の最初の日付/時刻値を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />ユーザーが選択した日付範囲の最初の日付を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を含むフォームを表示、<xref:System.Windows.Forms.MonthCalendar>を 1 つのカレンダー年を表示するコントロール。 例のようなプロパティの設定<xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.ForeColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>、 <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A>、および<xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>予定表コントロールの外観をカスタマイズします。 その他のプロパティと同様に<xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>、<xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>と<xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A>日付のどれが太字になっているをカスタマイズする設定。 また、予定表形式を変更するプロパティに設定を含む<xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A>、 <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A>、 <xref:System.Windows.Forms.MonthCalendar.MinDate%2A>、および<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>です。 <xref:System.Windows.Forms.MonthCalendar.DateSelected>と<xref:System.Windows.Forms.MonthCalendar.DateChanged>イベントも処理され、フォームにそれらの状態を表示します。  
+  
+ [!code-cpp[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/CPP/monthcalendar.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/CS/monthcalendar.cs#1)]
+ [!code-vb[System.Windows.Forms.MonthCalendar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MonthCalendar/VB/monthcalendar.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,136 @@
+<Type Name="AnyReturnReader" FullName="System.Web.Services.Protocols.AnyReturnReader">
+  <TypeSignature Language="C#" Value="public class AnyReturnReader : System.Web.Services.Protocols.MimeReturnReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnyReturnReader extends System.Web.Services.Protocols.MimeReturnReader" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.AnyReturnReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.MimeReturnReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サービス クライアントが HTTP を使用して実装せずに SOAP 応答の受信の戻り値の最小のリーダーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.AnyReturnReader>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。  
+  
+ <xref:System.Web.Services.Protocols.AnyReturnReader>クラスが抽象の親クラスのインターフェイスの最小限の実装を提供<xref:System.Web.Services.Protocols.MimeReturnReader>です。通常必要はありませんを使用する<xref:System.Web.Services.Protocols.AnyReturnReader>直接です。 適用される、Wsdl.exe ツールは、HTTP GET または HTTP POST の実装に応じて、クライアント プロキシ コードを生成するとき、 <xref:System.Web.Services.Protocols.HttpMethodAttribute> Web メソッドごとに、既定の設定、属性の<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>プロパティを<xref:System.Web.Services.Protocols.XmlReturnReader>、別のクラスから派生した<xref:System.Web.Services.Protocols.MimeReturnReader>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnyReturnReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.AnyReturnReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.AnyReturnReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public override object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.AnyReturnReader.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">A<see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />初期化子を取得する Web メソッドを示すです。</param>
+        <summary>渡されるパラメーターを返し、<see cref="M:System.Web.Services.Protocols.AnyReturnReader.Initialize(System.Object)" />メソッドです。</summary>
+        <returns>渡されたパラメーター、<see cref="M:System.Web.Services.Protocols.AnyReturnReader.Initialize(System.Object)" />メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.AnyReturnReader.Initialize%2A>メソッドです。 <xref:System.Web.Services.Protocols.AnyReturnReader>クラス初期化子があり、キーワードで参照されるインスタンス`this`がない限り、<xref:System.Web.Services.Protocols.LogicalMethodInfo>パラメーターの値に設定されている場合、初期化子に void 戻り値の型を持つ`null`します。  
+  
+ <xref:System.Web.Services.Protocols.AnyReturnReader.GetInitializer%2A>サービスの初期化中にメソッドが呼び出されます。 応答を処理すると、時、初期化子に後で、<xref:System.Web.Services.Protocols.AnyReturnReader>にオブジェクトが渡される、<xref:System.Web.Services.Protocols.AnyReturnReader.Initialize%2A>別のメソッド<xref:System.Web.Services.Protocols.AnyReturnReader>インスタンス。 その他のインスタンスへの呼び出しを受け取る、<xref:System.Web.Services.Protocols.AnyReturnReader.Read%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.AnyReturnReader.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">別のインスタンス、<see cref="T:System.Web.Services.Protocols.AnyReturnReader" />をクラス、<see cref="M:System.Web.Services.Protocols.AnyReturnReader.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />メソッドが以前に呼び出されます。</param>
+        <summary>
+          <see cref="T:System.Web.Services.Protocols.AnyReturnReader" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.AnyReturnReader.Initialize%2A>メソッドは、何も行われません。  
+  
+ このメソッドは、応答の処理時に呼び出されます。 入力パラメーター`initializer`の別のインスタンスは、<xref:System.Web.Services.Protocols.AnyReturnReader>クライアントの初期化中に取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override object Read (System.Net.WebResponse response, System.IO.Stream responseStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Read(class System.Net.WebResponse response, class System.IO.Stream responseStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.AnyReturnReader.Read(System.Net.WebResponse,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.Net.WebResponse" />
+        <Parameter Name="responseStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="response">操作の出力メッセージを含む、Web サービスによって送信される HTTP 応答の表現。</param>
+        <param name="responseStream">によって表される HTTP 応答の本文が表示される出力ストリーム、<c>応答</c>パラメーター。</param>
+        <summary>入力の HTTP 応答ストリームを返します。</summary>
+        <returns>入力の HTTP 応答ストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.AnyReturnReader>のクラスの実装、<xref:System.Web.Services.Protocols.AnyReturnReader.Read%2A>メソッドでは、読み込みは行われません。 代わりに単純に返します、<xref:System.IO.Stream>オブジェクトをパラメーターとして渡されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1129 @@
+<Type Name="ScrollBar" FullName="System.Windows.Controls.Primitives.ScrollBar">
+  <TypeSignature Language="C#" Value="public class ScrollBar : System.Windows.Controls.Primitives.RangeBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ScrollBar extends System.Windows.Controls.Primitives.RangeBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.ScrollBar" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.RangeBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_Track", Type=typeof(System.Windows.Controls.Primitives.Track))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スライド式のあるスクロール バーを提供するコントロールを表す<see cref="T:System.Windows.Controls.Primitives.Thumb" />の位置が、値に対応します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。  
+  
+ ![スクロール バーの図](~/add/media/scrollbar-illustration.JPG "スクロール バーの図")  
+  
+ <xref:System.Windows.Controls.Primitives.ScrollBar>コントロールに含まれる、<xref:System.Windows.Controls.Primitives.Track>コントロール。 <xref:System.Windows.Controls.Primitives.Track>コントロールでは、<xref:System.Windows.Controls.Primitives.Thumb>コントロールと 2 つ<xref:System.Windows.Controls.Primitives.RepeatButton>コントロール。 大きくなり、低下することができます、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール キーを押して、<xref:System.Windows.Controls.Primitives.RepeatButton>を制御または移動して、<xref:System.Windows.Controls.Primitives.Thumb>です。 既定の値の範囲、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティは、0 から 1 です。 <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>線形までの距離を表す、<xref:System.Windows.Controls.Primitives.Thumb>のエンドポイント間で、<xref:System.Windows.Controls.Primitives.ScrollBar>です。 設定して、既定値の範囲を変更することができます、<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>と<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>プロパティです。 <xref:System.Windows.Controls.Primitives.ScrollBar.Orientation%2A>プロパティを決定するかどうか、<xref:System.Windows.Controls.Primitives.ScrollBar>水平方向または垂直方向に表示されるのこのプロパティを定義する必要があります、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールを表示します。  
+  
+ <xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>垂直方向の下に上からの値が高くなるよう向きが<xref:System.Windows.Controls.Primitives.ScrollBar>または左から右の水平方向に<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ <xref:System.Windows.Controls.Primitives.Track>次の表にプロパティが、対応するバインド ターゲット<xref:System.Windows.Controls.Primitives.ScrollBar>プロパティと、<xref:System.Windows.Controls.Primitives.ScrollBar.Track%2A>プロパティが明示的に定義されていません。 明示的に定義する場合、<xref:System.Windows.Controls.Primitives.ScrollBar.Track%2A>プロパティのバインドは発生しません。  
+  
+|<xref:System.Windows.Controls.Primitives.Track> プロパティ|<xref:System.Windows.Controls.Primitives.ScrollBar> プロパティ|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.Primitives.Track.Maximum%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.Track.Minimum%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.Track.Value%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>|  
+  
+ アクセスすることができます、<xref:System.Windows.Controls.Primitives.Track>の制御、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールを使用して、<xref:System.Windows.Controls.Primitives.ScrollBar.Track%2A>プロパティです。  
+  
+ 表示する<xref:System.Windows.UIElement>スクロール バーを持つボックス内のコンテンツを使用して、<xref:System.Windows.Controls.ScrollViewer>コントロール。  
+  
+## <a name="customizing-the-scrollbar-control"></a>スクロール バー コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.Primitives.ScrollBar>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.Primitives.ScrollBar>を参照してください[スクロール バー スタイルとテンプレート](~/docs/framework/wpf/controls/scrollbar-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、水平方向を作成する方法を示します<xref:System.Windows.Controls.Primitives.ScrollBar>値は 0 ~ 100 の範囲を持ちます。  
+  
+ [!code-xaml[ScrollBarSnips#ScrollBar](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml#scrollbar)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollBar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferScrollToHorizontalOffsetCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand DeferScrollToHorizontalOffsetCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand DeferScrollToHorizontalOffsetCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.DeferScrollToHorizontalOffsetCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドに通知する、<see cref="T:System.Windows.Controls.ScrollViewer" />ユーザーがドラッグする、<see cref="T:System.Windows.Controls.Primitives.Thumb" />水平の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />で提供されている値に<see cref="P:System.Windows.Input.ExecutedRoutedEventArgs.Parameter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがのつまみをドラッグすると、 <xref:System.Windows.Controls.Primitives.ScrollBar>、<xref:System.Windows.Controls.Primitives.ScrollBar>呼び出し<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar.DeferScrollToHorizontalOffsetCommand>です。 場合<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>返します`true`、<xref:System.Windows.Controls.Primitives.ScrollBar>そのコマンドを実行します。  場合<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>返します`false`、<xref:System.Windows.Controls.Primitives.ScrollBar>実行、<xref:System.Windows.Controls.Primitives.ScrollBar.ScrollToHorizontalOffsetCommand>です。  
+  
+ <xref:System.Windows.Controls.ScrollViewer>遅延スクロールを有効にする次のコマンドを使用します。 ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A?displayProperty=nameWithType>は`true`をドラッグして、<xref:System.Windows.Controls.Primitives.Thumb>の<xref:System.Windows.Controls.Primitives.ScrollBar>のコンテンツ、<xref:System.Windows.Controls.ScrollViewer>離したまで変更されません、<xref:System.Windows.Controls.Primitives.Thumb>です。 遅延スクロールが有効になっている場合、<xref:System.Windows.Controls.Primitives.ScrollBar>実行、<xref:System.Windows.Controls.Primitives.ScrollBar.DeferScrollToHorizontalOffsetCommand>水平方向の<xref:System.Windows.Controls.Primitives.ScrollBar>ユーザーがドラッグしたときに、<xref:System.Windows.Controls.Primitives.Thumb>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferScrollToVerticalOffsetCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand DeferScrollToVerticalOffsetCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand DeferScrollToVerticalOffsetCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.DeferScrollToVerticalOffsetCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドに通知する、<see cref="T:System.Windows.Controls.ScrollViewer" />ユーザーがドラッグする、<see cref="T:System.Windows.Controls.Primitives.Thumb" />垂直の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />で提供されている値に<see cref="P:System.Windows.Input.ExecutedRoutedEventArgs.Parameter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがのつまみをドラッグすると、 <xref:System.Windows.Controls.Primitives.ScrollBar>、<xref:System.Windows.Controls.Primitives.ScrollBar>呼び出し<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar.DeferScrollToVerticalOffsetCommand>です。 場合<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>返します`true`、<xref:System.Windows.Controls.Primitives.ScrollBar>そのコマンドを実行します。  場合<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>返します`false`、<xref:System.Windows.Controls.Primitives.ScrollBar>実行、<xref:System.Windows.Controls.Primitives.ScrollBar.ScrollToVerticalOffsetCommand>です。  
+  
+ <xref:System.Windows.Controls.ScrollViewer>遅延スクロールを有効にする次のコマンドを使用します。 ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A?displayProperty=nameWithType>は`true`をドラッグして、<xref:System.Windows.Controls.Primitives.Thumb>の<xref:System.Windows.Controls.Primitives.ScrollBar>のコンテンツ、<xref:System.Windows.Controls.ScrollViewer>離したまで変更されません、<xref:System.Windows.Controls.Primitives.Thumb>です。 遅延スクロールが有効になっている場合、<xref:System.Windows.Controls.Primitives.ScrollBar>実行、<xref:System.Windows.Controls.Primitives.ScrollBar.DeferScrollToVerticalOffsetCommand>垂直方向の<xref:System.Windows.Controls.Primitives.ScrollBar>ユーザーがドラッグしたときに、<xref:System.Windows.Controls.Primitives.Thumb>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledCore">
+      <MemberSignature Language="C#" Value="protected override bool IsEnabledCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabledCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ScrollBar.IsEnabledCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />を有効にします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />で有効になっているが、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツのサイズが、それ以外の表示領域を超えると<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装ではこの設定<xref:System.Windows.Controls.Primitives.ScrollBar.IsEnabledCore%2A>に`true`場合にのみ、<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>の値、<xref:System.Windows.Controls.Primitives.ScrollBar>がより大きい、<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>値と<xref:System.Windows.Controls.Primitives.ScrollBar>を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineDownCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand LineDownCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand LineDownCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.LineDownCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />わずかな量の値を増やすことの垂直方向にその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.SmallChange%2A>プロパティです。  
+  
+ このコマンドは、ユーザーが、下方向キーを押したときに発生します。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_LineDownCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.LineDownCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.LineDownCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#LineDownCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#linedowncommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineLeftCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand LineLeftCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand LineLeftCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.LineLeftCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />わずかに脱落する水平方向の値を小さくしてその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.SmallChange%2A>プロパティです。  
+  
+ このコマンドは、左にユーザーが押す<xref:System.Windows.Controls.Primitives.RepeatButton>です。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_LineLeftCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.LineLeftCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.LineLeftCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#LineLeftCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#lineleftcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineRightCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand LineRightCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand LineRightCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.LineRightCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />わずかな量の値を増やすことの水平方向にその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.SmallChange%2A>プロパティです。  
+  
+ このコマンドは、右にユーザーが押す<xref:System.Windows.Controls.Primitives.RepeatButton>です。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_LineRightCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.LineRightCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.LineRightCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#LineRightCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#linerightcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineUpCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand LineUpCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand LineUpCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.LineUpCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />少量の垂直方向の値を小さくしてその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.SmallChange%2A>プロパティです。  
+  
+ このコマンドは、ユーザーが、上方向キーを押したときに発生します。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_LineUpCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.LineUpCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.LineUpCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#LineUpCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#lineupcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビジュアル ツリーを作成、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装にも設定、<xref:System.Windows.Controls.Primitives.ScrollBar.Track%2A>プロパティを<xref:System.Windows.Controls.Primitives.Track>で定義されている、<xref:System.Windows.Controls.Primitives.ScrollBar>テンプレート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenuClosing">
+      <MemberSignature Language="C#" Value="protected override void OnContextMenuClosing (System.Windows.Controls.ContextMenuEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContextMenuClosing(class System.Windows.Controls.ContextMenuEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.OnContextMenuClosing(System.Windows.Controls.ContextMenuEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ContextMenuEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クラスの処理を提供、<see cref="E:System.Windows.FrameworkElement.ContextMenuClosing" />に発生するイベントと、<see cref="T:System.Windows.Controls.ContextMenu" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContextMenu>の<xref:System.Windows.Controls.Primitives.ScrollBar>を変更するためのオプションを提供、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenuOpening">
+      <MemberSignature Language="C#" Value="protected override void OnContextMenuOpening (System.Windows.Controls.ContextMenuEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContextMenuOpening(class System.Windows.Controls.ContextMenuEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.OnContextMenuOpening(System.Windows.Controls.ContextMenuEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ContextMenuEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クラスの処理を提供、<see cref="E:System.Windows.FrameworkElement.ContextMenuOpening" />に発生するイベントと、<see cref="T:System.Windows.Controls.ContextMenu" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が開きます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContextMenu>の<xref:System.Windows.Controls.Primitives.ScrollBar>を変更するためのオプションを提供、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />この<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />コントロール。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.ScrollBarAutomationPeer" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.OnPreviewMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseLeftButtonDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を変更、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar>の場所に、<xref:System.Windows.UIElement.PreviewMouseLeftButtonDown>ユーザーが SHIFT キーを押したときに発生するイベントです。 設定して、イベントが処理される<xref:System.Windows.RoutedEventArgs.Handled%2A>イベント データの`e`に`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseRightButtonUp">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseRightButtonUp (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseRightButtonUp(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollBar.OnPreviewMouseRightButtonUp(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseRightButtonUp" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、マウス クリックの位置を保存できるように、<xref:System.Windows.Controls.Primitives.ScrollBar>への応答には、その位置にスクロールできる、<xref:System.Windows.Controls.Primitives.ScrollBar.ScrollHereCommand>です。  
+  
+   
+  
+## Examples  
+ A<xref:System.Windows.Controls.Primitives.ScrollBar.ScrollHereCommand>ユーザーが選択したときに発生**スクロールここ**、ユーザーが上でマウスの右ボタンを押したときに表示されるメニューから、<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Orientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Orientation Orientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation Orientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ScrollBar.Orientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が水平方向または垂直方向に表示されます。</summary>
+        <value><see cref="T:System.Windows.Controls.Orientation" />列挙値を定義するかどうか、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が水平方向または垂直方向に表示されます。 既定値は、<see cref="F:System.Windows.Controls.Orientation.Vertical" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Orientation"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ScrollBar.OrientationProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Primitives.ScrollBar.Orientation%2A>プロパティを<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。  
+  
+ [!code-csharp[ScrollBarSnips#Orientation](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml.cs#orientation)]
+ [!code-vb[ScrollBarSnips#Orientation](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollBarSnips/visualbasic/window1.xaml.vb#orientation)]
+ [!code-xaml[ScrollBarSnips#Orientation](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml#orientation)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrientationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OrientationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OrientationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.OrientationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ScrollBar.Orientation" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageDownCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand PageDownCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand PageDownCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.PageDownCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 、膨大な量の値を増やすことの垂直方向でその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.LargeChange%2A>プロパティです。  
+  
+ このコマンドは、ユーザーは、PAGE DOWN キーを押したときに発生します。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_PageDownCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.PageDownCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.PageDownCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#PageDownCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#pagedowncommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageLeftCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand PageLeftCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand PageLeftCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.PageLeftCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 、膨大な量の値を小さくする水平方向でその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.LargeChange%2A>プロパティです。  
+  
+ このコマンドは、ユーザーの左側にあるページ ボタンを押したときに、<xref:System.Windows.Controls.Primitives.Thumb>です。 次の図に、ページのボタン、<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ ![スクロール バーのさまざまな部分](~/add/media/scrollbarpagebutton.png "スクロール バーのさまざまな部分")  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_PageLeftCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.PageLeftCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.PageLeftCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#PageLeftCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#pageleftcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageRightCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand PageRightCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand PageRightCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.PageRightCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 、膨大な量の値を増やすことの水平方向でその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.LargeChange%2A>プロパティです。  
+  
+ このコマンドは、ユーザーの右側にあるページ ボタンを押したときに、<xref:System.Windows.Controls.Primitives.Thumb>です。 次の図に、ページのボタン、<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ ![スクロール バーのさまざまな部分](~/add/media/scrollbarpagebutton.png "スクロール バーのさまざまな部分")  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_PageRightCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.PageRightCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.PageRightCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#PageRightCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#pagerightcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageUpCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand PageUpCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand PageUpCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.PageUpCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 、膨大な量の値を小さくする垂直方向でその<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>の値によって、<xref:System.Windows.Controls.Primitives.RangeBase.LargeChange%2A>プロパティです。  
+  
+ このコマンドは、ユーザーは、PAGEUP キーを押したときに発生します。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_PageUpCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.PageUpCommand**`"/>`  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.Controls.Primitives.ScrollBar.PageUpCommand>カスタム<xref:System.Windows.Controls.Primitives.ScrollBar>スタイル テンプレート。  
+  
+ [!code-xaml[ScrollBarTemplateExample#PageUpCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#pageupcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scroll">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.Primitives.ScrollEventHandler Scroll;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.Primitives.ScrollEventHandler Scroll" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生した 1 つまたは複数回でコンテンツがスクロール、 <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> 、ユーザーが移動すると、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />マウスを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベント通常数回発生する場合、ユーザーが変更されたとき、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar>をドラッグして、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>です。 としてこのイベントが発生した回数に制限はありません、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>位置にドラッグします。  
+  
+ このイベントは、いつ発生するか、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールは、コードに変更します。  
+  
+<a name="routedEventInfo_Scroll"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ScrollBar.ScrollEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.Primitives.ScrollEventHandler>|  
+  
+   
+  
+## Examples  
+ 例を次のイベント ハンドラーを割り当てる方法、<xref:System.Windows.Controls.Primitives.ScrollBar.Scroll>イベントを<xref:System.Windows.Controls.Primitives.ScrollBar>制御、およびコードで、イベント ハンドラーを定義する方法です。  
+  
+ [!code-xaml[ScrollBarSnips#Scroll](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml#scroll)]  
+  
+ [!code-csharp[ScrollBarSnips#ScrollHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml.cs#scrollhandler)]
+ [!code-vb[ScrollBarSnips#ScrollHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollBarSnips/visualbasic/window1.xaml.vb#scrollhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ScrollEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ScrollEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollHereCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollHereCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollHereCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollHereCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />開いたマウス クリックのポイントに、<see cref="T:System.Windows.Controls.ContextMenu" />で、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、ユーザーが選択したときに発生**スクロールここ**から、<xref:System.Windows.Controls.ContextMenu>オプション。 <xref:System.Windows.Controls.ContextMenu>の<xref:System.Windows.Controls.Primitives.ScrollBar>、ユーザーが上にマウス ポインターを置いたときに表示されます、<xref:System.Windows.Controls.Primitives.ScrollBar>マウスの右ボタンを押すとします。 このメニューにはスクロールするためのオプション、<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ このコマンドでは、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部である、<xref:System.Windows.Controls.ScrollViewer>制御、およびによって実行される、<xref:System.Windows.Controls.ScrollViewer>です。  
+  
+<a name="xamlTextUsage_ScrollHereCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="` **ScrollBar.ScrollHereCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToBottomCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToBottomCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToBottomCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToBottomCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />を<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 垂直方向の<xref:System.Windows.Controls.Primitives.ScrollBar>、この移動は、ctrl キーを押しながら END キーを押したときに発生します。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_ScrollToBottomCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.ScrollToBottomCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToEndCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToEndCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToEndCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToEndCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの右下へスクロールするコマンド、<see cref="T:System.Windows.Controls.ScrollViewer" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドを使用してのみ、<xref:System.Windows.Controls.ScrollViewer>コントロール。  
+  
+<a name="xamlTextUsage_ScrollToEndCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.ScrollToEndCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToHomeCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToHomeCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToHomeCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToHomeCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの左上隅をコマンド、<see cref="T:System.Windows.Controls.ScrollViewer" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドを使用してのみ、<xref:System.Windows.Controls.ScrollViewer>コントロール。  
+  
+<a name="xamlTextUsage_ScrollToHomeCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.ScrollToHomeCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToHorizontalOffsetCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToHorizontalOffsetCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToHorizontalOffsetCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToHorizontalOffsetCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向のスクロール コマンド<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />で、<see cref="T:System.Windows.Controls.ScrollViewer" />で提供されている値に<see cref="P:System.Windows.Input.ExecutedRoutedEventArgs.Parameter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドを使用してのみ、<xref:System.Windows.Controls.ScrollViewer>コントロール。  
+  
+<a name="xamlTextUsage_ScrollToHorizontalOffsetCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.ScrollToHorizontalOffsetCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToLeftEndCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToLeftEndCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToLeftEndCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToLeftEndCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />を<see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />水平方向の値<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、ユーザーが水平方向の CTRL + ホーム キーを押したときに発生<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_ScrollToLeftEndCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="` **ScrollBar.ScrollToLeftEndCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToRightEndCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToRightEndCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToRightEndCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToRightEndCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />を<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />水平方向の値<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、ユーザーが水平方向の ctrl キーを押しながら END キーを押したときに発生<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_ScrollToRightEndCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="` **ScrollBar.ScrollToRightEndCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToTopCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToTopCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToTopCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToTopCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのスクロール、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />を<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />垂直方向の値<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 垂直方向の<xref:System.Windows.Controls.Primitives.ScrollBar>、この移動は、ctrl キーを押しながら HOME キーを押すときに発生します。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.ScrollBar>の一部として、<xref:System.Windows.Controls.ScrollViewer>コントロール、<xref:System.Windows.Controls.ScrollViewer>このコマンドを実行します。  
+  
+<a name="xamlTextUsage_ScrollToTopCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.ScrollToTopCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToVerticalOffsetCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedCommand ScrollToVerticalOffsetCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedCommand ScrollToVerticalOffsetCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToVerticalOffsetCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直方向のスクロール コマンド<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />で、<see cref="T:System.Windows.Controls.ScrollViewer" />で提供されている値に<see cref="P:System.Windows.Input.ExecutedRoutedEventArgs.Parameter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドを使用してのみ、<xref:System.Windows.Controls.ScrollViewer>コントロール。  
+  
+<a name="xamlTextUsage_ScrollToVerticalOffsetCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*オブジェクト**プロパティ*`="`**ScrollBar.ScrollToVerticalOffsetCommand**`"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Track">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.Track Track { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.Track Track" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ScrollBar.Track" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.Track</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.Primitives.Track" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />コントロール。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.Track" />で使用される、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なスタイル テンプレート、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールが含まれています、<xref:System.Windows.Controls.Primitives.Track>コントロールで 2 つのどちら側に囲まれた<xref:System.Windows.Controls.Button>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例にアクセスする方法を示しています、<xref:System.Windows.Controls.Primitives.Track>コントロールで使用される、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。  
+  
+ [!code-csharp[ScrollBarSnips#Track](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml.cs#track)]
+ [!code-vb[ScrollBarSnips#Track](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollBarSnips/visualbasic/window1.xaml.vb#track)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportSize">
+      <MemberSignature Language="C#" Value="public double ViewportSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ViewportSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ScrollBar.ViewportSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在表示されているスクロール可能なコンテンツの量を設定します。</summary>
+        <value>現在表示されているスクロール可能なコンテンツの量。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される単位<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A>コンテンツの長さの記述に使用される同じ単位です。 いくつかの例には、テキストの行またはページのテキストが含まれます。  
+  
+ 値、<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A>のサイズを計算するプロパティが使用される、<xref:System.Windows.Controls.Primitives.Thumb>スライド式の値インジケーターのとして表示されるコントロールを<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。 <xref:System.Windows.Controls.Primitives.Thumb>コントロールのサイズの量を表す、<xref:System.Windows.Controls.ScrollViewer>表示されているコントロールのコンテンツ。  場合の 25%、<xref:System.Windows.Controls.ScrollViewer>コントロールのコンテンツが表示されて、<xref:System.Windows.Controls.Primitives.Thumb>のトラックの 25% を占める、<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ どの単位を決定できます<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A>を使用します。  このプロパティを設定するときに、以下のことを確認、 <xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A>、 <xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>、 <xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>、および<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティが同じ単位を使用します。  
+  
+ 次の図は、どのように<xref:System.Windows.Controls.Primitives.Thumb>サイズが表示されているコンテンツの量を反映します。  
+  
+ ![スクロール バーのつまみのサイズのトラック長と](~/add/media/scrollbarthumbsize.png "トラック長とスクロール バーのつまみのサイズ")  
+  
+<a name="dependencyPropertyInfo_ViewportSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A>上、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。  
+  
+ [!code-csharp[ScrollBarSnips#Viewport](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml.cs#viewport)]
+ [!code-vb[ScrollBarSnips#Viewport](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollBarSnips/visualbasic/window1.xaml.vb#viewport)]
+ [!code-xaml[ScrollBarSnips#Viewport](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarSnips/CSharp/Window1.xaml#viewport)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewportSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewportSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollBar.ViewportSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ScrollBar.ViewportSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

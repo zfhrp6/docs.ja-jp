@@ -1,0 +1,108 @@
+<Type Name="AuditLevel" FullName="System.ServiceModel.AuditLevel">
+  <TypeSignature Language="C#" Value="public enum AuditLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuditLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.AuditLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>セキュリティ イベントをいつ監査するかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元の認証または承認、あるいはその両方を必要とする [!INCLUDE[indigo1](~/includes/indigo1-md.md)] アプリケーションの作成時に、セキュリティに関連するイベント (成功、失敗、またはその両方) を記録するように指定できます。 監査レベルは、この列挙体によって決定されます。  
+  
+ 監査ログの場所は、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A> クラスの <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> プロパティを <xref:System.ServiceModel.AuditLogLocation> 値のいずれかに設定することで指定されます。  
+  
+ 監査の詳細については、次を参照してください。[監査](~/docs/framework/wcf/feature-details/auditing-security-events.md)です。  
+  
+ 使用して監査動作を指定することも、 [ &lt;serviceSecurityAudit&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)バインドします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel%2A> プロパティと <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A> プロパティを <xref:System.ServiceModel.AuditLevel> 値のいずれかに設定します。  
+  
+ [!code-csharp[AuditingSecurityEvents#1](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#1)]
+ [!code-vb[AuditingSecurityEvents#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Failure">
+      <MemberSignature Language="C#" Value="Failure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.AuditLevel Failure = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.AuditLevel.Failure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>失敗したセキュリティ関連イベントだけが記録されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.AuditLevel None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.AuditLevel.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントは記録されません。 既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="Success" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.AuditLevel Success = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.AuditLevel.Success" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>成功したセキュリティ関連イベントだけが記録されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SuccessOrFailure">
+      <MemberSignature Language="C#" Value="SuccessOrFailure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.AuditLevel SuccessOrFailure = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.AuditLevel.SuccessOrFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>失敗したセキュリティ関連イベントと成功したセキュリティ関連イベントの両方が記録されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

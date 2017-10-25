@@ -1,0 +1,57 @@
+<Type Name="PeekAction" FullName="System.Messaging.PeekAction">
+  <TypeSignature Language="C#" Value="public enum PeekAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PeekAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.PeekAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>現在のメッセージ キュー、または次のメッセージをピークするかどうかを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Messaging.PeekAction>列挙が<xref:System.Messaging.MessageQueue.BeginPeek%28System.TimeSpan%2CSystem.Messaging.Cursor%2CSystem.Messaging.PeekAction%2CSystem.Object%2CSystem.AsyncCallback%29>と<xref:System.Messaging.MessageQueue.Peek%28System.TimeSpan%2CSystem.Messaging.Cursor%2CSystem.Messaging.PeekAction%29>キューに現在のメッセージまたは次のメッセージをピークするかどうかを示すためにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="Current" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.PeekAction Current = int32(-2147483648)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.PeekAction.Current" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.PeekAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューに現在のメッセージをピークします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Next">
+      <MemberSignature Language="C#" Value="Next" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.PeekAction Next = int32(-2147483647)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.PeekAction.Next" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.PeekAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューの次のメッセージをピークします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

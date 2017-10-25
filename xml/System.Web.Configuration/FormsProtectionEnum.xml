@@ -1,0 +1,101 @@
+<Type Name="FormsProtectionEnum" FullName="System.Web.Configuration.FormsProtectionEnum">
+  <TypeSignature Language="C#" Value="public enum FormsProtectionEnum" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormsProtectionEnum extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.FormsProtectionEnum" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>いずれかの cookie を使用する場合は、暗号化の種類を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムがに基づいて、構成済みのデータ検証アルゴリズムを使用してすべての値を選択する場合、 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)タグ。 これは、既定値であり、推奨値。  
+  
+ [なし] を選択した場合、プレーン テキスト攻撃の対象と cookie を引き起こすことがあります。  
+  
+ 検証を選択すると、cookie のデータの検証キーの連結、メッセージ認証コード (MAC)、コンピューティングおよび送出 cookie への MAC の付加により、cookie 検証を使用して cookie が作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.FormsProtectionEnum.All>列挙します。 コード例を参照してください、<xref:System.Web.Configuration.FormsAuthenticationConfiguration>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationConfiguration#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/CS/formsauthenticationconfiguration.cs#11)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationConfiguration#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationConfiguration/VB/formsauthenticationconfiguration.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.FormsProtectionEnum All = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.FormsProtectionEnum.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsProtectionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが cookie を保護するために、データの検証と暗号化の両方を使用することを指定します。 このオプションが設定されているデータ検証アルゴリズムを使用して (に基づいて、<see langword="machineKey" />要素)。 TRIPLE-DES (3 des) 暗号化に使用、および使用可能になる場合、キーが 48 バイト以上である場合。 <see langword="All" />既定値 (および推奨) 値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Encryption">
+      <MemberSignature Language="C#" Value="Encryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.FormsProtectionEnum Encryption = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.FormsProtectionEnum.Encryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsProtectionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TRIPLE-DES または DES を使用して cookie が暗号化されますが、cookie のデータ検証は実行されませんを指定します。 このように使用する cookie は、平文セキュリティ攻撃にさらされる可能性があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.FormsProtectionEnum None = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.FormsProtectionEnum.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsProtectionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化に対してのみ cookie を使用する、セキュリティ要件が高くしたがってがサイトの暗号化と検証の両方が無効になっているを指定します。 この方法で cookie を使用することはしないでください。ただし、.NET Framework を使用して個人用設定を有効にするリソースを最小限に抑える方法を勧めします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Validation">
+      <MemberSignature Language="C#" Value="Validation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.FormsProtectionEnum Validation = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.FormsProtectionEnum.Validation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsProtectionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションで検証スキームを使用して、転送中に暗号化された cookie の内容が変更されていないことを確認することを指定します。 Cookie のデータの検証キーの連結、メッセージ認証コード (MAC)、コンピューティングおよび送出 cookie への MAC の付加により、cookie が作成されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

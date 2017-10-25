@@ -1,0 +1,87 @@
+<Type Name="BookmarkOptions" FullName="System.Activities.BookmarkOptions">
+  <TypeSignature Language="C#" Value="public enum BookmarkOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BookmarkOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.BookmarkOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Activities.Bookmark" /> のオプションを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MultipleResume">
+      <MemberSignature Language="C#" Value="MultipleResume" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.BookmarkOptions MultipleResume = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.BookmarkOptions.MultipleResume" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.BookmarkOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数回再開できる <see cref="T:System.Activities.Bookmark" />。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ブックマークを再開するとき、ワークフロー ランタイムは保留中のブックマークをブックマーク テーブルから削除します。 ただし、ブックマークが MultipleResume として指定されている場合、ブックマークは、テーブルから削除されませんし、複数回、同じブックマークを再開することができます。 MultipleResume の使用例は、アクティビティをループさせるよう<xref:System.Activities.While>、 <xref:System.Activities.ForEach%601>、および<xref:System.Activities.Flowchart>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NonBlocking">
+      <MemberSignature Language="C#" Value="NonBlocking" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.BookmarkOptions NonBlocking = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.BookmarkOptions.NonBlocking" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.BookmarkOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフローをブロックしない <see cref="T:System.Activities.Bookmark" />。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、アクティビティに保留中のブックマークがある場合、ワークフロー ランタイムはアクティビティが実行を完了したとは見なしません。 ただし、ブックマークが作成時に NonBlocking として指定されている場合、ワークフロー ランタイム アクティビティことにより実行の完了が保留中の NonBlocking ブックマークがある場合でも他の保留中の作業がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.BookmarkOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.BookmarkOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.BookmarkOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の <see cref="T:System.Activities.Bookmark" /> オプション。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

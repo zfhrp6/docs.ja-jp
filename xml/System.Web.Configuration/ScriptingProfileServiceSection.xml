@@ -1,0 +1,171 @@
+<Type Name="ScriptingProfileServiceSection" FullName="System.Web.Configuration.ScriptingProfileServiceSection">
+  <TypeSignature Language="C#" Value="public sealed class ScriptingProfileServiceSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScriptingProfileServiceSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ScriptingProfileServiceSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロファイル サービスの設定の構成セクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ScriptingProfileServiceSection>クラスを使用すると、プログラムでアクセスし、変更、 `profileService` AJAX 機能を使用する ASP.NET アプリケーションの構成セクションの要素。  
+  
+ プロファイル サービスは、プロファイル プロパティ、現在の要求に関連付けられているユーザー id の取得し、設定に使用されます。 これは、認証されたユーザーに対して、プロファイル サービスを実行できることを意味します。 匿名 id の機能が有効になっている (または使用可能) の場合は、匿名ユーザーに対しても機能の構成ファイルにします。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言によってプロパティの値を指定する方法を示します、<xref:System.Web.Configuration.ScriptingProfileServiceSection>構成ファイル内のクラスです。  
+  
+```  
+<system.web.extensions>  
+  <scripting>  
+    <webServices>  
+      <profileService enabled="true"   
+        readAccessProperties="FirstName,LastName"   
+        writeAccessProperties="FirstName,LastName" />  
+    </webServices>  
+  </scripting>  
+</system.web.extensions>  
+```  
+  
+ 次の例にアクセスする方法を示しています、<xref:System.Web.Configuration.ScriptingProfileServiceSection>プログラムでセクションです。  
+  
+ [!code-csharp[System.Web.Configuration#2](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Configuration/CS/App_Code/ConfigSectionSample.cs#2)]
+ [!code-vb[System.Web.Configuration#2](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Configuration/VB/App_Code/ConfigSectionSample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptingProfileServiceSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ScriptingProfileServiceSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ScriptingProfileServiceSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingProfileServiceSection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイル サービスが AJAX 対応 ASP.NET アプリケーションで使用できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロファイル サービスが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingProfileServiceSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAccessProperties">
+      <MemberSignature Language="C#" Value="public string[] ReadAccessProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ReadAccessProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingProfileServiceSection.ReadAccessProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("readAccessProperties", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または読み取りアクセス プロファイルのプロパティを設定します。</summary>
+        <value>読み取りアクセス プロファイル プロパティの名前を格納する配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ AJAX 対応のアプリケーションで読み取りアクセス プロファイル プロパティを使用するために追加する 1 つまたは複数のプロファイル プロパティ名、<xref:System.Web.Configuration.ScriptingProfileServiceSection.ReadAccessProperties%2A>プロパティです。  
+  
+ 設定することができます<xref:System.Web.Configuration.ScriptingProfileServiceSection.ReadAccessProperties%2A>を空の文字列配列にします。 これは、クライアント スクリプトから読み取られるプロファイル プロパティを許可しないことを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAccessProperties">
+      <MemberSignature Language="C#" Value="public string[] WriteAccessProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] WriteAccessProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingProfileServiceSection.WriteAccessProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("writeAccessProperties", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイルのプロパティの書き込みアクセスを設定します。</summary>
+        <value>書き込みアクセスのプロファイル プロパティの名前を格納する配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ AJAX 対応のアプリケーションで書き込みアクセス プロファイル プロパティを使用するために追加する 1 つまたは複数のプロファイル プロパティ名、<xref:System.Web.Configuration.ScriptingProfileServiceSection.WriteAccessProperties%2A>プロパティです。  
+  
+ 設定することができます<xref:System.Web.Configuration.ScriptingProfileServiceSection.WriteAccessProperties%2A>を空の文字列配列にします。 これは、クライアント スクリプトから設定するプロファイルのプロパティを許可しないことを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

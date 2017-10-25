@@ -1,0 +1,154 @@
+<Type Name="FolderNameEditor+FolderBrowser" FullName="System.Windows.Forms.Design.FolderNameEditor+FolderBrowser">
+  <TypeSignature Language="C#" Value="protected sealed class FolderNameEditor.FolderBrowser : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi sealed beforefieldinit FolderNameEditor/FolderBrowser extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーがフォルダーを選択できるダイアログ ボックスを表します。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FolderBrowser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォルダーの上部に表示する説明を設定します。</summary>
+        <value>フォルダーの上部に表示する説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この説明は、フォルダーの選択に関する指示を提供できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryPath">
+      <MemberSignature Language="C#" Value="public string DirectoryPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DirectoryPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.DirectoryPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが選択したオブジェクトへのディレクトリ パスを取得します。</summary>
+        <value>ユーザーが選択したオブジェクトへのディレクトリ パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult ShowDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.DialogResult ShowDialog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.ShowDialog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォルダーのブラウザー ダイアログを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" />フォームからです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult ShowDialog (System.Windows.Forms.IWin32Window owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.DialogResult ShowDialog(class System.Windows.Forms.IWin32Window owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.ShowDialog(System.Windows.Forms.IWin32Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有するトップレベル ウィンドウ (例:: System.Windows.Forms.Form)。</param>
+        <summary>指定された所有者にフォルダー ブラウザー ダイアログを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" />フォームからです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartLocation">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Design.FolderNameEditor.FolderBrowserFolder StartLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Design.FolderNameEditor/FolderBrowserFolder StartLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.StartLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.FolderNameEditor+FolderBrowserFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルート ノードの開始位置を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Design.FolderNameEditor.FolderBrowserFolder" />を最初に参照フォルダー ブラウザーの位置を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Design.FolderNameEditor.FolderBrowserStyles Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Design.FolderNameEditor/FolderBrowserStyles Style" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.FolderNameEditor+FolderBrowserStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーを参照するときに、参照に使用するスタイルです。 これは、値のフラグの組み合わせには、<see cref="T:System.Windows.Forms.Design.FolderNameEditor.FolderBrowserStyles" />列挙します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Design.FolderNameEditor.FolderBrowserStyles" />の動作を示す列挙体メンバー、<see cref="T:System.Windows.Forms.Design.FolderNameEditor.FolderBrowser" />を使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

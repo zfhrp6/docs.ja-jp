@@ -1,0 +1,102 @@
+<Type Name="SoapExtensionImporter" FullName="System.Web.Services.Description.SoapExtensionImporter">
+  <TypeSignature Language="C#" Value="public abstract class SoapExtensionImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapExtensionImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.SoapExtensionImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>共通のインターフェイスとクラスの SOAP 拡張機能を指定するコード属性を生成するための機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapExtensionImporter> `abstract`クラスが公開、`abstract`メソッド、 <xref:System.Web.Services.Description.SoapExtensionImporter.ImportMethod%2A>、これにより、バインドで、操作を表す任意のメソッドにメタデータを追加する派生クラス。 メソッド自体は、入力方式ではありません。 バインディング クラス内のすべての Web メソッドに追加するコードの属性は、SOAP Web サービス プロトコルの拡張を送信 SOAP メッセージに余分なヘッダーを追加するか、受信 SOAP メッセージ上余分な処理を行うのためなど、表します。  
+  
+ 派生するクラスを使用する<xref:System.Web.Services.Description.SoapExtensionImporter>クライアント プロキシ コードの生成を拡張するか、`abstract`サーバー コード。 派生するクラスと組み合わせてこのような派生クラスを使用することができます、 `abstract` <xref:System.Web.Services.Protocols.SoapExtension>クライアントまたはサービスで、SOAP メッセージの実行時の処理を拡張するクラス。  
+  
+ 指定できます<xref:System.Web.Services.Description.SoapExtensionImporter>から構成ファイルで、`soapExtensionImporterTypes`構成要素とその子`add`要素。 構成を適用することができます。  
+  
+-   ASP.NET Web アプリケーション: サービスまたはクライアント。  
+  
+-   スタンドアロンの .NET Framework アプリケーション: クライアントのみです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapExtensionImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapExtensionImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.SoapExtensionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportContext">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapProtocolImporter ImportContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.SoapProtocolImporter ImportContext" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapExtensionImporter.ImportContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapProtocolImporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />を呼び出すインスタンス、<see cref="M:System.Web.Services.Description.SoapExtensionImporter.ImportMethod(System.CodeDom.CodeAttributeDeclarationCollection)" />メソッドです。</summary>
+        <value><see cref="T:System.Web.Services.Description.SoapProtocolImporter" />を呼び出すインスタンス、<see cref="M:System.Web.Services.Description.SoapExtensionImporter.ImportMethod(System.CodeDom.CodeAttributeDeclarationCollection)" />メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Services.Description.SoapProtocolImporter>オブジェクトのインスタンスへの参照を保持する<xref:System.Web.Services.Description.SoapExtensionImporter>派生した型を呼び出し、続いて、<xref:System.Web.Services.Description.SoapExtensionImporter.ImportMethod%2A>それらのインスタンスごとにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMethod">
+      <MemberSignature Language="C#" Value="public abstract void ImportMethod (System.CodeDom.CodeAttributeDeclarationCollection metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportMethod(class System.CodeDom.CodeAttributeDeclarationCollection metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapExtensionImporter.ImportMethod(System.CodeDom.CodeAttributeDeclarationCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.CodeDom.CodeAttributeDeclarationCollection" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">A<see cref="T:System.CodeDom.CodeAttributeDeclarationCollection" />先、<see cref="M:System.Web.Services.Description.SoapExtensionImporter.ImportMethod(System.CodeDom.CodeAttributeDeclarationCollection)" />メソッドを配置できる新しい<see cref="T:System.CodeDom.CodeAttributeDeclaration" />インスタンス。</param>
+        <summary>派生クラスでオーバーライドされると、バインドで、操作を表す任意のメソッドにコードの属性の宣言を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の宣言を適用するメソッドを直接使用しない、<xref:System.Web.Services.Description.SoapExtensionImporter.ImportMethod%2A>メソッドです。 属性は、バインディング クラス内のすべての Web メソッドに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

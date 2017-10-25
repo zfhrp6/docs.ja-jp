@@ -1,0 +1,758 @@
+<Type Name="LegendCell" FullName="System.Web.UI.DataVisualization.Charting.LegendCell">
+  <TypeSignature Language="C#" Value="public class LegendCell : System.Web.UI.DataVisualization.Charting.ChartNamedElement, System.Web.UI.DataVisualization.Charting.IChartMapArea" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LegendCell extends System.Web.UI.DataVisualization.Charting.ChartNamedElement implements class System.Web.UI.DataVisualization.Charting.IChartMapArea" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.LegendCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartNamedElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.DataVisualization.Charting.IChartMapArea</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>凡例項目内の凡例セルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、凡例項目を凡例が表示されます、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection>です。 これらの凡例項目は、順番で表されている個々 の凡例のセルで構成されている、<xref:System.Web.UI.DataVisualization.Charting.LegendCellCollection>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LegendCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendCell.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.DataVisualization.Charting.LegendCell" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LegendCell (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendCell.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">A<see langword="string" />セルの種類に応じて、セルのテキストまたはイメージ名を表す値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCell" />クラス、<paramref name="text" />セルのテキストまたはイメージの名前を指定するパラメーターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LegendCell (System.Web.UI.DataVisualization.Charting.LegendCellType cellType, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.DataVisualization.Charting.LegendCellType cellType, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendCell.#ctor(System.Web.UI.DataVisualization.Charting.LegendCellType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cellType" Type="System.Web.UI.DataVisualization.Charting.LegendCellType" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cellType">A<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCellType" />を使用する凡例のセルの種類を表す値です。</param>
+        <param name="text">セルの種類に応じて、セルのテキストまたはイメージ名を表す文字列値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCell" />指定されたセルの種類を持つクラスと<paramref name="text" />セルのテキストまたはイメージの名前を指定するパラメーターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LegendCell (System.Web.UI.DataVisualization.Charting.LegendCellType cellType, string text, System.Drawing.ContentAlignment alignment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.DataVisualization.Charting.LegendCellType cellType, string text, valuetype System.Drawing.ContentAlignment alignment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendCell.#ctor(System.Web.UI.DataVisualization.Charting.LegendCellType,System.String,System.Drawing.ContentAlignment)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cellType" Type="System.Web.UI.DataVisualization.Charting.LegendCellType" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="alignment" Type="System.Drawing.ContentAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="cellType">A<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCellType" />を使用する凡例のセルの種類を表す値です。</param>
+        <param name="text">A<see langword="string" />セルの種類によっては、セルのテキストまたはイメージ名を表す値です。</param>
+        <param name="alignment">A<see cref="T:System.Drawing.ContentAlignment" />凡例のセルのコンテンツの配置を表す値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCell" />クラスに、指定したセルの種類のコンテンツの配置と<paramref name="text" />セルのテキストまたはイメージの名前を指定するパラメーターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alignment">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.ContentAlignment Alignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.ContentAlignment Alignment" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Alignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.ContentAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>凡例の配置を設定するには、セルの内容を取得またはします。</summary>
+        <value>A<see cref="T:System.Drawing.ContentAlignment" />凡例のセルのコンテンツの配置を表す値です。 既定値は <see cref="F:System.Drawing.ContentAlignment.MiddleCenter" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.Alignment%2A>プロパティは、テキスト、系列記号または凡例のセル内の画像に合わせて使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルの背景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />値、凡例のセルの背景を描画するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.BackColor%2A>プロパティが凡例にすべてのエンティティの背景色を設定するときに、最高の優先順位がします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellSpan">
+      <MemberSignature Language="C#" Value="public virtual int CellSpan { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.CellSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルの内容の描画に使用する水平方向のセルの数を設定します。</summary>
+        <value><see langword="integer" />凡例のセルの内容の描画に使用する水平方向のセルの数を表す値です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルの内容は、セルの幅を超えて拡張する必要がある場合、は、設定、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellSpan%2A>プロパティの内容に合わせて必要なセルの数をします。 拡張ヘッダーや凡例にタイトルを追加する場合、このプロパティが最もよく使用されます。  
+  
+ このプロパティを 1 より大きい値に設定すると、拡張の凡例のセルの内容が収まるように空の凡例セルを追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.LegendCellType CellType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.LegendCellType CellType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.CellType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LegendCellType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルの種類を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCellType" />凡例のセルの内容を定義するために使用する型を表す列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.LegendCellType.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティがそれぞれ個々 の凡例のセルに表示されるコンテンツの種類を決定します。 セルの種類は次のいずれかを指定する必要があります。  
+  
+-   Text: が指定されている文字列を使用して、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.Text%2A>プロパティ、および凡例のセルに表示されます。  
+  
+-   SeriesSymbol: での系列記号が定義されている、<xref:System.Web.UI.DataVisualization.Charting.LegendItem.ImageStyle%2A>プロパティに、<xref:System.Web.UI.DataVisualization.Charting.LegendItem>クラスです。 凡例のセルに表示されます。 系列記号が視覚的に注意してください: 線、四角形またはマーカー。 ときに<xref:System.Web.UI.DataVisualization.Charting.LegendItem.ImageStyle%2A>に設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendImageStyle.Marker>セルにカスタム項目のマーカーのすべての属性を適用します。  
+  
+-   Image: イメージを使用して定義、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.Image%2A>プロパティと、凡例のセルに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendCell.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.LegendCell" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルのフォントを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Font" />凡例のセルのフォントを表すオブジェクト。 既定値は、"Microsoft Sans Serif、8 pt"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.Font%2A>プロパティは、凡例のセルのフォント プロパティを設定するために使用できます。  
+  
+ このプロパティを変更しようとすると<xref:System.Drawing.Font>、実行時にオブジェクトのコンパイル エラーが発生します。 実行時にフォント プロパティを設定する必要がありますを作成する新しい<xref:System.Drawing.Font>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルのテキストの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />凡例セル テキストの描画に使用される値。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは該当する場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendCellType.Text>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public virtual string Image { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Image" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ImageValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルにイメージの名前を設定します。</summary>
+        <value>A<see langword="string" />凡例のセルで使用するイメージの名前を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージの名前は、URL である必要があります。  
+  
+ このプロパティは該当する場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size ImageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ImageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.ImageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Size), "0, 0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.SizeEmptyValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルにイメージのサイズを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Size" />イメージのサイズを表す値です。 既定値は (0, 0)、つまり、イメージの元のサイズが使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.ImageSize%2A>凡例のセルの画像の高さと幅を明示的に設定するプロパティを使用します。  
+  
+ このプロパティは該当する場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageTransparentColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color ImageTransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ImageTransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.ImageTransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージが描画されるときに、透明色で置き換えられる色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />凡例のセルの画像で透明色として使用される値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.ImageTransparentColor%2A>プロパティは、のみ適用可能な場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Legend">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.Legend Legend { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Legend Legend" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Legend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Legend</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセルが所属する凡例を取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />には、このセルが属しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegendItem">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.LegendItem LegendItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.LegendItem LegendItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.LegendItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LegendItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセルに属している凡例項目を取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" />には、このセルが属しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapAreaAttributes">
+      <MemberSignature Language="C#" Value="public virtual string MapAreaAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MapAreaAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.MapAreaAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、マップの凡例のセルの領域の属性を設定します。</summary>
+        <value>A<see langword="string" />マップ領域の対応する凡例のセルの属性を表す値です。 既定値は、長さ 0 の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.MapAreaAttributes%2A>プロパティ、クライアント側の画像マップが自動的に作成されます。 マップ領域が作成することも、追加属性文字列を使用して、\<マップ > 関連する凡例のセルに対応するタグです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.MapAreaAttributes%2A>プロパティを組み合わせて使用することができます、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.Url%2A>プロパティをマップ領域を指定する属性をたとえば、ターゲット = _blank、できるだけクライアント側のイベント ハンドラー、たとえば、OnClick="MyEvent()"です。  
+  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.MapAreaAttributes%2A>系列とその系列のデータ ポイントの両方のプロパティが設定されて、データ ポイントのプロパティが優先されます。  
+  
+ このプロパティを設定するときに、特別なキーワードを使用することがあり、それぞれのキーワードはその型の適用可能なグラフ要素からデータに置き換えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Margins">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.Margins Margins { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Margins Margins" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Margins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.Margins), "0,0,15,15")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Margins</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルの余白を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.Margins" />上部、下部、左側、および凡例のセルの余白の右側の値を表すオブジェクト。 Top、bottom、左と右の既定値は、「0,0,15,15」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 余白は凡例のセルのフォント サイズの比率として計測されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルの名前を設定します。</summary>
+        <value>A<see langword="string" />凡例のセルのテキストの名前を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 凡例のセルの名前は一意である必要があります。それ以外の場合は、例外がスローされます。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.Name%2A>プロパティは、取得するときに、インデクサーとして使用できます、<xref:System.Web.UI.DataVisualization.Charting.LegendCell>オブジェクトから、<xref:System.Web.UI.DataVisualization.Charting.LegendCellCollection>です。  
+  
+ 長さ 0 の文字列にこのプロパティを設定する場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBackValue">
+      <MemberSignature Language="C#" Value="public string PostBackValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostBackValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.PostBackValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で処理可能なポストバック値、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</summary>
+        <value>A<see langword="string" />に渡されるポストバック値を表す、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeriesSymbolSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size SeriesSymbolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size SeriesSymbolSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.SeriesSymbolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Size), "200, 70")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルに表示される系列記号のサイズを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Size" />凡例のフォント サイズの割合として系列記号のサイズを表すオブジェクト。 記号の高さと幅の既定値は、それぞれ 200 と 70 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 系列記号のサイズは、凡例のフォント サイズの比率として計測されます。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.SeriesSymbolSize%2A>プロパティは、のみ適用可能な場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendCellType.SeriesSymbol>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルのテキストを設定します。</summary>
+        <value>A<see langword="string" />凡例のセルのテキストを表す値です。 既定値は、長さ 0 の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.Text%2A>プロパティは、のみ適用可能な場合、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.CellType%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.LegendCellType.Text>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public virtual string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルのツールヒントのテキストを設定します。</summary>
+        <value>A<see langword="string" />凡例のセルのツールヒントを表す値です。 既定値は、長さ 0 の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ **重要な**をこの方法で、イメージ マップを作成する、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>にオブジェクトを設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>です。 バイナリ ストリームを使用するときに、イメージ マップを作成することが別の手法を使用する必要があります。  
+  
+ 場合、`ToolTip`凡例項目と凡例のセルの両方のプロパティが設定されて、凡例のセル プロパティが優先されます。  
+  
+ これは、<xref:System.Web.UI.DataVisualization.Charting.LegendCell.ToolTip%2A>プロパティでは、さまざまな種類のグラフに関連するデータを表示する特別なキーワードを設定することができます。  
+  
+ ユーザー定義の座標にあるイメージ マップを作成するには、使用、<xref:System.Web.UI.DataVisualization.Charting.Chart.MapAreas%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public virtual string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.LegendCell.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.UrlValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例のセルの URL 対象を設定します。</summary>
+        <value>A<see langword="string" />グラフ要素の参照先の URL またはアンカー ポイントを表す値です。 絶対 URL を使用するのには、"http://"または"www"のいずれかの文字列式を開始します。 これらのプレフィックスのいずれかで、文字列が起動しない場合は相対 URL として扱われます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、クライアント側の画像マップが自動的に作成されます。 マップ領域は、Href 属性が指定したアンカーまたは URL に設定された場合にも作成されます。  
+  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ たとえば、マップ領域の属性の対象 = _blank を使用して指定することができます、<xref:System.Web.UI.DataVisualization.Charting.LegendCellColumn.MapAreaAttributes%2A>プロパティです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendCell.Url%2A>プロパティでは、さまざまな種類のグラフに関連するデータを表示する特別なキーワードを設定することができます。 詳細については、次を参照してください。[キーワード](http://msdn.microsoft.com/library/8a19d422-4eee-45ff-a5c3-feff7b76fa8c)です。  
+  
+ ユーザー定義の座標にあるイメージ マップを作成するには、使用、<xref:System.Web.UI.DataVisualization.Charting.Chart.MapAreas%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト。 詳細については、次を参照してください。[グラフ イメージの表示](http://msdn.microsoft.com/library/82ff568d-838c-408b-bd85-62e424ae0505)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

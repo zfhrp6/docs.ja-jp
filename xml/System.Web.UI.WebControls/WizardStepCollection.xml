@@ -1,0 +1,693 @@
+<Type Name="WizardStepCollection" FullName="System.Web.UI.WebControls.WizardStepCollection">
+  <TypeSignature Language="C#" Value="public sealed class WizardStepCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WizardStepCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WizardStepCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-ウィザードとして機能するコントロール内のオブジェクトを派生します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepCollection>を格納および管理のコレクション クラスは使用<xref:System.Web.UI.WebControls.WizardStepBase>-派生など、ウィザードとして機能するコントロールでのオブジェクト、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロールまたは<xref:System.Web.UI.WebControls.Wizard>コントロール。 たとえば、<xref:System.Web.UI.WebControls.Wizard>コントロール、<xref:System.Web.UI.WebControls.WizardStepCollection>クラスをその<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>プロパティです。  
+  
+ さまざまな方法でアクセスできる、 <xref:System.Web.UI.WebControls.WizardStepBase>-内のオブジェクトの派生、 <xref:System.Web.UI.WebControls.WizardStepCollection>:  
+  
+-   使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Item%2A>プロパティに直接アクセスを<xref:System.Web.UI.WebControls.WizardStepBase>-特定の 0 から始まるインデックス位置にオブジェクトを派生します。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.GetEnumerator%2A>メソッドをコレクションを反復処理に使用できる列挙子を作成します。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.UI.WebControls.WizardStepCollection>のコレクションを<xref:System.Array>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、設定する方法について、<xref:System.Web.UI.WebControls.WizardStepCollection>宣言の構文を使用するコレクション。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepCollectionDeclare#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionDeclare/CS/wizardstepcollectiondeclarecs.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepCollectionDeclare#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionDeclare/VB/wizardstepcollectiondeclarevb.aspx#3)]  
+  
+ 次の例では、プログラムで設定する方法について、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollection/CS/wizardstepcollectioncs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollection/VB/wizardstepcollectionvb.aspx#1)]  
+  
+ 前の例で Web ページの分離コード ファイルを次に示します。  
+  
+ [!code-csharp[System.Web.UI.WebControls.WizardStepCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollection/CS/wizardstepcollection.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.WizardStepCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollection/VB/wizardstepcollection.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.WebControls.WizardStepBase wizardStep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.WebControls.WizardStepBase wizardStep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.Add(System.Web.UI.WebControls.WizardStepBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wizardStep" Type="System.Web.UI.WebControls.WizardStepBase" />
+      </Parameters>
+      <Docs>
+        <param name="wizardStep"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生に追加するオブジェクト、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクションの末尾にオブジェクトを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepCollection.Add%2A>メソッドを追加、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生したオブジェクトの末尾に、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。 追加する、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクトを特定のインデックス位置を使用するコレクション、<xref:System.Web.UI.WebControls.WizardStepCollection.AddAt%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プログラムの作成を示しています、<xref:System.Web.UI.WebControls.Wizard>コントロールを使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Add%2A>メソッドを追加する<xref:System.Web.UI.WebControls.WizardStepBase>-派生<xref:System.Web.UI.WebControls.WizardStep>オブジェクトを<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>コレクション。 例では、なお、<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>のプロパティ、<xref:System.Web.UI.WebControls.Wizard>コントロールのインスタンスである、<xref:System.Web.UI.WebControls.WizardStepCollection>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardSteps#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardSteps/CS/wizardstepscs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardSteps#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardSteps/VB/wizardstepsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトが渡されたの<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public void AddAt (int index, System.Web.UI.WebControls.WizardStepBase wizardStep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAt(int32 index, class System.Web.UI.WebControls.WizardStepBase wizardStep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.AddAt(System.Int32,System.Web.UI.WebControls.WizardStepBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="wizardStep" Type="System.Web.UI.WebControls.WizardStepBase" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置のインデックス位置<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクト。</param>
+        <param name="wizardStep"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生に追加するオブジェクト、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクションの指定したインデックス位置にオブジェクトを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepCollection.AddAt%2A>メソッドを追加、 <xref:System.Web.UI.WebControls.WizardStepBase>-コレクションの指定したインデックス位置にオブジェクトを派生します。  
+  
+ 追加する、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生したオブジェクトの末尾に、<xref:System.Web.UI.WebControls.WizardStepCollection>収集、使用、<xref:System.Web.UI.WebControls.WizardStepCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトが渡されたの<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-オブジェクトをコレクションから派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Clear%2A>すべてを削除する方法、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生したオブジェクトから、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。  
+  
+> [!NOTE]
+>  後に、<xref:System.Web.UI.WebControls.WizardStepCollection.Clear%2A>メソッドを削除、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生したオブジェクトをコレクションから、<xref:System.Web.UI.WebControls.WizardStepCollection.Count%2A>のプロパティ、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクションには、ゼロの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WizardStepBase wizardStep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WizardStepBase wizardStep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.Contains(System.Web.UI.WebControls.WizardStepBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wizardStep" Type="System.Web.UI.WebControls.WizardStepBase" />
+      </Parameters>
+      <Docs>
+        <param name="wizardStep"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生内で検索するオブジェクト、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</param>
+        <summary>決定するかどうか、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクションには、固有の仕様が含まれている<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトが、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクションです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクトがコレクションに含まれています。 このメソッドは通常の存在をテストする使用、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクトを削除するなどのタスクを実行する前に、 <xref:System.Web.UI.WebControls.WizardStepBase>-オブジェクトをコレクションから派生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="wizardStep" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WizardStepBase[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WizardStepBase[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.CopyTo(System.Web.UI.WebControls.WizardStepBase[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WizardStepBase[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる配列<see cref="T:System.Web.UI.WebControls.WizardStepBase" />項目を受信するオブジェクトのコレクションからコピーします。</param>
+        <param name="index">先の配列、配列がコピーされた項目の受信を開始する位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />の場合は、互換性のある 1 次元配列にコレクション<see cref="T:System.Web.UI.WebControls.WizardStepBase" />オブジェクト、ターゲット配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.CopyTo%2A>に指定された 0 から始まる配列にコレクションの内容をコピーする方法です。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 内の項目にアクセスする配列の構文を使用するには項目は、配列では、後に、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。  
+  
+ 代わりに、使用することも、<xref:System.Web.UI.WebControls.WizardStepCollection.GetEnumerator%2A>メソッドをコレクション内の項目へのアクセスに使用できる列挙子を作成します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.WizardStepCollection.CopyTo%2A>にコピーする方法、<xref:System.Web.UI.WebControls.WizardStepBase>オブジェクトをコレクションから配列にします。 配列は、反復処理され、表示、<xref:System.Web.UI.Control.ID%2A>の各プロパティ<xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクト。 例では、なお、<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>のプロパティ、<xref:System.Web.UI.WebControls.Wizard>コントロールのインスタンスである、<xref:System.Web.UI.WebControls.WizardStepCollection>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionCopyTo/CS/wizardstepcollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionCopyTo/VB/wizardstepcollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-内のオブジェクトの派生、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロールの<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</summary>
+        <value>数<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-内のオブジェクトの派生、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Count%2A>の数を決定するプロパティ<xref:System.Web.UI.WebControls.WizardStepBase>-内のオブジェクトの派生、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。 <xref:System.Web.UI.WebControls.WizardStepCollection.Count%2A>プロパティは、バインドの上限を決定するコレクションを反復処理する場合によく使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />の反復処理に使用できるオブジェクトを実装する、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクション内のオブジェクトを派生します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-内のオブジェクトの派生、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WizardStepBase wizardStep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WizardStepBase wizardStep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.IndexOf(System.Web.UI.WebControls.WizardStepBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wizardStep" Type="System.Web.UI.WebControls.WizardStepBase" />
+      </Parameters>
+      <Docs>
+        <param name="wizardStep"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生内で検索するオブジェクト、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</param>
+        <summary>指定された位置を表すインデックス値を決定<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクション内のオブジェクトを派生します。</summary>
+        <returns>場合が見つかると、最初に見つかった位置の 0 から始まるインデックス、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトが現在内で渡される<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクションです。 それ以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.IndexOf%2A>メソッドの指定したインデックスを確認する<xref:System.Web.UI.WebControls.WizardStepBase>-現在のオブジェクトを派生<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。 場合、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクトのコレクションではない、-1 が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトが渡されたの<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.WizardStepBase wizardStep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.WizardStepBase wizardStep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.Insert(System.Int32,System.Web.UI.WebControls.WizardStepBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="wizardStep" Type="System.Web.UI.WebControls.WizardStepBase" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置のインデックスの場所、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクト。</param>
+        <param name="wizardStep"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生に挿入するオブジェクト、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクション内の指定したインデックス位置にオブジェクトを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepCollection.Insert%2A>メソッドを追加、 <xref:System.Web.UI.WebControls.WizardStepBase>-コレクションの指定したインデックス位置にオブジェクトを派生します。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.WizardStepCollection.AddAt%2A>を追加するメソッド、 <xref:System.Web.UI.WebControls.WizardStepBase>-コレクションにオブジェクトを派生します。 追加する、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生したオブジェクトの末尾に、<xref:System.Web.UI.WebControls.WizardStepCollection>収集、使用、<xref:System.Web.UI.WebControls.WizardStepCollection.Add%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WizardStepCollection.Insert%2A>メソッドおよび<xref:System.Web.UI.WebControls.WizardStepCollection.AddAt%2A>メソッドは、基本的に同じ機能を実行します。 ときに、<xref:System.Web.UI.WebControls.WizardStepCollection.Insert%2A>メソッドが呼び出されると、単に渡す、`wizardStep`と`index`パラメーターを<xref:System.Web.UI.WebControls.WizardStepCollection.AddAt%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プログラムの作成を示しています、<xref:System.Web.UI.WebControls.Wizard>コントロールを使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Insert%2A>メソッドを追加する<xref:System.Web.UI.WebControls.WizardStepBase>-派生するオブジェクト、<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>コレクション。 例では、なお、<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>のプロパティ、<xref:System.Web.UI.WebControls.Wizard>コントロールのインスタンスである、<xref:System.Web.UI.WebControls.WizardStepCollection>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepCollectionInsert#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionInsert/CS/wizardstepcollectioninsertcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepCollectionInsert#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionInsert/VB/wizardstepcollectioninsertvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクション内の派生オブジェクトを変更することができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />変更後、それ以外のコレクションを指定できます<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection>インターフェイスし、常にオーバーライド`false`です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.WizardStepCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A>のプロパティ、<xref:System.Collections.ICollection>インターフェイス  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WizardStepBase this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WizardStepBase Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WizardStepBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.WizardStep" />オブジェクトを取得します。</param>
+        <summary>取得、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-コレクション内の指定したインデックス位置から派生したオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-内のオブジェクトの派生、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Item%2A>取得するプロパティを<xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクトで指定したインデックス位置にある、<xref:System.Web.UI.WebControls.WizardStepCollection>配列表記を使用してコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.WizardStepBase wizardStep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.WizardStepBase wizardStep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.Remove(System.Web.UI.WebControls.WizardStepBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wizardStep" Type="System.Web.UI.WebControls.WizardStepBase" />
+      </Parameters>
+      <Docs>
+        <param name="wizardStep"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトをコレクションから削除します。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.WebControls.WizardStepBase" />-オブジェクトをコレクションから派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.Remove%2A>を削除する方法、 <xref:System.Web.UI.WebControls.WizardStepBase>-オブジェクトから派生した、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。 また、使用することができます、<xref:System.Web.UI.WebControls.WizardStepCollection.RemoveAt%2A>を削除する方法、 <xref:System.Web.UI.WebControls.WizardStepBase>-派生オブジェクトで指定した場所から、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.WizardStepCollection.Remove%2A>を削除する方法、 <xref:System.Web.UI.WebControls.WizardStepBase>-オブジェクトから派生した、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション。 例では、なお、<xref:System.Web.UI.WebControls.Wizard.WizardSteps%2A>のプロパティ、<xref:System.Web.UI.WebControls.Wizard>コントロールのインスタンスである、<xref:System.Web.UI.WebControls.WizardStepCollection>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepCollectionRemove#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionRemove/CS/wizardstepcollectionremovecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepCollectionRemove#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepCollectionRemove/VB/wizardstepcollectionremovevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトが渡されたの<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-派生オブジェクトを削除します。</param>
+        <summary>削除、 <see cref="T:System.Web.UI.WebControls.WizardStepBase" />-指定した位置にコレクションからオブジェクトを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepCollection.RemoveAt%2A>を削除する方法、 <xref:System.Web.UI.WebControls.WizardStepBase>-オブジェクトから派生した、<xref:System.Web.UI.WebControls.WizardStepCollection>コレクション内の指定したインデックス位置。 または、特定を削除することができます<xref:System.Web.UI.WebControls.WizardStepBase>-を使用してコレクションから派生したオブジェクト、<xref:System.Web.UI.WebControls.WizardStepCollection.Remove%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WizardStepCollection" /> コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.WizardStepCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.WizardStepCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A>のプロパティ、<xref:System.Collections.ICollection>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />の項目のコピーを受け取る、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</param>
+        <param name="index">コピーされた内容の受信を開始する位置を示す、ターゲット配列内の位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクションを 1 次元配列を対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />コレクションの末尾に追加します。</param>
+        <summary>指定されたオブジェクトをコレクションの末尾に追加します。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Object" />。</param>
+        <summary>指定したオブジェクトがコレクションに含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Object" />で見つかった、<see cref="T:System.Collections.IList" />それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索するオブジェクト。</param>
+        <summary>指定したオブジェクトのコレクション内の位置を表すインデックス値を決定します。</summary>
+        <returns>コレクション内の指定したオブジェクトのインデックス値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションにオブジェクトを挿入する位置を示すインデックス。</param>
+        <param name="value">コレクションに挿入するオブジェクト。</param>
+        <summary>指定した位置にあるコレクションで指定したオブジェクトを挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、コレクションがある固定サイズです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得するオブジェクトのインデックス。</param>
+        <summary>コレクション内の指定したインデックス位置にあるオブジェクトを取得します。</summary>
+        <value>取得するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、myCollection[index] という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除するオブジェクト。</param>
+        <summary>指定されたオブジェクトをコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

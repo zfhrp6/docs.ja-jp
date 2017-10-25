@@ -1,0 +1,163 @@
+<Type Name="RemoteParameterData" FullName="System.AddIn.Contract.Automation.RemoteParameterData">
+  <TypeSignature Language="C#" Value="public struct RemoteParameterData" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit RemoteParameterData extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Automation.RemoteParameterData" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パラメーターまたはコンポーネントがアプリケーション ドメインとプロセス境界を介してアクセスできる型に属しているメソッドの戻り値に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.Automation.RemoteParameterData>構造を実装する型に属するメソッドのパラメーターまたは戻り値に関する情報を提供する、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Reflection.ParameterAttributes Attributes;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Reflection.ParameterAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.Attributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドのパラメーターの属性を表します。 この<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />について説明します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument DefaultValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.AddIn.Contract.RemoteArgument DefaultValue" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.DefaultValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドのパラメーターの既定値を表すこの<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />について説明します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsByRef">
+      <MemberSignature Language="C#" Value="public bool IsByRef;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool IsByRef" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.IsByRef" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうかこの<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />が参照渡しであるメソッド パラメーターについて説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドの値が`true`場合は、この<xref:System.AddIn.Contract.Automation.RemoteParameterData>メソッド パラメーターを記述して参照によって渡されるです。 このフィールドの値は、それ以外の場合、`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsParameterArray">
+      <MemberSignature Language="C#" Value="public bool IsParameterArray;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool IsParameterArray" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.IsParameterArray" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうかこの<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />可変個の引数を持つことができるメソッドのパラメーターについて説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドの値が`true`場合は、この<xref:System.AddIn.Contract.Automation.RemoteParameterData>ことができるパラメーターを記述して可変個の引数です。 このフィールドの値がそれ以外の場合は`false`します。  
+  
+ このフィールドの値は常に`false`この<xref:System.AddIn.Contract.Automation.RemoteParameterData>COM オブジェクトによって提供されるメソッドのパラメーターについて説明します。  
+  
+ 可変個の引数を持つことができるパラメーターで指定する、 `params` (Visual c# の場合) と`ParamArray`(Visual Basic の場合) のキーワードです。 詳細については、次を参照してください。 [params](~/docs/csharp/language-reference/keywords/params.md)と[ParamArray](~/docs/visual-basic/language-reference/modifiers/paramarray.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name;" />
+      <MemberSignature Language="ILAsm" Value=".field public string Name" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドのパラメーターの名前を表すこの<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />について説明します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterType">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteTypeContract ParameterType;" />
+      <MemberSignature Language="ILAsm" Value=".field public class System.AddIn.Contract.Automation.IRemoteTypeContract ParameterType" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.ParameterType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteTypeContract</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を表すメソッドのパラメーターまたは戻り値のこの<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />について説明します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public int Position;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 Position" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.Automation.RemoteParameterData.Position" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドのパラメーターの位置を表すこの<see cref="T:System.AddIn.Contract.Automation.RemoteParameterData" />メソッドの他のパラメーターとの関連について説明します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

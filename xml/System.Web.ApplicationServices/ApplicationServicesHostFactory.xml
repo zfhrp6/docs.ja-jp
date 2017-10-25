@@ -1,0 +1,96 @@
+<Type Name="ApplicationServicesHostFactory" FullName="System.Web.ApplicationServices.ApplicationServicesHostFactory">
+  <TypeSignature Language="C#" Value="public class ApplicationServicesHostFactory : System.ServiceModel.Activation.ServiceHostFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationServicesHostFactory extends System.ServiceModel.Activation.ServiceHostFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.ApplicationServicesHostFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activation.ServiceHostFactory</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>管理対象ホスト環境での認証サービス、役割サービス、およびプロファイル サービスのインスタンスを作成するファクトリ クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このファクトリ クラスのインスタンスを作成する方法を提供する、 <xref:System.Web.ApplicationServices.AuthenticationService>、 <xref:System.Web.ApplicationServices.ProfileService>、および<xref:System.Web.ApplicationServices.RoleService>クラスです。  
+  
+ このファクトリ クラスを使用する WCF サービス (.svc) ファイルを作成し、指定<xref:System.Web.ApplicationServices.ApplicationServicesHostFactory>で、`ServiceHosting`の属性、`@ ServiceHost`ディレクティブです。  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています。<xref:System.Web.ApplicationServices.ApplicationServicesHostFactory>で、`@ ServiceHost`認証サービスを構成するための .svc ファイルのディレクティブ。  
+  
+```csharp  
+<%@ ServiceHost   
+  Language="C#"   
+  Service="System.Web.ApplicationServices.AuthenticationService"   
+  Factory="System.Web.ApplicationServices.ApplicationServicesHostFactory"   
+%>  
+  
+```  
+  
+```vb  
+<%@ ServiceHost   
+  Language="VB"   
+  Service="System.Web.ApplicationServices.AuthenticationService"   
+  Factory="System.Web.ApplicationServices.ApplicationServicesHostFactory"   
+%>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationServicesHostFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ApplicationServicesHostFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ApplicationServices.ApplicationServicesHostFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceHost">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.ServiceHost CreateServiceHost (Type serviceType, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.ServiceHost CreateServiceHost(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.ApplicationServicesHostFactory.CreateServiceHost(System.Type,System.Uri[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHost</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">作成するサービス ホストの型。</param>
+        <param name="baseAddresses">サービスのベース アドレスの配列。</param>
+        <summary>指定したベース アドレスまたはアドレスを持つサービス クラスのインスタンスを作成します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.ServiceHost" />を指定したベース アドレスまたはアドレスを持つサービスの種類のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常このメソッドはによって自動的に[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]サービスの一部として、アクティブ化する必要はありませんメソッドを手動で呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

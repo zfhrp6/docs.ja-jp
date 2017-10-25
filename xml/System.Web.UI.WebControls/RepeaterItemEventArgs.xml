@@ -1,0 +1,98 @@
+<Type Name="RepeaterItemEventArgs" FullName="System.Web.UI.WebControls.RepeaterItemEventArgs">
+  <TypeSignature Language="C#" Value="public class RepeaterItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RepeaterItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeaterItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.Repeater.ItemCreated" />と<see cref="E:System.Web.UI.WebControls.Repeater.ItemDataBound" />のイベント、<see cref="T:System.Web.UI.WebControls.Repeater" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.RepeaterItemEventArgs>を参照してください、<xref:System.Web.UI.WebControls.RepeaterItemEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次の例には、<xref:System.Web.UI.WebControls.Repeater.ItemCreated>のイベント、<xref:System.Web.UI.WebControls.Repeater>です。 行の新しい項目の種類を示すテキストが表示されるたびに、<xref:System.Web.UI.WebControls.Repeater>項目を作成します。  
+  
+ [!code-aspx-csharp[Classic RepeaterItemEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterItemEventArgs Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterItemEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterItemEventArgs Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeaterItemEventArgs (System.Web.UI.WebControls.RepeaterItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.RepeaterItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterItemEventArgs.#ctor(System.Web.UI.WebControls.RepeaterItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.RepeaterItem" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Web.UI.WebControls.RepeaterItem" />イベントに関連付けられています。 <see cref="P:System.Web.UI.WebControls.RepeaterItemEventArgs.Item" />プロパティがこの値に設定します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RepeaterItemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.RepeaterItemEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Item`|`item`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RepeaterItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.RepeaterItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItemEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeaterItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />イベントに関連付けられています。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RepeaterItem" />イベントに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのプロパティにアクセスを使用して、<xref:System.Web.UI.WebControls.RepeaterItem>このイベントに関連付けられています。  
+  
+   
+  
+## Examples  
+ 次の例で確認する方法、<xref:System.Web.UI.WebControls.RepeaterItem.ItemType%2A>からこのイベントに関連付けられている項目の<xref:System.Web.UI.WebControls.RepeaterCommandEventArgs.Item%2A>プロパティです。  
+  
+ [!code-aspx-csharp[Classic RepeaterItemEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterItemEventArgs Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterItemEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterItemEventArgs Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

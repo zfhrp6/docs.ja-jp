@@ -1,0 +1,86 @@
+<Type Name="WCFBuildProvider" FullName="System.Web.Compilation.WCFBuildProvider">
+  <TypeSignature Language="C#" Value="public class WCFBuildProvider : System.Web.Compilation.BuildProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WCFBuildProvider extends System.Web.Compilation.BuildProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.WCFBuildProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Compilation.BuildProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) サービスのプロキシ クラスのコードを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.WCFBuildProvider> WCF サービス参照を含んでいる Web アプリケーションのルート レベルのマッピング ファイル (.svcmap) を使用します。 マッピング ファイルでは、プロキシ クラス ソース コードを生成する必要がありますサービスを指定します。 他のリソースは、生成されたプロキシ クラスは、Web アプリケーションのコンパイル フェーズ中にコンパイルされます。  
+  
+ 継承された<xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>プロパティが内部的に定義されているし、ポイント .svcmap ファイルが存在する Web アプリケーションのルート ディレクトリにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WCFBuildProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.WCFBuildProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.WCFBuildProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public override void GenerateCode (System.Web.Compilation.AssemblyBuilder assemblyBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GenerateCode(class System.Web.Compilation.AssemblyBuilder assemblyBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.WCFBuildProvider.GenerateCode(System.Web.Compilation.AssemblyBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyBuilder" Type="System.Web.Compilation.AssemblyBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyBuilder">インスタンス、<see cref="T:System.Reflection.Emit.AssemblyBuilder" />オブジェクトに生成されたプロキシ コードを追加する必要があります。 このインスタンスは、実行時に ASP.NET によって用意します。</param>
+        <summary>サービス プロキシ クラス ソース コードを生成し、指定したアセンブリ ビルダーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Web アプリケーションのルート ディレクトリにある .svcmap ファイルを検索します。 メソッドが指定された関連するサービスのプロキシ クラスのソース コードを生成ファイルが見つかった場合、`assemblyBuilder`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>通常、このメソッドは .svcmap マッピング ファイルを解析しを指定した、生成されたソース コードに追加<see cref="T:System.Web.Compilation.AssemblyBuilder" />オブジェクト。 ソース コードの形式でアセンブリに協力することができます、<see cref="T:System.IO.TextWriter" />オブジェクトまたは CodeDOM グラフ。  
+  
+ 詳細については、「<see cref="T:System.Web.Compilation.BuildProvider" />」を参照してください。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

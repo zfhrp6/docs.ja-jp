@@ -1,0 +1,407 @@
+<Type Name="SqlCacheDependencyAdmin" FullName="System.Web.Caching.SqlCacheDependencyAdmin">
+  <TypeSignature Language="C#" Value="public static class SqlCacheDependencyAdmin" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SqlCacheDependencyAdmin extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.SqlCacheDependencyAdmin" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SQL Server データベースでサポートするために必要な管理タスクを実行、<see cref="T:System.Web.Caching.SqlCacheDependency" />ポーリング ベースの依存関係を使用する場合のクラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのメソッドを使用するにはプログラムで有効にして、SQL Server データベースとそのテーブルを無効にする<xref:System.Web.Caching.SqlCacheDependency>オブジェクトの変更通知します。 このクラスがどのデータベース内のテーブルは変更通知を使用して有効になっている情報を取得するさらに、<xref:System.Web.Caching.SqlCacheDependencyAdmin.GetTablesEnabledForNotifications%2A>メソッドです。 ただし、SQL Server データベースとそのテーブルの変更通知を管理するのにコマンド ライン ツール Aspnet_regsql を使用することもできます。  
+  
+> [!NOTE]
+>  をこのクラスで呼び出すメソッドのいずれかの SQL Server データベースへのアクセスに使用するアカウントは、テーブルおよびストアド プロシージャを作成する権限が必要です。 特定のテーブルでの通知を有効にするには、そのテーブル上の SQL Server トリガーを作成する権限が必要です。 データベースに対する権限を設定する方法の詳細については、SQL Server のマニュアルを参照してください。 ASP.NET プロセスによって使用されるアカウントの詳細については、次を参照してください。 [ASP.NET の偽装](http://msdn.microsoft.com/library/a0cb3024-562f-4184-9d3c-095504787d3d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、有効にして、SQL Server データベースのテーブル変更通知を無効にするための単純な ASP.NET ページです。 使用して、<xref:System.Web.Caching.SqlCacheDependencyAdmin>と呼ばれる接続文字列で指定されたデータベースで変更通知を管理するオブジェクト`MyConnectionString`です。 この例には、2 つのファイル、ユーザー インターフェイスを定義する .aspx ファイルおよび ASP.NET イベントのソース コードを含む分離コード ファイルが含まれています。  
+  
+ 最初のサンプルは、ユーザー インターフェイスを定義する .aspx ファイルです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Caching.SqlCacheDependencyAdmin#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx#10)]
+ [!code-aspx-vb[System.Web.Caching.SqlCacheDependencyAdmin#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx#10)]
+  
+ 2 番目のサンプルは、ページのイベントのソース コードを含む分離コード ファイルです。  
+  
+ [!code-csharp[System.Web.Caching.SqlCacheDependencyAdmin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx.cs#1)]
+ [!code-vb[System.Web.Caching.SqlCacheDependencyAdmin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DisableNotifications">
+      <MemberSignature Language="C#" Value="public static void DisableNotifications (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableNotifications(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.DisableNotifications(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <summary>無効に<see cref="T:System.Web.Caching.SqlCacheDependency" />指定されたデータベースの変更通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableNotifications%2A>メソッドで指定されたデータベースからの変更通知のサポートの削除、`connectionString`パラメーター。 実行すると、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableNotifications%2A>メソッドを実行する必要がある、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableNotifications%2A>メソッドを再度有効にする場合はデータベースの通知を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableNotifications%2A>無効にする方法の変更通知の接続文字列で指定されたデータベース`MyConnectionString`です。  
+  
+ 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスの概要に関するトピック。  
+  
+ [!code-vb[CachingSamples_SqlCacheDependencyAdmin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_SqlCacheDependencyAdmin/VB/sqlcachedep2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableTableForNotifications">
+      <MemberSignature Language="C#" Value="public static void DisableTableForNotifications (string connectionString, string table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableTableForNotifications(string connectionString, string table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="table" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <param name="table">変更通知を無効にするデータベースのテーブル。</param>
+        <summary>無効に<see cref="T:System.Web.Caching.SqlCacheDependency" />に SQL Server データベース テーブルに通知を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications%2A>メソッドを無効に変更の通知で指定されたテーブルを`table`パラメーターで指定されたデータベースである必要があります`connectionString`パラメーター。  
+  
+ 使用して、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications%2A>変更テーブルの通知を無効にする方法のいずれかを使用する必要があります、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>オーバー ロードを再度有効にする場合は、通知を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例の変更、接続文字列で指定されたテーブルで通知を無効に`MyConnectionString`です。  
+  
+ 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Caching.SqlCacheDependencyAdmin#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx.cs#7)]
+ [!code-vb[System.Web.Caching.SqlCacheDependencyAdmin#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Caching.DatabaseNotEnabledForNotificationException">データベースは、変更通知は無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="table" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="table" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableTableForNotifications">
+      <MemberSignature Language="C#" Value="public static void DisableTableForNotifications (string connectionString, string[] tables);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableTableForNotifications(string connectionString, string[] tables) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="tables" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <param name="tables">変更通知を無効にする SQL Server データベース テーブルの配列。</param>
+        <summary>無効に<see cref="T:System.Web.Caching.SqlCacheDependency" />SQL Server データベース テーブルの配列で通知を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications%2A>で指定されたテーブルからの通知を変更するメソッドの削除、`tables`パラメーター。 これらのテーブルがで指定されたデータベースである必要があります、`connectionString`パラメーター。  
+  
+ 使用して、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications%2A>変更テーブルの一覧については通知を無効にする方法のいずれかを使用する必要があります、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>オーバー ロードを再度有効にする場合は、通知を変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Caching.DatabaseNotEnabledForNotificationException">データベースは、変更通知は無効です。</exception>
+        <exception cref="T:System.ArgumentException">内の値のいずれか、<paramref name="tables" />パラメーターは<see langword="null" />します。  
+  
+ または  
+  
+ 内の値のいずれか、<paramref name="tables" />パラメーターが空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tables" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableNotifications">
+      <MemberSignature Language="C#" Value="public static void EnableNotifications (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableNotifications(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.EnableNotifications(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <summary>により、<see cref="T:System.Web.Caching.SqlCacheDependency" />の通知を指定されたデータベースを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableNotifications%2A>メソッドで指定されたデータベースからの変更通知のサポートの追加、`connectionString`パラメーター。 実行すると、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableNotifications%2A>メソッドが実行する必要があります、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableNotifications%2A>メソッドを無効にする場合はデータベースの通知を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableNotifications%2A>を有効にする方法の変更通知の接続文字列で指定されたデータベース`MyConnectionString`です。  
+  
+ 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Caching.SqlCacheDependencyAdmin#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx.cs#3)]
+ [!code-vb[System.Web.Caching.SqlCacheDependencyAdmin#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTableForNotifications">
+      <MemberSignature Language="C#" Value="public static void EnableTableForNotifications (string connectionString, string table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableTableForNotifications(string connectionString, string table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="table" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <param name="table">変更通知を有効にするデータベース テーブルです。</param>
+        <summary>指定した SQL Server データベースに接続し、指定したデータベース テーブルを有効化<see cref="T:System.Web.Caching.SqlCacheDependency" />通知を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>メソッドで指定されたテーブルの変更通知は追加、`table`パラメーターで指定されたデータベースである必要があります`connectionString`パラメーター。  
+  
+ 使用して、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>テーブル変更通知を追加するメソッドのいずれかを使用する必要があります、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications%2A>変更通知を無効にする場合のオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>を有効にする方法を変更する接続文字列で指定されたデータベースの指定されたテーブル上の通知`MyConnectionString`です。  
+  
+ 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Caching.SqlCacheDependencyAdmin#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx.cs#7)]
+ [!code-vb[System.Web.Caching.SqlCacheDependencyAdmin#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Caching.DatabaseNotEnabledForNotificationException">データベースは、変更通知は無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="table" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTableForNotifications">
+      <MemberSignature Language="C#" Value="public static void EnableTableForNotifications (string connectionString, string[] tables);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableTableForNotifications(string connectionString, string[] tables) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="tables" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <param name="tables">変更通知を有効にする SQL Server データベース テーブルの配列。</param>
+        <summary>指定した SQL Server データベースに接続でき、データベースのテーブルの指定した配列<see cref="T:System.Web.Caching.SqlCacheDependency" />通知を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>メソッドで指定されたテーブルの変更通知は追加、`tables`パラメーター。 これらのテーブルがで指定されたデータベースである必要があります、`connectionString`パラメーター。  
+  
+ 使用して、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>テーブルのグループに変更通知を追加するメソッドのいずれかを使用する必要があります、<xref:System.Web.Caching.SqlCacheDependencyAdmin.DisableTableForNotifications%2A>変更通知を無効にする場合のオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A>を有効にする方法を変更する接続文字列で指定されたデータベースでのセミコロン区切りのリストで指定されたテーブル上の通知`MyConnectionString`です。  
+  
+ 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Caching.SqlCacheDependencyAdmin#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx.cs#7)]
+ [!code-vb[System.Web.Caching.SqlCacheDependencyAdmin#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Caching.DatabaseNotEnabledForNotificationException">データベースは、変更通知は無効です。</exception>
+        <exception cref="T:System.ArgumentException">内の値のいずれか、<paramref name="tables" />パラメーターは<see langword="null" />します。  
+  
+ または  
+  
+ 内の値のいずれか、<paramref name="tables" />パラメーターが空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tables" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTablesEnabledForNotifications">
+      <MemberSignature Language="C#" Value="public static string[] GetTablesEnabledForNotifications (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetTablesEnabledForNotifications(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependencyAdmin.GetTablesEnabledForNotifications(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">SQL Server データベースに接続するために使用する接続文字列。</param>
+        <summary>SQL Server データベースの変更通知が有効になっているすべてのテーブルの名前を含む文字列配列を取得します。</summary>
+        <returns>SQL Server データベース テーブルの名前を格納する文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependencyAdmin.GetTablesEnabledForNotifications%2A>メソッドで指定されたデータベースのすべてのテーブルの名前を含む文字列配列を返します、`connectionString`パラメーター変更通知を有効になっています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、接続文字列で指定されたデータベースで変更通知が有効にするテーブルの文字列配列を作成`MyConnectionString`です。  
+  
+ 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Caching.SqlCacheDependencyAdmin#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/CS/cacheDependencyAdmincs.aspx.cs#2)]
+ [!code-vb[System.Web.Caching.SqlCacheDependencyAdmin#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching.SqlCacheDependencyAdmin/VB/cacheDependencyAdminvb.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Caching.DatabaseNotEnabledForNotificationException">データベースが変更通知を有効にされません。</exception>
+        <exception cref="T:System.Web.HttpException">データベースへの接続を確立できませんでした。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースに接続する権限がありません。  
+  
+ または  
+  
+ ASP.NET アプリケーションのセキュリティ コンテキストには、データベースの通知を無効にするアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,230 @@
+<Type Name="BounceEase" FullName="System.Windows.Media.Animation.BounceEase">
+  <TypeSignature Language="C#" Value="public class BounceEase : System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BounceEase extends System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.BounceEase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.EasingFunctionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アニメーションの跳ね返り効果を作成するイージング関数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のグラフを示しています<xref:System.Windows.Media.Animation.BounceEase>の異なる値を使用して<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>ここで、 *f*(*t*)、アニメーションの進行状況を表すと*t*時間を表します。  
+  
+ ![BounceEase EasingMode のグラフ] (~/add/media/bounceease-graph.png "BounceEase EasingMode のグラフ。")  
+  
+ 数バウンスするを使用して指定すること、<xref:System.Windows.Media.Animation.BounceEase.Bounces%2A>プロパティを指定し、バウンス (elastic 方法は、バウンス、) を使用して、<xref:System.Windows.Media.Animation.BounceEase.Bounciness%2A>プロパティです。 <xref:System.Windows.Media.Animation.BounceEase.Bounciness%2A>プロパティは、次のバウンスの振幅スケーリングを指定します。 たとえば、バウンスの値が 2 の簡単操作中に次のバウンスの振幅を 2 倍にし、イージング アウト中に次のバウンスの振幅を半分です。  
+  
+ だけでなく他のいくつかのイージング関数は<xref:System.Windows.Media.Animation.BounceEase>Silverlight の次のサンプルを使用してを調べることができます。  
+  
+ [このサンプルを実行する](http://go.microsoft.com/fwlink/?LinkId=139798&sref=easing_functions_gallery)  
+  
+ 継承することで、独自のカスタム イージング関数を作成するだけでなく、実行時に含まれるイージング関数を使用して、<xref:System.Windows.Media.Animation.EasingFunctionBase>です。  
+  
+<a name="xamlObjectElementUsage_BounceEase"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<BounceEase .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.BounceEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>跳ね返り効果を作成します。  
+  
+ [!code-xaml[BounceEase_Snippet#BounceEase](~/samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BounceEase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BounceEase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.BounceEase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounces">
+      <MemberSignature Language="C#" Value="public int Bounces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Bounces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BounceEase.Bounces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバウンスの数を設定します。</summary>
+        <value>バウンスの数。 値は、0 以上にする必要があります。 負の値は 0 に解決します。 既定値は 3 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、最終的な半分バウンスは含まれません。  
+  
+ [!INCLUDE[DP_ID_field_label](~/includes/dp-id-field-label-md.md)] <xref:System.Windows.Media.Animation.BounceEase.BouncesProperty>  
+  
+<a name="xamlAttributeUsage_Bounces"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Bounces="int" .../>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BouncesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BouncesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BouncesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.BounceEase.BouncesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.BounceEase.Bounces" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounciness">
+      <MemberSignature Language="C#" Value="public double Bounciness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Bounciness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BounceEase.Bounciness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバウンス バウンス アニメーションを示す値を設定します。 値が高いと、抑制バウンス (小さいバウンス) 中に、バウンス (よりバウンス) 間の高さのほとんどバウンスでこのプロパティの結果の値が小さいが失われます。</summary>
+        <value>バウンス バウンス アニメーションを指定する値。 この値は正の値である必要があります。 既定値は<c>2</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DP_ID_field_label](~/includes/dp-id-field-label-md.md)] <xref:System.Windows.Media.Animation.BounceEase.BouncinessProperty>  
+  
+<a name="xamlAttributeUsage_Bounciness"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Bounciness="double" .../>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BouncinessProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BouncinessProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BouncinessProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.BounceEase.BouncinessProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.BounceEase.Bounciness" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BounceEase.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> 派生クラスの新しいインスタンスを作成します。 派生クラスを作成するときには、このメソッドをオーバーライドする必要があります。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションのクラスに継承直接から<xref:System.Windows.Freezable>です。 このため、オーバーライドする必要があります、<xref:System.Windows.Media.Animation.BackEase.CreateInstanceCore%2A>アニメーション オブジェクトを構築するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseInCore">
+      <MemberSignature Language="C#" Value="protected override double EaseInCore (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 EaseInCore(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BounceEase.EaseInCore(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">アニメーションの正規化された時間 (進行状況)。</param>
+        <summary>カスタム イージング関数の <see cref="F:System.Windows.Media.Animation.EasingMode.EaseIn" /> モードを生成するためにオーバーライドできるイージング関数のロジック部分を提供します。</summary>
+        <returns>変換された進行状況を表す double 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変換のアニメーションの速度を制御する正規化された時間、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>の case<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>です。  
+  
+ のみのイージング関数を指定する必要が、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>ためにのケースの実装、<xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A>メソッド変換`normalizedTime`の<xref:System.Windows.Media.Animation.EasingMode.EaseOut>と<xref:System.Windows.Media.Animation.EasingMode.EaseInOut>場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

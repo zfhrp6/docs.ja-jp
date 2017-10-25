@@ -1,0 +1,163 @@
+<Type Name="InputScope" FullName="System.Windows.Input.InputScope">
+  <TypeSignature Language="C#" Value="public class InputScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InputScope extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputScope" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Input.InputScopeConverter, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>入力メソッドによって提供されるデータのスコープに関連する情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.FrameworkElement.InputScope%2A>と<xref:System.Windows.FrameworkContentElement.InputScope%2A>を取得するプロパティ、<xref:System.Windows.Input.InputScope>の特定の要素。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InputScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputScope.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.InputScope" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Names">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Names { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Names" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputScope.Names" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または入力スコープ名を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.InputScopeName" />入力されたスコープの名前を指定する列挙体です。  
+  
+ 既定値は <see cref="F:System.Windows.Input.InputScopeNameValue.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照する最も簡単な方法は、入力スコープ名を使用して、<xref:System.Windows.Input.InputScope>要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティの有効なメンバー以外の値を設定しようとしましたがときに発生する、<see cref="T:System.Windows.Input.InputScopeName" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PhraseList">
+      <MemberSignature Language="C#" Value="public System.Collections.IList PhraseList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList PhraseList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputScope.PhraseList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力プロセッサが推奨される入力パターンとして使用する句のコレクションを取得します。</summary>
+        <value>入力プロセッサが推奨される入力パターンとして使用する句のコレクションを格納するオブジェクト。  このオブジェクトを実装して、<see cref="T:System.Collections.IList" />インターフェイスです。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegularExpression">
+      <MemberSignature Language="C#" Value="public string RegularExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegularExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputScope.RegularExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または入力プロセッサが推奨されるテキストの入力パターンとして使用する正規表現を設定します。</summary>
+        <value>入力プロセッサが推奨されるテキストの入力パターンとして使用する正規表現を定義する文字列。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたがときに発生する**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SrgsMarkup">
+      <MemberSignature Language="C#" Value="public string SrgsMarkup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SrgsMarkup" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputScope.SrgsMarkup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または入力プロセッサが推奨される入力パターンとして使用する音声認識の文法の仕様 (SRGS) マークアップを指定する文字列を設定します。</summary>
+        <value>SRGS 入力プロセッサが推奨される入力パターンとして使用するマークアップを指定する文字列。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、このプロパティでは、音声入力に適用できるのみです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたがときに発生する**null**です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

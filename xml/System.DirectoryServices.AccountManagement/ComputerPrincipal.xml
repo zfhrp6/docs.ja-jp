@@ -1,0 +1,347 @@
+<Type Name="ComputerPrincipal" FullName="System.DirectoryServices.AccountManagement.ComputerPrincipal">
+  <TypeSignature Language="C#" Value="public class ComputerPrincipal : System.DirectoryServices.AccountManagement.AuthenticablePrincipal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComputerPrincipal extends System.DirectoryServices.AccountManagement.AuthenticablePrincipal" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.AccountManagement.AuthenticablePrincipal</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.DirectoryServices.AccountManagement.DirectoryRdnPrefix("CN")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンピューター アカウントであるプリンシパルをカプセル化します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> クラスの新しいインスタンスを初期化します。 呼び出しの前にオブジェクトのコンテキスト プロパティを設定する必要があります<see cref="M:System.DirectoryServices.AccountManagement.Principal.Save" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成時に、コンピューターのプリンシパル アカウントは保存されません。 アカウントを保持するための呼び出し、<xref:System.DirectoryServices.AccountManagement.Principal.Save%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComputerPrincipal (System.DirectoryServices.AccountManagement.PrincipalContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.AccountManagement.PrincipalContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />。</param>
+        <summary><see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" /> クラスの新しいインスタンスを初期化し、指定したコンテキストに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成時に、コンピューターのプリンシパル アカウントは保存されません。 アカウントを保存する、<xref:System.DirectoryServices.AccountManagement.Principal.Save%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComputerPrincipal (System.DirectoryServices.AccountManagement.PrincipalContext context, string samAccountName, string password, bool enabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.AccountManagement.PrincipalContext context, string samAccountName, string password, bool enabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="samAccountName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="samAccountName">このコンピューターのプリンシパルの SAM アカウント名。</param>
+        <param name="password">このアカウントのパスワード。</param>
+        <param name="enabled">アカウントが有効になっているかどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />クラスの指定したコンテキスト、SAM アカウント名、パスワードを使用して、値を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成時に、コンピューターのプリンシパル アカウントは保存されません。 アカウントを保持するための呼び出し、<xref:System.DirectoryServices.AccountManagement.Principal.Save%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByBadPasswordAttempt">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByBadPasswordAttempt (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByBadPasswordAttempt(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByBadPasswordAttempt(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />構造体をで使用されると共に、<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />不正なパスワードの試行でコンピューターを見つけます。</param>
+        <param name="type"><see cref="T:System.DirectoryServices.AccountManagement.MatchType" />検索に使用する比較の種類を指定します。</param>
+        <summary>返します、<see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" />のコレクション<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />指定されたパラメーターの範囲内の無効なパスワードの試行を持っているオブジェクト。</summary>
+        <returns>A <see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" /> 1 つまたは複数を格納している<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />一致が見つからない場合、検索パラメーターまたは空のコレクションに一致するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByExpirationTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByExpirationTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByExpirationTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByExpirationTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />構造体をで使用されると共に、<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />フィルターの検索結果にします。</param>
+        <param name="type"><see cref="T:System.DirectoryServices.AccountManagement.MatchType" />検索に使用する比較の種類を指定します。</param>
+        <summary>返します、<see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" />のコレクション<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />を指定した日付と時間の範囲内で有効期限を持つオブジェクト。</summary>
+        <returns>A <see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" /> 1 つまたは複数を格納している<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />一致が見つからない場合、検索パラメーターまたは空のコレクションに一致するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByIdentity">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.ComputerPrincipal FindByIdentity (System.DirectoryServices.AccountManagement.PrincipalContext context, string identityValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.ComputerPrincipal FindByIdentity(class System.DirectoryServices.AccountManagement.PrincipalContext context, string identityValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ComputerPrincipal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="identityValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="identityValue">コンピューターの id。 このパラメーターに含まれている任意の形式を指定できます、<see cref="T:System.DirectoryService.AccountManagement.IdentityType" />列挙します。</param>
+        <summary>指定した id 値に一致するコンピューターのプリンシパル オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />オブジェクトの指定した id の値に一致するか、一致が見つからない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.MultipleMatchesException">現在のコンピューター オブジェクトと一致する複数のコンピューター プリンシパルのオブジェクトは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByIdentity">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.ComputerPrincipal FindByIdentity (System.DirectoryServices.AccountManagement.PrincipalContext context, System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.ComputerPrincipal FindByIdentity(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DirectoryServices.AccountManagement.IdentityType identityType, string identityValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ComputerPrincipal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="identityType" Type="System.DirectoryServices.AccountManagement.IdentityType" />
+        <Parameter Name="identityValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="identityType">A<see cref="T:System.DirectoryServices.AccountManagement.IdentityType" />の形式を指定する列挙値、 <c>identityValue</c>パラメーター。</param>
+        <param name="identityValue">コンピューターの id。 このパラメーターに含まれている任意の形式を指定できます、<see cref="T:System.DirectoryService.AccountManagement.IdentityType" />列挙します。</param>
+        <summary>指定した id の種類と値に一致するコンピューターのプリンシパル オブジェクトを返します。 このバージョンの<see cref="Overload:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByIdentity" />メソッドは、id 値の形式を指定します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.AccountManagement.ComputerPrincipal" />オブジェクトの指定された id 値と型に一致するか、一致が見つからない場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.MultipleMatchesException">現在のコンピューター オブジェクトと一致する複数のコンピューター プリンシパルのオブジェクトは見つかりませんでした。</exception>
+        <exception cref="T:System.ComponenetModel.InvalidEnumerationOperatorException">ID の値は有効な <see cref="T:System.DirectoryServices.AccountManagement.IdentityType" /> 列挙値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByLockoutTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByLockoutTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByLockoutTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByLockoutTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />構造体をで使用されると共に、<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />フィルターの検索結果にします。</param>
+        <param name="type"><see cref="T:System.DirectoryServices.AccountManagement.MatchType" />検索に使用する比較の種類を指定します。</param>
+        <summary>返します、<see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" />のコレクション<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />を指定した日付と時間の範囲内でのロックアウト時間を持つオブジェクト。</summary>
+        <returns>A <see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" /> 1 つまたは複数を格納している<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />一致が見つからない場合、検索パラメーターまたは空のコレクションに一致するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByLogonTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByLogonTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByLogonTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByLogonTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />構造体をで使用されると共に、<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />フィルターの検索結果にします。</param>
+        <param name="type"><see cref="T:System.DirectoryServices.AccountManagement.MatchType" />検索に使用する比較の種類を指定します。</param>
+        <summary>返します、<see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" />のコレクション<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />を指定した日付と時間の範囲内でのログオン時間を持つオブジェクト。</summary>
+        <returns>A <see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" /> 1 つまたは複数を格納している<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />一致が見つからない場合、検索パラメーターまたは空のコレクションに一致するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByPasswordSetTime">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByPasswordSetTime (System.DirectoryServices.AccountManagement.PrincipalContext context, DateTime time, System.DirectoryServices.AccountManagement.MatchType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.ComputerPrincipal&gt; FindByPasswordSetTime(class System.DirectoryServices.AccountManagement.PrincipalContext context, valuetype System.DateTime time, valuetype System.DirectoryServices.AccountManagement.MatchType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.ComputerPrincipal.FindByPasswordSetTime(System.DirectoryServices.AccountManagement.PrincipalContext,System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.ComputerPrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.AccountManagement.PrincipalContext" />
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="type" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="context">操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryService.AccountManagement.PrincipalContext" />。</param>
+        <param name="time">A<see cref="T:System.DateTime" />構造体をで使用されると共に、<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />フィルターの検索結果にします。</param>
+        <param name="type"><see cref="T:System.DirectoryServices.AccountManagement.MatchType" />検索に使用する比較の種類を指定します。</param>
+        <summary>返します、<see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" />のコレクション<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />パスワードが設定されているオブジェクトが、指定した日付と時間の範囲内で時間を設定します。</summary>
+        <returns>A <see cref="T:System.DirectoryService.AccountManagement.PrincipalSearchResult'1" /> 1 つまたは複数を格納している<see cref="T:System.DirectoryService.AccountManagement.ComputerPincipal" />一致が見つからない場合、検索パラメーターまたは空のコレクションに一致するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。  時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、`time`オブジェクトとして<xref:System.DateTimeKind.Local>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicePrincipalNames">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.PrincipalValueCollection&lt;string&gt; ServicePrincipalNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.AccountManagement.PrincipalValueCollection`1&lt;string&gt; ServicePrincipalNames" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.ComputerPrincipal.ServicePrincipalNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalValueCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューター アカウントのサービス プリンシパル名 (SPN) のコレクションを取得します。</summary>
+        <value>このコンピューターの Spn をアカウントの名前を指定のコレクションに登録されます。 SPN の構文は、基になるストアによって異なります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

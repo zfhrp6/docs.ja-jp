@@ -1,0 +1,608 @@
+<Type Name="AnonymousPipeServerStream" FullName="System.IO.Pipes.AnonymousPipeServerStream">
+  <TypeSignature Language="C#" Value="public sealed class AnonymousPipeServerStream : System.IO.Pipes.PipeStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AnonymousPipeServerStream extends System.IO.Pipes.PipeStream" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Pipes.AnonymousPipeServerStream" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Pipes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.Pipes.PipeStream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>匿名パイプ、同期および非同期の両方がサポートする読み取りおよび書き込み操作の周囲のストリームを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 匿名パイプは、セーフを提供し、プロセスの子と親の間の通信をセキュリティで保護を支援します。 <xref:System.IO.Pipes.AnonymousPipeServerStream>クラスには、子プロセスからの情報の送受信に親プロセスができるようにします。  
+  
+ 匿名パイプは、通常、親と子のプロセス間でデータを転送する名前のない、一方向のパイプです。 匿名パイプは常にローカルです。ネットワーク経由で使用できません。 A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ 匿名パイプはサポートしていない<xref:System.IO.Pipes.PipeTransmissionMode.Message>モードを読み取る。  
+  
+ 匿名パイプのクライアント側を呼び出すことによって、サーバー側によって提供されるパイプのハンドルから作成する必要があります、<xref:System.IO.Pipes.AnonymousPipeServerStream.GetClientHandleAsString%2A>メソッドです。 クライアント プロセスを作成するときに、文字列がパラメーターとして渡されます。 クライアント プロセスからそれに渡され、<xref:System.IO.Pipes.AnonymousPipeClientStream>としてコンス トラクター、`pipeHandleAsString`パラメーター。  
+  
+ <xref:System.IO.Pipes.AnonymousPipeServerStream>クライアント ハンドルを使用して、オブジェクトを破棄しなければならない、<xref:System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle%2A>クライアントの終了時に通知するためにメソッドです。  
+  
+> [!NOTE]
+>  [!INCLUDE[winxppro](~/includes/winxppro-md.md)]と[!INCLUDE[win2kserver](~/includes/win2kserver-md.md)]、最大で 10 パイプは、ネットワーク経由で同時に接続できます。  
+  
+   
+  
+## Examples  
+ 次に、匿名パイプを使用して、親プロセスから子プロセスに文字列を送信する方法の例を示します。 この例では、<xref:System.IO.Pipes.AnonymousPipeServerStream> の <xref:System.IO.Pipes.PipeDirection> 値を使用して、親プロセス内に <xref:System.IO.Pipes.PipeDirection.Out> オブジェクトを作成しています。 作成、<xref:System.IO.Pipes.AnonymousPipeClientStream>を持つ子プロセス内のオブジェクト、<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.In>です。 次に、親プロセスはユーザー指定の文字列を子プロセスに送信します。 文字列は、コンソールに表示されます。  
+  
+ この例は、サーバー プロセスを使用して、<xref:System.IO.Pipes.AnonymousPipeServerStream>クラスです。 パイプ クライアントとサーバーの両方のコードを含む、完全なコード例を参照してください。[する方法: ローカルのプロセス間通信に使用する匿名パイプ](~/docs/standard/io/how-to-use-anonymous-pipes-for-local-interprocess-communication.md)です。  
+  
+ [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
+ [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousPipeServerStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Pipes.AnonymousPipeServerStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.AnonymousPipeServerStream>なしのコンス トラクター、<xref:System.IO.Pipes.PipeDirection>パラメーターの既定の方向が、<xref:System.IO.Pipes.PipeDirection.Out>です。 A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ このコンス トラクターを作成、<xref:System.IO.Pipes.AnonymousPipeServerStream>既定のバッファー サイズ、パイプ セキュリティなしとしているオブジェクトと<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousPipeServerStream (System.IO.Pipes.PipeDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.Pipes.PipeDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。  
+  
+ 匿名パイプは、必ず 1 つの方向にため<c>方向</c>に設定することはできません<see cref="F:System.IO.Pipes.PipeDirection.InOut" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />指定されたパイプの方向を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ このコンス トラクターを作成、<xref:System.IO.Pipes.AnonymousPipeServerStream>既定のバッファー サイズ、パイプ セキュリティなしとしているオブジェクトと<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="direction" /> が <see cref="F:System.IO.Pipes.PipeDirection.InOut" /> に設定されます。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousPipeServerStream (System.IO.Pipes.PipeDirection direction, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.Pipes.PipeDirection direction, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,System.IO.HandleInheritability)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。  
+  
+ 匿名パイプは、必ず 1 つの方向にため<c>方向</c>に設定することはできません<see cref="F:System.IO.Pipes.PipeDirection.InOut" />です。</param>
+        <param name="inheritability">基になるハンドルを子プロセスが継承できるかどうかを決定する列挙値の 1 つ。 設定する必要がいずれかに<see cref="F:System.IO.HandleInheritability.None" />または<see cref="F:System.IO.HandleInheritability.Inheritable" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />方向および継承性モードを指定されたパイプしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ このコンス トラクターを作成、<xref:System.IO.Pipes.AnonymousPipeServerStream>既定のバッファー サイズとパイプ セキュリティなしを持つオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名パイプを使用して子プロセスに、親プロセスから文字列を送信する方法を示します。 この例では、<xref:System.IO.Pipes.AnonymousPipeServerStream>で親プロセスでオブジェクトを作成、<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.Out>です。  
+  
+ [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
+ [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="inheritability" />設定されていないいずれかに<see cref="F:System.IO.HandleInheritability.None" />または<see cref="F:System.IO.HandleInheritability.Inheritable" />です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="direction" /> が <see cref="F:System.IO.Pipes.PipeDirection.InOut" /> に設定されます。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousPipeServerStream (System.IO.Pipes.PipeDirection direction, Microsoft.Win32.SafeHandles.SafePipeHandle serverSafePipeHandle, Microsoft.Win32.SafeHandles.SafePipeHandle clientSafePipeHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.Pipes.PipeDirection direction, class Microsoft.Win32.SafeHandles.SafePipeHandle serverSafePipeHandle, class Microsoft.Win32.SafeHandles.SafePipeHandle clientSafePipeHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle,Microsoft.Win32.SafeHandles.SafePipeHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="serverSafePipeHandle" Type="Microsoft.Win32.SafeHandles.SafePipeHandle" />
+        <Parameter Name="clientSafePipeHandle" Type="Microsoft.Win32.SafeHandles.SafePipeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。  
+  
+ 匿名パイプは、必ず 1 つの方向にため<c>方向</c>に設定することはできません<see cref="F:System.IO.Pipes.PipeDirection.InOut" />です。</param>
+        <param name="serverSafePipeHandle">このパイプのハンドルを安全な場所<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />オブジェクトによってカプセル化します。</param>
+        <param name="clientSafePipeHandle">セーフ ハンドルを<see cref="T:System.IO.Pipes.AnonymousPipeClientStream" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />クラス指定されたパイプ ハンドルから。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="serverSafePipeHandle" />または<paramref name="clientSafePipeHandle" />はハンドルが無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverSafePipeHandle" /> または <paramref name="clientSafePipeHandle" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="direction" /> が <see cref="F:System.IO.Pipes.PipeDirection.InOut" /> に設定されます。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなど、I/O エラーが発生しました。  
+  
+ または  
+  
+ ストリームは閉じられています。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousPipeServerStream (System.IO.Pipes.PipeDirection direction, System.IO.HandleInheritability inheritability, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.Pipes.PipeDirection direction, valuetype System.IO.HandleInheritability inheritability, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,System.IO.HandleInheritability,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。  
+  
+ 匿名パイプは、必ず 1 つの方向にため<c>方向</c>に設定することはできません<see cref="F:System.IO.Pipes.PipeDirection.InOut" />です。</param>
+        <param name="inheritability">基になるハンドルを子プロセスが継承できるかどうかを決定する列挙値の 1 つ。 設定する必要がいずれかに<see cref="F:System.IO.HandleInheritability.None" />または<see cref="F:System.IO.HandleInheritability.Inheritable" />です。</param>
+        <param name="bufferSize">バッファーのサイズ。 この値は、0 以上にする必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />指定されたパイプの方向、継承性モード、およびバッファー サイズを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ このコンス トラクターを作成、<xref:System.IO.Pipes.AnonymousPipeServerStream>パイプ セキュリティなしオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="inheritability" />設定されていないいずれかに<see cref="F:System.IO.HandleInheritability.None" />または<see cref="F:System.IO.HandleInheritability.Inheritable" />です。  
+  
+ または  
+  
+ <paramref name="bufferSize" /> が 0 未満です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="direction" /> が <see cref="F:System.IO.Pipes.PipeDirection.InOut" /> に設定されます。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousPipeServerStream (System.IO.Pipes.PipeDirection direction, System.IO.HandleInheritability inheritability, int bufferSize, System.IO.Pipes.PipeSecurity pipeSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.Pipes.PipeDirection direction, valuetype System.IO.HandleInheritability inheritability, int32 bufferSize, class System.IO.Pipes.PipeSecurity pipeSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.#ctor(System.IO.Pipes.PipeDirection,System.IO.HandleInheritability,System.Int32,System.IO.Pipes.PipeSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。  
+  
+ 匿名パイプは、必ず 1 つの方向にため<c>方向</c>に設定することはできません<see cref="F:System.IO.Pipes.PipeDirection.InOut" />です。</param>
+        <param name="inheritability">基になるハンドルを子プロセスが継承できるかどうかを決定する列挙値の 1 つ。</param>
+        <param name="bufferSize">バッファーのサイズ。 この値は、0 以上にする必要があります。</param>
+        <param name="pipeSecurity">パイプのアクセス制御と監査セキュリティを決定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />クラスが指定されたパイプの方向、継承性モード、バッファー サイズ、およびパイプのセキュリティを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>匿名パイプは一方向であるに定義されているためにはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="inheritability" />設定されていないいずれかに<see cref="F:System.IO.HandleInheritability.None" />または<see cref="F:System.IO.HandleInheritability.Inheritable" />です。  
+  
+ または  
+  
+ <paramref name="bufferSize" /> が 0 未満です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="direction" /> が <see cref="F:System.IO.Pipes.PipeDirection.InOut" /> に設定されます。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientSafePipeHandle">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.SafeHandles.SafePipeHandle ClientSafePipeHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafePipeHandle ClientSafePipeHandle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.AnonymousPipeServerStream.ClientSafePipeHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafePipeHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セーフ ハンドルを取得、<see cref="T:System.IO.Pipes.AnonymousPipeClientStream" />に現在接続されているオブジェクト、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />オブジェクト。</summary>
+        <value>ハンドル、<see cref="T:System.IO.Pipes.AnonymousPipeClientStream" />に現在接続されているオブジェクト、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle%2A>クライアント プロセスをクライアント ハンドルが渡された後、メソッドを呼び出す必要があります。 このメソッドが呼び出されない場合、<xref:System.IO.Pipes.AnonymousPipeServerStream>オブジェクトは、クライアントを破棄するときに通知されません、<xref:System.IO.Pipes.PipeStream>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeLocalCopyOfClientHandle">
+      <MemberSignature Language="C#" Value="public void DisposeLocalCopyOfClientHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisposeLocalCopyOfClientHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ローカル コピーを閉じ、<see cref="T:System.IO.Pipes.AnonymousPipeClientStream" />オブジェクトのハンドル。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle%2A>クライアント ハンドルがクライアントに渡された後、メソッドを呼び出す必要があります。 このメソッドが呼び出されない場合、<xref:System.IO.Pipes.AnonymousPipeServerStream>オブジェクトは、クライアントを破棄するときに通知されません、<xref:System.IO.Pipes.PipeStream>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名パイプを使用して、親プロセスから子プロセスに文字列を送信する方法を示します。 この例では、<xref:System.IO.Pipes.AnonymousPipeServerStream>で親プロセスでオブジェクトを作成、<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.Out>です。  
+  
+ [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
+ [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~AnonymousPipeServerStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースを解放し、前に他のクリーンアップ操作を実行、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />インスタンスがガベージ コレクションによって回収されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientHandleAsString">
+      <MemberSignature Language="C#" Value="public string GetClientHandleAsString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetClientHandleAsString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.AnonymousPipeServerStream.GetClientHandleAsString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>接続されている取得<see cref="T:System.IO.Pipes.AnonymousPipeClientStream" />文字列とオブジェクトのハンドル。</summary>
+        <returns>表す、接続されている文字列<see cref="T:System.IO.Pipes.AnonymousPipeClientStream" />オブジェクトのハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.AnonymousPipeServerStream.DisposeLocalCopyOfClientHandle%2A>クライアント プロセスをクライアント ハンドルが渡された後、メソッドを呼び出す必要があります。 このメソッドが呼び出されない場合、<xref:System.IO.Pipes.AnonymousPipeServerStream>オブジェクトは、クライアントを破棄するときに通知されません、<xref:System.IO.Pipes.PipeStream>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名パイプを使用して、親プロセスから子プロセスに文字列を送信する方法を示します。 この例では、<xref:System.IO.Pipes.AnonymousPipeServerStream>で親プロセスでオブジェクトを作成、<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.Out>です。  
+  
+ [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
+ [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadMode">
+      <MemberSignature Language="C#" Value="public override System.IO.Pipes.PipeTransmissionMode ReadMode { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Pipes.PipeTransmissionMode ReadMode" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.AnonymousPipeServerStream.ReadMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Pipes.PipeTransmissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りモードを設定、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />オブジェクト。 匿名パイプは、転送モードがある必要があります<see cref="F:System.IO.Pipes.PipeTransmissionMode.Byte" />です。</summary>
+        <value>読み取りモード、<see cref="T:System.IO.Pipes.AnonymousPipeServerStream" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 匿名パイプはサポートしていない<xref:System.IO.Pipes.PipeTransmissionMode.Message>読み取りモードにします。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名パイプを使用して、親プロセスから子プロセスに文字列を送信する方法を示します。 この例では、<xref:System.NotSupportedException>がキャッチされたときに、<xref:System.IO.Pipes.AnonymousPipeServerStream.ReadMode%2A>プロパティに設定されている<xref:System.IO.Pipes.PipeTransmissionMode.Message>です。  
+  
+ [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
+ [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">送信モードが正しくありません。 匿名パイプの場合のみ<see cref="F:System.IO.Pipes.PipeTransmissionMode.Byte" />はサポートされています。</exception>
+        <exception cref="T:System.NotSupportedException">プロパティに設定<see cref="F:System.IO.Pipes.PipeTransmissionMode.Message" />、これは、匿名パイプはサポートされていません。</exception>
+        <exception cref="T:System.IO.IOException">接続が壊れているか、別の I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">パイプは閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransmissionMode">
+      <MemberSignature Language="C#" Value="public override System.IO.Pipes.PipeTransmissionMode TransmissionMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Pipes.PipeTransmissionMode TransmissionMode" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.AnonymousPipeServerStream.TransmissionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Pipes.PipeTransmissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のパイプでサポートされるパイプ送信モードを取得します。</summary>
+        <value><see cref="T:System.IO.Pipes.PipeTransmissionMode" />現在のパイプでサポートされています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 匿名パイプはサポートしていない<xref:System.IO.Pipes.PipeTransmissionMode.Message>読み取りモードにします。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名パイプを使用して、親プロセスから子プロセスに文字列を送信する方法を示します。 この例では、<xref:System.IO.Pipes.AnonymousPipeServerStream>オブジェクトが、親プロセス内に作成されると、<xref:System.IO.Pipes.AnonymousPipeServerStream.TransmissionMode%2A>プロパティは、コンソールに表示されます。  
+  
+ [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
+ [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

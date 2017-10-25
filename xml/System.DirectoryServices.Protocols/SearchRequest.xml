@@ -1,0 +1,277 @@
+<Type Name="SearchRequest" FullName="System.DirectoryServices.Protocols.SearchRequest">
+  <TypeSignature Language="C#" Value="public class SearchRequest : System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchRequest extends System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.SearchRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.SearchRequest" />クラスは、検索操作を開始します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SearchRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchRequest.#ctor" /> コンストラクターは、<see cref="T:System.DirectoryServices.Protocols.SearchRequest" /> クラスのインスタンスを作成します。 このコンス トラクターでは、空の要求を作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SearchRequest (string distinguishedName, string ldapFilter, System.DirectoryServices.Protocols.SearchScope searchScope, params string[] attributeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, string ldapFilter, valuetype System.DirectoryServices.Protocols.SearchScope searchScope, string[] attributeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchRequest.#ctor(System.String,System.String,System.DirectoryServices.Protocols.SearchScope,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="ldapFilter" Type="System.String" />
+        <Parameter Name="searchScope" Type="System.DirectoryServices.Protocols.SearchScope" />
+        <Parameter Name="attributeList" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName">検索を開始する位置を示すオブジェクトの識別名。</param>
+        <param name="ldapFilter">LDAP 検索フィルター。</param>
+        <param name="searchScope">値のいずれかの<see cref="T:System.DirectoryServices.Protocols.SearchScope" />検索範囲を指定します。</param>
+        <param name="attributeList">結果セットに要求された属性を格納する配列。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchRequest.#ctor(System.String,System.String,System.DirectoryServices.Protocols.SearchScope,System.String[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.SearchRequest" />クラスの指定した名前、検索フィルター、スコープ、および属性を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SearchRequest (string distinguishedName, System.Xml.XmlDocument filter, System.DirectoryServices.Protocols.SearchScope searchScope, params string[] attributeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, class System.Xml.XmlDocument filter, valuetype System.DirectoryServices.Protocols.SearchScope searchScope, string[] attributeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchRequest.#ctor(System.String,System.Xml.XmlDocument,System.DirectoryServices.Protocols.SearchScope,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="filter" Type="System.Xml.XmlDocument" />
+        <Parameter Name="searchScope" Type="System.DirectoryServices.Protocols.SearchScope" />
+        <Parameter Name="attributeList" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName">検索対象のオブジェクトの識別名。</param>
+        <param name="filter">DSML v2 検索フィルター。</param>
+        <param name="searchScope">A<see cref="T:System.DirectoryServices.Protocols.SearchScope" />検索範囲を指定する値。 既定値は <see cref="T:System.DirectoryServices.Protocols.SearchScope" /> です。</param>
+        <param name="attributeList">結果セットに要求された属性を格納する配列。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchRequest.#ctor(System.String,System.Xml.XmlDocument,System.DirectoryServices.Protocols.SearchScope,System.String[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.SearchRequest" />クラスの指定した名前、検索フィルター、スコープ、および属性を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Aliases">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.DereferenceAlias Aliases { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.Protocols.DereferenceAlias Aliases" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.Aliases" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DereferenceAlias</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.Aliases" />プロパティには値のいずれかが含まれています<see cref="T:System.DirectoryServices.Protocols.DereferenceAlias" />逆参照のエイリアスの動作を指定します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.Protocols.DereferenceAlias" />逆参照のエイリアスの動作を指定する値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値がのメンバーではない<see cref="T:System.DirectoryServices.Protocols.DereferenceAlias" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.Attributes" />プロパティには、要求されたオブジェクトの属性が含まれています。</summary>
+        <value>要求されたオブジェクトの属性。 このプロパティを設定<see langword="null" />をすべての属性を取得します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">内の文字列のいずれかの<see cref="T:System.Collections.Specialized.StringCollection" />オブジェクトは null 参照 (<see langword="Nothing" /> Visual Basic で)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DistinguishedName">
+      <MemberSignature Language="C#" Value="public string DistinguishedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DistinguishedName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.DistinguishedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.DistinguishedName" />プロパティには、要求されたオブジェクトの識別名が含まれています。</summary>
+        <value>要求されたオブジェクトの識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public object Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Filter" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.Filter" />プロパティには検索フィルターが含まれています。</summary>
+        <value>検索フィルター。 値が文字列の場合は、このプロパティは LDAP 検索フィルターです。 値が XML ドキュメントの場合は、プロパティは、DSML v2 検索フィルターがします。 その他の種類では、例外をスローします。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">値は、文字列または XML ドキュメントではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.SearchScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.Protocols.SearchScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.SearchScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.Scope" />プロパティには値のいずれかが含まれています<see cref="T:System.DirectoryServices.SearchScope" />検索のスコープを指定します。</summary>
+        <value>値のいずれかの<see cref="T:System.DirectoryServices.SearchScope" />検索のスコープを指定します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値がのメンバーではない<see cref="T:System.DirectoryServices.SearchScope" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeLimit">
+      <MemberSignature Language="C#" Value="public int SizeLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SizeLimit" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.SizeLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.SizeLimit" />プロパティには、検索要求で返されたオブジェクトの最大数が含まれています。</summary>
+        <value>検索要求で返されたオブジェクトの最大数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeLimit">
+      <MemberSignature Language="C#" Value="public TimeSpan TimeLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeLimit" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.TimeLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.TimeLimit" />プロパティが含まれています、<see cref="T:System.TimeSpan" />サーバーが検索要求を処理する場合に、許可される時間間隔を指定するオブジェクト。</summary>
+        <value>A<see cref="T:System.TimeSpan" />サーバーが検索要求を処理する場合に、許可される時間間隔を指定するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">値より小さい<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlNode">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlElement ToXmlNode (System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlElement ToXmlNode(class System.Xml.XmlDocument doc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchRequest.ToXmlNode(System.Xml.XmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doc" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="doc"><see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchRequest.ToXmlNode(System.Xml.XmlDocument)" />メソッドから、指定された XML ノードを作成する<see cref="T:System.Xml.XmlDocument" />オブジェクト。</summary>
+        <returns>結果として得られる <see cref="T:System.Xml.XmlElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypesOnly">
+      <MemberSignature Language="C#" Value="public bool TypesOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TypesOnly" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchRequest.TypesOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchRequest.TypesOnly" />プロパティは、属性名のみと属性値ではなく、検索を返すかどうかを指定します。</summary>
+        <value>このプロパティは、する場合<see langword="true" />検索は、属性名のみを返します。 このプロパティは、する場合<see langword="false" />属性名と値の両方に、検索が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

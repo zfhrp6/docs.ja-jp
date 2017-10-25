@@ -1,0 +1,202 @@
+<Type Name="FontNamesConverter" FullName="System.Web.UI.WebControls.FontNamesConverter">
+  <TypeSignature Language="C#" Value="public class FontNamesConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontNamesConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FontNamesConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フォント名の一覧と個々 の名前を表す文字列の配列を含む文字列の間に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontNamesConverter.ConvertFrom%2A>個々 の名前を格納する文字列の配列へのフォント名の一覧を含む 1 つの文字列に変換するには、このクラスのメソッドです。 文字列の各フォント名は、コンマで区切る必要があります。 たとえば、文字列"arial、新しい roman、verdana がタイムアウト"、"arial"の文字列を含む配列、「回新しいローマ」および"verdana"に変換します。 コンマは先頭またはフォント名の末尾の空白と削除を確認します。 フォント名を途中で空白文字は削除されません。  
+  
+ <xref:System.Web.UI.WebControls.FontNamesConverter.ConvertTo%2A>メソッドは逆の操作を実行します。 これには、名前の一覧を含む 1 つの文字列を個別のフォント名を含む文字列の配列に変換します。 文字列"arial"、「回新しいローマ」および"verdana"を含む配列を文字列に変換するなど、"arial、タイムアウトに新しい roman、verdana"です。 フォント名に空白なしの間、コンマが自動的に挿入されていることを確認します。  
+  
+ 呼び出す、 <xref:System.Web.UI.WebControls.FontNamesConverter.CanConvertFrom%2A> 、変換を呼び出す前に実行できることを確認するメソッド、<xref:System.Web.UI.WebControls.FontNamesConverter.ConvertFrom%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.FontNamesConverter>フォント名の一覧を含む文字列を個々 の名前を格納する文字列の配列に変換するクラス。 文字列の配列は、1 つの文字列に変換され、表示されます。  
+  
+ [!code-aspx-csharp[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontNamesConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontNamesConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.FontNamesConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontNamesConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を実行する型コンバーターのコンテキストに関する情報を提供するオブジェクト。 オプションで渡すことができます<see langword="null" />このパラメーターにします。</param>
+        <param name="sourceType">A<see cref="T:System.Type" />から変換するデータ型を表すです。</param>
+        <summary>このコンバーターが、指定されたデータ型のオブジェクトを個別のフォント名を含む文字列の配列に変換できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />型を変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontNamesConverter.CanConvertFrom%2A>個別のフォント名を含む文字列の配列に指定されたデータ型を変換できるかどうかを調べます。  
+  
+> [!NOTE]
+>  このコンバーターがからのみ、`string`データ型。 `sourceType`パラメーター型でなければなりません<xref:System.String>です。 それ以外の場合、このメソッドが戻る`false`を指定したデータ型を変換できないことを示します。  
+  
+ オプションで渡すことができます`null`の`context`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.WebControls.FontNamesConverter.CanConvertFrom%2A> メソッドの使用方法を示します。 この例では、変換を実行する前に、個別のフォント名を含む文字列の配列に指定されたデータ型を変換できるかどうかを判断します。  
+  
+ [!code-aspx-csharp[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontNamesConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を実行する型コンバーターのコンテキストに関する情報を提供するオブジェクト。 このパラメーターは、このメソッドでは使用されません。 このメソッドの将来のバージョン用に予約されています。 オプションで渡すことができます<see langword="null" />このパラメーターにします。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />言語やカレンダー システムなどのカルチャに関する情報を表すオブジェクト。 このパラメーターは、このメソッドでは使用されません。 このメソッドの将来のバージョン用に予約されています。 オプションで渡すことができます<see langword="null" />このパラメーターにします。</param>
+        <param name="value">A<see cref="T:System.Object" />から変換するソース文字列を表すインスタンス。</param>
+        <summary>個別のフォント名を含む文字列の配列にフォント名の一覧を表す文字列に変換します。</summary>
+        <returns>A<see cref="T:System.Object" />を個別のフォント名を含む文字列の配列を表すインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontNamesConverter.ConvertFrom%2A>個々 の名前を格納する文字列の配列へのフォント名の一覧を含む文字列に変換します。 文字列の各フォント名は、コンマで区切る必要があります。 たとえば、文字列"arial、新しい roman、verdana がタイムアウト"、"arial"の文字列を含む配列、「回新しいローマ」および"verdana"に変換します。 および先頭またはフォント名の末尾に空白、コンマを削除することに注意してください。 フォント名を途中で空白文字は削除されません。  
+  
+> [!NOTE]
+>  `context`と`culture`パラメーターは、このバージョンのメソッドで使用されていない; 将来のバージョン、メソッドのために予約されています。 オプションで渡すことができます`null`これらのパラメーターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.FontNamesConverter.ConvertFrom%2A>フォント名の一覧を含む文字列を個々 の名前を格納する文字列の配列に変換します。  
+  
+ [!code-aspx-csharp[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="M:System.ComponentModel.TypeConverter.GetConvertFromException(System.Object)">
+          <paramref name="value" /> が <see cref="T:System.String" /> 型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontNamesConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を実行する型コンバーターのコンテキストに関する情報を提供するオブジェクト。 このパラメーターは、このメソッドでは使用されません。 このメソッドの将来のバージョン用に予約されています。 オプションで渡すことができます<see langword="null" />このパラメーターにします。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />言語やカレンダー システムなどのカルチャに関する情報を表すオブジェクト。 このパラメーターは、このメソッドでは使用されません。 このメソッドの将来のバージョン用に予約されています。 オプションで渡すことができます<see langword="null" />このパラメーターにします。</param>
+        <param name="value">変換する文字列のソースの配列を表すオブジェクト。</param>
+        <param name="destinationType">A<see cref="T:System.Object" />に変換するデータ型を表すインスタンス オブジェクト。 このパラメーターは、型でなければなりません<see cref="T:System.String" />です。</param>
+        <summary>個別のフォント名を含む文字列の配列からのフォント名の一覧を表す文字列を作成します。</summary>
+        <returns>A<see cref="T:System.Object" />フォント名の一覧を含む文字列を表すインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontNamesConverter.ConvertTo%2A>名の一覧を含む 1 つの文字列を個別のフォント名を含む文字列の配列に変換します。 文字列"arial"、「回新しいローマ」および"verdana"を含む配列を文字列に変換するなど、"arial、タイムアウトに新しい roman、verdana"です。 フォント名に空白なしの間、コンマが自動的に挿入されていることを確認します。  
+  
+> [!NOTE]
+>  このコンバーターにのみ変換できます、`string`データ型。 `destinationType`パラメーター型でなければなりません<xref:System.String>です。  
+  
+> [!NOTE]
+>  `context`と`culture`パラメーターは、このバージョンのメソッドで使用されていない; 将来のバージョン、メソッドのために予約されています。 オプションで渡すことができます`null`これらのパラメーターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.FontNamesConverter.ConvertTo%2A>フォント名の一覧を含む 1 つの文字列を個々 の名前を格納する文字列の配列に変換します。  
+  
+ [!code-aspx-csharp[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic FontNamesConverter.CanConvertFrom Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic FontNamesConverter.CanConvertFrom Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="M:System.ComponentModel.TypeConverter.GetConvertToException(System.Object,System.Type)">
+          <paramref name="destinationType" /> が <see cref="T:System.String" /> 型ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,226 @@
+<Type Name="SignInResponseMessage" FullName="System.IdentityModel.Services.SignInResponseMessage">
+  <TypeSignature Language="C#" Value="public class SignInResponseMessage : System.IdentityModel.Services.WSFederationMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SignInResponseMessage extends System.IdentityModel.Services.WSFederationMessage" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SignInResponseMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Services.WSFederationMessage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-federation サインイン応答メッセージを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメッセージは、受信したメッセージのアクション パラメーター (wa)"wsignin1.0"は、メッセージには、wresult または wresultptr パラメーターが含まれるときに作成されます。  
+  
+ 変換するときに、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse>オブジェクトを<xref:System.IdentityModel.Services.SignInResponseMessage>オブジェクト、RequestSecurityTokenResponse メッセージのコンテキスト属性は、経由では転送されず、明示的に設定する必要があります。  
+  
+ [!INCLUDE[wif_wsfed_ref](~/includes/wif-wsfed-ref-md.md)]  
+  
+ このクラスが表すメッセージの詳細については、Ws-federation 仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignInResponseMessage (Uri baseUrl, string result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl, string result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInResponseMessage.#ctor(System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="result" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">サインイン応答メッセージを適用するベース URL。</param>
+        <param name="result">メッセージに wresult パラメーター。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SignInResponseMessage" />クラス base URL および wresult パラメーターを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="result" /> が <see langword="null" /> または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignInResponseMessage (Uri baseUrl, Uri resultPtr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl, class System.Uri resultPtr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInResponseMessage.#ctor(System.Uri,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="resultPtr" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">サインイン応答メッセージを適用するベース URL。</param>
+        <param name="resultPtr">メッセージの wresultptr パラメーター。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.IdentityModel.Services.SignInResponseMessage" />クラスの指定されたベース URL と wresultptr パラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resultPtr" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignInResponseMessage (Uri baseUrl, System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response, System.IdentityModel.Services.WSFederationSerializer federationSerializer, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl, class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response, class System.IdentityModel.Services.WSFederationSerializer federationSerializer, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInResponseMessage.#ctor(System.Uri,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse,System.IdentityModel.Services.WSFederationSerializer,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="response" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />
+        <Parameter Name="federationSerializer" Type="System.IdentityModel.Services.WSFederationSerializer" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">サインイン応答メッセージを適用するベース URL。</param>
+        <param name="response"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />を指定します。</param>
+        <param name="federationSerializer"><see cref="T:System.IdentityModel.Services.WSFederationSerializer" />を使用して、応答をシリアル化します。</param>
+        <param name="context"><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />のシリアル化コンテキストを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SignInResponseMessage" />指定されたベース URL、応答メッセージ オブジェクト、シリアライザーはフェデレーションとシリアル化コンテキストを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseUrl" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="Response" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="federationSerializer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public string Result { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Result" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInResponseMessage.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wresult パラメーターを設定します。</summary>
+        <value>Wresult パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定`null`またはメッセージから wresult パラメーターを削除する空の文字列。 いずれか、<xref:System.IdentityModel.Services.SignInResponseMessage.Result%2A>プロパティまたは<xref:System.IdentityModel.Services.SignInResponseMessage.ResultPtr%2A>を有効にするメッセージのプロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultPtr">
+      <MemberSignature Language="C#" Value="public string ResultPtr { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResultPtr" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInResponseMessage.ResultPtr" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wresultptr パラメーターを設定します。</summary>
+        <value>Wresultptr パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定`null`またはメッセージから wresultptr パラメーターを削除する空の文字列。 いずれか、<xref:System.IdentityModel.Services.SignInResponseMessage.Result%2A>プロパティまたは<xref:System.IdentityModel.Services.SignInResponseMessage.ResultPtr%2A>を有効にするメッセージのプロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。 指定できます<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="protected override void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInResponseMessage.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Action パラメーター (wa) が"wsignin1.0"であること、および wresult パラメーターまたは wresultptr パラメーターのいずれかが指定されていることを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクション パラメーター (wa) は、"wsignin1.0"ではありません。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">Wresult パラメーターも wresultptr パラメーターが指定されています。  
+  
+ または  
+  
+ Wresult パラメーターと wresultptr パラメーターの両方が指定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInResponseMessage.Write(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">メッセージを記述するテキスト ライター。</param>
+        <summary>フォーム ポスト形式で指定されたテキスト ライターにこのメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Services.SignInResponseMessage.Validate%2A>メッセージを書き込む前にメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

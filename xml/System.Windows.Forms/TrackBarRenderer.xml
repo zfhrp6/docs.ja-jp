@@ -1,0 +1,683 @@
+<Type Name="TrackBarRenderer" FullName="System.Windows.Forms.TrackBarRenderer">
+  <TypeSignature Language="C#" Value="public sealed class TrackBarRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TrackBarRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TrackBarRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual スタイルをトラック バー コントロールを表示するために使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TrackBarRenderer>クラスのセットを提供`static`オペレーティング システムの現在の visual スタイルとトラック バー コントロールの各部分を表示するために使用できるメソッドです。 コントロールのレンダリングとは、コントロールのユーザー インターフェイスを描画することを意味します。 これは、現在の visual スタイルの外観を持つカスタム コントロールを描画する場合に便利です。  
+  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルがアプリケーション ウィンドウのクライアント領域に適用されている場合、このクラスのメソッドには現在の visual スタイルを使用してトラック バーが描画されます。 それ以外の場合、このクラスのメソッドがスローされます、<xref:System.InvalidOperationException>です。 このクラスのメンバーを使用できるかどうかを判断するのには、値を確認することができます、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティです。  
+  
+ このクラスの機能をラップする、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer?displayProperty=nameWithType>によって公開されている要素のいずれかに設定されている、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar?displayProperty=nameWithType>クラスです。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム コントロールを作成する方法を示しています、<xref:System.Windows.Forms.TrackBarRenderer>をマウスのクリックに応答する水平方向のトラック バーを描画するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.TrackBarRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.TrackBarRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.TrackBarRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DrawBottomPointingThumb">
+      <MemberSignature Language="C#" Value="public static void DrawBottomPointingThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBottomPointingThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawBottomPointingThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラック バーのスライダーを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラック バーのスライダーの範囲を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>Visual スタイルを使用して、下向きのトラック バーのスライダー (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawHorizontalThumb">
+      <MemberSignature Language="C#" Value="public static void DrawHorizontalThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawHorizontalThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawHorizontalThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラック バーのスライダーを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラック バーのスライダーの範囲を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>Visual スタイルを横方向のトラック バーのスライダー (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawHorizontalTicks">
+      <MemberSignature Language="C#" Value="public static void DrawHorizontalTicks (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, int numTicks, System.Windows.Forms.VisualStyles.EdgeStyle edgeStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawHorizontalTicks(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, int32 numTicks, valuetype System.Windows.Forms.VisualStyles.EdgeStyle edgeStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawHorizontalTicks(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.VisualStyles.EdgeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="numTicks" Type="System.Int32" />
+        <Parameter Name="edgeStyle" Type="System.Windows.Forms.VisualStyles.EdgeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />目盛りを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />タイマー刻みの境界を指定します。</param>
+        <param name="numTicks">描画するタイマー刻みの数。</param>
+        <param name="edgeStyle"><see cref="T:System.Windows.Forms.VisualStyles.EdgeStyle" /> 値のいずれか。</param>
+        <summary>指定した数の visual スタイルを横方向のトラック バーの目盛りを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ 幅または高さの外接する四角形またはタイマー刻みの数が 0 未満の場合、または`g`は`null`、<xref:System.Windows.Forms.TrackBarRenderer.DrawHorizontalTicks%2A>表示せずに返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawHorizontalTrack">
+      <MemberSignature Language="C#" Value="public static void DrawHorizontalTrack (System.Drawing.Graphics g, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawHorizontalTrack(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawHorizontalTrack(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラックを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラックの境界を指定します。</param>
+        <summary>Visual スタイルを横方向のトラック バーのトラックを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TrackBarRenderer.DrawHorizontalTrack%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>トラック バーを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TrackBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/cpp/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLeftPointingThumb">
+      <MemberSignature Language="C#" Value="public static void DrawLeftPointingThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawLeftPointingThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawLeftPointingThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラック バーのスライダーを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラック バーのスライダーの範囲を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>Visual スタイルを使用して、左向きのトラック バーのスライダー (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRightPointingThumb">
+      <MemberSignature Language="C#" Value="public static void DrawRightPointingThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRightPointingThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawRightPointingThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラック バーのスライダーを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラック バーのスライダーの範囲を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>Visual スタイルを使用して、右向きのトラック バーのスライダー (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTopPointingThumb">
+      <MemberSignature Language="C#" Value="public static void DrawTopPointingThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTopPointingThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawTopPointingThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラック バーのスライダーを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラック バーのスライダーの範囲を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>上向きのトラック バーのスライダー (つまみとも呼ばれます) で visual スタイルを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TrackBarRenderer.DrawTopPointingThumb%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>スライダー バー、上向きを描画するメソッドを追跡します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TrackBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/cpp/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVerticalThumb">
+      <MemberSignature Language="C#" Value="public static void DrawVerticalThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawVerticalThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawVerticalThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラック バーのスライダーを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラック バーのスライダーの範囲を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>Visual スタイルで垂直トラック バーのスライダー (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVerticalTicks">
+      <MemberSignature Language="C#" Value="public static void DrawVerticalTicks (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, int numTicks, System.Windows.Forms.VisualStyles.EdgeStyle edgeStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawVerticalTicks(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, int32 numTicks, valuetype System.Windows.Forms.VisualStyles.EdgeStyle edgeStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawVerticalTicks(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.VisualStyles.EdgeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="numTicks" Type="System.Int32" />
+        <Parameter Name="edgeStyle" Type="System.Windows.Forms.VisualStyles.EdgeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />目盛りを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />タイマー刻みの境界を指定します。</param>
+        <param name="numTicks">描画するタイマー刻みの数。</param>
+        <param name="edgeStyle"><see cref="T:System.Windows.Forms.VisualStyles.EdgeStyle" /> 値のいずれか。</param>
+        <summary>指定した数の visual スタイルを垂直方向のトラック バーの目盛りを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 幅または高さの外接する四角形またはタイマー刻みの数が 0 未満の場合、または`g`は`null`、<xref:System.Windows.Forms.TrackBarRenderer.DrawVerticalTicks%2A>表示せずに返します。  
+  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVerticalTrack">
+      <MemberSignature Language="C#" Value="public static void DrawVerticalTrack (System.Drawing.Graphics g, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawVerticalTrack(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.DrawVerticalTrack(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />トラックを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />トラックの境界を指定します。</param>
+        <summary>Visual スタイルで垂直トラック バーのトラックを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBottomPointingThumbSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetBottomPointingThumbSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetBottomPointingThumbSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.GetBottomPointingThumbSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />トラック バーのスライダーの表示状態を指定する値。</param>
+        <summary>下向きのトラック バーのスライダー (つまみとも呼ばれます) のピクセル単位のサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />スライダーのピクセル単位で、サイズを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スライダーのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLeftPointingThumbSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetLeftPointingThumbSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetLeftPointingThumbSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.GetLeftPointingThumbSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />スライダーの表示状態を指定する値。</param>
+        <summary>(ピクセル単位)、左のトラック バーのスライダー (つまみとも呼ばれます) のサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />スライダーのピクセル単位で、サイズを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スライダーのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRightPointingThumbSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetRightPointingThumbSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetRightPointingThumbSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.GetRightPointingThumbSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />スライダーの表示状態を指定する値。</param>
+        <summary>右側のトラック バーのスライダー (つまみとも呼ばれます) のピクセル単位で、サイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />スライダーのピクセル単位で、サイズを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スライダーのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTopPointingThumbSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetTopPointingThumbSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.TrackBarThumbState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetTopPointingThumbSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.TrackBarThumbState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TrackBarRenderer.GetTopPointingThumbSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.TrackBarThumbState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TrackBarThumbState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TrackBarThumbState" />スライダーの表示状態を指定する値。</param>
+        <summary>(ピクセル単位) を指すのトラック バーのスライダー (つまみとも呼ばれます) のサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />スライダーのピクセル単位で、サイズを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スライダーのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+ このメソッドを呼び出す前にする必要があることを確認するの値、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TrackBarRenderer.GetTopPointingThumbSize%2A>メソッドによって使用される四角形のサイズを決定する、<xref:System.Windows.Forms.TrackBarRenderer.DrawTopPointingThumb%2A>スライダーを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TrackBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TrackBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TrackBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TrackBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TrackBarRenderer.IsSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.TrackBarRenderer" />クラスは、visual スタイルをトラック バーを描画するために使用できます。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーには、オペレーティング システムで visual スタイルが有効にして、visual スタイル; のアプリケーション ウィンドウのクライアント領域に適用されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが場合`false`、このクラスのメソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TrackBarRenderer.IsSupported%2A>プロパティを使用するかどうかを決定する、<xref:System.Windows.Forms.TrackBarRenderer>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TrackBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/cpp/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.TrackBarRenderer#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TrackBarRenderer/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

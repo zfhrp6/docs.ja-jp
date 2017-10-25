@@ -1,0 +1,156 @@
+<Type Name="XamlXmlReaderSettings" FullName="System.Xaml.XamlXmlReaderSettings">
+  <TypeSignature Language="C#" Value="public class XamlXmlReaderSettings : System.Xaml.XamlReaderSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlXmlReaderSettings extends System.Xaml.XamlReaderSettings" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlXmlReaderSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlReaderSettings</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>規則の処理またはのオプション設定を指定します、 <see cref="T:System.Xaml.XamlXmlReader" /> XAML リーダーの実装です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlXmlReaderSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlXmlReaderSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlXmlReaderSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlXmlReaderSettings (System.Xaml.XamlXmlReaderSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlXmlReaderSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlXmlReaderSettings.#ctor(System.Xaml.XamlXmlReaderSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Xaml.XamlXmlReaderSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">既存の<see cref="T:System.Xaml.XamlXmlReaderSettings" />コピー先のオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Xaml.XamlXmlReaderSettings" /> 、既存の設定をコピーしてクラス<see cref="T:System.Xaml.XamlXmlReaderSettings" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseInput">
+      <MemberSignature Language="C#" Value="public bool CloseInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CloseInput" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlXmlReaderSettings.CloseInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはかどうか、基になるストリームまたはテキスト リーダーを閉じてときを示す値を設定、<see cref="T:System.Xaml.XamlXmlReader" />が閉じられます。</summary>
+        <value>
+          <see langword="true" />かどうか、基になるストリームまたはリーダーを閉じてときに、<see cref="T:System.Xaml.XamlXmlReader" />が閉じられた場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipXmlCompatibilityProcessing">
+      <MemberSignature Language="C#" Value="public bool SkipXmlCompatibilityProcessing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipXmlCompatibilityProcessing" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlXmlReaderSettings.SkipXmlCompatibilityProcessing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーが既定値と異なる必要があるかどうかを決定する値の設定を取得または<see cref="T:System.Xaml.XamlXmlReader" />マークアップ互換性コンテンツの処理方法の動作です。</summary>
+        <value>
+          <see langword="true" />発信側のリーダーを直接使用する場合つまり XML 互換性マークアップがメイン ストリームの一部として処理され、互換性がないと見なされます。 <see langword="false" />既定の動作を使用する場合は、個別に XML 互換性を処理します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作で XML マークアップ互換性のための処理<xref:System.Xaml.XamlXmlReader>される、<xref:System.Xaml.XamlXmlReader>初期化のために提供されるように、作成された内部ヘルパー クラスでラップされます。 このヘルパー クラスはマークアップ互換性ノードを個別に読み取りし、スキーマ コンテキストのマークアップ互換性に基づいてノードに入力します。  
+  
+ 推奨設定のシナリオに<xref:System.Xaml.XamlXmlReaderSettings.SkipXmlCompatibilityProcessing%2A>に`true`は。  
+  
+-   プライマリの XAML ストリームのマークアップ互換性コンテンツを保持するには。  
+  
+-   マークアップの互換性がマークアップ互換性の内容をインラインで処理できるリーダーを使用しているため既に処理されました。  
+  
+-   パフォーマンス上の理由から、XAML リーダー実装で XML 互換性規則を無視するを選択します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlLang">
+      <MemberSignature Language="C#" Value="public string XmlLang { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlLang" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlXmlReaderSettings.XmlLang" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーに昇格させることがあります値を書き込むライターを設定する言語の設定を取得または<see langword="xml:lang" />ノード内の属性です。</summary>
+        <value>考えられるに使用する文字列<see langword="xml:lang" />リーダーに基づいている出力します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元が、指定した文字列が適切であることを保証`xml:lang`使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSpacePreserve">
+      <MemberSignature Language="C#" Value="public bool XmlSpacePreserve { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool XmlSpacePreserve" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlXmlReaderSettings.XmlSpacePreserve" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML リーダーが書き込むすべての XAML ライターを指示するかどうかを決定する値の設定を取得または<see langword="xml:space" />ノード内の属性です。 その動作が必要な場合、この情報は、共有の XAML スキーマ コンテキストを通じて渡されます。</summary>
+        <value>
+          <see langword="true" />かどうか、XAML ノード ストリームを処理中のライターを作成できます<c>xml:space ="preserve"</c>出力です。<see langword="false" />場合<see langword="xml:space" />ノードに属性を書き込むことができません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML の空白の概念は、XAML に適用するのに十分堅牢であり、通常は、XAML リーダーによって無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

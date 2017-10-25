@@ -1,0 +1,350 @@
+<Type Name="QueryStringParameter" FullName="System.Web.UI.WebControls.QueryStringParameter">
+  <TypeSignature Language="C#" Value="public class QueryStringParameter : System.Web.UI.WebControls.Parameter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryStringParameter extends System.Web.UI.WebControls.Parameter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.QueryStringParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Parameter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("QueryStringField")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パラメーター オブジェクトに HTTP 要求のクエリ文字列フィールドの値をバインドします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Web.UI.WebControls.QueryStringParameter> HTTP 要求クエリ文字列の一部としてパラメーター化されたクエリまたはコマンドで使用されるパラメーターに渡されるフィールドの値をバインドするクラス。 フィールドがから取得した、<xref:System.Web.HttpRequest.QueryString%2A>コレクション。  
+  
+ パラメーターにデータをバインドするコントロールが例外をスロー、<xref:System.Web.UI.WebControls.QueryStringParameter>オブジェクトが参照されているが、対応するクエリ文字列の名前/値ペアが渡されない。 同様に、クエリ文字列フィールドの名前が対応する値を指定せずに渡された場合、データは表示されません。 このような状況を避けるためには、設定、<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>プロパティ適切な場合です。  
+  
+ <xref:System.Web.UI.WebControls.QueryStringParameter>クラスを提供、<xref:System.Web.UI.WebControls.QueryStringParameter.QueryStringField%2A>プロパティにバインドするクエリ文字列の値の名前を指定します。 継承されているプロパティも用意されています、<xref:System.Web.UI.WebControls.Parameter>クラスです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.QueryStringParameter>クラスが渡される値を検証しません。 生の値を提供します。 ただしの値を検証することができます、<xref:System.Web.UI.WebControls.QueryStringParameter>データ ソース コントロール内のオブジェクト。 これを行うには、処理、 `Selecting`、 `Updating`、 `Inserting`、または`Deleting`データのイベントのソース管理と、イベント ハンドラーのパラメーター値を確認します。 パラメーターの値が検証テストに合格しなかった場合は、設定して、データ操作を取り消すことができます、 <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> 、関連するプロパティ<xref:System.ComponentModel.CancelEventArgs>クラスを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.UI.WebControls.QueryStringParameter>でデータを表示するときに、フィルターとして使用するオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。 追加する、<xref:System.Web.UI.WebControls.QueryStringParameter>オブジェクトを<xref:System.Web.UI.WebControls.AccessDataSource>コントロールの<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション。 パラメーター オブジェクトがという名前のクエリ文字列フィールドの値をバインド`country`にその<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>文字列。 ない<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>フィールドが指定されていない場合、パラメーターのプロパティが指定されて`country`クエリ文字列と共に渡される、<xref:System.Web.UI.WebControls.AccessDataSource>スローを制御、<xref:System.NullReferenceException>例外。 フィールドの名前を付けて場合`country`が渡されますが、値がない、<xref:System.Web.UI.WebControls.GridView>コントロールにデータが表示されません。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.QueryStringParameter_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_4/CS/qsp4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.QueryStringParameter_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_4/VB/qsp4vb.aspx#1)]  
+  
+ 次の例を作成する方法を示しています、<xref:System.Web.UI.WebControls.QueryStringParameter>パラメーター化された SQL クエリを使用して、Access データベースからデータを表示するオブジェクト。 <xref:System.Web.UI.WebControls.AccessDataSource>オブジェクトにし、表示されるレコードの取得、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.GridView>コントロールを編集、また、Northwind Traders の Orders テーブルに注文の状態を更新できます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_22sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_22sql/CS/sql22cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_22sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_22sql/VB/sql22vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryStringParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい名前のないインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.QueryStringParameter>を使用して作成されたオブジェクトに、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>コンス トラクターは、そのすべてのプロパティの既定値で初期化します。 プロパティは、次のように初期化されます。  
+  
+-   <xref:System.Web.UI.WebControls.QueryStringParameter.QueryStringField%2A>空の文字列に初期化されます ("") です。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.Name%2A>空の文字列に初期化されます ("") です。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.Type%2A> は <xref:System.TypeCode?displayProperty=nameWithType> に初期化されます。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.Direction%2A> は <xref:System.Data.ParameterDirection.Input> に初期化されます。  
+  
+-   <xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A> は `null` に初期化されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>を新規作成するコンス トラクター<xref:System.Web.UI.WebControls.QueryStringParameter>パラメーターに追加し、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>のコレクション、<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。  
+  
+ [!code-csharp[System.Web.UI.WebControls.QueryStringParameter_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_1/CS/querystrparam1cs.aspx.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.QueryStringParameter_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_1/VB/querystrparam1vb.aspx.vb#2)]  
+  
+ <xref:System.Web.UI.WebControls.QueryStringParameter>にオブジェクトが追加、<xref:System.Web.UI.WebControls.AccessDataSource>制御し、は、ASP.NET Web ページで宣言されています。 <xref:System.Web.UI.WebControls.ListBox>コントロール、<xref:System.Web.UI.WebControls.AccessDataSource>バインドし、という名前のフィールドを含むクエリ文字列を含むページを要求するたびに、データを表示するコントロール`empId`対応する値を持つとします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.QueryStringParameter_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_1/CS/querystrparam1cs.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.WebControls.QueryStringParameter_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_1/VB/querystrparam1vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected QueryStringParameter (System.Web.UI.WebControls.QueryStringParameter original);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.QueryStringParameter original) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.#ctor(System.Web.UI.WebControls.QueryStringParameter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="original" Type="System.Web.UI.WebControls.QueryStringParameter" />
+      </Parameters>
+      <Docs>
+        <param name="original">A<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />インスタンスから現在のインスタンスを初期化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />クラスで指定されているインスタンスの値を使用して、<paramref name="original" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>コンス トラクターは、複製に使用される保護されたコピー コンス トラクター、<xref:System.Web.UI.WebControls.QueryStringParameter>インスタンス。 値、 <xref:System.Web.UI.WebControls.QueryStringParameter.QueryStringField%2A>、 <xref:System.Web.UI.WebControls.Parameter.Name%2A>、および<xref:System.Web.UI.WebControls.Parameter.Type%2A>プロパティは、新しいインスタンスに転送されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryStringParameter (string name, string queryStringField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string queryStringField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="queryStringField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="queryStringField">パラメーター オブジェクトにバインドされるクエリ文字列フィールドの名前です。 既定値は、空の文字列 ("") です。</param>
+        <summary>新しい名前付きのインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />クラスにバインドするには、どのクエリ文字列フィールドを識別する、指定した文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.QueryStringParameter>を使用して作成されたオブジェクトに、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>コンス トラクターは、パラメーターのバインド先のクエリ文字列フィールドを識別する指定されたパラメーター名で初期化します。 <xref:System.Web.UI.WebControls.Parameter.Type%2A>と<xref:System.Web.UI.WebControls.Parameter.Direction%2A>プロパティは既定値で初期化されます。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つ作成する方法を示しています。<xref:System.Web.UI.WebControls.QueryStringParameter>オブジェクトを使用して、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>コンス トラクターに追加すると、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールの<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コレクション。 A<xref:System.Web.UI.WebControls.GridView>場合データがコントロールに表示される、`employee`と`country`要求で渡されるクエリ文字列フィールドがあり、有効な値です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.QueryStringParameter_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_2/CS/qsp2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.QueryStringParameter_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_2/VB/qsp2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryStringParameter (string name, System.Data.DbType dbType, string queryStringField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.DbType dbType, string queryStringField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.#ctor(System.String,System.Data.DbType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dbType" Type="System.Data.DbType" />
+        <Parameter Name="queryStringField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="dbType">パラメーターのデータ型。</param>
+        <param name="queryStringField">パラメーター オブジェクトにバインドされるクエリ文字列フィールドの名前です。 既定値は、空の文字列 ("") です。</param>
+        <summary>新しい名前付きのインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />クラス、指定したクエリ文字列フィールドとパラメーターのデータ型を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryStringParameter (string name, TypeCode type, string queryStringField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.TypeCode type, string queryStringField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.#ctor(System.String,System.TypeCode,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.TypeCode" />
+        <Parameter Name="queryStringField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="type">パラメーターを表す型。 既定値は、<see cref="F:System.TypeCode.Object" /> です。</param>
+        <param name="queryStringField">パラメーター オブジェクトにバインドされるクエリ文字列フィールドの名前です。 既定値は、空の文字列 ("") です。</param>
+        <summary>新しい名前付きと厳密に型指定されたインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />クラスにバインドするには、どのクエリ文字列フィールドを識別する、指定した文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.QueryStringParameter>を使用して作成されたオブジェクトに、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>コンス トラクターは、指定されたパラメーター名、パラメーターの型およびパラメーターのバインド先のクエリ文字列フィールドを識別する文字列を初期化します。 <xref:System.Web.UI.WebControls.Parameter.Direction%2A>と<xref:System.Web.UI.WebControls.Parameter.ConvertEmptyStringToNull%2A>プロパティは既定値で初期化されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.UI.WebControls.QueryStringParameter>オブジェクトを使用して、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>コンス トラクターに追加し、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールの<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション。 A<xref:System.Web.UI.WebControls.GridView>場合データがコントロールに表示される、`employee`と`country`要求で渡されるクエリ文字列フィールドがあり、有効な値です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.QueryStringParameter_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_3/CS/qsp3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.QueryStringParameter_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_3/VB/qsp3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Parameter Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Parameter Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Parameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の複製を返します<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />インスタンス。</summary>
+        <returns>現在のインスタンスの複製。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.QueryStringParameter.Clone%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.QueryStringParameter.%23ctor%2A>の新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.QueryStringParameter>現在のインスタンスの値を使用してクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="protected override object Evaluate (System.Web.HttpContext context, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object Evaluate(class System.Web.HttpContext context, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.QueryStringParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />要求のインスタンス。</param>
+        <param name="control">ASP.NET Web に関連付けられている Web サーバー コントロールの場所のページ、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />オブジェクトを使用します。  
+  
+ **注**このパラメーターは使用されません。</param>
+        <summary>更新の値を返します、<see cref="T:System.Web.UI.WebControls.QueryStringParameter" />オブジェクト。</summary>
+        <returns>パラメーターの現在の値を表すオブジェクト。 コンテキストまたは要求がある場合<see langword="null" />、<see cref="M:System.Web.UI.WebControls.QueryStringParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />メソッドを返します。<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.QueryStringParameter>たびに、クエリ文字列フィールドにバインドしようとするオブジェクトを<xref:System.Web.UI.WebControls.QueryStringParameter.Evaluate%2A>メソッドが呼び出されます。  
+  
+ `context`がパラメーターを使用、<xref:System.Web.UI.WebControls.QueryStringParameter.Evaluate%2A>クエリ文字列から指定したクエリ文字列フィールドの値を取得します。 `control`パラメーターは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryStringField">
+      <MemberSignature Language="C#" Value="public string QueryStringField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QueryStringField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.QueryStringParameter.QueryStringField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパラメーターのバインド先のクエリ文字列フィールドの名前を設定します。</summary>
+        <value>パラメーターのバインド先のクエリ文字列フィールドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.QueryStringParameter.QueryStringField%2A>プロパティは、クエリ文字列で渡される名前/値ペアを識別します。 <xref:System.Web.UI.WebControls.QueryStringParameter.QueryStringField%2A>一方、プロパティは、ペアの名前を識別、<xref:System.Web.UI.WebControls.QueryStringParameter>プロパティは、実行時に、対応する値にバインドされています。 クエリ文字列を使用してページに期待されるクエリ文字列の名前/値ペアが渡されない場合、<xref:System.Web.UI.WebControls.QueryStringParameter.Evaluate%2A>メソッドは、パラメーターの値をバインドしよう、<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>プロパティが設定されていない、<xref:System.Web.UI.WebControls.QueryStringParameter.Evaluate%2A>パラメーター値をバインドするメソッドは失敗します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.QueryStringParameter>オブジェクトと共に、<xref:System.Web.UI.WebControls.SqlDataSource>内のデータを表示するコントロールを<xref:System.Web.UI.WebControls.ListBox>コントロール。 <xref:System.Web.UI.WebControls.QueryStringParameter.QueryStringField%2A>プロパティが予想されるクエリ文字列フィールドの名前に設定され、パラメーターに追加、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コレクション。 A<xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A>プロパティは、クエリ文字列を使用した名前/値ペアが渡されない場合に提供します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.QueryStringParameter_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_1/CS/querystrparam1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.QueryStringParameter_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.QueryStringParameter_1/VB/querystrparam1vb.aspx#1)]  
+  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.QueryStringParameter>オブジェクトと共に、<xref:System.Web.UI.WebControls.SqlDataSource>内のデータを表示するコントロールを<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.QueryStringParameter>にオブジェクトが追加、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>と共に出力パラメーターと戻り値に使用されるその他のパラメーター オブジェクトのコレクション。 データを取得するには、ストアド プロシージャから返される値を処理します。 このコード例は提供されている長い例の一部である、<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSourceStatusEventArgs_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSourceStatusEventArgs_1/CS/sql21cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSourceStatusEventArgs_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSourceStatusEventArgs_1/VB/sql21vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateInput">
+      <MemberSignature Language="C#" Value="public bool ValidateInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.QueryStringParameter.ValidateInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはか、クエリ文字列パラメーターの値が検証されているかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />クエリ パラメーターの値が検証されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合 page プロパティ<xref:System.Web.UI.Page.SkipFormActionValidation%2A>に設定されている`true`、および<xref:System.Web.UI.WebControls.QueryStringParameter.ValidateInput%2A>プロパティに設定されている`false`、クエリ文字列パラメーターは検証されません。 ただし場合、page プロパティ<xref:System.Web.UI.Page.SkipFormActionValidation%2A>に設定されている`true`、および<xref:System.Web.UI.WebControls.QueryStringParameter.ValidateInput%2A>プロパティに設定されている`true`、クエリ文字列パラメーターが検証されます。 場合 page プロパティ<xref:System.Web.UI.Page.SkipFormActionValidation%2A>に設定されている`false`、かどうかに関係なく、クエリ文字列パラメーターが検証されます、<xref:System.Web.UI.WebControls.QueryStringParameter.ValidateInput%2A>プロパティに設定されている`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

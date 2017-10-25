@@ -1,0 +1,514 @@
+<Type Name="EventLogConfiguration" FullName="System.Diagnostics.Eventing.Reader.EventLogConfiguration">
+  <TypeSignature Language="C#" Value="public class EventLogConfiguration : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventLogConfiguration extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventLogConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>イベント ログに対して静的な情報と構成設定が含まれています。 構成設定の多くは、ログを作成したイベント プロバイダーによって定義されました。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトのプロパティを変更する場合は、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+   
+  
+## Examples  
+ たとえば、このクラスを使用してコードを参照してください[する方法: 構成して、イベント ログのプロパティを読み取る](http://msdn.microsoft.com/en-us/2d2b00b3-2d1d-4567-a47e-3f5a7c1955ac)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogConfiguration (string logName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string logName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogConfiguration.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="logName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="logName">情報および構成設定を取得する対象のローカル イベント ログの名前。</param>
+        <summary>新しい初期化<see cref="T:System.Diagnostics.Eventing.Reader.EventLogConfiguration" />情報および構成設定を取得する対象のローカル イベント ログを指定することによってオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogConfiguration (string logName, System.Diagnostics.Eventing.Reader.EventLogSession session);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string logName, class System.Diagnostics.Eventing.Reader.EventLogSession session) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogConfiguration.#ctor(System.String,System.Diagnostics.Eventing.Reader.EventLogSession)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="logName" Type="System.String" />
+        <Parameter Name="session" Type="System.Diagnostics.Eventing.Reader.EventLogSession" />
+      </Parameters>
+      <Docs>
+        <param name="logName">情報および構成設定を取得する対象のイベント ログの名前。</param>
+        <param name="session">指定したログが属しているイベント ログ サービスを確認するために使用されたイベント ログ セッションです。 セッションは、ローカル コンピューターまたはリモート コンピューター上のイベント ログ サービスに接続されているか。</param>
+        <summary>新しい初期化<see cref="T:System.Diagnostics.Eventing.Reader.EventLogConfiguration" />情報および構成設定を取得する対象のログの名前を指定することによってオブジェクト。 ログは、ローカル コンピューターまたは指定されたイベント ログのセッションに基づいて、リモート コンピューターに配置できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogConfiguration.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogConfiguration.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>このオブジェクトによって使用されているアンマネージ リソースを解放し、必要に応じてマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClassicLog">
+      <MemberSignature Language="C#" Value="public bool IsClassicLog { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClassicLog" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.IsClassicLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログが、従来のイベント ログかを示すフラグを取得します。 従来のイベント ログは、そのイベントがイベント プロバイダーで使用されるマニフェスト (.xml ファイル) ではなく .mc ファイルで定義されているが、1 つです。</summary>
+        <value>返します<see langword="true" />かどうか、イベント ログ、従来のログを返します<see langword="false" />場合は、イベント ログは、従来のログではありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ログを有効または無効になっているかどうかを決定するブール値を設定します。 有効なログは、いずれかでイベントが記録されることができますと無効になっているログは、いずれかのイベントが記録されることはできません。</summary>
+        <value>返します<see langword="true" />場合は、ログが有効であり、返します<see langword="false" />場合は、ログが無効になっています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogFilePath">
+      <MemberSignature Language="C#" Value="public string LogFilePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LogFilePath" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.LogFilePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログのイベントが格納されているファイルの場所にファイルのディレクトリ パスを設定します。</summary>
+        <value>イベント ログ ファイルへのパスを表す文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogIsolation">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventLogIsolation LogIsolation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.Eventing.Reader.EventLogIsolation LogIsolation" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.LogIsolation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogIsolation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogIsolation" />イベント ログがアプリケーション、システム、またはカスタム イベント ログであるかどうかを指定する値。</summary>
+        <value>返します、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogIsolation" />値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogMode">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventLogMode LogMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.Eventing.Reader.EventLogMode LogMode" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.LogMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogMode" />イベント ログがいっぱいになったときにイベントを処理する方法を決定する値。</summary>
+        <value>返します、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogMode" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogName">
+      <MemberSignature Language="C#" Value="public string LogName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LogName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.LogName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログの名前を取得します。</summary>
+        <value>イベント ログの名前を表す文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventLogType LogType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.Eventing.Reader.EventLogType LogType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.LogType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogType" />イベント ログの種類を決定する値。</summary>
+        <value>返します、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogType" />値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSizeInBytes">
+      <MemberSignature Language="C#" Value="public long MaximumSizeInBytes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumSizeInBytes" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.MaximumSizeInBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ログ ファイルを許容する、バイト単位で最大のサイズを設定します。 ファイルには、この最大サイズに達すると、完全と見なされます。</summary>
+        <value>イベント ログ ファイルを許容する最大サイズ (バイト単位) を表す long 型の値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwningProviderName">
+      <MemberSignature Language="C#" Value="public string OwningProviderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OwningProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.OwningProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベント ログを作成したイベント プロバイダーの名前を取得します。</summary>
+        <value>このイベント ログを作成したイベント プロバイダーの名前を表す文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderBufferSize">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ProviderBufferSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ProviderBufferSize" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderBufferSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント プロバイダーはログにイベントを発行を使用するバッファーのサイズを取得します。</summary>
+        <value>Null にすることを整数値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderControlGuid">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Guid&gt; ProviderControlGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Guid&gt; ProviderControlGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderControlGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場合は、ログは、デバッグ ログは、イベント ログのコントロールのグローバル一意識別子 (GUID) を取得します。 このログはデバッグ用のログではない場合、この値は null になります。</summary>
+        <value>GUID 値または null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderKeywords">
+      <MemberSignature Language="C#" Value="public Nullable&lt;long&gt; ProviderKeywords { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int64&gt; ProviderKeywords" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderKeywords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント プロバイダーによって使用されるキーワードのマスクを設定します。</summary>
+        <value>イベント プロバイダーが、キーワードを定義していない場合は null にすることを long 型の値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderLatency">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ProviderLatency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ProviderLatency" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderLatency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントをログに発行するときにイベント プロバイダーで使用される最大遅延時間を取得します。</summary>
+        <value>イベント プロバイダーによって待機時間が指定されていない場合は null にすることを整数値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderLevel">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ProviderLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ProviderLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ログに記録されるが許可されている (をイベントの重大度を定義) イベントの最長レベルを設定します。 この値は、イベント プロバイダーによって定義されます。</summary>
+        <value>イベントのプロバイダーに定義された最大のイベント レベルがない場合は null にすることを整数値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderMaximumNumberOfBuffers">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ProviderMaximumNumberOfBuffers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ProviderMaximumNumberOfBuffers" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderMaximumNumberOfBuffers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントをイベント ログに発行する、イベント プロバイダーによって使用されるバッファーの最大数を取得します。</summary>
+        <value>イベントをイベント ログに発行する、イベント プロバイダーによって使用されるバッファーの最大数である整数値を返します。 この値を null にすることができます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderMinimumNumberOfBuffers">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ProviderMinimumNumberOfBuffers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ProviderMinimumNumberOfBuffers" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderMinimumNumberOfBuffers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントをイベント ログに発行する、イベント プロバイダーによって使用されるバッファーの最小数を取得します。</summary>
+        <value>イベントをイベント ログに発行するイベント プロバイダーによって使用されるバッファーの最小数を表す整数値を返します。 この値を null にすることができます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; ProviderNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; ProviderNames" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.ProviderNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベント ログにイベントを発行できるすべてのイベント プロバイダーの名前の列挙可能なコレクションを取得します。</summary>
+        <value>イベント プロバイダーの名前を格納する文字列の列挙可能なコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public void SaveChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成設定を保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityDescriptor">
+      <MemberSignature Language="C#" Value="public string SecurityDescriptor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SecurityDescriptor" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SecurityDescriptor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ログのセキュリティ記述子を設定します。 セキュリティ記述子は、ユーザーと、イベント ログに読み書きできるユーザーのグループを定義します。</summary>
+        <value>イベント ログのセキュリティ記述子を表す文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更された場合、呼び出し、<xref:System.Diagnostics.Eventing.Reader.EventLogConfiguration.SaveChanges%2A>メソッドの変更を保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

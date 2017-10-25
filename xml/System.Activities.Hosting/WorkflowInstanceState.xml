@@ -1,0 +1,114 @@
+<Type Name="WorkflowInstanceState" FullName="System.Activities.Hosting.WorkflowInstanceState">
+  <TypeSignature Language="C#" Value="public enum WorkflowInstanceState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WorkflowInstanceState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.WorkflowInstanceState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> の状態を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Aborted">
+      <MemberSignature Language="C#" Value="Aborted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.Hosting.WorkflowInstanceState Aborted = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Hosting.WorkflowInstanceState.Aborted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Hosting.WorkflowInstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> が中止されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスが後にこの状態であるが<xref:System.Activities.WorkflowApplication.Abort%2A>が呼び出されています。 この状態のワークフローが再開されるを使用して<xref:System.Activities.WorkflowApplication.Run%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="Complete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.Hosting.WorkflowInstanceState Complete = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Hosting.WorkflowInstanceState.Complete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Hosting.WorkflowInstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> が完了しました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この状態のワークフローは終了していると、その<xref:System.Activities.WorkflowApplication.Completed%2A>または<xref:System.Activities.WorkflowInvoker.InvokeCompleted>イベントが実行されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Idle">
+      <MemberSignature Language="C#" Value="Idle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.Hosting.WorkflowInstanceState Idle = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Hosting.WorkflowInstanceState.Idle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Hosting.WorkflowInstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> はアイドル状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この状態のワークフローが待機している、受信イベントになどを実行するとき、<xref:System.Activities.Statements.Pick>アクティビティ、またはなど、タイムアウトの期限を待機している実行時に、<xref:System.Activities.Statements.Delay>アクティビティ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Runnable">
+      <MemberSignature Language="C#" Value="Runnable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.Hosting.WorkflowInstanceState Runnable = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Hosting.WorkflowInstanceState.Runnable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Hosting.WorkflowInstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> を実行できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この状態のワークフローが作成されましたが、<xref:System.Activities.WorkflowApplication.Run%2A>が呼び出されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

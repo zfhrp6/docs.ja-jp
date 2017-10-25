@@ -1,0 +1,186 @@
+<Type Name="ImplicitResourceKey" FullName="System.Web.Compilation.ImplicitResourceKey">
+  <TypeSignature Language="C#" Value="public sealed class ImplicitResourceKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ImplicitResourceKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ImplicitResourceKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>暗黙のリソース キーを識別するフィールドが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ImplicitResourceKey>クラスには、暗黙のリソース キーを識別するフィールドが含まれています。  
+  
+ 暗黙のリソースは、次の形式のコントロールに割り当てられます。  
+  
+```  
+<asp:label runat="server" id="label1" meta:resourcekey="Welcome"  
+    text="Welcome"   
+      ie:text="Welcome Internet Explorer User"    
+    forecolor="blue"/>    
+```  
+  
+ ページは、解析時に、暗黙のリソースは、フォームの明示的なキーに変換されます [*フィルター*:]*プレフィックス*.*property*[.*サブプロパティ*] です。 指定したプレフィックスを持つリソース値 (前の例では、プレフィックスが`Welcome`) 一致するコントロールのプロパティに割り当てられました。 たとえば、値は、次のキーのリソース ファイルまたはソース コードに存在します。  
+  
+ `Welcome.Text`  
+  
+ `Ie:Welcome.Text`  
+  
+ `Welcome.Forecolor`  
+  
+ これらの値は、その対応するコントロールのプロパティに割り当てられます。  
+  
+ 暗黙のリソース キーは、ローカル リソースのみを参照できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImplicitResourceKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ImplicitResourceKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.ImplicitResourceKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImplicitResourceKey (string filter, string keyPrefix, string property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filter, string keyPrefix, string property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ImplicitResourceKey.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filter" Type="System.String" />
+        <Parameter Name="keyPrefix" Type="System.String" />
+        <Parameter Name="property" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter">暗黙のリソース キーのフィルター値。</param>
+        <param name="keyPrefix">プロパティのグループを識別するためのプレフィックス。</param>
+        <param name="property">プロパティとサブプロパティを指定すると、暗黙のリソース キーの場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ImplicitResourceKey" />の値を指定して、 <see cref="P:System.Web.Compilation.ImplicitResourceKey.Filter" />、<see cref="P:System.Web.Compilation.ImplicitResourceKey.KeyPrefix" />と<see cref="P:System.Web.Compilation.ImplicitResourceKey.Property" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public string Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ImplicitResourceKey.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または暗黙のリソース キーのフィルター値を設定します。</summary>
+        <value>A<see cref="T:System.String" />暗黙的なリソースの式のフィルターの値を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ImplicitResourceKey.Filter%2A>プロパティは、式にコロン (:) の前に、の値を参照します。 たとえば、次の形式で暗黙のリソースがあるとします。  
+  
+```  
+<asp:label runat="server" id="label1" meta:resourcekey="Welcome"  
+        text="Welcome"   
+        ie:text="Welcome Internet Explorer User"    
+        forecolor="blue"/>    
+```  
+  
+ このリソースには、可能性のあるリソース ファイルまたはソース コードから取得するリソースの値がローカライズされた 3 つのキーが含まれています。 これらのキーの 1 つは`Ie:Welcome.Text`、"Ie"では、<xref:System.Web.Compilation.ImplicitResourceKey.Filter%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyPrefix">
+      <MemberSignature Language="C#" Value="public string KeyPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyPrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ImplicitResourceKey.KeyPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のプロパティのグループを識別するためのプレフィックス。</summary>
+        <value>A<see cref="T:System.String" />式の暗黙のリソースのプレフィックスを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ImplicitResourceKey.KeyPrefix%2A>プロパティを結びつけるコントロールに割り当てることができるプロパティのコレクション。 <xref:System.Web.Compilation.ImplicitResourceKey.KeyPrefix%2A>存在する場合と、最初のピリオド (.) の前に値をプロパティがコロン (:)、式で参照します。 たとえば、次の形式で暗黙のリソースがあるとします。  
+  
+```  
+<asp:label runat="server" id="label1" meta:resourcekey="Welcome"  
+        text="Welcome"   
+        ie:text="Welcome Internet Explorer User"    
+        forecolor="blue"/>    
+```  
+  
+ このリソースには、3 つのキーが含まれています。 `Welcome.Text`、 `Ie:Welcome.Text`、および`Welcome.Forecolor`、可能性のあるがローカライズされるリソース ファイルまたはソース コードから取得するリソースの値。 各キーが`"Welcome"`として、<xref:System.Web.Compilation.ImplicitResourceKey.KeyPrefix%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public string Property { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Property" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ImplicitResourceKey.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定すると、暗黙のリソース キーの場合に、プロパティとサブプロパティを設定します。</summary>
+        <value>A<see cref="T:System.String" />プロパティとサブプロパティ式の暗黙のリソースを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ImplicitResourceKey.Property%2A>プロパティ ローカライズするコントロール プロパティを指定します。 <xref:System.Web.Compilation.ImplicitResourceKey.Property%2A>プロパティが式の 1 番目のピリオド (.) の後に値を参照します。 たとえば、次の形式で暗黙のリソースがあるとします。  
+  
+```  
+<asp:label runat="server" id="label1" meta:resourcekey="Welcome"  
+        text="Welcome"   
+        ie:text="Welcome Internet Explorer User"    
+        forecolor="blue"/>    
+```  
+  
+ このリソースには、3 つのキーが含まれています。 `Welcome.Text`、 `Ie:Welcome.Text`、および`Welcome.Forecolor`、可能性のあるがローカライズされるリソース ファイルまたはソース コードから取得するリソースの値。 これらのキーが<xref:System.Web.Compilation.ImplicitResourceKey.Property%2A>値`"Text"`、 `"Text"`、および`"Forecolor"`、それぞれします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

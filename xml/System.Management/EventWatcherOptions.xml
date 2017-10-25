@@ -1,0 +1,166 @@
+<Type Name="EventWatcherOptions" FullName="System.Management.EventWatcherOptions">
+  <TypeSignature Language="C#" Value="public class EventWatcherOptions : System.Management.ManagementOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventWatcherOptions extends System.Management.ManagementOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Management.EventWatcherOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>管理イベントを監視するためのオプションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリで Windows Management Instrumentation のマニュアルを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventWatcherOptions#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventWatcherOptions/cs/EventWatcherOptions.cs#1)]
+ [!code-vb[wminet_EventWatcherOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventWatcherOptions/vb/EventWatcherOptions.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWatcherOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventWatcherOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.EventWatcherOptions" />クラス イベントを監視するための既定値を使用します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリで Windows Management Instrumentation のマニュアルを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventWatcherOptions()#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventWatcherOptions()/cs/EventWatcherOptions().cs#1)]
+ [!code-vb[wminet_EventWatcherOptions()#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventWatcherOptions()/vb/EventWatcherOptions().vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWatcherOptions (System.Management.ManagementNamedValueCollection context, TimeSpan timeout, int blockSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementNamedValueCollection context, valuetype System.TimeSpan timeout, int32 blockSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventWatcherOptions.#ctor(System.Management.ManagementNamedValueCollection,System.TimeSpan,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Management.ManagementNamedValueCollection" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="blockSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="context">プロバイダーに渡されるプロバイダー固有の情報を含むオプションのコンテキスト オブジェクト。</param>
+        <param name="timeout">次のイベントを待機するタイムアウト値。</param>
+        <param name="blockSize">各ブロックに待機するイベントの数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.EventWatcherOptions" />指定された値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリで Windows Management Instrumentation のマニュアルを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventWatcherOptions-3#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventWatcherOptions-3/cs/EventWatcherOptions-3.cs#1)]
+ [!code-vb[wminet_EventWatcherOptions-3#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventWatcherOptions-3/vb/EventWatcherOptions-3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlockSize">
+      <MemberSignature Language="C#" Value="public int BlockSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BlockSize" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EventWatcherOptions.BlockSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはブロック操作のブロック サイズを設定します。 イベントを待機しているときに、この値は、戻る前に待機するイベントの数を指定します。</summary>
+        <value>返します、<see cref="T:System.Int32" />操作のブロックのブロック サイズを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 既定値は 1 です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリで Windows Management Instrumentation のマニュアルを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventWatcherOptions_BlockSize#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventWatcherOptions_BlockSize/cs/EventWatcherOptions_BlockSize.cs#1)]
+ [!code-vb[wminet_EventWatcherOptions_BlockSize#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventWatcherOptions_BlockSize/vb/EventWatcherOptions_BlockSize.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventWatcherOptions.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

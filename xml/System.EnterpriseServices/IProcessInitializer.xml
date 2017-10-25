@@ -1,0 +1,90 @@
+<Type Name="IProcessInitializer" FullName="System.EnterpriseServices.IProcessInitializer">
+  <TypeSignature Language="C#" Value="public interface IProcessInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProcessInitializer" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.IProcessInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("1113f52d-dc7f-4943-aed6-88d04027e32a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>COM コンポーネントの起動やシャット ダウン時に呼び出すことができるメソッドをサポートしています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.EnterpriseServices.IProcessInitializer>でインターフェイス メソッド サービス コンポーネントの初期化を実行する場合や、シャット ダウン コードとサーバー プロセス (Dllhost.exe) を起動またはシャット ダウン、それぞれします。  
+  
+ COM + に用意`Startup`と`Shutdown`Dllhost.exe の開始し、終了時にイベント。 この機能は、(以下に、サーバー コンポーネントと呼びます) のカスタムの初期化を実行し、コードをクリーンアップする COM + サーバー アプリケーションにインストールされている COM + コンポーネントを使用します。 実装する各コンポーネントのインスタンス、<xref:System.EnterpriseServices.IProcessInitializer>インターフェイスが作成および格納されているプロセスの期間のされインターフェイス メソッドにスタートアップおよびシャット ダウン中に呼び出されます。 実装された場合、 <xref:System.EnterpriseServices.ServicedComponent>、コンポーネントの登録時に、`InitializesServerApplication`内のパラメーター、`COMAdminCatalogObject`に設定されているコレクション内のコンポーネントで`true`です。  
+  
+ 使用して、`Startup`と`Shutdown`イベント、リソースの初期化、接続を作成することができます、共有、データの初期化とクリーンアップ コードを実行します。 ただし、サーバー コンポーネントのインスタンスがまだ作成されていないためには、COM + に固有の状態にアクセスする必要がありますできません。 さらに、コード、`Startup`と`Shutdown`イベントは、システムをシステム プロセスの開始後にライセンス認証を受け入れる準備を Dllhost.exe で 90 秒のみを待機するため、できるだけ迅速に返す必要があります。 Dllhost.exe が可能である 90 秒以内を通知されない場合、システム プロセスを終了します。したがって、すべての初期化プロセスはこの期間内に完了する必要があります。 初期化に参加している各サーバー コンポーネントをサポートする必要があります、<xref:System.EnterpriseServices.IProcessInitializer>インターフェイスです。 DllHost.exe スタートアップ時に、COM + 作成を呼び出し、このサービスを要求したすべてのサーバー コンポーネント`QueryInterface`の<xref:System.EnterpriseServices.IProcessInitializer>インターフェイス、および呼び出し、<xref:System.EnterpriseServices.IProcessInitializer.Startup%2A>関数。 同様に、DllHost.exe のプロセスがシャット ダウン時に呼び出し、<xref:System.EnterpriseServices.IProcessInitializer.Shutdown%2A>これらの関数が以前にインターフェイス ポインターを格納します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IProcessInitializer.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シャット ダウン操作を実行します。 Dllhost.exe をシャット ダウン時に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IProcessInitializer.Shutdown%2A>フェイルファースト、またはその他の重大なシャット ダウン イベントの間には呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Startup">
+      <MemberSignature Language="C#" Value="public void Startup (object punkProcessControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Startup([in]object punkProcessControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IProcessInitializer.Startup(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="punkProcessControl" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="punkProcessControl">Microsoft Windows XP へのポインターでは、<see langword="IUnknown" />を起動する COM コンポーネントのインターフェイスです。 Microsoft Windows 2000 では、この引数は常に<see langword="null" />です。</param>
+        <summary>起動時の初期化を実行します。 Dllhost.exe が開始されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって参照されるオブジェクト`punkProcessControl`を実装する<xref:System.EnterpriseServices.IProcessInitControl>インターフェイスです。 <xref:System.EnterpriseServices.IProcessInitControl>1 つのメソッドをサポートしている<xref:System.EnterpriseServices.IProcessInitControl.ResetInitializerTimeout%2A>です。  
+  
+ 内の初期化コード<xref:System.EnterpriseServices.IProcessInitializer.Startup%2A>呼び出すことができます、<xref:System.EnterpriseServices.IProcessInitControl.ResetInitializerTimeout%2A>コンポーネントがタイムアウトの起動前に残り秒数に設定してタイムアウトを指定しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

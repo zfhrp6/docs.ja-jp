@@ -1,0 +1,231 @@
+<Type Name="DispatcherPriority" FullName="System.Windows.Threading.DispatcherPriority">
+  <TypeSignature Language="C#" Value="public enum DispatcherPriority" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DispatcherPriority extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherPriority" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>操作がによって呼び出される優先順位について説明します、<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のシステム状態または、現在のバージョンの ApplicationIdle と ContextIdle に対応する「アイドル」がない[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  両方が有効である優先順位です。したがって、ContextIdle の優先度の操作では、SystemIdle の優先順位を持つ操作よりも高い優先順位があります。  
+  
+ <xref:System.Windows.Threading.DispatcherPriority.ApplicationIdle> CPU の割合を超えた場合、操作の実行を制限しません。  プロセスを調整する方法の 1 つのタイマーを使用するようにします。  
+  
+ 使用して、操作が通知される場合<xref:System.Windows.Threading.Dispatcher.Invoke%2A>自身で<xref:System.Windows.Threading.DispatcherPriority.ContextIdle>送信の優先度で、操作がキューをバイパスし、即座に実行します。  
+  
+<a name="xamlTextUsage_DispatcherPriority"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、呼び出し<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>引数を受け取りますデリゲートをパスします。  優先順位は Normal に設定します。  
+  
+ [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherDispatcherOneArge](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherdispatcheronearge)]
+ [!code-vb[ThreadingWeatherForecast#ThreadingWeatherDispatcherOneArge](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherdispatcheronearge)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationIdle">
+      <MemberSignature Language="C#" Value="ApplicationIdle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority ApplicationIdle = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.ApplicationIdle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 2 です。  操作は、アプリケーションがアイドル状態のときに処理されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="Background" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Background = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Background" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 4 です。  操作は、すべての他の非アイドルの操作が完了した後に処理されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextIdle">
+      <MemberSignature Language="C#" Value="ContextIdle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority ContextIdle = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.ContextIdle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 3 です。  操作は、バック グラウンド処理が完了した後に処理されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="DataBind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority DataBind = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.DataBind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 8 です。  操作は、データ バインディングと同じ優先順位で処理されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inactive">
+      <MemberSignature Language="C#" Value="Inactive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Inactive = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Inactive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 0 です。  操作は処理されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Input">
+      <MemberSignature Language="C#" Value="Input" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Input = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Input" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 5 です。  操作は、入力と同じ優先順位で処理されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="Invalid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Invalid = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Invalid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は-1 です。  これは、無効な優先順位です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Loaded">
+      <MemberSignature Language="C#" Value="Loaded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Loaded = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Loaded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 6 です。  操作は、レイアウトとレンダリングが完了すると、入力の優先順位にある項目を処理する前に処理されます。 具体的には、このような状況は、読み込まれたイベントを発生させる場合に使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Normal = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 9 です。  操作は、通常の優先順位で処理されます。  これは、一般的なアプリケーションの優先順位です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="Render" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Render = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Render" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 7 です。  表示と同じ優先順位で処理される操作です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="Send" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority Send = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.Send" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 10 です。  操作は、その他の非同期操作の前に処理されます。  これは、優先順位が高いです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemIdle">
+      <MemberSignature Language="C#" Value="SystemIdle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherPriority SystemIdle = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherPriority.SystemIdle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙値は 1 です。  操作は、システムがアイドル状態のときに処理されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

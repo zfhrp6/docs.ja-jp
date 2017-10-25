@@ -1,0 +1,65 @@
+<Type Name="DataSourceCacheExpiry" FullName="System.Web.UI.DataSourceCacheExpiry">
+  <TypeSignature Language="C#" Value="public enum DataSourceCacheExpiry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataSourceCacheExpiry extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceCacheExpiry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ASP.NET キャッシュ メカニズムを使用してキャッシュされたデータでは、タイムアウトが設定されているときに有効期限が切れる方法について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceCacheExpiry>列挙体は、データ ソース コントロールによってキャッシュされたデータが ASP.NET キャッシュで期限切れ方法について説明します。 ASP.NET データ ソース コントロールを使用して設定されている指定されたタイムアウト期間に基づいて ASP.NET キャッシュ内のデータのキャッシュ、`CacheDuration`プロパティです。 <xref:System.Web.UI.DataSourceCacheExpiry>このタイムアウト設定を使用する方法について説明します。 有効期限ポリシーは、絶対パスに設定されている場合は、データが最初にキャッシュされるため、指定された時間がから渡すときに、キャッシュされたデータが破棄されます。 有効期限ポリシーは、スライド式に設定されている場合は、指定した時間、キャッシュ エントリが使用されていない場合にのみ、キャッシュされたデータが破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.DataSourceCacheExpiry.Absolute>列挙体宣言します。 この例では、<xref:System.Web.UI.WebControls.SqlDataSource>データを表示するコントロールが使用される、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.SqlDataSource>コントロールが有効なキャッシュとその<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>アクティビティがある限りは、データをキャッシュする、「スライディング」に設定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_19sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_19sql/CS/sql19cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_19sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_19sql/VB/sql19vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Absolute">
+      <MemberSignature Language="C#" Value="Absolute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceCacheExpiry Absolute = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceCacheExpiry.Absolute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceCacheExpiry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされたデータでは、時間がで指定されたときに有効期限が切れる、<see langword="CacheDuration" />データが最初にキャッシュされるため、プロパティが渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sliding">
+      <MemberSignature Language="C#" Value="Sliding" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceCacheExpiry Sliding = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceCacheExpiry.Sliding" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceCacheExpiry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされたデータは、のみと、キャッシュ エントリが使用されていないまでの時間で指定された有効期限が切れる、<see langword="CacheDuration" />プロパティです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

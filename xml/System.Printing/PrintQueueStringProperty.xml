@@ -1,0 +1,96 @@
+<Type Name="PrintQueueStringProperty" FullName="System.Printing.PrintQueueStringProperty">
+  <TypeSignature Language="C#" Value="public class PrintQueueStringProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintQueueStringProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintQueueStringProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表し、1 つのみのいずれか、印刷キューの 3 つのプロパティ: <see cref="P:System.Printing.PrintQueue.Location" />、 <see cref="P:System.Printing.PrintQueue.Comment" />、または<see cref="P:System.Printing.PrintQueue.ShareName" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのオブジェクトが、オーバー ロードのいずれかのパラメーターとして使用、主に<xref:System.Printing.PrintServer.InstallPrintQueue%2A>のメソッド、<xref:System.Printing.PrintServer>です。 このメソッドでは、主要な 3 つの 1 つだけの初期化中に印刷キューをインストールすること<xref:System.String>プロパティです。 同じシグネチャが、メソッドのない 2 つのオーバー ロードは、同じシグネチャを持つことができますので、メソッドの 3 つの独立したオーバー ロードを持つことはできません。 別のオーバー ロードがある場合は、印刷キューをインストールし、2 つまたは複数の主要な文字列プロパティを初期化するには、 <xref:System.Printing.PrintServer.InstallPrintQueue%2A>、3 を置換する<xref:System.String>のパラメーター、<xref:System.Printing.PrintQueueStringProperty>パラメーター。 これらのパラメーターがこの順序でメジャーの文字列プロパティを設定するために使用します。 <xref:System.Printing.PrintQueue.ShareName%2A>、 <xref:System.Printing.PrintQueue.Comment%2A>、および<xref:System.Printing.PrintQueue.Location%2A>です。 初期化しないプロパティに対応するパラメーターに空の文字列を使用します。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueStringProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueStringProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintQueueStringProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintQueueStringProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表される印刷キューのプロパティの値を設定します。</summary>
+        <value>A<see cref="T:System.String" />プロパティの値を使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば場合、<xref:System.Printing.PrintQueueStringProperty.Type%2A>は<xref:System.Printing.PrintQueueStringPropertyType.Location>、 <xref:System.Printing.PrintQueueStringProperty.Name%2A> 「部署指定室」; が場合があります、<xref:System.Printing.PrintQueueStringProperty.Type%2A>は<xref:System.Printing.PrintQueueStringPropertyType.Comment>、 <xref:System.Printing.PrintQueueStringProperty.Name%2A> 「を使用してのみ A4 サイズの用紙このプリンターにします」があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueStringPropertyType Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Printing.PrintQueueStringPropertyType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintQueueStringProperty.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueStringPropertyType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が表現されている印刷キューの 3 つのプロパティを識別する値。</summary>
+        <value>A<see cref="T:System.Printing.PrintQueueStringPropertyType" />表現されている印刷キューのプロパティの種類を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintServer.InstallPrintQueue%2A>のメソッド、<xref:System.Printing.PrintServer>いることを確認するには、この情報を使用して、<xref:System.Printing.PrintQueueStringProperty.Name%2A>の正しいプロパティに値が割り当てられて、<xref:System.Printing.PrintQueue>インストールされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,71 @@
+<Type Name="SubscribeCompletedEventArgs" FullName="System.Net.PeerToPeer.Collaboration.SubscribeCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class SubscribeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SubscribeCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.SubscribeCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>該当する情報をコールバック メソッドを提供時に、<see cref="E:System.Net.PeerToPeer.Collaboration.PeerContact.SubscribeCompleted" />イベントがシグナル状態にします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PeerContact">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContact PeerContact { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerContact PeerContact" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.SubscribeCompletedEventArgs.PeerContact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />のサブスクリプションが要求されました。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />サブスクリプションの要求対象となるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は`null`のインスタンスのサブスクリプションが完了した場合<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>が関連付けられていない<xref:System.Net.PeerToPeer.Collaboration.PeerContact>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerNearMe">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerNearMe PeerNearMe { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerNearMe PeerNearMe" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.SubscribeCompletedEventArgs.PeerNearMe" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerNearMe</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />サブスクリプションが要求されます。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />サブスクリプションの要求対象となるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は`null`のインスタンスで、サブスクリプションが要求される場合<xref:System.Net.PeerToPeer.Collaboration.PeerContact>「近くの人」スコープに存在しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

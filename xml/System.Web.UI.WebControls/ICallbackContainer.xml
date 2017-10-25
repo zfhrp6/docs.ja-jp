@@ -1,0 +1,60 @@
+<Type Name="ICallbackContainer" FullName="System.Web.UI.WebControls.ICallbackContainer">
+  <TypeSignature Language="C#" Value="public interface ICallbackContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICallbackContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ICallbackContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールがコールバック スクリプトを取得できるようにするメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラス、<xref:System.Web.UI.WebControls.ICallbackContainer>インターフェイスは、サーバーへのコールバックを開始するスクリプトを使用してコントロールを提供します。 コールバックは、ページのコールバックの処理でページを再作成ページによって保持されている状態情報を変更せずにより一般的なポストバックとは異なります。 コールバックを作成する方法の詳細については、次を参照してください。[ポストバックなしクライアント コールバックの実装](http://msdn.microsoft.com/library/dfaaa7d4-e1f2-4322-b2f5-796e0419f185)です。  
+  
+ 実装するクラス、<xref:System.Web.UI.WebControls.ICallbackContainer>インターフェイスが実装する必要も、<xref:System.Web.UI.ICallbackEventHandler>コントロールによって生成されるイベントを処理するインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCallbackScript">
+      <MemberSignature Language="C#" Value="public string GetCallbackScript (System.Web.UI.WebControls.IButtonControl buttonControl, string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetCallbackScript(class System.Web.UI.WebControls.IButtonControl buttonControl, string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ICallbackContainer.GetCallbackScript(System.Web.UI.WebControls.IButtonControl,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buttonControl" Type="System.Web.UI.WebControls.IButtonControl" />
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="buttonControl">コールバック要求を開始するコントロール。</param>
+        <param name="argument">コールバック スクリプトの作成に使用される引数。</param>
+        <summary>Web サーバーにクライアントのコールバックを開始するためのスクリプトを作成します。</summary>
+        <returns>スクリプト、クライアントで実行すると、Web サーバーへのコールバックが開始されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.WebControls.ICallbackContainer.GetCallbackScript%2A>メソッドは、クライアントでは、ときに実行を開始する Web サーバーへのコールバック スクリプトを返す必要があります。  
+  
+ `argument`パラメーターに渡された、<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>コールバックを処理するメソッド。  
+  
+ コールバックを作成する方法の詳細については、次を参照してください。[ポストバックなしクライアント コールバックの実装](http://msdn.microsoft.com/library/dfaaa7d4-e1f2-4322-b2f5-796e0419f185)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

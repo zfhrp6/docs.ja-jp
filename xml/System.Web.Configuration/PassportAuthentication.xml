@@ -1,0 +1,152 @@
+<Type Name="PassportAuthentication" FullName="System.Web.Configuration.PassportAuthentication">
+  <TypeSignature Language="C#" Value="public sealed class PassportAuthentication : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PassportAuthentication extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.PassportAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This type is obsolete. The Passport authentication product is no longer supported and has been superseded by Live ID.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET アプリケーションでは、Passport ベースの認証を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.PassportAuthentication>クラスでは、アクセスし、Machine.config または Web.config 構成ファイル内で識別されるノードを構成することができます、`passport`タグ。  
+  
+ この型が所属するグループの一部、 <xref:System.Web.Configuration.AuthenticationSection>、 <xref:System.Web.Configuration.FormsAuthenticationConfiguration>、および<xref:System.Web.Configuration.AuthenticationMode>型です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.PassportAuthentication>クラスは、コンピューター、サイト、またはアプリケーション レベルでのみ構成ファイルの関連セクションに情報を書き込むことができます。 階層内のさまざまなレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 このクラスを使用するには、階層内の任意のレベルで構成情報を読み取れません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.PassportAuthentication>既存の Web アプリケーションの構成ファイルからのオブジェクト。 また、構成の例も示します。  
+  
+```  
+<authentication>  
+  <passport redirectUrl="Login.aspx"/>  
+</authentication>  
+```  
+  
+ [!code-csharp[System.Web.Configuration.PassportAuthentication#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PassportAuthentication/CS/passportauthentication.cs#1)]
+ [!code-vb[System.Web.Configuration.PassportAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PassportAuthentication/VB/passportauthentication.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PassportAuthentication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.PassportAuthentication.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.PassportAuthentication" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.PassportAuthentication>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.PassportAuthentication#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PassportAuthentication/CS/passportauthentication.cs#2)]
+ [!code-vb[System.Web.Configuration.PassportAuthentication#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PassportAuthentication/VB/passportauthentication.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PassportAuthentication.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PassportAuthentication.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectUrl">
+      <MemberSignature Language="C#" Value="public string RedirectUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RedirectUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PassportAuthentication.RedirectUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("redirectUrl", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求をリダイレクトする URL を設定します。</summary>
+        <value>要求がリダイレクトされるページの URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.PassportAuthentication.RedirectUrl%2A> Passport 認証が必要と、ユーザーが署名されていません Passport 認証を使用する場合に要求をリダイレクトする必要があります、ページの URL を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PassportAuthentication.RedirectUrl%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PassportAuthentication#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PassportAuthentication/CS/passportauthentication.cs#3)]
+ [!code-vb[System.Web.Configuration.PassportAuthentication#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PassportAuthentication/VB/passportauthentication.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

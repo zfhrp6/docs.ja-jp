@@ -1,0 +1,81 @@
+<Type Name="ChangeInterceptorAttribute" FullName="System.Data.Services.ChangeInterceptorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ChangeInterceptorAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ChangeInterceptorAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.ChangeInterceptorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Services.ChangeInterceptorAttribute" /> は、指定したエンティティ セット名の更新を処理する目的でメソッドに適用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース レベルの変更の承認と検証は、<xref:System.Data.Services.ChangeInterceptorAttribute> で注釈を付けたメソッドによって実装されます。 [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] は、エンティティごとの変更の処理規則や検証をサービスの開発者がプログラミングするために必要なインフラストラクチャを備えています。  
+  
+ エンティティ レベルのアクセス制御や検証は、クエリ インターセプターを介して適用することができます。 詳細については、「<xref:System.Data.Services.QueryInterceptorAttribute>」を参照してください。  
+  
+-  
+  
+   
+  
+## Examples  
+ 詳細については、<xref:System.Data.Services.QueryInterceptorAttribute> のトピックに記載された例を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChangeInterceptorAttribute (string entitySetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string entitySetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.ChangeInterceptorAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">インターセプターの適用対象となるエンティティを含んだエンティティ セットの名前。</param>
+        <summary><paramref name="entitySetName" /> パラメーターで指定されたエンティティ セットの新しい変更インターセプターを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntitySetName">
+      <MemberSignature Language="C#" Value="public string EntitySetName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EntitySetName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.ChangeInterceptorAttribute.EntitySetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターセプターの適用対象となるエンティティ セットの名前を取得します。</summary>
+        <value>エンティティ セットの名前を表す文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,866 @@
+<Type Name="BackgroundWorker" FullName="System.ComponentModel.BackgroundWorker">
+  <TypeSignature Language="C#" Value="public class BackgroundWorker : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BackgroundWorker extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.BackgroundWorker" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("DoWork")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別個のスレッドに対する操作を実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BackgroundWorker>クラスでは、別々 の専用スレッドで操作を実行することができます。 ダウンロードやデータベースのトランザクションのように時間のかかる操作には、ユーザー インターフェイス (UI) を実行中の応答を停止したかのように見える可能性があります。 UI 応答性と、このような操作に関連付けられている長い遅延に直面した場合に、<xref:System.ComponentModel.BackgroundWorker>クラスには、便利なソリューションが用意されています。  
+  
+ バック グラウンドで、時間のかかる操作を実行するには、作成、<xref:System.ComponentModel.BackgroundWorker>の操作が完了すると、操作と信号の進行状況を報告するイベントのリッスンとします。 作成することができます、<xref:System.ComponentModel.BackgroundWorker>プログラムからフォームにドラッグすることができますか、**コンポーネント**のタブ、**ツールボックス**です。 作成する場合、<xref:System.ComponentModel.BackgroundWorker>コンポーネント トレイに表示される、Windows フォーム デザイナーで、およびそのプロパティがプロパティ ウィンドウに表示されます。  
+  
+ バック グラウンド操作の設定のイベント ハンドラーを追加、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント。 このイベント ハンドラーで、時間のかかる操作を呼び出します。 操作を開始するには、呼び出す<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>です。 更新の進行状況の通知を受信するには、処理、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>イベント。 操作が完了したときに、通知を受信、処理、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント。  
+  
+> [!NOTE]
+>  すべてのユーザー インターフェイス オブジェクトを操作しないように注意する必要があります、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント ハンドラー。 代わりに、ユーザー インターフェイスを介しての通信、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>と<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント。  
+>   
+>  <xref:System.ComponentModel.BackgroundWorker>イベント間でマーシャ リングされない<xref:System.AppDomain>境界です。 使用しないで、<xref:System.ComponentModel.BackgroundWorker>コンポーネントを 1 つ以上でマルチ スレッド操作を実行<xref:System.AppDomain>です。  
+  
+ バック グラウンド操作では、パラメーターが必要とする場合は、呼び出す<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>パラメーターを使用します。 内部、 <xref:System.ComponentModel.BackgroundWorker.DoWork> 、イベント ハンドラーからパラメーターを抽出することができます、<xref:System.ComponentModel.DoWorkEventArgs.Argument%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 詳細については<xref:System.ComponentModel.BackgroundWorker>を参照してください[する方法: バック グラウンドで操作を実行](~/docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの基本、<xref:System.ComponentModel.BackgroundWorker>時間のかかる操作を非同期的に実行するためのクラスです。 次の図は、出力の例を示します。  
+  
+ ![BackgroundWorker の簡単な例](~/add/media/backgroundworker-simple.png "BackgroundWorker の簡単な例")  
+  
+ このコードを実行するには、Windows フォーム アプリケーションを作成します。 追加、<xref:System.Windows.Forms.Label>という名前のコントロール`resultLabel`2 つの追加と<xref:System.Windows.Forms.Button>という名前のコントロール`startAsyncButton`と`cancelAsyncButton`です。 作成<xref:System.Windows.Forms.Control.Click>両方のボタンのイベント ハンドラー。 **コンポーネント** タブ、ツールボックスの追加、<xref:System.ComponentModel.BackgroundWorker>という名前のコンポーネント`backgroundWorker1`です。 作成<xref:System.ComponentModel.BackgroundWorker.DoWork>、 <xref:System.ComponentModel.BackgroundWorker.ProgressChanged>、および<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>のイベント ハンドラー、<xref:System.ComponentModel.BackgroundWorker>です。 フォームのコードでは、次のコードで、既存のコードを置き換えます。  
+  
+ [!code-csharp[System.ComponentModel.BackgroundWorkerSimple#1](~/samples/snippets/csharp/VS_Snippets_Winforms/system.componentmodel.backgroundworkersimple/cs/form1.cs#1)]
+ [!code-vb[System.ComponentModel.BackgroundWorkerSimple#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/system.componentmodel.backgroundworkersimple/vb/form1.vb#1)]  
+  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker>時間のかかる操作を非同期的に実行するためのクラスです。 次の図は、出力の例を示します。  
+  
+ ![BackgroundWorker フィボナッチの例](~/add/media/backgroundworker-fibonacci.png "BackgroundWorker フィボナッチの例")  
+  
+ 操作は、選択のフィボナッチ数を計算、計算の進行に伴う、進行状況の更新を報告し、キャンセルする保留中の計算を許可します。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#1)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#1)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BackgroundWorker ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.BackgroundWorker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.ComponentModel.BackgroundWorker>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAsync">
+      <MemberSignature Language="C#" Value="public void CancelAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.CancelAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中のバック グラウンド操作の取り消しを要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>保留中のバック グラウンド操作を終了する要求を送信し、設定、<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>プロパティを`true`です。  
+  
+ 呼び出すと<xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>、ワーカー メソッドにその実行と終了を停止する機会がします。 ワーカーのコードを定期的にチェックする必要があります、<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>プロパティ設定されていることを確認して`true`です。  
+  
+> [!CAUTION]
+>  注意してくださいをコードに、<xref:System.ComponentModel.BackgroundWorker.DoWork>キャンセル要求が作成されると、ポーリング ループを見逃す可能性があります、イベント ハンドラーがその作業を完了可能性があります<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>に設定されている`true`です。 ここでは、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>フラグ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>で、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント ハンドラーに設定されていない`true`キャンセル要求が行われた場合でも、します。 このような状況が呼び出された、*競合状態*マルチ スレッド プログラミングの一般的な問題になるとします。 マルチ スレッド デザインの詳細については、問題を参照してください[マネージ スレッド処理の実施](~/docs/standard/threading/managed-threading-best-practices.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>非同期 (""バック グラウンド) 操作をキャンセルするメソッド。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#4)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#4)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancellationPending">
+      <MemberSignature Language="C#" Value="public bool CancellationPending { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancellationPending" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.CancellationPending" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがバック グラウンド操作のキャンセルを要求したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />アプリケーションがバック グラウンド操作のキャンセルを要求した場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>は`true`、<xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>でメソッドが呼び出されて、<xref:System.ComponentModel.BackgroundWorker>です。  
+  
+ このプロパティは定期的に確認する必要があります、ワーカー スレッドで使用するもの<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>に設定されているときに、バック グラウンド操作を中止し、`true`です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>プロパティ クエリを<xref:System.ComponentModel.BackgroundWorker>キャンセル状態に関するします。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#8)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#8)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoWork">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.DoWorkEventHandler DoWork;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.DoWorkEventHandler DoWork" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.BackgroundWorker.DoWork" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DoWorkEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに<see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync" />と呼びます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントを呼び出すとき、<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>メソッドです。 これは、可能性のある時間のかかる操作を実行する操作を開始する場所です。  
+  
+ コードに、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント ハンドラーを定期的に確認する必要があります、<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>とプロパティ値の場合は、操作の中止`true`です。 これが発生したときに設定できます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>フラグ<xref:System.ComponentModel.DoWorkEventArgs?displayProperty=nameWithType>に`true`、および<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>のフラグ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>で、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント ハンドラーに設定されます`true`です。  
+  
+> [!CAUTION]
+>  注意してくださいをコードに、<xref:System.ComponentModel.BackgroundWorker.DoWork>キャンセル要求が作成されると、ポーリング ループを見逃す可能性があります、イベント ハンドラーがその作業を完了可能性があります<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>に設定されている`true`です。 ここでは、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>フラグ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>で、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント ハンドラーに設定されていない`true`キャンセル要求が行われた場合でも、します。 このような状況が呼び出された、*競合状態*マルチ スレッド プログラミングの一般的な問題になるとします。 マルチ スレッド デザインの詳細については、問題を参照してください[マネージ スレッド処理の実施](~/docs/standard/threading/managed-threading-best-practices.md)です。  
+  
+ 場合は、演算結果が、結果を割り当てることができます、<xref:System.ComponentModel.DoWorkEventArgs.Result%2A?displayProperty=nameWithType>プロパティです。 これが利用できる、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>内のイベント ハンドラー、<xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 操作コードを処理しません、例外が発生した場合、 <xref:System.ComponentModel.BackgroundWorker> 、例外をキャッチし、これに、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>として公開される場所、イベント ハンドラー、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティの<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>します。 デバッガーが段階で中断されている Visual Studio デバッガーの下で実行している場合、<xref:System.ComponentModel.BackgroundWorker.DoWork>未処理の例外が発生したイベント ハンドラー。 複数ある場合<xref:System.ComponentModel.BackgroundWorker>、参照しないでくださいそれらを直接結合はこれに応じて、<xref:System.ComponentModel.BackgroundWorker.DoWork>の特定のインスタンスをイベント ハンドラー<xref:System.ComponentModel.BackgroundWorker>です。 代わりに、アクセスする必要があります、<xref:System.ComponentModel.BackgroundWorker>でキャスト、`sender`内のパラメーター、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント ハンドラー。  
+  
+ すべてのユーザー インターフェイス オブジェクトを操作しないように注意する必要があります、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント ハンドラー。 代わりに、ユーザー インターフェイスを介しての通信、<xref:System.ComponentModel.BackgroundWorker>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.DoWork>非同期操作を開始するイベントです。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#5)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#5)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBusy">
+      <MemberSignature Language="C#" Value="public bool IsBusy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBusy" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.IsBusy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.ComponentModel.BackgroundWorker" />非同期操作を実行しています。</summary>
+        <value>
+          <see langword="true" />、場合、<see cref="T:System.ComponentModel.BackgroundWorker" />非同期操作を実行している、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BackgroundWorker>を呼び出すときに非同期操作を開始<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.BackgroundWorker.IsBusy%2A>の完了を待つプロパティ、<xref:System.ComponentModel.BackgroundWorker>操作します。 このコード例で説明されている長い例の一部である[する方法: ファイルをダウンロードするバック グラウンドで](~/docs/framework/winforms/controls/how-to-download-a-file-in-the-background.md)です。  
+  
+ [!code-csharp[System.ComponentModel.BackgroundWorker.IsBusy#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.IsBusy/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BackgroundWorker.IsBusy#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.IsBusy/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDoWork">
+      <MemberSignature Language="C#" Value="protected virtual void OnDoWork (System.ComponentModel.DoWorkEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDoWork(class System.ComponentModel.DoWorkEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.OnDoWork(System.ComponentModel.DoWorkEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.DoWorkEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.BackgroundWorker.DoWork" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnProgressChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnProgressChanged (System.ComponentModel.ProgressChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnProgressChanged(class System.ComponentModel.ProgressChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.OnProgressChanged(System.ComponentModel.ProgressChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.ProgressChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.BackgroundWorker.OnProgressChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.OnProgressChanged%2A>に非同期操作の進行状況を報告するメソッド。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#24](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#24)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#24](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.ComponentModel.BackgroundWorker.OnProgressChanged(System.ComponentModel.ProgressChangedEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.ComponentModel.BackgroundWorker.OnProgressChanged(System.ComponentModel.ProgressChangedEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRunWorkerCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnRunWorkerCompleted (System.ComponentModel.RunWorkerCompletedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRunWorkerCompleted(class System.ComponentModel.RunWorkerCompletedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.RunWorkerCompletedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.BackgroundWorker.RunWorkerCompleted" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.ProgressChangedEventHandler ProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.ProgressChangedEventHandler ProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.BackgroundWorker.ProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ProgressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに<see cref="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32)" />と呼びます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントを呼び出すとき、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>メソッドです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>をユーザーに非同期操作の進行状況を報告するイベントです。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#7)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#7)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportProgress">
+      <MemberSignature Language="C#" Value="public void ReportProgress (int percentProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReportProgress(int32 percentProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="percentProgress" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="percentProgress">0 ~ 100、バック グラウンド操作が完了した割合です。</param>
+        <summary><see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことができます、進行状況を報告するバック グラウンド操作を必要がある場合、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>させる方法、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>イベント。 <xref:System.ComponentModel.BackgroundWorker.WorkerReportsProgress%2A>プロパティの値である必要があります`true`、または<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>がスローされます、<xref:System.InvalidOperationException>です。  
+  
+ 合計タスクの完了の割合としてバック グラウンド操作の進行状況を測定するための意味のある方法を実装することの責任です。  
+  
+ 呼び出し、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>メソッドは非同期でありが直ちに返されます。 <xref:System.ComponentModel.BackgroundWorker.ProgressChanged>イベント ハンドラーを作成したスレッドの実行、<xref:System.ComponentModel.BackgroundWorker>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>にユーザーを非同期操作の進行状況を報告するメソッド。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#8)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#8)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.ComponentModel.BackgroundWorker.WorkerReportsProgress" /> プロパティが <see langword="false" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportProgress">
+      <MemberSignature Language="C#" Value="public void ReportProgress (int percentProgress, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReportProgress(int32 percentProgress, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="percentProgress" Type="System.Int32" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="percentProgress">0 ~ 100、バック グラウンド操作が完了した割合です。</param>
+        <param name="userState">渡される状態オブジェクト<see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" />です。</param>
+        <summary><see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことができます、進行状況を報告するバック グラウンド操作を必要がある場合、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>させる方法、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>イベント。 <xref:System.ComponentModel.BackgroundWorker.WorkerReportsProgress%2A>プロパティの値にする必要があります`true`、または<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>がスローされます、<xref:System.InvalidOperationException>です。  
+  
+ 合計タスクの完了の割合としてバック グラウンド操作の進行状況を測定するための意味のある方法を実装することの責任です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>にユーザーを非同期操作の進行状況を報告するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripProgressBar>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripProgressBar#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripProgressBar/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.ToolStripProgressBar#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripProgressBar/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.ComponentModel.BackgroundWorker.WorkerReportsProgress" /> プロパティが <see langword="false" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RunWorkerAsync">
+      <MemberSignature Language="C#" Value="public void RunWorkerAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RunWorkerAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バック グラウンド操作の実行を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>メソッドが非同期的に実行された操作を開始する要求を送信します。 要求が処理されるときに、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベントを発生すると、さらに、バック グラウンド操作の実行を開始します。  
+  
+ バック グラウンド処理が既に実行されている場合は、呼び出す<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>再度を発生させる、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>メソッドを非同期操作を開始します。 説明されている長い例の一部である[する方法: ファイルをダウンロードするバック グラウンドで](~/docs/framework/winforms/controls/how-to-download-a-file-in-the-background.md)です。  
+  
+ [!code-csharp[System.ComponentModel.BackgroundWorker.IsBusy#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.IsBusy/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BackgroundWorker.IsBusy#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.IsBusy/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> は <see langword="true" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RunWorkerAsync">
+      <MemberSignature Language="C#" Value="public void RunWorkerAsync (object argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RunWorkerAsync(object argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="argument">実行するバック グラウンド処理で使用するためのパラメーター、<see cref="E:System.ComponentModel.BackgroundWorker.DoWork" />イベント ハンドラー。</param>
+        <summary>バック グラウンド操作の実行を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>メソッドが非同期的に実行された操作を開始する要求を送信します。 要求が処理されるときに、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベントを発生すると、さらに、バック グラウンド操作の実行を開始します。  
+  
+ 操作は、パラメーターを必要とする場合、としてを指定できます、`argument`パラメーターを<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>です。  
+  
+ バック グラウンド処理が既に実行されている場合は、呼び出す<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>再度を発生させる、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>メソッドを非同期操作を開始します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#3)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#3)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> は <see langword="true" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RunWorkerCompleted">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.RunWorkerCompletedEventHandler RunWorkerCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.RunWorkerCompletedEventHandler RunWorkerCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.BackgroundWorker.RunWorkerCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.RunWorkerCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バック グラウンド処理が完了した、取り消された、または例外が発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが発生したときに、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント ハンドラーを返します。  
+  
+ 操作が正常に完了してでその結果が割り当てられているかどうか、<xref:System.ComponentModel.BackgroundWorker.DoWork>を介して結果にアクセスする、イベント ハンドラー、<xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>操作によって例外がスローされたことを示します。  
+  
+ <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>プロパティ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>バック グラウンド操作で、キャンセル要求を処理するかどうかを示します。 場合で自分のコード、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント ハンドラーをチェックして、キャンセル要求を検出した、<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>フラグと設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のフラグ<xref:System.ComponentModel.DoWorkEventArgs?displayProperty=nameWithType>に`true`、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>のフラグ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>にも設定されます`true`です。  
+  
+> [!CAUTION]
+>  注意してくださいをコードに、<xref:System.ComponentModel.BackgroundWorker.DoWork>キャンセル要求が作成されると、ポーリング ループを見逃す可能性があります、イベント ハンドラーがその作業を完了可能性があります<xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A>に設定されている`true`です。 ここでは、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>フラグ<xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>で、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント ハンドラーに設定されていない`true`キャンセル要求が行われた場合でも、します。 このような状況が呼び出された、*競合状態*マルチ スレッド プログラミングの一般的な問題になるとします。 マルチ スレッド デザインの詳細については、問題を参照してください[マネージ スレッド処理の実施](~/docs/standard/threading/managed-threading-best-practices.md)です。  
+  
+ <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント ハンドラーが常に確認する必要があります、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=nameWithType>と<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A?displayProperty=nameWithType>プロパティにアクセスする前に、<xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType>プロパティです。 例外が発生した場合、または操作が取り消された場合へのアクセス、<xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType>プロパティが例外を発生させます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>非同期操作の結果を処理するイベントです。 このコード例に示されている例の一部である、<xref:System.ComponentModel.BackgroundWorker>クラスです。  
+  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#6)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#6)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkerReportsProgress">
+      <MemberSignature Language="C#" Value="public bool WorkerReportsProgress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WorkerReportsProgress" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.WorkerReportsProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.ComponentModel.BackgroundWorker" />進行状況をレポートできます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.BackgroundWorker" />進行状況の更新をサポートしています。 それ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.BackgroundWorker.WorkerReportsProgress%2A>プロパティを`true`する場合は、<xref:System.ComponentModel.BackgroundWorker>進行状況の更新をサポートするためにします。 このプロパティが`true`、ユーザー コードを呼び出すことができます、<xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A>させる方法、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkerSupportsCancellation">
+      <MemberSignature Language="C#" Value="public bool WorkerSupportsCancellation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WorkerSupportsCancellation" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.ComponentModel.BackgroundWorker" />が非同期のキャンセルをサポートします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.BackgroundWorker" />キャンセルをサポートしています。 それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation%2A>プロパティを`true`する場合は、<xref:System.ComponentModel.BackgroundWorker>取り消しをサポートします。 このプロパティが`true`、呼び出すことができます、<xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>バック グラウンド操作を中断するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,308 @@
+<Type Name="LinqDataSourceUpdateEventArgs" FullName="System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs">
+  <TypeSignature Language="C#" Value="public class LinqDataSourceUpdateEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinqDataSourceUpdateEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.LinqDataSource.Updating" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs>オブジェクトは、のいずれかのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 使用することができます、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs>をデータ ソースの更新操作が実行される前に、データを調べるオブジェクト。 データを検証、データ クラスによってスローされた検証例外、または更新前に、の値を変更し、ことができます。 また、更新操作を取り消すことができます。  
+  
+ <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A>オブジェクトには、最初に、データ ソースから取得したデータが含まれています。 <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>オブジェクトには、更新操作中に、データ ソースに保存されるデータが含まれています。  
+  
+ データ ソースを表すオブジェクトが、データを更新する前に検証例外がスローされた場合、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception%2A>プロパティにはインスタンスが含まれています、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException>クラスです。 すべての検証例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>プロパティです。 検証例外がスローされない場合、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception%2A>プロパティが含まれます`null`です。 検証の例外を処理して再スローされる例外を作成したくない場合は、設定、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.ExceptionHandled%2A>プロパティを`true`です。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.LinqDataSource>いるものを除き、Web ページで状態管理ストアが、元に値をデータ ソースから<xref:System.Data.Linq.Mapping.ColumnAttribute>属性マークが付いている`UpdateCheck.Never`です。 LINQ to SQL は、自動的にデータを更新する前に、データの整合性をチェックします。 この機能を使用するには、ビュー ステートに格納されている元の値をデータ ソースの現在の値を比較します。 LINQ to SQL では、データ ソースの値が変更された場合に例外が発生します。 ハンドラーを作成することで、追加のデータ検証を行うことができます、<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 例からのプロパティを比較する方法を示します、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A>プロパティおよび<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティを決定するかどうかの値、`Category`プロパティが変更されました。 場合は、`CategoryChanged`内のオブジェクトのプロパティ、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティに設定されている`true`です。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Updating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Updating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/vb/Default.aspx.vb#1)]  
+  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Updating(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceUpdateEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message & "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Updating(object sender,   
+        LinqDataSourceUpdateEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceUpdateEventArgs (System.Web.UI.WebControls.LinqDataSourceValidationException exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.LinqDataSourceValidationException exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.#ctor(System.Web.UI.WebControls.LinqDataSourceValidationException)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Web.UI.WebControls.LinqDataSourceValidationException" />
+      </Parameters>
+      <Docs>
+        <param name="exception">更新するデータを検証するときに発生した例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs" />指定された例外を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceUpdateEventArgs (object originalObject, object newObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object originalObject, object newObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.#ctor(System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalObject" Type="System.Object" />
+        <Parameter Name="newObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="originalObject">指定された型のオブジェクト、<see cref="P:System.Web.UI.WebControls.LinqDataSource.TableName" />データ ソースから取得された初期値を格納するプロパティです。</param>
+        <param name="newObject">指定された型のオブジェクト、<see cref="P:System.Web.UI.WebControls.LinqDataSource.TableName" />データ ソースに保存される値を格納するプロパティです。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.LinqDataSourceValidationException Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.LinqDataSourceValidationException Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LinqDataSourceValidationException</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作の前に、データの検証中にスローされた例外を取得します。</summary>
+        <value>エラーが発生しました; 場合は、例外それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 更新操作が実行される前に検証例外が発生する場合、例外は、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception%2A>プロパティです。 イベント ハンドラーで、<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベントでの例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Updating(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceUpdateEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message & "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Updating(object sender,   
+        LinqDataSourceUpdateEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはをことがスローされない再度、例外が処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーを作成することができます、<xref:System.Web.UI.WebControls.LinqDataSource.Updating>更新操作の前に発生した検証の例外を検査するイベントです。 例外の処理を再度スローすることは望ましくない場合は、設定、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.ExceptionHandled%2A>プロパティを`true`です。 設定しない場合、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.ExceptionHandled%2A>プロパティを`true`例外は、呼び出し履歴内の次のイベント ハンドラーに反映されます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Updating(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceUpdateEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message & "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Updating(object sender,   
+        LinqDataSourceUpdateEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewObject">
+      <MemberSignature Language="C#" Value="public object NewObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NewObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースに保存される値を含むオブジェクトを取得します。</summary>
+        <value>指定された型のオブジェクト、<see cref="P:System.Web.UI.WebControls.LinqDataSource.TableName" />を保存するデータを格納するプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーを作成、<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベントを取得、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティ、データを検証します。 また、データを変更したり、更新操作をキャンセルできます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 例からのプロパティを比較する方法を示します、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A>プロパティおよび<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティを決定するかどうかの値、`Category`プロパティが変更されました。 場合は、`CategoryChanged`内のオブジェクトのプロパティ、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティに設定されている`true`です。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Updating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Updating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalObject">
+      <MemberSignature Language="C#" Value="public object OriginalObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object OriginalObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースから取得された元の値を含むオブジェクトを取得します。</summary>
+        <value>指定された型のオブジェクト、<see cref="P:System.Web.UI.WebControls.LinqDataSource.TableName" />データ ソースから取得されたデータを格納するプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A>データ ソースの現在の値に対して元の値を確認および更新操作をキャンセルしたり、他の操作を行ったりするプロパティです。  
+  
+ <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A> Web ページ ビューに永続化されるプロパティのみが状態のプロパティに値が含まれます。 プロパティは、このような状況下で永続化されます。  
+  
+-   ときにデータ バインド コントロールに表示されます。  
+  
+-   ときに、<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Data.Linq.Mapping.ColumnAttribute?displayProperty=nameWithType>属性に設定されている`Always`または`WhenChanged`です。  
+  
+ 場合、<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>プロパティに設定されている`Never`と値がデータ バインド コントロールに表示されない場合、値は、Web ページには格納されません。 その場合は、割り当てることができないを<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 例からのプロパティを比較する方法を示します、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject%2A>プロパティおよび<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティを決定するかどうかの値、`Category`プロパティが変更されました。 場合は、`CategoryChanged`内のオブジェクトのプロパティ、<xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject%2A>プロパティに設定されている`true`です。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Updating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Updating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

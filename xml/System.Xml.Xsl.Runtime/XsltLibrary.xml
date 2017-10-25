@@ -1,0 +1,469 @@
+<Type Name="XsltLibrary" FullName="System.Xml.Xsl.Runtime.XsltLibrary">
+  <TypeSignature Language="C#" Value="public sealed class XsltLibrary" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XsltLibrary extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.Runtime.XsltLibrary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlXml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して異なる<see langword="XPath" />と<see langword="XSLT" />関数。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CheckScriptNamespace">
+      <MemberSignature Language="C#" Value="public int CheckScriptNamespace (string nsUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 CheckScriptNamespace(string nsUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.CheckScriptNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nsUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="nsUri">名前空間の URI。</param>
+        <summary>拡張機能とスクリプトの名前空間が衝突していないかを確認します。</summary>
+        <returns>内部のインフラストラクチャ専用の整数。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ElementAvailable">
+      <MemberSignature Language="C#" Value="public bool ElementAvailable (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ElementAvailable(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.ElementAvailable(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">XML 修飾名。</param>
+        <summary>XML 修飾名を表す文字列へと引数を評価します。 このメソッドを実装する、<c>要素が利用できる</c>で指定された関数[W3C XSL Transformations (XSLT)](http://go.microsoft.com/fwlink/?LinkID=49919)です。</summary>
+        <returns>
+          <see langword="true" />場合、[展開名](http://go.microsoft.com/fwlink/?LinkId=148269)命令の名前を指定します。 場合、 <see langword="expanded name" /> XSLT で定義された要素を参照し、URI に一致する XSLT 名前空間 URI、名前空間があります。 それ以外の場合、拡張名は拡張要素を参照します。 場合、 <see langword="expanded name" /> 、要素の使用可能な関数は名前空間 URI を null には<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾名に展開、`expanded name`式のスコープの名前空間の宣言を使用しています。 <xref:System.Xml.Xsl.Runtime.XsltLibrary.ElementAvailable%2A>関数が返される`true`場合にのみ、`expanded name`命令の名前を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EqualityOperator">
+      <MemberSignature Language="C#" Value="public bool EqualityOperator (double opCode, System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; left, System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool EqualityOperator(float64 opCode, class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; left, class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.EqualityOperator(System.Double,System.Collections.Generic.IList{System.Xml.XPath.XPathItem},System.Collections.Generic.IList{System.Xml.XPath.XPathItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="opCode" Type="System.Double" />
+        <Parameter Name="left" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+        <Parameter Name="right" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="opCode">
+          <see cref="T:System.Double" />実行する操作を指定します。</param>
+        <param name="left">
+          <see cref="T:System.Collections.Generic.IList`1" />型の<see cref="T:System.Xml.XPath.XPathItem" />します。</param>
+        <param name="right">
+          <see cref="T:System.Collections.Generic.IList`1" />型の<see cref="T:System.Xml.XPath.XPathItem" />します。</param>
+        <summary>コレクション型の間の等価性を決定<see cref="T:System.Xml.XPath.XPathItem" />です。</summary>
+        <returns>返します<see langword="true" />コレクションが等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FormatMessage">
+      <MemberSignature Language="C#" Value="public string FormatMessage (string res, System.Collections.Generic.IList&lt;string&gt; args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string FormatMessage(string res, class System.Collections.Generic.IList`1&lt;string&gt; args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.FormatMessage(System.String,System.Collections.Generic.IList{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="res" Type="System.String" />
+        <Parameter Name="args" Type="System.Collections.Generic.IList&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="res">メッセージ リソースが含まれた文字列。</param>
+        <param name="args">メソッドの引数を表す文字列のリスト。</param>
+        <summary>によって指定される書式指定文字列の書式、例外メッセージの構成、<paramref name="res" />パラメーターと引数に含まれる、<paramref name="args" />パラメーター。</summary>
+        <returns>書式設定する例外メッセージを含んだ文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FormatNumberDynamic">
+      <MemberSignature Language="C#" Value="public string FormatNumberDynamic (double value, string formatPicture, System.Xml.XmlQualifiedName decimalFormatName, string errorMessageName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string FormatNumberDynamic(float64 value, string formatPicture, class System.Xml.XmlQualifiedName decimalFormatName, string errorMessageName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.FormatNumberDynamic(System.Double,System.String,System.Xml.XmlQualifiedName,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="formatPicture" Type="System.String" />
+        <Parameter Name="decimalFormatName" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="errorMessageName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Double" />書式を設定する値が含まれています。</param>
+        <param name="formatPicture">書式指定記号を格納する文字列。</param>
+        <param name="decimalFormatName">
+          <see cref="T:System.Xml.XmlQualifiedName" />形式名が含まれています。</param>
+        <param name="errorMessageName">エラー メッセージ名を格納する文字列。</param>
+        <summary>format-number() XSLT 関数を実装します。 詳細については、次を参照してください。、[番号の書式設定](http://go.microsoft.com/fwlink/?LinkId=144247)、W3C 勧告のセクションです。</summary>
+        <returns>数値書式を示す文字列を返します。 詳細については、次を参照してください。、[番号の書式設定](http://go.microsoft.com/fwlink/?LinkId=144247)、W3C 勧告のセクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.Runtime.XsltLibrary.FormatNumberDynamic%2A>メソッド形式`value`を使用して、`formatPicture`および 10 進形式[展開名](http://go.microsoft.com/fwlink/?LinkID=148269)です。 `errorMessageName`エラー報告のみを使用し、10 進数形式のオブジェクトの修飾名を含める必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FormatNumberStatic">
+      <MemberSignature Language="C#" Value="public string FormatNumberStatic (double value, double decimalFormatterIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string FormatNumberStatic(float64 value, float64 decimalFormatterIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.FormatNumberStatic(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="decimalFormatterIndex" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Double" />書式を設定する値を格納します。</param>
+        <param name="decimalFormatterIndex">
+          <see cref="T:System.Double" />フォーマッタのインデックスが含まれています。</param>
+        <summary>format-number() XSLT 関数を実装します。 詳細については、次を参照してください。、[番号の書式設定](http://go.microsoft.com/fwlink/?LinkId=144247)、W3C 勧告のセクションです。</summary>
+        <returns>書式設定を示す文字列。 詳細については、次を参照してください。、[番号の書式設定](http://go.microsoft.com/fwlink/?LinkId=144247)、W3C 勧告のセクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.Runtime.XsltLibrary.FormatNumberStatic%2A>メソッドによって作成された、指定された decimal フォーマッタ オブジェクトを使用して指定された値を書式化<xref:System.Xml.Xsl.Runtime.XsltLibrary.RegisterDecimalFormatter%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FunctionAvailable">
+      <MemberSignature Language="C#" Value="public bool FunctionAvailable (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FunctionAvailable(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.FunctionAvailable(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+          <see cref="T:System.Xml.XmlQualifiedName" />オブジェクトの名前です。</param>
+        <summary>実装して、 [function-available()](http://go.microsoft.com/fwlink/?LinkId=144249) XSLT 関数です。</summary>
+        <returns>ブール値が<see langword="true" />で関数が識別される場合<paramref name="name" />は使用できます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsSameNodeSort">
+      <MemberSignature Language="C#" Value="public bool IsSameNodeSort (System.Xml.XPath.XPathNavigator nav1, System.Xml.XPath.XPathNavigator nav2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsSameNodeSort(class System.Xml.XPath.XPathNavigator nav1, class System.Xml.XPath.XPathNavigator nav2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.IsSameNodeSort(System.Xml.XPath.XPathNavigator,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nav1" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="nav2" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="nav1">
+          <see cref="T:System.Xml.XPath.XPathNavigator" />比較するオブジェクト。</param>
+        <param name="nav2">
+          <see cref="T:System.Xml.XPath.XPathNavigator" />比較するオブジェクト。</param>
+        <summary>2 つのノードが同じノード型であり、(そのノード型のノードが拡張名を持つ場合は) 同じ拡張名を持つかどうかを確認します。</summary>
+        <returns>ブール値である<see langword="true" />かどうか 2 つのノードが、同じノード型であり、同じ拡張名でそのノード型のノードには、名前が展開されている場合。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LangToLcid">
+      <MemberSignature Language="C#" Value="public int LangToLcid (string lang, bool forwardCompatibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 LangToLcid(string lang, bool forwardCompatibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.LangToLcid(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lang" Type="System.String" />
+        <Parameter Name="forwardCompatibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="lang">言語を示す文字列。</param>
+        <param name="forwardCompatibility">ブール値。言語に上位互換性がある場合は true。</param>
+        <summary>言語識別子に変換します (で指定されたとおり、<see langword="xml:lang" />属性) のカルチャ識別子 (LCID) にします。</summary>
+        <returns>カルチャ識別子を格納する文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NumberFormat">
+      <MemberSignature Language="C#" Value="public string NumberFormat (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; value, string formatString, double lang, string letterValue, string groupingSeparator, double groupingSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string NumberFormat(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; value, string formatString, float64 lang, string letterValue, string groupingSeparator, float64 groupingSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.NumberFormat(System.Collections.Generic.IList{System.Xml.XPath.XPathItem},System.String,System.Double,System.String,System.String,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+        <Parameter Name="formatString" Type="System.String" />
+        <Parameter Name="lang" Type="System.Double" />
+        <Parameter Name="letterValue" Type="System.String" />
+        <Parameter Name="groupingSeparator" Type="System.String" />
+        <Parameter Name="groupingSize" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Generic.IList`1" />メソッドに引数を表す文字列。</param>
+        <param name="formatString">
+          <see cref="T:System.Double" />書式指定文字列を示すです。</param>
+        <param name="lang">
+          <see cref="T:System.Double" />言語を示します。</param>
+        <param name="letterValue">文字値を格納する文字列。</param>
+        <param name="groupingSeparator">グループ区切り記号を格納する文字列。</param>
+        <param name="groupingSize">
+          <see cref="T:System.Double" />グループ化のサイズを格納するとします。</param>
+        <summary>数値書式を示す文字列を取得します。</summary>
+        <returns>数値書式を示す文字列。 内部的なインフラストラクチャ用途でのみ使用されます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDecimalFormat">
+      <MemberSignature Language="C#" Value="public int RegisterDecimalFormat (System.Xml.XmlQualifiedName name, string infinitySymbol, string nanSymbol, string characters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 RegisterDecimalFormat(class System.Xml.XmlQualifiedName name, string infinitySymbol, string nanSymbol, string characters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.RegisterDecimalFormat(System.Xml.XmlQualifiedName,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="infinitySymbol" Type="System.String" />
+        <Parameter Name="nanSymbol" Type="System.String" />
+        <Parameter Name="characters" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+          <see cref="T:System.Xml.XmlQualifiedName" />名前を含むオブジェクトです。</param>
+        <param name="infinitySymbol">無限大記号の文字列。</param>
+        <param name="nanSymbol">NaN 記号の文字列。</param>
+        <param name="characters">書式設定する文字を含んだ文字列。</param>
+        <summary>指定された拡張名の 10 進形式を登録します。 詳細については、次を参照してください。、[番号の書式設定](http://go.microsoft.com/fwlink/?LinkId=144247)、W3C 勧告のセクションです。</summary>
+        <returns>現在の実装では、戻り値は常に 0 です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDecimalFormatter">
+      <MemberSignature Language="C#" Value="public double RegisterDecimalFormatter (string formatPicture, string infinitySymbol, string nanSymbol, string characters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 RegisterDecimalFormatter(string formatPicture, string infinitySymbol, string nanSymbol, string characters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.RegisterDecimalFormatter(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatPicture" Type="System.String" />
+        <Parameter Name="infinitySymbol" Type="System.String" />
+        <Parameter Name="nanSymbol" Type="System.String" />
+        <Parameter Name="characters" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formatPicture">書式指定記号を格納する文字列。</param>
+        <param name="infinitySymbol">無限大記号を格納する文字列。</param>
+        <param name="nanSymbol">NaN 記号を格納する文字列。</param>
+        <param name="characters">書式設定する文字を格納する文字列。</param>
+        <summary>Decimal フォーマッタ オブジェクトを登録し、それに割り当てられている一意のインデックスを返します。 Decimal フォーマッタ オブジェクトは、format-number() XSLT 関数で使用されます。 詳細については、次を参照してください。、[番号の書式設定](http://go.microsoft.com/fwlink/?LinkId=144247)、W3C 勧告のセクションです。</summary>
+        <returns>型の一意のインデックスを返します<see cref="T:System.Double" />decimal フォーマッタ オブジェクトに割り当てられます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RelationalOperator">
+      <MemberSignature Language="C#" Value="public bool RelationalOperator (double opCode, System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; left, System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RelationalOperator(float64 opCode, class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; left, class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltLibrary.RelationalOperator(System.Double,System.Collections.Generic.IList{System.Xml.XPath.XPathItem},System.Collections.Generic.IList{System.Xml.XPath.XPathItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="opCode" Type="System.Double" />
+        <Parameter Name="left" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+        <Parameter Name="right" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="opCode">2 つの式の評価方法を指定します。  
+  
+ OpCode が 2 に等しい場合は、XPath 式を評価"左&lt;右"です。  
+  
+ OpCode が 3 に等しい場合は、XPath 式を評価"左&lt;= right"です。  
+  
+ OpCode が 4 に等しい場合は、XPath 式を評価"左&gt;右"です。  
+  
+ OpCode が 5 に等しい場合は、XPath 式を評価"左&gt;= right"</param>
+        <param name="left">評価する式。</param>
+        <param name="right">評価する式。</param>
+        <summary>評価するかどうか、<paramref name="left" />式より大きいまたは等しいよりまたは等しい、<paramref name="right" />式に基づいて、<paramref name="opCode" />渡されます。</summary>
+        <returns>ブール値。左の式の値が右の式の値以上である場合は true。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,523 @@
+<Type Name="IReflect" FullName="System.Reflection.IReflect">
+  <TypeSignature Language="C#" Value="public interface IReflect" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReflect" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.IReflect" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("AFBF15E5-C37C-11d2-B88E-00A0C9B471B8")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>相互運用、 [IDispatch インターフェイス](http://msdn.microsoft.com/en-us/ebbff4bc-36b2-4861-9efa-ffa45e013eb5)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.IReflect>と相互運用するインターフェイスを使用、 [IDispatch インターフェイス](http://msdn.microsoft.com/en-us/ebbff4bc-36b2-4861-9efa-ffa45e013eb5)です。 <xref:System.Reflection.IReflect>サブセットを定義、<xref:System.Type>リフレクション メソッドです。 オブジェクトとして COM からアクセスしているときの動作をカスタマイズする型をこのインターフェイスを実装することにより、`IDispatch`オブジェクト。 <xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler>クラスを実装するオブジェクトをマーシャ リングするために使用できます<xref:System.Reflection.IReflect>または<xref:System.Runtime.InteropServices.Expando.IExpando>COM として`IDispatch`オブジェクト、およびその逆です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo GetField (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo GetField(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetField(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するフィールドの名前。</param>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>返します、<see cref="T:System.Reflection.FieldInfo" />指定したフィールドとバインド フラグに対応するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Reflection.FieldInfo" />オブジェクトで指定された検索の制約を満たす名前付きオブジェクトのフィールド情報を含む<paramref name="bindingAttr" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">オブジェクトでは、同じ名前の複数のフィールドを実装します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFields">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo[] GetFields (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo[] GetFields(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetFields(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>配列を返します<see cref="T:System.Reflection.FieldInfo" />現在のクラスのすべてのフィールドに対応するオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Reflection.FieldInfo" />オブジェクトで指定された検索の制約を満たす、このリフレクション オブジェクトのすべてのフィールド情報を含む<paramref name="bindingAttr" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一致は、名前に基づいています。 各フィールドは、一意の名前でなければなりません。 <xref:System.Reflection.BindingFlags?displayProperty=nameWithType>フラグは、検索に非パブリック メソッドが含まれることを指定します。 <xref:System.Reflection.BindingFlags?displayProperty=nameWithType>フラグは、検索にパブリック メソッドが含まれることを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public System.Reflection.MemberInfo[] GetMember (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MemberInfo[] GetMember(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMember(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索対象のメンバーの名前。</param>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MemberInfo" />または指定した名前に一致するすべてのメンバーにすべてのパブリック メンバーに対応するオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Reflection.MemberInfo" />に一致するオブジェクト、<paramref name="name" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.IReflect.GetMember%2A>メソッドの配列を取得する<xref:System.Reflection.MemberInfo>バインディング属性と名前を使用して、すべてのパブリック メンバーまたは指定した名前に一致するすべてのメンバーに対応するオブジェクト。 または、指定した名前の大文字と小文字が計測されるか、無視して指定されたとおり<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMembers">
+      <MemberSignature Language="C#" Value="public System.Reflection.MemberInfo[] GetMembers (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MemberInfo[] GetMembers(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMembers(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MemberInfo" />すべてのパブリック メンバーまたは現在のクラスのすべてのメンバーのいずれかに対応するオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Reflection.MemberInfo" />このリフレクション オブジェクトのすべてのメンバー情報を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの配列を取得する<xref:System.Reflection.MemberInfo>すべてのパブリック メンバー、または現在のクラスのすべてのメンバーに対応するバインド属性を使用してオブジェクト。 このオブジェクトに対して定義されているメンバーのすべての配列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetMethod (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethod(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMethod(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索対象のメンバーの名前。</param>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>取得、<see cref="T:System.Reflection.MethodInfo" />下で、指定したメソッドに対応するオブジェクトが検索制約を指定します。</summary>
+        <returns>A<see cref="T:System.Reflection.MethodInfo" />オブジェクトで指定されたメソッド名と検索の制約に基づくと一致するメソッドの情報を含む<paramref name="bindingAttr" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">オブジェクトは、同じ名前の複数のメソッドを実装します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetMethod (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethod(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索対象のメンバーの名前。</param>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <param name="binder">実装するオブジェクト<see cref="T:System.Reflection.Binder" />、このメソッドに関連するプロパティを格納します。</param>
+        <param name="types">オーバー ロードされたメソッドの中から選択に使用する配列。</param>
+        <param name="modifiers">型が変更されているパラメーター シグネチャでバインドを機能させるために使われるパラメーター修飾子の配列。</param>
+        <summary>取得、<see cref="T:System.Reflection.MethodInfo" />オブジェクトを使用して、指定したメソッドに対応する、<see cref="T:System.Type" />オーバー ロードされたメソッドの中から選択する配列。</summary>
+        <returns>指定したすべてのパラメーターに一致する要求されたメソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は、メソッド名を基に一致する<xref:System.Reflection.BindingFlags>列挙型のメンバーで指定された型変換の種類、`binder`パラメーターでは、オーバー ロードは、および<xref:System.Reflection.ParameterInfo>メソッドのシグネチャを記述します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">オブジェクトは、同じ名前の複数のメソッドを実装します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethods">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo[] GetMethods (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo[] GetMethods(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMethods(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MethodInfo" />すべてのパブリック メソッドまたは現在のクラスのすべてのメソッドを持つオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Reflection.MethodInfo" />オブジェクト メソッドを含むすべて、このリフレクション オブジェクトの定義で指定された検索の制約を満たしている<paramref name="bindingAttr" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリックでない属性`bindingAttr`パブリック メソッドが返されるかどうかにのみ示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo[] GetProperties (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo[] GetProperties(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetProperties(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.PropertyInfo" />または現在のクラスのすべてのプロパティすべてのパブリック プロパティに対応するオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Reflection.PropertyInfo" />リフレクション オブジェクトで定義されたすべてのプロパティのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo GetProperty (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo GetProperty(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetProperty(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するプロパティの名前。</param>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <summary>取得、<see cref="T:System.Reflection.PropertyInfo" />下で、指定したプロパティに対応するオブジェクトが検索制約を指定します。</summary>
+        <returns>A<see cref="T:System.Reflection.PropertyInfo" />で指定された検索の制約を満たす配置プロパティのオブジェクト<paramref name="bindingAttr" />、または<see langword="null" />場合は、プロパティが見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">オブジェクトでは、同じ名前の複数のフィールドを実装します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo GetProperty (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, Type returnType, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo GetProperty(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, class System.Type returnType, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetProperty(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Type,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索対象のメンバーの名前。</param>
+        <param name="bindingAttr">検索の制御に使用されるバインディング属性。</param>
+        <param name="binder">実装するオブジェクト<see cref="T:System.Reflection.Binder" />、このメソッドに関連するプロパティを格納します。</param>
+        <param name="returnType">プロパティの型。</param>
+        <param name="types">同じ名前を持つオーバー ロードされたメソッドの中から選択に使用する配列。</param>
+        <param name="modifiers">パラメーター修飾子の選択に使用する配列。</param>
+        <summary>取得、<see cref="T:System.Reflection.PropertyInfo" />で指定したプロパティに対応するオブジェクトが検索制約を指定します。</summary>
+        <returns>A<see cref="T:System.Reflection.PropertyInfo" />リフレクション オブジェクトの指定した名前のプロパティが保持されていた場合は、配置プロパティのオブジェクトまたは<see langword="null" />場合は、プロパティが見つかりませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、取得、<xref:System.Reflection.PropertyInfo>下で、指定したプロパティに対応するオブジェクトが検索制約を指定します。 型の配列を使用して、オーバー ロードされたメソッドの中から選択します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMember">
+      <MemberSignature Language="C#" Value="public object InvokeMember (string name, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object target, object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, string[] namedParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object InvokeMember(string name, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object target, object[] args, valuetype System.Reflection.ParameterModifier[] modifiers, class System.Globalization.CultureInfo culture, string[] namedParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="namedParameters" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索対象のメンバーの名前。</param>
+        <param name="invokeAttr">1 つ、<see cref="T:System.Reflection.BindingFlags" />呼び出し属性。 <c>InvokeAttr</c>コンス トラクター、メソッド、プロパティ、またはフィールドをパラメーターとして使用することがあります。 適切な呼び出し属性を指定する必要があります。 空の文字列を渡すことによって、クラスの既定のメンバーを呼び出す ("") としてメンバーの名前。</param>
+        <param name="binder">1 つ、<see cref="T:System.Reflection.BindingFlags" />ビット フラグです。 実装して<see cref="T:System.Reflection.Binder" />、このメソッドに関連するプロパティを格納します。</param>
+        <param name="target">指定したメンバーを呼び出す対象となるオブジェクト。 このパラメーターには、静的メンバーは無視されます。</param>
+        <param name="args">呼び出すには、数、順序、およびメンバーのパラメーターの型を含むオブジェクトの配列。 これは、パラメーターがない場合、空の配列です。</param>
+        <param name="modifiers"><see cref="T:System.Reflection.ParameterModifier" /> オブジェクトの配列。 この配列は、長さと同じ、 <c>args</c>メタデータで呼び出されるメンバーの引数の属性を表すパラメーター。 パラメーターは、次の属性を持つことができます: <see langword="pdIn" />、 <see langword="pdOut" />、 <see langword="pdRetval" />、 <see langword="pdOptional" />、および<see langword="pdHasDefault" />です。 これらを [In]、[Out]、[retval]、[オプション]、および既定のパラメーターでは、それぞれします。 これらの属性は、さまざまな相互運用サービスで使用されます。</param>
+        <param name="culture">型の強制変換を制御するために使用する <see cref="T:System.Globalization.CultureInfo" /> のインスタンス。 たとえば、<c>カルチャ</c>に変換します、 <see langword="String" /> 1000 を表す、<see langword="Double" />値、1000 の表記が異なるカルチャによって異なるためです。 このパラメーターは、する場合<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="namedParameters">A<see langword="String" />パラメーターの配列。</param>
+        <summary>指定したメンバーを呼び出します。</summary>
+        <returns>指定されたメンバー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すメソッドはアクセス可能でなければならず、指定したバインダーと呼び出し属性の制約の下で、指定された引数リストに対する一致の特定性が最高のものでなければなりません。  
+  
+ 指定した引数リスト内の引数の数に等しければ、メソッドの宣言のパラメーターの数と各引数の型は、バインダーによってパラメーターの型に変換できる場合は、メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  渡されるパラメーター修飾子の配列、<xref:System.Reflection.IReflect.InvokeMember%2A>メソッドは、1 つのパラメーター修飾子を含める必要があります。 最初のパラメーター修飾子は COM に公開されたときに参照によって渡される引数を決定する必要がある場合と見なされます  
+  
+ バインダーが要求されたバインディングの種類に従って、すべての一致するメソッドを検索 (<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>、<xref:System.Reflection.IReflect.GetProperties%2A>など)。 メソッドのセットは、名前、引数の数と、バインダーで定義されている検索修飾子のセットによってフィルターされています。 メソッドを選択すると、メソッドが呼び出された場合、され、ユーザー補助機能がその時点でチェックします。 検索は、メソッドのセットが、メソッドに関連付けられているユーザー補助属性に基づいて検索を制御できます。 <xref:System.Reflection.Binder.BindToMethod%2A>呼び出されるメソッドを選択します。 既定のバインダーは、最も具体的な一致を選択します。  
+  
+ アクセスの制限には、完全に信頼されたコードは無視されます。 つまり、private のコンス トラクター、メソッド、フィールド、およびプロパティにアクセスして、コードが完全に信頼されるリフレクションを通じて呼び出されました。  
+  
+   
+  
+## Examples  
+ 次の例の値を取得する、<xref:System.DateTime.Now%2A>プロパティです。  
+  
+ [!code-cpp[Classic IReflect.InvokeMember Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic IReflect.InvokeMember Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic IReflect.InvokeMember Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic IReflect.InvokeMember Example/CS/source.cs#1)]
+ [!code-vb[Classic IReflect.InvokeMember Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic IReflect.InvokeMember Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">フィールドの 1 つ以上の引数が指定されて<see langword="set" />です。</exception>
+        <exception cref="T:System.MissingFieldException">フィールドまたはプロパティが見つかりません。</exception>
+        <exception cref="T:System.MissingMethodException">メソッドが見つかりません。</exception>
+        <exception cref="T:System.Security.SecurityException">せずに、必要なプライベート メンバーが呼び出される<see cref="T:System.Security.Permissions.ReflectionPermission" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlyingSystemType">
+      <MemberSignature Language="C#" Value="public Type UnderlyingSystemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type UnderlyingSystemType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.IReflect.UnderlyingSystemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、基になる型を取得、<see cref="T:System.Reflection.IReflect" />オブジェクト。</summary>
+        <value>基になる型を表す、<see cref="T:System.Reflection.IReflect" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

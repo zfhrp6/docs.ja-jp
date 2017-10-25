@@ -1,0 +1,180 @@
+<Type Name="WebHttpDispatchOperationSelector" FullName="System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector">
+  <TypeSignature Language="C#" Value="public class WebHttpDispatchOperationSelector : System.ServiceModel.Dispatcher.IDispatchOperationSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebHttpDispatchOperationSelector extends System.Object implements class System.ServiceModel.Dispatcher.IDispatchOperationSelector" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Dispatcher.IDispatchOperationSelector</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Web プログラミング モデルをサポートする操作セレクター。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector> は、URI (Uniform Resource Identifier) の一致に基づいて、メソッド呼び出しを <xref:System.UriTemplateTable> にディスパッチします。 <xref:System.UriTemplateTable> で複数の一致が検出されると、ディスパッチは HTTP メソッドによって実行されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebHttpDispatchOperationSelector ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector" />の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebHttpDispatchOperationSelector (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.#ctor(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">サービス エンドポイント。</param>
+        <summary>指定したエンドポイントを使用して <see cref="T:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUriTemplate">
+      <MemberSignature Language="C#" Value="public virtual UriTemplate GetUriTemplate (string operationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.UriTemplate GetUriTemplate(string operationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.GetUriTemplate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriTemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="operationName">操作。</param>
+        <summary>指定された操作名に関連付けられた <see cref="T:System.UriTemplate" /> を取得します。</summary>
+        <returns>指定された操作の <see cref="T:System.UriTemplate" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpOperationNamePropertyName">
+      <MemberSignature Language="C#" Value="public const string HttpOperationNamePropertyName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string HttpOperationNamePropertyName" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.HttpOperationNamePropertyName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に関して選択された操作の名前を提供する、要求メッセージのメッセージ プロパティの名前。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpOperationSelectorUriMatchedPropertyName">
+      <MemberSignature Language="C#" Value="public const string HttpOperationSelectorUriMatchedPropertyName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string HttpOperationSelectorUriMatchedPropertyName" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.HttpOperationSelectorUriMatchedPropertyName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作の呼び出しが、HTTP メソッドではなく、URI によって一致したかどうかを示す値を格納するキーとして使用される文字列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス操作の呼び出し時に、"404 エンドポイント/URI が見つかりません" と "405 メソッドは許可されていません" という 2 つの異なるエラーが発生することがあります。 この文字列と、関連付けられたブール型の値により、サービス モデルはこの 2 つのエラーを区別できます。 "404 エンドポイント/URI" エラーは、無効な URI が使用された場合に発生します。 "405 メソッドは許可されていません" エラーは、有効な URI が使用されているが、その URI で HTTP メソッドを使用できない場合に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectOperation">
+      <MemberSignature Language="C#" Value="public string SelectOperation (ref System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string SelectOperation(class System.ServiceModel.Channels.Message&amp; message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.SelectOperation(System.ServiceModel.Channels.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="message">サービス操作を呼び出すために送信される <see cref="T:System.ServiceModel.Channels.Message" /> オブジェクト。</param>
+        <summary>呼び出すサービス操作を選択します。</summary>
+        <returns>呼び出すサービス操作の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectOperation">
+      <MemberSignature Language="C#" Value="protected virtual string SelectOperation (ref System.ServiceModel.Channels.Message message, out bool uriMatched);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string SelectOperation(class System.ServiceModel.Channels.Message&amp; message, [out] bool&amp; uriMatched) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector.SelectOperation(System.ServiceModel.Channels.Message@,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+        <Parameter Name="uriMatched" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">サービス操作を呼び出すために送信される <see cref="T:System.ServiceModel.Channels.Message" /> オブジェクト。</param>
+        <param name="uriMatched">URI が特定のサービス操作と一致したかどうかを示す値。</param>
+        <summary>呼び出すサービス操作を選択します。</summary>
+        <returns>呼び出すサービス操作の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信 URI がある操作と一致する可能性はありますが、この操作では HTTP メソッドが許可されていません。 このような状況では、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] が `uriMatched` の場合は 404 (見つかりません) が、`false` が `uriMatched` の場合は 405 (メソッドは許可されていません) が `true` ランタイムにより返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

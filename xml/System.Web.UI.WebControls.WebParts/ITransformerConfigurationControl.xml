@@ -1,0 +1,73 @@
+<Type Name="ITransformerConfigurationControl" FullName="System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl">
+  <TypeSignature Language="C#" Value="public interface ITransformerConfigurationControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITransformerConfigurationControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Web パーツ接続においてトランスフォーマーの構成コントロールとして機能するコントロールを実装するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスフォーマーはそれを構成するユーザーを必要とする場合、構成コントロールを表示できます。 構成コントロールは、ユーザーがどの値が変換を選択できるユーザー インターフェイス (UI) を提供します。 接続ゾーンに表示します。 <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer.CreateConfigurationControl%2A?displayProperty=nameWithType>メソッドは、構成の制御を返します。  
+  
+ オーバーライドすることができます、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer.CreateConfigurationControl%2A>メソッド、トランスフォーマーはカスタマイズされた UI を必要とする場合。 構成の制御を実装する必要があります、<xref:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl>インターフェイスが含まれています、<xref:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl.Cancelled>と<xref:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl.Succeeded>イベント。 トランスフォーマー コントロールがないか、構成または正常に、それぞれ構成されているときに、これらのイベントが発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancelled">
+      <MemberSignature Language="C#" Value="public event EventHandler Cancelled;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Cancelled" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl.Cancelled" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスフォーマーの構成が完了していないときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する Web パーツ コントロール<xref:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl>トランスフォーマー構成は完了していないか、構成を実行できませんでした、またはユーザーには、構成が取り消されたため場合、このイベントを発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Succeeded">
+      <MemberSignature Language="C#" Value="public event EventHandler Succeeded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Succeeded" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl.Succeeded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスフォーマーの構成が正常に完了と発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する Web パーツ コントロール<xref:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl>トランスフォーマー構成が正常に完了したときに、このイベントを発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,888 @@
+<Type Name="Decoder" FullName="System.Text.Decoder">
+  <TypeSignature Language="C#" Value="public abstract class Decoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Decoder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Text.Decoder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encoding</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>エンコードされたバイトのシーケンスを文字のセットに変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装のインスタンスを取得する、<xref:System.Text.Decoder>クラス、アプリケーションで使用する必要があります、<xref:System.Text.Encoding.GetDecoder%2A>のメソッド、<xref:System.Text.Encoding>実装します。  
+  
+ <xref:System.Text.Decoder.GetCharCount%2A>メソッドは、バイト シーケンスをデコード中に発生する文字数を決定し、<xref:System.Text.Decoder.GetChars%2A>メソッドは、実際のデコードを実行します。 いくつかのバージョンのどちらの方法で使用できる、<xref:System.Text.Decoder>クラスです。 詳細については、「<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>」を参照してください。 A<xref:System.Text.Decoder>オブジェクトは、連続する呼び出しの間の状態情報を保持`GetChars`または<xref:System.Text.Decoder.Convert%2A>メソッドため、ブロックをまたぐバイト シーケンスを正しくデコードすることができますの。 <xref:System.Text.Decoder>もデータ ブロックの末尾にある末尾バイトを保持し、[次へ] のデコード操作で末尾バイトを使用します。 したがって、<xref:System.Text.Encoding.GetDecoder%2A>と<xref:System.Text.Encoding.GetEncoder%2A>の完全なデータ ストリームではなくデータ ブロックを頻繁にこれらの操作を処理するために転送し、ファイルのネットワーク操作に便利です。  
+  
+> [!NOTE]
+>  アプリケーションでは、データ ストリームの処理が終わったらことを確認してください、状態情報を設定してフラッシュされる、`flush`パラメーターを`true`適切なメソッドの呼び出しで。 例外が発生したかを呼び出してストリームをアプリケーションに切り替え場合、<xref:System.Text.Decoder.Reset%2A>の内部状態をクリアする、`Decoder`オブジェクト。  
+  
+## <a name="version-considerations"></a>バージョンの考慮事項  
+ A<xref:System.Text.Decoder>または<xref:System.Text.Encoder>変換操作中に、オブジェクトをシリアル化することができます。 オブジェクトの状態が同じ .NET Framework のバージョンで逆シリアル化される場合、保持は、別のバージョンで逆シリアル化される場合を失われます。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.Text.Decoder>に 2 つの異なるバイト配列を文字配列に変換します。 文字のバイトのいずれかの範囲の配列。 これは新機能と同様、<xref:System.IO.StreamReader>オブジェクトは内部的に、ストリームを読み取るとき。  
+  
+ [!code-cpp[Classic Decoder Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Decoder Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Decoder Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Decoder Example/CS/source.cs#1)]
+ [!code-vb[Classic Decoder Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Decoder Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>アプリケーションをこのクラスから継承するとき、すべてのメンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Decoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Text.Decoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの実装のインスタンスを取得するアプリケーションを使用する必要があります、<xref:System.Text.Encoding.GetDecoder%2A>のメソッド、<xref:System.Text.Encoding>実装します。  
+  
+   
+  
+## Examples  
+ 次の例では、新しい初期化するための 2 つの手法<xref:System.Text.Decoder>インスタンス。  
+  
+ [!code-cpp[System.Text.Decoder.ctor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Text.Decoder.ctor Example/CPP/ctor.cpp#1)]
+ [!code-csharp[System.Text.Decoder.ctor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.Decoder.ctor Example/CS/ctor.cs#1)]
+ [!code-vb[System.Text.Decoder.ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.Decoder.ctor Example/VB/ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public virtual void Convert (byte* bytes, int byteCount, char* chars, int charCount, bool flush, out int bytesUsed, out int charsUsed, out bool completed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Convert(unsigned int8* bytes, int32 byteCount, char* chars, int32 charCount, bool flush, [out] int32&amp; bytesUsed, [out] int32&amp; charsUsed, [out] bool&amp; completed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.Convert(System.Byte*,System.Int32,System.Char*,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte*" />
+        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char*" />
+        <Parameter Name="charCount" Type="System.Int32" />
+        <Parameter Name="flush" Type="System.Boolean" />
+        <Parameter Name="bytesUsed" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="charsUsed" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="completed" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">変換するバイト シーケンスを格納しているバッファーのアドレス。</param>
+        <param name="byteCount">バイト数<c>バイト</c>に変換します。</param>
+        <param name="chars">変換後の文字を格納するバッファーのアドレス。</param>
+        <param name="charCount">内の文字の最大数<c>chars</c>変換に使用します。</param>
+        <param name="flush">
+          これ以上データの変換を行わないことを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="bytesUsed">このメソッドから制御が戻るときに、変換の結果生成されたバイト数を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="charsUsed">このメソッドが戻るときからの文字の数を表す<c>chars</c>で変換に使用されました。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="completed">このメソッドが戻るときに、格納<see langword="true" />によってすべての文字が指定されている場合<c>byteCount</c>された変換後、それ以外の<see langword="false" />します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>バッファーに格納されているエンコード済みバイトを UTF-16 エンコード文字に変換し、その結果を別のバッファーに格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意して、<xref:System.Text.Decoder>オブジェクトへの呼び出しの間で状態を保存する<xref:System.Text.Decoder.Convert%2A>です。 これを設定する必要があります、アプリケーションでは、データ ストリームの処理が終わったら、`flush`パラメーターを`true`状態情報がフラッシュされるかどうかを確認します。 この設定では、デコーダーは、データ ブロックの末尾に無効なバイトを無視し、内部バッファーをクリアします。 サロゲート ペアの上位サロゲートなどの論理ユニットの一部である残り処理後のデータは、現在のフォールバック設定に従って変換されます。  
+  
+ `Convert`メソッドが、入力の任意の大きさをデコードするループ内で使用するため、ファイルまたはストリームから読み取られるデータなどです。 デコード操作の出力は、固定サイズのバッファーに格納します。 <xref:System.Text.Decoder.GetChars%2A>出力バッファーが十分でない場合、例外がスローされますが、<xref:System.Text.Decoder.Convert%2A>は、できるだけ多くの領域を入力し、読み取られたバイトと書き込まれる文字数を返します。 参照してください、<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>詳細コメントのトピックです。  
+  
+ `completed`出力パラメーターは、入力バッファー内のすべてのデータが変換され、出力バッファーに格納されているかどうかを示します。 このパラメーターに設定されている`false`でのバイト数が指定されている場合、`byteCount`パラメーターで指定された文字の数を超えずに変換できません、`charCount`パラメーター。 状況では、アプリケーション、出力バッファーの内容を使用か、新しい出力バッファーを提供インクリメント、`bytes`パラメーターによって指定されたバイト数を`bytesUsed`パラメーター、まず、`Convert`残りの入力を処理するには、もう一度メソッドです。  
+  
+ `completed`パラメーターを設定することも`false`場合でも、`bytesUsed`と`byteCount`パラメーターが等しい。 内のデータが解決しない場合、このような状況が発生した、<xref:System.Text.Decoder>内に保存されていないオブジェクト、`bytes`バッファー。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Text.Decoder.Convert(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="chars" />or <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="charCount" /> または <paramref name="byteCount" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">出力バッファーが小さすぎて、変換した入力を格納できません。 出力バッファーは、<see cref="Overload:System.Text.Decoder.GetCharCount" /> メソッドで示されるサイズ以上である必要があります。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public virtual void Convert (byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex, int charCount, bool flush, out int bytesUsed, out int charsUsed, out bool completed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Convert(unsigned int8[] bytes, int32 byteIndex, int32 byteCount, char[] chars, int32 charIndex, int32 charCount, bool flush, [out] int32&amp; bytesUsed, [out] int32&amp; charsUsed, [out] bool&amp; completed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.Convert(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+        <Parameter Name="byteIndex" Type="System.Int32" />
+        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char[]" />
+        <Parameter Name="charIndex" Type="System.Int32" />
+        <Parameter Name="charCount" Type="System.Int32" />
+        <Parameter Name="flush" Type="System.Boolean" />
+        <Parameter Name="bytesUsed" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="charsUsed" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="completed" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">変換するバイト配列。</param>
+        <param name="byteIndex">最初の要素<c>バイト</c>に変換します。</param>
+        <param name="byteCount">要素の数<c>バイト</c>に変換します。</param>
+        <param name="chars">変換後の文字を格納する配列。</param>
+        <param name="charIndex">最初の要素<c>chars</c>どのデータを格納します。</param>
+        <param name="charCount">要素の最大数<c>chars</c>変換に使用します。</param>
+        <param name="flush">
+          これ以上データの変換を行わないことを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="bytesUsed">このメソッドから制御が戻るときに、変換に使用されたバイト数を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="charsUsed">このメソッドが戻るときからの文字の数を表す<c>chars</c>変換の結果生成されました。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="completed">このメソッドが戻るときに、格納<see langword="true" />によってすべての文字が指定されている場合<c>byteCount</c>された変換後、それ以外の<see langword="false" />します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>配列に格納されているエンコード済みバイトを UTF-16 エンコード文字に変換し、その結果を文字配列に格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意して、<xref:System.Text.Decoder>オブジェクトへの呼び出しの間で状態を保存する<xref:System.Text.Decoder.Convert%2A>です。 これを設定する必要があります、アプリケーションでは、データ ストリームの処理が終わったら、`flush`パラメーターを`true`状態情報がフラッシュされるかどうかを確認します。 この設定では、デコーダーは、データ ブロックの末尾に無効なバイトを無視し、内部バッファーをクリアします。 サロゲート ペアの上位サロゲートなどの論理ユニットの一部である残り処理後のデータは、現在のフォールバック設定に従って変換されます。  
+  
+ `Convert`メソッドが、入力の任意の大きさをデコードするループ内で使用するため、ファイルまたはストリームから読み取られるデータなどです。 デコード操作の出力は、固定サイズのバッファーに格納します。 <xref:System.Text.Decoder.GetChars%2A>出力バッファーが十分でない場合、例外がスローされますが、<xref:System.Text.Decoder.Convert%2A>は、できるだけ多くの領域を入力し、読み取られたバイトと書き込まれる文字数を返します。 参照してください、<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>詳細コメントのトピックです。  
+  
+ `completed`出力パラメーターは、入力バッファー内のすべてのデータが変換され、出力バッファーに格納されているかどうかを示します。 このパラメーターに設定されている`false`でのバイト数が指定されている場合、`byteCount`パラメーターで指定された文字の数を超えずに変換できません、`charCount`パラメーター。 状況では、アプリケーション、出力バッファーの内容を使用か、新しい出力バッファーを提供インクリメント、`bytes`パラメーターによって指定されたバイト数を`bytesUsed`パラメーター、まず、`Convert`残りの入力を処理するには、もう一度メソッドです。  
+  
+ `completed`パラメーターを設定することも`false`場合でも、`bytesUsed`と`byteCount`パラメーターが等しい。 内のデータが解決しない場合、このような状況が発生した、<xref:System.Text.Decoder>内に保存されていないオブジェクト、`bytes`バッファー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Text.Encoder.Convert%2A> utf-16 文字のファイルを utf-8 に変換します。 次を使用して、<xref:System.Text.Decoder.Convert%2A>に utf-8 文字を変換する方法は、utf-16 文字をバックアップします。  
+  
+ [!code-csharp[sys.txt.EncoderDecoder.convert#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.txt.EncoderDecoder.convert/cs/edCvt.cs#1)]
+ [!code-vb[sys.txt.EncoderDecoder.convert#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.txt.EncoderDecoder.convert/vb/edCvt.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="chars" />or <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="charIndex" />、<paramref name="charCount" />、<paramref name="byteIndex" />、または <paramref name="byteCount" /> が 0 未満です。  
+  
+ または  
+  
+ 長さ<paramref name="chars" />  -  <paramref name="charIndex" />はより小さい<paramref name="charCount" />です。  
+  
+ または  
+  
+ 長さ<paramref name="bytes" />  -  <paramref name="byteIndex" />はより小さい<paramref name="byteCount" />です。</exception>
+        <exception cref="T:System.ArgumentException">出力バッファーが小さすぎて、変換した入力を格納できません。 出力バッファーは、<see cref="Overload:System.Text.Decoder.GetCharCount" /> メソッドで示されるサイズ以上である必要があります。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fallback">
+      <MemberSignature Language="C#" Value="public System.Text.DecoderFallback Fallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.DecoderFallback Fallback" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Decoder.Fallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Text.DecoderFallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Text.DecoderFallback" />現在のオブジェクト<see cref="T:System.Text.Decoder" />オブジェクト。</summary>
+        <value><see cref="T:System.Text.DecoderFallback" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.DecoderFallback>オブジェクトは、エンコード済みバイト シーケンスを文字に変換できないときに呼び出されるエラー ハンドラーを表します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />(<see langword="Nothing" />)。</exception>
+        <exception cref="T:System.ArgumentException">設定操作で、新しい値を割り当てることができません現在<see cref="T:System.Text.DecoderFallbackBuffer" />オブジェクトには、まだデコードされていないデータが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackBuffer">
+      <MemberSignature Language="C#" Value="public System.Text.DecoderFallbackBuffer FallbackBuffer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.DecoderFallbackBuffer FallbackBuffer" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Decoder.FallbackBuffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Text.DecoderFallbackBuffer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Text.DecoderFallbackBuffer" />オブジェクトに現在関連付けられている<see cref="T:System.Text.Decoder" />オブジェクト。</summary>
+        <value><see cref="T:System.Text.DecoderFallbackBuffer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.DecoderFallbackBuffer>オブジェクトによって使用されるデータを表す、<xref:System.Text.DecoderFallback>オブジェクト。 <xref:System.Text.DecoderFallback>オブジェクトは、エンコード済みバイト シーケンスを文字に変換できないときに呼び出されるエラー ハンドラーを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharCount">
+      <MemberSignature Language="C#" Value="public virtual int GetCharCount (byte* bytes, int count, bool flush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCharCount(unsigned int8* bytes, int32 count, bool flush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.GetCharCount(System.Byte*,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte*" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="flush" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">デコードする最初のバイトへのポインター。</param>
+        <param name="count">デコードするバイト数。</param>
+        <param name="flush">
+          <see langword="true" />計算の後に、エンコーダーの内部状態をクリアするをシミュレートするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定したバイト ポインターから始まるバイト シーケンスをデコードすることによって生成される文字数を計算します。 パラメーターは、計算後に、デコーダーの内部状態をクリアするかどうかを示します。</summary>
+        <returns>指定したバイト シーケンスと内部バッファー内のバイトをデコードすることによって生成される文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デコーダーの状態には影響しません。  
+  
+ 計算する正確な配列のサイズを<xref:System.Text.Decoder.GetChars%2A>必要と結果の文字を格納するアプリケーションを使用する必要があります<xref:System.Text.Decoder.GetCharCount%2A>です。  
+  
+ 場合`GetChars`で呼び出された`flush`'éý'`false`デコーダーが内部バッファーにデータ ブロックの末尾にある末尾バイトを格納し、それらを次にデコード操作で使用します。 アプリケーションを呼び出す必要があります`GetCharCount`呼び出す前にすぐにデータのブロックに`GetChars`同じブロックで、前のブロックからの後続バイトが計算に含まれるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" /><see langword="null" /> (<see langword="Nothing" /> Visual Basic .NET で)。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="count" /> が 0 未満です。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharCount">
+      <MemberSignature Language="C#" Value="public abstract int GetCharCount (byte[] bytes, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCharCount(unsigned int8[] bytes, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">デコード対象のバイト シーケンスが格納されたバイト配列。</param>
+        <param name="index">デコードする最初のバイトのインデックス。</param>
+        <param name="count">デコードするバイト数。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定したバイト配列に格納されているバイト シーケンスをデコードすることによって生成される文字数を計算します。</summary>
+        <returns>指定したバイト シーケンスと内部バッファー内のバイトをデコードすることによって生成される文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デコーダーの状態には影響しません。  
+  
+ 計算する正確な配列のサイズを<xref:System.Text.Decoder.GetChars%2A>必要と結果の文字を格納するアプリケーションを使用する必要があります<xref:System.Text.Decoder.GetCharCount%2A>です。  
+  
+ 場合`GetChars`で呼び出された`flush`'éý'`false`デコーダーが内部バッファーにデータ ブロックの末尾にある末尾バイトを格納し、それらを次にデコード操作で使用します。 アプリケーションを呼び出す必要があります`GetCharCount`呼び出す前にすぐにデータのブロックに`GetChars`同じブロックで、前のブロックからの後続バイトが計算に含まれるようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Text.Decoder.GetCharCount%2A>メソッドを指定された配列内のバイトの範囲をデコードするために必要な文字の数を計算します。  
+  
+ [!code-cpp[System.Text.Decoder.GetCharCount Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Text.Decoder.GetCharCount Example/CPP/getcharcount-byte[]-int32-int32.cpp#1)]
+ [!code-csharp[System.Text.Decoder.GetCharCount Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.Decoder.GetCharCount Example/CS/getcharcount-byte[]-int32-int32.cs#1)]
+ [!code-vb[System.Text.Decoder.GetCharCount Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.Decoder.GetCharCount Example/VB/getcharcount-byte[]-int32-int32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" />is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> および <paramref name="count" /> は <paramref name="bytes" /> において有効な範囲を表していません。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharCount">
+      <MemberSignature Language="C#" Value="public virtual int GetCharCount (byte[] bytes, int index, int count, bool flush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCharCount(unsigned int8[] bytes, int32 index, int32 count, bool flush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.GetCharCount(System.Byte[],System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="flush" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">デコード対象のバイト シーケンスが格納されたバイト配列。</param>
+        <param name="index">デコードする最初のバイトのインデックス。</param>
+        <param name="count">デコードするバイト数。</param>
+        <param name="flush">
+          <see langword="true" />計算の後に、エンコーダーの内部状態をクリアするをシミュレートするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定したバイト配列に格納されているバイト シーケンスをデコードすることによって生成される文字数を計算します。 パラメーターは、計算後に、デコーダーの内部状態をクリアするかどうかを示します。</summary>
+        <returns>指定したバイト シーケンスと内部バッファー内のバイトをデコードすることによって生成される文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デコーダーの状態には影響しません。  
+  
+ 計算する正確な配列のサイズを<xref:System.Text.Decoder.GetChars%2A>必要と結果の文字を格納するアプリケーションを使用する必要があります<xref:System.Text.Decoder.GetCharCount%2A>です。  
+  
+ 場合`GetChars`で呼び出された`flush`'éý'`false`デコーダーが内部バッファーにデータ ブロックの末尾にある末尾バイトを格納し、それらを次にデコード操作で使用します。 アプリケーションを呼び出す必要があります`GetCharCount`呼び出す前にすぐにデータのブロックに`GetChars`同じブロックで、前のブロックからの後続バイトが計算に含まれるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" />is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> および <paramref name="count" /> は <paramref name="bytes" /> において有効な範囲を表していません。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public virtual int GetChars (byte* bytes, int byteCount, char* chars, int charCount, bool flush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetChars(unsigned int8* bytes, int32 byteCount, char* chars, int32 charCount, bool flush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.GetChars(System.Byte*,System.Int32,System.Char*,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte*" />
+        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char*" />
+        <Parameter Name="charCount" Type="System.Int32" />
+        <Parameter Name="flush" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">デコードする最初のバイトへのポインター。</param>
+        <param name="byteCount">デコードするバイト数。</param>
+        <param name="chars">結果の文字セットの書き込みを開始する位置へのポインター。</param>
+        <param name="charCount">書き込む文字の最大数。</param>
+        <param name="flush">
+          <see langword="true" />変換後に、デコーダーの内部状態をクリアするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされると、指定した文字ポインターで始まる格納されている文字のセットに指定したバイト ポインターと内部バッファーのバイトで始まるバイト シーケンスをデコードします。 パラメーターでは、変換した後に、デコーダーの内部状態をクリアするかどうかを示します。</summary>
+        <returns><paramref name="chars" /> パラメーターによって示される位置に書き込む実際の文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意して、<xref:System.Text.Decoder>オブジェクトへの呼び出しの間で状態を保存する<xref:System.Text.Decoder.GetChars%2A>です。 これを設定する必要があります、アプリケーションでは、データ ストリームの処理が終わったら、`flush`パラメーターを`true`状態情報がフラッシュされるかどうかを確認します。 この設定では、デコーダーは、データ ブロックの末尾に無効なバイトを無視し、内部バッファーをクリアします。  
+  
+ 計算する正確なバッファーのサイズを`GetChars`必要と結果の文字を格納するアプリケーションを使用する必要があります<xref:System.Text.Decoder.GetCharCount%2A>です。  
+  
+ 場合`GetChars`で呼び出された`flush`'éý'`false`デコーダーが内部バッファーにデータ ブロックの末尾にある末尾バイトを格納し、それらを次にデコード操作で使用します。 アプリケーションを呼び出す必要があります`GetCharCount`呼び出す前にすぐにデータのブロックに`GetChars`同じブロックで、前のブロックからの後続バイトが計算に含まれるようにします。  
+  
+ 入力ストリームの数のセグメントに変換する、アプリケーションがある場合は、使用を検討して、<xref:System.Text.Decoder.Convert%2A>メソッドです。 <xref:System.Text.Decoder.GetChars%2A>出力バッファーが十分でない場合、例外がスローされますが、<xref:System.Text.Decoder.Convert%2A>は、できるだけ多くの領域を入力し、読み取られたバイトと書き込まれる文字数を返します。 参照してください、<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>詳細コメントのトピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" />is <see langword="null" /> (<see langword="Nothing" />).  
+  
+ または  
+  
+ <paramref name="chars" />is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="byteCount" /> または <paramref name="charCount" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="charCount" />結果の文字数未満です。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public abstract int GetChars (byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetChars(unsigned int8[] bytes, int32 byteIndex, int32 byteCount, char[] chars, int32 charIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+        <Parameter Name="byteIndex" Type="System.Int32" />
+        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char[]" />
+        <Parameter Name="charIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">デコード対象のバイト シーケンスが格納されたバイト配列。</param>
+        <param name="byteIndex">デコードする最初のバイトのインデックス。</param>
+        <param name="byteCount">デコードするバイト数。</param>
+        <param name="chars">結果の文字のセットを格納する文字配列。</param>
+        <param name="charIndex">結果の文字のセットを書き込む開始位置のインデックス。</param>
+        <summary>派生クラスでオーバーライドされると、指定した文字配列に指定したバイト配列からバイトと内部バッファーのバイトのシーケンスをデコードします。</summary>
+        <returns><paramref name="chars" /> に書き込まれた実際の文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意して、<xref:System.Text.Decoder>オブジェクトへの呼び出しの間で状態を保存する<xref:System.Text.Decoder.GetChars%2A>です。 これを設定する必要があります、アプリケーションでは、データ ストリームの処理が終わったら、`flush`パラメーターを`true`状態情報がフラッシュされるかどうかを確認します。 この設定では、デコーダーは、データ ブロックの末尾に無効なバイトを無視し、内部バッファーをクリアします。  
+  
+ 計算する正確な配列のサイズを`GetChars`必要と結果の文字を格納するアプリケーションを使用する必要があります<xref:System.Text.Decoder.GetCharCount%2A>です。  
+  
+ 場合`GetChars`で呼び出された`flush`'éý'`false`デコーダーが内部バッファーにデータ ブロックの末尾にある末尾バイトを格納し、それらを次にデコード操作で使用します。 アプリケーションを呼び出す必要があります`GetCharCount`呼び出す前にすぐにデータのブロックに`GetChars`同じブロックで、前のブロックからの後続バイトが計算に含まれるようにします。  
+  
+ 入力ストリームの数のセグメントに変換する、アプリケーションがある場合は、使用を検討して、<xref:System.Text.Decoder.Convert%2A>メソッドです。 <xref:System.Text.Decoder.GetChars%2A>出力バッファーが十分でない場合、例外がスローされますが、<xref:System.Text.Decoder.Convert%2A>は、できるだけ多くの領域を入力し、読み取られたバイトと書き込まれる文字数を返します。 参照してください、<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>詳細コメントのトピックです。  
+  
+   
+  
+## Examples  
+ 次の例では、ある範囲のバイト配列から要素をデコードし、Unicode 文字配列に保存する方法を示します。 <xref:System.Text.Decoder.GetCharCount%2A>メソッドは、配列にデコードされた要素を格納するために必要な文字数を計算に使用`bytes`です。 <xref:System.Text.Decoder.GetChars%2A>メソッドは、バイト配列に指定された要素をデコードし、新しい文字配列に保存します。  
+  
+ [!code-cpp[System.Text.Decoder.GetChars Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Text.Decoder.GetChars Example/CPP/getchars-byte[]-int32-int32-char[]-int32.cpp#1)]
+ [!code-csharp[System.Text.Decoder.GetChars Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.Decoder.GetChars Example/CS/getchars-byte[]-int32-int32-char[]-int32.cs#1)]
+ [!code-vb[System.Text.Decoder.GetChars Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.Decoder.GetChars Example/VB/getchars-byte[]-int32-int32-char[]-int32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" />is <see langword="null" /> (<see langword="Nothing" />).  
+  
+ または  
+  
+ <paramref name="chars" />is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="byteIndex" />または<paramref name="byteCount" />または<paramref name="charIndex" />が 0 未満です。  
+  
+ または  
+  
+ <paramref name="byteindex" /> および <paramref name="byteCount" /> は <paramref name="bytes" /> において有効な範囲を表していません。  
+  
+ または  
+  
+ <paramref name="charIndex" /> が <paramref name="chars" /> の有効なインデックスではありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="chars" />十分な容量がない<paramref name="charIndex" />に結果の文字を合わせて、配列の末尾にします。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public virtual int GetChars (byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex, bool flush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetChars(unsigned int8[] bytes, int32 byteIndex, int32 byteCount, char[] chars, int32 charIndex, bool flush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+        <Parameter Name="byteIndex" Type="System.Int32" />
+        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char[]" />
+        <Parameter Name="charIndex" Type="System.Int32" />
+        <Parameter Name="flush" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">デコード対象のバイト シーケンスが格納されたバイト配列。</param>
+        <param name="byteIndex">デコードする最初のバイトのインデックス。</param>
+        <param name="byteCount">デコードするバイト数。</param>
+        <param name="chars">結果の文字のセットを格納する文字配列。</param>
+        <param name="charIndex">結果の文字のセットを書き込む開始位置のインデックス。</param>
+        <param name="flush">
+          <see langword="true" />変換後に、デコーダーの内部状態をクリアするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされると、指定した文字配列に指定したバイト配列からバイトと内部バッファーのバイトのシーケンスをデコードします。 パラメーターでは、変換した後に、デコーダーの内部状態をクリアするかどうかを示します。</summary>
+        <returns>実際に書き込まれた文字数、<paramref name="chars" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意して、<xref:System.Text.Decoder>オブジェクトへの呼び出しの間で状態を保存する<xref:System.Text.Decoder.GetChars%2A>です。 これを設定する必要があります、アプリケーションでは、データ ストリームの処理が終わったら、`flush`パラメーターを`true`状態情報がフラッシュされるかどうかを確認します。 この設定では、デコーダーは、データ ブロックの末尾に無効なバイトを無視し、内部バッファーをクリアします。  
+  
+ 計算する正確な配列のサイズを`GetChars`必要と結果の文字を格納するアプリケーションを使用する必要があります<xref:System.Text.Decoder.GetCharCount%2A>です。  
+  
+ 場合`GetChars`で呼び出された`flush`'éý'`false`デコーダーが内部バッファーにデータ ブロックの末尾にある末尾バイトを格納し、それらを次にデコード操作で使用します。 アプリケーションを呼び出す必要があります`GetCharCount`呼び出す前にすぐにデータのブロックに`GetChars`同じブロックで、前のブロックからの後続バイトが計算に含まれるようにします。  
+  
+ 入力ストリームの数のセグメントに変換する、アプリケーションがある場合は、使用を検討して、<xref:System.Text.Decoder.Convert%2A>メソッドです。 <xref:System.Text.Decoder.GetChars%2A>出力バッファーが十分でない場合、例外がスローされますが、<xref:System.Text.Decoder.Convert%2A>は、できるだけ多くの領域を入力し、読み取られたバイトと書き込まれる文字数を返します。 参照してください、<xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>詳細コメントのトピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" />is <see langword="null" /> (<see langword="Nothing" />).  
+  
+ または  
+  
+ <paramref name="chars" />is <see langword="null" /> (<see langword="Nothing" />).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="byteIndex" />または<paramref name="byteCount" />または<paramref name="charIndex" />が 0 未満です。  
+  
+ または  
+  
+ <paramref name="byteindex" /> および <paramref name="byteCount" /> は <paramref name="bytes" /> において有効な範囲を表していません。  
+  
+ または  
+  
+ <paramref name="charIndex" /> が <paramref name="chars" /> の有効なインデックスではありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="chars" />十分な容量がない<paramref name="charIndex" />に結果の文字を合わせて、配列の末尾にします。</exception>
+        <exception cref="T:System.Text.DecoderFallbackException">フォールバックが発生しました (を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)の詳細について)  
+  
+ および  
+  
+ <see cref="P:System.Text.Decoder.Fallback" /> が <see cref="T:System.Text.DecoderExceptionFallback" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public virtual void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Decoder.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、その初期状態に戻す、デコーダーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの内部状態をクリアする、<xref:System.Text.Decoder>オブジェクト。 メソッドを前回呼び出したときから保存された任意の状態情報をクリアする<xref:System.Text.Decoder.GetChars%2A>または<xref:System.Text.Decoder.Convert%2A>など、末尾に、前のデータ ブロックの最後のバイト数。  
+  
+ アプリケーションを呼び出す必要があります、<xref:System.Text.Decoder.Reset%2A>メソッドによって例外がスローされた後でも、同じデコーダーを再利用する必要がある場合<xref:System.Text.Decoder.GetChars%2A>、 <xref:System.Text.Decoder.Convert%2A>、または<xref:System.Text.Decoder.GetCharCount%2A>、またはデコーダーがストリームに切り替え、別のストリームのデコードを開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

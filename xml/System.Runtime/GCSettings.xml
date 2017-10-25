@@ -1,0 +1,211 @@
+<Type Name="GCSettings" FullName="System.Runtime.GCSettings">
+  <TypeSignature Language="C#" Value="public static class GCSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit GCSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.GCSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のプロセスのガベージ コレクション設定を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.GCSettings.IsServerGC%2A>プロパティを現在のプロセスのサーバーのガベージ コレクションが有効になっているかどうかを判断します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsServerGC">
+      <MemberSignature Language="C#" Value="public static bool IsServerGC { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsServerGC" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.GCSettings.IsServerGC" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーのガベージ コレクションが有効であるかどうかを示す値を取得します。</summary>
+        <value>
+          サーバーのガベージ コレクションが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーのガベージ コレクションに関する情報を「ワークステーションとサーバーのガベージ コレクション」セクションを参照して[ガベージ コレクションの基礎](~/docs/standard/garbage-collection/fundamentals.md)です。  
+  
+ サーバーのガベージ コレクションが有効でない場合は、ワークステーションのガベージ コレクションが有効で (または同時実行コレクションなしです)。 サーバーのガベージ コレクションは、マルチプロセッサ コンピューターでのみ使用できます。  
+  
+ サーバーのガベージ コレクションを要求できるは、アンマネージ ホストとホスト要求が構成ファイルの設定をオーバーライドします。 ホストでは、ガベージ コレクションの型を指定しない場合は、サーバーのガベージ コレクションを指定する構成ファイルの設定を使用することができます。 マシン構成ファイルではなく、アプリケーション構成ファイルでのみこの設定は無効です (を参照してください[構成アプリ](http://msdn.microsoft.com/library/86bd26d3-737e-4484-9782-19b17f34cd1f))。 次の例では、サーバー ガベージ コレクションを有効にするサンプル アプリケーションの構成ファイルの内容を示します。  
+  
+```  
+<configuration>  
+  <runtime>  
+    <gcServer enabled="true" />  
+  </runtime>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、ホスト コンピューターがサーバーまたはワークステーションのガベージ コレクションを使用しているかどうかを示します。  
+  
+ [!code-csharp[Environment.IsServerGC#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.IsServerGC/CS/isg.cs#1)]
+ [!code-vb[Environment.IsServerGC#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.IsServerGC/VB/isg.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeObjectHeapCompactionMode">
+      <MemberSignature Language="C#" Value="public static System.Runtime.GCLargeObjectHeapCompactionMode LargeObjectHeapCompactionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Runtime.GCLargeObjectHeapCompactionMode LargeObjectHeapCompactionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.GCSettings.LargeObjectHeapCompactionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLargeObjectHeapCompactionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[.NET Framework 4.5.1 以降のバージョンでサポート]  
+  
+ フル ブロッキング ガベージ コレクションが大きなオブジェクト ヒープ (LOH) を圧縮するかどうかを示す値を取得または設定します。</summary>
+        <value>フル ブロッキング ガベージ コレクションが LOH を圧縮するかどうかを示す、列挙値の 1 つです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ LOH 85,000 バイトを超えるを必要とする (配列) などのラージ オブジェクトのメモリの割り当てが使用されます。 ガベージ コレクターでは、パフォーマンスに対する悪影響のためのメモリの大きなブロックのコピー、LOH、死んだ状態のオブジェクトによって占有されていたをおよび大きいオブジェクトのメモリの割り当ての今後の要求を再利用できるメモリ位置のリストの作成が行われる通常スイープします。 ただし、広くアプリでは、LOH の使用を一時的なオブジェクト、メモリが断片化もパフォーマンスに悪影響を格納します。 ここを使用することは、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A>をスイープするだけではなく、LOH ガベージ コレクション中に圧縮するプロパティです。  
+  
+ 既定値、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A>プロパティは<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>、ガベージ コレクション中に、LOH は最適化されないことを示します。 プロパティの値を割り当てた場合<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>LOH は、[次へ] フル ブロッキング ガベージ コレクション中に、圧縮、およびプロパティの値にリセット<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  バック グラウンド ガベージ コレクションをブロックしていません。 つまり、設定した場合、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A>プロパティを<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>、その後に発生する 2 つのコレクションが LOH を圧縮しないで、背景生成します。 だけ最初のブロッキング generation 2 のコレクションが LOH を圧縮します。  
+  
+ 後に、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A>プロパティに設定されている<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>、不確定の将来の時刻に、[次へ] のフル ブロッキング ガベージ コレクション (および LOH を圧縮) が実行されます。 次のようにコードを使用してすぐが LOH を圧縮することができます。  
+  
+ [!code-csharp[System.Runtime.GCSettings#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.gcsettings/cs/lohcompactionmode1.cs#1)]
+ [!code-vb[System.Runtime.GCSettings#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.gcsettings/vb/lohcompactionmode1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatencyMode">
+      <MemberSignature Language="C#" Value="public static System.Runtime.GCLatencyMode LatencyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Runtime.GCLatencyMode LatencyMode" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.GCSettings.LatencyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLatencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ガベージ コレクションの現在の待機モードを取得または設定します。</summary>
+        <value>待機モードを指定する列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、アプリケーションでのガベージ コレクションの割り込みの動作のレベルを減らすことができます、<xref:System.Runtime.GCLatencyMode>に<xref:System.Runtime.GCLatencyMode.LowLatency>重要な操作中にします。 このような操作を完了すると後、は、メモリを増やしてより多くのオブジェクトを再要求できるように高待機時間モードに戻ります。  
+  
+ 通常は、値を設定する、<xref:System.Runtime.GCSettings.LatencyMode%2A>ガベージ コレクターの待機モードを定義するプロパティです。 ただし、割り当てることによって、GC 領域の無待機モードを設定することはできません、<xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType>列挙体の値、<xref:System.Runtime.GCSettings.LatencyMode%2A>プロパティです。 代わりを呼び出して、<xref:System.GC.TryStartNoGCRegion%2A?displayProperty=nameWithType>を開始して、GC 領域の無待機モード、メソッドの呼び出し、<xref:System.GC.EndNoGCRegion%2A?displayProperty=nameWithType>を終了することです。  
+  
+ 参照してください[待機モード](~/docs/standard/garbage-collection/latency.md)のガベージ コレクションの実行時の構成設定の既定値に与える影響については、<xref:System.Runtime.GCLatencyMode>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Runtime.GCSettings.LatencyMode" />プロパティが無効な値に設定されています。  
+  
+ または  
+  
+ <see cref="P:System.Runtime.GCSettings.LatencyMode" />プロパティに設定することはできません<see cref="F:System.Runtime.GCLatencyMode.NoGCRegion" />です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

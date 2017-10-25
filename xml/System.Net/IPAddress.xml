@@ -1,0 +1,1440 @@
+<Type Name="IPAddress" FullName="System.Net.IPAddress">
+  <TypeSignature Language="C#" Value="public class IPAddress" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit IPAddress extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IPAddress" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット プロトコル (IP) アドレスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress>クラスには、IP ネットワーク上のコンピューターのアドレスが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ファミリのアドレスを取得するサーバーを照会する方法を示しています。 および、IP アドレスのことをサポートします。  
+  
+ [!code-cpp[System.Net.IPAddress#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress/CPP/ipaddress.cpp#1)]
+ [!code-csharp[System.Net.IPAddress#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress/CS/ipaddress.cs#1)]
+ [!code-vb[System.Net.IPAddress#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress/VB/ipaddress.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPAddress (byte[] address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="address">IP アドレスのバイト配列値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.IPAddress" />として指定されたアドレスを持つクラス、<see cref="T:System.Byte" />配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress>で作成された、<xref:System.Net.IPAddress.Address%2A>プロパティに設定`address`です。  
+  
+ 場合の長さ`address`は、4、<xref:System.Net.IPAddress.%23ctor%28System.Byte%5B%5D%29>構築 IPv4 アドレスです。 それ以外の場合、0 のスコープを伴う IPv6 アドレスが構築されました。  
+  
+ <xref:System.Byte>配列はインデックス位置 0 の最初に最上位バイトとバイト順のネットワーク内にあると見なされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="address" />無効な IP アドレスが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPAddress (long newAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 newAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.#ctor(System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newAddress" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="newAddress">IP アドレスの long 型の値。 たとえば、ビッグ エンディアン形式の値 0x2414188f は IP アドレス「143.24.20.36」になります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.IPAddress" />として指定されたアドレスを持つクラス、<see cref="T:System.Int64" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress>でインスタンスが作成、<xref:System.Net.IPAddress.Address%2A>プロパティに設定`newAddress`です。  
+  
+ <xref:System.Int64>ネットワーク バイトの順序になる値が使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="newAddress" />&lt; 0 または  
+  
+ <paramref name="newAddress" />&gt; 0x00000000FFFFFFFF</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPAddress (byte[] address, long scopeid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] address, int64 scopeid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.#ctor(System.Byte[],System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.Byte[]" />
+        <Parameter Name="scopeid" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="address">IP アドレスのバイト配列値です。</param>
+        <param name="scopeid">スコープ識別子の long 型の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.IPAddress" />として指定されたアドレスを持つクラス、<see cref="T:System.Byte" />配列と指定したスコープ識別子。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、IPv6 アドレスをインスタンス化します。 `scopeid`リンク ローカル アドレスの場合のネットワーク インターフェイスを識別します。 スコープは、リンク ローカルおよびサイト ローカル アドレスに対してのみ有効です。  
+  
+ <xref:System.Byte>配列はインデックス位置 0 の最初に最上位バイトとバイト順のネットワーク内にあると見なされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="address" />無効な IP アドレスが含まれています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scopeid" />&lt; 0 または  
+  
+ <paramref name="scopeid" />&gt; 0x00000000FFFFFFFF</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public long Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property has been deprecated. It is address family dependent. Please use IPAddress.Equals method to perform comparisons. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) アドレスです。</summary>
+        <value>IP アドレスの long 型の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは今後使用しません。 <xref:System.Net.IPAddress.GetAddressBytes%2A> を使用してください。  
+  
+ 変換する<xref:System.Net.IPAddress.Address%2A>ドットで区切られた 10 進表記を使用して、<xref:System.Net.IPAddress.ToString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPAddress.Address%2A>の IP アドレスを取得するパラメーター、<xref:System.Net.IPAddress>インスタンス。  
+  
+ [!code-cpp[IPAddress_Address_AddressFamily#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_Address_AddressFamily/CPP/ipaddress_address_addressfamily.cpp#2)]
+ [!code-csharp[IPAddress_Address_AddressFamily#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_Address_AddressFamily/CS/ipaddress_address_addressfamily.cs#2)]
+ [!code-vb[IPAddress_Address_AddressFamily#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_Address_AddressFamily/VB/ipaddress_address_addressfamily.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">アドレス ファミリが<see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressFamily">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.AddressFamily AddressFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.AddressFamily AddressFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.AddressFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.AddressFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP アドレスのアドレス ファミリを取得します。</summary>
+        <value>返します<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />ipv4 の場合、または<see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />IPv6 の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例を参照してください、<xref:System.Net.IPAddress>クラスに関するトピック。  
+  
+ [!code-cpp[System.Net.IPAddress#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress/CPP/ipaddress.cpp#3)]
+ [!code-csharp[System.Net.IPAddress#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress/CS/ipaddress.cs#3)]
+ [!code-vb[System.Net.IPAddress#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress/VB/ipaddress.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Any">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress Any;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress Any" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーがすべてのネットワーク インターフェイス上のクライアント アクティビティを待機する必要があることを示す IP アドレスを提供します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.Socket.Bind%2A?displayProperty=nameWithType>メソッドを使用、<xref:System.Net.IPAddress.Any>ことを指定するフィールド、<xref:System.Net.Sockets.Socket>インスタンスがすべてのネットワーク インターフェイス上のクライアント アクティビティを待機する必要があります。  
+  
+ <xref:System.Net.IPAddress.Any>フィールドは、ドットで区切られた 10 進表記 0.0.0.0 に相当します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Broadcast">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress Broadcast;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress Broadcast" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.Broadcast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP ブロードキャスト アドレスを提供します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.Broadcast>フィールドは、ドットで区切られた 10 進表記 255.255.255.255 に相当します。  
+  
+   
+  
+## Examples  
+ 次の例の出力、<xref:System.Net.IPAddress.Broadcast>コンソールへのアドレス。  
+  
+ [!code-cpp[IPAddress_Broadcast_Loopback#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_Broadcast_Loopback/CPP/ipaddress_broadcast_loopback.cpp#2)]
+ [!code-csharp[IPAddress_Broadcast_Loopback#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_Broadcast_Loopback/CS/ipaddress_broadcast_loopback.cs#2)]
+ [!code-vb[IPAddress_Broadcast_Loopback#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_Broadcast_Loopback/VB/ipaddress_broadcast_loopback.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand"><see cref="T:System.Net.IPAddress" />現在のインスタンスと比較します。</param>
+        <summary>2 つの IP アドレスを比較します。</summary>
+        <returns>
+          <see langword="true" />2 つのアドレスが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.Equals%2A>メソッドは現在、比較<xref:System.Net.IPAddress>インスタンス、`comparand`パラメーターを返す`true`2 つのインスタンスには、同じ IP アドレスが含まれている場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAddressBytes">
+      <MemberSignature Language="C#" Value="public byte[] GetAddressBytes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetAddressBytes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.GetAddressBytes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コピーを提供、<see cref="T:System.Net.IPAddress" />バイトの配列として。</summary>
+        <returns><see cref="T:System.Byte" /> 配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、バイト形式でサーバーの IP アドレスを取得する方法を示します。  
+  
+ [!code-cpp[System.Net.IPAddress#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress/CPP/ipaddress.cpp#2)]
+ [!code-csharp[System.Net.IPAddress#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress/CS/ipaddress.cs#2)]
+ [!code-vb[System.Net.IPAddress#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress/VB/ipaddress.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>IP アドレスのハッシュ値を返します。</summary>
+        <returns>整数ハッシュ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.GetHashCode%2A>メソッドは、IP アドレスのハッシュ コードを返します。 この値は、ハッシュ テーブル内のキーとして使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostToNetworkOrder">
+      <MemberSignature Language="C#" Value="public static short HostToNetworkOrder (short host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int16 HostToNetworkOrder(int16 host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.HostToNetworkOrder(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="host">変換する数値は、ホストのバイト順で表示されます。</param>
+        <summary>短い値をバイト順のホストからネットワーク バイト オーダーに変換します。</summary>
+        <returns>ネットワークのバイト順で表される短い値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターは、マルチバイト整数値のバイト順の異なる規則を使用します。 一部のコンピューター、最上位バイトが先頭に配置 (ビッグ エンディアン順と呼ばれます)、最下位バイトが先頭に配置他のユーザー (として知られ、リトル エンディアン順)。 異なるバイトの順序付けを使用しているコンピューターを操作するには、ネットワーク経由で送信されるすべての整数値がまず最上位バイトのあるネットワーク バイト順で送信されます。  
+  
+ <xref:System.Net.IPAddress.HostToNetworkOrder%2A>メソッドがネットワークによって使用されるバイトの順序にホストによって使用される、バイト順から、ホスト システムに格納されているマルチバイトの整数値に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostToNetworkOrder">
+      <MemberSignature Language="C#" Value="public static int HostToNetworkOrder (int host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 HostToNetworkOrder(int32 host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.HostToNetworkOrder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="host">変換する数値は、ホストのバイト順で表示されます。</param>
+        <summary>整数値をバイト順のホストからネットワーク バイト オーダーに変換します。</summary>
+        <returns>ネットワークのバイト順で表現される整数値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターは、マルチバイト整数値のバイト順の異なる規則を使用します。 一部のコンピューター、最上位バイトが先頭に配置 (ビッグ エンディアン順と呼ばれます)、最下位バイトが先頭に配置他のユーザー (として知られ、リトル エンディアン順)。 異なるバイトの順序付けを使用しているコンピューターを操作するには、ネットワーク経由で送信されるすべての整数値がまず最上位バイトのあるネットワーク バイト順で送信されます。  
+  
+ <xref:System.Net.IPAddress.HostToNetworkOrder%2A>メソッドがネットワークによって使用されるバイトの順序にホストによって使用される、バイト順から、ホスト システムに格納されているマルチバイトの整数値に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostToNetworkOrder">
+      <MemberSignature Language="C#" Value="public static long HostToNetworkOrder (long host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 HostToNetworkOrder(int64 host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.HostToNetworkOrder(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="host">変換する数値は、ホストのバイト順で表示されます。</param>
+        <summary>Long 型の値をバイト順のホストからネットワーク バイト オーダーに変換します。</summary>
+        <returns>ネットワークのバイト順で表される long 値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターは、マルチバイト整数値のバイト順の異なる規則を使用します。 一部のコンピューター、最上位バイトが先頭に配置 (ビッグ エンディアン順と呼ばれます)、最下位バイトが先頭に配置他のユーザー (として知られ、リトル エンディアン順)。 異なるバイトの順序付けを使用しているコンピューターを操作するには、ネットワーク経由で送信されるすべての整数値がまず最上位バイトのあるネットワーク バイト順で送信されます。  
+  
+ <xref:System.Net.IPAddress.HostToNetworkOrder%2A>メソッドがネットワークによって使用されるバイトの順序にホストによって使用される、バイト順から、ホスト システムに格納されているマルチバイトの整数値に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPv6Any">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress IPv6Any;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress IPv6Any" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.IPv6Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)" />メソッドを使用、<see cref="F:System.Net.IPAddress.IPv6Any" />ことを指定するフィールド、<see cref="T:System.Net.Sockets.Socket" />すべてのネットワーク インターフェイス上のクライアント アクティビティを待機する必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.IPv6Any> 0:0:0:0:0:0:0:0 コロン 16 進数表記でまたはに対応フィールドを:: compact 表記でします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、標準の圧縮形式でのホストの任意のアドレスを現在の値を表示します。  
+  
+ [!code-cpp[System.Net.IPAddress.IPv6NoneAnyLoopback#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/CPP/noneanyloopback.cpp#2)]
+ [!code-csharp[System.Net.IPAddress.IPv6NoneAnyLoopback#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/CS/noneanyloopback.cs#2)]
+ [!code-vb[System.Net.IPAddress.IPv6NoneAnyLoopback#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/VB/noneanyloopback.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPv6Loopback">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress IPv6Loopback;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress IPv6Loopback" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.IPv6Loopback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP ループバック アドレスを提供します。 このプロパティは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.IPv6Loopback> 0:0:0:0:0:0:0:1 コロン 16 進数表記でまたはに対応フィールドを:: な表記では 1 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、標準の圧縮形式で現在のホストのループバック アドレスの値を表示します。  
+  
+ [!code-cpp[System.Net.IPAddress.IPv6NoneAnyLoopback#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/CPP/noneanyloopback.cpp#1)]
+ [!code-csharp[System.Net.IPAddress.IPv6NoneAnyLoopback#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/CS/noneanyloopback.cs#1)]
+ [!code-vb[System.Net.IPAddress.IPv6NoneAnyLoopback#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/VB/noneanyloopback.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPv6None">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress IPv6None;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress IPv6None" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.IPv6None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク インターフェイスを使用しないことを示す IP アドレスを提供します。 このプロパティは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.Socket.Bind%2A?displayProperty=nameWithType>メソッドを使用、<xref:System.Net.IPAddress.IPv6None>ことを指定するフィールド、<xref:System.Net.Sockets.Socket>クライアントのアクティビティをリッスンする必要があります。 <xref:System.Net.IPAddress.IPv6None> 0:0:0:0:0:0:0:0 コロン 16 進数表記でまたはに対応フィールドを:: な表記では 0 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、標準の圧縮形式で現在のホストのアドレスなしの値を表示します。  
+  
+ [!code-cpp[System.Net.IPAddress.IPv6NoneAnyLoopback#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/CPP/noneanyloopback.cpp#3)]
+ [!code-csharp[System.Net.IPAddress.IPv6NoneAnyLoopback#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/CS/noneanyloopback.cs#3)]
+ [!code-vb[System.Net.IPAddress.IPv6NoneAnyLoopback#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress.IPv6NoneAnyLoopback/VB/noneanyloopback.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIPv4MappedToIPv6">
+      <MemberSignature Language="C#" Value="public bool IsIPv4MappedToIPv6 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIPv4MappedToIPv6" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.IsIPv4MappedToIPv6" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP アドレスが IPv4 マップの IPv6 アドレスであるかどうかを取得します。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。  
+  
+ <see langword="true" />IP アドレスが IPv6 の IPv4 マップ アドレス以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デュアル スタック ソケットには、常に、IPv6 アドレスが必要です。 IPv4 アドレスとの対話機能には、IPv6 の IPv4 マップ アドレスの形式の使用が必要です。 すべての IPv4 アドレスは、IPv4 ノードとの通信に IPv6 のみのアプリケーションを使用する IPv4 マップの IPv6 アドレスの形式で表示する必要があります。 IPv6 の IPv4 マップ アドレス形式は、IPv4、IPv6 アドレスとして表現されているノードの IPv4 アドレスを使用できます。 IPv4 アドレスが IPv6 アドレスの下位 32 ビットにエンコードされた、高位の 96 ビット固定プレフィックス 0:0:0:0:0:FFFF します。 IPv4 マップの IPv6 アドレスの形式は RFC 4291 で指定されます。 詳細については、次を参照してください。 [www.ietf.org/rfc/rfc4291.txt](http://go.microsoft.com/fwlink/?LinkID=92231)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIPv6LinkLocal">
+      <MemberSignature Language="C#" Value="public bool IsIPv6LinkLocal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIPv6LinkLocal" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.IsIPv6LinkLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが IPv6 リンク ローカル アドレスであるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />IP アドレスが IPv6 リンク ローカル アドレス以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIPv6Multicast">
+      <MemberSignature Language="C#" Value="public bool IsIPv6Multicast { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIPv6Multicast" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.IsIPv6Multicast" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IPv6 アドレスはかどうかを取得するグローバル アドレスをマルチキャストします。</summary>
+        <value>
+          <see langword="true" />場合は、IP アドレスがグローバル IPv6 マルチキャスト アドレスです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIPv6SiteLocal">
+      <MemberSignature Language="C#" Value="public bool IsIPv6SiteLocal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIPv6SiteLocal" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.IsIPv6SiteLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが IPv6 サイト ローカル アドレスであるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />IP アドレスが IPv6 サイト ローカル アドレス以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIPv6Teredo">
+      <MemberSignature Language="C#" Value="public bool IsIPv6Teredo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIPv6Teredo" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.IsIPv6Teredo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが IPv6 Teredo アドレスであるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />IP アドレスが IPv6 Teredo アドレス以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Teredo アドレスは、IPv6 アドレス プレフィックスが 2001年::/32 です。 Teredo アドレスは、通常の DNS 名解決によって返されるまたはローカル インターフェイスに割り当てられている IPv6 アドレスとして列挙できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoopback">
+      <MemberSignature Language="C#" Value="public static bool IsLoopback (System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsLoopback(class System.Net.IPAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.IsLoopback(System.Net.IPAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">IP アドレス。</param>
+        <summary>指定した IP アドレスが、ループバック アドレスであるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="address" />ループバック アドレス、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.IsLoopback%2A>メソッド比較`address`に<xref:System.Net.IPAddress.Loopback>し、返します`true`2 つの IP アドレスが同じ場合です。  
+  
+ IPv4 の場合を<xref:System.Net.IPAddress.IsLoopback%2A>メソッドを返します。`true`フォームのすべての IP アドレスに対して 127.X.Y.Z (X、Y、Z の段階である 0 ~ 255 の範囲)、だけでなく<xref:System.Net.IPAddress.Loopback>(127.0.0.1)。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.IPAddress.IsLoopback%2A>メソッドを指定されたアドレスが、ループバック アドレスであるかどうかを判別します。  
+  
+ [!code-cpp[System.Net.IPAddress.IsLoopback#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress.IsLoopback/CPP/isloopback.cpp#1)]
+ [!code-csharp[System.Net.IPAddress.IsLoopback#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress.IsLoopback/CS/isloopback.cs#1)]
+ [!code-vb[System.Net.IPAddress.IsLoopback#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress.IsLoopback/VB/isloopback.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Loopback">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress Loopback;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress Loopback" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.Loopback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP ループバック アドレスを提供します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.Loopback>フィールドは、ドットで区切られた 10 進表記 127.0.0.1 に相当します。  
+  
+   
+  
+## Examples  
+ 次の例の出力、<xref:System.Net.IPAddress.Loopback>コンソールへのアドレス。  
+  
+ [!code-cpp[IPAddress_Broadcast_Loopback#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_Broadcast_Loopback/CPP/ipaddress_broadcast_loopback.cpp#1)]
+ [!code-csharp[IPAddress_Broadcast_Loopback#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_Broadcast_Loopback/CS/ipaddress_broadcast_loopback.cs#1)]
+ [!code-vb[IPAddress_Broadcast_Loopback#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_Broadcast_Loopback/VB/ipaddress_broadcast_loopback.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapToIPv4">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress MapToIPv4 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.IPAddress MapToIPv4() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.MapToIPv4" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マップ、 <see cref="T:System.Net.IPAddress" /> IPv4 アドレスにオブジェクト。</summary>
+        <returns><see cref="T:System.Net.IPAddress" /> を返します。  
+  
+ IPv4 アドレス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デュアル スタック ソケットには、常に、IPv6 アドレスが必要です。 IPv4 アドレスとの対話機能には、IPv6 の IPv4 マップ アドレスの形式の使用が必要です。 すべての IPv4 アドレスは、IPv4 ノードとの通信に IPv6 のみのアプリケーションを使用する IPv4 マップの IPv6 アドレスの形式で表示する必要があります。 IPv6 の IPv4 マップ アドレス形式は、IPv4、IPv6 アドレスとして表現されているノードの IPv4 アドレスを使用できます。 IPv4 アドレスが IPv6 アドレスの下位 32 ビットにエンコードされた、高位の 96 ビット固定プレフィックス 0:0:0:0:0:FFFF します。 IPv4 マップの IPv6 アドレスの形式は RFC 4291 で指定されます。 詳細については、次を参照してください。 [www.ietf.org/rfc/rfc4291.txt](http://go.microsoft.com/fwlink/?LinkID=92231)です。  
+  
+ 使用する場合<xref:System.Net.IPAddress.MapToIPv4%2A>IPv6 形式の IPv4 アドレスを IPv4 形式に変換する必要があります最初に確認する IPv4 アドレス思います。 呼び出す<xref:System.Net.IPAddress.IsIPv4MappedToIPv6%2A>、返します`true`IP アドレスが IPv4、IPv6 として書き込まれる場合、または`false`それ以外の場合。 場合<xref:System.Net.IPAddress.IsIPv4MappedToIPv6%2A>返します`true`を使用して<xref:System.Net.IPAddress.MapToIPv4%2A>変換を行う。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapToIPv6">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress MapToIPv6 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.IPAddress MapToIPv6() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.MapToIPv6" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マップ、 <see cref="T:System.Net.IPAddress" /> IPv6 アドレスにオブジェクト。</summary>
+        <returns><see cref="T:System.Net.IPAddress" /> を返します。  
+  
+ IPv6 アドレス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デュアル スタック ソケットには、常に、IPv6 アドレスが必要です。 IPv4 アドレスとの対話機能には、IPv6 の IPv4 マップ アドレスの形式の使用が必要です。 すべての IPv4 アドレスは、IPv4 ノードとの通信に IPv6 のみのアプリケーションを使用する IPv4 マップの IPv6 アドレスの形式で表示する必要があります。 IPv6 の IPv4 マップ アドレス形式は、IPv4、IPv6 アドレスとして表現されているノードの IPv4 アドレスを使用できます。 IPv4 アドレスが IPv6 アドレスの下位 32 ビットにエンコードされた、高位の 96 ビット固定プレフィックス 0:0:0:0:0:FFFF します。 IPv4 マップの IPv6 アドレスの形式は RFC 4291 で指定されます。 詳細については、次を参照してください。 [www.ietf.org/rfc/rfc4291.txt](http://go.microsoft.com/fwlink/?LinkID=92231)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkToHostOrder">
+      <MemberSignature Language="C#" Value="public static short NetworkToHostOrder (short network);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int16 NetworkToHostOrder(int16 network) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.NetworkToHostOrder(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="network" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="network">、変換する数値は、ネットワークのバイト順で表示されます。</param>
+        <summary>短い値をバイト順をネットワークからホストのバイト順に変換します。</summary>
+        <returns>ホストのバイト順で表される短い値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターは、マルチバイト整数値のバイト順の異なる規則を使用します。 一部のコンピューター、最上位バイトが先頭に配置 (ビッグ エンディアン順と呼ばれます)、最下位バイトが先頭に配置他のユーザー (として知られ、リトル エンディアン順)。 異なるバイトの順序付けを使用しているコンピューターを操作するには、ネットワーク経由で送信されるすべての整数値がまず最上位バイトのあるネットワーク バイト順で送信されます。  
+  
+ <xref:System.Net.IPAddress.NetworkToHostOrder%2A>メソッドが、ホストによって使用される、バイト順をネットワークで使用される、バイト順から、ホスト システムに格納されているマルチバイトの整数値に変換します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPAddress.NetworkToHostOrder%2A>ネットワーク バイト オーダーからホストのバイト順に short 値を変換するメソッド。  
+  
+ [!code-cpp[IPAddress_NetworkToHost#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_NetworkToHost/CPP/ipaddress_networktohost.cpp#1)]
+ [!code-csharp[IPAddress_NetworkToHost#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_NetworkToHost/CS/ipaddress_networktohost.cs#1)]
+ [!code-vb[IPAddress_NetworkToHost#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_NetworkToHost/VB/ipaddress_networktohost.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkToHostOrder">
+      <MemberSignature Language="C#" Value="public static int NetworkToHostOrder (int network);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 NetworkToHostOrder(int32 network) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.NetworkToHostOrder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="network" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="network">、変換する数値は、ネットワークのバイト順で表示されます。</param>
+        <summary>整数値をバイト順をネットワークからホストのバイト順に変換します。</summary>
+        <returns>ホストのバイト順で表される整数値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターは、マルチバイト整数値のバイト順の異なる規則を使用します。 一部のコンピューター、最上位バイトが先頭に配置 (ビッグ エンディアン順と呼ばれます)、最下位バイトが先頭に配置他のユーザー (として知られ、リトル エンディアン順)。 異なるバイトの順序付けを使用しているコンピューターを操作するには、ネットワーク経由で送信されるすべての整数値がまず最上位バイトのあるネットワーク バイト順で送信されます。  
+  
+ <xref:System.Net.IPAddress.NetworkToHostOrder%2A>メソッドが、ホストによって使用される、バイト順をネットワークで使用される、バイト順から、ホスト システムに格納されているマルチバイトの整数値に変換します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPAddress.NetworkToHostOrder%2A>ネットワーク バイト オーダーからホストのバイト順を整数値に変換します。  
+  
+ [!code-cpp[IPAddress_NetworkToHost#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_NetworkToHost/CPP/ipaddress_networktohost.cpp#2)]
+ [!code-csharp[IPAddress_NetworkToHost#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_NetworkToHost/CS/ipaddress_networktohost.cs#2)]
+ [!code-vb[IPAddress_NetworkToHost#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_NetworkToHost/VB/ipaddress_networktohost.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkToHostOrder">
+      <MemberSignature Language="C#" Value="public static long NetworkToHostOrder (long network);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 NetworkToHostOrder(int64 network) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.NetworkToHostOrder(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="network" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="network">、変換する数値は、ネットワークのバイト順で表示されます。</param>
+        <summary>Long 型の値をバイト順をネットワークからホストのバイト順に変換します。</summary>
+        <returns>ホストのバイト順で表される long 値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターは、マルチバイト整数値のバイト順の異なる規則を使用します。 一部のコンピューター、最上位バイトが先頭に配置 (ビッグ エンディアン順と呼ばれます)、最下位バイトが先頭に配置他のユーザー (として知られ、リトル エンディアン順)。 異なるバイトの順序付けを使用しているコンピューターを操作するには、ネットワーク経由で送信されるすべての整数値がまず最上位バイトのあるネットワーク バイト順で送信されます。  
+  
+ <xref:System.Net.IPAddress.NetworkToHostOrder%2A>メソッドが、ホストによって使用される、バイト順をネットワークで使用される、バイト順から、ホスト システムに格納されているマルチバイトの整数値に変換します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPAddress.NetworkToHostOrder%2A>ネットワーク バイト オーダーからホストのバイト順を long 型の値に変換します。  
+  
+ [!code-cpp[IPAddress_NetworkToHost#3](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_NetworkToHost/CPP/ipaddress_networktohost.cpp#3)]
+ [!code-csharp[IPAddress_NetworkToHost#3](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_NetworkToHost/CS/ipaddress_networktohost.cs#3)]
+ [!code-vb[IPAddress_NetworkToHost#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_NetworkToHost/VB/ipaddress_networktohost.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.IPAddress None;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.IPAddress None" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPAddress.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク インターフェイスを使用しないことを示す IP アドレスを提供します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.Socket.Bind%2A?displayProperty=nameWithType>メソッドを使用、<xref:System.Net.IPAddress.None>ことを指定するフィールド、<xref:System.Net.Sockets.Socket>クライアントのアクティビティをリッスンする必要があります。 <xref:System.Net.IPAddress.None>フィールドは、ドットで区切られた 10 進表記 255.255.255.255 に相当します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPAddress.None>ネットワーク インターフェイスを使用しないことを示すプロパティです。  
+  
+ [!code-cpp[IPAddress_None#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IPAddress_None/CPP/ipaddress_none.cpp#1)]
+ [!code-csharp[IPAddress_None#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IPAddress_None/CS/ipaddress_none.cs#1)]
+ [!code-vb[IPAddress_None#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPAddress_None/VB/ipaddress_none.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Net.IPAddress Parse (string ipString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPAddress Parse(string ipString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ipString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ipString">IP アドレスと IPv6 のコロン区切り 16 進表記法で ipv4 のドットで区切られた 10 進表記を表す文字列。</param>
+        <summary>IP アドレス文字列に変換して、<see cref="T:System.Net.IPAddress" />インスタンス。</summary>
+        <returns><see cref="T:System.Net.IPAddress" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.Net.IPAddress.Parse%2A>メソッドを作成、<xref:System.Net.IPAddress>と IPv6 のコロン区切り 16 進表記法で ipv4 のドットで区切られた 10 進表記で表される IP アドレスからのインスタンス。  
+  
+ 部分 (各部分はピリオドで区切られます) の数`ipString`IP アドレスを構築する方法を決定します。 1 つの部分のアドレスは、ネットワーク アドレスに直接格納されます。 クラス A アドレスを指定するための便利な 2 部構成アドレスの最初のバイトとネットワーク アドレスの末尾の部分を一番右側の 3 バイトが先頭部分は、配置します。 クラス B のアドレスを指定するための便利な 3 つの部分アドレス最初のバイト、2 番目のバイトの 2 番目の部分とのネットワーク アドレスの最後の部分を右端の 2 バイトが最初の部分は、配置します。 例:  
+  
+|部分の数と使用例`ipString`|Ip アドレスに IPv4 アドレス|  
+|--------------------------------------------|--------------------------------|  
+|1 -- "65535"|0.0.255.255|  
+|2 -- "20.2"|20.0.0.2|  
+|2 -- "20.65535"|20.0.255.255|  
+|3 -- "128.1.2"|128.1.0.2|  
+  
+   
+  
+## Examples  
+ 次のコードがまたはのインスタンスに、IPv6 のコロン区切り 16 進表記法で ipv4 のドットで区切られた 10 進表記で、IP アドレスを含む文字列を変換、<xref:System.Net.IPAddress>クラスです。 オーバー ロードされたを使用し、<xref:System.Net.IPAddress.ToString%2A>標準の表記でアドレスを表示するメソッド。  
+  
+ [!code-cpp[System.Net.IPAddress.Parse#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress.Parse/CPP/parse.cpp#1)]
+ [!code-csharp[System.Net.IPAddress.Parse#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress.Parse/CS/parse.cs#1)]
+ [!code-vb[System.Net.IPAddress.Parse#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress.Parse/VB/parse.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ipString" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="ipString" />有効な IP アドレスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeId">
+      <MemberSignature Language="C#" Value="public long ScopeId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ScopeId" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPAddress.ScopeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または IPv6 アドレスのスコープ識別子を設定します。</summary>
+        <value>アドレスのスコープを指定する long 整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 意味<xref:System.Net.IPAddress.ScopeId%2A>が使用されているコンテキストに応じて変化します。  
+  
+-   リンク ローカル アドレスです。 異なるリンクに接続されている複数のインターフェイスとホストでは、複数のインターフェイスに同じリンク ローカル アドレスを割り当てることができます。 このあいまいさを回避するのには、スコープ識別子はメッセージを交換するインターフェイスを指定する使用されます。  
+  
+> [!NOTE]
+>  リンク ローカル アドレスの形式のプレフィックス (FP) FE80 で識別されるは、同じリンク上の近隣ノードと通信するときに、ノードによって使用されます。  
+  
+-   サイト ローカル アドレス。 ホストは、複数のサイトに接続することができます。 この場合、スコープ識別子は、通信するために特定のサイトを示すために使用されます。  
+  
+> [!NOTE]
+>  形式のプレフィックス (FP) fec 0 によって識別される、サイト ローカル アドレスは、プライベート イントラネット上に通信するときに、ノードによって使用されます。  
+  
+ 指定に使用される表記、`ScopeId`アドレスでは`Address%ScopeId`します。 たとえば、`FE80::5EFE:192.168.41.30%2.`  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Net.IPAddress#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPAddress/CPP/ipaddress.cpp#3)]
+ [!code-csharp[System.Net.IPAddress#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPAddress/CS/ipaddress.cs#3)]
+ [!code-vb[System.Net.IPAddress#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPAddress/VB/ipaddress.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <see langword="AddressFamily" /> = <see langword="InterNetwork" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scopeId" />&lt; 0  
+  
+ \- または  
+  
+-   <paramref name="scopeId" />&gt; 0x00000000FFFFFFFF</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インターネット アドレスをその標準の表記に変換します。</summary>
+        <returns>ドット形式の表記 IPv4 または IPv6 のコロン 16 進数表記では、IP アドレスを含む文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPAddress.ToString%2A>メソッドに格納されている IP アドレスを変換する、<xref:System.Net.IPAddress.Address%2A>プロパティをドット形式の表記 IPv4 または IPv6 のコロン 16 進数表記のいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">アドレス ファミリが<see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" />アドレスが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string ipString, out System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string ipString, [out] class System.Net.IPAddress&amp; address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPAddress.TryParse(System.String,System.Net.IPAddress@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ipString" Type="System.String" />
+        <Parameter Name="address" Type="System.Net.IPAddress&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="ipString">検証対象の文字列。</param>
+        <param name="address">文字列の <see cref="T:System.Net.IPAddress" /> バージョン。</param>
+        <summary>文字列が有効な IP アドレスかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="ipString" />、それ以外の IP アドレスとして解析できた<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドとして解析できる有効なものとして、ipString 値を受け入れることに注意してください、 <xref:System.Int64>、ネットワーク バイト オーダーと同様の方法で、IP アドレスの long 型の値としてその Int64 を処理する、<xref:System.Net.IPAddress.%23ctor%2A>コンス トラクターです。 これは、このメソッドを返す、Int64 が正常に解析された場合は true。 場合でも、有効な IP アドレスではないアドレスを表すことを意味します。 たとえば、ipString が「1」の場合は、このメソッドが戻る場合は true。「1」(または 0.0.0.1) が有効な IP アドレスではないと、false を返すには、このメソッドを予期したにもかかわらずです。 このバグを修正するため、現在の動作は変更されません、既存のアプリ使用できなくなります。 コードは、ドット形式 10 進形式で IP アドレスを解析するのみこのメソッドを使用していることを確認してこの動作を回避できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

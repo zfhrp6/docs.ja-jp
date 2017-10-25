@@ -1,0 +1,75 @@
+<Type Name="ICustomFactory" FullName="System.Runtime.InteropServices.ICustomFactory">
+  <TypeSignature Language="C#" Value="public interface ICustomFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ICustomFactory" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>拡張するマネージ オブジェクトのアクティブ化コードを記述できるように<see cref="T:System.MarshalByRefObject" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロキシを実装するクラスを提供することによってカスタム アクティブ化を有効にすることができます`ICustomFactory`属性と、<xref:System.MarshalByRefObject>クラス、<xref:System.Runtime.Remoting.Proxies.ProxyAttribute>です。 クラスが有効な場合、プロキシの<xref:System.Runtime.InteropServices.ICustomFactory.CreateInstance%2A>メソッド、クラスをアクティブ化する共通言語ランタイムによって呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public MarshalByRefObject CreateInstance (Type serverType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.MarshalByRefObject CreateInstance(class System.Type serverType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomFactory.CreateInstance(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.MarshalByRefObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serverType">アクティブ化する型。</param>
+        <summary>指定した型の新しいインスタンスを作成します。</summary>
+        <returns>A<see cref="T:System.MarshalByRefObject" />指定した型に関連付けられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CreateInstance`指定した型の新しいオブジェクトを作成する必要がある場合、共通言語ランタイムによって呼び出されます。 独自のカスタム クラス ファクトリを提供するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

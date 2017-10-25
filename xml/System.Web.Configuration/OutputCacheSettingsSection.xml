@@ -1,0 +1,119 @@
+<Type Name="OutputCacheSettingsSection" FullName="System.Web.Configuration.OutputCacheSettingsSection">
+  <TypeSignature Language="C#" Value="public sealed class OutputCacheSettingsSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OutputCacheSettingsSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.OutputCacheSettingsSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション ページの出力キャッシュ設定を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSettingsSection>クラスでは、プログラムでアクセスして変更することができます、`outputCacheSettings`の要素、`caching`構成ファイル内のセクションです。 出力キャッシュの設定は、依存関係を定義 (キャッシュとキャッシュ キー、ファイルに格納されているアイテム間のリレーションシップまたは<xref:System.Web.Caching.CacheDependency>オブジェクト) 出力キャッシュで使用されているのインスタンスによって、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブか、または、<xref:System.Web.Configuration.OutputCacheProfile>です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheSettingsSection>セクション プロパティによって定義された制限に従って、構成ファイルの関連するセクションに情報を書き込むことが<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.MachineToApplication>です。 階層では許可されませんレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 ただし、このクラスを使用すると、階層内の任意のレベルで構成情報を読み取る。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.OutputCacheSettingsSection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheSettingsSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSettingsSection/CS/OutputCacheSettingsSection.cs#1)]
+ [!code-vb[System.Web.Configuration.OutputCacheSettingsSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSettingsSection/VB/OutputCacheSettingsSection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutputCacheSettingsSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheSettingsSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.OutputCacheSettingsSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSettingsSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.OutputCacheSettingsSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputCacheProfiles">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheProfileCollection OutputCacheProfiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.OutputCacheProfileCollection OutputCacheProfiles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSettingsSection.OutputCacheProfiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("outputCacheProfiles")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheProfileCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.OutputCacheProfileCollection" /> を取得します。</summary>
+        <value>A<see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />の<see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクト</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSettingsSection.OutputCacheProfiles%2A>にプログラムでアクセス プロパティを使用する、`outputCacheProfiles`構成ファイル内の要素。 使用することができます、<xref:System.Web.Configuration.OutputCacheSettingsSection.OutputCacheProfiles%2A>プロパティを変更する、`outputCacheProfiles`要素プログラムでします。  
+  
+ `outputCacheProfiles`セクションが含まれます<xref:System.Web.Configuration.OutputCacheProfile>出力を表すオブジェクトをキャッシュはアプリケーション内のページで使用する設定。  これらの設定は、設定で、ページに適用できる、`CacheProfile`の属性、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブです。 依存関係、キャッシュの場所、およびキャッシュの有効期限などの属性のキャッシュを制御するには、プロファイルを適用します。  
+  
+ [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブが含まれるすべての設定をオーバーライドできます、<xref:System.Web.Configuration.OutputCacheProfile>を除く、<xref:System.Web.Configuration.OutputCacheProfile.Enabled%2A>プロパティです。 これは有効または無効にすることを確認するため、<xref:System.Web.Configuration.OutputCacheProfile>可能性がありますがオーバーライドされているすべてのページ内のディレクティブを変更する必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheSettingsSection.OutputCacheProfiles%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheSettingsSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSettingsSection/CS/OutputCacheSettingsSection.cs#3)]
+ [!code-vb[System.Web.Configuration.OutputCacheSettingsSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSettingsSection/VB/OutputCacheSettingsSection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSettingsSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

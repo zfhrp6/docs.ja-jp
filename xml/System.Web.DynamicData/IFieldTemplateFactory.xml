@@ -1,0 +1,84 @@
+<Type Name="IFieldTemplateFactory" FullName="System.Web.DynamicData.IFieldTemplateFactory">
+  <TypeSignature Language="C#" Value="public interface IFieldTemplateFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFieldTemplateFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.IFieldTemplateFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>フィールド テンプレートを作成するオブジェクトによって実装されるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこのクラスを実装する必要があります、<xref:System.Web.DynamicData.FieldTemplateFactory>フィールド テンプレートを作成するためにクラスです。 このインターフェイスを初期化するメソッドを提供する、<xref:System.Web.DynamicData.FieldTemplateFactory>し、フィールド テンプレートを作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateFieldTemplate">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.IFieldTemplate CreateFieldTemplate (System.Web.DynamicData.MetaColumn column, System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.DynamicData.IFieldTemplate CreateFieldTemplate(class System.Web.DynamicData.MetaColumn column, valuetype System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.IFieldTemplateFactory.CreateFieldTemplate(System.Web.DynamicData.MetaColumn,System.Web.UI.WebControls.DataBoundControlMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.IFieldTemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+        <Parameter Name="uiHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="column">フィールド テンプレートの表示に使用するデータ列を指定します。</param>
+        <param name="mode">フィールド テンプレートの表示モードを指定します。</param>
+        <param name="uiHint">使用するフィールド テンプレートを指定します。</param>
+        <summary><see cref="T:System.Web.DynamicData.MetaColumn" /> クラス、<see cref="T:System.Web.UI.WebControls.DataBoundControlMode" /> クラスおよび <see cref="P:System.Web.DynamicData.MetaColumn.UIHint" /> プロパティを使用して、フィールド テンプレートのインスタンスを作成します。</summary>
+        <returns>クラスで実装された場合の <see cref="T:System.Web.DynamicData.FieldTemplateFactory" /> オブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データ フィールドのテンプレートは、データ コントロールをデータ モデルのデータ型にマップされる ASP.NET ユーザー コントロールです。 フィールド テンプレートは、一般にから派生<xref:System.Web.DynamicData.FieldTemplateUserControl>、データ フィールド、データ列、およびデータ モデル内のメタデータにアクセスできるようにするクラス。 動的なデータ プロジェクト フィールド テンプレートの既定の指定に変更したり、カスタム フィールド テンプレートを作成することができます。 Imlemented、このメソッドは、データの列でのデータ列のモードに基づくフィールド テンプレートを作成するとき、<xref:System.Web.DynamicData.MetaColumn.UIHint%2A>プロパティです。 指定する、`uiHint`カスタム フィールド テンプレートを使用してデータを表示する場合のパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (System.Web.DynamicData.MetaModel model);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class System.Web.DynamicData.MetaModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.IFieldTemplateFactory.Initialize(System.Web.DynamicData.MetaModel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="model" Type="System.Web.DynamicData.MetaModel" />
+      </Parameters>
+      <Docs>
+        <param name="model">フィールド テンプレートを使用するデータ モデルを指定します。</param>
+        <summary>初期化、<see cref="T:System.Web.DynamicData.FieldTemplateFactory" />指定されたデータ モデルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データは、個々 のデータ フィールドを表示するのにフィールド テンプレートを使用します。 フィールド テンプレートは、通常、データ コントロール内の個々 のフィールドにデータ モデルのデータ型をマップするユーザー コントロールとして実装されます。 このメソッドは、初期化、<xref:System.Web.DynamicData.FieldTemplateFactory>データ モデルを使用するフィールド テンプレート フィールド テンプレートの作成に使用されるクラスが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

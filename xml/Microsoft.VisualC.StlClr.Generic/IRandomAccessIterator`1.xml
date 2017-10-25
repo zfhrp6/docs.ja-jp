@@ -1,0 +1,91 @@
+<Type Name="IRandomAccessIterator&lt;TValue&gt;" FullName="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;">
+  <TypeSignature Language="C#" Value="public interface IRandomAccessIterator&lt;TValue&gt; : Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract beforefieldinit IRandomAccessIterator`1&lt;TValue&gt; implements class Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1&lt;!TValue&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TValue" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TValue">[!INCLUDE[cpp_iter_arg](~/includes/cpp-iter-arg-md.md)]</typeparam>
+    <summary>ランダム アクセス反復子のインターフェイスを定義します。 ランダム アクセス反復子は、次の操作をサポート: 順方向の位置を 1 つを呼び出すことによって移動<c>operator++</c>、旧バージョンとの位置を 1 つを呼び出すことによって移動<c>operator--</c>を使用して要素にアクセスします。<c>operator[]</c>ポインターの算術演算を使用して要素にアクセスするとします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="distance">
+      <MemberSignature Language="C#" Value="public int distance (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 distance(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1.distance(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の反復子と同じコンテナーを指す有効な反復子。</param>
+        <summary>現在の反復子が指す要素と指定した反復子が指している要素間の距離を決定します。</summary>
+        <returns>個の要素を現在の反復子が指す要素と要素の間の距離を<paramref name="_Right" /> をポイントします。 この数値は負の値が場合<paramref name="_Right" />を現在の反復子が指す要素の前にある要素を指します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="less_than">
+      <MemberSignature Language="C#" Value="public bool less_than (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool less_than(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1.less_than(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の反復子と同じコンテナーを指す有効な反復子。</param>
+        <summary>指定した反復子が指す要素の前に、コンテナー内の要素を現在の反復子が指しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在の反復子は、要素の前に付属している要素を指すかどうかを<paramref name="_Right" />以外の場合が指している<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="move">
+      <MemberSignature Language="C#" Value="public int move (int _Offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 move(int32 _Offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1.move(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="_Offset">走査する要素の数。 反復子を前方に移動するには、正の数値を指定します。 旧バージョンとの反復子を移動するには、負の値を使用します。</param>
+        <summary>指定した要素数で、反復子を移動します。</summary>
+        <returns>実際の要素数が走査されます。 この数点が異なります<paramref name="_Offset" />目的の要素の数を反復処理する前に、先頭またはコンテナーの末尾に達した場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

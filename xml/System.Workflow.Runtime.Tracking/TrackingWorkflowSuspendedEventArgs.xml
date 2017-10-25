@@ -1,0 +1,66 @@
+<Type Name="TrackingWorkflowSuspendedEventArgs" FullName="System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs">
+  <TypeSignature Language="C#" Value="public class TrackingWorkflowSuspendedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TrackingWorkflowSuspendedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスが中断された理由についての情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs> は、ワークフロー インスタンスが中断されるときにランタイム追跡インフラストラクチャによって生成されます。 ワークフロー インスタンスに関連付けられている <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> 用に構成された<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> が含まれている場合は、ワークフロー追跡インフラストラクチャによって、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs> が <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord.EventArgs%2A> の <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> に設定されて追跡サービスに送信されます。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs> は、ランタイム追跡サービスが <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> で情報を渡す場合にのみ使用されます。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended?displayProperty=nameWithType> イベントのデータは <xref:System.Workflow.Runtime.WorkflowSuspendedEventArgs> で渡されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`WriteSuspendedEventArgs` を取得する <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs> という名前のメソッドを示しています。 このコードでは、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs.Error%2A> プロパティの値など、メソッドの引数の情報をコンソールに書き込みます。  
+  
+ このコード例は、Program.cs ファイルに含まれている EventArgs 追跡の SDK サンプルの一部です。 詳細については、次を参照してください。 [EventArgs 追跡のサンプル](http://msdn.microsoft.com/en-us/94818da2-c3c4-4a13-b47a-a0fb30dbbf1c)です。  
+  
+ [!code-csharp[WF_Samples#287](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#287)]
+ [!code-vb[WF_Samples#287](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#287)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public string Error { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Error" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingWorkflowSuspendedEventArgs.Error" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが中断された理由についての情報を格納します。 この情報は、<see cref="M:System.Workflow.Runtime.WorkflowInstance.Suspend(System.String)" /> (文字列エラー)、または <see cref="P:System.Workflow.ComponentModel.SuspendActivity.Error" /> アクティビティに設定された <see cref="T:System.Workflow.ComponentModel.SuspendActivity" /> プロパティからのものです。</summary>
+        <value>ワークフロー インスタンスが中断された理由を格納している文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

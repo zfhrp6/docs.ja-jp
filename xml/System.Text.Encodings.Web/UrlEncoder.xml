@@ -1,0 +1,131 @@
+<Type Name="UrlEncoder" FullName="System.Text.Encodings.Web.UrlEncoder">
+  <TypeSignature Language="C#" Value="public abstract class UrlEncoder : System.Text.Encodings.Web.TextEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UrlEncoder extends System.Text.Encodings.Web.TextEncoder" />
+  <TypeSignature Language="DocId" Value="T:System.Text.Encodings.Web.UrlEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Text.Encodings.Web.TextEncoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>URL の文字エンコーディングを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[ 
+
+## Remarks  
+ この種類のソース コードについては、 [System.Text.Encodings.Web プロジェクト](https://github.com/dotnet/corefx/tree/master/src/System.Text.Encodings.Web)GitHub でします。 単体テスト内のコード例にあるとしても機能する、 [System.Text.Encodings.Web/tests](https://github.com/dotnet/corefx/tree/master/src/System.Text.Encodings.Web/tests) GitHub 上のフォルダーです。  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UrlEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Encodings.Web.UrlEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Text.Encodings.Web.UrlEncoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Text.Encodings.Web.UrlEncoder Create (System.Text.Encodings.Web.TextEncoderSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Text.Encodings.Web.UrlEncoder Create(class System.Text.Encodings.Web.TextEncoderSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Encodings.Web.UrlEncoder.Create(System.Text.Encodings.Web.TextEncoderSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encodings.Web.UrlEncoder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Text.Encodings.Web.TextEncoderSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">設定を制御する方法、<see cref="T:System.Text.Encodings.Web.UrlEncoder" />インスタンスのエンコード、主にエンコードする文字。</param>
+        <summary>指定した設定を UrlEncoder クラスの新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Text.Encodings.Web.UrlEncoder" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="settings" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Text.Encodings.Web.UrlEncoder Create (params System.Text.Unicode.UnicodeRange[] allowedRanges);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Text.Encodings.Web.UrlEncoder Create(class System.Text.Unicode.UnicodeRange[] allowedRanges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Encodings.Web.UrlEncoder.Create(System.Text.Unicode.UnicodeRange[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encodings.Web.UrlEncoder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allowedRanges" Type="System.Text.Unicode.UnicodeRange[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="allowedRanges">エンコーダーはエンコードされませんが許可される文字のセット。</param>
+        <summary>エンコーダーがエンコードに使用できる文字 UrlEncoder クラスの新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Text.Encodings.Web.UrlEncoder" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[ 
+
+## Remarks  
+ 文字の一部`allowedRanges`まだエンコードされた可能性があります。 は、このパラメーターは、エンコーダーでエンコードされない、どのような文字を使用せずにする必要がありますをエンコードしませんが許可されたどのような範囲を示します。  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="allowedRanges" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Text.Encodings.Web.UrlEncoder Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Encodings.Web.UrlEncoder Default" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Encodings.Web.UrlEncoder.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encodings.Web.UrlEncoder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>組み込みのインスタンスを取得、<see cref="T:System.Text.Encodings.Web.UrlEncoder" />クラスです。</summary>
+        <value>組み込みのインスタンス、<see cref="T:System.Text.Encodings.Web.UrlEncoder" />クラスです。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

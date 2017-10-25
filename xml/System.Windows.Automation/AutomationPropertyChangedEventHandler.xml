@@ -1,0 +1,42 @@
+<Type Name="AutomationPropertyChangedEventHandler" FullName="System.Windows.Automation.AutomationPropertyChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void AutomationPropertyChangedEventHandler(object sender, AutomationPropertyChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AutomationPropertyChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationPropertyChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Automation.AutomationPropertyChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントを発生させたオブジェクト。</param>
+    <param name="e">イベントに関する情報。</param>
+    <summary>プロパティが変更されたときに UI オートメーション プロバイダーで発生するイベントを処理する UI オートメーション クライアント アプリケーションによって実装されるメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>によって表される`sender`可能性がありますいないがキャッシュされたプロパティ、パターンなど、アプリケーションが中にこのイベントにサブスクライブしているかどうかに応じて、<xref:System.Windows.Automation.CacheRequest>がアクティブであった。  
+  
+ プロバイダーの実装によって、プロパティ変更イベント必ずしも意味しませんプロパティの値が異なっています。だけ、同じ値にも、プロパティを設定したことがあります。 場合は、アプリケーションは、実際の変更にのみ応答する必要があるは、プロパティの状態を追跡するためにユーザーの責任です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsEnabled%2A>サブスクライブされている要素のプロパティが処理されます。  
+  
+ [!code-csharp[UIAClient_snip#172](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/PropertySnips.cs#172)]
+ [!code-vb[UIAClient_snip#172](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/PropertySnips.vb#172)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

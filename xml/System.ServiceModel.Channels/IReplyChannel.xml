@@ -1,0 +1,502 @@
+<Type Name="IReplyChannel" FullName="System.ServiceModel.Channels.IReplyChannel">
+  <TypeSignature Language="C#" Value="public interface IReplyChannel : System.ServiceModel.Channels.IChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReplyChannel implements class System.ServiceModel.Channels.IChannel, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IReplyChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>チャネルがメッセージング エンドポイント間の要求/応答通信の受信側になるために実装する必要があるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IReplyChannel> インターフェイスの <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> メソッドには同期と非同期のバリエーションがあり、これらのメソッドが返す <xref:System.ServiceModel.Channels.RequestContext> を使用して、受信した要求に対する応答を作成できます。  
+  
+ コントラクトには、受信、受信試行、およびメッセージ待機の各機能の同期と非同期のバリエーションが含まれます。  
+  
+ <xref:System.ServiceModel.Channels.IReplyChannel> は、必ずしも単一の送信元にバインドされているとは限りません。 他のチャネルおよびチャネル インターフェイスは、送信元と応答チャネルの間の相関関係を提供しますが、基本コントラクトにはそのような制約はありません。  
+  
+ プル モデルは、メッセージを受信するために <xref:System.ServiceModel.Channels.IReplyChannel> で使用されます。 このモデルは、<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> (またはそのバリエーションの 1 つ) の呼び出しと、その後のメッセージ到着待ちで構成されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginReceiveRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginReceiveRequest (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginReceiveRequest(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.BeginReceiveRequest(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">要求操作が完了したという非同期受信の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">要求操作の非同期受信に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>既定のタイムアウトで、使用可能な要求を受信するための非同期操作を開始します。</summary>
+        <returns>要求の非同期受信を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IReplyChannel.BeginReceiveRequest%28System.AsyncCallback%2CSystem.Object%29>メソッドを呼び出すための標準パターンを実装する<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest>非同期的にします。 既定のタイムアウトは 1 分です。 接続を構成するために使用されるバインドで受信タイムアウトが設定されている場合は、その値が使用されます。 これらの値を他の値にオーバーライドする明示的なタイムアウトを呼び出しで指定する場合は、<xref:System.ServiceModel.Channels.IReplyChannel.BeginReceiveRequest%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> を使用します。  
+  
+ 受信した要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginReceiveRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginReceiveRequest (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginReceiveRequest(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.BeginReceiveRequest(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">利用可能な要求の受信を待機する期間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">要求操作が完了したという非同期受信の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">要求操作の非同期受信に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>指定したタイムアウトで、使用可能な要求を受信するための非同期操作を開始します。</summary>
+        <returns>要求の非同期受信を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IReplyChannel.BeginReceiveRequest%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29>メソッドを呼び出すための標準パターンを実装する<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%28System.TimeSpan%29>非同期的にします。 このメソッドで設定するタイムアウトは、接続を構成するために使用されるバインドで設定されている受信タイムアウトをオーバーライドします。  
+  
+ 受信した要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTryReceiveRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginTryReceiveRequest (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginTryReceiveRequest(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.BeginTryReceiveRequest(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">要求受信操作を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトして <see langword="false" /> が返されます。</param>
+        <param name="callback">要求操作が完了したという非同期受信の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">要求操作の非同期受信に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>タイムアウトが指定され、状態オブジェクトが関連付けられている、要求メッセージを受信するための非同期操作を開始します。</summary>
+        <returns>非同期要求受信操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 待機せずにアプリケーションの処理を継続する必要がある場合は、非同期の <xref:System.ServiceModel.Channels.IReplyChannel.BeginTryReceiveRequest%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> メソッドを使用します。 要求メッセージに応答している間、またはタイムアウト期間が経過するまで、現在のスレッドがブロックされてもかまわない場合は、いずれかの同期 <xref:System.ServiceModel.Channels.IReplyChannel.TryReceiveRequest%28System.TimeSpan%2CSystem.ServiceModel.Channels.RequestContext%40%29> メソッドを使用します。  
+  
+ このメソッドは、コールバックを通じて操作のイベント ハンドラー ID の通知を受信します。 この操作は、チャネルでメッセージを使用できるようになるか、タイムアウトが発生するまで完了しません。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定した <see langword="false" /> が経過した場合、操作は <paramref name="timeout" /> を返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWaitForRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginWaitForRequest (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginWaitForRequest(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.BeginWaitForRequest(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">利用可能な要求の受信を待機する期間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">要求操作が完了したという非同期受信の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">要求操作の非同期受信に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>タイムアウトが指定され、状態オブジェクトが関連付けられている、非同期要求操作を開始します。</summary>
+        <returns>要求メッセージが到着するのを待機するための非同期操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージのキューへの到達を待機している間に、現在のスレッドがブロックされてもかまわない場合は、同期 <xref:System.ServiceModel.Channels.IReplyChannel.WaitForRequest%28System.TimeSpan%29> メソッドを使用します。 スレッドは、指定した `timeout` までブロックされます。  
+  
+ このメソッドは、コールバックを通じて操作のイベント ハンドラー ID の通知を受信します。 この操作は、チャネルで要求メッセージを使用できるようになるか、タイムアウトが発生するまで完了しません。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定した <see langword="false" /> が経過した場合、操作は <paramref name="timeout" /> を返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndReceiveRequest">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.RequestContext EndReceiveRequest (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.RequestContext EndReceiveRequest(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.EndReceiveRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.RequestContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="Overload:System.ServiceModel.Channels.IInputChannel.BeginReceive" />。</param>
+        <summary>使用可能な要求を受信するための非同期操作を完了します。</summary>
+        <returns>要求に対する応答の作成に使用される <see cref="T:System.ServiceModel.Channels.RequestContext" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信した要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>操作を完了する前に指定した <see cref="T:System.TimeoutException" /> が経過した場合、操作は <paramref name="timeout" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndTryReceiveRequest">
+      <MemberSignature Language="C#" Value="public bool EndTryReceiveRequest (IAsyncResult result, out System.ServiceModel.Channels.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EndTryReceiveRequest(class System.IAsyncResult result, [out] class System.ServiceModel.Channels.RequestContext&amp; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.EndTryReceiveRequest(System.IAsyncResult,System.ServiceModel.Channels.RequestContext@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.RequestContext&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.Channels.IReplyChannel.BeginTryReceiveRequest(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <param name="context">受信した <see cref="T:System.ServiceModel.Channels.RequestContext" />。</param>
+        <summary>要求メッセージを受信するための指定した非同期操作を完了します。</summary>
+        <returns>
+          指定した期間が経過する前に要求メッセージを受信する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWaitForRequest">
+      <MemberSignature Language="C#" Value="public bool EndWaitForRequest (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EndWaitForRequest(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.EndWaitForRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> 操作が完了したことを識別して、それから最終結果を取得する <see cref="M:System.ServiceModel.Channels.IReplyChannel.BeginWaitForRequest(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>指定した非同期の要求メッセージ待機操作を完了します。</summary>
+        <returns>
+          指定した期間が経過する前に要求を受信する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress LocalAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress LocalAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IReplyChannel.LocalAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この応答チャネルがメッセージを受信するアドレスを取得します。</summary>
+        <value>この応答チャネルがメッセージを受信する <see cref="T:System.ServiceModel.EndpointAddress" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このプロパティを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveRequest">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.RequestContext ReceiveRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.RequestContext ReceiveRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.RequestContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>利用できるものがある場合、受信した要求のコンテキストを返します。 コンテキストが利用できない場合は、利用できるものを待ちます。</summary>
+        <returns>応答の作成に使用される <see cref="T:System.ServiceModel.Channels.RequestContext" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.RequestContext> は、要求メッセージ、およびそのメッセージに応答するための機構をカプセル化します。  
+  
+ <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> は、複数回または同時に呼び出しできます。 受信した要求ごとに、<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> 呼び出しが 1 つだけ完了します。  
+  
+ 受信した要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveRequest">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.RequestContext ReceiveRequest (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.RequestContext ReceiveRequest(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.RequestContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">要求の受信操作を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトして <see langword="false" /> が返されます。</param>
+        <summary>利用できるものがある場合、受信した要求のコンテキストを返します。 コンテキストが利用できない場合は、利用できるものを待ちます。</summary>
+        <returns>応答の作成に使用される <see cref="T:System.ServiceModel.Channels.RequestContext" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.RequestContext> は、要求メッセージ、およびそのメッセージに応答するための機構をカプセル化します。  
+  
+ <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> は、複数回または同時に呼び出しできます。 受信した要求ごとに、<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> 呼び出しが 1 つだけ完了します。  
+  
+ 受信した要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReceiveRequest">
+      <MemberSignature Language="C#" Value="public bool TryReceiveRequest (TimeSpan timeout, out System.ServiceModel.Channels.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryReceiveRequest(valuetype System.TimeSpan timeout, [out] class System.ServiceModel.Channels.RequestContext&amp; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.TryReceiveRequest(System.TimeSpan,System.ServiceModel.Channels.RequestContext@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.RequestContext&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">要求の受信操作を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトして <see langword="false" /> が返されます。</param>
+        <param name="context">受信した <see cref="T:System.ServiceModel.Channels.RequestContext" />。</param>
+        <summary>指定した期間が経過する前に要求を受信するかどうかを示す値を返します。</summary>
+        <returns>
+          指定した期間が経過する前に要求メッセージを受信する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージがキューに到達するのを待機している間に、現在のスレッドがブロックされてもかまわない場合は、<xref:System.ServiceModel.Channels.IReplyChannel.TryReceiveRequest%28System.TimeSpan%2CSystem.ServiceModel.Channels.RequestContext%40%29> を使用します。 スレッドは、指定した `timeout` までブロックされます。 待機せずにアプリケーションの処理を継続する必要がある場合は、非同期の <xref:System.ServiceModel.Channels.IReplyChannel.BeginTryReceiveRequest%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> メソッドを使用します。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定した <see langword="false" /> が経過した場合、操作は <paramref name="timeout" /> を返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForRequest">
+      <MemberSignature Language="C#" Value="public bool WaitForRequest (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool WaitForRequest(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IReplyChannel.WaitForRequest(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">要求操作を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトして <see langword="false" /> が返されます。</param>
+        <summary>指定した期間が経過する前に要求メッセージを受信するかどうかを示す値を返します。</summary>
+        <returns>
+          指定した期間が経過する前に要求を受信する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IReplyChannel.WaitForRequest%28System.TimeSpan%29> を呼び出しても、要求メッセージの受信または処理は行われません。  
+  
+ <xref:System.ServiceModel.Channels.IReplyChannel.BeginWaitForRequest%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> メソッドは、主にユーザーがトランザクションを使用してメッセージを受信するようなトランザクション処理のシナリオで使用されます。 <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> だけをそのために普通に使用するときは、トランザクションを作成して、<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> を呼び出す必要があります。この場合は、トランザクションがタイムアウトする前にメッセージが到着することを期待するしかなく、メッセージが到着しない可能性もあります。  
+  
+ 代わりに、<xref:System.ServiceModel.Channels.IReplyChannel.WaitForRequest%28System.TimeSpan%29> を呼び出してタイムアウト (無限も可能) を指定し、メッセージが到着してからトランザクションを開き、<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> を呼び出して、トランザクションがタイムアウトする前に確実にメッセージを返すこともできます。  
+  
+ キューにメッセージが到達するまで待機する間、現在のスレッドがブロックされてもいい場合は、<xref:System.ServiceModel.Channels.IReplyChannel.WaitForRequest%28System.TimeSpan%29> を使用します。 スレッドは、指定した `timeout` までブロックされます。 待機せずにアプリケーションの処理を継続する必要がある場合は、非同期の <xref:System.ServiceModel.Channels.IReplyChannel.BeginWaitForRequest%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> メソッドを使用します。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定した <see langword="false" /> が経過した場合、操作は <paramref name="timeout" /> を返します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

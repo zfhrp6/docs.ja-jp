@@ -1,0 +1,395 @@
+<Type Name="ReadOnlyCollectionBase" FullName="System.Collections.ReadOnlyCollectionBase">
+  <TypeSignature Language="C#" Value="public abstract class ReadOnlyCollectionBase : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit ReadOnlyCollectionBase extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.ReadOnlyCollectionBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>提供、<see langword="abstract" />厳密に型指定された非ジェネリック読み取り専用コレクションの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Collections.ReadOnlyCollectionBase>インスタンスは常に読み取り専用です。 参照してください<xref:System.Collections.CollectionBase>このクラスの変更可能バージョンです。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.ReadOnlyCollectionBase>クラスです。  
+  
+ [!code-cpp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CPP/readonlycollectionbase.cpp#1)]
+ [!code-csharp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CS/readonlycollectionbase.cs#1)]
+ [!code-vb[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/VB/readonlycollectionbase.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ この実装は同期済みは提供されませんの (スレッド セーフな) ラッパー、 <see cref="T:System.Collections.ReadOnlyCollectionBase" />、派生クラスは、独自の同期されたバージョンを作成できますが、<see cref="T:System.Collections.ReadOnlyCollectionBase" />を使用して、<see cref="P:System.Collections.ICollection.SyncRoot" />プロパティです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+    <block subset="none" type="overrides">
+      <para>この基本クラスは、厳密に型指定された読み取り専用のカスタム コレクションを容易にできるようにするものです。 実装する場合は、独自に作成する代わりにこの基本クラスを拡張することをお勧めします。 この基本クラスのメンバーは、保護されてし、派生クラスのみを使用して使用するものではします。  
+  
+ このクラスは、基になるコレクションを使用、<see cref="P:System.Collections.ReadOnlyCollectionBase.InnerList" />から直接派生したクラスによってのみ使用するためのものでは、プロパティ<see cref="T:System.Collections.ReadOnlyCollectionBase" />です。 派生クラスでは、独自のユーザーが基になるコレクションを変更できないことを確認してください。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ReadOnlyCollectionBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ReadOnlyCollectionBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.ReadOnlyCollectionBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ReadOnlyCollectionBase.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれる要素の数を取得、<see cref="T:System.Collections.ReadOnlyCollectionBase" />インスタンス。</summary>
+        <value>含まれる要素の数、<see cref="T:System.Collections.ReadOnlyCollectionBase" />インスタンス。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.ReadOnlyCollectionBase>クラスです。  
+  
+ [!code-cpp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CPP/readonlycollectionbase.cpp#1)]
+ [!code-csharp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CS/readonlycollectionbase.cs#1)]
+ [!code-vb[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/VB/readonlycollectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ReadOnlyCollectionBase.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理する列挙子を返します、<see cref="T:System.Collections.ReadOnlyCollectionBase" />インスタンス。</summary>
+        <returns><see cref="T:System.Collections.ReadOnlyCollectionBase" /> インスタンスの <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.ReadOnlyCollectionBase>クラスです。  
+  
+ [!code-cpp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CPP/readonlycollectionbase.cpp#1)]
+ [!code-csharp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CS/readonlycollectionbase.cs#1)]
+ [!code-vb[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/VB/readonlycollectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerList">
+      <MemberSignature Language="C#" Value="protected System.Collections.ArrayList InnerList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList InnerList" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ReadOnlyCollectionBase.InnerList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれる要素の一覧を取得、<see cref="T:System.Collections.ReadOnlyCollectionBase" />インスタンス。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />を表す、<see cref="T:System.Collections.ReadOnlyCollectionBase" />自体をインスタンス化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Collections.ReadOnlyCollectionBase>クラスです。  
+  
+ [!code-cpp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CPP/readonlycollectionbase.cpp#1)]
+ [!code-csharp[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CS/readonlycollectionbase.cs#1)]
+ [!code-vb[System.Collections.ReadOnlyCollectionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/VB/readonlycollectionbase.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスは、基になるコレクションを使用、<see cref="P:System.Collections.ReadOnlyCollectionBase.InnerList" />から直接派生したクラスによってのみ使用するためのものでは、プロパティ<see cref="T:System.Collections.ReadOnlyCollectionBase" />です。 派生クラスでは、独自のユーザーが基になるコレクションを変更できないことを確認してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ReadOnlyCollectionBase.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ReadOnlyCollectionBase" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.ReadOnlyCollectionBase" /> 全体を、互換性のある 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、コピー先の配列の指定したインデックスから始まる部分に行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された配列は、互換性のある型でなければなりません。  
+  
+ このメソッドを使用して<xref:System.Array.Copy%2A?displayProperty=nameWithType>要素のコピー。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.ReadOnlyCollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ReadOnlyCollectionBase" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.ReadOnlyCollectionBase" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ReadOnlyCollectionBase.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスをするかどうかを示す値を取得、<see cref="T:System.Collections.ReadOnlyCollectionBase" />オブジェクトが同期されている (スレッド セーフである)。</summary>
+        <value>
+          <see langword="true" /> オブジェクトへのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ReadOnlyCollectionBase" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Collections.ReadOnlyCollectionBase>オブジェクトが同期されていません。 派生クラスでの同期されたバージョンを提供できる、<xref:System.Collections.ReadOnlyCollectionBase>クラスを使用して、<xref:System.Collections.ICollection.SyncRoot%2A>プロパティです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中にプロパティです。  
+  
+ [!code-cpp[System.Collections.ReadOnlyCollectionBase#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CPP/source2.cpp#2)]
+ [!code-csharp[System.Collections.ReadOnlyCollectionBase#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CS/source2.cs#2)]
+ [!code-vb[System.Collections.ReadOnlyCollectionBase#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ReadOnlyCollectionBase.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Collections.ReadOnlyCollectionBase" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.ReadOnlyCollectionBase" /> オブジェクトへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、独自の同期されたバージョンを指定できます、<xref:System.Collections.ReadOnlyCollectionBase>クラスを使用して、<xref:System.Collections.ICollection.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.ICollection.SyncRoot%2A>のプロパティ、<xref:System.Collections.ReadOnlyCollectionBase>オブジェクト上で直接、<xref:System.Collections.ReadOnlyCollectionBase>オブジェクト。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.ReadOnlyCollectionBase>オブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中にプロパティです。  
+  
+ [!code-cpp[System.Collections.ReadOnlyCollectionBase#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CPP/source2.cpp#2)]
+ [!code-csharp[System.Collections.ReadOnlyCollectionBase#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/CS/source2.cs#2)]
+ [!code-vb[System.Collections.ReadOnlyCollectionBase#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ReadOnlyCollectionBase/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

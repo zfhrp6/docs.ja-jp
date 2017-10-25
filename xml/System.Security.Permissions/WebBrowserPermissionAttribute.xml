@@ -1,0 +1,147 @@
+<Type Name="WebBrowserPermissionAttribute" FullName="System.Security.Permissions.WebBrowserPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebBrowserPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebBrowserPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.WebBrowserPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.WebBrowserPermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.WebBrowserPermissionAttribute>Windows Presentation Foundation (WPF) アプリケーション内で実行する Web ブラウザー コントロールの機能を制御します。 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>のために使用します。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 命令型のセキュリティのため、対応するアクセス許可クラスを使用して<xref:System.Security.Permissions.WebBrowserPermission>です。  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ 通常、このクラスは XAML では使用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、呼び出し元のコードが Web ブラウザー コントロールを作成するアクセス許可を制限なくことを要求する方法を示します。  
+  
+ [!code-csharp[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute3](~/samples/snippets/csharp/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/CSharp/Window1.xaml.cs#webbrowserpermissionattribute3)]
+ [!code-vb[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/visualbasic/window1.xaml.vb#webbrowserpermissionattribute3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowserPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.WebBrowserPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.WebBrowserPermissionAttribute" /> を使用して、<see cref="T:System.Security.Permissions.SecurityAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Security.Permissions.WebBrowserPermissionAttribute.Level%2A>プロパティは<xref:System.Security.Permissions.WebBrowserPermissionLevel.None>します。  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示します、<xref:System.Security.Permissions.WebBrowserPermissionAttribute>です。  
+  
+ [!code-csharp[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute4](~/samples/snippets/csharp/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/CSharp/Window1.xaml.cs#webbrowserpermissionattribute4)]
+ [!code-vb[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/visualbasic/window1.xaml.vb#webbrowserpermissionattribute4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.WebBrowserPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Permissions.WebBrowserPermission" /> クラスの新しいインスタンスを作成して返します。</summary>
+        <returns>セキュリティ宣言に対応する <see cref="T:System.Security.Permissions.WebBrowserPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.WebBrowserPermissionAttribute.CreatePermission%2A>メソッドは、アプリケーション コードではなく、セキュリティ システムによって呼び出されます。  
+  
+ によって記述されるセキュリティ情報<xref:System.Security.Permissions.WebBrowserPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて<xref:System.Security.Permissions.WebBrowserPermissionAttribute>を適用します。 システムでは、実行時情報にアクセスします。 システムを使用して、<xref:System.Security.Permissions.WebBrowserPermission>によって返される<xref:System.Security.Permissions.WebBrowserPermissionAttribute.CreatePermission%2A>属性ターゲットのセキュリティ情報をメタデータに格納されているシリアル化可能な形式に変換します。  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.WebBrowserPermissionLevel Level { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.WebBrowserPermissionLevel Level" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.WebBrowserPermissionAttribute.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.WebBrowserPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の Web ブラウザーのアクセス許可のレベルを設定、<see cref="T:System.Security.Permissions.WebBrowserPermissionAttribute" />です。</summary>
+        <value>現在の Web ブラウザーのアクセス許可レベルの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は <xref:System.Security.Permissions.WebBrowserPermissionLevel.None> です。  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例では、呼び出し元のコードが安全なレベルで実行される Web ブラウザー コントロールを作成する権限を持っているを要求する方法を示します。  
+  
+ [!code-csharp[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute2](~/samples/snippets/csharp/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/CSharp/Window1.xaml.cs#webbrowserpermissionattribute2)]
+ [!code-vb[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/visualbasic/window1.xaml.vb#webbrowserpermissionattribute2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

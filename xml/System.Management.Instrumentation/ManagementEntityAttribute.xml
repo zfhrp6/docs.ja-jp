@@ -1,0 +1,171 @@
+<Type Name="ManagementEntityAttribute" FullName="System.Management.Instrumentation.ManagementEntityAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ManagementEntityAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagementEntityAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.ManagementEntityAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ManagementEntity 属性は、クラスが WMI プロバイダーを通じて公開される管理情報を提供することを示します。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性でマークされたクラスをパブリックにする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、ManagementEntity 属性を使用してクラスをマークする方法を示します。  
+  
+```  
+// Use the ManagementEntity attribute on the class to specify that this // class contains management information that is available from  
+// provider.  
+  
+    [ManagementEntity(Name = "MortgageCalc")]  
+    public class MortgageCalcWMIProvider  
+    {  
+    }  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEntityAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.ManagementEntityAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementEntityAttribute" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターには、名前のパラメーターは取りません。 使用して名前を指定しない場合、<xref:System.Management.Instrumentation.ManagementEntityAttribute.Name>パラメーター、関連付けられている WMI クラスの名前は既定で属性付きクラスの名前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="External">
+      <MemberSignature Language="C#" Value="public bool External { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool External" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementEntityAttribute.External" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のアセンブリに外部クラスが実装されているプロバイダーの WMI クラスを表すかどうかを指定する値を設定します。</summary>
+        <value>クラスを表す場合、外部の WMI クラスと false それ以外の場合は true であるブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは抽象の既存の WMI クラスを拡張するクラスを実装するプロバイダーを実装する場合に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementEntityAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または WMI クラスの名前を設定します。</summary>
+        <value>WMI クラスの名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定して、WMI クラスの名前を指定しない場合、WMI クラスは既定で属性付きクラスの名前にします。  
+  
+   
+  
+## Examples  
+ 次の例では、Name パラメーターを使用してを MortgageCalcWMIProvider クラスによって表される WMI クラスの名前を設定します。 MortgageCalculator 名前に設定します。 パラメーター名を使用、対応する c# クラス名場合、MortgageCalcWMIProvider ここでとして使用 WMI クラス名。  
+  
+```  
+[ManagementEntity(Name = "MortgageCalculator")]  
+public class MortgageCalcWMIProvider  
+{  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Singleton">
+      <MemberSignature Language="C#" Value="public bool Singleton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Singleton" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementEntityAttribute.Singleton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたクラスがシングルトン WMI クラスを表すかどうかを指定します。</summary>
+        <value>クラスを表す場合、単一の WMI クラスと false それ以外の場合は true であるブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI クラスを singleton をできるだけがある 1 つのインスタンスです。 、WMI クラスのインスタンスが 1 つだけが作成されることを確認するためのロジックをコーディングできますが、このパラメーターの属性は簡単で一貫性のあるタスクを作成するものです。  
+  
+ 単一の WMI クラスを使用する場合、クライアント アプリケーションは、特別な構文を使用する必要があります。 詳細についてを参照してください、Describing MSDN オンライン ライブラリで、インスタンス オブジェクト パス トピック[http://www.msdn.com](http://www.msdn.com/)です。  
+  
+   
+  
+## Examples  
+ 次のコード スニペットでは、c# クラスがシングルトン WMI クラスに対応しているを示すために単一パラメーターを使用する方法を示します。  
+  
+```  
+[ManagementEntity(Singleton=true)]  
+public class SingletonSample  
+```  
+  
+ シングルトン クラスを実装するプロバイダーの作業例を参照してください。[する方法: 基本的な分離プロバイダーを作成する](http://msdn.microsoft.com/en-us/1dabd442-c1ff-40a1-bb0e-d7b3566c2300)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

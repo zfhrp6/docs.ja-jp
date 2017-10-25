@@ -1,0 +1,136 @@
+<Type Name="ResourcePermissionBaseEntry" FullName="System.Security.Permissions.ResourcePermissionBaseEntry">
+  <TypeSignature Language="C#" Value="public class ResourcePermissionBaseEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ResourcePermissionBaseEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.ResourcePermissionBaseEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コード アクセス セキュリティのアクセス許可セットの最小単位を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例が継承、<xref:System.Security.Permissions.ResourcePermissionBase>クラスです。 4 種類のコンス トラクターが実装されます。 この例と呼ばれるクラスの実装も用意されています。`MailslotPermissionEntry`です。 <xref:System.Security.Permissions.ResourcePermissionBase.PermissionAccessType%2A>プロパティが個別の種類に設定し、`MailslotPermissionEntry`です。 <xref:System.Security.Permissions.ResourcePermissionBase.TagNames%2A>プロパティが「名前」と"Machine"に個別に設定します。  
+  
+ [!code-cpp[ResourcePermissionBase#1](~/samples/snippets/cpp/VS_Snippets_CLR/ResourcePermissionBase/CPP/resourcepermissionbase.cpp#1)]
+ [!code-csharp[ResourcePermissionBase#1](~/samples/snippets/csharp/VS_Snippets_CLR/ResourcePermissionBase/CS/resourcepermissionbase.cs#1)]
+ [!code-vb[ResourcePermissionBase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ResourcePermissionBase/VB/resourcepermissionbase.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourcePermissionBaseEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBaseEntry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccess%2A>プロパティが 0 に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourcePermissionBaseEntry (int permissionAccess, string[] permissionAccessPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 permissionAccess, string[] permissionAccessPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.ResourcePermissionBaseEntry.#ctor(System.Int32,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.Int32" />
+        <Parameter Name="permissionAccessPath" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess">アクセス許可のアクセス レベルの列挙値の整数表現。 <see cref="P:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccess" />プロパティがこの値に設定します。</param>
+        <param name="permissionAccessPath">保護しているリソースを識別する文字列の配列。 <see cref="P:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccessPath" />プロパティがこの値に設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.ResourcePermissionBaseEntry" />指定したアクセス許可のアクセス権とアクセス許可のアクセス パスを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="permissionAccessPath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionAccess">
+      <MemberSignature Language="C#" Value="public int PermissionAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PermissionAccess" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス レベルの列挙値を表す整数を取得します。</summary>
+        <value>アクセス レベルの列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionAccessPath">
+      <MemberSignature Language="C#" Value="public string[] PermissionAccessPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] PermissionAccessPath" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccessPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保護しているリソースを識別する文字列の配列を取得します。</summary>
+        <value>保護しているリソースを識別する文字列の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceCounterPermissionEntry>2 つのプロパティを持つ<xref:System.Diagnostics.PerformanceCounterPermissionEntry.CategoryName%2A>と<xref:System.Diagnostics.PerformanceCounterPermissionEntry.MachineName%2A>です。 The <xref:System.Security.Permissions.ResourcePermissionBaseEntry.PermissionAccessPath%2A> for <xref:System.Diagnostics.PerformanceCounterPermissionEntry> returns <xref:System.Diagnostics.PerformanceCounterPermissionEntry.MachineName%2A> + "\\\\" + <xref:System.Diagnostics.PerformanceCounterPermissionEntry.CategoryName%2A>. たとえば、"myMachine\\\myCategory"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

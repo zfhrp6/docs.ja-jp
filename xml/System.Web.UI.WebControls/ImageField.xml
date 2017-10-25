@@ -1,0 +1,962 @@
+<Type Name="ImageField" FullName="System.Web.UI.WebControls.ImageField">
+  <TypeSignature Language="C#" Value="public class ImageField : System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImageField extends System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ImageField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロール内に画像として表示されるフィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField>クラスは、データ バインドされたコントロールによって使用 (など<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>) に表示される各レコードのイメージを表示します。 <xref:System.Web.UI.WebControls.ImageField>が使用されているデータ バインド コントロールに応じて異なる方法でオブジェクトが表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>表示の制御、<xref:System.Web.UI.WebControls.ImageField>を列としてオブジェクト中に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+ イメージを表示するには、バインドする必要があります、<xref:System.Web.UI.WebControls.ImageField>フィールドにイメージの URL を含むデータ ソースからのオブジェクト。 これを実現するには、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティです。 使用して、URL の値を形式指定できる、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>プロパティです。 各イメージは、それに関連付けられた代替テキストをこともできます。 イメージをロードすることはできません、イメージに使用可能な場合は、このテキストが表示されます。 ツール ヒント機能をサポートするブラウザーでは、ツールヒントとしてこのテキストを表示することもできます。 次の方法のいずれかを使用して、表示されるイメージの代替テキストを指定できます。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>プロパティをすべてのイメージに適用される代替テキストを指定します。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>へのデータ ソースからのフィールドにバインドするプロパティ、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>各イメージのプロパティです。 これにより、表示される各イメージの代替テキストが異なることができます。 使用して代替テキストを必要に応じて書式データをバインドするときに、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextFormatString%2A>プロパティです。  
+  
+ イメージの URL 値が`null`イメージを表示することはできません。 代替イメージを表示する`null`フィールド値を設定して、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>プロパティです。 設定して代替テキストを表示する代替イメージではなく、<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>プロパティです。  
+  
+ 既定では、宣言されたすべてのフィールドがデータ バインド コントロールに表示されます。 非表示にすることができます、<xref:System.Web.UI.WebControls.ImageField>を設定してデータ バインド コントロール内のオブジェクト、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを`false`です。  
+  
+ ヘッダーとフッター セクションでは、をカスタマイズすることができます、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 ヘッダーまたはフッター セクションで、キャプションを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>または<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>プロパティ、それぞれします。 テキストではなく、ヘッダーのセクションでは、イメージを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティです。 ヘッダー セクションを非表示にすることができます、<xref:System.Web.UI.WebControls.ImageField>オブジェクトを設定して、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>個々 のデータ バインドされたフィールドのプロパティです。 またはのヘッダー セクション全体、データ バインド コントロールを非表示に使用、コントロールの`ShowHeader`プロパティ (使用可能な場合)。  
+  
+ 外観をカスタマイズできる、<xref:System.Web.UI.WebControls.ImageField>オブジェクト (フォントの色や背景色、)、フィールドの各部分のスタイル プロパティを設定します。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>|子の Web サーバー コントロールのスタイルの設定、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>|フッター セクションのスタイルの設定、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>|ヘッダー セクションのスタイルの設定、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>|データ項目のスタイルの設定、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ImageField>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView>イメージを表示するコントロール。  
+  
+ [!code-aspx-csharp[ImageField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageField/CS/ImageFieldcs.aspx#1)]
+ [!code-aspx-vb[ImageField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageField/VB/ImageFieldvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ImageField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ImageField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.UI.WebControls.ImageField>データ バインド コントロールにオブジェクトを新規作成<xref:System.Web.UI.WebControls.ImageField>オブジェクト、そのプロパティを設定し、データ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.UI.WebControls.ImageField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めことフィールド静的に宣言されていると、表示するか非表示に必要に応じて。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して動的に追加する方法、<xref:System.Web.UI.WebControls.ImageField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>のコレクション、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[ImageFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldCtor/CS/ImageFieldCtorcs.aspx#1)]
+ [!code-aspx-vb[ImageFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldCtor/VB/ImageFieldCtorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateText">
+      <MemberSignature Language="C#" Value="public virtual string AlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.AlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の画像に表示される代替テキスト、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</summary>
+        <value>表示するイメージの代替テキスト、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>に表示されるイメージの代替テキストを指定するプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 イメージをロードすることはできません、イメージに使用可能な場合は、代替テキストが表示されます。 ツール ヒント機能をサポートするブラウザーでは、ツールヒントとしてこのテキストを表示することもできます。  
+  
+> [!NOTE]
+>  このプロパティ設定されている場合、すべてのイメージに表示される、<xref:System.Web.UI.WebControls.ImageField>オブジェクトが同じ代替テキストを共有します。 代わりに、バインドできます代替テキスト データ ソースのフィールドに設定して、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>このプロパティではなくプロパティです。 これにより、表示される各イメージの代替テキストが異なることができます。 両方の<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>と<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>プロパティを設定、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>プロパティが優先されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>に表示されたすべてのイメージの代替テキストを指定するプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ [!code-aspx-csharp[ImageField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageField/CS/ImageFieldcs.aspx#1)]
+ [!code-aspx-vb[ImageField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageField/VB/ImageFieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public virtual bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値の文字列を空にするかどうか ("") の値に変換<see langword="null" />フィールドの値が、データ ソースから返されたとき。</summary>
+        <value>
+          <see langword="true" />場合<see cref="F:System.String.Empty" />値に変換する<see langword="null" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合がありますユーザーは、フィールドの値を更新またはレコードを挿入するときに、空の文字列を入力することがあります。 使用して、<xref:System.Web.UI.WebControls.ImageField.ConvertEmptyStringToNull%2A>プロパティを空の文字列値を自動的に変換するかどうかを指定する`null`データ ソースのデータ フィールドが更新されたとき  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ImageField>表示クラス`null`既定では空の文字列として。 表示するには、別の値を設定、<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" />-コピーを受信するオブジェクトを派生します。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトを指定したオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.CopyProperties%2A>メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.ImageField>を別のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ImageField" /> クラスの新しいインスタンスを返します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.ImageField" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.CreateField%2A>メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A>の新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.ImageField>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAlternateTextField">
+      <MemberSignature Language="C#" Value="public virtual string DataAlternateTextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataAlternateTextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.DataAlternateTextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする値を含む、<see cref="P:System.Web.UI.WebControls.Image.AlternateText" />内の各イメージのプロパティ、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.Image.AlternateText" />内の各イメージのプロパティ、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>をソースのデータからフィールドの名前を指定するプロパティにバインドする値が含まれています、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>内の各イメージのプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 表示される各イメージのテキストの代替に異なる、有効です。 イメージをロードすることはできません、イメージに使用可能な場合は、代替テキストが表示されます。 ツール ヒント機能をサポートするブラウザーでは、ツールヒントとしてこのテキストを表示することもできます。  
+  
+> [!NOTE]
+>  設定ですべてのイメージに適用される代替テキストを指定することができます、<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>このプロパティではなくプロパティです。 両方の<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>と<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>プロパティを設定、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>フィールドが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>をソースのデータのフィールドの名前を指定するプロパティにバインドする値が含まれています、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>内の各イメージのプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ [!code-aspx-csharp[ImageFieldAlternateTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldAlternateTextField/CS/ImageFieldAlternateTextFieldcs.aspx#1)]
+ [!code-aspx-vb[ImageFieldAlternateTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldAlternateTextField/VB/ImageFieldAlternateTextFieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAlternateTextFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataAlternateTextFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataAlternateTextFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.DataAlternateTextFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する形式を指定する文字列内の各イメージの代替テキスト、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトが表示されます。</summary>
+        <value>これで、形式を指定する文字列内の各イメージの代替テキスト、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトが表示されます。 既定値は空の文字列 ("")、代替のテキストに適用するようになりました特殊な書式設定を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextFormatString%2A>に表示されるイメージの代替テキスト値のカスタム書式を指定するプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+> [!NOTE]
+>  書式指定文字列が適用される場合にのみ、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>プロパティを設定します。 にない場合に適用される、<xref:System.Web.UI.WebControls.ImageField.AlternateText%2A>プロパティを設定します。  
+  
+ これは、フィールドに含まれる元の値を変更する必要がある場合に便利です。 場合、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextFormatString%2A>プロパティが設定されていない、代替テキスト値は、特殊な書式設定を取得できません。  
+  
+ 書式指定文字列は、任意のリテラル文字列を指定でき、通常、フィールドの値のプレース ホルダーが含まれます。 など、書式指定文字列で"アイテムの値: {0}"、"{0}"プレース ホルダーがで指定されたフィールドの値に置き換え、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextField%2A>プロパティです。 書式指定文字列の残りの部分は、リテラル テキストとして表示されます。  
+  
+> [!NOTE]
+>  書式指定文字列にプレース ホルダーが含まれていない場合、データ ソースからのフィールドの値は、最終的な表示テキストには含まれません。  
+  
+ プレース ホルダー、コロンで区切られた 2 つの部分から成る (":") 形式で中かっこ (「{}」) で囲まれた`{A:Bxx}`です。 コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのフィールドの値のインデックスを指定します。  
+  
+> [!NOTE]
+>  このパラメーターは、書式指定構文の一部です。 各セルに 1 つだけのフィールドの値があるため、この値は 0 にのみ設定できます。  
+  
+ コロンとコロンの後の値は省略可能です。 コロンの後に文字 (`B`一般的な例で) 値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  書式指定文字が以外の大文字と小文字は`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字 (一般的な例では xx) の後の値は、有効桁数または表示する小数点以下桁数の数を指定します。 たとえば、"{0: f2}"書式指定文字列は、小数点以下 2 桁の固定小数点数を表示します。  
+  
+ 書式設定の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ImageField.DataAlternateTextFormatString%2A>内のイメージの代替テキスト値に、カスタム書式を適用するプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ [!code-aspx-csharp[ImageFieldAlternateTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldAlternateTextField/CS/ImageFieldAlternateTextFieldcs.aspx#1)]
+ [!code-aspx-vb[ImageFieldAlternateTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldAlternateTextField/VB/ImageFieldAlternateTextFieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataImageUrlField">
+      <MemberSignature Language="C#" Value="public virtual string DataImageUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataImageUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.DataImageUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする値を含む、<see cref="P:System.Web.UI.MobileControls.Image.ImageUrl" />内の各イメージのプロパティ、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.MobileControls.Image.ImageUrl" />内の各イメージのプロパティ、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.MobileControls.Image.ImageUrl%2A>内の各イメージのプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 指定したフィールドに表示するイメージの Url を含める必要があります、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 設定して、URL の値をフォーマットすることができます必要に応じて、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>プロパティです。  
+  
+> [!NOTE]
+>  フィールドの値が`null`イメージを表示することはできません。 代替イメージを表示する`null`フィールド値を設定して、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>プロパティです。 設定して代替テキストを表示する代替イメージではなく、<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.MobileControls.Image.ImageUrl%2A>内の各イメージのプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ [!code-aspx-csharp[ImageFieldImageUrlFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldImageUrlFormatString/CS/ImageFieldImageUrlFormatStringcs.aspx#1)]
+ [!code-aspx-vb[ImageFieldImageUrlFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldImageUrlFormatString/VB/ImageFieldImageUrlFormatStringvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataImageUrlFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataImageUrlFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataImageUrlFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する形式を指定する文字列内の各イメージの URL、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトが表示されます。</summary>
+        <value>これで、形式を指定する文字列内の各イメージの URL、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトが表示されます。 既定値は空の文字列 ("")、特殊な書式設定を適用しないこと、Url を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>で表示される画像の Url のカスタム書式を指定するプロパティ、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 場合など、URL を生成する必要がある場合に便利ですが、<xref:System.Web.UI.WebControls.ImageField>オブジェクトには、ファイル名にはだけが含まれています。 場合、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>プロパティが設定されていない、URL の値は、特殊な書式設定を取得できません。  
+  
+ 書式指定文字列は、任意のリテラル文字列を指定でき、通常、フィールドの値のプレース ホルダーが含まれます。 など、書式指定文字列で"アイテムの値: {0}"、"{0}"プレース ホルダーがで指定されたフィールドの値に置き換え、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティです。 書式指定文字列の残りの部分は、リテラル テキストとして表示されます。  
+  
+> [!NOTE]
+>  書式指定文字列にプレース ホルダーが含まれていない場合、データ ソースからのフィールドの値は、最終的な表示テキストには含まれません。  
+  
+ プレース ホルダー、コロンで区切られた 2 つの部分から成る (":") 形式で中かっこ (「{}」) で囲まれた`{A:Bxx}`です。 コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのフィールドの値のインデックスを指定します。  
+  
+> [!NOTE]
+>  このパラメーターは、書式指定構文の一部です。 各セルに 1 つだけのフィールドの値があるため、この値は 0 にのみ設定できます。  
+  
+ コロンとコロンの後の値は省略可能です。 コロンの後に文字 (`B`一般的な例で) 値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  書式指定文字が以外の大文字と小文字は`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字 (一般的な例では xx) の後の値は、有効桁数または表示する小数点以下桁数の数を指定します。 たとえば、"{0: f2}"書式指定文字列は、小数点以下 2 桁の固定小数点数を表示します。  
+  
+ 書式設定の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>内にある画像の URL に、カスタム書式を適用するプロパティ値を<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ [!code-aspx-csharp[ImageFieldImageUrlFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldImageUrlFormatString/CS/ImageFieldImageUrlFormatStringcs.aspx#1)]
+ [!code-aspx-vb[ImageFieldImageUrlFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldImageUrlFormatString/VB/ImageFieldImageUrlFormatStringvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValuesFromCell">
+      <MemberSignature Language="C#" Value="public override void ExtractValuesFromCell (System.Collections.Specialized.IOrderedDictionary dictionary, System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExtractValuesFromCell(class System.Collections.Specialized.IOrderedDictionary dictionary, class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.ExtractValuesFromCell(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="includeReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary"><see cref="T:System.Collections.Specialized.IOrderedDictionary" />指定されたセルの値を格納するために使用します。</param>
+        <param name="cell"><see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />取得する値を格納しています。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="includeReadOnly">
+          <see langword="true" />読み取り専用のフィールドの値が含まれるそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した入力<see cref="T:System.Collections.Specialized.IOrderedDictionary" />から、指定した値を持つオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.ExtractValuesFromCell%2A>メソッドから、指定したフィールドの値を取得するために使用するヘルパー メソッドは、<xref:System.Web.UI.WebControls.DataControlFieldCell>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ このメソッドには、戻り値はありません。 フィールドの値を使って参照によって返される代わりに、<xref:System.Collections.Specialized.IOrderedDictionary>オブジェクトに渡された、`dictionary`パラメーター。 反復処理するメソッドが呼び出された後、<xref:System.Collections.Specialized.IOrderedDictionary>フィールド値にアクセスするオブジェクト。  
+  
+> [!NOTE]
+>  読み取り専用フィールドの値が含まれる、<xref:System.Web.UI.WebControls.DataControlFieldCell>オブジェクトを渡す`true`の`includeReadOnly`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatImageUrlValue">
+      <MemberSignature Language="C#" Value="protected virtual string FormatImageUrlValue (object dataValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FormatImageUrlValue(object dataValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.FormatImageUrlValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataValue">変換する値。</param>
+        <summary>指定された書式を適用、<see cref="P:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString" />プロパティ フィールドの値をします。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.FormatImageUrlValue%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>に指定された書式を適用するクラス、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>プロパティ フィールドの値にします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.ImageField" />クラス、カスタム書式指定ルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeValue">
+      <MemberSignature Language="C#" Value="protected virtual string GetDesignTimeValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetDesignTimeValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.GetDesignTimeValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィールドの値を表示するときに使用する値を取得、<see cref="T:System.Web.UI.WebControls.ImageField" />デザイナー内のオブジェクト。</summary>
+        <returns>フィールドの値としてデザイナーに表示する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.GetDesignTimeValue%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>を表示するときに、フィールドの表示にどのような値を決めるクラスを<xref:System.Web.UI.WebControls.ImageField>デザイナー内のオブジェクト。 実際のデータは、デザイン時に、データ ソースから取得できない、このメソッドによって返される値が表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.ImageField" />クラスをデザイナーでフィールドに表示する別の値を返すには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormattedAlternateText">
+      <MemberSignature Language="C#" Value="protected virtual string GetFormattedAlternateText (System.Web.UI.Control controlContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetFormattedAlternateText(class System.Web.UI.Control controlContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.GetFormattedAlternateText(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlContainer" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="controlContainer"><see cref="T:System.Web.UI.Control" />を変換する代替テキスト値を格納します。</param>
+        <summary>指定された書式を適用、<see cref="P:System.Web.UI.WebControls.ImageField.DataAlternateTextFormatString" />プロパティを指定したに含まれている代替テキスト値に<see cref="T:System.Web.UI.Control" />オブジェクト。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.GetFormattedAlternateText%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>に指定された書式を適用するクラス、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlFormatString%2A>プロパティに代替テキスト値。 代替テキスト値が含まれている、<xref:System.Web.UI.Control>で指定されたオブジェクト、`controlContainer`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.ImageField" />クラス、カスタム書式指定ルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="protected virtual object GetValue (System.Web.UI.Control controlContainer, string fieldName, ref System.ComponentModel.PropertyDescriptor cachedDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetValue(class System.Web.UI.Control controlContainer, string fieldName, class System.ComponentModel.PropertyDescriptor&amp; cachedDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.GetValue(System.Web.UI.Control,System.String,System.ComponentModel.PropertyDescriptor@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlContainer" Type="System.Web.UI.Control" />
+        <Parameter Name="fieldName" Type="System.String" />
+        <Parameter Name="cachedDescriptor" Type="System.ComponentModel.PropertyDescriptor&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="controlContainer"><see cref="T:System.Web.UI.Control" />フィールドの値を格納しています。</param>
+        <param name="fieldName">値を取得する対象のフィールドの名前。</param>
+        <param name="cachedDescriptor">A<see cref="T:System.ComponentModel.PropertyDescriptor" />フィールドのプロパティを表す参照によって渡されます。</param>
+        <summary>指定したコントロールから、指定したフィールドの値を取得します。</summary>
+        <returns>指定したフィールドの値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.GetValue%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>指定したフィールドの値を決定するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><paramref name="controlContainer" /> パラメーターが <see langword="null" /> です。  
+  
+ \- または  
+  
+ コンテナー コントロールに関連付けられたデータ項目は<see langword="null" />します。  
+  
+ \- または  
+  
+ 指定されたフィールド、<paramref name="fieldName" />パラメーターが見つかりませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトのフィールドの値を決定するカスタムのルーチンを提供するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override bool Initialize (bool enableSorting, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Initialize(bool enableSorting, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.Initialize(System.Boolean,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enableSorting" Type="System.Boolean" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="enableSorting">
+          <see langword="true" />並べ替えがサポートされている場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="control">データ コントロールを含む、<see cref="T:System.Web.UI.WebControls.ImageField" />です。</param>
+        <summary>初期化、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</summary>
+        <returns>常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.Initialize%2A>メソッドは、データ コントロール、<xref:System.Web.UI.WebControls.ImageField>オブジェクトが関連の基本的なオブジェクトの初期化を実行するフィールドがフィールド コレクションに追加続ける前に、フィールドのインスタンス。 などのデータ コントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>を呼び出す、<xref:System.Web.UI.WebControls.ImageField.Initialize%2A>メソッドで、`CreateChildControls`などの他のメソッドの前にメソッド`CreateRow`データを特定の行を作成すると呼ばれます。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.DataControlFieldCell>の基本的な初期化を実行するオブジェクト、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 場合は、このメソッドを実装して、 <xref:System.Web.UI.WebControls.ImageField>-派生型を設定する前に、オブジェクトの初期化が必要と<xref:System.Web.UI.WebControls.DataControlFieldCell>でコントロールのデータをオブジェクトまたは、<xref:System.Web.UI.WebControls.ImageField.InitializeCell%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">初期化する <see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />。</param>
+        <param name="cellType"><see cref="T:System.Web.UI.WebControls.DataControlCellType" /> 値のいずれか。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="rowIndex">行の 0 から始まるインデックス。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />指定されたセルの種類、行の状態、および行のインデックスを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.InitializeCell%2A>メソッドはによって実装<xref:System.Web.UI.WebControls.ImageField>-派生型のテキストとコントロールを追加する、<xref:System.Web.UI.WebControls.DataControlFieldCell>テーブルを使用してユーザー インターフェイス (UI) を表示するデータ コントロールのオブジェクト。 これらのデータ コントロールは、完全なテーブル構造で行を作成するときに、コントロールの`CreateChildControls`メソッドが呼び出されます。 <xref:System.Web.UI.WebControls.ImageField.InitializeCell%2A>メソッドによって呼び出されます、`InitializeRow`データのメソッドなどのコントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>です。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.DataControlFieldCell>コントロールやデータを含むテーブル構造のセルを初期化するためにします。 作成している場合は、このメソッドを実装して、 <xref:System.Web.UI.WebControls.ImageField>-クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeDataCell">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeDataCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeDataCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.InitializeDataCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+      </Parameters>
+      <Docs>
+        <param name="cell">初期化する <see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />指定した行の状態を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.InitializeDataCell%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>クラス内のセルを初期化するために、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス、カスタムの初期化ルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public virtual string NullDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するテキスト、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトで、フィールドの値が指定されたとき、<see cref="P:System.Web.UI.WebControls.ImageField.DataImageUrlField" />プロパティは<see langword="null" />します。</summary>
+        <value>フィールドの値が表示されるテキストを<see langword="null" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、フィールドの値が指定されている場合、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティは`null`にイメージを表示できない、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 使用して、<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>イメージの場所に表示するテキストを指定するプロパティです。 テキストは、通常、標準イメージが利用できないか、見つからないことを示します。  
+  
+> [!NOTE]
+>  代わりに、フィールドの値が、別のイメージを表示できます`null`を設定して、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>このプロパティではなくプロパティです。 場合、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>と<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>プロパティが優先されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>でフィールドの値が指定されたときに表示されるテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティは`null`します。  
+  
+ [!code-aspx-csharp[ImageField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageField/CS/ImageFieldcs.aspx#1)]
+ [!code-aspx-vb[ImageField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageField/VB/ImageFieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string NullImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.NullImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、URL に表示される代替のイメージ、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトで、フィールドの値が指定されたとき、<see cref="P:System.Web.UI.WebControls.ImageField.DataImageUrlField" />プロパティは<see langword="null" />します。</summary>
+        <value>フィールドの値が表示される代替イメージ URL<see langword="null" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、フィールドの値が指定されている場合、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティは`null`にイメージを表示できない、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。 使用して、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>プロパティを表示する代替イメージの URL を指定します。 代替のイメージは、通常のイメージが利用できないか、見つかりませんことを示すイメージでは通常です。  
+  
+> [!NOTE]
+>  代わりに、単にテキストを表示できるフィールドの値が`null`を設定して、<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>このプロパティではなくプロパティです。 場合、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>と<xref:System.Web.UI.WebControls.ImageField.NullDisplayText%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ImageField.NullImageUrl%2A>でフィールドの値が指定されたときに表示される代替イメージの URL を指定するプロパティ、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティは`null`します。  
+  
+ [!code-aspx-csharp[ImageFieldNullImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldNullImageUrl/CS/ImageFieldNullImageUrlcs.aspx#1)]
+ [!code-aspx-vb[ImageFieldNullImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldNullImageUrl/VB/ImageFieldNullImageUrlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBindField">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataBindField (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataBindField(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.OnDataBindField(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>バインドするためのフィールドの値、<see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.OnDataBindField%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>内の対応するセルにデータ ソースのフィールドの値をバインドするクラス、<xref:System.Web.UI.WebControls.ImageField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.UI.WebControls.ImageField" />オブジェクトにはではないコントロールが含まれています、<see cref="T:System.Web.UI.WebControls.TextBox" />編集モードでの制御し、は、<see cref="T:System.Web.UI.WebControls.Image" />コントロールを<see cref="T:System.Web.UI.WebControls.Label" />読み取り専用モードで制御します。</exception>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.ImageField" />クラス、カスタム バインドのルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageField.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって、フィールドの値を指定するかどうかを示す値、<see cref="P:System.Web.UI.WebControls.ImageField.DataImageUrlField" />プロパティが編集モードにすることも可能です。</summary>
+        <value>
+          <see langword="true" />編集モードで、フィールドの値を変更できないことを示すためにそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定で指定されたフィールドの値、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>データ バインド コントロールが編集モードの場合、ユーザーがプロパティを変更できます。 ユーザーがフィールドの値を変更することを防ぐためにこのプロパティを設定`true`です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ImageField>オブジェクト、<xref:System.Web.UI.WebControls.ImageField.DataImageUrlField%2A>プロパティには、通常、オブジェクトに表示されるイメージへの Url を含むフィールドの名前が含まれます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ImageField.ReadOnly%2A>フィールド値を示すプロパティで表示される画像に Url を表す、<xref:System.Web.UI.WebControls.ImageField>オブジェクトが編集モードに変更できません。  
+  
+ [!code-aspx-csharp[ImageFieldReadOnly#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageFieldReadOnly/CS/ImageFieldReadOnlycs.aspx#1)]
+ [!code-aspx-vb[ImageFieldReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageFieldReadOnly/VB/ImageFieldReadOnlyvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisExpression">
+      <MemberSignature Language="C#" Value="public static readonly string ThisExpression;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ThisExpression" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ImageField.ThisExpression" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"this" 式を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.ThisExpression>フィールドはことを示すために使用、<xref:System.Web.UI.WebControls.ImageField>自体ではなく、フィールド、データ ソースのデータ ソースにオブジェクトをバインドする必要があります。 ここでは、オブジェクトのによって返される値<xref:System.Object.ToString%2A>メソッドが、フィールドに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public override void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが含まれるかどうかを判断、<see cref="T:System.Web.UI.WebControls.ImageField" />サポート コールバック オブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageField.ValidateSupportsCallback%2A>メソッドは、コントロールに含まれているかどうかを判断するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.ImageField>サポート コールバック オブジェクトします。 このメソッドがコールバックがサポートされていることを示すために、空のメソッド (コードが含まれていないメソッド) として実装されています。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.DataControlField" />クラス フィールド サポート コールバックによって、コントロールが含まれるかどうかを示すためにこのメソッドをオーバーライドします。 コールバックがサポートされていることを示すために、例外をスローしない空のメソッドとしてこのメソッドを実装しますそれ以外の場合、コールバックがサポートされていない理由を説明するメッセージと共に例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

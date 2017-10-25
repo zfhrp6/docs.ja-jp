@@ -1,0 +1,175 @@
+<Type Name="EditorZone" FullName="System.Web.UI.WebControls.WebParts.EditorZone">
+  <TypeSignature Language="C#" Value="public class EditorZone : System.Web.UI.WebControls.WebParts.EditorZoneBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EditorZone extends System.Web.UI.WebControls.WebParts.EditorZoneBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.EditorZone" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.EditorZoneBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.EditorZoneDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページ上の <see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" /> コントロールをホストするための、Web パーツ コントロール セットの主なコントロールとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セット内でゾーンとは、複合コントロールを Web ページ上の定義済みの領域をカバーし、サーバー コントロールが含まれています。 ゾーンの主な機能は、それに含まれるコントロールのレイアウトにこれらのコントロールの一般的なユーザー インターフェイス (UI) を提供します。 ゾーンと Web パーツ アプリケーションでその使用方法の詳細については、ベースのリファレンス ドキュメントを参照してください。<xref:System.Web.UI.WebControls.WebParts.WebZone>クラス、および[Web パーツ コントロール セット概要](http://msdn.microsoft.com/library/ff0149e4-695a-401a-8cda-53df6d7d2668)です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールは、Web パーツ コントロール セットの基本的なコントロールのいずれか。 Web パーツの主な機能は、機能 Web ページを変更 (または個人用設定) をエンドユーザーのに従って独自の設定と、個人用設定の保存後のブラウザー セッションのです。 Web パーツ ページを変更した場合の 1 つの側面には、編集; が含まれています。ユーザーは、外観、レイアウト、動作、および、表示されるは、その他のプロパティを編集できます<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 Web パーツ コントロール セットのいくつかのコントロールを含む、編集機能を提供する、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorZone> Web パーツ ページが編集モードになるし、使用できるようにさまざまなコントロールが表示される<xref:System.Web.UI.WebControls.WebParts.EditorPart>をカスタマイズするために使用するコントロール<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 <xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールがその親によく似ています、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>クラスに 1 つの主な違い:<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールで参照されている、ゾーンのテンプレートにはその<xref:System.Web.UI.WebControls.WebParts.EditorZone.ZoneTemplate%2A>プロパティです。 ゾーンのテンプレートは、ページ永続形式でコンテンツを宣言する機能を追加します。 ページの開発者を配置できます、<xref:System.Web.UI.WebControls.WebParts.EditorZone>子を追加、Web ページの宣言型マークアップで制御`<zonetemplate>`要素、および内、`<zonetemplate>`要素、宣言型の参照を追加<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールは、メソッドもあります<xref:System.Web.UI.WebControls.WebParts.EditorZone.CreateEditorParts%2A>、基本メソッドをオーバーライドする、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>クラスです。 このメソッドが必要されるよう、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール テンプレートを作成できます、ゾーンを格納<xref:System.Web.UI.WebControls.WebParts.EditorPart>宣言をゾーンに追加されるコントロールです。  
+  
+> [!NOTE]
+>  内のボタン、 <xref:System.Web.UI.WebControls.WebParts.EditorZone> UI が正常に動作するためにクライアント側のスクリプトを必要とします。 ブラウザーでスクリプトが無効になっている場合、ユーザーことができなくを通じてアクションを実行する、 <xref:System.Web.UI.WebControls.WebParts.EditorZone> UI。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定で表示されるマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなどのユーザー補助の標準に準拠していません可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、いくつかの宣言を示しますのプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.EditorZone>クラスです。 例から継承するカスタム エディター ゾーンを作成、<xref:System.Web.UI.WebControls.WebParts.EditorZone>クラス、および Web パーツ ページで使用します。  
+  
+ このコード例では、3 つの部分があります。  
+  
+-   ユーザー コントロールを Web ページの表示モードを変更することができます。  
+  
+-   ユーザー設定を参照する Web ページ<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール。  
+  
+-   例の動作についての説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_EditorZone_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorZone_Overview/CS/displaymodecs.ascx#4)]
+ [!code-aspx-vb[WebParts_EditorZone_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorZone_Overview/VB/displaymodevb.ascx#4)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 ページの上部には、`Register`ユーザー コントロールのディレクティブ。 ページのユーザー コントロールのタグが宣言されている、`uc1:`要素のプレフィックス。 通知次のとおりです、`<asp:WebPartZone>`要素は、`<asp:EditorZone>`要素を含むいくつか<xref:System.Web.UI.WebControls.WebParts.EditorPart>のいくつかのタグとその外観と動作を決定する設定のプロパティ、コントロール。 さまざまなメンバーにアクセスする方法がいくつもあります、<xref:System.Web.UI.WebControls.WebParts.EditorZone>をプログラムで制御します。  
+  
+ [!code-aspx-csharp[WebParts_EditorZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorZone_Overview/CS/editorzonecs.aspx#1)]
+ [!code-aspx-vb[WebParts_EditorZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorZone_Overview/VB/editorzonevb.aspx#1)]  
+  
+ ブラウザーでページを読み込むときに選択**編集モードの**編集モードに切り替えるにはドロップダウン リストでします。 編集用の UI を表示するにを 2 つのコントロールのいずれかのタイトル バーの動詞メニュー (下向きの矢印) をクリックし、をクリックして**編集**コントロールを編集します。 編集用の UI 表示での宣言とプログラムの使用法の影響を確認できます、<xref:System.Web.UI.WebControls.WebParts.EditorZone>クラス メンバーです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタムを作成する場合は、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZone" />ゾーンの編集用の UI のレンダリングを細かく制御するから直接継承することができます、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />クラスを追加するページの開発者向けのゾーンのテンプレートのサポートを提供する必要はありません限り<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />ゾーンに宣言によって制御します。 このような場合は、するには追加のすべて<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />ゾーンにプログラムで制御します。 ゾーンのテンプレートのサポートを提供する場合から継承する必要があります、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZone" />クラスです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditorZone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorZone.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.EditorZone" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEditorParts">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorZone.CreateEditorParts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.EditorPartCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを作成、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />ページ永続形式でゾーン テンプレート内で宣言されたコントロール。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.EditorPartCollection" />すべてへの参照を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />ゾーン テンプレート内で宣言されたコントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorZone.CreateEditorParts%2A>メソッドのみを作成する基本メソッドをオーバーライド、<xref:System.Web.UI.WebControls.WebParts.EditorPart>ゾーン テンプレート内で宣言されているコントロール。 その他の<xref:System.Web.UI.WebControls.WebParts.EditorPart>ゾーンに追加されたコントロールをプログラミングで追加する必要があります。 これは、ため、たとえば、実装することによって、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスで、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 次に、オーバーライドされた<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッド、ユーザー設定のコレクションを追加する<xref:System.Web.UI.WebControls.WebParts.EditorPart>ゾーンへのコントロールです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロールに、ID がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoneTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ZoneTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ZoneTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.EditorZone.ZoneTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.WebParts.EditorZone))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateInstance(System.Web.UI.TemplateInstance.Single)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の子コントロールを格納するテンプレートが用意されて、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZone" />ページ永続形式で制御します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />ゾーン内の子コントロールのコンテナーとして機能するゾーンのテンプレートです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorZone.ZoneTemplate%2A>プロパティは、の重要な違い、<xref:System.Web.UI.WebControls.WebParts.EditorZone>クラスと基本<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>クラスです。 ゾーンのテンプレートのサポートを追加することによって、<xref:System.Web.UI.WebControls.WebParts.EditorZone>クラスには、子を配置するページの開発者ができるように<xref:System.Web.UI.WebControls.WebParts.EditorPart>内で制御する<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールを Web ページの宣言型マークアップ。 ゾーンのテンプレートは、子コントロールのコンテナーとして機能します。  
+  
+> [!NOTE]
+>  Set アクセサーを<xref:System.Web.UI.WebControls.WebParts.EditorZone.ZoneTemplate%2A>プロパティの呼び出し、 <xref:System.Web.UI.WebControls.WebParts.EditorZoneBase.InvalidateEditorParts%2A> 、メソッドのコレクションを強制する<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールが再作成するテンプレートで宣言します。 これにより、認識されるようにテンプレートの内容ですべての変更が原因です。  
+  
+ テンプレートを使用する、ゾーン内で宣言によって、<xref:System.Web.UI.WebControls.WebParts.EditorZone>のペアを追加するコントロール、`<zonetemplate>`タグ、および参照<xref:System.Web.UI.WebControls.WebParts.EditorPart>タグの間のコントロールです。 インスタンスにつき 1 つだけのゾーンのテンプレートが表示されます、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール (このため、複数を追加する必要はありません`<zonetemplate>`要素を<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール)。 また、ゾーンのテンプレート、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールから派生するパーツ コントロールのみを含めることができます、<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言を使用して、<xref:System.Web.UI.WebControls.WebParts.EditorZone.ZoneTemplate%2A>プロパティです。 セクションの例で、例の完全なコードが検出された、<xref:System.Web.UI.WebControls.WebParts.EditorZone>クラスの概要です。  
+  
+ コード例を示す方法<xref:System.Web.UI.WebControls.WebParts.EditorPart>内でコントロールを配置することができます、`<zonetemplate>`内の要素、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_EditorZone_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorZone_Overview/CS/editorzonecs.aspx#2)]
+ [!code-aspx-vb[WebParts_EditorZone_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorZone_Overview/VB/editorzonevb.aspx#2)]  
+  
+ ブラウザーでページを読み込むときに選択**編集モードの**編集モードに切り替えるにはドロップダウン リストでします。 編集のユーザー インターフェイス (UI) を表示するにを 2 つのコントロールのいずれかのタイトル バーに動詞メニュー (下向きの矢印) をクリックし、をクリックして**編集**コントロールを編集します。 編集用の UI 表示、使用、いくつかを表示できます<xref:System.Web.UI.WebControls.WebParts.EditorPart>内で宣言されているコントロール、`<zonetemplate>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

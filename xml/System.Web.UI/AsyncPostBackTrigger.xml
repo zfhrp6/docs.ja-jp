@@ -1,0 +1,237 @@
+<Type Name="AsyncPostBackTrigger" FullName="System.Web.UI.AsyncPostBackTrigger">
+  <TypeSignature Language="C#" Value="public class AsyncPostBackTrigger : System.Web.UI.UpdatePanelControlTrigger" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsyncPostBackTrigger extends System.Web.UI.UpdatePanelControlTrigger" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.AsyncPostBackTrigger" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.UpdatePanelControlTrigger</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールとコントロールの省略可能なイベントの原因となる非同期ポストバック コントロール トリガーとして定義する、<see cref="T:System.Web.UI.UpdatePanel" />コントロールを更新します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.AsyncPostBackTrigger>コントロールのトリガーを有効にするコントロール、<xref:System.Web.UI.UpdatePanel>コントロール。 更新パネル用のトリガーであるコントロールでは、非同期ポストバック後に、パネルのコンテンツの更新を発生させます。 非同期トリガー コントロールの定義は、次のシナリオに便利です。  
+  
+-   コントロール パネル内に存在しないにします。  
+  
+-   コントロール パネル内にあるときに、<xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers%2A>プロパティは`false`します。  
+  
+-   親パネルを更新するために、入れ子になったパネル内にあるコントロールです。  
+  
+ コントロールを<xref:System.Web.UI.AsyncPostBackTrigger>先のトリガーは、更新パネルと同じ名前付けコンテナーである必要がありますコントロールの参照。 他の名前付けコンテナー コントロールに基づいているトリガーはサポートされていません。  
+  
+ 追加<xref:System.Web.UI.AsyncPostBackTrigger>を使用していずれかを制御、 **UpdatePanelTrigger コレクション エディター**  ダイアログ ボックスのデザイナーで、または作成することで、`Triggers`要素で宣言によって、<xref:System.Web.UI.UpdatePanel>コントロール。 <xref:System.Web.UI.AsyncPostBackTrigger.ControlID%2A>プロパティが必要ですが、<xref:System.Web.UI.AsyncPostBackTrigger.EventName%2A>プロパティはオプションです。 場合、<xref:System.Web.UI.AsyncPostBackTrigger.EventName%2A>プロパティが指定されていない、<xref:System.ComponentModel.DefaultEventAttribute>コントロールの属性は既定のイベントの確認に使用します。 たとえば、既定のイベントを<xref:System.Web.UI.WebControls.Button>コントロールは、<xref:System.Web.UI.WebControls.Button.Click>イベント。 <xref:System.Web.UI.AsyncPostBackTrigger.EventName%2A>プロパティ小文字は区別されません。  
+  
+ 名前付けコンテナーは、トリガーとして参照することもできます。 その場合は、コンテナー内のポストバックを発生させるすべての子コントロールと見なされますのトリガー、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ プログラムで追加する<xref:System.Web.UI.AsyncPostBackTrigger>コントロールはサポートされていません。 ポストバック コントロールをプログラムで登録するを使用して、<xref:System.Web.UI.ScriptManager.RegisterAsyncPostBackControl%2A>のメソッド、<xref:System.Web.UI.ScriptManager>コントロール。 まず、<xref:System.Web.UI.UpdatePanel.Update%2A>のメソッド、<xref:System.Web.UI.UpdatePanel>ときに、コントロールがポストバックを制御します。  
+  
+ 両方を使用してコントロールを定義する場合<xref:System.Web.UI.PostBackTrigger>と<xref:System.Web.UI.AsyncPostBackTrigger>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.Web.UI.AsyncPostBackTrigger>宣言によって制御されます。 A<xref:System.Web.UI.WebControls.Button>外にあるコントロール、<xref:System.Web.UI.UpdatePanel>コントロール ユーザーを検索する検索用語を入力できるように、 `Products` Northwind データベースのテーブルです。 A<xref:System.Web.UI.WebControls.GridView>内にあるコントロール、<xref:System.Web.UI.UpdatePanel>コントロールは、結果を示しています。 <xref:System.Web.UI.WebControls.Button>コントロールは、非同期のトリガーとして指定されて、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.AsyncPostBackTrigger#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.AsyncPostBackTrigger/CS/AsyncPostBackTriggerCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.AsyncPostBackTrigger#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.AsyncPostBackTrigger/VB/AsyncPostBackTriggerVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsyncPostBackTrigger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AsyncPostBackTrigger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.AsyncPostBackTrigger" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加<xref:System.Web.UI.AsyncPostBackTrigger>を使用していずれかを制御、 **UpdatePanelTrigger コレクション エディター**  ダイアログ ボックスのデザイナーで、または作成することで、`Triggers`要素で宣言によって、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ 追加<xref:System.Web.UI.AsyncPostBackTrigger>コントロール プログラムではサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlID">
+      <MemberSignature Language="C#" Value="public string ControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AsyncPostBackTrigger.ControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.AsyncPostBackTriggerControlIDConverter, System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を非同期ポストバックをトリガーするコントロールの名前、<see cref="T:System.Web.UI.UpdatePanel" />コントロール。</summary>
+        <value>サーバー コントロールの id。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventName">
+      <MemberSignature Language="C#" Value="public string EventName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EventName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AsyncPostBackTrigger.EventName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.AsyncPostBackTriggerEventNameConverter, System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のポストバック コントロール イベントをトリガーする、<see cref="T:System.Web.UI.UpdatePanel" />コントロールを更新します。</summary>
+        <value>イベントの名前です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.AsyncPostBackTrigger.EventName%2A>プロパティはオプションです。 指定されていない場合、<xref:System.ComponentModel.DefaultEventAttribute>コントロールの属性は既定のイベントの確認に使用します。 次の表には、いくつかの一般的な ASP.NET 2.0 コントロールの既定のイベントが一覧表示します。  
+  
+|コントロール|既定のイベント|  
+|-------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Button>|<xref:System.Web.UI.WebControls.Button.Click>|  
+|<xref:System.Web.UI.WebControls.Calendar>|<xref:System.Web.UI.WebControls.Calendar.SelectionChanged>|  
+|<xref:System.Web.UI.WebControls.CheckBox>|<xref:System.Web.UI.WebControls.CheckBox.CheckedChanged>|  
+|<xref:System.Web.UI.WebControls.GridView>|<xref:System.Web.UI.WebControls.GridView.SelectedIndexChanged>|  
+|<xref:System.Web.UI.WebControls.TextBox>|<xref:System.Web.UI.WebControls.TextBox.TextChanged>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasTriggered">
+      <MemberSignature Language="C#" Value="protected override bool HasTriggered ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool HasTriggered() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AsyncPostBackTrigger.HasTriggered" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トリガーが呼び出されるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、トリガーが呼び出されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール開発者、<xref:System.Web.UI.AsyncPostBackTrigger.HasTriggered%2A>トリガーが呼び出されたかどうかを決定するためのカスタム ロジックを提供するメソッド。 カスタムのトリガーを確認する、`Triggers`の要素、<xref:System.Web.UI.UpdatePanel>コントロール、ページまたは Web.config ファイルの要素には、ディレクティブを追加できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AsyncPostBackTrigger.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化、<see cref="T:System.Web.UI.AsyncPostBackTrigger" />を制御し、トリガーで指定されているイベントが存在し、有効かどうかを決定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">いいえ<see cref="T:System.Web.UI.ScriptManager" />コントロールがページに見つかりませんでした。  
+  
+ \- または  
+  
+ 指定されているイベント、<see cref="P:System.Web.UI.AsyncPostBackTrigger.EventName" />で指定されているコントロールのプロパティが見つかりません、<see cref="P:System.Web.UI.UpdatePanelControlTrigger.ControlID" />プロパティです。  
+  
+ \- または  
+  
+ 指定されているイベント、<see cref="P:System.Web.UI.AsyncPostBackTrigger.EventName" />で指定されているコントロールのプロパティ、<see cref="P:System.Web.UI.UpdatePanelControlTrigger.ControlID" />プロパティは、標準イベント ハンドラーのシグネチャと一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEvent">
+      <MemberSignature Language="C#" Value="public void OnEvent (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnEvent(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AsyncPostBackTrigger.OnEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの送信元です。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>ポストバックおよびの更新をトリガーするイベントを発生させる、<see cref="T:System.Web.UI.UpdatePanel" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AsyncPostBackTrigger.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の文字列表現を返します<see cref="T:System.Web.UI.AsyncPostBackTrigger" />コントロール。</summary>
+        <returns>現在を表す文字列<see cref="T:System.Web.UI.AsyncPostBackTrigger" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,210 @@
+<Type Name="DataGridViewCellParsingEventArgs" FullName="System.Windows.Forms.DataGridViewCellParsingEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewCellParsingEventArgs : System.Windows.Forms.ConvertEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCellParsingEventArgs extends System.Windows.Forms.ConvertEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellParsingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ConvertEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataGridView.CellParsing" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellParsing>ユーザー指定の値からセルで指定された型の値へのカスタム値の変換を提供するイベント<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>プロパティです。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellParsing>イベント、自分で値を変換できますまたは既定の変換をカスタマイズすることができます。 たとえば、値変換できます、セルを使用して自分で<xref:System.Windows.Forms.DataGridViewCell.ParseFormattedValue%2A>独自の型コンバーターを持つメソッドです。 または、既定の型コンバーターは、値を解析しますが、変更をさせることができます、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.InheritedCellStyle%2A?displayProperty=nameWithType>セルを使用して初期化されるプロパティ<xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A>プロパティです。  
+  
+ 変換すると、値自分で、置換の初期、書式設定された値、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>セルで指定された型に変換された値を持つプロパティ<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>プロパティです。 解析が必要なことを示す、設定、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A?displayProperty=nameWithType>プロパティを`true`です。  
+  
+ 完了時のイベント ハンドラー場合、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>は`null`か、適切な型はありません、または<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A>プロパティは`false`、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>セルを使用して解析が<xref:System.Windows.Forms.DataGridViewCell.ParseFormattedValue%2A>既定の型コンバーターを持つメソッドです。 このメソッドの既定の実装を使用して値を解析して、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>に渡されたセルのスタイルのプロパティです。 値と等しくない場合<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>を使用して、値を解析、<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>プロパティと型コンバーターで渡されます。  
+  
+ セルの値の表示の書式設定された値への変換をカスタマイズするには、処理、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs>日付エントリの妥当性をチェックします。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellParsingEventArgs (int rowIndex, int columnIndex, object value, Type desiredType, System.Windows.Forms.DataGridViewCellStyle inheritedCellStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex, int32 columnIndex, object value, class System.Type desiredType, class System.Windows.Forms.DataGridViewCellStyle inheritedCellStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellParsingEventArgs.#ctor(System.Int32,System.Int32,System.Object,System.Type,System.Windows.Forms.DataGridViewCellStyle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="desiredType" Type="System.Type" />
+        <Parameter Name="inheritedCellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">変更されたセルの行インデックス。</param>
+        <param name="columnIndex">変更されたセルの列インデックス。</param>
+        <param name="value">新しい値。</param>
+        <param name="desiredType">新しい値の型。</param>
+        <param name="inheritedCellStyle">変更されたセルに適用されるスタイルです。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCellParsingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnIndex">
+      <MemberSignature Language="C#" Value="public int ColumnIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellParsingEventArgs.ColumnIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析が必要なセル データの列インデックスを取得します。</summary>
+        <value>変更されたセルの列インデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ColumnIndex%2A>へのインデックスを取得するプロパティ、<xref:System.Windows.Forms.DataGridView.Columns%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ColumnIndex%2A>を日付の列に変更されたセルがあるかどうかを検出します。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritedCellStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewCellStyle InheritedCellStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCellStyle InheritedCellStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellParsingEventArgs.InheritedCellStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または編集されたセルに適用されるスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />編集されているセルの現在のスタイルを表すです。 既定値は、セルの値<see cref="P:System.Windows.Forms.DataGridViewCell.InheritedStyle" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、有効な書式設定、セルを決定することができます。 このプロパティを設定またはこのプロパティが返すオブジェクトのプロパティを変更する影響を及ぼしませんしない限り、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A>は`false`イベント ハンドラーが終了します。 ここで、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>セルのスタイルのプロパティを使用して、セルの値を解析します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.CellParsing?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.CellParsing?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#303](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#303)]
+ [!code-vb[System.Windows.Forms.EventExamples#303](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#303)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParsingApplied">
+      <MemberSignature Language="C#" Value="public bool ParsingApplied { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ParsingApplied" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルの値が正常に解析されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セルの値が正常に解析された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.DataGridViewCellParsingEventHandler>設定、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A>を新しいセルの値が正常に解析されたかどうか、さらに変換なしを示すプロパティが必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A>に`true`セルの値が正常に解析されたときにします。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellParsingEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析が必要なセルの行インデックスを取得します。</summary>
+        <value>変更されたセルの行インデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.RowIndex%2A>へのインデックスを取得するプロパティ、<xref:System.Windows.Forms.DataGridView.Rows%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.CellParsing?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.CellParsing?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#303](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#303)]
+ [!code-vb[System.Windows.Forms.EventExamples#303](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#303)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

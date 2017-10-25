@@ -1,0 +1,257 @@
+<Type Name="QualifierData" FullName="System.Management.QualifierData">
+  <TypeSignature Language="C#" Value="public class QualifierData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QualifierData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Management.QualifierData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WMI 修飾子についてを説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、に関する修飾子の情報を表示、 **Win32_Service**クラスを使用して、<xref:System.Management.QualifierData>クラスです。 詳細については**Win32_Service**http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_QualifierData#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_QualifierData/cs/QualifierData.cs#1)]
+ [!code-vb[wminet_QualifierData#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_QualifierData/vb/QualifierData.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsAmended">
+      <MemberSignature Language="C#" Value="public bool IsAmended { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAmended" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.IsAmended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または修飾子が修正されているかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />修飾子が修正されているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修正された修飾子は、WMI を通じて値をローカライズすることができます。 ローカライズされた修飾子は、WMI で別の名前空間に存在して、基本クラスの定義を取得するときにマージできます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`この修飾子が修正されている場合それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocal">
+      <MemberSignature Language="C#" Value="public bool IsLocal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocal" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.IsLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子がこのクラスにローカルに定義されているか、基底クラスからが反映されているかどうかを示す値を取得します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />修飾子がこのクラスにローカルに定義されているか、基本クラスからが反映されているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`修飾子は、このクラスでローカルに定義されている場合それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverridable">
+      <MemberSignature Language="C#" Value="public bool IsOverridable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOverridable" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.IsOverridable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または伝達されたときに、修飾子の値をオーバーライドできるかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />伝達されたときに、修飾子の値をオーバーライドできるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`伝達されたときに、修飾子の値をオーバーライドできる場合それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子の名前を表します。</summary>
+        <value>返します、<see cref="T:System.String" />修飾子の名前を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 修飾子の名前。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、に関する修飾子の情報を表示、 **Win32_Service**クラスを使用して、<xref:System.Management.QualifierData>クラスです。 詳細については**Win32_Service**http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_QualifierData_Name#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_QualifierData_Name/cs/QualifierData_Name.cs#1)]
+ [!code-vb[wminet_QualifierData_Name#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_QualifierData_Name/vb/QualifierData_Name.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropagatesToInstance">
+      <MemberSignature Language="C#" Value="public bool PropagatesToInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PropagatesToInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.PropagatesToInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または修飾子が、クラスのインスタンスに反映させるかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />修飾子が、クラスのインスタンスに反映させるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`この修飾子は、クラスのインスタンスに反映させる必要があります場合、それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropagatesToSubclass">
+      <MemberSignature Language="C#" Value="public bool PropagatesToSubclass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PropagatesToSubclass" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.PropagatesToSubclass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または修飾子がクラスのサブクラスに反映させるかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />修飾子がクラスのサブクラスに反映させるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合は、修飾子は、このクラスのサブクラスに反映させる必要があります。それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Management.QualifierData.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または修飾子の値を設定します。</summary>
+        <value>返します、<see cref="T:System.Object" />修飾子の値を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾子は、次のような CIM 型のサブセットののみできます: 文字列、uint16、uint32、sint32、uint64、sint64、real32、real64、またはブール値。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 修飾子の値です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、に関する修飾子の情報を表示、 **Win32_Service**クラスを使用して、<xref:System.Management.QualifierData>クラスです。 詳細については**Win32_Service**http://msdn.microsoft.com/library の MSDN ライブラリの Windows Management Instrumentation のマニュアルを参照してください。  
+  
+ [!code-csharp[wminet_QualifierData_Value#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_QualifierData_Value/cs/QualifierData_Value.cs#1)]
+ [!code-vb[wminet_QualifierData_Value#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_QualifierData_Value/vb/QualifierData_Value.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

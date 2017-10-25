@@ -1,0 +1,427 @@
+<Type Name="ObjectDataProvider" FullName="System.Windows.Data.ObjectDataProvider">
+  <TypeSignature Language="C#" Value="public class ObjectDataProvider : System.Windows.Data.DataSourceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDataProvider extends System.Windows.Data.DataSourceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.ObjectDataProvider" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Data.DataSourceProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインディング ソースとして使用できるオブジェクトをラップして作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Windows.Data.ObjectDataProvider>指定された型またはメンバーにリフレクションを実行するアクセス許可があるない場合は失敗します。 詳細については、アクセス許可の要件を参照してください。[バインディング ソースの概要](~/docs/framework/wpf/data/binding-sources-overview.md)です。  
+  
+ バインディング ソースとして使用するオブジェクトを作成する方法はたくさんあります。 リソース セクションに、オブジェクトを作成するなど、 [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]  ページで、またはすることができますのコードに、オブジェクトを作成し、設定として、`DataContext`ウィンドウのです。  
+  
+ <xref:System.Windows.Data.ObjectDataProvider>オブジェクトを作成することができます[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]バインディング ソースとして利用できるようにします。 次のプロパティを使用すると、オブジェクトにクエリを実行し、結果にバインドを提供します。  
+  
+-   使用して、<xref:System.Windows.Data.ObjectDataProvider.ConstructorParameters%2A>オブジェクトのコンス トラクターにパラメーターを渡すプロパティです。  
+  
+-   使用して、<xref:System.Windows.Data.ObjectDataProvider.MethodName%2A>メソッドを呼び出すし、使用するプロパティ、<xref:System.Windows.Data.ObjectDataProvider.MethodParameters%2A>メソッドにパラメーターを渡すプロパティです。 メソッドの結果にバインドできます。  
+  
+ 使用することも、<xref:System.Windows.Data.ObjectDataProvider.IsAsynchronous%2A>ワーカー スレッドで、またはアクティブなコンテキストでは、オブジェクトの作成を実行するかどうかを指定するプロパティです。  
+  
+ このクラスは、別のオブジェクトと、現在のバインド ソース オブジェクトを置換して、関連するすべてのバインドを更新するときにも役立ちます。  
+  
+ <xref:System.Windows.Data.ObjectDataProvider>作成し、オブジェクトをバインディングでのソース オブジェクトとして使用するための便利な方法を提供[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、既存のデータ モデルは置き換えられませんが、します。  
+  
+ データ バインディング用の独自のオブジェクトを実装している場合は、次を参照してください。[バインディング ソースの概要](~/docs/framework/wpf/data/binding-sources-overview.md)情報と推奨事項です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.ObjectDataProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.ObjectDataProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginQuery">
+      <MemberSignature Language="C#" Value="protected override void BeginQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void BeginQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.ObjectDataProvider.BeginQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求されたオブジェクトを作成する開始直ちに、またはバック グラウンド スレッドの値に基づいて、<see cref="P:System.Windows.Data.ObjectDataProvider.IsAsynchronous" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Data.DataSourceProvider.InitialLoad%2A>と<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>基本クラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructorParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.IList ConstructorParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList ConstructorParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.ObjectDataProvider.ConstructorParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンス トラクターに渡すパラメーターの一覧を取得します。</summary>
+        <value>コンス トラクターに渡すパラメーターの一覧。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションを暗黙的に変更すると、<xref:System.Windows.Data.ObjectDataProvider>を更新します。 複数の更新を誘発プロパティの使用を変更するときに<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>をお勧めします。  
+  
+<a name="xamlPropertyElementUsage_ConstructorParameters"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.ConstructorParameters>  
+    parameterValues  
+  </object.ConstructorParameters>  
+</object>  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用する方法を示します。  
+  
+ [!code-xaml[SimpleBinding#ODPCP](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml#odpcp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsynchronous">
+      <MemberSignature Language="C#" Value="public bool IsAsynchronous { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAsynchronous" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.ObjectDataProvider.IsAsynchronous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワーカー スレッドで、またはアクティブなコンテキストでは、オブジェクトの作成を実行するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />オブジェクトの作成をワーカー スレッドで実行するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに使用できる時間がかかっている外部データ オブジェクトにバインドする場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.ObjectDataProvider.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出すメソッドの名前を取得または設定します。</summary>
+        <value>呼び出すメソッドの名前。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、オブジェクトのメソッドを呼び出すし、使用する、<xref:System.Windows.Data.ObjectDataProvider.MethodParameters%2A>メソッドにパラメーターを渡すプロパティです。 メソッドの結果にバインドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.IList MethodParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList MethodParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.ObjectDataProvider.MethodParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドに渡すパラメーターの一覧を取得します。</summary>
+        <value>メソッドに渡すパラメーターの一覧。 既定値は空のリストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Data.ObjectDataProvider.MethodName%2A>プロパティを使用して、オブジェクトのメソッドを呼び出す、<xref:System.Windows.Data.ObjectDataProvider.MethodParameters%2A>メソッドにパラメーターを渡すプロパティです。 メソッドの結果にバインドできます。  
+  
+ このコレクションを暗黙的に変更すると、<xref:System.Windows.Data.ObjectDataProvider>を更新するオブジェクト。 複数の更新を誘発プロパティの使用を変更するときに<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>をお勧めします。  
+  
+<a name="xamlPropertyElementUsage_MethodParameters"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.MethodParameters>  
+    parameterValues  
+  </object.MethodParameters>  
+</object>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectInstance">
+      <MemberSignature Language="C#" Value="public object ObjectInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ObjectInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.ObjectDataProvider.ObjectInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド ソースとして使用されるオブジェクトを取得または設定します。</summary>
+        <value>構築されたオブジェクトのインスタンス<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectType" />と<see cref="P:System.Windows.Data.ObjectDataProvider.ConstructorParameters" />、または<see cref="T:System.Windows.Data.DataSourceProvider" />うち、<see cref="P:System.Windows.Data.DataSourceProvider.Data" />として使用される、<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectInstance" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Data.ObjectDataProvider.ObjectType%2A>で指定された型のオブジェクト プロパティを保持 null 以外の値に設定されている<xref:System.Windows.Data.ObjectDataProvider.ObjectType%2A>です。 場合<xref:System.Windows.Data.ObjectDataProvider.ObjectInstance%2A>、ユーザーによって割り当てられる、<xref:System.Windows.Data.ObjectDataProvider.ObjectType%2A>プロパティが割り当てられているオブジェクトの型を返します。 場合<xref:System.Windows.Data.ObjectDataProvider.ObjectInstance%2A>に設定されている、 <xref:System.Windows.Data.DataSourceProvider>、<xref:System.Windows.Data.ObjectDataProvider>を使用して、<xref:System.Windows.Data.DataSourceProvider.Data%2A>は有効なとして割り当てられているソース プロバイダーの<xref:System.Windows.Data.ObjectDataProvider.ObjectInstance%2A>します。  
+  
+ 場合<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>を使用する<xref:System.Windows.Data.ObjectDataProvider.ObjectInstance%2A>と<xref:System.Windows.Data.DataSourceProvider.Data%2A>まで更新されません<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="T:System.Windows.Data.ObjectDataProvider" />両方が割り当てられている、<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectType" />と<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectInstance" />のみです。 1 つ指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectType">
+      <MemberSignature Language="C#" Value="public Type ObjectType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.ObjectDataProvider.ObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを作成するオブジェクトの型を取得または設定します。</summary>
+        <value>このプロパティは<see langword="null" />ときに、<see cref="T:System.Windows.Data.ObjectDataProvider" />が初期化されていないまたは明示的に null に設定します。 場合<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectInstance" />が割り当てられる<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectType" />オブジェクトが null の場合、オブジェクトの種類、または null を返します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>を使用する<xref:System.Windows.Data.ObjectDataProvider.ObjectInstance%2A>と<xref:System.Windows.Data.DataSourceProvider.Data%2A>まで更新されない<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>と呼びます。  
+  
+<a name="xamlAttributeUsage_ObjectType"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ObjectType="myDataType"/>  
+```  
+  
+<a name="xamlValues_ObjectType"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *myDataType*  
+ インスタンスを作成するデータ型。 使用して、 [X:type マークアップ拡張機能](~/docs/framework/xaml-services/x-type-markup-extension.md)型を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="T:System.Windows.Data.ObjectDataProvider" />両方が割り当てられている、<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectType" />と<see cref="P:System.Windows.Data.ObjectDataProvider.ObjectInstance" />のみです。 1 つ指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeConstructorParameters">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeConstructorParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeConstructorParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.ObjectDataProvider.ShouldSerializeConstructorParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.ObjectDataProvider.ConstructorParameters" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.ObjectDataProvider.ConstructorParameters%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.ObjectDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.ObjectDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMethodParameters">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMethodParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMethodParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.ObjectDataProvider.ShouldSerializeMethodParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.ObjectDataProvider.MethodParameters" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.ObjectDataProvider.MethodParameters%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.ObjectDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.ObjectDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeObjectInstance">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeObjectInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeObjectInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.ObjectDataProvider.ShouldSerializeObjectInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.ObjectDataProvider.ObjectInstance" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.ObjectDataProvider.ObjectInstance%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.ObjectDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.ObjectDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeObjectType">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeObjectType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeObjectType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.ObjectDataProvider.ShouldSerializeObjectType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.ObjectDataProvider.ObjectType" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.ObjectDataProvider.ObjectType%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.ObjectDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.ObjectDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

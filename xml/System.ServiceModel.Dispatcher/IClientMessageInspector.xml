@@ -1,0 +1,160 @@
+<Type Name="IClientMessageInspector" FullName="System.ServiceModel.Dispatcher.IClientMessageInspector">
+  <TypeSignature Language="C#" Value="public interface IClientMessageInspector" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IClientMessageInspector" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IClientMessageInspector" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージを表示または変更するために <see cref="P:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors" /> コレクションに追加できる、メッセージ オブジェクト インスペクターを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> インターフェイスを実装し、それを <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> コレクションに追加して、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクトを通過するメッセージを検査または変更します。 詳細については、「<xref:System.ServiceModel.Dispatcher.ClientRuntime>」を参照してください。  
+  
+   
+  
+## Examples  
+ 呼び出されたときにコンソールに文字列を出力する実装を、次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#1](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#1)]
+ [!code-vb[Interceptors#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#1)]  
+  
+ <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> を使用してクライアント メッセージ インスペクターをクライアントのエンドポイントに挿入する方法を、次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
+ [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
+  
+ 最後に、特定のエンドポイントでエンドポイント動作を使用するようにクライアント構成ファイルを変更する方法を、次のコード例に示します。  
+  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AfterReceiveReply">
+      <MemberSignature Language="C#" Value="public void AfterReceiveReply (ref System.ServiceModel.Channels.Message reply, object correlationState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AfterReceiveReply(class System.ServiceModel.Channels.Message&amp; reply, object correlationState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reply" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+        <Parameter Name="correlationState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="reply">各種型に変換され、クライアント アプリケーションに戻されるメッセージ。</param>
+        <param name="correlationState">相関状態データ。</param>
+        <summary>応答メッセージを受信した後、それをクライアント アプリケーションに返信する前に、メッセージの検査と変更を実行できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply%2A> を実装して、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクトが応答メッセージを受信した後、クライアント アプリケーションに戻されるオブジェクトに逆シリアル化する前に、応答メッセージを検査または変更します。  
+  
+ `correlationState` は、このメッセージに対して <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> が呼び出されたときに、ユーザーによって返されるオブジェクトです。 2 つの <xref:System.Guid?displayProperty=nameWithType> オブジェクトが決して同じにならないように、これを `correlationState` にすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 呼び出されたときにコンソールに文字列を出力する実装を、次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#1](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#1)]
+ [!code-vb[Interceptors#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#1)]  
+  
+ <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> を使用してクライアント メッセージ インスペクターをクライアントのエンドポイントに挿入する方法を、次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
+ [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
+  
+ 最後に、特定のエンドポイントでエンドポイント動作を使用するようにクライアント構成ファイルを変更する方法を、次のコード例に示します。  
+  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeSendRequest">
+      <MemberSignature Language="C#" Value="public object BeforeSendRequest (ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object BeforeSendRequest(class System.ServiceModel.Channels.Message&amp; request, class System.ServiceModel.IClientChannel channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+        <Parameter Name="channel" Type="System.ServiceModel.IClientChannel" />
+      </Parameters>
+      <Docs>
+        <param name="request">サービスに送信されるメッセージ。</param>
+        <param name="channel">[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクト チャネル。</param>
+        <summary>要求メッセージをサービスに送信する前に、メッセージを検査または変更できるようにします。</summary>
+        <returns>オブジェクトとして返される、<paramref name="correlationState" />の引数、<see cref="M:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)" />メソッドです。 相関状態を使用しない場合は <see langword="null" /> です。  
+  
+ 2 つの <see cref="T:System.Guid" /> オブジェクトが決して同じにならないように、これを <paramref name="correlationState" /> にすることをお勧めします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージを検査または変更してから送信する <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> を実装します。  
+  
+   
+  
+## Examples  
+ 呼び出されたときにコンソールに文字列を出力する実装を、次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#1](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#1)]
+ [!code-vb[Interceptors#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#1)]  
+  
+ <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> を使用してクライアント メッセージ インスペクターをクライアントのエンドポイントに挿入する方法を、次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
+ [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
+  
+ 最後に、特定のエンドポイントでエンドポイント動作を使用するようにクライアント構成ファイルを変更する方法を、次のコード例に示します。  
+  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

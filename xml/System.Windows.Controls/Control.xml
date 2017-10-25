@@ -1,0 +1,1469 @@
+<Type Name="Control" FullName="System.Windows.Controls.Control">
+  <TypeSignature Language="C#" Value="public class Control : System.Windows.FrameworkElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Control extends System.Windows.FrameworkElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Control" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用するユーザー インターフェイス (UI) 要素の基底クラスを表す、<see cref="T:System.Windows.Controls.ControlTemplate" />の外観を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Control>クラスは、アプリケーションに追加するコントロールの多くの基本クラスです。 <xref:System.Windows.Controls.Control>を追加することができますが、クラスがごくわずかな動作を定義、<xref:System.Windows.Controls.Control>ため、アプリケーションははるかに一般的な継承されたコントロールを追加する<xref:System.Windows.Controls.Control>、ように、<xref:System.Windows.Controls.Button>または<xref:System.Windows.Controls.ListBox>です。  
+  
+ <xref:System.Windows.Controls.Control.Template%2A>プロパティとは、<xref:System.Windows.Controls.ControlTemplate>の外観を指定、<xref:System.Windows.Controls.Control>です。 コントロールの外観を変更するが、その機能を保持する場合は、新たに作成するを考慮する必要があります<xref:System.Windows.Controls.ControlTemplate>新しいクラスを作成する代わりにします。 詳しくは、「 [スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
+  
+ コントロールを継承できますをカスタムの動作でコントロールを作成できるだけでなく、その外観をカスタマイズできるようにする場合、<xref:System.Windows.Controls.Control>クラスし、定義、<xref:System.Windows.Controls.ControlTemplate>です。  継承するクラスから継承することができます、既存のコントロールの動作を拡張する場合は、<xref:System.Windows.Controls.Control>です。  
+  
+ A<xref:System.Windows.Controls.Control>を持たない、 <xref:System.Windows.Controls.ControlTemplate> 、アプリケーションと、次のプロパティ及ぼしませんしない限り、設定に表示されていない、<xref:System.Windows.Controls.ControlTemplate>それらを明示的に参照します。  
+  
+-   <xref:System.Windows.Controls.Control.Background%2A>  
+  
+-   <xref:System.Windows.Controls.Control.BorderBrush%2A>  
+  
+-   <xref:System.Windows.Controls.Control.BorderThickness%2A>  
+  
+-   <xref:System.Windows.Controls.Control.FontFamily%2A>  
+  
+-   <xref:System.Windows.Controls.Control.FontSize%2A>  
+  
+-   <xref:System.Windows.Controls.Control.FontStretch%2A>  
+  
+-   <xref:System.Windows.Controls.Control.FontWeight%2A>  
+  
+-   <xref:System.Windows.Controls.Control.Foreground%2A>  
+  
+-   <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>  
+  
+-   <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>  
+  
+ これらのプロパティを使用する一般的な方法は、内の要素をバインドする、<xref:System.Windows.Controls.ControlTemplate>プロパティにします。  値に基づいて色を変更する、制御したい場合など、<xref:System.Windows.Controls.Control.Background%2A>プロパティ内の要素の一部のプロパティをバインドすることができます、<xref:System.Windows.Controls.ControlTemplate>を<xref:System.Windows.Controls.Control.Background%2A>です。 使用して、 [TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)内の要素へのコントロールのプロパティをバインドする、<xref:System.Windows.Controls.ControlTemplate>です。  
+  
+ <xref:System.Windows.Controls.Control>メタデータを上書き、<xref:System.Windows.UIElement.Focusable%2A>プロパティを既定に設定し、`true`です。 詳細については、次を参照してください[依存関係プロパティの概要。](~/docs/framework/wpf/advanced/dependency-properties-overview.md)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Control ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Control" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeBounds" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeBounds">コンテンツの配置に使用される計算されたサイズ。</param>
+        <summary>配置とのコンテンツのサイズと呼ばれる、<see cref="T:System.Windows.Controls.Control" />オブジェクト。</summary>
+        <returns>コントロールのサイズです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコントロールの配置では、最初のビジュアルの子のみを配置します。 変換は適用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Background" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの背景を描画するブラシを設定します。</summary>
+        <value>コントロールの背景の塗りつぶしに使用するブラシ。 既定値は、<see cref="P:System.Windows.Media.Brushes.Transparent" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Control.Background%2A>プロパティ、コントロールの静止状態にのみ適用されます。  コントロールの既定のスタイルは、コントロールの状態が変更されたときに、その外観を指定します。 たとえば、設定した場合、<xref:System.Windows.Controls.Control.Background%2A>プロパティを<xref:System.Windows.Controls.Button>にこのボタンはその値が押されたか無効になっていない場合にのみです。 コントロールがバック グラウンドのより高度なカスタマイズを作成する場合は、コントロールのスタイルを定義する必要があります。  
+  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.Background%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_Background"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.BackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールの背景のプロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#11](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#11)]  
+  
+ [!code-csharp[ControlProps#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#1)]
+ [!code-vb[ControlProps#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#1)]  
+  
+ 次の例が押されたときに、ボタンの背景を変更するトリガーを有効にするテンプレートを示します。  
+  
+ [!code-xaml[BackgroundProp_snip#ButtonTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/BackgroundProp_snip/CS/page1.xaml#buttontemplate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.BackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.Background" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush BorderBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush BorderBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.BorderBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの枠の背景を描画するブラシを設定します。</summary>
+        <value>コントロールの境界線の塗りつぶしに使用するブラシ既定値は<see cref="P:System.Windows.Media.Brushes.Transparent" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.BorderBrush%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_BorderBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.BorderBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールの枠線のブラシのプロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#17](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#17)]  
+  
+ [!code-csharp[ControlProps#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#7)]
+ [!code-vb[ControlProps#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BorderBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BorderBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.BorderBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.BorderBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderThickness">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness BorderThickness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness BorderThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.BorderThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの境界線の太さを設定します。</summary>
+        <value>太さの値。既定では 4 つすべての側面に 0 の太さです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.BorderThickness%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_BorderThickness"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.BorderThicknessProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールの境界線の太さプロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps_snip#AdditionalControlProps11](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#additionalcontrolprops11)]  
+  
+ [!code-csharp[ControlProps_snip#AdditionalControlProps1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml.cs#additionalcontrolprops1)]
+ [!code-vb[ControlProps_snip#AdditionalControlProps1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps_snip/VisualBasic/Window1.xaml.vb#additionalcontrolprops1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderThicknessProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BorderThicknessProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BorderThicknessProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.BorderThicknessProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.BorderThickness" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily FontFamily { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily FontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.FontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Font)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのフォント ファミリを設定します。</summary>
+        <value>フォント ファミリ。 既定値は、システム ダイアログのフォントです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.FontFamily%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_FontFamily"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.FontFamilyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールのフォント ファミリのプロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#13](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#13)]  
+  
+ [!code-csharp[ControlProps#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#3)]
+ [!code-vb[ControlProps#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamilyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontFamilyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontFamilyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.FontFamilyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.FontFamily" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSize">
+      <MemberSignature Language="C#" Value="public double FontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.FontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FontSizeConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォント サイズを設定します。</summary>
+        <value>内のテキストのサイズ、<see cref="T:System.Windows.Controls.Control" />です。 既定値は、<see cref="P:System.Windows.SystemFonts.MessageFontSize" /> です。 フォント サイズは、正の数値である必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.FontSize%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_FontSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.FontSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+<a name="xamlAttributeUsage_FontSize"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontSize="double"/>  
+- or –  
+<object FontSize ="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_FontSize"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 明示的に、文字列では、小数点を含める必要がありますされません。 値など、`1`は許容されます。  
+  
+ 同じ<xref:System.Double>プロパティの値 セクションに記載されている範囲の制限がここに適用します。  
+  
+ *qualifiedDouble*  
+ A*二重*前述したようには値が続くこれら単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ **注**double 型の値を「自動」に設定することが多くの場合は、<xref:System.Windows.Controls.Control.FontSize%2A?displayProperty=nameWithType>場合はレンダリングされません"Auto"に設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールのフォント サイズ プロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#14](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#14)]  
+  
+ [!code-csharp[ControlProps#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#4)]
+ [!code-vb[ControlProps#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.FontSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.FontSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch FontStretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch FontStretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.FontStretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォントを縮小または画面上で展開する度合いを設定します。</summary>
+        <value><see cref="T:System.Windows.FontStretch" /> 値。 既定値は、<see cref="P:System.Windows.FontStretches.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.FontStretch%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_FontStretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.FontStretchProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールのフォントの伸縮プロパティを設定する方法を示します。 Stretch の可能な値を参照してください。<xref:System.Windows.FontStretches>です。  
+  
+ [!code-xaml[ControlProps_snip#AdditionalControlProps12](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#additionalcontrolprops12)]  
+  
+ [!code-csharp[ControlProps_snip#AdditionalControlProps2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml.cs#additionalcontrolprops2)]
+ [!code-vb[ControlProps_snip#AdditionalControlProps2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps_snip/VisualBasic/Window1.xaml.vb#additionalcontrolprops2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.FontStretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.FontStretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle FontStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle FontStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.FontStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォント スタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.FontStyle" /> 値。 既定値は、<see cref="P:System.Windows.FontStyles.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.FontStyle%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_FontStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.FontStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールのフォントのスタイル プロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#15](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#15)]  
+  
+ [!code-csharp[ControlProps#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#5)]
+ [!code-vb[ControlProps#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.FontStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.FontStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight FontWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight FontWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.FontWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したフォントの太さを設定します。</summary>
+        <value><see cref="T:System.Windows.FontWeight" /> 値。 既定値は、<see cref="P:System.Windows.FontWeights.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.FontWeight%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。 一覧については定義済み<xref:System.Windows.FontWeight>値を参照してください、<xref:System.Windows.FontWeights>クラスです。  
+  
+<a name="dependencyPropertyInfo_FontWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.FontWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Control.FontWeight%2A>コントロールのプロパティです。  
+  
+ [!code-xaml[ControlProps#16](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#16)]  
+  
+ [!code-csharp[ControlProps#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#6)]
+ [!code-vb[ControlProps#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.FontWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.FontWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Foreground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Foreground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Foreground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.Foreground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を前景色を描画するブラシ。</summary>
+        <value>コントロールの前景色を描画するブラシ。 既定値は、システム ダイアログのフォントの色です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.Foreground%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_Foreground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.ForegroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールのフォントのスタイル プロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#12](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#12)]  
+  
+ [!code-csharp[ControlProps#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#2)]
+ [!code-vb[ControlProps#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForegroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForegroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.ForegroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.Foreground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlesScrolling">
+      <MemberSignature Language="C#" Value="protected virtual bool HandlesScrolling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HandlesScrolling" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.HandlesScrolling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがスクロールをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールがある場合、<see cref="T:System.Windows.Controls.ScrollViewer" />そのスタイルのスクロール動作です。 カスタム キーボードは、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalContentAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.HorizontalAlignment HorizontalContentAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.HorizontalAlignment HorizontalContentAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.HorizontalContentAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの内容の水平方向の配置を設定します。</summary>
+        <value><see cref="T:System.Windows.HorizontalAlignment" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.HorizontalAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 加え<xref:System.Windows.HorizontalAlignment.Left>、 <xref:System.Windows.HorizontalAlignment.Right>、および<xref:System.Windows.HorizontalAlignment.Center>、設定することができます、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>プロパティを<xref:System.Windows.HorizontalAlignment.Stretch>、子要素の親要素の割り当て領域を埋めるを拡大します。 詳細については、次を参照してください。[アラインメント、余白、および概要のパディング](~/docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)です。  
+  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_HorizontalContentAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.HorizontalContentAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールの水平方向のコンテンツの配置プロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#18](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#18)]  
+  
+ [!code-csharp[ControlProps#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#8)]
+ [!code-vb[ControlProps#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalContentAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalContentAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalContentAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.HorizontalContentAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.HorizontalContentAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTabStop">
+      <MemberSignature Language="C#" Value="public bool IsTabStop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTabStop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.IsTabStop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタブ ナビゲーションにコントロールが含まれるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />タブ ナビゲーションにコントロールが含まれている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Controls.Control.IsTabStop%2A>は`false`コントロールがタブのナビゲーションから除外されます。  
+  
+<a name="dependencyPropertyInfo_IsTabStop"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.IsTabStopProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、 <xref:System.Windows.Controls.Control.IsTabStop%2A>  タブのナビゲーションのプロパティとコントロールに含まれるかどうかをテストする方法です。  
+  
+ [!code-xaml[ControlProps_snip#AdditionalControlProps15](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#additionalcontrolprops15)]  
+  
+ [!code-csharp[ControlProps_snip#AdditionalControlProps4](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml.cs#additionalcontrolprops4)]
+ [!code-vb[ControlProps_snip#AdditionalControlProps4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps_snip/VisualBasic/Window1.xaml.vb#additionalcontrolprops4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTabStopProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsTabStopProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsTabStopProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.IsTabStopProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.IsTabStop" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">メソッドが返すことができる最大サイズ。</param>
+        <summary>コントロールを再測定するために呼び出されます。</summary>
+        <returns>指定された最大まで、コントロールのサイズ<paramref name="constraint" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの既定値は、最初のビジュアルの子のみを測定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDoubleClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler MouseDoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler MouseDoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Control.MouseDoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ボタンが複数回クリックされると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素ツリーに沿って各によって生成される直接ルーティング イベントが実際にこのルーティングされたイベントは見えますが、要素ツリーを通じてバブルのルートに従う、<xref:System.Windows.UIElement>です。 設定した場合、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`で、<xref:System.Windows.Controls.Control.MouseDoubleClick>イベント ハンドラー、後続<xref:System.Windows.Controls.Control.MouseDoubleClick>でルート上のイベントが発生する<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定`false`です。 これは、ユーザー コントロールをダブルクリックしたときに通知し、アプリケーションでイベントを処理するコントロールのコンシューマーの高レベルのイベントです。  
+  
+ マウスのダブルクリックを処理するコントロールの作成者が使用する必要があります、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベントと<xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>が 2 に等しい。  これはの状態になります<xref:System.Windows.RoutedEventArgs.Handled%2A>に適切に反映されるまで、要素ツリー内の別の要素がイベントを処理する場合。  
+  
+ <xref:System.Windows.Controls.Control>クラスを定義、<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>と<xref:System.Windows.Controls.Control.MouseDoubleClick>イベントがない対応するシングル クリック イベント。  表示するかどうか、ユーザーがコントロールをクリックした、1 回、次のように処理します。、<xref:System.Windows.UIElement.MouseDown>イベント (または、対応する) チェックとかどうか、<xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>プロパティの値は 1 です。  
+  
+<a name="routedEventInfo_MouseDoubleClick"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.MouseDoubleClickEvent>|  
+|ルーティング方法|直接|  
+|Delegate|<xref:System.Windows.Input.MouseButtonEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーをアタッチする方法を示しています、<xref:System.Windows.Controls.Control.MouseDoubleClick>イベント。  
+  
+ [!code-xaml[ControlProps_snip#ControlEvents11](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#controlevents11)]  
+  
+ 次の例のイベント ハンドラーを示しています、<xref:System.Windows.Controls.Control.MouseDoubleClick>イベント。  
+  
+ [!code-csharp[ControlProps_snip#ControlEvents1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml.cs#controlevents1)]
+ [!code-vb[ControlProps_snip#ControlEvents1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps_snip/VisualBasic/Window1.xaml.vb#controlevents1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDoubleClickEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseDoubleClickEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseDoubleClickEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.MouseDoubleClickEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Control.MouseDoubleClick" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDoubleClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnMouseDoubleClick (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMouseDoubleClick(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.OnMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.Control.MouseDoubleClick" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで発生し、<xref:System.Windows.Controls.Control.MouseDoubleClick>イベントを呼び出すことによって、<xref:System.Windows.UIElement.RaiseEvent%2A>メソッドです。 詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.Control.OnMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.Control.OnMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseDoubleClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnPreviewMouseDoubleClick (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPreviewMouseDoubleClick(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.OnPreviewMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.Control.PreviewMouseDoubleClick" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで発生し、<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>イベントを呼び出すことによって、<xref:System.Windows.UIElement.RaiseEvent%2A>メソッドです。  詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.Control.OnPreviewMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.Control.OnPreviewMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTemplateChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnTemplateChanged (System.Windows.Controls.ControlTemplate oldTemplate, System.Windows.Controls.ControlTemplate newTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTemplateChanged(class System.Windows.Controls.ControlTemplate oldTemplate, class System.Windows.Controls.ControlTemplate newTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldTemplate" Type="System.Windows.Controls.ControlTemplate" />
+        <Parameter Name="newTemplate" Type="System.Windows.Controls.ControlTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="oldTemplate">古いテンプレート。</param>
+        <param name="newTemplate">新しいテンプレート。</param>
+        <summary>コントロールのテンプレートが変更されるたびに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレートの変更のタイミングは次のとおりです。  
+  
+1.  テンプレートは変更、<xref:System.Windows.DependencyObject.SetValue%2A>メソッドの呼び出し、スタイルのトリガー、またはその他の手段です。  
+  
+2.  プロパティ値の変更プロパティ変更のコールバックが呼び出されます。  
+  
+3.  以前のビジュアル ツリーが削除されます。  
+  
+4.  内部のメソッドが最終的に呼び出すと呼ばれる、<xref:System.Windows.Controls.Control.OnTemplateChanged%2A>メソッドです。  
+  
+5.  その後、メジャー、中に<xref:System.Windows.FrameworkElement.OnApplyTemplate%2A>が呼び出された新しいビジュアル ツリーがアタッチされているとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロール内のスペースを設定します。</summary>
+        <value>コンテンツの間にスペースの量、<see cref="T:System.Windows.Controls.Control" />とその<see cref="P:System.Windows.FrameworkElement.Margin" />または<see cref="T:System.Windows.Controls.Border" />です。  既定では 4 つすべての側面に 0 の太さです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 順序を左、上、右、および下余白を指定します。 詳細については、次を参照してください。<xref:System.Windows.Thickness>と[アラインメント、余白、および概要のパディング](~/docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)です。  
+  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.Padding%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_Padding"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.PaddingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールの余白のプロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps_snip#AdditionalControlProps13](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#additionalcontrolprops13)]  
+  
+ [!code-csharp[ControlProps_snip#AdditionalControlProps3](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml.cs#additionalcontrolprops3)]
+ [!code-vb[ControlProps_snip#AdditionalControlProps3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps_snip/VisualBasic/Window1.xaml.vb#additionalcontrolprops3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PaddingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PaddingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.PaddingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.Padding" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseDoubleClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler PreviewMouseDoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler PreviewMouseDoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Control.PreviewMouseDoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがマウス ボタンを 2 回以上クリックしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素ツリーに沿って各によって生成される直接ルーティング イベントが実際にこのルーティングされたイベントは見えますが、要素ツリーを通じてトンネリングのルートに従う、<xref:System.Windows.UIElement>です。 設定した場合、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`で、<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>イベント ハンドラー、後続<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>でルート上のイベントが発生する<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定`false`、ですが、<xref:System.Windows.Controls.Control.MouseDoubleClick>でイベントが発生する<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定`true`です。 これは、ユーザー コントロールをダブルクリックしたときに通知し、アプリケーションでイベントを処理するコントロールのコンシューマーの高レベルのイベントです。  
+  
+ マウスのダブルクリックを処理するコントロールの作成者が使用する必要があります、<xref:System.Windows.UIElement.PreviewMouseLeftButtonDown>イベントと<xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>が 2 に等しい。  これはの状態になります<xref:System.Windows.RoutedEventArgs.Handled%2A>に適切に反映されるまで、要素ツリー内の別の要素がイベントを処理する場合。  
+  
+ <xref:System.Windows.Controls.Control>クラスを定義、<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>と<xref:System.Windows.Controls.Control.MouseDoubleClick>イベントがない対応するシングル クリック イベント。  表示するかどうか、ユーザーがコントロールをクリックした、1 回、次のように処理します。、<xref:System.Windows.UIElement.MouseDown>イベント (または、対応する) チェックとかどうか、<xref:System.Windows.Input.MouseButtonEventArgs.ClickCount%2A>プロパティの値は 1 です。  
+  
+<a name="routedEventInfo_PreviewMouseDoubleClick"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.PreviewMouseDoubleClickEvent>|  
+|ルーティング方法|直接|  
+|Delegate|<xref:System.Windows.Input.MouseButtonEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーをアタッチする方法を示しています、<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>イベント。  
+  
+ [!code-xaml[ControlProps_snip#ControlEvents12](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#controlevents12)]  
+  
+ 次の例のイベント ハンドラーを示しています、<xref:System.Windows.Controls.Control.PreviewMouseDoubleClick>イベント。  
+  
+ [!code-csharp[ControlProps_snip#ControlEvents2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml.cs#controlevents2)]
+ [!code-vb[ControlProps_snip#ControlEvents2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps_snip/VisualBasic/Window1.xaml.vb#controlevents2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseDoubleClickEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseDoubleClickEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseDoubleClickEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.PreviewMouseDoubleClickEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Control.PreviewMouseDoubleClick" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndex">
+      <MemberSignature Language="C#" Value="public int TabIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TabIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.TabIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが TAB キーを使用してコントロールを移動するときに要素がフォーカスを受け取る順序を決定する値を設定します。</summary>
+        <value>デバイスの論理ナビゲーションの順序を決定する値。 既定値は <see cref="F:System.Int32.MaxValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 下のタブ インデックスを持つコントロールは、高いインデックスを持つコントロールの前にフォーカスを受け取ります。  
+  
+<a name="dependencyPropertyInfo_TabIndex"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.TabIndexProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、3 つのボタンのタブ インデックスを設定します。  
+  
+ [!code-xaml[ControlProps_snip#AdditionalControlProps17](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps_snip/CSharp/Pane1.xaml#additionalcontrolprops17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TabIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TabIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.TabIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.TabIndex" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Template">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ControlTemplate Template { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ControlTemplate Template" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.Template" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ControlTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール テンプレートを取得または設定します。</summary>
+        <value>外観を定義するテンプレート、<see cref="T:System.Windows.Controls.Control" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ControlTemplate>の外観を指定、<xref:System.Windows.Controls.Control>以外の場合、<xref:System.Windows.Controls.Control>はありません、 <xref:System.Windows.Controls.ControlTemplate>、<xref:System.Windows.Controls.Control>アプリケーションでは表示されません。 コントロールの作成者は、既定のコントロール テンプレートを定義し、アプリケーション作成者が上書きできる、<xref:System.Windows.Controls.ControlTemplate>をコントロールのビジュアル ツリーを再定義します。 参照してください[コントロールのスタイルとテンプレート](~/docs/framework/wpf/controls/control-styles-and-templates.md)と既存のコントロールのビジュアル ツリーを変更する方法の例についてはします。  
+  
+ A<xref:System.Windows.Controls.ControlTemplate>ユーザーとなどのオブジェクトの外側に表示される実装の詳細の自己完結型の単位を指定するものでは<xref:System.Windows.Style>オブジェクト。 同じコントロール テンプレート内では、コントロール テンプレートの内容を操作する唯一の方法です。  
+  
+<a name="dependencyPropertyInfo_Template"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.TemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>です。  これをリソースとしてアプリケーションに追加すると、アプリケーション内のすべてのボタンは省略記号ボタンとして表示されますが、ボタンとしての関数ではまだ。  
+  
+ [!code-xaml[StylingIntroSample_snippet#ButtonCT](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSample_snippet/CSharp/Window1.xaml#buttonct)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.TemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.Template" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Control.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を返します、<see cref="T:System.Windows.Controls.Control" />オブジェクト。</summary>
+        <returns>コントロールを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの作成者は、コントロールのコンシューマーを対象になる情報を格納する文字列を返すには、このメソッドをオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalContentAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.VerticalAlignment VerticalContentAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.VerticalAlignment VerticalContentAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Control.VerticalContentAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.VerticalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの内容の垂直方向の配置を設定します。</summary>
+        <value><see cref="T:System.Windows.VerticalAlignment" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.VerticalAlignment.Top" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 加え<xref:System.Windows.VerticalAlignment.Top>、 <xref:System.Windows.VerticalAlignment.Bottom>、および<xref:System.Windows.VerticalAlignment.Center>、設定することができます、<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティを<xref:System.Windows.VerticalAlignment.Stretch>、子要素の親要素の割り当てられているレイアウト領域の塗りつぶしを拡大します。 詳細については、次を参照してください。[アラインメント、余白、および概要のパディング](~/docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)です。  
+  
+ このプロパティにのみ影響がテンプレートを使用して、コントロール、<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティをパラメーターとします。 その他のコントロールは、このプロパティには影響はありません。  
+  
+<a name="dependencyPropertyInfo_VerticalContentAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Control.VerticalContentAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールのコンテンツの縦方向の配置プロパティを設定する方法を示します。  
+  
+ [!code-xaml[ControlProps#19](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml#19)]  
+  
+ [!code-csharp[ControlProps#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlProps/CSharp/Pane1.xaml.cs#9)]
+ [!code-vb[ControlProps#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlProps/VisualBasic/Pane1.xaml.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalContentAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalContentAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalContentAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Control.VerticalContentAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Control.VerticalContentAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

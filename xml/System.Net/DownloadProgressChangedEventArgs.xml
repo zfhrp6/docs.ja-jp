@@ -1,0 +1,138 @@
+<Type Name="DownloadProgressChangedEventArgs" FullName="System.Net.DownloadProgressChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class DownloadProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DownloadProgressChangedEventArgs extends System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.DownloadProgressChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.WebClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.ProgressChangedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Net.WebClient.DownloadProgressChanged" />のイベント、<see cref="T:System.Net.WebClient" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスに渡される、<xref:System.Net.DownloadProgressChangedEventHandler>です。  
+  
+   
+  
+## Examples  
+ イベント ハンドラーを設定する次のコード例を示します、<xref:System.Net.WebClient.DownloadProgressChanged>イベント。  
+  
+ [!code-cpp[NCLWebClientAsync#19](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#19)]
+ [!code-csharp[NCLWebClientAsync#19](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#19)]
+ [!code-vb[NCLWebClientAsync#19](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#19)]  
+  
+ 次のコード例は、このイベントのハンドラーの実装を示しています。  
+  
+ [!code-cpp[NCLWebClientAsync#42](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#42)]
+ [!code-csharp[NCLWebClientAsync#42](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#42)]
+ [!code-vb[NCLWebClientAsync#42](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#42)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BytesReceived">
+      <MemberSignature Language="C#" Value="public long BytesReceived { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 BytesReceived" />
+      <MemberSignature Language="DocId" Value="P:System.Net.DownloadProgressChangedEventArgs.BytesReceived" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信したバイト数を取得します。</summary>
+        <value><see cref="T:System.Int64" />を受信したバイト数を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 調べるには、転送の何パーセントが発生しましたを使用して、<xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、イベントのハンドラーの実装を示しています、<xref:System.Net.WebClient.DownloadProgressChanged>イベント。 このメソッドは、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLWebClientAsync#42](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#42)]
+ [!code-csharp[NCLWebClientAsync#42](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#42)]
+ [!code-vb[NCLWebClientAsync#42](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalBytesToReceive">
+      <MemberSignature Language="C#" Value="public long TotalBytesToReceive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TotalBytesToReceive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.DownloadProgressChangedEventArgs.TotalBytesToReceive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のバイトの合計数を取得、<see cref="T:System.Net.WebClient" />データは、操作をダウンロードします。</summary>
+        <value><see cref="T:System.Int64" />を受信するバイト数を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既に受信したバイト数を確認するには<xref:System.Net.DownloadProgressChangedEventArgs.BytesReceived%2A>プロパティです。  
+  
+ 調べるには、転送の何パーセントが発生しましたを使用して、<xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、イベントのハンドラーの実装を示しています、<xref:System.Net.WebClient.DownloadProgressChanged>イベント。 このメソッドは、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLWebClientAsync#42](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#42)]
+ [!code-csharp[NCLWebClientAsync#42](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#42)]
+ [!code-vb[NCLWebClientAsync#42](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

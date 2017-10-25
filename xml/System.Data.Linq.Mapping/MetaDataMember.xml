@@ -1,0 +1,582 @@
+<Type Name="MetaDataMember" FullName="System.Data.Linq.Mapping.MetaDataMember">
+  <TypeSignature Language="C#" Value="public abstract class MetaDataMember" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MetaDataMember extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.MetaDataMember" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データベース テーブルの列には、フィールドやドメイン オブジェクトのプロパティの間のマッピングを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MetaDataMember ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.MetaDataMember.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.MetaDataMember" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Association">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaAssociation Association { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaAssociation Association" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.Association" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaAssociation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Linq.Mapping.MetaAssociation" />このメンバーに対応します。</summary>
+        <value>対応する<see cref="T:System.Data.Linq.Mapping.MetaAssociation" />; が存在する場合は、それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、主キーのリレーションシップへの外部キーのようにデータベースの関連付けを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSync">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.AutoSync AutoSync { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Linq.Mapping.AutoSync AutoSync" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.AutoSync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.AutoSync</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの挿入の読み取り背面動作を取得および更新操作。</summary>
+        <value><see cref="T:System.Data.Linq.Mapping.AutoSync" /> 列挙型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBeNull">
+      <MemberSignature Language="C#" Value="public abstract bool CanBeNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanBeNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.CanBeNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの値を割り当てることがあるかどうかを取得、<see langword="null" />値。</summary>
+        <value>
+          <see langword="true" />このメンバーを割り当てることができる場合、<see langword="null" />値。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、依存、<xref:System.Data.Linq.Mapping.MetaDataMember.DbType%2A>プロパティ、利便性のために提供されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbType">
+      <MemberSignature Language="C#" Value="public abstract string DbType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DbType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.DbType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するデータベース列の型を取得します。</summary>
+        <value>文字列としてのデータベース列の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TRANSACT-SQL テーブル宣言コマンドで、列の定義に使用される正確なテキストになります。 ない定義している場合、データベース列の型がメンバーの型から推論されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringType">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaType DeclaringType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaType DeclaringType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.DeclaringType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Linq.Mapping.MetaType" />このデータ メンバーを格納しています。</summary>
+        <value>現在のメンバーを含むメタ型です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferredSourceAccessor">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaAccessor DeferredSourceAccessor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaAccessor DeferredSourceAccessor" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.DeferredSourceAccessor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaAccessor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、このメンバーの遅延のソースを設定するために使用されるアクセサーを取得します。</summary>
+        <value>このメンバーの遅延のソースにアクセスするために使用するアクセサー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferredValueAccessor">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaAccessor DeferredValueAccessor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaAccessor DeferredValueAccessor" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.DeferredValueAccessor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaAccessor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および (発生させずにフェッチ) このメンバーの遅延の値を設定するために使用されるアクセサーを取得します。</summary>
+        <value>このメンバーの遅延の値にアクセスするために使用するアクセサー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public abstract string Expression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>計算列を定義する式を取得します。</summary>
+        <value>文字列として、計算列の式。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssociation">
+      <MemberSignature Language="C#" Value="public abstract bool IsAssociation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAssociation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsAssociation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、アソシエーション リレーションシップを定義するかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />このメンバーには、アソシエーション リレーションシップが定義されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDbGenerated">
+      <MemberSignature Language="C#" Value="public abstract bool IsDbGenerated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDbGenerated" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsDbGenerated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、データベースによって自動的に生成するかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />このメンバーがデータベースによって自動的に生成された場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動的に生成されたメンバーは、対応するデータ行が挿入された後にすぐに同期されます。 値はサポートされていないトリガーによって生成されたキーを挿入します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeclaredBy">
+      <MemberSignature Language="C#" Value="public abstract bool IsDeclaredBy (System.Data.Linq.Mapping.MetaType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDeclaredBy(class System.Data.Linq.Mapping.MetaType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.MetaDataMember.IsDeclaredBy(System.Data.Linq.Mapping.MetaType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Data.Linq.Mapping.MetaType" />
+      </Parameters>
+      <Docs>
+        <param name="type">確認する型。</param>
+        <summary>このメンバーが指定した型で宣言されているかどうかを指定します。</summary>
+        <returns>
+          <see langword="true" />このメンバーは、指定した型で宣言されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeferred">
+      <MemberSignature Language="C#" Value="public abstract bool IsDeferred { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeferred" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsDeferred" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の動作を遅延ごとにこのメンバーを読み込むかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />既定では遅延ごとに、このメンバーに読み込まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDiscriminator">
+      <MemberSignature Language="C#" Value="public abstract bool IsDiscriminator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDiscriminator" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsDiscriminator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、継承識別子を表すかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />このメンバーは、継承識別子を表す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定できます`true`の場合は、最上位の最大で 1 つのメンバー、階層内のクラスをマップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPersistent">
+      <MemberSignature Language="C#" Value="public abstract bool IsPersistent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPersistent" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsPersistent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、列または制約) にマップするかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />このメンバーは、列 (または制約); にマップされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスは、永続的および非持続のメンバーの組み合わせがあります。 永続的なメンバーは、永続的でないメンバーがマップされていないときにマップされます。 マップされたクラスには、少なくとも 1 つの永続的なメンバーが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrimaryKey">
+      <MemberSignature Language="C#" Value="public abstract bool IsPrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーが型の id の一部であるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />このメンバーが型の id; の一部である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが場合`true`クラスのメンバーは、テーブルの一意なキーの一部である列を表します。 クラスの 1 つ以上のメンバーは、このプロパティに設定を持つことができます`true`関連付けられた列の複合であるキー。 エンティティ クラスのメンバーには、少なくとも 1 つはこの属性を持つ必要があり、主キーまたは一意のキーに対応するテーブルまたはビューにマップする必要があります。 それ以外の場合、LINQ to SQL では、データベースへの変更を送信するためには読み取り専用で、クラスのインスタンスが考慮されます。  
+  
+ 識別される列のセット<xref:System.Data.Linq.Mapping.MetaDataMember.IsPrimaryKey%2A>主キーにする必要はありません。 単に、エンティティを一意に識別するセットを示します。 一般的な代替手段には、クラスタ リング インデックスの列またはその他の一意のキー列が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVersion">
+      <MemberSignature Language="C#" Value="public abstract bool IsVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.IsVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、行のバージョンまたはタイムスタンプを表すかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />このメンバーを表している場合、行のバージョンまたはタイムスタンプです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン番号にインクリメントされ、timestamp 列が関連付けられている行が更新されるたびに更新されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadMethod">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodInfo LoadMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo LoadMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.LoadMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Linq.DataContext" />読み込み操作の実行に使用されるメソッド。</summary>
+        <value>Load メソッドとして<see cref="T:System.Reflection.MethodInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MappedName">
+      <MemberSignature Language="C#" Value="public abstract string MappedName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MappedName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.MappedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベース内の列または制約の名前を取得します。</summary>
+        <value>列または制約) を文字列としての名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MemberInfo Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MemberInfo Member" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる <see cref="T:System.Reflection.MemberInfo" /> を取得します。</summary>
+        <value>メンバーの属性およびメタデータ情報。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberAccessor">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaAccessor MemberAccessor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaAccessor MemberAccessor" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.MemberAccessor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaAccessor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのメンバーの値を設定するために使用されるアクセサーを取得します。</summary>
+        <value>アクセサー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じメンバーの名前を取得、<see cref="T:System.Reflection.MemberInfo" />名。</summary>
+        <value>同じ名前、<see cref="T:System.Reflection.MemberInfo" />名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="public abstract int Ordinal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Ordinal" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.Ordinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ結果の既定のレイアウトでこのメンバーの序数位置を取得します。</summary>
+        <value>序数位置。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StorageAccessor">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaAccessor StorageAccessor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaAccessor StorageAccessor" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.StorageAccessor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaAccessor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのメンバーのストレージの値を設定するために使用されるアクセサーを取得します。</summary>
+        <value>このメンバーのストレージの値のアクセサー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StorageMember">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MemberInfo StorageMember { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MemberInfo StorageMember" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.StorageMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーのデータを格納するメンバーを取得します。</summary>
+        <value>記憶域のメンバー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public abstract Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの種類を取得します。</summary>
+        <value>現在のメンバーの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCheck">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.UpdateCheck UpdateCheck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Linq.Mapping.UpdateCheck UpdateCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaDataMember.UpdateCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.UpdateCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーのオプティミスティック同時実行制御チェック ポリシーを取得します。</summary>
+        <value><see cref="T:System.Data.Linq.Mapping.UpdateCheck" />列挙型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスは、バージョン メンバーを持っていない場合 (<xref:System.Data.Linq.Mapping.MetaDataMember.IsVersion%2A>に設定`true`)、データベースの現在の状態を元のメンバーの値を比較することによって検出が行われます。  
+  
+ <xref:System.Data.Linq.Mapping.MetaDataMember.UpdateCheck%2A>プロパティは、LINQ to SQL がオプティミスティック同時実行による競合の検出を実装する方法を決定します。 このプロパティを持つメンバーのみに設定<xref:System.Data.Linq.Mapping.UpdateCheck.Always>または<xref:System.Data.Linq.Mapping.UpdateCheck.WhenChanged>競合の検出時に考慮されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,200 @@
+<Type Name="AttachablePropertyServices" FullName="System.Xaml.AttachablePropertyServices">
+  <TypeSignature Language="C#" Value="public static class AttachablePropertyServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AttachablePropertyServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.AttachablePropertyServices" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アタッチ可能なプロパティから値およびアクセサー メソッドの情報を取得して、添付プロパティ ストアを操作する静的ヘルパー メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのほとんどの機能は、プロパティ ストアをアタッチ、一般に実装に依存しています、<xref:System.Xaml.IAttachedPropertyStore>インターフェイスです。 ただし、パラメーターにストアを渡すため<xref:System.Xaml.AttachablePropertyServices>はインターフェイスとして型指定されず、、代わりに入力`object`です。 これは、任意のオブジェクトを渡すことができます、ここでは、内部の既定アタッチ可能なプロパティ ストアが使用されるためです。  
+  
+ 任意のオブジェクトのベスト プラクティスではするには、ストアに関連付けられているオブジェクトを渡します。 渡さないでください`null`がないことを示すために、<xref:System.Xaml.IAttachedPropertyStore>を使用します。 渡す`null`何もしないコード パスを入力します。 Null 以外の場合は、オブジェクトを渡すことが、として評価される`null`試みに<xref:System.Xaml.IAttachedPropertyStore>キャストで、既定のアタッチ可能なプロパティ ストアを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyPropertiesTo">
+      <MemberSignature Language="C#" Value="public static void CopyPropertiesTo (object instance, System.Collections.Generic.KeyValuePair&lt;System.Xaml.AttachableMemberIdentifier,object&gt;[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CopyPropertiesTo(object instance, valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.Xaml.AttachableMemberIdentifier, object&gt;[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AttachablePropertyServices.CopyPropertiesTo(System.Object,System.Collections.Generic.KeyValuePair{System.Xaml.AttachableMemberIdentifier,System.Object}[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="array" Type="System.Collections.Generic.KeyValuePair&lt;System.Xaml.AttachableMemberIdentifier,System.Object&gt;[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実装する特定のアタッチ可能なプロパティ ストア<see cref="T:System.Xaml.IAttachedPropertyStore" />; または静的な既定アタッチ可能なプロパティ ストアにアクセスするには、その null オブジェクトです。</param>
+        <param name="array">コピー先の配列。 配列は、ジェネリック配列、渡す必要がありますのコンポーネントが必要<see cref="T:System.Xaml.AttachableMemberIdentifier" />と<see langword="object" />です。</param>
+        <param name="index">コピー先のソースのインデックス。</param>
+        <summary>指定されたアタッチ可能なプロパティ ストアからとコピー先の配列には、すべてのアタッチ可能なプロパティと値のペアをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す、基になる<xref:System.Collections.Generic.ICollection%601.CopyTo%2A>で実装が制約されているキーと値のペアになり、このトピックに記載されていない例外の発生元となる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttachedPropertyCount">
+      <MemberSignature Language="C#" Value="public static int GetAttachedPropertyCount (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetAttachedPropertyCount(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AttachablePropertyServices.GetAttachedPropertyCount(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実装する特定のアタッチ可能なプロパティ ストア<see cref="T:System.Xaml.IAttachedPropertyStore" />; または静的な既定アタッチ可能なプロパティ ストアにアクセスするには、その null オブジェクトです。</param>
+        <summary>指定されたストアにあるアタッチ可能なプロパティ エントリの数を返します。</summary>
+        <returns>ストア内のエントリの整数の数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProperty">
+      <MemberSignature Language="C#" Value="public static bool RemoveProperty (object instance, System.Xaml.AttachableMemberIdentifier name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RemoveProperty(object instance, class System.Xaml.AttachableMemberIdentifier name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AttachablePropertyServices.RemoveProperty(System.Object,System.Xaml.AttachableMemberIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="name" Type="System.Xaml.AttachableMemberIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実装する特定のアタッチ可能なプロパティ ストア<see cref="T:System.Xaml.IAttachedPropertyStore" />; または静的な既定アタッチ可能なプロパティ ストアにアクセスするには、その null オブジェクトです。</param>
+        <param name="name">ストアから削除する添付可能なプロパティ エントリの識別子。</param>
+        <summary>指定されたストアから指定されたアタッチ可能なプロパティのエントリを削除します。</summary>
+        <returns>
+          <see langword="true" />場合のアタッチ可能なプロパティ エントリ<paramref name="name" />がストアに存在し、そこから削除された、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストアは、インスタンスごとそのため、ストアで、`name`値があいまいにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public static void SetProperty (object instance, System.Xaml.AttachableMemberIdentifier name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetProperty(object instance, class System.Xaml.AttachableMemberIdentifier name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AttachablePropertyServices.SetProperty(System.Object,System.Xaml.AttachableMemberIdentifier,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="name" Type="System.Xaml.AttachableMemberIdentifier" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実装する特定のアタッチ可能なプロパティ ストア<see cref="T:System.Xaml.IAttachedPropertyStore" />; または静的な既定アタッチ可能なプロパティ ストアを使用するには、その null オブジェクトです。</param>
+        <param name="name">値を設定する対象のアタッチ可能なプロパティのエントリの識別子。</param>
+        <param name="value">設定する値。</param>
+        <summary>指定されたストアの指定されたアタッチ可能なプロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ストアに値を設定できませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetProperty">
+      <MemberSignature Language="C#" Value="public static bool TryGetProperty (object instance, System.Xaml.AttachableMemberIdentifier name, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGetProperty(object instance, class System.Xaml.AttachableMemberIdentifier name, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AttachablePropertyServices.TryGetProperty(System.Object,System.Xaml.AttachableMemberIdentifier,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="name" Type="System.Xaml.AttachableMemberIdentifier" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実装する特定のアタッチ可能なプロパティ ストア<see cref="T:System.Xaml.IAttachedPropertyStore" />; または静的な既定アタッチ可能なプロパティ ストアを使用するには、その null オブジェクトです。</param>
+        <param name="name">値を取得する対象のアタッチ可能なプロパティのエントリの識別子。</param>
+        <param name="value">Out パラメーター。 このメソッドが戻るときに場合、値のコピー先のオブジェクトを含む<c>名前</c>ストア内に存在し、値。</param>
+        <summary>指定されたストアで指定されたアタッチ可能なプロパティの値の取得を試みます。 特定のアタッチ可能なプロパティがストアに存在しない場合、例外はスローされません。</summary>
+        <returns>
+          <see langword="true" />場合のアタッチ可能なプロパティ エントリ<paramref name="name" />が、ストアに見つかりましたし、値にポストされた<paramref name="value" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool TryGetProperty&lt;T&gt; (object instance, System.Xaml.AttachableMemberIdentifier name, out T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGetProperty&lt;T&gt;(object instance, class System.Xaml.AttachableMemberIdentifier name, [out] !!T&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AttachablePropertyServices.TryGetProperty``1(System.Object,System.Xaml.AttachableMemberIdentifier,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="name" Type="System.Xaml.AttachableMemberIdentifier" />
+        <Parameter Name="value" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">出力の予期される型。</typeparam>
+        <param name="instance">実装する特定のアタッチ可能なプロパティ ストア<see cref="T:System.Xaml.IAttachedPropertyStore" />; または静的な既定アタッチ可能なプロパティ ストアにアクセスするには、その null オブジェクトです。</param>
+        <param name="name">値を取得する対象のアタッチ可能なプロパティのエントリの識別子。</param>
+        <param name="value">Out パラメーター。 このメソッドが戻るときに場合、値のコピー先のオブジェクトを含む<c>名前</c>ストア内に存在し、値。</param>
+        <summary>値を取得する指定されたアタッチ可能なプロパティの指定されたストアに汎用の出力形式を取得しようとします。 特定のアタッチ可能なプロパティがストアに存在しない場合、例外はスローされません。</summary>
+        <returns>
+          <see langword="true" />場合のアタッチ可能なプロパティ エントリ<paramref name="name" />が、ストアに見つかりましたし、値にポストされた<paramref name="value" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

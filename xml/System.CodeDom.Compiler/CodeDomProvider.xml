@@ -1,0 +1,1392 @@
+<Type Name="CodeDomProvider" FullName="System.CodeDom.Compiler.CodeDomProvider">
+  <TypeSignature Language="C#" Value="public abstract class CodeDomProvider : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeDomProvider extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CodeDomProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>基本クラスを提供<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />実装します。 このクラスは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.CodeDom.Compiler.CodeDomProvider>を作成し、コード ジェネレーター、コード コンパイラのインスタンスを取得するために使用できます。 コード ジェネレーターを使用して、特定の言語でコードを生成することができ、コード コンパイラを使用してアセンブリにコードをコンパイルすることができます。  
+  
+> [!NOTE]
+>  [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]メソッドで使用できるコード ジェネレーター、コード コンパイラがコード プロバイダーから直接使用します。 呼び出す必要はありません<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>または<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>にアクセスするメソッド、およびこれらのメソッドは、不使用とマークします。 これは、新しいコード プロバイダーの実装だけでなく、既存の適用されます。  
+  
+ A<xref:System.CodeDom.Compiler.CodeDomProvider>実装通常コード生成やコード コンパイルのインターフェイスを提供および 1 つのプログラミング言語のコンパイルを管理するコードを生成するためです。 サポートされているいくつかの言語<xref:System.CodeDom.Compiler.CodeDomProvider>に付属している実装、[!INCLUDE[winsdklong](~/includes/winsdklong-md.md)]です。 これらの言語には、c#、Visual Basic、C++、および JScript が含まれます。 開発者またはコンパイラ販売元が実装することができます、<xref:System.CodeDom.Compiler.ICodeGenerator>と<xref:System.CodeDom.Compiler.ICodeCompiler>インターフェイスおよび提供、 <xref:System.CodeDom.Compiler.CodeDomProvider> CodeDOM 他のプログラミング言語のサポートを拡張します。  
+  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)ファイル (Machine.config) が追加の構成設定を追加するには、開発者やコンパイラ販売元のメカニズムを提供するマシンの構成の<xref:System.CodeDom.Compiler.CodeDomProvider>実装します。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider>クラスを検出し、列挙の静的メソッドを提供、<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A>メソッドは、すべての設定を返します<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>メソッドは、特定の設定を返します<xref:System.CodeDom.Compiler.CodeDomProvider>プログラミング言語の名前に基づく実装します。 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>メソッドのインスタンスを返します、<xref:System.CodeDom.Compiler.CodeDomProvider>特定の言語の実装です。  
+  
+ 構成ファイルの言語プロバイダー設定の詳細については、次を参照してください。[コンパイラおよび言語プロバイダー設定のスキーマ](http://msdn.microsoft.com/library/c020b139-8699-4f0d-9ac9-70d0c5b2a8c8)です。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求し、クラス レベルの継承確認要求を使用します。 A<xref:System.Security.SecurityException>が、直前の呼び出し元または派生クラスのいずれかに完全信頼のアクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 次のサンプル プログラムは生成し、"Hello World"を使用して印刷するプログラムの CodeDOM モデルに基づくソース コードをコンパイル、<xref:System.Console>クラスです。 Windows フォーム ユーザー インターフェイスを提供します。 ユーザーがプログラミングいくつかの選択肢から言語を選択できます。 c#、Visual Basic、および JScript です。  
+  
+ [!code-cpp[CodeDomExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source.cpp#1)]
+ [!code-csharp[CodeDomExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source.cs#1)]
+ [!code-vb[CodeDomExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <block subset="none" type="overrides">
+      <para>.NET Framework バージョン 1.0 および 1.1 では、コード プロバイダーの構成の実装の<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />、 <see cref="T:System.CodeDom.Compiler.ICodeGenerator" />、 <see cref="T:System.CodeDom.Compiler.ICodeParser" />、および<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />です。 [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />、 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" />、および<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />メソッドは廃止されましたが、および方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />と<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />で直接利用、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスです。 コード プロバイダーの実装でこれらのメソッドをオーバーライドして、基本メソッドを呼び出さないでください。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CodeDomProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromDom">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom (System.CodeDom.Compiler.CompilerParameters options, params System.CodeDom.CodeCompileUnit[] compilationUnits);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit[] compilationUnits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="compilationUnits" Type="System.CodeDom.CodeCompileUnit[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイル時の設定を示すオブジェクト。</param>
+        <param name="compilationUnits">型の配列<see cref="T:System.CodeDom.CodeCompileUnit" />を示すコードをコンパイルします。</param>
+        <summary>に基づいてアセンブリをコンパイル、<see cref="N:System.CodeDom" />の指定した配列に含まれているツリー<see cref="T:System.CodeDom.CodeCompileUnit" />オブジェクトを指定したコンパイラの設定を使用します。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeCompiler>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeCompiler>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />コード コンパイラを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード コンパイラを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromFile">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile (System.CodeDom.Compiler.CompilerParameters options, params string[] fileNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile(class System.CodeDom.Compiler.CompilerParameters options, string[] fileNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileNames" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイル時の設定を示すオブジェクト。</param>
+        <param name="fileNames">コンパイルするファイルの名前の配列。</param>
+        <summary>指定したコンパイラ設定を使用して、指定したファイルに含まれるソース コードからアセンブリをコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeCompiler>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeCompiler>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />コード コンパイラを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード コンパイラを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileAssemblyFromSource">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource (System.CodeDom.Compiler.CompilerParameters options, params string[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource(class System.CodeDom.Compiler.CompilerParameters options, string[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromSource(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="sources" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />このコンパイルのコンパイラ設定を示すオブジェクト。</param>
+        <param name="sources">コンパイルするソース コードの文字列の配列。</param>
+        <summary>指定されたソース コードを含む、指定したコンパイラ設定を使用して文字列の配列からアセンブリをコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeCompiler>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeCompiler>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />コード コンパイラを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード コンパイラを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCompiler">
+      <MemberSignature Language="C#" Value="public abstract System.CodeDom.Compiler.ICodeCompiler CreateCompiler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeCompiler CreateCompiler() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("ICodeCompiler is obsolete")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeCompiler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しいコード コンパイラを作成します。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeCompiler" />のコンパイルに使用できる<see cref="N:System.CodeDom" />ソース コード形式のベースします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは廃止されていますが、[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]です。 呼び出す、推奨される方法は、<xref:System.CodeDom.Compiler.ICodeCompiler>コード プロバイダーで直接使用できるメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、実装する必要があります、<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />内のメンバー、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスし、スロー、<see cref="T:System.NotSupportedException" />このメソッドが呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEscapedIdentifier">
+      <MemberSignature Language="C#" Value="public virtual string CreateEscapedIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateEscapedIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateEscapedIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">エスケープされた識別子を作成する対象の文字列です。</param>
+        <summary>指定された値に対して、エスケープされた識別子を作成します。</summary>
+        <returns>値のエスケープされた識別子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.CreateEscapedIdentifier%2A>テスト識別子が予約されているいずれかと競合するかどうか、または言語のキーワードを場合は、言語固有のエスケープ コードの書式設定と同じ名前を返します。 これは、エスケープされた識別子に呼ばれます。 エスケープされた識別子を含む同じ`value`識別子、キーワードと区別するのには追加エスケープ コードの書式設定が、します。 2 つの実装の例では、先頭、`value`と"@"ひとまとめにして、または、`value`で"["および"]"です。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateGenerator">
+      <MemberSignature Language="C#" Value="public abstract System.CodeDom.Compiler.ICodeGenerator CreateGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("ICodeGenerator is obsolete")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しいコード ジェネレーターを作成します。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />生成に使用できる<see cref="N:System.CodeDom" />ソース コード形式のベースします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは廃止されていますが、[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]です。 呼び出す、推奨される方法は、<xref:System.CodeDom.Compiler.ICodeGenerator>で直接使用できる方法は、<xref:System.CodeDom.Compiler.CodeDomProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、実装する必要があります、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />内のメンバー、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />クラスし、スロー、<see cref="T:System.NotSupportedException" />このメソッドが呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateGenerator">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.ICodeGenerator CreateGenerator (System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator(class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="output">A<see cref="T:System.IO.TextWriter" />を使用するを出力します。</param>
+        <summary>派生クラスでオーバーライドされると、指定された新しいコード ジェネレーターを作成<see cref="T:System.IO.TextWriter" />出力用です。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />生成に使用できる<see cref="N:System.CodeDom" />ソース コード形式のベースします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された使用<xref:System.IO.TextWriter>出力用です。 このメソッドは、ソース コードの増分更新を複数の最適化されたコード生成をサポートします。  
+  
+> [!NOTE]
+>  基本クラス実装の呼び出し、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>メソッドで、廃止されていますが、[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]され、その結果、<xref:System.NotSupportedException>場合、<xref:System.CodeDom.Compiler.ICodeGenerator>オブジェクトは返されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateGenerator">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.ICodeGenerator CreateGenerator (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">出力先ファイルの名前です。</param>
+        <summary>派生クラスでオーバーライドされると、指定したファイル名の出力を使用して、新しいコード ジェネレーターを作成します。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />生成に使用できる<see cref="N:System.CodeDom" />ソース コード形式のベースします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したファイル名の出力を使用します。  
+  
+> [!NOTE]
+>  基本クラス実装の呼び出し、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>メソッドで、廃止されていますが、[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]され、その結果、<xref:System.NotSupportedException>場合、<xref:System.CodeDom.Compiler.ICodeGenerator>オブジェクトは返されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParser">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.ICodeParser CreateParser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeParser CreateParser() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("ICodeParser is obsolete")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeParser</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しいコード パーサーを作成します。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeParser" />ソース コードの解析に使用できます。 基本の実装は常に返します<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProvider">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CodeDomProvider CreateProvider (string language);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CodeDomProvider CreateProvider(string language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="language">言語の名前。</param>
+        <summary>取得、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />指定した言語のインスタンス。</summary>
+        <returns>指定した言語の名前に実装されている CodeDOM プロバイダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメソッドは、いくつかのプロバイダーのいずれかをオプションで使用するアプリケーションでコード プロバイダーのインスタンスを作成する最もよく使用します。 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>インスタンスを作成するコード プロバイダーを実行時に指定できます。 どのコード プロバイダーを使用してデザイン時にわかっている場合そのコード プロバイダーのインスタンスを作成しないでを使用して、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>メソッドです。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>メソッドを返します、<xref:System.CodeDom.Compiler.CodeDomProvider>特定言語の名前のインスタンス以外の呼び出しに似ていますが、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>言語プロバイダーの種類を持つメソッドです。 使用して<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>言語名に対して構成されているプロバイダーの実装を動的に検索する場合。  
+  
+ 言語の名前、1 つ以上のプロバイダー実装が構成されている場合<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>最後の一致する構成要素のプロバイダーのインスタンスを返します。  
+  
+ 使用して、<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType>メソッドのオーバー ロードする場合、特定の言語プロバイダーの実装です。 たとえば、使用、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>言語の名前をサポートするプロバイダーのインスタンスを取得するメソッド`"CSharp"`; を使用して、<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType>専用のプロバイダーのインスタンスを取得するメソッドのオーバー ロード、<xref:Microsoft.CSharp.CSharpCodeProvider?displayProperty=nameWithType>実装します。 使用する必要があります、[\]、CultureInfo オブジェクトを使用して\<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%2CSystem.Object%5B%5D%29?displayProperty=nameWithType > メソッドの言語用の複数のコード プロバイダーがあり、特定のコード プロバイダーをインスタンス化したい場合。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A>メソッドでは、少なくとも 1 つのプロバイダーの実装が特定の言語をサポートしているかどうかを確認します。 使用して言語名を検証する<xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A>に渡す前に<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>です。 サポートされていない言語名を渡す場合<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>、<xref:System.Configuration.ConfigurationException?displayProperty=nameWithType>がスローされます。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A>を特定するメソッドを使用できます<xref:System.CodeDom.Compiler.CodeDomProvider>、開発者やで識別されるコンパイラ ベンダーによって提供される追加の実装を含むコンピューターの実装、 [ &lt;system.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)マシン構成ファイル (Machine.config) でします。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>メソッドのインスタンスを返します、<xref:System.CodeDom.Compiler.CodeDomProvider>特定の言語の実装です。  
+  
+ 言語名では区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定、<xref:System.CodeDom.Compiler.CodeDomProvider>入力言語と表示言語プロバイダーの構成設定の実装です。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#6)]
+ [!code-csharp[CodeDom_CompilerInfo#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#6)]
+ [!code-vb[CodeDom_CompilerInfo#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="language" />このコンピューターに構成されているプロバイダーはありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="language" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProvider">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CodeDomProvider CreateProvider (string language, System.Collections.Generic.IDictionary&lt;string,string&gt; providerOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CodeDomProvider CreateProvider(string language, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; providerOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" />
+        <Parameter Name="providerOptions" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="language">言語の名前。</param>
+        <param name="providerOptions">構成ファイルからプロバイダー オプションのコレクション。</param>
+        <summary>取得、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />インスタンスの言語とプロバイダー オプションを指定します。</summary>
+        <returns>指定した言語の名前とオプションの実装されている CodeDOM プロバイダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメソッドは、いくつかのプロバイダーのいずれかをオプションで使用するアプリケーションでコード プロバイダーのインスタンスを作成する最もよく使用します。 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%28System.String%2CSystem.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%29>実行時にインスタンスを作成するコード プロバイダーのバージョンを指定できます。 どのコード プロバイダーを使用してデザイン時にわかっている場合を使用せずにそのコード プロバイダーのインスタンスを作成する必要があります、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%28System.String%2CSystem.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%29>メソッドです。  
+  
+ 使用して<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%28System.String%2CSystem.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%29>特定の言語とオプションの構成プロバイダーの実装を動的に検索する場合。 言語名では区別されません。 サポートされているプロバイダー オプションについては、特定の CodeDOM プロバイダーのマニュアルを参照してください。  
+  
+ プロバイダーを検証して、言語の名前の 2 つ以上のプロバイダー実装が構成されている場合、プロバイダーの呼び出しについては、の「解説」セクションを参照してください、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%28System.String%29>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、プロバイダーのインスタンスを作成する方法を示しています、`providerOptions`パラメーター。  
+  
+ [!code-csharp[CodeDomProvider.ProviderOptions#1](~/samples/snippets/csharp/VS_Snippets_CLR/codedomprovider.provideroptions/cs/program.cs#1)]
+ [!code-vb[CodeDomProvider.ProviderOptions#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/codedomprovider.provideroptions/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateValidIdentifier">
+      <MemberSignature Language="C#" Value="public virtual string CreateValidIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateValidIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateValidIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">有効な識別子を生成する対象の文字列です。</param>
+        <summary>指定された値に対して有効な識別子を作成します。</summary>
+        <returns>指定された値に対して有効な識別子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.CreateValidIdentifier%2A>識別子が予約されていると競合しているかどうかをテストまたは言語のキーワード、しかどうか、有効な識別子を返すしようという名前が競合しません。 From キーワード; 識別子を区別するために返される識別子が若干変更されて通常たとえば、名前可能性があります前にアンダー スコア (「_ _」) です。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExtension">
+      <MemberSignature Language="C#" Value="public virtual string FileExtension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileExtension" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeDomProvider.FileExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の言語でソース コード ファイルを使用する既定のファイル名拡張子を取得します。</summary>
+        <value>現在の言語のソース ファイルの拡張子に対応するファイル名拡張子。 基本の実装は常に返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ファイル名拡張子を生成または使用する必要がありますを示すコード ジェネレーター、コード コンパイラによって使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例のインスタンスを作成する<xref:Microsoft.VisualBasic.VBCodeProvider?displayProperty=nameWithType>です。 プロバイダーの名前、ハッシュ コード、および既定のファイル名拡張子プロバイダーの新しいインスタンスを表示します。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#3)]
+ [!code-csharp[CodeDom_CompilerInfo#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#3)]
+ [!code-vb[CodeDom_CompilerInfo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromCompileUnit">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromCompileUnit (System.CodeDom.CodeCompileUnit compileUnit, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromCompileUnit(class System.CodeDom.CodeCompileUnit compileUnit, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit(System.CodeDom.CodeCompileUnit,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="compileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />コードを生成します。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力コードが送信されます。</param>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定の Code Document Object Model (CodeDOM) のコンパイル単位のコードを生成し、指定したオプションを使用して、指定されたテキスト ライターに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A>から"Hello World"アプリケーション用のコードを生成する方法を<xref:System.CodeDom.CodeCompileUnit>です。 この例に示されている例の一部である、<xref:System.CodeDom.Compiler.CodeDomProvider>クラスです。  
+  
+ [!code-cpp[CodeDomExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source.cpp#3)]
+ [!code-csharp[CodeDomExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source.cs#3)]
+ [!code-vb[CodeDomExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromExpression">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromExpression (System.CodeDom.CodeExpression expression, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromExpression(class System.CodeDom.CodeExpression expression, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromExpression(System.CodeDom.CodeExpression,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="expression">A<see cref="T:System.CodeDom.CodeExpression" />コードを生成するための式を示すオブジェクト。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をコードが送信されます。</param>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>Code Document Object Model (CodeDOM) の指定された式のコードを生成し、指定したオプションを使用して、指定されたテキスト ライターに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromMember">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromMember (System.CodeDom.CodeTypeMember member, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromMember(class System.CodeDom.CodeTypeMember member, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromMember(System.CodeDom.CodeTypeMember,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="member" Type="System.CodeDom.CodeTypeMember" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="member">A<see cref="T:System.CodeDom.CodeTypeMember" />コードを生成する対象のメンバーを示すオブジェクト。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をコードが送信されます。</param>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定の Code Document Object Model (CodeDOM) のメンバー宣言のコードを生成し、指定したオプションを使用して、指定されたテキスト ライターに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラス実装をスロー、<xref:System.NotImplementedException>です。 参照してください<xref:Microsoft.CSharp.CSharpCodeProvider.GenerateCodeFromMember%2A?displayProperty=nameWithType>ドキュメントについては、このメソッドの実装を記述します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromMember%2A>メソッドによって実装される、<xref:Microsoft.CSharp.CSharpCodeProvider>と<xref:Microsoft.VisualBasic.VBCodeProvider>クラスです。  
+  
+ [!code-csharp[CodeDom_GenerateCodeFromMember#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_GenerateCodeFromMember/cs/program.cs#1)]
+ [!code-vb[CodeDom_GenerateCodeFromMember#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_GenerateCodeFromMember/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドは派生クラスでオーバーライドされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromNamespace">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromNamespace (System.CodeDom.CodeNamespace codeNamespace, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromNamespace(class System.CodeDom.CodeNamespace codeNamespace, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromNamespace(System.CodeDom.CodeNamespace,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">A<see cref="T:System.CodeDom.CodeNamespace" />コードを生成する対象の名前空間を示すオブジェクト。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をコードが送信されます。</param>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>Code Document Object Model (CodeDOM) の指定した名前空間のコードを生成し、指定したオプションを使用して、指定されたテキスト ライターに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromStatement">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromStatement (System.CodeDom.CodeStatement statement, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromStatement(class System.CodeDom.CodeStatement statement, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromStatement(System.CodeDom.CodeStatement,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="statement" Type="System.CodeDom.CodeStatement" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="statement">A<see cref="T:System.CodeDom.CodeStatement" />コードを生成する CodeDOM 要素を格納します。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をコードが送信されます。</param>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定の Code Document Object Model (CodeDOM) のステートメントのコードを生成し、指定したオプションを使用して、指定されたテキスト ライターに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromType">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromType (System.CodeDom.CodeTypeDeclaration codeType, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromType(class System.CodeDom.CodeTypeDeclaration codeType, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromType(System.CodeDom.CodeTypeDeclaration,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeType" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="codeType">A<see cref="T:System.CodeDom.CodeTypeDeclaration" />コードを生成する対象の種類を示すオブジェクト。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をコードが送信されます。</param>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定の Code Document Object Model (CodeDOM) の型の宣言のコードを生成し、指定したオプションを使用して、指定されたテキスト ライターに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllCompilerInfo">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CompilerInfo[] GetAllCompilerInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CompilerInfo[] GetAllCompilerInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコンピューターの構成設定をプロバイダーとコンパイラ、言語を返します。</summary>
+        <returns>型の配列<see cref="T:System.CodeDom.Compiler.CompilerInfo" />構成済みのすべての設定を表す<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />実装します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A>コンピューターの言語プロバイダー設定を列挙するメソッド。  
+  
+> [!NOTE]
+>  [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、.NET Framework によって提供される既定の言語プロバイダーがで指定されていない、 [ &lt;system.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)コンパイラ構成セクションし、削除することはできませんのでこのメソッドは、既定のプロバイダーおよび構成ファイルで指定されたすべての情報を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コンピューターの言語プロバイダーを列挙し、各言語プロバイダーの構成およびコンパイラ設定を表示します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#8)]
+ [!code-csharp[CodeDom_CompilerInfo#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#8)]
+ [!code-vb[CodeDom_CompilerInfo#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompilerInfo">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CompilerInfo GetCompilerInfo (string language);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CompilerInfo GetCompilerInfo(string language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="language">言語名。</param>
+        <summary>指定した言語の構成設定をプロバイダーとコンパイラ、言語を返します。</summary>
+        <returns>A <see cref="T:System.CodeDom.Compiler.CompilerInfo" /> 、構成済みの設定を使用して作成されたオブジェクト<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />実装します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)マシンの構成のファイル、言語プロバイダーとコンパイラ構成設定を含む各<xref:System.CodeDom.Compiler.CodeDomProvider>コンピューターに実装します。 マシン構成ファイルについては、のマシン構成ファイルのセクションを参照してください。[構成アプリ](http://msdn.microsoft.com/library/86bd26d3-737e-4484-9782-19b17f34cd1f)です。 <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>メソッドは、指定した言語の名前の各プロバイダーの構成要素を検索します。 返された<xref:System.CodeDom.Compiler.CompilerInfo>インスタンスに構成された言語プロバイダーおよびコンパイラ設定が含まれています。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A>メソッドでは、少なくとも 1 つのプロバイダーの実装が特定の言語をサポートしているかどうかを確認します。 使用して言語名を検証する<xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A>に渡す前に<xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>です。 これにより、スロー、<xref:System.Configuration.ConfigurationException?displayProperty=nameWithType>にアクセスするとき、<xref:System.CodeDom.Compiler.CompilerInfo>サポートされていない言語名のインスタンス。  
+  
+ 入力言語の名前、1 つ以上のプロバイダー実装が構成されている場合<xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>構成要素最後の一致するプロバイダーからの設定を返します。  
+  
+ 言語名では区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定、<xref:System.CodeDom.Compiler.CodeDomProvider>入力言語と表示言語プロバイダーの構成設定の実装です。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#6)]
+ [!code-csharp[CodeDom_CompilerInfo#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#6)]
+ [!code-vb[CodeDom_CompilerInfo#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><paramref name="language" />このコンピューターに構成されているプロバイダーはありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="language" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConverter">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.TypeConverter GetConverter (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.TypeConverter GetConverter(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetConverter(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">型コンバーターを取得する対象のオブジェクトの型。</param>
+        <summary>取得、<see cref="T:System.ComponentModel.TypeConverter" />の指定したデータ型。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter" />指定した型のまたは<see langword="null" />場合、<see cref="T:System.ComponentModel.TypeConverter" />の指定した型が見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、特定のデータ型の特定の種類の型コンバーターを提供するには、このメソッドをオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLanguageFromExtension">
+      <MemberSignature Language="C#" Value="public static string GetLanguageFromExtension (string extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetLanguageFromExtension(string extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extension">ファイル名拡張子。</param>
+        <summary>指定されたファイル名拡張子に関連付けられている言語名で構成されている形式で返します、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />コンパイラ構成セクション。</summary>
+        <returns>関連付けられているファイル名拡張子で構成されている言語の名前、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />コンパイラ構成設定。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)、マシンの構成では、ファイル (Machine.config) は、各言語プロバイダーとコンパイラ構成設定を含まれています<xref:System.CodeDom.Compiler.CodeDomProvider>に実装します。コンピューターです。 <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>メソッドは、指定したファイル名拡張子の各プロバイダーの構成要素を検索します。  
+  
+ <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A>メソッドでは、少なくとも 1 つのプロバイダーの実装が特定のファイル名拡張子をサポートしているかどうかを確認します。 使用してファイル名拡張子を検証する<xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A>に渡す前に<xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>です。 これにより、<xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>からスロー、<xref:System.Configuration.ConfigurationException?displayProperty=nameWithType>サポートされないファイル名拡張子。  
+  
+ 入力ファイル名拡張子をサポートするプロバイダーの実装が存在しているし、そのプロバイダー用に構成された複数のサポートされている言語<xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>そのプロバイダーの最初の言語名を返します。 入力ファイル名拡張子に対して複数のプロバイダー実装が構成されている場合<xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>構成要素を最後の一致するプロバイダーから言語の名前を返します。  
+  
+ 言語の名前とファイル名拡張子は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定、<xref:System.CodeDom.Compiler.CodeDomProvider>入力ファイル名拡張子と表示言語プロバイダーの構成設定の実装です。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#5)]
+ [!code-csharp[CodeDom_CompilerInfo#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#5)]
+ [!code-vb[CodeDom_CompilerInfo#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><paramref name="extension" />このコンピューターに構成されている言語プロバイダーはありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="extension" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeOutput">
+      <MemberSignature Language="C#" Value="public virtual string GetTypeOutput (System.CodeDom.CodeTypeReference type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTypeOutput(class System.CodeDom.CodeTypeReference type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetTypeOutput(System.CodeDom.CodeTypeReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.CodeDom.CodeTypeReference" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.CodeDom.CodeTypeReference" />を示す戻り値の型。</param>
+        <summary>指定したによって示される型を取得<see cref="T:System.CodeDom.CodeTypeReference" />です。</summary>
+        <returns>このコード ジェネレーターによってコードを生成する言語用、指定した型のテキスト形式に書式設定します。 Visual basic の場合は、たとえば、渡すことで、<see cref="T:System.CodeDom.CodeTypeReference" />の<see cref="T:System.Int32" />型には、「整数」が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefinedExtension">
+      <MemberSignature Language="C#" Value="public static bool IsDefinedExtension (string extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefinedExtension(string extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extension">ファイル名拡張子。</param>
+        <summary>ファイル名拡張子がある関連付けられているかどうかをテスト<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />コンピューター上で構成の実装です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />実装は指定されたファイル名拡張子に対して構成されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)、マシンの構成では、ファイル (Machine.config) は、各言語プロバイダーとコンパイラ構成設定を含まれています<xref:System.CodeDom.Compiler.CodeDomProvider>に実装します。コンピューターです。 <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A>メソッドは、指定したファイル名拡張子のプロバイダー構成要素を検索します。  
+  
+ ファイル名拡張子は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定、<xref:System.CodeDom.Compiler.CodeDomProvider>入力ファイル名拡張子と表示言語プロバイダーの構成設定の実装です。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#5)]
+ [!code-csharp[CodeDom_CompilerInfo#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#5)]
+ [!code-vb[CodeDom_CompilerInfo#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="extension" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefinedLanguage">
+      <MemberSignature Language="C#" Value="public static bool IsDefinedLanguage (string language);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefinedLanguage(string language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="language">言語の名前。</param>
+        <summary>かどうかを言語には、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />コンピューター上で構成の実装です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />実装は指定された言語用に構成されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ &lt;System.codedom&gt;要素](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)、マシンの構成では、ファイル (Machine.config) は、各言語プロバイダーとコンパイラ構成設定を含まれています<xref:System.CodeDom.Compiler.CodeDomProvider>に実装します。コンピューターです。 <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A>メソッドは、指定した言語の名前のプロバイダー構成要素を検索します。  
+  
+ 言語名では区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定、<xref:System.CodeDom.Compiler.CodeDomProvider>入力言語と表示言語プロバイダーの構成設定の実装です。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerInfo>クラスです。  
+  
+ [!code-cpp[CodeDom_CompilerInfo#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#6)]
+ [!code-csharp[CodeDom_CompilerInfo#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#6)]
+ [!code-vb[CodeDom_CompilerInfo#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CompilerInfo/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="language" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidIdentifier">
+      <MemberSignature Language="C#" Value="public virtual bool IsValidIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsValidIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.IsValidIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">有効な識別子を確認する値。</param>
+        <summary>指定した値が現在の言語に対して有効な識別子であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="value" />パラメーターが有効な識別子です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、識別子が有効かどうかをテストします。 <xref:System.CodeDom.Compiler.CodeDomProvider.IsValidIdentifier%2A>メソッドは、プロバイダー固有です。 1 つのプロバイダーに対して有効な識別子を他のプロバイダーの有効なことができない可能性があります。 場合`value`文字が含まれています、ASCII 文字の範囲外のコードのコンパイルに使用されるすべての言語識別子を確認します。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.CodeDom.Compiler.CodeDomProvider.IsValidIdentifier(System.String)" />派生クラスでを返す方法の設計<see langword="true" />言語の規則に適合させますであり、キーワードと競合していない場合にのみです。  
+  
+ このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageOptions">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.LanguageOptions LanguageOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.Compiler.LanguageOptions LanguageOptions" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeDomProvider.LanguageOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.LanguageOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語機能識別子を取得します。</summary>
+        <value>言語の特殊な機能を示す <see cref="T:System.CodeDom.Compiler.LanguageOptions" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.CodeCompileUnit Parse (System.IO.TextReader codeStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeCompileUnit Parse(class System.IO.TextReader codeStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Parse(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeStream" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="codeStream">A<see cref="T:System.IO.TextReader" />を解析するためのコードの読み取りに使用できるオブジェクト。</param>
+        <summary>指定したテキストのストリームから読み取ったコードをコンパイル、<see cref="T:System.CodeDom.CodeCompileUnit" />です。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />解析済みのコードの表現を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeParser>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateParser%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeParser>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、パーサーを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" />コード パーサーを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeParser" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード パーサーを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Supports">
+      <MemberSignature Language="C#" Value="public virtual bool Supports (System.CodeDom.Compiler.GeneratorSupport supports);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Supports(valuetype System.CodeDom.Compiler.GeneratorSupport supports) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Supports(System.CodeDom.Compiler.GeneratorSupport)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generatorSupport" Type="System.CodeDom.Compiler.GeneratorSupport" />
+      </Parameters>
+      <Docs>
+        <param name="supports">To be added.</param>
+        <summary>返します。 指定されたコード生成をサポートするかどうかを示す値を指定します。</summary>
+        <returns>
+          <see langword="true" />指定されたコード生成をサポートは提供です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数がこのメソッドを呼び出すことができる<xref:System.CodeDom.Compiler.GeneratorSupport>バイナリと共に、適切な機能フラグのセットを結合することで、一連の機能をテストするには、一度にフラグ`OR`演算子 (&#124;)。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、このメソッドが用意されて、<xref:System.CodeDom.Compiler.ICodeGenerator>実装によって返される、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>プロバイダーのメソッドです。 バージョン 2.0 ではコード プロバイダーがオーバーライドされていない場合でもにこのメソッド コード プロバイダーを直接呼び出すことができます。 コード プロバイダーがこのメソッドをオーバーライドしていない場合、<xref:System.CodeDom.Compiler.ICodeGenerator>実装は、基本クラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドはどちらも<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />メソッドが派生クラスでオーバーライドします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合、対応する、基本クラスのメソッドを呼び出さないでください。 基本クラスのメソッドでは、ジェネレーターを作成、古い形式を使用して派生クラスで<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />コード ジェネレーターを使用する既存のプロバイダーとの互換性のためのメソッドです。 基本クラスのメソッドを順に呼び出して、相当するメソッド、<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />実装にこの機能を実行します。 表示される、<see cref="T:System.NotImplementedException" />コード ジェネレーターを使用しないコード プロバイダーから基本クラスのメソッドを呼び出す場合。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

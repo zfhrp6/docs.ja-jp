@@ -1,0 +1,153 @@
+<Type Name="EntityViewContainer" FullName="System.Data.Mapping.EntityViewContainer">
+  <TypeSignature Language="C#" Value="public abstract class EntityViewContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EntityViewContainer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Mapping.EntityViewContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>生成されたビューを格納するためにデザイン時に作成される型の基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、コンパイル時のビューの生成に使用されます。 開発者による使用を目的としたものではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EntityViewContainer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Mapping.EntityViewContainer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see langword="EntityViewContainer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmEntityContainerName">
+      <MemberSignature Language="C#" Value="public string EdmEntityContainerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EdmEntityContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Mapping.EntityViewContainer.EdmEntityContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Metadata.Edm.EntityContainer" /> の名前を取得または設定します。</summary>
+        <value>コンテナーの名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewAt">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.Generic.KeyValuePair&lt;string,string&gt; GetViewAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Collections.Generic.KeyValuePair`2&lt;string, string&gt; GetViewAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Mapping.EntityViewContainer.GetViewAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.KeyValuePair&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">ビューのインデックス。</param>
+        <summary>ビューとそのキーを含む、指定したインデックスにキー/値ペアを返します。</summary>
+        <returns>キー/値ペア<paramref name="index" />ビューとそのキーが含まれています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashOverAllExtentViews">
+      <MemberSignature Language="C#" Value="public string HashOverAllExtentViews { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HashOverAllExtentViews" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Mapping.EntityViewContainer.HashOverAllExtentViews" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューのハッシュ値。</summary>
+        <value>ハッシュ値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashOverMappingClosure">
+      <MemberSignature Language="C#" Value="public string HashOverMappingClosure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HashOverMappingClosure" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Mapping.EntityViewContainer.HashOverMappingClosure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ値。</summary>
+        <value>ハッシュ値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreEntityContainerName">
+      <MemberSignature Language="C#" Value="public string StoreEntityContainerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StoreEntityContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Mapping.EntityViewContainer.StoreEntityContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストレージ スキーマの <see cref="T:System.Data.Metadata.Edm.EntityContainer" /> を取得または設定します。</summary>
+        <value>コンテナー名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewCount">
+      <MemberSignature Language="C#" Value="public int ViewCount { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ViewCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Mapping.EntityViewContainer.ViewCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューの数を取得または設定します。</summary>
+        <value>ビュー数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

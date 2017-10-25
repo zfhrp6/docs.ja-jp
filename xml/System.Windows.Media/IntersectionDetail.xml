@@ -1,0 +1,116 @@
+<Type Name="IntersectionDetail" FullName="System.Windows.Media.IntersectionDetail">
+  <TypeSignature Language="C#" Value="public enum IntersectionDetail" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IntersectionDetail extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.IntersectionDetail" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ジオメトリの交差部分に関する情報を提供、<see cref="T:System.Windows.Media.GeometryHitTestParameters" />とビジュアル ヒットしたをします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、ヒット テスト ジオメトリ (青の円) とビジュアルのジオメトリ (赤い四角形) 間のリレーションシップを示します。  
+  
+ ![ヒット テストで使用される IntersectionDetail のダイアグラム](~/add/media/intersectiondetail01.png "ダイアグラムので使用される IntersectionDetail のヒット テスト")  
+ヒット テスト中にヒット テスト ジオメトリとビジュアルの geometry の交差部分  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A>プロパティ<xref:System.Windows.Media.GeometryHitTestResult>です。  
+  
+ [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet11)]
+ [!code-vb[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="Empty" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.IntersectionDetail Empty = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.IntersectionDetail.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Geometry" />ヒット テスト パラメーターとターゲット ビジュアル、または、ジオメトリが交差しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyContains">
+      <MemberSignature Language="C#" Value="FullyContains" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.IntersectionDetail FullyContains = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.IntersectionDetail.FullyContains" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Geometry" />ヒット テスト パラメーターは、ターゲット ビジュアルの境界または geometry 内で完全包含です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyInside">
+      <MemberSignature Language="C#" Value="FullyInside" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.IntersectionDetail FullyInside = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.IntersectionDetail.FullyInside" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット ビジュアルまたはジオメトリは、完全、<see cref="T:System.Windows.Media.Geometry" />ヒット テストのパラメーターです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersects">
+      <MemberSignature Language="C#" Value="Intersects" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.IntersectionDetail Intersects = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.IntersectionDetail.Intersects" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Geometry" />ヒット テスト パラメーターとターゲット ビジュアル、または、geometry の交差します。 つまり、2 つの要素が重なるは、他のいずれの要素が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotCalculated">
+      <MemberSignature Language="C#" Value="NotCalculated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.IntersectionDetail NotCalculated = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.IntersectionDetail.NotCalculated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.IntersectionDetail" />値は計算されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

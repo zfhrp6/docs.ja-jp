@@ -1,0 +1,2592 @@
+<Type Name="FlowDocument" FullName="System.Windows.Documents.FlowDocument">
+  <TypeSignature Language="C#" Value="public class FlowDocument : System.Windows.FrameworkContentElement, IServiceProvider, System.Windows.Documents.IDocumentPaginatorSource, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi FlowDocument extends System.Windows.FrameworkContentElement implements class System.IServiceProvider, class System.Windows.Documents.IDocumentPaginatorSource, class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.FlowDocument" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkContentElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Documents.IDocumentPaginatorSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Inherit, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Blocks")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>改ページ位置の自動修正や列などの高度なドキュメント機能を持つフロー コンテンツをホストして書式設定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument>子コンテンツの強力なコンテンツ モデルを適用します。  含まれる最上位レベルの子要素、<xref:System.Windows.Documents.FlowDocument>から派生する必要があります<xref:System.Windows.Documents.Block>です。  有効な最上位レベルの子要素を以下に示します。  
+  
+-   <xref:System.Windows.Documents.BlockUIContainer>  
+  
+-   <xref:System.Windows.Documents.List>  
+  
+-   <xref:System.Windows.Documents.Paragraph>  
+  
+-   <xref:System.Windows.Documents.Section>  
+  
+-   <xref:System.Windows.Documents.Table>  
+  
+ 既定値<xref:System.Windows.DataTemplate>の<xref:System.Windows.Documents.FlowDocument>が含まれています、<xref:System.Windows.Controls.FlowDocumentReader>を使用する場合、ドキュメントの表示に使用される<xref:System.Windows.Documents.FlowDocument>XAML ファイルのルート要素として。 場合<xref:System.Windows.Documents.FlowDocument>ルート要素ではなくでドキュメントを表示することができます、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、 <xref:System.Windows.Controls.FlowDocumentPageViewer>、または<xref:System.Windows.Controls.FlowDocumentReader>コントロール。 編集することも、<xref:System.Windows.Documents.FlowDocument>で、<xref:System.Windows.Controls.RichTextBox>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlowDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Windows.Documents.FlowDocument" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlowDocument (System.Windows.Documents.Block block);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Block block) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.#ctor(System.Windows.Documents.Block)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="block" Type="System.Windows.Documents.Block" />
+      </Parameters>
+      <Docs>
+        <param name="block">抽象から派生するオブジェクト<see cref="T:System.Windows.Documents.Block" />クラスに初期コンテンツとして追加します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.FlowDocument" />クラス、指定した追加<see cref="T:System.Windows.Documents.Block" />初期コンテンツとして要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な入力の種類の`block`含める<xref:System.Windows.Documents.BlockUIContainer>、 <xref:System.Windows.Documents.List>、 <xref:System.Windows.Documents.Paragraph>、 <xref:System.Windows.Documents.Section>、および<xref:System.Windows.Documents.Table>です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  ここで、<xref:System.Windows.Documents.FlowDocument>実行段落の入れ子になったテキストから成るフロー要素のブロック構造が含まれています。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentConstructorSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentconstructorsimple)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentConstructorSimple](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentconstructorsimple)]  
+  
+ 次の例は、プログラムで単純な 2 × 2 テーブルを構築しを使用して、<xref:System.Windows.Documents.FlowDocument>を新規作成するコンス トラクター<xref:System.Windows.Documents.FlowDocument>テーブルを含むです。  やや複雑でフローの要素のブロック構造を使用すると、コンス トラクターの使用の値は、前の例と同じです。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentConstructorTable](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentconstructortable)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentConstructorTable](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentconstructortable)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="block" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Background" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />コンテンツ エリアの背景の塗りつぶしに使用します。</summary>
+        <value>コンテンツ エリアの背景の塗りつぶしに使用するブラシまたは<see langword="null" />背景ブラシを使用しないようにします。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な定義済みのブラシの色の表は、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+<a name="dependencyPropertyInfo_Background"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.BackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.Background%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentBackgroundXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentbackgroundxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.Background%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentBackground](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentbackground)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentBackground](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentbackground)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.BackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.Background" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Blocks">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.BlockCollection Blocks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.BlockCollection Blocks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.Blocks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.BlockCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.FlowDocument" /> の内容の最上位の <see cref="T:System.Windows.Documents.Block" /> 要素を取得します。</summary>
+        <value><see cref="T:System.Windows.Documents.FlowDocument" /> の内容を構成する <see cref="T:System.Windows.Documents.Block" /> 要素を含む <see cref="T:System.Windows.Documents.BlockCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Documents.BlockCollection>列挙またはの内容を操作するには、このプロパティによって返される、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ 含まれる最上位レベルの子要素、<xref:System.Windows.Documents.FlowDocument>から派生する必要があります<xref:System.Windows.Documents.Block>です。  有効な最上位レベルの子要素を以下に示します。  
+  
+-   <xref:System.Windows.Documents.BlockUIContainer>  
+  
+-   <xref:System.Windows.Documents.List>  
+  
+-   <xref:System.Windows.Documents.Paragraph>  
+  
+-   <xref:System.Windows.Documents.Section>  
+  
+-   <xref:System.Windows.Documents.Table>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnGap">
+      <MemberSignature Language="C#" Value="public double ColumnGap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ColumnGap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.ColumnGap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.FlowDocument" /> 内の列間の間隔を示す、列間隔値を取得または設定します。</summary>
+        <value>列間隔 (デバイスに依存しないピクセル単位)。  値<see cref="F:System.Double.NaN" />(属性値に相当"<c>自動</c>")、列間隔と等しいことを示します、<see cref="P:System.Windows.Documents.FlowDocument.LineHeight" />プロパティです。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、現在の列の間隔が返されます。  この値を設定して、現在有効な列の間隔を変更、コンテンツが再配置が発生する可能性があります。  
+  
+ 列の間隔は、現在を超えることはできません<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>あれば<xref:System.Windows.Documents.FlowDocument.PagePadding%2A>です。  場合の値、<xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>プロパティは、この制限を超える、この制限を確認する有効な列の間隔を短縮します。  
+  
+ このプロパティには効果がない場合は<xref:System.Windows.Documents.FlowDocument.ColumnWidth%2A>は`null`します。  
+  
+<a name="xamlAttributeUsage_ColumnGap"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ColumnGap="double"/>  
+- or -  
+<object ColumnGap="qualifiedDouble"/>  
+- or -  
+<object ColumnGap="Auto"/>  
+```  
+  
+<a name="xamlValues_ColumnGap"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*上で説明したように値 (ドキュメントを除く`Auto`)、その後に、次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 現在の値に設定する列の有効な間隔により、<xref:System.Windows.Documents.FlowDocument.LineHeight%2A>プロパティです。  プロパティの値に相当<xref:System.Double.NaN>です。  
+  
+<a name="dependencyPropertyInfo_ColumnGap"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.ColumnGapProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentColumnGap](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcolumngap)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentColumnGap](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcolumngap)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnGapProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnGapProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnGapProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.ColumnGapProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.ColumnGap" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnRuleBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush ColumnRuleBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush ColumnRuleBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.ColumnRuleBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列間ルールの描画に使用する <see cref="T:System.Windows.Media.Brush" /> を取得または設定します。</summary>
+        <value>列間の罫線を描画するときに使用する <see cref="T:System.Windows.Media.Brush" />、または背景ブラシを使用しないようにする <see langword="null" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 規則は、列は、列の間が描画され、コンテンツの列を視覚的に分離するために使用するための行です。  
+  
+ 使用可能な定義済みのブラシの色の表は、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+ このプロパティには効果がない場合、<xref:System.Windows.Documents.FlowDocument.ColumnRuleWidth%2A>プロパティが 0 または`null`です。  
+  
+ 列の規則には、2 つ以上の列がある場合にのみが表示されます。  
+  
+<a name="dependencyPropertyInfo_ColumnRuleBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.ColumnRuleBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.ColumnRuleBrush%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentColumnRule](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcolumnrule)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentColumnRule](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcolumnrule)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnRuleBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnRuleBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnRuleBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.ColumnRuleBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.ColumnRuleBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnRuleWidth">
+      <MemberSignature Language="C#" Value="public double ColumnRuleWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ColumnRuleWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.ColumnRuleWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のルールの幅を取得または設定します。</summary>
+        <value>列のルールの幅。デバイス非依存のピクセル単位で指定します。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 規則は、列は、列の間が描画され、コンテンツの列を視覚的に分離するために使用するための行です。  
+  
+ このプロパティには効果がない場合、<xref:System.Windows.Documents.FlowDocument.ColumnRuleBrush%2A>プロパティは`null`します。  
+  
+ 列の規則は、2 つ以上の列がある場合にのみ表示されます。  列のルールの幅は以下にするのには制限、<xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>です。  
+  
+<a name="xamlAttributeUsage_ColumnRuleWidth"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ColumnRuleWidth="double"/>  
+- or -  
+<object ColumnRuleWidth="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_ColumnRuleWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_ColumnRuleWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.ColumnRuleWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.ColumnRuleWidth%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentColumnRule](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcolumnrule)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentColumnRule](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcolumnrule)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnRuleWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnRuleWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnRuleWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.ColumnRuleWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.ColumnRuleWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnWidth">
+      <MemberSignature Language="C#" Value="public double ColumnWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ColumnWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.ColumnWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の列の適切な最小幅、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>適切な最小列幅 (デバイスに依存しないピクセル単位)。 値<see cref="F:System.Double.NaN" />により、ページの幅に関係なく、表示する列は 1 つだけです。  既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.FlowDocument>使用可能な表示領域内のコンテンツの表示を最大化するには、その内容を動的に調整します。  表示する列の数は、このプロパティで指定された列の最小幅を指定した、使用可能な表示領域に収まる列の数によって決まります。  実際の列幅は、このプロパティで指定された値よりも大きい可能性があります。  
+  
+ どちらの方向にウィンドウのサイズを変更すると、列の領域を最大限に利用を動的に再生成されることが発生します。 これにより、コンテンツは、ユーザーの環境に動的に適応します。  
+  
+<a name="xamlAttributeUsage_ColumnWidth"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ColumnWidth="double"/>  
+- or -  
+<object ColumnWidth="qualifiedDouble"/>  
+- or -  
+<object ColumnWidth="Auto"/>  
+```  
+  
+<a name="xamlValues_ColumnWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 現在の 20 倍に自動的に計算される列の幅と、<xref:System.Windows.Documents.FlowDocument.FontSize%2A>です。  
+  
+<a name="dependencyPropertyInfo_ColumnWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.ColumnWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.ColumnWidth%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentColumnWidthXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentcolumnwidthxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.ColumnWidth%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentColumnWidth](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcolumnwidth)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentColumnWidth](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcolumnwidth)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.ColumnWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.ColumnWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEnd">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ContentEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ContentEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.ContentEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの末尾を表す、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />内でコンテンツの終わりを表す、<see cref="T:System.Windows.Documents.FlowDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.ContentEnd%2A>の末尾にコンテンツを追加するプロパティが使用される多くの場合、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>'éý'<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Documents.FlowDocument.ContentEnd%2A>にコンテンツを追加するプロパティ、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentContentEnd](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcontentend)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentContentEnd](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcontentend)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStart">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ContentStart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ContentStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.ContentStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの開始を表す、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointerContext" />内でコンテンツの開始を表す、<see cref="T:System.Windows.Documents.FlowDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.ContentStart%2A>の先頭にコンテンツを挿入するプロパティが使用される多くの場合、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>'éý'<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Documents.FlowDocument.ContentStart%2A>の冒頭にコンテンツを挿入するプロパティ、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentContentStart](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcontentstart)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentContentStart](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcontentstart)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.FlowDirection FlowDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FlowDirection FlowDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.FlowDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容のフローの相対的な方向、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>1 つ、<see cref="T:System.Windows.FlowDirection" />相対フローの方向を指定する値。 既定値は、<see cref="F:System.Windows.FlowDirection.LeftToRight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、現在有効なフローの方向が返されます。  このプロパティを設定するの内容、<xref:System.Windows.Documents.FlowDocument>指示した方向にフローします。  
+  
+ <xref:System.Windows.Documents.FlowDocument.FlowDirection%2A>コンテンツ通常に対応して表される言語の固有のフロー方向。  ヘブライ語やアラビア語は、必然的に右から左に流れる言語の例を示します。  英語、ドイツ語、およびロシア語は、左から右に必然的にフローする言語の例を示します。  
+  
+> [!NOTE]
+>  このプロパティの値は、オペレーティング システムで使用される言語に合わせて自動的には変更されません。 既定値は、別の値を使用する必要がある場合<xref:System.Windows.FlowDirection.LeftToRight>、自分でに指定する必要があります。  
+  
+<a name="dependencyPropertyInfo_FlowDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.FlowDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>, <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FlowDirection%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentFlowDirectionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentflowdirectionxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FlowDirection%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentFlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentflowdirection)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentFlowDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentflowdirection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FlowDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FlowDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.FlowDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.FlowDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily FontFamily { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily FontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.FontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Font, Modifiability=System.Windows.Modifiability.Unmodifiable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の優先される最上位レベルのフォント ファミリ、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.FontFamily" />優先フォント ファミリ、または優先されるプライマリ フォント ファミリと 1 つ以上の代替フォント ファミリを指定するオブジェクト。 既定値はによって決まるフォント、<see cref="P:System.Windows.SystemFonts.MessageFontFamily" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Documents.FlowDocument.FontFamily%2A>子要素には、この最上位レベルの設定がよりも優先されます。  
+  
+ 複数のファミリを指定すると、2 回目以降のフォント ファミリは、プライマリ フォント ファミリを使用または適用できない場合に使用されるフォールバック ファミリとして機能します。  
+  
+ このプロパティは、優先度だけを指定します。  指定したフォント ファミリが使用できない場合、<xref:System.Windows.Documents.FlowDocument>が暗黙的にフォールバックしてによって決まるフォント、<xref:System.Windows.SystemFonts.MessageFontFamily%2A?displayProperty=nameWithType>値。  
+  
+<a name="xamlAttributeUsage_FontFamily"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontFamily="fontFamilyName"/>  
+- or -  
+<object FontFamily="fontFamilyNamesList"/>  
+- or -  
+<object FontFamily="fontFamilyFolderReference"/>  
+- or -  
+<object FontFamily="fontFamilyUriReference"/>  
+```  
+  
+<a name="xamlValues_FontFamily"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontFamilyName*  
+ フォント ファミリ名を指定する文字列。  たとえば、`"Arial"` または `"Century Gothic"` のようにします。  
+  
+ *fontFamilyNamesList*  
+ (コンマの後の空白は無視されます)、コンマで区切って複数のフォント ファミリ名を指定する文字列、します。  指定した最初のフォント ファミリを果たすプライマリ フォント ファミリ。以降のフォント ファミリは、プライマリ フォント ファミリが使用または適用できない場合に使用するフォールバック ファミリとして機能します。  たとえば、`"Arial, Century Gothic"`世紀ゴートとして代替フォント ファミリと、プライマリ フォント ファミリと Arial を指定します。  
+  
+ *fontFamilyFolderReference*  
+ フォント ファミリ名と共に、フォントを含むフォルダーを指定する文字列。  フォント ファミリ名とフォルダーは、# 文字で区切られます。  フォルダーの参照は、絶対または相対パスにあります。  たとえば、`"Custom Fonts\#My Custom Font"` のようにします。  
+  
+ *fontFamilyUriReference*  
+ 指定する文字列、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のフォント、フォント ファミリ名とします。  [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]し、フォント ファミリ名は、# 文字で区切られます。  たとえば、`"http://MyFontServer/Fonts/#My Custom Font"` のようにします。  
+  
+<a name="dependencyPropertyInfo_FontFamily"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.FontFamilyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontFamily%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentFontStuffXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentfontstuffxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontFamily%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentfontstuff)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentfontstuff)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamilyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontFamilyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontFamilyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.FontFamilyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.FontFamily" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSize">
+      <MemberSignature Language="C#" Value="public double FontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.FontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FontSizeConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォント サイズ、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>使用する目的のフォント サイズ (デバイス非依存のピクセル単位)。   既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontSize" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Documents.FlowDocument.FontSize%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+<a name="xamlAttributeUsage_FontSize"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontSize="double"/>  
+- or -  
+<object FontSize="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_FontSize"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_FontSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.FontSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontSize%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentFontStuffXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentfontstuffxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontSize%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentfontstuff)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentfontstuff)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.FontSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.FontSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch FontStretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch FontStretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.FontStretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォント伸縮特性、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontStretch" />クラスを使用する目的のフォント伸縮特性を指定します。 既定値は、<see cref="P:System.Windows.FontStretches.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Documents.FlowDocument.FontStretch%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+<a name="dependencyPropertyInfo_FontStretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.FontStretchProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontStretch%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentFontStuffXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentfontstuffxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontStretch%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentfontstuff)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentfontstuff)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.FontStretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.FontStretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle FontStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle FontStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.FontStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォント スタイル、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontStyles" />目的のフォント スタイルを指定するクラス。 既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontStyle" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Documents.FlowDocument.FontStyle%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+<a name="dependencyPropertyInfo_FontStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.FontStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontStyle%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentFontStuffXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentfontstuffxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontStyle%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentfontstuff)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentfontstuff)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.FontStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.FontStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight FontWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight FontWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.FontWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォントの太さ、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontWeights" />フォントの太さを指定するクラス。 既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontWeight" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Documents.FlowDocument.FontWeight%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+<a name="dependencyPropertyInfo_FontWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.FontWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontWeight%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentFontStuffXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentfontstuffxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.FontWeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentfontstuff)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentFontStuff](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentfontstuff)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.FontWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.FontWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Foreground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Foreground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Foreground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.Foreground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />のテキストの内容に適用する、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>テキスト コンテンツに適用するために使用するブラシ。 既定値は、<see cref="P:System.Windows.Media.Brushes.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な定義済みのブラシの色を示す色見本のテーブル、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+ どの<xref:System.Windows.Documents.FlowDocument.Foreground%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+<a name="dependencyPropertyInfo_Foreground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.ForegroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>,<br /><br /> <xref:System.Windows.FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.Foreground%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentBackgroundXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentbackgroundxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.Foreground%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentBackground](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentbackground)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentBackground](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentbackground)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForegroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForegroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.ForegroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.Foreground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsColumnWidthFlexible">
+      <MemberSignature Language="C#" Value="public bool IsColumnWidthFlexible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsColumnWidthFlexible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.IsColumnWidthFlexible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="P:System.Windows.Documents.FlowDocument.ColumnWidth" />値は、柔軟なまたは固定します。</summary>
+        <value>
+          <see langword="true" />場合は、列の幅は柔軟性があります。<see langword="false" />列の幅は固定されている場合。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.IsColumnWidthFlexible%2A>プロパティは、列間の余分なコンテンツ領域の幅 (つまり、ページの幅と配置後に、コンテンツの幅の違い) が配信される方法を決定します。 設定`true`余分なスペースが分散されることを意味均等をそれぞれの列です。 この場合は、列のサイズをで指定された幅よりも大きかったする可能性があります、<xref:System.Windows.Documents.FlowDocument.ColumnWidth%2A>プロパティです。  設定`false`スペースは、ページの右側の余白に配分です。 この場合、列は、で指定した幅にサイズが常に余分な手段、<xref:System.Windows.Documents.FlowDocument.ColumnWidth%2A>プロパティ (その幅があれば、ページの幅よりも小さい場合に限り<xref:System.Windows.Documents.FlowDocument.PagePadding%2A>)。  
+  
+ 次の図は、このプロパティにレイアウトの違いを示します`true`または`false`です。  明るい青色でコンテンツの列を表す、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ ![スクリーン ショット: IsColumnWidthFlexible 値の比較](~/add/media/flowdoc-columnflex.png "スクリーン ショット: IsColumnWidthFlexible の比較値")  
+  
+<a name="dependencyPropertyInfo_IsColumnWidthFlexible"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.IsColumnWidthFlexibleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.IsColumnWidthFlexible%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentColumnFlexXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentcolumnflexxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.IsColumnWidthFlexible%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentColumnFlex](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentcolumnflex)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentColumnFlex](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentcolumnflex)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsColumnWidthFlexibleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsColumnWidthFlexibleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsColumnWidthFlexibleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.IsColumnWidthFlexibleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.IsColumnWidthFlexible" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledCore">
+      <MemberSignature Language="C#" Value="protected override bool IsEnabledCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabledCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.IsEnabledCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="P:System.Windows.ContentElement.IsEnabled" />プロパティを<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>値、<see cref="P:System.Windows.ContentElement.IsEnabled" />プロパティを<see cref="T:System.Windows.Documents.FlowDocument" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHyphenationEnabled">
+      <MemberSignature Language="C#" Value="public bool IsHyphenationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHyphenationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.IsHyphenationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または単語の自動ハイフネーションが有効か無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />自動改行と単語のハイフネーションが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動単語ハイフネーション機能により、<xref:System.Windows.Documents.FlowDocument>を自動的に中断し、現在のレイアウトの条件に基づいて、単語を単語を区切るです。  これにより、長い単語を 1 行で開始し、その次のまま続行して、揃えのテキスト内の空白のより均等に配分を実現する傾向があります。  単語が分割され、標準の文法規則に従って設定されます。  ハイフネーションが適切な段落のレイアウトと組み合わせると特に効果的 (によって表される、<xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A>プロパティ)。  
+  
+<a name="dependencyPropertyInfo_IsHyphenationEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.IsHyphenationEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.IsHyphenationEnabled%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentHyphenateXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumenthyphenatexaml)]  
+  
+ 方法を次の図に示す前<xref:System.Windows.Documents.FlowDocument>をレンダリングします。  
+  
+ ![スクリーン ショット: FlowDocument ハイフンが有効になっている](~/add/media/flowdoc-hyphenenabled.png "スクリーン ショット: FlowDocument ハイフンが有効になっています。")  
+  
+ 方法を次の図に示す同じ<xref:System.Windows.Documents.FlowDocument>の既定の設定を使用してレンダリング<xref:System.Windows.Documents.FlowDocument.IsHyphenationEnabled%2A> =`false`です。  
+  
+ ![スクリーン ショット: ハイフンが無効に FlowDocument](~/add/media/flowdoc-hyphendisabled.png "スクリーン ショット: ハイフンが無効になった FlowDocument")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.IsHyphenationEnabled%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentHyphenate](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumenthyphenate)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentHyphenate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumenthyphenate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHyphenationEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsHyphenationEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsHyphenationEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.IsHyphenationEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.IsHyphenationEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOptimalParagraphEnabled">
+      <MemberSignature Language="C#" Value="public bool IsOptimalParagraphEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOptimalParagraphEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または適切な段落のレイアウトが有効か無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />適切な段落のレイアウトが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切な段落のレイアウトは、内の段落をレイアウトする機能、<xref:System.Windows.Documents.FlowDocument>ホワイト スペースは、できるだけ均等に配分されるようです。  理論上は、この無駄な空白行揃えのテキストおよびその他のレイアウトのルーチンで発生する可能性を排除することで、最も快適に閲覧を提供します。  適切な段落のレイアウトは自動ハイフネーションと組み合わせると特に効果的 (によって表される、<xref:System.Windows.Documents.FlowDocument.IsHyphenationEnabled%2A>プロパティ)。  
+  
+<a name="dependencyPropertyInfo_Opt"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentHyphenateXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumenthyphenatexaml)]  
+  
+ 方法を次の図に示す前<xref:System.Windows.Documents.FlowDocument>をレンダリングします。  
+  
+ ![スクリーン ショット: FlowDocument ハイフンが有効になっている](~/add/media/flowdoc-hyphenenabled.png "スクリーン ショット: FlowDocument ハイフンが有効になっています。")  
+  
+ 方法を次の図に示す同じ<xref:System.Windows.Documents.FlowDocument>の既定の設定を使用してレンダリング<xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> =`false`です。  
+  
+ ![スクリーン ショット: ハイフンが無効に FlowDocument](~/add/media/flowdoc-hyphendisabled.png "スクリーン ショット: ハイフンが無効になった FlowDocument")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentHyphenate](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumenthyphenate)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentHyphenate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumenthyphenate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOptimalParagraphEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOptimalParagraphEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOptimalParagraphEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeight">
+      <MemberSignature Language="C#" Value="public double LineHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LineHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.LineHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの各行の高さを取得または設定します。</summary>
+        <value>各行の高さ。単位はデバイスに依存しないピクセルで、値は 0.0034 から 160000 までの範囲です。 値<see cref="F:System.Double.NaN" />(属性値に相当"<c>自動</c>")、行の高さが現在のフォント特性から自動的に決定されます。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を変更しても、関連付けられているテキストの高さは変更されません。代わりに、テキストを含む行の高さを変更します。 テキストのサイズを変更するには、使用、<xref:System.Windows.Documents.FlowDocument.FontSize%2A>プロパティです。  
+  
+ このプロパティでは、内の行のレイアウトだけでなく、<xref:System.Windows.Documents.FlowDocument>の影響を受けるその<xref:System.Windows.Documents.FlowDocument.LineStackingStrategy%2A>プロパティです。  
+  
+<a name="xamlAttributeUsage_LineHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object LineHeight="double"/>  
+- or -  
+<object LineHeight="qualifiedDouble"/>  
+- or -  
+<object LineHeight="Auto"/>  
+```  
+  
+<a name="xamlValues_LineHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると`0.0034`と以下、`160000`です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 現在のフォント特性から自動的に決定される行の高さが発生します。  プロパティの値に相当<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_LineHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.LineHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.LineHeight%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentLineHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentlineheightxaml)]  
+  
+ 方法を次の図に示す前<xref:System.Windows.Documents.FlowDocument>をレンダリングします。  
+  
+ ![スクリーン ショット: FlowDocument LineHeight](~/add/media/flowdocument-lineheight.png "スクリーン ショット: FlowDocument LineHeight")  
+  
+ 方法を次の図に示す同じ<xref:System.Windows.Documents.FlowDocument>の既定の設定を使用してレンダリング<xref:System.Windows.Documents.FlowDocument.LineHeight%2A> =<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+ ![スクリーン ショット: FlowDocument LineHeight の既定](~/add/media/flowdocument-lineheightdefault.png "スクリーン ショット: FlowDocument LineHeight の既定値")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.LineHeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentLineHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentlineheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentLineHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentlineheight)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Controls.TextBlock.LineHeight" />負の値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LineHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LineHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.LineHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.LineHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineStackingStrategy">
+      <MemberSignature Language="C#" Value="public System.Windows.LineStackingStrategy LineStackingStrategy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LineStackingStrategy LineStackingStrategy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.LineStackingStrategy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineStackingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のテキストの行ごとに行ボックスを決定するメカニズム、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>1 つ、<see cref="T:System.Windows.LineStackingStrategy" />内のテキストの行ごとに行ボックスを決定するメカニズムを指定する値、<see cref="T:System.Windows.Documents.FlowDocument" />です。 既定値は、<see cref="F:System.Windows.LineStackingStrategy.MaxHeight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_LineStackingStrategy"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.LineStackingStrategyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>のテキスト行に行ボックスを作成する方法を決定するプロパティ、<xref:System.Windows.Controls.TextBlock>です。 最初の<xref:System.Windows.Controls.TextBlock>が、<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>値<xref:System.Windows.LineStackingStrategy.MaxHeight>、2 番目<xref:System.Windows.Controls.TextBlock>の値を持つ<xref:System.Windows.LineStackingStrategy.BlockLineHeight>します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#LineStackingStrategyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/linestackingstrategyexample.xaml#linestackingstrategyexamplewholepage)]  
+  
+ 次の図は、上記のコードの結果を示します。  
+  
+ ![スクリーン ショット: LineStackingStrategy 値の比較](~/add/media/flow-linestackingstrategy.gif "スクリーン ショット: LineStackingStrategy の比較値")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineStackingStrategyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LineStackingStrategyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LineStackingStrategyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.LineStackingStrategyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.LineStackingStrategy" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子を反復処理できる列挙子を取得、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>論理上の子の列挙子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPageHeight">
+      <MemberSignature Language="C#" Value="public double MaxPageHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxPageHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.MaxPageHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のページの高さの最大値、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>内のページのデバイス非依存ピクセルで、最大の高さ、<see cref="T:System.Windows.Documents.FlowDocument" />です。 既定値は<see cref="F:System.Double.PositiveInfinity" />(ページの最大高さはありません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連続的に表示する場合、<xref:System.Windows.Documents.FlowDocument.MinPageHeight%2A>プロパティよりも優先、<xref:System.Windows.Documents.FlowDocument.MaxPageHeight%2A>プロパティで、さらによりも優先、<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>プロパティです。 3 つすべてのプロパティが特定のページに設定されている場合は、プロパティが評価される順序とします。  
+  
+ このプロパティが no されるときに有効<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>に設定されている<xref:System.Double.NaN?displayProperty=nameWithType>(自動)。  
+  
+<a name="xamlAttributeUsage_MaxPageHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MaxPageHeight="double"/>  
+- or -  
+<object MaxPageHeight="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_MaxPageHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_MaxPageHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.MaxPageHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MaxPageHeight%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPageWidthHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpagewidthheightxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MaxPageHeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpagewidthheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpagewidthheight)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPageHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxPageHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxPageHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.MaxPageHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.MaxPageHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPageWidth">
+      <MemberSignature Language="C#" Value="public double MaxPageWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxPageWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.MaxPageWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のページの最大の幅、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>デバイス非依存ピクセルでのページで、最大の幅、<see cref="T:System.Windows.Documents.FlowDocument" />です。 既定値は<see cref="F:System.Double.PositiveInfinity" />(ページの最大幅なし)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連続的に表示する場合、<xref:System.Windows.Documents.FlowDocument.MinPageWidth%2A>プロパティよりも優先、<xref:System.Windows.Documents.FlowDocument.MaxPageWidth%2A>プロパティで、さらによりも優先、<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>プロパティです。 3 つすべてのプロパティが特定のページに設定されている場合は、プロパティが評価される順序とします。  
+  
+ このプロパティが no されるときに有効<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>に設定されている<xref:System.Double.NaN?displayProperty=nameWithType>(自動)。  
+  
+<a name="xamlAttributeUsage_MaxPageWidth"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MaxPageWidth="double"/>  
+- or -  
+<object MaxPageWidth="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_MaxPageWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_MaxPageWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.MaxPageWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MaxPageWidth%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPageWidthHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpagewidthheightxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MaxPageWidth%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpagewidthheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpagewidthheight)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPageWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxPageWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxPageWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.MaxPageWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.MaxPageWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinPageHeight">
+      <MemberSignature Language="C#" Value="public double MinPageHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinPageHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.MinPageHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のページの高さの最小値、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>内のページのデバイス非依存ピクセルで、最小の高さ、<see cref="T:System.Windows.Documents.FlowDocument" />です。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連続的に表示する場合、<xref:System.Windows.Documents.FlowDocument.MinPageHeight%2A>プロパティよりも優先、<xref:System.Windows.Documents.FlowDocument.MaxPageHeight%2A>プロパティで、さらによりも優先、<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>プロパティです。 3 つすべてのプロパティが特定のページに設定されている場合は、プロパティが評価される順序とします。  
+  
+ このプロパティが no されるときに有効<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>に設定されている<xref:System.Double.NaN?displayProperty=nameWithType>(自動)。  
+  
+<a name="xamlAttributeUsage_MinPageHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MinPageHeight="double"/>  
+- or -  
+<object MinPageHeight="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_MinPageHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_MinPageHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.MinPageHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MinPageHeight%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPageWidthHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpagewidthheightxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MinPageHeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpagewidthheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpagewidthheight)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinPageHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinPageHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinPageHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.MinPageHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.MinPageHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinPageWidth">
+      <MemberSignature Language="C#" Value="public double MinPageWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinPageWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.MinPageWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のページの幅の最小値、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>内のページのデバイス非依存ピクセルで、最小の幅、<see cref="T:System.Windows.Documents.FlowDocument" />です。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連続的に表示する場合、<xref:System.Windows.Documents.FlowDocument.MinPageWidth%2A>プロパティよりも優先、<xref:System.Windows.Documents.FlowDocument.MaxPageWidth%2A>プロパティで、さらによりも優先、<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>プロパティです。 3 つすべてのプロパティが特定のページに設定されている場合は、プロパティが評価される順序とします。  
+  
+ このプロパティが no されるときに有効<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>に設定されている<xref:System.Double.NaN?displayProperty=nameWithType>(自動)。  
+  
+<a name="xamlAttributeUsage_MinPageWidth"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MinPageWidth="double"/>  
+- or -  
+<object MinPageWidth="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_MinPageWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_MinPageWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.MinPageWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MinPageWidth%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPageWidthHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpagewidthheightxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.MinPageWidth%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpagewidthheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpagewidthheight)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinPageWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinPageWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinPageWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.MinPageWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.MinPageWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、提供特定<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />を実装する、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]インフラストラクチャです。</summary>
+        <returns>型固有の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 実装。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、通常、特定のコンス トラクターを呼び出す<xref:System.Windows.Automation.Peers.AutomationPeer>実装、および結果が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override sealed void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">関連付けられているイベントの引数。</param>
+        <summary>要素に存在する 1 つ以上の依存関係プロパティの有効な値が変更された場合に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.FrameworkContentElement.OnPropertyChanged%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageHeight">
+      <MemberSignature Language="C#" Value="public double PageHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PageHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.PageHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のページの適切な高さ、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>内のページのデバイス非依存ピクセルで、適切な高さ、<see cref="T:System.Windows.Documents.FlowDocument" />です。 値<see cref="F:System.Double.NaN" />(属性値に相当"<c>自動</c>")、ページの高さが自動的に決定されます。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連続的に表示する場合、<xref:System.Windows.Documents.FlowDocument.MinPageHeight%2A>プロパティよりも優先、<xref:System.Windows.Documents.FlowDocument.MaxPageHeight%2A>プロパティで、さらによりも優先、<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>プロパティです。 3 つすべてのプロパティが特定のページに設定されている場合は、プロパティが評価される順序とします。  
+  
+<a name="xamlAttributeUsage_PageHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object PageHeight="double"/>  
+- or -  
+<object PageHeight="qualifiedDouble"/>  
+- or -  
+<object PageHeight="Auto"/>  
+```  
+  
+<a name="xamlValues_PageHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ *Auto*  
+ ページの高さが自動的に決定されますが発生します。  プロパティの値に相当<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_PageHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.PageHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPageWidthHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpagewidthheightxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.PageHeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpagewidthheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpagewidthheight)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PageHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PageHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.PageHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.PageHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PagePadding">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness PagePadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness PagePadding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.PagePadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの境界とページのコンテンツとの間に埋め込むスペースの幅を示す値を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Thickness" />デバイス非依存ピクセルで、適用するパディングの量を指定します。 既定では 0 (0.0) の均一の幅です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.PagePadding%2A>すべての方向に一様として記述できます (`PagePadding="10"`)、4 つの値を表す左、として top、right、上下のパディングを個別にまたは (`PagePadding="5,0,10,20"`)。  
+  
+ 指定されたパディングの厚みが対応するページ サイズを超える場合 (たとえば、左と右余白の幅の合計が、ページの幅を超える場合)、パディングの厚みを関連するページのサイズを超えることに比例して削減されます。  
+  
+<a name="xamlAttributeUsage_PagePadding"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object PagePadding="uniformThickness"/>  
+- or -  
+<object PagePadding="independentThickness"/>  
+- or -  
+<object PagePadding="qualifiedUniformThickness"/>  
+- or -  
+<object PagePadding="qualifiedIndependentThickness"/>  
+```  
+  
+<a name="xamlValues_PagePadding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *uniformThickness*  
+ 1 つの文字列表現<xref:System.Double>4 つすべての厚みを一様に適用する値。  たとえば、値の`"10"`はの値に相当`"10,10,10,10"`です。  修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *independentThickness*  
+ 順序付けに 4 つの文字列表現<xref:System.Double>左、上の太さの独立したディメンションに対応する値が右、および下には、この順序で。  4 つの値をコンマで区切る必要があります。スペースは使用できません。  たとえば、「5,10,15,20」結果パディングの 5 ピクセル コンテンツ、コンテンツの上の余白の 10 のピクセル、右の余白の 15 ピクセルおよびコンテンツの下の余白の 20 ピクセルの左側にします。  
+  
+ *qualifiedUniformThickness*  
+ 記述された値*uniformThickness*後に、次の単位指定子の 1 つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1in"`すべての方向に 1 インチの統一されたパディングを提供します。  
+  
+ *qualifiedIndependentThickness*  
+ 記述された値*independentThickness*、後に、次の単位指定子の 1 つの独立した各値を持つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1.5in,0.8in,1.5in,0.8in"` のようにします。  単位指定子は、混合または 1 つまたは複数の値からを省略すると場合があります。  
+  
+<a name="dependencyPropertyInfo_PagePadding"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.PagePaddingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、さまざまな方法を設定する、<xref:System.Windows.Documents.FlowDocument.PagePadding%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPaddingXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpaddingxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.PagePadding%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPadding](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpadding)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPadding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpadding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PagePaddingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PagePaddingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PagePaddingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.PagePaddingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.PagePadding" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageWidth">
+      <MemberSignature Language="C#" Value="public double PageWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PageWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.PageWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のページの幅、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>内のページのデバイス非依存ピクセルで、幅、<see cref="T:System.Windows.Documents.FlowDocument" />です。 値<see cref="F:System.Double.NaN" />(属性値に相当"<c>自動</c>") により、ページの幅を自動的に決定されます。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連続的に表示する場合、<xref:System.Windows.Documents.FlowDocument.MinPageWidth%2A>プロパティよりも優先、<xref:System.Windows.Documents.FlowDocument.MaxPageWidth%2A>プロパティで、さらによりも優先、<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>プロパティです。 3 つすべてのプロパティが特定のページに設定されている場合は、プロパティが評価される順序とします。  
+  
+<a name="xamlAttributeUsage_PageWidth"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object PageWidth="double"/>  
+- or -  
+<object PageWidth="qualifiedDouble"/>  
+- or -  
+<object PageWidth="Auto"/>  
+```  
+  
+<a name="xamlValues_PageWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ *Auto*  
+ 自動的に決定されます、ページの幅が発生します。  プロパティの値に相当<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_PageWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.PageWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentPageWidthHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentpagewidthheightxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentpagewidthheight)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentPageWidthHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentpagewidthheight)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PageWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PageWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.PageWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.PageWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDpi">
+      <MemberSignature Language="C#" Value="public void SetDpi (System.Windows.DpiScale dpiInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDpi(valuetype System.Windows.DpiScale dpiInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.SetDpi(System.Windows.DpiScale)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpiInfo" Type="System.Windows.DpiScale" />
+      </Parameters>
+      <Docs>
+        <param name="dpiInfo"><see cref="T:System.Windows.Media.Visual" /> または <see cref="T:System.Windows.UIElement" /> の表示元の DPI 設定。</param>
+        <summary>FlowDocument の DPI を設定することにより、再測定および再表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各モニターの DPI シナリオで使用してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IServiceProvider.GetService">
+      <MemberSignature Language="C#" Value="object IServiceProvider.GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IServiceProvider.GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.System#IServiceProvider#GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得対象となるサービスの型を指定するオブジェクト。</param>
+        <summary>指定した型のサービス オブジェクトを取得します。</summary>
+        <returns>型のサービス オブジェクト<paramref name="serviceType." />  
+  
+ または  
+  
+ <see langword="null" />型のサービス オブジェクトが存在しない場合<paramref name="serviceType" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Documents.IDocumentPaginatorSource.DocumentPaginator">
+      <MemberSignature Language="C#" Value="System.Windows.Documents.DocumentPaginator System.Windows.Documents.IDocumentPaginatorSource.DocumentPaginator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.DocumentPaginator System.Windows.Documents.IDocumentPaginatorSource.DocumentPaginator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.System#Windows#Documents#IDocumentPaginatorSource#DocumentPaginator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.DocumentPaginator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実際のコンテンツの改ページ調整を実行するソース オブジェクトを定義します。</summary>
+        <value>実際のコンテンツの改ページを実行するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.FlowDocument.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.TextAlignment TextAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextAlignment TextAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.TextAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コンテンツの水平方向の配置を示す値を取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextAlignment" />目的の配置を指定する値。 既定値は、<see cref="F:System.Windows.TextAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TextAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.TextAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.TextAlignment%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentTextAlignmentXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumenttextalignmentxaml)]  
+  
+ 方法を次の図に示す前<xref:System.Windows.Documents.FlowDocument>と共に表示される<xref:System.Windows.TextAlignment.Left>テキストの配置 (既定)。  
+  
+ ![スクリーン ショット: 左の TextAlign プロパティ値](~/add/media/flowdoc-textalign-left.png "スクリーン ショット: 左の TextAlign プロパティ値")  
+  
+ 次に示しますがどのように同じ<xref:System.Windows.Documents.FlowDocument>と共に表示される<xref:System.Windows.TextAlignment.Right>テキストの配置。  
+  
+ ![スクリーン ショット: 右の TextAlign 値の](~/add/media/flowdoc-textalign-right.png "スクリーン ショット: 右の TextAlign 値")  
+  
+ 次に示しますがどのように同じ<xref:System.Windows.Documents.FlowDocument>と共に表示される<xref:System.Windows.TextAlignment.Center>テキストの配置。  
+  
+ ![スクリーン ショット: 中央の TextAlign プロパティ値](~/add/media/flowdoc-textalign-center.png "スクリーン ショット: 中央の TextAlign プロパティ値")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.TextAlignment%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentTextAlignment](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumenttextalignment)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentTextAlignment](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumenttextalignment)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.TextAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.TextAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffects">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TextEffectCollection TextEffects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TextEffectCollection TextEffects" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.TextEffects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextEffectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキストに適用する効果、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>A <see cref="T:System.Windows.Media.TextEffectCollection" /> 1 つ以上含む<see cref="T:System.Windows.Media.TextEffect" />のテキストに適用する効果を定義するオブジェクト、<see cref="T:System.Windows.Documents.FlowDocument" />です。 既定値は<see langword="null" />(効果は適用されません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TextEffects"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.FlowDocument.TextEffectsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffectsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextEffectsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextEffectsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.FlowDocument.TextEffectsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.FlowDocument.TextEffects" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Typography">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Typography Typography { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Typography Typography" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.FlowDocument.Typography" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Typography</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの内容を現在有効な文字体裁のバリエーションを取得、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.Typography" />現在有効な文字体裁のバリエーションを指定するオブジェクト。 既定の文字体裁の値の一覧は、次を参照してください。<see cref="T:System.Windows.Documents.Typography" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.Typography%2A>プロパティにのみ適用されます[!INCLUDE[TLA#tla_opentype](~/includes/tlasharptla-opentype-md.md)]フォントです。 文字体裁のバリエーションには影響しません、バリアント型をサポートしないフォントです。  このトピックの詳細については、次を参照してください。 [WPF のタイポグラフィ](~/docs/framework/wpf/advanced/typography-in-wpf.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でさまざまな文字体裁のバリエーションを設定する方法を示します、<xref:System.Windows.Documents.FlowDocument.Typography%2A>の属性、<xref:System.Windows.Documents.FlowDocument>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentTypographyXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumenttypographyxaml)]  
+  
+ 次の例のさまざまな側面を設定する方法を示しています、<xref:System.Windows.Documents.FlowDocument.Typography%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentTypography](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumenttypography)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentTypography](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumenttypography)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

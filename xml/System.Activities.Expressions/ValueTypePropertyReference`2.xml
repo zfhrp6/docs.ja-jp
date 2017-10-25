@@ -1,0 +1,186 @@
+<Type Name="ValueTypePropertyReference&lt;TOperand,TResult&gt;" FullName="System.Activities.Expressions.ValueTypePropertyReference&lt;TOperand,TResult&gt;">
+  <TypeSignature Language="C#" Value="public sealed class ValueTypePropertyReference&lt;TOperand,TResult&gt; : System.Activities.CodeActivity&lt;System.Activities.Location&lt;TResult&gt;&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ValueTypePropertyReference`2&lt;TOperand, TResult&gt; extends System.Activities.CodeActivity`1&lt;class System.Activities.Location`1&lt;!TResult&gt;&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Expressions.ValueTypePropertyReference`2" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TOperand" />
+    <TypeParameter Name="TResult" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Activities.CodeActivity&lt;System.Activities.Location&lt;TResult&gt;&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TResult">System.Activities.Location&lt;TResult&gt;</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TOperand">値の型です。</typeparam>
+    <typeparam name="TResult">プロパティの型。</typeparam>
+    <summary>式の左辺値として使用できる値の型のプロパティを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Activities.Expressions.ValueTypePropertyReference%602> アクティビティで `Assign` を使用することで、`string` 値をプロパティに割り当てて、プロパティ値をコンソールに出力します。 `Assign` アクティビティは、次に示す例で定義されている `struct` を使用する場合に `myStructVariable.AProperty = "Hello";`ステートメントと同等です。  
+  
+> [!NOTE]
+>  <xref:System.Activities.Expressions.ValueTypePropertyReference%602> 左辺値式のアクティビティを直接インスタンス化する代わりに、<xref:System.Activities.Expressions.ExpressionServices.ConvertReference%2A> を呼び出すことをお勧めします。後者の方法は抽象化レベルが高いので、より直感的にワークフローを実装できます。  
+  
+```  
+  
+// Define a struct with a property named AProperty.  
+struct StructWithProperty  
+{  
+    public string AProperty { get; set; }  
+}  
+  
+public static void ValueTypePropertyReferenceSample()  
+{  
+    // Create a variable of type StructWithProperty to store the property.  
+    var swpvar = new Variable<StructWithProperty>("swpvar", new StructWithProperty());  
+  
+    // Create the top-level activity to be invoked later.  
+    Activity myActivity = new Sequence  
+    {  
+        Variables = { swpvar },  
+        Activities =   
+        {                      
+            // Create an Assign activity for a property named AProperty.  
+            new Assign<string>  
+            {  
+                To = new ValueTypePropertyReference<StructWithProperty, string>  
+                {  
+                    OperandLocation = swpvar,  
+                    PropertyName = "AProperty",  
+                },  
+                // Assign a string literal to AProperty.  
+                Value = "Hello",  
+            },  
+            // Create a WriteLine activity to write the value of AProperty to the console.  
+            new WriteLine()  
+            {  
+                Text = ExpressionServices.Convert<string>(ctx => swpvar.Get(ctx).AProperty),  
+            }  
+        }  
+    };  
+  
+    // Invoke the Sequence activity.  
+    WorkflowInvoker.Invoke(myActivity);  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValueTypePropertyReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.ValueTypePropertyReference`2.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Expressions.ValueTypePropertyReference`2" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="protected override void CacheMetadata (System.Activities.CodeActivityMetadata metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CacheMetadata(valuetype System.Activities.CodeActivityMetadata metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.ValueTypePropertyReference`2.CacheMetadata(System.Activities.CodeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Activities.CodeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override System.Activities.Location&lt;TResult&gt; Execute (System.Activities.CodeActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Activities.Location`1&lt;!TResult&gt; Execute(class System.Activities.CodeActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.ValueTypePropertyReference`2.Execute(System.Activities.CodeActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Location&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.CodeActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperandLocation">
+      <MemberSignature Language="C#" Value="public System.Activities.InOutArgument&lt;TOperand&gt; OperandLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.InOutArgument`1&lt;!TOperand&gt; OperandLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Expressions.ValueTypePropertyReference`2.OperandLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.InOutArgument&lt;TOperand&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティを格納する値の型のインスタンスを取得または設定します。</summary>
+        <value>プロパティを格納する値の型のインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Expressions.ValueTypePropertyReference`2.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの名前を取得または設定します。</summary>
+        <value>プロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

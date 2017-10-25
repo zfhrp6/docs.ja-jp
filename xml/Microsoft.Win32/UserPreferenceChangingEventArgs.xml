@@ -1,0 +1,82 @@
+<Type Name="UserPreferenceChangingEventArgs" FullName="Microsoft.Win32.UserPreferenceChangingEventArgs">
+  <TypeSignature Language="C#" Value="public class UserPreferenceChangingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserPreferenceChangingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.UserPreferenceChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:Microsoft.Win32.SystemEvents.UserPreferenceChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging>イベントを適用するのには、ユーザーの設定を変更するときに発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:Microsoft.Win32.UserPreferenceChangingEventArgs>を監視する型、<xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging>イベント。 このコード例に示されている例の一部である、<xref:Microsoft.Win32.SystemEvents>クラスです。  
+  
+ [!code-cpp[SystemEvents#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemEvents/cpp/SystemEvents.cpp#1)]
+ [!code-csharp[SystemEvents#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemEvents/CS/SystemEvents.cs#1)]
+ [!code-vb[SystemEvents#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemEvents/VB/SystemEvents.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserPreferenceChangingEventArgs (Microsoft.Win32.UserPreferenceCategory category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Win32.UserPreferenceCategory category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.UserPreferenceChangingEventArgs.#ctor(Microsoft.Win32.UserPreferenceCategory)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="category" Type="Microsoft.Win32.UserPreferenceCategory" />
+      </Parameters>
+      <Docs>
+        <param name="category">1 つ、<see cref="T:Microsoft.Win32.UserPreferenceCategory" />が変更されたユーザー 基本設定のカテゴリを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Win32.UserPreferenceChangingEventArgs" />クラスを使用して指定されたユーザー 基本設定カテゴリの識別子。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.UserPreferenceCategory Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Win32.UserPreferenceCategory Category" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.UserPreferenceChangingEventArgs.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.UserPreferenceCategory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー設定の変更のカテゴリを取得します。</summary>
+        <value>1 つ、<see cref="T:Microsoft.Win32.UserPreferenceCategory" />を変更しているユーザーの基本設定のカテゴリを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:Microsoft.Win32.UserPreferenceChangingEventArgs>を監視する型、<xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging>イベント。 このコード例に示されている例の一部である、<xref:Microsoft.Win32.SystemEvents>クラスです。  
+  
+ [!code-cpp[SystemEvents#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemEvents/cpp/SystemEvents.cpp#1)]
+ [!code-csharp[SystemEvents#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemEvents/CS/SystemEvents.cs#1)]
+ [!code-vb[SystemEvents#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemEvents/VB/SystemEvents.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

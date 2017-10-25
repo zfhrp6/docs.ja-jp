@@ -1,0 +1,537 @@
+<Type Name="SecurityTokenServiceConfiguration" FullName="System.IdentityModel.Configuration.SecurityTokenServiceConfiguration">
+  <TypeSignature Language="C#" Value="public class SecurityTokenServiceConfiguration : System.IdentityModel.Configuration.IdentityConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityTokenServiceConfiguration extends System.IdentityModel.Configuration.IdentityConfiguration" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Configuration.IdentityConfiguration</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ トークン サービス (STS) の構成を定義します。 Sts を実装するクラスから派生し、<see cref="T:System.IdentityModel.SecurityTokenService" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.SecurityTokenService>トピックがから取得した、`Custom Token`サンプルです。 このサンプルは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供し、SWT トークンを提供できる、パッシブ STS の実装が含まれています。 アクティブ STS を実装する方法の例を参照してください、`Federation Metadata`サンプルです。 WIF およびをダウンロードする場所に関するこれらのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードのカスタム実装を示しています、 <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration> SWT トークンを処理する、パッシブ STS をサポートするクラス。 構成が初期化され、格納されている HTTP アプリケーションの状態で最初に、静的な`Current`プロパティにアクセスします。 コンス トラクターは、カスタム STS、カスタムの発行者トークン リゾルバー、および既定のトークンの種類 (SWT トークンの種類の URI) の型を使用してカスタム構成のプロパティを初期化します。 また、SWT トークン ハンドラーを既定のハンドラー コレクションに追加します。  
+  
+ [!code-csharp[WIFCustomTokenSTS#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenserviceconfiguration.cs#2)]  
+  
+ 次のコードを呼び出すことで Ws-federation 要求を処理するカスタム パッシブ STS を呼び出す方法を示しています、<xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest%28System.Web.HttpRequest%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.IdentityModel.SecurityTokenService%2CSystem.Web.HttpResponse%29?displayProperty=nameWithType>の背後にあるコードからメソッド、`default.aspx.cs`ファイル。 <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.CreateSecurityTokenService%2A>メソッドのインスタンスを初期化、`PassiveSTS.CustomSecurityTokenService`クラスに設定されたプロパティを使用して、`CustomSecurityTokenServiceConfiguration`クラスが前の例に示すようにします。  
+  
+ [!code-csharp[WIFCustomTokenSTS#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/default.aspx.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration (bool loadConfig);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool loadConfig) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loadConfig" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="loadConfig">
+          <see langword="true" />構成ファイルから設定を読み込めませんそれ以外の場合<see langword="false" />です。</param>
+        <summary><see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" /> クラスの新しいインスタンスを初期化します。 必要に応じて、現在の構成から設定を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration (string issuerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">発行者の名前。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />を指定した発行者名を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`issuerName`は`null`、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration (string issuerName, bool loadConfig);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuerName, bool loadConfig) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="loadConfig" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">発行者の名前。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName" /> プロパティを設定します。</param>
+        <param name="loadConfig">
+          <see langword="true" />構成ファイルから設定を読み込めませんそれ以外の場合<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />を指定した発行者名を持つクラス。 必要に応じて、現在の構成から設定を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`issuerName`は`null`、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration (string issuerName, System.IdentityModel.Tokens.SigningCredentials signingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuerName, class System.IdentityModel.Tokens.SigningCredentials signingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor(System.String,System.IdentityModel.Tokens.SigningCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">発行者の名前。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName" /> プロパティを設定します。</param>
+        <param name="signingCredentials">STS の署名資格情報。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SigningCredentials" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />を指定した発行者名および資格情報の署名を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`issuerName`は`null`、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration (string issuerName, System.IdentityModel.Tokens.SigningCredentials signingCredentials, bool loadConfig);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuerName, class System.IdentityModel.Tokens.SigningCredentials signingCredentials, bool loadConfig) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor(System.String,System.IdentityModel.Tokens.SigningCredentials,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+        <Parameter Name="loadConfig" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">発行者の名前。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName" /> プロパティを設定します。</param>
+        <param name="signingCredentials">STS の署名資格情報。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SigningCredentials" /> プロパティを設定します。</param>
+        <param name="loadConfig">
+          <see langword="true" />構成ファイルから設定を読み込めませんそれ以外の場合<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />を指定した発行者名および資格情報の署名を持つクラス。 必要に応じて、現在の構成から設定を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`issuerName`は`null`、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenServiceConfiguration (string issuerName, System.IdentityModel.Tokens.SigningCredentials signingCredentials, string serviceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuerName, class System.IdentityModel.Tokens.SigningCredentials signingCredentials, string serviceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.#ctor(System.String,System.IdentityModel.Tokens.SigningCredentials,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+        <Parameter Name="serviceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">発行者の名前。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName" /> プロパティを設定します。</param>
+        <param name="signingCredentials">STS の署名資格情報。 <see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SigningCredentials" /> プロパティを設定します。</param>
+        <param name="serviceName">名前、<see langword="&lt;identityConfiguration&gt;" />構成が読み込まれるが元となる要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />を指定した発行者名および資格情報の署名を持つクラス。 設定は、指定された名前付き構成から読み込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`issuerName`は`null`、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName%2A>セキュリティ トークン サービスを使用してトークンを作成する前に、プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenService">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.SecurityTokenService CreateSecurityTokenService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.SecurityTokenService CreateSecurityTokenService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.CreateSecurityTokenService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.SecurityTokenService</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ トークン サービス (STS) のインスタンスを作成、<see cref="T:System.Type" />で指定されている、<see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SecurityTokenService" />プロパティです。</summary>
+        <returns>インスタンス、<see cref="T:System.Type" />で指定されている、<see cref="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SecurityTokenService" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたクラス、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SecurityTokenService%2A>プロパティは、型のパラメーターを受け取るコンス トラクターを実装する必要があります<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration>です。  
+  
+   
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.SecurityTokenService>トピックがから取得した、`Custom Token`サンプルです。 このサンプルは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供し、SWT トークンを提供できる、パッシブ STS の実装が含まれています。 アクティブ STS を実装する方法の例を参照してください、`Federation Metadata`サンプルです。 WIF およびをダウンロードする場所に関するこれらのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードのカスタム実装を示しています、 <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration> SWT トークンを処理する、パッシブ STS をサポートするクラス。 構成が初期化され、格納されている HTTP アプリケーションの状態で最初に、静的な`Current`プロパティにアクセスします。 コンス トラクターは、カスタム STS、カスタムの発行者トークン リゾルバー、および既定のトークンの種類 (SWT トークンの種類の URI) の型を使用してカスタム構成のプロパティを初期化します。 また、SWT トークン ハンドラーを既定のハンドラー コレクションに追加します。  
+  
+ 次のコードを呼び出すことで Ws-federation 要求を処理するカスタム パッシブ STS を呼び出す方法を示しています、<xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest%28System.Web.HttpRequest%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.IdentityModel.SecurityTokenService%2CSystem.Web.HttpResponse%29?displayProperty=nameWithType>の背後にあるコードからメソッド、`default.aspx.cs`ファイル。 <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.CreateSecurityTokenService%2A>メソッドのインスタンスを初期化、`PassiveSTS.CustomSecurityTokenService`クラスの現在の設定のプロパティを使用して`CustomSecurityTokenServiceConfiguration`オブジェクト。 `CustomSecurityTokenServiceConfiguration.Current`プロパティは実装、`CustomSecurityTokenServiceConfiguration`クラスを HTTP アプリケーションの状態に保存されているクラスのインスタンスを返します。  
+  
+ [!code-csharp[WIFCustomTokenSTS#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/default.aspx.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMaxSymmetricKeySizeInBits">
+      <MemberSignature Language="C#" Value="public int DefaultMaxSymmetricKeySizeInBits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultMaxSymmetricKeySizeInBits" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultMaxSymmetricKeySizeInBits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求に指定する KeySize がこの制限時間内にある場合に使用されるビット チェックで既定のキーのサイズ制限を設定します。</summary>
+        <value>既定キーのサイズの制限のビットです。 既定値は 1024 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、対称キーの場合にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSymmetricKeySizeInBits">
+      <MemberSignature Language="C#" Value="public int DefaultSymmetricKeySizeInBits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultSymmetricKeySizeInBits" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultSymmetricKeySizeInBits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたトークンに使用されるビットの既定のキー サイズを設定します。</summary>
+        <value>ビット単位で、発行されたトークンで使用されるキーのサイズ。 既定値は 256 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、対称キーの場合にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTokenLifetime">
+      <MemberSignature Language="C#" Value="public TimeSpan DefaultTokenLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultTokenLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultTokenLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行済みトークンで使用される既定の有効期間を設定します。</summary>
+        <value>使用する既定の有効期間は、トークンを発行します。 既定値は、1 日です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTokenType">
+      <MemberSignature Language="C#" Value="public string DefaultTokenType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultTokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultTokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトークンの発行に使用される既定トークンの種類を設定します。</summary>
+        <value>既定のトークンの種類を表す文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列値は URI の形式で指定します。たとえば、SAML 1.1 トークンの種類を次は、文字列値: http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1 です。  
+  
+ 既定のトークンの種類は、SAML 1.1 に設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />または空です。</exception>
+        <exception cref="T:System.ArgumentException">トークン ハンドラーでは、指定した値が定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableWsdl">
+      <MemberSignature Language="C#" Value="public bool DisableWsdl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableWsdl" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DisableWsdl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ トークン サービス (STS) の WSDL の生成を有効にするかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />STS; の WSDL の生成を有効にするにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumTokenLifetime">
+      <MemberSignature Language="C#" Value="public TimeSpan MaximumTokenLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaximumTokenLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.MaximumTokenLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行済みトークンの最大トークンの有効期間を設定します。</summary>
+        <value>発行済みトークンの最大のトークン有効期間。 既定値は、1 日です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenService">
+      <MemberSignature Language="C#" Value="public Type SecurityTokenService { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type SecurityTokenService" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SecurityTokenService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Type" />のセキュリティ トークン サービス (STS)。</summary>
+        <value>セキュリティ トークン サービスの型。 種類はから派生する必要があります、<see cref="T:System.IdentityModel.SecurityTokenService" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたクラス、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SecurityTokenService%2A>プロパティは、型のパラメーターを受け取るコンス トラクターを実装する必要があります<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した値として割り当てることができる<see cref="T:System.IdentityModel.SecurityTokenService" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningCredentials">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SigningCredentials SigningCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SigningCredentials SigningCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SigningCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SigningCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名資格情報を設定します。</summary>
+        <value>署名資格情報です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.SigningCredentials%2A>アクティブなセキュリティ トークン サービス (STS) を実装する場合、プロパティは無視されます。 代わりから、サービス証明書を設定する必要があります、 <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> STS をホストしているサービス ホストのプロパティです。 アクティブ STS に使用するサービス ホストがによって表される、<xref:System.ServiceModel.Security.WSTrustServiceHost>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenIssuerName">
+      <MemberSignature Language="C#" Value="public string TokenIssuerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TokenIssuerName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TokenIssuerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたトークンに設定できるようにするために、発行者名を設定します。</summary>
+        <value>発行者の名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />または空の文字列が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrust13RequestSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrust13RequestSerializer WSTrust13RequestSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrust13RequestSerializer WSTrust13RequestSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.WSTrust13RequestSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrust13RequestSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Ws-trust 1.3 の要求 (RST) シリアライザー。</summary>
+        <value>Ws-trust 1.3 の要求 (RST) シリアライザー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrust13ResponseSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrust13ResponseSerializer WSTrust13ResponseSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrust13ResponseSerializer WSTrust13ResponseSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.WSTrust13ResponseSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrust13ResponseSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-trust 1.3 応答 (RSTR) シリアライザーを設定します。</summary>
+        <value>Ws-trust 1.3 応答 (RSTR) シリアライザー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustFeb2005RequestSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005RequestSerializer WSTrustFeb2005RequestSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005RequestSerializer WSTrustFeb2005RequestSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.WSTrustFeb2005RequestSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005RequestSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ws-trust Feb 2005 の設定を取得または要求 (RST) のシリアライザー。</summary>
+        <value>Ws-trust Feb 2005 要求 (RST) のシリアライザー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustFeb2005ResponseSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005ResponseSerializer WSTrustFeb2005ResponseSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005ResponseSerializer WSTrustFeb2005ResponseSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.WSTrustFeb2005ResponseSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005ResponseSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ws-trust Feb 2005 の設定を取得または応答 (RSTR) シリアライザー。</summary>
+        <value>Ws-trust Feb 2005 応答 (RSTR) シリアライザー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定した値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

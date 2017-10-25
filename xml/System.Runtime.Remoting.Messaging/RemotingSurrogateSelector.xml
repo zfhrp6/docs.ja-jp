@@ -1,0 +1,229 @@
+<Type Name="RemotingSurrogateSelector" FullName="System.Runtime.Remoting.Messaging.RemotingSurrogateSelector">
+  <TypeSignature Language="C#" Value="public class RemotingSurrogateSelector : System.Runtime.Serialization.ISurrogateSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RemotingSurrogateSelector extends System.Object implements class System.Runtime.Serialization.ISurrogateSelector" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISurrogateSelector</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>派生したオブジェクトのシリアル化に使用できるリモート処理のサロゲートの選択、<see cref="T:System.MarshalByRefObject" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サロゲートは、オブジェクトのシリアル化要件を処理するオブジェクトです。 リモート処理のサロゲートを処理から派生したオブジェクトのシリアル化要件をリモート処理<xref:System.MarshalByRefObject>です。 <xref:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector>で使用するための登録済みのサロゲートを管理、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>と<xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>です。  
+  
+ リモート処理用のシリアル化中に、 <xref:System.MarshalByRefObject>、リモート処理のサロゲートを作成、<xref:System.Runtime.Remoting.ObjRef>をアクティブ化して、リモート オブジェクトとの通信に必要なすべての関連情報が含まれています。 新しく作成された<xref:System.Runtime.Remoting.ObjRef>するリモートの場所に送信し、プロキシを作成するために使用します。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求し、クラス レベルの継承確認要求を使用します。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに、インフラストラクチャのアクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RemotingSurrogateSelector ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChainSelector">
+      <MemberSignature Language="C#" Value="public virtual void ChainSelector (System.Runtime.Serialization.ISurrogateSelector selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ChainSelector(class System.Runtime.Serialization.ISurrogateSelector selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.ChainSelector(System.Runtime.Serialization.ISurrogateSelector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selector" Type="System.Runtime.Serialization.ISurrogateSelector" />
+      </Parameters>
+      <Docs>
+        <param name="selector">次<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />を確認します。</param>
+        <summary>指定した追加<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />サロゲート セレクター チェーンにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスに接続されているチェーン内のリモート処理サロゲートを並べた、<xref:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector>です。 各チェーンには、リモート処理のサロゲート、サロゲート セレクターを指定したオブジェクトの種類の互換性のためのサロゲートを検索するチェックが含まれています。 現在のメソッドは、互換性のあるサロゲートについては、サロゲート チェーンに新しいリモート処理のサロゲート セレクターを追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.MessageSurrogateFilter Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Messaging.MessageSurrogateFilter Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.MessageSurrogateFilter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Remoting.Messaging.MessageSurrogateFilter" />の現在のインスタンスの委任、<see cref="T:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector" />です。</summary>
+        <value><see cref="T:System.Runtime.Remoting.Messaging.MessageSurrogateFilter" />の現在のインスタンスの委任、<see cref="T:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSelector">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Serialization.ISurrogateSelector GetNextSelector ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Serialization.ISurrogateSelector GetNextSelector() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.GetNextSelector" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISurrogateSelector</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次を返します<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />サロゲート セレクターのチェーン。</summary>
+        <returns>次<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />サロゲート セレクターのチェーン。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRootObject">
+      <MemberSignature Language="C#" Value="public object GetRootObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetRootObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.GetRootObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクト グラフのルートにあるオブジェクトを返します。</summary>
+        <returns>オブジェクト グラフのルートにあるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSurrogate">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Serialization.ISerializationSurrogate GetSurrogate (Type type, System.Runtime.Serialization.StreamingContext context, out System.Runtime.Serialization.ISurrogateSelector ssout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Serialization.ISerializationSurrogate GetSurrogate(class System.Type type, valuetype System.Runtime.Serialization.StreamingContext context, [out] class System.Runtime.Serialization.ISurrogateSelector&amp; ssout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.GetSurrogate(System.Type,System.Runtime.Serialization.StreamingContext,System.Runtime.Serialization.ISurrogateSelector@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISerializationSurrogate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="ssout" Type="System.Runtime.Serialization.ISurrogateSelector&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />サロゲートが要求されます。</param>
+        <param name="context">送信元または送信先のシリアル化します。</param>
+        <param name="ssout">このメソッドが戻るとき、<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />指定したオブジェクトの種類に適したシナリオです。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたコンテキストで指定された型に該当するサロゲートを返します。</summary>
+        <returns>特定のコンテキスト内の特定の種類に該当するサロゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理のためのサロゲート、リモート処理のシリアル化の要件を処理から派生したオブジェクトの<xref:System.MarshalByRefObject>です。 派生したオブジェクトのシリアル化中に<xref:System.MarshalByRefObject>リモート処理のサロゲートを作成、リモートの場所に、<xref:System.Runtime.Remoting.ObjRef>をアクティブ化して、リモート オブジェクトとの通信に必要なすべての関連情報が含まれています。 新しく作成された<xref:System.Runtime.Remoting.ObjRef>するリモートの場所に送信し、プロキシを作成するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRootObject">
+      <MemberSignature Language="C#" Value="public void SetRootObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRootObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.SetRootObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">オブジェクト グラフのルートにあるオブジェクト。</param>
+        <summary>オブジェクト グラフのルートにあるオブジェクトを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSoapFormat">
+      <MemberSignature Language="C#" Value="public virtual void UseSoapFormat ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UseSoapFormat() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector.UseSoapFormat" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SOAP 形式を使用して、現在のサロゲート セレクターを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドは SOAP フォーマッタ シンクに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

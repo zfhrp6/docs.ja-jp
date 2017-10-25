@@ -1,0 +1,1949 @@
+<Type Name="FlowDocumentReader" FullName="System.Windows.Controls.FlowDocumentReader">
+  <TypeSignature Language="C#" Value="public class FlowDocumentReader : System.Windows.Controls.Control, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi FlowDocumentReader extends System.Windows.Controls.Control implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.FlowDocumentReader" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Document")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ContentHost", Type=typeof(System.Windows.Controls.Decorator))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_FindToolBarHost", Type=typeof(System.Windows.Controls.Decorator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>複数の表示モードの組み込みサポートを備えたのフロー コンテンツを表示するため、コントロールを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.FlowDocumentReader>ユーザーが単一ページ (ページに-を-時) の表示モードの 2 つのページに-を-時点 (読書形式) 表示モード、および連続スクロール (ボトムレス) 表示モードなど、さまざまな表示モードを動的に選択できるようにする機能が含まれます。  表示モードを動的に切り替える必要がない場合は軽量のフロー コンテンツ ビューアーは、特定の表示モードで修正します。  <xref:System.Windows.Controls.FlowDocumentPageViewer>単一ページの表示モードでフロー コンテンツを表示および<xref:System.Windows.Controls.FlowDocumentScrollViewer>連続スクロール モードでフロー コンテンツを表示します。  使用可能な表示モードの詳細については、次を参照してください。<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>です。  
+  
+ 次の図に示しています、<xref:System.Windows.Controls.FlowDocumentReader>その既定値はコントロール[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。  
+  
+ ![コールアウト付きスクリーン ショット: FlowDocumentReader](~/add/media/flowdocrdr-main.png "コールアウト付きスクリーン ショット: FlowDocumentReader")  
+  
+-   **コンテンツ領域**-コンテンツ領域の内容を表示する、<xref:System.Windows.Documents.FlowDocument>によって指定された、<xref:System.Windows.Controls.FlowDocumentReader.Document%2A>プロパティです。  
+  
+-   **ツール バー** -コンテンツ領域の下にある既定のツールバーをドッキングします。 コンテンツ ページを移動する、表示モードの選択、およびズーム レベル変更の検索コントロールをホストします。  
+  
+    -   **検索 ボタン**-**検索**ボタンにより、検索ダイアログ ボックスの内容を検索するには、そのユーザー、<xref:System.Windows.Controls.FlowDocumentReader>指定した語句または語句をします。  **検索**ボタンが表示されない場合<xref:System.Windows.Controls.FlowDocumentReader.IsFindEnabled%2A>は`false`します。  詳細については、「<xref:System.Windows.Controls.FlowDocumentReader.Find%2A>」を参照してください。  
+  
+    -   **ページ ナビゲーション コントロール**ページ ナビゲーション コントロールは、インジケーターが、現在のページ番号とページの合計数だけでなく、次のページ (下の矢印) または (上向きの矢印) の前のページにジャンプするボタンを追加します。  
+  
+    -   **表示モード ボタン**-表示モード ボタンを使用して、ユーザー利用可能な表示モードからを選択します。  詳細については、「<xref:System.Windows.Controls.FlowDocumentReader.ViewingMode%2A>」を参照してください。  
+  
+    -   **ズーム コントロール**-ズーム コントロールがそれぞれプラス記号をクリックするか、マイナス記号のボタン、ズーム レベルを増減するユーザーを有効にします。  ズーム コントロールには、ズーム レベルの調整用スライダーも含まれます。  詳細については、「<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>」を参照してください。  
+  
+ 既定のツールバー[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]を含まない、**印刷**ボタンをクリックします。  
+  
+ <xref:System.Windows.Documents.FlowDocument>のみ使用可能な子要素、<xref:System.Windows.Controls.FlowDocumentReader>です。  A<xref:System.Windows.Controls.FlowDocumentReader>要素は、1 つをホストできる<xref:System.Windows.Documents.FlowDocument>です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、<xref:System.Windows.Controls.FlowDocumentReader>前の図に含まれています。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FloaterFigureXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_floaterfigurexaml)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlowDocumentReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.FlowDocumentReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelPrint">
+      <MemberSignature Language="C#" Value="public void CancelPrint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelPrint() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.CancelPrint" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の印刷ジョブを取り消します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDecreaseZoom">
+      <MemberSignature Language="C#" Value="public bool CanDecreaseZoom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanDecreaseZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.CanDecreaseZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />レベルを下げることができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />低下、それ以外のレベルを指定できます<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Controls.FlowDocumentReader.DecreaseZoom%2A>メソッドが下がる、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルで指定された量、<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrement%2A>プロパティです。  このプロパティの値の値に適用されます、<xref:System.Windows.Controls.FlowDocumentReader.MinZoom%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_CanDecreaseZoom"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.CanDecreaseZoomProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDecreaseZoomProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanDecreaseZoomProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanDecreaseZoomProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.CanDecreaseZoomProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.CanDecreaseZoom" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoToNextPage">
+      <MemberSignature Language="C#" Value="public bool CanGoToNextPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoToNextPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.CanGoToNextPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.FlowDocumentReader" />実行できる、<see cref="P:System.Windows.Input.NavigationCommands.NextPage" />コンテンツの次のページにジャンプするコマンドをルーティングします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.FlowDocumentReader" />コンテンツ; の次のページにジャンプできますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CanGoToNextPage"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.CanGoToNextPageProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoToNextPageProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanGoToNextPageProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanGoToNextPageProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.CanGoToNextPageProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.CanGoToNextPage" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoToPage">
+      <MemberSignature Language="C#" Value="public bool CanGoToPage (int pageNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanGoToPage(int32 pageNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.CanGoToPage(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pageNumber">有効なジャンプ先としてを確認するページ番号です。</param>
+        <summary>示す値を返すかどうか、または<see cref="T:System.Windows.Controls.FlowDocumentReader" />指定したページ番号にジャンプできます。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Controls.FlowDocumentReader" /> 、それ以外の指定したページ番号にジャンプできる<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.NavigationCommands.GoToPage%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoToPreviousPage">
+      <MemberSignature Language="C#" Value="public bool CanGoToPreviousPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoToPreviousPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.CanGoToPreviousPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.FlowDocumentReader" />実行できる、<see cref="P:System.Windows.Input.NavigationCommands.PreviousPage" />コンテンツの前のページにジャンプするコマンドをルーティングします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.FlowDocumentReader" />コンテンツ; の前のページにジャンプできますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CanGoToPreviousPage"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.CanGoToPreviousPageProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoToPreviousPageProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanGoToPreviousPageProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanGoToPreviousPageProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.CanGoToPreviousPageProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.CanGoToPreviousPage" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanIncreaseZoom">
+      <MemberSignature Language="C#" Value="public bool CanIncreaseZoom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanIncreaseZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.CanIncreaseZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />レベルを増やすことができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />増加、それ以外のレベルを指定できます<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Controls.FlowDocumentReader.IncreaseZoom%2A>メソッドが増加、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルで指定された量、<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrement%2A>プロパティです。  このプロパティの値の値に適用されます、<xref:System.Windows.Controls.FlowDocumentReader.MaxZoom%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_CanIncreaseZoom"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.CanIncreaseZoomProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanIncreaseZoomProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanIncreaseZoomProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanIncreaseZoomProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.CanIncreaseZoomProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.CanIncreaseZoom" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseZoom">
+      <MemberSignature Language="C#" Value="public void DecreaseZoom ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DecreaseZoom() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.DecreaseZoom" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行、<see cref="P:System.Windows.Input.NavigationCommands.DecreaseZoom" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.FlowDocumentReader.DecreaseZoom%2A>メソッドが現在を減少<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルで指定された値によって、<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrement%2A>プロパティです。  
+  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]ズームを縮小するためのボタンが含まれています。  
+  
+ このメソッドを呼び出しても何も起こりません場合、<xref:System.Windows.Controls.FlowDocumentReader.CanDecreaseZoom%2A>プロパティは`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.FlowDocument Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.FlowDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.FlowDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.FlowDocumentReader" /> によって表示されるコンテンツをホストする <see cref="T:System.Windows.Documents.FlowDocument" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.FlowDocumentReader" /> によって表示されるコンテンツをホストする <see cref="T:System.Windows.Documents.FlowDocument" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Document"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.DocumentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DocumentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DocumentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.DocumentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.Document" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public void Find ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Find() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.Find" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>[検索] ダイアログを切り替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]が含まれています、**検索**を検索] ダイアログ ボックスを切り替えるボタンをクリックします。  次の図は、検索 ダイアログ ボックスを示します、<xref:System.Windows.Controls.FlowDocumentReader>既定の UI。  
+  
+ ![コールアウト付きスクリーン ショット: FlowDocumentReader](~/add/media/flowdocrdr-find.png "コールアウト付きスクリーン ショット: FlowDocumentReader")  
+  
+ 既定の [検索] ダイアログ ボックスに検索テキストを入力するためのフィールドが含まれますと同様のボタン**次を検索**、**前を検索**、および**オプション**です。  既定では、次の検索オプションが用意されています。  
+  
+-   単語単位のみです。  
+  
+-   大文字と小文字が一致します。  
+  
+-   発音区別符号と一致します。  
+  
+-   Kashida と一致します。  
+  
+-   Alef hamza と一致します。  
+  
+ このメソッドを呼び出しても何も起こりません場合、<xref:System.Windows.Controls.FlowDocumentReader.IsFindEnabled%2A>プロパティは`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseZoom">
+      <MemberSignature Language="C#" Value="public void IncreaseZoom ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void IncreaseZoom() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.IncreaseZoom" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行、<see cref="P:System.Windows.Input.NavigationCommands.IncreaseZoom" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.FlowDocumentReader.IncreaseZoom%2A>メソッド、現在の増加<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルで指定された値によって、<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrement%2A>プロパティです。  
+  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]ズームを拡大するためのボタンが含まれています。  
+  
+ このメソッドを呼び出しても何も起こりません場合、<xref:System.Windows.Controls.FlowDocumentReader.CanIncreaseZoom%2A>プロパティは`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFindEnabled">
+      <MemberSignature Language="C#" Value="public bool IsFindEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFindEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsFindEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="P:System.Windows.Input.ApplicationCommands.Find" />ルーティング コマンドが有効にします。</summary>
+        <value>
+          <see langword="true" />有効にする、<see cref="P:System.Windows.Input.ApplicationCommands.Find" />コマンドです。 それ以外の場合、ルーティング<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]が含まれています、**検索**を検索] ダイアログ ボックスを切り替えるボタンをクリックします。  次の図は、検索 ダイアログ ボックスを示します、<xref:System.Windows.Controls.FlowDocumentReader>既定の UI。  
+  
+ ![コールアウト付きスクリーン ショット: FlowDocumentReader](~/add/media/flowdocrdr-find.png "コールアウト付きスクリーン ショット: FlowDocumentReader")  
+  
+ ときに<xref:System.Windows.Controls.FlowDocumentReader.IsFindEnabled%2A>は`false`、**検索**ボタンが表示されない、 <xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  
+  
+<a name="dependencyPropertyInfo_IsFindEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsFindEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.IsFindEnabled%2A>属性。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentReaderXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentreaderxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.IsFindEnabled%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentreader)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentreader)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFindEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsFindEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsFindEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsFindEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsFindEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInactiveSelectionHighlightEnabled">
+      <MemberSignature Language="C#" Value="public bool IsInactiveSelectionHighlightEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInactiveSelectionHighlightEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか<see cref="T:System.Windows.Controls.FlowDocumentReader" />コントロールにフォーカスがあるない場合に選択したテキストが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.FlowDocumentReader" />選択したテキストを表示時に、<see cref="T:System.Windows.Controls.FlowDocumentReader" />がフォーカスされていない、それ以外の<see langword="false" />します。  
+  
+ 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsInactiveSelectionHighlightEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInactiveSelectionHighlightEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsInactiveSelectionHighlightEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsInactiveSelectionHighlightEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsInactiveSelectionHighlightEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPageViewEnabled">
+      <MemberSignature Language="C#" Value="public bool IsPageViewEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPageViewEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsPageViewEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="F:System.Windows.Controls.FlowDocumentReaderViewingMode.Page" />表示モードとして使用できます。</summary>
+        <value>
+          <see langword="true" />その単一ページ表示を示すためにはモードを使用できます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 少なくとも 1 つの表示モードを有効にする必要があります。  
+  
+<a name="dependencyPropertyInfo_IsPageViewEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsPageViewEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを設定<see langword="false" />中<see cref="P:System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabled" />と<see cref="P:System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabled" />も<see langword="false" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPageViewEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsPageViewEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsPageViewEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsPageViewEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsPageViewEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrintEnabled">
+      <MemberSignature Language="C#" Value="public bool IsPrintEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrintEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsPrintEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="P:System.Windows.Input.ApplicationCommands.Print" />ルーティング コマンドが有効にします。</summary>
+        <value>
+          <see langword="true" />有効にする、<see cref="P:System.Windows.Input.ApplicationCommands.Print" />コマンドです。 それ以外の場合、ルーティング<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsPrintEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsPrintEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.IsPrintEnabled%2A>属性。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentReaderXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentreaderxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.IsPrintEnabled%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentreader)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentreader)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrintEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsPrintEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsPrintEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsPrintEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsPrintEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsScrollViewEnabled">
+      <MemberSignature Language="C#" Value="public bool IsScrollViewEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsScrollViewEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="F:System.Windows.Controls.FlowDocumentReaderViewingMode.Scroll" />表示モードとして使用できます。</summary>
+        <value>
+          <see langword="true" />示す<see cref="F:System.Windows.Controls.FlowDocumentReaderViewingMode.Scroll" />表示モードとして使用できます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 少なくとも 1 つの表示モードを有効にする必要があります。  
+  
+<a name="dependencyPropertyInfo_IsScrollViewEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを設定<see langword="false" />中<see cref="P:System.Windows.Controls.FlowDocumentReader.IsPageViewEnabled" />と<see cref="P:System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabled" />も<see langword="false" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsScrollViewEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsScrollViewEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsScrollViewEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectionActive">
+      <MemberSignature Language="C#" Value="public bool IsSelectionActive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelectionActive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsSelectionActive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.FlowDocumentReader" />フォーカスと選択したテキスト。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Controls.FlowDocumentReader" /> 、テキスト ボックスにフォーカスがあるない場合に、選択したテキストを表示それ以外の場合、<see langword="false" />です。  
+  
+ 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsSelectionActive"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsSelectionActiveProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectionActiveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsSelectionActiveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsSelectionActiveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsSelectionActiveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsSelectionActive" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTwoPageViewEnabled">
+      <MemberSignature Language="C#" Value="public bool IsTwoPageViewEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTwoPageViewEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="F:System.Windows.Controls.FlowDocumentReaderViewingMode.TwoPage" />表示モードとして使用できます。</summary>
+        <value>
+          <see langword="true" />示す<see cref="F:System.Windows.Controls.FlowDocumentReaderViewingMode.TwoPage" />表示モードとして使用できます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 少なくとも 1 つの表示モードを有効にする必要があります。  
+  
+<a name="dependencyPropertyInfo_IsTwoPageViewEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを設定<see langword="false" />中<see cref="P:System.Windows.Controls.FlowDocumentReader.IsPageViewEnabled" />と<see cref="P:System.Windows.Controls.FlowDocumentReader.IsScrollViewEnabled" />も<see langword="false" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTwoPageViewEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsTwoPageViewEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsTwoPageViewEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.IsTwoPageViewEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子を反復処理できる列挙子を取得、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <value>論理上の子の列挙子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxZoom">
+      <MemberSignature Language="C#" Value="public double MaxZoom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.MaxZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、最大値を許容<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />レベルを<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <value>最大許容<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />レベルを<see cref="T:System.Windows.Controls.FlowDocumentReader" />、割合として解釈します。 既定では 200.0 (最大 200% ズーム) レベルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]調整に使用できるスライダーが含まれています、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベル。  このプロパティの上限値を指定する、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>スライダーします。  
+  
+<a name="dependencyPropertyInfo_MaxZoom"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.MaxZoomProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.MaxZoom%2A>属性。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentReaderXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentreaderxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.MaxZoom%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentreader)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentreader)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxZoomProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxZoomProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxZoomProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.MaxZoomProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.MaxZoom" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinZoom">
+      <MemberSignature Language="C#" Value="public double MinZoom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.MinZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最小値を許容<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />レベルを<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <value>許容される最小<see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" />レベルを<see cref="T:System.Windows.Controls.FlowDocumentReader" />、割合として解釈します。 既定では (最小 80.0 ズーム レベルを 80%) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]調整に使用できるスライダーが含まれています、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベル。  このプロパティの下限値を指定する、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>スライダーします。  
+  
+<a name="dependencyPropertyInfo_MinZoom"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.MinZoomProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.MinZoom%2A>属性。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentReaderXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentreaderxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.MinZoom%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentreader)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentreader)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinZoomProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinZoomProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinZoomProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.MinZoomProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.MinZoom" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビジュアル ツリーを構築、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されるたびに<xref:System.Windows.FrameworkElement.ApplyTemplate%2A>と呼びます。  
+  
+ このメソッドは<xref:System.Windows.FrameworkElement.OnApplyTemplate%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCancelPrintCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnCancelPrintCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCancelPrintCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnCancelPrintCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理、<see cref="P:System.Windows.Input.ApplicationCommands.CancelPrint" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Input.ApplicationCommands.CancelPrint%2A>コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.FlowDocumentReader" />します。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.FlowDocumentReader" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDecreaseZoomCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnDecreaseZoomCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDecreaseZoomCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnDecreaseZoomCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理、<see cref="P:System.Windows.Input.NavigationCommands.DecreaseZoom" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Input.NavigationCommands.DecreaseZoom%2A>コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDpiChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDpiChanged (System.Windows.DpiScale oldDpiScaleInfo, System.Windows.DpiScale newDpiScaleInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDpiChanged(valuetype System.Windows.DpiScale oldDpiScaleInfo, valuetype System.Windows.DpiScale newDpiScaleInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnDpiChanged(System.Windows.DpiScale,System.Windows.DpiScale)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldDpiScaleInfo" Type="System.Windows.DpiScale" />
+        <Parameter Name="newDpiScaleInfo" Type="System.Windows.DpiScale" />
+      </Parameters>
+      <Docs>
+        <param name="oldDpiScaleInfo">設定前の DPI スケールします。</param>
+        <param name="newDpiScaleInfo">新規の DPI スケール設定。</param>
+        <summary>このフロー ドキュメント リーダーが表示される DPI が変更されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFindCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnFindCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFindCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnFindCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理、<see cref="P:System.Windows.Input.ApplicationCommands.Find" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Input.ApplicationCommands.Find%2A>コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIncreaseZoomCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnIncreaseZoomCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnIncreaseZoomCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnIncreaseZoomCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理、<see cref="P:System.Windows.Input.NavigationCommands.IncreaseZoom" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Input.NavigationCommands.IncreaseZoom%2A>コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialized">
+      <MemberSignature Language="C#" Value="protected override void OnInitialized (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInitialized(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnInitialized(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />オブジェクトに関連付けられている引数を含む、<see cref="E:System.Windows.FrameworkElement.Initialized" />ルーティングされたイベント。</param>
+        <summary>処理、<see cref="E:System.Windows.FrameworkElement.Initialized" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.FrameworkElement.IsInitialized%2A>プロパティは`true`します。  
+  
+ このメソッドは<xref:System.Windows.FrameworkElement.OnInitialized%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsKeyboardFocusWithinChanged">
+      <MemberSignature Language="C#" Value="protected override void OnIsKeyboardFocusWithinChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnIsKeyboardFocusWithinChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnIsKeyboardFocusWithinChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />オブジェクトに関連付けられている引数を含む、<see cref="E:System.Windows.UIElement.IsKeyboardFocusWithinChanged" />ルーティングされたイベント。</param>
+        <summary>処理、<see cref="E:System.Windows.UIElement.IsKeyboardFocusWithinChanged" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、のコンテンツ エリアにフォーカスを移動し、<xref:System.Windows.Controls.FlowDocumentReader>です。  
+  
+ このメソッドを呼び出すたびに、<xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>依存関係プロパティの変更。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータを提供します。</param>
+        <summary>未処理のたびに呼び出されます<see cref="E:System.Windows.Input.Keyboard.KeyDown" />添付ルーティング イベントがそのルート上で、このクラスから派生した要素に到達します。 このイベントに対するクラス処理を追加するには、このメソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーボード操作は、専用の入力マネージャーによって処理されます。 キーストロークを入力し、バインド、可能性のあるキーストロークを処理する一般的なキーストロークとして公開される前にコマンドなどに依存するその他のプログラミング機能です。 システムの機能をマーク イベントを処理し、これらの入力する場合<xref:System.Windows.Controls.FlowDocumentReader.OnKeyDown%2A>は呼び出されません。  
+  
+ このメソッドには、既定の実装ではありません。 継承の中間クラスには、このメソッドが実装されている場合に、実装で base() を呼び出すことはお勧めもします。 要件に応じて、特別な処理の前後 base() を呼び出すことがあります。  
+  
+ このメソッドの目的は、類似した[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]でのイベント パターン * メソッド: インスタンス ハンドラーではなく、クラス ハンドラーを持つ派生クラスから一致するイベントを処理するための手段を提供します。 ここでは、照合イベントは、ルーティングされたイベントです。 On のメソッドの実装パターンではルーティング イベントの異なるルーティング イベントを子要素、必ずしも要素であるハンドラーを呼び出す (ほとんどの場合にイベントを再生成する必要がありますいないを再試行してください) で発生する可能性があります。 サブクラス<xref:System.Windows.Controls.FlowDocumentReader>経路イベントが受信したときに、プライベート クラス ハンドラー メソッドを呼び出すにこともできます。 イベントの引数を受け取り、イベントを処理済みとしてマークする 1 つの潜在的なシナリオです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPrintCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnPrintCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPrintCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnPrintCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理、<see cref="P:System.Windows.Input.ApplicationCommands.Print" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Input.ApplicationCommands.Print%2A>コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPrintCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnPrintCompleted ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPrintCompleted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnPrintCompleted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>印刷ジョブが完了したときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSwitchViewingModeCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnSwitchViewingModeCommand (System.Windows.Controls.FlowDocumentReaderViewingMode viewingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSwitchViewingModeCommand(valuetype System.Windows.Controls.FlowDocumentReaderViewingMode viewingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.OnSwitchViewingModeCommand(System.Windows.Controls.FlowDocumentReaderViewingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewingMode" Type="System.Windows.Controls.FlowDocumentReaderViewingMode" />
+      </Parameters>
+      <Docs>
+        <param name="viewingMode">1 つ、<see cref="T:System.Windows.Controls.FlowDocumentReaderViewingMode" />に切り替えるには表示モードを指定する値。</param>
+        <summary>処理、<see cref="M:System.Windows.Controls.FlowDocumentReader.SwitchViewingMode(System.Windows.Controls.FlowDocumentReaderViewingMode)" />コマンドをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Controls.FlowDocumentReader.SwitchViewingMode%2A>ルーティング コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCount">
+      <MemberSignature Language="C#" Value="public int PageCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.PageCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってホストされているコンテンツの表示ページの現在の数を取得、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <value>によってホストされているコンテンツのページを表示の現在の数、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フロー コンテンツには、ページの固定数の固有の概念はありません。内容、<xref:System.Windows.Documents.FlowDocument>される数は現在の表示およびレイアウトの特性に基づいて、ページの表示のセットに動的に編成されます。  たとえば、サイズ変更、<xref:System.Windows.Controls.FlowDocumentReader>または変更、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルにコンテンツが構成されている表示ページの数に影響します。  
+  
+ ときに、<xref:System.Windows.Controls.FlowDocumentReader>では、<xref:System.Windows.Controls.FlowDocumentReaderViewingMode.Scroll>モードを表示するには、ページ数と現在のページ番号は常に 1 (任意のコンテンツが読み込まれたと仮定)。  
+  
+<a name="dependencyPropertyInfo_PageCount"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.PageCountProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCountProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PageCountProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PageCountProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.PageCountProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.PageCount" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageNumber">
+      <MemberSignature Language="C#" Value="public int PageNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.PageNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在表示されているページのページ番号を取得します。</summary>
+        <value>現在表示されているページのページ番号です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フロー コンテンツには、ページの固定数の固有の概念はありません。内容、<xref:System.Windows.Documents.FlowDocument>される数は現在の表示およびレイアウトの特性に基づいて、ページの表示のセットに動的に編成されます。  たとえば、サイズ変更、<xref:System.Windows.Controls.FlowDocumentReader>または変更、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルにコンテンツが構成されている表示ページの数に影響します。  
+  
+ ときに、<xref:System.Windows.Controls.FlowDocumentReader>では、<xref:System.Windows.Controls.FlowDocumentReaderViewingMode.Scroll>モードを表示するには、ページ数と現在のページ番号は常に 1 (任意のコンテンツが読み込まれたと仮定)。  
+  
+<a name="dependencyPropertyInfo_PageNumber"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.PageNumberProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageNumberProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PageNumberProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PageNumberProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.PageNumberProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.PageNumber" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Print">
+      <MemberSignature Language="C#" Value="public void Print ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Print() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.Print" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内容を印刷するために使用する標準的な印刷ダイアログを起動、<see cref="T:System.Windows.Controls.FlowDocumentReader" />と印刷設定を構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]は提供されません、**印刷**ボタンをクリックします。  
+  
+ 次の図は、標準の印刷 ダイアログ ボックスの例を示します。  印刷 ダイアログ ボックスの特定の外観は、ホスト コンピューターの構成に応じて異なる場合がありますに注意してください。  
+  
+ ![スクリーン ショット: 印刷 ダイアログ ボックス](~/add/media/flowdocrdr-print.png "スクリーン ショット: 印刷 ダイアログ ボックス")  
+  
+ このメソッドを呼び出しても何も起こりません場合、<xref:System.Windows.Controls.FlowDocumentReader.IsPrintEnabled%2A>プロパティは`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selection">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextSelection Selection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextSelection Selection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.Selection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したコンテンツを取得、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <value>選択したコンテンツの<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.FlowDocumentReader.Selection%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例で、ユーザーが選択されたテキストを取得する方法を示しています、<xref:System.Windows.Controls.FlowDocumentReader>です。  
+  
+ [!code-xaml[FlowDocSelection#5](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocSelection/CSharp/Window3.xaml#5)]  
+[!code-csharp[FlowDocSelection#6](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocSelection/CSharp/Window3.xaml.cs#6)]
+[!code-vb[FlowDocSelection#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocSelection/VisualBasic/Window3.xaml.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush SelectionBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush SelectionBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.SelectionBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択したテキストを強調表示するブラシを設定します。</summary>
+        <value>選択したテキストを強調表示するブラシ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 選択したテキストを強調表示するブラシを指定することができます、<xref:System.Windows.Controls.FlowDocumentReader>を設定して、<xref:System.Windows.Controls.FlowDocumentReader.SelectionBrush%2A>と<xref:System.Windows.Controls.FlowDocumentReader.SelectionOpacity%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Controls.FlowDocumentReader>、設定、<xref:System.Windows.Controls.FlowDocumentReader.SelectionBrush%2A>ピンク色、およびセットへのプロパティ、 <xref:System.Windows.Controls.FlowDocumentReader.SelectionOpacity%2A> 0.7 するプロパティです。  
+  
+ [!code-xaml[FlowDocReaderSelBrushSnippet#SelectionBrush](~/samples/snippets/csharp/VS_Snippets_Wpf/flowdocreaderselbrushsnippet/CS/window1.xaml#selectionbrush)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectionBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectionBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.SelectionBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.SelectionBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionOpacity">
+      <MemberSignature Language="C#" Value="public double SelectionOpacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SelectionOpacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.SelectionOpacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の不透明度、<see cref="P:System.Windows.Controls.FlowDocumentReader.SelectionBrush" />です。</summary>
+        <value>不透明度、<see cref="P:System.Windows.Controls.FlowDocumentReader.SelectionBrush" />です。 既定値は 0.4 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合、<xref:System.Windows.Controls.FlowDocumentReader.SelectionOpacity%2A>を 0 に、<xref:System.Windows.Controls.FlowDocumentReader.SelectionBrush%2A>は透過的とは表示されません。 設定した場合、 <xref:System.Windows.Controls.FlowDocumentReader.SelectionOpacity%2A> 1.0 以上、<xref:System.Windows.Controls.FlowDocumentReader.SelectionBrush%2A>は非透過的と、選択したテキストが表示されません。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Controls.FlowDocumentReader>、設定、<xref:System.Windows.Controls.FlowDocumentReader.SelectionBrush%2A>ピンク色、およびセットへのプロパティ、 <xref:System.Windows.Controls.FlowDocumentReader.SelectionOpacity%2A> 0.7 するプロパティです。  
+  
+ [!code-xaml[FlowDocReaderSelBrushSnippet#SelectionBrush](~/samples/snippets/csharp/VS_Snippets_Wpf/flowdocreaderselbrushsnippet/CS/window1.xaml#selectionbrush)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionOpacityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectionOpacityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectionOpacityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.SelectionOpacityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.SelectionOpacity" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchViewingMode">
+      <MemberSignature Language="C#" Value="public void SwitchViewingMode (System.Windows.Controls.FlowDocumentReaderViewingMode viewingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SwitchViewingMode(valuetype System.Windows.Controls.FlowDocumentReaderViewingMode viewingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.SwitchViewingMode(System.Windows.Controls.FlowDocumentReaderViewingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewingMode" Type="System.Windows.Controls.FlowDocumentReaderViewingMode" />
+      </Parameters>
+      <Docs>
+        <param name="viewingMode">1 つ、<see cref="T:System.Windows.Controls.FlowDocumentReaderViewingMode" />目的表示モードを指定する値。</param>
+        <summary>実行、<see cref="F:System.Windows.Controls.FlowDocumentReader.SwitchViewingModeCommand" />コマンド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが切り替わり、<xref:System.Windows.Controls.FlowDocumentReader>指定した表示モードにします。  
+  
+ 詳細については利用可能な表示モードで、<xref:System.Windows.Controls.FlowDocumentReader>を参照してください<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchViewingModeCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand SwitchViewingModeCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand SwitchViewingModeCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.SwitchViewingModeCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、**表示モードの切り替え**コマンド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.FlowDocumentReader>クラスが、このコマンドに組み込みの処理 (および多数のアプリケーションおよびナビゲーションのコマンドの処理を組み込み)。 コマンドとコマンドのバインドの詳細については、次を参照してください。[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ はなくこのコマンドを開始するよりも呼び出すことができます代わりに<xref:System.Windows.Controls.FlowDocumentReader.SwitchViewingMode%2A>に関連する<xref:System.Windows.Controls.FlowDocumentReader>です。 結果は、同じです。  
+  
+ **表示モードの切り替え**コマンドのいずれかを指定できます、パラメーターなしの表示モードでは、次の利用可能な表示モードに進めましている場合、<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>列挙のシーケンス、またはその名前を付けて表示モードを指定できます、<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>で、<xref:System.Windows.Input.RoutedUICommand>コマンドのパラメーターです。 コマンドのプロパティを設定するために使用する場合[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]コマンドは、パラメーターなしである必要があります。  
+  
+ 使用しても、処理または置き換えることは、独自の処理で、いずれかの組み込みを使用して派生クラスでこのコマンドに応答可能性があります。 <xref:System.Windows.Controls.FlowDocumentReader.OnSwitchViewingModeCommand%2A>クラスを変更に使用できるコールバックが処理されて、コマンドのショートカット キー、テンプレートまたはインスタンスを変更する必要なし。  
+  
+<a name="xamlTextUsage_SwitchViewingModeCommand"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+```  
+<object property="SwitchViewingMode"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchViewingModeCore">
+      <MemberSignature Language="C#" Value="protected virtual void SwitchViewingModeCore (System.Windows.Controls.FlowDocumentReaderViewingMode viewingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SwitchViewingModeCore(valuetype System.Windows.Controls.FlowDocumentReaderViewingMode viewingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.SwitchViewingModeCore(System.Windows.Controls.FlowDocumentReaderViewingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewingMode" Type="System.Windows.Controls.FlowDocumentReaderViewingMode" />
+      </Parameters>
+      <Docs>
+        <param name="viewingMode">1 つ、<see cref="T:System.Windows.Controls.FlowDocumentReaderViewingMode" />目的表示モードを指定する値。</param>
+        <summary><see cref="M:System.Windows.Controls.FlowDocumentReader.SwitchViewingMode(System.Windows.Controls.FlowDocumentReaderViewingMode)" /> コマンドを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については利用可能な表示モードで、<xref:System.Windows.Controls.FlowDocumentReader>を参照してください<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 使用して、<see cref="P:System.Windows.Controls.FlowDocumentReader.Document" />プロパティを追加する、<see cref="T:System.Windows.Documents.FlowDocument" />のコンテンツの子として、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.FlowDocumentReader.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewingMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.FlowDocumentReaderViewingMode ViewingMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.FlowDocumentReaderViewingMode ViewingMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.ViewingMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.FlowDocumentReaderViewingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の表示モード、<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Controls.FlowDocumentReaderViewingMode" />表示モードを指定する値。 既定値は、<see cref="F:System.Windows.Controls.FlowDocumentReaderViewingMode.Page" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]表示モードを選択するためのボタンが含まれています。  次の図は、表示モードの選択ボタン、<xref:System.Windows.Controls.FlowDocumentReader>既定の UI。  
+  
+ ![スクリーン ショット: FlowDocumentReader ViewMode](~/add/media/flowdocrdr-viewmode.png "スクリーン ショット: FlowDocumentReader ViewMode")  
+  
+ 詳細については<xref:System.Windows.Controls.FlowDocumentReader>モードを表示するを参照してください<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>です。  
+  
+<a name="dependencyPropertyInfo_ViewingMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.ViewingModeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewingModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewingModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewingModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.ViewingModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.ViewingMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zoom">
+      <MemberSignature Language="C#" Value="public double Zoom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Zoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.Zoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のズーム レベルを取得または設定します。</summary>
+        <value>現在のズーム レベルは、パーセンテージとして解釈します。 既定値は 100.0 (100% のズーム レベル)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]増加または減少させて拡大または縮小、だけでなく、スライダーのズーム レベルを調整するためのボタンを提供するズーム コントロールが含まれています。  次の図は、ズーム コントロールを示します、<xref:System.Windows.Controls.FlowDocumentReader>既定の UI。  
+  
+ ![Flowdocumentreader コントロール ズーム](~/add/media/flowdocrdr-zoom.png "flowdocumentreader コントロール ズーム")  
+  
+ ズーム レベルがの値によって制限されます、<xref:System.Windows.Controls.FlowDocumentReader.MinZoom%2A>と<xref:System.Windows.Controls.FlowDocumentReader.MaxZoom%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_Zoom"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.ZoomProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>属性。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentReaderXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentreaderxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentreader)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentreader)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomIncrement">
+      <MemberSignature Language="C#" Value="public double ZoomIncrement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ZoomIncrement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.FlowDocumentReader.ZoomIncrement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはズーム増分値を設定します。</summary>
+        <value>現在のズーム インクリメントは、パーセンテージとして解釈します。 既定では 10.0 (10% のズーム increment です)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ズーム インクリメントは、パーセンテージ、<xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>レベルで拡大または縮小するときに、<xref:System.Windows.Input.NavigationCommands.IncreaseZoom%2A>または<xref:System.Windows.Input.NavigationCommands.DecreaseZoom%2A>コマンドが実行される、それぞれします。  
+  
+ 既定の<xref:System.Windows.Controls.FlowDocumentReader>[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]増加または減少させて拡大または縮小、だけでなく、スライダーのズーム レベルを調整するためのボタンを提供するズーム コントロールが含まれています。  次の図は、ズーム コントロールを示します、<xref:System.Windows.Controls.FlowDocumentReader>既定の UI。  
+  
+ ![Flowdocumentreader コントロール ズーム](~/add/media/flowdocrdr-zoom.png "flowdocumentreader コントロール ズーム")  
+  
+<a name="dependencyPropertyInfo_ZoomIncrement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrementProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrement%2A>属性。  
+  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentReaderXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentreaderxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.FlowDocumentReader.ZoomIncrement%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_flowdocumentreader)]
+ [!code-vb[FlowDocumentSnippets#_FlowDocumentReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_flowdocumentreader)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomIncrementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ZoomIncrementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ZoomIncrementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.ZoomIncrementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.ZoomIncrement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ZoomProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ZoomProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.FlowDocumentReader.ZoomProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.FlowDocumentReader.Zoom" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

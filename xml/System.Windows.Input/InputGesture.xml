@@ -1,0 +1,68 @@
+<Type Name="InputGesture" FullName="System.Windows.Input.InputGesture">
+  <TypeSignature Language="C#" Value="public abstract class InputGesture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InputGesture extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputGesture" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力デバイスのジェスチャを記述する抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装<xref:System.Windows.Input.InputGesture>で[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]は<xref:System.Windows.Input.KeyGesture>と<xref:System.Windows.Input.MouseGesture>です。  
+  
+ コマンドが呼び出されたジェスチャが実行されるように、入力ジェスチャは、コマンドに関連付けできます。  詳細については、次を参照してください。<xref:System.Windows.Input.InputBinding>と[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InputGesture ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputGesture.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.InputGesture" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public abstract bool Matches (object targetElement, System.Windows.Input.InputEventArgs inputEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Matches(object targetElement, class System.Windows.Input.InputEventArgs inputEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputGesture.Matches(System.Object,System.Windows.Input.InputEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetElement" Type="System.Object" />
+        <Parameter Name="inputEventArgs" Type="System.Windows.Input.InputEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetElement">コマンドのターゲットです。</param>
+        <param name="inputEventArgs">このジェスチャを比較する入力イベントのデータ。</param>
+        <summary>派生クラスでオーバーライドされると、かどうか、指定した<see cref="T:System.Windows.Input.InputGesture" />に指定された関連付けられている入力と一致する<see cref="T:System.Windows.Input.InputEventArgs" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />ジェスチャが入力に一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

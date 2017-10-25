@@ -1,0 +1,368 @@
+<Type Name="TreeNodeStyleCollection" FullName="System.Web.UI.WebControls.TreeNodeStyleCollection">
+  <TypeSignature Language="C#" Value="public sealed class TreeNodeStyleCollection : System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TreeNodeStyleCollection extends System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.StateManagedCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクト内にある、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeStyleCollection>を格納および管理のコレクション クラスが使用される<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクト。 <xref:System.Web.UI.WebControls.TreeView.LevelStyles%2A>型のプロパティ<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>ツリーの個々 のレベルのノードのスタイルを格納します。  
+  
+ <xref:System.Web.UI.WebControls.TreeView.LevelStyles%2A>プロパティは、代わりに、個別のスタイル プロパティなど、<xref:System.Web.UI.WebControls.TreeView.NodeStyle%2A>ツリーのさまざまなレベルでノードのスタイルを制御するプロパティです。 コレクション内の最初のスタイルは、ツリーの最初のレベルのノードのスタイルに対応します。 コレクション内の 2 番目のスタイルは、ツリー、およびなどの第 2 レベルのノードのスタイルに対応します。 <xref:System.Web.UI.WebControls.TreeView.LevelStyles%2A>プロパティが最もよく使用される内容: スタイルのナビゲーション メニューのテーブルを生成する特定のレベルのノードが子ノードがあるかどうかに関係なく、同じ外観を持つ必要があります。  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeStyleCollection>クラスからそのメンバーのほとんどの継承、<xref:System.Web.UI.StateManagedCollection>クラスです。 継承されたメンバーの詳細については、次を参照してください。<xref:System.Web.UI.StateManagedCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>の個々 のレベルのスタイルの設定を指定するクラス、<xref:System.Web.UI.WebControls.TreeView>コントロール。 注意して、<xref:System.Web.UI.WebControls.TreeView.LevelStyles%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeViewLevelStyles#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewLevelStyles/CS/treeviewlevelstylescs.aspx#1)]
+ [!code-aspx-vb[TreeViewLevelStyles#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewLevelStyles/VB/treeviewlevelstylesvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.UI.WebControls.TreeNodeStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.UI.WebControls.TreeNodeStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.Add(System.Web.UI.WebControls.TreeNodeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.TreeNodeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style"><see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />を追加します。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />の末尾にオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />オブジェクト。</summary>
+        <returns>位置、新しい<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />挿入されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Add%2A>メソッドを指定した追加<xref:System.Web.UI.WebControls.TreeNodeStyle>の末尾にオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>オブジェクト。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeStyleCollection>を追加することができます`null`、重複も<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.TreeNodeStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.TreeNodeStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.Contains(System.Web.UI.WebControls.TreeNodeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.TreeNodeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">検索する <see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトがコレクション内にします。</summary>
+        <returns>
+          <see langword="true" />、場合、指定した<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトがコレクションに含まれている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Web.UI.WebControls.TreeNodeStyle>にオブジェクトが含まれている、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>オブジェクト。 <xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Contains%2A>メソッドは、通常の存在をテストする使用、<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトを追加またはコレクションから、ノードを削除するなどのタスクを実行する前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.TreeNodeStyle[] styleArray, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.TreeNodeStyle[] styleArray, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.CopyTo(System.Web.UI.WebControls.TreeNodeStyle[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="styleArray" Type="System.Web.UI.WebControls.TreeNodeStyle[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="styleArray">0 から始まる配列<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトからコピーされた項目を受信する、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />です。</param>
+        <param name="index">コピーされた内容の受信を開始する位置を示す、ターゲット配列内の位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />オブジェクトの場合は、互換性のある 1 次元配列を<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクト、ターゲット配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>オブジェクトの指定した 0 から始まる配列を<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクト。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 配列は、コレクション内の項目にアクセスし、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKnownType">
+      <MemberSignature Language="C#" Value="protected override object CreateKnownType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object CreateKnownType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.CreateKnownType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypes">
+      <MemberSignature Language="C#" Value="protected override Type[] GetKnownTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] GetKnownTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.GetKnownTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.TreeNodeStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.TreeNodeStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.IndexOf(System.Web.UI.WebControls.TreeNodeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.TreeNodeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">検索する <see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />。</param>
+        <summary>指定したインデックスを決定<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />コレクション内のオブジェクト。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス<paramref name="style" />内で、 <see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />、それ以外の場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.IndexOf%2A>メソッドの指定した 0 から始まるインデックスを確認する<xref:System.Web.UI.WebControls.TreeNodeStyle>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>オブジェクト。 コレクション内のノードは、このメソッドは-1 を返します。  
+  
+> [!NOTE]
+>  場合、指定した<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトでは、コレクション内で複数回表示され、最初に見つかった位置のインデックスが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.TreeNodeStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.TreeNodeStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.Insert(System.Int32,System.Web.UI.WebControls.TreeNodeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Web.UI.WebControls.TreeNodeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置を示す 0 から始まるインデックス位置、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />です。</param>
+        <param name="style">挿入する <see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトに、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Insert%2A>メソッドを指定された挿入<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトに、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>指定した 0 から始まるインデックス位置のオブジェクト。  
+  
+ 代わりに、追加することができます、<xref:System.Web.UI.WebControls.TreeNodeStyle>の末尾にオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>を使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNodeStyle this[int i] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TreeNodeStyle Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeStyleCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まるインデックス、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />を取得します。</param>
+        <summary>取得または設定、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />で指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />で指定したインデックス位置、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Item%2A>インデックスにアクセスするプロパティ、<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトから、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>配列表記を使用して、指定したインデックスにあるオブジェクト。 コレクションは、0 から始まる。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsert">
+      <MemberSignature Language="C#" Value="protected override void OnInsert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.OnInsert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.TreeNodeStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.TreeNodeStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.Remove(System.Web.UI.WebControls.TreeNodeStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.TreeNodeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">削除する <see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトから、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Remove%2A>メソッドを指定された削除<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトをコレクションからです。 連続しているが、残りのオブジェクトのインデックスを更新します。  
+  
+ 代わりに、使用して特定のインデックス位置のノードを削除することができます、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.RemoveAt%2A>メソッドです。 使用して、コレクション内のすべてのノードを削除することも、<xref:System.Web.UI.StateManagedCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス位置、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトから指定したインデックス位置にある、<see cref="T:System.Web.UI.WebControls.TreeNodeStyleCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.RemoveAt%2A>を削除する方法、<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトから指定した 0 から始まるインデックス位置にある、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection>オブジェクト。 すべての項目をツリー構造内の空いた位置を埋める、削除されたノードが 1 レベル上へ移動し、後に配置されています。 移動した項目のインデックスも更新します。  
+  
+ 代わりに、特定を削除することができます<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトを使用して、<xref:System.Web.UI.WebControls.TreeNodeStyleCollection.Remove%2A>メソッドです。 使用して、コレクション内のすべてのノードを削除することも、<xref:System.Web.UI.WebControls.TreeNodeCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirtyObject">
+      <MemberSignature Language="C#" Value="protected override void SetDirtyObject (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDirtyObject(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyleCollection.SetDirtyObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

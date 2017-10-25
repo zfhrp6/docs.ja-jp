@@ -1,0 +1,48 @@
+<Type Name="IVbcHostObjectFreeThreaded" FullName="Microsoft.Build.Tasks.Hosting.IVbcHostObjectFreeThreaded">
+  <TypeSignature Language="C#" Value="public interface IVbcHostObjectFreeThreaded" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVbcHostObjectFreeThreaded" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Hosting.IVbcHostObjectFreeThreaded" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("ECCF972F-8C2D-4F51-9746-9288661DE2CB")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>IDE との通信に Vbc タスク用のフリー スレッドのインターフェイスを定義します。 具体的には、Vbc タスクでは、コマンド ライン コンパイラをシェルを作成するのではなく、IDE に実際のコンパイルは委任します。  
+  
+ この特定のバージョンのコンパイルとは異なり、IVbcHostObject::Compile) は、UI スレッドにマーシャ リングされません。 インターフェイスの実装は、任意のマーシャ リングを担当します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public bool Compile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Compile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObjectFreeThreaded.Compile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ソース ファイルをコンパイルします。</summary>
+        <returns><see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

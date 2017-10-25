@@ -1,0 +1,130 @@
+<Type Name="PipeAccessRule" FullName="System.IO.Pipes.PipeAccessRule">
+  <TypeSignature Language="C#" Value="public sealed class PipeAccessRule : System.Security.AccessControl.AccessRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PipeAccessRule extends System.Security.AccessControl.AccessRule" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Pipes.PipeAccessRule" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.AccessRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パイプのアクセス規則を定義するアクセス制御エントリ (ACE) の抽象化を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス制御規則は、アクションを決定は許可されている Microsoft Windows を実行しているコンピューターでは、使用するユーザー アカウントの権限を定義します。  
+  
+ <xref:System.IO.Pipes.PipeAccessRule>クラスを表します (読み取り、書き込み、およびなど) を提供するアクセスの種類、ユーザー アカウントを指定する基になるアクセス制御エントリ (ACE) の抽象化し、許可するか、その権限を拒否するかどうか。  このクラスは、子オブジェクトへのアクセス規則を反映する方法も指定できます。  
+  
+ 使用して、<xref:System.IO.Pipes.PipeAccessRule>新しいアクセス ルールを作成するクラス。  ルールを使用して、永続化することができます、<xref:System.IO.Pipes.PipeSecurity>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PipeAccessRule (System.Security.Principal.IdentityReference identity, System.IO.Pipes.PipeAccessRights rights, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.IO.Pipes.PipeAccessRights rights, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeAccessRule.#ctor(System.Security.Principal.IdentityReference,System.IO.Pipes.PipeAccessRights,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="rights" Type="System.IO.Pipes.PipeAccessRights" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity"><see cref="T:System.Security.Principal.IdentityReference" />ユーザー アカウントへの参照をカプセル化するオブジェクト。</param>
+        <param name="rights">1 つ、<see cref="T:System.IO.Pipes.PipeAccessRights" />アクセス規則に関連付けられている操作の種類を指定する値。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />許可操作または拒否するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.PipeAccessRule" />クラスが指定された id、パイプのアクセス権、およびアクセス制御の種類を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用できる永続化することを使用してアクセス制御規則を作成する、<xref:System.IO.Pipes.PipeSecurity>クラスです。 アクセス制御規則は、アクションを決定は許可されている Microsoft Windows を実行しているコンピューターでは、使用するユーザー アカウントの権限を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PipeAccessRule (string identity, System.IO.Pipes.PipeAccessRights rights, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.IO.Pipes.PipeAccessRights rights, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeAccessRule.#ctor(System.String,System.IO.Pipes.PipeAccessRights,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="rights" Type="System.IO.Pipes.PipeAccessRights" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザー アカウントの名前。</param>
+        <param name="rights">1 つ、<see cref="T:System.IO.Pipes.PipeAccessRights" />アクセス規則に関連付けられている操作の種類を指定する値。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />許可操作または拒否するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.PipeAccessRule" />クラスが指定された id、パイプのアクセス権、およびアクセス制御の種類を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用できる永続化することを使用してアクセス制御規則を作成する、<xref:System.IO.Pipes.PipeSecurity>クラスです。 アクセス制御規則は、アクションを決定は許可されている Microsoft Windows を実行しているコンピューターでは、使用するユーザー アカウントの権限を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PipeAccessRights">
+      <MemberSignature Language="C#" Value="public System.IO.Pipes.PipeAccessRights PipeAccessRights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Pipes.PipeAccessRights PipeAccessRights" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.PipeAccessRule.PipeAccessRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Pipes.PipeAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Pipes.PipeAccessRights" />に現在関連付けられているフラグ<see cref="T:System.IO.Pipes.PipeAccessRule" />オブジェクト。</summary>
+        <value><see cref="T:System.IO.Pipes.PipeAccessRights" /> 値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

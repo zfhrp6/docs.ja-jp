@@ -1,0 +1,103 @@
+<Type Name="AxHost+InvalidActiveXStateException" FullName="System.Windows.Forms.AxHost+InvalidActiveXStateException">
+  <TypeSignature Language="C#" Value="public class AxHost.InvalidActiveXStateException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit AxHost/InvalidActiveXStateException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AxHost.InvalidActiveXStateException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ActiveX コントロールが無効な状態で参照されている場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック プロパティと ActiveX コントロールのメソッドのみ参照できます、ActiveX コントロールをインスタンス化され、完全に初期化した後それ以外の場合、<xref:System.Windows.Forms.AxHost.InvalidActiveXStateException>例外がスローされます。 <xref:System.Windows.Forms.AxHost.InvalidActiveXStateException>例外クラスには、参照を作成するメンバーと型のメンバーの名前が含まれています。 いずれかのメンバーの種類が、<xref:System.Windows.Forms.AxHost.ActiveXInvokeKind>列挙値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidActiveXStateException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.InvalidActiveXStateException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException" /> ActiveX コントロールを参照するメンバーに関する情報を指定しないクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidActiveXStateException (string name, System.Windows.Forms.AxHost.ActiveXInvokeKind kind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Windows.Forms.AxHost/ActiveXInvokeKind kind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.InvalidActiveXStateException.#ctor(System.String,System.Windows.Forms.AxHost.ActiveXInvokeKind)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="kind" Type="System.Windows.Forms.AxHost+ActiveXInvokeKind" />
+      </Parameters>
+      <Docs>
+        <param name="name">無効な状態になっていたときに、ActiveX コントロールを参照しているメンバーの名前です。</param>
+        <param name="kind"><see cref="T:System.Windows.Forms.AxHost.ActiveXInvokeKind" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException" />クラスし、ActiveX コントロールと、参照の種類を参照しているメンバーの名前を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.InvalidActiveXStateException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の例外の文字列形式を作成して返します。</summary>
+        <returns>現在の例外の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでこの情報が指定した場合に行われた ActiveX コントロールと参照の種類を参照するメンバーに関する情報を含む文字列を返します、<xref:System.Windows.Forms.AxHost.InvalidActiveXStateException.%23ctor%28System.String%2CSystem.Windows.Forms.AxHost.ActiveXInvokeKind%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

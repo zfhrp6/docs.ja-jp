@@ -1,0 +1,131 @@
+<Type Name="ProfileProviderAttribute" FullName="System.Web.Profile.ProfileProviderAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ProfileProviderAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileProviderAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileProviderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー プロファイル プロパティのプロファイル プロバイダーを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProviderAttribute>カスタム プロファイルの実装のプロパティ プロファイル プロバイダーを識別するクラスを使用します。 カスタム プロファイルの実装が継承されたクラス、<xref:System.Web.Profile.ProfileBase>クラスを abstract であり、ユーザー プロファイルの構成要素で指定されていないプロパティを定義します。 ユーザー プロファイルを使用して、カスタムの種類を指定することができます、`inherits`次の例で示すように、アプリケーションの Web.config ファイルの構成要素の属性です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString=  
+      "Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx"  
+        name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <authorization>  
+      <deny users="?" />  
+    </authorization>  
+  
+    <profile inherits="Samples.AspNet.Profile.EmployeeProfile"  
+      defaultProvider="SqlProvider">  
+      <providers>  
+        <clear />  
+        <add  
+          name="SqlProvider"  
+          type="System.Web.Profile.SqlProfileProvider"   
+          connectionStringName="SqlServices"   
+          description="SQL Profile Provider for Sample"/>   
+        <add  
+          name="EmployeeInfoProvider"  
+          type="System.Web.Profile.SqlProfileProvider"   
+          connectionStringName="SqlServices"   
+          description="SQL Profile Provider for Employee Info"/>   
+      </providers>  
+  
+      <properties>  
+        <add name="GarmentSize" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例から継承するクラスを定義する、<xref:System.Web.Profile.ProfileBase>カスタム プロファイルを作成するクラス。 カスタム プロファイルの種類が指定された、`inherits`アプリケーションの Web.config ファイルの構成要素の属性です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileProviderAttribute (string providerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProviderAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerName">プロパティのプロファイル プロバイダーの名前。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.Profile.ProfileProviderAttribute" />指定されたプロファイル プロバイダー名を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProviderAttribute>カスタム プロファイルの実装のプロパティ プロファイル プロバイダーを識別するクラスを使用します。 カスタム プロファイルの実装が継承されたクラス、<xref:System.Web.Profile.ProfileBase>クラスを abstract であり、ユーザー プロファイルの構成要素で指定されていないプロパティを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例から継承するクラスを定義する、<xref:System.Web.Profile.ProfileBase>カスタム プロファイルを作成するクラス。 カスタム プロファイルの種類が指定された、`inherits`アプリケーションの Web.config ファイルの構成要素の属性です。 カスタム プロファイルの実装を指定する構成ファイルの例は、次を参照してください。、<xref:System.Web.Profile.ProfileProviderAttribute>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileProviderAttribute.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー プロファイル プロパティのプロファイル プロバイダーの名前を取得します。</summary>
+        <value>ユーザー プロファイル プロパティのプロファイル プロバイダーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

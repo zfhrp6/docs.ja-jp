@@ -1,0 +1,208 @@
+<Type Name="DpapiDataProtector" FullName="System.Security.Cryptography.DpapiDataProtector">
+  <TypeSignature Language="C#" Value="public sealed class DpapiDataProtector : System.Security.Cryptography.DataProtector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DpapiDataProtector extends System.Security.Cryptography.DataProtector" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.DpapiDataProtector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.DataProtector</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単純なデータ保護方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.DpapiDataProtector>クラスを使用してデータを保護する構造化された方法を提供する、<xref:System.Security.Cryptography.ProtectedData>クラスです。 クラス コンス トラクターには、保護されたデータを特定するためのパスワードを提供する用途のパラメーターがあります。 3 つすべてのパラメーターはハッシュされ、暗号化されたデータ文字列の一部として含まれます。 データの保護を解除する用途のパラメーターを知る必要があります。 <xref:System.Security.Cryptography.ProtectedData.Protect%2A?displayProperty=nameWithType>データを暗号化するために呼び出されるメソッドには、`optionalEntropy`パラメーターをより安全にデータの暗号化に該当する情報を追加することができます。 目的のパラメーターのハッシュは、オプションのエントロピーに使用されます。 データの暗号化を解除するキーを使用する必要はありません、ために、慎重に選択して、目的のデータと、別のレベルのセキュリティがデータの保護に追加します。  
+  
+ 使用する場合、<xref:System.Security.Cryptography.DpapiDataProtector.Scope%2A>設定<xref:System.Security.Cryptography.DataProtectionScope.CurrentUser>データの復号化できるデータを暗号化したユーザーの一致するログオン資格情報を持つユーザーのみです。 さらに、復号化通常できるデータが暗号化されているコンピューター上でのみ。 データを暗号化する Windows の関数は、暗号化を実行するセッション キーを作成します。 セッション キーは、データの復号化されるときにもう一度取得されます。 セッション キーを使用してデータを保護する方法の詳細については、次を参照してください。 [Windows データ保護](http://go.microsoft.com/fwlink/?LinkId=224686)です。  
+  
+ 使用する場合、<xref:System.Security.Cryptography.DpapiDataProtector.Scope%2A>の設定<xref:System.Security.Cryptography.DataProtectionScope.LocalMachine>データを保護するときに、目的のパラメーターを慎重に識別しないと、その目的を認識しているコンピューター上の他のアプリケーションにアクセスして、データの保護を解除します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DpapiDataProtector (string appName, string primaryPurpose, params string[] specificPurpose);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appName, string primaryPurpose, string[] specificPurpose) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DpapiDataProtector.#ctor(System.String,System.String,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="appName" Type="System.String" />
+        <Parameter Name="primaryPurpose" Type="System.String" />
+        <Parameter Name="specificPurpose" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="appName">アプリケーションの名前。</param>
+        <param name="primaryPurpose">データ プロテクターの主な目的です。</param>
+        <param name="specificPurpose">データ プロテクターの特定の目的。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Security.Cryptography.DpapiDataProtector" />クラスを指定したアプリケーション名、主な目的は、および特定の目的を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたアプリケーション名、`appName`パラメーターは、目的は、保護されたデータの一部と見なされます。 3 つのパラメーターはハッシュされ、保護して、データを復号化の両方のハッシュを使用します。 例として`primaryPurpose`と`specificPurposes`値は**Giftcard**と**\<ギフト カード番号 >**または**請求書**と**\<請求番号 >**です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="appName" />空の文字列または<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="primaryPurpose" />空の文字列または<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="specificPurposes" />空の文字列を含むまたは<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.Permissions.DataProtectionPermission">データを保護します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReprotectRequired">
+      <MemberSignature Language="C#" Value="public override bool IsReprotectRequired (byte[] encryptedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsReprotectRequired(unsigned int8[] encryptedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DpapiDataProtector.IsReprotectRequired(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">チェックする暗号化されたデータ。</param>
+        <summary>データを再暗号化する必要があるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />データを再暗号化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に `true` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrependHashedPurposeToPlaintext">
+      <MemberSignature Language="C#" Value="protected override bool PrependHashedPurposeToPlaintext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrependHashedPurposeToPlaintext" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DpapiDataProtector.PrependHashedPurposeToPlaintext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderProtect">
+      <MemberSignature Language="C#" Value="protected override byte[] ProviderProtect (byte[] userData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance unsigned int8[] ProviderProtect(unsigned int8[] userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DpapiDataProtector.ProviderProtect(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="userData">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderUnprotect">
+      <MemberSignature Language="C#" Value="protected override byte[] ProviderUnprotect (byte[] encryptedData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance unsigned int8[] ProviderUnprotect(unsigned int8[] encryptedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DpapiDataProtector.ProviderUnprotect(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.DataProtectionScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.DataProtectionScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DpapiDataProtector.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.DataProtectionScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ保護のスコープを設定します。</summary>
+        <value>Data protection (現在のユーザーまたはローカル コンピューター) のスコープを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.Security.Cryptography.DataProtectionScope.CurrentUser" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のプログラムで読み取ることができません、データ保護はディスク上のデータを暗号化します。  キーの保護やデータの保護を解除する必要はありません。 設定した場合、<xref:System.Security.Cryptography.DpapiDataProtector.Scope%2A>に<xref:System.Security.Cryptography.DataProtectionScope.CurrentUser>データの保護を解除できる資格情報で実行されているアプリケーションのみです。 ただし、つまり、資格情報で実行されているすべてのアプリケーションが、保護されたデータにアクセスできることです。  設定した場合、<xref:System.Security.Cryptography.DpapiDataProtector.Scope%2A>に<xref:System.Security.Cryptography.DataProtectionScope.LocalMachine>コンピューター上の任意の完全に信頼されたアプリケーションは、保護の解除、アクセス、およびアプリケーション名、主な目的、および特定の目的が認識されている場合は、データを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

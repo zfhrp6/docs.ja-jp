@@ -1,0 +1,62 @@
+<Type Name="IRegisteredObject" FullName="System.Web.Hosting.IRegisteredObject">
+  <TypeSignature Language="C#" Value="public interface IRegisteredObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRegisteredObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IRegisteredObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ホスティング環境で管理されているオブジェクトのメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを実装する必要があります、<xref:System.Web.Hosting.IRegisteredObject>ホスティング環境での登録し、その有効期間が、ホスティング環境で管理するためにインターフェイスです。  
+  
+ 登録済みのオブジェクトのインスタンスを作成するには呼び出すことによって、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A?displayProperty=nameWithType>アプリケーション マネージャーのメソッドです。 アプリケーション マネージャーは、オブジェクトの種類に固有のメソッドを呼び出すことができますし、呼び出し元に、新しく作成されたオブジェクトを返します。 スタートアップ中に、登録済みのオブジェクトを呼び出す必要があります、<xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A?displayProperty=nameWithType>メソッドがオブジェクトの登録を完了します。  
+  
+ アプリケーション マネージャーは、登録済みのオブジェクトを停止する必要があります、ときに呼び出されます、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>メソッドです。  
+  
+ アプリケーションでは、登録済みの型のインスタンスを 1 つだけを持つことができます。 登録済みの型の複数のインスタンスを作成するのにには、アプリケーションに登録され、複数のインスタンスを管理するマネージャー オブジェクトを作成するのにファクトリ パターンを使用します。 オブジェクトの例については、ファクトリ パターンを実装する例を参照しての<xref:System.Web.Hosting.ApplicationManager>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop (bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Stop(bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IRegisteredObject.Stop(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="immediate">
+          <see langword="true" />登録済みのオブジェクトを示すために登録解除するホスト環境から; を返す前にそれ以外の場合、<see langword="false" />です。</param>
+        <summary>登録を解除する登録済みのオブジェクトを要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション マネージャーが呼び出す、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>メソッドに登録を解除する登録済みのオブジェクトを確認してください。 処理中に、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>メソッド、登録済みのオブジェクトを呼び出す必要があります、<xref:System.Web.Hosting.HostingEnvironment.UnregisterObject%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Web.Hosting.IRegisteredObject.Stop%2A>メソッドが呼び出された最初、`immediate`パラメーターに設定`false`です。 オブジェクトがいずれかの完全な処理を呼び出す、<xref:System.Web.Hosting.HostingEnvironment.UnregisterObject%2A>メソッド、および戻り値またはそれをすぐに戻り、呼び出す前に非同期的に処理を完了、<xref:System.Web.Hosting.HostingEnvironment.UnregisterObject%2A>メソッドです。  
+  
+ 登録済みのオブジェクトが、アプリケーション マネージャーのタイムアウト期間が経過する前に、処理を完了しない場合、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>メソッドが呼び出されたもう一度、`immediate`パラメーターに設定`true`です。 ときに、`immediate`パラメーターは`true`、登録済みのオブジェクトを呼び出す必要があります、 <xref:System.Web.Hosting.HostingEnvironment.UnregisterObject%2A> ; を返す前にメソッド アプリケーション マネージャーによってそれ以外の場合、その登録が削除されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

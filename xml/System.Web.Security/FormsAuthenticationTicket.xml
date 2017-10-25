@@ -1,0 +1,448 @@
+<Type Name="FormsAuthenticationTicket" FullName="System.Web.Security.FormsAuthenticationTicket">
+  <TypeSignature Language="C#" Value="public sealed class FormsAuthenticationTicket" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FormsAuthenticationTicket extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.FormsAuthenticationTicket" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フォーム認証でユーザーを識別するために使用するチケットのプロパティと値へのアクセスを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationTicket>フォーム認証で認証されたユーザーの識別に使用される認証チケットを表すオブジェクトを作成するクラスを使用します。 プロパティと、フォーム認証チケットの値をクッキーまたは URL に格納されている暗号化された文字列との間に変換されます。  
+  
+ <xref:System.Web.Security.FormsAuthentication>クラスを提供する<xref:System.Web.Security.FormsAuthentication.Encrypt%2A>cookie をまたはから URL に格納できる文字列値を作成する方法、<xref:System.Web.Security.FormsAuthenticationTicket>です。 <xref:System.Web.Security.FormsAuthentication>クラスも用意されています、<xref:System.Web.Security.FormsAuthentication.Decrypt%2A>メソッドを作成、<xref:System.Web.Security.FormsAuthenticationTicket>フォーム認証クッキーまたは URL から、暗号化された認証チケットからオブジェクトを取得します。  
+  
+ <xref:System.Web.Security.FormsAuthenticationTicket> For を使用して、現在の認証済みユーザーをアクセスすることができます、<xref:System.Web.Security.FormsIdentity.Ticket%2A>のプロパティ、<xref:System.Web.Security.FormsIdentity>クラスです。 現在にアクセスすることができます<xref:System.Web.Security.FormsIdentity>でキャスト オブジェクト、 <xref:System.Security.Principal.IPrincipal.Identity%2A> 、現在のプロパティ<xref:System.Web.HttpContext.User%2A>型として<xref:System.Web.Security.FormsIdentity>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の結果を格納する、 <xref:System.Web.Security.FormsAuthentication.Encrypt%2A> cookie を使用して、メソッド、<xref:System.Web.Security.FormsAuthentication.FormsCookieName%2A>から返される URL にユーザーをリダイレクトし、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketClass/CS/formsauthenticationticketclasscs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketClass/VB/formsauthenticationticketclassvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationTicket (string name, bool isPersistent, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, bool isPersistent, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationTicket.#ctor(System.String,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="isPersistent" Type="System.Boolean" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">チケットに関連付けられているユーザー名。</param>
+        <param name="isPersistent">
+          <see langword="true" />(ブラウザー セッション間で保存されます) 永続的な cookie でチケットを格納する場合。それ以外の場合、<see langword="false" />です。 チケットが URL に格納されている場合は、この値は無視されます。</param>
+        <param name="timeout">認証チケットの有効期限を分単位での時刻。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Security.FormsAuthenticationTicket" />クラス cookie の名前と有効期限の情報を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationTicket>このコンス トラクターによって作成されたオブジェクトになります、<xref:System.Web.Security.FormsAuthenticationTicket.CookiePath%2A>値の値に設定、<xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>プロパティ、<xref:System.Web.Security.FormsAuthenticationTicket.Version%2A>の値が 2、<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>現在の日付と時刻の値、<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>値は空の文字列 ("")、および<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>現在の日付と時刻の値に設定されている値、`timeout`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationTicket (int version, string name, DateTime issueDate, DateTime expiration, bool isPersistent, string userData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 version, string name, valuetype System.DateTime issueDate, valuetype System.DateTime expiration, bool isPersistent, string userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationTicket.#ctor(System.Int32,System.String,System.DateTime,System.DateTime,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="version" Type="System.Int32" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="issueDate" Type="System.DateTime" />
+        <Parameter Name="expiration" Type="System.DateTime" />
+        <Parameter Name="isPersistent" Type="System.Boolean" />
+        <Parameter Name="userData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="version">チケットのバージョン番号。</param>
+        <param name="name">チケットに関連付けられているユーザー名。</param>
+        <param name="issueDate">ローカルの日付と時刻をチケットが発行されました。</param>
+        <param name="expiration">ローカルの日付とチケットの有効期限が切れる時刻。</param>
+        <param name="isPersistent">
+          <see langword="true" />(ブラウザー セッション間で保存されます) 永続的な cookie でチケットを格納する場合。それ以外の場合、<see langword="false" />です。 チケットが URL に格納されている場合は、この値は無視されます。</param>
+        <param name="userData">チケットを格納するユーザーに固有のデータ。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.Security.FormsAuthenticationTicket" /> cookie の名前、バージョン、有効期限、発行日、永続性、およびユーザーに固有のデータを持つクラス。 Cookie のパスは、アプリケーションの構成ファイルで設定された既定値に設定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationTicket>このコンス トラクターによって作成されたオブジェクトには、<xref:System.Web.Security.FormsAuthenticationTicket.CookiePath%2A>値の値に設定、<xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>です。  
+  
+> [!NOTE]
+>  `userData` パラメーターとして `null` を使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationTicket (int version, string name, DateTime issueDate, DateTime expiration, bool isPersistent, string userData, string cookiePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 version, string name, valuetype System.DateTime issueDate, valuetype System.DateTime expiration, bool isPersistent, string userData, string cookiePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationTicket.#ctor(System.Int32,System.String,System.DateTime,System.DateTime,System.Boolean,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="version" Type="System.Int32" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="issueDate" Type="System.DateTime" />
+        <Parameter Name="expiration" Type="System.DateTime" />
+        <Parameter Name="isPersistent" Type="System.Boolean" />
+        <Parameter Name="userData" Type="System.String" />
+        <Parameter Name="cookiePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="version">チケットのバージョン番号。</param>
+        <param name="name">チケットに関連付けられているユーザー名。</param>
+        <param name="issueDate">ローカルの日付と時刻をチケットが発行されました。</param>
+        <param name="expiration">ローカルの日付とチケットの有効期限が切れる時刻。</param>
+        <param name="isPersistent">
+          <see langword="true" />(ブラウザー セッション間で保存されます) 永続的な cookie でチケットを格納する場合。それ以外の場合、<see langword="false" />です。 チケットが URL に格納されている場合は、この値は無視されます。</param>
+        <param name="userData">チケットを格納するユーザーに固有のデータ。</param>
+        <param name="cookiePath">Cookie に格納されているときに、チケットのパス。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.Security.FormsAuthenticationTicket" /> cookie の名前、バージョン、ディレクトリのパス、発行日、有効期限の日付、永続性、およびユーザー定義データを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  `userData` パラメーターとして `null` を使用することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例の結果を格納する、 <xref:System.Web.Security.FormsAuthentication.Encrypt%2A> cookie を使用して、メソッド、<xref:System.Web.Security.FormsAuthentication.FormsCookieName%2A>プロパティとリダイレクト URL にユーザーがから返される、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketClass/CS/formsauthenticationticketclasscs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketClass/VB/formsauthenticationticketclassvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookiePath">
+      <MemberSignature Language="C#" Value="public string CookiePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookiePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.CookiePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証チケットの cookie のパスを取得します。</summary>
+        <value>フォーム認証チケットの cookie のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Security.FormsAuthenticationTicket>が指定されていないコンス トラクターを使用して作成された、`cookiePath`パラメーター、<xref:System.Web.Security.FormsAuthenticationTicket.CookiePath%2A>プロパティの値を返します、<xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>プロパティ; version プロパティに指定された値を返しますそれ以外の場合、<xref:System.Web.Security.FormsAuthenticationTicket>コンス トラクター。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expiration">
+      <MemberSignature Language="C#" Value="public DateTime Expiration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Expiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.Expiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルの日付と、フォーム認証チケットの有効期限が切れる時刻を取得します。</summary>
+        <value><see cref="T:System.DateTime" />フォーム認証チケットが期限切れにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Security.FormsAuthenticationTicket>を使用して作成されて、<xref:System.Web.Security.FormsAuthenticationTicket.%23ctor%28System.String%2CSystem.Boolean%2CSystem.Int32%29>有効期限の日付と時刻のパラメーターが指定されていないコンス トラクター、<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>プロパティに基づいて、現在の日付と時刻の値の合計値を返します、`timeout`コンス トラクターに指定されたパラメーター。  
+  
+ 場合、<xref:System.Web.Security.FormsAuthenticationTicket>を受け取るコンス トラクターを使用して作成された、 `expiration` 、パラメーター、<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>プロパティに指定された値を返します、`expiration`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="public bool Expired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expired" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.Expired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証チケットの有効期限が切れているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、フォーム認証チケットの有効期限が切れました。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationTicket.Expired%2A>プロパティから返される`true`場合、<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>日付と時刻が現在の日付と時刻です。 より小さいそれ以外の場合、<xref:System.Web.Security.FormsAuthenticationTicket.Expired%2A>プロパティから返される`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPersistent">
+      <MemberSignature Language="C#" Value="public bool IsPersistent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPersistent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.IsPersistent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証チケット情報を含む cookie が永続的かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、永続的な cookie ブラウザー セッション間で保存されている) が発行されたものです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssueDate">
+      <MemberSignature Language="C#" Value="public DateTime IssueDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IssueDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.IssueDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証チケットが最初に発行したローカルの日付を取得します。</summary>
+        <value><see cref="T:System.DateTime" />フォーム認証チケットが最初に発行されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>プロパティは、ローカルの日付と、フォーム認証チケットが発行された時刻を表します。 <xref:System.Web.Security.FormsAuthentication.RenewTicketIfOld%2A>メソッドを使用、<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>プロパティの値を決定するかどうか、<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>フォーム認証の日付と時刻が使用して更新する必要がありますをチケット、<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>プロパティの値を新しい<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>日付と時刻。 チケットが更新されるときに、<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>プロパティは、ローカルの日付と時刻に更新します。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証チケットに関連付けられているユーザー名を取得します。</summary>
+        <value>フォーム認証チケットに関連付けられているユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public string UserData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チケットに格納されているユーザーに固有の文字列を取得します。</summary>
+        <value>チケットに格納されているユーザーに固有の文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Security.FormsAuthenticationTicket>が指定されていないコンス トラクターを使用して作成された、 `userData` 、パラメーター、<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>プロパティが空の文字列を返します ("") です。version プロパティに指定された値を返しますそれ以外の場合、<xref:System.Web.Security.FormsAuthenticationTicket>コンス トラクターです。  
+  
+ 使用することができます、<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>で追加のユーザー情報を格納するプロパティ、<xref:System.Web.Security.FormsAuthenticationTicket>が保守されません、<xref:System.Web.Security.FormsAuthenticationTicket>プロパティの値。  
+  
+> [!NOTE]
+>  格納されたデータの量を制限する必要があります、<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>プロパティです。 サイズを確認する必要がある、<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>無効なクッキーまたは極端に長い URL のプロパティは行われません。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationTicket.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チケットのバージョン番号を取得します。</summary>
+        <value>チケットのバージョン番号。 既定値は 2 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Security.FormsAuthenticationTicket>が指定されていないコンス トラクターを使用して作成された、 `version` 、パラメーター、<xref:System.Web.Security.FormsAuthenticationTicket.Version%2A>プロパティには、2 が返されます。 version プロパティがに指定された値を返しますそれ以外の場合、<xref:System.Web.Security.FormsAuthenticationTicket>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティ値が表示されます、<xref:System.Web.Security.FormsAuthenticationTicket>現在ログオンしているユーザーです。  
+  
+> [!NOTE]
+>  ユーザーのログオンが存在しない場合、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティ`null`、キャストしようとするとき、コンパイラの例外が表示されます、<xref:System.Security.Principal.IPrincipal.Identity%2A>プロパティとして、<xref:System.Web.Security.FormsIdentity>オブジェクト。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketProperties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/CS/formsauthenticationticketpropertiescs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketProperties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketProperties/VB/formsauthenticationticketpropertiesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
